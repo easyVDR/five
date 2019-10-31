@@ -1,0 +1,571 @@
+#!/bin/sh
+
+. /lib/partman/lib/base.sh
+. /lib/partman/lib/commit.sh
+. /usr/share/debconf/confmodule
+
+error_str=''
+chosen_sys_dev=''
+chosen_sys_dev_human=''
+chosen_sys_id=''
+nextstage=false
+prevstage=false
+device_qty=0
+complete_device_str="Komplettes Laufwerk verwenden"
+media_partition_str="Medienpartition"
+advanced_partition_str="Erweiterte Partitionierung starten"
+
+abort () {
+	if [ -f /var/run/parted_server.pid ]; then
+		stop_parted_server
+	fi
+	exit $1
+}
+
+
+###########################################################
+# Dont touch. This is from partman
+###########################################################
+
+easypart_device_name () {
+	cd $1
+	printf "%s - %s%s%s%s%s" "$(humandev $(cat device))" '${!TAB}' '${!ALIGN=RIGHT}' "$(longint2human $(cat size))" '${!TAB}' "$(cat model)"
+}
+
+init_partman () {
+	mkdir -p /var/lib/partman
+	initcount=$(ls /lib/partman/init.d/* | wc -l)
+	db_progress START 0 $initcount partman/progress/init/title
+
+	for s in /lib/partman/init.d/*; do
+		if [ -x $s ]; then
+			#logger -t partman "Running init.d/$s"
+
+			base=$(basename $s | sed 's/[0-9]*//')
+			# Not every init script has, or needs, its own progress
+			# template. Add them to slow init scripts only.
+			if ! db_progress INFO partman/progress/init/$base; then
+				db_progress INFO partman/progress/init/fallback
+			fi
+			if ! $s; then
+				db_progress STOP
+				abort 10
+			fi
+		fi
+		db_progress STEP 1
+	done
+
+	db_progress STOP
+}
+
+start_partman () {
+	rm /tmp/use-easypart
+	partman
+	exit $?
+}
+
+
+###########################################################
+# Becarefull!!! Some Things are important for partman
+###########################################################
+
+find_devices () {
+	DEVICES=/var/lib/partman/devices
+        if [ -e /tmp/easypart-device-choices ]; then
+		rm /tmp/easypart-device-choices
+	fi
+
+        if [ -e /tmp/choices2device ]; then
+		rm /tmp/choices2device
+	fi
+
+	device_qty=0
+
+	for dev in $DEVICES/*; do
+		printf "%s," "$(easypart_device_name $dev | sed 's/,/ /g')" >> /tmp/easypart-device-choices
+                # das gleiche nochmal in die zuordnungsdatei 
+		printf "%s," "$(easypart_device_name $dev | sed 's/,/ /g')" >> /tmp/choices2device
+		printf "%s\n" "$dev" >> /tmp/choices2device
+		device_qty=$(($device_qty + 1))
+	done
+
+	if [ "$device_qty" = 1 ]; then
+		chosen_sys_dev=$dev
+		chosen_sys_dev_human=$(echo $chosen_sys_dev | cut -d "/" -f6 | sed 's/=/\//g')
+		chosen_media_dev=$dev
+	fi
+
+	printf "%s" "$(cat /tmp/easypart-device-choices | sed 's/.$//')" > /tmp/easypart-device-choices
+}
+
+choose_sys_device () {
+	if [ "$device_qty" = 1 ]; then
+		nextstage=true
+	else
+		# Needed for Alignment and disable back button
+		db_capb align
+		chosen_sys_dev=''
+		chosen_sys_dev_human=''
+		nextstage=false
+		prevstage=false
+
+		devicechoices=$(cat /tmp/easypart-device-choices)
+		devicechoices=$(printf "%s, , %s" "$devicechoices" "$advanced_partition_str")
+
+		debconf-loadtemplate easypart /etc/easypart.template
+		db_subst easypart/choosesysdevice CHOICES "$devicechoices"
+		db_input critical easypart/choosesysdevice
+
+		if db_go; then
+			db_get easypart/choosesysdevice
+
+			IFS=','
+			while read choice dev; do
+				if [ "$RET" = "$choice" ]; then
+					chosen_sys_dev=$dev
+					chosen_sys_dev_human=$(echo $chosen_sys_dev | cut -d "/" -f6 | sed 's/=/\//g')
+					nextstage=true
+				fi
+			done < /tmp/choices2device
+			restore_ifs
+
+			if [ "$RET" = "$advanced_partition_str" ]; then
+				start_partman
+			fi
+		else
+			prevstage=true
+		fi
+	fi
+}
+
+choose_media_device () {
+	# Needed for Alignment and disable back button
+	db_capb backup align
+
+	chosen_media_dev=''
+	nextstage=false
+	prevstage=false
+
+	devicechoices=$(cat /tmp/easypart-device-choices)
+
+	debconf-loadtemplate easypart /etc/easypart.template
+	db_subst easypart/choosemediadevice CHOICES "$devicechoices"
+	db_input critical easypart/choosemediadevice
+	
+	if db_go; then
+		db_get easypart/choosemediadevice
+
+		IFS=','
+		while read choice dev; do
+			if [ "$RET" = "$choice" ]; then
+				chosen_media_dev=$dev
+				nextstage=true
+			fi
+		done < /tmp/choices2device
+		restore_ifs
+	else
+		prevstage=true
+	fi
+}
+
+find_partitions () {
+	cd $1
+        if [ ! -e easypart-partition-choices ]; then
+		open_dialog PARTITIONS
+	
+		partitions="$(read_paragraph)"
+		close_dialog
+
+		# Dirty aber leider nicht anders möglich
+		db_progress START 1 3 easypart/title
+		db_progress INFO easypart/findpartitioninfo
+		db_progress STEP 1
+
+		IFS="$TAB"
+		echo "$partitions" |
+		while { read num id size type fs path name; [ "$id" ]; }; do
+			infoname=""
+			find_partition_info
+			printf "%s %s%s%s%s%s%s%s," "$path" '${!TAB}' '${!ALIGN=RIGHT}' "$(longint2human $size)" '${!TAB}' "$fs" '${!TAB}' "$infoname" >> easypart-partition-choices
+			# das gleiche nochmal in die zuordnungsdatei 
+			printf "%s," "$path" >> choices2part
+			printf "%s/," "$id" >> choices2part
+			printf "%s," "$fs" >> choices2part
+			printf "%s\n" "$infoname" >> choices2part
+		done
+	
+		db_progress STOP
+
+		printf "%s" "$(cat easypart-partition-choices | sed 's/.$//')" > easypart-partition-choices
+
+		restore_ifs
+	fi
+}
+
+find_partition_info () {
+	mkdir -p /tmp$path
+	mount -rt "$fs" $path /tmp/$path
+
+	infostep=1
+
+	while [ $infostep != BREAK ]; do 
+	  case $infostep in
+		1)
+		  infostep=2
+		  # alte easyVDRversionen
+		  try_file=/tmp$path/etc/vdr/static.conf
+		  if [ -f $try_file ]; then
+		  	basevers=$(cat $try_file | grep BASE | cut -d "=" -f2 | sed 's/"//g')
+		  	subvers=$(cat $try_file | grep SUB | cut -d "=" -f2 | sed 's/"//g')
+		  	infoname=$(printf "%s %s.%s" "easyVDR" "$basevers" "$subvers")
+			infostep=BREAK
+		  fi
+		  ;;
+		2)
+		  infostep=3
+		  # easyVDR ab 0.9
+		  try_file=/tmp$path/usr/share/easyvdr/easyvdr-version
+		  if [ -f $try_file ]; then
+			basevers=$(cat $try_file | grep BASE | cut -d "=" -f2 | sed 's/"//g')
+			subvers=$(cat $try_file | grep SUB | cut -d "=" -f2 | sed 's/"//g')
+			infoname=$(printf "%s %s.%s" "easyVDR" "$basevers" "$subvers")
+			infostep=BREAK
+		  fi
+		  ;;
+		3)
+		  infostep=4
+		  # Medienpartition
+		  if [ -e /tmp/$path/convert/ ]; then
+			infoname=$(printf "%s" "$media_partition_str")
+			infostep=BREAK
+		  else  
+		  	if [ "$(find /tmp$path \( -name "*.vdr" -o -name "*.ts" \))" ]; then
+				infoname=$(printf "%s" "$media_partition_str")
+				infostep=BREAK
+		  	fi
+		  fi
+		  ;;
+		*)
+		  infostep=BREAK
+		  ;;
+	  esac
+	done
+
+	umount $path
+
+}
+
+choose_sys_partition () {
+	if [ "$device_qty" = 1 ]; then
+		db_capb align
+	else	
+		# Needed for Alignment TAB, Back Button, etc.
+		db_capb backup align
+	fi	
+
+	if [ "$chosen_sys_id" != "" ]; then
+		unset_sys_partition
+	fi
+
+	cd $1
+
+	chosen_sys_id=''
+	nextstage=false
+	prevstage=false
+
+	partitionchoices=$(cat easypart-partition-choices)
+	partitionchoices=$(printf "%s, , %s" "$partitionchoices" "$complete_device_str")
+	if [ "$device_qty" = 1 ]; then
+		partitionchoices=$(printf "%s, , %s" "$partitionchoices" "$advanced_partition_str")
+	fi
+	
+	debconf-loadtemplate easypart /etc/easypart.template
+	db_subst easypart/choosesyspartition CHOICES "$partitionchoices"
+	db_input critical easypart/choosesyspartition
+	if db_go; then
+		goback=false
+		db_get easypart/choosesyspartition
+		user_choice=$(echo $RET | cut -d " " -f1)
+		error_str=""
+		IFS=','
+		while read choice sys_id fs name; do
+			if [ "$user_choice" = "$choice" ]; then
+				if [ "$fs" != "linux-swap" ] && [ "$name" != "$media_partition_str" ]; then
+					chosen_sys_id=$sys_id
+					nextstage=true
+					set_sys_partition
+				else
+					if [ "$fs" = "linux-swap" ]; then
+						error_str="no_swap_allowed"
+					fi
+					if [ "$name" = "$media_partition_str" ]; then
+						error_str="no_media_allowed"
+					fi
+				fi
+			fi
+		done < choices2part
+
+		restore_ifs
+	
+		if [ "$RET" = "$complete_device_str" ]; then
+			nextstage=true
+			use_full_device
+		fi
+
+		if [ "$RET" = "$advanced_partition_str" ]; then
+			start_partman
+		fi
+	else
+		prevstage=true
+	fi
+	
+	if [ "$error_str" != '' ]; then
+		db_capb
+		debconf-loadtemplate easypart /etc/easypart.template
+		db_input critical easypart/$error_str
+		db_go
+	fi	
+}
+
+choose_media_partition () {
+	# Needed for Alignment TAB, Back Button, etc.
+	db_capb backup align
+
+	if [ "$chosen_media_id" != "" ]; then
+		unset_media_partition
+	fi
+
+	cd $1
+
+	chosen_media_id=''
+	nextstage=false
+	prevstage=false
+
+	partitionchoices=$(cat easypart-partition-choices)
+	debconf-loadtemplate easypart /etc/easypart.template
+	db_subst easypart/choosemediapartition CHOICES "$partitionchoices"
+	db_input critical easypart/choosemediapartition
+	if db_go; then
+		goback=false
+		db_get easypart/choosemediapartition
+		user_choice=$(echo $RET | cut -d " " -f1)
+		error_str=""
+		IFS=','
+		while read choice media_id fs name; do
+			if [ "$user_choice" = "$choice" ]; then
+				#if [ "$fs" != "linux-swap" ] && [ "$name" != "$media_partition_str" ]; then
+				if [ "$fs" != "linux-swap" ] && ([ "$chosen_sys_dev" != "$chosen_media_dev" ] || [ "$chosen_sys_id" != "$media_id" ]); then
+					chosen_media_id=$media_id
+					nextstage=true
+					set_media_partition
+				else
+					if [ "$fs" = "linux-swap" ]; then
+						error_str="no_swap_allowed"
+					fi
+					if [ "$chosen_sys_id" = "$media_id" ]; then
+						error_str="no_same_partition"
+					fi
+				fi
+			fi
+		done < choices2part
+
+		restore_ifs
+	else
+		prevstage=true
+	fi
+	
+	if [ "$error_str" != '' ]; then
+		db_capb
+		debconf-loadtemplate easypart /etc/easypart.template
+		db_input critical easypart/$error_str
+		db_go
+		error_str=""
+	fi	
+}
+
+set_sys_partition () {
+	cd $chosen_sys_dev/$chosen_sys_id
+
+	echo ext4 > acting_filesystem
+	echo ext4 > filesystem
+	touch format
+	touch formatable
+	echo format > method
+	mkdir options
+	touch use_filesystem
+	echo ext4 > visual_filesystem #??
+	echo / > visual_mountpoint # ??
+	echo / > mountpoint
+	touch bootable
+}
+
+unset_sys_partition () {
+	cd $chosen_sys_dev/$chosen_sys_id
+	rm acting_filesystem
+	rm filesystem
+	rm format
+	rm formatable
+	rm method
+	rm use_filesystem
+	rm mountpoint
+	rm bootable
+}
+
+
+set_media_partition () {
+	cd $chosen_media_dev/$chosen_media_id
+
+	cp detected_filesystem acting_filesystem
+	touch existing
+	cp detected_filesystem filesystem
+	echo keep > method
+	echo /media/easyvdr01 > mountpoint
+	mkdir options
+	touch use_filesystem
+	cp mountpoint visual_mountpoint #??
+	cp detected_filesystem visual_filesystem #??
+}
+
+unset_media_partition () {
+	cd $chosen_media_dev/$chosen_media_id
+	rm acting_filesystem
+	rm existing
+	rm filesystem
+	rm method
+	rm mountpoint
+	mkdir options
+	rm use_filesystem
+	rm visual_mountpoint #??
+	rm visual_filesystem #??
+}
+
+user_check () {
+	nextstage=false
+	prevstage=false
+	for s in /lib/partman/check.d/*; do
+		if [ -x $s ]; then
+			#logger -t partman "Running check.d/$s"
+			if ! $s; then
+				prevstage=true
+			fi
+		fi
+	done
+
+}
+
+user_confirm () {
+	nextstage=false
+	prevstage=false
+
+	if confirm_changes partman; then
+		nextstage=true
+	else
+		prevstage=true	
+	fi
+}
+
+finish_up () {
+	for s in /lib/partman/commit.d/*; do
+		if [ -x $s ]; then
+			#logger -t partman "Running commit.d/$s"
+			$s || continue 2
+		fi
+	done
+
+	for s in /lib/partman/finish.d/*; do
+		if [ -x $s ]; then
+			#logger -t partman "Running finish.d/$s"
+			$s || {
+				exitcode=$?
+				if [ "$exitcode" = 1 ]; then
+					continue 2
+				else
+					abort $exitcode
+				fi
+			}
+		fi
+	done
+
+}
+
+use_full_device () {
+	cd /tmp/
+
+	if [ -e /tmp/easypart-debconf ]; then
+		rm /tmp/easypart-debconf
+	fi
+
+	echo partman-auto	partman-auto/disk	string	$chosen_sys_dev_human  >> /tmp/easypart-debconf
+	echo partman-auto	partman-auto/method	string	regular  >> /tmp/easypart-debconf
+	echo partman-auto	partman-auto/expert_recipe_file	string	/etc/easypart.recipe  >> /tmp/easypart-debconf
+
+#partman	partman/confirm_write_new_label	boolean	true
+#partman	partman/choose_partition	select	finish
+#partman	partman/confirm	boolean	true
+	debconf-set-selections /tmp/easypart-debconf
+	start_partman
+}
+
+main () {
+	init_partman
+
+	debconf-loadtemplate easypart /etc/easypart.template
+	db_settitle easypart/title 
+	
+	Stage=1
+	while true; do
+		case "$Stage" in
+		1)
+			find_devices
+			choose_sys_device
+		;;
+		2)
+			find_partitions "$chosen_sys_dev"
+			choose_sys_partition "$chosen_sys_dev"
+		;;
+		3)
+			find_devices
+			choose_media_device
+		;;
+		4)
+			find_partitions "$chosen_media_dev"
+			choose_media_partition "$chosen_media_dev"
+		;;
+		5)
+			user_check
+			if [ "$prevstage" = false ]; then
+				user_confirm
+			fi
+		;;
+		6)
+			finish_up
+		;;
+		50)
+			use_full_device
+		;;
+		*)
+			break
+		;;
+		esac
+
+		if [ $prevstage = true ]; then
+			if [ "$Stage" = 4 ] && [ "$device_qty" = 1 ]; then
+				Stage=$(($Stage - 1))
+			fi
+			Stage=$(($Stage - 1))
+		fi
+
+		if [ $nextstage = true ]; then
+			if [ "$Stage" = 2 ] && [ "$device_qty" = 1 ]; then
+				Stage=$(($Stage + 1))
+			fi
+			Stage=$(($Stage + 1))
+		fi
+        done
+}
+
+main
+
+
+#abort 10 - geht ins hauptmenü..
+#abort

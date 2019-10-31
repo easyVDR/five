@@ -1,0 +1,51 @@
+Template: easypart/title
+Type: title
+Description: easyVDR-Partitionierung
+
+Template: easypart/choosesysdevice
+Type: select
+Choices: ${CHOICES}
+Description: Wo soll installiert werden?
+ Die folgenden Laufwerke wurden auf ihrem System ermittelt. Bitte wählen sie ein Laufwerk.
+
+Template: easypart/choosesyspartition
+Type: select
+Choices: ${CHOICES}
+Description: Wo soll easyVDR installiert werden?
+ Die folgenden Partitionen wurden auf ihrem System ermittelt.
+ .
+ Bitte wählen sie eine Partition auf der easyVDR installiert werden soll.
+ .
+ Alle Daten dieser Partition werden gelöscht um das System zu installieren.
+
+Template: easypart/choosemediadevice
+Type: select
+Choices: ${CHOICES}
+Description: Wo befindet sich ihr Media Laufwerk?
+ Die folgenden Laufwerke wurden auf ihrem System ermittelt. Bitte wählen sie ein Laufwerk.
+
+Template: easypart/choosemediapartition
+Type: select
+Choices: ${CHOICES}
+Description: Welche Partition soll als Media verwendet werden?
+ Die folgenden Partitionen wurden auf ihrem System ermittelt.
+ .
+ Bitte wählen sie die Partition die für Aufzeichnungen und andere Medien verwendet werden soll.
+ . 
+ Diese Partition wird NICHT formatiert, sondern nur in das System eingebunden.
+
+Template: easypart/findpartitioninfo
+Type: text
+Description: Durchsuche die vorhandenen Partitionen.
+
+Template: easypart/no_swap_allowed
+Type: note
+Description: Sie dürfen keine Swap Partition auswählen.
+
+Template: easypart/no_media_allowed
+Type: note
+Description: Sie dürfen keine als Media erkannte Partition auswählen.
+
+Template: easypart/no_same_partition
+Type: note
+Description: Sie haben diese Partition schon als Systempartition gewählt.

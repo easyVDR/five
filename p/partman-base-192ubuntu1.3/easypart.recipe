@@ -1,0 +1,26 @@
+partman-auto/text/easyvdr_sheme ::
+
+300 4000 15000 ext4
+$primary{ }
+$bootable{ }
+method{ format }
+format{ }
+use_filesystem{ ext4 }
+filesystem{ ext4 }
+mountpoint{ / } .
+
+64 512 200% linux-swap
+method{ swap }
+format{ } .
+
+100 1000 1000000000 ext4
+method{ format }
+format{ }
+use_filesystem{ }
+filesystem{ xfs }
+mountpoint{ /media/easyvdr01 }
+options/noatime{ noatime }
+options/nodiratime{ nodiratime }
+options/logbsize{ logbsize=256k }
+options/logbufs{ logbufs=8 }
+options/osyncisosync{ osyncisosync} .

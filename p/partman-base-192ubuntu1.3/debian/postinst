@@ -1,0 +1,7 @@
+#!/bin/sh
+
+if [ -f /tmp/use-easypart ]; then
+  easypart
+else
+  partman
+fi
