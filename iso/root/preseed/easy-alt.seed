@@ -1,0 +1,87 @@
+# This first command is run as early as possible, just after preseeding is read.
+d-i preseed/early_command string touch /tmp/use-easypart; . /usr/share/debconf/confmodule; db_get debconf/priority; case $RET in low|medium) db_fset tasksel/first seen false; echo 'tasksel tasksel/first seen false' >>/var/lib/preseed/log ;; esac
+
+# Any hostname and domain names assigned from dhcp take precedence over
+# values set here. However, setting the values still prevents the questions
+# from being shown, even if values come from dhcp.
+
+# If non-free firmware is needed for the network or other hardware, you can configure the installer to always try to load it, without prompting. Or
+# change to false to disable asking.
+d-i hw-detect/load_firmware boolean true
+
+# Suite to install.
+d-i mirror/suite string oneiric
+d-i mirror/udeb/suite string oneiric
+
+# To create a normal user account.
+d-i passwd/user-fullname string easyVDR User
+d-i passwd/username string easyvdr
+d-i passwd/user-password password easyvdr
+d-i passwd/user-password-again password easyvdr
+d-i user-setup/allow-password-weak boolean true
+
+
+# Additional repositories, local[0-9] available
+d-i apt-setup/local0/repository string deb http://ppa.launchpad.net/easyvdr-team/vdr-stable/ubuntu oneiric main
+d-i apt-setup/local0/comment string vdr stable
+d-i apt-setup/local0/source boolean true
+d-i apt-setup/local0/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+d-i apt-setup/local1/repository string deb http://ppa.launchpad.net/easyvdr-team/base-stable/ubuntu oneiric main
+d-i apt-setup/local1/comment string base-stable
+d-i apt-setup/local1/source boolean true
+d-i apt-setup/local1/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+#d-i apt-setup/local1/key string hkp://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+d-i apt-setup/local2/repository string deb http://ppa.launchpad.net/easyvdr-team/others-stable/ubuntu oneiric main
+d-i apt-setup/local2/comment string others-stable
+d-i apt-setup/local2/source boolean true
+d-i apt-setup/local2/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+
+### Package selection
+tasksel tasksel/first multiselect  
+# Individual additional packages to install
+d-i pkgsel/include string easyvdr-ppa-keys easyvdr-setup easyvdr python-software-properties
+
+# Only install basic language packs. Let tasksel ask about tasks.
+d-i	pkgsel/language-pack-patterns	string
+# No language support packages.
+d-i	pkgsel/install-language-support	boolean false
+
+#Kernel# Neu Martin
+d-i base-installer/initramfs-tools/driver-policy    select  most
+d-i base-installer/kernel/image     select  linux-generic
+
+
+d-i lirc/remote	select Custom
+d-i lirc/transmitter select None
+d-i shared/proftpd/inetd_or_standalone	select standalone
+d-i mysql-server/root_password string easyvdr
+d-i mysql-server/root_password seen true
+d-i mysql-server/root_password_again string easyvdr
+d-i mysql-server/root_password_again seen true 
+
+
+d-i hddtemp/daemon	boolean	false
+
+
+# Whether to upgrade packages after debootstrap.
+# Allowed values: none, safe-upgrade, full-upgrade
+d-i pkgsel/upgrade select none
+
+
+# Avoid that last message about the install being complete.
+d-i finish-install/reboot_in_progress note
+
+
+ubiquity        ubiquity/summary        note
+ubiquity	ubiquity/reboot	boolean	true
+
+# This command is run just before the install finishes, but when there is still a usable /target directory. You can chroot to /target and use it
+# directly, or use the apt-install and in-target commands to easily install packages and run commands in the target system.
+d-i preseed/late_command string cd /target; \
+    mkdir local-repo; \
+    cp -p -r /cdrom/dists /target/local-repo; \
+    cp -p -r /cdrom/pool /target/local-repo 
+

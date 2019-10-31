@@ -1,0 +1,13 @@
+#!/bin/sh
+
+#fixed tree for root (not ~/source/ISO)
+DIR=/home/martin/source/ISO/
+
+cd $DIR/cd-image
+sudo mkdir cd-image
+sudo mkdir loop
+
+
+sudo mkdir org
+cd org
+wget http://cdimage.ubuntu.com/ubuntu-server/daily/current/focal-server-arm64.iso

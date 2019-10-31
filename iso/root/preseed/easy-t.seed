@@ -1,0 +1,176 @@
+# This first command is run as early as possible, just after preseeding is read.
+d-i preseed/early_command string touch /tmp/use-easypart; . /usr/share/debconf/confmodule; db_get debconf/priority; case $RET in low|medium) db_fset tasksel/first seen false; echo 'tasksel tasksel/first seen false' >>/var/lib/preseed/log ;; esac
+
+# This command is run immediately before the partitioner starts. It may be useful to apply dynamic partitioner preseeding that depends on the state
+# of the disks (which may not be visible when preseed/early_command runs).
+#d-i partman/early_command string cd /tmp; wget http://dev.easy-vdr.de/tmp/09/pre-partition; chmod +x ./pre-partition; \
+
+### Network configuration
+# netcfg will choose an interface that has link if possible. This makes it skip displaying a list if there is more than one interface.
+d-i netcfg/choose_interface select auto
+# If you have a slow dhcp server and the installer times out waiting for it, this might be useful.
+#d-i netcfg/dhcp_timeout string 60
+
+# Any hostname and domain names assigned from dhcp take precedence over
+# values set here. However, setting the values still prevents the questions
+# from being shown, even if values come from dhcp.
+d-i netcfg/get_hostname string easyvdr
+d-i netcfg/get_domain string local.net
+
+# If non-free firmware is needed for the network or other hardware, you can configure the installer to always try to load it, without prompting. Or
+# change to false to disable asking.
+d-i hw-detect/load_firmware boolean true
+
+### Mirror settings
+# If you select ftp, the mirror/country string does not need to be set.
+#d-i mirror/protocol string ftp
+#d-i mirror/country string manual
+#d-i mirror/http/hostname string ftp-stud.hs-esslingen.de
+d-i mirror/http/directory string /ubuntu
+d-i mirror/http/proxy string
+
+# Suite to install.
+d-i mirror/suite string oneiric
+d-i mirror/udeb/suite string oneiric
+
+### Clock and time zone setup; Controls whether or not the hardware clock is set to UTC.
+d-i clock-setup/utc boolean true
+
+# You may set this to any valid setting for $TZ; see the contents of
+# /usr/share/zoneinfo/ for valid values.
+d-i time/zone string Europe/Berlin
+
+# Controls whether to use NTP to set the clock during the install
+d-i clock-setup/ntp boolean false
+# NTP server to use. The default is almost always fine here.
+#d-i clock-setup/ntp-server string ntp.example.com
+
+# To create a normal user account.
+d-i passwd/user-fullname string easyVDR User
+d-i passwd/username string easyvdr
+d-i passwd/user-password password easyvdr
+d-i passwd/user-password-again password easyvdr
+d-i user-setup/allow-password-weak boolean true
+
+# The user account will be added to some standard initial groups. To
+# override that, use this.
+#d-i passwd/user-default-groups string audio cdrom video
+d-i user-setup/encrypt-home boolean false
+
+# Additional repositories, local[0-9] available
+d-i apt-setup/local0/repository string deb http://ppa.launchpad.net/easyvdr-team/vdr-stable/ubuntu oneiric main
+d-i apt-setup/local0/comment string vdr stable
+d-i apt-setup/local0/source boolean true
+d-i apt-setup/local0/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+d-i apt-setup/local1/repository string deb http://ppa.launchpad.net/easyvdr-team/base-stable/ubuntu oneiric main
+d-i apt-setup/local1/comment string base-stable
+d-i apt-setup/local1/source boolean true
+d-i apt-setup/local1/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+d-i apt-setup/local2/repository string deb http://ppa.launchpad.net/easyvdr-team/others-stable/ubuntu oneiric main
+d-i apt-setup/local2/comment string others-stable
+d-i apt-setup/local2/source boolean true
+d-i apt-setup/local2/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+
+####Testing####
+d-i apt-setup/local3/repository string deb http://ppa.launchpad.net/easyvdr-team/vdr-testing/ubuntu oneiric main
+d-i apt-setup/local3/comment string vdr testing
+d-i apt-setup/local3/source boolean true
+d-i apt-setup/local3/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+d-i apt-setup/local4/repository string deb http://ppa.launchpad.net/easyvdr-team/base-testing/ubuntu oneiric main
+d-i apt-setup/local4/comment string base-testing
+d-i apt-setup/local4/source boolean true
+d-i apt-setup/local4/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+d-i apt-setup/local5/repository string deb http://ppa.launchpad.net/easyvdr-team/others-testing/ubuntu oneiric main
+d-i apt-setup/local5/comment string others-testing
+d-i apt-setup/local5/source boolean true
+d-i apt-setup/local5/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+
+
+
+# Enable extras.ubuntu.com.
+#d-i apt-setup/extras boolean true
+
+
+# By default the installer requires that repositories be authenticated
+# using a known gpg key. This setting can be used to disable that
+# authentication. Warning: Insecure, not recommended.
+#d-i debian-installer/allow_unauthenticated string true
+
+### Package selection
+tasksel tasksel/first multiselect  
+# Individual additional packages to install
+d-i pkgsel/include string easyvdr-ppa-keys easyvdr-setup easyvdr python-software-properties
+
+# Only install basic language packs. Let tasksel ask about tasks.
+d-i	pkgsel/language-pack-patterns	string
+# No language support packages.
+d-i	pkgsel/install-language-support	boolean false
+
+#Kernel# Neu Martin
+d-i base-installer/initramfs-tools/driver-policy    select  most
+d-i base-installer/kernel/image     select  linux-generic
+
+
+d-i lirc/remote	select Custom
+d-i lirc/transmitter select None
+d-i shared/proftpd/inetd_or_standalone	select standalone
+d-i mysql-server/root_password string easyvdr
+d-i mysql-server/root_password seen true
+d-i mysql-server/root_password_again string easyvdr
+d-i mysql-server/root_password_again seen true 
+d-i postfix/mailname	string	easyvdr.local.net
+d-i postfix/main_mailer_type	select Local only
+d-i postfix/destinations	string localhost
+
+d-i nullmailer/relayhost    string easyvdr.local
+d-i nullmailer/mailname     string easyvdr.local.net
+d-i nullmailer/adminaddr    string easyvdr
+
+d-i shared/mailname string easyvdr.local.net
+d-i netcfg/get_domain string easyvdr.local
+d-i hddtemp/daemon	boolean	false
+
+
+# Whether to upgrade packages after debootstrap.
+# Allowed values: none, safe-upgrade, full-upgrade
+d-i pkgsel/upgrade select none
+
+# Some versions of the installer can report back on what software you have  installed, and what software you use. The default is not to report back,
+# but sending reports helps the project determine what software is most popular and include it on CDs.
+popularity-contest popularity-contest/participate boolean false
+
+
+# This is fairly safe to set, it makes grub install automatically to the MBR if no other operating system is detected on the machine.
+d-i grub-installer/only_debian boolean true
+
+# This one makes grub-installer install to the MBR if it also finds some other OS, which is less safe as it might not be able to boot that other OS.
+d-i grub-installer/with_other_os boolean true
+
+# Avoid that last message about the install being complete.
+d-i finish-install/reboot_in_progress note
+
+ubiquity        ubiquity/summary        note
+ubiquity	ubiquity/reboot	boolean	true
+ubiquity	languagechooser/language-name	select German
+ubiquity	countrychooser/shortlist	select DE
+ubiquity        countrychooser/countryname	select Germany
+ubiquity        countrychooser/country-name      string Germany
+debconf		debconf/language	string	de
+ubiquity	tzconfig/gmt	boolean	false
+ubiquity	time/zone	select	Europe/Berlin
+ubiquity	debian-installer/country	string DE
+ubiquity	debian-installer/language	string de
+ubiquity	debian-installer/locale	select de_DE.UTF-8
+
+
+# This command is run just before the install finishes, but when there is still a usable /target directory. You can chroot to /target and use it
+# directly, or use the apt-install and in-target commands to easily install packages and run commands in the target system.
+d-i preseed/late_command string cd /target; \
+    mkdir local-repo; \
+    cp -p -r /cdrom/dists /target/local-repo; \
+    cp -p -r /cdrom/pool /target/local-repo 
+
