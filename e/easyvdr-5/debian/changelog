@@ -1,0 +1,5 @@
+easyvdr-5 (00.01-0easyVDR0~focal) focal; urgency=medium
+
+  * new base for iso
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Oct 2019 11:48:51 +0100
