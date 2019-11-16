@@ -1,0 +1,92 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  2005 - 2006 Andreas Schmidt(Darkside) <vdrl-at-schmidtie.de>
+                             2009 - 2012 Andreas Brachold <vdr07-at-deltab.de>
+
+Project's homepage:          http://projects.vdr-developer.org/projects/plg-dvdswitch/wiki
+
+Latest version available at: http://projects.vdr-developer.org/projects/plg-dvdswitch/files
+
+This plugin for VDR is free software: you can redistribute it and/or 
+modify it under the terms of the GNU General Public License as published 
+by the Free Software Foundation, version 2 of the License.
+
+This plugin for VDR is distributed in the hope that it will be useful,
+but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY 
+or FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License 
+for more details.
+
+You should have received a copy of the GNU General Public License
+along with this plugin for VDR. If not, see <http://www.gnu.org/licenses/>.
+
+See the file COPYING for license information.
+
+Description:
+------------
+The dvdswitch plugin functions as a kind of a DVD changer. It makes it possible 
+to select images and play them with the DVD plugin.
+
+Check follow requirements:
+-------------------------
+* dvd-plugin installed (http://sourceforge.net/projects/dvdplugin/)
+
+
+Install vdr-plugin-dvdswitch:
+---------------------------
+Unpack the vdr-plugin-dvdswitch tarball to $VDRSOURCE/PLUGINS/src directory.
+Variable $VDRSOURCE stands for a directory, where source archive of VDR package 
+was be decompressed.
+
+#> cd $VDRSOURCE/PLUGINS/src
+#> tar -xzvf vdr-dvdswitch-0.0.1.tgz
+#> ln -s dvdswitch-0.0.1 dvdswitch
+
+Compile the plugin (from VDR's source directory)
+
+Change the working directory to VDR source root and compile this plugin 
+like all other VDR plugins.
+
+#> cd $VDRSOURCE
+#> make plugins
+
+After everything has been compiled without errors, copy the plugin to their 
+target directory.
+
+#> make install
+
+
+how to anonymously get the current source
+-----------------------------------------
+
+git clone git://projects.vdr-developer.org/vdr-plugin-dvdswitch.git dvdswitch
+
+
+
+
+Git-Repository (read/write): 
+-----------------------------------------
+You need a account write privilege on vdr-developer.org
+
+git clone gitosis@projects.vdr-developer.org:vdr-plugin-dvdswitch.git dvdswitch
+
+how to make a new release
+-------------------------
+
+adapt version in dvdswitch.c and HISTORY
+
+set date in HISTORY
+
+#> git commit
+#> git status # must be clean
+#> git tag -a -m 'new release' '0.0.1'
+#> git push --tags
+
+Build package
+
+#> make dist
+
+in the project configuration, add new version 0.0.1
+upload vdr-dvdswitch-0.0.1.tgz
+
+announce new version at vdr@linuxtv.org
+

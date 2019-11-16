@@ -1,0 +1,24 @@
+Source: vdr-plugin-epgsync
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), pkg-config, svdrpservice-dev
+Standards-Version: 3.9.4
+Homepage: Homepage: http://vdr.schmirler.de/
+
+Package: vdr-plugin-epgsync
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: VDR plugin for EPG synchronization between VDR systems
+ With this plugin you can import the EPG of a remote VDR. It can either
+ use SVDRP or streamdev's VTP to download the EPG.
+
+Package: vdr-plugin-epgsync-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-epgsync (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-epgsync
+ .
+ This package contains only the debugging symbols for vdr-plugin-epgsync

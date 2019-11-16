@@ -1,0 +1,8 @@
+debian/externalplayer.conf        var/lib/vdr/plugins/
+debian/start-firefox              usr/share/vdr-plugin-externalplayer/
+debian/start-xbmc                 usr/share/vdr-plugin-externalplayer/
+debian/switch-xbmc-frontend       usr/share/vdr-plugin-externalplayer/
+debian/start-console              usr/share/vdr-plugin-externalplayer/
+debian/start-lxde                 usr/share/vdr-plugin-externalplayer/
+debian/start-xfce                 usr/share/vdr-plugin-externalplayer/
+debian/sudoers-externalplayer     etc/sudoers.d/

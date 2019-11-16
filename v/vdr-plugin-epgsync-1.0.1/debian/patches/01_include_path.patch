@@ -1,0 +1,20 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01_include_path.dpatch by Tobias Grimm <tg@e-tobi.net>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Set correct include path to svdrpservice.h.
+
+@DPATCH@
+Index: vdr-plugin-epgsync/thread.h
+===================================================================
+--- vdr-plugin-epgsync.orig/thread.h	2014-11-04 22:23:01.081727475 +0100
++++ vdr-plugin-epgsync/thread.h	2014-11-04 22:23:18.557660203 +0100
+@@ -10,7 +10,7 @@
+ #include <vdr/thread.h>
+ #include <vdr/tools.h>
+ #include <vdr/plugin.h>
+-#include "svdrpservice.h"
++#include <svdrpservice.h>
+ #include <time.h>
+ 
+ class cEpgSyncThread: public cThread {

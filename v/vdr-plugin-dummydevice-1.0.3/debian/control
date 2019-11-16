@@ -1,0 +1,20 @@
+Source: vdr-plugin-dummydevice
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>, Peter Siering <ps@ctmagazin.de>, Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.16)
+Standards-Version: 3.9.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-dummydevice/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-dummydevice/trunk/
+Homepage: http://phivdr.dyndns.org/vdr/vdr-dummydevice/
+
+Package: vdr-plugin-dummydevice
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin that emulates a dvb output device
+ This plugin emulates an output device, that does nothing. 
+ All data is silently discarded. That is useful if you just 
+ run vdr as recording server orR for streaming and would 
+ like to overcome some limitions regarding the handling of a 
+ primary device. 

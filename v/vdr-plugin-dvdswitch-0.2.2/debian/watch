@@ -1,0 +1,2 @@
+version=2
+http://projects.vdr-developer.org/projects/plg-dvdswitch/files .*/vdr-dvdswitch-(.*)\.tgz

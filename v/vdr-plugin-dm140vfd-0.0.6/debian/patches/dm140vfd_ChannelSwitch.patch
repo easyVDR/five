@@ -1,0 +1,66 @@
+Index: b/setup.c
+===================================================================
+--- a/setup.c
++++ b/setup.c
+@@ -330,7 +330,7 @@
+ 
+   static const char * szDisplayType[eDisplayType_LASTITEM];
+   szDisplayType[eDisplayType_Hiper]  = tr("Hiper Media: 040b:7001");
+-  szDisplayType[eDisplayType_Activy] = tr("Activy: 1509:925d");
++  szDisplayType[eDisplayType_Activy] = tr("Activy5xx/ScaleoEvi: 1509:925d");
+ 
+   Add(new cMenuEditStraItem (tr("Display Type"),           
+         &m_tmpSetup.m_nDisplayType,
+Index: b/span.c
+===================================================================
+--- a/span.c
++++ b/span.c
+@@ -55,7 +55,7 @@
+ 
+       if ( cPluginManager::CallFirstService(SPAN_GET_BAR_HEIGHTS_ID, &gbh )) {
+ 
+-        int barWidth = (this->Width() - bands)/bands;
++        int barWidth = (this->Width() +7)/bands; //DM140 --> 112 Pixel
+         int saEndY = this->Height();
+   
+         this->clear(); 
+Index: b/status.c
+===================================================================
+--- a/status.c
++++ b/status.c
+@@ -27,11 +27,15 @@
+ 
+ }
+ 
+-void cVFDStatusMonitor::ChannelSwitch(const cDevice *pDevice, int nChannelNumber)
+-{
++#if VDRVERSNUM >= 10726
++void cVFDStatusMonitor::ChannelSwitch(const cDevice *pDevice, int nChannelNumber, bool bLiveView) {
++#else
++void cVFDStatusMonitor::ChannelSwitch(const cDevice *pDevice, int nChannelNumber) {
++    bool bLiveView = pDevice && pDevice->IsPrimaryDevice()  && false == EITScanner.UsesDevice(pDevice);
++#endif
++
+     if (nChannelNumber > 0 
+-        && pDevice->IsPrimaryDevice() 
+-        && !EITScanner.UsesDevice(pDevice)
++        && bLiveView
+         && (nChannelNumber == cDevice::CurrentChannel()))
+     {
+ #ifdef MOREDEBUGMSG
+Index: b/status.h
+===================================================================
+--- a/status.h
++++ b/status.h
+@@ -24,7 +24,11 @@
+  public: 
+   cVFDStatusMonitor(cVFDWatch*    pDev);
+  protected:
++#if VDRVERSNUM >= 10726
++  virtual void ChannelSwitch(const cDevice *Device, int ChannelNumber, bool LiveView);
++#else
+   virtual void ChannelSwitch(const cDevice *Device, int ChannelNumber);
++#endif
+   virtual void Recording(const cDevice *pDevice, const char *szName, const char *szFileName, bool bOn);
+   virtual void Replaying(const cControl *pControl, const char *szName, const char *szFileName, bool bOn);
+   virtual void SetVolume(int Volume, bool Absolute);

@@ -1,0 +1,11 @@
+#!/bin/bash
+
+#export DISPLAY=:0
+#export HOME=/var/lib/vdr
+#
+#stop easyvdr-frontend
+#/usr/bin/xbmc --standalone -l /var/run/lirc/lircd
+#start easyvdr-frontend
+
+
+usr/share/vdr-plugin-externalplayer/switch-xbmc-frontend -start-xbmc -easyvdr-externalplayer

@@ -1,0 +1,15 @@
+Index: vdr-plugin-dm140vfd-0.0.6/Makefile
+===================================================================
+--- vdr-plugin-dm140vfd-0.0.6.orig/Makefile
++++ vdr-plugin-dm140vfd-0.0.6/Makefile
+@@ -54,8 +54,8 @@ INCLUDES += -I$(VDRDIR)/include
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+ 
+-INCLUDES += $(shell freetype-config --cflags)
+-LIBS += $(shell freetype-config --libs)
++INCLUDES += $(shell pkg-config --cflags freetype2)
++LIBS += $(shell pkg-config --libs freetype2)
+ 
+ #INCLUDES += $(shell pkg-config --cflags libhid)
+ #LIBS += $(shell pkg-config --libs libhid)

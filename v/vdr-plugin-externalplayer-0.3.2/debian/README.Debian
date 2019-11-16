@@ -1,0 +1,24 @@
+vdr-plugin-externalplayer for Debian
+------------------------------------
+
+This package comes with a modified externalplayer.conf to help you
+startup MMS with German language support
+
+
+Wrapper script for MMS:
+-----------------------
+
+If you want German (or other) language within MMS, use a tiny wrapper script
+and change the 'Command' call accordingly:
+
+ Command          = "/path/to/your/wrapper-script";
+
+Wrapper script:
+---
+ #!/bin/sh
+ LC_ALL=de_DE.UTF-8 && /usr/local/bin/mms
+---
+
+Remember to make it executeable (chmod +x)
+
+ -- Roman Muellenschlaeder <mms@prodeia.de>  Mon, 20 Aug 2007 11:26:28 +0200

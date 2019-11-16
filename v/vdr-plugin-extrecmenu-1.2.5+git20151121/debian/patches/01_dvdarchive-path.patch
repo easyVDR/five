@@ -1,0 +1,33 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01_dvdarchive-path.dpatch by Tobias Grimm <tg@e-tobi.net>
+##
+## Thomas Günther <tom@toms-cafe.de>
+##   - adapted to extrecmenu-0.8a
+##   - adapted to extrecmenu-0.9
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Set path to dvdarchive.sh script.
+
+@DPATCH@
+Index: vdr-plugin-extrecmenu-1.2.5+git20151121/mymenurecordings.c
+===================================================================
+--- vdr-plugin-extrecmenu-1.2.5+git20151121.orig/mymenurecordings.c	2015-11-22 21:19:09.886295935 +0100
++++ vdr-plugin-extrecmenu-1.2.5+git20151121/mymenurecordings.c	2015-11-22 21:19:09.882295916 +0100
+@@ -578,7 +578,7 @@
+   if(wasdvd&&!cControl::Control())
+   {
+     char *cmd=NULL;
+-    if(-1!=asprintf(&cmd,"dvdarchive.sh umount \"%s\"",*strescape(myReplayControl::LastReplayed(),"'\\\"$")))
++    if(-1!=asprintf(&cmd,"/usr/share/vdr-plugin-extrecmenu/dvdarchive.sh umount \"%s\"",*strescape(myReplayControl::LastReplayed(),"'\\\"$")))
+     {
+       isyslog("[extrecmenu] calling %s to unmount dvd",cmd);
+       int result=SystemExec(cmd);
+@@ -1116,7 +1116,7 @@
+                 {
+                   strcpy(path,recording->FileName());
+                   name=strrchr(path,'/')+1;
+-                  if(-1!=asprintf(&msg,"dvdarchive.sh mount \"%s\" '%s'",*strescape(path,"'"),*strescape(name,"'\\\"$")))
++                  if(-1!=asprintf(&msg,"/usr/share/vdr-plugin-extrecmenu/dvdarchive.sh mount \"%s\" '%s'",*strescape(path,"'"),*strescape(name,"'\\\"$")))
+                   {
+                     isyslog("[extrecmenu] calling %s to mount dvd",msg);
+                     int result=SystemExec(msg);

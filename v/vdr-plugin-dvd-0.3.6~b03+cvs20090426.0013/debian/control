@@ -1,0 +1,22 @@
+Source: vdr-plugin-dvd
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~),
+ vdr-dev (>= 1.7.21),
+ gettext,
+ libdvdnav-dev (>=4.1.2-3),
+ liba52-0.7.4-dev
+Standards-Version: 3.9.2
+Homepage: http://sourceforge.net/projects/dvdplugin
+Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-dvd.git
+Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr-plugin-dvd.git
+
+Package: vdr-plugin-dvd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Suggests: libdvdcss2
+Description: DVD playback plugin for VDR
+ This plugin for VDR allows one to play back DVD Video discs
+ from within VDR.

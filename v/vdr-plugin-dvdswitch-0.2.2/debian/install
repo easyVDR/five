@@ -1,0 +1,3 @@
+debian/dvdswitch_readdvd             usr/share/vdr-plugin-dvdswitch/
+debian/dvdswitch_writedvd            usr/share/vdr-plugin-dvdswitch/
+debian/plugin.dvdswitch.conf    etc/vdr/plugins/

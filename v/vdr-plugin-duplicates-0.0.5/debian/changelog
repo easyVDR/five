@@ -1,0 +1,186 @@
+vdr-plugin-duplicates (0.0.5-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 00:34:15 +0100
+
+vdr-plugin-duplicates (0.0.5-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 16:23:57 +0100
+
+vdr-plugin-duplicates (0.0.5-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:11:41 +0100
+
+vdr-plugin-duplicates (0.0.5-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 00:16:12 +0200
+
+vdr-plugin-duplicates (0.0.5-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:46:07 +0200
+
+vdr-plugin-duplicates (0.0.5-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:30:32 +0200
+
+vdr-plugin-duplicates (0.0.5-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:34:50 +0200
+
+vdr-plugin-duplicates (0.0.5-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:54:01 +0200
+
+vdr-plugin-duplicates (0.0.5-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:36:02 +0100
+
+vdr-plugin-duplicates (0.0.5-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Nov 2015 00:16:21 +0100
+
+vdr-plugin-duplicates (0.0.5-0easyVDR9~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 18:51:43 +0200
+
+vdr-plugin-duplicates (0.0.5-0easyVDR8~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:08:39 +0200
+
+vdr-plugin-duplicates (0.0.5-0easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 21:07:51 +0100
+
+vdr-plugin-duplicates (0.0.5-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:20:16 +0100
+
+vdr-plugin-duplicates (0.0.5-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:22:04 +0100
+
+vdr-plugin-duplicates (0.0.5-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:35:23 +0100
+
+vdr-plugin-duplicates (0.0.5-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:39:06 +0200
+
+vdr-plugin-duplicates (0.0.5-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:06:29 +0200
+
+vdr-plugin-duplicates (0.0.5-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Nov 2013 01:14:06 +0100
+
+vdr-plugin-duplicates (0.0.5-0easyVDR1~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 10 Oct 2013 23:05:07 +0200
+
+vdr-plugin-duplicates (0.0.5-0easyVDR0~raring) raring; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Jun 2013 14:41:35 +0200
+
+vdr-plugin-duplicates (0.0.5-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 23 Dec 2012 09:46:29 +0100
+
+vdr-plugin-duplicates (0.0.4-0yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 06 Sep 2012 00:03:54 +0200
+
+vdr-plugin-duplicates (0.0.4-0yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:21:00 +0200
+
+vdr-plugin-duplicates (0.0.4-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:12:59 +0100
+
+vdr-plugin-duplicates (0.0.4-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:11:36 +0100
+
+vdr-plugin-duplicates (0.0.4-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 08:55:40 +0100
+
+vdr-plugin-duplicates (0.0.4-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 06 Jan 2012 17:52:25 +0100
+
+vdr-plugin-duplicates (0.0.3-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 14 Dec 2011 18:25:54 +0100
+
+vdr-plugin-duplicates (0.0.2-0yavdr1~precise) precise; urgency=low
+
+  * Change build dependencies to match also witch precise
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sat, 03 Dec 2011 19:32:05 +0100
+
+vdr-plugin-duplicates (0.0.2-0yavdr0~precise) precise; urgency=low
+
+  * Initial release 
+  
+ -- Reiner Paulus <flex0r@gmx.net>  Sat, 03 Dec 2011 14:12:05 +0100
+

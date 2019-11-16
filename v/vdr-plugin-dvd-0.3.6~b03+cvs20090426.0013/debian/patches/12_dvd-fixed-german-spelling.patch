@@ -1,0 +1,75 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 12_dvd-fixed-german-spelling.dpatch by Thomas Günther <tom@toms-cafe.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Fixed spelling errors in german translation.
+
+@DPATCH@
+Index: vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013/i18n.c
+===================================================================
+--- vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013.orig/i18n.c	2008-12-23 18:26:32.000000000 +0100
++++ vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013/i18n.c	2011-04-09 17:23:49.000000000 +0200
+@@ -125,7 +125,7 @@
+     },
+     {
+     "Setup.DVD$Preferred menu language",                    // English
+-        "Bevorzugte Spache für Menüs",                      // Deutsch
++        "Bevorzugte Sprache für Menüs",                     // Deutsch
+         "Prednostni jezik za menije",                       // Slovenski
+         "menu - linguaggio preferito",                      // Italiano
+         "Taalkeuze voor menu",                              // Nederlands
+@@ -177,7 +177,7 @@
+     },
+     {
+     "Setup.DVD$Preferred subtitle language",                // English
+-        "Bevorzugte Spache für Untertitel",                 // Deutsch
++        "Bevorzugte Sprache für Untertitel",                // Deutsch
+         "Prednostni jezik za podnapise",                    // Slovenski
+         "sottotitoli - linguaggio preferito",               // Italiano
+         "Taalkeuze voor ondertitels",                       // Nederlands
+@@ -333,7 +333,7 @@
+     },
+     {
+     "Error.DVD$Error opening DVD!",                         // English
+-        "Fehler beim öffnen der DVD!",                      // Deutsch
++        "Fehler beim Öffnen der DVD!",                      // Deutsch
+         "Napaka pri odpiranju DVD-ja!",                     // Slovenski
+         "",                                                 // Italiano
+         "Fout bij het openen van de DVD!",                  // Nederlands
+@@ -359,7 +359,7 @@
+     },
+     {
+     "Error.DVD$Error fetching data from DVD!",              // English
+-        "Fehler beim lesen von der DVD!",                   // Deutsch
++        "Fehler beim Lesen von der DVD!",                   // Deutsch
+         "Napaka pri branju podatkov iz DVD-ja!",            // Slovenski
+         "",                                                 // Italiano
+         "Error bij het verkrijgen van data van de DVD!",    // Nederlands
+Index: vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013/po/de_DE.po
+===================================================================
+--- vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013.orig/po/de_DE.po	2008-12-23 17:56:17.000000000 +0100
++++ vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013/po/de_DE.po	2011-04-09 17:23:49.000000000 +0200
+@@ -25,19 +25,19 @@
+ msgstr "DVD"
+ 
+ msgid "Error.DVD$Error opening DVD!"
+-msgstr "Fehler beim öffnen der DVD!"
++msgstr "Fehler beim Öffnen der DVD!"
+ 
+ msgid "Error.DVD$Error fetching data from DVD!"
+-msgstr "Fehler beim lesen von der DVD!"
++msgstr "Fehler beim Lesen von der DVD!"
+ 
+ msgid "Setup.DVD$Preferred menu language"
+-msgstr "Bevorzugte Spache für Menüs"
++msgstr "Bevorzugte Sprache für Menüs"
+ 
+ msgid "Setup.DVD$Preferred audio language"
+ msgstr "Bevorzugte Sprache für Dialog"
+ 
+ msgid "Setup.DVD$Preferred subtitle language"
+-msgstr "Bevorzugte Spache für Untertitel"
++msgstr "Bevorzugte Sprache für Untertitel"
+ 
+ msgid "Setup.DVD$Player region code"
+ msgstr "Regionalkode für DVD Spieler"

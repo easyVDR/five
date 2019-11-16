@@ -1,0 +1,21 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 05_stdint.dpatch by Tobias Grimm <etobi@debian.org>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Define __STDC_LIMIT_MACROS to make the C limit macros available to the
+## DP: C++ code.
+
+@DPATCH@
+Index: vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013/Makefile
+===================================================================
+--- vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013.orig/Makefile	2011-04-09 17:23:33.000000000 +0200
++++ vdr-plugin-dvd-0.3.6~b03+cvs20090426.0013/Makefile	2011-04-09 17:23:40.000000000 +0200
+@@ -43,7 +43,7 @@
+ 
+ INCLUDES += -I$(VDRDIR)/include -I$(NAVDIR)
+ 
+-DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
++DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"' -D__STDC_LIMIT_MACROS
+ 
+ # to use xine videoout:
+ ifdef POLLTIMEOUTS_BEFORE_DEVICECLEAR

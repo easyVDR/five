@@ -1,0 +1,12 @@
+Index: b/ffont.h
+===================================================================
+--- a/ffont.h
++++ b/ffont.h
+@@ -66,6 +66,7 @@
+   int Kerning(cVFDGlyph *Glyph, uint PrevSym) const;
+   cVFDGlyph* Glyph(uint CharCode) const;
+   virtual void DrawText(cBitmap*, int, int, const char*, tColor, tColor, int) const {};
++  virtual void DrawText(cPixmap*, int, int, const char*, tColor, tColor, int) const {};
+ public:
+   cVFDFont(const char *Name, int CharHeight, int CharWidth = 0);
+   virtual ~cVFDFont();

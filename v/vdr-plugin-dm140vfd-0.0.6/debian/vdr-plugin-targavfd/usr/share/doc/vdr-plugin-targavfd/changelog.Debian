@@ -1,0 +1,35 @@
+vdr-plugin-targavfd (0.0.6-2yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 02 Nov 2010 22:47:48 +0100
+
+vdr-plugin-targavfd (0.0.6-1yavdr3) lucid; urgency=low
+
+  * New upstream release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 31 Oct 2010 12:03:05 +0200
+
+vdr-plugin-targavfd (0.0.5-3yavdr1) lucid; urgency=low
+
+  * lost build-dep. pkg-config .... 
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 10 Aug 2010 09:27:09 +0200
+
+vdr-plugin-targavfd (0.0.5-1yavdr1) lucid; urgency=low
+
+  * New upstream release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 04 Aug 2010 18:16:58 +0200
+
+vdr-plugin-targavfd (0.0.4-2yavdr1) lucid; urgency=low
+
+  * added build-dep. libfreetype6-dev
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 01 May 2010 16:04:42 +0200
+
+vdr-plugin-targavfd (0.0.4-1yavdr1) lucid; urgency=low
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 30 Apr 2010 09:30:20 +0200

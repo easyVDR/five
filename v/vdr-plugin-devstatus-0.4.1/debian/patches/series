@@ -1,0 +1,5 @@
+recordingfound.patch
+channelswitch.patch
+Makefile.patch
+devstatus-0.4.1-dvbadapterfrontend.diff
+devstatus-0.4.1-svdrpmemoryleak.diff

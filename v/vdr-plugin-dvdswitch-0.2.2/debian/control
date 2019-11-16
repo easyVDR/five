@@ -1,0 +1,17 @@
+Source: vdr-plugin-dvdswitch
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>, Thomas Günther <tom@toms-cafe.de>, Tobias Grimm <etobi@debian.org>, Thomas Schmidt <tschmidt@debian.org>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.0.0), pkg-config, gettext
+Standards-Version: 3.9.4
+
+Package: vdr-plugin-dvdswitch
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, vdr-plugin-dvd, eject, at
+Suggests: dvd+rw-tools
+Description: VDR plugin to create, burn, mount and manage DVD iso images
+ With this VDR plugin it is possible to select between DVD iso images,
+ directories containing a DVD file structure or the real DVD drive and
+ mount them for playback with the DVD plugin. The Plugin allows also
+ to create iso images from a DVD and or to burn them onto a DVD.

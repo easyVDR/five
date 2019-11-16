@@ -1,0 +1,29 @@
+Source: vdr-plugin-eepg
+Section: misc
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8.0.0), vdr-dev (>= 1.7.35), gettext, pkg-config
+Standards-Version: 3.9.4
+Homepage: http://projects.vdr-developer.org/projects/plg-eepg/wiki
+
+Package: vdr-plugin-eepg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin to access special epg's of
+ Video Disk Recorder (VDR) is a digital sat-receiver program using
+ Linux and DVB technologies. It allows one to record MPEG2 streams,
+ as well as output the stream to TV.
+ .
+ This package allows to read data from special epg's of Premiere, 
+ Mediahighway 1 und 2, Sky Uk, Sky Italy, Freesat and NagraGuide
+ 
+Package: vdr-plugin-eepg-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-eepg (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-eepg
+ .
+ This package contains only the debugging symbols for vdr-plugin-eepg 
+

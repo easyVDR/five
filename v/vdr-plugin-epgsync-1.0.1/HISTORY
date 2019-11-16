@@ -1,0 +1,49 @@
+VDR Plugin 'epgsync' Revision History
+-----------------------------------------
+
+- Updated Slovak translation (thanks to Milan Hrala)
+- New option for periodic sync (suggested by GTRDRIVER@vdrportal)
+- Added SVDRP command to trigger sync (suggested by no sleep@vdrportal)
+
+2013-06-07: Version 1.0.0
+
+- Updated Makefile for VDR 1.7.36 and dropped compatibility with older VDR
+  versions
+- Updated SVDRP port. Default is now 0 (i.e. use svdrpservice).
+- Added Slovak translation (thanks to Milan Hrala)
+- Included a copy of svdrpservice.h
+
+2010-04-19: Version 0.0.4
+
+- VDR 1.7.13 obsoletes pluginparam-patch. Analog and IPTV now have dedicated
+  channel source values.
+- Mapping channels by name failed when syncing in channel-by-channel mode
+  and the channels to be imported were not part of the local channel list.
+  (reported by tivi2@vdrportal)
+- Don't log LSTE errors caused by remote channels which are unknown or don't
+  provide a schedule (reported by fnu@vdrportal)
+- Abort faster when stopping epgsync thread
+- Fixed missing translations in vdr 1.4.x
+
+2009-02-10: Version 0.0.3
+
+- New setup option for filtering destination channels by channel type.
+  Credits to wirbel for pluginparam-patch support (iptv/pvrinput).
+- New setup option makes epgsync find unknown channels by name or makes it
+  copy EPG to channels with same name but different ID
+- Gettext support for VDR 1.5.7+
+  Thanks to Udo Richter for his po218n.pl backward compatibility script
+- Italian translations (thanks to Diego Pierotto)
+- Fixed ambiguous statement causing compiler error on older gcc (reported by
+  foobar42@vdrportal)
+
+2006-09-25: Version 0.0.2
+
+- Fixed segfault when svdrpservice plugin encountered a problem while syncing
+  (reported by greenman@vdrportal)
+- Now running as a low priority thread to get rid of (or at least reduce) the
+  impact epgsync had in some environments (thanks to Artur Skawina)
+
+2006-07-24: Version 0.0.1
+
+- Initial revision.

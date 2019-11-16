@@ -1,0 +1,27 @@
+--- a/extrecmenu.c
++++ b/extrecmenu.c
+@@ -250,16 +250,16 @@
+ 
+ bool cPluginExtrecmenu::Service(const char *Id,void *Data)
+ {
+-  if(!Data)
+-    return true;
+-
+-  cOsdMenu **menu=(cOsdMenu**)Data;
+-  if(mysetup.ReplaceOrgRecMenu && strcmp(Id,"MainMenuHooksPatch-v1.0::osRecordings")==0)
++  if(Data)
+   {
+-    if(menu)
+-      *menu=(cOsdMenu*)MainMenuAction();
++    cOsdMenu **menu=(cOsdMenu**)Data;
++    if(mysetup.ReplaceOrgRecMenu && strcmp(Id,"MainMenuHooksPatch-v1.0::osRecordings")==0)
++    {
++      if(menu)
++        *menu=(cOsdMenu*)MainMenuAction();
+ 
+-    return true;
++      return true;
++    }
+   }
+   return false;
+ }

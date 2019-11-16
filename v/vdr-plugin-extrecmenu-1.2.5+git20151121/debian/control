@@ -1,0 +1,26 @@
+Source: vdr-plugin-extrecmenu
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>, Thomas Günther <tom@toms-cafe.de>, Tobias Grimm <etobi@debian.org>, Thomas Schmidt <tschmidt@debian.org>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.0.0), pkg-config, gettext
+Standards-Version: 3.9.4
+Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-extrecmenu.git
+Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr-plugin-extrecmenu.git
+
+Package: vdr-plugin-extrecmenu
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Plugin for vdr for an enhanced recordings menu
+ This plugin provides a recordings menu enhanced with the possibility to
+ rename or move recordings.
+
+Package: vdr-plugin-extrecmenu-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-extrecmenu (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-extrecmenu
+ .
+ This package contains only the debugging symbols for vdr-plugin-extrecmenu
+

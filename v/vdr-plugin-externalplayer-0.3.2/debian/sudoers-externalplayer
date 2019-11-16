@@ -1,0 +1,17 @@
+# Sudoers-File for vdr-plugin-externalplayer
+# placed in /etc/sudoers.d
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# See the man page for details on how to write a sudoers file.
+#
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+Cmnd_Alias EXTERNAL = /usr/share/vdr-plugin-externalplayer/*
+
+vdr ALL=NOPASSWD:EXTERNAL
+

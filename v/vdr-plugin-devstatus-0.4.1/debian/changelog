@@ -1,0 +1,533 @@
+vdr-plugin-devstatus (0.4.1-5easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 14:59:22 +0100
+
+vdr-plugin-devstatus (0.4.1-5easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 16:23:34 +0100
+
+vdr-plugin-devstatus (0.4.1-5easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:11:15 +0100
+
+vdr-plugin-devstatus (0.4.1-5easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 00:15:46 +0200
+
+vdr-plugin-devstatus (0.4.1-5easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:45:36 +0200
+
+vdr-plugin-devstatus (0.4.1-5easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:30:04 +0200
+
+vdr-plugin-devstatus (0.4.1-5easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:34:25 +0200
+
+vdr-plugin-devstatus (0.4.1-5easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:53:35 +0200
+
+vdr-plugin-devstatus (0.4.1-5easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:35:32 +0100
+
+vdr-plugin-devstatus (0.4.1-5easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 01:03:14 +0100
+
+vdr-plugin-devstatus (0.4.1-4mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Nov 2015 00:13:12 +0100
+
+vdr-plugin-devstatus (0.4.1-3mangoVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:27:42 +0200
+
+vdr-plugin-devstatus (0.4.1-3mangoVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Aug 2015 22:23:31 +0200
+
+vdr-plugin-devstatus (0.4.1-3mangoVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 21:58:53 +0200
+
+vdr-plugin-devstatus (0.4.1-3mangoVDR1~trusty) trusty; urgency=high
+
+  * rebuild for vdr-2.2.0
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 04 Jul 2015 20:19:25 +0200
+
+vdr-plugin-devstatus (0.4.1-3easyVDR0~trusty) trusty; urgency=high
+
+  * added patches from
+    http://www.vdr-portal.de/board16-video-disk-recorder/board55-vdr-plugins/126864-patch-devstatus-richtige-adapter-frontend-nummer-benutzen-memory-leak-bei-svdrp-behoben/
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 04 Jul 2015 20:11:36 +0200
+
+vdr-plugin-devstatus (0.4.1-2easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:07:53 +0200
+
+vdr-plugin-devstatus (0.4.1-2easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 21:07:27 +0100
+
+vdr-plugin-devstatus (0.4.1-2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:19:56 +0100
+
+vdr-plugin-devstatus (0.4.1-2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:21:38 +0100
+
+vdr-plugin-devstatus (0.4.1-2easyVDR3~trusty) trusty; urgency=high
+
+  * fix rules
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Feb 2015 03:24:30 +0100
+
+vdr-plugin-devstatus (0.4.1-1easyVDR3~trusty) trusty; urgency=high
+
+  * add new Makefile
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Feb 2015 03:14:39 +0100
+
+vdr-plugin-devstatus (0.4.1-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:34:44 +0100
+
+vdr-plugin-devstatus (0.4.1-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:38:38 +0200
+
+vdr-plugin-devstatus (0.4.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:06:01 +0200
+
+vdr-plugin-devstatus (0.4.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 02 Dec 2013 22:05:05 +0100
+
+vdr-plugin-devstatus (0.4.1-29fnu3~trusty) trusty; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 27 Oct 2013 13:11:20 +0100
+
+vdr-plugin-devstatus (0.4.1-29fnu3~precise) precise; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 23 Oct 2013 17:51:48 +0200
+
+vdr-plugin-devstatus (0.4.1-29fnu2~precise) precise; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 23 Oct 2013 17:13:47 +0200
+
+vdr-plugin-devstatus (0.4.1-29fnu1~precise) precise; urgency=high
+
+  * Build for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 12 Sep 2013 02:50:33 +0200
+
+vdr-plugin-devstatus (0.4.1-29fnu0~precise) precise; urgency=high
+
+  * rebuild for my ppa
+  * raise debhelper (>= 8)
+  * drop cdbs
+  * add debug symbols 
+
+ -- Frank Neumann <fnu@yavdr.org>  Tue, 23 Apr 2013 11:33:59 +0200
+
+vdr-plugin-devstatus (0.4.1-28fnu14~precise) precise; urgency=high
+
+  * rebuild for fnu ppa
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 11 Apr 2013 19:40:18 +0200
+
+vdr-plugin-devstatus (0.4.1-28yavdr13~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:45:37 +0200
+
+vdr-plugin-devstatus (0.4.1-28yavdr12~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:45:50 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr11~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 00:57:14 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr9~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:46:43 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 11 Mar 2013 11:51:11 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr7~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:17:03 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:22:05 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:02:08 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:49:48 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:00:37 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:33:00 +0100
+
+vdr-plugin-devstatus (0.4.1-28yavdr1~precise) precise; urgency=high
+
+  * Rebuild for yaVDR 0.5.1
+  * add recordingfound.patch
+
+ -- Frank Neumann <fnu@yavdr.org>  Tue, 23 Oct 2012 20:08:15 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr15~lucid) lucid; urgency=high
+
+  * Rebuild for yaVDR 0.3.3
+
+ -- Frank Neumann <fnu@yavdr.org>  Tue, 27 Mar 2012 12:46:49 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr14~lucid) lucid; urgency=high
+
+  * Rebuild for yaVDR 0.3.3
+
+ -- Frank Neumann <fnu@yavdr.org>  Sat, 17 Mar 2012 15:38:08 +0100
+
+vdr-plugin-devstatus (0.4.1-27yavdr13~lucid) lucid; urgency=high
+
+  * Rebuild for yaVDR 0.3.3
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 14 Mar 2012 01:46:53 +0100
+
+vdr-plugin-devstatus (0.4.1-27yavdr12~lucid) lucid; urgency=high
+
+  * Rebuild due ffmpeg corrections
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 25 Dec 2011 18:23:15 +0100
+
+vdr-plugin-devstatus (0.4.1-27yavdr11~lucid) lucid; urgency=medium
+
+  * rebuild
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 05 Sep 2011 19:35:53 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr12~lucid) lucid; urgency=medium
+
+  * rebuild
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 05 Sep 2011 16:06:38 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr11~lucid) lucid; urgency=low
+
+  * rebuild
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 04 Sep 2011 16:41:32 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr10~lucid) lucid; urgency=low
+
+  * rebuild
+
+ -- Frank Neumann <fnu@yavdr.org>  Sat, 20 Aug 2011 16:31:42 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr9~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 18 Aug 2011 20:01:36 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr8~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 15 Jun 2011 13:42:23 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr7~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 14 Jun 2011 20:40:27 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr6~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 25 May 2011 13:51:16 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr5~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 22 May 2011 22:52:32 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr4~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Tue, 19 Apr 2011 19:49:02 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr3~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Sun, 03 Apr 2011 22:00:48 +0200
+
+vdr-plugin-devstatus (0.4.1-27yavdr2~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Tue, 22 Mar 2011 23:06:24 +0100
+
+vdr-plugin-devstatus (0.4.1-27yavdr1~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Mon, 14 Mar 2011 22:04:36 +0100
+
+vdr-plugin-devstatus (0.4.1-26yavdr1~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 03 Mar 2011 08:26:15 +0100
+
+vdr-plugin-devstatus (0.4.1-25yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 18 Feb 2011 23:21:44 +0100
+
+vdr-plugin-devstatus (0.4.1-24yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 15 Feb 2011 14:46:18 +0100
+
+vdr-plugin-devstatus (0.4.1-23yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 10 Feb 2011 08:33:42 +0100
+
+vdr-plugin-devstatus (0.4.1-22yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 09 Feb 2011 01:00:55 +0100
+
+vdr-plugin-devstatus (0.4.1-21yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 08 Feb 2011 23:12:15 +0100
+
+vdr-plugin-devstatus (0.4.1-20yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 16 Jan 2011 21:44:53 +0100
+
+vdr-plugin-devstatus (0.4.1-19yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 08 Jan 2011 21:17:12 +0100
+
+vdr-plugin-devstatus (0.4.1-18yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 07 Jan 2011 19:24:48 +0100
+
+vdr-plugin-devstatus (0.4.1-17yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 03 Jan 2011 19:36:36 +0100
+
+vdr-plugin-devstatus (0.4.1-16yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 02 Nov 2010 19:55:52 +0100
+
+vdr-plugin-devstatus (0.4.1-15yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 24 Sep 2010 23:57:38 +0200
+
+vdr-plugin-devstatus (0.4.1-10yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.15 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 01 Jul 2010 23:12:32 +0200
+
+vdr-plugin-devstatus (0.4.1-8yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.15 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 14 Jun 2010 23:06:34 +0200
+
+vdr-plugin-devstatus (0.4.1-7yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.14 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 20 May 2010 09:39:46 +0200
+
+vdr-plugin-devstatus (0.4.1-6yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.14
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 15 Mar 2010 22:23:43 +0100
+
+vdr-plugin-devstatus (0.4.1-5yavdr1) karmic; urgency=low
+
+  * reb. vdr-1.7.12
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 21 Feb 2010 19:54:49 +0100
+
+vdr-plugin-devstatus (0.4.1-4yavdr1) karmic; urgency=low
+
+  * updated ABI version
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 25 Dec 2009 21:01:14 +0100
+
+vdr-plugin-devstatus (0.4.1-2tvt1) karmic; urgency=low
+
+  * rebuild for vdr 1.7.10
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 24 Nov 2009 15:45:13 +0100
+
+vdr-plugin-devstatus (0.4.1-1gda2) jaunty; urgency=low
+
+  * Rebuild against vdr-1.6.0-10gda7
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 May 2009 12:14:45 +0200
+
+vdr-plugin-devstatus (0.4.1-1gda1) jaunty; urgency=low
+
+  * New upstream release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 18 Apr 2009 23:11:07 +0200
+
+vdr-plugin-devstatus (0.4.0-1gda4) jaunty; urgency=low
+
+  * Rebuild against vdr-1.6.0-10gda6
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 16 Apr 2009 22:57:45 +0200
+
+vdr-plugin-devstatus (0.4.0-1gda3) jaunty; urgency=low
+
+  * Rebuild against vdr-1.6.0-10gda5
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 16 Apr 2009 22:57:45 +0200
+
+vdr-plugin-devstatus (0.4.0-1gda2) jaunty; urgency=low
+
+  * Rebuild against vdr-1.6.0-9gda3
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 23 Mar 2009 21:45:00 +0100
+
+vdr-plugin-devstatus (0.4.0-1gda1) unstable; urgency=low
+
+  * New upstream release
+  
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 16 Feb 2009 23:34:06 +0100
+
+vdr-plugin-devstatus (0.3.0-1gda1) unstable; urgency=low
+
+  * New upstream release
+  
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 03 Dec 2008 22:21:15 +0100
+
+vdr-plugin-devstatus (0.1.0-1gda1) unstable; urgency=low
+
+  * Initial release
+  
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 16 Nov 2008 15:07:15 +0100
+

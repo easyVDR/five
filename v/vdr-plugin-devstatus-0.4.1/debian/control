@@ -1,0 +1,25 @@
+Source: vdr-plugin-devstatus
+Section: misc
+Priority: extra
+Maintainer: Gerald Dachs <gda@dachsweb.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), gettext, pkg-config
+Standards-Version: 3.9.4
+Homepage: http://www.u32.de/vdr.html
+
+Package: vdr-plugin-devstatus
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: show status of all dvb devices
+ .
+ Does provide a handy view what your dvb devices ar doing right now.
+
+Package: vdr-plugin-devstatus-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-devstatus (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-devstatus
+ .
+ This package contains only the debugging symbols for vdr-plugin-devstatus 
+

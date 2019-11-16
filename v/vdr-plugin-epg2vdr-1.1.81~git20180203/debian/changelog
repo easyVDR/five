@@ -1,0 +1,742 @@
+vdr-plugin-epg2vdr (1:1.1.81~git20180203-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 15:30:13 +0100
+
+vdr-plugin-epg2vdr (1:1.1.81~git20180203-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Feb 2018 20:17:10 +0100
+
+vdr-plugin-epg2vdr (1:1.1.81~git20180203-0easyVDR1~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:dc1a77c - bugfix: Fixed possible crash on recording update without longdescription
+                   - change: More readable error message on DBAPI mismatch (thx to Lars!)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 03 Feb 2018 16:44:11 +0100
+
+vdr-plugin-epg2vdr (1:1.1.78~git20171224-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:cdf0de8 - change: update of recording description handling
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Dec 2017 13:44:37 +0100
+
+vdr-plugin-epg2vdr (1:1.1.77~git20171223-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:56c04bd - change: backward compatibility to vdr 2.2.0 - another step
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Dec 2017 00:05:41 +0100
+
+vdr-plugin-epg2vdr (1:1.1.76~git20171221-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:370d37d - resolved merge conflict
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Dec 2017 18:41:06 +0100
+
+vdr-plugin-epg2vdr (1:1.1.75~git20171221-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:fc626c1 - fixed compiler warning on 32 bit platforms
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Dec 2017 16:41:06 +0100
+
+vdr-plugin-epg2vdr (1:1.1.73~git20170628-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for vdr-2.3.8
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 18 Aug 2017 21:26:15 +0200
+
+vdr-plugin-epg2vdr (1:1.1.73~git20170628-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2819b6c - bugfix: Fixed compile with VDR 2.2.0
+                   - bugfix: Fixed problem with unknown channels
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 19:52:37 +0200
+
+vdr-plugin-epg2vdr (1:1.1.72~git20170622-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:b1af485 - bugfix: Fixed crash on end of recording
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 22 Jun 2017 21:33:41 +0200
+
+vdr-plugin-epg2vdr (1:1.1.71~git20170622-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 22 Jun 2017 20:57:46 +0200
+
+vdr-plugin-epg2vdr (1:1.1.71~git20170622-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:03cce8c - fixed git push in makefile
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 22 Jun 2017 20:28:44 +0200
+
+vdr-plugin-epg2vdr (1:1.1.70~git20170622-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2ae8025 - fixed compile error 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 22 Jun 2017 14:14:44 +0200
+
+vdr-plugin-epg2vdr (1:1.1.68~git20170611-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ca32dc16 - fixed macro for vdr 2.2.0
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 11 Jun 2017 19:53:45 +0200
+
+vdr-plugin-epg2vdr (1:1.1.66~git20170610-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5e865739 - Bugfix: Fixed vdr 2.2.0 compile problem (thx to Alexander Grothe)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 11 Jun 2017 00:06:43 +0200
+
+vdr-plugin-epg2vdr (1:1.1.65~git20170609-1easyVDR0~trusty) trusty; urgency=high
+
+  * fix timer.c build error
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Jun 2017 13:53:18 +0200
+
+vdr-plugin-epg2vdr (1:1.1.65~git20170609-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2685239d - Bugfix: Fixed another lock sequence
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 09 Jun 2017 23:13:57 +0200
+
+vdr-plugin-epg2vdr (1:1.1.64~git20170609-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:e8deefd3 - Bugfix: Fixed lock sequence
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 09 Jun 2017 15:43:29 +0200
+
+vdr-plugin-epg2vdr (1:1.1.62~git20170603-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 05 Jun 2017 18:24:48 +0200
+
+vdr-plugin-epg2vdr (1:1.1.62~git20170603-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2a7ae657 - typo
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Jun 2017 00:01:23 +0200
+
+vdr-plugin-epg2vdr (1:1.1.61~git20170527-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:a9c42d42 - minor change
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 May 2017 16:31:29 +0200
+
+vdr-plugin-epg2vdr (1:1.1.60~git20170507-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:75ef0d7 - bugfix: Fixed possible crash on channel lock
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 07 May 2017 13:44:43 +0200
+
+vdr-plugin-epg2vdr (1:1.1.59~git20170505-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:65ef548 - bugfix: Fixed crash on missing cahnnels
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 05 May 2017 21:44:45 +0200
+
+vdr-plugin-epg2vdr (1:1.1.56~git20170324-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:507589a2 - bugfix: Fixed problem with service interface (frequent db reconnects)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Mar 2017 16:22:27 +0100
+
+vdr-plugin-epg2vdr (1:1.1.54a~git20170323-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 23 Mar 2017 23:39:16 +0100
+
+vdr-plugin-epg2vdr (1:1.1.54a~git20170323-0easyVDR1~trusty) trusty; urgency=high
+
+  * added depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 23 Mar 2017 23:07:46 +0100
+
+vdr-plugin-epg2vdr (1:1.1.54a~git20170323-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5949bef1 - added: New event plugin interface
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 23 Mar 2017 22:42:13 +0100
+
+vdr-plugin-epg2vdr (1:1.1.52~git20170321-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:4ce37758 - bugfix: crash in EPG menu
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 21 Mar 2017 21:01:22 +0100
+
+vdr-plugin-epg2vdr (1:1.1.50~git20170319-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:fa25e712 - copatibility with oder g++
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 19 Mar 2017 22:10:12 +0100
+
+vdr-plugin-epg2vdr (1:1.1.48~git20170318-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:a83bbb05 - added channelid to service events on interface
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 18 Mar 2017 22:55:46 +0100
+
+vdr-plugin-epg2vdr (1:1.1.48~git20170316-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:6ab5ecdd - added: Further improvement of extended skins interface
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Mar 2017 23:42:41 +0100
+
+vdr-plugin-epg2vdr (1:1.1.46~git20170306-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:fc75b2cf - added: Added column for future features to vdrs table
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Mar 2017 22:34:04 +0100
+
+vdr-plugin-epg2vdr (1:1.1.43~git20170301-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:fbd7f1ca - updated TODOs
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 01 Mar 2017 21:44:07 +0100
+
+vdr-plugin-epg2vdr (1:1.1.41~git20170227-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:b980d7c9 - minor log message change
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 27 Feb 2017 20:36:19 +0100
+
+vdr-plugin-epg2vdr (1:1.1.39~git20170226-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2e170d79 - change: modified null field handling for timersdonedb
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Feb 2017 19:15:31 +0100
+
+vdr-plugin-epg2vdr (1:1.1.38~git20170216-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:f2235956 - minor timer state fix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Feb 2017 17:14:47 +0100
+
+vdr-plugin-epg2vdr (1:1.1.38~git20170214-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:f88dd26a - bugfix: fixed compile bug
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 14 Feb 2017 17:18:38 +0100
+
+vdr-plugin-epg2vdr (1:1.1.34~git20170210-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:3284ee6 - bugfix: Fixed possible crash at timer update
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 10 Feb 2017 17:04:52 +0100
+
+vdr-plugin-epg2vdr (1:1.1.33~git20170209-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:4987cfb4 - Added epg handler patch for VDR 2.3.2
+                      -> enhancement of epg handler interface to fix a threading
+                      problem which can occur on systems with more than one tuner
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 09 Feb 2017 22:20:04 +0100
+
+vdr-plugin-epg2vdr (1:1.1.32~git20170208-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5dc4d147 - bugfix: first program menu item now also selectable
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 08 Feb 2017 21:20:22 +0100
+
+vdr-plugin-epg2vdr (1:1.1.30~git20170206-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:cfca111b - bugfix: fix of '1.1.28' next try ;)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 07 Feb 2017 00:43:34 +0100
+
+vdr-plugin-epg2vdr (1:1.1.27~git20170201-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 02 Feb 2017 14:47:11 +0100
+
+vdr-plugin-epg2vdr (1:1.1.27~git20170201-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1285aa60 - bugfix: fixed timer naming problem
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 01 Feb 2017 23:32:05 +0100
+
+vdr-plugin-epg2vdr (1:1.1.26~git20170119-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2792c70 - minor changes
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 20 Jan 2017 22:32:42 +0100
+
+vdr-plugin-epg2vdr (1:1.1.22~git20170109-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:0f1c6ffa -  change: fixed problem with 2.3.1 / 2.3
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 09 Jan 2017 20:57:07 +0100
+
+vdr-plugin-epg2vdr (1:1.1.21~git20170107-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ff88f80b -  change: now compiles with vdr 2.3.1/2.3.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 08 Jan 2017 02:22:23 +0100
+
+vdr-plugin-epg2vdr (1:1.1.20~git20170104-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:974736b3 - bugix: fixed reinstate of events in epg handler
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 06 Jan 2017 18:47:02 +0100
+
+vdr-plugin-epg2vdr (1:1.1.19~git20161204-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2a77344e - change: merging of lib
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Dec 2016 23:00:12 +0100
+
+vdr-plugin-epg2vdr (1:1.1.16~git20161102-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1663aa33 - minor fix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 02 Nov 2016 22:16:47 +0100
+
+vdr-plugin-epg2vdr (1:1.1.14~git20161101-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:0adbe45d - added: added title for genn and yellow button in epg-detail menu
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 01 Nov 2016 17:41:58 +0100
+
+vdr-plugin-epg2vdr (1:1.1.11~git20161030-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:8bc9efc8 - added: mark epgseasrch timers (set source to 'epgs')
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 30 Oct 2016 17:03:08 +0100
+
+vdr-plugin-epg2vdr (1:1.1.10~git20161022-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:77c1c60b - added: update of db field timers._starttime
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Oct 2016 22:54:46 +0200
+
+vdr-plugin-epg2vdr (1:1.1.9~git20161018-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:c94a6dea - bugfix: fixed missing close of socket handle
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 18 Oct 2016 21:00:28 +0200
+
+vdr-plugin-epg2vdr (1:1.1.6~git20160828-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d2f3b4e8 - added: support of long eventids for tvsp (merged dev into master)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 28 Aug 2016 21:07:49 +0200
+
+vdr-plugin-epg2vdr (1:1.1.5+dev~git20160722-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Jul 2016 23:57:11 +0200
+
+vdr-plugin-epg2vdr (1:1.1.3~git20160706-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Jul 2016 19:18:05 +0200
+
+vdr-plugin-epg2vdr (1.1.3~git20160706-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:a717eb17 - bugfix: fixed channel switch in schedule menu
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Jul 2016 23:44:12 +0200
+
+vdr-plugin-epg2vdr (1.1.0~git20160704-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:9ed9de4b - change: merged http branch into master
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Jul 2016 00:39:56 +0200
+
+vdr-plugin-epg2vdr (1.0.49~git20160614+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:4e4d9440 - change: fixed unitialized variable (thx to Joerg)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 14 Jun 2016 20:38:00 +0200
+
+vdr-plugin-epg2vdr (1.0.48~git20160601+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:424ed47b - change: adjustet some log levels in epg handler (more silent)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 01 Jun 2016 23:20:20 +0200
+
+vdr-plugin-epg2vdr (1.0.46~git20160525+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:709ae155 - change: optimized scrap recording trigger
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 25 May 2016 23:29:11 +0200
+
+vdr-plugin-epg2vdr (1.0.45~git20160524+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:1518db0c - fixed compile
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 24 May 2016 21:12:25 +0200
+
+vdr-plugin-epg2vdr (1.0.44~git20160523+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:dc909d83 - bugfix: fixed crash at timer-service on empty epg
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 May 2016 22:58:24 +0200
+
+vdr-plugin-epg2vdr (1.0.41~git20160520+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:42ba79fe - added: new column for textual rating and commentator
+                      change: removed unused info column
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 21 May 2016 00:05:24 +0200
+
+vdr-plugin-epg2vdr (1.0.40~git20160518+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:510256c5 - bugfix: Fixed toggle of timer state with [red]
+                      bugfix: Fixed change of timer start/end timer
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 18 May 2016 19:57:59 +0200
+
+vdr-plugin-epg2vdr (1.0.39~git20160517+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:6da73c42 - added: service to notify timer changes
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 17 May 2016 20:22:06 +0200
+
+vdr-plugin-epg2vdr (1.0.38~git20160515+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:b553a074 - added: optimized timer lookup for schedules menu
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 15 May 2016 20:55:33 +0200
+
+vdr-plugin-epg2vdr (1.0.37~git20160514+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:657e4263 - hotfix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 14 May 2016 18:01:00 +0200
+
+vdr-plugin-epg2vdr (1.0.34~git20160509+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:87f49124 - fixed: added sql string-escape for python return
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 09 May 2016 19:11:04 +0200
+
+vdr-plugin-epg2vdr (1.0.33~git20160504+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:09bca2b5 - bugfix: fixed cursor pos in timermenu after refresh
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 04 May 2016 19:38:51 +0200
+
+vdr-plugin-epg2vdr (1.0.28~git20160426+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:7477edee - fix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 26 Apr 2016 23:48:44 +0200
+
+vdr-plugin-epg2vdr (1.0.28~git20160423+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:ae5c1327 - bugfix: added missing table init
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 23 Apr 2016 23:04:30 +0200
+
+vdr-plugin-epg2vdr (1.0.26~git20160422+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:d97a87c0 - bugfix fixed set of scrnew on info.epg2vdr changes
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 22 Apr 2016 22:25:38 +0200
+
+vdr-plugin-epg2vdr (1.0.19~git20160419+http-1easyVDR0~trusty) trusty; urgency=high
+
+  * added build depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Apr 2016 22:57:23 +0200
+
+vdr-plugin-epg2vdr (1.0.19~git20160419+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:02ed45f7 - bugfix: fixed timer menu refresh
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Apr 2016 22:49:18 +0200
+
+vdr-plugin-epg2vdr (0.1.13+git20151123-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:44:31 +0200
+
+vdr-plugin-epg2vdr (0.1.13+git20151123-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:36:52 +0100
+
+vdr-plugin-epg2vdr (0.1.13+git20151123-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:b2fe603e - fixed possible deadlock on schedules
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Nov 2015 23:33:14 +0100
+
+vdr-plugin-epg2vdr (0.1.12+git20150204-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:09:53 +0200
+
+vdr-plugin-epg2vdr (0.1.12+git20150204-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 22:58:29 +0100
+
+vdr-plugin-epg2vdr (0.1.12+git20150204-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 Mar 2015 18:44:17 +0100
+
+vdr-plugin-epg2vdr (0.1.10.git20140515.1121-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:40:24 +0200
+
+vdr-plugin-epg2vdr (0.1.10.git20140515.1121-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 09 Jun 2014 22:47:35 +0200
+
+vdr-plugin-epg2vdr (0.1.10.git20140515.1121-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 15 May 2014 13:24:40 +0200
+
+vdr-plugin-epg2vdr (0.1.10.git20140513.0914-0yavdr0~precise) precise; urgency=medium
+
+  * test compiling for 32-Bit
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 13 May 2014 14:30:09 +0200
+
+vdr-plugin-epg2vdr (0.1.10.git20140513.0913-2yavdr0~precise) precise; urgency=medium
+
+  * add libxslt-dev dependency 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 13 May 2014 13:51:28 +0200
+
+vdr-plugin-epg2vdr (0.1.10.git20140513.0913-1yavdr0~precise) precise; urgency=medium
+
+  * add libxml2-dev dependency 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 13 May 2014 13:47:46 +0200
+
+vdr-plugin-epg2vdr (0.1.10.git20140513.0913-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 13 May 2014 13:37:05 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140510.0812-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 10 May 2014 10:45:45 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140509.1437-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 16:40:21 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140509.1259-1yavdr0~precise) precise; urgency=high
+
+  * add libjpeg-turbo8-dev, libimlib2-dev build-depends 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 15:40:49 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140509.1259-0yavdr0~precise) precise; urgency=high
+
+  * add libcurl dependency 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 15:29:43 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140509.1206-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 14:45:23 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140508.1307-0yavdr0~precise) precise; urgency=high
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 11:10:55 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140507.0833-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 08 May 2014 14:11:47 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140329.0921-0yavdr2~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:01:25 +0200
+
+vdr-plugin-epg2vdr (0.1.8.git20140329.0921-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sat, 29 Mar 2014 10:22:01 +0100
+
+vdr-plugin-epg2vdr (0.1.7.git20140321.1302-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 21 Mar 2014 14:02:51 +0100
+
+vdr-plugin-epg2vdr (0.1.7-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 17 Mar 2014 17:55:23 +0100
+
+vdr-plugin-epg2vdr (0.1.5+git20140205-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+  * removed activity check, instead wait up to 20 seconds to give the main loop time to finish 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 05 Mar 2014 17:11:55 +0100
+
+vdr-plugin-epg2vdr (0.1.4-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 03 Jan 2014 17:43:32 +0100
+
+vdr-plugin-epg2vdr (0.1.3+git20131204-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 04 Dec 2013 15:01:32 +0100
+
+vdr-plugin-epg2vdr (0.1.2-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 20 Nov 2013 16:05:43 +0100
+
+vdr-plugin-epg2vdr (0.1.1-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 28 Oct 2013 15:51:04 +0100
+
+vdr-plugin-epg2vdr (0.1.0-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 27 Oct 2013 23:53:42 +0100
+
+vdr-plugin-epg2vdr (0.0.6-1yavdr2~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 27 Oct 2013 09:00:52 +0100
+
+vdr-plugin-epg2vdr (0.0.6-1yavdr2~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:34:10 +0200
+
+vdr-plugin-epg2vdr (0.0.6-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 16 Sep 2013 20:35:01 +0200
+
+vdr-plugin-epg2vdr (0.0.5-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 05 Sep 2013 20:22:46 +0200
+
+vdr-plugin-epg2vdr (0.0.4-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 04 Sep 2013 16:38:05 +0200
+
+vdr-plugin-epg2vdr (0.0.3-1yavdr2~precise) precise; urgency=medium
+
+  * use vdr dependencies
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 01 Sep 2013 21:38:30 +0200
+
+vdr-plugin-epg2vdr (0.0.3-1yavdr1~precise) precise; urgency=medium
+
+  * initial release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 01 Sep 2013 20:33:07 +0200

@@ -1,0 +1,115 @@
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 00:34:57 +0100
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 16:24:24 +0100
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:12:08 +0100
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 00:16:38 +0200
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:46:33 +0200
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:31:03 +0200
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:35:20 +0200
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:54:29 +0200
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:36:32 +0100
+
+vdr-plugin-dynamite (2:0.3.0+git20151123-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:80817116 - adjust for vdr 2.3.1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 00:11:21 +0100
+
+vdr-plugin-dynamite (2:0.2.1+git20150212-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 24 Apr 2015 15:25:59 +0200
+
+vdr-plugin-dynamite (2:0.2.1+git20150212-0easyVDR0~trusty) trusty; urgency=high
+
+  * increase build number
+
+ -- Wolfgang <vdr@gmx.de>  Fri, 24 Apr 2015 15:00:13 +0200
+
+vdr-plugin-dynamite (20150212195758testing-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:09:23 +0200
+
+vdr-plugin-dynamite (20150212195758testing-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 21:08:08 +0100
+
+vdr-plugin-dynamite (20150212195758testing-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 Mar 2015 19:06:30 +0100
+
+vdr-plugin-dynamite (20150212195758testing-1frodo0~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Mar 2015 12:10:32 +0100
+
+vdr-plugin-dynamite (20150212195758testing-1frodo0~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Mar 2015 15:24:37 +0100
+
+vdr-plugin-dynamite (20150212195758testing-0yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 20 Feb 2015 14:00:22 +0100
+
+vdr-plugin-dynamite (20150212195758testing-0yavdr0~precise) precise; urgency=medium
+
+  * Autobuild - b'b6ff9f04d40398cbbdcf273d391df8b456f05e52\n'
+    git://github.com/yavdr/vdr-plugin-dynamite.git
+
+ -- yaVDR Release-Team <release@yavdr.org>  Thu, 12 Feb 2015 19:58:00 +0100

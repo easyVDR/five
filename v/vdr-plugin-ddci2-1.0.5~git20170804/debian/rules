@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+#DH_VERBOSE=1
+
+VERSION=0.0.13+git20140411
+
+.PHONY: override_dh_strip override_dh_auto_install
+
+override_dh_strip:
+	dh_strip --dbg-package=vdr-plugin-ddci2-dbg
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/vdr-plugin-ddci2
+
+override_dh_gencontrol:
+	sh /usr/share/vdr-dev/dependencies.sh
+	dh_gencontrol
+
+%:
+	dh $@
+
+make-orig:
+	git archive --format=tar.gz --prefix=vdr-plugin-ddci2-$(VERSION)/ -o ../vdr-plugin-ddci2_$(VERSION).orig.tar.gz origin/master
+

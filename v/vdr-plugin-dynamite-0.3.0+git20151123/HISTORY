@@ -1,0 +1,281 @@
+VDR Plugin 'dynamite' Revision History
+--------------------------------------
+
+2011-01-06: Version 0.0.1
+
+- Initial revision.
+
+(developing and releasing were fast the last days
+ so skipping some meaningless changes...)
+
+2011-01-08: Version 0.0.4a
+
+- rework patch for vdr so it won't collide with other patches
+- LSTD outputs an asterisk behind the number of the primary device
+- the number corresponds to the index in the array so it won't
+  change for one device if others are attached/detached.
+- DETD called with a number tries to detach the device at the
+  given position in the array.
+
+2011-01-09: Version 0.0.4b
+
+- protect device array with a mutex
+- add Service Interface "dynamite-AttachDevice-v0.1" and
+  "dynamite-DetachDevice-v0.1"
+  the pointer passed in "Data" is interpreted as a devpath like
+  the SVDRP command ATTD and DETD.
+  Returns always "true" on these commands even if Data is NULL
+  as suggested in the docs.
+- don't detach device which are receiving something with a
+  priority > 0.
+
+2011-01-09: Version 0.0.4c
+
+- add new commands for locking/unlocking devices so the can
+  be protected from accidently detaching (LCKD / UNLD)
+- extend the Service interface with these commands
+  "dynamite-LockDevice-v0.1" / "dynamite-UnlockDevice-v0.1"
+
+2011-01-11: Version 0.0.4e
+
+- add new command SCND
+
+2011-01-11: Version 0.0.4i
+
+- now it seems to work... :-)
+
+2011-01-27: Version 0.0.4j
+
+- add "GetTS" watchdog
+- detach player and transfer mode on detach so all handles are freed
+
+2011-01-27: Version 0.0.5
+
+- add udev monitor for auto attaching new dvb-frontends
+- you can use "dynamite --log-udev" on the vdr commandline for logging
+  lots of udev events
+
+2011-01-27: Version 0.0.5a
+
+- refactor udev wrapper
+
+2011-01-29: Version 0.0.5b
+
+- add new command "SDGT" for setting a default "GetTS"-timeout for all attached
+  and "to be attached" devices
+- add "dynamite.DefaultGetTSTimeout" to setup.conf
+- speed up dvb-device creation
+- add alternate (more readable) commands for SVDRP like "AttachDevice" for "ATTD"
+
+2011-01-30: Version 0.0.5c
+
+- correct LDFLAGS in Makefile
+
+2011-02-02: Version 0.0.5d
+
+- add generic udev-filter for other plugins
+
+2011-02-03: Version 0.0.5e
+
+- rework vdr-patch to avoid problems with EITScanner (no ABI changes)
+
+2011-02-10: Version 0.0.5f
+
+- add new command to cDynamicDeviceProbe to call dynamite-Service (no ABI changes)
+- extend udev-monitor with parsing of a timeout-value set by some udev rule
+
+2011-02-16: Version 0.0.5g
+
+- modify vdr-patch because zapping could interrupt recordings
+
+2011-02-17: Version 0.0.5h
+
+- add parsing of udev-property "dynamite_timeout_handler_arg"
+- add "dynamite.GetTSTimeoutHandler = /path/to/program" to setup.conf
+- call external program on GetTS-timeout
+
+2011-02-17: Version 0.0.5i
+
+- add idle option to cDevice, "idle"-devices must close all their handles.
+  They are ignored by the epg-scan.
+
+2011-02-23: Version 0.0.5j
+
+- move reading of udev properties from the monitor to the attacher,
+  so that they are recognized on devices present at startup.
+
+2011-02-26: Version 0.0.5k
+
+- while in cDvbDeviceProbe create only as much cDynamicDevice-objects as needed
+- create dummy-device-probe only if specified on command line option "--dummy-probe"
+- add commandline arg --GetTSTimeoutHandler /path/to/program
+- add new command "DTAD" for detaching all devices
+
+2011-03-09: Version 0.0.5l
+
+- bugfix on logging error message
+
+2011-03-17: Version 0.0.5m
+
+- use getopt_long on commandline argument processing, look at README for new arguments
+- raise event via cPlugin::Service if a device is attached/detached so other plugins
+  can react on it ("dynamite-event-DeviceAttached-v0.1", "dynamite-event-DeviceDetached-v0.1")
+
+2011-03-18: Version 0.0.5n
+
+- add new command "ForceDetachDevice", the device will be detached regardless of any receivers
+  or locks
+
+2011-03-23: Version 0.0.5o
+
+- fix bug in GetAudioChannelDevice (endless loop)
+
+2011-03-24: Version 0.0.6
+
+- scan with udev for dvb devices on startup to bridge gaps in the adapter numbers
+- add udev property "dynamite_attach" to keep devices from being attached
+- add udev property "dynamite_instanceid" to associate the devices to different vdr instances
+
+2011-03-25: Version 0.0.6a
+
+- add some OSD functionality
+
+2011-04-06: Version 0.0.6c
+
+- add new parameter "--free-device-slots" and leave an additional slot free
+  if streamdev-client is loaded
+
+2011-06-15: Version 0.0.6d
+
+- add udev property "dynamite_cardindex" to attach a device at a preferred slot (if free)
+
+2011-06-22: Version 0.0.6e
+
+- leave eight additional slots free if mcli-plugin is loaded
+
+2011-07-03: Version 0.0.6f
+
+- don't attach devices at probe-time, just queue them
+
+2011-07-13: Version 0.0.6g
+
+- add italian translations (thanks to Diego Pierotto)
+- add commandline arg --idle-hook=/path/to/program
+  and as parameter "dynamite.IdleHook = /path/to/program" at setup.conf
+
+2011-08-17: Version 0.0.6h
+
+- add patch for vdr 1.7.19 and add support for new virtual methods of cDevice
+
+2011-08-17: Version 0.0.7
+
+- add patch for vdr 1.7.20
+
+2011-09-04: Version 0.0.7a
+
+- add two new parameters to activate the auto-idle-mode
+  --idle-timout=m  set unused devices after m minutes to idle
+  --idle-wakeup=h  waheup idle devices after h hours
+
+2011-09-04: Version 0.0.7b
+
+- correct timeout evaluation for auto-idle
+
+2011-09-04: Version 0.0.7c
+
+- auto-wakeup and idle-again now works correctly if the device is not used with "OpenDvr" in the meantime
+
+2011-09-04: Version 0.0.8
+
+- add patch for vdr 1.7.21
+
+2011-09-21: Version 0.0.8a
+
+- add SVDRP/Service commands SetIdleTimeout and SetIdleWakeup to modify the values on the fly
+
+2011-10-26: Version 0.0.8b
+
+- add udev monitor for remove events of usb hardware so devices can be detached on unplugging
+
+2011-10-27: Version 0.0.8c
+
+- correct call of the idle hook
+
+2011-12-04: Version 0.0.8d
+
+- allow disable of auto-idle per device via Service/SVDRP/udev
+
+2011-12-08: Version 0.0.8e
+
+- fix a possible double attach of devices if they have a cardindex set with udev
+
+2011-12-10: Version 0.0.8f
+
+- try to set the initial channel on device-attach if it hasn't been set so far
+  and the user or a timer hasn't selected another channel
+  (giving up 60 seconds after startup)
+
+2011-12-11: Version 0.0.8g
+
+- if the initial channel is empty, the "current channel" is the "startup channel"
+
+2011-12-15: Version 0.0.8h
+
+- correct define for new virtual functions added by yaVDR-patches
+
+2011-12-15: Version 0.0.8i
+
+- add udev attribute "dynamite_attach_delay" for delaying the attach of specific devices
+  useful for device if the firmware upload needs some time
+
+2011-12-15: Version 0.0.8j
+
+- add attach-hook, argument is --device=/dev/path
+
+2011-12-21: Version 0.0.8k
+
+- call attach-hook on detach, too, argument is --action=detach --device=/dev/path
+  arguments for call on attach has changed to --action=attach --device=/dev/path
+
+2011-12-21: Version 0.0.9
+
+- adjust to vdr 1.7.22
+
+2011-12-21: Version 0.0.9a
+
+- reset CAMs if device will not get ready on attach
+
+2012-02-05: Version 0.0.9b
+
+- add udev attribute "dynamite_sources" which will limit the reception of the device to the given sources
+
+2012-03-08: Version 0.0.9c
+
+- on "force detach" queue command, don't delete directly on the call
+
+2012-03-28: Version 0.0.9d
+
+- adjust to vdr 1.7.27
+
+2012-03-29: Version 0.0.9e
+
+- re-new the device bonding if a device is attached
+
+2012-05-23: Version 0.0.9f
+
+- add udev attribute "dynamite_attach_delay_preopen"
+
+2012-10-04: Version 0.1.0
+
+- adjust to vdr 1.7.31
+- drop support for older developer versions
+- remove LNB_SHARING code
+
+2012-12-08: Version 0.1.1
+
+- adjust to vdr 1.7.33
+
+2013-04-17: Version 0.1.5
+
+- leave some free device slots for output plugins (softhddevice, xine and xineliboutput)
+

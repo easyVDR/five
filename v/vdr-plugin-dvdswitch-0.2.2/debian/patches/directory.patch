@@ -1,0 +1,32 @@
+--- a/Makefile
++++ b/Makefile
+@@ -56,6 +56,7 @@
+ INCLUDE +=
+ 
+ DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
++DEFINES += -U_FORTIFY_SOURCE
+ 
+ ### The object files (add further files here):
+ 
+--- a/commands.c
++++ b/commands.c
+@@ -397,6 +397,9 @@
+   switch(Key)
+   {
+     case kOk:
++	
++	cOsdMenu::ProcessKey(kOk);
++	
+       if(!isempty(Dir))
+       {
+         char *buffer = NULL;
+@@ -487,6 +490,9 @@
+   switch(Key)
+   {
+     case kOk:
++	
++	cOsdMenu::ProcessKey(kOk);
++	
+       if(!isempty(Dir))
+       {
+         char *buffer = NULL;

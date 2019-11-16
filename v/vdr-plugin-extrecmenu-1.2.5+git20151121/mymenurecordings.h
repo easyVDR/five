@@ -1,0 +1,126 @@
+// --- myMenuRecordingsItem ---------------------------------------------------
+class myMenuRecordingsItem:public cOsdItem
+{
+  private:
+#if VDRVERSNUM >= 10733
+    cRecording *recording_copy;
+    cRecording *recording;
+#endif
+    bool dirismoving;
+    bool isdvd;
+    bool ishdd;
+    bool isPesRecording;
+    int level,isdirectory;
+    int totalentries,newentries;
+    char *title;
+    char *name;
+    const char *filename;
+    std::string uniqid; // this is the unique name that identifies a recording
+  public:
+    myMenuRecordingsItem(cRecording *Recording,int Level);
+    ~myMenuRecordingsItem();
+    const char *FileName(){return filename;}
+    const char *Name(){return name;}
+#if VDRVERSNUM >= 10733
+    inline void rec_copy(void);
+#endif
+    bool IsDirectory(){return name!=NULL;}
+    bool IsPesRecording(void) const { return isPesRecording; }
+    void IncrementCounter(bool IsNew);
+    bool IsDVD(){return isdvd;}
+    bool IsHDD(){return ishdd;}
+    void SetDirIsMoving(bool moving){dirismoving=moving;}
+    bool GetDirIsMoving(){return dirismoving;}
+    const char *UniqID(){return uniqid.length()?uniqid.c_str():"";}
+#if VDRVERSNUM >= 10733
+    virtual void SetMenuItem(cSkinDisplayMenu *DisplayMenu, int Index, bool Current, bool Selectable);
+#endif
+};
+
+// --- myMenuRecordings -------------------------------------------------------
+class myMenuRecordings:public cOsdMenu
+{
+ private:
+  bool edit;
+  static bool wasdvd;
+  static bool washdd;
+  static bool golastreplayed;
+  static dev_t fsid;
+  static time_t lastDiskSpaceCheck;
+  static int lastFreeMB;
+  int level,helpkeys;
+  int recordingsstate;
+  char *base;
+  bool Open();
+  void SetHelpKeys();
+  void Title();
+  cRecording *GetRecording(myMenuRecordingsItem *Item);
+  eOSState Play();
+  eOSState Rewind();
+  eOSState Delete();
+  eOSState Rename();
+  eOSState MoveRec();
+  eOSState Info();
+  eOSState Details();
+  eOSState Commands(eKeys Key=kNone);
+  eOSState ChangeSorting();
+  int FreeMB();
+ public:
+  myMenuRecordings(const char *Base=NULL,int Level=0);
+  ~myMenuRecordings();
+  void Set(bool Refresh=false);
+  virtual eOSState ProcessKey(eKeys Key);
+#ifdef USE_GRAPHTFT
+  virtual const char* MenuKind(){return"MenuExtRecordings";}
+#endif
+  void ForceFreeMbUpdate(){lastDiskSpaceCheck=0;};
+};
+
+// --- myMenuRenameRecording --------------------------------------------------
+class myMenuRenameRecording:public cOsdMenu
+{
+ private:
+  bool isdir;
+  char *dirbase,*dirname;
+  char name[MaxFileName];
+  char path[MaxFileName];
+  cRecording *recording;
+  myMenuRecordings *menurecordings;
+ public:
+  myMenuRenameRecording(cRecording *Recording,const char *DirBase,const char *DirName);
+  ~myMenuRenameRecording();
+  virtual eOSState ProcessKey(eKeys Key);
+};
+
+// --- myMenuMoveRecording ----------------------------------------------------
+class myMenuMoveRecording:public cOsdMenu
+{
+ private:
+  int level;
+  char *base;
+  char *dirbase,*dirname;
+  cRecording *recording;
+  myMenuRecordings *menurecordings;
+  void Set();
+  eOSState Open();
+  eOSState MoveRec();
+  eOSState Create();
+ public:
+  myMenuMoveRecording(cRecording *Recording,const char *DirBase,const char *DirName,const char *Base=NULL,int Level=0);
+  ~myMenuMoveRecording();
+  virtual eOSState ProcessKey(eKeys Key);
+  static bool clearall;
+};
+
+// --- myMenuRecordingDetails -------------------------------------------------
+class myMenuRecordingDetails:public cOsdMenu
+{
+ private:
+  int priority,lifetime;
+  cRecording *recording;
+  myMenuRecordings *menurecordings;
+ public:
+  myMenuRecordingDetails(cRecording *Recording);
+  virtual eOSState ProcessKey(eKeys Key);
+  static bool ModifyInfo(cRecording *Recording, const char *Info);
+};

@@ -1,0 +1,2 @@
+version=3
+http://projects.vdr-developer.org/projects/list_files/plg-dm140vfd .*/vdr-dm140vfd-(.*)\.tgz

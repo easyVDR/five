@@ -1,0 +1,121 @@
+# vdr-dm140vfd-plugin language source file.
+# Copyright (C) Andreas Brachold <vdr07 AT deltab de>
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Andreas Brachold <vdr07 AT deltab de> 2009, 2010.
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-dm140vfd-plugin 0.0.5\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2010-12-30 09:35+0100\n"
+"PO-Revision-Date: 2010-07-02 21:25+0200\n"
+"Last-Translator: Andreas Brachold <vdr07 AT deltab de>\n"
+"Language-Team: Andreas Brachold <vdr07 AT deltab de>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Control a dm140 vfd"
+msgstr "Steuert ein DM140 VFD"
+
+msgid "dm140vfd"
+msgstr "Dm140VFD"
+
+msgid "Single line"
+msgstr "Einzelne Zeile"
+
+msgid "Dual lines"
+msgstr "Zwei Zeilen"
+
+msgid "Only topic"
+msgstr "Nur Titel"
+
+msgid "Render mode"
+msgstr "Anzeigemodus"
+
+msgid "Default font"
+msgstr "Zeichensatz"
+
+msgid "Height of big font"
+msgstr "Höhe des großen Zeichensatzes"
+
+msgid "Height of small font"
+msgstr "Höhe des kleinen Zeichensatzes"
+
+msgid "Do nothing"
+msgstr "Nichts unternehmen"
+
+msgid "Turning display off"
+msgstr "Abschalten der Anzeige"
+
+msgid "Show next timer"
+msgstr "Nächsten Timer anzeigen"
+
+msgid "Show only present next timer"
+msgstr "Nur vorhandenen nächsten Timer anzeigen"
+
+msgid "Exit mode"
+msgstr "Ende Modus"
+
+msgid "Never"
+msgstr "Nie"
+
+msgid "Timed"
+msgstr "Zeitlich"
+
+msgid "Ever"
+msgstr "Immer"
+
+msgid "Show volume bargraph"
+msgstr "Lautstärkebargraph anzeigen"
+
+msgid "Resume on activities"
+msgstr "Reaktivieren bei Aktivität"
+
+msgid "Only per time"
+msgstr "Gemäß der Zeit"
+
+msgid "Suspend display at night"
+msgstr "Nächtliches Aussetzen der Anzeige"
+
+msgid "Beginning of suspend"
+msgstr "Anfangszeit"
+
+msgid "End time of suspend"
+msgstr "Endzeit"
+
+msgid "Hiper Media: 040b:7001"
+msgstr "Hiper Media: 040b:7001"
+
+msgid "Activy: 1509:925d"
+msgstr "Activy: 1509:925d"
+
+msgid "Display Type"
+msgstr "Display Typ"
+
+msgid "None active timer"
+msgstr "Kein aktiver Timer"
+
+msgid "Unknown title"
+msgstr "Unbekannter Titel"
+
+#~ msgid "Show nothing"
+#~ msgstr "Nichts anzeigen"
+
+#~ msgid "Half brightness"
+#~ msgstr "Halbe Helligkeit"
+
+#~ msgid "Full brightness"
+#~ msgstr "Volle Helligkeit"
+
+#~ msgid "Brightness"
+#~ msgstr "Helligkeit"
+
+#~ msgid "Showing clock"
+#~ msgstr "Uhrzeit anzeigen"
+
+#~ msgid "Open display once"
+#~ msgstr "Display nur einmal öffnen"
+
+#~ msgid "Reopen display on failure"
+#~ msgstr "Display bei Fehler erneut öffnen"

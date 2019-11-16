@@ -1,0 +1,7 @@
+04_vdr-dvd_resume.patch
+05_stdint.patch
+10_dvd.c.patch
+11_allow-non-existing-dvd-drive.patch
+12_dvd-fixed-german-spelling.patch
+13_fix-dvdnav-using-c++-keywords.patch
+vdr-2.1.x-compat.patch

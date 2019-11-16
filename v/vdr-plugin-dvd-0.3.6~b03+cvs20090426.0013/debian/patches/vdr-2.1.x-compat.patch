@@ -1,0 +1,28 @@
+--- a/player-dvd.c
++++ b/player-dvd.c
+@@ -264,8 +264,12 @@
+ 
+ // ... in this directory (default: /video)
+ #ifndef RESUMEDIR
++#if APIVERSNUM > 20101
++#define RESUMEDIR cVideoDirectory::Name()
++#else
+ #define RESUMEDIR VideoDirectory
+ #endif
++#endif
+ 
+ 
+ // borrowed from the mplayer plugin code and adapted to the dvd resume requirements
+@@ -592,8 +596,11 @@
+ 	        if (playMode == pmSlow)
+                 sp=2;
+         }
++#if APIVERSNUM > 20103
++        DeviceTrickSpeed(sp, true);
++#else
+         DeviceTrickSpeed(sp);
+-
++#endif
+     } else if ( nts>0 && nts-NORMAL_SPEED <= MAX_MAX_SPEEDS ) {
+         fastWindFactor  = 1;
+         trickSpeed = nts;

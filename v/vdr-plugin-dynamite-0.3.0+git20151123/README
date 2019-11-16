@@ -1,0 +1,368 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Lars Hanisch <dvb@flensrocker.de>
+
+Project's homepage:          http://projects.vdr-developer.org/projects/plg-dynamite
+
+Latest version available at: git clone git://projects.vdr-developer.org/vdr-plugin-dynamite.git
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Description
+-----------
+This plugin turns the dvbdevices into hotpluggable devices. They
+can be dynamically attached and detached while vdr is running.
+Don't forget to patch the vdr-source, you find the necessary one
+in the "patches" directory of the plugin sources.
+
+How it works
+------------
+It creates as many devices as it can till the global vdr-device-array
+is full. After this plugin is loaded every device created by a
+plugin can't be used by vdr. So make sure dynamite is loaded as
+the last plugin.
+
+If a device is dynamically attached to vdr, this plugin creates an
+instance of the corresponding cDevice-subclass and plugs it into
+a free "dumb device" mentioned above. Now this device can do
+everything its subdevice can do.
+
+If a device is detached the corresponding subdevice is deleted and
+the "dumb device" is dumb again.
+
+A device with receivers at priorities > 0 can't be detached.
+
+How to make other plugins "explosive"
+-------------------------------------
+Like cDvbDeviceProbe there is a list of probe-objects where a plugin
+can hook into (see cDynamicDeviceProbe at the end of patched device.h).
+The Probe-function gets an devicepath and if the plugin can handle
+this it returns a pointer to a new created device on the heap.
+Don't forget to pass through the "ParentDevice" parameter to the cDevice
+constructor!
+
+You don't need to remember this pointer, it will be deleted by dynamite.
+The devicepath doesn't need to be a valid path like
+/dev/dvb/adapter0/frontend0 or /dev/video0 etc. since the plugin decides
+what it should do with this string. In dynamite.c you can see an example
+of an dynamic dummy device creator. It reacts on the devicepath
+"dummydevice" followed by a number e.g. "dummydevice0".
+
+If a plugin wants its device to be dynamically attached/detached it must
+not create its devices in its Initialize function. Instead it should
+queue the found devicepaths with the helper function
+"cDynamicDeviceProbe::QueueDynamicDeviceCommand(ddpcAttach, devpath)".
+After initialization the dynamite-plugin is calling every cDynamicDeviceProbe
+with the queued devicepaths in its Initialize-function. See the patches
+directory for examples.
+
+The devices have to close all their handles in their destructor and clean
+up after them. Otherwise this is a potential source of memory leaks.
+Plugins which creates a cDvbDeviceProbe should replace it with a
+cDynamicDeviceProbe (you can use "#ifdef __DYNAMIC_DEVICE_PROBE" for
+conditional compiling).
+
+If you're looking for an example grab the source of pvrinput from:
+http://projects.vdr-developer.org/projects/plg-pvrinput
+
+How to attach/detach a device
+-----------------------------
+There a some new SVDRP commands for the dynamic devices. The string in quotes
+above the command is for the internal Service-interface of the vdr-plugins.
+
+"dynamite-AttachDevice-v0.1"
+ATTD devicepath
+    Asks all cDynamicDeviceProbe-objects to attach the given devicepath
+    till one returns a valid pointer. You can control the order by the
+    order of the plugins you load
+    alternate command: AttachDevice
+
+"dynamite-DetachDevice-v0.1"
+DETD devicepath
+    Looks through its remembered devicepaths and deletes the attached
+    device if found. Case is important!
+    Any timeouts or locks set to this slot will be reset to its defaults.
+    alternate command: DetachDevice
+
+"dynamite-ForceDetachDevice-v0.1"
+FDTD devpath
+    Looks through its remembered devicepaths and deletes the attached
+    device if found. Case is important!
+    The device will be detached regardless of recordings or other locks!
+    This is useful for unplugged usb-sticks etc.
+    alternate command: ForceDetachDevice
+
+"dynamite-DetachAllDevices-v0.1"
+DTAD [force]
+    detachs all attached devices
+    "force" will ignore recordings and other receivers
+    alternate command: DetachAllDevices
+
+"dynamite-ScanDevices-v0.1"
+SCND '/dev/path/glob*/pattern*'
+    Scan filesystem with pattern and try to attach each found device
+    don't forget to enclose the pattern with single quotes
+    e.g. SCND '/dev/dvb/adapter*/frontend*'
+    alternate command: ScanDevices
+
+"dynamite-LockDevice-v0.1"
+LCKD /dev/path/to/device
+    Lock the device so it can't be detached
+    alternate command: LockDevice
+
+"dynamite-UnlockDevice-v0.1"
+UNLD /dev/path/to/device
+    Remove the lock of the device so it can be detached
+    alternate command: UnlockDevice
+
+"dynamite-SetIdle-v0.1"
+SetIdle /dev/path/to/device
+    Try to set the device to idle so it won't be used by epg-scan
+    and can close all its handles
+
+"dynamite-SetNotIdle-v0.1"
+SetNotIdle /dev/path/to/device
+    Revoke the idle state of the device
+
+"dynamite-DisableAutoIdle-v0.1"
+DisableAutoIdle /dev/path/to/device
+    Disables the auto-idle feature on this device
+
+"dynamite-EnableAutoIdle-v0.1"
+EnableAutoIdle /dev/path/to/device
+    Enables the auto-idle feature on this device if the timeout configured
+
+(no Service-interface)
+LSTD
+    Lists all devices managed by this plugin. The first column is an id,
+    the second column is the devicepath passed with ATTD
+    The id can be used with the DETD and UNLD commands instead of the path.
+    An asterisk behind the id means that this device is locked and
+    can't be detached.
+    alternate command: ListDevices
+
+"dynamite-SetGetTSTimeout-v0.1"
+SGTT /dev/path/to/device seconds
+    Sets the \"GetTSPacket\"-watchdog timeout to specified amount of seconds
+    If the device returns no data (Data == NULL) for this period of time,
+    the device will be detached. Usefull if you want to reload the driver etc.
+    A value of 0 seconds disables the watchdog.
+    alternate command: SetGetTSTimeout
+
+"dynamite-SetDefaultGetTSTimeout-v0.1"
+SDGT seconds
+    Sets the \"GetTSPacket\"-watchdog timeout for all attached devices
+    and all devices that will be attached.
+    alternate command: SetDefaultGetTSTimeout
+
+"dynamite-AddUdevMonitor-v0.1"
+ADUM subsystem begin-of-devnode
+    Adds a filter to the udev-monitor.
+    If an event occurs whose devnode starts with the supplied parameter
+    this devnode will be queued for attaching, e.g.
+    AddUdevMonitor video4linux /dev/video
+    (this is what pvrinput uses)
+    alternate command: AddUdevMonitor
+
+"dynamite-SetGetTSTimeoutHandlerArg-v0.1"
+SetGetTSTimeoutHandlerArg /dev/path/to/device arg
+    Sets the argument for the timout handler program.
+
+"dynamite-CallGetTSTimeoutHandler-v0.1"
+CallGetTSTimeoutHandler arg
+    Calls the timout handler program with the given arguments.
+
+"dynamite-SetIdleTimeout-v0.1"
+SIDT minutes
+    Sets the timeout for an used device to be switched into idle mode,
+    a value of 0 will deactivate the auto-idle-mode.
+    alternate command: SetIdleTimeout
+
+"dynamite-SetIdleWakeup-v0.1"
+SIDW hours
+    Sets the timeout for an idle device to be reactivated,
+    a lower interval than 1 hour is not possible.
+    alternate command: SetIdleWakeup
+
+Don't forget to prefix them with "plug dynamite"...
+
+Controlling dynamite with the OSD
+---------------------------------
+The main menu item "dynamite" offers the following possibilities:
+- list attached devices
+- scan for new DVB devices
+- detach device
+- lock/unlock device
+- disable/enable auto-idle of device
+- switch device to idle
+
+Signals emitted via cPluginManager::CallAllServices
+---------------------------------------------------
+On some actions dynamite calls the Service interface of every plugin
+so other plugins can react on these.
+
+On attaching a device:
+"dynamite-event-DeviceAttached-v0.1" /dev/path/to/device
+
+On detaching a device:
+"dynamite-event-DeviceDetached-v0.1" /dev/path/to/device
+
+Parameters in setup.conf
+------------------------
+dynamite.DefaultGetTSTimeout = 0
+dynamite.GetTSTimeoutHandler = /path/to/program
+dynamite.FreeDeviceSlots = 0
+dynamite.AttachHook = /path/to/program
+dynamite.IdleHook = /path/to/program
+dynamite.IdleTimeout = 0
+dynamite.IdleWakeup = 0
+
+Commandline Arguments
+---------------------
+-u, --log-udev
+        log all udev events to syslog (useful for diagnostics)
+-d, --dummy-probe
+        start dummy-device probe (useful for experiments)
+-t, --GetTSTimeout=n
+        set default GetTS-timeout to n seconds
+-h, --GetTSTimeoutHandler=/path/to/program
+        set program to be called on GetTS-timeout
+-f, --free-device-slots=n
+        leave n slots free for non-dynamic devices of
+        incompatible plugins
+-a, --attach-hook=/path/to/program
+        set program to be called on device attach/detach
+-i, --idle-hook=/path/to/program
+        set program to be called on SetIdle and reactivation
+-I, --idle-timeout=m
+        if a device is unused for m minutes set it to idle, 0 disables auto-idle (default)
+-W, --idle-wakeup=h
+        if a device is idle for h hours wake it up (e.g. for EPG scan)
+
+Attach hook
+-----------
+If you want 'special action' taken after a device is attached or detached
+to vdr you can specify a program either with the commandline parameter
+"--attach-hook=/path/to/program" or with an entry in the setup.conf
+dynamite.AttachHook = /path/to/program
+It will be called with the parameter "--action=[attach|detach] --device=/dev/path".
+
+Idle mode
+---------
+A device with no active receiver can be set to "idle". Classes derived
+from cDevice shall try to close all resources like filehandles in the
+method SetIdleDevice. E.g. cDvbDevice will close its frontend so the driver
+can enable a power-save mode. And it has been observed that some tuners are
+a lot cooler, so it must be good. :-)
+An idle device will be ignored by the EIT scanner but will be reactivated
+if it's needed for a recording etc.
+You can set a programm to be called on every idle-switch. It will receive
+the parameters
+  --idle=[on|off]
+  --device=/dev/path/to/device
+
+If you have set an idle-timeout and idle-wakeup value greater than 0, dynamite
+will try to deactivate unused devices on its own. In sporadic intervals it will
+test all devices if their "CloseDvr" was last called "idle-minutes" ago (or
+OpenDvr got called at all).
+After a minimum of "idle-wakeup" hours the device will be reactivated so it can
+be used by the EIT scanner or similar modules. The wakeup cannot be disabled,
+only a minimum of one hour can be specified.
+If there are problems with the auto-idle mode on some devices but you want to use
+it on your other devices you can disable it per device via "Service", SVDRP or
+udev (see below).
+
+"GetTS" watchdog
+----------------
+Some DVB cards are known to be unstable - sometimes their driver just hangs
+and vdr won't get any data anymore. Mostly you have to stop vdr, reload the
+drivers and restart vdr again. But that would affect other recordings etc.
+If you have such a card the "Auto-Detach" feature may be useful. Just set
+the "GetTS" timeout to 10 or 15 seconds (or whatever you like) and dynamite
+will automatically detach this device if its GetTSPacket method returns
+no data for this period of time.
+WARNING: You have to attach this device manually again! For now there's no
+automatism to reload the driver (or whatever is needed) to reanimate the device.
+You can use the GetTSTimeoutHandler set in setup.conf for this.
+
+If you want to add a timeout only to specific devices you can do this with udev.
+Add a rule which sets with ENV{dynamite_timeout}="10" the needed timeout value.
+
+example for udev rule:
+ACTION=="add", SUBSYSTEM=="dvb", ENV{DVB_DEVICE_TYPE}=="frontend" \
+  , ENV{dynamite_attach}="yes" \
+  , ENV{dynamite_attach_delay}="10" \
+  , ENV{dynamite_attach_delay_preopen}="yes" \
+  , ENV{dynamite_instanceid}="0" \
+  , ENV{dynamite_cardindex}="5" \
+  , ENV{dynamite_sources}="C,T" \
+  , ENV{dynamite_timeout}="10" \
+  , ENV{dynamite_timeout_handler_arg}="%k" \
+  , ENV{dynamite_disable_autoidle}="no"
+
+After the device is detached and dynamite.GetTSTimeoutHandler in setup.conf is set
+to a path, this program is called. If the udev-property "dynamite_timeout_handler_arg"
+is not present the devpath is provided as argument, with which the device was attached.
+
+Udev Properties
+---------------
+Attaching of devices can be controlled with some udev device properties which can be
+set by a udev rule (see example above).
+
+dynamite_attach
+    "no", "n", "0", "ignore": don't attach this device, any other string will be like "yes"
+
+dynamite_attach_delay
+    n: wait with attaching this device at least n seconds
+
+dynamite_attach_delay_preopen
+    "yes", "y", "1": If an attach_delay is specified, dynamite will open the given path
+                     before the delay (O_RDWR | O_NONBLOCK) to trigger the load of the firmware.
+                     It will be closed immediately and reopened when it's attached.
+                     Useful for "bad" usb-box-drivers.
+
+dynamite_instanceid
+    n: attach only at vdr with matching instance id
+
+dynamite_cardindex
+    n: if possible attach at slot with given cardindex
+       if no cardindex is given, the adapter number will be used (see "Known issues")
+
+dynamite_disable_autoidle
+    "yes", "y", "disable", "true", "1": disable the auto-idle feature on this device, any other
+                                        string or missing of this property will activate the
+                                        auto-idle feature if configured
+
+dynamite_sources
+    comma separated list of strings from sources.conf
+    dynamite will deny all channels from other sources for the subdevice.
+    If this variable is missing the subdevice is asked as usual.
+    This is useful for hybrid devices which supports multiple delivery systems
+    but only one is connected. Or if you have to dishes to different satellites
+    connected to two cards.
+    It will NOT switch the delivery system on dvb-cards, this is up to the device itself!
+
+dynamite_timeout
+    n: set GetTS timeout in seconds on this device
+
+dynamite_timeout_handler_arg
+    string: set a argument passed through to the auto-detach script
+
+Known issues
+------------
+If a device managed by this plugin is the primary device it cannot be
+detached. That would imply that vdr searches for a new primary device
+or should be forced to transfer mode or something else. Since I don't
+know anything about this you have to wait for this feature or teach
+me how to do this...
+
+The "no cardindex given" default mechanism doesn't count frontends with
+numbers > 0. Make sure you have one frontend per adapter.
+
+TODO
+----
+...

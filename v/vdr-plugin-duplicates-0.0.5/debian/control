@@ -1,0 +1,14 @@
+Source: vdr-plugin-duplicates
+Section: video
+Priority: extra
+Maintainer: Timo Eskola <timo@tolleri.net>
+Uploader: Reiner Paulus <flex0r@gmx.net>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.20)
+Standards-Version: 3.9.2
+Homepage: http://www.tolleri.net/vdr
+
+Package: vdr-plugin-duplicates
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Shows duplicate recordings.
+ Shows duplicate recordings in VDR.

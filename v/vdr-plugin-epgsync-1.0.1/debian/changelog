@@ -1,0 +1,133 @@
+vdr-plugin-epgsync (1.0.1-8easyVDR0~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:21:16 +0100
+
+vdr-plugin-epgsync (1.0.1-4easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 15:30:38 +0100
+
+vdr-plugin-epgsync (1.0.1-4easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 17:22:56 +0100
+
+vdr-plugin-epgsync (1.0.1-4easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:20:49 +0100
+
+vdr-plugin-epgsync (1.0.1-4easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 21:28:22 +0200
+
+vdr-plugin-epgsync (1.0.1-4easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:34:51 +0200
+
+vdr-plugin-epgsync (1.0.1-4easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:31:52 +0200
+
+vdr-plugin-epgsync (1.0.1-4easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:36:04 +0200
+
+vdr-plugin-epgsync (1.0.1-4easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:55:05 +0200
+
+vdr-plugin-epgsync (1.0.1-4easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:37:18 +0100
+
+vdr-plugin-epgsync (1.0.1-4easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:30:21 +0100
+
+vdr-plugin-epgsync (1.0.1-3easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:10:32 +0200
+
+vdr-plugin-epgsync (1.0.1-3easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 22:58:49 +0100
+
+vdr-plugin-epgsync (1.0.1-3easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:20:55 +0100
+
+vdr-plugin-epgsync (1.0.1-3easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:23:10 +0100
+
+vdr-plugin-epgsync (1.0.1-3easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Feb 2015 01:23:46 +0100
+
+vdr-plugin-epgsync (1.0.1-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:41:05 +0200
+
+vdr-plugin-epgsync (1.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:08:08 +0200
+
+vdr-plugin-epgsync (1.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 23 Apr 2014 23:30:45 +0200
+
+vdr-plugin-epgsync (1.0.0-1easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 13 Jan 2014 01:05:29 +0100
+
+vdr-plugin-epgsync (1.0.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 13:10:16 +0100
+
+vdr-plugin-epgsync (1.0.0-1easyVDR0~raring) raring; urgency=high
+
+  * Initial Release
+  * switch to quilt
+  * add dbg package 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Jul 2013 21:03:18 +0200

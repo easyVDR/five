@@ -1,0 +1,95 @@
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 15:29:46 +0100
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 17:22:20 +0100
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:20:15 +0100
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 21:27:34 +0200
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:34:30 +0200
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:31:14 +0200
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:35:29 +0200
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:54:41 +0200
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:36:43 +0100
+
+vdr-plugin-eepg (0.0.6pre.git20150215-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:23:33 +0100
+
+vdr-plugin-eepg (0.0.6pre.git20150215-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:09:38 +0200
+
+vdr-plugin-eepg (0.0.6pre.git20150215-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 22:58:20 +0100
+
+vdr-plugin-eepg (0.0.6pre.git20150215-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 Mar 2015 20:51:42 +0100
+
+vdr-plugin-eepg (0.0.6pre.git20140610-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:40:09 +0200
+
+vdr-plugin-eepg (0.0.6pre.git20140610-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 10 Jun 2014 21:42:05 +0200
+
+vdr-plugin-eepg (0.0.6pre.git20130714-0easyVDR0~raring) raring; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Jul 2013 01:28:54 +0200

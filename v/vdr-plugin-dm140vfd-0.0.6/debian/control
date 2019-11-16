@@ -1,0 +1,17 @@
+Source: vdr-plugin-dm140vfd
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>
+Build-Depends: cdbs, debhelper (>= 7.0.50~), vdr-dev (>=1.7.26), gettext, pkg-config, libfreetype-dev
+Standards-Version: 3.9.2
+Homepage: http://projects.vdr-developer.org/wiki/plg-targavfd
+
+Package: vdr-plugin-dm140vfd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, vdr-plugin-span
+Description: VDR plugin to show information on VFD Futaba DM140GINK
+ dm140vfd is a plugin for the Video Disc Recorder and shows information about 
+ the current state of VDR on DM140 USB Graphic Vacuum Fluorescent Display 
+ (Futaba DM140GINK).
+XB-VDR-Patchlevel: ${vdr:Patchlevel}

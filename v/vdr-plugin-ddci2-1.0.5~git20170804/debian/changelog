@@ -1,0 +1,180 @@
+vdr-plugin-ddci2 (1.0.5~git20170804-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 00:32:52 +0100
+
+vdr-plugin-ddci2 (1.0.5~git20170804-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 15:43:59 +0100
+
+vdr-plugin-ddci2 (1.0.5~git20170804-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 15:22:10 +0100
+
+vdr-plugin-ddci2 (1.0.5~git20170804-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 14:41:15 +0100
+
+vdr-plugin-ddci2 (1.0.5~git20170804-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:05dd988 - Updated README.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 04 Aug 2017 23:11:37 +0200
+
+vdr-plugin-ddci2 (1.0.4~git20170428-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:a1da150 - Bump version to 1.0.4
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 28 Apr 2017 14:21:52 +0200
+
+vdr-plugin-ddci2 (1.0.3~git20170406-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:793037e - Bump version to 1.0.3
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 06 Apr 2017 21:17:45 +0200
+
+vdr-plugin-ddci2 (1.0.2~git20170402-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:29b6f41 - Bump version to 1.0.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Apr 2017 15:31:21 +0200
+
+vdr-plugin-ddci2 (0.2.2~git20170327-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:4282292 - Do no StopIt in StartDecrypting.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 27 Mar 2017 12:08:34 +0200
+
+vdr-plugin-ddci2 (0.0.17~git20170311-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ee7a5b8 - Fixed memory leak on exit.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Mar 2017 00:46:18 +0100
+
+vdr-plugin-ddci2 (0.0.15~git20170307-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1cfba70 - Fixed Mutex locking
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 08 Mar 2017 01:06:10 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-2easyVDR0~trusty) trusty; urgency=high
+
+  * added ddci2_anydevice.diff thx klaus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 07 Jan 2017 22:18:36 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:45:26 +0200
+
+vdr-plugin-ddci2 (0.0.13+git20140411-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:29:55 +0200
+
+vdr-plugin-ddci2 (0.0.13+git20140411-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:34:17 +0200
+
+vdr-plugin-ddci2 (0.0.13+git20140411-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:53:27 +0200
+
+vdr-plugin-ddci2 (0.0.13+git20140411-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:35:19 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:18:54 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:07:30 +0200
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 03:58:54 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 24 Mar 2015 03:38:45 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0yavdr6~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 20 Feb 2015 13:59:37 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0yavdr5~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Feb 2015 20:32:39 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0yavdr4~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Feb 2015 00:30:11 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0yavdr3~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 08 Feb 2015 16:13:06 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0yavdr2~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 01 Feb 2015 16:12:38 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0yavdr1~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 18 Jan 2015 16:31:08 +0100
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0yavdr0~trusty) trusty; urgency=medium
+
+  * rebuild for trusty
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 13 Sep 2014 12:16:50 +0200
+
+vdr-plugin-ddci2 (0.0.13+git20140411-0yavdr0~precise) precise; urgency=medium
+
+  * initial release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 23 Apr 2014 23:07:33 +0200

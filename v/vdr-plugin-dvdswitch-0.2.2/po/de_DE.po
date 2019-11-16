@@ -1,0 +1,391 @@
+# vdr-dvdswitch-plugin plugin language source file.
+# This file is distributed under the same license as the vdr-dvdswitch-plugin package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-dvdswitch-plugin 0.1.7\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2011-02-13 16:14+0100\n"
+"PO-Revision-Date: 2009-10-03 14:03+0200\n"
+"Last-Translator:\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Commands"
+msgstr "Befehle"
+
+msgid "Directory Management"
+msgstr "Verzeichnis Management"
+
+msgid "DVD-Tray open"
+msgstr "DVD Schublade öffnen"
+
+msgid "DVD-Tray close"
+msgstr "DVD Schublade schließen"
+
+msgid "Play"
+msgstr "Wiedergabe"
+
+msgid "Image rename"
+msgstr "Image umbenennen"
+
+msgid "Image move"
+msgstr "Image verschieben"
+
+msgid "Image delete"
+msgstr "Image löschen"
+
+msgid "Image burn"
+msgstr "Image brennen"
+
+msgid "Image to create from DVD"
+msgstr "Image von DVD erstellen"
+
+msgid "Select Directory"
+msgstr "Verzeichnis auswählen"
+
+msgid "New"
+msgstr "Neu"
+
+msgid "Select"
+msgstr "Auswählen"
+
+msgid "Rename"
+msgstr "Umbenennen"
+
+msgid "Delete"
+msgstr "Löschen"
+
+msgid "Move"
+msgstr "Verschieben"
+
+msgid "Edit directories"
+msgstr "Verzeichnisse bearbeiten"
+
+msgid "No rights to access this directory!"
+msgstr "Keine Berechtigung zum Wechseln in dieses Verzeichnis!"
+
+msgid "Really delete?"
+msgstr "Wirklich löschen?"
+
+msgid "Directory not empty! However delete?"
+msgstr "Verzeichnis ist nicht leer! Dennoch löschen?"
+
+msgid "Missing rights to create directory!"
+msgstr "Keine Berechtigung zum erstellen des Verzeichnis!"
+
+msgid "Directory exists"
+msgstr "Verzeichnis existiert bereits"
+
+msgid "Missing rights to rename!"
+msgstr "Keine Berechtigung zum umbennen!"
+
+msgid "Insert"
+msgstr "Einfügen"
+
+msgid "Specified Writescript not exist!"
+msgstr "Angegebenes Writescript existiert nicht!"
+
+msgid "Can't execute Writescript!"
+msgstr "Kann Writescript nicht ausführen!"
+
+msgid "Burn now?"
+msgstr "Jetzt brennen?"
+
+msgid "Read DVD"
+msgstr "Lies DVD"
+
+msgid "Specified Readscript not exist!"
+msgstr "Angegebenes Readscript existiert nicht!"
+
+msgid "Can't execute Readscript!"
+msgstr "Kann Readscript nicht ausführen!"
+
+msgid "Can't query name of volume!"
+msgstr "Konnte Name des Volume nicht abfragen"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Directory"
+msgstr "Verzeichnis"
+
+msgid "Type of image"
+msgstr "Typ des Images"
+
+msgid "Read in"
+msgstr "Einlesen"
+
+msgid "Invalid file name for DVD-Image"
+msgstr "Ungültiger Dateiname für das DVD-Image"
+
+msgid "No type of image selected"
+msgstr "Es wurde kein Imagetyp ausgewählt!"
+
+msgid "No directory selected. Use Standard?"
+msgstr "Es wurde kein Verzeichnis ausgewählt. Standard benutzen?"
+
+msgid "Now read?"
+msgstr "Jetzt einlesen?"
+
+msgid "Allows playback of DVD images"
+msgstr "Erlaubt das Abspielen von DVD-Abbildern"
+
+msgid "Image Directory not readable or not exist"
+msgstr "Image Verzeichnis ist nicht lesbar oder existiert nicht"
+
+msgid "DVD-Plugin not found! Function deactivated!"
+msgstr "DVD Plugin nicht gefunden! Funktion deaktiviert!"
+
+msgid "Directory with 'VIDEO_TS' Folder"
+msgstr "Verzeichnis mit 'VIDEO_TS' Ordner"
+
+msgid "File with '.iso' Extension"
+msgstr "Datei mit '.iso' Extension"
+
+msgid "Iso-Image"
+msgstr "Iso-Image"
+
+msgid "Image-File"
+msgstr "Image-Datei"
+
+msgid "Image-Directory"
+msgstr "Image-Verzeichnis"
+
+msgid "to change"
+msgstr "Wechseln"
+
+msgid "File exists in Directory"
+msgstr "Datei existiert bereits im Verzeichnis"
+
+msgid "without category"
+msgstr "ohne Kategorie"
+
+msgid "DVD-Drive"
+msgstr "DVD-Laufwerk"
+
+msgid "Dir.Mgmt."
+msgstr "Verz.Mgmt."
+
+msgid "Open"
+msgstr "Öffnen"
+
+msgid "Close"
+msgstr "Schließen"
+
+msgid "Burn"
+msgstr "Brennen"
+
+msgid "Create"
+msgstr "Erstellen"
+
+msgid "Generic settings"
+msgstr "Allgemeine Einstellungen"
+
+msgid "\tHide mainmenu entry"
+msgstr "\tVerstecke Hauptmenüeintrag"
+
+msgid "\t  Name"
+msgstr "\t  Name"
+
+msgid "\tImage Dir."
+msgstr "\tImage Verz."
+
+msgid "\tType of images"
+msgstr "\tTypen von Images"
+
+msgid "\tView free disk space"
+msgstr "\tZeige freien Plattenplatz"
+
+msgid "Display settings"
+msgstr "Anzeige Einstellungen"
+
+msgid "All Images"
+msgstr "Alle Images"
+
+msgid "All with Cat."
+msgstr "Alle mit Kat."
+
+msgid "Directories"
+msgstr "Verzeichnisse"
+
+msgid "Image type"
+msgstr "Image Typ"
+
+msgid "File type"
+msgstr "Datei-Typ"
+
+msgid "none"
+msgstr "Keine"
+
+msgid "ascending"
+msgstr "Aufsteigend"
+
+msgid "descending"
+msgstr "Absteigend"
+
+msgid "\tDisplay mode"
+msgstr "\tAnzeige Modus"
+
+msgid "\t  Category Type"
+msgstr "\t  Art der Kategorie"
+
+msgid "\t  invisible empty Dir's/Cat."
+msgstr "\t  Blende leere Verz./Kat. aus"
+
+msgid "\tAlphabetic Sort"
+msgstr "\talphabetische Sortierung"
+
+msgid "\tvisible DVD-Drive"
+msgstr "\tDVD-LW einblenden"
+
+msgid "Special display settings"
+msgstr "Detailierte Anzeige Einstellungen"
+
+msgid "\tvisible Image-Type Col"
+msgstr "\tZeige Spalte Image-Typ"
+
+msgid "\t  Width for Image-Col"
+msgstr "\t  Breite für Image-Spalte"
+
+msgid "\tvisible Image-Size Col"
+msgstr "\tZeige Spalte Image Größe"
+
+msgid "\tchange Character"
+msgstr "\tZeichen ändern"
+
+msgid "\tchar for Cat.Line"
+msgstr "\tZeichen für Kat.Linie"
+
+msgid "\t  Count before Cat.Name"
+msgstr "\t  Anzahl vorm Kat.Namen"
+
+msgid "\tSpaces before/after Cat.Name"
+msgstr "\tLeerzeichen vor/nach Kat.Name"
+
+msgid "\tSeparator for Subcat"
+msgstr "\tTrennzeichen für Subkat."
+
+msgid "Navigation"
+msgstr "Navigation"
+
+msgid "\tCat.Jump by Left/Right"
+msgstr "\tKat.sprung bei Links/Rechts"
+
+msgid "Key allocation"
+msgstr "Tastenbelegung"
+
+msgid "None function"
+msgstr "Keine Funktion"
+
+msgid "Dir. Management"
+msgstr "Verz. Management"
+
+msgid "Tray open"
+msgstr "DVD öffnen"
+
+msgid "Tray close"
+msgstr "DVD schließen"
+
+msgid "Image create"
+msgstr "Image erstellen"
+
+msgid "\tKey 1"
+msgstr "\tTaste 1"
+
+msgid "\tKey 2"
+msgstr "\tTaste 2"
+
+msgid "\tKey 3"
+msgstr "\tTaste 3"
+
+msgid "\tKey 4"
+msgstr "\tTaste 4"
+
+msgid "\tKey 5"
+msgstr "\tTaste 5"
+
+msgid "\tKey 6"
+msgstr "\tTaste 6"
+
+msgid "\tKey 7"
+msgstr "\tTaste 7"
+
+msgid "\tKey 8"
+msgstr "\tTaste 8"
+
+msgid "\tKey 9"
+msgstr "\tTaste 9"
+
+msgid "\tKey 0"
+msgstr "\tTaste 0"
+
+msgid "\tKey Red"
+msgstr "\tTaste Rot"
+
+msgid "\tKey Green"
+msgstr "\tTaste Grün"
+
+msgid "\tKey Yellow"
+msgstr "\tTaste Gelb"
+
+msgid "\tKey Blue"
+msgstr "\tTaste Blau"
+
+msgid "\tKey OK"
+msgstr "\tTaste OK"
+
+msgid "to adjust"
+msgstr "Einstellen"
+
+msgid "Type of images"
+msgstr "Typen von Images"
+
+msgid "Edit"
+msgstr "Bearbeiten"
+
+msgid "Really delete entry?"
+msgstr "Eintrag wirklich löschen?"
+
+msgid "File"
+msgstr "Datei"
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Type title"
+msgstr "Typ-Bezeichnung"
+
+msgid "Directory contains"
+msgstr "Verzeichnis enthält"
+
+msgid "File extension"
+msgstr "Datei-Erweiterung"
+
+msgid "Hide extension"
+msgstr "Erweiterung ausblenden"
+
+msgid "'Description' must not empty!"
+msgstr "'Beschreibung' darf nicht leer sein!"
+
+msgid "'Type title' must not empty!"
+msgstr "'Typ Bezeichnung' darf nicht leer sein!"
+
+msgid "'Directory contains' must not empty!"
+msgstr "'Verzeichnis enthält' darf nicht leer sein!"
+
+msgid "'File extension' must not empty!"
+msgstr "'Datei Erweiterung' darf nicht leer sein!"
+
+msgid "No rights to delete image"
+msgstr "Keine Berechtigung zum Löschen des Images"
+
+msgid "Operation failed"
+msgstr "Operation fehlgeschlagen"
+
+msgid "No rights to move image"
+msgstr "Keine Berechtigung zum Verschieben des Images"
+

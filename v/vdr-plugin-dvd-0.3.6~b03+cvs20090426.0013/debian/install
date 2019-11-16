@@ -1,0 +1,4 @@
+libvdr-dvd.so.*                 usr/lib/vdr/plugins/
+debian/plugin.dvd.conf          etc/vdr/plugins/
+debian/vdr-plugin-dvd.groups    usr/share/vdr/groups.d/
+locale                          usr/share/

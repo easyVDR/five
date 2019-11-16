@@ -1,0 +1,17 @@
+Index: vdr-plugin-epg2vdr-1.1.62~git20170603/Make.config
+===================================================================
+--- vdr-plugin-epg2vdr-1.1.62~git20170603.orig/Make.config	2017-05-27 15:52:18.000000000 +0200
++++ vdr-plugin-epg2vdr-1.1.62~git20170603/Make.config	2017-06-05 18:26:54.162513337 +0200
+@@ -7,10 +7,10 @@
+ 
+ # user defined stuff
+ 
+-PREFIX = /usr/local
++PREFIX = /usr
+ 
+ # enable AUX patch, in VDR >= 2.3.4 not needed!
+-#WITH_AUX_PATCH = 1
++WITH_AUX_PATCH = 1
+ 
+ # enable graphtftng and/or pin plugin support if autodetection below don't work
+ #WITH_GTFT = 1
