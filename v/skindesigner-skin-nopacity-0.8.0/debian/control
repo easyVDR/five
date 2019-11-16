@@ -1,0 +1,15 @@
+Source: skindesigner-skin-nopacity
+Section: misc
+Priority: extra
+Maintainer: Frodo <frodo.vdr@gmx.net>
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: 
+
+Package: skindesigner-skin-nopacity
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 0.8.2)
+Suggests: fonts-ds-digital, fonts-sourcesanspro
+Description: skin nopacity for skindesigner
+

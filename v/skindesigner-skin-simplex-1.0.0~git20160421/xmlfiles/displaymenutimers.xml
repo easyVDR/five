@@ -1,0 +1,43 @@
+<menutimers x="0" y="0" width="100%" height="100%" fadetime="0">
+    <menuitems x="0" y="10%" orientation="vertical" width="100%" height="80%" align="center" numlistelements="16">
+        <listelement>
+            <!-- Background -->
+            <area x="2" width="{areawidth}*0.68 - 4" layer="2">
+                <fill condition="not{current}" color="{clrTransparent}" />
+                <drawimage condition="{current}" x="0" y="0" width="100%" height="100%" imagetype="skinpart" path="item_menu" />
+            </area>
+            <area x="1%" width="56%" layer="2">
+                <drawimage condition="{flagactive}" name="active" imagetype="icon" path="button_on" x="0" width="0.9*{areaheight}" height="0.9*{areaheight}" valign="center" />
+                <drawimage condition="not{flagactive}" name="active" imagetype="icon" path="button_off" x="0" width="0.9*{areaheight}" height="0.9*{areaheight}" valign="center" />
+                <drawimage condition="{flagrecording}" name="active" imagetype="icon" path="button_red" x="0.9*{areaheight}" width="0.9*{areaheight}" height="0.9*{areaheight}" valign="center" />
+            </area>
+            <areascroll scrollelement="timertext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="5%" width="52%" layer="3">
+                <drawtext name="timertext" x="10" valign="center" font="{light}" fontsize="80%" color="{clrText}" text="{dayname} {day}. {timerstart} - {timerstop}: {title}" />
+            </areascroll>
+        </listelement>
+
+        <currentelement delay="500" fadetime="0">
+            <area x="73%" y="15%" width="26%" height="20%"  layer="2">
+                <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="10" y="0" width="30%" height="100%" />
+                <drawtext name="channum" x="{width(logo)} + 30" y="{areaheight}/6" font="{semibold}" fontsize="40%" color="{clrText}" text="# {channelnumber}" />
+                <drawtext name="channame" x="{width(logo)} + 30" y="{areaheight}/3 + {areaheight}/6" width="{areawidth} - {width(logo)} - 30" font="{semibold}" fontsize="40%" color="{clrText}" text="{channelname}" />
+            </area>
+            <area x="73%" y="35%" width="26%" height="75%" layer="2">
+                <!-- title -->
+                <drawtext name="title" align="center" y="0" font="{semibold}" width="{areawidth}-20" fontsize="{areaheight}/10" color="{clrText}" text="{eventtitle}" />
+                <!-- scraper poster -->
+                <drawimage condition="{hasposter}" name="poster" imagetype="image" path="{posterpath}" x="10" y="{posy(title)} + {height(title)} + 10" width="{areawidth}/3" height="{areawidth}/3 * {posterheight} / {posterwidth}"/>
+                <!-- description -->
+                <drawtextbox condition="{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" float="topleft" floatwidth="{width(poster)} + 10" floatheight="{height(poster)} + 30" font="{light}" fontsize="5%" color="{clrText}" text="{eventdescription}" />
+                <drawtextbox condition="not{hasposter}" x="10" y="{posy(poster)}" width="99%" height="{areaheight} - {posy(poster)}" font="{light}" fontsize="5%" color="{clrText}" text="{eventdescription}" />
+            </area>
+        </currentelement>
+    </menuitems>
+    <scrollbar>
+        <area x="{areawidth}*0.685" y="10%" width="{areawidth}*0.01" height="80%" layer="3">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="1" y="1" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrTransparent}" />
+            <drawrectangle x="2" y="2 + {areaheight} * {offset} / 1000" width="{areawidth} - 4" height="{areaheight} * {height} / 1000 - 4" color="{clrBorder}" />
+        </area>
+    </scrollbar>
+</menutimers>

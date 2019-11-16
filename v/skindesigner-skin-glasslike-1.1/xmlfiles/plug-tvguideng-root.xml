@@ -1,0 +1,765 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
+
+<displayplugin x="0" y="0" width="100%" height="100%" fadetime="{mainmenuFadeTime}" scaletvx="{areawidth}*0.01" scaletvy="{areaheight}*0.695" scaletvwidth="{areawidth}*0.29" scaletvheight="{areaheight}*0.3" >
+
+    <viewelement name="background_hor">
+	<!-- main window -->
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.96" height="{areaheight}*0.70 - {areawidth}*0.02" layer="2">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	</area>
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.96" height="{areaheight}*0.70 - {areawidth}*0.02" layer="6">
+	    <drawellipse x="0" y="0" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{areawidth} - 15" y="0" width="13" height="13" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - 13" y="0" width="13" height="13" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{areawidth} - 15" y="{areaheight} - 15" width="13" height="13" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - 13" y="{areaheight} - 13" width="13" height="13" quadrant="-4" color="{clrBlack}" />
+	    <drawellipse x="0" y="{areaheight} - 15" width="13" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="0" y="{areaheight} - 13" width="13" height="13" quadrant="-3" color="{clrBlack}" />
+	</area>
+	<!-- glass -->
+        <area condition="{mainmenuGlassEffect}" background="true" x="0" y="0" width="100%" height="100%" layer="7">
+            <drawimage cache="true" imagetype="skinpart" path="glass_fg" x="0" y="0" width="100%" height="100%"/>
+	</area>
+	<!-- scrollbar -->
+        <area background="true" x="{areawidth}*0.99 - {areawidth}*0.01" y="{areawidth}*0.01" width="1%" height="{areaheight} - {areawidth}*0.02" layer="2">
+            <drawellipse x="0" y="0" width="{areawidth}" height="{areawidth}" quadrant="0" color="{clrBorder}" />
+            <drawellipse x="0" y="{areaheight} - {areawidth}" width="{areawidth}" height="{areawidth}" quadrant="0" color="{clrBorder}" />
+            <drawellipse x="0" y="0" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrBackground}" />
+            <drawellipse x="" y="{areaheight} - {areawidth}" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="0" y="{areawidth}/2" width="{areawidth} - 2" height="{areaheight} - {areawidth}" color="{clrBackground}" />
+            <drawrectangle x="{areawidth} - 2" y="{areawidth}/2" width="2" height="{areaheight} - {areawidth}" color="{clrBorder}" />
+	</area>
+        <!-- clock -->
+        <area background="true" x="{areawidth}*0.935 - {areaheight}*0.05" y="78%" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="2">
+            <drawimage imagetype="skinpart" path="menuclockback" x="0" y="0" width="100%" height="100%"/>
+	</area>
+        <!-- tv frame -->
+        <area background="true" x="0" y="0" width="{areawidth}" height="{areaheight}*0.70" layer="1">
+	    <fill color="{clrBlack}" />
+	</area>
+        <area background="true" x="0" y="{areaheight}*0.70" width="{areawidth}*0.01" height="{areaheight}*0.30 - {areawidth}*0.01" layer="1">
+	    <fill color="{clrBlack}" />
+	</area>
+        <area background="true" x="{areawidth}*0.30" y="{areaheight}*0.70" width="{areawidth}*0.70" height="{areaheight}*0.30 - {areawidth}*0.01" layer="1">
+	    <fill color="{clrBlack}" />
+	</area>
+        <area background="true" x="0" y="{areaheight} - {areawidth}*0.01" width="{areawidth}" height="{areawidth}*0.01" layer="1">
+	    <fill color="{clrBlack}" />
+	</area>
+        <area background="true" x="{areawidth}*0.01" y="{areaheight}*0.7" width="{areawidth}*0.3 - {areawidth}*0.01" height="{areaheight}*0.30 - {areawidth}*0.01" layer="1">
+            <drawrectangle x="{areawidth} - 2" y="0" width="2" height="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - 2" width="100%" height="2" color="{clrBorder}" />
+            <drawellipse x="0" y="0" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+            <drawellipse x="{areawidth} - 13" y="0" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 13" y="0" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+            <drawellipse x="0" y="{areaheight} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+            <drawellipse x="0" y="{areaheight} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+            <drawellipse x="{areawidth} - 15" y="{areaheight} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 13" y="{areaheight} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+        </area>
+        <!-- info frame -->
+        <area background="true" x="{areawidth}*0.40" y="{areaheight}*0.775" width="{areawidth}*0.49" height="{areaheight}*0.225 - {areawidth}*0.01" layer="1">
+            <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+            <drawellipse x="0" y="0" width="15" height="15" quadrant="-2" color="{clrTransparent}" />
+            <drawellipse x="{areawidth} - 15" y="0" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 15" y="0" width="15" height="15" quadrant="-1" color="{clrTransparent}" />
+            <drawellipse x="{areawidth} - 17" y="{areaheight} - 17" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 15" y="{areaheight} - 15" width="15" height="15" quadrant="-4" color="{clrTransparent}" />
+            <drawellipse x="0" y="{areaheight} - 15" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+            <drawellipse x="0" y="{areaheight} - 15" width="15" height="15" quadrant="-3" color="{clrTransparent}" />
+        </area>
+	<!-- vdr logo -->
+	<area background="true" x="{areawidth}*0.903" y="{areaheight}*0.70 - {areawidth}*0.02" width="{areawidth}*0.07" height="{areaheight}*0.10" layer="2">
+	    <drawimage imagetype="icon" path="ico_vdrlogo" x="0" y="0" width="90%" height="{areaheight}"/>
+        </area>
+	<area background="true" x="{areawidth}*0.90" y="{areaheight}*0.70" width="{areawidth}*0.07" height="{areaheight}*0.10" layer="2">
+	    <drawimage imagetype="icon" path="ico_glasslike" x="0" valign="bottom" width="100%" height="{areaheight}"/>
+	</area>
+	<!-- fake scrollbar -->
+        <area background="true" x="{areawidth}*0.99 - {areawidth}*0.01 + 2" y="{areawidth}*0.01 + 2" width="{areawidth}*0.01 - 6" height="{areaheight} - {areawidth}*0.02 - 6" layer="3">
+	    <drawellipse name="scroll_top" x="0" y="0" width="{areawidth}/2" height="{areawidth}/2" quadrant="2" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="0" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="2" color="{clrProgressbarBg}" />
+	    <drawellipse x="{areawidth}/2" y="0" width="{areawidth}/2" height="{areawidth}/2" quadrant="1" color="{clrProgressbar}" />
+	    <drawellipse x="{areawidth}/2 - 1" y="0" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="1" color="{clrProgressbarBg}" />
+	    <drawellipse name="scroll_bottom" x="0" y="{areaheight}-{areawidth}/2" width="{areawidth}/2" height="{areawidth}/2" quadrant="3" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}/2" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="3" color="{clrProgressbarBg}" />
+	    <drawellipse x="{areawidth}/2" y="{areaheight}-{areawidth}/2" width="{areawidth}/2" height="{areawidth}/2" quadrant="4" color="{clrProgressbar}" />
+	    <drawellipse x="{areawidth}/2 - 1" y="{areaheight}-{areawidth}/2" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="4" color="{clrProgressbarBg}" />
+            <drawrectangle x="0" y="{height(scroll_top)} - 2" width="{areawidth} - 2" height="{posy(scroll_bottom)} - {width(scroll_top)} + 2" color="{clrProgressbarBg}" />
+            <drawrectangle x="{areawidth} - 2" y="{height(scroll_top)}" width="2" height="{posy(scroll_bottom)} - {width(scroll_top)}" color="{clrProgressbar}" />
+        </area>
+	<!-- timeline -->
+	<area background="true" x="{areawidth}*0.08" y="{areawidth}*0.01 + {areaheight}*0.03 - 3" width="{areawidth}*0.89 - 2" height="3" layer="3">
+            <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="0" width="100%" height="100%"/>
+	</area>
+    </viewelement>
+
+    <viewelement name="background_ver">
+	<!-- main window -->
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.96" height="{areaheight}*0.70 - {areawidth}*0.02" layer="2">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	</area>
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.96" height="{areaheight}*0.70 - {areawidth}*0.02" layer="6">
+	    <drawellipse x="0" y="0" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{areawidth} - 15" y="0" width="13" height="13" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - 13" y="0" width="13" height="13" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{areawidth} - 15" y="{areaheight} - 15" width="13" height="13" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - 13" y="{areaheight} - 13" width="13" height="13" quadrant="-4" color="{clrBlack}" />
+	    <drawellipse x="0" y="{areaheight} - 15" width="13" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="0" y="{areaheight} - 13" width="13" height="13" quadrant="-3" color="{clrBlack}" />
+	</area>
+	<!-- glass -->
+        <area condition="{mainmenuGlassEffect}" background="true" x="0" y="0" width="100%" height="100%" layer="7">
+            <drawimage cache="true" imagetype="skinpart" path="glass_fg" x="0" y="0" width="100%" height="100%"/>
+	</area>
+	<!-- scrollbar -->
+        <area background="true" x="{areawidth}*0.99 - {areawidth}*0.01" y="{areawidth}*0.01" width="1%" height="{areaheight} - {areawidth}*0.02" layer="2">
+            <drawellipse x="0" y="0" width="{areawidth}" height="{areawidth}" quadrant="0" color="{clrBorder}" />
+            <drawellipse x="0" y="{areaheight} - {areawidth}" width="{areawidth}" height="{areawidth}" quadrant="0" color="{clrBorder}" />
+            <drawellipse x="0" y="0" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrBackground}" />
+            <drawellipse x="" y="{areaheight} - {areawidth}" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="0" y="{areawidth}/2" width="{areawidth} - 2" height="{areaheight} - {areawidth}" color="{clrBackground}" />
+            <drawrectangle x="{areawidth} - 2" y="{areawidth}/2" width="2" height="{areaheight} - {areawidth}" color="{clrBorder}" />
+	</area>
+        <!-- clock -->
+        <area background="true" x="{areawidth}*0.935 - {areaheight}*0.05" y="78%" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="3">
+            <drawimage imagetype="skinpart" path="menuclockback" x="0" y="0" width="100%" height="100%"/>
+	</area>
+        <!-- tv frame -->
+        <area background="true" x="0" y="0" width="{areawidth}" height="{areaheight}*0.70" layer="1">
+	    <fill color="{clrBlack}" />
+	</area>
+        <area background="true" x="0" y="{areaheight}*0.70" width="{areawidth}*0.01" height="{areaheight}*0.30 - {areawidth}*0.01" layer="1">
+	    <fill color="{clrBlack}" />
+	</area>
+        <area background="true" x="{areawidth}*0.30" y="{areaheight}*0.70" width="{areawidth}*0.70" height="{areaheight}*0.30 - {areawidth}*0.01" layer="1">
+	    <fill color="{clrBlack}" />
+	</area>
+        <area background="true" x="0" y="{areaheight} - {areawidth}*0.01" width="{areawidth}" height="{areawidth}*0.01" layer="1">
+	    <fill color="{clrBlack}" />
+	</area>
+        <area background="true" x="{areawidth}*0.01" y="{areaheight}*0.7" width="{areawidth}*0.3 - {areawidth}*0.01" height="{areaheight}*0.30 - {areawidth}*0.01" layer="1">
+            <drawrectangle x="{areawidth} - 2" y="0" width="2" height="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - 2" width="100%" height="2" color="{clrBorder}" />
+            <drawellipse x="0" y="0" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+            <drawellipse x="{areawidth} - 13" y="0" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 13" y="0" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+            <drawellipse x="0" y="{areaheight} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+            <drawellipse x="0" y="{areaheight} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+            <drawellipse x="{areawidth} - 15" y="{areaheight} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 13" y="{areaheight} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+        </area>
+        <!-- info frame -->
+        <area background="true" x="{areawidth}*0.40" y="{areaheight}*0.775" width="{areawidth}*0.49" height="{areaheight}*0.225 - {areawidth}*0.01" layer="1">
+            <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+            <drawellipse x="0" y="0" width="15" height="15" quadrant="-2" color="{clrTransparent}" />
+            <drawellipse x="{areawidth} - 15" y="0" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 15" y="0" width="15" height="15" quadrant="-1" color="{clrTransparent}" />
+            <drawellipse x="{areawidth} - 17" y="{areaheight} - 17" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 15" y="{areaheight} - 15" width="15" height="15" quadrant="-4" color="{clrTransparent}" />
+            <drawellipse x="0" y="{areaheight} - 15" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+            <drawellipse x="0" y="{areaheight} - 15" width="15" height="15" quadrant="-3" color="{clrTransparent}" />
+        </area>
+	<!-- vdr logo -->
+	<area background="true" x="{areawidth}*0.903" y="{areaheight}*0.70 - {areawidth}*0.02" width="{areawidth}*0.07" height="{areaheight}*0.10" layer="2">
+	    <drawimage imagetype="icon" path="ico_vdrlogo" x="0" y="0" width="90%" height="{areaheight}"/>
+        </area>
+	<area background="true" x="{areawidth}*0.90" y="{areaheight}*0.70" width="{areawidth}*0.07" height="{areaheight}*0.10" layer="2">
+	    <drawimage imagetype="icon" path="ico_glasslike" x="0" valign="bottom" width="100%" height="{areaheight}"/>
+	</area>
+	<!-- fake scrollbar -->
+        <area background="true" x="{areawidth}*0.99 - {areawidth}*0.01 + 2" y="{areawidth}*0.01 + 2" width="{areawidth}*0.01 - 6" height="{areaheight} - {areawidth}*0.02 - 6" layer="3">
+	    <drawellipse name="scroll_top" x="0" y="0" width="{areawidth}/2" height="{areawidth}/2" quadrant="2" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="0" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="2" color="{clrProgressbarBg}" />
+	    <drawellipse x="{areawidth}/2" y="0" width="{areawidth}/2" height="{areawidth}/2" quadrant="1" color="{clrProgressbar}" />
+	    <drawellipse x="{areawidth}/2 - 1" y="0" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="1" color="{clrProgressbarBg}" />
+	    <drawellipse name="scroll_bottom" x="0" y="{areaheight}-{areawidth}/2" width="{areawidth}/2" height="{areawidth}/2" quadrant="3" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}/2" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="3" color="{clrProgressbarBg}" />
+	    <drawellipse x="{areawidth}/2" y="{areaheight}-{areawidth}/2" width="{areawidth}/2" height="{areawidth}/2" quadrant="4" color="{clrProgressbar}" />
+	    <drawellipse x="{areawidth}/2 - 1" y="{areaheight}-{areawidth}/2" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="4" color="{clrProgressbarBg}" />
+            <drawrectangle x="0" y="{height(scroll_top)} - 2" width="{areawidth} - 2" height="{posy(scroll_bottom)} - {width(scroll_top)} + 2" color="{clrProgressbarBg}" />
+            <drawrectangle x="{areawidth} - 2" y="{height(scroll_top)}" width="2" height="{posy(scroll_bottom)} - {width(scroll_top)}" color="{clrProgressbar}" />
+        </area>
+	<!-- timeline -->
+	<area background="true" x="{areawidth}*0.0275 -3" y="{areawidth}*0.01 + {areaheight}*0.05" width="3" height="{areaheight}*0.65 - {areawidth}*0.02 - 2" layer="3">
+            <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="0" width="100%" height="100%"/>
+	</area>
+    </viewelement>
+
+    <!-- Tokens available in Header
+    {isdummy}                 true if active element is a dummy element
+    {title}                   title of event of active grid
+    {shorttext}               shorttext of event of active grid
+    {description}             detailed description of event of active grid
+    {start}                   event start time in hh::mm
+    {stop}                    event stop time
+    {day}                     day of event of active grid
+    {date}                    date of  event  of active grid in dd.mm.yy
+    {daynumeric}              day as number
+    {month}                   month as number
+    {year}                    year as number
+    {running}                 true if event is currently running
+    {elapsed}                 elapsed time of event, if not running 0
+    {duration}                duration of event
+    {durationhours}           duration, full hours
+    {durationminutes}         duration, rest of minutes
+    {channelname}             Channel Name
+    {channelnumber}           Channel Number
+    {channelid}               ChannelID as path to display channel logo
+    {channellogoexists}       true if channel logo exists
+    {hasposter}               true if a scraped poster is available for this element
+    {posterwidth}             width of scraped poster
+    {posterheight}            height of scraped poster
+    {posterpath}              absolute path of scraped poster
+    -->
+
+    <viewelement name="header_hor">
+        <area condition="not{isdummy}" x="{areawidth}*0.41" y="{areaheight}*0.775" width="{areawidth}*0.47 - 2" height="{areaheight}*0.07" layer="2">
+            <drawtext align="center" y="0" font="{regular}" width="100%" fontsize="70%" color="{clrFontTvguideBright}" text="{title}" />
+            <drawtext align="center" y="60%" font="{regular}" width="100%" fontsize="40%" color="{clrFontTvguideDark}" text="{shorttext}" />
+	    <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="{areaheight} - 3" width="100%" height="3"/>
+	</area>
+        <area condition="not{isdummy}" x="{areawidth}*0.305" y="{areaheight}*0.70" width="{areawidth}*0.09" height="{areaheight}*0.05" layer="3">
+            <drawtext align="center" y="0" font="{regular}" width="100%" fontsize="55%" color="{clrFontTvguideBright}" text="{day} {printf('%02d.%02d', daynumeric, month)}.{year}" />
+            <drawtext align="center" y="50%" font="{regular}" width="100%" fontsize="55%" color="{clrFontTvguideBright}" text="{start} - {stop}" />
+	</area>
+	<!-- poster -->
+        <area condition="not{isdummy}++{hasposter}" x="{areawidth}*0.31" y="{areaheight} - {areawidth}*0.01 - {areawidth}*0.08*{posterheight}/{posterwidth}" width="{areawidth}*0.08" height="{areawidth}*0.08*{posterheight}/{posterwidth}" layer="2">
+	    <drawrectangle x="{posx(poster_window)}" y="{posy(poster_window)}" width="{width(poster_window)} + 2" height="{height(poster_window)} + 2" color="{clrBorder}" />
+	    <drawrectangle name="poster_window" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrTransparent}" />
+            <drawimage imagetype="image" path="{posterpath}" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2"/>
+            <drawellipse x="0" y="0" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+            <drawellipse x="{areawidth} - 15" y="0" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 15" y="0" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+            <drawellipse x="0" y="{areaheight} - 15" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+            <drawellipse x="0" y="{areaheight} - 15" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+            <drawellipse x="{areawidth} - 17" y="{areaheight} - 17" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 15" y="{areaheight} - 15" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+        <area condition="{isdummy}||not{hasposter}" x="{areawidth}*0.31" y="{areaheight}*0.825" width="{areawidth}*0.08" height="{areaheight}*0.06" layer="2">
+            <drawimage imagetype="channellogo" path="{channelid}" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+	</area>
+        <areascroll condition="not{isdummy}" orientation="vertical" mode="forthandback" delay="1000" scrollspeed="slow" x="{areawidth}*0.41" y="{areaheight}*0.845" width="{areawidth}*0.47 - 2" height="{areaheight}*0.155 - {areawidth}*0.01 - 2" layer="2">
+            <drawtextbox x="0" y="0" width="100%" font="{regular}" fontsize="20%" color="{clrFontTvguideBright}" text="{description}" />
+        </areascroll>
+        <area condition="{isdummy}" x="{areawidth}*0.41" y="{areaheight}*0.785" width="{areawidth}*0.47 - 2" height="{areaheight}*0.205 - {areawidth}*0.01 - 2" layer="2">
+            <drawtext x="0" y="23%" font="{regular}" width="100%" fontsize="75%" color="{clrFontTvguideBright}" text="{title}" />
+	    <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="{areaheight} - 3" width="100%" height="3"/>
+        </area>
+    </viewelement>
+
+    <viewelement name="header_ver">
+        <area condition="not{isdummy}" x="{areawidth}*0.41" y="{areaheight}*0.775" width="{areawidth}*0.47 - 2" height="{areaheight}*0.07" layer="2">
+            <drawtext align="center" y="0" font="{regular}" width="100%" fontsize="70%" color="{clrFontTvguideBright}" text="{title}" />
+            <drawtext align="center" y="60%" font="{regular}" width="100%" fontsize="40%" color="{clrFontTvguideDark}" text="{shorttext}" />
+	    <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="{areaheight} - 3" width="100%" height="3"/>
+	</area>
+        <area condition="not{isdummy}" x="{areawidth}*0.305" y="{areaheight}*0.70" width="{areawidth}*0.09" height="{areaheight}*0.05" layer="2">
+            <drawtext align="center" y="0" font="{regular}" width="100%" fontsize="55%" color="{clrFontTvguideBright}" text="{day} {printf('%02d.%02d', daynumeric, month)}.{year}" />
+            <drawtext align="center" y="50%" font="{regular}" width="100%" fontsize="55%" color="{clrFontTvguideBright}" text="{start} - {stop}" />
+	</area>
+	<!-- poster -->
+        <area condition="not{isdummy}++{hasposter}" x="{areawidth}*0.31" y="{areaheight} - {areawidth}*0.01 - {areawidth}*0.08*{posterheight}/{posterwidth}" width="{areawidth}*0.08" height="{areawidth}*0.08*{posterheight}/{posterwidth}" layer="2">
+	    <drawrectangle x="{posx(poster_window)}" y="{posy(poster_window)}" width="{width(poster_window)} + 2" height="{height(poster_window)} + 2" color="{clrBorder}" />
+	    <drawrectangle name="poster_window" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrTransparent}" />
+            <drawimage imagetype="image" path="{posterpath}" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2"/>
+            <drawellipse x="0" y="0" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+            <drawellipse x="{areawidth} - 15" y="0" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 15" y="0" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+            <drawellipse x="0" y="{areaheight} - 15" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+            <drawellipse x="0" y="{areaheight} - 15" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+            <drawellipse x="{areawidth} - 17" y="{areaheight} - 17" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+            <drawellipse x="{areawidth} - 15" y="{areaheight} - 15" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+        <area condition="{isdummy}||not{hasposter}" x="{areawidth}*0.31" y="{areaheight}*0.825" width="{areawidth}*0.08" height="{areaheight}*0.06" layer="2">
+            <drawimage imagetype="channellogo" path="{channelid}" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+	</area>
+        <areascroll condition="not{isdummy}" orientation="vertical" mode="forthandback" delay="1000" scrollspeed="slow" x="{areawidth}*0.41" y="{areaheight}*0.845" width="{areawidth}*0.47 - 2" height="{areaheight}*0.155 - {areawidth}*0.01 - 2" layer="2">
+            <drawtextbox x="0" y="0" width="100%" font="{regular}" fontsize="20%" color="{clrFontTvguideBright}" text="{description}" />
+        </areascroll>
+        <area condition="{isdummy}" x="{areawidth}*0.41" y="{areaheight}*0.785" width="{areawidth}*0.47 - 2" height="{areaheight}*0.205 - {areawidth}*0.01 - 2" layer="2">
+            <drawtext x="0" y="23%" font="{regular}" width="100%" fontsize="75%" color="{clrFontTvguideBright}" text="{title}" />
+	    <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="{areaheight} - 3" width="100%" height="3"/>
+        </area>
+    </viewelement>
+
+    <!-- Available Variables Footer:
+    {red1}                    true if red button is button 1
+    {red2}                    true if red button is button 2
+    {red3}                    true if red button is button 3
+    {red4}                    true if red button is button 4
+    {green1}                  true if green button is button 1
+    {green2}                  true if green button is button 2
+    {green3}                  true if green button is button 3
+    {green4}                  true if green button is button 4
+    {yellow1}                 true if yellow button is button 1
+    {yellow2}                 true if yellow button is button 2
+    {yellow3}                 true if yellow button is button 3
+    {yellow4}                 true if yellow button is button 4
+    {blue1}                   true if blue button is button 1
+    {blue2}                   true if blue button is button 2
+    {blue3}                   true if blue button is button 3
+    {blue4}                   true if blue button is button 4
+    {red}                     label of red button
+    {green}                   label of green button
+    {yellow}                  label of yellow button
+    {blue}                    label of blue button
+    -->
+
+    <viewelement name="footer_hor">
+        <area background="true" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1945" height="{areaheight}*0.025" layer="1">
+	    <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    <drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight} - 1" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+        </area>
+        <area background="true" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1945" height="{areaheight}*0.025" layer="1">
+	    <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    <drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight} - 1" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+        </area>
+        <area background="true" x="{areawidth}*0.5980" y="{areaheight}*0.7" width="{areawidth}*0.1945" height="{areaheight}*0.025" layer="1">
+	    <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    <drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight} - 1" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+        </area>
+        <area background="true" x="{areawidth}*0.6955" y="{areaheight}*0.732" width="{areawidth}*0.1945" height="{areaheight}*0.025" layer="1">
+	    <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    <drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight} - 1" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+        </area>
+
+        <area condition="{red1}" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{red}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{red}" imagetype="skinpart" path="buttonred" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{red}" />
+        </area>
+        <area condition="{red2}" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{red}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{red}" imagetype="skinpart" path="buttongreen" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{red}" />
+        </area>
+        <area condition="{red3}" x="{areawidth}*0.5950" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{red}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{red}" imagetype="skinpart" path="buttonyellow" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{red}" />
+        </area>
+        <area condition="{red4}" x="{areawidth}*0.6925" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{red}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{red}" imagetype="skinpart" path="buttonblue" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{red}" />
+        </area>
+
+        <area condition="{green1}" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{green}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{green}" imagetype="skinpart" path="buttonred" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{green}" />
+        </area>
+        <area condition="{green2}" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{green}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{green}" imagetype="skinpart" path="buttongreen" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{green}" />
+        </area>
+        <area condition="{green3}" x="{areawidth}*0.5950" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{green}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{green}" imagetype="skinpart" path="buttonyellow" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{green}" />
+        </area>
+        <area condition="{green4}" x="{areawidth}*0.6925" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{green}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{green}" imagetype="skinpart" path="buttonblue" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{green}" />
+        </area>
+
+        <area condition="{yellow1}" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{yellow}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{yellow}" imagetype="skinpart" path="buttonred" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{yellow}" />
+        </area>
+        <area condition="{yellow2}" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{yellow}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{yellow}" imagetype="skinpart" path="buttongreen" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{yellow}" />
+        </area>
+        <area condition="{yellow3}" x="{areawidth}*0.5950" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{yellow}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{yellow}" imagetype="skinpart" path="buttonyellow" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{yellow}" />
+        </area>
+        <area condition="{yellow4}" x="{areawidth}*0.6925" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{yellow}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{yellow}" imagetype="skinpart" path="buttonblue" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{yellow}" />
+        </area>
+
+        <area condition="{blue1}" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{blue}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{blue}" imagetype="skinpart" path="buttonred" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{blue}" />
+        </area>
+        <area condition="{blue2}" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{blue}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{blue}" imagetype="skinpart" path="buttongreen" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{blue}" />
+        </area>
+        <area condition="{blue3}" x="{areawidth}*0.5950" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{blue}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{blue}" imagetype="skinpart" path="buttonyellow" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{blue}" />
+        </area>
+        <area condition="{blue4}" x="{areawidth}*0.6925" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{blue}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{blue}" imagetype="skinpart" path="buttonblue" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{blue}" />
+        </area>
+    </viewelement>
+
+    <viewelement name="footer_ver">
+        <area background="true" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1945" height="{areaheight}*0.025" layer="1">
+	    <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    <drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight} - 1" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+        </area>
+        <area background="true" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1945" height="{areaheight}*0.025" layer="1">
+	    <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    <drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight} - 1" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+        </area>
+        <area background="true" x="{areawidth}*0.5980" y="{areaheight}*0.7" width="{areawidth}*0.1945" height="{areaheight}*0.025" layer="1">
+	    <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    <drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight} - 1" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+        </area>
+        <area background="true" x="{areawidth}*0.6955" y="{areaheight}*0.732" width="{areawidth}*0.1945" height="{areaheight}*0.025" layer="1">
+	    <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrBorder}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    <drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight} - 1" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrBackground}" />
+        </area>
+
+        <area condition="{red1}" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{red}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{red}" imagetype="skinpart" path="buttonred" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{red}" />
+        </area>
+        <area condition="{red2}" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{red}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{red}" imagetype="skinpart" path="buttongreen" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{red}" />
+        </area>
+        <area condition="{red3}" x="{areawidth}*0.5950" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{red}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{red}" imagetype="skinpart" path="buttonyellow" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{red}" />
+        </area>
+        <area condition="{red4}" x="{areawidth}*0.6925" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{red}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{red}" imagetype="skinpart" path="buttonblue" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{red}" />
+        </area>
+
+        <area condition="{green1}" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{green}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{green}" imagetype="skinpart" path="buttonred" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{green}" />
+        </area>
+        <area condition="{green2}" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{green}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{green}" imagetype="skinpart" path="buttongreen" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{green}" />
+        </area>
+        <area condition="{green3}" x="{areawidth}*0.5950" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{green}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{green}" imagetype="skinpart" path="buttonyellow" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{green}" />
+        </area>
+        <area condition="{green4}" x="{areawidth}*0.6925" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{green}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{green}" imagetype="skinpart" path="buttonblue" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{green}" />
+        </area>
+
+        <area condition="{yellow1}" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{yellow}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{yellow}" imagetype="skinpart" path="buttonred" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{yellow}" />
+        </area>
+        <area condition="{yellow2}" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{yellow}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{yellow}" imagetype="skinpart" path="buttongreen" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{yellow}" />
+        </area>
+        <area condition="{yellow3}" x="{areawidth}*0.5950" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{yellow}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{yellow}" imagetype="skinpart" path="buttonyellow" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{yellow}" />
+        </area>
+        <area condition="{yellow4}" x="{areawidth}*0.6925" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{yellow}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{yellow}" imagetype="skinpart" path="buttonblue" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{yellow}" />
+        </area>
+
+        <area condition="{blue1}" x="{areawidth}*0.4" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{blue}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{blue}" imagetype="skinpart" path="buttonred" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{blue}" />
+        </area>
+        <area condition="{blue2}" x="{areawidth}*0.4975" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{blue}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{blue}" imagetype="skinpart" path="buttongreen" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{blue}" />
+        </area>
+        <area condition="{blue3}" x="{areawidth}*0.5950" y="{areaheight}*0.7" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{blue}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{blue}" imagetype="skinpart" path="buttonyellow" align="center" valign="center" width="100%" height="100%" />
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{blue}" />
+        </area>
+        <area condition="{blue4}" x="{areawidth}*0.6925" y="{areaheight}*0.732" width="{areawidth}*0.1975" height="{areaheight}*0.025" layer="2">
+            <drawimage condition="empty{blue}" imagetype="skinpart" path="buttoninactive" align="center" valign="center" width="100%" height="100%"/>
+            <drawimage condition="isset{blue}" imagetype="skinpart" path="buttonblue" align="center" valign="center" width="100%" height="100%"/>
+            <drawtext align="center" valign="center" font="{bold}" fontsize="100%" color="{clrFontColorButton}" text="{blue}" />
+        </area>
+    </viewelement>
+
+    <!-- Available Variables time:
+    {time}                   timestring in hh:mm
+    {sec}                    current seconds
+    {min}                    current minutes
+    {hour}                   current hours
+    {hmins}                  current "hourminutes" to display an hour hand
+    {day}                    day in digits
+    {dayleadingzero}         day in digits with leading 0
+    {dayname}                Full name of the day
+    {daynameshort}           Short 3 char name of the day
+    {month}                  month in digits with leading 0
+    {monthname}              Full name of the month
+    {monthnameshort}         3 letter abbrivation of month name
+    {year}                   year in yyyy
+    -->
+
+    <viewelement name="time_hor">
+        <area x="{areawidth}*0.935 - {areaheight}*0.05" y="{areaheight}*0.78" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="2">
+            <drawimage imagetype="skinpart" path="watchhands/s_{sec}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="{areawidth}*0.935 - {areaheight}*0.05" y="{areaheight}*0.78" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="3">
+            <drawimage imagetype="skinpart" path="watchhands/m_{min}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="{areawidth}*0.935 - {areaheight}*0.05" y="{areaheight}*0.78" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="4">
+            <drawimage imagetype="skinpart" path="watchhands/h_{hmins}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="{areawidth}*0.895" y="{areaheight}*0.9" width="{areawidth}*0.08" height="{areaheight}*0.08" layer="2">
+            <drawtext align="center" valign="top" font="{regular}" fontsize="35%" color="{clrWhite}" text="{dayname}" />
+            <drawtext align="center" valign="center" font="{regular}" fontsize="35%" color="{clrWhite}" text="{dayleadingzero}.{month}.{year}" />
+            <drawtext align="center" valign="bottom" font="{regular}" fontsize="35%" color="{clrWhite}" text="{time}" />
+        </area>
+    </viewelement>
+
+    <viewelement name="time_ver">
+        <area x="{areawidth}*0.935 - {areaheight}*0.05" y="{areaheight}*0.78" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="2">
+            <drawimage imagetype="skinpart" path="watchhands/s_{sec}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="{areawidth}*0.935 - {areaheight}*0.05" y="{areaheight}*0.78" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="3">
+            <drawimage imagetype="skinpart" path="watchhands/m_{min}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="{areawidth}*0.935 - {areaheight}*0.05" y="{areaheight}*0.78" width="{areaheight}*0.10" height="{areaheight}*0.10" layer="4">
+            <drawimage imagetype="skinpart" path="watchhands/h_{hmins}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area x="{areawidth}*0.895" y="{areaheight}*0.9" width="{areawidth}*0.08" height="{areaheight}*0.08" layer="2">
+            <drawtext align="center" valign="top" font="{regular}" fontsize="35%" color="{clrWhite}" text="{dayname}" />
+            <drawtext align="center" valign="center" font="{regular}" fontsize="35%" color="{clrWhite}" text="{dayleadingzero}.{month}.{year}" />
+            <drawtext align="center" valign="bottom" font="{regular}" fontsize="35%" color="{clrWhite}" text="{time}" />
+        </area>
+    </viewelement>
+
+    <!-- Tokens available in datetimeline
+    {weekday}                weekday of current display
+    {date}                   date of current display
+    -->
+
+    <!-- Tokens available in timeindicator
+    {percenttotal}            position of current time indicator in tenth of a percent of complete time shown
+    -->
+
+    <viewelement name="timeindicator_hor">
+        <area x="{areawidth}*0.08" y="{areawidth}*0.01" width="{areawidth}*0.89 - 2" height="{areaheight}*0.70 - {areawidth}*0.02 - 2" layer="4">
+            <drawrectangle x="{percenttotal}*{areawidth}/1000" y="0" width="1" height="100%" color="{clrRed}" />
+        </area>
+    </viewelement>
+
+    <viewelement name="timeindicator_ver">
+        <area x="{areawidth}*0.0275" y="{areawidth}*0.01 + {areaheight}*0.05" width="{areawidth}*0.9475 - 2" height="{areaheight}*0.65 - {areawidth}*0.02 - 2" layer="4">
+            <drawrectangle x="0" y="{percenttotal}*{areaheight}/1000" width="100%" height="1" color="{clrRed}" />
+        </area>
+    </viewelement>
+
+    <!-- Tokens available in timeline
+    {timestring}             time of grid in hh:mm
+    -->
+
+    <grid name="timeline_hor" x="{areawidth}*0.08" y="{areawidth}*0.01" width="{areawidth}*0.89 - 2" height="{areaheight}*0.03 - 3">
+        <area layer="2">
+            <drawimage condition="{fullhour}" imagetype="skinpart" path="plug_tvguide/timelinebright_horizontal" x="0" y="0" width="100%" height="100%"/>
+            <drawimage condition="not{fullhour}" imagetype="skinpart" path="plug_tvguide/timelinedark_horizontal" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area layer="3">
+            <drawtext condition="{fullhour}" x="5%" valign="center" font="{regular}" fontsize="100%" color="{clrBlack}" text="{timestring}" />
+            <drawtext condition="not{fullhour}" x="5%" valign="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{timestring}" />
+        </area>
+    </grid>
+
+    <grid name="timeline_ver" x="{areawidth}*0.01" y="{areaheight}*0.05 + {areawidth}*0.01" width="{areawidth}*0.0175" height="{areaheight}*0.65 - {areawidth}*0.02 - 2">
+        <area layer="2">
+            <drawimage condition="{fullhour}" imagetype="skinpart" path="plug_tvguide/timelinebright_vertical" x="3" y="0" width="{areawidth} - 6" height="100%"/>
+            <drawimage condition="not{fullhour}" imagetype="skinpart" path="plug_tvguide/timelinedark_vertical" x="3" y="0" width="{areawidth} - 6" height="100%"/>
+        </area>
+        <area layer="3">
+            <drawtextvertical condition="{fullhour}" direction="topdown" align="left" valign="top" font="{regular}" fontsize="70%" color="{clrBlack}" text="{timestring}" />
+            <drawtextvertical condition="not{fullhour}" direction="topdown" align="left" valign="top" font="{regular}" fontsize="70%" color="{clrWhite}" text="{timestring}" />
+        </area>
+    </grid>
+
+    <!-- Tokens available in channels
+    {name}                   name of channel
+    {number}                 number of channel
+    {channelid}              id of channel to display channel logo
+    {channellogoexists}       true if channel logo exists
+    -->
+
+    <grid name="channels_hor" x="{areawidth}*0.01" y="{areaheight}*0.03 + {areawidth}*0.01" width="{areawidth}*0.07" height="{areaheight}*0.67 - {areawidth}*0.02 - 2">
+        <area layer="2">
+            <drawimage imagetype="skinpart" path="line_vertical" x="{areawidth} - 3" y="0" width="3" height="100%"/>
+        </area>
+        <area layer="3">
+            <drawimage condition="{channellogoexists}" name="gridchanlogo" imagetype="channellogo" path="{channelid}" x="{areawidth}*0.1 - 2" valign="center" width="80%" height="70%" />
+            <drawtext condition="not{channellogoexists}" name="gridchanname" x="{areawidth}*0.35" valign="center" width="65%" font="{regular}" fontsize="40%" color="{clrWhite}" text="{name}" />
+	</area>
+    </grid>
+
+    <grid name="channels_ver" x="{areawidth}*0.0275" y="{areawidth}*0.01" width="{areawidth}*0.9425 - 2" height="{areaheight}*0.05">
+        <area layer="2">
+            <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="{areaheight} - 3" width="100%" height="3"/>
+        </area>
+        <area layer="3">
+            <drawimage condition="{channellogoexists}" imagetype="channellogo" path="{channelid}" align="center" valign="center" width="60%" height="60%" />
+            <drawtext condition="not{channellogoexists}" align="center" valign="center" width="90%" font="{light}" fontsize="40%" color="{clrWhite}" text="{name}" />
+        </area>
+    </grid>
+
+    <!-- Tokens available in channelgroups
+    {color}                  alternates grid by grid from true to false
+    {group}                  name of channel group
+    -->
+
+    <grid name="channelgroups_hor" x="{areawidth}*0.979" y="{areawidth}*0.015" width="{areawidth}*0.01" height="{areaheight} - {areawidth}*0.03">
+        <area layer="4">
+            <drawtextvertical direction="topdown" align="center" valign="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{group}" />
+        </area>        
+    </grid>
+
+    <grid name="channelgroups_ver" x="{areawidth}*0.979" y="{areawidth}*0.015" width="{areawidth}*0.01" height="{areaheight} - {areawidth}*0.03">
+        <area layer="4">
+            <drawtextvertical direction="topdown" align="center" valign="center" font="{regular}" fontsize="100%" color="{clrWhite}" text="{group}" />
+        </area>        
+    </grid>
+
+    <!-- Tokens available in schedules
+    {color}                  alternates grid by grid from true to false
+    {dummy}                  true if grid is a dummy grid
+    {timer}                  true if a timer is set for the according event
+    {switchtimer}            true if a switchtimer is set for the according event
+    {title}                  title of grid
+    {shorttext}              shorttext of grid
+    {start}                  start time in hh:mm
+    {stop}                   stop time in hh:dd
+    -->
+
+    <grid name="schedules_hor" x="{areawidth}*0.08" y="{areaheight}*0.03 + {areawidth}*0.01" width="{areawidth}*0.89 - 2" height="{areaheight}*0.67 - {areawidth}*0.02 - 2">
+        <area layer="2">
+            <drawimage condition="not{current}" imagetype="skinpart" path="plug_tvguide/grid_horizontal" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+            <drawimage condition="{current}" imagetype="skinpart" path="plug_tvguide/grid_active_horizontal" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+        </area>
+        <area layer="3">
+            <drawtext condition="not{dummy}++{current}" x="1%" valign="center" width="98%" font="{regular}" fontsize="{areaheight}*{tvguideGridFontSizeHor}/100" color="{clrFontTvguideGridBright}" text="{title}" />
+            <drawtext condition="not{dummy}++not{current}" x="1%" valign="center" width="98%" font="{regular}" fontsize="{areaheight}*{tvguideGridFontSizeHor}/100" color="{clrFontTvguideGridDark}" text="{title}" />
+            <drawtext condition="{dummy}++{current}" x="1%" valign="center" width="98%" font="{regular}" fontsize="{areaheight}*{tvguideGridFontSizeHor}/100" color="{clrFontTvguideGridBright}" text="{title}" />
+            <drawtext condition="{dummy}++not{current}" x="1%" valign="center" width="98%" font="{regular}" fontsize="{areaheight}*{tvguideGridFontSizeHor}/100" color="{clrFontTvguideGridDark}" text="{title}" />
+            <drawimage condition="{tvguideGridLineHorizontal}" imagetype="skinpart" path="line_horizontal" x="0" y="{areaheight} - 3" width="{areawidth} - 3" height="3"/>
+            <drawimage condition="{tvguideGridLineVertical}" imagetype="skinpart" path="line_vertical" x="{areawidth} - 3" y="0" width="3" height="100%"/>
+	</area>
+        <area layer="3">
+	    <!-- rec border -->
+	    <drawrectangle condition="{timer}++not{searchtimer}" x="0" y="0" width="{areawidth} - 1" height="{areaheight} - 1" color="{clrRed}" />
+	    <drawrectangle condition="{timer}++not{searchtimer}" x="1" y="1" width="{areawidth} - 3" height="{areaheight} - 3" color="{clrTransparent}" />
+	    <!-- zap border -->
+	    <drawrectangle condition="{searchtimer}++not{timer}" x="1" y="0" width="{areawidth - 1}" height="{areaheight} - 1" color="{clrOrange}" />
+	    <drawrectangle condition="{searchtimer}++not{timer}" x="1" y="1" width="{areawidth} - 3" height="{areaheight} - 3" color="{clrTransparent}" />
+	    <!-- rec and zap border -->
+	    <drawrectangle condition="{timer}++{searchtimer}" x="0" y="0" width="{areawidth} - 1" height="{areaheight} - 1" color="{clrRed}" />
+	    <drawrectangle condition="{timer}++{searchtimer}" x="1" y="1" width="{areawidth} - 3" height="{areaheight} - 3" color="{clrOrange}" />
+	    <drawrectangle condition="{timer}++{searchtimer}" x="2" y="2" width="{areawidth} - 5" height="{areaheight} - 5" color="{clrTransparent}" />
+        </area>
+    </grid>
+
+    <grid name="schedules_ver" x="{areawidth}*0.0275" y="{areaheight}*0.05 + {areawidth}*0.01" width="{areawidth}*0.9425 - 2" height="{areaheight}*0.65 - {areawidth}*0.02 - 2">
+        <area layer="2">
+            <drawimage condition="not{current}" imagetype="skinpart" path="plug_tvguide/grid_vertical" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+            <drawimage condition="{current}" imagetype="skinpart" path="plug_tvguide/grid_active_vertical" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+        </area>
+        <area layer="3">
+            <drawtext condition="not{dummy}++{current}" x="1%" valign="top" width="98%" font="{regular}" fontsize="{areawidth}*{tvguideGridFontSizeVer}/500" color="{clrFontTvguideGridBright}" text="{title}" />
+            <drawtext condition="not{dummy}++not{current}" x="1%" valign="top" width="98%" font="{regular}" fontsize="{areawidth}*{tvguideGridFontSizeVer}/500" color="{clrFontTvguideGridDark}" text="{title}" />
+            <drawtext condition="{dummy}++{current}" x="1%" valign="top" width="98%" font="{regular}" fontsize="{areawidth}*{tvguideGridFontSizeVer}/500" color="{clrFontTvguideGridBright}" text="{title}" />
+            <drawtext condition="{dummy}++not{current}" x="1%" valign="top" width="98%" font="{regular}" fontsize="{areawidth}*{tvguideGridFontSizeVer}/500" color="{clrFontTvguideGridDark}" text="{title}" />
+            <drawimage condition="{tvguideGridLineHorizontal}" imagetype="skinpart" path="line_horizontal" x="0" y="{areaheight} - 3" width="{areawidth} - 3" height="3"/>
+            <drawimage condition="{tvguideGridLineVertical}" imagetype="skinpart" path="line_vertical" x="{areawidth} - 3" y="0" width="3" height="100%"/>
+	</area>
+        <area layer="3">
+	    <!-- rec border -->
+	    <drawrectangle condition="{timer}++not{searchtimer}" x="0" y="0" width="{areawidth} - 1" height="{areaheight} - 1" color="{clrRed}" />
+	    <drawrectangle condition="{timer}++not{searchtimer}" x="1" y="1" width="{areawidth} - 3" height="{areaheight} - 3" color="{clrTransparent}" />
+	    <!-- zap border -->
+	    <drawrectangle condition="{searchtimer}++not{timer}" x="1" y="0" width="{areawidth} - 1" height="{areaheight} - 1" color="{clrOrange}" />
+	    <drawrectangle condition="{searchtimer}++not{timer}" x="1" y="1" width="{areawidth} - 3" height="{areaheight} - 3" color="{clrTransparent}" />
+	    <!-- rec and zap border -->
+	    <drawrectangle condition="{timer}++{searchtimer}" x="0" y="0" width="{areawidth} - 1" height="{areaheight} - 1" color="{clrRed}" />
+	    <drawrectangle condition="{timer}++{searchtimer}" x="1" y="1" width="{areawidth} - 3" height="{areaheight} - 3" color="{clrOrange}" />
+	    <drawrectangle condition="{timer}++{searchtimer}" x="2" y="2" width="{areawidth} - 5" height="{areaheight} - 5" color="{clrTransparent}" />
+        </area>
+    </grid>
+
+    <!-- Tokens available in channeljump
+    {channel}                current user input for channel jump
+    -->
+ 
+    <viewelement name="channeljump">
+    </viewelement>
+
+</displayplugin>

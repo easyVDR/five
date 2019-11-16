@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE globals SYSTEM "../../../../dtd/globals.dtd">
+<globals>
+    <colors>
+        <color name="clrTheme">FFFF0000</color>
+        <color name="clrProgressbar">FFFF0000</color>
+        <color name="clrProgressbarBg">FF3A3A3A</color>
+<!--
+        <color name="clrProgressbar">FFABABAB</color>
+        <color name="clrProgressbarBg">FF3A3A3A</color>
+        <color name="clrBorder">FF0000FF</color>
+-->
+    </colors>
+    <variables>
+    </variables>
+</globals>

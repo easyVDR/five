@@ -1,0 +1,9 @@
+vdr_themes/*.theme var/lib/vdr/themes
+globals.xml usr/share/vdr/plugins/skindesigner/skins/glasslike
+setup.xml usr/share/vdr/plugins/skindesigner/skins/glasslike
+icons/* usr/share/vdr/plugins/skindesigner/skins/glasslike/icons
+skinparts/* usr/share/vdr/plugins/skindesigner/skins/glasslike/skinparts
+themes/* usr/share/vdr/plugins/skindesigner/skins/glasslike/themes
+xmlfiles/* usr/share/vdr/plugins/skindesigner/skins/glasslike/xmlfiles
+menuicons/* usr/share/vdr/plugins/skindesigner/skins/glasslike/menuicons
+

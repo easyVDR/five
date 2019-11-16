@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displaymenu SYSTEM "../../../dtd/displaymenu.dtd" [
+<!ENTITY displaymenudefault SYSTEM "displaymenudefault.xml">
+<!ENTITY displaymenumain SYSTEM "displaymenumain.xml">
+<!ENTITY displaymenusetup SYSTEM "displaymenusetup.xml">
+<!ENTITY displaymenuschedules SYSTEM "displaymenuschedules.xml">
+<!ENTITY displaymenutimers SYSTEM "displaymenutimers.xml">
+<!ENTITY displaymenuchannels SYSTEM "displaymenuchannels.xml">
+<!ENTITY displaymenurecordings SYSTEM "displaymenurecordings.xml">
+<!ENTITY displaymenudetailepg SYSTEM "displaymenudetailepg.xml">
+<!ENTITY displaymenudetailrecording SYSTEM "displaymenudetailrecording.xml">
+<!ENTITY displaymenudetailtext SYSTEM "displaymenudetailtext.xml">
+]>
+
+<displaymenu x="3%" y="5%" width="94%" height="90%" fadetime="0">
+    <background>
+        <area x="0" y="0" width="70%" height="100%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+        <area x="80%" y="0" width="20%" height="15%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+        <area x="72%" y="20%" width="28%" height="80%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+    </background>
+
+    <header>
+        <area x="0" y="0" width="70%" height="10%" layer="2">
+            <drawtext x="15" valign="center" font="{light}" fontsize="80%" color="{clrText}" text="{title}" />
+        </area>
+    </header>
+
+    <datetime shifttime="0">
+        <area x="80%" y="0" width="20%" height="15%" layer="2">
+            <drawtext align="center" y="1%" font="{light}" fontsize="30%" color="{clrText}" text="{daynameshort} {day}.{month}.{year}" />
+            <drawtext align="center" y="25%" font="{light}" fontsize="80%" color="{clrText}" text="{time}" />
+        </area>
+    </datetime>
+
+    <message>
+       <area x="25%" y="70%" width="50%" height="20%" layer="6">
+            <fill condition="{status}" color="{clrStatus}" />
+            <fill condition="{info}" color="{clrInfo}" />
+            <fill condition="{warning}" color="{clrWarning}" />
+            <fill condition="{error}" color="{clrError}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+       <area x="25%" y="70%" width="50%" height="20%" layer="7">
+            <drawimage condition="{status}" imagetype="icon" path="message_status" x="3%" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawimage condition="{info}" imagetype="icon" path="message_info" x="3%" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawimage condition="{warning}" imagetype="icon" path="message_warn" x="3%" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawimage condition="{error}" imagetype="icon" path="message_error" x="3%" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawtextbox x="{areawidth}*0.1 + {areaheight}*0.6" width="0.85*{areawidth}- {areaheight}*0.6" align="center" valign="center" font="{light}" fontsize="25%" color="{clrText}" text="{text}" maxlines="3" />
+        </area>
+    </message>
+    
+    <sortmode>
+    </sortmode>
+
+    <colorbuttons>
+        <area x="0" y="90%" width="17%" height="10%" layer="2">
+            <drawtext condition="{red1}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{red}" />
+            <drawimage condition="{red1}" imagetype="icon" path="button_red" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{green1}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{green}" />
+            <drawimage condition="{green1}" imagetype="icon" path="button_green" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{yellow1}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{yellow}" />
+            <drawimage condition="{yellow1}" imagetype="icon" path="button_yellow" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{blue1}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{blue}" />
+            <drawimage condition="{blue1}" imagetype="icon" path="button_blue" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+        </area>
+        <area x="17%" y="90%" width="17%" height="10%" layer="2">
+            <drawtext condition="{red2}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{red}" />
+            <drawimage condition="{red2}" imagetype="icon" path="button_red" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{green2}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{green}" />
+            <drawimage condition="{green2}" imagetype="icon" path="button_green" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{yellow2}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{yellow}" />
+            <drawimage condition="{yellow2}" imagetype="icon" path="button_yellow" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{blue2}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{blue}" />
+            <drawimage condition="{blue2}" imagetype="icon" path="button_blue" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+        </area>
+        <area x="34%" y="90%" width="17%" height="10%" layer="2">
+            <drawtext condition="{red3}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{red}" />
+            <drawimage condition="{red3}" imagetype="icon" path="button_red" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{green3}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{green}" />
+            <drawimage condition="{green3}" imagetype="icon" path="button_green" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{yellow3}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{yellow}" />
+            <drawimage condition="{yellow3}" imagetype="icon" path="button_yellow" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{blue3}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{blue}" />
+            <drawimage condition="{blue3}" imagetype="icon" path="button_blue" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+        </area>
+        <area x="51%" y="90%" width="17%" height="10%" layer="2">
+            <drawtext condition="{red4}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{red}" />
+            <drawimage condition="{red4}" imagetype="icon" path="button_red" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{green4}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{green}" />
+            <drawimage condition="{green4}" imagetype="icon" path="button_green" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{yellow4}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{yellow}" />
+            <drawimage condition="{yellow4}" imagetype="icon" path="button_yellow" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{blue4}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{blue}" />
+            <drawimage condition="{blue4}" imagetype="icon" path="button_blue" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+        </area>
+    </colorbuttons>
+    &displaymenudefault;
+    &displaymenumain;
+    &displaymenusetup;
+    &displaymenuschedules;
+    &displaymenutimers;
+    &displaymenuchannels;
+    &displaymenurecordings;
+    &displaymenudetailepg;
+    &displaymenudetailrecording;
+    &displaymenudetailtext;
+</displaymenu>

@@ -1,0 +1,60 @@
+ <menudefault x="0" y="0" width="100%" height="100%" fadetime="0">
+    <background>
+        <area x="0" y="0" width="70%" height="100%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+        <area x="80%" y="0" width="20%" height="15%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+    </background>
+
+    <menuitems x="0" y="10%" orientation="vertical" width="70%" height="80%" align="center" menuitemwidth="68%" determinatefont="column1" numlistelements="16">
+        <listelement>
+            <area x="2" width="{areawidth} - 4" layer="2">
+                <fill condition="not{current}" color="{clrTransparent}" />
+                <drawimage condition="{current}" x="0" y="0" width="100%" height="100%" imagetype="skinpart" path="item_menu" />
+                <drawimage condition="{separator}" x="0" y="0" width="100%" height="100%" imagetype="skinpart" path="item_separator" />
+            </area>
+
+            <!-- Separators -->
+            <area x="1%" condition="{separator}" width="98%" layer="3">
+                <drawtext align="left" valign="center" font="{light}" fontsize="90%" width="98%" color="{clrTextInactive}" text="{column1}" />
+            </area>
+
+            <!-- Setup Menus -->
+            <areascroll condition="not{separator} ++ {setup} ++ {column2set}" scrollelement="column1" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="59%" layer="3">
+                <drawtext condition="not{current}" x="0" width="99%" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{column1}" />
+                <drawtext condition="{current}" name="column1" x="0" width="99%" valign="center" font="{light}" fontsize="90%" color="{clrTextActive}" text="{column1}" />
+            </areascroll>
+            <area x="60%" condition="not{separator} ++ {setup} ++ {column2set}" width="39%" layer="3">
+                <drawtext condition="not{current}" align="right" valign="center" font="{light}" fontsize="90%" width="99%" color="{clrText}" text="{column2}" />
+                <drawtext condition="{current}" align="right" valign="center" font="{light}" fontsize="90%" width="99%" color="{clrTextActive}" text="{column2}" />
+            </area>
+
+            <areascroll x="1%" condition="not{separator} ++ {setup} ++ not{column2set}" scrollelement="column1" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" width="98%" layer="3">
+                <drawtext condition="not{current}" align="left" valign="center" font="{light}" fontsize="90%" width="99%" color="{clrText}" text="{column1}" />
+                <drawtext name="column1" condition="{current}" align="left" valign="center" font="{light}" fontsize="90%" width="99%" color="{clrTextActive}" text="{column1}" />
+            </areascroll>
+
+            <!-- Default Menus -->
+            <areascroll condition="not{separator} ++ not{setup}" scrollelement="column1" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="{column1width}" layer="3">
+                <drawtext condition="not{current}" x="{column1x}" width="{column1width}" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{column1}" />
+                <drawtext condition="{current}" name="column1" x="{column1x}" width="{column1width}" valign="center" font="{light}" fontsize="90%" color="{clrTextActive}" text="{column1}" />
+            </areascroll>
+            <area condition="not{separator} ++ not{setup}" x="1%" width="100%" layer="3">
+                <drawtext condition="{column2set} ++ not{current}" x="{column2x}" valign="center" font="{light}" fontsize="90%" width="{column2width}" color="{clrText}" text="{column2}" />
+                <drawtext condition="{column2set} ++ {current}" x="{column2x}" valign="center" font="{light}" fontsize="90%" width="{column2width}" color="{clrTextActive}" text="{column2}" />
+                <drawtext condition="{column3set} ++ not{current}" x="{column3x}" valign="center" font="{light}" fontsize="90%" width="{column3width}" color="{clrText}" text="{column3}" />
+                <drawtext condition="{column3set} ++ {current}" x="{column3x}" valign="center" font="{light}" fontsize="90%" width="{column3width}" color="{clrTextActive}" text="{column3}" />
+                <drawtext condition="{column4set} ++ not{current}" x="{column4x}" valign="center" font="{light}" fontsize="90%" width="{column4width}" color="{clrText}" text="{column4}" />
+                <drawtext condition="{column4set} ++ {current}" x="{column4x}" valign="center" font="{light}" fontsize="90%" width="{column4width}" color="{clrTextActive}" text="{column4}" />
+                <drawtext condition="{column5set} ++ not{current}" x="{column5x}" valign="center" font="{light}" fontsize="90%" width="{column5width}" color="{clrText}" text="{column5}" />
+                <drawtext condition="{column5set} ++ {current}" x="{column5x}" valign="center" font="{light}" fontsize="90%" width="{column5width}" color="{clrTextActive}" text="{column5}" />
+                <drawtext condition="{column6set} ++ not{current}" x="{column6x}" valign="center" font="{light}" fontsize="90%" width="{column6width}" color="{clrText}" text="{column6}" />
+                <drawtext condition="{column6set} ++ {current}" x="{column6x}" valign="center" font="{light}" fontsize="90%" width="{column6width}" color="{clrTextActive}" text="{column6}" />
+            </area>
+        </listelement>
+    </menuitems>
+</menudefault>

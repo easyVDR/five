@@ -1,0 +1,15 @@
+<menumain x="5%" y="5%" width="90%" height="90%" fadetime="0">
+    <menuitems x="0" y="15%" width="30%" height="73%" orientation="vertical" align="center" numlistelements="10">
+        <listelement>
+            <area x="2" width="{areawidth} - 4" layer="2">
+                <fill condition="not{current}" color="{clrTransparent}" />
+                <drawimage condition="{current}" x="0" y="0" width="100%" height="100%" imagetype="skinpart" path="item_mainmenu" />
+            </area>
+            <areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="98%" layer="3">
+                <drawtext condition="not{current}" x="20" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{number} {label}" />
+                <drawtext condition="{current}" name="menutext" x="20" valign="center" font="{light}" fontsize="90%" color="{clrTextActive}" text="{number} {label}" />
+            </areascroll>
+        </listelement>
+    </menuitems>
+    <scrollbar></scrollbar>
+</menumain>

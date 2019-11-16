@@ -1,0 +1,8 @@
+debian/*.theme var/lib/vdr/themes
+globals.xml usr/share/vdr/plugins/skindesigner/skins/shady_KISS
+setup.xml usr/share/vdr/plugins/skindesigner/skins/shady_KISS
+icons/* usr/share/vdr/plugins/skindesigner/skins/shady_KISS/icons
+skinparts/* usr/share/vdr/plugins/skindesigner/skins/shady_KISS/skinparts
+themes/* usr/share/vdr/plugins/skindesigner/skins/shady_KISS/themes
+xmlfiles/* usr/share/vdr/plugins/skindesigner/skins/shady_KISS/xmlfiles
+menuicons/standardicons/* usr/share/vdr/plugins/skindesigner/skins/shady_KISS/menuicons/standardicons

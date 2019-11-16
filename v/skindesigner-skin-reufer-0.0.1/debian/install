@@ -1,0 +1,8 @@
+debian/*.theme var/lib/vdr/themes
+globals.xml usr/share/vdr/plugins/skindesigner/skins/reufer
+setup.xml usr/share/vdr/plugins/skindesigner/skins/reufer
+themes/* usr/share/vdr/plugins/skindesigner/skins/reufer/themes
+xmlfiles/* usr/share/vdr/plugins/skindesigner/skins/reufer/xmlfiles
+icons/* usr/share/vdr/plugins/skindesigner/skins/reufer/icons
+svgtemplates/* usr/share/vdr/plugins/skindesigner/skins/reufer/svgtemplates
+font/* usr/share/vdr/plugins/skindesigner/skins/reufer/font

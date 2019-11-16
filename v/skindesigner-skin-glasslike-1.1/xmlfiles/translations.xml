@@ -1,0 +1,454 @@
+<translations>
+    <token name="tr(new)">
+        <trans lang="en_EN">new</trans>
+        <trans lang="de_DE">neu</trans>
+    </token>
+    <token name="tr(NEW)">
+        <trans lang="en_EN">NEW</trans>
+        <trans lang="de_DE">NEU</trans>
+    </token>
+    <token name="tr(Recordings)">
+        <trans lang="en_EN">Recordings</trans>
+        <trans lang="de_DE">Aufzeichnungen</trans>
+    </token>
+    <token name="tr(Last)">
+        <trans lang="en_EN">Last</trans>
+	<trans lang="de_DE">Letzten</trans>
+    </token>
+    <token name="tr(Schedule)">
+        <trans lang="en_EN">Schedule</trans>
+        <trans lang="de_DE">Programm</trans>
+    </token>
+    <token name="tr(Schedules)">
+        <trans lang="en_EN">Schedules</trans>
+        <trans lang="de_DE">Sendungen</trans>
+    </token>
+    <token name="tr(Info)">
+        <trans lang="en_EN">Info</trans>
+        <trans lang="de_DE">Info</trans>
+    </token>
+    <token name="tr(active)">
+        <trans lang="en_EN">active</trans>
+        <trans lang="de_DE">aktive</trans>
+    </token>
+    <token name="tr(inactive)">
+        <trans lang="en_EN">inactive</trans>
+        <trans lang="de_DE">deaktiviert</trans>
+    </token>
+    <token name="tr(Active)">
+        <trans lang="en_EN">Active</trans>
+        <trans lang="de_DE">Aktive</trans>
+    </token>
+    <token name="tr(Timers)">
+        <trans lang="en_EN">Timers</trans>
+        <trans lang="de_DE">Timer</trans>
+    </token>
+    <token name="tr(Timer)">
+        <trans lang="en_EN">Timer</trans>
+        <trans lang="de_DE">Timer</trans>
+    </token>
+    <token name="tr(Diskusage)">
+        <trans lang="en_EN">Disk Usage</trans>
+        <trans lang="de_DE">Festplatte</trans>
+    </token>
+    <token name="tr(Load)">
+        <trans lang="en_EN">Load</trans>
+	<trans lang="de_DE">Auslastung</trans>
+    </token>
+    <token name="tr(Cpuusage)">
+        <trans lang="en_EN">Cpu usage</trans>
+	<trans lang="de_DE">Prozessor</trans>
+    </token>
+    <token name="tr(Cputemp)">
+        <trans lang="en_EN">Cpu temp</trans>
+	<trans lang="de_DE">CPU Temperatur</trans>
+    </token>
+    <token name="tr(Gputemp)">
+        <trans lang="en_EN">Gpu temp</trans>
+	<trans lang="de_DE">GPU Temperatur</trans>
+    </token>
+    <token name="tr(Memory)">
+        <trans lang="en_EN">Memory</trans>
+	<trans lang="de_DE">Arbeitsspeicher</trans>
+    </token>
+    <token name="tr(Swap)">
+        <trans lang="en_EN">Swap</trans>
+	<trans lang="de_DE">Swap</trans>
+    </token>
+    <token name="tr(System)">
+        <trans lang="en_EN">System</trans>
+	<trans lang="de_DE">System</trans>
+    </token>
+    <token name="tr(free)">
+        <trans lang="en_EN">free</trans>
+        <trans lang="de_DE">frei</trans>
+    </token>
+    <token name="tr(used)">
+        <trans lang="en_EN">used</trans>
+        <trans lang="de_DE">belegt</trans>
+    </token>
+    <token name="tr(Jump)">
+        <trans lang="en_EN">Jump</trans>
+        <trans lang="de_DE">Springen</trans>
+    </token>
+    <token name="tr(minus)">
+        <trans lang="en_EN">-1 min</trans>
+        <trans lang="de_DE">-1 min</trans>
+    </token>
+    <token name="tr(plus)">
+        <trans lang="en_EN">+1 min</trans>
+        <trans lang="de_DE">+1 min</trans>
+    </token>
+    <token name="tr(Close)">
+        <trans lang="en_EN">Close</trans>
+        <trans lang="de_DE">Verlassen</trans>
+    </token>
+    <token name="tr(Warning)">
+        <trans lang="en_EN">Warning</trans>
+        <trans lang="de_DE">Warnung</trans>
+    </token>
+    <token name="tr(Error)">
+        <trans lang="en_EN">Error</trans>
+        <trans lang="de_DE">Fehler</trans>
+    </token>
+    <token name="tr(Transponder)">
+        <trans lang="en_EN">Transponder</trans>
+        <trans lang="de_DE">Transponder</trans>
+    </token>
+    <token name="tr(Now)">
+        <trans lang="en_EN">Now</trans>
+        <trans lang="de_DE">Jetzt</trans>
+    </token>
+    <token name="tr(Next)">
+        <trans lang="en_EN">Next</trans>
+        <trans lang="de_DE">Nachfolgend</trans>
+    </token>
+    <token name="tr(Nexts)">
+        <trans lang="en_EN">Nexts</trans>
+        <trans lang="de_DE">Nachfolgende</trans>
+    </token>
+    <token name="tr(Nextschedules)">
+        <trans lang="en_EN">Next Schedules</trans>
+        <trans lang="de_DE">Nachfolgende Sendungen</trans>
+    </token>
+    <token name="tr(Reruns)">
+        <trans lang="en_EN">Reruns</trans>
+        <trans lang="de_DE">Wiederholungen</trans>
+    </token>
+    <token name="tr(Rerunsof)">
+        <trans lang="en_EN">Reruns of</trans>
+        <trans lang="de_DE">Wiederholungen von</trans>
+    </token>
+    <token name="tr(Actors)">
+        <trans lang="en_EN">Actors</trans>
+        <trans lang="de_DE">Schauspieler</trans>
+    </token>
+    <token name="tr(Episode)">
+        <trans lang="en_EN">Episode</trans>
+        <trans lang="de_DE">Folge</trans>
+    </token>
+    <token name="tr(Season)">
+        <trans lang="en_EN">Season</trans>
+        <trans lang="de_DE">Staffel</trans>
+    </token>
+    <token name="tr(Gueststars)">
+        <trans lang="en_EN">Guest Stars</trans>
+        <trans lang="de_DE">Gaststars</trans>
+    </token>
+    <token name="tr(Seriesfirstaired)">
+        <trans lang="en_EN">Series First Aired</trans>
+        <trans lang="de_DE">Erstausstrahlung der Serie</trans>
+    </token>
+    <token name="tr(Episodefirstaired)">
+        <trans lang="en_EN">Episode First Aired</trans>
+        <trans lang="de_DE">Erstausstrahlung der Episode</trans>
+    </token>
+    <token name="tr(Network)">
+        <trans lang="en_EN">Network</trans>
+        <trans lang="de_DE">TV Station</trans>
+    </token>
+    <token name="tr(Genre)">
+        <trans lang="en_EN">Genre</trans>
+        <trans lang="de_DE">Genre</trans>
+    </token>
+    <token name="tr(Status)">
+        <trans lang="en_EN">Status</trans>
+        <trans lang="de_DE">Status</trans>
+    </token>
+    <token name="tr(Rating)">
+        <trans lang="en_EN">Rating</trans>
+        <trans lang="de_DE">Bewertung</trans>
+    </token>
+    <token name="tr(Episoderating)">
+        <trans lang="en_EN">Episode Rating</trans>
+        <trans lang="de_DE">Bewertung der Folge</trans>
+    </token>
+    <token name="tr(Recinfo)">
+        <trans lang="en_EN">Recording Information</trans>
+        <trans lang="de_DE">Aufnahme Informationen</trans>
+    </token>
+    <token name="tr(Recchannelname)">
+        <trans lang="en_EN">Recording Channel</trans>
+        <trans lang="de_DE">Aufgenommen auf Kanal</trans>
+    </token>
+    <token name="tr(Seriesgalery)">
+        <trans lang="en_EN">Series Galery</trans>
+        <trans lang="de_DE">Serien Galerie</trans>
+    </token>
+    <token name="tr(Moviegalery)">
+        <trans lang="en_EN">Movie Galery</trans>
+        <trans lang="de_DE">Spielfilm Galerie</trans>
+    </token>
+    <token name="tr(Originaltitle)">
+        <trans lang="en_EN">Original Title</trans>
+        <trans lang="de_DE">Originaltitel</trans>
+    </token>
+    <token name="tr(Budget)">
+        <trans lang="en_EN">Budget</trans>
+        <trans lang="de_DE">Budget</trans>
+    </token>
+    <token name="tr(Revenue)">
+        <trans lang="en_EN">Revenue</trans>
+        <trans lang="de_DE">Einnahmen</trans>
+    </token>
+    <token name="tr(Adult)">
+        <trans lang="en_EN">Adult</trans>
+        <trans lang="de_DE">Nur für Erwachsene</trans>
+    </token>
+    <token name="tr(Releasedate)">
+        <trans lang="en_EN">Release Date</trans>
+        <trans lang="de_DE">Erscheinungsdatum</trans>
+    </token>
+    <token name="tr(Runtime)">
+        <trans lang="en_EN">Runtime</trans>
+        <trans lang="de_DE">Laufzeit</trans>
+    </token>
+    <token name="tr(Popularity)">
+        <trans lang="en_EN">Popularity</trans>
+        <trans lang="de_DE">Popularität</trans>
+    </token>
+    <token name="tr(Voteaverage)">
+        <trans lang="en_EN">Vote Average</trans>
+        <trans lang="de_DE">Durchschnittliche Wertung</trans>
+    </token>
+    <token name="tr(Homepage)">
+        <trans lang="en_EN">Homepage</trans>
+        <trans lang="de_DE">Homepage</trans>
+    </token>
+    <token name="tr(Recsize)">
+        <trans lang="en_EN">Recording size</trans>
+        <trans lang="de_DE">Größe der Aufnahme</trans>
+    </token>
+    <token name="tr(Recsizecutted)">
+        <trans lang="en_EN">Cutted Recording Size</trans>
+        <trans lang="de_DE">Größe der geschnittenen Aufnahme</trans>
+    </token>
+    <token name="tr(Reclength)">
+        <trans lang="en_EN">Recording Length</trans>
+        <trans lang="de_DE">Länge der Aufnahme</trans>
+    </token>
+    <token name="tr(Reclengthepg)">
+        <trans lang="en_EN">Event Length (EPG)</trans>
+        <trans lang="de_DE">Länge der Sendung laut EPG</trans>
+    </token>
+    <token name="tr(Programlength)">
+        <trans lang="en_EN">Program Length</trans>
+        <trans lang="de_DE">Länge der Sendung</trans>
+    </token>
+    <token name="tr(Reclengthcutted)">
+        <trans lang="en_EN">Cutted Recording Length</trans>
+        <trans lang="de_DE">Länge der geschnittenen Aufnahme</trans>
+    </token>
+    <token name="tr(Bitrate)">
+        <trans lang="en_EN">Bit Rate</trans>
+        <trans lang="de_DE">Bitrate</trans>
+    </token>
+    <token name="tr(Format)">
+        <trans lang="en_EN">Format</trans>
+        <trans lang="de_DE">Format</trans>
+    </token>
+    <token name="tr(Searchtimer)">
+        <trans lang="en_EN">Searchtimer</trans>
+        <trans lang="de_DE">Suchtimer</trans>
+    </token>
+    <token name="tr(Volume)">
+        <trans lang="en_EN">Volume</trans>
+        <trans lang="de_DE">Lautstärke</trans>
+    </token>
+    <token name="tr(Pause)">
+        <trans lang="en_EN">Pause</trans>
+        <trans lang="de_DE">Pause</trans>
+    </token>
+        <token name="tr(Apparenttemp)">
+            <trans lang="en_EN">Felt Temperature</trans>
+            <trans lang="de_DE">Gefühlte Temperatur</trans>
+        </token>
+        <token name="tr(todaymin)">
+            <trans lang="en_EN">minimum today</trans>
+            <trans lang="de_DE">heutiges Minimum</trans>
+        </token>
+        <token name="tr(todaymax)">
+            <trans lang="en_EN">maximum today</trans>
+            <trans lang="de_DE">heutiges Maximum</trans>
+        </token>
+        <token name="tr(Precipitationprobability)">
+            <trans lang="en_EN">Precipitation Prob.</trans>
+            <trans lang="de_DE">Regenrisiko</trans>
+        </token>
+        <token name="tr(Precipitationintensity)">
+            <trans lang="en_EN">Precipitation Intensity</trans>
+            <trans lang="de_DE">Regenmenge</trans>
+        </token>
+        <token name="tr(Precipitationtype)">
+            <trans lang="en_EN">Precipitation Type</trans>
+            <trans lang="de_DE">Niederschlagsart</trans>
+        </token>
+        <token name="tr(Noprecipitation)">
+            <trans lang="en_EN">No precipitation</trans>
+            <trans lang="de_DE">Kein Niederschlag</trans>
+        </token>
+        <token name="tr(Humidity)">
+            <trans lang="en_EN">Humidity</trans>
+            <trans lang="de_DE">Luftfeuchtigkeit</trans>
+        </token>
+        <token name="tr(Windbearing)">
+            <trans lang="en_EN">Wind Bearing</trans>
+            <trans lang="de_DE">Windrichtung</trans>
+        </token>
+        <token name="tr(Windspeed)">
+            <trans lang="en_EN">Wind Speed</trans>
+            <trans lang="de_DE">Windgeschwindigkeit</trans>
+        </token>
+        <token name="tr(Cloudcover)">
+            <trans lang="en_EN">Cloud Cover</trans>
+            <trans lang="de_DE">Bewölkung</trans>
+        </token>
+        <token name="tr(Pressure)">
+            <trans lang="en_EN">Pressure</trans>
+            <trans lang="de_DE">Luftdruck</trans>
+        </token>
+        <token name="tr(Ozone)">
+            <trans lang="en_EN">Ozone</trans>
+            <trans lang="de_DE">Ozon</trans>
+        </token>
+        <token name="tr(Visibility)">
+            <trans lang="en_EN">Visibility</trans>
+            <trans lang="de_DE">Sicht</trans>
+        </token>
+        <token name="tr(Conditions)">
+            <trans lang="en_EN">Weather Conditions</trans>
+            <trans lang="de_DE">Wetterlage</trans>
+        </token>
+        <token name="tr(Weatherforecast)">
+            <trans lang="en_EN">Weatherforecast</trans>
+            <trans lang="de_DE">Wettervorhersage</trans>
+        </token>
+        <token name="tr(Timestamp)">
+            <trans lang="en_EN">Timestamp</trans>
+            <trans lang="de_DE">Aktualisiert</trans>
+        </token>
+        <token name="tr(from)">
+            <trans lang="en_EN">from</trans>
+            <trans lang="de_DE">aus</trans>
+        </token>
+        <token name="tr(at)">
+            <trans lang="en_EN">at</trans>
+            <trans lang="de_DE">um</trans>
+        </token>
+        <token name="tr(Felt)">
+            <trans lang="en_EN">Felt</trans>
+            <trans lang="de_DE">Gefühlt</trans>
+        </token>
+        <token name="tr(felt)">
+            <trans lang="en_EN">felt</trans>
+            <trans lang="de_DE">gefühlt</trans>
+        </token>
+        <token name="tr(min)">
+            <trans lang="en_EN">min</trans>
+            <trans lang="de_DE">min</trans>
+        </token>
+        <token name="tr(max)">
+            <trans lang="en_EN">max</trans>
+            <trans lang="de_DE">max</trans>
+        </token>
+        <token name="tr(for)">
+            <trans lang="en_EN">for</trans>
+            <trans lang="de_DE">für</trans>
+        </token>
+        <token name="tr(Temperatures)">
+            <trans lang="en_EN">Temperatures</trans>
+            <trans lang="de_DE">Temperaturen</trans>
+        </token>
+        <token name="tr(Outsidetemp)">
+            <trans lang="en_EN">Outside temperature</trans>
+            <trans lang="de_DE">Außentemperatur</trans>
+        </token>
+        <token name="tr(Channelgroup)">
+            <trans lang="en_EN">Channelgroup</trans>
+            <trans lang="de_DE">Kanalgruppe</trans>
+        </token>
+        <token name="tr(Upsinfo)">
+            <trans lang="en_EN">UPS info</trans>
+            <trans lang="de_DE">USV Info</trans>
+        </token>
+        <token name="tr(Charge)">
+            <trans lang="en_EN">Charge</trans>
+            <trans lang="de_DE">Ladung</trans>
+        </token>
+        <token name="tr(Timeleft)">
+            <trans lang="en_EN">Time left</trans>
+            <trans lang="de_DE">Zeitreserve</trans>
+        </token>
+        <token name="tr(Input)">
+            <trans lang="en_EN">Input</trans>
+            <trans lang="de_DE">Eingang</trans>
+        </token>
+        <token name="tr(Output)">
+            <trans lang="en_EN">Output</trans>
+            <trans lang="de_DE">Ausgang</trans>
+        </token>
+        <token name="tr(Battery)">
+            <trans lang="en_EN">Battery</trans>
+            <trans lang="de_DE">Batterie</trans>
+        </token>
+        <token name="tr(Voltage)">
+            <trans lang="en_EN">Voltage</trans>
+            <trans lang="de_DE">Spannung</trans>
+        </token>
+        <token name="tr(Temperature)">
+            <trans lang="en_EN">Temperature</trans>
+            <trans lang="de_DE">Temperatur</trans>
+        </token>
+        <token name="tr(UPS)">
+            <trans lang="en_EN">UPS</trans>
+            <trans lang="de_DE">USV</trans>
+        </token>
+        <token name="tr(runs)">
+            <trans lang="en_EN">runs</trans>
+            <trans lang="de_DE">läuft</trans>
+        </token>
+        <token name="tr(Noepg)">
+            <trans lang="en_EN">No EPG Info</trans>
+            <trans lang="de_DE">Keine EPG Infos</trans>
+        </token>
+        <token name="tr(Recordedat)">
+            <trans lang="en_EN">Recorded at</trans>
+            <trans lang="de_DE">Aufgenommen am</trans>
+        </token>
+        <token name="tr(Playbackends)">
+            <trans lang="en_EN">Playback ends at</trans>
+            <trans lang="de_DE">Wiedergabe endet um</trans>
+        </token>
+        <token name="tr(Plex for VDR)">
+            <trans lang="en_EN">Plex for VDR</trans>
+            <trans lang="de_DE">Plex für VDR</trans>
+        </token>
+        <token name="tr(Speichertemp)">
+            <trans lang="en_EN">Roof Temperatur</trans>
+            <trans lang="de_DE">Speicher Temperatur</trans>
+        </token>
+        <token name="tr(Back)">
+            <trans lang="en_EN">Back</trans>
+            <trans lang="de_DE">Zurück</trans>
+        </token>
+</translations>

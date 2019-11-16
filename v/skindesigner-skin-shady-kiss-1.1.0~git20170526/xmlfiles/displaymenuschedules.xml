@@ -1,0 +1,378 @@
+<menuschedules x="0" y="0" width="100%" height="100%" fadetime="0">
+
+	<background>
+		<area x="0" y="{areaheight}*0.999" width="100%" height="{areaheight}*0.001" layer="1">
+			<fill color="{clrBlack}" />
+		</area>
+		<area x="0" y="0" width="100%" height="100%" transparency="{transBackground}" layer="1">
+			<drawimage condition="not{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNG" />
+			<drawimage condition="{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNGBright" />
+		</area>
+		<area x="0" y="0" width="100%" height="100%" layer="2">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowsMenuDefault" />
+		</area>
+		<area x="0" y="0" width="100%" height="11%" layer="3">
+			<drawimage x="0" width="{areawidth}*0.972" height="{areaheight}*0.972" imagetype="skinpart" path="gradientHeader" />
+		</area>
+		<area condition="eq({indexcurrentInfo}, 1)" x="70%" y="14%" width="25%" height="75%" transparency="{transLists}" layer="3">
+			<drawimage x="0" y="0" height="100%" width="100%" imagetype="skinpart" path="currentElementHeader" />
+		</area>
+		<area condition="eq({indexcurrentInfo}, 2)" x="65%" y="14%" width="30%" height="75%" transparency="{transLists}" layer="3">
+			<drawimage x="0" y="0" height="100%" width="100%" imagetype="skinpart" path="currentElementHeader" />
+		</area>
+	</background>
+	<header>
+		<area x="1%" y="2%" width="60%" height="7%" layer="3">
+			<drawtext condition="{whatsonnow}||{whatsonnext}||{whatsonfavorites}" x="4%" valign="center" font="{light}" fontsize="80%" color="{clrLightGray}" text="{title}" />
+			<drawimage name="logo" condition="{whatson}" imagetype="channellogo" path="{channelid}" x="0" y="1%" width="15%" height="90%" valign="center" />
+			<drawtext name="channel" condition="{whatson}" x="{width(logo)}*1.2" valign="center" font="{light}" fontsize="80%" color="{clrLightGray}" text="{channelnumber} - {channelname}" />
+		</area>
+	</header>
+	<menuitems x="0" y="14%" orientation="vertical" width="100%" height="75%" align="center" numlistelements="{numShortSubmenuitems}"> 
+		<listelement>
+<!--noCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 0)++not{whatsonfavorites}">
+				<area x="17%" width="78%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}++not{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLong"/>
+					<drawimage condition="not{current}++{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonSeparatorLong"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActive_Gradient" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActiveColor" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActive" />
+				</area>
+				<area condition="{timerfull}" x="92%" width="2%" layer="4">
+				<drawimage x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+				</area>
+			</areacontainer>
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)++not{whatsonfavorites}">
+				<area x="17%" width="52%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}++not{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMedium"/>
+					<drawimage condition="not{current}++{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonSeparatorMedium"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive_Gradient" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActiveColor" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive" />
+				</area>
+				<area condition="{timerfull}" x="66%" width="2%" layer="4">
+					<drawimage x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+				</area>
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)++not{whatsonfavorites}">
+				<area x="17%" width="47%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}++not{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMedium"/>
+					<drawimage condition="not{current}++{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonSeparatorMedium"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive_Gradient" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActiveColor" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive" />
+				</area>
+				<area condition="{timerfull}" x="61%" width="2%" layer="4">
+					<drawimage x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+				</area>
+			</areacontainer>
+<!--noCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 0)++{whatsonfavorites}">
+				<area x="24%" width="71%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}++not{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLong"/>
+					<drawimage condition="not{current}++{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonSeparatorLong"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActive_Gradient" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActiveColor" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActive" />
+				</area>
+				<area condition="{timerfull}" x="92%" width="2%" layer="4">
+				<drawimage x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+				</area>
+			</areacontainer>
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)++{whatsonfavorites}">
+				<area x="24%" width="45%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}++not{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMedium"/>
+					<drawimage condition="not{current}++{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonSeparatorMedium"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive_Gradient" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActiveColor" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive" />
+				</area>
+				<area condition="{timerfull}" x="66%" width="2%" layer="4">
+					<drawimage x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+				</area>
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)++{whatsonfavorites}">
+				<area x="24%" width="40%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}++not{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMedium"/>
+					<drawimage condition="not{current}++{separator}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonSeparatorMedium"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive_Gradient" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActiveColor" />
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive" />
+				</area>
+				<area condition="{timerfull}" x="61%" width="2%" layer="4">
+					<drawimage x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+				</area>
+			</areacontainer>
+<!-- WHATSON -->
+			<areacontainer condition="not{separator}++{whatson}">
+				<area x="0" width="16%" transparency="{transLists}" layer="3">
+					<drawimage x="5%" y="0" width="{areawidth}*0.95" height="{areaheight}" imagetype="skinpart" path="cellBackground" />
+				</area>
+				<area x="2%" width="3%" layer="4">
+					<drawtext x="0" width="100%" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{day}" />
+				</area>
+				<area x="5%" width="6%" layer="4">
+					<drawtext x="0" width="100%" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{printf('%02d.%02d', daynumeric, month)}." />
+				</area>
+				<area x="11%" width="7%" layer="4">
+					<drawtext condition="isset{title}" name="menutext" x="0" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{start}" />
+				</area>
+			</areacontainer>
+<!--noCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 0)++not{separator}++{whatson}">
+				<areascroll condition="isset{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="73%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				</areascroll>
+				<areascroll condition="empty{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="73%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+			</areacontainer>
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)++not{separator}++{whatson}">
+				<areascroll condition="isset{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="47%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				</areascroll>
+				<areascroll condition="empty{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="47%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)++not{separator}++{whatson}">
+				<areascroll condition="isset{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="42%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				</areascroll>
+				<areascroll condition="empty{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="42%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+			</areacontainer>
+<!-- WHATSONNOW -->
+			<areacontainer condition="not{separator}++{whatsonnow}">
+				<area x="0" width="16%" transparency="{transLists}" layer="3">
+					<drawimage x="5%" y="0" width="{areawidth}*0.95" height="{areaheight}" imagetype="skinpart" path="cellBackground" />
+				</area>
+				<area condition="{channellogoexists}" x="2%" width="6%" layer="4">
+					<drawimage name="logo" imagetype="channellogo" path="{channelid}" x="27%" y="20%" width="65%" height="65%" />
+				</area>
+				<areascroll condition="not{channellogoexists}" scrollelement="channel" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="9%" layer="4">
+					<drawtext condition="{current}" name="channel" x="0" y="15%" align="center" valign="center" font="{light}" fontsize="50%" color="{clrLightGray}" text="{channelname}"/>
+					<drawtext condition="not{current}" x="0" y="15%" align="center" valign="center" font="{light}" fontsize="50%" color="{clrLightGray}" text="{channelname}"/>
+				</areascroll>
+				<area x="11%" width="7%" layer="4">
+					<drawtext condition="isset{title}" name="menutext" x="0" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{start}" />
+				</area>
+				<area condition="{running}++not{longElapsedBar}" x="9%" width="7%" layer="4">
+					<drawrectangle x="12%" y="{areaheight}*0.96" width="{areawidth}*0.84*{elapsed}/{duration}" height="{areaheight}*0.01" color="{clrHigh}" />
+				</area>
+				<area condition="{running}++{longElapsedBar}++eq({indexcurrentInfo}, 0)" x="17%" width="78%" layer="4">
+					<drawrectangle x="1%" y="{areaheight}*0.96" width="{areawidth}*0.98*{elapsed}/{duration}" height="{areaheight}*0.01" color="{clrHigh}" />
+				</area>
+				<area condition="{running}++{longElapsedBar}++eq({indexcurrentInfo}, 1)" x="17%" width="52%" layer="4">
+					<drawrectangle x="1%" y="{areaheight}*0.96" width="{areawidth}*0.98*{elapsed}/{duration}" height="{areaheight}*0.01" color="{clrHigh}" />
+				</area>
+				<area condition="{running}++{longElapsedBar}++eq({indexcurrentInfo}, 2)" x="17%" width="47%" layer="4">
+					<drawrectangle x="1%" y="{areaheight}*0.96" width="{areawidth}*0.98*{elapsed}/{duration}" height="{areaheight}*0.01" color="{clrHigh}" />
+				</area>
+			</areacontainer>
+<!--noCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 0)++not{separator}++{whatsonnow}">
+				<areascroll condition="empty{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="73%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+				<areascroll condition="isset{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="73%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				</areascroll>
+			</areacontainer>
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)++not{separator}++{whatsonnow}">
+				<areascroll condition="empty{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="47%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+				<areascroll condition="isset{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="47%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				</areascroll>
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)++not{separator}++{whatsonnow}">
+				<areascroll condition="empty{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="42%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+				<areascroll condition="isset{shorttext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="42%" layer="4">
+					<drawtext condition="isset{title}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+					<drawtext condition="isset{title}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				</areascroll>
+			</areacontainer>
+<!-- WHATSONNEXT -->
+			<areacontainer condition="not{separator}++{whatsonnext}">
+				<area x="0" width="16%" transparency="{transLists}" layer="3">
+					<drawimage x="5%" y="0" width="{areawidth}*0.95" height="{areaheight}" imagetype="skinpart" path="cellBackground" />
+				</area>
+				<area condition="{channellogoexists}" x="2%" width="6%" layer="4">
+					<drawimage name="logo" imagetype="channellogo" path="{channelid}" x="27%" y="20%" width="65%" height="65%" />
+				</area>
+				<areascroll condition="not{channellogoexists}" scrollelement="channel" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="9%" layer="4">
+					<drawtext condition="{current}" name="channel" x="0" y="15%" align="center" valign="center" font="{light}" fontsize="50%" color="{clrLightGray}" text="{channelname}"/>
+					<drawtext condition="not{current}" x="0" y="15%" align="center" valign="center" font="{light}" fontsize="50%" color="{clrLightGray}" text="{channelname}"/>
+				</areascroll>
+				<area x="11%" width="7%" layer="4">
+					<drawtext condition="isset{title}" name="menutext" x="0" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{start}" />
+				</area>
+			</areacontainer>
+<!--noCurrentInfo-->
+			 <areascroll condition="eq({indexcurrentInfo}, 0)++not{separator}++{whatsonnext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="73%" layer="4">
+				<drawtext condition="isset{title}++empty{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				<drawtext condition="isset{title}++empty{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				
+				<drawtext condition="isset{title}++isset{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				
+				<drawtext condition="isset{title}++isset{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+			</areascroll>
+<!--tallCurrentInfo-->
+			 <areascroll condition="eq({indexcurrentInfo}, 1)++not{separator}++{whatsonnext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="47%" layer="4">
+				<drawtext condition="isset{title}++empty{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				<drawtext condition="isset{title}++empty{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				<drawtext condition="isset{title}++isset{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				<drawtext condition="isset{title}++isset{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+			</areascroll>
+<!--wideCurrentInfo-->
+			 <areascroll condition="eq({indexcurrentInfo}, 2)++not{separator}++{whatsonnext}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="19%" width="42%" layer="4">
+				<drawtext condition="isset{title}++empty{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				<drawtext condition="isset{title}++empty{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				<drawtext condition="isset{title}++isset{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				<drawtext condition="isset{title}++isset{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+			</areascroll>
+<!-- WHATSONFAVORITES -->
+			<areacontainer condition="not{separator}++{whatsonfavorites}">
+				<area x="0" width="24%" transparency="{transLists}" layer="3">
+					<drawimage x="3%" y="0" width="{areawidth}*0.95" height="{areaheight}" imagetype="skinpart" path="cellTimers" />
+				</area>
+				<area condition="{channellogoexists}" x="1%" width="6%" layer="4">
+					<drawimage name="logo" imagetype="channellogo" path="{channelid}" x="13%" y="20%" width="65%" height="65%" />
+				</area>
+				<areascroll condition="not{channellogoexists}" scrollelement="channel" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="5%" layer="4">
+					<drawtext condition="{current}" name="channel" y="15%" align="center" valign="center" font="{light}" fontsize="50%" color="{clrLightGray}" text="{channelname}"/>
+					<drawtext  condition="not{current}" y="15%" align="center" valign="center" font="{light}" fontsize="50%" color="{clrLightGray}" text="{channelname}"/>
+				</areascroll>
+				<area x="5%" width="10%" layer="4">
+				<drawtext x="25%" width="100%" align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{date}" />
+				</area>
+				<!--<area x="15%" width="5%" layer="4">
+					<drawtext condition="isset{title}" x="0" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{start} - {stop}" />
+				</area>-->
+				<area x="{areawidth}*0.135" width="10%" layer="4">
+				<drawtext condition="isset{title}" align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{start} - {stop}" />
+			</area>
+			</areacontainer>
+<!--noCurrentInfo-->
+			<areascroll condition="eq({indexcurrentInfo}, 0)++not{separator}++{whatsonfavorites}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="25%" width="65%" layer="4">
+				<drawtext condition="isset{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				<drawtext condition="isset{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				<drawtext condition="empty{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				<drawtext condition="empty{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+			</areascroll>
+<!--tallCurrentInfo-->
+			<areascroll condition="eq({indexcurrentInfo}, 1)++not{separator}++{whatsonfavorites}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="25%" width="41%" layer="4">
+				<drawtext condition="isset{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				<drawtext condition="isset{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				<drawtext condition="empty{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				<drawtext condition="empty{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+			</areascroll>
+<!--wideCurrentInfo-->
+			<areascroll condition="eq({indexcurrentInfo}, 2)++not{separator}++{whatsonfavorites}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="25%" width="36%" layer="4">
+				<drawtext condition="isset{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				<drawtext condition="isset{shorttext}++not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title} - {shorttext}"/>
+				<drawtext condition="empty{shorttext}++{current}" name="menutext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				<drawtext condition="empty{shorttext}not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+			</areascroll>
+<!-- Separator -->
+			<areacontainer condition="{separator}">
+				<area condition="{whatson}||{whatsonnow}||{whatsonnext}" x="0" width="16%" transparency="{transLists}" layer="3">
+					<drawimage x="5%" y="0" width="{areawidth}*0.95" height="{areaheight}" imagetype="skinpart" path="cellSepBackgroundShort" />
+				</area>
+				<area condition="{whatsonfavorites}" x="0" width="24%" transparency="{transLists}" layer="3">
+					<drawimage x="3%" y="0" width="{areawidth}*0.95" height="{areaheight}" imagetype="skinpart" path="cellSepBackground" />
+				</area>
+				<area condition="{whatson}" x="0%" width="16%" layer="4">
+					<drawtext condition="isset{title}" x="0" align="center" valign="center" font="{light}" fontsize="60%" color="{clrSeparatorText}" text="{title}" />
+				</area>
+				<area condition="eq({indexcurrentInfo}, 0)++isset{title}" x="19%" width="73%" layer="4">
+					<drawtext condition="{whatsonnow}||{whatsonnext}||{whatsonfavorites}" x="0" align="center" valign="center" font="{light}" fontsize="70%" color="{clrSeparatorText}" text="{title}" />
+				</area>
+				<area condition="eq({indexcurrentInfo}, 1)++isset{title}" x="18%" width="47%" layer="4">
+					<drawtext condition="{whatsonnow}||{whatsonnext}" x="0" align="center" valign="center" font="{light}" fontsize="70%" color="{clrSeparatorText}" text="{title}" />
+				</area>
+				<area condition="eq({indexcurrentInfo}, 1)++isset{title}++{whatsonfavorites}" x="25%" width="41%" layer="4">
+					<drawtext x="0" align="center" valign="center" font="{light}" fontsize="70%" color="{clrSeparatorText}" text="{title}" />
+				</area>
+				<area condition="eq({indexcurrentInfo}, 2)++isset{title}" x="18%" width="42%" layer="4">
+					<drawtext condition="{whatsonnow}||{whatsonnext}" x="0" align="center" valign="center" font="{light}" fontsize="70%" color="{clrSeparatorText}" text="{title}" />
+				</area>
+				<area condition="eq({indexcurrentInfo}, 2)++isset{title}++{whatsonfavorites}" x="25%" width="36%" layer="4">
+					<drawtext x="0" align="center" valign="center" font="{light}" fontsize="70%" color="{clrSeparatorText}" text="{title}" />
+				</area>
+			</areacontainer>
+		</listelement>
+
+		<currentelement delay="0" fadetime="{currentelementsFadeTime}">
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)">
+				<area x="71%" y="1%" width="23%" height="6%" layer="4">
+					<drawtext x="0" y="5%" width="100%" align="center" font="{light}" fontsize="{fontSizeInfoTitle}" color="{clrLightGray}" text="{title}" />
+				</area>
+				<area x="70%" y="7%" width="25%" height="5%" layer="4">
+					<drawtext x="4%" y="25%" width="100%" font="{light}" fontsize="{fontSizeInfoDetails}" color="{clrLightGray}" text="{day} {daynumeric}.{month}.   {start} - {stop}   ({duration} min)" />
+				</area>
+				<area x="70%" y="12%" width="25%" height="{areaheight}*0.93" layer="4">
+					<drawimage condition="isset{posterpath}" imagetype="skinpart" path="posterBGCurrent" x="0" y="0" width="{areawidth}*0.48" height="{areawidth}*0.61"/>
+					<drawimage condition="isset{posterpath}" name="poster" imagetype="image" path="{posterpath}" x="4%" y="2%" width="{areawidth}*0.35" height="{areawidth}*0.35* {posterheight}/{posterwidth}"/>
+					<drawtextbox condition="isset{posterpath}" x="4%" y="2%" width="92%" height="92%" float="topleft" floatwidth="{width(poster)}*1.2" floatheight="{height(poster)}*1.1" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{description}" />
+					<drawtextbox condition="empty{posterpath}" x="4%" y="2%" width="92%" height="92%" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{description}" />
+				</area>
+				<area condition="{running}" x="70%" y="1%" width="25%" height="6%" layer="4">
+					<drawrectangle x="2%" y="{areaheight}*0.92" width="{areawidth}*0.96*{elapsed}/{duration}" height="{areaheight}*0.03" color="{clrHigh}" />
+				</area>
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)">
+				<area x="66%" y="1%" width="28%" height="6%" layer="4">
+					<drawtext x="0" y="5%" width="100%" align="center" font="{light}" fontsize="{fontSizeInfoTitle}" color="{clrLightGray}" text="{title}" />
+				</area>
+				<area x="65%" y="7%" width="30%" height="5%" layer="4">
+					<drawtext x="4%" y="25%" align="center" width="100%" font="{light}" fontsize="{fontSizeInfoDetails}" color="{clrLightGray}" text="{day} {daynumeric}.{month}.   {start} - {stop}   ({duration} min)" />
+				</area>
+				<area x="65%" y="12%" width="30%" height="{areaheight}*0.93" layer="4">
+					<drawimage condition="isset{posterpath}" imagetype="skinpart" path="posterBGCurrent" x="0" y="0" width="{areawidth}*0.48" height="{areawidth}*0.61"/>
+					<drawimage condition="isset{posterpath}" name="poster" imagetype="image" path="{posterpath}" x="4%" y="2%" width="{areawidth}*0.35" height="{areawidth}*0.35* {posterheight}/{posterwidth}"/>
+					<drawtextbox condition="isset{posterpath}" x="4%" y="2%" width="92%" height="92%" float="topleft" floatwidth="{width(poster)}*1.2" floatheight="{height(poster)}*1.1" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{description}" />
+					<drawtextbox condition="empty{posterpath}" x="4%" y="2%" width="92%" height="92%" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{description}" />
+				</area>
+				<area condition="{running}" x="65%" y="1%" width="30%" height="6%" layer="4">
+					<drawrectangle x="2%" y="{areaheight}*0.92" width="{areawidth}*0.96*{elapsed}/{duration}" height="{areaheight}*0.03" color="{clrHigh}" />
+				</area>
+			</areacontainer>
+		</currentelement>
+	</menuitems>
+
+	<scrollbar>
+		<area condition="lt({height},1000)" x="95%" y="14%" width="5%" height="75%" layer="3">
+			 <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowScrollSub" />
+			 <drawimage x="15%" y="{areaheight} * {offset} / 1000" width="{areawidth}*0.1" height="{areaheight} * {height} / 1000" imagetype="skinpart" path="scrollBar" />
+		</area>
+	</scrollbar>
+
+</menuschedules>

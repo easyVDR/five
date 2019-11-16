@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayreplay SYSTEM "../../../dtd/displayreplay.dtd">
+<displayreplay x="5%" y="73%" width="90%" height="22%" fadetime="{fadetimereplay}" shifttime="{shifttimereplay}" shifttype="bottom" shiftmode="linear">
+    <background>
+        <area x="0%" y="0%" width="100%" height="100%" layer="1">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+            <drawrectangle x="87%" y="0" width="{border}" height="100%" color="{clrBorder}" />
+        </area>
+    </background>
+    <datetime>
+        <area x="87%" y="0%" width="13%" height="100%" layer="2">
+            <drawtext align="center" y="16%" font="{light}" fontsize="30%" color="{clrText}" text="{time}" />
+            <drawtext align="center" y="50%" font="{light}" fontsize="19%" color="{clrText}" text="{dayname}" />
+            <drawtext align="center" y="68%" font="{light}" fontsize="19%" color="{clrText}" text="{day}.{month}.{year}" />
+        </area>
+    </datetime>
+    <rectitle>
+        <area x="8%" y="7%" width="77%" height="50%" layer="2">
+            <drawtext x="0%" y="0%" width="100%" font="{semibold}" fontsize="50%" color="{clrText}" text="{rectitle}" />
+            <drawtext x="0%" y="45%" width="100%" font="{light}" fontsize="40%" color="{clrText}" text="{recsubtitle}" />
+        </area>
+    </rectitle>
+    <currenttime>
+        <area x="2%" y="67%" width="20%" height="20%" layer="2">
+            <drawtext x="0" valign="center" font="{light}" fontsize="100%" color="{clrText}" text="{reccurrent}" />
+        </area>
+    </currenttime>
+    <totaltime>
+        <area x="65%" y="67%" width="20%" height="20%" layer="2">
+            <drawtext align="right" valign="center" font="{light}" fontsize="100%" color="{clrText}" text="{rectotal}" />
+        </area>
+    </totaltime>
+    <jump>
+        <area x="25%" y="67%" width="38%" height="20%" layer="3">
+            <drawtext x="0" align="center" valign="center" font="{light}" fontsize="100%" color="{clrText}" text="{jump}" />
+        </area>
+    </jump>
+    <controlicons>
+        <area x="3%" y="15%" width="8%" height="22%" layer="3">
+            <drawimage condition="{rewind}" imagetype="icon" path="fastrev" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{rewind1x}" imagetype="icon" path="fastrev" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{rewind2x}" imagetype="icon" path="fastrev" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{rewind3x}" imagetype="icon" path="fastrev" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{slowrewind}" imagetype="icon" path="slowrev" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{slowrewind1x}" imagetype="icon" path="slowrev" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{slowrewind2x}" imagetype="icon" path="slowrev" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{slowrewind3x}" imagetype="icon" path="slowrev" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{pause}" imagetype="icon" path="pause" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{play}" imagetype="icon" path="play" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{forward}" imagetype="icon" path="fastfwd" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{forward1x}" imagetype="icon" path="fastfwd" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{forward2x}" imagetype="icon" path="fastfwd" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{forward3x}" imagetype="icon" path="fastfwd" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{slowforward}" imagetype="icon" path="slowfwd" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{slowforward1x}" imagetype="icon" path="slowfwd" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{slowforward2x}" imagetype="icon" path="slowfwd" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+            <drawimage condition="{slowforward3x}" imagetype="icon" path="slowfwd" x="0" y="0" width="{areaheight}" height="{areaheight}" />
+        </area>
+    </controlicons>
+    <progressbar>
+        <area x="2%" y="55%" width="83%" height="8%" layer="3">
+            <fill color="{clrTransparent}" />
+            <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" color="{clrProgressbarGauge}" quadrant="0" />
+            <drawrectangle x="{areaheight} * 0.5" y="0" height="100%" width="{areawidth} - {areaheight}" color="{clrProgressbarBackground}" />
+            <drawellipse x="{areawidth} - {areaheight}" y="0" width="{areaheight}" height="{areaheight}" color="{clrProgressbarBackground}" quadrant="0" />
+            <drawrectangle x="{areaheight} * 0.5" y="0" width="{current} * {areawidth} / {total} - {current} * {areaheight} / {total}" height="{areaheight}" color="{clrProgressbarGauge}" />
+            <drawellipse x="{current} * {areawidth} / {total} - {current} * {areaheight} / {total}" y="0" width="{areaheight}" height="{areaheight}" color="{clrProgressbarGauge}" quadrant="0" />
+        </area>
+    </progressbar>
+    <cutmarks>
+        <area x="2%" y="55%" width="83%" height="8%" layer="4">
+            <loop name="marks" x="0" y="0" orientation="absolute">
+                <drawrectangle condition="{marks[startmark]}" x="{areaheight} * 0.5 + {marks[position]}*{areawidth}/{marks[total]} - {marks[position]}*{areaheight}/{marks[total]}" y="{areaheight} * 0.35" width="{marks[endposition]}*{areawidth}/{marks[total]} - {marks[position]}*{areawidth}/{marks[total]} - {marks[endposition]}*{areaheight}/{marks[total]} + {marks[position]}*{areaheight}/{marks[total]}" height="{areaheight} * 0.3" color="{clrProgressbarMarks}" />
+                <drawellipse x="{areaheight} * 0.35 + {marks[position]}*{areawidth}/{marks[total]} - {marks[position]}*{areaheight}/{marks[total]}" y="{areaheight} * 0.35" width="0.3 * {areaheight}" height="0.3 * {areaheight}" color="{clrProgressbarMarks}" quadrant="0" />
+            </loop>
+        </area>
+    </cutmarks>
+    <message>
+        <area x="25%" y="25%" width="50%" height="50%" layer="6">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+            <drawtext x="10%" y="10%" width="80%" align="center" valign="center" font="{light}" fontsize="40%" color="{clrText}" text="{text}" />
+        </area>
+    </message>
+</displayreplay>

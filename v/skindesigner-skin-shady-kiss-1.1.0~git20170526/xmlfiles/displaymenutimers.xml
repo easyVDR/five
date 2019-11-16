@@ -1,0 +1,204 @@
+<menutimers x="0" y="0" width="100%" height="100%" fadetime="0">
+	<background>
+		<area x="0" y="{areaheight}*0.999" width="100%" height="{areaheight}*0.001" layer="1">
+			<fill color="{clrBlack}" />
+		</area>
+		<area x="0" y="0" width="100%" height="100%" transparency="{transBackground}" layer="1">
+			<drawimage condition="not{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNG" />
+			<drawimage condition="{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNGBright" />
+		</area>
+		<area x="0" y="0" width="100%" height="100%" layer="2">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowsMenuDefault" />
+		</area>
+		<area x="0" y="0" width="100%" height="11%" layer="3">
+			<drawimage x="0" width="{areawidth}*0.972" height="{areaheight}*0.972" imagetype="skinpart" path="gradientHeader" />
+		</area>
+		<area condition="eq({indexcurrentInfo}, 1)" x="70%" y="14%" width="25%" height="75%" transparency="{transLists}" layer="3">
+			<drawimage x="0" y="0" height="100%" width="100%" imagetype="skinpart" path="currentElementHeader" />
+		</area>
+		<area condition="eq({indexcurrentInfo}, 2)" x="65%" y="14%" width="30%" height="75%" transparency="{transLists}" layer="3">
+			<drawimage x="0" y="0" height="100%" width="100%" imagetype="skinpart" path="currentElementHeader" />
+		</area>
+	</background>
+
+	<header condition="{showDiscUsage}">
+		<area x="0" y="0" width="5%" height="10%" layer="3">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="disc" />
+		</area>
+		<area x="0" y="1%" width="6%" height="9%" layer="4">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="discSpec" />
+			<drawimage x="0" width="{areawidth}" height="{areaheight}/100*{freepercent}" imagetype="skinpart" path="discSpecHide" />
+		</area>
+		<area x="0" y="6%" width="5%" height="4%" layer="4">
+			<drawtext x="0" y="25%"  align="center" font="{light}" fontsize="75%" color="{clrLightGray}" text="{usedpercent}%" />
+		</area>
+		<area x="6%" y="2%" width="60%" height="7%" layer="4">
+			<drawtext x="1%" valign="center" font="{light}" fontsize="80%" color="{clrLightGray}" text="{title}" />
+		</area>
+	</header>
+	
+	<menuitems x="0" y="14%" orientation="vertical" width="100%" height="75%" align="center" numlistelements="{numShortSubmenuitems}">
+		<listelement>
+			<area x="0" width="24%" transparency="{transLists}" layer="3">
+				<drawimage x="3%" y="0" width="{areawidth}*0.95" height="{areaheight}" imagetype="skinpart" path="cellTimers" />
+			</area>
+			<area x="1%" width="6%" layer="4">
+				<drawimage name="logo" imagetype="channellogo" path="{channelid}" x="13%" y="20%" width="65%" height="65%" />
+			</area>
+			<area x="5%" width="10%" layer="4">
+				<drawtext x="25%" width="100%" align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{dayname} {printf('%02d.%02d', day, month)}." />
+			</area>
+			<area x="{areawidth}*0.135" width="10%" layer="4">
+				<drawtext condition="isset{title}++gt({numShortSubmenuitems}, 12)" x="20%" align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{timerstart} - {timerstop}" />
+				<drawtext condition="isset{title}++eq({numShortSubmenuitems}, 12)" x="20%" align="center" valign="center" font="{light}" fontsize="55%" color="{clrLightGray}" text="{timerstart} - {timerstop}" />
+			</area>
+<!--noCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 0)">
+				<area x="24%" width="71%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLong"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActive"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActiveColor"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="buttonLongActive_Gradient"/>
+				</area>
+				<!--<area x="{areawidth}*0.908" width="{areawidth}*0.037" layer="3">
+					<drawrectangle x="0" y="1" width="1" height="{areaheight}-2" color="{clrBlack}" />
+					<drawrectangle x="1" y="1" width="1" height="{areaheight}-2" color="{clrRecMenuConflTop}" />
+					<drawrectangle x="2" y="1" width="{areawidth}-2" height="{areaheight}-2" color="{clrIconsBG}" />
+				</area>-->
+				<area condition="not{isremote}" x="{areawidth}*0.92" width="2%" layer="4">
+					<drawimage condition="not{flagactive}" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="inactiveMarker" />
+					<drawimage condition="{flagactive}++not{flagrecording}" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="{flagrecording}" animtype="blink" animfreq="1000" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="isset{state}++strequal({state}, 'R')" animtype="blink" animfreq="1000" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+				</area>
+				<area condition="{isremote}" x="{areawidth}*0.921" width="2%" layer="4">
+					<drawimage condition="{flagactive}++strnotequal({state}, 'R')" x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteOn" />
+					<drawimage condition="not{flagactive}"  x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteOff" />
+					<drawimage condition="strequal({state}, 'R')" animtype="blink" animfreq="1000" x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteRec" />
+				</area>
+				<areascroll condition="{epg2vdrShowHostname}++isset{state}" scrollelement="timertext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areawidth}*0.255" width="{areawidth}*0.66" layer="3">
+					<drawtext name="vdrname" valign="center" width="{areawidth}*0.0125*{hostnameChars}" font="{light}" fontsize="70%" color="{clrLightGray}" text="{vdrname}"/>
+					<drawrectangle x="{areawidth}*0.0125*{hostnameChars}" y="1" width="1" height="{areaheight}-2" color="{clrBlack}" />
+					<drawrectangle x="{areawidth}*0.0125*{hostnameChars}+1" y="1" width="1" height="{areaheight}-2" color="{clrRecMenuConflTop}" />
+					<drawtext condition="{current}" x="{areawidth}*0.0125*{hostnameChars}+10" name="timertext" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="not{current}" x="{areawidth}*0.0125*{hostnameChars}+10" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+				<areascroll condition="not{epg2vdrShowHostname}||empty{state}" scrollelement="timertext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="25%" width="66%" layer="3">
+					<drawtext condition="{current}" name="timertext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+				
+			</areacontainer>
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)">
+				<area x="24%" width="45%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMedium"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActiveColor"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive_Gradient"/>
+				</area>
+				<area condition="not{isremote}" x="{areawidth}*0.665" width="2%" layer="4">
+					<drawimage condition="not{flagactive}" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="inactiveMarker" />
+					<drawimage condition="{flagactive}++not{flagrecording}" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="{flagrecording}" animtype="blink" animfreq="1000" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="isset{state}++strequal({state}, 'R')" animtype="blink" animfreq="1000" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />	
+				</area>
+				<area condition="{isremote}" x="{areawidth}*0.666" width="2%" layer="4">
+					<drawimage condition="{flagactive}++strnotequal({state}, 'R')" x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteOn" />
+					<drawimage condition="not{flagactive}"  x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteOff" />
+					<drawimage condition="strequal({state}, 'R')" animtype="blink" animfreq="1000" x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteRec" />
+				</area>
+				<areascroll condition="{epg2vdrShowHostname}++isset{state}" scrollelement="timertext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areawidth}*0.255" width="{areawidth}*0.4" layer="3">
+					<drawtext name="vdrname" valign="center" width="{areawidth}*0.0205*{hostnameChars}" font="{light}" fontsize="70%" color="{clrLightGray}" text="{vdrname}"/>
+					<drawrectangle x="{areawidth}*0.0205*{hostnameChars}" y="1" width="1" height="{areaheight}-2" color="{clrBlack}" />
+					<drawrectangle x="{areawidth}*0.0205*{hostnameChars}+1" y="1" width="1" height="{areaheight}-2" color="{clrRecMenuConflTop}" />
+					<drawtext condition="{current}" x="{areawidth}*0.0205*{hostnameChars}+10" name="timertext" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="not{current}" x="{areawidth}*0.0205*{hostnameChars}+10" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+				<areascroll condition="not{epg2vdrShowHostname}||empty{state}" scrollelement="timertext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areawidth}*0.255" width="40%" layer="3">
+					<drawtext condition="{current}" name="timertext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)">
+				<area x="24%" width="40%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMedium"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 0)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 1)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActiveColor"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive_Gradient"/>
+				</area>
+				<area condition="not{isremote}" x="{areawidth}*0.615" width="2%" layer="4">
+					<drawimage condition="not{flagactive}" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="inactiveMarker" />
+					<drawimage condition="{flagactive}++not{flagrecording}" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="{flagrecording}" animtype="blink" animfreq="1000" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="isset{state}++strequal({state}, 'R')" animtype="blink" animfreq="1000" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+				</area>
+				<area condition="{isremote}" x="{areawidth}*0.616" width="2%" layer="4">
+					<drawimage condition="{flagactive}++strnotequal({state}, 'R')" x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteOn" />
+					<drawimage condition="not{flagactive}" x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteOff" />
+					<drawimage condition="strequal({state}, 'R')" animtype="blink" animfreq="1000" x="0" y="28%" width="{areaheight}*0.44" height="{areaheight}*0.44" imagetype="icon" path="remoteRec" />
+				</area>
+				<areascroll condition="{epg2vdrShowHostname}++isset{state}" scrollelement="timertext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areawidth}*0.255" width="{areawidth}*0.35" layer="3">
+					<drawtext name="vdrname" valign="center" width="{areawidth}*0.0235*{hostnameChars}" font="{light}" fontsize="70%" color="{clrLightGray}" text="{vdrname}"/>
+					<drawrectangle x="{areawidth}*0.0235*{hostnameChars}" y="1" width="1" height="{areaheight}-2" color="{clrBlack}" />
+					<drawrectangle x="{areawidth}*0.0235*{hostnameChars}+1" y="1" width="1" height="{areaheight}-2" color="{clrRecMenuConflTop}" />
+					<drawtext condition="{current}" x="{areawidth}*0.0235*{hostnameChars}+10" name="timertext" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="not{current}" x="{areawidth}*0.0235*{hostnameChars}+10" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+				<areascroll condition="not{epg2vdrShowHostname}||empty{state}" scrollelement="timertext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areawidth}*0.255" width="35%" layer="3">
+					<drawtext condition="{current}" name="timertext" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{title}"/>
+				</areascroll>
+			</areacontainer>
+		</listelement>
+
+		<currentelement delay="0" fadetime="{currentelementsFadeTime}">
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)">
+				<area x="71%" y="{areaheight}*0.001" width="23%" height="6%" layer="4">
+					<drawtext x="0" y="5%" width="100%" align="center" valign="center" font="{light}" fontsize="{fontSizeInfoTitle}" color="{clrLightGray}" text="{eventtitle}" />
+				</area>
+				<area x="70%" y="7%" width="25%" height="5%" layer="4">
+					<drawtext x="4%" y="25%" align="center" width="100%" font="{light}" fontsize="{fontSizeInfoDetails}" color="{clrLightGray}" text="{channelnumber} - {channelname}     {day}.{month}.   {timerstart} - {timerstop}" />
+				</area>
+				<area x="70%" y="12%" width="25%" height="{areaheight}*0.93" layer="4">
+					<drawimage condition="isset{posterpath}" imagetype="skinpart" path="posterBGCurrent" x="0" y="0" width="{areawidth}*0.48" height="{areawidth}*0.61"/>
+					<drawimage condition="isset{posterpath}" name="poster" imagetype="image" path="{posterpath}" x="4%" y="2%" width="{areawidth}*0.35" height="{areawidth}*0.35* {posterheight} / {posterwidth}"/>
+					<drawtextbox condition="isset{posterpath}" x="4%" y="2%" width="92%" height="92%" float="topleft" floatwidth="{width(poster)}*1.2" floatheight="{height(poster)}*1.1" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{eventdescription}" />
+					<drawtextbox condition="empty{posterpath}" x="4%" y="2%" width="92%" height="92%" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{eventdescription}" />
+				</area>
+<!--elapsed and duration not in skd-0.8.x-->
+				<!--<area condition="{currentInfo}++{running}" x="70%" y="1%" width="25%" height="6%" layer="4">
+					<drawrectangle x="2%" y="{areaheight}*0.92" width="{areawidth}*0.96*{elapsed}/{duration}" height="{areaheight}*0.03" color="{clrHigh}" />
+				</area>-->
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)">
+				<area x="66%" y="{areaheight}*0.001" width="28%" height="6%" layer="4">
+					<drawtext x="0" y="5%" width="100%" align="center" valign="center" font="{light}" fontsize="{fontSizeInfoTitle}" color="{clrLightGray}" text="{eventtitle}" />
+				</area>
+				<area x="65%" y="7%" width="30%" height="5%" layer="4">
+					<drawtext x="4%" y="25%" align="center" width="100%" font="{light}" fontsize="{fontSizeInfoDetails}" color="{clrLightGray}" text="{channelnumber} - {channelname}     {day}.{month}.   {timerstart} - {timerstop}" />
+				</area>
+				<area x="65%" y="12%" width="30%" height="{areaheight}*0.93" layer="4">
+					<drawimage condition="isset{posterpath}" imagetype="skinpart" path="posterBGCurrent" x="0" y="0" width="{areawidth}*0.48" height="{areawidth}*0.61"/>
+					<drawimage condition="isset{posterpath}" name="poster" imagetype="image" path="{posterpath}" x="4%" y="2%" width="{areawidth}*0.35" height="{areawidth}*0.35* {posterheight} / {posterwidth}"/>
+					<drawtextbox condition="isset{posterpath}" x="4%" y="2%" width="92%" height="92%" float="topleft" floatwidth="{width(poster)}*1.2" floatheight="{height(poster)}*1.1" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{eventdescription}" />
+					<drawtextbox condition="empty{posterpath}" x="4%" y="2%" width="92%" height="92%" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{eventdescription}" />
+				</area>
+<!--elapsed and duration not in skd-0.8.x-->
+				<!--<area condition="{currentInfo}++{running}" x="65%" y="1%" width="30%" height="6%" layer="4">
+					<drawrectangle x="2%" y="{areaheight}*0.92" width="{areawidth}*0.96*{elapsed}/{duration}" height="{areaheight}*0.03" color="{clrHigh}" />
+				</area>-->
+			</areacontainer>
+		</currentelement>
+	</menuitems>
+
+	<scrollbar>
+		<area condition="lt({height},1000)" x="95%" y="14%" width="5%" height="75%" layer="3">
+			 <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowScrollSub" />
+			 <drawimage x="15%" y="{areaheight} * {offset} / 1000" width="{areawidth}*0.1" height="{areaheight} * {height} / 1000" imagetype="skinpart" path="scrollBar" />
+		</area>
+	</scrollbar>
+</menutimers>

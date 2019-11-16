@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayaudiotracks SYSTEM "../../../dtd/displayaudiotracks.dtd">
+
+<displayaudiotracks x="30%" y="0" width="40%" height="100%">
+    <background>
+        <area x="0" y="{areaheight} - {numtracks} * {areaheight} / 10 - {areaheight} / 10" width="100%" height="{areaheight} / 10 + {areaheight} / 10 * {numtracks}" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth}-4" height="{areaheight}-4" color="{clrBackground}" />
+        </area>
+    </background>
+
+    <header>
+        <area x="0" y="{areaheight} - {numtracks} * {areaheight} / 10 - {areaheight} / 10" width="100%" height="{areaheight} / 10" layer="2">
+            <drawtext align="center" valign="center" font="{semibold}" fontsize="80%" color="{clrText}" text="{title}" />
+        </area>
+    </header>
+
+    <menuitems x="0" y="{areaheight} - {numelements} * {areaheight} / 10" orientation="vertical" width="100%" height="{numelements} * {areaheight} / 10" align="top" numlistelements="{numelements}">
+        <listelement>
+            <!-- Background -->
+            <area x="1%" width="98%" layer="2">
+                <fill condition="not{current}" color="{clrTransparent}" />
+                <drawimage condition="{current}" x="0" y="0" width="100%" height="100%" imagetype="skinpart" path="item_mainmenu" />
+            </area>
+            <area x="1%" width="98%" layer="3">
+                <drawtext condition="not{current}" x="10" valign="center" font="{light}" fontsize="60%" color="{clrText}" text="{title}" />
+                <drawtext condition="{current}" x="10" valign="center" font="{light}" fontsize="60%" color="{clrTextActive}" text="{title}" />
+            </area>
+        </listelement>
+    </menuitems>
+
+</displayaudiotracks>

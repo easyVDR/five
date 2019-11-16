@@ -1,0 +1,67 @@
+<menumain x="0" y="0" width="100%" height="100%" fadetime="0">
+    <background>
+        <area x="0" y="0" width="30%" height="100%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+        <area x="80%" y="0" width="20%" height="15%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+        <area condition="{weathermainmenu}" x="55%" y="0" width="20%" height="15%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+            <drawrectangle x="50%" y="{areaheight}*0.67" width="1" height="{areaheight}*0.33" color="{clrBorder}" />
+            <drawrectangle x="4" y="66%" width="{areawidth} - 8" height="1" color="{clrBorder}" />
+        </area>
+    </background>
+    <header>
+        <area x="0" y="0" width="1" height="1" layer="1">
+            <fill color="{clrTransparent}" />
+        </area>
+    </header>
+    
+    <colorbuttons>
+        <area x="0" y="85%" width="30%" height="15%" layer="2">
+            <drawimage imagetype="icon" path="button_red" x="20" y="{areaheight}*0.1" width="{areaheight}*0.3" height="{areaheight}*0.3"/>
+            <drawimage imagetype="icon" path="button_green" x="20" y="{areaheight}*0.6" width="{areaheight}*0.3" height="{areaheight}*0.3"/>
+            <drawimage imagetype="icon" path="button_yellow" x="{areawidth} - {areaheight}*0.3 - 20" y="{areaheight}*0.1" width="{areaheight}*0.3" height="{areaheight}*0.3"/>
+            <drawimage imagetype="icon" path="button_blue" x="{areawidth} - {areaheight}*0.3 - 20" y="{areaheight}*0.6" width="{areaheight}*0.3" height="{areaheight}*0.3"/>
+            <drawtext x="{areaheight}*0.3 + 30" y="13%" font="{light}" fontsize="25%" color="{clrText}" text="{red}" />
+            <drawtext x="{areaheight}*0.3 + 30" y="63%" font="{light}" fontsize="25%" color="{clrText}" text="{green}" />
+            <drawtext name="textyellow" x="{areawidth} - {areaheight}*0.3 - 30 - {width(textyellow)}" y="13%" font="{light}" fontsize="25%" color="{clrText}" text="{yellow}" />
+            <drawtext name="textblue" x="{areawidth} - {areaheight}*0.3 - 30 - {width(textblue)}" y="63%" font="{light}" fontsize="25%" color="{clrText}" text="{blue}" />
+        </area>
+    </colorbuttons>
+
+    <currentweather condition="{weathermainmenu}" shifttime="0">
+        <area x="55%" y="0" width="12%" height="10%" layer="2">
+            <drawtext align="center" valign="center" font="{light}" fontsize="80%" color="{clrText}" text="{temperature}°C" />
+        </area>
+        <area x="67%" y="0" width="8%" height="10%" layer="2">
+            <drawimage imagetype="icon" path="weather/{icon}" align="center" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+        </area>
+        <area x="55%" y="10%" width="20%" height="5%" layer="3">
+            <drawimage name="tempmin" imagetype="icon" path="mintemp" x="15" valign="center" width="{areaheight}*0.8 / 3" height="{areaheight}*0.8"/>
+            <drawtext x="{width(tempmin)} + 20" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{mintemperature}°C" />
+            <drawimage name="tempmax" imagetype="icon" path="maxtemp" x="{areawidth} - {areaheight}*0.8 / 3 - 15" valign="center" width="{areaheight}*0.8 / 3" height="{areaheight}*0.8"/>
+            <drawtext name="texttempmax" x="{areawidth} - {areaheight}*0.8 / 3 - {width(texttempmax)} - 20" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{maxtemperature}°C" />
+        </area>
+    </currentweather>
+
+    <menuitems x="0" y="7%" width="30%" height="73%" orientation="vertical" align="center" numlistelements="10">
+        <listelement>
+            <area x="2" width="{areawidth} - 4" layer="2">
+                <fill condition="not{current}" color="{clrTransparent}" />
+                <drawimage condition="{current}" x="0" y="0" width="100%" height="100%" imagetype="skinpart" path="item_mainmenu" />
+            </area>
+            <areascroll scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="98%" layer="3">
+                <drawtext condition="not{current}" x="20" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{number} {label}" />
+                <drawtext condition="{current}" name="menutext" x="20" valign="center" font="{light}" fontsize="90%" color="{clrTextActive}" text="{number} {label}" />
+            </areascroll>
+        </listelement>
+    </menuitems>
+    
+    <scrollbar>
+    </scrollbar>
+</menumain>

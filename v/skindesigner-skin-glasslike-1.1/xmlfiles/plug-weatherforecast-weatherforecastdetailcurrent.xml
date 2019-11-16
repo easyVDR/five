@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
+
+<menuplugin x="0" y="0" width="100%" height="100%" fadetime="{mainmenuFadeTime}" scaletvx="{areawidth}*0.01" scaletvy="{areaheight}*0.695" scaletvwidth="{areawidth}*0.29" scaletvheight="{areaheight}*0.3" >
+    <background>
+    </background>
+
+    <header>
+    </header>
+
+    <datetime>
+    </datetime>
+
+    <colorbuttons>
+    </colorbuttons>
+
+    <scrollbar>
+	<!-- scrollbar -->
+        <area x="{areawidth}*0.99 - {areawidth}*0.01 + 2" y="{areawidth}*0.01 + 2 + {areaheight}*{offset}/1000" width="{areawidth}*0.01 - 6" height="{areaheight}*{height}/1000 - {areawidth}*0.02 - 6" layer="2">
+	    <drawellipse name="scroll_top" x="0" y="0" width="{areawidth}/2" height="{areawidth}/2" quadrant="2" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="0" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="2" color="{clrProgressbarBg}" />
+	    <drawellipse x="{areawidth}/2" y="0" width="{areawidth}/2" height="{areawidth}/2" quadrant="1" color="{clrProgressbar}" />
+	    <drawellipse x="{areawidth}/2 - 1" y="0" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="1" color="{clrProgressbarBg}" />
+	    <drawellipse name="scroll_bottom" x="0" y="{areaheight}-{areawidth}/2" width="{areawidth}/2" height="{areawidth}/2" quadrant="3" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}/2" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="3" color="{clrProgressbarBg}" />
+	    <drawellipse x="{areawidth}/2" y="{areaheight}-{areawidth}/2" width="{areawidth}/2" height="{areawidth}/2" quadrant="4" color="{clrProgressbar}" />
+	    <drawellipse x="{areawidth}/2 - 1" y="{areaheight}-{areawidth}/2" width="{areawidth}/2 - 1" height="{areawidth}/2 - 2" quadrant="4" color="{clrProgressbarBg}" />
+            <drawrectangle x="0" y="{height(scroll_top)} - 2" width="{areawidth} - 2" height="{posy(scroll_bottom)} - {width(scroll_top)} + 2" color="{clrProgressbarBg}" />
+            <drawrectangle x="{areawidth} - 2" y="{height(scroll_top)}" width="2" height="{posy(scroll_bottom)} - {width(scroll_top)}" color="{clrProgressbar}" />
+        </area>
+    </scrollbar>
+    <!-- Available Variables in detailheader and tab:
+    {menuheader}                        "Current Weather"
+    {city}                              configured city to display weather for
+    {latitude}                          latitude
+    {longitude}                         longitude
+    {timestamp}                         timestamp in hh:mm dd.mm of current forecast
+    {temperature}                       current temperature in °C
+    {apparenttemperature}               apparent (felt) temperature in °C
+    {temperaturemin}                    minimum temperature the day in °C
+    {temperaturemax}                    maximum temperature the day in °C
+    {summary}                           short summary of current weather
+    {icon}                              path to use in <drawimage> to display appropriate weather icon
+    {precipitationintensity}            precipitation intensity in l/qm    
+    {precipitationprobability}          precipitation probability in %
+    {precipitationtype}                 precipitation type (snow, ...)
+    {humidity}                          humidity in %
+    {windspeed}                         wind speed in km/h
+    {windbearing}                       wind bearing in degrees
+    {windbearingstring}                 wind bearing as human readable string (e.g NE, NNE, ...)
+    {visibility}                        visibility in km
+    {cloudcover}                        cloud cover in %
+    {pressure}                          pressure in HPa
+    {ozone}                             Ozone in DU (Dobson Unit)
+    -->
+    <detailheader>
+	<!-- menu frame -->
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.96" height="{areaheight}*0.70 - {areawidth}*0.02" layer="1">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)}" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 15" y="{posy(mainframe)} + {height(mainframe)} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+	<!-- info -->
+        <area x="{areawidth}*0.97 - {areaheight}*0.70 - {areawidth}*0.02 - 2" y="{areawidth}*0.01" width="{areaheight}*0.70 - {areaheight}*0.02 - 2" height="{areaheight}*0.70 - {areawidth}*0.02 - 2" layer="3">
+            <drawimage align="center" valign="center" imagetype="skinpart" path="weather/{icon}" width="95%" height="95%" />
+            <drawtext x="{posx(temp)} + 10" y="{posy(temp)} + 10" font="{regular}" fontsize="30%" color="{clrBlack}" text="{temperature} °C" />
+            <drawtext name="temp" align="center" valign="center" font="{regular}" fontsize="30%" color="{clrWhite}" text="{temperature} °C" />
+            <drawtext x="{posx(apparenttemp)} + 5" y="{posy(temp)} + {height(temp)} + 5" font="{regular}" fontsize="10%" color="{clrBlack}" text="{tr(Felt)}: {apparenttemperature} °C" />
+            <drawtext name="apparenttemp" align="center" y="{posy(temp)} + {height(temp)}" font="{regular}" fontsize="10%" color="{clrWhite}" text="{tr(Felt)}: {apparenttemperature} °C" />
+        </area>
+        <!-- weather location -->
+        <area x="{areawidth}*0.40" y="{areaheight}*0.775" width="{areawidth}*0.49" height="{areaheight}*0.225 - {areawidth}*0.01" layer="4">
+            <drawtext align="center" valign="top" width="100%" font="{regular}" fontsize="50%" color="{clrFontTitle}" text="{tr(Conditions)} {tr(for)}" />
+            <drawimage align="center" y="{areaheight}*0.50 - 2" imagetype="skinpart" path="line_horizontal" width="100%" height="3" />
+            <drawtext align="center" valign="bottom" width="100%" font="{regular}" fontsize="50%" color="{clrFontSubtitle}" text="{city}" />
+        </area>
+	<!-- menuicon --> 
+        <area x="{areawidth}*0.30" y="{areaheight}*0.70" width="{areawidth}*0.10" height="{areaheight}*0.30 - {areawidth}*0.01" layer="1">
+            <drawimage align="center" valign="center" imagetype="menuicon" path="pluginicons/weatherforecast" width="90%" height="90%" />
+        </area>
+     </detailheader>
+
+    <tab name="current" x="{areawidth}*0.02" y="{areawidth}*0.02" width="{areawidth}*0.94 - 2" height="{areaheight}*0.70 - {areawidth}*0.02 - 2" layer="4" scrollheight="{areaheight}/4">
+        <drawtext x="0" y="6%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(todaymin)}: {mintemperature}°C, {tr(todaymax)}: {maxtemperature}°C" />
+        <drawtext x="0" y="14%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Apparenttemp)}: {apparenttemperature}°C" />
+        <drawtext x="0" y="22%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Precipitationprobability)}: {precipitationprobability} %" />
+        <drawtext x="0" y="30%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Precipitationintensity)}: {precipitationintensity} l/qm" />
+        <drawtext x="0" y="38%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Humidity)}: {humidity} %" />
+        <drawtext x="0" y="46%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Windspeed)}: {windspeed} km/h aus {windbearingstring}" />
+        <drawtext x="0" y="54%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Visibility)}: {visibility} km" />
+        <drawtext x="0" y="62%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Cloudcover)}: {cloudcover} %" />
+        <drawtext x="0" y="70%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Pressure)}: {pressure} HPa" />
+        <drawtext x="0" y="78%" font="{regular}" fontsize="8%" color="{clrWhite}" text="{tr(Ozone)}: {ozone} DU" />
+    </tab>
+</menuplugin>

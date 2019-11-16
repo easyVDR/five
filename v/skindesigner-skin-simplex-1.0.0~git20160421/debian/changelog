@@ -1,0 +1,131 @@
+skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 23:46:23 +0100
+
+skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 00:56:30 +0100
+
+skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 23:58:46 +0100
+
+skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR3~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Jun 2017 17:59:21 +0200
+
+skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 07 Oct 2016 21:09:32 +0200
+
+skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 07 Oct 2016 17:39:09 +0200
+
+skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ed06ad7 fixed svgtemplate handling
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Apr 2016 22:38:24 +0200
+
+skindesigner-skin-simplex (1.0.0~git20160418-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit: da5fc18 - adapted svgtemplates
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Apr 2016 21:17:25 +0200
+
+skindesigner-skin-simplex (0.7.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Nov 2015 23:02:00 +0100
+
+skindesigner-skin-simplex (0.7.0-0mangoVDR1~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 24 Aug 2015 20:16:19 +0200
+
+skindesigner-skin-simplex (0.7.0-0mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild for my ppa
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Aug 2015 23:50:55 +0200
+
+skindesigner-skin-simplex (0.7.0-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 4f914ad: fixed default menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 09 Aug 2015 11:48:45 +0200
+
+skindesigner-skin-simplex (0.6.3-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * fb3276d: added mute in displayvolume
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 03 Aug 2015 14:46:05 +0200
+
+skindesigner-skin-simplex (0.6.3-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * fb3276d: added mute in displayvolume
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 03 Aug 2015 14:45:52 +0200
+
+skindesigner-skin-simplex (0.6.3-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 67e53df: fixed rec buttin in tvguide
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 31 Jul 2015 19:21:46 +0200
+
+skindesigner-skin-simplex (0.6.3-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 67e53df: fixed rec buttin in tvguide
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 31 Jul 2015 19:21:26 +0200
+
+skindesigner-skin-simplex (0.6.2-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 2471ec8: theme darkred
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 31 Jul 2015 13:32:02 +0200
+
+skindesigner-skin-simplex (0.6.2-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 2471ec8: theme darkred
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 31 Jul 2015 13:31:58 +0200
+
+skindesigner-skin-simplex (0.6.2-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d7b2c3c: changed displayreplay
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 26 Jul 2015 15:49:43 +0200
+
+skindesigner-skin-simplex (0.6.2-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d7b2c3c: changed displayreplay
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 26 Jul 2015 15:49:39 +0200
+

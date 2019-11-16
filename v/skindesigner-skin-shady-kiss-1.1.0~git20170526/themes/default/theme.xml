@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE globals SYSTEM "../../../../dtd/globals.dtd">
+
+<globals>
+    <colors>
+		<!-- theme-colors for svgtemplates-->
+		
+		<!--start (left-right) of two-color-gradients-->
+		<color name="clrDown">FF120401</color>
+		
+		<!--center of two-color-gradients, brighter than clrDown-->
+		<color name="clrUp">FF780B02</color>
+		
+		<!--
+		
+		-->
+		
+		<!--bars: percentseen, elapsed, viewoffset-->
+		<color name="clrHigh">FF666666</color>
+		
+		<!--separatortext-->
+		<color name="clrSeparatorText">FFEBEBEB</color>
+		
+		<!--warnings, timerconflicts-->
+		<color name="clrRed">FFFF0000</color>
+		
+		<!--{marks[active]} in displayreplay-->
+		<color name="clrGreen">FF5FE200</color>
+		
+		<!--inactive and startmarks in displayreplay
+		borders in tvguideng-root
+		textcolor and rectangles in tvguideng-recmenu-->
+		<color name="clrBlack">FF000000</color>
+		
+		<!--onpause displayreplay-->
+		<color name="clrSemiTransBlack">D0000000</color>
+		
+		<!--text in tvguideng-recmenu, tvguideng-root-->
+		<color name="clrWhite">FFFFFFFF</color>
+		
+		<!--main textcolor-->
+		<color name="clrLightGray">FFEBEBEB</color>
+		
+		<!--eraser ;)-->
+		<color name="clrTransparent">00000000</color>
+		
+		<!--background dayset, editmode in tvguideng-recmenu-->
+		<color name="clrActive">FF666666</color>
+		
+		<!--background timerconflict in tvguideng-recmenu-->
+		<color name="clrBackGroundGray">FF131313</color>
+		
+		<!--overlap-text in tvguideng-recmenu (timers)-->
+		<color name="clrTransRed">99FF0000</color>
+		
+		<!--background in tvguideng-recmenu-->
+		<color name="clrRecMenuHide">F0000000</color>
+		
+		<!--borders of tvguideng-recmenu-->
+		<color name="clrRecMenuBorderTop">FF4D4D4D</color>               
+		<color name="clrRecMenuBorderBottom">FF171717</color>
+		<color name="clrRecMenuConflTop">FF373938</color>
+		<!--plex-poster-->
+		<color name="clrPlexFillBright">C81E1E1E</color>
+		<color name="clrPlexFillDark">D7000000</color>
+		<color name="clrDarkGray">FF808080</color>
+		<color name="clrBar">FF780B02</color>
+		<!--background timericons-->
+		<color name="clrIconsBG">A7000000</color>
+	</colors>
+    <!--
+    these variables can be used everywhere in the templates
+    variabls of type int can also be used as conditions, just
+    set such a variable to 1 for true and 0 for false
+    -->
+    <variables>
+    </variables>
+    <!--
+    The three Fonts FontOSD, FontFix and FontSml configured in VDR
+    can be used in all template "font" attributes with this tokens:
+    {vdrOsd}
+    {vdrFix}
+    {vdrSml} 
+    If you like to use further fonts, just define them below.
+    Syntax:
+    <font name="tokenname">fontname</font>
+    These fonts can then also be used in all templates in the "font" 
+    attribute.
+    if an invalid font is used in a template, vdrOsd is used as default.
+    -->
+    <fonts>
+    </fonts>
+</globals>

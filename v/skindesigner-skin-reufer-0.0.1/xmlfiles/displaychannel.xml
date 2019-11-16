@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displaychannel SYSTEM "../../../dtd/displaychannel.dtd">
+<displaychannel x="5%" y="73%" width="90%" height="22%" fadetime="{fadetimechannel}" shifttime="{shifttimechannel}" shifttype="bottom" shiftmode="linear">
+    <background>
+        <area x="0%" y="0%" width="100%" height="100%" layer="1">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+            <drawrectangle x="20%" y="0" width="{border}" height="100%" color="{clrBorder}" />
+            <drawrectangle x="87%" y="0" width="{border}" height="100%" color="{clrBorder}" />
+        </area>
+    </background>
+    <channelinfo>
+        <area x="21%" y="0" width="100%" height="25%" layer="2">
+            <drawtext x="0%" y="8%" width="100%" font="{semibold}" fontsize="100%" color="{clrText}" text="{channelnumber}  {channelname}" />
+        </area>
+        <area condition="{channellogoexists}" x="2%" y="5%" width="16%" height="90%" layer="2">
+            <drawrectangle x="2%" y="2%" width="96%" height="96%" color="{clrLogoBackground}" />
+        </area>
+        <area condition="{channellogoexists}" x="2%" y="5%" width="16%" height="90%" layer="3">
+            <drawimage cache="true" imagetype="channellogo" path="{channelid}" align="center" x="5%" y="5%" width="90%" height="90%" />
+        </area>
+        <area condition="not{channellogoexists}" x="2%" y="5%" width="16%" height="90%" layer="2">
+            <drawtext align="center" valign="center" width="98%" font="{bold}" fontsize="30%" color="{clrText}" text="{channelname}" />
+        </area>
+    </channelinfo>
+    <epginfo>
+        <area x="21%" y="25%" width="65%" height="75%" layer="2">
+            <drawtext x="0%" y="6%" font="{regular}" fontsize="25%" color="{clrText}" text="{currentstart} - {currentstop}" />
+            <drawtext x="0%" y="50%" font="{regular}" fontsize="25%" color="{clrTextInactive}" text="{nextstart} - {nextstop}" />
+            <drawtext x="21%" y="6%" font="{regular}" fontsize="25%" color="{clrText}" text="{currenttitle}" />
+            <drawtext x="21%" y="28%" font="{italic}" fontsize="25%" color="{clrText}" text="{currentsubtitle}" />
+            <drawtext x="0%" y="31%" font="{italic}" fontsize="20%" color="{clrText}" text="+{currentremaining}'" />
+            <drawtext x="21%" y="50%" font="{regular}" fontsize="25%" color="{clrTextInactive}" text="{nexttitle}" />
+            <drawtext x="21%" y="72%" font="{italic}" fontsize="25%" color="{clrTextInactive}" text="{nextsubtitle}" />
+        </area>
+    </epginfo>
+    <progressbar>
+        <area condition="gt({duration}, 0)" x="26%" y="52%" width="7%" height="6%" layer="2">
+            <fill color="{clrTransparent}" />
+            <drawellipse x="0" y="0" width="{areaheight} * 0.5" height="{areaheight}" color="{clrProgressbarBackground}" quadrant="7" />
+            <drawrectangle x="{areaheight} * 0.5" y="0" height="100%" width="{areawidth} - {areaheight}" color="{clrProgressbarBackground}" />
+            <drawellipse x="{areawidth} - 0.5 * {areaheight}" y="0" width="{areaheight} * 0.5" height="{areaheight}" color="{clrProgressbarBackground}" quadrant="5" />
+            <drawellipse x="{areaheight} * 0.25" y="{areaheight} * 0.25" width="0.5 * {areaheight}" height="0.5 * {areaheight}" color="{clrProgressbarMarks}" quadrant="0" />
+            <drawrectangle x="{areaheight} * 0.5" y="{areaheight} * 0.25" width="{elapsed} * {areawidth} / {duration} - {elapsed} * {areaheight} / {duration}" height="{areaheight} * 0.5" color="{clrProgressbarMarks}" />
+            <drawellipse x="{areaheight} * 0.25 + {elapsed} * {areawidth} / {duration} - {elapsed} * {areaheight} / {duration}" y="{areaheight} * 0.25" width="0.5 * {areaheight}" height="0.5 * {areaheight}" color="{clrProgressbarMarks}" quadrant="0" />
+        </area>
+    </progressbar>
+    <datetime>
+        <area x="87%" y="0%" width="13%" height="100%" layer="2">
+            <drawtext align="center" y="16%" font="{light}" fontsize="30%" color="{clrText}" text="{time}" />
+            <drawtext align="center" y="50%" font="{light}" fontsize="19%" color="{clrText}" text="{dayname}" />
+            <drawtext align="center" y="68%" font="{light}" fontsize="19%" color="{clrText}" text="{day}.{month}.{year}" />
+        </area>
+    </datetime>
+    <message>
+        <area x="25%" y="25%" width="50%" height="50%" layer="6">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+            <drawtext x="10%" y="10%" width="80%" align="center" valign="center" font="{light}" fontsize="40%" color="{clrText}" text="{text}" />
+        </area>
+    </message>
+</displaychannel>

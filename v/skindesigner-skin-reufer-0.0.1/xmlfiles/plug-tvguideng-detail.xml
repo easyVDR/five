@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
+<displayplugin x="0" y="0" width="100%" height="100%">
+    <viewelement name="background">
+        <area x="0%" y="0%" width="100%" height="100%" layer="1">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0%" y="95%" height="6%" width="26%" color="{clrBackgroundRed}" />
+            <drawrectangle x="25%" y="95%" height="6%" width="26%" color="{clrBackgroundGreen}" />
+            <drawrectangle x="50%" y="95%" height="6%" width="26%" color="{clrBackgroundYellow}" />
+            <drawrectangle x="75%" y="95%" height="6%" width="26%" color="{clrBackgroundBlue}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+            <drawrectangle x="0%" y="12%" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0%" y="95%" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="76%" y="0%" height="12%" width="{border}" color="{clrBorder}" />
+        </area>
+    </viewelement>
+    <scrollbar>
+        <area x="{areawidth} * 0.98" y="13%" width="{areawidth} * 0.01" height="81%" layer="3">
+            <fill color="{clrTransparent}" />
+            <drawellipse x="0" y="0" width="{areawidth}" height="{areawidth} * 0.5" color="{clrHighlight}" quadrant="6" />
+            <drawrectangle x="0" y="{areawidth} * 0.5" height="{areaheight} - {areawidth}" width="100%" color="{clrHighlight}" />
+            <drawellipse x="0" y="{areaheight} - 0.5 * {areawidth}" width="{areawidth}" height="{areawidth} * 0.5" color="{clrHighlight}" quadrant="8" />
+            <drawellipse name="slidertop" x="{areawidth} * 0.25" y="{areawidth} * 0.25 + {areaheight} * {offset} / 1000 - {areawidth} * {offset} / 1000" width="{areawidth} * 0.5" height="{areawidth} * 0.25" color="{clrBorder}" quadrant="6" />
+            <drawrectangle name="sliderbody" x="{areawidth} * 0.25" y="{posy(slidertop)} + {height(slidertop)}" height="{areaheight} * {height} / 1000 - {areawidth} * {height} / 1000" width="{areawidth} * 0.5" color="{clrBorder}" />
+            <drawellipse name="sliderbottom" x="{areawidth} * 0.25" y="{posy(sliderbody)} + {height(sliderbody)}" width="{areawidth} * 0.5" height="{areawidth} * 0.25" color="{clrBorder}" quadrant="8" />
+        </area>
+    </scrollbar>
+    <viewelement name="footer">
+        <area x="0" y="95%" width="100%" height="5%" layer="2">
+            <drawtextbox x="0%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{red}" />
+            <drawtextbox x="25%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{green}" />
+            <drawtextbox x="50%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{yellow}" />
+            <drawtextbox x="75%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{blue}" />
+        </area>
+    </viewelement>
+    <viewelement name="time">
+        <area x="76%" y="0%" width="23%" height="12%" layer="2">
+            <drawtext align="right" y="8%" font="{light}" fontsize="55%" color="{clrText}" text="{time}" />
+            <drawtext align="right" y="58%" font="{light}" fontsize="35%" color="{clrText}" text="{dayname}, {day}.{month}.{year}" />
+        </area>
+    </viewelement>
+    <viewelement name="header">
+        <area x="0%" y="1%" width="75%" height="12%" layer="2">
+            <drawtext x="1%" y="0%" font="{semibold}" width="100%" fontsize="50%" color="{clrText}" text="{start} - {stop}  {title}" />
+            <drawtextbox x="1%" y="48%" width="100%" font="{light}" fontsize="38%" color="{clrText}" text="{shorttext}" />
+        </area>
+    </viewelement>
+    <tab name="EPG Info" x="1%" y="13%" width="97%" height="81%" layer="2" scrollheight="{areaheight}/4">
+        <drawtextbox x="0" y="0" width="100%" font="{light}" fontsize="0.055 * {areaheight}" color="{clrText}" text="{description}" />
+    </tab>
+    <tablabels></tablabels>
+</displayplugin>

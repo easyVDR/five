@@ -1,0 +1,387 @@
+<menurecordings x="0" y="0" width="100%" height="100%" orientation="{recmenuorientation}" fadetime="0" >
+	<background orientation="vertical">
+		<area x="0" y="{areaheight}*0.999" width="100%" height="{areaheight}*0.001" layer="1">
+			<fill color="{clrBlack}" />
+		</area>
+		<area x="0" y="0" width="100%" height="100%" transparency="{transBackground}" layer="1">
+			<drawimage condition="not{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNG" />
+			<drawimage condition="{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNGBright" />
+		</area>
+		<area x="0" y="0" width="100%" height="100%" layer="2">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowsMenuDefault" />
+		</area>
+		<area x="0" y="0" width="100%" height="11%" layer="2">
+			<drawimage x="0" width="{areawidth}*0.972" height="{areaheight}*0.972" imagetype="skinpart" path="gradientHeader" />
+		</area>
+		<area condition="eq({indexcurrentInfo}, 1)" x="70%" y="14%" width="25%" height="75%" transparency="{transLists}" layer="3">
+			<drawimage x="0" y="0" height="100%" width="100%" imagetype="skinpart" path="currentElementHeader" />
+		</area>
+		<area condition="eq({indexcurrentInfo}, 2)" x="65%" y="14%" width="30%" height="75%" transparency="{transLists}" layer="3">
+			<drawimage x="0" y="0" height="100%" width="100%" imagetype="skinpart" path="currentElementHeader" />
+		</area>
+	</background>
+	
+	<background orientation="horizontal">
+		<area x="0" y="{areaheight}*0.999" width="100%" height="{areaheight}*0.001" layer="1">
+			<fill color="{clrBlack}" />
+		</area>
+		<area x="0" y="0" width="100%" height="100%" transparency="{transBackground}" layer="1">
+			<drawimage condition="not{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNG" />
+			<drawimage condition="{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNGBright" />
+		</area>
+		<area x="0" y="0" width="100%" height="100%" layer="2">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowsMenuDefault" />
+		</area>
+		<area x="0" y="0" width="100%" height="11%" layer="2">
+			<drawimage x="0" width="{areawidth}*0.972" height="{areaheight}*0.972" imagetype="skinpart" path="gradientHeader" />
+		</area>
+	</background>
+
+	<header condition="{showDiscUsage}">
+		<area x="0" y="0" width="5%" height="10%" layer="3">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="disc" />
+		</area>
+		<area x="0" y="1%" width="6%" height="9%" layer="4">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="discSpec" />
+			<drawimage x="0" width="{areawidth}" height="{areaheight}/100*{freepercent}" imagetype="skinpart" path="discSpecHide" />
+		</area>
+		<area x="0" y="6%" width="5%" height="4%" layer="4">
+			<drawtext x="0" y="25%"  align="center" font="{light}" fontsize="75%" color="{clrLightGray}" text="{usedpercent}%" />
+		</area>
+		<area x="6%" y="2%" width="60%" height="7%" layer="4">
+			<drawtext x="1%" valign="center" font="{light}" fontsize="80%" color="{clrLightGray}" text="{title}" />
+		</area>
+	</header>
+	
+	<menuitems x="1%" y="12%" orientation="horizontal" width="95%" height="79%" align="center" numlistelements="7">
+		<listelement>
+			<area y="54%" height="46%" layer="3">
+				<drawimage condition="{current}" x="0" y="0" width="100%" height="96%" imagetype="skinpart" path="buttonRootCurrentTVG_Gradient_ver" />
+				<drawimage condition="not{current}" x="4%" y="15%" width="92%" height="80%" imagetype="skinpart" path="buttonPlexCover" />
+			</area>
+			<area condition="{folder}" y="51%" height="46%" layer="4">
+				<drawimage condition="not{current}" name="foldericon" align="center" y="14%" width="{areaheight}*0.7*0.68" height="{areaheight}*0.7" imagetype="icon" path="ico_recfolder"  />
+				<drawimage condition="{current}" name="foldericon" align="center" y="0" width="{areaheight}*0.9*0.68" height="{areaheight}*0.9" imagetype="icon" path="ico_recfolder"  />
+				<drawtextbox align="center" maxlines="2" x="5%" y="80%" width="90%" height="25%" font="{light}" fontsize="8%" color="{clrLightGray}" text="{name}" />
+				<drawtext align="center" x="5%" y="70%" width="98%" font="{light}" fontsize="8%" color="{clrLightGray}" text="({numrecordingsfolder}, {newrecordingsfolder} {tr(new)})" />
+			</area>
+			<areacontainer condition="not{folder}">
+				<area condition="not{current}" y="64%" height="36%" layer="4">
+					<drawimage condition="{hasposterthumbnail}" y="0" align="center" width="{areaheight}*0.7*0.68" height="{areaheight}*0.7" imagetype="image" path="{thumbnailpath}" />
+					<drawrectangle x="22%" y="72%" width="{areawidth}*0.56*{percentseen}/100" height="{areaheight}*0.01" color="{clrHigh}" />
+					<drawtextbox align="center" maxlines="2" x="4%" y="75%" width="92%" height="38%" font="{light}" fontsize="9%" color="{clrLightGray}" text="{name}" />
+				</area>
+				<area condition="{current}" y="54%" height="46%" layer="4">
+					<drawtextbox align="center" maxlines="3" x="5%" y="10%" width="90%" height="38%" font="{light}" fontsize="9%" color="{clrLightGray}" text="{name}" />
+					<drawtext x="35%" y="47%" font="{light}" fontsize="8%" color="{clrLightGray}" text="{percentseen}%" />
+					<drawtext x="35%" y="71%" font="{light}" fontsize="8%" color="{clrLightGray}" text="{duration} min" />
+					<drawtext x="5%" y="87%" font="{light}" fontsize="7%" color="{clrLightGray}" text="{date}" />
+					<drawtext y="87%" align="right" font="{light}" fontsize="7%" color="{clrLightGray}" text="{time}   " />
+				</area>
+				<area condition="{current}" y="54%" height="46%" transparency="40" layer="4">
+					<drawimage condition="gt({percentseen}, 0)" x="8%" y="46%" width="{areaheight}*0.1" height="{areaheight}*0.1" imagetype="icon" path="seenActive" />
+					<drawimage condition="eq({percentseen}, 0)" x="8%" y="46%" width="{areaheight}*0.1" height="{areaheight}*0.1" imagetype="icon" path="seen" />
+					<drawimage condition="{cutted}" x="3%" y="60%" width="{areaheight}*0.2" height="{areaheight}*0.2" imagetype="icon" path="cutActive" />
+					<drawimage condition="not{cutted}" x="3%" y="60%" width="{areaheight}*0.2" height="{areaheight}*0.2" imagetype="icon" path="cut" />
+				</area>
+			</areacontainer>
+		</listelement>
+
+		<currentelement delay="0" fadetime="{currentelementsFadeTime}">
+			<area condition="isset{posterpath}" x="0" y="1%" width="98%" height="52%" layer="3">
+				<drawimage imagetype="skinpart" path="posterBGDetail" x="0" y="0" width="{areawidth}*0.203" height="{areawidth}*0.27"/>
+				<drawimage name="poster" imagetype="image" path="{posterpath}" x="0" y="0" width="{areaheight}*0.95*{posterwidth}/{posterheight}" height="95%"/>
+				<drawrectangle x="0" y="98%" width="{width(poster)}*{percentseen}/100" height="{areaheight}*0.006" color="{clrHigh}" />
+				<drawtext name="title" x="{width(poster)}*1.2" y="0" font="{semibold}" fontsize="12%" color="{clrLightGray}" text="{name}" />
+				<drawtext name="shorttext" x="{width(poster)}*1.2" y="{height(title)}" width="0.96*{areawidth} - {width(poster)}" font="{light}" fontsize="10%" color="{clrLightGray}" text="{shorttext}" />
+				<drawtextbox x="{width(poster)}*1.2" y="23%" width="{areawidth}*0.94 - {width(poster)}" height="{areaheight}*0.77" font="{light}" fontsize="9%" color="{clrLightGray}" text="{description}" />
+			</area>
+			<area condition="empty{posterpath}" x="0" y="1%" width="98%" height="52%" layer="3">
+				<drawtext name="title" x="1%" y="0" font="{semibold}" fontsize="12%" color="{clrLightGray}" text="{name}" />
+				<drawtext name="shorttext" x="1%" y="{height(title)}" width="98%" font="{semibold}" fontsize="10%" color="{clrLightGray}" text="{shorttext}" />
+				<drawtextbox x="1%" y="23%" width="{areawidth}*0.98" height="{areaheight}*0.77" font="{light}" fontsize="9%" color="{clrLightGray}" text="{description}" />
+			</area>
+		</currentelement>
+	</menuitems>
+
+	<menuitems x="0" y="14%" orientation="vertical" width="100%" height="75%" align="center" numlistelements="{00_numRecordingsmenuitems}">
+		<listelement>
+			<areacontainer condition="not{folder}">
+				<area x="0" width="19%" transparency="{transLists}" layer="3">
+					<drawimage x="4%" y="0" width="{areawidth}*0.96" height="{areaheight}" imagetype="skinpart" path="cellRecordings" />
+				</area>
+				<area condition="eq({00_numRecordingsmenuitems}, 12)" x="{areawidth}*0.01" width="8%" layer="4">
+					<drawtext align="center" valign="center" font="{light}" fontsize="57%" color="{clrLightGray}" text="{printf('%02d.%02d.%d', daynumeric, month, year)}" />
+				</area>
+				<area condition="gt({00_numRecordingsmenuitems}, 12)" x="{areawidth}*0.01" width="8%" layer="4">
+					<drawtext align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{printf('%02d.%02d.%d', daynumeric, month, year)}" />
+				</area>
+				<area x="9%" width="5%" layer="4">
+					<drawtext align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{time}" />
+				</area>
+				<area x="14%" width="5%" layer="4">
+					<drawtext align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{durationhours}:{durationminutes} " />
+				</area>
+				<area condition="not{longElapsedBar}" x="14%" y="1%" width="5%" height="6%" layer="4">
+					<drawrectangle x="0" y="{areaheight}*0.96" width="{areawidth}*0.9*{percentseen}/100" height="{areaheight}*0.03" color="{clrHigh}" />
+				</area>
+			</areacontainer>
+			
+			<areacontainer condition="{folder}">
+				<area x="0" width="19%" transparency="{transLists}" layer="3">
+					<drawimage x="4%" y="0" width="{areawidth}*0.96" height="{areaheight}" imagetype="skinpart" path="cellRecordingsFolderDark" />
+				</area>
+				<area x="5%" width="4%" layer="4">
+					<drawtext x="0" align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{numrecordingsfolder}" />
+				</area>
+				<area x="10%" width="7%" layer="4">
+					<drawtext align="center" valign="center" font="{light}" fontsize="60%" color="{clrLightGray}" text="{tr(new)}: {newrecordingsfolder}" />
+				</area>
+			</areacontainer>
+<!--noCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 0)">
+				<area x="19%" width="75%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonLong"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons},0)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonLongActive"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons},2)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonLongActive_Gradient"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons},1)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonLongActiveColor"/>
+				</area>
+				<area condition="not{folder}++{longElapsedBar}" x="20%" width="74%" layer="4">
+					<drawrectangle x="0" y="{areaheight}*0.92" width="{areawidth}*0.995*{percentseen}/100" height="{areaheight}*0.01" color="{clrHigh}" />
+				</area>
+				<area x="89%" width="{areaheight}" transparency="15" layer="4">
+					<drawimage condition="{cutted}" x="0" y="0" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6" imagetype="icon" path="cutActive" />
+					<drawimage condition="not{cutted}" x="0" y="0" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6" imagetype="icon" path="cut" />
+				</area>
+
+				<area condition="not{folder}" x="91%" width="2%" layer="4">
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+				</area>
+
+				<areascroll condition="{folder}" scrollelement="name" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="21%" width="68%" layer="4">
+					<drawtext condition="{current}" name="name" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+				</areascroll>
+				<areascroll condition="not{folder}" scrollelement="name" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="21%" width="68%" layer="4">
+					<drawtext condition="{current}" name="name" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+				</areascroll>
+			</areacontainer>
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)"> 
+				<area x="19%" width="50%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMedium"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons},0)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive_Gradient"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons},1)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActiveColor"/>
+				</area>
+				<area condition="not{folder}++{longElapsedBar}" x="20%" width="49%" layer="4">
+					<drawrectangle x="0" y="{areaheight}*0.96" width="{areawidth}*0.99*{percentseen}/100" height="{areaheight}*0.01" color="{clrHigh}" />
+				</area>
+
+				<area condition="not{folder}" x="64%" width="{areaheight}" transparency="15" layer="4">
+					<drawimage condition="{cutted}" x="0" y="0" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6" imagetype="icon" path="cutActive" />
+					<drawimage condition="not{cutted}" x="0" y="0" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6" imagetype="icon" path="cut" />
+				</area>
+
+				<area condition="not{folder}" x="66%" width="2%" layer="4">
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+				</area>
+
+				<areascroll condition="{folder}" scrollelement="name" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="21%" width="42%" layer="4">
+					<drawtext condition="{current}" name="name" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+				</areascroll>
+				<areascroll condition="not{folder}" scrollelement="name" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="21%" width="42%" layer="4">
+					<drawtext condition="{current}" name="name" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+				</areascroll>
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)"> 
+				<area x="19%" width="45%" transparency="{transLists}" layer="3">
+					<drawimage condition="not{current}" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMedium"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons},0)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons}, 2)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActive_Gradient"/>
+					<drawimage condition="{current}++eq({indexcoloredButtons},1)" x="1%" y="0" width="{areawidth}*0.991" height="{areaheight}" imagetype="skinpart" path="buttonMediumActiveColor"/>
+				</area>
+				<area condition="not{folder}++{longElapsedBar}" x="20%" width="44%" layer="4">
+					<drawrectangle x="0" y="{areaheight}*0.96" width="{areawidth}*0.99*{percentseen}/100" height="{areaheight}*0.01" color="{clrHigh}" />
+				</area>
+
+				<area condition="not{folder}" x="59%" width="{areaheight}" transparency="15" layer="4">
+					<drawimage condition="{cutted}" x="0" y="0" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6" imagetype="icon" path="cutActive" />
+					<drawimage condition="not{cutted}" x="0" y="0" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6" imagetype="icon" path="cut" />
+				</area>
+
+				<area condition="not{folder}" x="61%" width="2%" layer="4">
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="{new}++eq({03_new-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="not{new}++not{watched}++eq({05_notNewNotWatched-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 1)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="blueMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 2)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="darkGrayMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 3)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="green_blueMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 4)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="greenMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 5)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="lightGrayMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 6)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="orangeMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 7)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="redMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 8)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="turquoiseMarker" />
+					<drawimage condition="not{new}++{watched}++eq({07_notNewWatched-recordingsMarker}, 9)" x="0" y="10%" width="{areaheight}*0.8*39/57" height="{areaheight}*0.8" imagetype="skinpart" path="yellowMarker" />
+				</area>
+
+				<areascroll condition="{folder}" scrollelement="name" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="21%" width="37%" layer="4">
+					<drawtext condition="{current}" name="name" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+				</areascroll>
+				<areascroll condition="not{folder}" scrollelement="name" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="21%" width="37%" layer="4">
+					<drawtext condition="{current}" name="name" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+					<drawtext condition="not{current}" x="0" valign="center" font="{light}" fontsize="70%" color="{clrLightGray}" text="{name}"/>
+				</areascroll>
+			</areacontainer>
+		</listelement>
+		
+		<currentelement delay="0" fadetime="{currentelementsFadeTime}">
+<!--tallCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 1)">
+				<area x="71%" y="1%" width="23%" height="6%" layer="4">
+					<drawtext name="title" x="0" y="5%" width="100%" align="center" font="{light}" fontsize="{fontSizeInfoTitle}" color="{clrLightGray}" text="{name}" />
+				</area>
+				<area condition="not{folder}" x="70%" y="7%" width="25%" height="5%" layer="4">
+					<drawtext x="0" y="25%" align="center" width="100%" font="{light}" fontsize="{fontSizeInfoDetails}" color="{clrLightGray}" text="{daynumeric}.{month}.{year}   {time}   ({duration} min)" />
+				</area>
+				<area condition="not{folder}" x="70%" y="12%" width="25%" height="{areaheight}*0.93" layer="4">
+					<drawimage condition="isset{posterpath}" imagetype="skinpart" path="posterBGCurrent" x="0" y="0" width="{areawidth}*0.48" height="{areawidth}*0.61"/>
+					<drawimage condition="isset{posterpath}" name="poster" imagetype="image" path="{posterpath}" x="4%" y="2%" width="{areawidth}*0.35" height="{areawidth}*0.35* {posterheight} / {posterwidth}"/>
+					<drawtextbox condition="isset{posterpath}" x="4%" y="2%" width="92%" height="92%" float="topleft" floatwidth="{width(poster)}*1.2" floatheight="{height(poster)}*1.1" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{description}" />
+					<drawtextbox condition="empty{posterpath}" x="4%" y="2%" width="92%" height="92%" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{description}" />
+				</area>
+				<area condition="not{folder}++{currentInfo}" x="70%" y="1%" width="25%" height="6%" layer="6">
+					<drawrectangle x="2%" y="{areaheight}*0.92" width="{areawidth}*0.96*{percentseen}/100" height="{areaheight}*0.05" color="{clrHigh}" />
+				</area>
+				<area condition="{folder}" x="71%" y="10%" width="23%" height="10%" layer="4">
+					<drawtext condition="eq({numrecordingsfolder}, 1)" x="0" y="0" align="center" width="100%" font="{light}" fontsize="45%" color="{clrLightGray}" text="{numrecordingsfolder} {tr(recording)}" />
+					<drawtext condition="gt({numrecordingsfolder}, 1)" x="0" y="0" align="center" width="100%" font="{light}" fontsize="45%" color="{clrLightGray}" text="{numrecordingsfolder} {tr(recordings)}" />
+					<drawtext name="newrecordingsfolder" x="0" y="45%" align="center" width="100%" font="{light}" fontsize="40%" color="{clrLightGray}" text="{newrecordingsfolder} {tr(new)}" />
+				</area>
+				<area condition="{folder}++isset{posterpath}" x="71%" y="21%" width="23%" height="70%" layer="4">
+					<drawimage x="10%" y="0" height="{areawidth}*0.8*{posterheight}/{posterwidth}" width="{areawidth}*0.8" imagetype="image" path="{posterpath}" />
+				</area>
+			</areacontainer>
+<!--wideCurrentInfo-->
+			<areacontainer condition="eq({indexcurrentInfo}, 2)">
+				<area x="66%" y="1%" width="28%" height="6%" layer="4">
+					<drawtext name="title" x="0" y="5%" width="100%" align="center" font="{light}" fontsize="{fontSizeInfoTitle}" color="{clrLightGray}" text="{name}" />
+				</area>
+				<area condition="not{folder}" x="65%" y="7%" width="30%" height="5%" layer="4">
+					<drawtext x="0" y="25%" align="center" font="{light}" fontsize="{fontSizeInfoDetails}" color="{clrLightGray}" text="{daynumeric}.{month}.{year}   {time}   ({duration} min)" />
+				</area>
+				<area condition="not{folder}" x="65%" y="12%" width="30%" height="{areaheight}*0.93" layer="4">
+					<drawimage condition="isset{posterpath}" imagetype="skinpart" path="posterBGCurrent" x="0" y="0" width="{areawidth}*0.48" height="{areawidth}*0.61"/>
+					<drawimage condition="isset{posterpath}" name="poster" imagetype="image" path="{posterpath}" x="4%" y="2%" width="{areawidth}*0.35" height="{areawidth}*0.35* {posterheight} / {posterwidth}"/>
+					<drawtextbox condition="isset{posterpath}" x="4%" y="2%" width="92%" height="92%" float="topleft" floatwidth="{width(poster)}*1.2" floatheight="{height(poster)}*1.1" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{description}" />
+					<drawtextbox condition="empty{posterpath}" x="4%" y="2%" width="92%" height="92%" font="{light}" fontsize="{fontSizeInfoDescription}" color="{clrLightGray}" text="{description}" />
+				</area>
+				<area condition="not{folder}++{currentInfo}" x="65%" y="1%" width="30%" height="6%" layer="6">
+					<drawrectangle x="2%" y="{areaheight}*0.92" width="{areawidth}*0.96*{percentseen}/100" height="{areaheight}*0.05" color="{clrHigh}" />
+				</area>
+				<area condition="{folder}" x="66%" y="10%" width="28%" height="10%" layer="4">
+					<drawtext condition="eq({numrecordingsfolder}, 1)" x="0" y="0" align="center" width="100%" font="{light}" fontsize="45%" color="{clrLightGray}" text="{numrecordingsfolder} {tr(recording)}" />
+					<drawtext condition="gt({numrecordingsfolder}, 1)" x="0" y="0" align="center" width="100%" font="{light}" fontsize="45%" color="{clrLightGray}" text="{numrecordingsfolder} {tr(recordings)}" />
+					<drawtext name="newrecordingsfolder" x="0" y="45%" align="center" width="100%" font="{light}" fontsize="40%" color="{clrLightGray}" text="{newrecordingsfolder} {tr(new)}" />
+				</area>
+				<area condition="{folder}++isset{posterpath}" x="66%" y="21%" width="28%" height="70%" layer="4">
+					<drawimage x="10%" y="0" height="{areawidth}*0.8*{posterheight}/{posterwidth}" width="{areawidth}*0.8" imagetype="image" path="{posterpath}" />
+				</area>
+			</areacontainer>
+		</currentelement>
+	</menuitems>
+
+	<scrollbar orientation="vertical">
+		<area condition="lt({height},1000)" x="95%" y="14%" width="5%" height="75%" layer="3">
+			 <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowScrollSub" />
+			 <drawimage x="15%" y="{areaheight} * {offset} / 1000" width="{areawidth}*0.1" height="{areaheight} * {height} / 1000" imagetype="skinpart" path="scrollBar" />
+		</area>
+	</scrollbar>
+	<scrollbar orientation="horizontal">
+		<area x="0" y="{areaheight}*0.895" width="97%" height="1%" layer="3">
+			<drawimage x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowVol" />
+		</area>
+		<area x="{areawidth}*0.015" y="89%" width="94%" height="2%" layer="3">
+			<drawimage x="{areawidth} * {offset} / 1000" valign="center" width="{areawidth}*{height}/1000" height="{areaheight}/4" imagetype="skinpart" path="scrollBarVer"/>
+		</area>
+	</scrollbar>
+	
+</menurecordings>

@@ -1,0 +1,161 @@
+<menutimers x="0" y="0" width="100%" height="100%" fadetime="{mainmenuFadeTime}" scaletvx="{areawidth}*0.01" scaletvy="{areaheight}*0.695" scaletvwidth="{areawidth}*0.29" scaletvheight="{areaheight}*0.3" >
+    <scrollbar>
+	<!-- scrollbar -->
+        <area x="{areawidth}*0.99 - {areawidth}*0.01 + 2" y="{areawidth}*0.01 + 2 + {areaheight}*{offset}/1000" width="{areawidth}*0.01 - 6" height="{areaheight}*{height}/1000 - {areawidth}*0.02 - 6" layer="2">
+	    <drawellipse x="0" y="0" width="100%" height="{areawidth}" quadrant="0" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="0" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrProgressbarBg}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}" width="100%" height="{areawidth}" quadrant="0" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrProgressbarBg}" />
+            <drawrectangle x="0" y="{areawidth}/2" width="{areawidth} - 2" height="{areaheight} - {areawidth}" color="{clrProgressbarBg}" />
+            <drawrectangle x="{areawidth} - 2" y="{areawidth}/2" width="2" height="{areaheight} - {areawidth}" color="{clrProgressbar}" />
+        </area>
+    </scrollbar>
+
+    <header>
+	<!-- menu frame -->
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.64" height="{areaheight}*0.70 - {areawidth}*0.02" layer="1">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)}" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 15" y="{posy(mainframe)} + {height(mainframe)} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+	<!-- menu frame 2 -->
+        <area background="true" x="{areawidth}*0.66" y="{areawidth}*0.01" width="{areawidth}*0.31" height="{areaheight}*0.70 - {areawidth}*0.02" layer="1">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)}" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 15" y="{posy(mainframe)} + {height(mainframe)} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+	<!-- title -->
+	<area background="true" x="{areawidth}*0.41" y="{areaheight}*0.78" width="{areawidth}*0.47 - 2" height="{areaheight}*0.08" layer="2">
+            <drawtext align="center" y="0" font="{regular}" fontsize="100%" color="{clrFontMenuBright}" text="{title}" />
+	</area>
+    </header>
+ 
+    <menuitems x="0" y="{areawidth}*0.02" orientation="vertical" width="100%" height="{areaheight}*0.70 - {areawidth}*0.04 - 2" align="center" numlistelements="{timersNumMenuItems}">
+        <!-- Available Variables channels menu listelement:
+        {nummenuitem}       number of item in list, starts with 1
+        {title}             Title of Timer
+        {timerstart}        Start Time of Timer in hh::mm
+        {timerstop}         End Time of Timer in hh::mm
+        {day}               Day (numerical)
+        {dayname}           Day, for repeating timers days where timer is active
+        {month}             Month (two digits)
+        {monthname}         Month, three letter abbrevation
+        {year}              Year (4 digits)
+        {channelname}       Name of channel which is set for the timer
+        {channellogoexists} true if a channel logo exists 
+        {channelid}         ID of channel which is set for the timer (for dispalying channel logo)
+        {channelnumber}     Number of channel which is set for the timer
+        {eventtitle}        Title of corresponding event
+        {eventstart}        Start Time of corresponding event in hh::mm
+        {eventstop}         Stop Time of corresponding event in hh::mm
+        {current}           true if item is currently selected
+        {flagactive}        true if timer is active
+        {flaginstant}       true if timer is an instant timer
+        {flagvps}           true if timer uses VPS
+        {flagrecording}     true if is recording currently
+        {flagpending}       true if timer is pending
+        -->
+        <listelement>
+            <!-- current -->
+            <area x="{areawidth}*0.01" width="{areawidth}*0.64 - 1" layer="2">
+                <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+            </area>
+<!--
+	    <areascroll condition="{current}" scrollelement="menutext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="{areawidth}*0.02" width="{areawidth}*0.62 - 1" layer="3">
+                <drawtext name="days" x="{areawidth}*0.02" y="{areaheight}*0.1" font="{regular}" fontsize="40%" color="{clrTransparent}" text="XXXXXXXXXXXXX" />
+                <drawtext name="menutext" x="{posx(days)} + {width(days)} + {areawidth}*0.02" valign="center" font="{regular}" fontsize="60%" color="{clrFontMenuItemBright}" text="{title}xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+	    </areascroll>
+-->
+            <!-- element -->
+            <area x="{areawidth}*0.02" width="{areawidth}*0.62 - 1" layer="3">
+                <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="{areaheight}*0.90" height="{areaheight}*0.80" valign="center" />
+                <drawtext x="{areaheight}*1.1" y="{areaheight}*0.1" font="{regular}" fontsize="40%" color="{clrFontMenuItemBright}" text="{timerstart}" />
+                <drawimage x="{areaheight}*1.1" y="{areaheight}*0.5 - 1" imagetype="skinpart" path="line_gray_horizontal" width="{width(startstoptime)}" height="3" />
+                <drawtext x="{areaheight}*1.1" y="{areaheight}*0.5" name="startstoptime" font="{regular}" fontsize="40%" color="{clrFontMenuItemBright}" text="{timerstop}" />
+                <drawtext name="days" x="{posx(startstoptime)} + {width(startstoptime)} + {areawidth}*0.02" y="{areaheight}*0.1" font="{regular}" fontsize="40%" color="{clrTransparent}" text="XXXXXXX" />
+                <drawtext condition="isset{dayname}" x="{posx(startstoptime)} + {width(startstoptime)} + {areawidth}*0.02" y="{areaheight}*0.1" font="{regular}" fontsize="40%" color="{clrFontMenuItemDark}" text="{dayname} {day}.{month}." />
+                <drawtext condition="empty{dayname}" x="{posx(startstoptime)} + {width(startstoptime)} + {areawidth}*0.02" y="{areaheight}*0.1" font="{regular}" fontsize="40%" color="{clrFontMenuItemDark}" text="{day}" />
+                <drawtext name="menutext" x="{posx(days)} + {width(days)} + {areawidth}*0.02" valign="center" font="{regular}" fontsize="60%" color="{clrFontMenuItemBright}" text="{title}" />
+                <drawimage condition="{flagactive}" x="{posx(startstoptime)} + {width(startstoptime)} + {areawidth}*0.02" y="{areaheight}*0.50" imagetype="icon" path="ico_on_short" width="{areaheight}*0.40" height="{areaheight}*0.40" />
+                <drawimage condition="not{flagactive}" x="{posx(startstoptime)} + {width(startstoptime)} + {areawidth}*0.02" y="{areaheight}*0.50" imagetype="icon" path="ico_off_short" width="{areaheight}*0.40" height="{areaheight}*0.40" />
+                <drawellipse condition="{flagrecording}" x="{posx(menutext)} - {areawidth}*0.02 - {areaheight}*0.80" y="{areaheight}*0.5" width="{areaheight}*0.80" height="{areaheight}*0.40" color="{clrRed}" quadrant="0" />
+                <drawellipse condition="{flagrecording}" x="{posx(menutext)} - {areawidth}*0.02 - {areaheight}*0.80" y="{areaheight}*0.5" width="{areaheight}*0.80 - 2" height="{areaheight}*0.40 - 2" color="{clrTransparent}" quadrant="0" />
+                <drawtext condition="{flagrecording}" name="rec" x="{posx(menutext)} - {areawidth}*0.02 - {areaheight}*0.40 - {width(rec)}/2" y="{areaheight}*0.55" animtype="blink" animfreq="1000" font="{italic}" fontsize="30%" color="{clrRed}" text="REC" />
+	    </area>
+        </listelement>
+        <!-- additional element which is drawn for current element -->
+        <!-- Available Variables channels menu currentelement:
+        {menuitemx}         x position of according menu item
+        {menuitemy}         y position of according menu item
+        {menuitemwidth}     width of according menu item
+        {menuitemheight}    height of according menu item
+        {title}             Title of Timer
+        {timerstart}        Start Time of Timer in hh::mm
+        {timerstop}         End Time of Timer in hh::mm
+        {day}               Day (numerical)
+        {dayname}           Day, for repeating timers days where timer is active
+        {month}             Month (two digits)
+        {monthname}         Month, three letter abbrevation
+        {year}              Year (4 digits)#
+        {channelname}       Name of channel which is set for the timer
+        {channellogoexists} true if a channel logo exists 
+        {channelid}         ID of channel which is set for the timer (for dispalying channel logo)
+        {channelnumber}     Number of channel which is set for the timer
+        {eventtitle}        Title of corresponding event
+        {eventstart}        Start Time of corresponding event in hh::mm
+        {eventstop}         Stop Time of corresponding event in hh::mm
+        {eventshorttext}    Short Text corresponding event
+        {eventdescription}  Description corresponding event
+        {hasposter}         true if a scraped poster is available for event
+        {posterwidth}       width of scraped poster
+        {posterheight}      height of scraped poster
+        {posterpath}        absolute path of scraped poster
+        {flagactive}        true if timer is active
+        {flaginstant}       true if timer is an instant timer
+        {flagvps}           true if timer uses VPS
+        {flagrecording}     true if is recording currently
+        {flagpending}       true if timer is pending
+        -->
+        <currentelement delay="{timersDescriptionDelay}" fadetime="{timersFadeTime}">
+	    <!-- info window -->
+	    <area x="{areawidth}*0.41" y="{areaheight}*1.20" width="{areawidth}*0.47 - 2" height="{areaheight}*0.28" layer="2">
+                <drawimage imagetype="skinpart" path="line_horizontal" align="center" y="{areaheight}/2 - 2" width="{areawidth}" height="3" />
+                <drawellipse x="{posx(channumber)} - {areawidth}*0.03" y="{posy(channumber)}" width="{width(channumber)} + {areawidth}*0.06" height="{height(channumber)}" color="{clrFontMenuItemDark}" quadrant="0" />
+                <drawellipse x="{posx(channumber)} - {areawidth}*0.03" y="{posy(channumber)}" width="{width(channumber)} + {areawidth}*0.06 - 3" height="{height(channumber)} - 3" color="{clrTransparent}" quadrant="0" />
+                <drawtext name="channumber" x="{areawidth}/2 - {width(channame)}/2 - {width(channumber)}/2" y="{areaheight}*0.55" font="{regular}" fontsize="45%" color="{clrFontMenuBright}" text="{channelnumber}" />
+                <drawtext name="channame" x="{areawidth}/2 - {width(channame)}/2 + {width(channumber)}/2" y="{areaheight}*0.55" font="{regular}" fontsize="45%" color="{clrFontMenuBright}" text="   - {channelname}" />
+	    </area>
+            <area x="{areawidth}*0.31" y="{areaheight}*1.23 + {areawidth}*0.01" width="{areawidth}*0.08" height="{areawidth}*0.06" layer="2">
+                <!-- logo -->
+                <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+	    </area>
+	    <!-- main window 2 -->
+            <area x="{areawidth}*0.66 + {areaheight}*0.01" y="0" width="{areawidth}*0.31 - {areaheight}*0.02 - 2" height="{areaheight}*0.20" layer="2">
+		<!-- name start/stop -->
+                <drawtext align="center" y="0" font="{regular}" fontsize="40%" color="{clrFontMenuBright}" text="{eventtitle}" />
+                <drawtext condition="{flagactive}" align="center" y="{areaheight}*0.39" font="{regular}" fontsize="30%" color="{clrFontMenuBright}" text="{eventstart} - {eventstop}" />
+                <drawtext condition="not{flagactive}" align="center" y="{areaheight}*0.39" font="{regular}" fontsize="50%" color="{clrFontInactive}" text="{tr(Timer)} {tr(inactive)}" />
+                <drawtext align="center" y="{areaheight}*0.65" font="{regular}" fontsize="30%" color="{clrFontMenuDark}" text="{eventshorttext}" />
+                <drawimage imagetype="skinpart" path="line_horizontal" align="center" y="{areaheight} - 7" width="{areawidth}" height="3" />
+	    </area>
+            <areascroll condition="{flagactive}" mode="carriagereturn" scrollelement="descriptiontext" orientation="vertical" delay="1000" scrollspeed="medium" x="{areawidth}*0.66 + {areaheight}*0.01" y="{areaheight}*0.21" width="{areawidth}*0.31 - {areaheight}*0.02 - 2" height="{areaheight}*0.79" layer="2">
+		<!-- description -->
+                <drawtextbox condition="not{hasposter}" x="0" y="0" width="{areawidth}" font="{regular}" fontsize="7%" color="{clrFontMenuBright}" text="{eventdescription}" />
+                <drawimage condition="{hasposter}" name="poster" imagetype="image" path="{posterpath}" align="right" valign="top" width="{areawidth}*0.40" height="{areaheight}*0.40 / {posterwidth}*{posterheight}" />
+                <drawtextbox condition="{hasposter}" name="descriptiontext" x="0" y="0" width="{areawidth}" float="topright" floatwidth="{width(poster)} + 10" floatheight="{height(poster)} + {areaheight}*0.1" font="{regular}" fontsize="7%" color="{clrFontMenuBright}" text="{eventdescription}" />
+	    </areascroll>
+        </currentelement>
+    </menuitems>
+</menutimers>

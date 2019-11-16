@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generator: Adobe Illustrator 15.1.0, SVG Export Plug-In . SVG Version: 6.00 Build 0)  -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   id="Layer_1"
+   x="0px"
+   y="0px"
+   width="512px"
+   height="512px"
+   viewBox="0 0 512 512"
+   enable-background="new 0 0 512 512"
+   xml:space="preserve"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="windbearing_SW.svg"><metadata
+   id="metadata80"><rdf:RDF><cc:Work
+       rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+         rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><defs
+   id="defs78" /><sodipodi:namedview
+   pagecolor="#ffffff"
+   bordercolor="#666666"
+   borderopacity="1"
+   objecttolerance="10"
+   gridtolerance="10"
+   guidetolerance="10"
+   inkscape:pageopacity="0"
+   inkscape:pageshadow="2"
+   inkscape:window-width="1366"
+   inkscape:window-height="746"
+   id="namedview76"
+   showgrid="false"
+   inkscape:zoom="0.86"
+   inkscape:cx="256"
+   inkscape:cy="194.81369"
+   inkscape:window-x="-8"
+   inkscape:window-y="-8"
+   inkscape:window-maximized="1"
+   inkscape:current-layer="g3083"><inkscape:grid
+     type="xygrid"
+     id="grid2987" /></sodipodi:namedview>
+
+
+<g
+   id="g3083"
+   transform="matrix(0.70710678,-0.70710678,0.70710678,0.70710678,-106.03867,256)"><g
+     style="fill:#b3b3b3"
+     id="g70"
+     transform="matrix(-0.38152972,-0.92435657,0.92435657,-0.38152972,117.0324,590.29739)">
+	<g
+   style="fill:#b3b3b3"
+   id="g72">
+		<path
+   style="fill:#b3b3b3"
+   id="path74"
+   d="M 256,0 C 114.604,0 0,114.604 0,256 0,397.375 114.604,512 256,512 397.375,512 512,397.375 512,256 512,114.604 397.375,0 256,0 z m 0,448 C 150.125,448 64,361.875 64,256 64,150.125 150.125,64 256,64 c 105.875,0 192,86.125 192,192 0,105.875 -86.125,192 -192,192 z m -96,-96 128,-64 64,-128 -128,64 -64,128 z"
+   inkscape:connector-curvature="0" />
+	</g>
+</g><path
+     inkscape:connector-curvature="0"
+     id="path3079"
+     d="m 263.89062,234.86905 -8.45598,20.33225 -60.42925,-25.22945 c -33.23608,-13.87623 -60.39502,-25.3142 -60.35321,-25.41777 0.0776,-0.19194 137.5639,9.66732 137.64792,9.8709 0.0254,0.0613 -3.75903,9.2612 -8.40972,20.44398 z"
+     style="fill:#ff0000;fill-opacity:1;fill-rule:nonzero;stroke:#d40000;stroke-width:0.47393364" /><path
+     inkscape:connector-curvature="0"
+     id="path3081"
+     d="m 246.94368,276.44826 -8.67065,20.85752 -53.52321,-46.53786 c -29.43777,-25.59583 -53.50253,-46.58761 -53.47726,-46.64839 0.0252,-0.0608 0.77843,-0.0606 1.6737,3.8e-4 1.31225,0.0894 1.60802,0.17443 1.52595,0.43856 -0.0813,0.26148 1.29818,0.91723 6.83146,3.24746 20.79276,8.75641 47.671,20.00636 79.0622,33.09165 l 35.24848,14.69313 -8.67065,20.85751 z"
+     style="fill:#d40000;fill-opacity:1;fill-rule:nonzero;stroke:#d40000;stroke-width:0.19305019" /></g></svg>

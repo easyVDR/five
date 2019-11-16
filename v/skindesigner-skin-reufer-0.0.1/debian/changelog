@@ -1,0 +1,29 @@
+skindesigner-skin-reufer (0.0.1-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 23:44:51 +0100
+
+skindesigner-skin-reufer (0.0.1-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 00:55:54 +0100
+
+skindesigner-skin-reufer (0.0.1-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 23:58:13 +0100
+
+skindesigner-skin-reufer (0.0.1-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Jun 2017 17:58:46 +0200
+
+skindesigner-skin-reufer (0.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * initial build
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 20 Nov 2016 00:25:25 +0100

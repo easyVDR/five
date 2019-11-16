@@ -1,0 +1,427 @@
+shady-KISS-skin History
+-------------------------------------------
+
+2017-05-25:
+- Fixed bgprocess
+- Fixed separators with two columns and separators in mailbox-plugin
+
+2016-05-28:
+- Added Zapcockpit
+
+2016-05-24:
+- Adjusted position of timericons
+- Added italian translation (provided by fiveten_59@vdrportal)
+
+2016-05-20:
+- Adjustments for timerstates in timermenus and displaychannel
+- Removed setup for epg2vdr-skdPatch
+
+2016-05-11:
+- Reimplemented 'isRecording' and added 'current- and nextrecording' in displaychannel
+- Added icon for remotetimers in mainmenu
+
+2016-05-08:
+- Fixes for epg2vdr and running timers
+
+2016-05-03:
+- Show even local hostname in epg2vdr-menu Timer
+
+2016-05-02:
+- Added setup for number of hostnamechars in epg2vdr-menu Timer
+- Removed areascroll of fritzbox-separators
+- Added separators in skinsetup for plugins
+
+2016-04-20:
+- Added setup for epg2vdrShowHostname
+- Added setup if skindesigner is patched for epg2vdr
+
+2016-04-18:
+- New icons for remote-timer
+
+2016-04-17:
+- First steps with epg2vdr
+- Fixed patch for epg2vdr
+
+2016-04-15:
+- Added svgtemplates/skinparts for compatibility with skindesigner-0.9.6
+- Modified ratingstars for plugplex
+- Reworked plug-plex-detail
+- New arrow for plex-trailer
+
+2016-04-07:
+- Added marker for switchtimer in tvguideng
+
+2016-04-05:
+- Filled bottommost line of OSD with Black (workaround for .....?)
+- Reduced size if coloured markers
+- Removed debug
+
+2016-04-04:
+- Small fix for timeredit
+- Added setup for channelname in displaychannel
+- Enlarged height of channelpanel
+
+2016-04-02:
+- Fixed timerconflictmenu
+
+2016-03-31:
+- Fixed condition with recordingedit
+
+2016-03-30:
+- Added rewind- and fastforward-speed in controliconsmodeonly
+
+2016-03-29:
+- Changed optional bright cutmarks in displayreplay
+- Added rewind- and fastforward-speed
+
+2016-03-26:
+- Some more stuff for plex II
+- Added setup-submenu für pluginspecific settings
+- Added optional bright background for replayprogressbar
+
+2016-03-19:
+- Added thumbs for extras in plug-plex-detail
+
+2016-03-18:
+- Some more stuff for plex
+
+2016-03-16:
+- Small fixes in plug-plex-root
+
+2016-03-13:
+- Fixed progressbarcolour in plex-detail-view
+- Added setup for banner and poster in displaychannel, switched from shifting to fading
+
+
+2016-03-12:
+- First steps with plug-plex-detail
+
+2016-03-11:
+- Added banner in displaychannel 
+
+2016-03-09:
+- Added timerconflicts in displaymenudefault 
+
+2016-03-07:
+- Removed scalingtv* in all views but main- and setupmenu
+- Removed Debug in displaymenudefault
+- Reactivated blinking of recording-marker in displaychannel
+
+2016-02-06:
+- Fixed bug in translations of setup.xml
+
+2016-02-03:
+- Added optional devices-widget for mainmenu
+
+2016-02-02:
+- Adjusted width of systeminfo-progressbar
+- Added setup for second column in settings and edit
+- Fixed typo, removed blinking of recording-marker in displaychannel
+- Fixed missed end of Start Tag drawimage
+
+2016-02-01:
+- Added setup for channellist without running events
+- Added setup for statuscolumn in zaphistory-plugin
+- Adjusted width of zaphistory-progressbar
+
+
+2016-02-29:
+- Fixed background of separator in displaymenuschedules
+- Added presenteventtitle to listitems in displaymenuchannel without currentelement
+- Added special display for timeredit, recordingedit and zaphistory-plugin in displaymenudefault
+- Some tweaks for zaphistory
+
+2016-02-27:
+- Added presenteventtitle to listitems in displaymenuchannel
+
+2016-02-23:
+- Some cosmestics in tvguideng-recmenu
+
+2016-02-22:
+- Small fixes 
+- Fixed int-selector in tvguideng-recmenu
+- Improved display of progressbars in displaymenudefault
+- Reimplemented support for plexplugin
+
+2016-02-19:
+- Adjusted y-values in displayreplay, reverted last commit
+- Removed debug in displayreplay
+
+2016-02-18:
+- Changed scrapercontent in displayreplay from shifting to fading
+
+2016-02-17:
+- Added setup for main- and setupmenulist on the left or right side
+
+2016-02-14:
+- Fixed typo in displaymenumain
+- Added setup for poster and EPGpic in detailinfos 
+
+2016-02-13:
+- Fixed posterBGDetail in detailepg
+- Special treatment for div views with only one column (displaymenudefault)
+- Adjusted scrollheight in tab actors (hopefully fixed)
+- Reduced fontsize of timerstart-timerstop in timersmenu if only 12 listitems are shown
+- Reactivated fadetimes
+- Deactivated shift- and fadetime in audiotracks (actually in this view not supported by skindesigner)
+- Enlarged fontsize of reruns in menudetetailepg if only 12 listitems are shown
+- Setup for fadetimes of timers and lastrecs, disc, temps, load and weather in mainmenu
+
+2016-02-12:
+- Fixed scaling of videowindow in weatherforecast
+- Changed {epgname} to {name} menurecordings
+- Adjusted scrollheight in tab actors
+- Fixed rectitle in displayreplay 
+
+2016-02-10:
+- Adapted for skindesigner-0.8.x
+
+2016-02-05:
+- Fixed conditions in displaymenudetailrecording
+- Fixed conditions in displaymenudetailepg and tvguideng-detail
+
+2016-02-03:
+- Added wide currentelement in channelsmenu
+- Fixed presenteventduration in channelsmenu
+
+2016-02-02:
+- Fixed width of markers
+- Fixed columns in displaymenurecordings
+- Added setup to show only timers and infos in mainmenu
+- Reduced height of textboxes in all currentelements
+
+2016-02-01
+- Added {date} for WHATSONFAVORITES
+- Added wide currentelement in schedules, timers and recordings
+
+2016-01-31:
+- Fixed area of {timerstart} - {timerstop} in displaymenutimers
+- Fixed needless display of posterbackgrounds in currentelements
+
+2016-01-21:
+- Fixed conditions for neutrinoepg
+- Added starttimes for neutrinoepg
+
+2016-01-13:
+- Added EPG-images in displaymenudetailrecording
+
+2016-01-12:
+- Added EPG-images in displaymenudetailepg and plug-tvguideng-detail
+
+2016-01-08:
+- Added setup for numbering in main- and setupmenu
+
+2015-09-10:
+- Removed some useless code
+
+2015-09-03:
+- Changed format of datetime
+
+2015-08-31:
+- Fixed scrollheight of actor-thumbs, fixed areawidht of datetime in menus
+
+2015-08-11:
+- Changed setup of menubars
+
+2015-08-09:
+- Added horizontal menu in displaymenurecordings
+
+2015-08-01:
+- Added discusage in menutimers, made ist optional
+
+2015-07-31:
+- Switched vdrusagestring to graphical usedpercent
+
+2015-07-30:
+- Added percentseenbar in currentelement of recordings
+- Added progressmodeonly in displayreplay
+- Added vdrusagestring in menurecordings
+
+2015-07-29:
+- Fixed layer for timeshifttotal
+
+2015-07-27:
+- Improved visibility of timeshift-progressbar
+
+2015-07-27:
+- Fixed area of currenttime in displayreplay
+- Switched font to Open Sans
+
+2015-07-17:
+- Commented colors in theme.xml
+- Small fixes
+
+2015-07-15:
+- Added svg-templates
+- Added condition for recdate in displayreplay
+- Removed obsolte colours
+- Fixed scrollbars in main- and setup-menu
+
+2015-07-11:
+- Some small fixes
+- Added scrollbars for plex-plugin
+- Fixed time-format 
+- Test areacontainer in displaymenurecordings
+- Added new buttonPlexCover
+
+2015-07-09:
+- Added setup for long elapsedbars
+- Added bar for livebuffer in displaychannel
+- Added setup for timeshifttotal in displayreplay
+- Fixed scaletv in plug-tvguideng-detail
+
+2015-07-08:
+- Added fritzbox-plugin-section to displaymenudefault (patch provided by beinhart@vdrportal)
+- Reorganized timers, lastrecs and infos in mainmenu
+
+2015-07-07:
+- Small fixes
+
+2015-07-06:
+- Fixed condition for markers in menurecordings
+- Reorganized markers for recordings
+- Removed cutted-symbol for recordings-folders
+- Added time-tag
+- Fixed typo
+
+2015-07-05:
+- Added channelname if no channelogo exists in schedules-list
+
+2015-07-04:
+- New displayreplay and displaychannel
+- Removed test- and debug-code
+- Added posterbackgrounds
+- Fixed bug in displayreplay
+- Added setup for shift- and fade-times
+- Some improvements for tvguideng-view
+
+2015-07-02:
+- Some more stuff for new design
+
+2015-06-15:
+- New layout for VDR-lists !WIP!
+
+2015-04-12:
+- Reworked setup
+- Added blink for REC-text in displaychannel
+- Small changes of messages
+- Added three last recordings to showTimersRecordingsandInfos-option in main menu
+
+2015-04-12:
+- Fixed conditions for shorttext in displaymenuschedules
+- Fixed displaymenusetup
+- Added dedicated columnhandling to systeminfo, fritzbox and setup in displaymenudefault
+
+2015-04-10:
+- Added recchannelname in displaymenudetailrecordings
+- Lightened textcolor
+- Removed useless bracket in weatherforecastdetailcurrent
+- New shadowbackgound for weatherforecastdetailcurrent
+- Removed {visibility} in weatherforecastcurrent
+- Some improvements for favorites in displaymenuschedules
+
+2015-04-09:
+- Increased fontsize of current and nexttitle in displaychannel if subtitles are empty
+- Fixed nonsense in displaymenurecordings 
+
+2015-04-08:
+- Reworked messagesbars
+- Fixed area of setupiconbar
+
+2015-04-07:
+- Fixed fontsize of {numrecordingsfolder} > 99
+
+2015-04-06:
+- Fixed areas in weatherforecast
+
+2015-04-05:
+- Added setupparameter "Show timers and infos in mainmenu"
+- Added third option for active menubars (gradient)
+- Added divider (hyphen) between title and shorttetxts
+- Rearranged setup
+- Some cleanups
+
+2015-04-03:
+- Small fix for coloredbuttons
+
+2015-04-02:
+- Rearranged Weatherforecast-Main-View
+- Added setupparameter for setting up numbers of menuitemsitems in all menus; cleanups
+
+2015-02-31:
+- Fixed bug in plug-weatherforecast-weatherforecast.xml
+- Improved position and fontsize of temps in weatherforecast
+- Removed some useless pics and code
+
+2015-03-30:
+- Changed some positions in weatherforecastdetails
+
+2015-03-29:
+- Added setup-parameter "Colored active buttons" and corresponding graphics
+
+2015-03-27:
+- Updated README an HISTORY
+- Some cleanups
+- Renamed nowBar to elapsedBar and fixed its width
+- Added elapsedBar.svg
+- Added setup-parameter "fadetime" used in
+  displaychannel, -message, -audiotracks, -replay and -volume
+- Fixed height of eventshorttext in displaymenutimers
+
+2015-03-24:
+- Changed shadows of WeatherCurrentMain
+
+2015-03-23:
+- Improvements for weatherfoecast
+- Improvements for weatherforecast (II)
+- Fixed weatherDivider
+- Improvements for weatherforecast (III)
+
+2015-03-22:
+- Added stuff for WeatherForecast
+
+2015-03-21:
+- Fixed conditions in viewelement header
+- Added vertical view for TVGuideNG
+- Some optical improvements
+- Added some orange icons
+
+2015-03-20:
+- Added templates for TVGuideNG
+
+2015-03-06:
+- Changed position of large posters
+- Added date and time in display
+- Some more adjustments for posters
+
+2015-03-05:
+- Changed floatwidth and -height in detailepg
+
+2015-03-04:
+- Reworked shadows
+- Added bright backgroundgradient
+- Changed frame for folderposters
+
+2015-03-01:
+- Moved messagebar to the bottom
+- Rework of displaychannel
+- Reworked positions of date, time, texts,
+  floatwidth/height in schedules and timersmenu
+
+2015-02-28:
+- Added switch for setupmenuiconbar
+- Added switch for timersstoptime
+- Added switch for recordingtime
+- Changed position of messages
+- Added switch for schedules without EPG-data
+- Changed bar of currentmenuentries
+- Increased actor-pics and fontsize of names
+- Added shorttexts in menuentries of schedules
+- Increased floatwidth in currentelementviews
+- Added switch for channeldetails
+- Rework of posters in displaymenurecordings
+
+
+2015-02-25: git-init 
+
+

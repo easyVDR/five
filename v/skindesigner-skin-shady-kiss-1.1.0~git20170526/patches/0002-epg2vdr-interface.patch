@@ -1,0 +1,216 @@
+diff --git a/coreengine/definitions.h b/coreengine/definitions.h
+index b07943f..da4ec54 100644
+--- a/coreengine/definitions.h
++++ b/coreengine/definitions.h
+@@ -894,6 +894,10 @@ enum class eLeMenuTimersST {
+     eventtitle,
+     eventstart,
+     eventstop,
++    state,
++    stateinfo,
++    action,
++    vdrname,
+     count
+ };
+ 
+@@ -910,6 +914,8 @@ enum class eLeMenuTimersIT {
+     flagvps,
+     flagrecording,
+     flagpending,
++    isvdrrunning,
++    isremote,
+     count
+ };
+ 
+@@ -929,6 +935,10 @@ enum class eCeMenuTimersST {
+     eventdescription,
+     posterpath,
+     bannerpath,
++    state,
++    stateinfo,
++    action,
++    vdrname,
+     count
+ };
+ 
+@@ -952,6 +962,8 @@ enum class eCeMenuTimersIT {
+     hasbanner,
+     bannerwidth,
+     bannerheight,
++    isvdrrunning,
++    isremote,
+     count
+ };
+ 
+diff --git a/coreengine/listelements.c b/coreengine/listelements.c
+index 1ebfa94..7cc2dcd 100644
+--- a/coreengine/listelements.c
++++ b/coreengine/listelements.c
+@@ -1,5 +1,6 @@
+ #include "listelements.h"
+ #include "../config.h"
++#include "../services/epgtimer.h"
+ #include <sstream>
+ #include <algorithm>
+ 
+@@ -1166,6 +1167,9 @@ void cLeMenuTimers::SetTokenContainer(void) {
+     tokenContainer->DefineStringToken("{eventtitle}", (int)eLeMenuTimersST::eventtitle);
+     tokenContainer->DefineStringToken("{eventstart}", (int)eLeMenuTimersST::eventstart);
+     tokenContainer->DefineStringToken("{eventstop}", (int)eLeMenuTimersST::eventstop);
++    tokenContainer->DefineStringToken("{state}", (int)eLeMenuTimersST::state);
++    tokenContainer->DefineStringToken("{stateinfo}", (int)eLeMenuTimersST::stateinfo);
++    tokenContainer->DefineStringToken("{action}", (int)eLeMenuTimersST::action);
+     tokenContainer->DefineIntToken("{nummenuitem}", (int)eLeMenuTimersIT::nummenuitem);
+     tokenContainer->DefineIntToken("{current}", (int)eLeMenuTimersIT::current);
+     tokenContainer->DefineIntToken("{separator}", (int)eLeMenuTimersIT::separator);
+@@ -1178,6 +1182,9 @@ void cLeMenuTimers::SetTokenContainer(void) {
+     tokenContainer->DefineIntToken("{flagvps}", (int)eLeMenuTimersIT::flagvps);
+     tokenContainer->DefineIntToken("{flagrecording}", (int)eLeMenuTimersIT::flagrecording);
+     tokenContainer->DefineIntToken("{flagpending}", (int)eLeMenuTimersIT::flagpending);
++    tokenContainer->DefineIntToken("{isvdrrunning}", (int)eLeMenuTimersIT::isvdrrunning);
++    tokenContainer->DefineIntToken("{isremote}", (int)eLeMenuTimersIT::isremote);
++    tokenContainer->DefineStringToken("{vdrname}", (int)eLeMenuTimersST::vdrname);
+     InheritTokenContainer();    
+ }
+ 
+@@ -1264,6 +1271,19 @@ bool cLeMenuTimers::Parse(bool forced) {
+         tokenContainer->AddStringToken((int)eLeMenuTimersST::eventstart, *event->GetTimeString());
+         tokenContainer->AddStringToken((int)eLeMenuTimersST::eventstop, *event->GetEndTimeString());
+     }
++
++    cEpgTimer_Interface_V1* epgTimer;
++    if (epgTimer = dynamic_cast<cEpgTimer_Interface_V1*>((cTimer*)timer)) {
++        tokenContainer->AddIntToken((int)eLeMenuTimersIT::isvdrrunning, epgTimer->isVdrRunning());
++        tokenContainer->AddIntToken((int)eLeMenuTimersIT::isremote, epgTimer->isRemote());
++        char state = epgTimer->State();
++        tokenContainer->AddStringToken((int)eLeMenuTimersST::state, &state);
++        tokenContainer->AddStringToken((int)eLeMenuTimersST::stateinfo, epgTimer->StateInfo());
++        tokenContainer->AddStringToken((int)eLeMenuTimersST::vdrname, epgTimer->VdrName());
++        char action = epgTimer->Action();
++        tokenContainer->AddStringToken((int)eLeMenuTimersST::action, &action);
++    }
++
+     return true;
+ }
+ 
+@@ -1303,6 +1323,9 @@ void cCeMenuTimers::SetTokenContainer(void) {
+     tokenContainer->DefineStringToken("{eventdescription}", (int)eCeMenuTimersST::eventdescription);
+     tokenContainer->DefineStringToken("{posterpath}", (int)eCeMenuTimersST::posterpath);
+     tokenContainer->DefineStringToken("{bannerpath}", (int)eCeMenuTimersST::bannerpath);
++    tokenContainer->DefineStringToken("{state}", (int)eCeMenuTimersST::state);
++    tokenContainer->DefineStringToken("{stateinfo}", (int)eCeMenuTimersST::stateinfo);
++    tokenContainer->DefineStringToken("{action}", (int)eCeMenuTimersST::action);
+     tokenContainer->DefineIntToken("{menuitemx}", (int)eCeMenuTimersIT::menuitemx);
+     tokenContainer->DefineIntToken("{menuitemy}", (int)eCeMenuTimersIT::menuitemy);
+     tokenContainer->DefineIntToken("{menuitemwidth}", (int)eCeMenuTimersIT::menuitemwidth);
+@@ -1322,6 +1345,9 @@ void cCeMenuTimers::SetTokenContainer(void) {
+     tokenContainer->DefineIntToken("{hasbanner}", (int)eCeMenuTimersIT::hasbanner);
+     tokenContainer->DefineIntToken("{bannerwidth}", (int)eCeMenuTimersIT::bannerwidth);
+     tokenContainer->DefineIntToken("{bannerheight}", (int)eCeMenuTimersIT::bannerheight);
++    tokenContainer->DefineIntToken("{isvdrrunning}", (int)eCeMenuTimersIT::isvdrrunning);
++    tokenContainer->DefineIntToken("{isremote}", (int)eCeMenuTimersIT::isremote);
++    tokenContainer->DefineStringToken("{vdrname}", (int)eCeMenuTimersST::vdrname);
+     InheritTokenContainer();
+ }
+ 
+@@ -1407,6 +1433,19 @@ bool cCeMenuTimers::Parse(bool forced) {
+         if (LoadFullScrapInfo(event, NULL))
+             SetScraperPosterBannerTimer(tokenContainer);
+     }
++
++    cEpgTimer_Interface_V1* epgTimer;
++    if (epgTimer = dynamic_cast<cEpgTimer_Interface_V1*>((cTimer*)timer)) {
++        tokenContainer->AddIntToken((int)eCeMenuTimersIT::isvdrrunning, epgTimer->isVdrRunning());
++        tokenContainer->AddIntToken((int)eCeMenuTimersIT::isremote, epgTimer->isRemote());
++        char state = epgTimer->State();
++        tokenContainer->AddStringToken((int)eCeMenuTimersST::state, &state);
++        tokenContainer->AddStringToken((int)eCeMenuTimersST::stateinfo, epgTimer->StateInfo());
++        tokenContainer->AddStringToken((int)eCeMenuTimersST::vdrname, epgTimer->VdrName());
++        char action = epgTimer->Action();
++        tokenContainer->AddStringToken((int)eCeMenuTimersST::action, &action);
++    }
++
+     return true;
+ }
+ 
+diff --git a/services/epgtimer.h b/services/epgtimer.h
+new file mode 100644
+index 0000000..1468a6a
+--- /dev/null
++++ b/services/epgtimer.h
+@@ -0,0 +1,75 @@
++/*
++ * service.h: EPG2VDR plugin for the Video Disk Recorder
++ *
++ * See the README file for copyright information and how to reach the author.
++ *
++ */
++
++#ifndef _SERVICE_H_
++#define _SERVICE_H_
++
++#include <vdr/timers.h>
++
++//***************************************************************************
++// Timer - Skin Interface
++//***************************************************************************
++
++class cEpgTimer_Interface_V1 : public cTimer
++{
++   public:
++
++      cEpgTimer_Interface_V1(bool Instant = false, bool Pause = false, cChannel* Channel = 0)
++         : cTimer(Instant, Pause, Channel) {}
++
++      long TimerId()              { return timerid; }
++      long EventId()              { return eventid; }
++      const char* VdrName()       { return vdrName ? vdrName : ""; }
++      const char* VdrUuid()       { return vdrUuid ? vdrUuid : ""; }
++      int isVdrRunning()          { return vdrRunning; }
++      int isLocal()               { return local; }
++      int isRemote()              { return !isLocal(); }
++
++      char State()                { return state; }
++      const char* StateInfo()     { return stateInfo ? stateInfo : ""; }
++      char Action()               { return action; }
++
++   protected:
++
++      long timerid;
++      long eventid;
++
++      char* vdrName;
++      char* vdrUuid;
++      int local;
++      int vdrRunning;
++
++      char state;
++      char* stateInfo;
++      char action;
++};
++
++#ifdef EPG2VDR
++
++//***************************************************************************
++// Class cEpgTimer
++//***************************************************************************
++
++class cEpgTimer : public cEpgTimer_Interface_V1
++{
++   public:
++
++      cEpgTimer(bool Instant = false, bool Pause = false, cChannel* Channel = 0);
++      virtual ~cEpgTimer();
++
++      void setTimerId(long id)    { timerid = id; }
++      void setEventId(long id)    { eventid = id; }
++      void setState(char s, const char* info);
++      void setAction(char a, const char* info);
++      void setVdr(const char* name, const char* uuid = 0, int running = 0);
++};
++
++#endif // EPG2VDR
++
++//***************************************************************************
++
++#endif // _SERVICE_H_

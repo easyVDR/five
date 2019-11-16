@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
+
+<menuplugin x="0" y="0" width="100%" height="100%" fadetime="0">
+    <background>
+        <area x="0" y="0" width="70%" height="30%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+        <area x="0" y="35%" width="100%" height="65%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+        <area x="80%" y="0" width="20%" height="15%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+    </background>
+
+    <header>
+        <area x="0" y="0" width="1" height="1" layer="1">
+            <fill color="{clrTransparent}" />
+        </area>
+    </header>
+
+    <datetime>
+        <area x="80%" y="0" width="20%" height="15%" layer="2">
+            <drawtext align="center" y="1%" font="{light}" fontsize="30%" color="{clrText}" text="{daynameshort} {day}.{month}.{year}" />
+            <drawtext align="center" y="25%" font="{light}" fontsize="80%" color="{clrText}" text="{time}" />
+        </area>
+    </datetime>
+
+    <colorbuttons>
+        <area x="0" y="0" width="1" height="1" layer="1">
+            <fill color="{clrTransparent}" />
+        </area>
+    </colorbuttons>
+
+    <menuitems x="0" y="3%" orientation="vertical" width="100%" height="97%" align="top" numlistelements="12">
+        <listelement>
+            <!-- Background -->
+            <area x="1%" width="68%" layer="2">
+                <fill condition="not{current}" color="{clrTransparent}" />
+                <drawimage condition="{current}" x="0" y="0" width="100%" height="100%" imagetype="skinpart" path="item_menu" />
+            </area>
+            <area x="1%" width="68%" layer="3">
+                <drawtext x="10" valign="center" font="{light}" fontsize="95%" color="{clrText}" text="{menuitemtext}" />
+            </area>
+        </listelement>
+        <currentelement delay="100" fadetime="0">
+            <area condition="{iscurrent}" x="1%" y="35%" width="98%" height="64%" layer="3">
+                <drawimage name="weathericon" imagetype="icon" path="weather/{icon}" x="{areawidth}*0.98 - {areaheight}*0.5" y="2%" width="{areaheight}*0.5" height="{areaheight}*0.5"/>
+                <drawtext name="city" x="0" y="0" font="{semibold}" fontsize="20%" color="{clrText}" text="{city}" />
+                <drawtext x="{width(city)} + 20" y="0" font="{light}" fontsize="20%" color="{clrText}" text="{timestamp}" />
+                <drawtext x="0" y="18%" font="{light}" fontsize="25%" color="{clrText}" text="{temperature}°C  {summary}" />
+                <drawtext x="0" y="50%" font="{light}" fontsize="12%" color="{clrText}" text="{tr(apparenttemp)}: {apparenttemperature} °C" />
+                <drawtext align="right" y="50%" font="{light}" fontsize="12%" color="{clrText}" text="{tr(precipitationprobability)}: {precipitationprobability} %" />
+                <drawtext x="0" y="62%" font="{light}" fontsize="12%" color="{clrText}" text="{tr(precipitationintensity)}: {precipitationintensity} l/qm" />
+                <drawtext align="right" y="62%" font="{light}" fontsize="12%" color="{clrText}" text="{tr(humidity)}: {humidity} %" />
+                <drawtext x="0" y="74%" font="{light}" fontsize="12%" color="{clrText}" text="{tr(windspeed)}: {windspeed} km/h" />
+                <drawtext align="right" y="74%" font="{light}" fontsize="12%" color="{clrText}" text="{tr(windbearing)}: {windbearingstring}  ({windbearing} °)" />
+                <drawtext x="0" y="86%" font="{light}" fontsize="12%" color="{clrText}" text="{tr(cloudcover)}: {cloudcover} %" />
+            </area>
+            <area condition="{ishourly}" x="1%" y="35%" width="98%" height="64%" layer="3">
+                <loop name="hourly" x="0" y="0" width="{areawidth}" orientation="horizontal" columnwidth="{areawidth}*0.33-1" rowheight="{areaheight}/4" overflow="linewrap" >
+                    <drawtext x="10" y="0" font="{semibold}" fontsize="{rowheight}/3" color="{clrText}" text="{hourly[timestamp]}" />
+                    <drawtext x="10" y="{rowheight}/3 - 2" font="{light}" fontsize="{rowheight}/3 + 10" color="{clrText}" text="{hourly[temperature]}°C" />
+                    <drawtext x="10" y="{rowheight}*2/3" font="{light}" fontsize="{rowheight}/3" color="{clrText}" text="{hourly[summary]}" />
+                    <drawimage imagetype="icon" path="weather/{hourly[icon]}" x="{columnwidth} - {rowheight} - 10" valign="center" width="{rowheight}" height="{rowheight}"/>
+                    <drawrectangle x="{columnwidth} - 1" y="2" width="1" height="{rowheight} - 4" color="{clrBorder}" />
+                    <drawrectangle x="2" y="{rowheight} - 1" width="{columnwidth} - 4" height="1" color="{clrBorder}" />
+                </loop>
+            </area>
+            <area condition="{isdaily}" x="1%" y="35%" width="98%" height="64%" layer="3">
+                <loop name="daily" x="0" y="0" width="{areawidth}" orientation="horizontal" columnwidth="{areawidth}*0.5-1" rowheight="{areaheight}/4" overflow="linewrap">
+                    <drawtext x="10"  y="0" font="{semibold}" fontsize="{rowheight}/3" color="{clrText}" text="{daily[dayname]} {daily[day]}" />
+                    <drawtext x="10"  y="{rowheight}/3 - 2" font="{light}" fontsize="{rowheight}/3 + 10" color="{clrText}" text="{daily[temperaturemin]}°C - {daily[temperaturemax]}°C" />
+                    <drawtext x="10" y="{rowheight}*2/3"  font="{light}" fontsize="{rowheight}/3" width="{columnwidth} - {rowheight}*0.7" color="{clrText}" text="{daily[summary]}" />
+                    <drawimage imagetype="icon" path="weather/{daily[icon]}" x="{columnwidth} - {rowheight} - 10" valign="center" width="{rowheight}" height="{rowheight}"/>
+                    <drawrectangle x="{columnwidth} - 1" y="2" width="1" height="{rowheight} - 4" color="{clrBorder}" />
+                    <drawrectangle x="2" y="{rowheight} - 1" width="{columnwidth} - 4" height="1" color="{clrBorder}" />
+                </loop>
+            </area>
+        </currentelement>
+    </menuitems>
+</menuplugin>

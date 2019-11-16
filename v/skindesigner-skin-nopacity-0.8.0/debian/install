@@ -1,0 +1,5 @@
+debian/*.theme var/lib/vdr/themes
+globals.xml usr/share/vdr/plugins/skindesigner/skins/nopacity
+setup.xml usr/share/vdr/plugins/skindesigner/skins/nopacity
+themes/* usr/share/vdr/plugins/skindesigner/skins/nopacity/themes
+xmlfiles/* usr/share/vdr/plugins/skindesigner/skins/nopacity/xmlfiles

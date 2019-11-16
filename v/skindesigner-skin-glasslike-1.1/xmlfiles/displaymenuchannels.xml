@@ -1,0 +1,183 @@
+<menuchannels x="0" y="0" width="100%" height="100%" fadetime="{mainmenuFadeTime}" scaletvx="{areawidth}*0.01" scaletvy="{areaheight}*0.695" scaletvwidth="{areawidth}*0.29" scaletvheight="{areaheight}*0.3" >
+    <scrollbar>
+	<!-- scrollbar -->
+        <area x="{areawidth}*0.99 - {areawidth}*0.01 + 2" y="{areawidth}*0.01 + 2 + {areaheight}*{offset}/1000" width="{areawidth}*0.01 - 6" height="{areaheight}*{height}/1000 - {areawidth}*0.02 - 6" layer="2">
+	    <drawellipse x="0" y="0" width="100%" height="{areawidth}" quadrant="0" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="0" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrProgressbarBg}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}" width="100%" height="{areawidth}" quadrant="0" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrProgressbarBg}" />
+            <drawrectangle x="0" y="{areawidth}/2" width="{areawidth} - 2" height="{areaheight} - {areawidth}" color="{clrProgressbarBg}" />
+            <drawrectangle x="{areawidth} - 2" y="{areawidth}/2" width="2" height="{areaheight} - {areawidth}" color="{clrProgressbar}" />
+        </area>
+     </scrollbar>
+
+    <header>
+	<!-- menu frame -->
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.33" height="{areaheight}*0.70 - {areawidth}*0.02" layer="1">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)}" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 15" y="{posy(mainframe)} + {height(mainframe)} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+	<!-- menu frame 2 -->
+        <area background="true" x="{areawidth}*0.35" y="{areawidth}*0.01" width="{areawidth}*0.62" height="{areaheight}*0.70 - {areawidth}*0.02" layer="1">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)}" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 15" y="{posy(mainframe)} + {height(mainframe)} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+    </header>
+ 
+    <menuitems x="0" y="{areawidth}*0.02" orientation="vertical" width="100%" height="{areaheight}*0.70 - {areawidth}*0.04 - 2" align="center" numlistelements="{channelsNumMenuItems}">
+        <!-- Available Variables channels menu listelement:
+        {number}                  number of the displayed channel
+        {name}                    name of the displayed channel
+        {channelid}               ChannelID as path to display channel logo
+        {transponder}             Transponder of channel
+        {frequency}               Frequency of channel
+        {source}                  Source of channel (S, C, T)
+        {sourcedescription}       Descriptin of source from sources.conf
+        {position}                orbital position of the satellite in case this is a DVB-S source
+        {isAtsc}                  true if channel is a ATSC channel
+        {isCable}                 true if channel is cable channel
+        {isSat}                   true if channel is a satellite channel
+        {isTerr}                  true if channel is terrestrical
+        {presenteventtitle}       title of present event on this channel
+        {presenteventstart}       present event start time in hh::mm
+        {presenteventstop}        present event event stop time in hh::mm
+        {current}                 true if item is currently selected 
+        {separator}               true if item is a list separator 
+        -->
+        <listelement>
+            <!-- background and foreground-->
+            <area x="{areawidth}*0.01" width="{areawidth}*0.33 - 1" layer="2">
+                <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="1%" width="{areawidth}" height="{areaheight}*0.98"/>
+            </area>
+            <!-- channel logo -->
+            <area condition="not{separator}" x="{areawidth}*0.02" width="{areaheight}/{channelsNumMenuItems}" layer="3">
+                <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" width="100%" height="74%" valign="center" />
+            </area>
+            <!-- channel name -->
+            <area condition="not{separator}" x="{areawidth}*0.03 + {areaheight}/{channelsNumMenuItems}" width="{areawidth}*0.30 - {areaheight}/{channelsNumMenuItems} - 1" layer="3">
+                <drawtext x="0" y="5%" font="{regular}" fontsize="60%" color="{clrFontMenuItemDark}" text="{number} {name}" />
+            </area>
+            <!-- channel information -->
+            <area condition="not{separator}" x="{areawidth}*0.03 + {areaheight}/{channelsNumMenuItems}" width="{areawidth}*0.30 - {areaheight}/{channelsNumMenuItems} - 1" layer="3">
+                <drawtext x="0" y="50%" font="{regular}" fontsize="45%" color="{clrFontMenuItemBright}" text="{presenteventtitle}" />
+            </area>
+           <!-- separator -->
+            <area condition="{separator}" x="{areawidth}*0.03 + {areaheight}/{channelsNumMenuItems}" width="{areawidth}*0.31 - {areaheight}/{channelsNumMenuItems} - 1" layer="3">
+                <drawimage name="sep" imagetype="icon" path="ico_channelsep" x="0" valign="center" width="{areaheight}*0.74" height="{areaheight}*0.74"/>
+                <drawtext x="{width(sep)} + {areaheight}*0.01" valign="center" font="{regular}" fontsize="60%" color="{clrFontInactive}" text="{name}" />
+            </area>
+        </listelement>
+        <!-- additional element which is drawn for current element -->
+        <!-- Available Variables channels menu currentelement:
+        {number}                        number of the displayed channel
+        {name}                          name of the displayed channel
+        {channelid}                     ChannelID as path to display channel logo
+        {transponder}                   Transponder of channel
+        {frequency}                     Frequency of channel
+        {source}                        Source of channel (S, C, T)
+        {sourcedescription}             Descriptin of source from sources.conf
+        {position}                      orbital position of the satellite in case this is a DVB-S source
+        {isAtsc}                        true if channel is a ATSC channel
+        {isCable}                       true if channel is cable channel
+        {isSat}                         true if channel is a satellite channel
+        {isTerr}                        true if channel is terrestrical
+        {presenteventtitle}             title of present event on this channel
+        {presenteventstart}             present event start time in hh::mm
+        {presenteventstop}              present event stop time in hh::mm
+        {presenteventshorttext}         present event short text
+        {presenteventdescription}       present event description
+        {presenteventday}               present event name of day
+        {presenteventdate}              present event date in dd:mm:yy
+        {presenteventelapsed}           present event elapsed time
+        {presenteventduration}          present event duration
+        {hasposter}                     true if a scraped poster is available for this elements present evemt
+        {posterwidth}                   width of scraped poster
+        {posterheight}                  height of scraped poster
+        {posterpath}                    absolute path of scraped poster
+        {nexteventtitle}                title of next event on this channel
+        {nexteventstart}                next event start time in hh::mm
+        {nexteventstop}                 next event event stop time in hh::mm
+        {nexteventshorttext}            next event short text
+        {nexteventdescription}          next event description
+        {nexteventday}                  next event name of day
+        {nexteventdate}                 next event date in dd:mm:yy
+        {nexteventdate}                 next event duration
+        {schedule[]}                    array with following 10 schedules
+        {schedule[title]}               title of event
+        {schedule[shorttext]}           shorttext of event
+        {schedule[start]}               start time of event in hh:mm
+        {schedule[stop]}                stop time of event in hh:mm        
+        -->
+        <currentelement delay="{channelsDescriptionDelay}" fadetime="{channelsFadeTime}">
+            <area x="{areawidth}*0.31" y="{areaheight}*1.18 + {areawidth}*0.01" width="{areawidth}*0.08" height="{areawidth}*0.06" layer="2">
+                <!-- logo -->
+                <drawimage name="logo" imagetype="channellogo" path="{channelid}" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+	    </area>
+            <area x="{areawidth}*0.36" y="0" width="{areawidth}*0.60 - 2" height="{areaheight}*0.10" layer="2">
+		<!-- header -->
+                <drawtext name="channelname" align="center" y="0" font="{regular}" fontsize="{areaheight} - 5" color="{clrFontMenuBright}" text="{number} - {name}" />
+		<drawimage align="center" y="{areaheight} - 3" imagetype="skinpart" path="line_horizontal" width="{areawidth}" height="3" />
+	    </area>
+            <area background="true" x="{areawidth}*0.50" y="{areaheight}*0.1205" width="{areawidth}*0.14" height="{areaheight}*0.03" layer="2">
+		<!-- progressbar background -->
+	    	<drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    	<drawellipse x="0" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrTransparent}" />
+	    	<drawellipse x="{areawidth}-{areaheight}" y="0" width="{areaheight}" height="{areaheight}" quadrant="0" color="{clrBorder}" />
+	    	<drawellipse x="{areawidth}-{areaheight}" y="0" width="{areaheight} - 2" height="{areaheight} - 2" quadrant="0" color="{clrTransparent}" />
+            	<drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight} - 2" color="{clrTransparent}" />
+            	<drawrectangle x="{areaheight}/2" y="{areaheight} - 2" width="{areawidth} - {areaheight}" height="2" color="{clrBorder}" />
+	    </area>
+            <area x="{areawidth}*0.50 + 2" y="{areaheight}*0.1205 + 2" width="{areaheight}*0.03-4 + {areawidth}*0.14/{presenteventduration}*{presenteventelapsed} - {areaheight}*0.03/{presenteventduration}*{presenteventelapsed} - 8/{presenteventduration}*{presenteventelapsed}" height="{areaheight}*0.03 - 4" layer="2">
+		<!-- progressbar -->
+	    	<drawellipse name="progress_left" x="0" y="0" width="{areaheight}/2" height="{areaheight}/2" quadrant="2" color="{clrProgressbar}" />
+	    	<drawellipse x="0" y="0" width="{areaheight}/2 - 2" height="{areaheight}/2 - 1" quadrant="2" color="{clrProgressbarBg}" />
+	    	<drawellipse x="0" y="{areaheight}/2 - 1" width="{areaheight}/2" height="{areaheight}/2" quadrant="3" color="{clrProgressbar}" />
+	    	<drawellipse x="0" y="{areaheight}/2 - 2" width="{areaheight}/2 - 2" height="{areaheight}/2 - 1" quadrant="3" color="{clrProgressbarBg}" />
+	    	<drawellipse name="progress_right" x="{areawidth}-{areaheight}/2" y="0" width="{areaheight}/2" height="{areaheight}/2" quadrant="1" color="{clrProgressbar}" />
+	    	<drawellipse x="{areawidth}-{areaheight}/2" y="0" width="{areaheight}/2 - 2" height="{areaheight}/2 - 1" quadrant="1" color="{clrProgressbarBg}" />
+	    	<drawellipse x="{areawidth}-{areaheight}/2" y="{areaheight}/2 - 1" width="{areaheight}/2" height="{areaheight}/2" quadrant="4" color="{clrProgressbar}" />
+	    	<drawellipse x="{areawidth}-{areaheight}/2" y="{areaheight}/2 - 2" width="{areaheight}/2 - 2" height="{areaheight}/2 - 1" quadrant="4" color="{clrProgressbarBg}" />
+            	<drawrectangle x="{width(progress_left)} - 2" y="0" width="{posx(progress_right)} - {width(progress_left)} + 2" height="{areaheight} - 2" color="{clrProgressbarBg}" />
+            	<drawrectangle x="{width(progress_left)}" y="{areaheight} - 2" width="{posx(progress_right)} - {width(progress_left)}" height="2" color="{clrProgressbar}" />
+	    </area>
+            <area x="{areawidth}*0.36" y="{areaheight}*0.11" width="{areawidth}*0.60 - 2" height="{areaheight}*0.90 -2" layer="2">
+                <!-- NOW -->
+                <drawtext name="headernow" x="0" y="0" width="48%" font="{regular}" fontsize="6%" color="{clrFontMenuBright}" text="{tr(Now)}: {presenteventstart} - {presenteventstop}" />
+                <drawtext name="titlenow" x="0" y="{posy(headernow)} + {height(headernow)}" width="48%" font="{regular}" fontsize="6%" color="{clrFontMenuDark}" text="{presenteventtitle}" />
+                <drawtextbox x="0" y="{posy(titlenow)} + {height(titlenow)} + 10" width="48%" height="{areaheight} - {posy(titlenow)} - {height(titlenow)} - 10" font="{regular}" fontsize="5%" color="{clrFontMenuBright}" text="{presenteventshorttext}&#10;&#10;{presenteventdescription}" />
+		<!-- separator -->
+		<drawimage x="{areawidth}*0.50 - 2" valign="center" imagetype="skinpart" path="line_vertical" width="3" height="{areaheight}" />
+                <!-- NEXT -->
+                <drawtext name="headernext" x="52%" y="0" width="48%" font="{regular}" fontsize="6%" color="{clrFontMenuBright}" text="{tr(Next)}: {nexteventstart} - {nexteventstop}" />
+                <drawtext name="titlenext" x="52%" y="{posy(headernext)} + {height(headernext)}" width="48%" font="{regular}" fontsize="6%" color="{clrFontMenuDark}" text="{nexteventtitle}" />
+                <drawtextbox x="52%" y="{posy(titlenext)} + {height(titlenext)} + 10" width="48%" height="{areaheight} - {posy(titlenext)} - {height(titlenext)} - 10" font="{regular}" fontsize="5%" color="{clrFontMenuBright}" text="{nexteventshorttext}&#10;&#10;{nexteventdescription}" />
+            </area>
+            <area x="{areawidth}*0.41" y="{areaheight}*1.182" width="{areawidth}*0.47 - 2" height="{areaheight}*0.326" layer="2">
+                <drawtext name="text_nexts" x="0" y="{areaheight}*0.29" font="{bold}" fontsize="20%" color="{clrFontMenuBright}" text="{tr(Nexts)}" />
+                <drawtext name="text_schedules" x="{posx(text_nexts)} + {width(text_nexts)}/2 - {width(text_schedules)}/2" y="{areaheight}*0.51" font="{bold}" fontsize="20%" color="{clrFontMenuBright}" text="{tr(Schedules)}:" />
+	    </area>
+            <areascroll mode="forthandback" orientation="vertical" delay="2000" scrollspeed="medium" x="{areawidth}*0.41" y="{areaheight}*1.182" width="{areawidth}*0.47 - 2" height="{areaheight}*0.326" layer="2">
+                <loop name="schedule" x="{areawidth}*0.25" y="0" orientation="vertical">
+<!--
+                    <drawtext condition="strequal({schedule[title]}, {schedule[shorttext]})" x="0" font="{regular}" width="{areawidth}*0.750" fontsize="18%" color="{clrFontMenuBright}" text="{schedule[start]} {schedule[title]}" />
+-->
+                    <drawtext condition="strnotequal({schedule[title]}, 'schedule')" x="0" font="{regular}" width="{areawidth}*0.750" fontsize="18%" color="{clrFontMenuBright}" text="{schedule[start]} {schedule[title]} - {schedule[shorttext]}" />
+                </loop>
+            </areascroll>
+        </currentelement>
+    </menuitems>
+</menuchannels>

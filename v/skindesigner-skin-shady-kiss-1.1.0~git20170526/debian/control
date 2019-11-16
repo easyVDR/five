@@ -1,0 +1,15 @@
+Source: skindesigner-skin-shady-kiss
+Section: misc
+Priority: extra
+Maintainer: Tomas Saxer <tsaxer@gmx.de>
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: http://www.anthra.de/shady-skin
+
+Package: skindesigner-skin-shady-kiss
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 1.1.2)
+Suggests: fonts-ds-digital, fonts-sourcesanspro
+Description: skin shady kiss for skindesigner
+

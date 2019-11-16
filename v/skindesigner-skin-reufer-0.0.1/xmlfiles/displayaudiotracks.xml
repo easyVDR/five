@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayaudiotracks SYSTEM "../../../dtd/displayaudiotracks.dtd">
+<displayaudiotracks x="10%" y="10%" width="20%" height="80%">
+    <background>
+        <area x="0%" y="{areaheight} - {numtracks} * {areaheight} * 0.06 - {areaheight} * 0.06" width="100%" height="{areaheight} * 0.06 + {areaheight} * 0.06 * {numtracks}" layer="1">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+        </area>
+    </background>
+    <header>
+        <area x="0" y="{areaheight} - {numtracks} * {areaheight} * 0.06 - {areaheight} * 0.06" width="100%" height="{areaheight} * 0.06" layer="2">
+            <drawtext align="center" valign="center" font="{semibold}" fontsize="90%" color="{clrText}" text="{title}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+        </area>
+    </header>
+    <menuitems x="0" y="{areaheight} - {numelements} * {areaheight} * 0.06" orientation="vertical" width="100%" height="{numelements} * {areaheight} * 0.06" align="top" numlistelements="{numelements}">
+        <listelement>
+            <!-- Background -->
+            <area x="1%" width="98%" layer="2">
+                <fill condition="not{current}" color="{clrTransparent}" />
+                <fill condition="{current}" color="{clrHighlight}" />
+            </area>
+            <areascroll x="1%" width="98%" layer="3" scrollelement="trackname" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium">
+                <drawtext name="trackname" x="10" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{title}" />
+            </areascroll>
+        </listelement>
+    </menuitems>
+</displayaudiotracks>

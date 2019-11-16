@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE globals SYSTEM "../../dtd/globals.dtd"[
+<!ENTITY translations SYSTEM "./xmlfiles/translations.xml">
+]>
+<globals>
+    <variables>
+	<var type="double" name="mainmenuWidgetInfoPosx1">0.41</var>
+	<var type="double" name="mainmenuWidgetInfoPosx2">0.53</var>
+	<var type="double" name="mainmenuWidgetInfoPosx3">0.65</var>
+	<var type="double" name="mainmenuWidgetInfoPosx4">0.77</var>
+
+	<var type="double" name="mainmenuWidgetInfoPosy1">0.78</var>
+	<var type="double" name="mainmenuWidgetInfoPosy2">0.83</var>
+	<var type="double" name="mainmenuWidgetInfoPosy3">0.88</var>
+	<var type="double" name="mainmenuWidgetInfoPosy4">0.93</var>
+
+	<var type="double" name="mainmenuWidgetInfoFontSizeName">0.022</var>
+	<var type="double" name="mainmenuWidgetInfoFontSizeScala">0.018</var>
+	<var type="double" name="mainmenuWidgetInfoWidthName">0.085</var>
+
+	<var type="int" name="mainmenuWidgetDisc">1</var>
+	<var type="int" name="mainmenuFadeTime">0</var>
+
+	<var type="int" name="mainmenuWidgetShiftTimers">500</var>
+	<var type="int" name="mainmenuWidgetDelayTimers">500</var>
+	<var type="int" name="mainmenuWidgetShiftInfo">500</var>
+	<var type="int" name="mainmenuWidgetDelayInfo">1000</var>
+    </variables>
+
+    <colors>
+        <color name="clrRed">FFFF0000</color>
+        <color name="clrGreen">FF5FE200</color>
+        <color name="clrYellow">FFE2DA00</color>
+        <color name="clrBlue">FF007FE2</color>
+        <color name="clrWhite">FFFFFFFF</color>
+        <color name="clrTransWhite">99FFFFFF</color>
+        <color name="clrBlack">FF000000</color>
+        <color name="clrOrange">FFFFCC33</color>	
+        <color name="clrGray">FF858585</color>
+        <color name="clrTransGray">99858585</color>
+        <color name="clrBorder">FFABABAB</color>
+        <color name="clrTransBorder">99ABABAB</color>
+        <color name="clrBackground">FF1A1A1A</color>
+        <color name="clrTransBlack">99000000</color>
+        <color name="clrTransBlackDark">DD000000</color>
+        <color name="clrTransRed">99FF0000</color>
+        <color name="clrTransGreen">995FE200</color>
+        <color name="clrTransYellow">99E2DA00</color>
+        <color name="clrTransBlue">99007FE2</color>
+        <color name="clrTransparent">00000000</color>
+        <color name="clrDarkRed">FF640000</color>
+        <color name="clrFontMenuItem">AAAAAAAA</color>
+        <color name="clrFontMenuItemSelected">FFFFFFFF</color>
+        <color name="clrFontInactive">FF858585</color>
+        <color name="clrFontMenuBright">FFFFFFFF</color>
+        <color name="clrFontMenuDark">AAAAAAAA</color>
+        <color name="clrFontMenuItemBright">FFFFFFFF</color>
+        <color name="clrFontMenuItemDark">AAAAAAAA</color>
+        <color name="clrFontWidgetBright">FFFFFFFF</color>
+        <color name="clrFontWidgetDark">AAAAAAAA</color>
+        <color name="clrProgressbar">FF666666</color>
+        <color name="clrProgressbarBg">FF3A3A3A</color>
+        <color name="clrProgressbarInactive">FF858585</color>
+        <color name="clrTimeshiftProgressbar">FF3A3A3A</color>
+        <color name="clrChannelProgressbarBg">FFFAFAFA</color>
+	<color name="clrWidgetStatusBarGreen">FF33FF33</color>	
+        <color name="clrWidgetStatusBarRed">FFFF3333</color>	
+        <color name="clrWidgetStatusBarYellow">FFFFFF33</color>	
+        <color name="clrWidgetStatusBarOrange">FFFFCC33</color>	
+        <color name="clrWidgetStatusBarBg">FFABABAB</color>	
+        <color name="clrWidgetStatusBarNeutral">FFEBEBEB</color>
+        <color name="clrWidgetFontName">FFFFFFFF</color>
+        <color name="clrWidgetFontScala">FF858585</color>
+        <color name="clrFontColorButton">FFFFFFFF</color>
+        <color name="clrNewRec">FF00FFFF</color>
+        <color name="clrCuttedRec">FF0094FF</color>
+        <color name="clrFontChannelTitle">FFFFFFFF</color>
+        <color name="clrFontChannelSubtitle">99FFFFFF</color>
+        <color name="clrFontTitle">FFFFFFFF</color>
+        <color name="clrFontSubtitle">99FFFFFF</color>
+        <color name="clrFontChannelNextTitle">FF777777</color>
+        <color name="clrFontChannelNextSubtitle">99777777</color>
+        <color name="clrStatusIconActive">FFFFFFFF</color>
+        <color name="clrStatusIconInactive">99555555</color>
+        <color name="clrFontTvguideBright">FFFFFFFF</color>
+        <color name="clrFontTvguideDark">AAAAAAAA</color>
+        <color name="clrFontTvguideGridBright">FFFFFFFF</color>
+        <color name="clrFontTvguideGridDark">AAAAAAAA</color>
+    </colors>
+
+	&translations;
+
+   <fonts>
+        <font name="light">Roboto:Light</font>
+        <font name="lightitalic">Roboto:LightItalic</font>
+        <font name="bold">Roboto:Bold</font>
+        <font name="bolditalic">Roboto:BoldItalic</font>
+        <font name="black">Roboto:Black</font>
+        <font name="blackitalic">Roboto:BlackItalic</font>
+        <font name="regular">Roboto:Regular</font>
+        <font name="italic">Roboto:Italic</font>
+        <font name="medium">Roboto:Medium</font>
+        <font name="mediumitalic">Roboto:MediumItalic</font>
+        <font name="thin">Roboto:Thin</font>
+        <font name="thinitalic">Roboto:ThinItalic</font>
+    </fonts>
+</globals>

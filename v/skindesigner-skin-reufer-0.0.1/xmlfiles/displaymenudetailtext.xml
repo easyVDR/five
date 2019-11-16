@@ -1,0 +1,16 @@
+<menudetailedtext x="0%" y="16%" width="100%" height="78%" fadetime="0">
+    <scrollbar>
+        <area x="{areawidth} * 0.98" y="1%" width="{areawidth} * 0.01" height="98%" layer="3">
+            <fill color="{clrTransparent}" />
+            <drawellipse x="0" y="0" width="{areawidth}" height="{areawidth} * 0.5" color="{clrHighlight}" quadrant="6" />
+            <drawrectangle x="0" y="{areawidth} * 0.5" height="{areaheight} - {areawidth}" width="100%" color="{clrHighlight}" />
+            <drawellipse x="0" y="{areaheight} - 0.5 * {areawidth}" width="{areawidth}" height="{areawidth} * 0.5" color="{clrHighlight}" quadrant="8" />
+            <drawellipse name="slidertop" x="{areawidth} * 0.25" y="{areawidth} * 0.25 + {areaheight} * {offset} / 1000 - {areawidth} * {offset} / 1000" width="{areawidth} * 0.5" height="{areawidth} * 0.25" color="{clrBorder}" quadrant="6" />
+            <drawrectangle name="sliderbody" x="{areawidth} * 0.25" y="{posy(slidertop)} + {height(slidertop)}" height="{areaheight} * {height} / 1000 - {areawidth} * {height} / 1000" width="{areawidth} * 0.5" color="{clrBorder}" />
+            <drawellipse name="sliderbottom" x="{areawidth} * 0.25" y="{posy(sliderbody)} + {height(sliderbody)}" width="{areawidth} * 0.5" height="{areawidth} * 0.25" color="{clrBorder}" quadrant="8" />
+        </area>
+    </scrollbar>
+    <tab name="text" x="1%" y="1%" width="97%" height="98%" layer="2" scrollheight="{areaheight}/4">
+        <drawtextbox x="0" y="0" width="100%" font="{light}" fontsize="7%" color="{clrText}" text="{text}" />
+    </tab>
+</menudetailedtext>

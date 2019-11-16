@@ -1,0 +1,37 @@
+<menutimers x="0%" y="16%" width="100%" height="78%" fadetime="0">
+    <menuitems x="0" y="0" orientation="vertical" width="100%" height="100%" align="center" numlistelements="13">
+        <listelement>
+            <!-- background -->
+            <area x="0" width="{areawidth} * 0.49" layer="2">
+                <fill condition="not{current}" color="{clrTransparent}" />
+                <fill condition="{current}" color="{clrHighlight}" />
+            </area>
+            <area x="1%" width="56%" layer="2">
+                <drawimage condition="{flagactive}" name="active" imagetype="icon" path="timer" x="0" width="0.7*{areaheight}" height="0.7*{areaheight}" valign="center" />
+            </area>
+            <areascroll scrollelement="timertext" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="5%" width="44%" layer="3">
+                <drawtext condition="{flagrecording}" name="timertext" x="0" valign="center" font="{italic}" fontsize="90%" color="{clrText}" text="{printf('%02d.%02d.%d', day, month, year)}, {timerstart} - {timerstop}: {title}" />
+                <drawtext condition="not{flagrecording}" name="timertext" x="0" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{printf('%02d.%02d.%d', day, month, year)}, {timerstart} - {timerstop}: {title}" />
+            </areascroll>
+        </listelement>
+        <currentelement delay="200" fadetime="0">
+            <area x="52%" y="0" width="47%" height="98%" layer="2">
+                <drawtext name="title" x="1%" y="0" width="98%" font="{semibold}" fontsize="9%" color="{clrText}" text="{eventtitle}" />
+                <drawtext name="shorttext" x="1%" y="0.95 * {height(title)}" width="98%" font="{light}" fontsize="7%" color="{clrText}" text="{eventshorttext}" />
+                <drawtext name="datetime" x="1%" y="{posy(shorttext)} + {height(shorttext)}" font="{light}" fontsize="6%" color="{clrText}" text="{eventstart} - {eventstop}" />
+                <drawtextbox name="description" x="1%" y="{posy(datetime)} + 1.5* {height(datetime)}" width="98%" height="{areaheight} - {posy(datetime)} - {height(datetime)}" font="{light}" fontsize="6%" color="{clrText}" text="{eventdescription}" />
+            </area>
+        </currentelement>
+    </menuitems>
+    <scrollbar>
+        <area x="{areawidth} * 0.5 - {areawidth} * 0.005" y="1%" width="{areawidth} * 0.01" height="98%" layer="3">
+            <fill color="{clrTransparent}" />
+            <drawellipse x="0" y="0" width="{areawidth}" height="{areawidth} * 0.5" color="{clrHighlight}" quadrant="6" />
+            <drawrectangle x="0" y="{areawidth} * 0.5" height="{areaheight} - {areawidth}" width="100%" color="{clrHighlight}" />
+            <drawellipse x="0" y="{areaheight} - 0.5 * {areawidth}" width="{areawidth}" height="{areawidth} * 0.5" color="{clrHighlight}" quadrant="8" />
+            <drawellipse name="slidertop" x="{areawidth} * 0.25" y="{areawidth} * 0.25 + {areaheight} * {offset} / 1000 - {areawidth} * {offset} / 1000" width="{areawidth} * 0.5" height="{areawidth} * 0.25" color="{clrBorder}" quadrant="6" />
+            <drawrectangle name="sliderbody" x="{areawidth} * 0.25" y="{posy(slidertop)} + {height(slidertop)}" height="{areaheight} * {height} / 1000 - {areawidth} * {height} / 1000" width="{areawidth} * 0.5" color="{clrBorder}" />
+            <drawellipse name="sliderbottom" x="{areawidth} * 0.25" y="{posy(sliderbody)} + {height(sliderbody)}" width="{areawidth} * 0.5" height="{areawidth} * 0.25" color="{clrBorder}" quadrant="8" />
+        </area>
+    </scrollbar>
+</menutimers>

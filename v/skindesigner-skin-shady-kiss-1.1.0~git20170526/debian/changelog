@@ -1,0 +1,305 @@
+skindesigner-skin-shady-kiss (1.1.0~git20170526-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 23:45:49 +0100
+
+skindesigner-skin-shady-kiss (1.1.0~git20170526-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 00:56:05 +0100
+
+skindesigner-skin-shady-kiss (1.1.0~git20170526-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 23:58:24 +0100
+
+skindesigner-skin-shady-kiss (1.1.0~git20170526-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Jun 2017 17:58:58 +0200
+
+skindesigner-skin-shady-kiss (1.1.0~git20170526-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:550e0e3 - Fixed bgprocess
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 26 May 2017 19:20:11 +0200
+ 
+skindesigner-skin-shady-kiss (1.1.0~git20160911-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:20:25 +0200
+
+skindesigner-skin-shady-kiss (1.1.0~git20160911-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 18 Sep 2016 21:42:01 +0200 
+
+skindesigner-skin-shady-kiss (1.1.0~git20160911-0easyVDR2~trusty) trusty; urgency=high
+
+  * remove obsolet files
+  
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 18 Sep 2016 20:55:58 +0200
+
+skindesigner-skin-shady-kiss (1.1.0~git20160911-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * 90172e7: Added Zapcockpit
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 11 Sep 2016 21:33:27 +0200
+
+skindesigner-skin-shady-kiss (1.0.0~git20160421-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ed9df9d - Added setup for epg2vdrShowHostname,  Added setup if
+    skindesigner is patched for epg2vdr
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Apr 2016 23:08:30 +0200
+
+skindesigner-skin-shady-kiss (1.0.0~git20160418-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:bb9b4b2 - New icons for remote-timer
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Apr 2016 20:32:11 +0200
+
+skindesigner-skin-shady-kiss (1.0.0~git20160417-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:02d2fe5 Fixed patch for epg2vdr
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Apr 2016 20:20:35 +0200
+
+skindesigner-skin-shady-kiss (0.7.2+git20160122-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:aaaa79b - Added starttimes for neutrinoep
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 22 Jan 2016 00:38:49 +0100
+
+skindesigner-skin-shady-kiss (0.7.2+git20151126-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:641a11b - Removed some useless code
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 03 Dec 2015 21:48:16 +0100
+
+skindesigner-skin-shady-kiss (0.5.3.git20150705-3easyVDR0~trustyu) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 22:00:13 +0100
+
+skindesigner-skin-shady-kiss (0.5.3.git20150705-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Nov 2015 22:59:36 +0100
+
+skindesigner-skin-shady-kiss (0.5.3.git20150705-0mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 21:58:23 +0200
+
+skindesigner-skin-shady-kiss (0.5.3.git20150705-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Jul 2015 22:27:14 +0200
+
+skindesigner-skin-shady-kiss (0.5.3.git20150622-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Jun 2015 23:48:18 +0200
+
+skindesigner-skin-shady-kiss (0.5.3.git20150622-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 Jun 2015 19:58:58 +0200
+
+skindesigner-skin-shady-kiss (0.5.3.git20150620.1727-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d325543: New defaultsettings
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 20 Jun 2015 19:27:25 +0200
+
+skindesigner-skin-shady-kiss (0.4.8.git20150523.2146-1yavdr0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * b2095de: Added three last recordings to
+    showTimersRecordingsandInfos-option in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 23:46:24 +0200
+
+skindesigner-skin-shady-kiss (0.4.8.git20150523.2146-1yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b2095de: Added three last recordings to
+    showTimersRecordingsandInfos-option in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 23:46:18 +0200
+
+skindesigner-skin-shady-kiss (0.4.3.git20150414.1946-0yavdr0~trusty) trusty; urgency=low
+
+  * b2095de: Added three last recordings to
+    showTimersRecordingsandInfos-option in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 14 Apr 2015 21:47:55 +0200
+
+skindesigner-skin-shady-kiss (0.4.3.git20150414.1943-0yavdr0~precise) precise; urgency=low
+
+  * b2095de: Added three last recordings to
+    showTimersRecordingsandInfos-option in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 14 Apr 2015 21:45:50 +0200
+
+skindesigner-skin-shady-kiss (0.4.2.git20150413.1906-0yavdr0~trusty) trusty; urgency=low
+
+  * b2095de: Added three last recordings to
+    showTimersRecordingsandInfos-option in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 13 Apr 2015 21:08:25 +0200
+
+skindesigner-skin-shady-kiss (0.4.2.git20150413.1905-0yavdr0~precise) precise; urgency=low
+
+  * b2095de: Added three last recordings to
+    showTimersRecordingsandInfos-option in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 13 Apr 2015 21:06:47 +0200
+
+skindesigner-skin-shady-kiss (0.3.3.git20150405.1558-0yavdr0~trusty) trusty; urgency=low
+
+  * bd69819: Small fix for coloredbuttons
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 05 Apr 2015 17:58:51 +0200
+
+skindesigner-skin-shady-kiss (0.3.3.git20150405.1558-0yavdr0~precise) precise; urgency=low
+
+  * bd69819: Small fix for coloredbuttons
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 05 Apr 2015 17:58:37 +0200
+
+skindesigner-skin-shady-kiss (0.3.3.git20150330.1130-0yavdr0~trusty) trusty; urgency=low
+
+  * c59c793: Fixed displaymenutimers
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 30 Mar 2015 13:30:14 +0200
+
+skindesigner-skin-shady-kiss (0.3.3.git20150330.1129-0yavdr0~precise) precise; urgency=low
+
+  * c59c793: Fixed displaymenutimers
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 30 Mar 2015 13:29:59 +0200
+
+skindesigner-skin-shady-kiss (0.3.3.git20150328.2208-0yavdr0~trusty) trusty; urgency=low
+
+  * 005f5d4: Testing "Colored buttons"
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Mar 2015 23:08:12 +0100
+
+skindesigner-skin-shady-kiss (0.3.3.git20150328.2207-0yavdr0~precise) precise; urgency=low
+
+  * 005f5d4: Testing "Colored buttons"
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Mar 2015 23:07:58 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150328.1442-0yavdr0~trusty) trusty; urgency=low
+
+  * 2fd9f38: Updated README and HISTORY
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Mar 2015 15:42:30 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150328.1442-0yavdr0~precise) precise; urgency=low
+
+  * 2fd9f38: Updated README and HISTORY
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Mar 2015 15:42:18 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150325.1919-0yavdr0~trusty) trusty; urgency=low
+
+  * 131f5b9: Changed shadows of WeatherCurrentMain
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 25 Mar 2015 20:19:57 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150325.1919-0yavdr0~precise) precise; urgency=low
+
+  * 131f5b9: Changed shadows of WeatherCurrentMain
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 25 Mar 2015 20:19:44 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150323.2026-0yavdr0~trusty) trusty; urgency=low
+
+  * 4359b1f: Improvements for weatherforecast (III)
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 23 Mar 2015 21:26:19 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150323.2025-0yavdr0~precise) precise; urgency=low
+
+  * 4359b1f: Improvements for weatherforecast (III)
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 23 Mar 2015 21:26:06 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150323.1853-0yavdr0~trusty) trusty; urgency=low
+
+  * 1247d10: Fixed weatherDivider
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 23 Mar 2015 19:53:41 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150323.1853-0yavdr0~precise) precise; urgency=low
+
+  * 1247d10: Fixed weatherDivider
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 23 Mar 2015 19:53:29 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150323.1844-0frodo0~trusty) trusty; urgency=low
+
+  * 1247d10: Fixed weatherDivider
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 23 Mar 2015 19:44:49 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150323.1844-0frodo0~precise) precise; urgency=low
+
+  * 1247d10: Fixed weatherDivider
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 23 Mar 2015 19:44:25 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150322.2027-0frodo0~trusty) trusty; urgency=low
+
+  * d00d9da: Added stuff for WeatherForecast
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Mar 2015 21:28:01 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150322.2027-0frodo0~precise) precise; urgency=low
+
+  * d00d9da: Added stuff for WeatherForecast
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Mar 2015 21:27:44 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150322.2026-0frodo0~trusty) trusty; urgency=low
+
+  * d00d9da: Added stuff for WeatherForecast
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Mar 2015 21:27:03 +0100
+
+skindesigner-skin-shady-kiss (0.3.2.git20150322.2023-0frodo0~trusty) trusty; urgency=low
+
+  * d00d9da: Added stuff for WeatherForecast
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Mar 2015 21:23:47 +0100
+
+skindesigner-skin-shady-kiss (0.2.2.git20150321.1517-0frodo0~trusty) trusty; urgency=low
+
+  * new
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Mar 2015 16:17:08 +0100
+

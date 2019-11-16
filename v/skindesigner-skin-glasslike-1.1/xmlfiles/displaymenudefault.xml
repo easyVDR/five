@@ -1,0 +1,91 @@
+<menudefault x="0" y="0" width="100%" height="100%" fadetime="{mainmenuFadeTime}" scaletvx="{areawidth}*0.01" scaletvy="{areaheight}*0.695" scaletvwidth="{areawidth}*0.29" scaletvheight="{areaheight}*0.3" >
+    <scrollbar>
+	<!-- scrollbar -->
+        <area x="{areawidth}*0.99 - {areawidth}*0.01 + 2" y="{areawidth}*0.01 + 2 + {areaheight}*{offset}/1000" width="{areawidth}*0.01 - 6" height="{areaheight}*{height}/1000 - {areawidth}*0.02 - 6" layer="2">
+	    <drawellipse x="0" y="0" width="100%" height="{areawidth}" quadrant="0" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="0" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrProgressbarBg}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}" width="100%" height="{areawidth}" quadrant="0" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrProgressbarBg}" />
+            <drawrectangle x="0" y="{areawidth}/2" width="{areawidth} - 2" height="{areaheight} - {areawidth}" color="{clrProgressbarBg}" />
+            <drawrectangle x="{areawidth} - 2" y="{areawidth}/2" width="2" height="{areaheight} - {areawidth}" color="{clrProgressbar}" />
+        </area>
+     </scrollbar>
+
+    <header> <!-- menu frame -->
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.96" height="{areaheight}*0.70 - {areawidth}*0.02" layer="1">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)}" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 15" y="{posy(mainframe)} + {height(mainframe)} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+	<!-- info -->
+        <area x="{areawidth}*0.40" y="{areaheight}*0.775" width="{areawidth}*0.49 - 2" height="{areaheight}*0.225 - {areawidth}*0.01 - 2" layer="2">
+            <drawimage align="center" valign="center" imagetype="skinpart" path="line_horizontal" width="100%" height="3" />
+            <drawtext condition="not{vectraSetup}" align="center" y="15%" font="{regular}" fontsize="30%" color="{clrWhite}" text="{title}" />
+            <drawtext condition="not{vectraSetup}" align="center" y="60%" font="{regular}" fontsize="25%" color="{clrWhite}" text="VDR {vdrversion}" />
+            <drawtext condition="{vectraSetup}" align="center" y="15%" font="{regular}" fontsize="30%" color="{clrWhite}" text="{title}" />
+            <drawtext condition="{vectraSetup}" align="center" y="60%" font="{regular}" fontsize="25%" color="{clrWhite}" text="VDR-StreamingClient" />
+        </area>
+	<!-- menu icon -->
+        <area x="{areawidth}*0.30" y="{areaheight}*0.70" width="{areawidth}*0.10" height="{areaheight}*0.30 - {areawidth}*0.01" layer="1">
+            <drawimage align="center" valign="center" imagetype="menuicon" path="{icon}" width="90%" height="90%" />
+	</area>
+    </header>
+    <menuitems x="{areawidth}*0.01" y="{areawidth}*0.02" orientation="vertical" width="{areawidth}*0.96 - 2" height="{areaheight}*0.70 - {areawidth}*0.04 - 2" align="center" menuitemwidth="100%" determinatefont="column1" numlistelements="{defaultmenuNumMenuItems}">
+        <!-- Available Variables default menu listelement:
+        {column1}                   text of column1
+        {column2}                   text of column2
+        {column3}                   text of column3
+        {column4}                   text of column4
+        {column5}                   text of column5
+        {column6}                   text of column6
+        {column2set}                true if column2 is used
+        {column3set}                true if column3 is used
+        {column4set}                true if column4 is used
+        {column5set}                true if column5 is used
+        {column6set}                true if column6 is used
+        {column2x}                  proposed x value of column2
+        {column3x}                  proposed x value of column3
+        {column4x}                  proposed x value of column4
+        {column5x}                  proposed x value of column5
+        {column6x}                  proposed x value of column6
+        {column1width}              proposed width of column1
+        {column2width}              proposed width of column2
+        {column3width}              proposed width of column3
+        {column4width}              proposed width of column4
+        {column5width}              proposed width of column5
+        {column6width}              proposed width of column6
+        {current}                   true if column is currently selected 
+        {separator}                 true if column is a list separator 
+        -->
+        <listelement>
+            <area x="0" width="100%" layer="2">
+                <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+                <drawimage condition="not{current}" imagetype="skinpart" path="line_gray_horizontal" x="0" y="0" width="{areawidth}" height="1"/>
+                <drawimage condition="not{current}" imagetype="skinpart" path="line_gray_horizontal" x="0" y="{areaheight} - 1" width="{areawidth}" height="1"/>
+            </area>
+            <areascroll scrollelement="column1" mode="forthandback" orientation="horizontal" delay="1000" scrollspeed="medium" x="1%" width="{column1width}" layer="3">
+                <drawtext condition="not{current}" name="column1" x="{column1x}" width="{column1width}" valign="center" font="{regular}" fontsize="90%" color="{clrFontMenuItem}" text="{column1}" />
+                <drawtext condition="{current}" name="column1" x="{column1x}" width="{column1width}" valign="center" font="{regular}" fontsize="90%" color="{clrFontMenuItemSelected}" text="{column1}" />
+            </areascroll>
+            <area x="1%" width="100%" layer="3">
+                <drawtext condition="{column2set}++not{current}" x="{column2x}" valign="center" width="{column2width}" font="{regular}" fontsize="90%" color="{clrFontMenuItem}" text="{column2}" />
+                <drawtext condition="{column2set}++{current}" x="{column2x}" valign="center" width="{column2width}" font="{regular}" fontsize="90%" color="{clrFontMenuItemSelected}" text="{column2}" />
+                <drawtext condition="{column3set}++not{current}" x="{column3x}" valign="center" width="{column3width}" font="{regular}" fontsize="90%" color="{clrFontMenuItem}" text="{column3}" />
+                <drawtext condition="{column3set}++{current}" x="{column3x}" valign="center" width="{column3width}" font="{regular}" fontsize="90%" color="{clrFontMenuItemSelected}" text="{column3}" />
+                <drawtext condition="{column4set}++not{current}" x="{column4x}" valign="center" width="{column4width}" font="{regular}" fontsize="90%" color="{clrFontMenuItem}" text="{column4}" />
+                <drawtext condition="{column4set}++{current}" x="{column4x}" valign="center" width="{column4width}" font="{regular}" fontsize="90%" color="{clrFontMenuItemSelected}" text="{column4}" />
+                <drawtext condition="{column5set}++not{current}" x="{column5x}" valign="center" width="{column5width}" font="{regular}" fontsize="90%" color="{clrFontMenuItem}" text="{column5}" />
+                <drawtext condition="{column5set}++{current}" x="{column5x}" valign="center" width="{column5width}" font="{regular}" fontsize="90%" color="{clrFontMenuItemSelected}" text="{column5}" />
+                <drawtext condition="{column6set}++not{current}" x="{column6x}" valign="center" width="{column6width}" font="{regular}" fontsize="90%" color="{clrFontMenuItem}" text="{column6}" />
+                <drawtext condition="{column6set}++{current}" x="{column6x}" valign="center" width="{column6width}" font="{regular}" fontsize="90%" color="{clrFontMenuItemSelected}" text="{column6}" />
+            </area>
+        </listelement>
+        
+    </menuitems>
+</menudefault>

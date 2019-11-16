@@ -1,0 +1,42 @@
+skindesigner-skin-simplex-mango (0.0.2-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 23:46:46 +0100
+
+skindesigner-skin-simplex-mango (0.0.2-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 00:56:42 +0100
+
+skindesigner-skin-simplex-mango (0.0.2-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 23:58:58 +0100
+
+skindesigner-skin-simplex-mango (0.0.2-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Jun 2017 17:59:33 +0200
+
+skindesigner-skin-simplex-mango (0.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * remove obsolet logos
+  * increase build number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 31 Oct 2016 22:53:45 +0100
+
+skindesigner-skin-simplex-mango (0.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * added logos
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 30 Oct 2016 17:51:57 +0100
+
+skindesigner-skin-simplex-mango (0.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * initial build
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 14 Oct 2016 22:56:26 +0200

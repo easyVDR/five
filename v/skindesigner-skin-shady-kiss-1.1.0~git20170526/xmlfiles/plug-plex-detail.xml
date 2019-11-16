@@ -1,0 +1,402 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
+
+<displayplugin x="0" y="0" width="100%" height="100%" fadetime="0">
+	
+	<!-- Available Variables message:
+	{displaymessage}			bool: message displayed?
+    {message}                   string: message to display
+    -->
+	<viewelement name="message">
+    </viewelement>
+	
+	<!-- Tokens available in background
+		{hasfanart}	bool
+		{hascover}	bool
+		{fanartpath} string/path
+		{coverpath}	string/path
+    -->
+	<viewelement name="background">
+		<area x="0" y="{areaheight}*0.999" width="100%" height="{areaheight}*0.001" layer="1">
+			<fill color="{clrBlack}" />
+		</area>
+		<areacontainer condition="eq({indexplexDetail}, 0)">
+			<area x="0" y="0" width="100%" height="100%" layer="1">
+				<drawimage condition="not{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNG" />
+				<drawimage condition="{brightBackground}" x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="gradientPNGBright" />    
+			</area>
+			<area x="0" y="0" width="100%" height="100%" layer="2">
+				<drawimage  x="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowsMenuDefault" />
+			</area>
+			<area x="0" y="0" width="100%" height="11%" layer="2">
+				<drawimage x="0" width="{areawidth}*0.972" height="{areaheight}*0.972" imagetype="skinpart" path="gradientHeader" />           
+			</area>	
+		</areacontainer>
+    </viewelement>
+    
+    <viewelement name="time">
+		<area condition="eq({indexplexDetail}, 0)" x="60%" y="3%" width="35%" height="10%" layer="6">
+			<drawtext align="right" font="{light}" fontsize="55%" color="{clrLightGray}" text="{dayname}   {dayleadingzero}. {monthnameshort}    {time}" />
+		</area>
+	</viewelement>
+	
+	<!-- Tokens available in info
+	{title}                 	string, Name of the element
+	{viewgroup}					int: {UNDEF = 0, MOVIE = 1, SHOW = 2, SEASON = 3, EPISODE = 4, MUSIC, PHOTO};
+		
+	Following tokens are avaliable if the item is a directory or video
+	{year}						Year of production
+	{hasthumb}					bool
+		{thumb}					string, Image/Cover
+	{hasart}					bool
+		{art}					string, Fanart
+			
+	If the item is a video following tokens are avaliable
+	The item is a video if one of the following tokens are set: {ismovie}, {isepisode} {isclip}
+	{contentrating}		string, FSK, PEGI -> eg. de/16
+	{rating}			int, starrating 0.0 - 10.0 multiplied by 10 -> 0 - 100
+	{ratingstring}		string, rating formated as double %.1f
+	{viewoffset}		int, minutes, last viewed position
+	{viewoffsetpercent} last viewed position as percent value 0 - 100
+	{duration}			int, minutes, total duration
+	{orginaltitle}		original title
+	{summary}			Description, plot, summary
+	{studio}			Studio
+	{viewCount}			Unseen if less than 1
+	
+	{originallyAvailableYear}		Year of release/first aired
+	{originallyAvailableMonth}	Month of release/first aired
+	{originallyAvailableDay}		Day of release/first aired
+	
+	{roles[actor]}		looptoken
+	{genres[genre]}	looptoken
+	
+	{videoResolution}	string (sd, 720, 1080)
+	{bitrate}			int
+	{width}				int
+	{height}			int
+	{audioChannels}		int
+	{aspectRatio}		string (1.33, 1.78, 1.85, 2.35)
+	{audioCodec}		string (aac, mp3, mp2, ac3, dca) hint: dca==DTS
+	{videoCodec}		string (mpeg4, msmpeg4, h264)
+	{container}			string (avi, mp4, mkv)
+	{videoFrameRate}	string (PAL, NTSC, 24p)
+	
+	{ismovie}
+	{isepisode}
+		{seriestitle}		Title of the series/show
+		{season}			int, Season
+		{episode}			int, Episode, season based
+		{hasbanner}		bool, Bannerstyle
+			{banner}		Image path
+		{hasseriesthumb}	bool, seriesthumb (seasoncover, seriescover)
+			{seriesthumb}	Image path
+    
+	-->
+	<viewelement name="info">
+		<areacontainer condition="{hasart}++eq({indexplexDetail}, 1)">
+			<area x="0" y="0" width="100%" height="100%" layer="3">
+			<drawimage name="art" x="0" width="{areawidth}" height="{areaheight}" imagetype="image" path="{art}" />
+			</area>
+			<area x="0" y="0" width="100%" height="23%" layer="4">
+				<fill color="{clrPlexFillBright}" />
+			</area>
+			<area x="0" y="23%" width="100%" height="77%" layer="4">
+				<fill color="{clrPlexFillDark}" />
+			</area>
+		</areacontainer>
+		<areacontainer condition="{ismovie}">			
+			<area x="{areawidth}*0.0035" y="{areaheight}*0.1325" width="{areawidth}*0.245" height="56%" layer="5">
+				<drawimage condition="{hasthumb}" imagetype="skinpart" path="posterBGDetail" x="0" y="0" width="{areawidth}" height="{areawidth}*1.3"/>
+			</area>
+			<area x="{areawidth}*0.015" y="14%" width="18%" height="54%" layer="5">
+				<drawimage name="thumb" condition="{hasthumb}" imagetype="image" path="{thumb}" align="center" x="0" y="0" width="{areawidth}" height="{areawidth}*480/320" />
+			</area>
+			<area x="{areawidth}*0.015" y="{areaheight}*0.67" width="18%" height="22%" layer="6" >
+				<drawimage name="art" x="0" y="10%"  width="{areawidth}" height="{areawidth}*9/16" imagetype="image" path="{art}" />
+				<drawrectangle x="0" y="0" width="100%" height="10%" color="{clrTransparent}"/>
+				<drawrectangle x="0" y="90%" width="100%" height="11%" color="{clrTransparent}"/>
+			</area>
+
+			<area x="23%" y="15%" width="70%" height="7%" layer="5">
+				<drawtext x="1%" y="0" width="80%" font="{regular}" fontsize="80%" color="{clrLightGray}" text="{title}" />
+				<drawtext x="1%" y="0" align="right" width="80%" font="{regular}" fontsize="80%" color="{clrDarkGray}" text="{year}" />
+			</area>
+			<area x="22%" y="23%" width="73%" height="1%" layer="5">
+				<drawrectangle x="0" y="0" width="{areawidth}" height="30%" color="{clrRecMenuBorderTop}" />
+				<drawrectangle x="0" y="0" width="74%" height="30%" color="{clrBar}" />
+			</area>
+
+			<area x="23%" y="26%" width="71%" height="4%" layer="5">
+				<drawtext x="0" y="0" width="30%" font="{regular}" fontsize="84%" color="{clrLightGray}" text="{duration}min" />
+				<drawimage name="stars" condition="gt({rating}, 0)" x="86%" y="0" width="{areawidth}*0.14" height="{areaheight}*0.8" imagetype="skinpart" path="starsFullBG" />
+				<drawrectangle condition="gt({rating}, 0)" x="{posx(stars)}+{width(stars)}*{rating}/100" y="0" width="{width(stars)}-{rating}/100*{width(stars)}" height="{areaheight}" color="{clrTransparent}" />	
+			</area>
+			<area x="23%" y="26%" width="71%" height="4%" layer="5">
+				<drawimage x="86%" y="0" width="{areawidth}*0.14" height="{areaheight}*0.8" imagetype="skinpart" path="stars" />
+			</area>
+
+			<area condition="isset{tagline}" x="23%" y="31%" width="71%" height="59%" layer="5">
+				<drawtext name="tagline" font="{regular}" fontsize="7%" color="{clrDarkGray}" text="{tagline}" />
+				<loop name="genres" x="0" y="{posy(tagline)}+{height(tagline)}*1.5" orientation="horizontal" width="{areawidth}" height="2%" rowheight="{areaheight}">
+					<drawtext x="0" y="0" width="50%" font="{regular}" fontsize="6%" color="{clrLightGray}" text="{genres[genre]}  " />
+				</loop>
+				<drawtext name="studio" y="{posy(tagline)}+{height(tagline)}*1.5" align="right" font="{regular}" fontsize="6%" color="{clrLightGray}" text="{studio}" />
+				<drawtext name="actors" x="0" y="20%" font="{regular}" fontsize="6%" color="{clrDarkGray}" text="{tr(actors)}: " />
+				<loop name="roles" x="{width(actors)}*1.1" y="20%" orientation="horizontal" width="{areawidth}" height="7%" columnwidth="{areawidth}/6" rowheight="{areaheight}" overflow="linewrap">
+					<drawtext x="0" y="0" align="center" width="100%" font="{regular}" fontsize="6%" color="{clrLightGray}" text="{roles[actor]}" />
+				</loop>
+				<drawtextbox x="0" y="32%" width="100%" font="{regular}" fontsize="{areaheight}*0.055" color="{clrLightGray}" text="{summary}" />
+			</area>
+			
+			<area condition="empty{tagline}" x="23%" y="31%" width="71%" height="59%" layer="5">
+				<loop name="genres" x="0" y="0" orientation="horizontal" width="{areawidth}" height="2%" rowheight="{areaheight}">
+					<drawtext x="0" y="0" width="50%" font="{regular}" fontsize="6%" color="{clrLightGray}" text="{genres[genre]}  " />
+				</loop>
+				<drawtext name="studio" y="0" align="right" font="{regular}" fontsize="6%" color="{clrLightGray}" text="{studio}" />
+				<drawtext name="actors" x="0" y="10%" font="{regular}" fontsize="6%" color="{clrDarkGray}" text="{tr(actors)}: " />
+				<loop name="roles" x="{width(actors)}*1.1" y="10%" orientation="horizontal" width="{areawidth}" height="7%" columnwidth="{areawidth}/6" rowheight="{areaheight}" overflow="linewrap">
+					<drawtext x="0" y="0" align="center" width="100%" font="{regular}" fontsize="6%" color="{clrLightGray}" text="{roles[actor]}" />
+				</loop>
+				<drawtextbox x="0" y="20%" width="100%" font="{light}" fontsize="{areaheight}*0.055" color="{clrLightGray}" text="{summary}" />
+			</area>			
+		</areacontainer>
+		<areacontainer condition="{isepisode}">
+			<area x="2%" y="15%" width="25%" height="75%" layer="5">
+				<drawimage name="thumb" condition="{hasseriesthumb}" imagetype="image" path="{seriesthumb}" align="center" x="0" y="0" width="{areawidth}" height="{areawidth}*480/320" />
+			</area>
+			<area x="30%" y="16%" width="65%" height="7%" layer="5">
+				<drawtext x="1%" y="0" width="80%" font="{regular}" fontsize="80%" color="{clrLightGray}" text="{seriestitle}" />
+				<drawtext x="1%" y="0" align="right" width="80%" font="{regular}" fontsize="80%" color="{clrDarkGray}" text="{printf('S%02d E%02d', season, episode)}" />
+			</area>
+			<area x="30%" y="23%" width="65%" height="1%" layer="5">
+				<drawrectangle x="0" y="0" width="{areawidth}" height="30%" color="{clrRecMenuBorderTop}" />
+				<drawrectangle x="0" y="0" width="74%" height="30%" color="{clrBar}" />
+			</area>
+			<area x="30%" y="25%" width="65%" height="5%" layer="5">
+				<drawtext x="1%" y="0" width="80%" font="{regular}" fontsize="80%" color="{clrDarkGray}" text="{title}" />
+				<drawtext x="1%" y="0" align="right" width="80%" font="{regular}" fontsize="80%" color="{clrDarkGray}" text="{originallyAvailableDay}.{originallyAvailableMonth}.{originallyAvailableYear}" />
+			</area>
+
+			<area x="30%" y="31%" width="{areawidth}*0.084" height="4%" layer="5">
+				<drawimage name="stars" condition="gt({rating}, 0)" x="0" y="15%" width="{areawidth}" height="{areaheight}*0.5" imagetype="skinpart" path="starsFull" />
+				<drawrectangle condition="gt({rating}, 0)" x="{posx(stars)}+{width(stars)}*{rating}/100" y="0" width="{width(stars)}-{rating}/100*{width(stars)}" height="{areaheight}" color="{clrTransparent}" />
+			</area>
+			<area x="30%" y="31%" width="{areawidth}*0.084" height="4%" layer="5">
+				<drawimage condition="gt({rating}, 0)" x="0" y="15%" width="{areawidth}" height="{areaheight}*0.5" imagetype="skinpart" path="stars" />
+			</area>
+			<area x="85%" y="31%" width="10%" height="4%" layer="5">
+				<drawtext x="1%" y="0" align="right" width="80%" font="{regular}" fontsize="84%" color="{clrLightGray}" text="{duration}min" />
+			</area>
+			<areascroll orientation="vertical" mode="forthandback" delay="1000" scrollspeed="medium" x="30%" y="37%" width="65%" height="55%" layer="5">
+				<drawtextbox condition="isset{summary}" x="0" y="0" width="100%" font="{regular}" fontsize="{areaheight}*0.055" color="{clrLightGray}" text="{summary}" />
+			</areascroll>
+		</areacontainer>
+		
+			<!--{videoResolution}	string (sd, 720, 1080)
+				{bitrate}			int
+				{width}				int
+				{height}			int
+				{audioChannels}		int
+				{aspectRatio}		string (1.33, 1.78, 1.85, 2.35)
+				{audioCodec}		string (aac, mp3, mp2, ac3, dca) hint: dca==DTS
+				{videoCodec}		string (mpeg4, msmpeg4, h264)
+				{container}			string (avi, mp4, mkv)
+				{videoFrameRate}	string (PAL, NTSC, 24p)
+			-->
+
+			<area x="2%" y="63%" width="17%" height="{areaheight}*0.025" layer="5">
+				<!--videoResolution-->
+				<drawimage condition="strequal({videoResolution}, '480')" x="0" y="20%" width="{areaheight}*0.7407*43/20" height="{areaheight}*0.7407" imagetype="icon" path="480p" />
+				<drawimage condition="strequal({videoResolution}, 'sd')" x="0" y="20%" width="{areaheight}*0.7407*27/20" height="{areaheight}*0.7407" imagetype="icon" path="SD" />
+				<drawimage condition="strequal({videoResolution}, '720')" x="0" y="20%" width="{areaheight}*0.7407*42/20" height="{areaheight}*0.7407" imagetype="icon" path="720p" />
+				<drawimage condition="strequal({videoResolution}, '1080')" x="0" y="20%" width="{areaheight}*0.7407*52/20" height="{areaheight}*0.7407" imagetype="icon" path="1080p" />
+				<!--audioCodec-->
+				<drawimage condition="strequal({audioCodec}, 'aac')" x="0" y="20%" align="center" width="{areaheight}*0.7407*77/20" height="{areaheight}*0.7407" imagetype="icon" path="aac" />
+				<drawimage condition="strequal({audioCodec}, 'mp3')" x="0" y="20%" align="center" width="{areaheight}*0.7407*40/20" height="{areaheight}*0.7407" imagetype="icon" path="mp3" />
+				<drawimage condition="strequal({audioCodec}, 'ac3')" x="0" y="0" align="center" width="{areaheight}*44/20" height="{areaheight}" imagetype="icon" path="dolby" />
+				<drawimage condition="strequal({audioCodec}, 'dca')" x="0" y="5%" align="center" width="{areaheight}*0.9*48/20" height="{areaheight}*0.9" imagetype="icon" path="dts" />
+				<!--audioChannels-->
+				<drawimage condition="eq({audioChannels}, 2)" x="0" y="20%" align="right" width="{areaheight}*0.7407*29/20" height="{areaheight}*0.7407" imagetype="icon" path="2.0" />
+				<drawimage condition="eq({audioChannels}, 5)" x="0" y="20%" align="right" width="{areaheight}*0.7407*26/20" height="{areaheight}*0.7407" imagetype="icon" path="5.1" />
+				<drawimage condition="eq({audioChannels}, 6)" x="0" y="20%" align="right" width="{areaheight}*0.7407*26/20" height="{areaheight}*0.7407" imagetype="icon" path="6.1" />
+				<!--<drawtext x="0" y="20%" align="right" font="{regular}" fontsize="84%" color="{clrLightGray}" text="{audioChannels}" />-->
+			</area>
+	</viewelement>
+	
+	<!-- Tokens available for scrollbar
+		{height}	height of the position marker of the scrollbar in percent
+		{offset}	offset for the position marker from the top of the scrollbar in percent
+	-->
+	<viewelement name="scrollbar">
+		<area condition="{hasscrollbar}" x="19%" y="{areaheight}*0.692" width="5%" height="{areaheight}*0.177" layer="4">
+			 <drawimage condition="lt({height}, 100)" x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="shadowScrollSub" />
+			 <drawimage condition="lt({height}, 100)" x="18%" y="{areaheight}*{offset}/100" width="{areawidth}*0.05" height="{areaheight}*{height}/100" imagetype="skinpart" path="scrollBar" />
+		</area>
+	</viewelement>
+	
+	<!--
+	Same tokens as in grids from root-view
+	but element are usually from type "clip" so the available information are the following:
+	
+	{title}                 	string, Name of the element
+	{extratype}								int, 1 = trailer, 5 = Behind the Scenes(?)
+	{duration}			int, minutes, total duration
+	{originallyAvailableYear}		Year of release/first aired
+	{originallyAvailableMonth}	Month of release/first aired
+	{originallyAvailableDay}		Day of release/first aired
+	-->
+	
+	<grid name="extragrid" x="{areawidth}*0.015" y="67%" width="18%" height="22%">
+		<area layer="5">
+			<drawtext condition="eq({extratype}, 1)" x="1%" y="0" width="98%" font="{light}" fontsize="10%" color="{clrDarkGray}" text="Trailer" />
+			<drawtext condition="eq({extratype}, 5)" x="1%" y="0" width="98%" font="{light}" fontsize="10%" color="{clrDarkGray}" text="Hinter den Kulissen" />
+		</area>
+		<area height="{areaheight}" layer="6">
+			<drawrectangle x="0" y="0" width="100%" height="100%" color="{clrTransparent}"/>
+			<drawimage name="thumb" condition="{hasthumb}" align="left" imagetype="image" path="{thumb}" x="0" y="0" width="100%" height="{areawidth}*240/320" />
+			<drawrectangle x="0" y="0" width="100%" height="10%" color="{clrTransparent}"/>
+			<drawrectangle x="0" y="90%" width="100%" height="11%" color="{clrTransparent}"/>
+		</area>
+		<area layer="7">
+			<drawimage name="play" x="0" y="10%" width="100%" height="81%" imagetype="skinpart" path="plexArrow"/>
+			<drawrectangle x="0" y="10%" width="1" height="{height(play)}" color="{clrBlack}" />
+			<drawrectangle x="{width(play)}-1" y="10%" width="1" height="80%" color="{clrBlack}" />
+			<drawrectangle x="0" y="10%" width="{width(play)}" height="1" color="{clrBlack}" />
+			<drawrectangle x="0" y="{posy(play)}+{height(play)}-1" width="100%" height="1" color="{clrBlack}" />
+		</area>
+		<area layer="7">
+			<drawtext name="title" x="1%" y="90%" width="98%" font="{regular}" fontsize="10%" color="{clrLightGray}" text="{title}" />
+		</area>
+		<area condition="gt({rows}, 1)||gt({columns}, 1)" layer="7">
+			<!--<fill color="{clrRed}" />-->
+			<drawrectangle x="0" y="0" width="100%" height="100%" color="{clrRed}"/>
+			<drawtext x="0" y="0" width="100%" font="{light}" align="center" fontsize="15%" color="{clrBlack}" text="Set" />
+			<drawtext x="0" y="15%" width="100%" font="{light}" align="center" fontsize="15%" color="{clrBlack}" text="Plex" />
+			<drawtext x="0" y="30%" width="100%" font="{light}" align="center" fontsize="15%" color="{clrBlack}" text="Grid" />
+			<drawtext x="0" y="45%" width="100%" font="{light}" align="center" fontsize="15%" color="{clrBlack}" text="Extras" />
+			<drawtext x="0" y="60%" width="100%" font="{light}" align="center" fontsize="15%" color="{clrBlack}" text="Rows:1" />
+			<drawtext x="0" y="75%" width="100%" font="{light}" align="center" fontsize="15%" color="{clrBlack}" text="Cols:1" />
+		</area>
+	</grid>
+	
+	<!-- Available Variables Footer:
+    {red1}                    true if red button is button 1
+    {red2}                    true if red button is button 2
+    {red3}                    true if red button is button 3
+    {red4}                    true if red button is button 4
+    {green1}                  true if green button is button 1
+    {green2}                  true if green button is button 2
+    {green3}                  true if green button is button 3
+    {green4}                  true if green button is button 4
+    {yellow1}                 true if yellow button is button 1
+    {yellow2}                 true if yellow button is button 2
+    {yellow3}                 true if yellow button is button 3
+    {yellow4}                 true if yellow button is button 4
+    {blue1}                   true if blue button is button 1
+    {blue2}                   true if blue button is button 2
+    {blue3}                   true if blue button is button 3
+    {blue4}                   true if blue button is button 4
+    {red}                     label of red button
+    {green}                   label of green button
+    {yellow}                  label of yellow button
+    {blue}                    label of blue button
+    -->
+	<viewelement name="footer">
+		<areacontainer condition="eq({indexplexDetail}, 1)">
+			<area x="2%" y="94%" width="{areawidth}*24/100*0.94" height="5%" layer="7">
+				<drawimage x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlancMain" />
+				<drawtext condition="{red1}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{red}" />
+				<drawimage condition="{red1}++isset{red}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonRedMain" />
+				<drawtext condition="{green1}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{green}" />
+				<drawimage condition="{green1}++isset{green}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonGreenMain" />
+				<drawtext condition="{yellow1}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{yellow}" />
+				<drawimage condition="{yellow1}++isset{yellow}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonYellowMain" />
+				<drawtext condition="{blue1}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{blue}" />
+				<drawimage condition="{blue1}++isset{blue}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlueMain" />
+			</area>
+			<area x="25%" y="94%" width="{areawidth}*25/100*0.943" height="5%" layer="7">
+				<drawimage x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlancMain" />
+				<drawtext condition="{red2}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{red}" />
+				<drawimage condition="{red2}++isset{red}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonRedMain" />
+				<drawtext condition="{green2}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{green}" />
+				<drawimage condition="{green2}++isset{green}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonGreenMain" />
+				<drawtext condition="{yellow2}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{yellow}" />
+				<drawimage condition="{yellow2}++isset{yellow}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonYellowMain" />
+				<drawtext condition="{blue2}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{blue}" />
+				<drawimage condition="{blue2}++isset{blue}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlueMain" />
+			</area>
+			<area x="49%" y="94%" width="{areawidth}*25/100*0.94" height="5%" layer="7">
+				<drawimage x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlancMain" />
+				<drawtext condition="{red3}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{red}" />
+				<drawimage condition="{red3}++isset{red}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonRedMain" />
+				<drawtext condition="{green3}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{green}" />
+				<drawimage condition="{green3}++isset{green}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonGreenMain" />
+				<drawtext condition="{yellow3}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{yellow}" />
+				<drawimage condition="{yellow3}++isset{yellow}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonYellowMain" />
+				<drawtext condition="{blue3}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{blue}" />
+				<drawimage condition="{blue3}++isset{blue}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlueMain" />
+			</area>
+			<area x="73%" y="94%" width="{areawidth}*24/100*0.96" height="5%" layer="7">
+			<drawimage x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlancMain" />
+				<drawtext condition="{red4}" x="20" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{red}" />
+				<drawimage condition="{red4}++isset{red}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonRedMain" />
+				<drawtext condition="{green4}" x="20" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{green}" />
+				<drawimage condition="{green4}++isset{green}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonGreenMain" />
+				<drawtext condition="{yellow4}" x="20" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{yellow}" />
+				<drawimage condition="{yellow4}++isset{yellow}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonYellowMain" />
+				<drawtext condition="{blue4}" x="0" y="{areaheight}*0.07" align="center" font="{regular}" fontsize="65%" color="{clrDarkGray}" text="{blue}" />
+				<drawimage condition="{blue4}++isset{blue}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlueMain" />
+			</area>
+		</areacontainer>
+		<areacontainer condition="eq({indexplexDetail}, 0)">
+			<area x="0" y="0" width="100%" height="100%" layer="3" >
+				<drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="SubMenuButtons" />
+			</area>
+			<area x="1%" y="92%" width="{areawidth}*24/100*0.94" height="5%" layer="3">
+				<drawimage x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlancMain" />
+				<drawtext condition="{red1}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{red}" />
+				<drawimage condition="{red1}++isset{red}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonRedMain" />
+				<drawtext condition="{green1}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{green}" />
+				<drawimage condition="{green1}++isset{green}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonGreenMain" />
+				<drawtext condition="{yellow1}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{yellow}" />
+				<drawimage condition="{yellow1}++isset{yellow}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonYellowMain" />
+				<drawtext condition="{blue1}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{blue}" />
+				<drawimage condition="{blue1}++isset{blue}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlueMain" />
+			</area>
+			<area x="24%" y="92%" width="{areawidth}*25/100*0.943" height="5%" layer="3">
+				<drawimage x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path=	"buttonBlancMain" />
+				<drawtext condition="{red2}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{red}" />
+				<drawimage condition="{red2}++isset{red}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonRedMain" />
+				<drawtext condition="{green2}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{green}" />
+				<drawimage condition="{green2}++isset{green}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonGreenMain" />
+				<drawtext condition="{yellow2}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{yellow}" />
+				<drawimage condition="{yellow2}++isset{yellow}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonYellowMain" />
+				<drawtext condition="{blue2}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{blue}" />
+				<drawimage condition="{blue2}++isset{blue}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlueMain" />
+			</area>
+			<area x="48%" y="92%" width="{areawidth}*25/100*0.94" height="5%" layer="3">
+				<drawimage x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlancMain" />
+				<drawtext condition="{red3}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{red}" />
+				<drawimage condition="{red3}++isset{red}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonRedMain" />
+				<drawtext condition="{green3}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{green}" />
+				<drawimage condition="{green3}++isset{green}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonGreenMain" />
+				<drawtext condition="{yellow3}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{yellow}" />
+				<drawimage condition="{yellow3}++isset{yellow}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonYellowMain" />
+				<drawtext condition="{blue3}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{blue}" />
+				<drawimage condition="{blue3}++isset{blue}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlueMain" />
+			</area>
+			<area x="72%" y="92%" width="{areawidth}*24/100*0.96" height="5%" layer="3">
+				<drawimage x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlancMain" />
+				<drawtext condition="{red4}" x="20" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{red}" />
+				<drawimage condition="{red4}++isset{red}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonRedMain" />
+				<drawtext condition="{green4}" x="20" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{green}" />
+				<drawimage condition="{green4}++isset{green}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonGreenMain" />
+				<drawtext condition="{yellow4}" x="20" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{yellow}" />
+				<drawimage condition="{yellow4}++isset{yellow}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonYellowMain" />
+				<drawtext condition="{blue4}" x="0" y="{areaheight}*0.07" align="center" font="{light}" fontsize="65%" color="{clrLightGray}" text="{blue}" />
+				<drawimage condition="{blue4}++isset{blue}" x="0" y="93%" width="{areawidth}" height="{areaheight}/9" imagetype="skinpart" path="buttonBlueMain" />
+			</area>
+		</areacontainer>
+	</viewelement>
+</displayplugin>

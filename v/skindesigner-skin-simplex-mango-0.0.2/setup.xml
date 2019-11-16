@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE setup SYSTEM "../../dtd/setup.dtd">
+
+<setup>
+    <menu>
+        <parameter type="bool" name="weathermainmenu" displaytext="{tr(weathermainmenu)}">0</parameter>
+        <parameter type="int" name="fadetimechannel" min="0" max="1000" displaytext="{tr(fadetextchannel)}">0</parameter>
+        <parameter type="int" name="shifttimechannel" min="0" max="1000" displaytext="{tr(shifttextchannel)}">300</parameter>
+        <parameter type="int" name="fadetimereplay" min="0" max="1000" displaytext="{tr(fadetextreplay)}">0</parameter>
+        <parameter type="int" name="shifttimereplay" min="0" max="1000" displaytext="{tr(shifttextreplay)}">300</parameter>
+        <parameter type="int" name="fadetimevolume" min="0" max="1000" displaytext="{tr(fadetextvolume)}">0</parameter>
+        <parameter type="int" name="shifttimevolume" min="0" max="1000" displaytext="{tr(shifttextvolume)}">300</parameter>
+    </menu>
+
+    <translations>
+        <token name="tr(weathermainmenu)">
+            <trans lang="en_EN">Display Weather in Main Menu</trans>
+            <trans lang="de_DE">Wetter im Hauptmenü anzeigen</trans>
+        </token>
+        <token name="tr(fadetextchannel)">
+            <trans lang="en_EN">Fade time Channel Display [ms]</trans>
+            <trans lang="de_DE">Einblendzeit Kanalanzeige [ms]</trans>
+        </token>
+        <token name="tr(shifttextchannel)">
+            <trans lang="en_EN">Shift time Channel Display [ms]</trans>
+            <trans lang="de_DE">Einfahrzeit Kanalanzeige [ms]</trans>
+        </token>
+        <token name="tr(fadetextreplay)">
+            <trans lang="en_EN">Fade time Replay Display [ms]</trans>
+            <trans lang="de_DE">Einblendzeit Wiedergabeanzeige [ms]</trans>
+        </token>
+        <token name="tr(shifttextreplay)">
+            <trans lang="en_EN">Shift time Replay Display [ms]</trans>
+            <trans lang="de_DE">Einfahrzeit Wiedergabeanzeige [ms]</trans>
+        </token>
+        <token name="tr(fadetextvolume)">
+            <trans lang="en_EN">Fade time Volume Display [ms]</trans>
+            <trans lang="de_DE">Einblendzeit Lautstärkeanzeige [ms]</trans>
+        </token>
+        <token name="tr(shifttextvolume)">
+            <trans lang="en_EN">Shift time Volume Display [ms]</trans>
+            <trans lang="de_DE">Einfahrzeit Lautstärkeanzeige [ms]</trans>
+        </token>
+    </translations>
+</setup>

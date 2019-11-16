@@ -1,0 +1,8 @@
+debian/*.theme var/lib/vdr/themes
+globals.xml usr/share/vdr/plugins/skindesigner/skins/simplex
+setup.xml usr/share/vdr/plugins/skindesigner/skins/simplex
+themes/* usr/share/vdr/plugins/skindesigner/skins/simplex/themes
+xmlfiles/* usr/share/vdr/plugins/skindesigner/skins/simplex/xmlfiles
+icons/* usr/share/vdr/plugins/skindesigner/skins/simplex/icons
+svgtemplates/* usr/share/vdr/plugins/skindesigner/skins/simplex/svgtemplates
+font/* usr/share/vdr/plugins/skindesigner/skins/simplex/font

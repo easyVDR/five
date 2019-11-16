@@ -1,0 +1,15 @@
+Source: skindesigner-skin-simplex
+Section: misc
+Priority: extra
+Maintainer: Frodo <frodo.vdr@gmx.net>
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.3
+Homepage: 
+
+Package: skindesigner-skin-simplex
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 0.6.2~), fonts-opensans
+Recommends: vdr-plugin-weatherforecast, vdr-plugin-tvguideng
+Description: skin simplex for skindesigner
+

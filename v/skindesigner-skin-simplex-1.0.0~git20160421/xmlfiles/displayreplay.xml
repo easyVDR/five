@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayreplay SYSTEM "../../../dtd/displayreplay.dtd">
+
+<displayreplay x="0" y="0" width="100%" height="100%" fadetime="{fadetimechannel}" shifttime="{shifttimechannel}" shifttype="bottom" shiftmode="slowed">
+    <background>
+        <area x="5%" y="75%" width="90%" height="20%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth}-4" height="{areaheight}-4" color="{clrBackground}" />
+        </area>
+        <area x="{areawidth}*0.07" y="{areaheight}*0.82" width="{areawidth}*0.86" height="{areaheight}*0.03" layer="2">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="1" y="1" width="{areawidth}-2" height="{areaheight}-2" color="{clrTransparent}" />
+        </area>
+    </background>
+
+    <backgroundmodeonly>
+        <!-- background small infobar -->
+        <area x="35%" y="80%" width="30%" height="10%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth}-4" height="{areaheight}-4" color="{clrBackground}" />
+        </area>
+    </backgroundmodeonly>
+
+    <datetime>
+        <area x="78%" y="75%" width="17%" height="5%" layer="2">
+            <drawtext align="right" y="0" font="{light}" fontsize="100%" color="{clrText}" text="{daynameshort} {day}. {monthnameshort} {time} " />
+        </area>
+    </datetime>
+
+    <rectitle>
+        <area x="6%" y="75%" width="63%" height="5%" layer="2">
+            <drawtext x="0" name="title" valign="center" width="{areawidth}" font="{semibold}" fontsize="85%" color="{clrText}" text="{rectitle}" />
+            <drawtext condition="isset{recsubtitle}" x="{width(title)}+10" valign="center" width="{areawidth}-{width(title)}-10" font="{light}" fontsize="85%" color="{clrText}" text=" - {recsubtitle}" />
+        </area>
+    </rectitle>
+
+    <recinfo>
+        <area x="70%" y="75%" width="8%" height="5%" layer="2">
+            <drawimage imagetype="icon" path="{resolution}" align="center" valign="center" width="{areaheight}*0.8*2" height="{areaheight}*0.8"/>
+        </area>
+    </recinfo>
+
+    <currenttime>
+        <area x="7%" y="85%" width="30%" height="5%" layer="2">
+            <drawtext x="0" valign="center" font="{light}" fontsize="100%" color="{clrText}" text="{reccurrent}" />
+        </area>
+    </currenttime>
+
+    <totaltime>
+        <area x="63%" y="85%" width="30%" height="5%" layer="2">
+            <drawtext condition="not{timeshift}" align="right" valign="center" font="{light}" fontsize="100%" color="{clrText}" text="{rectotal}" />
+            <drawtext condition="{timeshift}" align="right" valign="center" font="{light}" fontsize="100%" color="{clrText}" text="{timeshifttotal} ({rectotal})" />
+        </area>
+    </totaltime>
+
+    <endtime>
+        <area x="63%" y="89%" width="30%" height="4%" layer="2">
+            <drawtext align="right" valign="center" font="{light}" fontsize="100%" color="{clrText}" text="{tr(endsat)}: {recend}" />
+        </area>
+    </endtime>
+
+    <progressbar>
+        <area condition="not{timeshift}" x="{areawidth}*0.07+3" y="{areaheight}*0.82+3" width="{areawidth}*0.86-6" height="{areaheight}*0.03-6" layer="3">
+            <drawrectangle x="0" y="0" width="{current}/{total}*{areawidth}" height="{areaheight}" color="{clrBorder}" />
+        </area>
+        <area condition="{timeshift}" x="{areawidth}*0.07+3" y="{areaheight}*0.82+3" width="{areawidth}*0.86-6" height="{areaheight}*0.03-6" layer="3">
+            <drawrectangle x="0" y="0" width="{total}/{timeshifttotal}*{areawidth}" height="{areaheight}" color="{clrProgressTimeshift}" />
+            <drawrectangle x="0" y="0" width="{current}/{timeshifttotal}*{areawidth}" height="{areaheight}" color="{clrBorder}" />
+        </area>
+    </progressbar>
+
+    <cutmarks>
+        <area condition="not{timeshift}" x="{areawidth}*0.07+3" y="{areaheight}*0.82+3" width="{areawidth}*0.86-6" height="{areaheight}*0.03-6" layer="4">
+            <loop name="marks" x="0" y="0" orientation="absolute">
+                <!-- draw mark -->
+                <drawrectangle condition="not{marks[active]}" x="{marks[position]}/{marks[total]}*{areawidth}" y="0" width="1" height="100%" color="{clrCutmark}" />
+                <drawrectangle condition="not{marks[active]} ++ {marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth}" y="0" width="5" height="1" color="{clrCutmark}" />
+                <drawrectangle condition="not{marks[active]} ++ {marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth}" y="{areaheight}-1" width="5" height="1" color="{clrCutmark}" />
+                <drawrectangle condition="not{marks[active]} ++ not{marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth} - 5" y="0" width="5" height="1" color="{clrCutmark}" />
+                <drawrectangle condition="not{marks[active]} ++ not{marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth} - 5" y="{areaheight}-1" width="5" height="1" color="{clrCutmark}" />
+                <!-- draw active mark -->
+                <drawrectangle condition="{marks[active]}" x="{marks[position]}/{marks[total]}*{areawidth}" y="0" width="1" height="100%" color="{clrCutmarkActive}" />
+                <drawrectangle condition="{marks[active]} ++ {marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth}" y="0" width="5" height="1" color="{clrCutmarkActive}" />
+                <drawrectangle condition="{marks[active]} ++ {marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth}" y="{areaheight}-1" width="5" height="1" color="{clrCutmarkActive}" />
+                <drawrectangle condition="{marks[active]} ++ not{marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth} - 5" y="0" width="5" height="1" color="{clrCutmarkActive}" />
+                <drawrectangle condition="{marks[active]} ++ not{marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth} - 5" y="{areaheight}-1" width="5" height="1" color="{clrCutmarkActive}" />
+                <!-- draw bar to next mark if mark is startmark-->                
+                <drawrectangle condition="{marks[startmark]}" x="{marks[position]}/{marks[total]}*{areawidth}" y="30%" width="{marks[endposition]}/{marks[total]}*{areawidth} - {marks[position]}/{marks[total]}*{areawidth}" height="40%" color="{clrCutmark}" />
+            </loop>
+        </area>
+        <area condition="{timeshift}" x="{areawidth}*0.07+3" y="{areaheight}*0.82+3" width="{areawidth}*0.86-6" height="{areaheight}*0.03-6" layer="4">
+            <loop name="marks" x="0" y="0" orientation="absolute">
+                <!-- draw mark -->
+                <drawrectangle condition="not{marks[active]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth}" y="0" width="1" height="100%" color="{clrCutmark}" />
+                <drawrectangle condition="not{marks[active]} ++ {marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth}" y="0" width="5" height="1" color="{clrCutmark}" />
+                <drawrectangle condition="not{marks[active]} ++ {marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth}" y="{areaheight}-1" width="5" height="1" color="{clrCutmark}" />
+                <drawrectangle condition="not{marks[active]} ++ not{marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth} - 5" y="0" width="5" height="1" color="{clrCutmark}" />
+                <drawrectangle condition="not{marks[active]} ++ not{marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth} - 5" y="{areaheight}-1" width="5" height="1" color="{clrCutmark}" />
+                <!-- draw active mark -->
+                <drawrectangle condition="{marks[active]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth}" y="0" width="1" height="100%" color="{clrCutmarkActive}" />
+                <drawrectangle condition="{marks[active]} ++ {marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth}" y="0" width="5" height="1" color="{clrCutmarkActive}" />
+                <drawrectangle condition="{marks[active]} ++ {marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth}" y="{areaheight}-1" width="5" height="1" color="{clrCutmarkActive}" />
+                <drawrectangle condition="{marks[active]} ++ not{marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth} - 5" y="0" width="5" height="1" color="{clrCutmarkActive}" />
+                <drawrectangle condition="{marks[active]} ++ not{marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth} - 5" y="{areaheight}-1" width="5" height="1" color="{clrCutmarkActive}" />
+                <!-- draw bar to next mark if mark is startmark-->                
+                <drawrectangle condition="{marks[startmark]}" x="{marks[position]}/{marks[timeshifttotal]}*{areawidth}" y="30%" width="{marks[endposition]}/{marks[timeshifttotal]}*{areawidth} - {marks[position]}/{marks[timeshifttotal]}*{areawidth}" height="40%" color="{clrCutmark}" />
+            </loop>
+        </area>
+    </cutmarks>
+
+    <controlicons>
+        <area x="30%" y="87%" width="40%" height="7%" layer="3">
+            <drawimage condition="not{rewind} ++ not{rewind1x} ++ not{rewind2x} ++ not{rewind3x}" imagetype="icon" path="rec_rew_inactive" x="{areawidth}/2 - 2*{areaheight} - 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{rewind}" imagetype="icon" path="rec_rew_active" x="{areawidth}/2 - 2*{areaheight} - 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{rewind1x}" imagetype="icon" path="rec_rew_x1" x="{areawidth}/2 - 2*{areaheight} - 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{rewind2x}" imagetype="icon" path="rec_rew_x2" x="{areawidth}/2 - 2*{areaheight} - 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{rewind3x}" imagetype="icon" path="rec_rew_x3" x="{areawidth}/2 - 2*{areaheight} - 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            
+            <drawimage condition="not{pause}" imagetype="icon" path="rec_pause_inactive" x="{areawidth}/2 - {areaheight} - 2" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{pause}" imagetype="icon" path="rec_pause_active" x="{areawidth}/2 - {areaheight} - 2" y="0" width="{areaheight}" height="{areaheight}"/>
+
+            <drawimage condition="not{play}" imagetype="icon" path="rec_play_inactive" x="{areawidth}/2 +  2" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{play}" imagetype="icon" path="rec_play_active" x="{areawidth}/2 + 2" y="0" width="{areaheight}" height="{areaheight}"/>
+
+            <drawimage condition="not{forward} ++ not{forward1x} ++ not{forward2x} ++ not{forward3x}" imagetype="icon" path="rec_fwd_inactive" x="{areawidth}/2 + {areaheight} + 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{forward}" imagetype="icon" path="rec_fwd_active" x="{areawidth}/2 + {areaheight} + 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{forward1x}" imagetype="icon" path="rec_fwd_x1" x="{areawidth}/2 + {areaheight} + 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{forward2x}" imagetype="icon" path="rec_fwd_x2" x="{areawidth}/2 + {areaheight} + 6" y="0" width="{areaheight}" height="{areaheight}"/>
+            <drawimage condition="{forward3x}" imagetype="icon" path="rec_fwd_x3" x="{areawidth}/2 + {areaheight} + 6" y="0" width="{areaheight}" height="{areaheight}"/>
+        </area>
+    </controlicons>
+
+    <controliconsmodeonly>
+        <area x="35%" y="80%" width="30%" height="10%" layer="2">
+            <drawimage condition="{rewind}" imagetype="icon" path="rec_rew_active" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{rewind1x}" imagetype="icon" path="rec_rew_x1" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{rewind2x}" imagetype="icon" path="rec_rew_x2" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{rewind3x}" imagetype="icon" path="rec_rew_x3" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{pause}" imagetype="icon" path="rec_pause_active" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{play}" imagetype="icon" path="rec_play_active" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{forward}" imagetype="icon" path="rec_fwd_active" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{forward1x}" imagetype="icon" path="rec_fwd_x1" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{forward2x}" imagetype="icon" path="rec_fwd_x2" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+            <drawimage condition="{forward3x}" imagetype="icon" path="rec_fwd_x3" x="{areawidth} - {areaheight}" valign="center" width="{areaheight}*0.8" height="{areaheight}*0.8"/>
+        </area>
+    </controliconsmodeonly>
+
+    <!-- Available Variables progressmodeonly:
+    {current}                   current frame of recording
+    {total}                     total frames of recording
+    {timecurrent}               current time in hh:mm:ss or mm:ss if shorter that one hour
+    {timetotal}                 total time in hh:mm:ss or mm:ss if shorter that one hour
+    -->
+    <progressmodeonly>
+        <area x="36%" y="{areaheight}*0.81" width="28%" height="5%" layer="2">
+            <drawtext x="0" valign="center" font="{semibold}" fontsize="90%" color="{clrText}" text="{timecurrent} ({timetotal})" />
+        </area>
+        <area x="36%" y="{areaheight}*0.865" width="20%" height="{areaheight}*0.015" layer="2">
+            <fill color="{clrProgressbar}" />
+            <drawrectangle x="1" y="1" width="{areawidth}-2" height="{areaheight}-2" color="{clrTransparent}" />
+            <drawrectangle x="2" y="2" width="{areawidth}*{current}/{total} - 2*{current}/{total}" height="{areaheight}-4" color="{clrProgressbar}" />
+        </area>
+    </progressmodeonly>
+
+    <jump>
+        <area x="40%" y="45%" width="20%" height="6%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth}-4" height="{areaheight}-4" color="{clrBackground}" />
+        </area>
+        <area x="40%" y="45%" width="20%" height="6%" layer="2">
+            <drawtext align="center" valign="center" font="{light}" fontsize="80%" color="{clrText}" text="{jump}" />
+        </area>
+    </jump>
+
+    <onpause delay="60" fadetime="{fadetimechannel}">
+        <area x="0" y="0" width="100%" height="100%" layer="7">
+            <fill color="{clrBackground}" />
+            <drawtext align="center" valign="center" font="{semibold}" fontsize="20%" color="{clrText}" text="Pause" />
+        </area>
+    </onpause>
+
+    <onpausemodeonly delay="20" fadetime="{fadetimechannel}">
+        <area x="0" y="0" width="100%" height="100%" layer="7">
+            <fill color="{clrBackground}" />
+            <drawtext align="center" valign="center" font="{semibold}" fontsize="20%" color="{clrText}" text="Pause" />
+        </area>
+    </onpausemodeonly>
+
+    <message>
+        <area x="25%" y="70%" width="50%" height="20%" layer="6">
+            <fill condition="{status}" color="{clrStatus}" />
+            <fill condition="{info}" color="{clrInfo}" />
+            <fill condition="{warning}" color="{clrWarning}" />
+            <fill condition="{error}" color="{clrError}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+        </area>
+        <area x="25%" y="70%" width="50%" height="20%" layer="6">
+            <drawimage condition="{status}" imagetype="icon" path="message_status" x="3%" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawimage condition="{info}" imagetype="icon" path="message_info" x="3%" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawimage condition="{warning}" imagetype="icon" path="message_warn" x="3%" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawimage condition="{error}" imagetype="icon" path="message_error" x="3%" valign="center" width="{areaheight}*0.6" height="{areaheight}*0.6"/>
+            <drawtextbox x="{areawidth}*0.1 + {areaheight}*0.6" width="0.85*{areawidth}- {areaheight}*0.6" align="center" valign="center" font="{light}" fontsize="25%" color="{clrText}" text="{text}" maxlines="3" />
+        </area>
+    </message>
+</displayreplay>

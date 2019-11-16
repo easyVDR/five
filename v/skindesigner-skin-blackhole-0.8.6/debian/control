@@ -1,0 +1,15 @@
+Source: skindesigner-skin-blackhole
+Section: misc
+Priority: extra
+Maintainer: Frodo <frodo.vdr@gmx.net>
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/louisbraun/blackhole 
+
+Package: skindesigner-skin-blackhole
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 0.8.0)
+Suggests: vdr-plugin-tvguideng
+Description: skin blackhole for skindesigner
+

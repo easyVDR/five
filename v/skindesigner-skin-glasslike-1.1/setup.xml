@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE setup SYSTEM "../../dtd/setup.dtd">
+
+<setup>
+    <menu>
+    <submenu name="MainMenu" displaytext="{tr(submainmenu)}">
+<!--
+        <parameter type="int" name="mainmenuFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+-->
+        <parameter type="int" name="mainmenuNumMenuItems" min="6" max="20" displaytext="{tr(nummenuitems)}">8</parameter>
+        <parameter type="bool" name="mainmenuIcons" displaytext="{tr(icons)}">1</parameter>
+        <parameter type="bool" name="mainmenuItemNumber" displaytext="{tr(itemnumber)}">1</parameter>
+        <parameter type="bool" name="mainmenuWidgetWeather" displaytext="{tr(widgetweather)}">1</parameter>
+        <parameter type="bool" name="mainmenuWidgetSysInfo" displaytext="{tr(widgetsysinfo)}">1</parameter>
+        <parameter type="bool" name="mainmenuWidgetRecordings" displaytext="{tr(widgetrecordings)}">0</parameter>
+        <parameter type="int" name="mainmenuWidgetFadeime" min="0" max="3000" displaytext="{tr(widgetfadetime)}">0</parameter>
+        <parameter type="bool" name="mainmenuTimerTypeIndicator" displaytext="{tr(timertypeindicator)}">1</parameter>
+        <parameter type="bool" name="mainmenuRecBlink" displaytext="{tr(recblink)}">1</parameter>
+        <parameter type="bool" name="mainmenuGlassEffect" displaytext="{tr(glasseffect)}">1</parameter>
+    </submenu>
+    <submenu name="DefaultMenu" displaytext="{tr(subdisplaymenudefault)}">
+        <parameter type="int" name="defaultmenuNumMenuItems" min="6" max="20" displaytext="{tr(nummenuitems)}">14</parameter>
+    </submenu>
+    <submenu name="Channel" displaytext="{tr(subdisplaychannel)}">
+        <parameter type="int" name="channelFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+        <parameter type="bool" name="channelWidgetWeather" displaytext="{tr(widgetweather)}">1</parameter>
+        <parameter type="bool" name="channelWidgetClock" displaytext="{tr(widgetclock)}">1</parameter>
+        <parameter type="bool" name="channelWidgetBanner" displaytext="{tr(widgetbanner)}">1</parameter>
+        <parameter type="bool" name="channelWidgetPoster" displaytext="{tr(widgetposter)}">1</parameter>
+        <parameter type="bool" name="channelRecBlink" displaytext="{tr(recblink)}">0</parameter>
+    </submenu>
+    <submenu name="Replay" displaytext="{tr(subdisplayreplay)}">
+        <parameter type="int" name="replayFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+        <parameter type="bool" name="replayWidgetClock" displaytext="{tr(widgetclock)}">1</parameter>
+        <parameter type="bool" name="replayWidgetBanner" displaytext="{tr(widgetbanner)}">1</parameter>
+        <parameter type="bool" name="replayWidgetPoster" displaytext="{tr(widgetposter)}">1</parameter>
+        <parameter type="bool" name="replayRecBlink" displaytext="{tr(recblink)}">0</parameter>
+    </submenu>
+    <submenu name="Volume" displaytext="{tr(subdisplayvolume)}">
+        <parameter type="int" name="volumeFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+    </submenu>
+    <submenu name="Message" displaytext="{tr(subdisplaymessage)}">
+        <parameter type="int" name="messageFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">500</parameter>
+    </submenu>
+    <submenu name="Audio" displaytext="{tr(subdisplayaudio)}">
+        <parameter type="int" name="audioFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+    </submenu>
+    <submenu name="Schedules" displaytext="{tr(subdisplaymenuschedules)}">
+        <parameter type="int" name="schedulesFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+        <parameter type="int" name="schedulesDescriptionDelay" min="0" max="5000" displaytext="{tr(descriptiondelay)}">1000</parameter>
+        <parameter type="int" name="schedulesNumMenuItems" min="6" max="20" displaytext="{tr(nummenuitems)}">12</parameter>
+    </submenu>
+    <submenu name="Timers" displaytext="{tr(subdisplaymenutimers)}">
+        <parameter type="int" name="timersFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+        <parameter type="int" name="timersDescriptionDelay" min="0" max="5000" displaytext="{tr(descriptiondelay)}">1000</parameter>
+        <parameter type="int" name="timersNumMenuItems" min="6" max="12" displaytext="{tr(nummenuitems)}">7</parameter>
+    </submenu>
+    <submenu name="Recordings" displaytext="{tr(subdisplaymenurecordings)}">
+        <parameter type="int" name="recordingsFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+        <parameter type="int" name="recordingsDescriptionDelay" min="0" max="5000" displaytext="{tr(descriptiondelay)}">1000</parameter>
+        <parameter type="int" name="recordingsNumMenuItems" min="6" max="12" displaytext="{tr(nummenuitems)}">8</parameter>
+    </submenu>
+    <submenu name="Channels" displaytext="{tr(subdisplaymenuchannels)}">
+        <parameter type="int" name="channelsFadeTime" min="0" max="1000" displaytext="{tr(fadetime)}">50</parameter>
+        <parameter type="int" name="channelsDescriptionDelay" min="0" max="5000" displaytext="{tr(descriptiondelay)}">2000</parameter>
+        <parameter type="int" name="channelsNumMenuItems" min="6" max="20" displaytext="{tr(nummenuitems)}">12</parameter>
+    </submenu>
+    <submenu name="Plugins" displaytext="{tr(subplugins)}">
+    <submenu name="TvGuideNg" displaytext="{tr(subtvguide)}">
+        <parameter type="bool" name="tvguideGridLineHorizontal" displaytext="{tr(gridlinehorizontal)}">1</parameter>
+        <parameter type="bool" name="tvguideGridLineVertical" displaytext="{tr(gridlinevertical)}">1</parameter>
+        <parameter type="int" name="tvguideGridFontSizeHor" min="10" max="80" displaytext="{tr(gridfontsize)}">60</parameter>
+        <parameter type="int" name="tvguideGridFontSizeVer" min="10" max="80" displaytext="{tr(gridfontsize)}">60</parameter>
+        <parameter type="bool" name="tvguideRecBlink" displaytext="{tr(recblink)}">0</parameter>
+    </submenu>
+    </submenu>
+    <submenu name="Vectra" displaytext="{tr(subspecial)}">
+        <parameter type="bool" name="vectraSetup" displaytext="{tr(vectrasetup)}">0</parameter>
+        <parameter type="bool" name="mainmenuWidgetUps" displaytext="UPS">0</parameter>
+    </submenu>
+    </menu>
+
+    <!--
+    translations of displaytexts
+    -->
+    <translations>
+        <token name="tr(icons)">
+            <trans lang="en_EN">Show Icons</trans>
+            <trans lang="de_DE">Icons anzeigen</trans>
+        </token>
+        <token name="tr(itemnumber)">
+            <trans lang="en_EN">Show Item Numbers</trans>
+            <trans lang="de_DE">Nummerierung anzeigen</trans>
+        </token>
+        <token name="tr(fadetime)">
+            <trans lang="en_EN">Fade time in ms</trans>
+            <trans lang="de_DE">Einblendzeit in ms</trans>
+        </token>
+        <token name="tr(widgetfadetime)">
+            <trans lang="en_EN">Widget Fade time in ms</trans>
+            <trans lang="de_DE">Widget Einblendzeit in ms</trans>
+        </token>
+        <token name="tr(nummenuitems)">
+            <trans lang="en_EN">Num Items</trans>
+            <trans lang="de_DE">Anzahl Menüelemente</trans>
+        </token>
+        <token name="tr(widgetweather)">
+            <trans lang="en_EN">Show weather widget</trans>
+            <trans lang="de_DE">Wetter Widget anzeigen</trans>
+        </token>
+        <token name="tr(widgetclock)">
+            <trans lang="en_EN">Show clock widget</trans>
+            <trans lang="de_DE">Uhr Widget anzeigen</trans>
+        </token>
+        <token name="tr(widgetbanner)">
+            <trans lang="en_EN">Show series banner</trans>
+            <trans lang="de_DE">Serien Banner anzeigen</trans>
+        </token>
+        <token name="tr(widgetposter)">
+            <trans lang="en_EN">Show poster</trans>
+            <trans lang="de_DE">Poster anzeigen</trans>
+        </token>
+        <token name="tr(widgetsysinfo)">
+            <trans lang="en_EN">Show sysinfo widget</trans>
+            <trans lang="de_DE">Sysinfo Widget anzeigen</trans>
+        </token>
+        <token name="tr(widgetups)">
+            <trans lang="en_EN">Show UPS widget</trans>
+            <trans lang="de_DE">USV Widget anzeigen</trans>
+        </token>
+        <token name="tr(widgetrecordings)">
+            <trans lang="en_EN">Show last-recordings widget</trans>
+            <trans lang="de_DE">Letzte-Aufzeichnungen Widget anzeigen</trans>
+        </token>
+        <token name="tr(timertypeindicator)">
+            <trans lang="en_EN">Show local/server timer indicator</trans>
+            <trans lang="de_DE">Zeige Lokal/Server Timer Indikator</trans>
+        </token>
+        <token name="tr(descriptiondelay)">
+            <trans lang="en_EN">Description delay in ms</trans>
+            <trans lang="de_DE">Verzögerung der Detailinfos in ms</trans>
+        </token>
+        <token name="tr(vectrasetup)">
+            <trans lang="en_EN">Setup for my system</trans>
+            <trans lang="de_DE">Setup für mein eigenes System</trans>
+        </token>
+        <token name="tr(fontsize)">
+            <trans lang="en_EN">Font size</trans>
+            <trans lang="de_DE">Schriftgröße</trans>
+        </token>
+        <token name="tr(recblink)">
+            <trans lang="en_EN">Blinking REC Icon</trans>
+            <trans lang="de_DE">Blinkendes Aufnahme Symbol</trans>
+        </token>
+        <token name="tr(subgeneral)">
+            <trans lang="en_EN">General</trans>
+            <trans lang="de_DE">Allgemein</trans>
+        </token>
+        <token name="tr(submainmenu)">
+            <trans lang="en_EN">Main menu</trans>
+            <trans lang="de_DE">Hauptmenü</trans>
+        </token>
+        <token name="tr(subdisplaychannel)">
+            <trans lang="en_EN">Channel switch</trans>
+            <trans lang="de_DE">Kanalwechsel</trans>
+        </token>
+        <token name="tr(subdisplayreplay)">
+            <trans lang="en_EN">Replay</trans>
+            <trans lang="de_DE">Wiedergabe</trans>
+        </token>
+        <token name="tr(subdisplayvolume)">
+            <trans lang="en_EN">Volume</trans>
+            <trans lang="de_DE">Lautstärke</trans>
+        </token>
+        <token name="tr(subdisplaymenudefault)">
+            <trans lang="en_EN">Settings menus</trans>
+            <trans lang="de_DE">Einstellungs Menüs</trans>
+        </token>
+        <token name="tr(subdisplaymessage)">
+            <trans lang="en_EN">Messages</trans>
+            <trans lang="de_DE">Nachrichten</trans>
+        </token>
+        <token name="tr(subdisplayaudio)">
+            <trans lang="en_EN">Audio</trans>
+            <trans lang="de_DE">Audio</trans>
+        </token>
+        <token name="tr(subdisplaymenurecordings)">
+            <trans lang="en_EN">Recordings</trans>
+            <trans lang="de_DE">Aufnahmen</trans>
+        </token>
+        <token name="tr(subdisplaymenuschedules)">
+            <trans lang="en_EN">Schedule</trans>
+            <trans lang="de_DE">Programmführer</trans>
+        </token>
+        <token name="tr(subdisplaymenutimers)">
+            <trans lang="en_EN">Timers</trans>
+            <trans lang="de_DE">Timer</trans>
+        </token>
+        <token name="tr(subdisplaymenurecordings)">
+            <trans lang="en_EN">Recordings</trans>
+            <trans lang="de_DE">Aufnahmen</trans>
+        </token>
+        <token name="tr(subdisplaymenuchannels)">
+            <trans lang="en_EN">Channels</trans>
+            <trans lang="de_DE">Kanäle</trans>
+        </token>
+        <token name="tr(subspecial)">
+            <trans lang="en_EN">Vectra's special settings ;-)</trans>
+            <trans lang="de_DE">Vectra's Spezialeinstellungen ;-)</trans>
+        </token>
+        <token name="tr(subplugins)">
+            <trans lang="en_EN">Plugins</trans>
+            <trans lang="de_DE">Plugins</trans>
+        </token>
+        <token name="tr(subtvguide)">
+            <trans lang="en_EN">TV Guide NG</trans>
+            <trans lang="de_DE">TV Guide NG</trans>
+        </token>
+        <token name="tr(channumber)">
+            <trans lang="en_EN">Show channel numbers</trans>
+            <trans lang="de_DE">Kanalnummern anzeigen</trans>
+        </token>
+        <token name="tr(gridlinehorizontal)">
+            <trans lang="en_EN">Show horizontal grid separator</trans>
+            <trans lang="de_DE">Horizontale Trennlinien im Grid anzeigen</trans>
+        </token>
+        <token name="tr(gridlinevertical)">
+            <trans lang="en_EN">Show vertical grid separator</trans>
+            <trans lang="de_DE">Vertikale Trennlinien im Grid anzeigen</trans>
+        </token>
+        <token name="tr(gridfontsize)">
+            <trans lang="en_EN">Fontsize in grid</trans>
+            <trans lang="de_DE">Schriftgröße im Grid</trans>
+        </token>
+        <token name="tr(widgettimeranimtype)">
+            <trans lang="en_EN">Timer animation type (1=fade / 2=shift)</trans>
+            <trans lang="de_DE">Timer einblend Animation (1=FadeIn / 2=Schieben)</trans>
+        </token>
+        <token name="tr(glasseffect)">
+            <trans lang="en_EN">Glass effect</trans>
+            <trans lang="de_DE">Glas Effekt</trans>
+        </token>
+    </translations>
+</setup>

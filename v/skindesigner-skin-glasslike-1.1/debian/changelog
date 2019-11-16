@@ -1,0 +1,183 @@
+skindesigner-skin-glasslike (1.1-3easyVDR8~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 23:43:32 +0100
+
+skindesigner-skin-glasslike (1.1-3easyVDR7~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 00:54:55 +0100
+
+skindesigner-skin-glasslike (1.1-3easyVDR6~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 23:57:14 +0100
+
+skindesigner-skin-glasslike (1.1-3easyVDR5~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Jun 2017 17:57:47 +0200
+
+skindesigner-skin-glasslike (1.1-3easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:19:10 +0200
+
+skindesigner-skin-glasslike (1.1-3easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Sep 2016 01:19:05 +0200
+
+skindesigner-skin-glasslike (1.1-3easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Jan 2016 16:51:05 +0100
+
+skindesigner-skin-glasslike (1.1-3easyVDR1~trusty) trusty; urgency=high
+
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Jan 2016 13:42:36 +0100
+
+skindesigner-skin-glasslike (1.1-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 21:45:10 +0100
+
+skindesigner-skin-glasslike (1.1-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Nov 2015 22:51:43 +0100
+
+skindesigner-skin-glasslike (1.1-1mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 21:57:25 +0200
+
+skindesigner-skin-glasslike (1.1-1mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Jul 2015 21:38:17 +0200
+
+skindesigner-skin-glasslike (1.1-0mangoVDR2~trusty) trusty; urgency=high
+
+  * added plugins logos
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 29 Jun 2015 19:33:18 +0200
+
+skindesigner-skin-glasslike (1.1-0mangoVDR1~trusty) trusty; urgency=high
+
+  * added new menu and plugins logos
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 29 Jun 2015 18:05:35 +0200
+
+skindesigner-skin-glasslike (1.1-0mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 Jun 2015 00:05:33 +0200
+
+skindesigner-skin-glasslike (1.1-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * e404c2f: plex support
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 15 Jun 2015 22:53:13 +0200
+
+skindesigner-skin-glasslike (1.1-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * e404c2f: plex support
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 14 Jun 2015 15:38:26 +0200
+
+skindesigner-skin-glasslike (1.1-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * e404c2f: plex support
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 14 Jun 2015 15:37:58 +0200
+
+skindesigner-skin-glasslike (1.0-4-gd7badad-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d7badad: bugfix temperaturscala hauptmenu
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 29 May 2015 20:12:38 +0200
+
+skindesigner-skin-glasslike (1.0-4-gd7badad-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d7badad: bugfix temperaturscala hauptmenu
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 29 May 2015 20:12:15 +0200
+
+skindesigner-skin-glasslike (1.0-2-g2fbf1fb-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 2fbf1fb: kleinere optische anpassungen
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 25 May 2015 14:59:40 +0200
+
+skindesigner-skin-glasslike (1.0-2-g2fbf1fb-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 2fbf1fb: kleinere optische anpassungen
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 25 May 2015 14:59:31 +0200
+
+skindesigner-skin-glasslike (0.4.8.git20150524.1620-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 19ad954: 576 in SDTV umbenannt / setup parameter angepasst
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 24 May 2015 18:20:28 +0200
+
+skindesigner-skin-glasslike (0.4.8.git20150524.1620-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 19ad954: 576 in SDTV umbenannt / setup parameter angepasst
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 24 May 2015 18:20:06 +0200
+
+skindesigner-skin-glasslike (0.4.8.git20150523.2012-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 4817a9b: first release
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 22:12:48 +0200
+
+skindesigner-skin-glasslike (0.4.8.git20150523.2012-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 4817a9b: first release
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 22:12:37 +0200
+
+skindesigner-skin-glasslike (0.4.8.git20150523.1952-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 4817a9b: first release
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 21:53:12 +0200
+
+skindesigner-skin-glasslike (0.4.8.git20150523.1952-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 4817a9b: first release
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 21:52:55 +0200
+

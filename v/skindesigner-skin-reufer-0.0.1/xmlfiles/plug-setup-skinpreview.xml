@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
+<menuplugin x="0%" y="16%" width="100%" height="78%" fadetime="0">
+    <header></header>
+    <scrollbar>
+        <area x="{areawidth} * 0.98" y="1%" width="{areawidth} * 0.01" height="98%" layer="3">
+            <fill color="{clrTransparent}" />
+            <drawellipse x="0" y="0" width="{areawidth}" height="{areawidth} * 0.5" color="{clrHighlight}" quadrant="6" />
+            <drawrectangle x="0" y="{areawidth} * 0.5" height="{areaheight} - {areawidth}" width="100%" color="{clrHighlight}" />
+            <drawellipse x="0" y="{areaheight} - 0.5 * {areawidth}" width="{areawidth}" height="{areawidth} * 0.5" color="{clrHighlight}" quadrant="8" />
+            <drawellipse name="slidertop" x="{areawidth} * 0.25" y="{areawidth} * 0.25 + {areaheight} * {offset} / 1000 - {areawidth} * {offset} / 1000" width="{areawidth} * 0.5" height="{areawidth} * 0.25" color="{clrBorder}" quadrant="6" />
+            <drawrectangle name="sliderbody" x="{areawidth} * 0.25" y="{posy(slidertop)} + {height(slidertop)}" height="{areaheight} * {height} / 1000 - {areawidth} * {height} / 1000" width="{areawidth} * 0.5" color="{clrBorder}" />
+            <drawellipse name="sliderbottom" x="{areawidth} * 0.25" y="{posy(sliderbody)} + {height(sliderbody)}" width="{areawidth} * 0.5" height="{areawidth} * 0.25" color="{clrBorder}" quadrant="8" />
+        </area>
+    </scrollbar>
+    <detailheader>
+        <area x="0" y="0" width="1" height="1" layer="2"></area>
+    </detailheader>
+    <tab name="{tr(skinpreview)}" x="1%" y="1%" width="96%" height="98%" layer="2" scrollheight="{areaheight}/4">
+        <drawtext name="author" x="0" y="0" width="98%" font="{light}" fontsize="6%" color="{clrText}" text="Author: {author}" />
+        <drawtext name="headerplugs" x="0" y="{posy(author)} + {height(author)}" font="{semibold}" fontsize="7%" color="{clrText}" text="Supported Plugins:" />
+        <loop name="plugins" x="0" y="{posy(headerplugs)} + {height(headerplugs)}" orientation="vertical" columnwidth="{areawidth}/2" rowheight="{areaheight}*0.06">
+            <drawtext x="0" valign="center" font="{light}" fontsize="6%" color="{clrText}" text="{plugins[name]}" />
+        </loop>
+        <drawtext name="headerfonts" x="0" y="{posy(plugins)} + {height(plugins)} + 10" font="{semibold}" fontsize="7%" color="{clrText}" text="Used Fonts:" />
+        <loop name="fonts" x="0" y="{posy(headerfonts)} + {height(headerfonts)}" orientation="vertical" columnwidth="{areawidth}/2" rowheight="{areaheight}*0.06">
+            <drawtext condition="{fonts[installed]}" x="0" valign="center" font="{light}" fontsize="6%" color="{clrText}" text="{fonts[name]} (installed)" />
+            <drawtext condition="not{fonts[installed]}" x="0" valign="center" font="{light}" fontsize="6%" color="{clrText}" text="{fonts[name]} (NOT installed)" />
+        </loop>
+        <loop name="screenshots" x="0" y="{posy(fonts)} + {height(fonts)}" orientation="horizontal" columnwidth="{areawidth}/3-1" rowheight="{areawidth}/3*9/16 * 1.2">
+            <drawtext name="desc" align="center" y="0" font="{light}" fontsize="6%" color="{clrText}" text="{screenshots[desc]}" />
+            <drawimage imagetype="image" path="{screenshots[path]}" align="center" y="{height(desc)}+10" width="{columnwidth}*0.95" height="{columnwidth} * 0.95 * 9 / 16" />
+        </loop>
+    </tab>
+    <tab name="{tr(skingalery)}" x="1%" y="1%" width="96%" height="98%" layer="2" scrollheight="{areaheight}/4">
+        <loop name="screenshots" x="0" y="0" orientation="vertical" columnwidth="{areawidth}" rowheight="{areaheight}">
+            <drawimage imagetype="image" path="{screenshots[path]}" align="center" valign="center" width="{areaheight}*16/9" height="{areaheight}" />
+        </loop>
+    </tab>
+    <tablabels></tablabels>
+</menuplugin>

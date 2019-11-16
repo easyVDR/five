@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+#DH_VERBOSE=1
+export PREFIX=/usr
+
+#PLG_PACKAGE = vdr-plugin-skindesigner
+#DBG_PACKAGE = $(PLG_PACKAGE)-dbg
+#LIB_PACKAGES = $(filter libskindesignerapi%, $(shell dh_listpackages))
+#NON_LIB_PACKAGES = $(filter-out libskindesignerapi%, $(shell dh_listpackages))
+
+%:
+	dh $@
+
+#	dh $@ --with vdrplugin
+
+#override_dh_auto_install:
+#	dh_auto_install --destdir=debian/$(PLG_PACKAGE)
+
+#override_dh_strip:
+#	dh_strip --dbg-package=$(DBG_PACKAGE)
+
+#override_dh_gencontrol:
+#	libversion=`pkg-config --modversion libskindesignerapi/libskindesignerapi.pc` ; \
+#	  buildversion=`dpkg-parsechangelog | sed -n 's/^Version: \(.*\)/\1/p'` ; \
+#	  for lib in $(LIB_PACKAGES); do \
+#	    dh_gencontrol -p$$lib -- -v$$libversion-$$buildversion ; \
+#	  done ; \
+#	  for nonlib in $(NON_LIB_PACKAGES); do \
+#	    dh_gencontrol -p$$nonlib -- ; \
+#	  done

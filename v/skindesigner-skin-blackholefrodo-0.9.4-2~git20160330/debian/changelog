@@ -1,0 +1,178 @@
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR8~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 23:43:05 +0100
+
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR7~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 00:54:36 +0100
+
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR6~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 23:56:54 +0100
+
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR5~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Jun 2017 17:57:01 +0200
+
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:18:50 +0200
+
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 22 Sep 2016 21:31:01 +0200
+
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR2~trusty) trusty; urgency=high
+
+  * added new displaymenu.xml
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 20 Sep 2016 23:28:24 +0200
+
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR1~trusty) trusty; urgency=high
+
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 18 Sep 2016 19:24:22 +0200
+
+skindesigner-skin-blackholefrodo (0.9.4-2~git20160330-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:da4a52c - add info
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 20 Apr 2016 00:01:23 +0200
+
+skindesigner-skin-blackholefrodo (0.6.2-2easyVDR2~trusty) trusty; urgency=high
+
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Jan 2016 16:46:47 +0100
+
+skindesigner-skin-blackholefrodo (0.6.2-2easyVDR1~trusty) trusty; urgency=high
+
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Dec 2015 14:56:47 +0100
+
+skindesigner-skin-blackholefrodo (0.6.2-2easyVDR0~trusty) trusty; urgency=high
+
+  * added new displaymenu.xml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 12 Dec 2015 18:25:49 +0100
+
+skindesigner-skin-blackholefrodo (0.6.2-1easyVDR0~trusty) trusty; urgency=high
+
+  * fix debian/control
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 Dec 2015 19:19:05 +0100
+
+skindesigner-skin-blackholefrodo (0.6.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:408c6ec - vompserver 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 03 Dec 2015 23:01:01 +0100
+
+skindesigner-skin-blackholefrodo (0.4.6-1-g3181949-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 21:43:44 +0100
+
+skindesigner-skin-blackholefrodo (0.4.6-1-g3181949-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Nov 2015 22:49:59 +0100
+
+skindesigner-skin-blackholefrodo (0.4.6-1-g3181949-1mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 21:57:08 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-1-g3181949-1mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Jul 2015 21:28:17 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-1-g3181949-0mangoVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 29 Jun 2015 22:13:54 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-1-g3181949-0mangoVDR1~trusty) trusty; urgency=high
+
+  * added logos
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 Jun 2015 17:07:26 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-1-g3181949-0mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 Jun 2015 00:53:12 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-1-g3181949-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 3181949: add plex skindesigner support
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 19 May 2015 21:41:13 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d8a2205: changes from louis
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 22:42:53 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d8a2205: changes from louis
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 22:42:42 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d8a2205: changes from louis
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 May 2015 15:09:18 +0200
+
+skindesigner-skin-blackholefrodo (0.4.6-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d8a2205: changes from louis
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 May 2015 15:09:12 +0200
+
+skindesigner-skin-blackholefrodo (0.4.3.git20150429.1805-0frodo0~trusty) trusty; urgency=low
+
+  * 447e4e0: plex
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 20:06:06 +0200
+
+skindesigner-skin-blackholefrodo (0.4.3.git20150429.1805-0frodo0~precise) precise; urgency=low
+
+  * 447e4e0: plex
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 20:05:41 +0200
+

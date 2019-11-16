@@ -1,0 +1,15 @@
+Source: skindesigner-skin-glasslike
+Section: misc
+Priority: extra
+Maintainer: vectra130 <no@email.net>
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/Vectra130/skindesigner_glasslike
+
+Package: skindesigner-skin-glasslike
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 0.4.6~)
+Suggests: fonts-ds-digital, fonts-sourcesanspro
+Description: skin glasslike for skindesigner
+

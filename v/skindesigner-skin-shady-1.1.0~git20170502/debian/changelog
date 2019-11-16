@@ -1,0 +1,663 @@
+skindesigner-skin-shady (1.1.0~git20170502-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 23:45:13 +0100
+
+skindesigner-skin-shady (1.1.0~git20170502-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 00:56:05 +0100
+
+skindesigner-skin-shady (1.1.0~git20170502-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 22:59:12 +0100
+
+skindesigner-skin-shady (1.1.0~git20170502-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Jun 2017 18:03:25 +0200
+
+skindesigner-skin-shady (1.1.0~git20170502-0easyVDR0-trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:3784aae - Fixed special handling for bgprocess
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 02 May 2017 19:48:22 +0200
+
+skindesigner-skin-shady (1.1.0~git20170423-0easyVDR0-trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:e24135b - Added special handling for bgprocess
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 23 Apr 2017 22:58:25 +0200
+
+skindesigner-skin-shady (1.1.0~git20160910-0easyVDR3-trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:24:22 +0200
+
+skindesigner-skin-shady (1.1.0~git20160910-0easyVDR2-trusty) trusty; urgency=high
+
+  * remove obsolet files
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 18 Sep 2016 20:57:55 +0200
+
+skindesigner-skin-shady (1.1.0~git20160910-0easyVDR1-trusty) trusty; urgency=high
+
+  * automatic rebuild
+  
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Sep 2016 01:23:26 +0200
+
+skindesigner-skin-shady (1.1.0~git20160910-0easyVDR0-trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * 4abf848: Added Zapcockpit
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 11 Sep 2016 21:20:51 +0200
+
+skindesigner-skin-shady (1.0.0~git20160421-0easyVDR0-trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:22b0538 - Added setup for epg2vdrShowHostname,  Added setup if
+    skindesigner is patched for epg2vdr
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Apr 2016 23:15:38 +0200
+
+skindesigner-skin-shady (1.0.0~git20160418-0easyVDR0-trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:7b17b2a - New icons for remote-timers
+  * First steps with epg2vdr  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Apr 2016 21:00:53 +0200
+
+skindesigner-skin-shady (0.6.2+git20160122-0easyVDR0-trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:aaaa79b - Added starttimes for neutrinoepg
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 22 Jan 2016 00:36:06 +0100
+
+skindesigner-skin-shady (0.6.2+git20151126-0easyVDR0-trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d2d2d74 - Added progressmodeonly in displayreplay
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 03 Dec 2015 22:05:41 +0100
+
+skindesigner-skin-shady (0.5.3+git20150706-3easyVDR0-trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 21:55:51 +0100
+
+skindesigner-skin-shady (0.5.3+git20150706-1easyVDR0-trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Nov 2015 22:55:15 +0100
+
+skindesigner-skin-shady (0.5.3+git20150706-0mangoVDR1-trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 22:15:18 +0200
+
+skindesigner-skin-shady (0.5.3+git20150706-0mangoVDR0-trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Jul 2015 21:22:02 +0200
+
+skindesigner-skin-shady (0.5.3+git20150622-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Jun 2015 23:46:05 +0200
+
+skindesigner-skin-shady (0.5.3+git20150622-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 Jun 2015 00:14:18 +0200
+
+skindesigner-skin-shady (0.5.3.git20150621.0906-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * a03d7de: Fixed 00_menuFadetime in displayreplay
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 21 Jun 2015 11:06:38 +0200
+
+skindesigner-skin-shady (0.5.2.git20150612.0515-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 9b1d758: Removed condition for currentelemnt in
+    displaymenurecordings
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 12 Jun 2015 07:15:34 +0200
+
+skindesigner-skin-shady (0.5.2.git20150612.0515-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 9b1d758: Removed condition for currentelemnt in
+    displaymenurecordings
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 12 Jun 2015 07:15:21 +0200
+
+skindesigner-skin-shady (0.5.2.git20150610.1344-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * cd6f1e3: Removed detailview for displaymenurecordings, small fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 10 Jun 2015 15:44:45 +0200
+
+skindesigner-skin-shady (0.5.2.git20150610.1344-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * cd6f1e3: Removed detailview for displaymenurecordings, small fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 10 Jun 2015 15:44:29 +0200
+
+skindesigner-skin-shady (0.5.2.git20150608.0600-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 07497ad: Small fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 08 Jun 2015 08:00:58 +0200
+
+skindesigner-skin-shady (0.5.2.git20150608.0600-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 07497ad: Small fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 08 Jun 2015 08:00:51 +0200
+
+skindesigner-skin-shady (0.5.2.git20150606.2138-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d61efdd: Added detailview for displaymenurecordings
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 06 Jun 2015 23:38:08 +0200
+
+skindesigner-skin-shady (0.5.2.git20150606.2138-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d61efdd: Added detailview for displaymenurecordings
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 06 Jun 2015 23:38:02 +0200
+
+skindesigner-skin-shady (0.5.1.git20150603.2010-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 2c91bbf: Small improvements plug-setup-skinpreview.xml
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 03 Jun 2015 22:10:27 +0200
+
+skindesigner-skin-shady (0.5.1.git20150603.2010-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 2c91bbf: Small improvements plug-setup-skinpreview.xml
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 03 Jun 2015 22:10:03 +0200
+
+skindesigner-skin-shady (0.5.1.git20150602.1444-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * f27549d: Reworked plug-setup-skinpreview.xml
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 02 Jun 2015 16:44:30 +0200
+
+skindesigner-skin-shady (0.5.1.git20150602.1444-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * f27549d: Reworked plug-setup-skinpreview.xml
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 02 Jun 2015 16:44:14 +0200
+
+skindesigner-skin-shady (0.5.0.git20150531.1558-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * b719d52: Some graphical improvements for skinpreview
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 17:58:53 +0200
+
+skindesigner-skin-shady (0.5.0.git20150531.1558-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b719d52: Some graphical improvements for skinpreview
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 17:58:45 +0200
+
+skindesigner-skin-shady (0.4.8.git20150530.2100-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * e0e40f3: Added replayTimeshift.svg
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 May 2015 23:00:58 +0200
+
+skindesigner-skin-shady (0.4.8.git20150530.2100-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * e0e40f3: Added replayTimeshift.svg
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 May 2015 23:00:45 +0200
+
+skindesigner-skin-shady (0.4.8.git20150527.1542-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * fef0d5f: Changed buttonPlexActiveCover.png
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 27 May 2015 17:42:39 +0200
+
+skindesigner-skin-shady (0.4.8.git20150527.1542-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * fef0d5f: Changed buttonPlexActiveCover.png
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 27 May 2015 17:42:22 +0200
+
+skindesigner-skin-shady (0.4.8.git20150525.1311-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * b1e3210: Some more improvements for plex-template (V)
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 25 May 2015 15:11:19 +0200
+
+skindesigner-skin-shady (0.4.8.git20150525.1311-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b1e3210: Some more improvements for plex-template (V)
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 25 May 2015 15:11:14 +0200
+
+skindesigner-skin-shady (0.4.8.git20150525.0653-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 546301a: Added translations for columns- and rows-info (plex-
+    template)
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 25 May 2015 08:53:46 +0200
+
+skindesigner-skin-shady (0.4.8.git20150525.0653-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 546301a: Added translations for columns- and rows-info (plex-
+    template)
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 25 May 2015 08:53:38 +0200
+
+skindesigner-skin-shady (0.4.8.git20150524.1621-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d884dac: Fixed height of plex-header
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 24 May 2015 18:21:13 +0200
+
+skindesigner-skin-shady (0.4.8.git20150524.1621-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d884dac: Fixed height of plex-header
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 24 May 2015 18:21:06 +0200
+
+skindesigner-skin-shady (0.4.8.git20150523.2148-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 65e50eb: Changed columns- and rows-info in plex-template
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 23:48:42 +0200
+
+skindesigner-skin-shady (0.4.8.git20150523.2148-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 65e50eb: Changed columns- and rows-info in plex-template
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 23:48:35 +0200
+
+skindesigner-skin-shady (0.4.8.git20150522.2041-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * c6f3774: Some more improvements for plex-template
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 22 May 2015 22:41:45 +0200
+
+skindesigner-skin-shady (0.4.8.git20150522.2041-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * c6f3774: Some more improvements for plex-template
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 22 May 2015 22:41:31 +0200
+
+skindesigner-skin-shady (0.4.7.git20150522.1344-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * de5a4a6: Fixed timerconflicts in mainmenu (second try)
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 22 May 2015 15:44:47 +0200
+
+skindesigner-skin-shady (0.4.7.git20150522.1344-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * de5a4a6: Fixed timerconflicts in mainmenu (second try)
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 22 May 2015 15:44:40 +0200
+
+skindesigner-skin-shady (0.4.7.git20150521.1915-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 1e89d8d: Added detail- and list-view for plex-plugin (incomplete)
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 21 May 2015 21:15:31 +0200
+
+skindesigner-skin-shady (0.4.7.git20150521.1915-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 1e89d8d: Added detail- and list-view for plex-plugin (incomplete)
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 21 May 2015 21:15:16 +0200
+
+skindesigner-skin-shady (0.4.7.git20150520.1601-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 9a15d23: Fixed typo in displaymenudetailrecording
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 20 May 2015 18:01:44 +0200
+
+skindesigner-skin-shady (0.4.7.git20150520.1601-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 9a15d23: Fixed typo in displaymenudetailrecording
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 20 May 2015 18:01:26 +0200
+
+skindesigner-skin-shady (0.4.7.git20150519.1930-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 9d48224: Change Grid Viewmode
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 19 May 2015 21:30:41 +0200
+
+skindesigner-skin-shady (0.4.7.git20150519.1930-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 9d48224: Change Grid Viewmode
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 19 May 2015 21:30:34 +0200
+
+skindesigner-skin-shady (0.4.7.git20150518.1801-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 58712a8: Fixed floatwidth and floatheight in
+    displaymenudetailrecording
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 18 May 2015 20:01:20 +0200
+
+skindesigner-skin-shady (0.4.7.git20150518.1801-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 58712a8: Fixed floatwidth and floatheight in
+    displaymenudetailrecording
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 18 May 2015 20:01:14 +0200
+
+skindesigner-skin-shady (0.4.7.git20150516.2115-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 2efab4b: Fixed typo in 07_notNewWatchedNotCutted-recordingsMarker
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 23:15:52 +0200
+
+skindesigner-skin-shady (0.4.7.git20150516.2115-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 2efab4b: Fixed typo in 07_notNewWatchedNotCutted-recordingsMarker
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 23:15:47 +0200
+
+skindesigner-skin-shady (0.4.6.git20150516.0911-0frodo0~trusty) trusty; urgency=low
+
+  * 2efab4b: Fixed typo in 07_notNewWatchedNotCutted-recordingsMarker
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 11:11:17 +0200
+
+skindesigner-skin-shady (0.4.6.git20150516.0910-0frodo0~precise) precise; urgency=low
+
+  * 2efab4b: Fixed typo in 07_notNewWatchedNotCutted-recordingsMarker
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 11:10:52 +0200
+
+skindesigner-skin-shady (0.4.5.git20150513.1258-0frodo0~trusty) trusty; urgency=low
+
+  * b114ed2: Fixed menuFadetime-parameter, added shifting for
+    displaychannel (both provided by MegaX@vdrportal)
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 13 May 2015 14:58:32 +0200
+
+skindesigner-skin-shady (0.4.5.git20150513.1258-0frodo0~precise) precise; urgency=low
+
+  * b114ed2: Fixed menuFadetime-parameter, added shifting for
+    displaychannel (both provided by MegaX@vdrportal)
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 13 May 2015 14:58:17 +0200
+
+skindesigner-skin-shady (0.4.5.git20150512.1107-0frodo0~trusty) trusty; urgency=low
+
+  * efc56f0: Added shadowsRecordingsMain1.png
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 12 May 2015 13:07:26 +0200
+
+skindesigner-skin-shady (0.4.5.git20150512.1107-0frodo0~precise) precise; urgency=low
+
+  * efc56f0: Added shadowsRecordingsMain1.png
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 12 May 2015 13:07:11 +0200
+
+skindesigner-skin-shady (0.4.4.git20150510.1348-0frodo0~trusty) trusty; urgency=low
+
+  * d7a0541: Changed display of resolution in channelinfo
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 10 May 2015 15:48:14 +0200
+
+skindesigner-skin-shady (0.4.4.git20150510.1347-0frodo0~precise) precise; urgency=low
+
+  * d7a0541: Changed display of resolution in channelinfo
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 10 May 2015 15:47:50 +0200
+
+skindesigner-skin-shady (0.4.4.git20150508.1927-0frodo0~trusty) trusty; urgency=low
+
+  * 2538d1f: Small fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 08 May 2015 21:28:01 +0200
+
+skindesigner-skin-shady (0.4.4.git20150508.1927-0frodo0~precise) precise; urgency=low
+
+  * 2538d1f: Small fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 08 May 2015 21:27:45 +0200
+
+skindesigner-skin-shady (0.4.4.git20150507.1741-0frodo0~trusty) trusty; urgency=low
+
+  * 8768c5e: Fixed ECM
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 07 May 2015 19:42:01 +0200
+
+skindesigner-skin-shady (0.4.4.git20150507.1741-0frodo0~precise) precise; urgency=low
+
+  * 8768c5e: Fixed ECM
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 07 May 2015 19:41:36 +0200
+
+skindesigner-skin-shady (0.4.4.git20150505.1823-0frodo0~trusty) trusty; urgency=low
+
+  * e851ea3: Adapted width of remotetimerssymbol in mainmenutimers
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 05 May 2015 20:23:52 +0200
+
+skindesigner-skin-shady (0.4.4.git20150505.1823-0frodo0~precise) precise; urgency=low
+
+  * e851ea3: Adapted width of remotetimerssymbol in mainmenutimers
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 05 May 2015 20:23:36 +0200
+
+skindesigner-skin-shady (0.4.3.git20150501.1327-0frodo0~trusty) trusty; urgency=low
+
+  * 7574210: Adapted defaultmenu.xml to menucategory setup
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 01 May 2015 15:27:13 +0200
+
+skindesigner-skin-shady (0.4.3.git20150501.1326-0frodo0~precise) precise; urgency=low
+
+  * 7574210: Adapted defaultmenu.xml to menucategory setup
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 01 May 2015 15:26:54 +0200
+
+skindesigner-skin-shady (0.4.3.git20150429.1806-0frodo0~trusty) trusty; urgency=low
+
+  * 8d941e8: Added special treatment for progressbars in neutrinoepg
+    without channelnumbers
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 20:06:39 +0200
+
+skindesigner-skin-shady (0.4.3.git20150429.1806-0frodo0~precise) precise; urgency=low
+
+  * 8d941e8: Added special treatment for progressbars in neutrinoepg
+    without channelnumbers
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 20:06:26 +0200
+
+skindesigner-skin-shady (0.4.3.git20150429.0930-0frodo0~trusty) trusty; urgency=low
+
+  * c26f598: Added setup for last timers in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 11:30:14 +0200
+
+skindesigner-skin-shady (0.4.3.git20150429.0929-0frodo0~precise) precise; urgency=low
+
+  * c26f598: Added setup for last timers in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 11:29:51 +0200
+
+skindesigner-skin-shady (0.4.3.git20150427.1715-0frodo0~trusty) trusty; urgency=low
+
+  * 212b980: Added special treatment for fritzbox "Call details" and
+    plex-setup "UUID" in displaymenudefault
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 27 Apr 2015 19:15:23 +0200
+
+skindesigner-skin-shady (0.4.3.git20150427.1713-0frodo0~precise) precise; urgency=low
+
+  * 212b980: Added special treatment for fritzbox "Call details" and
+    plex-setup "UUID" in displaymenudefault
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 27 Apr 2015 19:13:53 +0200
+
+skindesigner-skin-shady (0.4.3.git20150426.0938-0frodo0~trusty) trusty; urgency=low
+
+  * efca800: Fixed translation in setup.xml
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 26 Apr 2015 11:39:00 +0200
+
+skindesigner-skin-shady (0.4.3.git20150426.0937-0frodo0~precise) precise; urgency=low
+
+  * efca800: Fixed translation in setup.xml
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 26 Apr 2015 11:37:44 +0200
+
+skindesigner-skin-shady (0.4.3.git20150425.1656-0frodo0~trusty) trusty; urgency=low
+
+  * b2f3350: Reworked displayreplay
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 25 Apr 2015 18:56:41 +0200
+
+skindesigner-skin-shady (0.4.3.git20150425.1656-0frodo0~precise) precise; urgency=low
+
+  * b2f3350: Reworked displayreplay
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 25 Apr 2015 18:56:26 +0200
+
+skindesigner-skin-shady (0.4.3.git20150423.1742-0frodo0~trusty) trusty; urgency=low
+
+  * d8a005f: Updated History
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 23 Apr 2015 19:42:22 +0200
+
+skindesigner-skin-shady (0.4.3.git20150423.1741-0frodo0~precise) precise; urgency=low
+
+  * d8a005f: Updated History
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 23 Apr 2015 19:41:56 +0200
+
+skindesigner-skin-shady (0.4.3.git20150421.1340-0frodo0~trusty) trusty; urgency=low
+
+  * 93daaeb: Updated HISTORY, increased luminescence of remoteTimers.png
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 21 Apr 2015 15:40:28 +0200
+
+skindesigner-skin-shady (0.4.3.git20150421.1340-0frodo0~precise) precise; urgency=low
+
+  * 93daaeb: Updated HISTORY, increased luminescence of remoteTimers.png
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 21 Apr 2015 15:40:14 +0200
+
+skindesigner-skin-shady (0.4.3.git20150420.1611-0frodo0~trusty) trusty; urgency=low
+
+  * 2b9ebba:  Added graphical progressbars for systeminfo-plugin
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 20 Apr 2015 18:11:47 +0200
+
+skindesigner-skin-shady (0.4.3.git20150420.1611-0frodo0~precise) precise; urgency=low
+
+  * 2b9ebba:  Added graphical progressbars for systeminfo-plugin
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 20 Apr 2015 18:11:20 +0200
+
+skindesigner-skin-shady (0.4.3.git20150418.1401-0frodo0~trusty) trusty; urgency=low
+
+  * 7ed496c: Numbered setup for delay and fadetimes
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 18 Apr 2015 16:01:53 +0200
+
+skindesigner-skin-shady (0.4.3.git20150418.1401-0frodo0~precise) precise; urgency=low
+
+  * 7ed496c: Numbered setup for delay and fadetimes
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 18 Apr 2015 16:01:29 +0200
+
+skindesigner-skin-shady (0.4.3.git20150417.1936-0frodo0~trusty) trusty; urgency=low
+
+  * 9b9ac3a: Added setup for delay and fadetimes
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Apr 2015 21:37:21 +0200
+
+skindesigner-skin-shady (0.4.3.git20150417.1934-0frodo0~precise) precise; urgency=low
+
+  * 9b9ac3a: Added setup for delay and fadetimes
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Apr 2015 21:35:58 +0200
+
+skindesigner-skin-shady (0.4.3.git20150417.1405-0frodo0~trusty) trusty; urgency=low
+
+  * d60b253: Fixed heights in weatherforecast
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Apr 2015 16:06:42 +0200
+
+skindesigner-skin-shady (0.4.3.git20150417.1404-0frodo0~precise) precise; urgency=low
+
+  * d60b253: Fixed heights in weatherforecast
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Apr 2015 16:05:18 +0200
+
+skindesigner-skin-shady (0.3.2.git20150321.1517-0frodo0~trusty) trusty; urgency=low
+
+  * new
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Mar 2015 16:17:08 +0100
+

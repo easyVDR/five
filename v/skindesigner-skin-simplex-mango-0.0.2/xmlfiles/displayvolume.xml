@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayvolume SYSTEM "../../../dtd/displayvolume.dtd">
+
+<displayvolume x="30%" y="85%" width="40%" height="15%" fadetime="{fadetimevolume}" shifttime="{shifttimevolume}" shifttype="bottom" shiftmode="slowed">
+    <background>
+        <area x="0" y="0" width="100%" height="{areawidth}/10" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth}-4" height="{areaheight}-4" color="{clrBackground}" />
+        </area>
+    </background>
+
+    <volume>
+        <area x="0" y="0" width="100%" height="{areawidth}/10" layer="3">
+            <drawimage imagetype="icon" x="0" y="0" width="100%" height="100%" path="vol_back" />
+        </area>        
+        <area x="0" y="0" width="100%" height="{areawidth}/10" layer="2">
+            <drawrectangle x="0" y="0" width="{volume}/{maxvolume}*{areawidth}" height="100%" color="{clrBorder}" />
+        </area>        
+        <area x="0" y="0" width="100%" height="{areawidth}/10" layer="4">
+            <drawtext name="volperc" x="{areawidth}*0.98 - {width(volperc)}" valign="center" font="{bold}" fontsize="60%" color="{clrText}" text="{volpercent}%" />
+            <drawimage condition="{mute}" imagetype="icon" x="80%" valign="center" width="{areaheight}*0.7" height="{areaheight}*0.7" path="mute" />
+        </area>
+    </volume>
+
+</displayvolume>

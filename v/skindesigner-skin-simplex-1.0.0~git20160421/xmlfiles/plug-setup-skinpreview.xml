@@ -1,0 +1,124 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
+
+<menuplugin x="0" y="0" width="100%" height="100%" fadetime="0">
+    <background>
+        <area x="0" y="0" width="100%" height="100%" layer="1">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrBackground}" />
+            <drawrectangle x="15" y="15%" width="{areawidth} - 30" height="2" color="{clrBorder}" />
+            <drawrectangle x="15" y="80%" width="{areawidth} - 30" height="2" color="{clrBorder}" />
+        </area>
+    </background>
+
+    <header>
+        <area x="0" y="0" width="1" height="1" layer="1">
+            <fill color="{clrTransparent}" />
+        </area>
+    </header>
+
+    <datetime>
+        <area x="0" y="0" width="1" height="1" layer="1">
+            <fill color="{clrTransparent}" />
+        </area>
+    </datetime>
+
+    <colorbuttons>
+        <area x="0" y="90%" width="25%" height="10%" layer="2">
+            <drawtext condition="{red1}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{red}" />
+            <drawimage condition="{red1}" imagetype="icon" path="button_red" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{green1}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{green}" />
+            <drawimage condition="{green1}" imagetype="icon" path="button_green" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{yellow1}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{yellow}" />
+            <drawimage condition="{yellow1}" imagetype="icon" path="button_yellow" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{blue1}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{blue}" />
+            <drawimage condition="{blue1}" imagetype="icon" path="button_blue" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+        </area>
+        <area x="25%" y="90%" width="25%" height="10%" layer="2">
+            <drawtext condition="{red2}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{red}" />
+            <drawimage condition="{red2}" imagetype="icon" path="button_red" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{green2}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{green}" />
+            <drawimage condition="{green2}" imagetype="icon" path="button_green" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{yellow2}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{yellow}" />
+            <drawimage condition="{yellow2}" imagetype="icon" path="button_yellow" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{blue2}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{blue}" />
+            <drawimage condition="{blue2}" imagetype="icon" path="button_blue" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+        </area>
+        <area x="50%" y="90%" width="25%" height="10%" layer="2">
+            <drawtext condition="{red3}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{red}" />
+            <drawimage condition="{red3}" imagetype="icon" path="button_red" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{green3}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{green}" />
+            <drawimage condition="{green3}" imagetype="icon" path="button_green" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{yellow3}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{yellow}" />
+            <drawimage condition="{yellow3}" imagetype="icon" path="button_yellow" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{blue3}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{blue}" />
+            <drawimage condition="{blue3}" imagetype="icon" path="button_blue" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+        </area>
+        <area x="75%" y="90%" width="25%" height="10%" layer="2">
+            <drawtext condition="{red4}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{red}" />
+            <drawimage condition="{red4}" imagetype="icon" path="button_red" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{green4}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{green}" />
+            <drawimage condition="{green4}" imagetype="icon" path="button_green" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{yellow4}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{yellow}" />
+            <drawimage condition="{yellow4}" imagetype="icon" path="button_yellow" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+            <drawtext condition="{blue4}" x="{areaheight}*0.4 + 30" valign="center" font="{light}" fontsize="50%" color="{clrText}" text="{blue}" />
+            <drawimage condition="{blue4}" imagetype="icon" path="button_blue" x="10" valign="center" width="{areaheight}*0.4" height="{areaheight}*0.4"/>
+        </area>
+    </colorbuttons>
+
+    <scrollbar>
+       <area x="{areawidth} - 15 - {areawidth}*0.015" y="16%" width="{areawidth}*0.015" height="63%" layer="3">
+            <fill color="{clrBorder}" />
+            <drawrectangle x="2" y="2" width="{areawidth} - 4" height="{areaheight} - 4" color="{clrTransparent}" />
+            <drawrectangle x="4" y="4 + {areaheight} * {offset} / 1000" width="{areawidth} - 8" height="{areaheight} * {height} / 1000 - 8" color="{clrBorder}" />
+        </area>
+    </scrollbar>
+
+    <detailheader>
+        <area x="2%" y="2%" width="96%" height="15%" layer="2">
+            <drawtext x="20" valign="center" font="{light}" fontsize="70%" color="{clrText}" text="{menuheader}" />
+        </area>
+        <area x="2%" y="2%" width="96%" height="15%" layer="3">
+            <drawtext align="right" valign="center" font="{light}" fontsize="60%" color="{clrText}" text="Author: {author} " />
+        </area>
+    </detailheader>
+
+    <tab name="{tr(skinpreview)}" x="2%" y="16%" width="94%" height="63%" layer="2" scrollheight="{areaheight}/4">
+        <drawtext name="headerplugs" x="0" y="0" font="{semibold}" fontsize="10%" color="{clrText}" text="Supported Plugins:" />
+        <loop name="plugins" x="0" y="10%" orientation="vertical" columnwidth="{areawidth}/2" rowheight="{areaheight}*0.08">
+            <drawtext x="0" valign="center" font="{light}" fontsize="8%" color="{clrText}" text="{plugins[name]}" />
+        </loop>
+
+        <drawtext name="headerfonts" x="0" y="{posy(plugins)} + {height(plugins)} + 10" font="{semibold}" fontsize="10%" color="{clrText}" text="Used Fonts:" />
+        <loop name="fonts" x="0" y="{posy(headerfonts)} + {height(headerfonts)}" orientation="vertical" columnwidth="{areawidth}/2" rowheight="{areaheight}*0.08">
+            <drawtext condition="{fonts[installed]}" x="0" valign="center" font="{light}" fontsize="8%" color="{clrText}" text="{fonts[name]} (installed)" />
+            <drawtext condition="not{fonts[installed]}" x="0" valign="center" font="{light}" fontsize="8%" color="{clrText}" text="{fonts[name]} (NOT installed)" />
+        </loop>
+
+        <loop name="screenshots" x="0" y="{posy(fonts)} + {height(fonts)}" orientation="horizontal" columnwidth="{areawidth}/3-1" rowheight="{areawidth}/3*9/16 * 1.2">
+            <drawtext name="desc" align="center" y="0" font="{light}" fontsize="10%" color="{clrText}" text="{screenshots[desc]}" />
+            <drawimage imagetype="image" path="{screenshots[path]}" align="center" y="{height(desc)}+10" width="{columnwidth}*0.95" height="{columnwidth} * 0.95 * 9 / 16"/>
+        </loop>
+    </tab>
+    <tab name="{tr(skingalery)}" x="2%" y="16%" width="94%" height="63%" layer="2" scrollheight="{areaheight}">
+        <loop name="screenshots" x="0" y="0" orientation="vertical" columnwidth="{areawidth}" rowheight="{areaheight}">
+            <drawimage imagetype="image" path="{screenshots[path]}" align="center" valign="center" width="{areaheight}*16/9" height="{areaheight}"/>
+        </loop>
+    </tab>
+
+    <tablabels>
+        <area x="30" y="80%" width="{areawidth} - 60" height="8%" layer="3">
+            <loop name="tabs" x="0" y="0" orientation="horizontal">
+                <drawrectangle x="0" y="0" width="{width(label)}" height="100%" color="{clrBorder}" />
+                <drawrectangle x="2" y="2" width="{width(label)} - 4" height="{areaheight}-4" color="{clrTransparent}" />
+                <drawtext name="label" x="0" valign="center" font="{light}" fontsize="60%" color="{clrText}" text="  {tabs[title]}  " />
+            </loop>
+        </area>
+        <area x="30" y="80%" width="{areawidth} - 60" height="8%" layer="4">
+            <loop name="tabs" x="0" y="0" orientation="horizontal">
+                <drawtext name="label" x="0" valign="center" font="{light}" fontsize="60%" color="{clrTransparent}" text="  {tabs[title]}  " />
+                <drawimage condition="{tabs[current]}" x="2" y="2" width="{width(label)} - 4" height="{areaheight} - 4" imagetype="skinpart" path="active_tab" />
+            </loop>
+        </area>
+    </tablabels>
+</menuplugin>

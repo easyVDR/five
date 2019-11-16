@@ -1,0 +1,117 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="100"
+   height="100"
+   viewBox="0 0 100 100"
+   id="svg5443"
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="button_green.svg">
+  <defs
+     id="defs5445">
+    <linearGradient
+       inkscape:collect="always"
+       id="linearGradient6474">
+      <stop
+         style="stop-color:#ececec;stop-opacity:1;"
+         offset="0"
+         id="stop6476" />
+      <stop
+         style="stop-color:#ececec;stop-opacity:0;"
+         offset="1"
+         id="stop6478" />
+    </linearGradient>
+    <linearGradient
+       inkscape:collect="always"
+       xlink:href="#linearGradient6474"
+       id="linearGradient6480"
+       x1="10.890897"
+       y1="967.25842"
+       x2="32.530128"
+       y2="987.49469"
+       gradientUnits="userSpaceOnUse" />
+  </defs>
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="2.4213942"
+     inkscape:cx="107.52507"
+     inkscape:cy="8.8297694"
+     inkscape:document-units="px"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     units="px"
+     inkscape:window-width="1920"
+     inkscape:window-height="1017"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata5448">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Ebene 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(0,-952.36216)">
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path6001"
+       sodipodi:type="arc"
+       sodipodi:cx="50"
+       sodipodi:cy="1002.3622"
+       sodipodi:rx="49"
+       sodipodi:ry="49"
+       sodipodi:start="1.4638111"
+       sodipodi:end="1.4400953"
+       d="M 55.232281,1051.082 A 49,49 0 0 1 1.3120337,1007.8832 49,49 0 0 1 44.190385,953.70781 49,49 0 0 1 98.619077,996.2642 49,49 0 0 1 56.386132,1050.9443"
+       sodipodi:open="true" />
+    <path
+       sodipodi:open="true"
+       d="M 54.484813,1044.122 A 42,42 0 0 1 8.2674575,1007.0945 42,42 0 0 1 45.02033,960.65843 42,42 0 0 1 91.673494,997.13534 42,42 0 0 1 55.473827,1044.004"
+       sodipodi:end="1.4400953"
+       sodipodi:start="1.4638111"
+       sodipodi:ry="42"
+       sodipodi:rx="42"
+       sodipodi:cy="1002.3622"
+       sodipodi:cx="50"
+       sodipodi:type="arc"
+       id="path6003"
+       style="fill:#00d400;fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <path
+       style="fill:url(#linearGradient6480);fill-opacity:1;stroke:none;stroke-width:2;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+       id="path6472"
+       sodipodi:type="arc"
+       sodipodi:cx="50"
+       sodipodi:cy="1002.3622"
+       sodipodi:rx="42"
+       sodipodi:ry="42"
+       sodipodi:start="1.4638111"
+       sodipodi:end="1.4400953"
+       d="M 54.484813,1044.122 A 42,42 0 0 1 8.2674575,1007.0945 42,42 0 0 1 45.02033,960.65843 42,42 0 0 1 91.673494,997.13534 42,42 0 0 1 55.473827,1044.004"
+       sodipodi:open="true" />
+  </g>
+</svg>

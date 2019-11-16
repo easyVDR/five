@@ -1,0 +1,62 @@
+#    README for shady_KISS-skin for vdr-plugin-skindesigner
+#
+#    Copyright (C) 2015 - 2016   Tomas Saxer <tsaxer@gmx.de> 
+#
+#    This program is free software; you can redistribute it and/or modify it under the terms of 
+#    the GNU General Public License as published by the Free Software Foundation; either 
+#    version 2 of the License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+#    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+#    See the GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License along with this program; 
+#    if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, 
+#    MA 02110, USA
+
+
+Latest version is available via git: https://github.com/tomsax56/shady_KISS
+
+Screenshots: http://www.anthra.de/shady-skin
+
+Description:
+
+The shady-skin is a skin for Klaus Schmidingers VDR and Louis Brauns vdr-plugin-skindesigner.
+
+
+I. Requirements:
+
+	1.	vdr-plugin-skindesigner
+
+	2.	Font: Open Sans, many other fonts are to fat and don't fit in some areas!
+
+	3.	A set of channellogos eg: http://creimer.net/channellogos/skindesigner-white-20150607.tar.bz2
+
+
+II. Install:
+
+	1. Simplest via setup of skindesigner-plugin
+
+	2. Via Shell
+
+		a.	First time:
+
+			cd /usr/share/vdr/plugins/skindesigner/skins
+
+			git clone https://github.com/tomsax56/shady_KISS
+
+			find -name *.theme -exec mv {} "/var/lib/vdr/themes" \ ;
+
+		b.	Update:
+
+			cd /usr/share/vdr/plugins/skindesigner/skins/shady_KISS
+
+			git pull
+
+If you encounter any bugs, problems, or have any issues,
+please don't hesitate to contact me or place a post at vdrportal.de
+even in English.
+
+Have fun ;)
+
+Tomas

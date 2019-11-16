@@ -1,0 +1,180 @@
+<menurecordings x="0" y="0" width="100%" height="100%" fadetime="{mainmenuFadeTime}" scaletvx="{areawidth}*0.01" scaletvy="{areaheight}*0.695" scaletvwidth="{areawidth}*0.29" scaletvheight="{areaheight}*0.3" >
+    <scrollbar>
+	<!-- scrollbar -->
+        <area x="{areawidth}*0.99 - {areawidth}*0.01 + 2" y="{areawidth}*0.01 + 2 + {areaheight}*{offset}/1000" width="{areawidth}*0.01 - 6" height="{areaheight}*{height}/1000 - {areawidth}*0.02 - 6" layer="2">
+	    <drawellipse x="0" y="0" width="100%" height="{areawidth}" quadrant="0" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="0" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrProgressbarBg}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}" width="100%" height="{areawidth}" quadrant="0" color="{clrProgressbar}" />
+	    <drawellipse x="0" y="{areaheight}-{areawidth}" width="{areawidth} - 2" height="{areawidth} - 2" quadrant="0" color="{clrProgressbarBg}" />
+            <drawrectangle x="0" y="{areawidth}/2" width="{areawidth} - 2" height="{areaheight} - {areawidth}" color="{clrProgressbarBg}" />
+            <drawrectangle x="{areawidth} - 2" y="{areawidth}/2" width="2" height="{areaheight} - {areawidth}" color="{clrProgressbar}" />
+        </area>
+    </scrollbar>
+
+    <header>
+	<!-- menu frame -->
+	<area background="true" x="{areawidth}*0.01" y="{areawidth}*0.01" width="{areawidth}*0.64" height="{areaheight}*0.70 - {areawidth}*0.02" layer="1">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)}" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 15" y="{posy(mainframe)} + {height(mainframe)} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+	<!-- menu frame 2 -->
+        <area background="true" x="{areawidth}*0.66" y="{areawidth}*0.01" width="{areawidth}*0.31" height="{areaheight}*0.70 - {areawidth}*0.02" layer="1">
+	    <drawrectangle x="0" y="0" width="100%" height="100%" color="{clrBorder}" />
+	    <drawrectangle name="mainframe" x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrBackground}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)}" width="15" height="15" quadrant="-2" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="13" height="15" quadrant="-1" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)}" width="15" height="15" quadrant="-1" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="13" quadrant="-3" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)}" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-3" color="{clrBlack}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 15" y="{posy(mainframe)} + {height(mainframe)} - 15" width="15" height="15" quadrant="-4" color="{clrBorder}" />
+	    <drawellipse x="{posx(mainframe)} + {width(mainframe)} - 13" y="{posy(mainframe)} + {height(mainframe)} - 13" width="15" height="15" quadrant="-4" color="{clrBlack}" />
+	</area>
+	<!-- title -->
+	<area background="true" x="{areawidth}*0.41" y="{areaheight}*0.78" width="{areawidth}*0.47 - 2" height="{areaheight}*0.08" layer="2">
+            <drawtext align="center" valign="center" font="{regular}" fontsize="70%" color="{clrFontMenuBright}" text="{title}" />
+	</area>
+        <area x="{areawidth}*0.305" y="{areaheight}*0.76" width="{areawidth}*0.09" height="{areawidth}*0.09" layer="2">
+            <!-- logo -->
+            <drawimage name="logo" imagetype="image" path="menuicons/standardicons/Recordings.png" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+        </area>
+    </header>
+ 
+    <menuitems x="0" y="{areawidth}*0.02" orientation="vertical" width="100%" height="{areaheight}*0.70 - {areawidth}*0.04 - 2" align="center" numlistelements="{recordingsNumMenuItems}">
+        <!-- Available Variables recordings menu listelement:
+        {nummenuitem}           number of item in list, starts with 1
+        {name}                  Real Name of recording (Name of Recording Folder)
+        {epgname}               Name of recording (Name from EPG)
+        {date}                  Date of recording
+        {time}                  Time of recording
+        {daynumeric}            day as number
+        {month}                 month as number
+        {year}                  year as number
+        {duration}              real duration of recording in minutes
+        {durationhours}         real duration, full hours
+        {durationminutes}       real duration, rest of minutes
+        {durationevent}         duration of corresponding event in minutes
+        {durationeventhours}    event duration, full hours
+        {durationeventminutes}  event duration, rest of minutes
+        {current}               true if item is currently selected
+        {new}                   true if recording is new
+        {percentseen}           percent already watched, -1 for VDR < 2.1.8
+        {cutted}                true if recording is cutted
+        {folder}                true if item is a folder
+        {numrecordingsfolder}   if item is a folder, number of recordings in this folder
+        {newrecordingsfolder}   if item is a folder, number of new recordings in this folder
+        {hasposterthumbnail}    true if a scraped poster thumbnail is available for recording
+        {thumbnailbwidth}       width of scraped poster thumbnail
+        {thumbnailheight}       height of scraped poster thumbnail
+        {thumbnailpath}         absolute path of scraped poster thumbnail
+        -->
+        <listelement>
+            <!-- current -->
+            <area x="{areawidth}*0.01" width="{areawidth}*0.64 - 1" layer="2">
+                <drawimage condition="{current}" imagetype="skinpart" path="menubuttonactive" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+            </area>
+            <!-- folder -->
+            <area condition="{folder}" x="{areawidth}*0.02" width="{areawidth}*0.62 - 1" layer="3">
+                <drawimage name="foldericon" imagetype="icon" path="ico_recfolder" x="0" width="{areaheight}*0.90" height="{areaheight}*0.80" valign="center" />
+            </area>
+            <area condition="{folder}" x="{areawidth}*0.02" width="{areawidth}*0.62 - 1" layer="4">
+                <drawimage condition="{hasposterthumbnail}" name="thumb" imagetype="image" path="{thumbnailpath}" x="{areaheight}*0.03" valign="center" width="{areaheight}*0.65" height="{areaheight}*0.65" />
+            </area>
+            <area condition="{folder}" x="{areawidth}*0.02" width="{areawidth}*0.62 - 1" layer="5">
+                <drawimage condition="{hasposterthumbnail}" name="foldericon" imagetype="icon" path="ico_recfolder_top" x="0" width="{areaheight}*0.90" height="{areaheight}*0.80" valign="center" />
+                <drawtext x="{areaheight}*1.1" y="{areaheight}*0.1" font="{regular}" fontsize="40%" color="{clrFontMenuItemBright}" text="{numrecordingsfolder}" />
+                <drawimage x="{areaheight}*1.1" y="{areaheight}*0.5 - 1" imagetype="skinpart" path="line_gray_horizontal" width="{width(newrecordings)}" height="3" />
+                <drawtext x="{areaheight}*1.1" y="{areaheight}*0.5" name="newrecordings" font="{regular}" fontsize="40%" color="{clrTransparent}" text="XXXXXXXX" />
+                <drawtext x="{areaheight}*1.1" y="{areaheight}*0.5" name="newrecords" font="{regular}" fontsize="40%" color="{clrFontMenuItemDark}" text="{newrecordingsfolder} {tr(new)}" />
+                <drawtext condition="isset{epgname}" name="menutext" x="{posx(newrecordings)} + {width(newrecordings)} + {areawidth}*0.02" valign="center" font="{regular}" fontsize="60%" color="{clrFontMenuItemBright}" text="{epgname}" />
+                <drawtext condition="empty{epgname}" name="menutext" x="{posx(newrecordings)} + {width(newrecordings)} + {areawidth}*0.02" valign="center" font="{regular}" fontsize="60%" color="{clrFontMenuItemBright}" text="{name}" />
+	    </area>
+            <!-- records -->
+            <area condition="not{folder}" x="{areawidth}*0.02" width="{areawidth}*0.62 - 1" layer="5">
+                <drawimage condition="{hasposterthumbnail}" name="thumb" imagetype="image" path="{thumbnailpath}" x="0" width="{areaheight}*0.90" height="{areaheight}*0.80" valign="center" />
+                <drawtext x="{areaheight}*1.1" y="{areaheight}*0.1" name="record" font="{regular}" fontsize="40%" color="{clrFontMenuItemBright}" text="{printf('%02d.%02d', daynumeric, month)}.{year}" />
+                <drawimage condition="{new}" x="{areaheight}*1.1" y="{areaheight}*0.5 - 1" imagetype="skinpart" path="line_gray_horizontal" width="{width(recording)}" height="3" />
+                <drawrectangle condition="not{new}" x="{areaheight}*1.1" y="{areaheight}*0.5 - 1" width="{width(recording)}" height="3" color="{clrProgressbarBg}" />
+                <drawrectangle condition="not{new}" x="{areaheight}*1.1" y="{areaheight}*0.5 - 1" width="{width(recording)} * {percentseen}/100" height="3" color="{clrFontMenuItemBright}" />
+                <drawtext x="{areaheight}*1.1" y="{areaheight}*0.5" name="recording" font="{regular}" fontsize="40%" color="{clrTransparent}" text="XXXXXXXX" />
+                <drawtext x="{areaheight}*1.1" y="{areaheight}*0.5" font="{regular}" fontsize="40%" color="{clrFontMenuItemDark}" text="{time}" />
+		<drawellipse condition="{new}" x="{posx(recording)} + {width(recording)} - {areaheight}*0.30" y="{areaheight}*0.57" width="{areaheight}*0.30" height="{areaheight}*0.25" color="{clrNewRec}" quadrant="0" />
+		<drawellipse condition="{new}" x="{posx(recording)} + {width(recording)} - {areaheight}*0.30" y="{areaheight}*0.57" width="{areaheight}*0.30 - 2" height="{areaheight}*0.25 - 2" color="{clrTransparent}" quadrant="0" />
+                <drawtext condition="{new}" name="newrec" x="{posx(recording)} + {width(recording)} - {areaheight}*0.15 - {width(newrec)}/2 - 2" y="{areaheight}*0.62" font="{italic}" fontsize="15%" color="{clrNewRec}" text="{tr(NEW)}" />
+		<drawellipse condition="{cutted}" x="{posx(recording)} + {width(recording)} - {areaheight}*0.62" y="{areaheight}*0.57" width="{areaheight}*0.30" height="{areaheight}*0.25" color="{clrCuttedRec}" quadrant="0" />
+		<drawellipse condition="{cutted}" x="{posx(recording)} + {width(recording)} - {areaheight}*0.62" y="{areaheight}*0.57" width="{areaheight}*0.30 - 2" height="{areaheight}*0.25 - 2" color="{clrTransparent}" quadrant="0" />
+                <drawtext condition="{cutted}" name="cuttedrec" x="{posx(recording)} + {width(recording)} - {areaheight}*0.47 - {width(cuttedrec)}/2 - 2" y="{areaheight}*0.62" font="{italic}" fontsize="15%" color="{clrCuttedRec}" text="CUT" />
+<!--
+                <drawimage condition="{new}" x="{posx(recording)} + {width(recording)} - {areaheight}*0.25" y="{areaheight}*0.57" imagetype="icon" path="ico_recnew" width="{areaheight}*0.25" height="{areaheight}*0.25" />
+                <drawimage condition="{cutted}" x="{posx(recording)} + {width(recording)} - {areaheight}*0.55" y="{areaheight}*0.57" imagetype="icon" path="ico_cutted" width="{areaheight}*0.25" height="{areaheight}*0.25" />
+-->
+                <drawtext name="menutext" x="{posx(recording)} + {width(recording)} + {areawidth}*0.02" valign="center" font="{regular}" fontsize="60%" color="{clrFontMenuItemBright}" text="{name}" />
+	    </area>
+        </listelement>
+        <!-- additional element which is drawn for current element -->
+        <!-- Available Variables channels menu currentelement:
+        {menuitemx}             x position of according menu item
+        {menuitemy}             y position of according menu item
+        {menuitemwidth}         width of according menu item
+        {menuitemheight}        height of according menu item
+        {name}                  Real Name of recording (Name of Recording Folder)
+        {epgname}               Name of recording (Name from EPG)
+        {shorttext}             Short Text of recording
+        {description}           Descrption of recording        
+        {date}                  Date of recording
+        {time}                  Time of recording
+        {daynumeric}            day as number
+        {month}                 month as number
+        {year}                  year as number
+        {duration}              real duration of recording in minutes
+        {durationhours}         real duration, full hours
+        {durationminutes}       real duration, rest of minutes
+        {durationevent}         duration of corresponding event in minutes
+        {durationeventhours}    event duration, full hours
+        {durationeventminutes}  event duration, rest of minutes        
+	{new}                   true if recording is new
+        {cutted}                true if recording is cutted
+        {folder}                true if item is a folder
+        {numrecordingsfolder}   if item is a folder, number of recordings in this folder
+        {newrecordingsfolder}   if item is a folder, number of new recordings in this folder
+        {hasposter}             true if a scraped poster is available for recording
+        {posterwidth}           width of scraped poster
+        {posterheight}          height of scraped poster
+        {posterpath}            absolute path of scraped poster
+        -->
+        <currentelement delay="{recordingsDescriptionDelay}" fadetime="{recordingsFadeTime}">
+	    <!-- info window -->
+	    <area x="{areawidth}*0.41" y="{areaheight}*1.20" width="{areawidth}*0.47 - 2" height="{areaheight}*0.28" layer="2">
+                <drawimage imagetype="skinpart" path="line_horizontal" align="center" y="{areaheight}/2 - 2" width="{areawidth}" height="3" />
+                <drawtext condition="(gt{duration}, 0)" align="center" y="{areaheight}*0.55" font="{regular}" fontsize="30%" color="{clrFontMenuBright}" text="{tr(Reclength)}: {duration} min" />
+	    </area>
+	    <!-- main window 2 -->
+            <area x="{areawidth}*0.66 + {areaheight}*0.01" y="0" width="{areawidth}*0.31 - {areaheight}*0.02 - 2" height="{areaheight}*0.20" layer="2">
+		<!-- name start/stop -->
+                <drawtext condition="isset{epgname}" align="center" y="0" font="{regular}" fontsize="40%" color="{clrFontMenuBright}" text="{epgname}" />
+                <drawtext condition="empty{epgname}" align="center" y="0" font="{regular}" fontsize="40%" color="{clrFontMenuBright}" text="{name}" />
+                <drawtext condition="not{cutted}++(gt{durationevent}, 0)" align="center" y="{areaheight}*0.39" font="{regular}" fontsize="30%" color="{clrFontMenuBright}" text="{tr(Programlength)} (EPG): {durationevent} min" />
+<!--
+                <drawtext condition="empty{durationevent}++isset{duration}++not{cutted}" align="center" y="{areaheight}*0.39" font="{regular}" fontsize="30%" color="{clrFontMenuBright}" text="{tr(Reclength)}: {duration} min" />
+-->
+                <drawtext condition="{cutted}" align="center" y="{areaheight}*0.39" font="{regular}" fontsize="30%" color="{clrFontMenuBright}" text="{tr(Reclengthcutted)}: {duration} min" />
+                <drawtext align="center" y="{areaheight}*0.65" font="{regular}" fontsize="30%" color="{clrFontMenuDark}" text="{shorttext}" />
+                <drawimage imagetype="skinpart" path="line_horizontal" align="center" y="{areaheight} - 7" width="{areawidth}" height="3" />
+	    </area>
+            <areascroll mode="carriagereturn" scrollelement="descriptiontext" orientation="vertical" delay="1000" scrollspeed="medium" x="{areawidth}*0.66 + {areaheight}*0.01" y="{areaheight}*0.21" width="{areawidth}*0.31 - {areaheight}*0.02 - 2" height="{areaheight}*0.79" layer="2">
+		<!-- description -->
+                <drawtext condition="empty{description}" align="center" y="30%" width="{areawidth}" font="{regular}" fontsize="10%" color="{clrFontInactive}" text="{tr(Noepg)}" />
+                <drawtextbox condition="not{hasposter}" x="0" y="0" width="{areawidth}" font="{regular}" fontsize="7%" color="{clrFontMenuBright}" text="{description}" />
+                <drawimage condition="{hasposter}" name="poster" imagetype="image" path="{posterpath}" align="right" valign="top" width="{areawidth}*0.40" height="{areaheight}*0.40 / {posterwidth}*{posterheight}" />
+                <drawtextbox condition="{hasposter}" name="descriptiontext" x="0" y="0" width="{areawidth}" float="topright" floatwidth="{width(poster)} + 10" floatheight="{height(poster)} + {areaheight}*0.1" font="{regular}" fontsize="7%" color="{clrFontMenuBright}" text="{description}" />
+	    </areascroll>
+        </currentelement>
+    </menuitems>
+
+</menurecordings>

@@ -1,0 +1,5 @@
+debian/*.theme var/lib/vdr/themes
+globals.xml usr/share/vdr/plugins/skindesigner/skins/blackhole
+setup.xml usr/share/vdr/plugins/skindesigner/skins/blackhole
+themes/* usr/share/vdr/plugins/skindesigner/skins/blackhole/themes
+xmlfiles/* usr/share/vdr/plugins/skindesigner/skins/blackhole/xmlfiles

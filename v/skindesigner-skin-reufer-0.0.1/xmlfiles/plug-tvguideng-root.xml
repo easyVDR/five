@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayplugin SYSTEM "../../../dtd/displayplugin.dtd">
+<displayplugin x="2%" y="2%" width="96%" height="96%">
+    <!-- horizontal -->
+    <viewelement name="background_hor">
+        <area x="0%" y="0%" width="100%" height="100%" layer="1">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0%" y="95%" height="6%" width="26%" color="{clrBackgroundRed}" />
+            <drawrectangle x="25%" y="95%" height="6%" width="26%" color="{clrBackgroundGreen}" />
+            <drawrectangle x="50%" y="95%" height="6%" width="26%" color="{clrBackgroundYellow}" />
+            <drawrectangle x="75%" y="95%" height="6%" width="26%" color="{clrBackgroundBlue}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+            <drawrectangle x="0%" y="12%" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0%" y="17%" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="12%" y="12%" height="83%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="76%" y="0%" height="12%" width="{border}" color="{clrBorder}" />
+        </area>
+    </viewelement>
+    <viewelement name="header_hor">
+        <area condition="not{isdummy}" x="0%" y="1%" width="75%" height="12%" layer="2">
+            <drawtext x="1%" y="0%" font="{semibold}" width="100%" fontsize="50%" color="{clrText}" text="{start} - {stop}  {title}" />
+            <drawtextbox x="1%" y="48%" width="100%" font="{light}" fontsize="38%" color="{clrText}" text="{shorttext}" />
+        </area>
+        <area condition="{isdummy}" x="0%" y="0%" width="80%" height="12%" layer="2">
+            <drawtext x="1%" y="31%" font="{light}" width="100%" fontsize="38%" color="{clrText}" text="{title}" />
+        </area>
+    </viewelement>
+    <viewelement name="time_hor">
+        <area x="76%" y="0%" width="23%" height="12%" layer="2">
+            <drawtext align="right" y="8%" font="{light}" fontsize="55%" color="{clrText}" text="{time}" />
+            <drawtext align="right" y="58%" font="{light}" fontsize="35%" color="{clrText}" text="{dayname}, {day}.{month}.{year}" />
+        </area>
+    </viewelement>
+    <viewelement name="datetimeline_hor">
+        <area x="0" y="12%" width="12%" height="5%" layer="3">
+            <drawtext align="center" valign="center" font="{semibold}" fontsize="90%" color="{clrText}" text="{weekday} {date}." />
+        </area>
+    </viewelement>
+    <grid name="timeline_hor" x="12%" y="12%" width="88%" height="5%">
+        <area layer="2">
+            <drawrectangle x="{border}" y="{border}" width="{areawidth} - 2 * {border}" height="{areaheight} - {border}" color="{clrGrid}" />
+            <drawtext x="5%" y="12%" font="{light}" fontsize="85%" color="{clrText}" text="{timestring}" />
+        </area>
+    </grid>
+    <viewelement name="timeindicator_hor">
+        <area x="12%" y="17%" width="88%" height="78%" layer="3">
+            <drawrectangle x="{percenttotal}*{areawidth}/1000-1" y="0" width="2" height="100%" color="{clrTimeIndicator}" />
+        </area>
+    </viewelement>
+    <viewelement name="footer_hor">
+        <area x="0" y="95%" width="100%" height="5%" layer="2">
+            <drawtextbox x="0%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{red}" />
+            <drawtextbox x="25%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{green}" />
+            <drawtextbox x="50%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{yellow}" />
+            <drawtextbox x="75%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{blue}" />
+        </area>
+    </viewelement>
+    <grid name="channels_hor" x="0" y="17%" width="12%" height="78%">
+        <area layer="1">
+            <drawrectangle x="{border}" y="{border}" width="{areawidth} - 2 * {border}" height="{areaheight} - 2 * {border}" color="{clrGrid}" />
+        </area>
+        <area layer="2">
+            <drawimage name="chanlogo" condition="{channellogoexists}" imagetype="channellogo" path="{channelid}" x="5%" valign="center" width="90%" height="95%" />
+            <drawtextbox name="channame" condition="not{channellogoexists}" x="5%" valign="center" width="90%" font="{light}" fontsize="45%" color="{clrText}" text="{name}" />
+        </area>
+    </grid>
+    <grid name="schedules_hor" x="12%" y="17%" width="88%" height="78%">
+        <area layer="2">
+            <fill condition="{current}" color="{clrBorder}" />
+            <drawrectangle condition="not{timer}" x="{border}" y="{border}" width="{areawidth} - 2 * {border}" height="{areaheight} - 2 * {border}" color="{clrGrid}" />
+            <drawrectangle condition="{timer}" x="{border}" y="{border}" width="{areawidth} - 2 * {border}" height="{areaheight} - 2 * {border}" color="{clrGridTimer}" />
+        </area>
+        <area layer="3">
+            <drawtext condition="not{dummy}" x="0.1 * {areaheight}" y="10%" width="{areawidth} - 0.2 * {areaheight}" font="{light}" fontsize="44%" color="{clrText}" text="{start} - {stop}" />
+            <drawtext condition="not{dummy}" x="0.1 * {areaheight}" y="50%" width="{areawidth} - 0.2 * {areaheight}" font="{italic}" fontsize="44%" color="{clrText}" text="{title}" />
+            <drawtext condition="{dummy}" x="0.1 * {areaheight}" valign="center" width="98%" font="{light}" fontsize="44%" color="{clrText}" text="{title}" />
+        </area>
+    </grid>
+    <!-- vertical -->
+    <viewelement name="background_ver">
+        <area x="0%" y="0%" width="100%" height="100%" layer="1">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0%" y="95%" height="6%" width="26%" color="{clrBackgroundRed}" />
+            <drawrectangle x="25%" y="95%" height="6%" width="26%" color="{clrBackgroundGreen}" />
+            <drawrectangle x="50%" y="95%" height="6%" width="26%" color="{clrBackgroundYellow}" />
+            <drawrectangle x="75%" y="95%" height="6%" width="26%" color="{clrBackgroundBlue}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+            <drawrectangle x="0%" y="12%" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0%" y="22%" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0%" y="95%" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="10%" y="12%" height="83%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="76%" y="0%" height="12%" width="{border}" color="{clrBorder}" />
+        </area>
+    </viewelement>
+    <viewelement name="header_ver">
+        <area condition="not{isdummy}" x="0%" y="1%" width="75%" height="12%" layer="2">
+            <drawtext x="1%" y="0%" font="{semibold}" width="100%" fontsize="50%" color="{clrText}" text="{start} - {stop}  {title}" />
+            <drawtextbox x="1%" y="48%" width="100%" font="{light}" fontsize="38%" color="{clrText}" text="{shorttext}" />
+        </area>
+        <area condition="{isdummy}" x="0%" y="0%" width="80%" height="12%" layer="2">
+            <drawtext x="1%" y="31%" font="{light}" width="100%" fontsize="38%" color="{clrText}" text="{title}" />
+        </area>
+    </viewelement>
+    <viewelement name="time_ver">
+        <area x="76%" y="0%" width="23%" height="12%" layer="2">
+            <drawtext align="right" y="8%" font="{light}" fontsize="55%" color="{clrText}" text="{time}" />
+            <drawtext align="right" y="58%" font="{light}" fontsize="35%" color="{clrText}" text="{dayname}, {day}.{month}.{year}" />
+        </area>
+    </viewelement>
+    <viewelement name="datetimeline_ver">
+        <area x="0" y="12%" width="10%" height="10%" layer="3">
+            <drawtext align="center" valign="center" font="{semibold}" fontsize="43%" color="{clrText}" text="{weekday} {date}." />
+        </area>
+    </viewelement>
+    <viewelement name="footer_ver">
+        <area x="0" y="95%" width="100%" height="5%" layer="2">
+            <drawtextbox x="0%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{red}" />
+            <drawtextbox x="25%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{green}" />
+            <drawtextbox x="50%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{yellow}" />
+            <drawtextbox x="75%" y="90%" width="25%" align="center" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{blue}" />
+        </area>
+    </viewelement>
+    <viewelement name="timeindicator_ver">
+        <area x="0" y="35%" width="100%" height="55%" layer="3">
+            <drawrectangle x="0" y="{percenttotal}*{areaheight}/1000" width="100%" height="1" color="{clrTimeIndicator}" />
+        </area>
+    </viewelement>
+    <grid name="timeline_ver" x="0%" y="22%" width="10%" height="73%">
+        <area layer="2">
+            <drawrectangle x="{border}" y="{border}" width="{areawidth} - 2 * {border}" height="{areaheight} - {border}" color="{clrGrid}" />
+            <drawtext x="0%" y="3%" font="{light}" align="center" fontsize="35%" color="{clrText}" text="{timestring}" />
+        </area>
+    </grid>
+    <grid name="channels_ver" x="10%" y="12%" width="90%" height="10%">
+        <area layer="1">
+            <drawrectangle x="{border}" y="{border}" width="{areawidth} - 2 * {border}" height="{areaheight} - 2 * {border}" color="{clrGrid}" />
+        </area>
+        <area layer="2">
+            <drawimage name="chanlogo" condition="{channellogoexists}" imagetype="channellogo" path="{channelid}" x="5%" valign="center" width="90%" height="95%" />
+            <drawtextbox name="channame" condition="not{channellogoexists}" x="5%" valign="center" width="90%" font="{light}" fontsize="45%" color="{clrText}" text="{name}" />
+        </area>
+    </grid>
+    <grid name="schedules_ver" x="10%" y="22%" width="90%" height="73%">
+        <area layer="2">
+            <fill condition="{current}" color="{clrBorder}" />
+            <drawrectangle condition="not{timer}" x="{border}" y="{border}" width="{areawidth} - 2 * {border}" height="{areaheight} - 2 * {border}" color="{clrGrid}" />
+            <drawrectangle condition="{timer}" x="{border}" y="{border}" width="{areawidth} - 2 * {border}" height="{areaheight} - 2 * {border}" color="{clrGridTimer}" />
+        </area>
+        <area layer="3">
+            <drawtext condition="not{dummy}" name="schedtime" x="3%" y="3%" width="94%" font="{light}" fontsize="0.18 * {areawidth}" color="{clrText}" text="{start} - {stop}" />
+            <drawtextbox condition="not{dummy}" x="3%" y="{height(schedtime)}" width="94%" height="{areaheight} - {height(schedtime)}" font="{italic}" fontsize="0.18 * {areawidth}" color="{clrText}" text="{title}" />
+            <drawtext condition="{dummy}" x="3%" valign="center" width="94%" font="{light}" fontsize="0.18 * {areawidth}" color="{clrText}" text="{title}" />
+        </area>
+    </grid>
+    <viewelement name="channeljump">
+        <area x="40%" y="45%" width="20%" height="10%" layer="6">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0%" y="95%" height="6%" width="26%" color="{clrBackgroundRed}" />
+            <drawrectangle x="25%" y="95%" height="6%" width="26%" color="{clrBackgroundGreen}" />
+            <drawrectangle x="50%" y="95%" height="6%" width="26%" color="{clrBackgroundYellow}" />
+            <drawrectangle x="75%" y="95%" height="6%" width="26%" color="{clrBackgroundBlue}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+        </area>
+        <area x="40%" y="45%" width="20%" height="10%" layer="7">
+            <drawtext align="center" valign="center" font="{light}" fontsize="80%" color="{clrText}" text="{channel}" />
+        </area>
+    </viewelement>
+</displayplugin>

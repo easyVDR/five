@@ -1,0 +1,15 @@
+Source: skindesigner-skin-reufer
+Section: misc
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: 
+
+Package: skindesigner-skin-reufer
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 1.2.0), fonts-opensans
+Recommends: vdr-plugin-weatherforecast, vdr-plugin-tvguideng
+Description: skin reufer for skindesigner
+

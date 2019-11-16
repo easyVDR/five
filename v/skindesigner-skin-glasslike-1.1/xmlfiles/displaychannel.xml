@@ -1,0 +1,482 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displaychannel SYSTEM "../../../dtd/displaychannel.dtd">
+
+<displaychannel x="0" y="0" width="100%" height="100%" fadetime="{channelFadeTime}" shifttime="{channelFadeTime}" shifttype="bottom" shiftmode="slowed">
+
+    <background>
+	<area background="true" x="0" y="{areaheight}*0.59" width="{areawidth}" height="{areaheight}*0.41"  layer="1">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="skinpart" path="displaychannelback" />
+	</area>
+	<!-- logo hintergrund -->
+	<area background="true" x="{areawidth}*0.02" y="{areaheight}*0.76" width="{areawidth}*0.16" height="{areaheight}*0.15"  layer="3">
+            <drawimage imagetype="skinpart" path="channellogoback" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+	</area>
+	<!-- trennlinien epgtitel -->
+	<area background="true" x="0" y="{areaheight}*0.74" width="{areawidth}" height="3"  layer="2">
+            <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+	</area>
+	<area background="true" x="0" y="{areaheight}*0.93" width="{areawidth}" height="3"  layer="2">
+            <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+	</area>
+<!--
+	<area background="true" x="{areawidth}*0.03" y="{areaheight}*0.835 - 2" width="{areawidth}*0.94" height="3"  layer="2">
+            <drawimage imagetype="skinpart" path="line_horizontal" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+	</area>
+-->
+	<!-- uhr -->
+	<area condition="{channelWidgetClock}" background="true" x="{areawidth}*0.90 - {areaheight}*0.075" y="{areaheight}*0.55" width="{areaheight}*0.15" height="{areaheight}*0.15"  layer="2">
+            <drawimage imagetype="skinpart" path="menuclockback" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+	</area>
+    </background>
+ 
+    <!-- Available Variables channelinfo:
+    {channelnumber}                 Number of Channel, with "-" in case of channel switching
+    {channelname}                   Name of current Channel
+    {channellogoexists}             true if a channel logo exists 
+    {channelid}                     ChannelID as path to display channel logo
+    {switching}                     true if a number is pressed on the remote to switch to a dedicated channel
+    -->
+    <channelinfo>
+	<!-- kanal nummer/name -->
+	<area x="{areawidth}*0.25" y="{areaheight}*0.62" width="{areawidth}*0.50" height="{areaheight}*0.10" layer="2">
+	    <drawtext name="channumber" x="0" y="0" font="{regular}" fontsize="{areaheight}" color="{clrFontChannelTitle}" text="{channelnumber}" />
+	    <drawtext x="{width(channumber)}" y="{areaheight}*0.10" font="{regular}" fontsize="{areaheight}*0.80" color="{clrFontChannelTitle}" text="    {channelname}" />
+	</area>
+	<!-- kanallogo -->
+	<area x="{areawidth}*0.03" y="{areaheight}*0.77" width="{areawidth}*0.14" height="{areaheight}*0.13"  layer="4">
+            <drawimage imagetype="channellogo" path="{channelid}" x="0" y="0" width="{areawidth}" height="{areaheight}" />
+	</area>
+    </channelinfo>
+
+    <!-- Available Variables epginfo:
+    {currenttitle}                     Title of the current Schedule
+    {currentsubtitle}                  Subtitle of the current Schedule
+    {currentstart}                     Start of current Schedule in hh:mm
+    {currentstop}                      End of current Schedule in hh:mm 
+    {currentduration}                  Duration of current Schedule in min
+    {currentdurationhours}             Duration, full hours
+    {currentdurationminutes}           Duration, rest of minutes
+    {currentelapsed}                   Elapsed time of current Schedule in min
+    {currentremaining}                 Remaining time of current Schedule in min
+    {currentrecording}                 true if current Schedule is recorded
+    {hasVPS}                           true if current Schedule has VPS
+    {nexttitle}                        Title of next Schedule
+    {nextsubtitle}                     Subtitle of next Schedule
+    {nextstart}                        Start of next Schedule in hh:mm
+    {nextstop}                         Stop of next Schedule in hh:mm
+    {nextduration}                     Duration of next Schedule in min
+    {nextdurationhours}                Duration, full hours
+    {nextdurationminutes}              Duration, rest of minutes
+    {nextrecording}                    true if next Schedule will be recorded
+    -->
+    <epginfo>
+	<!-- now -->
+	<area x="{areawidth}*0.20" y="{areaheight}*0.74" width="{areawidth}*0.78" height="{areaheight}*0.09"  layer="2">
+	    <drawtext name="starttime" x="0" valign="top" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.7" color="{clrFontChannelTitle}" text="{currentstart}" />
+	    <drawtext x="{width(starttime)} + {areawidth}*0.03" valign="top" width="{areawidth}*0.96 - {width(starttime)} - {width(dura)}" font="{italic}" fontsize="{areaheight}*0.65" color="{clrFontChannelTitle}" text="{currenttitle}" />
+	    <drawtext x="{width(starttime)} + {areawidth}*0.03" valign="bottom" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.45" color="{clrFontChannelSubtitle}" text="{currentsubtitle}" />
+	    <drawtext name="dura" align="right" valign="top" font="{regular}" fontsize="{areaheight}*0.65" color="{clrFontChannelTitle}" text="{currentelapsed}/{currentduration}min" />
+	</area>
+	<!-- next -->
+	<area x="{areawidth}*0.20" y="{areaheight}*0.833" width="{areawidth}*0.78" height="{areaheight}*0.09"  layer="2">
+	    <drawtext name="starttime" x="0" valign="top" font="{regular}" fontsize="{areaheight}*0.7" color="{clrFontChannelNextTitle}" text="{nextstart}" />
+	    <drawtext x="{width(starttime)} + {areawidth}*0.03" valign="top" width="{areawidth}*0.96 - {width(starttime)} - {width(dura)}" font="{italic}" fontsize="{areaheight}*0.65" color="{clrFontChannelNextTitle}" text="{nexttitle}" />
+	    <drawtext x="{width(starttime)} + {areawidth}*0.03" valign="bottom" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.45" color="{clrFontChannelNextSubtitle}" text="{nextsubtitle}" />
+	    <drawtext name="dura" align="right" valign="top" font="{regular}" fontsize="{areaheight}*0.65" color="{clrFontChannelNextTitle}" text="{nextduration}min" />
+	</area>
+    </epginfo>
+
+    <!-- Available Variables progressbar:
+    {start}                            Start of current Schedule in hh:mm
+    {stop}                             End of current Schedule in hh:mm 
+    {duration}                         Total Duration of current Schedule in seconds
+    {elapsed}                          Elapsed time of current Schedule in seconds
+    {remaining}                        Remaining time of current Schedule in seconds
+    -->
+    <progressbarback>
+        <area background="true" x="{areawidth}*0.20" y="{areaheight}*0.831" width="{areawidth}*0.78" height="{areaheight}*0.008" layer="1">
+            <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" color="{clrChannelProgressbarBg}" quadrant="0" />
+            <drawellipse x="{areawidth}-{areaheight}" y="0" width="{areaheight}" height="{areaheight}" color="{clrChannelProgressbarBg}" quadrant="0" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrChannelProgressbarBg}" />
+	</area>
+<!--
+        <area background="true" x="{areawidth}*0.02" y="{areaheight}*0.925" width="{areawidth}*0.96" height="{areaheight}*0.008" layer="1">
+            <drawellipse x="0" y="0" width="{areaheight}" height="{areaheight}" color="{clrChannelProgressbarBg}" quadrant="0" />
+            <drawellipse x="{areawidth}-{areaheight}" y="0" width="{areaheight}" height="{areaheight}" color="{clrChannelProgressbarBg}" quadrant="0" />
+            <drawrectangle x="{areaheight}/2" y="0" width="{areawidth} - {areaheight}" height="{areaheight}" color="{clrChannelProgressbarBg}" />
+	</area>
+-->
+    </progressbarback>
+    <progressbar>
+        <area x="{areawidth}*0.20" y="{areaheight}*0.831" width="{areawidth}*0.78" height="{areaheight}*0.008" layer="2">
+            <drawellipse x="1" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
+            <drawellipse x="1 + {elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight}" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
+            <drawrectangle x="{areaheight}/2" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight}" height="{areaheight}-2" color="{clrProgressbar}" />
+	</area>
+        <area x="{areawidth}*0.20" y="{areaheight}*0.831" width="{areawidth}*0.78" height="{areaheight}*0.008" layer="3">
+	    <drawimage imagetype="skinpart" path="horizontalbartop" x="1" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight} + {areaheight}-2" height="{areaheight}-2"/>
+	</area>
+<!--
+        <area x="{areawidth}*0.02" y="{areaheight}*0.925" width="{areawidth}*0.96" height="{areaheight}*0.008" layer="2">
+            <drawellipse x="1" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
+            <drawellipse x="1 + {elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight}" y="1" width="{areaheight}-2" height="{areaheight}-2" color="{clrProgressbar}" quadrant="0" />
+            <drawrectangle x="{areaheight}/2" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight}" height="{areaheight}-2" color="{clrProgressbar}" />
+	</area>
+        <area x="{areawidth}*0.02" y="{areaheight}*0.925" width="{areawidth}*0.96" height="{areaheight}*0.008" layer="3">
+	    <drawimage imagetype="skinpart" path="horizontalbartop" x="1" y="1" width="{elapsed}/{duration}*{areawidth} - {elapsed}/{duration}*{areaheight} + {areaheight}-2" height="{areaheight}-2"/>
+	</area>
+-->
+    </progressbar>
+
+    <!-- Available Variables statusinfo:
+    {isRadio}                          true if channel is a radio channel
+    {hasVT}                            true if channel has video text   
+    {isStereo}                         true if a stereo audio trac is available
+    {isDolby}                          true if a dolby audio track is available
+    {isEncrypted}                      true if channel is encrypted
+    {isRecording}                      true if currently a recording is running on this channel
+    {newmails}                         true if mailbox plugin is installed and new mails are available
+    -->
+    <statusinfo>
+	<area condition="not{isRecording}" x="{areawidth}*0.155" y="{areaheight}*0.940" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+<!--
+            <drawellipse x="0" y="0" width="{areawidth}" height="{areaheight}" color="{clrStatusIconInactive}" quadrant="0" />
+            <drawellipse x="0" y="0" width="{areawidth} - 2" height="{areaheight} - 2" color="{clrTransparent}" quadrant="0" />
+-->
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="REC" />
+	</area>
+	<area condition="{isRecording}" x="{areawidth}*0.155" y="{areaheight}*0.940" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_red" />
+	    <drawtext condition="{channelRecBlink}" name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" animtype="blink" animfreq="500" font="{italic}" fontsize="{areaheight}*0.75" color="{clrRed}" text="REC" />
+	    <drawtext condition="not{channelRecBlink}" name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrRed}" text="REC" />
+	</area>
+
+	<area condition="not{isRadio}" x="{areawidth}*0.205" y="{areaheight}*0.944" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="Radio" />
+	</area>
+	<area condition="{isRadio}" x="{areawidth}*0.205" y="{areaheight}*0.944" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="Radio" />
+	</area>
+
+	<area condition="not{hasVT}" x="{areawidth}*0.255" y="{areaheight}*0.948" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="TXT" />
+	</area>
+	<area condition="{hasVT}" x="{areawidth}*0.255" y="{areaheight}*0.948" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="TXT" />
+	</area>
+
+	<area condition="not{isStereo}" x="{areawidth}*0.305" y="{areaheight}*0.951" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="Stereo" />
+	</area>
+	<area condition="{isStereo}" x="{areawidth}*0.305" y="{areaheight}*0.951" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="Stereo" />
+	</area>
+
+	<area condition="not{isDolby}" x="{areawidth}*0.355" y="{areaheight}*0.953" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="Dolby" />
+	</area>
+	<area condition="{isDolby}" x="{areawidth}*0.355" y="{areaheight}*0.953" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="Dolby" />
+	</area>
+
+	<area condition="not{isEncrypted}" x="{areawidth}*0.405" y="{areaheight}*0.955" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="CAM" />
+	</area>
+	<area condition="{isEncrypted}" x="{areawidth}*0.405" y="{areaheight}*0.955" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="CAM" />
+	</area>
+    </statusinfo>
+
+    <!-- Available Variables audioinfo:
+    {numaudiotracks}                   number of available audio tracks for current channel
+    {audiochannel}                     0 if current channel is stereo, 1 for left chanel only, 2 for right channel only
+    {trackdesc}                        description of the current audio track
+    {tracklang}                        language of the current audio track
+    -->
+    <audioinfo>
+    </audioinfo>
+
+
+    <!-- Available Variables screenresolution:
+    {screenwidth}                      width of currently displayed channel in px
+    {screenheight}                     height of currently displayed channel in px
+    {resolution}                       resolution: hd1080i, hd720p, sd576i
+    {aspect}                           screen aspect, each 4:3, 16:9 or 21:9
+    {isHD}                             true for hd1080i and hd720p
+    {isWideScreen}                     true if aspect is 16:9 or 21:9
+    -->
+    <screenresolution>
+	<area condition="strnotequal({resolution}, 'hd1080i')" x="{areawidth}*0.455" y="{areaheight}*0.956" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="1080" />
+	</area>
+	<area condition="strequal({resolution}, 'hd1080i')" x="{areawidth}*0.455" y="{areaheight}*0.956" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="1080" />
+	</area>
+
+	<area condition="strnotequal({resolution}, 'hd720p')" x="{areawidth}*0.505" y="{areaheight}*0.956" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="720" />
+	</area>
+	<area condition="strequal({resolution}, 'hd720p')" x="{areawidth}*0.505" y="{areaheight}*0.956" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="720" />
+	</area>
+
+	<area condition="not{isHD}" x="{areawidth}*0.555" y="{areaheight}*0.955" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="HDTV" />
+	</area>
+	<area condition="{isHD}" x="{areawidth}*0.555" y="{areaheight}*0.955" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="HDTV" />
+	</area>
+
+	<area condition="{isHD}" x="{areawidth}*0.605" y="{areaheight}*0.953" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="SDTV" />
+	</area>
+	<area condition="not{isHD}" x="{areawidth}*0.605" y="{areaheight}*0.953" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="SDTV" />
+	</area>
+
+	<area condition="strnotequal({aspect}, '21:9')" x="{areawidth}*0.655" y="{areaheight}*0.952" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="21:9" />
+	</area>
+	<area condition="strequal({aspect}, '21:9')" x="{areawidth}*0.655" y="{areaheight}*0.952" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="21:9" />
+	</area>
+
+	<area condition="strnotequal({aspect}, '16:9')" x="{areawidth}*0.705" y="{areaheight}*0.948" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="16:9" />
+	</area>
+	<area condition="strequal({aspect}, '16:9')" x="{areawidth}*0.705" y="{areaheight}*0.948" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="16:9" />
+	</area>
+
+	<area condition="strnotequal({aspect}, '4:3')" x="{areawidth}*0.755" y="{areaheight}*0.944" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="4:3" />
+	</area>
+	<area condition="strequal({aspect}, '4:3')" x="{areawidth}*0.755" y="{areaheight}*0.944" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="4:3" />
+	</area>
+
+	<area condition="not{isWideScreen}" x="{areawidth}*0.805" y="{areaheight}*0.940" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_inactive" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconInactive}" text="WIDE" />
+	</area>
+	<area condition="{isWideScreen}" x="{areawidth}*0.805" y="{areaheight}*0.940" width="{areawidth}*0.04" height="{areaheight}*0.03"  layer="2">
+	    <drawimage x="0" y="0" width="{areawidth}" height="{areaheight}" imagetype="icon" path="ico_status_active" />
+	    <drawtext name="text" x="{areawidth}/2 - {width(text)}/2 - 1" valign="center" width="{areawidth} - 2" font="{italic}" fontsize="{areaheight}*0.75" color="{clrStatusIconActive}" text="WIDE" />
+	</area>
+    </screenresolution>
+
+    <!-- Available Variables dvbdeviceinfo:
+    {prevAvailable}                     true if previous Channel Group is avaialble
+    {nextAvailable}                     true if next Channel Group is avaialble
+    {group}                             Name of current Channel Group
+    {nextgroup}                         Name of next Channel Group
+    {prevgroup}                         Name of prev Channel Group
+    {sepexists}                         true if a channel separator logo exists
+    {seppath}                           path for separator logo to use in imagetype "seplogo"
+    -->
+    <channelgroup>
+	<area x="{areawidth}*0.040" y="{areaheight}*0.78" width="{areawidth}*0.12" height="{areaheight}*0.11"  layer="4">
+            <drawimage condition="{sepexists}" imagetype="seplogo" path="{seppath}" width="{areawidth}" height="{areaheight}" align="center" valign="center" />
+            <drawimage condition="not{sepexists}" imagetype="icon" path="ico_channelsep" align="center" valign="center" width="{areaheight}" height="{areaheight}"/>
+        </area>
+	<area x="{areawidth}*0.25" y="{areaheight}*0.80" width="{areawidth}*0.50" height="{areaheight}*0.07"  layer="3">
+            <drawtext x="{areaheight}*1.25" width="{areawidth} - {areaheight}*2.5" align="center" valign="center" font="{regular}" fontsize="{areaheight}" color="{clrFontChannelTitle}" text="{group}" />
+            <drawimage imagetype="icon" path="ico_arrow_left" align="left" valign="center" width="{areaheight}" height="{areaheight}"/>
+            <drawimage imagetype="icon" path="ico_arrow_right" align="right" valign="center" width="{areaheight}" height="{areaheight}"/>
+        </area>             
+    </channelgroup>
+
+    <!-- Available Variables signalquality:
+    {signalstrength}                    STR value of currently displayed channel
+    {signalquality}                     SNR value of currently displayed channel
+    -->
+    <signalquality>
+    </signalquality>
+
+    <!-- background of signalmeter, will only be drawn if signalquality was deleted -->
+    <signalqualityback>
+    </signalqualityback>
+
+    <!-- Available Variables devices:
+    signalstrength and -quality are only set if not mode="light" is used in <devices>
+    {numdevices}                number of available devices
+    {devices[]}                 array with available devices
+    {devices[num]}              number of current device
+    {devices[type]}             type of device (DVB-S, DVB-C, ...)
+    {devices[istuned]}          true if device is currently tuned to a transponder
+    {devices[livetv]}           true if device is currently playing livetv
+    {devices[recording]}        true if device is currently recording
+    {devices[hascam]}           true if device has a CAM
+    {devices[cam]}              number of CAM
+    {devices[signalstrength]}   signalstrength of devcie
+    {devices[signalquality]}    signalstrength of devcie
+    {devices[channelnumber]}    number of the currently tuned channel
+    {devices[channelname]}      name of the currently tuned channel
+    {devices[channellogoexists]} true if a channel logo exists 
+    {devices[channelid]}        ID of the currently tuned channel
+    {devices[source]}           source of the currently tuned channel
+    -->
+<!--
+    <devices mode="full|light">
+    </devices>
+-->
+
+    <!-- Available Variables currentweather:
+    {timestamp}                 timestamp of forecast in dd.mm hh:mm
+    {temperature}               current temperature in °C
+    {apparenttemperature}       apparent (feeled) temperature
+    {mintemperature}            minimum daily temperature in °C
+    {maxtemperature}            maximum daily temperature in °C
+    {summary}                   short weather summary
+    {icon}                      weather icon 
+    {precipitationintensity}    precipitation intensity in l/m2
+    {precipitationprobability}  precipitation probability in %
+    {precipitationtype}         precipitation type
+    {humidity}                  humidity in %
+    {windspeed}                 windspeed in km/h
+    {windbearing}               wind bearing in °
+    {windbearingstring}         wind bearing (N, NE, ...)
+    {visibility}                visibility in km
+    {cloudcover}                cloud cover in %
+    {pressure}                  pressure in HPo
+    {ozone}                     ozone value in DU
+    -->
+    <currentweather>
+        <area condition="{channelWidgetWeather}" x="{areawidth}*0.10 - {areaheight}*0.075" y="{areaheight}*0.55" width="{areaheight}*0.15" height="{areaheight}*0.15" layer="3">
+            <drawimage name="weathericon" imagetype="skinpart" path="weather/{icon}" x="0" y="0" width="{areawidth}" height="{areaheight}"/>
+	</area>
+        <area condition="{channelWidgetWeather}" x="{areawidth}*0.10 - {areaheight}*0.075 - 1" y="{areaheight}*0.59 - 1" width="{areaheight}*0.15" height="{areaheight}*0.07" layer="4">
+	    <drawtext x="{areawidth}/2 - {width(temp)}/2 - 3" y="{areaheight}/2 - {height(temp)}" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.95" color="{clrBlack}" text="{temperature}°C" />
+	    <drawtext x="{areawidth}/2 - {width(temp)}/2 + 5" y="{areaheight}/2 - {height(temp)} + 2" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.95" color="{clrBlack}" text="{temperature}°C" />
+	    <drawtext name="temp" x="{areawidth}/2 - {width(temp)}/2" y="{areaheight}/2 - {height(temp)} + 2" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.95" color="{clrWhite}" text="{temperature}°C" />
+	</area>
+
+        <area condition="{channelWidgetWeather}" x="{areawidth}*0.02" y="{areaheight}*0.65" width="{areawidth}*0.05" height="{areaheight}*0.05" layer="2">
+            <drawimage name="mintempicon" imagetype="skinpart" path="weather/mintemp" align="left" y="{areaheight}*0.35" width="{areaheight}*0.30" height="{areaheight}*0.60"/>
+	    <drawtext x="{width(mintempicon)} + 2" valign="bottom" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.65" color="{clrFontWidgetBright}" text="{mintemperature}°C" />
+	</area>
+        <area condition="{channelWidgetWeather}" x="{areawidth}*0.13" y="{areaheight}*0.65" width="{areawidth}*0.05" height="{areaheight}*0.05" layer="2">
+            <drawimage name="maxtempicon" imagetype="skinpart" path="weather/maxtemp" align="right" y="{areaheight}*0.35" width="{areaheight}*0.30" height="{areaheight}*0.60"/>
+	    <drawtext name="maxtemptext" x="{posx(maxtempicon)} - {width(mactemptext)} - 2" valign="bottom" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.65" color="{clrFontWidgetBright}" text="{maxtemperature}°C" />
+	</area>
+        <area condition="{channelWidgetWeather}" x="{areawidth}*0.02" y="{areaheight}*0.70" width="{areawidth}*0.16" height="{areaheight}*0.05" layer="2">
+	    <drawtext align="center" valign="top" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.70" color="{clrFontWidgetBright}" text="{summary}" />
+	</area>
+    </currentweather>
+
+    <!-- Available Variables scrapercontent:
+    {posterpath}                        Full Path of Poster to use in image path attribute
+    {posterwidth}                       width of poster in pixel
+    {posterheight}                      height of poster in pixel
+    {hasPoster}                         true if poster is available
+    {bannerpath}                        Full Path of banner to use in image path attribute
+    {bannerwidth}                       width of banner in pixel
+    {bannerheight}                      height of banner in pixel
+    {hasBanner}                         true if banner is available
+
+    Use this tokens if you want to display a banner for series and a poster for movies:
+    {mediapath}                         Full Path of Poster or Banner to use in image path attribute
+    {mediawidth}                        width of image in pixel
+    {mediaheight}                       height of image in pixel
+    {isbanner}                          true if image is a banner, false if it is a poster
+    -->
+    <scrapercontent detached="true" delay="50" fadetime="0">
+        <area condition="{channelWidgetBanner}++{hasbanner}" x="{areawidth}*0.01" y="1%" width="{areaheight}*0.14*{mediawidth}/{mediaheight}" height="14%" layer="2">
+            <drawimage name="bannerback" imagetype="skinpart" path="banner_back" align="center" valign="center"  width="{areawidth}" height="{areaheight}"/>
+        </area>
+        <area condition="{channelWidgetBanner}++{hasbanner}" x="{areawidth}*0.02" y="{areaheight}*0.01 + {areaheight}*0.01" width="{areaheight}*0.14*{mediawidth}/{mediaheight} - {areawidth}*0.02" height="{areaheight}*0.14 - {areaheight}*0.02" layer="3">
+            <drawimage imagetype="image" path="{mediapath}" align="center" valign="center"  width="{areawidth}" height="{areaheight}"/>
+        </area>
+        <area condition="{channelWidgetPoster}++{hasposter}" x="{areawidth} -{areaheight}*0.5*{posterwidth}/{posterheight}" y="1%" width="{areaheight}*0.5*{posterwidth}/{posterheight}" height="50%" layer="2">
+            <drawimage name="poster" imagetype="image" path="{posterpath}" x="0" y="0" align="center" valign="center" width="{areaheight} * 0.83  * {posterwidth} / {posterheight}" height="{areaheight} * 0.83"/>
+        </area>
+        <area condition="{channelWidgetPoster}++{hasposter}" x="{areawidth}-{areaheight}*0.5*{posterwidth}/{posterheight}" y="1%" width="{areaheight}*0.5*{posterwidth}/{posterheight}" height="50%" layer="3">
+            <drawimage imagetype="skinpart" path="poster_top" x="0" y="0" valign="top" align="center" width="{areaheight} * 0.88  * {posterwidth} / {posterheight}" height="{areaheight} * 0.95" />
+        </area>
+    </scrapercontent>
+
+    <!-- Available Variables datetime:
+    {time}                              time in hh:mm
+    {day}                               day in digits
+    {dayleadingzero}                    day in digits with leading 0
+    {dayname}                           Full name of the day
+    {daynameshort}                      Short 3 char name of the day
+    {month}                             month in digits with leading 0
+    {monthname}                         Full name of the month
+    {monthnameshort}                    3 letter abbrivation of month name
+    {year}                              year in yyyy
+    -->
+    <datetime>
+        <area condition="{channelWidgetClock}" x="{areawidth}*0.82" y="{areaheight}*0.65" width="{areawidth}*0.05" height="{areaheight}*0.05" layer="2">
+	    <drawtext align="left" valign="bottom" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.80" color="{clrFontWidgetBright}" text="{dayleadingzero}.{month}." />
+	</area>
+        <area condition="{channelWidgetClock}" x="{areawidth}*0.93" y="{areaheight}*0.65" width="{areawidth}*0.05" height="{areaheight}*0.05" layer="2">
+	    <drawtext align="right" valign="bottom" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.80" color="{clrFontWidgetBright}" text="{time}" />
+	</area>
+        <area condition="{channelWidgetClock}" x="{areawidth}*0.82" y="{areaheight}*0.70" width="{areawidth}*0.16" height="{areaheight}*0.05" layer="2">
+	    <drawtext align="center" valign="top" width="{areawidth}" font="{regular}" fontsize="{areaheight}*0.70" color="{clrFontWidgetBright}" text="{dayname}" />
+	</area>
+    </datetime>
+
+    <!-- Available Variables time:
+    {sec}                    current seconds
+    {min}                    current minutes
+    {hour}                   current hours
+    {hmins}                  current "hourminutes" to display an hour hand
+    -->
+    <time>
+        <area condition="{channelWidgetClock}" x="{areawidth}*0.90 - {areaheight}*0.075" y="{areaheight}*0.55" width="{areaheight}*0.15" height="{areaheight}*0.15" layer="3">
+            <drawimage imagetype="skinpart" path="watchhands/s_{sec}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area condition="{channelWidgetClock}" x="{areawidth}*0.90 - {areaheight}*0.075" y="{areaheight}*0.55" width="{areaheight}*0.15" height="{areaheight}*0.15" layer="4">
+            <drawimage imagetype="skinpart" path="watchhands/m_{min}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+        <area condition="{channelWidgetClock}" x="{areawidth}*0.90 - {areaheight}*0.075" y="{areaheight}*0.55" width="{areaheight}*0.15" height="{areaheight}*0.15" layer="5">
+            <drawimage imagetype="skinpart" path="watchhands/h_{hmins}" x="0" y="0" width="100%" height="100%"/>
+        </area>
+    </time>
+
+    <!-- Available Variables message:
+    {text}                     message text
+    {status}                   true if message is a status message
+    {info}                     true if message is a info message
+    {warning}                  true if message is a warn message
+    {error}                    true if message is a error message
+    -->
+    <message>
+    </message>
+
+    <!-- Available Variables customtokens:
+    all custom tokens set by the svdrp command SCTK are available in this viewelement
+    For instance, use an appropriate script which runs periodically as cronjob and
+    sets these custom tokens with svdrpsend or dbus2vdr
+    --> 
+    <customtokens>
+    </customtokens>
+    
+</displaychannel>

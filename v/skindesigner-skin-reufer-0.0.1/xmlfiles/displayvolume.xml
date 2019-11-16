@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayvolume SYSTEM "../../../dtd/displayvolume.dtd">
+<displayvolume x="33%" y="80%" width="33%" height="10%" fadetime="{fadetimevolume}" shifttime="{shifttimevolume}" shifttype="bottom" shiftmode="linear">
+    <background>
+        <area x="0" y="0" width="100%" height="100%" layer="1">
+            <fill color="{clrBackground}" />
+            <drawrectangle x="0" y="0" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+            <drawrectangle x="0" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawrectangle x="{areawidth} - {border}" y="0" height="100%" width="{border}" color="{clrBorder}" />
+            <drawellipse x="{border}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="{border}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-1" />
+            <drawellipse x="{border}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius} - {border}" height="{radius} - {border}" color="{clrBorder}" quadrant="-4" />
+            <drawellipse x="0" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-2" />
+            <drawellipse x="{areawidth} - {radius}" y="0" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-1" />
+            <drawellipse x="0" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-3" />
+            <drawellipse x="{areawidth} - {radius}" y="{areaheight} - {radius}" width="{radius}" height="{radius}" color="{clrTransparent}" quadrant="-4" />
+        </area>
+    </background>
+    <volume>
+        <area x="0" y="0" width="100%" height="50%" layer="2">
+            <drawtext align="center" valign="center" font="{semibold}" fontsize="90%" color="{clrText}" text="{tr(volume)}" />
+            <drawrectangle x="0" y="{areaheight} - {border}" height="{border}" width="100%" color="{clrBorder}" />
+        </area>
+        <area x="0" y="50%" width="96%" height="50%" layer="2">
+            <drawtext name="volperc" x="{areawidth}*0.98 - {width(volperc)}" align="right" valign="center" font="{light}" fontsize="90%" color="{clrText}" text="{volpercent}%" />
+        </area>
+        <area x="2%" y="68%" width="75%" height="14%" layer="3">
+            <fill color="{clrTransparent}" />
+            <drawellipse x="0" y="0" width="{areaheight} * 0.5" height="{areaheight}" color="{clrProgressbarBackground}" quadrant="7" />
+            <drawrectangle x="{areaheight} * 0.5" y="0" height="100%" width="{areawidth} - {areaheight}" color="{clrProgressbarBackground}" />
+            <drawellipse x="{areawidth} - 0.5 * {areaheight}" y="0" width="{areaheight} * 0.5" height="{areaheight}" color="{clrProgressbarBackground}" quadrant="5" />
+            <drawellipse x="{areaheight} * 0.25" y="{areaheight} * 0.25" width="0.5 * {areaheight}" height="0.5 * {areaheight}" color="{clrProgressbarMarks}" quadrant="0" />
+            <drawrectangle x="{areaheight} * 0.5" y="{areaheight} * 0.25" width="{volume} * {areawidth} / {maxvolume} - {volume} * {areaheight} / {maxvolume}" height="{areaheight} * 0.5" color="{clrProgressbarMarks}" />
+            <drawellipse x="{areaheight} * 0.25 + {volume} * {areawidth} / {maxvolume} - {volume} * {areaheight} / {maxvolume}" y="{areaheight} * 0.25" width="0.5 * {areaheight}" height="0.5 * {areaheight}" color="{clrProgressbarMarks}" quadrant="0" />
+        </area>
+    </volume>
+</displayvolume>

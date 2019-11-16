@@ -1,0 +1,530 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE setup SYSTEM "../../dtd/setup.dtd">
+
+<setup>
+    <!--
+    define all your parameters here which should be configurable via
+    OSD and the skindesigner setup menu.
+    Parameters must have type "bool" or "integer". For "bool" Parameters
+    a choice yes/no is shown in the setup menu, a "integer" parameter
+    can be configured to a value between "min" and "max". If "min" is not
+    set, "0" is the minimum, if "max" is not set, "1000" is maximum.
+    "displayname" is used to display the option in the setup menu.
+    The configured parameter value is the default value.
+    -->
+    <menu>
+<!--
+        <parameter type="bool" name="showdevices" displaytext="{tr(showdevices)}">0</parameter>
+-->
+		<submenu name="Main-Menu" displaytext="{tr(mainMenu)}">
+			<parameter type="string" name="panelMain" displaytext="{tr(panelMain)}" options="none,showInfosAndOnlyTimers,showInfosAndTimers,showInfosAndTimersAndLastrecs">3</parameter>
+			<parameter type="string" name="widgets" displaytext="{tr(widgets)}" options="tempsLoadWeather,devicesWeather">0</parameter>
+			<parameter type="string" name="mainMenuOrientation" displaytext="{tr(mainMenuOrientation)}" options="right, left">0</parameter>
+			<parameter type="int" name="fadetimeTempsLoadWeatherDisc" min="0" max="500" displaytext="{tr(fadetimeTempsLoadWeatherDisc)}">0</parameter>
+			<parameter type="int" name="fadetimeTimersAndLastrecs" min="0" max="500" displaytext="{tr(fadetimeTimersAndLastrecs)}">0</parameter>
+		</submenu>
+		<submenu name="Channel-Info" displaytext="{tr(channelInfo)}">
+			<parameter type="string" name="scrapContent" displaytext="{tr(scrapContent)}" options="none,pInl,bTL,bAp">1</parameter>
+			<parameter type="string" name="channelName" displaytext="{tr(channelName)}" options="scroll, wide">0</parameter>
+			<parameter type="bool" name="dateTime" displaytext="{tr(dateTime)}">1</parameter>
+			<parameter type="bool" name="weatherInfo" displaytext="{tr(weatherInfo)}">0</parameter>
+			<parameter type="bool" name="ecmInfo" displaytext="{tr(ecmInfo)}">0</parameter>
+		</submenu>
+		<submenu name="Recordings" displaytext="{tr(recordingsmarker)}">
+			<parameter type="bool" name="replayPGBG" displaytext="{tr(replayPGBG)}">0</parameter>
+			<parameter type="string" name="recmenuorientation" displaytext="{tr(recmenuorientation)}" options="horizontal,vertical">1</parameter>
+			<parameter type="int" name="00_numRecordingsmenuitems" min="12" max="18" displaytext="{tr(00_numRecordingsmenuitems)}">15</parameter>
+			<parameter type="int" name="03_new-recordingsMarker" min="0" max="9" displaytext="{tr(03_new-recordingsMarker)}">2</parameter>
+			<parameter type="int" name="05_notNewNotWatched-recordingsMarker" min="0" max="9" displaytext="{tr(05_notNewNotWatched-recordingsMarker)}">9</parameter>
+			<parameter type="int" name="07_notNewWatched-recordingsMarker" min="0" max="9" displaytext="{tr(07_notNewWatched-recordingsMarker)}">6</parameter>
+		</submenu>
+		<submenu name="Lists-Setup" displaytext="{tr(menuItems)}">
+			<parameter type="int" name="numShortMenuitems" min="8" max="10" displaytext="{tr(numShortMenuitems)}">10</parameter>
+			<parameter type="int" name="numLongSubmenuitems" min="12" max="18" displaytext="{tr(numLongSubmenuitems)}">15</parameter>
+			<parameter type="int" name="numShortSubmenuitems" min="12" max="18" displaytext="{tr(numShortSubmenuitems)}">15</parameter>
+			<parameter type="string" name="channelList" displaytext="{tr(channelList)}" options="onlyChannel,channelAndEvent">0</parameter>
+			<parameter type="string" name="column2Alignment" displaytext="{tr(column2Alignment)}" options="right-justified,left-justified">0</parameter>
+			<parameter type="string" name="currentInfo" displaytext="{tr(currentInfo)}" options="noCurrentInfo,tallCurrentInfo,wideCurrentInfo">1</parameter>
+			<parameter type="int" name="fontSizeInfoTitle" min="34" max="54" displaytext="{tr(fontSizeInfoTitle)}">34</parameter>
+			<parameter type="int" name="fontSizeInfoDetails" min="30" max="36" displaytext="{tr(fontSizeInfoDetails)}">30</parameter>
+			<parameter type="int" name="fontSizeInfoDescription" min="30" max="54" displaytext="{tr(fontSizeInfoDescription)}">30</parameter>
+		</submenu>
+		<submenu name="Shift-and-fade-times" displaytext="{tr(shiftFadeTimes)}">
+			<parameter type="int" name="volumeShiftTime" min="0" max="500" displaytext="{tr(volumeShiftTime)}">300</parameter>
+			<parameter type="int" name="messageShiftTime" min="0" max="500" displaytext="{tr(messageShiftTime)}">300</parameter>
+			<parameter type="int" name="channelFadeTime" min="0" max="500" displaytext="{tr(channelFadeTime)}">0</parameter>
+			<parameter type="int" name="currentelementsFadeTime" min="0" max="500" displaytext="{tr(currentelementsFadeTime)}">0</parameter>
+		</submenu>
+		<submenu name="Plugins" displaytext="Plugins">
+			<parameter type="separator" name="epg2vdr" displaytext="Plugin epg2vdr"/>
+			<parameter type="bool" name="epg2vdrShowHostname" displaytext="{tr(epg2vdrShowHostname)}">1</parameter>
+			<parameter type="int" name="hostnameChars" min="5" max="12" displaytext="{tr(hostnameChars)}">8</parameter>
+			<parameter type="separator" name="plex" displaytext="Plugin plex"/>
+			<parameter type="string" name="plexDetail" displaytext="{tr(plexDetail)}" options="kissStyle,fanartStyle">0</parameter>
+			<parameter type="separator" name="systeminfo" displaytext="Plugin systeminfo"/>
+			<parameter type="bool" name="sysinfoPBtheme" displaytext="{tr(sysinfoPBtheme)}">1</parameter>
+			<parameter type="separator" name="tvguideng" displaytext="Plugin TVguideNG"/>
+			<parameter type="bool" name="tvgngDescriptionScroll" displaytext="{tr(tvgngDescriptionScroll)}">0</parameter>
+			<parameter type="separator" name="zaphistory" displaytext="Plugin zaphistory"/>
+			<parameter type="bool" name="zaphistoryStatusCol" displaytext="{tr(zaphistoryStatusCol)}">1</parameter>
+		</submenu>
+		<submenu name="Miscellaneous" displaytext="{tr(miscellaneous)}">
+			<parameter type="bool" name="brightBackground" displaytext="{tr(brightBackground)}">0</parameter>
+			<parameter type="string" name="coloredButtons" displaytext="{tr(coloredButtons)}" options="no,border,gradient">2</parameter>
+			<parameter type="bool" name="setupIconbar" displaytext="{tr(setupIconbar)}">0</parameter>
+			<parameter type="int" name="fontSizeDescr" min="34" max="50" displaytext="{tr(fontSizeDescr)}">34</parameter>
+			<parameter type="string" name="showPosterAndEPGpic" displaytext="{tr(showPosterAndEPGpic)}" options="primarilyPoster,postersAndEPGpic">0</parameter>
+			<parameter type="bool" name="showReplayPoster" min="30" max="50" displaytext="{tr(showReplayPoster)}">0</parameter>
+			<parameter type="int" name="transBackground" min="0" max="25" displaytext="{tr(transBackground)}">10</parameter>
+			<parameter type="int" name="transLists" min="0" max="20" displaytext="{tr(transLists)}">5</parameter>
+			<parameter type="bool" name="longElapsedBar" displaytext="{tr(longElapsedBar)}">0</parameter>
+			<parameter type="bool" name="showTimeshiftTotal" displaytext="{tr(showTimeshiftTotal)}">1</parameter>
+			<parameter type="bool" name="showDiscUsage" displaytext="{tr(showDiscUsage)}">1</parameter>
+			<parameter type="bool" name="showNumbering" displaytext="{tr(showNumbering)}">1</parameter>
+		</submenu>
+	</menu>
+    <!--
+    translations of displaytexts
+    -->
+	<translations>
+		<token name="tr(mainMenu)">
+			<trans lang="en_EN">Main menu</trans>
+			<trans lang="de_DE">Hauptmen&#252;</trans>
+			<trans lang="it_IT">Menù principale</trans>
+		</token>
+		<token name="tr(mainMenuOrientation)">
+			<trans lang="en_EN">Position list main- and setupmenu</trans>
+			<trans lang="de_DE">Position Liste Haupt- und Setupmen&#252;</trans>
+			<trans lang="it_IT">Posizione lista principale e setup del menù</trans>
+		</token>
+		<token name="tr(left)">
+			<trans lang="en_EN">left</trans>
+			<trans lang="de_DE">links</trans>
+			<trans lang="it_IT">sinistra</trans>
+		</token>
+		<token name="tr(right)">
+			<trans lang="en_EN">right</trans>
+			<trans lang="de_DE">rechts</trans>
+			<trans lang="it_IT">destra</trans>
+		</token>
+		<token name="tr(menuItems)">
+			<trans lang="en_EN">VDR-Lists-Setup</trans>
+			<trans lang="de_DE">VDR-Listen-Setup</trans>
+			<trans lang="it_IT">Setup liste VDR</trans>
+		</token>
+		<token name="tr(miscellaneous)">
+			<trans lang="en_EN">Miscellaneous</trans>
+			<trans lang="de_DE">Sonstiges</trans>
+			<trans lang="it_IT">Miscellanea</trans>
+		</token>
+		<token name="tr(numShortMenuitems)">
+			<trans lang="en_EN">Number of items in main and setup menu</trans>
+			<trans lang="de_DE">Anzahl der Elemente im Haupt- und Setupmen&#252;</trans>
+			<trans lang="it_IT">Numero di voci del menù e del setup  (default=10)</trans>
+		</token>
+		<token name="tr(numLongSubmenuitems)">
+			<trans lang="en_EN">Number of items in submenus (long)</trans>
+			<trans lang="de_DE">Anzahl der Elemente in Submen&#252;s (lang)</trans>
+			<trans lang="it_IT">Numero di voci del submenù (lungo, default=14)</trans>
+		</token>
+		<token name="tr(numShortSubmenuitems)">
+			<trans lang="en_EN">Number of items in submenus (short)</trans>
+			<trans lang="de_DE">Anzahl der Elemente in Submen&#252;s (kurz)</trans>
+			<trans lang="it_IT">Numero di voci del submenù (corto, default=14)</trans>
+		</token>
+		<token name="tr(channelList)">
+			<trans lang="en_EN">List menu channels</trans>
+			<trans lang="de_DE">Liste Men&#252; Kan&#228;le</trans>
+			<trans lang="it_IT">Liste menù canali</trans>
+		</token>
+		<token name="tr(onlyChannel)">
+			<trans lang="en_EN">Only channels</trans>
+			<trans lang="de_DE">Nur Kan&#228;le</trans>
+			<trans lang="it_IT">Solo canali</trans>
+		</token>
+		<token name="tr(channelAndEvent)">
+			<trans lang="en_EN">Channel and running event</trans>
+			<trans lang="de_DE">Kanal und aktuelle Sendung</trans>
+			<trans lang="it_IT">Canale ed evento attuale</trans>
+		</token>
+		<token name="tr(column2Alignment)">
+			<trans lang="en_EN">Alignment second column (settings, edit)</trans>
+			<trans lang="de_DE">Ausrichtung zweite Spalte (Einstellungen, Editieren)</trans>
+			<trans lang="it_IT">Allineamento seconda colonna (settings, edit)</trans>
+		</token>
+		<token name="tr(right-justified)">
+			<trans lang="en_EN">right-justified</trans>
+			<trans lang="de_DE">rechts-b&#252;ndig</trans>
+			<trans lang="it_IT">giustificazione destra</trans>
+		</token>
+		<token name="tr(left-justified)">
+			<trans lang="en_EN">left-justified</trans>
+			<trans lang="de_DE">links-b&#252;ndig</trans>
+			<trans lang="it_IT">giustificazione sinistra</trans>
+		</token>
+		<token name="tr(00_numRecordingsmenuitems)">
+			<trans lang="en_EN">Number of items in recordingsmenu (default=15)</trans>
+			<trans lang="de_DE">Anzahl der Elemente im Aufnahmenmen&#252; (default=15)</trans>
+			<trans lang="it_IT">Numero di voci nel menù registrazioni</trans>
+		</token>
+		<token name="tr(brightBackground)">
+			<trans lang="en_EN">Bright backgroundgradient</trans>
+			<trans lang="de_DE">Heller Hintergrundverlauf</trans>
+			<trans lang="it_IT">Gradiente di background luminoso</trans>
+		</token>
+		<token name="tr(panelMain)">
+			<trans lang="en_EN">Panel with timers, lastrecs and widgets</trans>
+			<trans lang="de_DE">Paneel mit Timern, Aufnahmen und Widgets</trans>
+			<trans lang="it_IT">Panello con timers, ultime registrazioni e widgets</trans>
+		</token>
+		<token name="tr(none)">
+			<trans lang="en_EN">No</trans>
+			<trans lang="de_DE">Nein</trans>
+			<trans lang="it_IT">No</trans>
+		</token>
+		<token name="tr(showInfosAndOnlyTimers)">
+			<trans lang="en_EN">Show only timers and widgets</trans>
+			<trans lang="de_DE">Zeige nur Timer und Widgets</trans>
+			<trans lang="it_IT">Mostra solo timers e widgets</trans>
+		</token>
+		<token name="tr(showInfosAndTimers)">
+			<trans lang="en_EN">Show widgets and primarily timers</trans>
+			<trans lang="de_DE">Zeige Widgets und vorrangig Timer</trans>
+			<trans lang="it_IT">Mostra solo widgets timers prioritari</trans>
+		</token>
+		<token name="tr(showInfosAndTimersAndLastrecs)">
+			<trans lang="en_EN">Show widgets, timers + at least last three recordings</trans>
+			<trans lang="de_DE">Zeige Widgets, Timer + mind. letzte drei Aufnahmen</trans>
+			<trans lang="it_IT">Mostra widgets, timers + almeno le ultime tre registrazioni</trans>
+		</token>
+		<token name="tr(widgets)">
+			<trans lang="en_EN">Widgets</trans>
+			<trans lang="de_DE">Widgets</trans>
+			<trans lang="it_IT">Widgets</trans>
+		</token>
+		<token name="tr(tempsLoadWeather)">
+			<trans lang="en_EN">Temps, load and weather</trans>
+			<trans lang="de_DE">Temps, Load und Wetter</trans>
+			<trans lang="it_IT">Tempi, caricamenti e previsioni</trans>
+		</token>
+		<token name="tr(devicesWeather)">
+			<trans lang="en_EN">Devices and weather</trans>
+			<trans lang="de_DE">Devices und Wetter</trans>
+			<trans lang="it_IT">Devices e previsioni</trans>
+		</token>
+		<token name="tr(setupIconbar)">
+			<trans lang="en_EN">Show iconbar in setup-menu</trans>
+			<trans lang="de_DE">Zeige Leiste mit Icons im Setup-Men&#252;</trans>
+			<trans lang="it_IT">Mostra barra delle icone nel menù del setup </trans>
+		</token>
+		<token name="tr(coloredButtons)">
+			<trans lang="en_EN">Colored active buttons</trans>
+			<trans lang="de_DE">Farbige Auswahlbalken</trans>
+			<trans lang="it_IT">Bottoni attivi colorati</trans>
+		</token>
+		<token name="tr(no)">
+			<trans lang="en_EN">no</trans>
+			<trans lang="de_DE">nein</trans>
+			<trans lang="it_IT">no</trans>
+		</token>
+		<token name="tr(border)">
+			<trans lang="en_EN">only colored border</trans>
+			<trans lang="de_DE">nur farbiger Rand</trans>
+			<trans lang="it_IT">solo bordi colorati</trans>
+		</token>
+		<token name="tr(gradient)">
+			<trans lang="en_EN">extensive gradient</trans>
+			<trans lang="de_DE">vollfl&#228;chiger Farbverlauf</trans>
+			<trans lang="it_IT">gradiente esteso</trans>
+		</token>
+		<token name="tr(tvgngDescriptionScroll)">
+			<trans lang="en_EN">Scroll descriptions in TVGuideNG</trans>
+			<trans lang="de_DE">Scrolltext bei Beschreibungen in TVGuideNG</trans>
+			<trans lang="it_IT">Scorri descrizioni in TVGuideNG</trans>
+		</token>
+		<token name="tr(showReplayPoster)">
+			<trans lang="en_EN">Show posters in replay-panel</trans>
+			<trans lang="de_DE">Zeige Poster im Wiedergabe-Paneel</trans>
+			<trans lang="it_IT">Mostra poster nel pannello replay</trans>
+		</token>
+		<token name="tr(currentInfo)">
+			<trans lang="en_EN">Info for active listitem</trans>
+			<trans lang="de_DE">Info f&#252;r aktives Listenelement</trans>
+			<trans lang="it_IT">Info per elementi attivi della lista</trans>
+		</token>
+		<token name="tr(noCurrentInfo)">
+			<trans lang="en_EN">No</trans>
+			<trans lang="de_DE">Nein</trans>
+			<trans lang="it_IT">No</trans>
+		</token>
+		<token name="tr(tallCurrentInfo)">
+			<trans lang="en_EN">Tall</trans>
+			<trans lang="de_DE">Schmal</trans>
+			<trans lang="it_IT">Alto</trans>
+		</token>
+		<token name="tr(wideCurrentInfo)">
+			<trans lang="en_EN">Wide</trans>
+			<trans lang="de_DE">Breit</trans>
+			<trans lang="it_IT">largo</trans>
+		</token>
+		<token name="tr(fontSizeInfoTitle)">
+			<trans lang="en_EN">Fontsize title in info for active listelement</trans>
+			<trans lang="de_DE">Schriftgr&#246;&#223;e Titel in Info zum aktiven Listenelement</trans>
+			<trans lang="it_IT">Dimensione del font nelle info degli elementi attivi della lista</trans>
+		</token>
+		<token name="tr(fontSizeInfoDetails)">
+			<trans lang="en_EN">Fontsize date, time...in info for active listelement</trans>
+			<trans lang="de_DE">Schriftgr&#246;&#223;e Datum, Zeit ... in Info zum aktiven Listenelement</trans>
+			<trans lang="it_IT">Dimensione del font della data, ora ... nelle info degli elementi attivi della lista</trans>
+		</token>
+		<token name="tr(fontSizeInfoDescription)">
+			<trans lang="en_EN">Fontsize description in info for active listelement</trans>
+			<trans lang="de_DE">Schriftgr&#246;&#223;e Beschreibung in Info zum aktiven Listenelement</trans>
+			<trans lang="it_IT">Descrizione delle dimensioni del font nelle info degli elementi attivi della lista</trans>
+		</token>
+		<token name="tr(fontSizeDescr)">
+			<trans lang="en_EN">Fontsize detaildescriptions</trans>
+			<trans lang="de_DE">Schriftgr&#246;&#223;e Detail-Beschreibungen</trans>
+			<trans lang="it_IT">Descrizione dettagliate delle dimensioni del font</trans>
+		</token>
+		<token name="tr(showPosterAndEPGpic)">
+			<trans lang="en_EN">Poster and EPGpic in Details</trans>
+			<trans lang="de_DE">Poster und EPGpic in Details</trans>
+			<trans lang="it_IT">Poster e pic dell'EPG nei dettagli</trans>
+		</token>
+		<token name="tr(primarilyPoster)">
+			<trans lang="en_EN">Primarily poster</trans>
+			<trans lang="de_DE">Vorrangig Poster</trans>
+			<trans lang="it_IT">Poster primario</trans>
+		</token>
+		<token name="tr(postersAndEPGpic)">
+			<trans lang="en_EN">If available both</trans>
+			<trans lang="de_DE">Wenn vorhanden beides</trans>
+			<trans lang="it_IT">Se disponibili entrambi</trans>
+		</token>
+		<token name="tr(transBackground)">
+			<trans lang="en_EN">Transparency backgrounds</trans>
+			<trans lang="de_DE">Transparenz Hintergr&#252;nde</trans>
+			<trans lang="it_IT">Background in trasparenza</trans>
+		</token>
+		<token name="tr(transLists)">
+			<trans lang="en_EN">Transparency menulists</trans>
+			<trans lang="de_DE">Transparenz Men&#252;listen</trans>
+			<trans lang="it_IT">Liste menù in trasparenza</trans>
+		</token>
+		<token name="tr(sysinfoPBtheme)">
+			<trans lang="en_EN">Bars in systeminfo-plugin in themecolors</trans>
+			<trans lang="de_DE">Balken im systeminfo-plugin in Themefarben</trans>
+			<trans lang="it_IT">Barre del plugin systeminfo con colori del tema</trans>
+		</token>
+		<token name="tr(longElapsedBar)">
+			<trans lang="en_EN">Show elapsedbar beneath events (recordings, whatsonnow)</trans>
+			<trans lang="de_DE">Zeige Balken f&#252;r abgelaufene Zeit unterhalb der Titel (Aufzeichnungen, Jetzt)</trans>
+			<trans lang="it_IT">Mostra barra tempo trascorso sotto gli eventi (registrazioni, in visione ora)</trans>
+		</token>
+		<token name="tr(showTimeshiftTotal)">
+			<trans lang="en_EN">Show total time of timeshift-event in displayreplay</trans>
+			<trans lang="de_DE">Zeige Dauer (Zeitangabe) des Timeshift-Events im Wiedergabepaneel</trans>
+			<trans lang="it_IT">Mostra tempo totale del timeshift dell'evento nel display riproduzione</trans>
+		</token>
+		<token name="tr(showDiscUsage)">
+			<trans lang="en_EN">Show discusage in recordings- and timersmenu</trans>
+			<trans lang="de_DE">Zeige Festplattenausnutzung im Aufnahmen- und Timermen&#252;</trans>
+			<trans lang="it_IT">Mostra utilizzo del disco nei menù registrazioni e timer</trans>
+		</token>
+		<token name="tr(showNumbering)">
+			<trans lang="en_EN">Show numbering in main- and setupmenu</trans>
+			<trans lang="de_DE">Zeige Nummerierung im Haupt- und Setupmen&#252;</trans>
+			<trans lang="it_IT">Mostra numerazione nei menù principale e setup</trans>
+		</token>
+<!--channelInfo-->
+		<token name="tr(channelInfo)">
+			<trans lang="en_EN">Channel-Info</trans>
+			<trans lang="de_DE">Kanal-Info</trans>
+			<trans lang="it_IT">Info canale</trans>
+		</token>
+		<token name="tr(channelName)">
+			<trans lang="en_EN">Show Channelname</trans>
+			<trans lang="de_DE">Zeige Kanalnamen</trans>
+			<trans lang="it_IT">Mostra nome canale</trans>
+		</token>
+		<token name="tr(scroll)">
+			<trans lang="en_EN">Short centered above logo</trans>
+			<trans lang="de_DE">Kurz, zentriert &#252;ber dem Logo</trans>
+			<trans lang="it_IT">Breve in centro sopra il logo</trans>
+		</token>
+		<token name="tr(wide)">
+			<trans lang="en_EN">Long, left-justified</trans>
+			<trans lang="de_DE">Lang, links-b&#252;ndig</trans>
+			<trans lang="it_IT">Lungo giustificato a sinistra</trans>
+		</token>
+		<token name="tr(dateTime)">
+			<trans lang="en_EN">Show date and time</trans>
+			<trans lang="de_DE">Zeige Datum und Zeit</trans>
+			<trans lang="it_IT">Mostra data e ora</trans>
+		</token>
+		<token name="tr(weatherInfo)">
+			<trans lang="en_EN">Show weatherinfos</trans>
+			<trans lang="de_DE">Zeige Wetterinfos</trans>
+			<trans lang="it_IT">Mostra informazioni sul tempo</trans>
+		</token>
+		<token name="tr(ecmInfo)">
+			<trans lang="en_EN">Show ecm-infos</trans>
+			<trans lang="de_DE">Zeige ecm-Infos</trans>
+			<trans lang="it_IT">Mostra info ECM</trans>
+		</token>
+		<token name="tr(scrapContent)">
+			<trans lang="en_EN">Banner and poster</trans>
+			<trans lang="de_DE">Banner und Poster</trans>
+			<trans lang="it_IT">Banner e poster</trans>
+		</token>
+		<token name="tr(pInl)">
+			<trans lang="en_EN">Show only poster in panel</trans>
+			<trans lang="de_DE">Zeige nur Poster im Paneel</trans>
+			<trans lang="it_IT">Mostrare solo poster nel pannello</trans>
+		</token>
+		<token name="tr(bTL)">
+			<trans lang="en_EN">Show only banner top left</trans>
+			<trans lang="de_DE">Zeige nur Banner oben links</trans>
+			<trans lang="it_IT">Mostrare solo banner in alto a sinistra</trans>
+		</token>
+		<token name="tr(bAp)">
+			<trans lang="en_EN">Show banner and poster</trans>
+			<trans lang="de_DE">Zeige Banner und Poster</trans>
+			<trans lang="it_IT">Mostrare banner e poster</trans>
+		</token>
+<!--RecordingMarkersProgress-->
+		<token name="tr(recmenuorientation)">
+			<trans lang="en_EN">Direction menu recordings</trans>
+			<trans lang="de_DE">Ausrichtung Men&#252; Aufzeichnungen</trans>
+			<trans lang="it_IT">Allineamento menù registrazioni</trans>
+		</token>
+		<token name="tr(horizontal)">
+			<trans lang="en_EN">horizontal</trans>
+			<trans lang="de_DE">horizontal</trans>
+			<trans lang="it_IT">orizzontale</trans>
+		</token>
+		<token name="tr(vertical)">
+			<trans lang="en_EN">vertical</trans>
+			<trans lang="de_DE">vertikal</trans>
+			<trans lang="it_IT">verticale</trans>
+		</token>
+		<token name="tr(recordingsmarker)">
+			<trans lang="en_EN">Recordings</trans>
+			<trans lang="de_DE">Aufzeichnungen</trans>
+			<trans lang="it_IT">Registrazioni</trans>
+		</token>
+		<token name="tr(replayPGBG)">
+			<trans lang="en_EN">Bright cutbars in replayprogressbar</trans>
+			<trans lang="de_DE">Helle Schnittbalken in der Wiedergabeprogressbar</trans>
+			<trans lang="it_IT">Barre luminose nella barra avanzamento</trans>
+		</token>
+		<token name="tr(03_new-recordingsMarker)">
+			<trans lang="en_EN">Marker for new recordings</trans>
+			<trans lang="de_DE">Marker f&#252;r neue Aufnahmen</trans>
+			<trans lang="it_IT">Marker per nuove registrazioni</trans>
+		</token>
+		<token name="tr(05_notNewNotWatched-recordingsMarker)">
+			<trans lang="en_EN">Marker for recordings seen &lt; 85%</trans>
+			<trans lang="de_DE">Marker f&#252;r Aufnahmen gesehen &lt; 85%</trans>
+			<trans lang="it_IT">Marker per registrazioni viste &lt; 85%</trans>
+		</token>
+		<token name="tr(07_notNewWatched-recordingsMarker)">
+			<trans lang="en_EN">Marker for recordings seen &gt; 85%</trans>
+			<trans lang="de_DE">Marker f&#252;r Aufnahmen gesehen &gt; 85%</trans>
+			<trans lang="it_IT">Marker per registrazioni viste &lt; 85%</trans>
+		</token>
+<!--Shift- and fade-times-->
+		<token name="tr(shiftFadeTimes)">
+			<trans lang="en_EN">Shift- and fade-times</trans>
+			<trans lang="de_DE">Einfahr- und Einblendzeiten</trans>
+			<trans lang="it_IT">Tempi cambio e dissolvenza</trans>
+		</token>
+		<token name="tr(fadetimeTempsLoadWeatherDisc)">
+			<trans lang="en_EN">Fade-time Temps, load, weather and disc</trans>
+			<trans lang="de_DE">Einblendzeit Temperatur, Load, Wetter und HDD</trans>
+			<trans lang="it_IT">Tempo dissolvenza temperature, carico, tempo e disco</trans>
+		</token>
+		
+		<token name="tr(fadetimeTimersAndLastrecs)">
+			<trans lang="en_EN">Fade-time timers ans lastrecs</trans>
+			<trans lang="de_DE">Einblendzeit Timer und letzte Aufnahmen</trans>
+			<trans lang="it_IT">Tempo dissolvenza dei timers e ultime registrazioni</trans>
+		</token>
+		<token name="tr(volumeShiftTime)">
+			<trans lang="en_EN">Shift-time volume</trans>
+			<trans lang="de_DE">Einfahrzeit Lautst&#228;rke</trans>
+			<trans lang="it_IT">Tempi di cambio del volume</trans>
+		</token>
+		<token name="tr(messageShiftTime)">
+			<trans lang="en_EN">Shift-time messages</trans>
+			<trans lang="de_DE">Einfahrzeit Meldungen</trans>
+			<trans lang="it_IT">Tempi di cambio dei messaggi</trans>
+		</token>
+		<token name="tr(audioShiftTime)">
+			<trans lang="en_EN">Shift-time audio</trans>
+			<trans lang="de_DE">Einfahrzeit Audio</trans>
+			<trans lang="it_IT">Tempi di cambio dell'audio</trans>
+		</token>
+		<token name="tr(channelFadeTime)">
+			<trans lang="en_EN">Fadetime channel- and replay-panel</trans>
+			<trans lang="de_DE">Einblendzeit Kanal-und Wiedergabe-Paneel</trans>
+			<trans lang="it_IT">Pannello tempo dissolvenza canali e replay</trans>
+		</token>
+		<token name="tr(channelPosterDelay)">
+			<trans lang="en_EN">Delay posters in channel-panel</trans>
+			<trans lang="de_DE">Verz&#246;gerung Poster im Kanal-Paneel</trans>
+			<trans lang="it_IT">Ritardo poster nel pannello canali</trans>
+		</token>
+		<token name="tr(channelPosterFadeTime)">
+			<trans lang="en_EN">Fade-time posters in channel-panel</trans>
+			<trans lang="de_DE">Einblendzeit Poster im Kanal-Paneel</trans>
+			<trans lang="it_IT">Tempo dissolvenza dei poster nel pannello canali</trans>
+		</token>
+		<token name="tr(channelWeatherDelay)">
+			<trans lang="en_EN">Delay weatherinfo in channel-panel</trans>
+			<trans lang="de_DE">Verz&#246;gerung Wetterinfo im Kanal-Paneel</trans>
+			<trans lang="it_IT">Ritardo info previsioni nel pannello canali</trans>
+		</token>
+		<token name="tr(channelWeatherFadeTime)">
+			<trans lang="en_EN">Fade-time weatherinfo in channel-panel</trans>
+			<trans lang="de_DE">Einblendzeit Wetterinfo im Kanal-Paneel</trans>
+			<trans lang="it_IT">Tempo di dissolvenza info del tempo nel pannello canali</trans>
+		</token>
+		<token name="tr(currentelementsFadeTime)">
+			<trans lang="en_EN">Fade-time infos beside lists</trans>
+			<trans lang="de_DE">Einblendzeit Infos neben Listen</trans>
+			<trans lang="it_IT">Info del tempo di dissolvenza accanto alle liste</trans>
+		</token>
+		<token name="tr(zaphistoryStatusCol)">
+			<trans lang="en_EN">Show statuscolumn in zayhistory</trans>
+			<trans lang="de_DE">Zeige Statusspalte in zaphistory</trans>
+			<trans lang="it_IT">Mostra stato colonna in zaphistory</trans>
+		</token>	
+		<token name="tr(epg2vdrShowHostname)">
+			<trans lang="en_EN">Shown hostname of remote-timers in epg2vdr-menu 'Timer'</trans>
+			<trans lang="de_DE">Zeige Hostname der Remote-Timer im epg2vdr-Menü 'Timer'</trans>
+			<trans lang="it_IT">Mostra hostname di timers in remoto nel menù epg2vdr 'Timer'</trans>
+		</token>
+		<token name="tr(hostnameChars)">
+			<trans lang="en_EN">Number of chars of Hostname in epg2vdr-menu 'Timer'</trans>
+			<trans lang="de_DE">Anzahl der Zeichen des Hostnamens im epg2vdr-Menü 'Timer'</trans>
+			<trans lang="it_IT">Numero di caratteri degli hostname nel menù epg2vdr 'Timer'</trans>
+		</token>
+		<token name="tr(plexDetail)">
+			<trans lang="en_EN">Background Plex-Detail</trans>
+			<trans lang="de_DE">Hintergrund Plex-Detail</trans>
+			<trans lang="it_IT">Dettagli di Plex in background</trans>
+		</token>
+		<token name="tr(kissStyle)">
+			<trans lang="en_EN">KISS</trans>
+			<trans lang="de_DE">KISS</trans>
+			<trans lang="it_IT">KISS</trans>
+		</token>
+		<token name="tr(fanartStyle)">
+			<trans lang="en_EN">Art</trans>
+			<trans lang="de_DE">Art</trans>
+			<trans lang="it_IT">Arte</trans>
+		</token>
+	</translations>
+</setup>

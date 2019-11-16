@@ -1,0 +1,131 @@
+skindesigner-skin-nopacity (0.8.0-0easyVDR7~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 23:44:18 +0100
+
+skindesigner-skin-nopacity (0.8.0-0easyVDR6~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 00:55:32 +0100
+
+skindesigner-skin-nopacity (0.8.0-0easyVDR5~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 23:57:51 +0100
+
+skindesigner-skin-nopacity (0.8.0-0easyVDR4~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Jun 2017 17:58:24 +0200
+
+skindesigner-skin-nopacity (0.8.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:19:52 +0200
+
+skindesigner-skin-nopacity (0.8.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 22 Sep 2016 21:31:24 +0200
+
+skindesigner-skin-nopacity (0.8.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * added new displaymenu.xml
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 21 Sep 2016 02:08:24 +0200
+
+skindesigner-skin-nopacity (0.8.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:493922b - changes for skindesigner 0.8.0
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 18 Sep 2016 19:55:27 +0200
+
+skindesigner-skin-nopacity (0.5.3-2easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Jan 2016 17:46:14 +0100
+
+skindesigner-skin-nopacity (0.5.3-1easyVDR2~trustyubuntu1) trusty; urgency=high
+
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Jan 2016 16:34:42 +0100
+
+skindesigner-skin-nopacity (0.5.3-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Jan 2016 13:36:59 +0100
+
+skindesigner-skin-nopacity (0.5.3-1easyVDR0~trusty) trusty; urgency=high
+
+  * added new logos
+  * added new displaymenu.xml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Dec 2015 14:48:44 +0100
+
+skindesigner-skin-nopacity (0.5.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 03 Dec 2015 22:32:52 +0100
+
+skindesigner-skin-nopacity (0.5.0-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * added logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 21:48:07 +0100
+
+skindesigner-skin-nopacity (0.5.0-1mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 21:58:00 +0200
+
+skindesigner-skin-nopacity (0.5.0-1mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Jul 2015 21:48:17 +0200
+
+skindesigner-skin-nopacity (0.5.0-0mangoVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 29 Jun 2015 22:15:10 +0200
+
+skindesigner-skin-nopacity (0.5.0-0mangoVDR1~trusty) trusty; urgency=high
+
+  * added logos
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 Jun 2015 17:10:33 +0200
+
+skindesigner-skin-nopacity (0.5.0-0mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild formeasyVDR
+  * added logos for easyVDR  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 26 Jun 2015 22:35:12 +0200
+
+skindesigner-skin-nopacity (0.5.0-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 3ed6cea: initial commit
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 16:03:27 +0200
+
+skindesigner-skin-nopacity (0.0.0-0-g1111111-0frodo0~precise) precise; urgency=medium
+
+  * first try
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 31 May 2015 15:41:24 +0200

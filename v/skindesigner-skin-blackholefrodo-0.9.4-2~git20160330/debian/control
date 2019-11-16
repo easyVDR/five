@@ -1,0 +1,18 @@
+Source: skindesigner-skin-blackholefrodo
+Section: misc
+Priority: extra
+Maintainer: Frodo <frodo.vdr@gmx.net>
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage:https://github.com/FrodoVDR/blackholefrodo.git
+
+Package: skindesigner-skin-blackholefrodo
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-skindesigner (>= 0.8.2), fonts-ds-digital
+Conflicts: skindesigner-skin-blackholefrodo-ripit
+Replaces: skindesigner-skin-blackholefrodo-ripit
+Recommends: vdr-plugin-weatherforecast
+Description: skin blackholefrodo for skindesigner
+
+
