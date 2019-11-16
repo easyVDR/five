@@ -1,0 +1,11 @@
+--- a/event.c
++++ b/event.c
+@@ -20,7 +20,7 @@
+ }
+ 
+ const char* cEventBlock::LastTitle="just initialized";
+-const bool* cEventBlock::ReplayingRecording=false;
++const bool* cEventBlock::ReplayingRecording = (bool*)false;
+ 
+ cEventsBlock EventsBlock;
+ 

@@ -1,0 +1,27 @@
+Index: vdr-2.2.0/plugin.c
+===================================================================
+--- vdr-2.2.0.orig/plugin.c	2015-12-24 15:16:27.180257212 +0100
++++ vdr-2.2.0/plugin.c	2015-12-24 15:16:27.176257192 +0100
+@@ -341,6 +341,13 @@
+   char *p = strchr(s, ' ');
+   if (p)
+      *p = 0;
++
++  struct stat st;
++  if (stat (cString::sprintf("%s/%s%s%s%s", directory, LIBVDR_PREFIX, s, SO_INDICATOR, APIVERSION), &st) && errno == ENOENT) {
++     esyslog("WARN: missing plugin '%s'", s);
++     fprintf(stderr, "vdr: missing plugin '%s'\n", s);
++     }
++  else
+   dlls.Add(new cDll(cString::sprintf("%s/%s%s%s%s", directory, LIBVDR_PREFIX, s, SO_INDICATOR, APIVERSION), Args));
+   free(s);
+ }
+@@ -349,7 +356,7 @@
+ {
+   for (cDll *dll = dlls.First(); dll; dll = dlls.Next(dll)) {
+       if (!dll->Load(Log))
+-         return false;
++         ;
+       }
+   return true;
+ }

@@ -1,0 +1,89 @@
+Index: vdr-2.2.0/device.c
+===================================================================
+--- vdr-2.2.0.orig/device.c	2016-08-02 14:49:22.863391575 +0200
++++ vdr-2.2.0/device.c	2016-08-02 14:49:22.855391536 +0200
+@@ -1703,7 +1703,8 @@
+                        }
+                     }
+                  // Distribute the packet to all attached receivers:
+-                 Lock();
++                 {
++                 cMutexLock MutexLock(&mutexReceiver);
+                  for (int i = 0; i < MAXRECEIVERS; i++) {
+                      if (receiver[i] && receiver[i]->WantsPid(Pid)) {
+                         if (DetachReceivers && cs && (!cs->IsActivating() || receiver[i]->Priority() >= LIVEPRIORITY)) {
+@@ -1717,7 +1718,7 @@
+                            ChannelCamRelations.SetDecrypt(receiver[i]->ChannelID(), CamSlotNumber);
+                         }
+                      }
+-                 Unlock();
++                   }
+                  }
+               }
+            else
+@@ -1759,6 +1760,8 @@
+      return false;
+      }
+ #endif
++  bool breakout = false;
++  {
+   cMutexLock MutexLock(&mutexReceiver);
+   for (int i = 0; i < MAXRECEIVERS; i++) {
+       if (!receiver[i]) {
+@@ -1774,16 +1777,23 @@
+          Receiver->device = this;
+          receiver[i] = Receiver;
+          Unlock();
+-         if (camSlot && Receiver->priority > MINPRIORITY) { // priority check to avoid an infinite loop with the CAM slot's caPidReceiver
+-            camSlot->StartDecrypting();
+-            startScrambleDetection = time(NULL);
+-            }
+-         Start();
+-         return true;
++         breakout = true;
++         break; // leave mutexReceiver-block asap
+          }
+       }
+-  esyslog("ERROR: no free receiver slot!");
+-  return false;
++  }
++  if (breakout) {
++      if (camSlot && Receiver->priority > MINPRIORITY) { // priority check to avoid an infinite loop with the CAM slot's caPidReceiver
++	    camSlot->StartDecrypting();
++            startScrambleDetection = time(NULL);
++	    }
++      Start(); // has to be outside of mutexReceiver-block
++      return true;
++      }
++  else {
++      esyslog("ERROR: no free receiver slot!");
++      return false;
++      }
+ }
+ 
+ void cDevice::Detach(cReceiver *Receiver)
+@@ -1793,6 +1803,7 @@
+   if (!Receiver || Receiver->device != this)
+      return;
+   bool receiversLeft = false;
++  {  
+   cMutexLock MutexLock(&mutexReceiver);
+   for (int i = 0; i < MAXRECEIVERS; i++) {
+       if (receiver[i] == Receiver) {
+@@ -1807,6 +1818,7 @@
+       else if (receiver[i])
+          receiversLeft = true;
+       }
++    } // leave mutexReceiver-block asap      
+   if (camSlot) {
+      if (Receiver->priority > MINPRIORITY) { // priority check to avoid an infinite loop with the CAM slot's caPidReceiver
+         camSlot->StartDecrypting();
+@@ -1815,7 +1827,7 @@
+         }
+      }
+   if (!receiversLeft)
+-     Cancel(-1);
++     Cancel(-1); // has to be outside of mutexReceiver-block
+ }
+ 
+ void cDevice::DetachAll(int Pid)

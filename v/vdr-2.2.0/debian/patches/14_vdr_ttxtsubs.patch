@@ -1,0 +1,4141 @@
+Index: vdr-2.2.0/channels.c
+===================================================================
+--- vdr-2.2.0.orig/channels.c	2015-02-01 14:47:05.000000000 +0100
++++ vdr-2.2.0/channels.c	2015-07-14 18:34:51.000000000 +0200
+@@ -426,6 +426,26 @@
+   seen = time(NULL);
+ }
+ 
++void cChannel::SetTeletextSubtitlePages(tTeletextSubtitlePage pages[], int numberOfPages)
++{
++  int mod = CHANNELMOD_NONE;
++  if (totalTtxtSubtitlePages != (fixedTtxtSubtitlePages + numberOfPages))
++     mod |= CHANNELMOD_PIDS;
++  totalTtxtSubtitlePages = fixedTtxtSubtitlePages;
++  for (int i = 0; (i < numberOfPages) && (totalTtxtSubtitlePages < MAXTXTPAGES); i++) {
++      if (teletextSubtitlePages[totalTtxtSubtitlePages].ttxtMagazine != pages[i].ttxtMagazine ||
++          teletextSubtitlePages[totalTtxtSubtitlePages].ttxtPage != pages[i].ttxtPage ||
++          teletextSubtitlePages[totalTtxtSubtitlePages].ttxtType != pages[i].ttxtType ||
++          strcmp(teletextSubtitlePages[totalTtxtSubtitlePages].ttxtLanguage, pages[i].ttxtLanguage)) {
++         mod |= CHANNELMOD_PIDS;
++         teletextSubtitlePages[totalTtxtSubtitlePages] = pages[i];
++         }
++      totalTtxtSubtitlePages++;
++      }
++  modification |= mod;
++  Channels.SetModified();
++}
++
+ void cChannel::SetCaIds(const int *CaIds)
+ {
+   if (caids[0] && caids[0] <= CA_USER_MAX)
+@@ -556,10 +576,17 @@
+         q += IntArrayToString(q, Channel->dpids, 10, Channel->dlangs, Channel->dtypes);
+         }
+      *q = 0;
+-     const int TBufferSize = MAXSPIDS * (5 + 1 + MAXLANGCODE2) + 10; // 5 digits plus delimiting ',' or ';' plus optional '=cod+cod', +10: paranoia and tpid
++     const int TBufferSize = (MAXTXTPAGES * MAXSPIDS) * (5 + 1 + MAXLANGCODE2) + 10; // 5 digits plus delimiting ',' or ';' plus optional '=cod+cod', +10: paranoia and tpid
+      char tpidbuf[TBufferSize];
+      q = tpidbuf;
+      q += snprintf(q, sizeof(tpidbuf), "%d", Channel->tpid);
++     if (Channel->fixedTtxtSubtitlePages > 0) {
++        *q++ = '+';
++        for (int i = 0; i < Channel->fixedTtxtSubtitlePages; ++i) {
++            tTeletextSubtitlePage page = Channel->teletextSubtitlePages[i];
++            q += snprintf(q, sizeof(tpidbuf) - (q - tpidbuf), "%d=%s", page.PageNumber(), page.ttxtLanguage);
++            }
++        }
+      if (Channel->spids[0]) {
+         *q++ = ';';
+         q += IntArrayToString(q, Channel->spids, 10, Channel->slangs);
+@@ -730,6 +757,32 @@
+                     }
+               spids[NumSpids] = 0;
+               }
++           fixedTtxtSubtitlePages = 0;
++           if ((p = strchr(tpidbuf, '+')) != NULL) {
++              *p++ = 0;
++              char *q;
++              char *strtok_next;
++              while ((q = strtok_r(p, ",", &strtok_next)) != NULL) {
++                    if (fixedTtxtSubtitlePages < MAXTXTPAGES) {
++                       int page;
++                       char *l = strchr(q, '=');
++                       if (l)
++                          *l++ = 0;
++                       if (sscanf(q, "%d", &page) == 1) {
++                          teletextSubtitlePages[fixedTtxtSubtitlePages] = tTeletextSubtitlePage(page);
++                          if (l)
++                             strn0cpy(teletextSubtitlePages[fixedTtxtSubtitlePages].ttxtLanguage, l, MAXLANGCODE2);
++                          fixedTtxtSubtitlePages++;
++                          }
++                       else
++                          esyslog("ERROR: invalid Teletext page!"); // no need to set ok to 'false'
++                       }
++                    else
++                       esyslog("ERROR: too many Teletext pages!"); // no need to set ok to 'false'
++                    p = NULL;
++                    }
++              totalTtxtSubtitlePages = fixedTtxtSubtitlePages;
++              }
+            if (sscanf(tpidbuf, "%d", &tpid) != 1)
+               return false;
+            if (caidbuf) {
+Index: vdr-2.2.0/channels.h
+===================================================================
+--- vdr-2.2.0.orig/channels.h	2015-02-01 14:30:26.000000000 +0100
++++ vdr-2.2.0/channels.h	2015-07-14 18:34:51.000000000 +0200
+@@ -36,6 +36,7 @@
+ #define MAXDPIDS 16 // dolby (AC3 + DTS)
+ #define MAXSPIDS 32 // subtitles
+ #define MAXCAIDS 12 // conditional access
++#define MAXTXTPAGES 8 // teletext pages
+ 
+ #define MAXLANGCODE1 4 // a 3 letter language code, zero terminated
+ #define MAXLANGCODE2 8 // up to two 3 letter language codes, separated by '+' and zero terminated
+@@ -72,6 +73,16 @@
+   static const tChannelID InvalidID;
+   };
+ 
++struct tTeletextSubtitlePage {
++  tTeletextSubtitlePage(void) { ttxtPage = ttxtMagazine = 0; ttxtType = 0x02; strcpy(ttxtLanguage, "und"); }
++  tTeletextSubtitlePage(int page) { ttxtMagazine = (page / 100) & 0x7; ttxtPage = (((page % 100) / 10) << 4) + (page % 10); ttxtType = 0x02; strcpy(ttxtLanguage, "und"); }
++  char ttxtLanguage[MAXLANGCODE1];
++  uchar ttxtPage;
++  uchar ttxtMagazine;
++  uchar ttxtType;
++  int PageNumber(void) const { return BCDCHARTOINT(ttxtMagazine) * 100 + BCDCHARTOINT(ttxtPage); }
++  };
++
+ class cChannel;
+ 
+ class cLinkChannel : public cListObject {
+@@ -116,6 +127,9 @@
+   uint16_t compositionPageIds[MAXSPIDS];
+   uint16_t ancillaryPageIds[MAXSPIDS];
+   int tpid;
++  int fixedTtxtSubtitlePages;
++  int totalTtxtSubtitlePages;
++  tTeletextSubtitlePage teletextSubtitlePages[MAXTXTPAGES];
+   int caids[MAXCAIDS + 1]; // list is zero-terminated
+   int nid;
+   int tid;
+@@ -169,6 +183,8 @@
+   uint16_t CompositionPageId(int i) const { return (0 <= i && i < MAXSPIDS) ? compositionPageIds[i] : uint16_t(0); }
+   uint16_t AncillaryPageId(int i) const { return (0 <= i && i < MAXSPIDS) ? ancillaryPageIds[i] : uint16_t(0); }
+   int Tpid(void) const { return tpid; }
++  const tTeletextSubtitlePage *TeletextSubtitlePages() const { return teletextSubtitlePages; }
++  int TotalTeletextSubtitlePages() const { return totalTtxtSubtitlePages; }
+   const int *Caids(void) const { return caids; }
+   int Ca(int Index = 0) const { return Index < MAXCAIDS ? caids[Index] : 0; }
+   int Nid(void) const { return nid; }
+@@ -198,6 +214,7 @@
+   void SetName(const char *Name, const char *ShortName, const char *Provider);
+   void SetPortalName(const char *PortalName);
+   void SetPids(int Vpid, int Ppid, int Vtype, int *Apids, int *Atypes, char ALangs[][MAXLANGCODE2], int *Dpids, int *Dtypes, char DLangs[][MAXLANGCODE2], int *Spids, char SLangs[][MAXLANGCODE2], int Tpid);
++  void SetTeletextSubtitlePages(tTeletextSubtitlePage pages[], int numberOfPages);
+   void SetCaIds(const int *CaIds); // list must be zero-terminated
+   void SetCaDescriptors(int Level);
+   void SetLinkChannels(cLinkChannels *LinkChannels);
+Index: vdr-2.2.0/ci.c
+===================================================================
+--- vdr-2.2.0.orig/ci.c	2015-02-02 14:57:39.000000000 +0100
++++ vdr-2.2.0/ci.c	2015-07-14 18:34:51.000000000 +0200
+@@ -2155,6 +2155,8 @@
+          AddPid(Channel->Sid(), *Dpid, STREAM_TYPE_PRIVATE);
+      for (const int *Spid = Channel->Spids(); *Spid; Spid++)
+          AddPid(Channel->Sid(), *Spid, STREAM_TYPE_PRIVATE);
++     if (Channel->Tpid() && Setup.SupportTeletext)
++        AddPid(Channel->Sid(), Channel->Tpid(), STREAM_TYPE_PRIVATE);
+      }
+ }
+ 
+@@ -2178,6 +2180,8 @@
+          CaPmt.AddPid(*Dpid, STREAM_TYPE_PRIVATE);
+      for (const int *Spid = Channel->Spids(); *Spid; Spid++)
+          CaPmt.AddPid(*Spid, STREAM_TYPE_PRIVATE);
++     if (Channel->Tpid() && Setup.SupportTeletext)
++        CaPmt.AddPid(Channel->Tpid(), STREAM_TYPE_PRIVATE);
+      cas->SendPMT(&CaPmt);
+      cTimeMs Timeout(QUERY_REPLY_TIMEOUT);
+      do {
+Index: vdr-2.2.0/config.c
+===================================================================
+--- vdr-2.2.0.orig/config.c	2015-02-10 13:24:13.000000000 +0100
++++ vdr-2.2.0/config.c	2015-08-25 20:03:04.000000000 +0200
+@@ -403,6 +403,7 @@
+   MarginStop = 10;
+   AudioLanguages[0] = -1;
+   DisplaySubtitles = 0;
++  SupportTeletext = 0;
+   SubtitleLanguages[0] = -1;
+   SubtitleOffset = 0;
+   SubtitleFgTransparency = 0;
+@@ -625,6 +626,7 @@
+   else if (!strcasecmp(Name, "MarginStop"))          MarginStop         = atoi(Value);
+   else if (!strcasecmp(Name, "AudioLanguages"))      return ParseLanguages(Value, AudioLanguages);
+   else if (!strcasecmp(Name, "DisplaySubtitles"))    DisplaySubtitles   = atoi(Value);
++  else if (!strcasecmp(Name, "SupportTeletext"))     SupportTeletext    = atoi(Value);
+   else if (!strcasecmp(Name, "SubtitleLanguages"))   return ParseLanguages(Value, SubtitleLanguages);
+   else if (!strcasecmp(Name, "SubtitleOffset"))      SubtitleOffset     = atoi(Value);
+   else if (!strcasecmp(Name, "SubtitleFgTransparency")) SubtitleFgTransparency = atoi(Value);
+@@ -751,6 +753,7 @@
+   Store("MarginStop",         MarginStop);
+   StoreLanguages("AudioLanguages", AudioLanguages);
+   Store("DisplaySubtitles",   DisplaySubtitles);
++  Store("SupportTeletext",    SupportTeletext);
+   StoreLanguages("SubtitleLanguages", SubtitleLanguages);
+   Store("SubtitleOffset",     SubtitleOffset);
+   Store("SubtitleFgTransparency", SubtitleFgTransparency);
+Index: vdr-2.2.0/config.h
+===================================================================
+--- vdr-2.2.0.orig/config.h	2015-02-13 16:39:08.000000000 +0100
++++ vdr-2.2.0/config.h	2015-08-25 20:03:09.000000000 +0200
+@@ -280,6 +280,7 @@
+   int MarginStart, MarginStop;
+   int AudioLanguages[I18N_MAX_LANGUAGES + 1];
+   int DisplaySubtitles;
++  int SupportTeletext;
+   int SubtitleLanguages[I18N_MAX_LANGUAGES + 1];
+   int SubtitleOffset;
+   int SubtitleFgTransparency, SubtitleBgTransparency;
+Index: vdr-2.2.0/device.c
+===================================================================
+--- vdr-2.2.0.orig/device.c	2015-07-14 18:34:51.000000000 +0200
++++ vdr-2.2.0/device.c	2015-08-25 20:02:59.000000000 +0200
+@@ -19,6 +19,7 @@
+ #include "receiver.h"
+ #include "status.h"
+ #include "transfer.h"
++#include "vdrttxtsubshooks.h"
+ 
+ // --- cLiveSubtitle ---------------------------------------------------------
+ 
+@@ -1321,6 +1322,13 @@
+                   }
+                break;
+           case 0xBD: { // private stream 1
++               // EBU Teletext data, ETSI EN 300 472
++               // if PES data header length = 24 and data_identifier = 0x10..0x1F (EBU Data)
++               if (Data[8] == 0x24 && Data[45] >= 0x10 && Data[45] < 0x20) {
++                  cVDRTtxtsubsHookListener::Hook()->PlayerTeletextData((uint8_t*)Data, Length);
++                  break;
++                  }
++
+                int PayloadOffset = Data[8] + 9;
+ 
+                // Compatibility mode for old subtitles plugin:
+@@ -1480,6 +1488,7 @@
+      tsToPesVideo.Reset();
+      tsToPesAudio.Reset();
+      tsToPesSubtitle.Reset();
++     tsToPesTeletext.Reset();
+      }
+   else if (Length < TS_SIZE) {
+      esyslog("ERROR: skipped %d bytes of TS fragment", Length);
+@@ -1524,6 +1533,17 @@
+                     if (!VideoOnly || HasIBPTrickSpeed())
+                        PlayTsSubtitle(Data, TS_SIZE);
+                     }
++                 else if (Pid == patPmtParser.Tpid()) {
++                    if (!VideoOnly || HasIBPTrickSpeed()) {
++                       int l;
++                       tsToPesTeletext.PutTs(Data, Length);
++                       if (const uchar *p = tsToPesTeletext.GetPes(l)) {
++                          if ((l > 45) && (p[0] == 0x00) && (p[1] == 0x00) && (p[2] == 0x01) && (p[3] == 0xbd) && (p[8] == 0x24) && (p[45] >= 0x10) && (p[45] < 0x20))
++                             cVDRTtxtsubsHookListener::Hook()->PlayerTeletextData((uchar *)p, l, false, patPmtParser.TeletextSubtitlePages(), patPmtParser.TotalTeletextSubtitlePages());
++                          tsToPesTeletext.Reset();
++                          }
++                       }
++                    }
+                  }
+               }
+            else if (Pid == patPmtParser.Ppid()) {
+Index: vdr-2.2.0/device.h
+===================================================================
+--- vdr-2.2.0.orig/device.h	2015-07-14 18:34:51.000000000 +0200
++++ vdr-2.2.0/device.h	2015-08-25 20:02:52.000000000 +0200
+@@ -603,6 +603,7 @@
+   cTsToPes tsToPesVideo;
+   cTsToPes tsToPesAudio;
+   cTsToPes tsToPesSubtitle;
++  cTsToPes tsToPesTeletext;
+   bool isPlayingVideo;
+ protected:
+   const cPatPmtParser *PatPmtParser(void) const { return &patPmtParser; }
+Index: vdr-2.2.0/Makefile
+===================================================================
+--- vdr-2.2.0.orig/Makefile	2015-02-09 13:28:24.000000000 +0100
++++ vdr-2.2.0/Makefile	2015-08-25 20:03:04.000000000 +0200
+@@ -74,6 +74,8 @@
+        skinclassic.o skinlcars.o skins.o skinsttng.o sourceparams.o sources.o spu.o status.o svdrp.o themes.o thread.o\
+        timers.o tools.o transfer.o vdr.o videodir.o
+ 
++OBJS += vdrttxtsubshooks.o
++
+ DEFINES  += $(CDEFINES)
+ INCLUDES += $(CINCLUDES)
+ 
+Index: vdr-2.2.0/MANUAL
+===================================================================
+--- vdr-2.2.0.orig/MANUAL	2015-02-17 14:48:38.000000000 +0100
++++ vdr-2.2.0/MANUAL	2015-07-14 18:34:51.000000000 +0200
+@@ -810,6 +810,9 @@
+                          background transparency. By default the values as broadcast
+                          are used.
+ 
++  Record Teletext Subtitles = no
++                         If set to 'yes', teletext subtitles will be recorded.
++
+   LNB:
+ 
+   Use DiSEqC = no        Generally turns DiSEqC support on or off.
+Index: vdr-2.2.0/menu.c
+===================================================================
+--- vdr-2.2.0.orig/menu.c	2015-07-14 18:34:51.000000000 +0200
++++ vdr-2.2.0/menu.c	2015-08-25 20:03:09.000000000 +0200
+@@ -3326,6 +3326,7 @@
+      Add(new cMenuEditIntItem( tr("Setup.DVB$Subtitle foreground transparency"), &data.SubtitleFgTransparency, 0, 9));
+      Add(new cMenuEditIntItem( tr("Setup.DVB$Subtitle background transparency"), &data.SubtitleBgTransparency, 0, 10));
+      }
++  Add(new cMenuEditBoolItem(tr("Setup.DVB$Enable teletext support"), &data.SupportTeletext));
+ 
+   SetCurrent(Get(current));
+   Display();
+Index: vdr-2.2.0/pat.c
+===================================================================
+--- vdr-2.2.0.orig/pat.c	2015-01-04 14:14:01.000000000 +0100
++++ vdr-2.2.0/pat.c	2015-08-25 20:02:54.000000000 +0200
+@@ -12,6 +12,7 @@
+ #include "channels.h"
+ #include "libsi/section.h"
+ #include "libsi/descriptor.h"
++#include "vdrttxtsubshooks.h"
+ 
+ #define PMT_SCAN_TIMEOUT  1000 // ms
+ 
+@@ -426,6 +427,8 @@
+         char DLangs[MAXDPIDS][MAXLANGCODE2] = { "" };
+         char SLangs[MAXSPIDS][MAXLANGCODE2] = { "" };
+         int Tpid = 0;
++        tTeletextSubtitlePage TeletextSubtitlePages[MAXTXTPAGES];
++        int NumTPages = 0;
+         int NumApids = 0;
+         int NumDpids = 0;
+         int NumSpids = 0;
+@@ -517,8 +520,21 @@
+                                     NumSpids++;
+                                     }
+                                  break;
+-                            case SI::TeletextDescriptorTag:
++                            case SI::TeletextDescriptorTag: {
+                                  Tpid = esPid;
++                                 SI::TeletextDescriptor *sd = (SI::TeletextDescriptor *)d;
++                                 SI::TeletextDescriptor::Teletext ttxt;
++                                 for (SI::Loop::Iterator it; sd->teletextLoop.getNext(ttxt, it); ) {
++                                     bool isSubtitlePage = (ttxt.getTeletextType() == 0x02) || (ttxt.getTeletextType() == 0x05);
++                                     if ((NumTPages < MAXTXTPAGES) && ttxt.languageCode[0] && isSubtitlePage) {
++                                        strn0cpy(TeletextSubtitlePages[NumTPages].ttxtLanguage, I18nNormalizeLanguageCode(ttxt.languageCode), MAXLANGCODE1);
++                                        TeletextSubtitlePages[NumTPages].ttxtPage = ttxt.getTeletextPageNumber();
++                                        TeletextSubtitlePages[NumTPages].ttxtMagazine = ttxt.getTeletextMagazineNumber();
++                                        TeletextSubtitlePages[NumTPages].ttxtType = ttxt.getTeletextType();
++                                        NumTPages++;
++                                        }
++                                     }
++                                 }
+                                  break;
+                             case SI::ISO639LanguageDescriptorTag: {
+                                  SI::ISO639LanguageDescriptor *ld = (SI::ISO639LanguageDescriptor *)d;
+@@ -630,6 +646,12 @@
+             }
+         if (Setup.UpdateChannels >= 2) {
+            Channel->SetPids(Vpid, Ppid, Vtype, Apids, Atypes, ALangs, Dpids, Dtypes, DLangs, Spids, SLangs, Tpid);
++           if (NumTPages < MAXTXTPAGES) {
++              int manualPageNumber = cVDRTtxtsubsHookListener::Hook()->ManualPageNumber(Channel);
++              if (manualPageNumber)
++                 TeletextSubtitlePages[NumTPages++] = tTeletextSubtitlePage(manualPageNumber);
++              }
++           Channel->SetTeletextSubtitlePages(TeletextSubtitlePages, NumTPages);
+            Channel->SetCaIds(CaDescriptors->CaIds());
+            Channel->SetSubtitlingDescriptors(SubtitlingTypes, CompositionPageIds, AncillaryPageIds);
+            }
+Index: vdr-2.2.0/po/ca_ES.po
+===================================================================
+--- vdr-2.2.0.orig/po/ca_ES.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/ca_ES.po	2015-07-17 18:43:27.000000000 +0200
+@@ -10,7 +10,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2008-03-02 19:02+0100\n"
+ "Last-Translator: Luca Olivetti <luca@ventoso.org>\n"
+ "Language-Team: Catalan <vdr@linuxtv.org>\n"
+@@ -660,6 +660,15 @@
+ msgid "Lifetime"
+ msgstr "Durada"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "sÌ"
++
++msgid "no"
++msgstr "no"
++
+ msgid "File"
+ msgstr "Arxiu"
+ 
+@@ -784,12 +793,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -799,9 +817,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -829,6 +853,9 @@
+ msgid "Commands"
+ msgstr "Ordres"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Esborrar gravaciÛ?"
+ 
+@@ -862,6 +889,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Esquerra (%)"
+ 
+@@ -990,9 +1020,6 @@
+ msgid "center cut out"
+ msgstr "nomÈs part central"
+ 
+-msgid "no"
+-msgstr "no"
+-
+ msgid "names only"
+ msgstr "nomÈs noms"
+ 
+@@ -1059,6 +1086,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "TransparËncia fons subtÌtols"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "ConfiguraciÛ de l'LNB"
+ 
+@@ -1163,9 +1196,6 @@
+ msgid "confirm"
+ msgstr "confirmar"
+ 
+-msgid "yes"
+-msgstr "sÌ"
+-
+ msgid "Recording"
+ msgstr "Opcions de GravaciÛ"
+ 
+@@ -1220,6 +1250,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Esborrar gravacions timeshift"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Opcions de ReproducciÛ"
+ 
+@@ -1338,6 +1371,9 @@
+ msgid "Schedule"
+ msgstr "Guia de ProgramaciÛ"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Aturar la reproducciÛ"
+@@ -1386,6 +1422,9 @@
+ msgid "Jump: "
+ msgstr "Salta a: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "No hi ha marques d'ediciÛ definides"
+ 
+Index: vdr-2.2.0/po/cs_CZ.po
+===================================================================
+--- vdr-2.2.0.orig/po/cs_CZ.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/cs_CZ.po	2015-07-17 18:43:27.000000000 +0200
+@@ -10,7 +10,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2010-05-06 11:00+0200\n"
+ "Last-Translator: Ale≈° Ju≈ô√≠k <ajurik@quick.cz>\n"
+ "Language-Team: Czech <vdr@linuxtv.org>\n"
+@@ -660,6 +660,15 @@
+ msgid "Lifetime"
+ msgstr "≈Ωivotnost"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "ano"
++
++msgid "no"
++msgstr "ne"
++
+ msgid "File"
+ msgstr "Soubor"
+ 
+@@ -784,12 +793,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Zastaven√© kop√≠rov√°n√≠"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "St≈ôih"
+ 
+ msgid "Button$Delete marks"
+ msgstr "V√Ωmaz znaƒçek"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "Nahr√°vka zmizela!"
+ 
+@@ -799,9 +817,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Chyba p≈ôi vlo≈æen√≠ nahr√°vky do fronty pro st≈ôih"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "P≈ôejmenovat nahr√°vku jm√©nem slo≈æky?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Samzat editaƒçn√≠ znaƒçky t√©to nahr√°vky?"
+ 
+@@ -829,6 +853,9 @@
+ msgid "Commands"
+ msgstr "P≈ô√≠kazy"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Smazat nahr√°vku?"
+ 
+@@ -862,6 +889,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "T√©ma"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Vlevo (%)"
+ 
+@@ -990,9 +1020,6 @@
+ msgid "center cut out"
+ msgstr "dost≈ôedu o≈ô√≠znout"
+ 
+-msgid "no"
+-msgstr "ne"
+-
+ msgid "names only"
+ msgstr "jen n√°zvy"
+ 
+@@ -1059,6 +1086,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Pr≈Øhlednost pozad√≠ titulk≈Ø"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1163,9 +1196,6 @@
+ msgid "confirm"
+ msgstr "potvrdit"
+ 
+-msgid "yes"
+-msgstr "ano"
+-
+ msgid "Recording"
+ msgstr "Nahr√°v√°n√≠"
+ 
+@@ -1220,6 +1250,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Mazat nahr√°vky Timeshift"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "P≈ôehr√°v√°n√≠"
+ 
+@@ -1338,6 +1371,9 @@
+ msgid "Schedule"
+ msgstr "Program (EPG)"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Zastavit p≈ôehr√°v√°n√≠"
+@@ -1386,6 +1422,9 @@
+ msgid "Jump: "
+ msgstr "Skok: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Nejsou definov√°ny editaƒçn√≠ znaƒçky!"
+ 
+Index: vdr-2.2.0/po/da_DK.po
+===================================================================
+--- vdr-2.2.0.orig/po/da_DK.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/da_DK.po	2015-07-17 18:43:27.000000000 +0200
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2007-08-12 14:17+0200\n"
+ "Last-Translator: Mogens Elneff <mogens@elneff.dk>\n"
+ "Language-Team: Danish <vdr@linuxtv.org>\n"
+@@ -657,6 +657,15 @@
+ msgid "Lifetime"
+ msgstr "Levetid"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "ja"
++
++msgid "no"
++msgstr "nej"
++
+ msgid "File"
+ msgstr "Fil"
+ 
+@@ -781,12 +790,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -796,9 +814,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -826,6 +850,9 @@
+ msgid "Commands"
+ msgstr "Kommandoer"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Slet optagelse?"
+ 
+@@ -859,6 +886,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Venstre (%)"
+ 
+@@ -987,9 +1017,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "nej"
+-
+ msgid "names only"
+ msgstr "kun navne"
+ 
+@@ -1056,6 +1083,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Undertekst baggrundsgennemsigtighed"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1160,9 +1193,6 @@
+ msgid "confirm"
+ msgstr ""
+ 
+-msgid "yes"
+-msgstr "ja"
+-
+ msgid "Recording"
+ msgstr "Optagelse"
+ 
+@@ -1217,6 +1247,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr ""
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Afspilning"
+ 
+@@ -1335,6 +1368,9 @@
+ msgid "Schedule"
+ msgstr "Programoversigt"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Stop afspilning"
+@@ -1383,6 +1419,9 @@
+ msgid "Jump: "
+ msgstr "Hop: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Der er ikke sat nogen redigeringsmÊrker!"
+ 
+Index: vdr-2.2.0/po/de_DE.po
+===================================================================
+--- vdr-2.2.0.orig/po/de_DE.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/de_DE.po	2015-08-25 20:02:55.000000000 +0200
+@@ -1057,6 +1057,9 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Untertitel-Transparenz Hintergrund"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr "Videotext-Unterst¸tzung aktivieren"
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+Index: vdr-2.2.0/po/el_GR.po
+===================================================================
+--- vdr-2.2.0.orig/po/el_GR.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/el_GR.po	2015-07-17 18:43:27.000000000 +0200
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2007-08-12 14:17+0200\n"
+ "Last-Translator: Dimitrios Dimitrakos <mail@dimitrios.de>\n"
+ "Language-Team: Greek <vdr@linuxtv.org>\n"
+@@ -657,6 +657,15 @@
+ msgid "Lifetime"
+ msgstr "ƒÈ›ÒÍÂÈ· –·Ò·ÏÔÌﬁÚ"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "Ì·ﬂ"
++
++msgid "no"
++msgstr "¸˜È"
++
+ msgid "File"
+ msgstr "¡Ò˜ÂﬂÔ"
+ 
+@@ -781,12 +790,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -796,9 +814,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -826,6 +850,9 @@
+ msgid "Commands"
+ msgstr "≈ÌÙÔÎ›Ú"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "ƒÈ·„Ò·ˆﬁ Â„„Ò·ˆﬁÚ?"
+ 
+@@ -859,6 +886,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "»›Ï·"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "¡ÒÈÛÙÂÒ‹ (%)"
+ 
+@@ -987,9 +1017,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "¸˜È"
+-
+ msgid "names only"
+ msgstr "Ï¸ÌÔ ÔÌ¸Ï·Ù·"
+ 
+@@ -1056,6 +1083,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr ""
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1160,9 +1193,6 @@
+ msgid "confirm"
+ msgstr ""
+ 
+-msgid "yes"
+-msgstr "Ì·ﬂ"
+-
+ msgid "Recording"
+ msgstr "≈„„Ò·ˆﬁ"
+ 
+@@ -1217,6 +1247,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr ""
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "¡Ì··Ò·„˘„ﬁ"
+ 
+@@ -1335,6 +1368,9 @@
+ msgid "Schedule"
+ msgstr "–Ò¸„Ò·ÏÏ·"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " ‘›ÎÔÚ ·Ì··Ò·„˘„ﬁÚ"
+@@ -1383,6 +1419,9 @@
+ msgid "Jump: "
+ msgstr "‘ÔÔË›ÙÁÛÁ: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "ƒ›Ì ›˜ÔıÌ ÔÒÈÛÙÂﬂ ÛÁÏÂﬂ· ÂÂÓÂÒ„·Ûﬂ·Ú"
+ 
+Index: vdr-2.2.0/po/es_ES.po
+===================================================================
+--- vdr-2.2.0.orig/po/es_ES.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/es_ES.po	2015-07-17 18:43:27.000000000 +0200
+@@ -8,7 +8,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-19 23:00+0100\n"
+ "Last-Translator: Gabriel Bonich <gbonich@gmail.com>\n"
+ "Language-Team: Spanish <vdr@linuxtv.org>\n"
+@@ -658,6 +658,15 @@
+ msgid "Lifetime"
+ msgstr "DuraciÛn"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "sÌ"
++
++msgid "no"
++msgstr "no"
++
+ msgid "File"
+ msgstr "Fichero"
+ 
+@@ -782,12 +791,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Stop copiar"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "Cortar"
+ 
+ msgid "Button$Delete marks"
+ msgstr "Eliminar marcas"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "GrabaciÛn desaparecida"
+ 
+@@ -797,9 +815,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Error mientras la grabaciÛn est· en cola!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Renombrar la grabaciÛn a la carpeta nombre?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Eliminar las marcas de edicÛn para esta grabaciÛn?"
+ 
+@@ -827,6 +851,9 @@
+ msgid "Commands"
+ msgstr "“rdenes"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "øEliminar grabaciÛn?"
+ 
+@@ -860,6 +887,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Izquierda (%)"
+ 
+@@ -988,9 +1018,6 @@
+ msgid "center cut out"
+ msgstr "solo parte central"
+ 
+-msgid "no"
+-msgstr "no"
+-
+ msgid "names only"
+ msgstr "solo nombres"
+ 
+@@ -1057,6 +1084,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Transparencia fondo subtÌtulos"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1161,9 +1194,6 @@
+ msgid "confirm"
+ msgstr "confirmar"
+ 
+-msgid "yes"
+-msgstr "sÌ"
+-
+ msgid "Recording"
+ msgstr "Opciones de grabaciÛn"
+ 
+@@ -1218,6 +1248,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Borrar grabaciones timeshift"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Opciones de reproducciÛn"
+ 
+@@ -1336,6 +1369,9 @@
+ msgid "Schedule"
+ msgstr "GuÌa de ProgramaciÛn"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Parar reproduciÛn"
+@@ -1384,6 +1420,9 @@
+ msgid "Jump: "
+ msgstr "Saltar: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "°No se han definido marcas de ediciÛn!"
+ 
+Index: vdr-2.2.0/po/et_EE.po
+===================================================================
+--- vdr-2.2.0.orig/po/et_EE.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/et_EE.po	2015-07-17 18:43:27.000000000 +0200
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2007-08-12 14:17+0200\n"
+ "Last-Translator: Arthur Konovalov <artlov@gmail.com>\n"
+ "Language-Team: Estonian <vdr@linuxtv.org>\n"
+@@ -657,6 +657,15 @@
+ msgid "Lifetime"
+ msgstr "Eluiga"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "jah"
++
++msgid "no"
++msgstr "ei"
++
+ msgid "File"
+ msgstr "Fail"
+ 
+@@ -781,12 +790,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Kopeerimise peatamine"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "L√µika"
+ 
+ msgid "Button$Delete marks"
+ msgstr "Markerite kustutamine"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "Salvestus kadunud!"
+ 
+@@ -796,9 +814,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Salvestuse lisamine l√µikamiseks eba√µnnestus!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Nimetada salvestuse nimi kaustaks?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Kustutada selle salvestuse markerid?"
+ 
+@@ -826,6 +850,9 @@
+ msgid "Commands"
+ msgstr "K√§sud"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Kustutada salvestus?"
+ 
+@@ -859,6 +886,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Teema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Nihe paremale (%)"
+ 
+@@ -987,9 +1017,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "ei"
+-
+ msgid "names only"
+ msgstr "nimed"
+ 
+@@ -1056,6 +1083,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Subtiitri tausta l√§bipaistvus"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr "Teleteksti tugi"
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1160,9 +1193,6 @@
+ msgid "confirm"
+ msgstr "kinnitada"
+ 
+-msgid "yes"
+-msgstr "jah"
+-
+ msgid "Recording"
+ msgstr "Salvestamine"
+ 
+@@ -1217,6 +1247,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Ajanihke salvestuse kustutamine"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Taasesitus"
+ 
+@@ -1335,6 +1368,9 @@
+ msgid "Schedule"
+ msgstr "Kava"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " L√µpetada taasesitus"
+@@ -1383,6 +1419,9 @@
+ msgid "Jump: "
+ msgstr "H√ºpe: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Redigeerimise markerid puuduvad!"
+ 
+Index: vdr-2.2.0/po/fi_FI.po
+===================================================================
+--- vdr-2.2.0.orig/po/fi_FI.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/fi_FI.po	2015-08-25 20:02:34.000000000 +0200
+@@ -1060,6 +1060,9 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Tekstityksen taustan l√§pin√§kyvyys"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr "Salli teksti-TV-tuki"
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+Index: vdr-2.2.0/po/fr_FR.po
+===================================================================
+--- vdr-2.2.0.orig/po/fr_FR.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/fr_FR.po	2015-07-17 18:43:27.000000000 +0200
+@@ -18,7 +18,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-11 11:02+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-18 20:16+0100\n"
+ "Last-Translator: Bernard Jaulin <bernard.jaulin@gmail.com>\n"
+ "Language-Team: French <vdr@linuxtv.org>\n"
+@@ -668,6 +668,15 @@
+ msgid "Lifetime"
+ msgstr "Dur√©e de vie"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "oui"
++
++msgid "no"
++msgstr "non"
++
+ msgid "File"
+ msgstr "Fichier"
+ 
+@@ -792,12 +801,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Arr√™ter la copie"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "Couper"
+ 
+ msgid "Button$Delete marks"
+ msgstr "Supprimer les marqueurs"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "L'enregistrement a disparu !"
+ 
+@@ -807,9 +825,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Erreur lors de la mise en file d'attente pour la coupe !"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Modifier le nom du dossier des enregistrements ?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Supprimer les marqueurs de montage pour cet enregistrement ?"
+ 
+@@ -837,6 +861,9 @@
+ msgid "Commands"
+ msgstr "Commandes"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Supprimer l'enregistrement ?"
+ 
+@@ -870,6 +897,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Th√®me"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Gauche (%)"
+ 
+@@ -998,9 +1028,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "non"
+-
+ msgid "names only"
+ msgstr "noms uniquement"
+ 
+@@ -1067,6 +1094,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Transparence du fond des sous-titres"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1171,9 +1204,6 @@
+ msgid "confirm"
+ msgstr "confirmer"
+ 
+-msgid "yes"
+-msgstr "oui"
+-
+ msgid "Recording"
+ msgstr "Enregistrement"
+ 
+@@ -1228,6 +1258,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Supprimer l'enregistrement du timeshift"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Lecture"
+ 
+@@ -1346,6 +1379,9 @@
+ msgid "Schedule"
+ msgstr "Programme"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Arr√™ter la lecture"
+@@ -1394,6 +1430,9 @@
+ msgid "Jump: "
+ msgstr "Acc√®s direct : "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Pas de marqueurs d'√©dition d√©finis !"
+ 
+Index: vdr-2.2.0/po/hr_HR.po
+===================================================================
+--- vdr-2.2.0.orig/po/hr_HR.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/hr_HR.po	2015-07-17 18:43:27.000000000 +0200
+@@ -9,7 +9,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2008-03-17 19:00+0100\n"
+ "Last-Translator: Adrian Caval <anrxc@sysphere.org>\n"
+ "Language-Team: Croatian <vdr@linuxtv.org>\n"
+@@ -659,6 +659,15 @@
+ msgid "Lifetime"
+ msgstr "Trajanje"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "da"
++
++msgid "no"
++msgstr "ne"
++
+ msgid "File"
+ msgstr "Datoteka"
+ 
+@@ -783,12 +792,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -798,9 +816,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -828,6 +852,9 @@
+ msgid "Commands"
+ msgstr "Naredbe"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Obrisati snimku?"
+ 
+@@ -861,6 +888,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Lijevo (%)"
+ 
+@@ -989,9 +1019,6 @@
+ msgid "center cut out"
+ msgstr "izreæi sredinu"
+ 
+-msgid "no"
+-msgstr "ne"
+-
+ msgid "names only"
+ msgstr "samo imena"
+ 
+@@ -1058,6 +1085,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Transparentnost pozadine titla"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1162,9 +1195,6 @@
+ msgid "confirm"
+ msgstr ""
+ 
+-msgid "yes"
+-msgstr "da"
+-
+ msgid "Recording"
+ msgstr "Snimanje"
+ 
+@@ -1219,6 +1249,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr ""
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Reprodukcija"
+ 
+@@ -1337,6 +1370,9 @@
+ msgid "Schedule"
+ msgstr "Raspored"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Prekini reprodukciju"
+@@ -1385,6 +1421,9 @@
+ msgid "Jump: "
+ msgstr "SkoËi: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Nijedna toËka rezanja nije odreena!"
+ 
+Index: vdr-2.2.0/po/hu_HU.po
+===================================================================
+--- vdr-2.2.0.orig/po/hu_HU.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/hu_HU.po	2015-07-17 18:43:27.000000000 +0200
+@@ -11,7 +11,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-01-30 13:14+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-13 09:36+0200\n"
+ "Last-Translator: Istv√°n F√ºley <ifuley@tigercomp.ro>\n"
+ "Language-Team: Hungarian <vdr@linuxtv.org>\n"
+@@ -662,6 +662,15 @@
+ msgid "Lifetime"
+ msgstr "√âlettartam"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "igen"
++
++msgid "no"
++msgstr "nem"
++
+ msgid "File"
+ msgstr "F√°jl"
+ 
+@@ -786,12 +795,21 @@
+ msgid "Button$Stop copying"
+ msgstr "M√°sol√°sa le√°ll√≠t√°sa"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "V√°g√°s"
+ 
+ msgid "Button$Delete marks"
+ msgstr "V√°g√≥pontok t√∂rl√©se"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "Ez a felv√©tel elt≈±nt!"
+ 
+@@ -801,9 +819,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Hiba a felv√©tel v√°g√°sra el≈ëk√©sz√≠t√©se k√∂zben!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Felv√©tel √°tnevez√©se a k√∂nyvt√°r nev√©re?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "T√∂r√∂ljem a felv√©tel v√°g√≥pontjait?"
+ 
+@@ -831,6 +855,9 @@
+ msgid "Commands"
+ msgstr "Parancsok"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Felv√©tel t√∂rl√©se?"
+ 
+@@ -864,6 +891,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "T√©ma"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Balra (%)"
+ 
+@@ -992,9 +1022,6 @@
+ msgid "center cut out"
+ msgstr "teljeskit√∂lt√©s"
+ 
+-msgid "no"
+-msgstr "nem"
+-
+ msgid "names only"
+ msgstr "kiz√°r√≥lag nevek"
+ 
+@@ -1061,6 +1088,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Felirat h√°tter√©nek transzparenci√°ja"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1165,9 +1198,6 @@
+ msgid "confirm"
+ msgstr "meger≈ës√≠t√©s"
+ 
+-msgid "yes"
+-msgstr "igen"
+-
+ msgid "Recording"
+ msgstr "Felv√©tel"
+ 
+@@ -1222,6 +1252,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Id≈ëeltol√°sos felv√©tel t√∂rl√©se"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Lej√°tsz√°s"
+ 
+@@ -1340,6 +1373,9 @@
+ msgid "Schedule"
+ msgstr "M≈±sor√∫js√°g"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Lej√°tsz√°st befejzni"
+@@ -1388,6 +1424,9 @@
+ msgid "Jump: "
+ msgstr "Ugr√°s ide: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Nincs v√°g√≥pont kijel√∂lve!"
+ 
+Index: vdr-2.2.0/po/it_IT.po
+===================================================================
+--- vdr-2.2.0.orig/po/it_IT.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/it_IT.po	2015-07-17 18:43:27.000000000 +0200
+@@ -11,7 +11,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-12 19:31+0100\n"
+ "Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+ "Language-Team: Italian <vdr@linuxtv.org>\n"
+@@ -663,6 +663,15 @@
+ msgid "Lifetime"
+ msgstr "Scadenza"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "s√¨"
++
++msgid "no"
++msgstr "no"
++
+ msgid "File"
+ msgstr "Nome"
+ 
+@@ -787,12 +796,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Ferma copia"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "Taglia"
+ 
+ msgid "Button$Delete marks"
+ msgstr "Elimina marcatori"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "Registrazione sparita!"
+ 
+@@ -802,9 +820,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Errore durante l'accodamento della registrazione per il taglio!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Rinominare registrazione come nome cartella?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Eliminare i marcatori di modifica della registrazione?"
+ 
+@@ -832,6 +856,9 @@
+ msgid "Commands"
+ msgstr "Comandi"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Eliminare la registrazione?"
+ 
+@@ -865,6 +892,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema colori"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Sinistra (%)"
+ 
+@@ -993,9 +1023,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "no"
+-
+ msgid "names only"
+ msgstr "solo nomi"
+ 
+@@ -1062,6 +1089,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Trasparenza sfondo sottotitoli"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1166,9 +1199,6 @@
+ msgid "confirm"
+ msgstr "conferma"
+ 
+-msgid "yes"
+-msgstr "s√¨"
+-
+ msgid "Recording"
+ msgstr "Registrazione"
+ 
+@@ -1223,6 +1253,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Elimina registrazione timeshift"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Riproduzione"
+ 
+@@ -1341,6 +1374,9 @@
+ msgid "Schedule"
+ msgstr "Programmi"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Ferma riproduzione"
+@@ -1389,6 +1425,9 @@
+ msgid "Jump: "
+ msgstr "Vai a: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Nessun marcatore di modifica definito!"
+ 
+Index: vdr-2.2.0/po/lt_LT.po
+===================================================================
+--- vdr-2.2.0.orig/po/lt_LT.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/lt_LT.po	2015-07-17 18:43:27.000000000 +0200
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-11 14:02+0200\n"
+ "Last-Translator: Valdemaras Pipiras <varas@ambernet.lt>\n"
+ "Language-Team: Lithuanian <vdr@linuxtv.org>\n"
+@@ -657,6 +657,15 @@
+ msgid "Lifetime"
+ msgstr "Galiojimas"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "taip"
++
++msgid "no"
++msgstr "ne"
++
+ msgid "File"
+ msgstr "Failas"
+ 
+@@ -781,12 +790,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Sustabdyti kopijavimƒÖ"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "I≈°kirpti"
+ 
+ msgid "Button$Delete marks"
+ msgstr "I≈°trinti ≈æymes"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "ƒÆra≈°ai i≈°valyti!"
+ 
+@@ -796,9 +814,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Klaida sustatant ƒØra≈°us ƒØ karpymo eilƒô!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Priskirti ƒØra≈°ui katalogo pavadinimƒÖ?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Ar tikrai i≈°trinti ≈°io ƒØra≈°o koregavimo ≈æymes?"
+ 
+@@ -826,6 +850,9 @@
+ msgid "Commands"
+ msgstr "Komandos"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "I≈°trinti ƒØra≈°ƒÖ?"
+ 
+@@ -859,6 +886,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Atitraukimas nuo kairƒós (%)"
+ 
+@@ -987,9 +1017,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "ne"
+-
+ msgid "names only"
+ msgstr "tik pavadinimai"
+ 
+@@ -1056,6 +1083,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Subtitr≈≥ fono permatomumas"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "Konverteris (LNB)"
+ 
+@@ -1160,9 +1193,6 @@
+ msgid "confirm"
+ msgstr "patvirtinti"
+ 
+-msgid "yes"
+-msgstr "taip"
+-
+ msgid "Recording"
+ msgstr "ƒÆra≈°ymas"
+ 
+@@ -1217,6 +1247,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Trinti atidƒóto grojimo ƒØra≈°ƒÖ"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Pakartojimai"
+ 
+@@ -1335,6 +1368,9 @@
+ msgid "Schedule"
+ msgstr "Programa"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Sustabdyti kartojimƒÖ"
+@@ -1383,6 +1419,9 @@
+ msgid "Jump: "
+ msgstr "Per≈°okti: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Nenustatytos koregavimo ≈æymƒós!"
+ 
+Index: vdr-2.2.0/po/nl_NL.po
+===================================================================
+--- vdr-2.2.0.orig/po/nl_NL.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/nl_NL.po	2015-07-17 18:43:27.000000000 +0200
+@@ -13,7 +13,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-11 10:51+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-10 19:43+0100\n"
+ "Last-Translator: Erik Oomen <oomen.e@gmail.com>\n"
+ "Language-Team: Dutch <vdr@linuxtv.org>\n"
+@@ -663,6 +663,15 @@
+ msgid "Lifetime"
+ msgstr "Bewaarduur"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "ja"
++
++msgid "no"
++msgstr "nee"
++
+ msgid "File"
+ msgstr "Bestandnaam"
+ 
+@@ -787,12 +796,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Stop kopiÎren"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "Knip"
+ 
+ msgid "Button$Delete marks"
+ msgstr "Verwijder markeringen"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "Opname verdwenen!"
+ 
+@@ -802,9 +820,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Kan opname voor knippen niet in wachtrij plaatsen!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Opname hernoemen naar mapnaam?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Verwijder bewerkings markeringen voor deze opnamen?"
+ 
+@@ -832,6 +856,9 @@
+ msgid "Commands"
+ msgstr "Commando's"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Opname verwijderen?"
+ 
+@@ -865,6 +892,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Thema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Links (%)"
+ 
+@@ -993,9 +1023,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "nee"
+-
+ msgid "names only"
+ msgstr "alleen namen"
+ 
+@@ -1062,6 +1089,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Transparantie achtergrond ondertiteling"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1166,9 +1199,6 @@
+ msgid "confirm"
+ msgstr "bevestig"
+ 
+-msgid "yes"
+-msgstr "ja"
+-
+ msgid "Recording"
+ msgstr "Opname"
+ 
+@@ -1223,6 +1253,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Verwijder time-shift opname"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Afspelen"
+ 
+@@ -1341,6 +1374,9 @@
+ msgid "Schedule"
+ msgstr "Programmagids"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Stop afspelen"
+@@ -1389,6 +1425,9 @@
+ msgid "Jump: "
+ msgstr "Springen: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Geen bewerkingsmarkeringen gedefinieerd!"
+ 
+Index: vdr-2.2.0/po/nn_NO.po
+===================================================================
+--- vdr-2.2.0.orig/po/nn_NO.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/nn_NO.po	2015-07-17 18:43:27.000000000 +0200
+@@ -8,7 +8,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2007-08-12 14:17+0200\n"
+ "Last-Translator: Truls Slevigen <truls@slevigen.no>\n"
+ "Language-Team: Norwegian Nynorsk <vdr@linuxtv.org>\n"
+@@ -658,6 +658,15 @@
+ msgid "Lifetime"
+ msgstr "Levetid"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "ja"
++
++msgid "no"
++msgstr "nei"
++
+ msgid "File"
+ msgstr "Filnavn"
+ 
+@@ -782,12 +791,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -797,9 +815,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -827,6 +851,9 @@
+ msgid "Commands"
+ msgstr "Kommandoer"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Slette opptak?"
+ 
+@@ -860,6 +887,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr ""
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr ""
+ 
+@@ -988,9 +1018,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "nei"
+-
+ msgid "names only"
+ msgstr ""
+ 
+@@ -1057,6 +1084,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr ""
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1161,9 +1194,6 @@
+ msgid "confirm"
+ msgstr ""
+ 
+-msgid "yes"
+-msgstr "ja"
+-
+ msgid "Recording"
+ msgstr "Opptak"
+ 
+@@ -1218,6 +1248,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr ""
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Spill av"
+ 
+@@ -1336,6 +1369,9 @@
+ msgid "Schedule"
+ msgstr "Programmer"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Stopp avspilling"
+@@ -1384,6 +1420,9 @@
+ msgid "Jump: "
+ msgstr "Hopp: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr ""
+ 
+Index: vdr-2.2.0/po/pl_PL.po
+===================================================================
+--- vdr-2.2.0.orig/po/pl_PL.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/pl_PL.po	2015-07-17 18:43:27.000000000 +0200
+@@ -10,7 +10,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-12 00:59+0100\n"
+ "Last-Translator: Tomasz Maciej Nowak <tmn505@gmail.com>\n"
+ "Language-Team: Polish <vdr@linuxtv.org>\n"
+@@ -660,6 +660,15 @@
+ msgid "Lifetime"
+ msgstr "Czas øycia"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "tak"
++
++msgid "no"
++msgstr "nie"
++
+ msgid "File"
+ msgstr "Plik"
+ 
+@@ -784,12 +793,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Zatrzymaj kopiowanie"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "Wytnij"
+ 
+ msgid "Button$Delete marks"
+ msgstr "UsuÒ zaznaczone"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "Nagranie zniknÍ≥o!"
+ 
+@@ -799,9 +817,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "B≥±d podczas zakolejkowania nagrania do przycinania!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "ZmieniÊ nazwÍ nagrania na nazwÍ katalogu?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Usun±Ê zaznaczenia z edycji dla tego nagrania?"
+ 
+@@ -829,6 +853,9 @@
+ msgid "Commands"
+ msgstr "Polecenia"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Usun±Ê nagranie?"
+ 
+@@ -862,6 +889,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Motyw"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Od lewej (%)"
+ 
+@@ -990,9 +1020,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "nie"
+-
+ msgid "names only"
+ msgstr "tylko nazwy"
+ 
+@@ -1059,6 +1086,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Przeºrocze podtytu≥Ûw: T≥o"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1163,9 +1196,6 @@
+ msgid "confirm"
+ msgstr "potwierdº"
+ 
+-msgid "yes"
+-msgstr "tak"
+-
+ msgid "Recording"
+ msgstr "Nagranie"
+ 
+@@ -1220,6 +1250,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "UsuÒ nagranie timeshift"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Odtwarzanie"
+ 
+@@ -1338,6 +1371,9 @@
+ msgid "Schedule"
+ msgstr "Program"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Zatrzymaj odtwarzanie"
+@@ -1386,6 +1422,9 @@
+ msgid "Jump: "
+ msgstr "Skok: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Nie zdefiniowano znacznikÛw montaøu!"
+ 
+Index: vdr-2.2.0/po/pt_PT.po
+===================================================================
+--- vdr-2.2.0.orig/po/pt_PT.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/pt_PT.po	2015-07-17 18:43:27.000000000 +0200
+@@ -8,7 +8,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2010-03-28 22:49+0100\n"
+ "Last-Translator: Cris Silva <hudokkow@gmail.com>\n"
+ "Language-Team: Portuguese <vdr@linuxtv.org>\n"
+@@ -658,6 +658,15 @@
+ msgid "Lifetime"
+ msgstr "Validade"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "sim"
++
++msgid "no"
++msgstr "n„o"
++
+ msgid "File"
+ msgstr "Ficheiro"
+ 
+@@ -782,12 +791,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -797,9 +815,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -827,6 +851,9 @@
+ msgid "Commands"
+ msgstr "Comandos"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Eliminar gravaÁ„o?"
+ 
+@@ -860,6 +887,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Cor do tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Esquerda (%)"
+ 
+@@ -988,9 +1018,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "n„o"
+-
+ msgid "names only"
+ msgstr "apenas nomes"
+ 
+@@ -1057,6 +1084,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "TransparÍncia de fundo das legendas"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1161,9 +1194,6 @@
+ msgid "confirm"
+ msgstr "confirmar"
+ 
+-msgid "yes"
+-msgstr "sim"
+-
+ msgid "Recording"
+ msgstr "GravaÁ„o"
+ 
+@@ -1218,6 +1248,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Eliminar gravaÁıes timeshift"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Reproduzir"
+ 
+@@ -1336,6 +1369,9 @@
+ msgid "Schedule"
+ msgstr "ProgramaÁ„o"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Parar reproduÁ„o"
+@@ -1384,6 +1420,9 @@
+ msgid "Jump: "
+ msgstr "Saltar: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Marcas de ediÁ„o n„o foram definidas!"
+ 
+Index: vdr-2.2.0/po/ro_RO.po
+===================================================================
+--- vdr-2.2.0.orig/po/ro_RO.po	2015-02-19 10:12:21.000000000 +0100
++++ vdr-2.2.0/po/ro_RO.po	2015-07-17 18:43:27.000000000 +0200
+@@ -8,7 +8,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-11 22:26+0100\n"
+ "Last-Translator: Lucian Muresan <lucianm@users.sourceforge.net>\n"
+ "Language-Team: Romanian <vdr@linuxtv.org>\n"
+@@ -659,6 +659,15 @@
+ msgid "Lifetime"
+ msgstr "Timp de pƒÉstrare"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "da"
++
++msgid "no"
++msgstr "nu"
++
+ msgid "File"
+ msgstr "Fi≈üier"
+ 
+@@ -783,12 +792,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Opre»ôte copierea"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "Taie"
+ 
+ msgid "Button$Delete marks"
+ msgstr "»òterge marcajele"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "√énregistrarea a dispƒÉrut!"
+ 
+@@ -798,9 +816,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Eroare la punerea √Æn coada pentru tƒÉiere!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Redenumesc √Ænregistrarea ca pe director?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "»òterg marcajele de editare pentru aceastƒÉ √Ænregistrare?"
+ 
+@@ -828,6 +852,9 @@
+ msgid "Commands"
+ msgstr "Comenzi"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "≈ûterg √Ænregistrarea?"
+ 
+@@ -861,6 +888,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "TemƒÉ"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "St√¢nga (%)"
+ 
+@@ -989,9 +1019,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "nu"
+-
+ msgid "names only"
+ msgstr "doar numele"
+ 
+@@ -1058,6 +1085,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Transparen≈£a fundalului subtitrƒÉrii"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1162,9 +1195,6 @@
+ msgid "confirm"
+ msgstr "confirmare"
+ 
+-msgid "yes"
+-msgstr "da"
+-
+ msgid "Recording"
+ msgstr "√énregistrare"
+ 
+@@ -1219,6 +1249,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "≈ûterge √Ænregistrarea pentru vizionare decalatƒÉ"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Redare"
+ 
+@@ -1337,6 +1370,9 @@
+ msgid "Schedule"
+ msgstr "Program (EPG)"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Opre≈üte redarea"
+@@ -1385,6 +1421,9 @@
+ msgid "Jump: "
+ msgstr "Salt la: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Nu s-au pus marcaje de editare pentru aceastƒÉ √Ænregistrare"
+ 
+Index: vdr-2.2.0/po/ru_RU.po
+===================================================================
+--- vdr-2.2.0.orig/po/ru_RU.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/ru_RU.po	2015-07-17 18:43:27.000000000 +0200
+@@ -8,7 +8,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2013-03-10 17:13+0100\n"
+ "Last-Translator: Oleg Roitburd <oroitburd@gmail.com>\n"
+ "Language-Team: Russian <vdr@linuxtv.org>\n"
+@@ -658,6 +658,15 @@
+ msgid "Lifetime"
+ msgstr "¡‡ﬁ⁄ Â‡–›’›ÿÔ"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "‘–"
++
++msgid "no"
++msgstr "›’‚"
++
+ msgid "File"
+ msgstr "ƒ–Ÿ€"
+ 
+@@ -782,12 +791,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -797,9 +815,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -827,6 +851,9 @@
+ msgid "Commands"
+ msgstr "∫ﬁ‹–›‘Î"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "¡‚’‡’‚Ï ◊–ﬂÿ·Ï?"
+ 
+@@ -860,6 +887,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "¬’‹–"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "æ‚·‚„ﬂ ·€’“– (%)"
+ 
+@@ -988,9 +1018,6 @@
+ msgid "center cut out"
+ msgstr "ﬁ—‡’◊–‚Ï ·—ﬁ⁄„"
+ 
+-msgid "no"
+-msgstr "›’‚"
+-
+ msgid "names only"
+ msgstr "‚ﬁ€Ï⁄ﬁ ›–◊“–›ÿÔ"
+ 
+@@ -1057,6 +1084,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "ø‡ﬁ◊‡–Á›ﬁ·‚Ï ‰ﬁ›– ·„—‚ÿ‚‡ﬁ“"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "∫ﬁ›“’‡‚’‡"
+ 
+@@ -1161,9 +1194,6 @@
+ msgid "confirm"
+ msgstr "ﬂﬁ‘‚“’‡÷‘’›ÿ’"
+ 
+-msgid "yes"
+-msgstr "‘–"
+-
+ msgid "Recording"
+ msgstr "∑–ﬂÿ·Ï"
+ 
+@@ -1218,6 +1248,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "„‘–€’›ÿÔ ﬁ‚€ﬁ÷’››ﬁŸ ◊–ﬂÿ·ÿ"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "≤ﬁ·ﬂ‡ﬁÿ◊“’‘’›ÿ’"
+ 
+@@ -1336,6 +1369,9 @@
+ msgid "Schedule"
+ msgstr "¬’€’”ÿ‘"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " ø‡’⁄‡–‚ÿ‚Ï “ﬁ·ﬂ‡ﬁÿ◊“’‘’›ÿ’"
+@@ -1384,6 +1420,9 @@
+ msgid "Jump: "
+ msgstr "ø’‡’Ÿ‚ÿ: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Ω’ ◊–‘–›Î ‹’‚⁄ÿ ‘€Ô ‹ﬁ›‚–÷–!"
+ 
+Index: vdr-2.2.0/po/sk_SK.po
+===================================================================
+--- vdr-2.2.0.orig/po/sk_SK.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/sk_SK.po	2015-07-17 18:43:27.000000000 +0200
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-17 18:59+0100\n"
+ "Last-Translator: Milan Hrala <hrala.milan@gmail.com>\n"
+ "Language-Team: Slovak <vdr@linuxtv.org>\n"
+@@ -658,6 +658,15 @@
+ msgid "Lifetime"
+ msgstr "Æivotnosª"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "·no"
++
++msgid "no"
++msgstr "nie"
++
+ msgid "File"
+ msgstr "S˙bor"
+ 
+@@ -782,12 +791,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Zastaviª kopÌrovanie"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "Vystrihn˙ª"
+ 
+ msgid "Button$Delete marks"
+ msgstr "Vymazaª znaËky"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "Z·znam sa stratil!"
+ 
+@@ -797,9 +815,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Chyba v poradÌ pri zostrihu nahr·vky!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Premenovaª meno prieËinku nahr·vky?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Odstr·niª strihovÈ znaËky tejto nahr·vky?"
+ 
+@@ -827,6 +851,9 @@
+ msgid "Commands"
+ msgstr "PrÌkazy"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Zmazaª nahr·vku?"
+ 
+@@ -860,6 +887,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "TÈma"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Vµavo (%)"
+ 
+@@ -988,9 +1018,6 @@
+ msgid "center cut out"
+ msgstr "orezaª do stredu"
+ 
+-msgid "no"
+-msgstr "nie"
+-
+ msgid "names only"
+ msgstr "iba n·zvy"
+ 
+@@ -1057,6 +1084,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Priehµadnosª pozadia titulkov"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB (nÌzko πumov· jednotka)"
+ 
+@@ -1161,9 +1194,6 @@
+ msgid "confirm"
+ msgstr "overiª"
+ 
+-msgid "yes"
+-msgstr "·no"
+-
+ msgid "Recording"
+ msgstr "Nahr·vanie"
+ 
+@@ -1218,6 +1248,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Vymazaª timeshift z·znamy"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Prehr·vanie"
+ 
+@@ -1336,6 +1369,9 @@
+ msgid "Schedule"
+ msgstr "TV program"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Zastaviª prehr·vanie"
+@@ -1384,6 +1420,9 @@
+ msgid "Jump: "
+ msgstr "Skok: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Neboli vyznaËenÈ znaËky pre zostrihanie!"
+ 
+Index: vdr-2.2.0/po/sl_SI.po
+===================================================================
+--- vdr-2.2.0.orig/po/sl_SI.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/sl_SI.po	2015-07-17 18:43:27.000000000 +0200
+@@ -8,7 +8,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2013-03-04 12:46+0100\n"
+ "Last-Translator: Matjaz Thaler <matjaz.thaler@guest.arnes.si>\n"
+ "Language-Team: Slovenian <vdr@linuxtv.org>\n"
+@@ -658,6 +658,15 @@
+ msgid "Lifetime"
+ msgstr "Veljavnost"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "da"
++
++msgid "no"
++msgstr "ne"
++
+ msgid "File"
+ msgstr "Datoteka"
+ 
+@@ -782,12 +791,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -797,9 +815,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -827,6 +851,9 @@
+ msgid "Commands"
+ msgstr "Ukazi"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Izbriπi posnetek?"
+ 
+@@ -860,6 +887,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Levo (%)"
+ 
+@@ -988,9 +1018,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "ne"
+-
+ msgid "names only"
+ msgstr "samo imena"
+ 
+@@ -1057,6 +1084,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Transparentnost ozadja podnapisov"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1161,9 +1194,6 @@
+ msgid "confirm"
+ msgstr "potrdi"
+ 
+-msgid "yes"
+-msgstr "da"
+-
+ msgid "Recording"
+ msgstr "Snemanje"
+ 
+@@ -1218,6 +1248,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Izbriπi snemanje z zamikom"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Predvajanje"
+ 
+@@ -1336,6 +1369,9 @@
+ msgid "Schedule"
+ msgstr "Program"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Prekini predvajanje"
+@@ -1384,6 +1420,9 @@
+ msgid "Jump: "
+ msgstr "SkoËi: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Nobena prekinitvena toËka ni definirana!"
+ 
+Index: vdr-2.2.0/po/sv_SE.po
+===================================================================
+--- vdr-2.2.0.orig/po/sv_SE.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/sv_SE.po	2015-07-17 18:43:27.000000000 +0200
+@@ -12,7 +12,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-12 21:58+0100\n"
+ "Last-Translator: Magnus Sirviˆ <sirwio@hotmail.com>\n"
+ "Language-Team: Swedish <vdr@linuxtv.org>\n"
+@@ -662,6 +662,15 @@
+ msgid "Lifetime"
+ msgstr "Livstid"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "ja"
++
++msgid "no"
++msgstr "nej"
++
+ msgid "File"
+ msgstr "Filnamn"
+ 
+@@ -786,12 +795,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Avsluta kopiering"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "Redigera"
+ 
+ msgid "Button$Delete marks"
+ msgstr "Ta bort redigeringsm‰rke"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "Inspelningen fˆrsvann!"
+ 
+@@ -801,9 +819,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Ett fel upstod n‰r inspelningen kˆades fˆr klippning!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "Byta namn pÂ inspelning till mappnamnet?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Ta bort redigeringsm‰rken fˆr den h‰r inspelningen?"
+ 
+@@ -831,6 +855,9 @@
+ msgid "Commands"
+ msgstr "Kommandon"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Ta bort inspelningen?"
+ 
+@@ -864,6 +891,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "V‰nster (%)"
+ 
+@@ -992,9 +1022,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "nej"
+-
+ msgid "names only"
+ msgstr "bara namn"
+ 
+@@ -1061,6 +1088,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Transparent bakgrund textremsa"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1165,9 +1198,6 @@
+ msgid "confirm"
+ msgstr "bekr‰fta"
+ 
+-msgid "yes"
+-msgstr "ja"
+-
+ msgid "Recording"
+ msgstr "Inspelning"
+ 
+@@ -1222,6 +1252,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Radering av timeshift-inspelning"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Uppspelning"
+ 
+@@ -1340,6 +1373,9 @@
+ msgid "Schedule"
+ msgstr "Program"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Avsluta uppspelning"
+@@ -1388,6 +1424,9 @@
+ msgid "Jump: "
+ msgstr "Hoppa: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Det finns inga redigeringsm‰rken"
+ 
+Index: vdr-2.2.0/po/tr_TR.po
+===================================================================
+--- vdr-2.2.0.orig/po/tr_TR.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/tr_TR.po	2015-07-17 18:43:28.000000000 +0200
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2008-02-28 00:33+0100\n"
+ "Last-Translator: Oktay YolgeÁen <oktay_73@yahoo.de>\n"
+ "Language-Team: Turkish <vdr@linuxtv.org>\n"
+@@ -657,6 +657,15 @@
+ msgid "Lifetime"
+ msgstr "÷mr¸"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "evet"
++
++msgid "no"
++msgstr "hay˝r"
++
+ msgid "File"
+ msgstr "K¸t¸k"
+ 
+@@ -781,12 +790,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -796,9 +814,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -826,6 +850,9 @@
+ msgid "Commands"
+ msgstr "Komutlar"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Kay˝t˝ sil?"
+ 
+@@ -859,6 +886,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Tema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Sol (%)"
+ 
+@@ -987,9 +1017,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "hay˝r"
+-
+ msgid "names only"
+ msgstr "s˝rf isimler"
+ 
+@@ -1056,6 +1083,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Altyaz˝ arka ˛effafl˝k"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1160,9 +1193,6 @@
+ msgid "confirm"
+ msgstr ""
+ 
+-msgid "yes"
+-msgstr "evet"
+-
+ msgid "Recording"
+ msgstr "Kay˝t"
+ 
+@@ -1217,6 +1247,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr ""
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Tekrar"
+ 
+@@ -1335,6 +1368,9 @@
+ msgid "Schedule"
+ msgstr "Program"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Gˆsteri˛i bitir"
+@@ -1383,6 +1419,9 @@
+ msgid "Jump: "
+ msgstr "Atla: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Kesim i˛aretleri belirtilmemi˛!"
+ 
+Index: vdr-2.2.0/po/uk_UA.po
+===================================================================
+--- vdr-2.2.0.orig/po/uk_UA.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/uk_UA.po	2015-07-17 18:43:28.000000000 +0200
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2015-02-13 18:14+0100\n"
+ "Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
+ "Language-Team: Ukrainian <vdr@linuxtv.org>\n"
+@@ -658,6 +658,15 @@
+ msgid "Lifetime"
+ msgstr "–°—Ç—Ä–æ–∫ –∑–±–µ—Ä—ñ–≥–∞–Ω–Ω—è"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "—Ç–∞–∫"
++
++msgid "no"
++msgstr "–Ω—ñ"
++
+ msgid "File"
+ msgstr "–§–∞–π–ª"
+ 
+@@ -782,12 +791,21 @@
+ msgid "Button$Stop copying"
+ msgstr "–ó—É–ø–∏–Ω–∏—Ç–∏ –∫–æ–ø—ñ—é–≤–∞–Ω–Ω—è"
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr "–û–±—Ä—ñ–∑–∞–Ω–Ω—è"
+ 
+ msgid "Button$Delete marks"
+ msgstr "–í–∏–ª—É—á–∏—Ç–∏ –º—ñ—Ç–∫–∏"
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr "–ó–∞–ø–∏—Å –∑–Ω–∏–∫!"
+ 
+@@ -797,9 +815,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "–ü–æ–º–∏–ª–∫–∞ –ø–µ—Ä–µ—à—É–∫–æ–≤—É–≤–∞–Ω–Ω—è –∑–∞–ø–∏—Å—É –¥–ª—è –æ–±—Ä—ñ–∑–∞–Ω–Ω—è!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr "–ù–∞–∑–≤–∞—Ç–∏ –∑–∞–ø–∏—Å –Ω–∞–∑–≤–æ—é —Ç–µ–∫–∏?"
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "–í–∏–ª—É—á–∏—Ç–∏ –º—ñ—Ç–∫–∏ —Ä–µ–¥–∞–≥—É–≤–∞–Ω–Ω—è –¥–ª—è —Ü—å–æ–≥–æ –∑–∞–ø–∏—Å—É?"
+ 
+@@ -827,6 +851,9 @@
+ msgid "Commands"
+ msgstr "–ö–æ–º–∞–Ω–¥–∏"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "–í–∏—Ç–µ—Ä—Ç–∏ –∑–∞–ø–∏—Å?"
+ 
+@@ -860,6 +887,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "–¢–µ–º–∞"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "–í—ñ–¥—Å—Ç—É–ø –∑–ª—ñ–≤–∞ (%)"
+ 
+@@ -988,9 +1018,6 @@
+ msgid "center cut out"
+ msgstr "–æ–±—Ä—ñ–∑–∞—Ç–∏ –ø–æ –±–æ–∫–∞—Ö"
+ 
+-msgid "no"
+-msgstr "–Ω—ñ"
+-
+ msgid "names only"
+ msgstr "—Ç—ñ–ª—å–∫–∏ –Ω–∞–∑–≤–∏"
+ 
+@@ -1057,6 +1084,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "–ü—Ä–æ–∑–æ—Ä—ñ—Å—Ç—å –∑–∞–¥–Ω—å–æ–≥–æ –ø–ª–∞–Ω—É —Å—É–±—Ç–∏—Ç—Ä—ñ–≤"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "–ö–æ–Ω–≤–µ—Ä—Ç–µ—Ä"
+ 
+@@ -1161,9 +1194,6 @@
+ msgid "confirm"
+ msgstr "–ø—ñ–¥—Ç–≤–µ—Ä–¥–∏—Ç–∏"
+ 
+-msgid "yes"
+-msgstr "—Ç–∞–∫"
+-
+ msgid "Recording"
+ msgstr "–ó–∞–ø–∏—Å"
+ 
+@@ -1218,6 +1248,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "–í–∏–¥–∞–ª–∏—Ç–∏ –∑–∞–ø–∏—Å–∏ –∑ –∑—Å—É–≤–æ–º –ø–æ —á–∞—Å—É"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "–ü–µ—Ä–µ–≥–ª—è–¥"
+ 
+@@ -1336,6 +1369,9 @@
+ msgid "Schedule"
+ msgstr "–¢–µ–ª–µ–≥—ñ–¥"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " –ó—É–ø–∏–Ω–∏—Ç–∏ –ø—Ä–æ–≥—Ä–∞–≤–∞–Ω–Ω—è"
+@@ -1384,6 +1420,9 @@
+ msgid "Jump: "
+ msgstr "–ü–µ—Ä–µ–π—Ç–∏: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "–ù–µ –∑–∞–¥–∞–Ω–æ –º—ñ—Ç–æ–∫ –¥–ª—è –º–æ–Ω—Ç–∞–∂—É!"
+ 
+Index: vdr-2.2.0/po/zh_CN.po
+===================================================================
+--- vdr-2.2.0.orig/po/zh_CN.po	2015-02-19 10:12:22.000000000 +0100
++++ vdr-2.2.0/po/zh_CN.po	2015-07-17 18:43:28.000000000 +0200
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2013-03-04 14:52+0800\n"
+ "Last-Translator: NFVDR <nfvdr@live.com>\n"
+ "Language-Team: Chinese (simplified) <nfvdr@live.com>\n"
+@@ -659,6 +659,15 @@
+ msgid "Lifetime"
+ msgstr "ÁªàÁîü"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "ÊòØ"
++
++msgid "no"
++msgstr "‰∏ç"
++
+ msgid "File"
+ msgstr "Êñá‰ª∂"
+ 
+@@ -783,12 +792,21 @@
+ msgid "Button$Stop copying"
+ msgstr ""
+ 
++msgid "Button$Copy"
++msgstr ""
++
++msgid "Button$Delete resume"
++msgstr ""
++
+ msgid "Button$Cut"
+ msgstr ""
+ 
+ msgid "Button$Delete marks"
+ msgstr ""
+ 
++msgid "Button$Toggle commands"
++msgstr ""
++
+ msgid "Recording vanished!"
+ msgstr ""
+ 
+@@ -798,9 +816,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr ""
+ 
++msgid "Error while queueing recording for copying!"
++msgstr ""
++
+ msgid "Rename recording to folder name?"
+ msgstr ""
+ 
++msgid "Delete resume for this recording?"
++msgstr ""
++
+ msgid "Delete editing marks for this recording?"
+ msgstr ""
+ 
+@@ -828,6 +852,9 @@
+ msgid "Commands"
+ msgstr "Â∏∏Áî®Êìç‰ΩúÂëΩ‰ª§"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "ÊòØÂê¶Âà†Èô§ÂΩïÂÉèÔºü"
+ 
+@@ -861,6 +888,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "‰∏ªÈ¢òÈÄâÊã©"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Â∑¶ËæπË∑ùÁ¶ªËÆæÁΩÆ (%)"
+ 
+@@ -989,9 +1019,6 @@
+ msgid "center cut out"
+ msgstr "‰∏≠ÂøÉÂâ™ÂàáÊ®°Âºè"
+ 
+-msgid "no"
+-msgstr "‰∏ç"
+-
+ msgid "names only"
+ msgstr "‰ªÖÊòØÂêçÂ≠ó"
+ 
+@@ -1058,6 +1085,12 @@
+ msgid "Setup.DVB$Subtitle background transparency"
+ msgstr "Â≠óÂπïËÉåÊôØÈÄèÊòéÂ∫¶"
+ 
++msgid "Setup.DVB$Enable teletext support"
++msgstr ""
++
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "ÂàáÊç¢Âô®ËÆæÁΩÆ"
+ 
+@@ -1162,9 +1195,6 @@
+ msgid "confirm"
+ msgstr "Á°ÆËÆ§"
+ 
+-msgid "yes"
+-msgstr "ÊòØ"
+-
+ msgid "Recording"
+ msgstr "ÂΩïÂÉèËÆæÁΩÆ"
+ 
+@@ -1219,6 +1249,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Âà†Èô§Êó∂ÁßªËÆ∞ÂΩï"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "ÂõûÊîæËÆæÁΩÆ"
+ 
+@@ -1337,6 +1370,9 @@
+ msgid "Schedule"
+ msgstr "‰ªªÂä°ÂàóË°®"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " ÂÅúÊ≠¢ÂõûÊîæ"
+@@ -1385,6 +1421,9 @@
+ msgid "Jump: "
+ msgstr "Ë∑≥Ëøá: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Êó†ÁºñËæëÊ†áËÆ∞ÂÆö‰πâ!"
+ 
+Index: vdr-2.2.0/receiver.c
+===================================================================
+--- vdr-2.2.0.orig/receiver.c	2015-01-12 15:04:31.000000000 +0100
++++ vdr-2.2.0/receiver.c	2015-07-14 18:34:51.000000000 +0200
+@@ -72,7 +72,8 @@
+             (Channel->Ppid() == Channel->Vpid() || AddPid(Channel->Ppid())) &&
+             AddPids(Channel->Apids()) &&
+             AddPids(Channel->Dpids()) &&
+-            AddPids(Channel->Spids());
++            AddPids(Channel->Spids()) &&
++            (!Setup.SupportTeletext || AddPid(Channel->Tpid()));
+      }
+   return true;
+ }
+Index: vdr-2.2.0/remux.c
+===================================================================
+--- vdr-2.2.0.orig/remux.c	2015-01-14 10:57:09.000000000 +0100
++++ vdr-2.2.0/remux.c	2015-08-25 20:02:50.000000000 +0200
+@@ -416,6 +416,29 @@
+   return i;
+ }
+ 
++int cPatPmtGenerator::MakeTeletextDescriptor(uchar *Target, const tTeletextSubtitlePage *pages, int pageCount)
++{
++  int i = 0, j = 0;
++  Target[i++] = SI::TeletextDescriptorTag;
++  int l = i;
++  Target[i++] = 0x00; // length
++  for (int n = 0; n < pageCount; n++) {
++      const char* Language = pages[n].ttxtLanguage;
++      Target[i++] = *Language++;
++      Target[i++] = *Language++;
++      Target[i++] = *Language++;
++      Target[i++] = (pages[n].ttxtType << 3) + pages[n].ttxtMagazine;
++      Target[i++] = pages[n].ttxtPage;
++      j++;
++      }
++  if (j > 0) {
++     Target[l] = j * 5; // update length
++     IncEsInfoLength(i);
++     return i;
++     }
++  return 0;
++}
++
+ int cPatPmtGenerator::MakeLanguageDescriptor(uchar *Target, const char *Language)
+ {
+   int i = 0;
+@@ -503,6 +526,7 @@
+   if (Channel) {
+      int Vpid = Channel->Vpid();
+      int Ppid = Channel->Ppid();
++     int Tpid = Channel->Tpid();
+      uchar *p = buf;
+      int i = 0;
+      p[i++] = 0x02; // table id
+@@ -535,6 +559,10 @@
+          i += MakeStream(buf + i, 0x06, Channel->Spid(n));
+          i += MakeSubtitlingDescriptor(buf + i, Channel->Slang(n), Channel->SubtitlingType(n), Channel->CompositionPageId(n), Channel->AncillaryPageId(n));
+          }
++     if (Tpid) {
++        i += MakeStream(buf + i, 0x06, Tpid);
++        i += MakeTeletextDescriptor(buf + i, Channel->TeletextSubtitlePages(), Channel->TotalTeletextSubtitlePages());
++        }
+ 
+      int sl = i - SectionLength - 2 + 4; // -2 = SectionLength storage, +4 = length of CRC
+      buf[SectionLength] |= (sl >> 8) & 0x0F;
+@@ -608,6 +636,7 @@
+   pmtPids[0] = 0;
+   vpid = vtype = 0;
+   ppid = 0;
++  tpid = 0;
+ }
+ 
+ void cPatPmtParser::ParsePat(const uchar *Data, int Length)
+@@ -696,11 +725,13 @@
+      int NumSpids = 0;
+      vpid = vtype = 0;
+      ppid = 0;
++     tpid = 0;
+      apids[0] = 0;
+      dpids[0] = 0;
+      spids[0] = 0;
+      atypes[0] = 0;
+      dtypes[0] = 0;
++     totalTtxtSubtitlePages = 0;
+      SI::PMT::Stream stream;
+      for (SI::Loop::Iterator it; Pmt.streamLoop.getNext(stream, it); ) {
+          dbgpatpmt("     stream type = %02X, pid = %d", stream.getStreamType(), stream.getPid());
+@@ -799,6 +830,28 @@
+                                     spids[NumSpids] = 0;
+                                     }
+                                  break;
++                            case SI::TeletextDescriptorTag: {
++                                 dbgpatpmt(" teletext");
++                                 tpid = stream.getPid();
++                                 SI::TeletextDescriptor *sd = (SI::TeletextDescriptor *)d;
++                                 SI::TeletextDescriptor::Teletext ttxt;
++                                 if (totalTtxtSubtitlePages < MAXTXTPAGES) {
++                                    for (SI::Loop::Iterator it; sd->teletextLoop.getNext(ttxt, it); ) {
++                                        bool isSubtitlePage = (ttxt.getTeletextType() == 0x02) || (ttxt.getTeletextType() == 0x05);
++                                        if (isSubtitlePage && ttxt.languageCode[0]) {
++                                           dbgpatpmt(" '%s:%x.%x'", ttxt.languageCode, ttxt.getTeletextMagazineNumber(), ttxt.getTeletextPageNumber());
++                                           strn0cpy(teletextSubtitlePages[totalTtxtSubtitlePages].ttxtLanguage, I18nNormalizeLanguageCode(ttxt.languageCode), MAXLANGCODE1);
++                                           teletextSubtitlePages[totalTtxtSubtitlePages].ttxtPage = ttxt.getTeletextPageNumber();
++                                           teletextSubtitlePages[totalTtxtSubtitlePages].ttxtMagazine = ttxt.getTeletextMagazineNumber();
++                                           teletextSubtitlePages[totalTtxtSubtitlePages].ttxtType = ttxt.getTeletextType();
++                                           totalTtxtSubtitlePages++;
++                                           if (totalTtxtSubtitlePages >= MAXTXTPAGES)
++                                              break;
++                                           }
++                                        }
++                                    }
++                                 }
++                                 break;
+                             case SI::ISO639LanguageDescriptorTag: {
+                                  SI::ISO639LanguageDescriptor *ld = (SI::ISO639LanguageDescriptor *)d;
+                                  dbgpatpmt(" '%s'", ld->languageCode);
+Index: vdr-2.2.0/remux.h
+===================================================================
+--- vdr-2.2.0.orig/remux.h	2014-03-22 15:58:24.000000000 +0100
++++ vdr-2.2.0/remux.h	2015-08-25 20:02:50.000000000 +0200
+@@ -302,6 +302,7 @@
+   int MakeStream(uchar *Target, uchar Type, int Pid);
+   int MakeAC3Descriptor(uchar *Target, uchar Type);
+   int MakeSubtitlingDescriptor(uchar *Target, const char *Language, uchar SubtitlingType, uint16_t CompositionPageId, uint16_t AncillaryPageId);
++  int MakeTeletextDescriptor(uchar *Target, const tTeletextSubtitlePage *pages, int pageCount);
+   int MakeLanguageDescriptor(uchar *Target, const char *Language);
+   int MakeCRC(uchar *Target, const uchar *Data, int Length);
+   void GeneratePmtPid(const cChannel *Channel);
+@@ -349,6 +350,7 @@
+   int vpid;
+   int ppid;
+   int vtype;
++  int tpid;
+   int apids[MAXAPIDS + 1]; // list is zero-terminated
+   int atypes[MAXAPIDS + 1]; // list is zero-terminated
+   char alangs[MAXAPIDS][MAXLANGCODE2];
+@@ -361,6 +363,8 @@
+   uint16_t compositionPageIds[MAXSPIDS];
+   uint16_t ancillaryPageIds[MAXSPIDS];
+   bool updatePrimaryDevice;
++  int totalTtxtSubtitlePages;
++  tTeletextSubtitlePage teletextSubtitlePages[MAXTXTPAGES];
+ protected:
+   int SectionLength(const uchar *Data, int Length) { return (Length >= 3) ? ((int(Data[1]) & 0x0F) << 8)| Data[2] : 0; }
+ public:
+@@ -397,6 +401,9 @@
+   int Vtype(void) const { return vtype; }
+        ///< Returns the video stream type as defined by the current PMT, or 0 if no video
+        ///< stream type has been detected, yet.
++  int Tpid(void) { return tpid; }
++       ///< Returns the teletext pid as defined by the current PMT, or 0 if no teletext
++       ///< pid has been detected, yet.
+   const int *Apids(void) const { return apids; }
+   const int *Dpids(void) const { return dpids; }
+   const int *Spids(void) const { return spids; }
+@@ -411,6 +418,8 @@
+   uchar SubtitlingType(int i) const { return (0 <= i && i < MAXSPIDS) ? subtitlingTypes[i] : uchar(0); }
+   uint16_t CompositionPageId(int i) const { return (0 <= i && i < MAXSPIDS) ? compositionPageIds[i] : uint16_t(0); }
+   uint16_t AncillaryPageId(int i) const { return (0 <= i && i < MAXSPIDS) ? ancillaryPageIds[i] : uint16_t(0); }
++  const tTeletextSubtitlePage *TeletextSubtitlePages() const { return teletextSubtitlePages; }
++  int TotalTeletextSubtitlePages() const { return totalTtxtSubtitlePages; }
+   };
+ 
+ // TS to PES converter:
+Index: vdr-2.2.0/vdr.5
+===================================================================
+--- vdr-2.2.0.orig/vdr.5	2015-02-17 14:43:53.000000000 +0100
++++ vdr-2.2.0/vdr.5	2015-07-14 18:34:51.000000000 +0200
+@@ -249,6 +249,12 @@
+ 
+ .B ...:201;2001=deu,2002=eng:...
+ 
++Manual teletext subtitling pages can be defined separated by a '+' sign.
++The pages (separated by commas) can contain language codes, delimited by a '='
++sign, as in
++
++.B ...:201+150=deu,151=fin;2001,2002:...
++
+ .TP
+ .B Conditional access
+ A hexadecimal integer defining how this channel can be accessed:
+Index: vdr-2.2.0/vdrttxtsubshooks.c
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ vdr-2.2.0/vdrttxtsubshooks.c	2015-07-14 18:34:51.000000000 +0200
+@@ -0,0 +1,63 @@
++/*
++ * vdr-ttxtsubs - A plugin for the Linux Video Disk Recorder
++ * Copyright (c) 2003 - 2008 Ragnar Sundblad <ragge@nada.kth.se>
++ *
++ * This program is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License as published by the
++ * Free Software Foundation; either version 2 of the License, or (at your option)
++ * any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
++ * details.
++ *
++ * You should have received a copy of the GNU General Public License along with
++ * this program; if not, write to the Free Software Foundation, Inc.,
++ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
++ *
++ */
++
++#include <stdlib.h>
++#include <stdio.h>
++#include <stdint.h>
++
++#include "vdrttxtsubshooks.h"
++
++// XXX Really should be a list...
++static cVDRTtxtsubsHookListener *gListener;
++
++// ------ class cVDRTtxtsubsHookProxy ------
++
++class cVDRTtxtsubsHookProxy : public cVDRTtxtsubsHookListener
++{
++ public:
++  virtual void HideOSD(void) { if(gListener) gListener->HideOSD(); };
++  virtual void ShowOSD(void) { if(gListener) gListener->ShowOSD(); };
++  virtual void PlayerTeletextData(uint8_t *p, int length, bool IsPesRecording, const struct tTeletextSubtitlePage teletextSubtitlePages[] = NULL, int pageCount = 0)
++    { if(gListener) gListener->PlayerTeletextData(p, length, IsPesRecording, teletextSubtitlePages, pageCount); };
++  virtual int ManualPageNumber(const cChannel *channel)
++    { if(gListener) return gListener->ManualPageNumber(channel); else return 0; };
++};
++
++
++// ------ class cVDRTtxtsubsHookListener ------
++
++cVDRTtxtsubsHookListener::~cVDRTtxtsubsHookListener()
++{
++  gListener = 0;
++}
++
++void cVDRTtxtsubsHookListener::HookAttach(void)
++{
++  gListener = this;
++  //printf("cVDRTtxtsubsHookListener::HookAttach\n");
++}
++
++static cVDRTtxtsubsHookProxy gProxy;
++
++cVDRTtxtsubsHookListener *cVDRTtxtsubsHookListener::Hook(void)
++{
++  return &gProxy;
++}
++
+Index: vdr-2.2.0/vdrttxtsubshooks.h
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ vdr-2.2.0/vdrttxtsubshooks.h	2015-07-14 18:34:51.000000000 +0200
+@@ -0,0 +1,46 @@
++/*
++ * vdr-ttxtsubs - A plugin for the Linux Video Disk Recorder
++ * Copyright (c) 2003 - 2008 Ragnar Sundblad <ragge@nada.kth.se>
++ *
++ * This program is free software; you can redistribute it and/or modify it
++ * under the terms of the GNU General Public License as published by the
++ * Free Software Foundation; either version 2 of the License, or (at your option)
++ * any later version.
++ *
++ * This program is distributed in the hope that it will be useful, but
++ * WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or
++ * FITNESS FOR A PARTICULAR PURPOSE. See the GNU General Public License for more
++ * details.
++ *
++ * You should have received a copy of the GNU General Public License along with
++ * this program; if not, write to the Free Software Foundation, Inc.,
++ * 51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA
++ *
++ */
++
++#ifndef __VDRTTXTSUBSHOOKS_H
++#define __VDRTTXTSUBSHOOKS_H
++
++#define TTXTSUBSVERSNUM 2
++
++class cDevice;
++class cChannel;
++struct tTeletextSubtitlePage;
++
++class cVDRTtxtsubsHookListener {
++ public:
++  cVDRTtxtsubsHookListener(void) {};
++  virtual ~cVDRTtxtsubsHookListener();
++
++  void HookAttach(void);
++
++  virtual void HideOSD(void) {};
++  virtual void ShowOSD(void) {};
++  virtual void PlayerTeletextData(uint8_t *p, int length, bool IsPesRecording = true, const struct tTeletextSubtitlePage teletextSubtitlePages[] = NULL, int pageCount = 0) {};
++  virtual int ManualPageNumber(const cChannel *channel) { return 0; };
++
++  // used by VDR to call hook listeners
++  static cVDRTtxtsubsHookListener *Hook(void);
++};
++
++#endif

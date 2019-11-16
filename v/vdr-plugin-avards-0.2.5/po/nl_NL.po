@@ -1,0 +1,98 @@
+# VDR Avards plugin language source file.
+# Copyright (C) 2008 Christoph Haubrich
+# This file is distributed under the same license as the Avards package.
+# Johan Schuring, 2007
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.18\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-09 18:58+0100\n"
+"PO-Revision-Date: 2007-08-26 18:36+0200\n"
+"Last-Translator: Johan Schuring\n"
+"Language-Team: <see README>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "auto"
+msgstr "automatisch"
+
+msgid "force 4:3"
+msgstr "afdwingen 4:3"
+
+msgid "force L14:9"
+msgstr "afdwingen L14:9"
+
+msgid "force L16:9"
+msgstr "afdwingen L16:9"
+
+msgid "force L>16:9"
+msgstr "afdwingen L>16:9"
+
+msgid "force 16:9"
+msgstr "afdwingen 16:9"
+
+msgid "Avards stop"
+msgstr "Avards Stoppen"
+
+msgid "mode"
+msgstr "modus"
+
+msgid "Avards start"
+msgstr "Avards starten"
+
+msgid "detection"
+msgstr "detectie"
+
+msgid "unknown"
+msgstr ""
+
+msgid "switching WSS mode to"
+msgstr "zet WSS mode om naar"
+
+msgid "switching off WSS"
+msgstr "WSS uitzetten"
+
+msgid "start/stop entry in main menu"
+msgstr "Start/Stop in hoofdmenu"
+
+msgid "Auto start plugin"
+msgstr "Plugin Autostart"
+
+msgid "WSS mode"
+msgstr "WSS-modus"
+
+msgid "Enable L>16:9 (2,4:1)"
+msgstr "Toestaan L>16:9 (2,4:1)"
+
+msgid "Pan tone tolerance"
+msgstr "Pan toon tolerantie"
+
+msgid "Pan tone max. black"
+msgstr "Pan toon max Zwartwaarde"
+
+msgid "overscan (%)"
+msgstr "overscan (%)"
+
+msgid "logo width (%)"
+msgstr "logobreedte (%)"
+
+msgid "preserve aspect ratio"
+msgstr "bewaar aspect ratio"
+
+msgid "show all lines"
+msgstr "toon alle lijnen"
+
+msgid "poll rate (milliseconds)"
+msgstr "poll rate (miliseconden)"
+
+msgid "delay (in polls)"
+msgstr "vertraging (in polls)"
+
+msgid "Show message on WSS switch"
+msgstr "Toon bericht bij omzetten WSS"
+
+msgid "VDR OSD is"
+msgstr "VDR OSD is"

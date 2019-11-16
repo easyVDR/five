@@ -1,0 +1,27 @@
+Source: vdr-plugin-audiorecorder
+Section: video
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Origin: easyVDR
+Build-Depends: debhelper (>= 9), cdbs, vdr-dev (>= 2.2.0), pkg-config, libavcodec-dev, libavutil-dev, libavformat-dev, libtag1-dev, libtinyxml-dev
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/plg-audiorecorder
+
+
+Package: vdr-plugin-audiorecorder
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, perl
+Description: This plugin records songs with artist, title and ID3-Tag.
+ The naming and cutting of the songs uses the "Radiotext plus" feature
+ of the ARD channels "DAS MODUL", Eins_Live, YOU_FM, WDR_2, SWR3 etc.,
+ as long as the vdr is tuned to the transponder or if there is a unused DVB-card.
+
+Package: vdr-plugin-audiorecorder-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-audiorecorder (= ${binary:Version}), ${misc:Depends}, ${vdr:Depends}
+Description: debugging symbols for vdr-plugin-audiorecorder
+ .
+ This package contains only the debugging symbols for vdr-plugin-audiorecorder

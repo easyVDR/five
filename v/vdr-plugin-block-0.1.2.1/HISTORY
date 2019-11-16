@@ -1,0 +1,258 @@
+VDR Plugin 'block' Revision History
+-----------------------------------
+
+2012/04/03: Version 0.1.2
+Bugfix:
+  -Joe_D sent a patch which exposes myself coding JAVA for too long.
+   Several memory leaks and issues have been fixed. Thank you Joe_D.
+Features:
+  -The plugin now may take care of age rating information derived from
+   the DVB stream as suggested by Grindo. See 'DVB rating' in the plugins
+   setup and README for more information.
+
+
+**************************************************************************
+2010/11/12: Version 0.1.1
+Bugfix:
+  -In some cases plugin wrongly switched to a blacklisted channel, if all
+   channels on the given transponder were blocked. Fixed.
+Features:
+  -Updated Italian translation. Thanks again to Diego Pierotto.
+
+
+**************************************************************************
+2010/11/05: Version 0.1.0a
+Bugfix:
+  -In Parental Guidance mode while perfoming the search for a whitelisted
+   channel the plugin deblocked the last channel at either end of the
+   channel list. Fixed.
+
+
+**************************************************************************
+2010/11/04: Version 0.1.0
+
+New features / Bugfixes:
+-Feature: block.conf format and path changed
+ The blacklist was formerly stored in $VDRCONFIG\plugins. As this is also used by several other plugins
+ the directory might rapidly become overpopulated. I decided to move the location of block.conf to
+ $VDRCONFIG/plugins/block. To your convenienve you won't have to move the file manually. It is moved the first
+ time you start vdr after installing at least version 0.1.0 of the block-plugin. 
+ Please note that during this process the file is also scanned for (case-insensitive) duplicates which will 
+ be sorted out (syslogged as 'WARNINGS') as well as all entries will be marked blacklisted due to the new 
+ blacklist/whitelist feature since version 0.1.0. It doesn't matter if you are upgrading from the taste-plugin 
+ or a former version of the block-plugin, the plugin should choose the right file (if there is one) 
+ automatically. Though the plugin was tested quite a lot, it might be very good idea to create a BACKUP before 
+ you upgrade the block plugin. Nevertheless the plugin itself should create a backup of the old file in 
+ $VDRCONFIG/plugins/block/block.conf.safe-pre0.1.0 automatically.
+
+-Feature: Whitelist function
+ The most relevant new feature in this version is probably the possibility not only to blacklist entries in 
+ the plugins list but also to whitelist them! This should make the use of the parental guidance feature much 
+ easier for example. In this context the use of regular expressions, partial patterns, blacklist and whitelist 
+ entries easily results in contradictory rules for a particular entry and made it necessary to implement a new
+ evaluation pathway. The best thing about this is that you still just have to press De-/Block in the vdr main
+ menu to make use of the plugin. The changes in the evaluation pathway will be applied automatically in the
+ background. As i think the usage of the plugin is kept as easy as possible, you could skip the description of
+ the decision pathway. Nevertheless the following describes happens behind the curtains, if a string is checked
+ for being acceptable or not:
+ 1. First all matching entries are collected.
+ 2. If all rules point to the same condition (blacklisted or whitelisted) this results in returning this particular
+    condition.
+ 3. If contradictory rules are detected, the plugin falls back to the value of a new option in the plugins setup
+    which was implemented exactly for these cases: Fuzzy fallback {black|white}.
+ 4. The above rules are overridden if there is a case-insensitive exact string match found in the plugins list.
+    In this case the plugin will just switch the list property of this match from black to white or vice versa
+    instead of creating a duplicate. In case the string match is only case insensitive the plugin furthermore
+    switches the ignore case property of the entry.
+ 
+ To make ultimate use of the plugin (probably makes sense in turn with parental guidance mode and whitelist entries)
+ you could add a new entry in the plugins list:
+ [.]*
+ and set the property Regular Expression to true. This should block every, read carefully, EVERY show on any
+ channel, except for those being whitelisted. Remember, once Parental Guidance is turned on you are not allowed
+ to whitelist anything anymore...until you switch it off in vdr's setup file again. Handle with care!
+
+-Feature: New Setup Option 'Fuzzy Fallback' (see whitelist section above)
+
+-Feature: Duplicate entries are not allowed anymore! 
+ At the first import of block.conf the plugin will eliminate all duplicates from your old blacklist. However you do 
+ not have to care about duplicates yourself. The plugin should configure everythin automatically. (please also refer 
+ to the block.conf section above)
+
+-Feature: New key handling in the plugins setup
+ F4/Blue now changes the black/white attribute of the current entry (see whitelist section above). Please note
+ that it could take a short time to let the plugin find the right entry internally. This is due to the implementation 
+ of cList in vdr itself.
+
+-Feature: 'New' jumps to an existing 'New entry'
+ This comes along with the new prohibition of duplicate entries and should increase convenience. As stated in the
+ last section, it could take some time to let the plugin find the right place. Again this is due to the implementation
+ of cList in vdr itself.
+
+-Feature: Parental Guidance and main menu entry
+ If Parental Guidance is active it shouldn't be possible to deblock the current show with the main menu entry.
+ Any attempt to do this is logged in the syslog.
+
+-Feature: In Parental Guidance mode replay may be blocked
+ In Parental Guidance mode now also the replay of recorded shows is blocked, if a blacklisted title is
+ detected. Any attempt to play such a blocked recording also is logged in the syslog. However it is not possible
+ to block recorded shows directly. You'll have to have a matching list entry by blocking the corresponding show
+ on Live TV, by manually adding it in the plugins setup or by editing block.conf (vdr restart required).
+
+-Feature: Consideration of empty or no EPG data
+ Channels with empty EPG or no EPG at all may also be handled by the plugin now. Use regular expressions 
+ or a blank list entry to deal with such stations. (see regular expression in the whitelist section above for an
+ example). However if your EPG turns out to be buggy or vdr does not update EPG fast enough, such an entry may cause 
+ unwanted behaviour of the block mechanism in rare cases.
+
+-Feature: Italian translation added (thanks to Diego Pierotto)
+ Due to the new features few strings remain untranslated (though i added some...). 
+ If anyone could help out with this or other translations feel free drop  me a line.
+
+-Feature: Added list sorting.
+
+-Feature: Changes are applied immediately.
+ The plugin now immediately applies any changes to the block rules, eg in case anything in the list is altered 
+ (and saved) in the plugins setup.
+
+-Bugfix: In rare cases shows were not blocked. Fixed.
+ If the current channel had the same blacklisted EPG title as the last channel the current channel was not blocked.
+ Fixed. Thanks to igel, who again was the only one reporting this bug.
+
+-Bugfix: Zap direction
+ The automatical zap direction should now be detected correctly (except it is not possible to determine 
+ which results in direction 'up')
+
+-Bugfix: Changing the zap direction on block events to 'down' should now work (again).
+
+-Bugfix: Unwanted behaviour if OSD is open
+ A very nasty bug emerged if a block event happened on the underlying channel while the user was doing something
+ in the vdr OSD menus. In fact the plugin triggered a virtual keypress of the Back which in the worst case could
+ result in an irresponsive main menu. This bug which was caused by the plugins user interface during the display of
+ the block message is now fixed. The plugin simply switches channels and does not provide a user interface if 
+ the vdr OSD is open.
+
+-Bugfix: Log message was not ifdef'ed and spammed the syslog on channels with no or empty EPG though LOGGING was off.
+
+**************************************************************************
+2010/08/06: Version 0.0.4
+New Features:
+  -The main menu entry now not only adds the title of the current
+   show to the blacklist, but also permanentely removes the title
+   if it is already found in the blacklist.
+
+Bugfixes:
+  -with detection method 'Channel EPG' and while watching
+   a recorded show VDR stopped playback and switched
+   to another channel on a block event. Fixed now.
+
+  -Channel Up and Channel Down keys were not working at all !!
+   I did not notice that because these keys are not configured
+   on my remote and the code seemed pretty much straight-forward. 
+   But it turned out that the key-handling of VDR itself differs 
+   from the one for Up and Down. It was quite hard to find a solution,
+   but finally I found a workaround in sending Up or Down in case the user 
+   presses Channel Up or Channel Down from the plugin code to VDR ;).
+   Subsequently these internally sent Up or Down keys are interpreted 
+   by the plugin in the next main thread loop.
+
+   Thanks to igel who again was the only one reporting this bug ;).
+
+
+**************************************************************************
+2010/06/15: Version 0.0.3
+
+Added experimental parental guidance functions. Please see README 
+for details.
+
+Several strings changed / German translation updated.
+
+Bugfixing.
+
+
+**************************************************************************
+2010/06/06: Version 0.0.2
+
+Added a new detection method: Channel EPG
+This method scans the running program and not only blocks on zapping but
+also makes the plugin switch to another channel on a changeover to a
+blacklisted show. In some rare cases several stations do not update
+the current EPG signal in sync so unfortunately there might be false 
+detections. It is possible to change the detection method in the plugins
+setup, where 'On Switch' is the old method and 'Channel EPG' the new.
+
+Furthermore it is now possible to change switching directions on a block
+event by pressing the (channel) up/down keys on your remote.
+
+Several other minor code changes. 
+
+
+**************************************************************************
+2010/04/20: Version 0.0.1b
+
+Initial release.
+
+Fix: 'Ok' now in fact unlocks a blocked broadcast reliably
+     (switch function was moved to destructor of control.c)
+
+
+**************************************************************************
+2010/04/19: Version 0.0.1
+
+First version.
+
+This version is based on a cvs checkout (20100113) of the orphaned
+vdr-plugin taste originally coded by LordJaxom aka Sascha Volkenandt.
+Unfortunately the taste plugin did not work on vdr machines lacking a full
+feature dvb card. So i tried to change some code  to achieve compatibility
+with a broader range of configs and finally came up with a new version that
+does the job on machines with a ff-card as well as on budget solutions (in
+my case the dxr3) and state-of-the-art softdevice configurations. This patch
+can be found here:
+http://www.vdr-portal.de/board/thread.php?threadid=92550
+
+Tobi then kindly offered me the opportunity to continue the development of
+the taste plugin on projects.vdr-developer.org and i asked Sascha how he
+feels about that, but he did not answer. So i decided to publish the new 
+version as a fork called 'block'. This way Saschas work will remain 
+untouched and i am completely free to continue my work on the plugin.
+
+
+Differences in the block plugin
+-------------------------------
+
+** New features:
+
+-Compatibility with non-ff output including budget and state-of-the-art
+softdevice configurations added (channel switch analysis changed)
+-Implementation of syslog functions (BLOCK_LOGGING in the Makefile set
+	to 1 or 0 respectively will switch logging on/off)
+	ATTENTION: This will add lots of entries to your syslog!
+
+
+** Patches:
+
+Patches by tomg and mapovi which were written for the taste plugin were
+applied to a  were applied to a clean cvs checkout of the taste plugin
+on 2010/01/13 so that they are permanently build in the block plugin now.
+
+Locale patch:
+  - fixed clean target of Makefile
+  - adapted Makefile to current newplugin template
+  - use translations of main vdr
+  - exclude old i18n parts by ifdefs
+Version compatibility:
+  Changes for VDR >= 1.5.0 (applicable to VDR >= 1.4.5)
+Makefile fix:
+  added -fPIC to compiler options to prevent FTBFS
+
+Some additional information can be found here:
+http://www.vdr-portal.de/board/thread.php?threadid=90293
+Thanks to tomg and mapovi for their kind permission to use the patches.
+
+
+** WWW:
+
+Project homepage: http://projects.vdr-developer.org/projects/plg-block/news
+
+Author contact: Michael Schneider <vdrportal_midas at gmx dot de>

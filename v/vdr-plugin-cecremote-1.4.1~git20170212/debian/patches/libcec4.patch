@@ -1,0 +1,27 @@
+Index: vdr-plugin-cecremote-1.4.1~git20170212/Makefile
+===================================================================
+--- vdr-plugin-cecremote-1.4.1~git20170212.orig/Makefile	2017-02-12 01:10:24.000000000 +0100
++++ vdr-plugin-cecremote-1.4.1~git20170212/Makefile	2017-07-09 17:08:49.786844015 +0200
+@@ -29,15 +29,15 @@
+ 
+ # Check for libcec
+ 
+-ifneq (exists, $(shell pkg-config libcec && echo exists))
+-  $(warning ******************************************************************)
+-  $(warning 'libcec' not detected!)
+-  $(error ******************************************************************)
+-endif
++#ifneq (exists, $(shell pkg-config libcec && echo exists))
++#  $(warning ******************************************************************)
++#  $(warning 'libcec' not detected!)
++#  $(error ******************************************************************)
++#endif
+ 
+ 
+-CFLAGS   = $(call PKGCFG,cflags)
+-CXXFLAGS = $(call PKGCFG,cxxflags)
++#CFLAGS   = $(call PKGCFG,cflags)
++#CXXFLAGS = $(call PKGCFG,cxxflags)
+ 
+ 
+ ### The version number of VDR's plugin API:

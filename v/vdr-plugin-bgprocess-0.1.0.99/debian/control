@@ -1,0 +1,13 @@
+Source: vdr-plugin-bgprocess
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.22), gettext
+Standards-Version: 3.9.3
+Homepage: http://www.reel-multimedia.com/de/
+
+Package: vdr-plugin-bgprocess
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Displays information about background process
+ Displays information about background process that is got by a service call to bgprocess plugin.

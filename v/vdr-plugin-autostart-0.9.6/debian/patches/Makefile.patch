@@ -1,0 +1,11 @@
+--- a/Makefile
++++ b/Makefile
+@@ -21,7 +21,7 @@
+ 
+ ### Make sure that necessary options are included:
+ 
+-include $(VDRDIR)/Make.global
++-include $(VDRDIR)/Make.global
+ 
+ ### Allow user defined options to overwrite defaults:
+ 

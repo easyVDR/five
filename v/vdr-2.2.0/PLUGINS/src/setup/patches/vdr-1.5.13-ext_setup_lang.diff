@@ -1,0 +1,14 @@
+diff -ruNp vdr-1.5.13-ext~/menu.c vdr-1.5.13-ext/menu.c
+--- vdr-1.5.13-ext~/menu.c	2008-01-22 15:00:36.000000000 +0100
++++ vdr-1.5.13-ext/menu.c	2008-01-22 14:58:55.000000000 +0100
+@@ -3913,7 +3913,9 @@ cMenuMain::cMenuMain(eOSState State)
+ #ifdef USE_SETUP
+   // Load Menu Configuration
+   char *menuXML = NULL;
+-  asprintf(&menuXML, "%s/setup/vdr-menu.xml", cPlugin::ConfigDirectory());
++  asprintf(&menuXML, "%s/setup/vdr-menu.%s.xml", cPlugin::ConfigDirectory(), Setup.OSDLanguage);
++  if (access(menuXML, 04) == -1)
++     asprintf(&menuXML, "%s/setup/vdr-menu.xml", cPlugin::ConfigDirectory());
+   subMenu.LoadXml(menuXML);
+   free(menuXML);
+   nrDynamicMenuEntries=0;

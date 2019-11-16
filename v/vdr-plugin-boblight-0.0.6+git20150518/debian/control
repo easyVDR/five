@@ -1,0 +1,23 @@
+Source: vdr-plugin-boblight
+Section: video
+Priority: extra
+Maintainer: Lars Hanisch <dvb@flensrocker.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), pkg-config, libboblight-dev
+Standards-Version: 3.9.1
+Homepage: http://projects.vdr-developer.org/projects/plg-boblight
+
+Package: vdr-plugin-boblight
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A VDR plugin, boblight with data from softhddevice
+ Needs libboblight.so and boblightd configured and running (https://code.google.com/p/boblight)
+
+Package: vdr-plugin-boblight-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-boblight (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-boblight
+ .
+ This package contains only the debugging symbols for vdr-plugin-boblight 
+

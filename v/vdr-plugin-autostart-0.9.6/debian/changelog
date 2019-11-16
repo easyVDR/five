@@ -1,0 +1,287 @@
+vdr-plugin-autostart (0.9.6-2easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 00:19:39 +0100
+
+vdr-plugin-autostart (0.9.6-2easyVDR0~bionic) bionic; urgency=high
+
+  * added patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 15:13:08 +0100
+ 
+vdr-plugin-autostart (0.9.6-1easyVDR9~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 14:59:18 +0100
+
+vdr-plugin-autostart (0.9.6-1easyVDR8~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 00:38:21 +0100
+
+vdr-plugin-autostart (0.9.6-1easyVDR7~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 00:14:58 +0200
+
+vdr-plugin-autostart (0.9.6-1easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 25 May 2017 19:42:48 +0200
+
+vdr-plugin-autostart (0.9.6-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:44:01 +0200
+
+vdr-plugin-autostart (0.9.6-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:28:16 +0200
+
+vdr-plugin-autostart (0.9.6-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:32:48 +0200
+
+vdr-plugin-autostart (0.9.6-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:52:03 +0200
+
+vdr-plugin-autostart (0.9.6-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:33:52 +0100
+
+vdr-plugin-autostart (0.9.6-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:13:46 +0100
+
+vdr-plugin-autostart (0.9.6-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:05:31 +0200
+
+vdr-plugin-autostart (0.9.6-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 03:58:35 +0100
+
+vdr-plugin-autostart (0.9.6-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:19:05 +0100
+
+vdr-plugin-autostart (0.9.6-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Feb 2015 01:35:18 +0100
+
+vdr-plugin-autostart (0.9.6-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:33:17 +0100
+
+vdr-plugin-autostart (0.9.6-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:36:57 +0200
+
+vdr-plugin-autostart (0.9.6-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 02 May 2014 03:55:52 +0200
+
+vdr-plugin-autostart (0.9.6-1yavdr0~trusty) trusty; urgency=medium
+
+  * remove build dir 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 05 Apr 2014 16:00:03 +0200
+
+vdr-plugin-autostart (0.9.6-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream version 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 05 Apr 2014 15:22:57 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr13~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:25:15 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr12~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 21:57:58 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr10~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 15:52:31 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr9~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:31:40 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:01:37 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 00:55:43 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:19:29 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:44:23 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:44:39 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 00:55:56 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:45:10 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-1yavdr0~precise) precise; urgency=medium
+
+  * don't include Make.global
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 12 Mar 2013 15:12:48 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr12~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 12 Mar 2013 14:00:19 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr11~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:20:39 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr10~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:00:34 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr9~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:48:15 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 19:58:55 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:31:19 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:12:08 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:19:00 +0200
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:10:58 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:09:36 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 08:53:40 +0100
+
+vdr-plugin-autostart (0.9.3.hg20120128-0yavdr1~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 28 Jan 2012 11:04:20 +0100
+
+vdr-plugin-autostart (0.9.3-0yavdr1~oneiric) oneiric; urgency=medium
+
+  * New upstream release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 03 Nov 2011 08:42:22 +0200
+
+vdr-plugin-autostart (0.9.0-0yavdr0) lucid; urgency=low
+
+  * New upstream release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 04 Feb 2011 21:43:47 +0100
+
+vdr-plugin-autostart (0.0.1+git20110111-0yavdr0) lucid; urgency=low
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 05 Jan 2011 19:36:18 +0100

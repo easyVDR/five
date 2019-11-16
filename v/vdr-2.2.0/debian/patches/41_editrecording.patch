@@ -1,0 +1,362 @@
+Index: vdr-2.2.0/menu.c
+===================================================================
+--- vdr-2.2.0.orig/menu.c	2016-02-01 15:15:27.383672861 +0100
++++ vdr-2.2.0/menu.c	2016-02-01 15:15:27.379672841 +0100
+@@ -2369,9 +2369,11 @@
+   cMenuEditStrItem *nameItem;
+   const char *buttonFolder;
+   const char *buttonAction;
+-  const char *buttonDeleteMarks;
++  const char *buttonDelete;
+   const char *actionCancel;
+   const char *doCut;
++  const char *doCopy;
++  bool extraAction;
+   int recordingIsInUse;
+   void Set(void);
+   void SetHelpKeys(void);
+@@ -2380,7 +2382,7 @@
+   eOSState Folder(void);
+   eOSState Action(void);
+   eOSState RemoveName(void);
+-  eOSState DeleteMarks(void);
++  eOSState Delete(void);
+   eOSState ApplyChanges(void);
+ public:
+   cMenuRecordingEdit(cRecording *Recording);
+@@ -2402,9 +2404,11 @@
+   nameItem = NULL;
+   buttonFolder = NULL;
+   buttonAction = NULL;
+-  buttonDeleteMarks = NULL;
++  buttonDelete = NULL;
+   actionCancel = NULL;
+   doCut = NULL;
++  doCopy = NULL;
++  extraAction = false;
+   recordingIsInUse = ruNone;
+   Set();
+ }
+@@ -2436,20 +2440,26 @@
+ {
+   buttonFolder = !recordingIsInUse ? tr("Button$Folder") : NULL;
+   buttonAction = NULL;
+-  buttonDeleteMarks = NULL;
++  buttonDelete = NULL;
+   actionCancel = NULL;
+   doCut = NULL;
++  doCopy = NULL;
+   if ((recordingIsInUse & ruCut) != 0)
+      buttonAction = actionCancel = ((recordingIsInUse & ruPending) != 0) ? tr("Button$Cancel cutting") : tr("Button$Stop cutting");
+   else if ((recordingIsInUse & ruMove) != 0)
+      buttonAction = actionCancel = ((recordingIsInUse & ruPending) != 0) ? tr("Button$Cancel moving") : tr("Button$Stop moving");
+   else if ((recordingIsInUse & ruCopy) != 0)
+      buttonAction = actionCancel = ((recordingIsInUse & ruPending) != 0) ? tr("Button$Cancel copying") : tr("Button$Stop copying");
++  else if (extraAction) {
++     cResumeFile ResumeFile(recording->FileName(), recording->IsPesRecording());
++     buttonAction = doCopy = tr("Button$Copy");
++     buttonDelete = (ResumeFile.Read() != -1) ? tr("Button$Delete resume") : NULL;
++     }
+   else if (recording->HasMarks()) {
+      buttonAction = doCut = tr("Button$Cut");
+-     buttonDeleteMarks = tr("Button$Delete marks");
++     buttonDelete = tr("Button$Delete marks");
+      }
+-  SetHelp(buttonFolder, buttonAction, buttonDeleteMarks);
++  SetHelp(buttonFolder, buttonAction, buttonDelete, tr("Button$Toggle commands"));
+ }
+ 
+ bool cMenuRecordingEdit::RefreshRecording(void)
+@@ -2490,6 +2500,23 @@
+            Skins.Message(mtError, tr("Error while queueing recording for cutting!"));
+         }
+      }
++  else if (doCopy) {
++     if (!*name)
++        *name = ' '; // name must not be empty!
++     cString NewName = *folder ? cString::sprintf("%s%c%s", folder, FOLDERDELIMCHAR, name) : name;
++     NewName.CompactChars(FOLDERDELIMCHAR);
++     if (strcmp(NewName, recording->Name())) {
++        cString FromName = cString(ExchangeChars(strdup(recording->Name()), true), true);
++        cString ToName = cString(ExchangeChars(strdup(*NewName), true), true);
++        cString FileName = cString(strreplace(strdup(recording->FileName()), *FromName, *ToName), true);
++        if (access(*FileName, F_OK) != 0 || Interface->Confirm(tr("Edited version already exists - overwrite?"))) {
++           if (MakeDirs(FileName, true) && !RecordingsHandler.Add(ruCopy, recording->FileName(), FileName))
++              Skins.Message(mtError, tr("Error while queueing recording for copying!"));
++           else
++              Recordings.AddByName(FileName);
++           }
++        }
++     }
+   recordingIsInUse = recording->IsInUse();
+   RefreshRecording();
+   SetHelpKeys();
+@@ -2514,13 +2541,22 @@
+   return osContinue;
+ }
+ 
+-eOSState cMenuRecordingEdit::DeleteMarks(void)
++eOSState cMenuRecordingEdit::Delete(void)
+ {
+-  if (buttonDeleteMarks && Interface->Confirm(tr("Delete editing marks for this recording?"))) {
+-     if (recording->DeleteMarks())
++  if (extraAction) {
++     if (buttonDelete && Interface->Confirm(tr("Delete resume for this recording?"))) {
++        cResumeFile ResumeFile(recording->FileName(), recording->IsPesRecording());
++        ResumeFile.Delete();
+         SetHelpKeys();
+-     else
+-        Skins.Message(mtError, tr("Error while deleting editing marks!"));
++        }
++     }
++  else {
++     if (buttonDelete && Interface->Confirm(tr("Delete editing marks for this recording?"))) {
++        if (recording->DeleteMarks())
++           SetHelpKeys();
++         else
++           Skins.Message(mtError, tr("Error while deleting editing marks!"));
++        }
+      }
+   return osContinue;
+ }
+@@ -2567,7 +2603,8 @@
+        case k0:      return RemoveName();
+        case kRed:    return buttonFolder ? Folder() : osContinue;
+        case kGreen:  return buttonAction ? Action() : osContinue;
+-       case kYellow: return buttonDeleteMarks ? DeleteMarks() : osContinue;
++       case kYellow: return buttonDelete ? Delete() : osContinue;
++       case kBlue:   extraAction = !extraAction; SetHelpKeys(); return osContinue;
+        case kOk:     return !recordingIsInUse ? ApplyChanges() : osBack;
+        default: break;
+        }
+Index: vdr-2.2.0/po/fi_FI.po
+===================================================================
+--- vdr-2.2.0.orig/po/fi_FI.po	2016-02-01 15:15:27.383672861 +0100
++++ vdr-2.2.0/po/fi_FI.po	2016-02-01 15:15:27.379672841 +0100
+@@ -11,7 +11,7 @@
+ msgstr ""
+ "Project-Id-Version: VDR 2.2.0\n"
+ "Report-Msgid-Bugs-To: <vdr-bugs@tvdr.de>\n"
+-"POT-Creation-Date: 2015-02-10 13:40+0100\n"
++"POT-Creation-Date: 2015-07-15 23:01+0200\n"
+ "PO-Revision-Date: 2007-08-15 15:52+0200\n"
+ "Last-Translator: Matti Lehtimäki <matti.lehtimaki@gmail.com>\n"
+ "Language-Team: Finnish <vdr@linuxtv.org>\n"
+@@ -661,6 +661,15 @@
+ msgid "Lifetime"
+ msgstr "Elinikä"
+ 
++msgid "Childlock"
++msgstr ""
++
++msgid "yes"
++msgstr "kyllä"
++
++msgid "no"
++msgstr "ei"
++
+ msgid "File"
+ msgstr "Tiedosto"
+ 
+@@ -785,12 +794,21 @@
+ msgid "Button$Stop copying"
+ msgstr "Lopeta kopiointi"
+ 
++msgid "Button$Copy"
++msgstr "Kopioi"
++
++msgid "Button$Delete resume"
++msgstr "Poista paluutiedot"
++
+ msgid "Button$Cut"
+ msgstr "Leikkaa"
+ 
+ msgid "Button$Delete marks"
+ msgstr "Poista merkinnät"
+ 
++msgid "Button$Toggle commands"
++msgstr "Vaihda komennot"
++
+ msgid "Recording vanished!"
+ msgstr "Tallenne katosi!"
+ 
+@@ -800,9 +818,15 @@
+ msgid "Error while queueing recording for cutting!"
+ msgstr "Tallenteen lisääminen leikkausjonoon epäonnistui!"
+ 
++msgid "Error while queueing recording for copying!"
++msgstr "Tallenteen lisääminen kopiointijonoon epäonnistui!"
++
+ msgid "Rename recording to folder name?"
+ msgstr "Nimeä tallenne kansion mukaan?"
+ 
++msgid "Delete resume for this recording?"
++msgstr "Poistetaanko tallenteen paluutiedot?"
++
+ msgid "Delete editing marks for this recording?"
+ msgstr "Poistetaanko muokkausmerkinnät tallenteelta?"
+ 
+@@ -830,6 +854,9 @@
+ msgid "Commands"
+ msgstr "Komennot"
+ 
++msgid "Cannot delete archived recording!"
++msgstr ""
++
+ msgid "Delete recording?"
+ msgstr "Poistetaanko tallenne?"
+ 
+@@ -863,6 +890,9 @@
+ msgid "Setup.OSD$Theme"
+ msgstr "Teema"
+ 
++msgid "Setup.OSD$WarEagle icons"
++msgstr ""
++
+ msgid "Setup.OSD$Left (%)"
+ msgstr "Vaakakeskitys (%)"
+ 
+@@ -991,9 +1021,6 @@
+ msgid "center cut out"
+ msgstr "center cut out"
+ 
+-msgid "no"
+-msgstr "ei"
+-
+ msgid "names only"
+ msgstr "vain nimet"
+ 
+@@ -1063,6 +1090,9 @@
+ msgid "Setup.DVB$Enable teletext support"
+ msgstr "Salli teksti-TV-tuki"
+ 
++msgid "Setup.DVB$Channel Blocker"
++msgstr ""
++
+ msgid "LNB"
+ msgstr "LNB"
+ 
+@@ -1167,9 +1197,6 @@
+ msgid "confirm"
+ msgstr "varmista"
+ 
+-msgid "yes"
+-msgstr "kyllä"
+-
+ msgid "Recording"
+ msgstr "Tallennus"
+ 
+@@ -1224,6 +1251,9 @@
+ msgid "Setup.Recording$Delete timeshift recording"
+ msgstr "Poista ajansiirtotallenne"
+ 
++msgid "Setup.Recording$Dump NALU Fill data"
++msgstr ""
++
+ msgid "Replay"
+ msgstr "Toisto"
+ 
+@@ -1342,6 +1372,9 @@
+ msgid "Schedule"
+ msgstr "Ohjelmisto"
+ 
++msgid "VDR"
++msgstr ""
++
+ #. TRANSLATORS: note the leading blank!
+ msgid " Stop replaying"
+ msgstr " Lopeta toisto"
+@@ -1390,6 +1423,9 @@
+ msgid "Jump: "
+ msgstr "Siirry: "
+ 
++msgid "Cannot edit archived recording!"
++msgstr ""
++
+ msgid "No editing marks defined!"
+ msgstr "Muokkausmerkinnät puuttuvat!"
+ 
+Index: vdr-2.2.0/svdrp.c
+===================================================================
+--- vdr-2.2.0.orig/svdrp.c	2016-02-01 15:15:27.383672861 +0100
++++ vdr-2.2.0/svdrp.c	2016-02-01 15:15:27.379672841 +0100
+@@ -192,6 +192,10 @@
+   "    After a CLRE command, no further EPG processing is done for 10\n"
+   "    seconds, so that data sent with subsequent PUTE commands doesn't\n"
+   "    interfere with data from the broadcasters.",
++  "CPYR <number> <new name>\n"
++  "    Copy the recording with the given number. Before a recording can be\n"
++  "    copied, an LSTR command must have been executed in order to retrieve\n"
++  "    the recording numbers.\n"
+   "DELC <number>\n"
+   "    Delete channel.",
+   "DELR <number>\n"
+@@ -680,6 +684,56 @@
+   return NULL;
+ }
+ 
++void cSVDRP::CmdCPYR(const char *Option)
++{
++  if (*Option) {
++     char *opt = strdup(Option);
++     char *num = skipspace(opt);
++     char *option = num;
++     while (*option && !isspace(*option))
++           option++;
++     char c = *option;
++     *option = 0;
++     if (isnumber(num)) {
++        cRecording *recording = recordings.Get(strtol(num, NULL, 10) - 1);
++        if (recording) {
++           if (int RecordingInUse = recording->IsInUse())
++              Reply(550, "%s", *RecordingInUseMessage(RecordingInUse, Option, recording));
++           else {
++              if (c)
++                 option = skipspace(++option);
++              if (*option) {
++                 cString newName = option;
++                 newName.CompactChars(FOLDERDELIMCHAR);
++                 if (strcmp(newName, recording->Name())) {
++                    cString fromName = cString(ExchangeChars(strdup(recording->Name()), true), true);
++                    cString toName = cString(ExchangeChars(strdup(*newName), true), true);
++                    cString fileName = cString(strreplace(strdup(recording->FileName()), *fromName, *toName), true);
++                    if (MakeDirs(fileName, true) && !RecordingsHandler.Add(ruCopy, recording->FileName(), fileName)) {
++                       Recordings.AddByName(fileName);
++                       Reply(250, "Recording \"%s\" copied to \"%s\"", recording->Name(), *newName);
++                       }
++                    else
++                       Reply(554, "Error while copying recording \"%s\" to \"%s\"!", recording->Name(), *newName);
++                    }
++                 else
++                    Reply(501, "Identical new recording name");
++                 }
++              else
++                 Reply(501, "Missing new recording name");
++              }
++           }
++        else
++           Reply(550, "Recording \"%s\" not found%s", num, recordings.Count() ? "" : " (use LSTR before moving)");
++        }
++     else
++        Reply(501, "Error in recording number \"%s\"", num);
++     free(opt);
++     }
++  else
++     Reply(501, "Missing recording number");
++}
++
+ void cSVDRP::CmdDELR(const char *Option)
+ {
+   if (*Option) {
+Index: vdr-2.2.0/svdrp.h
+===================================================================
+--- vdr-2.2.0.orig/svdrp.h	2016-02-01 15:15:27.383672861 +0100
++++ vdr-2.2.0/svdrp.h	2016-02-01 15:15:27.379672841 +0100
+@@ -56,6 +56,7 @@
+   void PrintHelpTopics(const char **hp);
+   void CmdCHAN(const char *Option);
+   void CmdCLRE(const char *Option);
++  void CmdCPYR(const char *Option);
+   void CmdDELC(const char *Option);
+   void CmdDELR(const char *Option);
+   void CmdDELT(const char *Option);

@@ -1,0 +1,25 @@
+Source: vdr-plugin-autostart
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 2.0.7), gettext, libdbus-1-dev, libdvdread-dev, libcdio-cdda-dev, pkg-config
+Standards-Version: 3.9.1
+Homepage: http://www.uli-eckhardt.de/vdr/autostart.de.html
+
+Package: vdr-plugin-autostart
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, udisks
+Description: A VDR plugin which tries to identify the type of media inserted by removable devices
+ This VDR-PlugIn tries to identify the type of media inserted by removable devices 
+ like CD-ROM/DVD or USB sticks and starts the configured PlugIn and execute
+ configured key codes, so that a PlugIn can start without any user interaction. 
+
+Package: vdr-plugin-autostart-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-autostart (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-autostart
+ .
+ This package contains only the debugging symbols for vdr-plugin-autostart
+

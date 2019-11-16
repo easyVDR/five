@@ -1,0 +1,216 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Christoph Haubrich <christoph.haubrich (AT) web.de>
+Project's homepage:          http://firefly.vdr-developer.org/avards/
+Latest version available at: http://firefly.vdr-developer.org/avards/
+
+See the file COPYING for license information.
+
+
+Description:
+------------
+Avards is a plugin to enlarge a widescreen film on the display if it is sent
+in a 4:3 letterbox format. This is accomplished by changing the WSS signal
+sent to the display.
+
+Avards is based on the standalone version avards-0.0.6, available at
+   http://habichthugo.vdr-developer.org/avards/avards.htm
+See also the description there for detailed technical information, hints and caveats.
+
+Thanks to habichthugo@vdrportal and Oliver Endriss (o.endriss AT gmx.de) for
+their work on the original avards, the driver and firmware.
+
+
+Background:
+-----------
+If you've got a 4:3 display (CRT, LCD, ...) you will most likely not profit
+from this plugin, but if you've got 16:9 display there are some situation where
+this plugin will be useful:
+- if the program is broadcasted in 16:9 it will be displayed in 16:9 (full screen)
+- if the program is broadcasted in normal (full screen) 4:3 it will be displayed
+  in 4:3 with black bars on the left and right
+- if the program is broadcasted in letterboxed 4:3 it will be displayed with
+  black bars on the left and right added by the display and black bars on the
+  top and bottom added by the broadcaster and this is were this plugin
+  comes in: it manipulates the WSS (wide screen signaling) to tell the display
+  to enlarge the picture. According to the calculated or forced size it will be
+  enlarged to L14:9, L16:9 or L>16:9 format.
+
+The following WSS formats may be set by Avards:
+- 4:3
+- 16:9
+- L14:9
+- L16:9
+- L>16:9 (if enabled in settings, disabled by default)
+
+  See http://habichthugo.vdr-developer.org/avards/avards.htm (in german) for a
+  more detailed description.
+
+
+Requirements:
+-------------
+1) VDR
+VDR >= 1.4.6 (including versions 1.5.x)
+It should work with older versions but this was not tested
+
+2) DVB driver (v4l):
+The DVB driver (v4l) must not be older than appr. January 2006 to support this
+feature. If you are using kernel 2.6.16 or higher then the required extensions
+are already present in the v4l driver.
+If you have an older version of v4l you are stronlgy encouraged to upgrade to a
+newer version. However, with the following patch also older versions should work:
+http://habichthugo.vdr-developer.org/avards/stuff/v4l-dvb-wss-v2.diff
+
+3) DVB firmware:
+The firmware version must be f42623 or newer which means one of the following
+currently available firmware versions is required:
+  f42623           (http://www.suse.de/~werner/test_av-f42623.tar.bz2)
+  f32623           (http://www.suse.de/~werner/test_av-f32623.tar.bz2)
+  f22623           (http://www.suse.de/~werner/test_av-f22623.tar.bz2)
+  f12623           (http://www.suse.de/~werner/test_av-f12623.tar.bz2)
+
+You can check your firmware version with the output of the dmesg command:
+  > dmesg|grep rtsl
+  dvb-ttpci: info @ card 0: firm f0240009, rtsl b0250018, vid 71010068, app 80f12623
+The last six characters are the firmware version, which is f12623 here.
+
+With these firmware version there will be already an automatic switching between
+4:3 and 16:9  according to the currently displayed material. Avards is only required
+for (automagically) selecting additional modes.
+
+Currently these fx2623 firmware versions are testing versions but nevertheless they are
+running stable in every day usage. As they are testing versions they are not
+available under the official web site http://www.linuxtv.org/downloads/firmware
+
+To upgrade your firmware you have to exchange the file dvb-ttpci-01.fw and
+unload/load the driver (or reboot). The location of the firmware file depends on
+your linux distribution, common places are /usr/lib/hotplug or /lib/firmware.
+
+When the display is zoomed the OSD is also zoomed by the hardware and therefore it
+might not be visible completely. Avards takes care of that by calculating adapted
+OSD sizes based on the values entered in the VDR settings dialog. Beginning with
+VDR 1.5.4 the skin must use the official cOsd::Left()/Top()/Width()/Hight() functions
+to query the actual OSD size. For older version of VDR Avards provides a service
+interface where the skin should query the actual size. If this functionallity is not
+used the on screen display is likely not to be fully visible in certain zoom modes.
+OSD calculations are based on the values entered in VDR setup and only for zoomed
+modes the top and hight values are modified. So the basic OSD size is still
+configured in the VDR settings.
+
+
+Installation
+------------
+The Avards plugin is compiled and installed the same way as any other plugin:
+- cd <VDR>/PLUGINS/src
+- tar xjf vdr-avards-<version>.tar.bz2
+- ln -s avards-<version> avards
+- cd ../..
+- make plugins
+
+
+Usage:
+------
+Edit your runvdr (or whatever startup script you use) to load the Avards plugin, e.g.
+  vdr -Pavards
+to use Avards with the default settings and start VDR.
+
+Switch your VDR to 16:9 mode (Setup->DVB->Video format-> 16:9)
+
+Now you can start and stop the Avards plugin via the main menu entry (if enabled) or you
+can select via the settings to let it always start when vdr is started.
+The setting of "WSS mode" controls how the plugin acts: if auto(matic) is selected the
+plugin analyses the picture and switches the according WSS mode. The other selectable
+modes force a special WSS mode which can be useful if you do not like the sometimes
+occuring heavily switching during comercial breaks.
+
+The main menu entry has two functions: Starting and stopping Avards and displaying
+the mode: if Avards is stopped it will show the mode it will start with (automatic
+detection or any of the forced modes). If Avards is running it shows the currently
+selected WSS mode (16:9, 4:3, L16:9, etc).
+
+Avards needs access to the device files of the full featured dvb card which is used
+to display the picture. If this is not the first dvb card the defaults can be overridden
+with the following command line parameters:
+
+  -v, --dev_video=<Device>  Video device        (default is /dev/video0)
+  -d, --dev_dvb=<Device>    DVB device          (default is /dev/dvb/adapter0)
+  -b, --dev_vbi=<Device>    VBI device          (default is /dev/vbi0)
+
+Alternatively you can use VDR's GrabImage function instead of the device /dev/video.
+Supply the command line parameter -g to use GrabImage:
+  -g, --grab                use VDR's GrabImage instead of video device
+
+If the default WSS code for 4:3 (0x08) results in stretched pictures it can be replaced
+with 0x0e via the command line parameter 
+  -q, --quirks-mode         use WSS code 0x0e instead of 0x08 for 4:3 and unknown aspect ratios
+
+
+Setup Options:
+--------------
+The following settings are available in the vdr->plugins setup menu
+(most of them taken directly from the standalone version of avards):
+
+- Show Start/Stop Mainmenu Entry: Show or hide the plugin start/stop entry in main menu
+
+- Autostart:           start Avards automatically when VDR is started
+
+- WSS mode:            choose between auto-mode (which analyzes the frames) or force the
+                       WSS mode to the selected one (no analyzing of frames)
+
+- Enable L>16:9 (2,4:1): Enable L>16:9 output. Normally this makes not much sense as
+                       current standard displays are in 16:9 format and limit the zoom to
+                       L16:9 automatically (thus using L16:9 if L>16:9 is set)
+
+- Pan tone tolerance:  Maximum difference of a pixel from the most gray tone pixels
+                       within a pan vector (hex; grayscale; 0..255; default is 8).
+                       This value is ignored if "Pan Tone max. Black" is greater than
+                       zero
+
+- Pan tone max. black: Enable pan vector detection by a given lowest value of a pixel,
+                       interpreted as black (hex; grayscale; 0..ff; choose 20 or so).
+                       Otherwise the gray tone of the pan vector is detected
+                       automatically (may be white, green or whatever just as well).
+
+- overscan (%):        The width of a frame in percent around the picture which is
+                       ignored during analyzing of the pan vectors (default is 3)
+
+- logo width (%):      Maximum width in percent of a range with wrong pixels (a logo)
+                       within a pan vector (default is 20)
+
+- detection:           for the zoom modes you can choose between two preferences:
+                       - preserve aspect ratio: this setting orientates on the aspect ratio
+                       to select a fitting zoom mode. This might result in cutting off a
+                       few lines on the top and bottom (but no small black bars on the left
+                       and right)
+                       - show all lines: this setting chooses a WSS mode where all lines
+                       are shown. This might result in small bars at the left and right (but
+                       no lines are cut off)
+                       Note that this setting shows only in rare circumstances any effect as
+                       for most pictures both algorithms result in the same WSS mode.
+
+- poll rate (milliseconds): Poll rate (delay between picture analyze in milliseconds)
+                       default is 80 ms (lower values do not make ense at the
+                       moment)
+
+- delay (in polls):    Delay WSS output until the last <n> analyzed pictures produces
+                       the same result (multiply with poll_rate to get the effective
+                       delay time, default is 5)
+
+- test if frontend has lock: Enable the 'frontend has lock' test
+                       (no longer useful, because of black screen detection, but...)
+
+- show message on WSS switch: shows as message on each change of the WSS signal
+
+- VDR OSD is:          choose between PAL and NTSC. This is needed for correct
+                       calculation of the OSD size in zoom modes
+
+
+Troubleshooting:
+----------------
+Currently there is only one common known error situation: If the main menu entry
+always shows "Avards start" and does not change to "Avards stop" then the detection
+thread cannot be started. See the additional messages in the syslog. This is likely
+because there is a problem with the vbi device file. This occurs for example if the
+drivers are reloaded but the vbi<x> device is not deleted during unload and a new
+vbi<x+1> device is created during the following load. So Avards is using the wrong
+vbi-device and thus won't start the detection thread.

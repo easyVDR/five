@@ -1,0 +1,86 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@cadsoft.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <vdrportal_midas at gmx dot de>\n"
+"POT-Creation-Date: 2012-04-18 18:12+0200\n"
+"PO-Revision-Date: 2010-11-05 00:53+0100\n"
+"Last-Translator: Klaus Schmidinger <kls@cadsoft.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Block unwanted shows by EPG title"
+msgstr "Sendung/EPG-Titel sperren"
+
+msgid "(De)Block broadcast"
+msgstr "Sendung (ent)sperren"
+
+msgid "Permission denied!"
+msgstr "Aktion nicht erlaubt!"
+
+msgid "Current show blocked!"
+msgstr "Aktuelle Sendung gesperrt!"
+
+msgid "New Entry"
+msgstr "Neuer Eintrag"
+
+msgid "Hide Mainmenu Entry"
+msgstr "Hauptmenüeintrag verstecken"
+
+msgid "Message Timeout [s]"
+msgstr "Wartezeit bis Umschalten [s]"
+
+msgid "On Switch"
+msgstr "Beim Umschalten"
+
+msgid "Channel EPG"
+msgstr "Kanal EPG"
+
+msgid "black"
+msgstr "gesperrt"
+
+msgid "white"
+msgstr "nicht gesperrt"
+
+msgid "Detection Method"
+msgstr "Methode"
+
+msgid "Ok deblocks temporarily"
+msgstr "Ok entsperrt temporär"
+
+msgid "Fuzzy fallback"
+msgstr "Unschärfepriorität"
+
+msgid "DVB rating"
+msgstr "Altersfreigabe (DVB)"
+
+msgid "--- Keywords -------------------------------------------------------------------"
+msgstr "--- Schlagworte ----------------------------------------------------------------"
+
+msgid "Delete keyword?"
+msgstr "Schlagwort löschen?"
+
+msgid "Pattern"
+msgstr "Suchmuster"
+
+msgid "Regular Expression"
+msgstr "Regulärer Ausdruck"
+
+msgid "Ignore Case"
+msgstr "Groß/Kleinschreibung ignorieren"
+
+msgid "Whitelist"
+msgstr ""
+
+msgid "Malformed regular expression!"
+msgstr "Ungültiger regulärer Ausdruck!"
+
+msgid "Please edit duplicate instead"
+msgstr "Bitte vorhandenen Eintrag editieren"

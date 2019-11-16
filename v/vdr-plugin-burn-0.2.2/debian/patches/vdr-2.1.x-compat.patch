@@ -1,0 +1,14 @@
+--- a/jobs.c
++++ b/jobs.c
+@@ -263,7 +263,11 @@
+ 	std::string recording::get_graft_point() const
+ 	{
+ 		return proctools::format("{0}={1}")
++#if APIVERSNUM > 20101
++			   % m_fileName.substr(std::string(cVideoDirectory::Name()).length())
++#else
+ 			   % m_fileName.substr(std::string(VideoDirectory).length())
++#endif
+ 			   % m_fileName;
+ 	}
+ 

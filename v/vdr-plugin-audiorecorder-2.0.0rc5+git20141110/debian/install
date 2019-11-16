@@ -1,0 +1,3 @@
+contrib/*.conf                        var/lib/vdr/plugins/audiorecorder/
+contrib/set_path                      var/lib/vdr/plugins/audiorecorder/
+debian/channels_audiorecorder.conf    var/lib/vdr/plugins/audiorecorder/

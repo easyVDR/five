@@ -1,0 +1,167 @@
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 00:21:34 +0100
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 23:51:05 +0100
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 23:23:33 +0100
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 22:13:16 +0200
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:44:36 +0200
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:29:01 +0200
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:33:27 +0200
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:52:37 +0200
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:34:14 +0100
+
+vdr-plugin-boblight (0.0.6+git20150518-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:15:13 +0100
+
+vdr-plugin-boblight (0.0.6+git20150518-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 May 2015 00:05:59 +0200
+
+vdr-plugin-boblight (0.0.6+git20150518-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 May 2015 00:03:42 +0200
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 Mar 2015 03:44:30 +0100
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Mar 2015 21:30:45 +0100
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr9~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 20 Feb 2015 11:08:45 +0100
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr8~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Feb 2015 00:28:43 +0100
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr7~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 08 Feb 2015 16:11:36 +0100
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr6~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 01 Feb 2015 16:11:23 +0100
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr5~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 18 Jan 2015 16:29:57 +0100
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr4~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:25:51 +0200
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 21:58:35 +0200
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 15:53:05 +0100
+
+vdr-plugin-boblight (0.0.5.git20140124.1803-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 24 Jan 2014 19:04:17 +0100
+
+vdr-plugin-boblight (0.0.5.git20140110.1654-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 10 Jan 2014 17:54:41 +0100
+
+vdr-plugin-boblight (0.0.3.git20131231.1451-0yavdr0~precise) precise; urgency=low
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Tue, 31 Dec 2013 15:53:09 +0100
+
+vdr-plugin-boblight (0.0.2-4-ged814f4-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild against new boblight
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 31 Dec 2013 13:41:36 +0100
+
+vdr-plugin-boblight (0.0.2-4-ged814f4-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Mon, 30 Dec 2013 10:30:21 +0100
+
+vdr-plugin-boblight (0.0.1+git20131209-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 29 Dec 2013 13:11:14 +0200

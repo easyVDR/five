@@ -1,0 +1,12 @@
+--- a/detector/cdiotester.cc
++++ b/detector/cdiotester.cc
+@@ -8,7 +8,7 @@
+  * GNU GENERAL PUBLIC LICENSE. See the file COPYING for details.
+  */
+ #include "cdiotester.h"
+-#include <cdio/cdda.h>
++#include <cdio/paranoia/cdda.h>
+ 
+ bool cCdioTester::isMedia (cMediaHandle d, stringList &keylist)
+ {
+ 

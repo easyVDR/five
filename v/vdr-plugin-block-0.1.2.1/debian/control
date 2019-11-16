@@ -1,0 +1,29 @@
+Source: vdr-plugin-block
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>, Thomas Schmidt <tschmidt@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 7), cdbs, vdr-dev (>= 2.0.0), gettext, pkg-config
+Standards-Version: 3.8.4
+Homepage: http://projects.vdr-developer.org/projects/show/plg-block
+
+Package: vdr-plugin-block
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Provides: vdr-plugin-taste
+Replaces: vdr-plugin-taste (<=0.0.2d+cvs20080102.1814-9)
+Conflicts: vdr-plugin-taste (<=0.0.2d+cvs20080102.1814-9)
+Description: VDR plugin that skips channels with unwanted content
+ This plugin for the Linux Video Disc Recorder prevents you from being
+ bothered by unwanted broadcasts.  Instead of those the screen will stay 
+ black, the sound muted, an info  message appears in the OSD and after a
+ configurable pause the vdr switches to another channel.
+
+Package: vdr-plugin-block-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-block (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-block
+ .
+ This package contains only the debugging symbols for vdr-plugin-block

@@ -1,0 +1,83 @@
+vdr-plugin-avards (0.2.5-0easyVDR8~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 00:20:29 +0100
+
+vdr-plugin-avards (0.2.5-0easyVDR7~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 14:59:29 +0100
+
+vdr-plugin-avards (0.2.5-0easyVDR6~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 00:38:30 +0100
+
+vdr-plugin-avards (0.2.5-0easyVDR5~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 00:15:11 +0200
+
+vdr-plugin-avards (0.2.5-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:44:10 +0200
+
+vdr-plugin-avards (0.2.5-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:28:26 +0200
+
+vdr-plugin-avards (0.2.5-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:32:59 +0200
+
+vdr-plugin-avards (0.2.5-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:52:12 +0200
+
+vdr-plugin-avards (0.2.5-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 15 Apr 2016 19:44:53 +0200
+
+vdr-plugin-avards (0.2.5-0yavdr4~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Tue, 22 Dec 2015 18:40:23 +0100
+
+vdr-plugin-avards (0.2.5-0yavdr3~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Mon, 21 Dec 2015 20:16:50 +0100
+
+vdr-plugin-avards (0.2.5-0yavdr2~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 25 May 2015 17:34:06 +0200
+
+vdr-plugin-avards (0.2.5-0yavdr1~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 25 May 2015 17:22:38 +0200
+
+vdr-plugin-avards (0.2.5-0yavdr0~trusty) trusty; urgency=medium
+
+  * inital version 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 28 Apr 2015 17:20:49 +0200

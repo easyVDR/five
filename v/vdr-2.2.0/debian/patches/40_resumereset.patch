@@ -1,0 +1,26 @@
+Index: vdr-2.2.0/dvbplayer.c
+===================================================================
+--- vdr-2.2.0.orig/dvbplayer.c	2015-12-24 15:15:48.788066835 +0100
++++ vdr-2.2.0/dvbplayer.c	2015-12-24 15:15:48.784066816 +0100
+@@ -409,11 +409,16 @@
+               Index = 0; // when stopping within RESUMEBACKUP seconds of the first mark the recording shall still be considered unviewed
+            marks->Unlock();
+            }
+-        Index -= int(round(RESUMEBACKUP * framesPerSecond));
+-        if (Index > 0)
+-           Index = index->GetNextIFrame(Index, false);
+-        else
+-           Index = 0;
++        int backup = int(round(RESUMEBACKUP * framesPerSecond));
++        if (Index >= index->Last() - backup)
++           Index = index->GetNextIFrame(0, true);
++        else {
++           Index -= backup;
++           if (Index > 0)
++              Index = index->GetNextIFrame(Index, false);
++           else
++              Index = 0;
++           }
+         if (Index >= 0)
+            return index->StoreResume(Index);
+         }

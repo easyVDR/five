@@ -1,0 +1,17 @@
+Index: vdr-2.2.0/receiver.c
+===================================================================
+--- vdr-2.2.0.orig/receiver.c	2015-12-24 15:16:12.040182136 +0100
++++ vdr-2.2.0/receiver.c	2015-12-24 15:16:12.032182097 +0100
+@@ -37,8 +37,10 @@
+ bool cReceiver::AddPid(int Pid)
+ {
+   if (Pid) {
+-     if (numPids < MAXRECEIVEPIDS)
+-        pids[numPids++] = Pid;
++     if (numPids < MAXRECEIVEPIDS) {
++        if (!WantsPid(Pid))
++           pids[numPids++] = Pid;
++        }
+      else {
+         dsyslog("too many PIDs in cReceiver (Pid = %d)", Pid);
+         return false;

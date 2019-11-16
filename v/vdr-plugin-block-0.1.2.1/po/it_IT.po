@@ -1,0 +1,88 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Alberto Carraro <bertocar@tin.it>, 2001
+# Antonio Ospite <ospite@studenti.unina.it>, 2003
+# Sean Carlos <seanc@libero.it>, 2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <vdrportal_midas at gmx dot de>\n"
+"POT-Creation-Date: 2012-04-18 18:12+0200\n"
+"PO-Revision-Date: 2010-11-06 19:52+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team:  <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Block unwanted shows by EPG title"
+msgstr "Blocca i programmi non desiderati tramite i titoli EPG"
+
+msgid "(De)Block broadcast"
+msgstr "(S)Blocca trasmissione"
+
+msgid "Permission denied!"
+msgstr "Permesso negato!"
+
+msgid "Current show blocked!"
+msgstr "Programma attuale bloccato!"
+
+msgid "New Entry"
+msgstr "Nuovo valore"
+
+msgid "Hide Mainmenu Entry"
+msgstr "Nascondi voce menu principale"
+
+msgid "Message Timeout [s]"
+msgstr "Scadenza messaggio [s]"
+
+msgid "On Switch"
+msgstr "Al cambio canale"
+
+msgid "Channel EPG"
+msgstr "Canale EPG"
+
+msgid "black"
+msgstr "nega"
+
+msgid "white"
+msgstr "autorizza"
+
+msgid "Detection Method"
+msgstr "Metodo rilevamento"
+
+msgid "Ok deblocks temporarily"
+msgstr "Permetti sblocchi temporanei"
+
+msgid "Fuzzy fallback"
+msgstr "Ripristina"
+
+msgid "DVB rating"
+msgstr "DVB rating"
+
+msgid "--- Keywords -------------------------------------------------------------------"
+msgstr "--- Parole chiave --------------------------------------------------------------"
+
+msgid "Delete keyword?"
+msgstr "Eliminare parola chiave?"
+
+msgid "Pattern"
+msgstr "Termine ricerca"
+
+msgid "Regular Expression"
+msgstr "Espressione regolare"
+
+msgid "Ignore Case"
+msgstr "Ignora maiuscole/minuscole"
+
+msgid "Whitelist"
+msgstr "Elenco autorizzati"
+
+msgid "Malformed regular expression!"
+msgstr "Espressione regolare mal costruita!"
+
+msgid "Please edit duplicate instead"
+msgstr "Modifica invece i duplicati"

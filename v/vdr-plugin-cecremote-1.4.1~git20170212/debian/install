@@ -1,0 +1,2 @@
+debian/plugin.cecremote.conf    etc/vdr/plugins
+contrib/*	var/lib/vdr/plugins/cecremote

@@ -1,0 +1,124 @@
+Index: vdr-2.2.0/Make.config
+===================================================================
+--- /dev/null	1970-01-01 00:00:00.000000000 +0000
++++ vdr-2.2.0/Make.config	2015-12-24 15:16:47.648358708 +0100
+@@ -0,0 +1,80 @@
++#
++# User defined Makefile options for the Video Disk Recorder
++#
++# Copy this file to 'Make.config' and change the parameters as necessary.
++#
++# See the main source file 'vdr.c' for copyright information and
++# how to reach the author.
++#
++# $Id: Make.config.template 2.19 2013/02/18 10:55:39 kls Exp $
++
++### The C compiler and options:
++
++CC       = gcc
++CFLAGS   = -g -O3 -Wall
++
++CXX      = g++
++CXXFLAGS = -g -O3 -Wall -Werror=overloaded-virtual -Wno-parentheses
++
++# Use 'make M32=1 ...' to build a 32-bit version of VDR on a 64-bit machine:
++ifdef M32
++CFLAGS   += -m32
++CXXFLAGS += -m32
++endif
++
++### The directory environment:
++
++# Default directories (adjust as necessary or desired):
++
++PREFIX    = /usr
++BINDIR    = $(PREFIX)/bin
++INCDIR    = $(PREFIX)/include
++LIBDIR    = $(PREFIX)/lib/vdr/plugins
++LOCDIR    = $(PREFIX)/share/locale
++MANDIR    = $(PREFIX)/share/man
++PCDIR     = $(PREFIX)/lib/pkgconfig
++RESDIR    = $(PREFIX)/share/vdr
++#DVBDIR    = /usr/src/v4l-dvb/linux/include/uapi
++
++VIDEODIR  = /video0
++CONFDIR   = /var/lib/vdr
++CACHEDIR  = /var/cache/vdr
++
++# Overrides for preset/legacy configurations:
++
++# Use 'make LCLBLD=1' to build locale and plugin files under the source directory:
++ifdef LCLBLD
++LOCDIR       = $(CWD)/locale
++PLUGINDIR    = $(CWD)/PLUGINS
++ifndef PLUGIN # don't overwrite for plugins with old makefiles
++LIBDIR       = $(PLUGINDIR)/lib
++endif
++HDRDIR       = $(CWD)/include
++endif
++
++# Use 'make ONEDIR=1' to have all data in one single directory:
++ifdef ONEDIR
++VIDEODIR     = /video0
++CACHEDIR     = $(VIDEODIR)
++CONFDIR      = $(VIDEODIR)
++RESDIR       = $(VIDEODIR)
++endif
++
++# Use this if you want to have a central place where you configure compile time
++# parameters for plugins:
++#PLGCFG = $(CONFDIR)/plugins.mk
++
++### The remote control:
++
++LIRC_DEVICE = /var/run/lirc/lircd
++
++REMOTE=LIRC
++
++### Define if you want vdr to not run as root:
++#VDR_USER = vdr
++
++### Fallback for plugins with old makefiles:
++ifdef PLUGIN
++CFLAGS   += -fPIC
++CXXFLAGS += -fPIC
++endif
+Index: vdr-2.2.0/Makefile
+===================================================================
+--- vdr-2.2.0.orig/Makefile	2015-12-24 15:16:47.656358748 +0100
++++ vdr-2.2.0/Makefile	2015-12-24 15:16:47.652358728 +0100
+@@ -17,9 +17,9 @@
+ CXXFLAGS ?= -g -O3 -Wall -Werror=overloaded-virtual -Wno-parentheses
+ 
+ CDEFINES  = -D_GNU_SOURCE
+-CDEFINES += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE -DTIXML_USE_STL
++CDEFINES += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
+ 
+-LIBS      = -ljpeg -lpthread -ldl -lcap -lrt -ltinyxml $(shell pkg-config --libs freetype2 fontconfig)
++LIBS      = -ljpeg -lpthread -ldl -lcap -lrt $(shell pkg-config --libs freetype2 fontconfig)
+ INCLUDES ?= $(shell pkg-config --cflags freetype2 fontconfig)
+ 
+ # Directories:
+@@ -29,12 +29,12 @@
+ PLUGINDIR ?= $(CWD)/PLUGINS
+ 
+ DESTDIR   ?=
+-VIDEODIR  ?= /srv/vdr/video
++VIDEODIR  ?= /video0
+ CONFDIR   ?= /var/lib/vdr
+ ARGSDIR   ?= /etc/vdr/conf.d
+ CACHEDIR  ?= /var/cache/vdr
+ 
+-PREFIX    ?= /usr/local
++PREFIX    ?= /usr
+ BINDIR    ?= $(PREFIX)/bin
+ INCDIR    ?= $(PREFIX)/include
+ LIBDIR    ?= $(PREFIX)/lib/vdr
+@@ -77,6 +77,7 @@
+ OBJS += vdrttxtsubshooks.o
+ OBJS += iconpatch.o
+ OBJS += submenu.o
++OBJS += tinystr.o tinyxml.o tinyxmlerror.o tinyxmlparser.o
+ 
+ DEFINES  += $(CDEFINES)
+ INCLUDES += $(CINCLUDES)

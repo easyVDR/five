@@ -1,0 +1,298 @@
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR14~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 23:58:46 +0100
+
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR13~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 23:51:27 +0100
+
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR12~artful) artful; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 23:32:10 +0100
+
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR11~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 23:23:56 +0100
+
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR10~zesty) zesty; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 09 Jul 2017 17:04:04 +0200
+ 
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR6~zesty) zesty; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 09 Jul 2017 16:39:24 +0200
+
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR5~zesty) zesty; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 29 Jun 2017 17:28:30 +0200
+
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR4~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 29 Jun 2017 00:07:32 +0200
+
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR1~trusty) trusty; urgency=high
+
+  * added depends libcec4-dev
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Feb 2017 00:24:19 +0100
+
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Feb 2017 00:10:30 +0100
+
+vdr-plugin-cecremote (1.4.0+git20170212-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added depends libcec4
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Feb 2017 00:02:13 +0100
+ 
+vdr-plugin-cecremote (1.4.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:45:08 +0200
+
+vdr-plugin-cecremote (1.4.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:29:35 +0200
+
+vdr-plugin-cecremote (1.4.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 08 Sep 2016 16:47:08 +0200
+
+vdr-plugin-cecremote (1.4.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 10 Jun 2016 23:02:32 +0200
+
+vdr-plugin-cecremote (1.3.1-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:42:06 +0200
+
+vdr-plugin-cecremote (1.3.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:34:56 +0100
+
+vdr-plugin-cecremote (1.3.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Nov 2015 00:10:47 +0100
+
+vdr-plugin-cecremote (1.3.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * b505e89: Bump version to 1.3.1
+  * depends libcec3  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 21 Sep 2015 22:40:50 +0200
+
+vdr-plugin-cecremote (1.3.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 30 Aug 2015 22:21:49 +0200
+
+vdr-plugin-cecremote (1.2.0-1mangoVDR0~trusty) trusty; urgency=high
+
+  * added depends libplatform-dev
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jun 2015 21:58:38 +0200
+
+vdr-plugin-cecremote (1.2.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * depends libcec3
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 May 2015 22:40:09 +0200
+
+vdr-plugin-cecremote (1.2.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 20 May 2015 18:38:32 +0200
+
+vdr-plugin-cecremote (1.2.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 May 2015 21:56:05 +0200
+
+vdr-plugin-cecremote (1.2.0-0frodo0~trusty) trusty; urgency=medium
+
+  * Feature: HDMI-Port is configurable.
+  * Bugfix: TV will be switched on automatically, only if it is configured.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 17 May 2015 16:34:05 +0200
+
+vdr-plugin-cecremote (1.1.0-0frodo0~trusty) trusty; urgency=low
+
+  * rebuild for trusty
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 25 Apr 2015 17:24:10 +0200
+
+vdr-plugin-cecremote (1.1.0-0frodo0~precise) precise; urgency=low
+
+  * Incorporate patch from sirwio, to get AN_CHANNELS_LIST key functional.
+  * Fix crashes on svdrp commands VDRK/CECK if no keymap id is used as option.
+  * Add setup option to hide cecremote menu from vdr main menu.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 25 Apr 2015 17:19:27 +0200
+
+vdr-plugin-cecremote (1.0.0-0frodo0~precise) precise; urgency=low
+
+  * new version
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 22:40:39 +0200
+
+vdr-plugin-cecremote (0.2.0.hg20150301.1440-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.4.0 for changeset c700db6bc23b
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 01 Mar 2015 15:40:25 +0100
+
+vdr-plugin-cecremote (0.2.0.hg20150228.1836-0frodo0~precise) precise; urgency=low
+
+  * Extend parser for <device>
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Feb 2015 19:36:34 +0100
+
+vdr-plugin-cecremote (0.2.0.hg20150228.1833-0frodo0~precise) precise; urgency=low
+
+  * Extend parser for <device>
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Feb 2015 19:33:14 +0100
+
+vdr-plugin-cecremote (0.2.0.hg20150228.1737-0frodo0~precise) precise; urgency=low
+
+  * Add new tag <cecdevicetype> in <global>
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Feb 2015 18:37:08 +0100
+
+vdr-plugin-cecremote (0.2.0.hg20150228.1630-0frodo0~precise) precise; urgency=low
+
+  * Fix an out of bounds write of mCECKeyNames and correct the size of
+    mDefaultKeyMap, as reported by sirwio
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Feb 2015 17:30:37 +0100
+
+vdr-plugin-cecremote (0.2.0.hg20150228.1613-0frodo0~precise) precise; urgency=low
+
+  * Fix an out of bounds write of mCECKeyNames and correct the size of
+    mDefaultKeyMap, as reported by sirwio
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Feb 2015 17:13:28 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150223.1826-0frodo0~precise) precise; urgency=low
+
+  * Fix an out of bounds write of mCECKeyNames and correct the size of
+    mDefaultKeyMap, as reported by sirwio
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 23 Feb 2015 19:26:16 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150221.2132-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.2.0 for changeset 3bb447915fd9
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 22:32:24 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150221.1850-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.2.0 for changeset 3bb447915fd9
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:50:10 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150221.1844-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.2.0 for changeset 3bb447915fd9
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:44:43 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150221.1841-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.2.0 for changeset 3bb447915fd9
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:41:35 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150221.1834-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.2.0 for changeset 3bb447915fd9
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:34:35 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150221.1833-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.2.0 for changeset 3bb447915fd9
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:33:29 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150221.1832-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.2.0 for changeset 3bb447915fd9
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:32:48 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150221.1823-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.0.3 for changeset 07f9b5b7a5fb
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:23:50 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150216.0558-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.0.3 for changeset 07f9b5b7a5fb
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 16 Feb 2015 06:58:21 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150215.2014-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.0.3 for changeset 07f9b5b7a5fb
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 15 Feb 2015 21:14:56 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150215.2012-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.0.3 for changeset 07f9b5b7a5fb
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 15 Feb 2015 21:12:26 +0100
+
+vdr-plugin-cecremote (0.0.3.hg20150215.1932-0frodo0~precise) precise; urgency=low
+
+  * Added tag V0.0.3 for changeset 07f9b5b7a5fb
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 15 Feb 2015 20:32:35 +0100
+
+vdr-plugin-cecremote (0.0.2.hg20150208.1520-0frodo0~precise) precise; urgency=medium
+
+  * Basic functionality implemented
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 08 Feb 2015 07:20:35 -0800
+

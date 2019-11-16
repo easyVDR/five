@@ -1,0 +1,98 @@
+# VDR Avards plugin language source file.
+# Copyright (C) 2008 Christoph Haubrich
+# This file is distributed under the same license as the Avards package.
+# Christoph Haubrich, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.18\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-09 18:58+0100\n"
+"PO-Revision-Date: 2008-08-01 00:53+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team: <see README>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "auto"
+msgstr "automatica"
+
+msgid "force 4:3"
+msgstr "forza 4:3"
+
+msgid "force L14:9"
+msgstr "forza L14:9"
+
+msgid "force L16:9"
+msgstr "forza L16:9"
+
+msgid "force L>16:9"
+msgstr "forza L>16:9"
+
+msgid "force 16:9"
+msgstr "forza 16:9"
+
+msgid "Avards stop"
+msgstr "Ferma Avards"
+
+msgid "mode"
+msgstr "modalità"
+
+msgid "Avards start"
+msgstr "Avvia Avards"
+
+msgid "detection"
+msgstr "Rilevamento"
+
+msgid "unknown"
+msgstr "sconosciuta"
+
+msgid "switching WSS mode to"
+msgstr "cambia mod. WSS in"
+
+msgid "switching off WSS"
+msgstr "spegnimento WSS"
+
+msgid "start/stop entry in main menu"
+msgstr "Voce Avvia/Ferma menu princ."
+
+msgid "Auto start plugin"
+msgstr "Avvio automatico plugin"
+
+msgid "WSS mode"
+msgstr "Modalità WSS"
+
+msgid "Enable L>16:9 (2,4:1)"
+msgstr "Abilita uscita L>16:9 (2,4:1)"
+
+msgid "Pan tone tolerance"
+msgstr "Tolleranza tonalità pan."
+
+msgid "Pan tone max. black"
+msgstr "Livello max tonalità pan."
+
+msgid "overscan (%)"
+msgstr "Sovrascansione (%)"
+
+msgid "logo width (%)"
+msgstr "Larghezza logo (%)"
+
+msgid "preserve aspect ratio"
+msgstr "Mantieni proporzioni"
+
+msgid "show all lines"
+msgstr "Mostra tutte le righe"
+
+msgid "poll rate (milliseconds)"
+msgstr "Ritardo analisi immagini (ms)"
+
+msgid "delay (in polls)"
+msgstr "Ritardo (in percentuale)"
+
+msgid "Show message on WSS switch"
+msgstr "Mostra mess. al cambio WSS"
+
+msgid "VDR OSD is"
+msgstr "Tipo OSD di VDR"

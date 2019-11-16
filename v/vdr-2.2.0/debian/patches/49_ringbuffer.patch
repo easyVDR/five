@@ -1,0 +1,26 @@
+Index: vdr-2.2.0/dvbplayer.c
+===================================================================
+--- vdr-2.2.0.orig/dvbplayer.c	2016-10-08 16:19:00.000000000 +0200
++++ vdr-2.2.0/dvbplayer.c	2016-10-08 16:25:44.144193561 +0200
+@@ -197,7 +197,7 @@
+ 
+ // --- cDvbPlayer ------------------------------------------------------------
+ 
+-#define PLAYERBUFSIZE  MEGABYTE(1)
++#define PLAYERBUFSIZE  MEGABYTE(4)
+ 
+ #define RESUMEBACKUP 10 // number of seconds to back up when resuming an interrupted replay session
+ #define MAXSTUCKATEOF 3 // max. number of seconds to wait in case the device doesn't play the last frame
+Index: vdr-2.2.0/recorder.c
+===================================================================
+--- vdr-2.2.0.orig/recorder.c	2016-10-08 16:19:00.000000000 +0200
++++ vdr-2.2.0/recorder.c	2016-10-08 16:26:14.876345954 +0200
+@@ -10,7 +10,7 @@
+ #include "recorder.h"
+ #include "shutdown.h"
+ 
+-#define RECORDERBUFSIZE  (MEGABYTE(20) / TS_SIZE * TS_SIZE) // multiple of TS_SIZE
++#define RECORDERBUFSIZE  (MEGABYTE(40) / TS_SIZE * TS_SIZE) // multiple of TS_SIZE
+ 
+ // The maximum time we wait before assuming that a recorded video data stream
+ // is broken:

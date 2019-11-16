@@ -1,0 +1,14 @@
+cdiotester.o: cdiotester.cc cdiotester.h mediatester.h dbusdevkit.h \
+ logger.h configfileparser.h extstring.h
+configfileparser.o: configfileparser.cc configfileparser.h extstring.h \
+ logger.h
+dbusdevkit.o: dbusdevkit.cc dbusdevkit.h logger.h
+filedetector.o: filedetector.cc filedetector.h mediatester.h dbusdevkit.h \
+ logger.h configfileparser.h extstring.h
+mediadetector.o: mediadetector.cc mediadetector.h configfileparser.h \
+ extstring.h logger.h filedetector.h mediatester.h dbusdevkit.h \
+ cdiotester.h videodvdtester.h
+mediatester.o: mediatester.cc mediatester.h dbusdevkit.h logger.h \
+ configfileparser.h extstring.h
+videodvdtester.o: videodvdtester.cc videodvdtester.h mediatester.h \
+ dbusdevkit.h logger.h configfileparser.h extstring.h

@@ -1,0 +1,377 @@
+vdr-plugin-audiorecorder (2.0.0rc5+git20141110-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 00:19:06 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141110-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Jan 2019 01:25:03 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141110-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 00:52:06 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141110-0easyVDR0~zesty) zesty; urgency=high
+
+  * new upstream snapshot
+  * commit:342ada18 - cleanup; code libav10
+  * added ffmpeg3 patch
+  * added tinyxml patch (easyVDR) 
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 09 Jul 2017 20:13:20 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-3easyVDR2~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 30 Jun 2017 00:38:21 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-3easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 17 Apr 2017 21:15:55 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 10 Mar 2017 16:24:00 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-2easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 09 Mar 2017 00:43:28 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-2easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 08 Mar 2017 00:33:12 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-2easyVDR1~trusty) trusty; urgency=high
+
+  * test build
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Mar 2017 21:55:10 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-2easyVDR0~trusty) trusty; urgency=high
+
+  * added depends ffmpeg3
+  * increase build number  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Mar 2017 21:33:04 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-1easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:43:49 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:27:49 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:32:37 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:51:52 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 22 Mar 2016 23:13:18 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:33:38 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 16 Nov 2015 23:34:52 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR8~trusty) trusty; urgency=high
+
+  * automatic rebuild for new ffmepg-2.7.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:25:02 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild for new ffmepg-2.7.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Aug 2015 23:05:53 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:05:14 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 03:58:12 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:18:56 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Feb 2015 01:35:00 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:33:01 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 05:24:56 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141104-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * add tinyxml for easyVDR
+  * add dependency to vdr-abi-version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 05 Nov 2014 02:52:47 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc5-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * include tinyxml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Nov 2014 23:24:26 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc4+git20141020-1easyVDR1~trusty) trusty; urgency=high
+
+  * add scripts to convert mp3
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Nov 2014 22:04:17 +0100
+
+vdr-plugin-audiorecorder (2.0.0rc4+git20141020-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 26 Oct 2014 00:26:40 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc4+git20141020-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 26 Oct 2014 00:20:43 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc4+git20141019-0easyVDR1~trusty) trusty; urgency=high
+
+  * switch to quilt
+  * correct name
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 21 Oct 2014 03:27:07 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc4+git201419-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * add tinynml for easyVDR
+  * add depends ffmpeg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 21 Oct 2014 03:15:16 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140607-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 10 Oct 2014 03:34:13 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140606-0easyVDR4~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 09 Oct 2014 23:13:41 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140606-0easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 09 Oct 2014 00:05:29 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140606-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 08 Oct 2014 23:56:16 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140606-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 08 Oct 2014 23:38:46 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140606-0easyVDR0~trusty) trusty; urgency=high
+
+  * add tinyxml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 08 Oct 2014 01:31:10 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-4easyVDR6~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Oct 2014 03:47:41 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-3easyVDR6~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Oct 2014 03:22:50 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-2easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:36:39 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-2easyVDR5~trusty) trusty; urgency=high
+
+  * rm tinyxml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 06 Jul 2014 02:58:13 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-2easyVDR4~trusty) trusty; urgency=high
+
+  * add tinyxml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 06 Jul 2014 02:20:15 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-1easyVDR4~trusty) trusty; urgency=high
+
+  * add depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 Jul 2014 02:40:13 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-0easyVDR4~trusty) trusty; urgency=high
+
+  * add depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Jun 2014 01:00:41 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-0easyVDR3~trusty) trusty; urgency=high
+
+  * add correct path
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Jun 2014 00:08:37 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-0easyVDR2~trusty) trusty; urgency=high
+
+  * add depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 27 Jun 2014 01:40:25 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 09 Jun 2014 01:44:36 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc3+git20140605-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 06 Jun 2014 22:45:46 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-1easyVDR9~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 May 2014 04:39:17 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR9~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 May 2014 04:25:23 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR8~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 May 2014 04:13:22 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR7~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 May 2014 04:01:40 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR6~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 May 2014 22:57:04 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR5~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 May 2014 21:54:50 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR4~trusty) trusty; urgency=high
+
+  * add patch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 May 2014 21:35:48 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 May 2014 02:51:37 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR2~trusty) trusty; urgency=high
+
+  * add tinyxml-dev
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 May 2014 02:34:37 +0200
+ 
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 May 2014 02:22:37 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc2-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial release 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 May 2014 00:52:59 +0200

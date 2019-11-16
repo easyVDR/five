@@ -1,0 +1,22 @@
+Source: vdr-plugin-cecremote
+Section: video
+Priority: extra
+Maintainer: Ulrich Eckhardt <uli-vdr@uli-eckhardt.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), gettext, pkg-config, libcec-dev, libxerces-c-dev, libp8-platform-dev, libpugixml-dev, libudev-dev
+Standards-Version: 3.9.5
+Homepage: http://hg.uli-eckhardt.de/
+
+Package: vdr-plugin-cecremote
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, libxerces-c3.1, cec-utils, libcec4
+Description: cecremote plugin for VDR
+
+Package: vdr-plugin-cecremote-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-cecremote (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-cecremote
+ .
+ This package contains only the debugging symbols for vdr-plugin-cecremote

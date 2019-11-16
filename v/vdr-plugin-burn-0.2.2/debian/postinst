@@ -1,0 +1,32 @@
+#!/bin/sh
+set -e
+
+COUNTER=/var/lib/vdr/plugins/burn/counters/standard
+
+if [ "$1" = "configure" ]; then
+
+    if [ -d /media/easyvdr01/convert ]; then
+    /bin/mkdir -p /media/easyvdr01/convert/iso
+	/bin/mkdir -p /media/easyvdr01/convert/tmp
+    /bin/touch /media/easyvdr01/convert/iso/.do_not_delete
+    /bin/chown -R vdr:vdr /media/easyvdr01/convert
+    fi
+
+    # Change owner of directory for temporary files
+    /bin/chown vdr:vdr /var/cache/vdr-plugin-burn || true
+
+    # Change owner of directory for grabbed backgrounds
+    /bin/chown vdr:vdr /var/lib/vdr/plugins/burn/skins/Grabbed || true
+
+    # Create standard counter if not exist
+    if [ ! -r $COUNTER ]; then
+        /bin/mkdir -p $(dirname $COUNTER)
+        /bin/cp -f /usr/share/vdr-plugin-burn/counters/standard $COUNTER || true
+        /bin/chown vdr:vdr $COUNTER || true
+    fi
+
+    # Make vdr a member of the groups required by the plugin
+    /bin/sh /usr/lib/vdr/vdr-groups.sh --add vdr-plugin-burn
+fi
+
+#DEBHELPER#

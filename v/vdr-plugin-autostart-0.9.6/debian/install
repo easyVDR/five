@@ -1,0 +1,5 @@
+#libvdr-autostart.so.*    usr/lib/vdr/plugins/
+debian/autostart.conf        etc/vdr/plugins/autostart
+#locale                      usr/share/
+debian/plugin.autostart.conf        etc/vdr/plugins/
+contrib/com.vdr.autostart.pkla	var/lib/polkit-1/localauthority/10-vendor.d/

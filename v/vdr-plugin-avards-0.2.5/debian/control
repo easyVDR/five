@@ -1,0 +1,23 @@
+Source: vdr-plugin-avards
+Section: video
+Priority: extra
+Maintainer: yaVDR Team <team@yavdr.org>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 2.2.0-1), gettext, pkg-config
+Standards-Version: 3.9.4
+Homepage: http://firefly.vdr-developer.org/avards/index.html
+
+Package: vdr-plugin-avards
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Plugin for VDR. Automatic Video Aspect Ratio Detection and Signaling
+
+Package: vdr-plugin-avards-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-avards (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-avards
+ .
+ This package contains only the debugging symbols for vdr-plugin-avards
+

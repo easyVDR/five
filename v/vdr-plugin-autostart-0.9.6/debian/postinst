@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+
+
+    # Change owner of directory 
+    chown -R vdr:vdr /var/lib/vdr/plugins/autostart/ || true
+
+fi
+
+#DEBHELPER#

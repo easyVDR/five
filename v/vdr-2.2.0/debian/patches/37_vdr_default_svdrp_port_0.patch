@@ -1,0 +1,18 @@
+Description: This sets the default svdrp-port to 0, which means that
+ SVDRP is disabled by default unless someone specifies
+ another port with the --port option when starting vdr
+Author: Thomas Schmidt <tschmidt@debian.org>
+
+Index: vdr-2.2.0/vdr.c
+===================================================================
+--- vdr-2.2.0.orig/vdr.c	2016-02-01 15:14:43.831456897 +0100
++++ vdr-2.2.0/vdr.c	2016-02-01 15:15:02.000000000 +0100
+@@ -188,7 +188,7 @@
+   // Command line options:
+ 
+ #define dd(a, b) (*a ? a : b)
+-#define DEFAULTSVDRPPORT 6419
++#define DEFAULTSVDRPPORT 0
+ #define DEFAULTWATCHDOG     0 // seconds
+ #define DEFAULTVIDEODIR VIDEODIR
+ #define DEFAULTCONFDIR dd(CONFDIR, VideoDirectory)

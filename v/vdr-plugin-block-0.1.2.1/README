@@ -1,0 +1,184 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+The block plugin is a fork of the orphaned taste plugin 0.0.2d which was
+originally coded by LordJaxom aka Sascha Volkenandt.
+Please do not install both plugins (taste AND block)!
+Apart from that this probably won't work it simply does not make any sense
+at all ;).
+
+Contact information (block plugin):
+Developer/Maintainer: Michael Schneider <vdrportal_midas at gmx dot de>
+Project homepage: http://projects.vdr-developer.org/projects/plg-block/news
+Wiki-page: http://www.vdr-wiki.de/wiki/index.php/Block-plugin
+
+Contact information (taste plugin):
+Written by: Sascha Volkenandt <sascha at akv-soft dot de>
+Project homepage: http://www.magoa.net/linux/index.php?view=taste
+
+See the file COPYING for license information.
+
+
+**************
+*DESCRIPTION:*
+**************
+
+This plugin prevents you from being bothered by unwanted broadcasts. Instead
+of those the screen will stay black, the sound muted, an info message
+appears in the OSD and after a configurable pause the vdr switches to
+another channel.
+
+Unwanted shows are identified by their EPG title in a predefined blacklist.
+You can add the current title to the block plugin blacklist by choosing
+'De-/Block Broadcast' from the main VDR menu or by editing the blacklist in
+the setup of the plugin. In the latter case make sure you close the submenus
+as well as the setup menu by 'ok' to properly save your changes. This would
+also be the right place to remove entries from the blacklist. Once a show is
+blocked you could also deblock the current show by again choosing 
+'De-/Block Broadcast' from the main menu, while the show is running on the
+current channel.
+
+There are two detection methods which can be chosen in the plugins setup
+under 'Detection Method' - On Switch or Channel EPG.
+On Switch:
+Every time the VDR switches to another channel the block plugin checks if
+the EPG title of the current show matches with a blacklist entry and if so
+the show won't be displayed and after a configurable pause (default 2s) the
+VDR switches to another channel automatically. Usually this will be the next
+possible lower channel number if you were coming from a higher one or
+vice-versa. If this is not possible, the vdr switches to the last channel
+displayed.
+Channel EPG:
+If set to this option the plugin scans the epg title not only on channel
+switches but it will scan permanently. This way also block events in the
+current channel are detected. This is mandatory for parental guidance mode
+and automatically set in this mode.
+
+In case you unexpectedly want to watch a blacklisted show you can override
+the block rule by pressing 'Ok' while the message is displayed. This
+behaviour can be deactivated in the plugins setup (automatically in parental
+guidance mode).
+
+For VDR versions <= 1.3.16 you will have to apply the included patch to the
+VDR source in order to have multiple channels being blocked in a row.
+Otherwise the block plugin will only skip the first channel. The patch
+originates from the taste plugin and was written by Sascha Volkenandt.
+
+
+
+*************
+*** USAGE ***
+*************
+
+Block current show:
+-------------------
+
+Choose 'Block Broadcast' from the main vdr menu.
+
+
+Edit, white/blacklist, delete or manually add new entries:
+----------------------------------------------------------
+
+Go to the plugins setup in the vdr menu, where you will find the blacklist.
+Use the color keys as shown in the osd.
+Editing additionally allows you to ignore case, or to use regular 
+expressions and to white/blacklist the entry.
+In Parental Guidance mode it is only possible to add entries and editing
+is restricted to new entries and to changes to the pattern and regular
+expression mode.
+Black/whitelisting is switched by choosing the main menu entry of the 
+plugin and can also be changed in the plugins pattern list (by blue/F4)
+or in the editing view of an entry.
+
+
+Setup Options:
+--------------
+
+Hide main menu entry: Shows/doesn't show the block plugin main menu entry.
+
+Timeout: Defines how long the block osd message is displayed, before the
+         plugin switches to another channel.
+
+Method: In version 0.0.2 there a new detection method was added. You can
+        choose between 'On Switch' which is the old method that only scans
+        at zap events. The other method is 'Channel EPG' which scans the
+        current epg title permanentely. If you are setting up a parental
+        guidance config you want to use the latter one (see below).
+
+Ok deblocks temporarily: If set to yes this allows a blocked show to be
+                         watched by pressing ok as long as the block osd
+                         message is displayed. It does not permanentely
+                         deblock a show. If you are setting up a parental
+                         guidance config you want to set this to 'no'
+                         (see below).
+
+Fuzzy Fallback: As of version 0.1.0 whitelisting function was added which
+                could lead to contradictory rules for a list entry. If so
+                the plugin falls back to the value fo Fuzzy Fallback which
+                could be set to black or white.
+
+DVB rating: As of version 0.1.2 the block plugins Parental Guidance mode
+            can verify against the Parental Rating stream information sent
+            by the broadcaster. Unfortunately this information seems not
+            to be very reliable as most stations have the value set to 0
+            (at least here in Germany and on DVB-S/T), which would be ok 
+            for lets say Sesamy Street but not for action movies or even 
+            the news depending on your point of view. That said the 
+            current implementation only takes care of values > 0.
+            
+            So the actual benefit of block taking care of the streams 
+            rating information is that it will block every show with a
+            rating < 1 and additionally deblock shows that are broadcasted
+            with valid rating information (ie > 0) and the value being
+            lower than 'DVB rating' in the plugins setup.
+
+            Setting the value to 0 means disabled.
+
+            NOTE: DVB rating requires at least VDR 1.7.11.
+
+
+Parental Guidance Setup 
+(Experimental as of version 0.0.2+dev):
+---------------------------------------
+
+First of all: I can't guarantee a perfectly failsafe childprotection.
+              Feel free to test the Parental Guidance config at your
+              own risk but don't forget, that it is you not me who
+              takes care of your children. Nevertheless the method
+              used by the plugin should work quite well, as long as
+              the stations are updating their epg information in sync
+              with the current show.
+
+How to: Several prerequisites have to be configured in the plugins
+        setup. For your convenience these are set by manually adding 
+        or setting
+
+        block.ParentalGuidance=1
+
+        to vdrs setup.conf. vdr has to be stopped before you edit
+        the file, otherwise it will be overwritten the 
+        next time vdr stops and your changes will be lost. Note that
+        once the setting has been added to setup.conf the only way
+        to deactivate parental guidance mode is to set
+
+        block.ParentalGuidance=0
+        
+        (again with vdr being stopped) or by removing the row from
+        setup.conf.
+        
+        Setting ParentalGuidance to 1 overrides four other setup
+        options: 'Detection Method' is set to 'Channel EPG',
+        'Ok deblocks temporarily' is set to 'No', 'Fuzzy fallback'
+        is set to 'black' and DVB rating becomes deactivated,  as 
+        other settings obviously would undermine Parental Guidance 
+        mode. Furthermore the color keys yellow (Delete) and blue 
+        (switch black/white) are deactivated in the plugins setup. 
+        Editing is only allowed for new entries, for which you are 
+        only allowed to change the pattern and to set regular 
+        expression mode.
+        
+
+
+Finally improvements may depend on your feedback, so please drop me a line 
+if you experience any kind of potential misbehaviour of the plugin, if you
+have suggestions how to make the block plugin better etc. or if you just
+want to say thank you ;) !

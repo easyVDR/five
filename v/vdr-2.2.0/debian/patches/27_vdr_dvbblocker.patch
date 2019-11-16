@@ -1,0 +1,81 @@
+Index: vdr-2.2.0/config.c
+===================================================================
+--- vdr-2.2.0.orig/config.c	2016-02-01 15:13:25.511068528 +0100
++++ vdr-2.2.0/config.c	2016-02-01 15:13:25.507068508 +0100
+@@ -398,6 +398,7 @@
+   PositionerLastLon = 0;
+   SetSystemTime = 0;
+   TimeSource = 0;
++  ChannelBlocker = 0;
+   TimeTransponder = 0;
+   StandardCompliance = STANDARD_DVB;
+   MarginStart = 2;
+@@ -623,6 +624,7 @@
+   else if (!strcasecmp(Name, "SetSystemTime"))       SetSystemTime      = atoi(Value);
+   else if (!strcasecmp(Name, "TimeSource"))          TimeSource         = cSource::FromString(Value);
+   else if (!strcasecmp(Name, "TimeTransponder"))     TimeTransponder    = atoi(Value);
++  else if (!strcasecmp(Name, "ChannelBlocker"))      ChannelBlocker     = atoi(Value);
+   else if (!strcasecmp(Name, "StandardCompliance"))  StandardCompliance = atoi(Value);
+   else if (!strcasecmp(Name, "MarginStart"))         MarginStart        = atoi(Value);
+   else if (!strcasecmp(Name, "MarginStop"))          MarginStop         = atoi(Value);
+@@ -751,6 +753,7 @@
+   Store("SetSystemTime",      SetSystemTime);
+   Store("TimeSource",         cSource::ToString(TimeSource));
+   Store("TimeTransponder",    TimeTransponder);
++  Store("ChannelBlocker",     ChannelBlocker);
+   Store("StandardCompliance", StandardCompliance);
+   Store("MarginStart",        MarginStart);
+   Store("MarginStop",         MarginStop);
+Index: vdr-2.2.0/config.h
+===================================================================
+--- vdr-2.2.0.orig/config.h	2016-02-01 15:13:25.511068528 +0100
++++ vdr-2.2.0/config.h	2016-02-01 15:13:25.507068508 +0100
+@@ -283,6 +283,7 @@
+   int SetSystemTime;
+   int TimeSource;
+   int TimeTransponder;
++  int ChannelBlocker;
+   int StandardCompliance;
+   int MarginStart, MarginStop;
+   int AudioLanguages[I18N_MAX_LANGUAGES + 1];
+Index: vdr-2.2.0/dvbdevice.c
+===================================================================
+--- vdr-2.2.0.orig/dvbdevice.c	2016-02-01 15:13:25.511068528 +0100
++++ vdr-2.2.0/dvbdevice.c	2016-02-01 15:13:25.507068508 +0100
+@@ -1522,6 +1522,10 @@
+ 
+ bool cDvbDevice::ProvidesSource(int Source) const
+ {
++  if (Setup.ChannelBlocker == 1) {
++      if (IsPrimaryDevice()) return false;
++      //isyslog("ChannelBlocker active on primary Interface");
++  }
+   int type = Source & cSource::st_Mask;
+   return type == cSource::stNone
+       || type == cSource::stAtsc  && ProvidesDeliverySystem(SYS_ATSC)
+Index: vdr-2.2.0/menu.c
+===================================================================
+--- vdr-2.2.0.orig/menu.c	2016-02-01 15:13:25.511068528 +0100
++++ vdr-2.2.0/menu.c	2016-02-01 15:13:25.507068508 +0100
+@@ -3385,6 +3385,7 @@
+      Add(new cMenuEditIntItem( tr("Setup.DVB$Subtitle background transparency"), &data.SubtitleBgTransparency, 0, 10));
+      }
+   Add(new cMenuEditBoolItem(tr("Setup.DVB$Enable teletext support"), &data.SupportTeletext));
++  Add(new cMenuEditBoolItem(tr("Setup.DVB$Channel Blocker"), &data.ChannelBlocker));
+ 
+   SetCurrent(Get(current));
+   Display();
+Index: vdr-2.2.0/po/de_DE.po
+===================================================================
+--- vdr-2.2.0.orig/po/de_DE.po	2016-02-01 15:13:25.511068528 +0100
++++ vdr-2.2.0/po/de_DE.po	2016-02-01 15:13:25.507068508 +0100
+@@ -979,6 +979,9 @@
+ msgid "Setup.EPG$Preferred language"
+ msgstr "Bevorzugte Sprache"
+ 
++msgid "Setup.DVB$Channel Blocker"
++msgstr "Tuner des primären DVB blocken"
++
+ msgid "pan&scan"
+ msgstr "pan&scan"
+ 

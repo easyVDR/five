@@ -1,0 +1,13 @@
+Index: vdr-plugin-audiorecorder-2.0.0rc5+git20141109/Makefile
+===================================================================
+--- vdr-plugin-audiorecorder-2.0.0rc5+git20141109.orig/Makefile	2017-07-09 19:45:54.953580893 +0200
++++ vdr-plugin-audiorecorder-2.0.0rc5+git20141109/Makefile	2017-07-09 19:45:54.949580873 +0200
+@@ -43,7 +43,7 @@
+ ## avcodec_decode_audio3 --> avcodec_decode_audio4
+ ## avcodec_encode_audio --> avcodec_encode_audio2
+ 
+-#DEFINES += -DAVCODEC_NEW
++DEFINES += -DAVCODEC_NEW
+ 
+ ## end new avcodec
+ 

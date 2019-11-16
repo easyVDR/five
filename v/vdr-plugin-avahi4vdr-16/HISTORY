@@ -1,0 +1,27 @@
+VDR Plugin 'avahi4vdr' Revision History
+---------------------------------------
+
+2012-12-26: Version 1
+
+- Initial revision.
+
+2012-12-28: Version 4
+
+- add support for services.conf
+
+2012-12-28: Version 5
+
+- add SVDRP command for reloading services.conf
+
+2013-01-16: Version 7
+
+- add event browser-allfornow
+
+2013-02-13: Version 9
+
+- install helper header
+
+2013-04-17: Version 12
+
+- switch to GLib's GMainLoop
+

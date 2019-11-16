@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+	Minimal configuration file for the cec-plugin.
+	Normally the following cec logical addresses are used:
+	0 : TV
+	4 : Own libCEC address
+	8 : DVD/Blueray player
+-->
+<config>
+	<global>
+		<cecdebug>7</cecdebug>
+		<combokeytimeoutms>1000</combokeytimeoutms>
+		<rtcdetect>true</rtcdetect>
+		<shutdownonstandby>false</shutdownonstandby>
+		<poweroffonstandby>false</poweroffonstandby>
+		<!--  On VDR start power on TV, make VDR device active -->
+		<onstart>
+			<poweron>TV</poweron>
+			<makeactive />
+		</onstart>
+		<!--  On VDR stop power off TV and DVD/Blueray player -->
+		<onstop>
+			<poweroff>TV</poweroff>
+			<poweroff>player</poweroff>
+		</onstop>
+		
+		<cecdevicetype>RECORDING_DEVICE</cecdevicetype>
+	</global>
+	
+	<!-- Define DVD/Blueray Player -->
+	<device id="player">
+		<logical>8</logical>
+	</device>
+	
+	<!--  Menu for Blueray/DVD player -->
+	<menu name="Watch DVD" address="player">
+		<!--  When menu is selected, switch on TV and player and make player active -->
+		<onstart>
+			<poweron>TV</poweron>
+			<poweron>player</poweron>
+			<makeinactive />
+		</onstart>
+		<player file="/video/conf/plugins/cecremote/blueray.mpg">
+		<!--  <keymaps cec="default" vdr="default" /> -->
+			<stop>Back</stop>
+			<stop>Menu</stop>
+		</player>
+		<!--  When returning to VDR poweroff DVD Player and make VDR active -->
+		<onstop>
+			<poweroff>player</poweroff>
+			<makeactive />
+		</onstop>
+	</menu>
+	
+	<!--  Menu to togle power of TV -->
+	<menu name="TV TOGGLE" address="0">
+		<!-- When menu is selected, toggle TV power state -->
+		<onpoweron>
+			<poweron>TV</poweron>
+			<makeactive />
+		</onpoweron>
+		<onpoweroff>
+		<!--  Send CEC commands to power off TV -->
+			<poweroff>TV</poweroff>
+			<makeactive />
+		</onpoweroff>
+	</menu>
+</config>

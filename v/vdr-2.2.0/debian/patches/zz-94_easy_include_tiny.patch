@@ -1,0 +1,36 @@
+Index: vdr-2.2.0/submenu.c
+===================================================================
+--- vdr-2.2.0.orig/submenu.c	2015-12-24 15:16:54.184391118 +0100
++++ vdr-2.2.0/submenu.c	2015-12-24 15:16:54.180391098 +0100
+@@ -12,7 +12,6 @@
+  ****************************************************************************/
+ 
+ #ifndef SUBMENU_H
+-#include <tinyxml.h>
+ #include "submenu.h"
+ #include "plugin.h"
+ #include "iconpatch.h"
+@@ -36,7 +35,7 @@
+   _currentMenu = currentMenu;
+   _level       = level;
+ 
+-  if (xml != NULL && xml->Type() == TiXmlNode::TINYXML_ELEMENT) {
++  if (xml != NULL && xml->Type() == TiXmlNode::ELEMENT) {
+      const char *tag = xml->Value();
+ 
+      if (cSubMenuNode::IsType(tag) != cSubMenuNode::UNDEFINED) {
+Index: vdr-2.2.0/submenu.h
+===================================================================
+--- vdr-2.2.0.orig/submenu.h	2015-12-24 15:16:54.184391118 +0100
++++ vdr-2.2.0/submenu.h	2015-12-24 15:16:54.180391098 +0100
+@@ -14,9 +14,9 @@
+ #ifndef SUBMENU_H
+ #define SUBMENU_H
+ 
+-#include <tinyxml.h>
+ #include "thread.h"
+ #include "tools.h"
++#include "tinystr.h"
+ 
+ class cSubMenuNode;
+ class cSubMenuNodes;

@@ -1,0 +1,24 @@
+--- a/setup.c
++++ b/setup.c
+@@ -91,7 +91,7 @@
+ 			PROCTOOLS_INIT_PROPERTY( RemovePath,          false ),
+ 			PROCTOOLS_INIT_PROPERTY( CustomDiskSize,      200 ),
+ 			PROCTOOLS_INIT_PROPERTY( BurnSpeed,           0 ),
+-			PROCTOOLS_INIT_PROPERTY( RequantType,         requanttype_metakine ),
++			PROCTOOLS_INIT_PROPERTY( RequantType,         requanttype_transcode ),
+ 			PROCTOOLS_INIT_PROPERTY( PreserveLogFiles,    false ),
+ 			PROCTOOLS_INIT_PROPERTY( DefaultLanguage,     0 ),
+ 			PROCTOOLS_INIT_PROPERTY( MainMenuStatus,      true ),
+--- a/vdrburn-dvd.sh
++++ b/vdrburn-dvd.sh
+@@ -103,8 +103,8 @@
+ 
+ 	requant)
+ 		REQUANT_FACTOR=$(echo "$REQUANT_FACTOR" | tr ',' '.')
+-		echo requant $REQUANT_FACTOR 3 $VIDEO_SIZE
+-		$IO_NICE requant $REQUANT_FACTOR 3 $VIDEO_SIZE < "$VIDEO_FILE" > "$REQUANT_FILE"
++		echo requant_M2VRequant $REQUANT_FACTOR 3 $VIDEO_SIZE
++		$IO_NICE M2VRequantiser $REQUANT_FACTOR 3 $VIDEO_SIZE < "$VIDEO_FILE" > "$REQUANT_FILE"
+ 		rm -f "$VIDEO_FILE"
+ 	;;
+ 
