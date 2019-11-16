@@ -1,0 +1,198 @@
+# German translations for VDRSeriesTimer package
+# German messages for VDRSeriesTimer.
+# Copyright (C) 2008 THE VDRSeriesTimer'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the VDRSeriesTimer package.
+# root <eplists@constabel.net>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDRSeriesTimer 0.3.0-beta1\n"
+"Report-Msgid-Bugs-To: <eplists@constabel.net>\n"
+"POT-Creation-Date: 2008-03-02 13:34+0100\n"
+"PO-Revision-Date: 2008-02-16 19:53+0100\n"
+"Last-Translator: Mike Constabel <eplists@constabel.net>\n"
+"Language-Team: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+msgid "Module"
+msgstr "Modul"
+
+msgid "not found"
+msgstr "nicht gefunden"
+
+msgid "please install it or edit EplistsClient.pm and set"
+msgstr "bitte installiere es oder editiere EplistsClient.pm und setze"
+
+msgid "try to load"
+msgstr "versuche folgendes zu laden:"
+
+msgid "without"
+msgstr "ohne"
+
+msgid "please install"
+msgstr "bitte installiere"
+
+msgid "or"
+msgstr "oder"
+
+msgid "Using"
+msgstr "Verwende"
+
+msgid "To disable this warning install"
+msgstr "Um diese Warnung abzuschalten installiere"
+
+msgid "edit EplistsClient.pm and set"
+msgstr "editiere EplistsClient.pm und setze"
+
+msgid "failed"
+msgstr "fehlgeschlagen"
+
+msgid "Unidentified Line"
+msgstr "Unbekannte Zeile"
+
+msgid "File"
+msgstr "Datei"
+
+msgid "Port isn't numeric"
+msgstr "Port ist nicht numerisch"
+
+msgid "Cannot connect to"
+msgstr "Kann keine Verbindung herstellen zu"
+
+msgid "Please provide username and password"
+msgstr "Bitte Username und Passwort angeben"
+
+msgid "please install it or edit Eplists.pm and set"
+msgstr "bitte installiere es oder editiere Eplists.pm und setze"
+
+msgid "Please provide Title and Subtitle or Title and EpisodeOverAll or PrintLists"
+msgstr "Bitte dem Script Titel und Subtitel oder Titel und Episodennummer oder PrintLists übergeben"
+
+msgid "No matching list for this event found"
+msgstr "Keine passende Liste für diese Sendung gefunden"
+
+msgid "Please check ListsDir, directory doesn't exist"
+msgstr "Bitte prüfe ListsDir, Verzeichnis existiert nicht"
+
+msgid "Lists found"
+msgstr "Gefundene Listen"
+
+msgid "is like title"
+msgstr "ähnelt dem Titel"
+
+msgid "with a distance from"
+msgstr "mit einem Abstand von"
+
+msgid "using file"
+msgstr "verwende Datei"
+
+msgid "No episode lists found for"
+msgstr "Keine Liste gefunden für die Sendung"
+
+msgid "Changeable in"
+msgstr "Änderbar in"
+
+msgid "episodes list configuration file"
+msgstr "der Konfigurationsdatei der Serie"
+
+msgid "Changeable on commandline"
+msgstr "Änderbar per Befehlszeilenoption"
+
+msgid "No episode number found, try searching by comparing subtitle"
+msgstr "Keine Folgennummer gefunden, versuche eine Suche nach Untertitel"
+
+msgid "Only episode number found, try searching by comparing episode number"
+msgstr "Nur die Folgennummer gefunden, versuche eine Suche nach Folgennummer"
+
+msgid "Run"
+msgstr "Durchlauf"
+
+msgid "Found title"
+msgstr "Gefundener Titel"
+
+msgid "changed to"
+msgstr "geändert in"
+
+msgid "is like the given"
+msgstr "ähnelt dem Titel"
+
+msgid "so using"
+msgstr "verwende deshalb"
+
+msgid "Warning"
+msgstr "Warnung"
+
+msgid "but max distance is"
+msgstr "der maximal erlaubte Abstand ist aber"
+
+msgid "is equal to the given"
+msgstr "ist identisch mit"
+
+msgid "is like"
+msgstr "ähnelt"
+
+msgid "as subtitle"
+msgstr "als Titel"
+
+msgid "Writing changed episodes list to file"
+msgstr "Schreibe Änderungen in die Datei"
+
+msgid "Cannot open file"
+msgstr "Kann folgende Datei nicht öffnen:"
+
+msgid "Cannot write changes of episodes list to file"
+msgstr "Kann Änderungen nicht in folgende Datei schreiben:"
+
+msgid "File is COMPLETE or PROTECTED"
+msgstr "Datei ist COMPLETE oder PROTECTED"
+
+msgid "Cannot find episode title in episode list"
+msgstr "Episode konnte nicht in Liste gefunden werden"
+
+msgid "Error"
+msgstr "Fehler"
+
+msgid "Missing command"
+msgstr "Befehl fehlt"
+
+msgid "Please provide an existing file or a path with parameter"
+msgstr "Bitte einen Dateinamen oder einen Pfad angeben mit dem Parameter"
+
+msgid "Cannot open input file"
+msgstr "Kann folgende Eingabe-Datei nicht öffnen:"
+
+msgid "Output file already exists! Specify -f if you want me to force overwriting it"
+msgstr "Ausgabe-Datei existiert bereits! Verwende den Parameter -f um die Datei zu überschreiben"
+
+msgid "Syntax error: Please check the line, especially the season and episode numbering"
+msgstr "Syntax Fehler: Prüfe die Zeile, achte insbesonders auf die Staffel- und Folgen-Nummerierung"
+
+msgid "Skipping not needed line"
+msgstr "Überspringe nicht benötigte Zeile"
+
+msgid "Skipping not needed empty line"
+msgstr "Überspringe nicht benötigte Leerzeile"
+
+msgid "Skipping unknown line"
+msgstr "Überspringe unbekannte Zeile"
+
+msgid "Cannot open output file"
+msgstr "Kann folgende Ausgabe-Datei nicht öffnen:"
+
+msgid "File not accepted"
+msgstr "Datei nicht akzeptiert"
+
+msgid "errors"
+msgstr "Fehler"
+
+msgid "warnings"
+msgstr "Warnungen"
+
+msgid "infos"
+msgstr "Infos"
+
+msgid "File accepted"
+msgstr "Datei akzeptiert"

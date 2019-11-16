@@ -1,0 +1,752 @@
+diff -Nur org/config/config.pl_dist new/config/config.pl_dist
+--- org/config/config.pl_dist	2007-06-15 11:43:54.000000000 +0200
++++ new/config/config.pl_dist	2008-02-19 08:07:08.000000000 +0100
+@@ -81,6 +81,8 @@
+ our $tvtMax=14;
+ 
+ # settings for episodes
+-our $episodeBase="http://www.toppoint.de/~vejoun/cgi-bin/";
++our $episodeBase="http://eplists.constabel.net/eplists/eplist.cgi";
+ our $genEpisode=1;
+ 
++our $EplistsEnabled=1;
++#our $EplistsConfig="~/.eplists/vdrseriestimer.conf";
+diff -Nur org/inc/helperfunc new/inc/helperfunc
+--- org/inc/helperfunc	2007-06-15 11:43:54.000000000 +0200
++++ new/inc/helperfunc	2008-03-04 08:42:17.000000000 +0100
+@@ -116,7 +116,7 @@
+ 	while(<CHANNELS>) {
+ 
+ 		doexit() if $please_exit;
+-		# Kategorien überspringen
++		# Kategorien Ã¼berspringen
+ 		next if (/^:/);
+ 
+ 		chomp;
+@@ -189,7 +189,7 @@
+ 		close CACHE;
+ 	} else {
+ 		while ($tries > 0 and ! $success) {
+-print "try $tries\n";
++			print "try $tries\n";
+ 			sleep 2 if $delay; # hoerzu macht dicht, wenns zu schnell geht ...
+ 			$tries--;
+ 			my $res;
+@@ -242,77 +242,154 @@
+ sub cleanup {
+ 	$yesterday = UnixDate($gestern, "%Y%m%d");
+ 	$today = UnixDate($heute, "%Y%m%d");
++        $twodaysago = UnixDate($vorgestern, "%Y%m%d");
++        $tomorrow = UnixDate($morgen, "%Y%m%d");
+ 
+ 	opendir DH, $downloadprefix ;
+ 	@directory = readdir DH ;
+ 	close DH ;
+ 	foreach $file (@directory) {	
+-		# Älter als einen Tag? weg damit.
++		# Ã„lter als einen Tag? weg damit.
+ 		if ($file =~ m/$yesterday/) {
+ 			unlink("$downloadprefix$file");
+ 		}
++		if ($file =~ m/$twodaysago/) {
++                        unlink("$downloadprefix$file");
++                }
+ 	}
+ 
+ 	opendir DH, $updateprefix ;
+ 	@directory = readdir DH ;
+ 	close DH ;
+ 	foreach $file (@directory) {	
+-		# Älter als einen Tag? weg damit.
++		# Ã„lter als einen Tag? weg damit.
+ 		if ($file =~ m/$yesterday/) {
+ 			unlink("$updateprefix$file");
+ 		}
+-	}
+-
+-if ($useupdate) {
+-	print "lösche Daten von heute ..\n";
+-	opendir DH, $downloadprefix ;
+-	@directory = readdir DH ;
+-	close DH ;
+-	foreach $file (@directory) {	
+-		# Daten von heute? download forcieren.
+-		# TVMovie-Daten nicht loeschen, dafuer gibt es
+-		# updatefiles.
+-		next if $file =~ m/^tvmovie_/;
+-		if ($file =~ m/$today/) {
+-			unlink("$downloadprefix$file");
++                if ($file =~ m/$twodaysago/) {
++                        unlink("$updateprefix$file");
++                }
++	}
++
++	if ($useupdate && ! $noclean) {
++		print "lÃ¶sche Daten von heute ..\n";
++		opendir DH, $downloadprefix ;
++		@directory = readdir DH ;
++		close DH ;
++		foreach $file (@directory) {	
++			# Daten von heute? download forcieren.
++			# TVMovie-Daten nicht loeschen, dafuer gibt es
++			# updatefiles.
++			next if $file =~ m/^tvmovie_/;
++			if ($file =~ m/$today/) {
++				unlink("$downloadprefix$file");
++			}
++	                if ($file =~ m/$tomorrow/) {
++	                        unlink("$downloadprefix$file");
++	                }
+ 		}
+ 	}
++
+ }
+ 
++sub epg_bugfix {
++	my ($kategory, $title_ref, $subtitle_ref, $themes) = @_;
++	if ( $$title_ref && ! $$subtitle_ref && $themes ) {
++#		print "bugfix: $$title_ref, $themes";
++		$themes =~ s/^(?:Them(?:a|en)\s+u\.a\.|Them(?:a|en)|u\.a\.):?\s+(.*)$/$1/i;
++		$$subtitle_ref = substr($1, 0, 77);
++		$$subtitle_ref .= "..." if length($$subtitle_ref) == 77;
++#		print " -> $$title_ref, $$subtitle_ref\n";
++	}
+ }
+ 
+ sub makeEPGevent {
+-# unpacking and packing for utf8-stuff
+-#
+-my $event_id = pack "U0C*", unpack "C*", shift;
+-my $start = pack "U0C*", unpack "C*", shift;
+-my $dauer = pack "U0C*", unpack "C*", shift;
+-my $title = pack "U0C*", unpack "C*", shift;
+-my $subtitle = pack "U0C*", unpack "C*", shift;
+-my $id = pack "U0C*", unpack "C*", shift;
+-my $mode = pack "U0C*", unpack "C*", shift;
+-my $summary = pack "U0C*", unpack "C*", shift;
+-
+-my $regie = pack "U0C*", unpack "C*", shift;
+-my $darsteller = pack "U0C*", unpack "C*", shift;
+-my $genre =  pack "U0C*", unpack "C*", shift;
+-my $kategory = pack "U0C*", unpack "C*", shift;
+-my $country = pack "U0C*", unpack "C*", shift;
+-my $year = pack "U0C*", unpack "C*", shift;
+-my $audio = pack "U0C*", unpack "C*", shift;
+-my $format = pack "U0C*", unpack "C*", shift;
+-my $flags = pack "U0C*", unpack "C*", shift;
+-my $origtitle = pack "U0C*", unpack "C*", shift;
+-my $fsk = pack "U0C*", unpack "C*", shift;
+-my $folge = pack "U0C*", unpack "C*", shift;
+-my $bewertung = pack "U0C*", unpack "C*", shift;
+-my $channel = pack "U0C*", unpack "C*", shift;
+-my $shortsummary = pack "U0C*", unpack "C*", shift;
+-my $wertung = pack "U0C*", unpack "C*", shift;
+-my $vpsstart = pack "U0C*", unpack "C*", shift;
++
++	my ($event_id, $start, $dauer, $title, $subtitle, $id, $mode, $summary, $regie, $darsteller, $genre, $kategory, $country, $year, $audio, $format, $flags, $origtitle, $fsk, $folge, $bewertung, $channel, $shortsummary, $wertung, $vpsstart, $themes, $moderator, $guest) = @_;
++	my ($e_season, $e_episode, $e_number, $e_status, $e_bugfixescode) = ("", "", "", "", 0);
++
++	epg_bugfix($kategory, \$title, \$subtitle, $themes);
++
++	if ( $EplistsEnabled && ( ( $kategory && ( $kategory eq "Serie" || $kategory eq "Spielfilm" || $kategory eq "Kinder" ) ) || ! $kategory ) && $title ) {
++
++		$episode = 0 if ! $episode;
++
++		my $Result_ref = Eplists_Search( {      Title           => $title,
++							Subtitle        => $subtitle,
++							EpisodeOverAll  => $episode,
++							Length		=> $dauer,
++							FormatPrefix    => "",
++							Format          => "S%sE%eN%n",
++							Verbose         => 0,
++							Fallback        => 0,
++							Protected       => 1,
++							UserConf	=> ( defined $EplistsConfig && $EplistsConfig ) ? $EplistsConfig : ""
++							}
++						);
++
++		if ( defined $$Result_ref{MultiResult} && scalar @${$$Result_ref{MultiResult}} > 0 ) {
++			my $parts = scalar @${$$Result_ref{MultiResult}};
++
++			my $multisubtitle_ref	= ${$$Result_ref{MultiSubtitle}};
++			#$$multiresult_ref	= ${$$Result_ref{MultiResult}};
++			print Dumper($Result_ref) if $parts > 1;
++
++			my $id_tmp		= $id;
++			my $event_id_tmp	= $event_id;
++			my $start_tmp		= $start;
++			my $dauer_tmp		= $dauer;
++
++			for ( $i = 0; $i < $parts; $i++ ) {
++				if ( $${$$Result_ref{MultiResult}}[$i] =~ /S(\d+)E(\d+)N(\d+)/ ) {
++					$e_season  = $1;
++					$e_episode = $2;
++					$e_number  = $3;
++				} elsif ( $${$$Result_ref{MultiStatus}}[$i] ) {
++					$e_status  = $${$$Result_ref{MultiStatus}}[$i];
++				}
++
++				if ( $parts > 1 && $id_tmp < 4000000000 ) {
++
++					$dauer		= $dauer_tmp / $parts;
++					$start		= $start_tmp + $i * $dauer;
++					$event_id	= "40".$i."0000000" + $event_id_tmp if $i;
++					$id		= "40".$i."0000000" + $id_tmp if $i;
++					$subtitle	= $${$$Result_ref{MultiSubtitle}}[$i];
++					($summary, $year, $flags, $origtitle, $fsk, $folge, $bewertung, $shortsummary, $wertung, $vpsstart) = ("", "", "", "", "", "", "", "", "", "") if $i;
++				}
++
++				if ( $$Result_ref{Bugfixes} ) {
++					$title		= $$Result_ref{Title};
++					$subtitle	= $$Result_ref{Subtitle};
++					$e_bugfixescode	= $$Result_ref{BugfixesCode}
++				}
++
++				if ( $$Result_ref{Bugfixes} ) {
++					print Dumper($Result_ref);
++				}
++
++				print "makeEPGevent2($event_id, $start, $dauer, $title, $subtitle, $id\n" if $parts > 1;
++				makeEPGevent2($event_id, $start, $dauer, $title, $subtitle, $id, $mode, $summary, $regie, $darsteller, $genre, $kategory, $country, $year, $audio, $format, $flags, $origtitle, $fsk, $folge, $bewertung, $channel, $shortsummary, $wertung, $vpsstart, $themes, $moderator, $guest, $e_season, $e_episode, $e_number, $e_status, $e_bugfixescode);
++			}
++
++		} else {
++			if ( $${$$Result_ref{MultiStatus}}[0] ) {
++				$e_status  = $${$$Result_ref{MultiStatus}}[0];
++			}
++			makeEPGevent2($event_id, $start, $dauer, $title, $subtitle, $id, $mode, $summary, $regie, $darsteller, $genre, $kategory, $country, $year, $audio, $format, $flags, $origtitle, $fsk, $folge, $bewertung, $channel, $shortsummary, $wertung, $vpsstart, $themes, $moderator, $guest, $e_season, $e_episode, $e_number, $e_status, $e_bugfixescode);
++		}
++
++	} else {
++		makeEPGevent2($event_id, $start, $dauer, $title, $subtitle, $id, $mode, $summary, $regie, $darsteller, $genre, $kategory, $country, $year, $audio, $format, $flags, $origtitle, $fsk, $folge, $bewertung, $channel, $shortsummary, $wertung, $vpsstart, $themes, $moderator, $guest, $e_season, $e_episode, $e_number, $e_status, $e_bugfixescode);
++	}
++}
++
++sub makeEPGevent2 {
++
++my ($event_id, $start, $dauer, $title, $subtitle, $id, $mode, $summary, $regie, $darsteller, $genre, $kategory, $country, $year, $audio, $format, $flags, $origtitle, $fsk, $folge, $bewertung, $channel, $shortsummary, $wertung, $vpsstart, $themes, $moderator, $guest, $e_season, $e_episode, $e_number, $e_status, $e_bugfixescode) = @_;
+ 
+ my $epgsummary = "";
+-use bytes;
++#use bytes;
+ $epgsummary = "$kategory/$genre"		if $wanttopflags and ($kategory or $genre);
+ $epgsummary =~ s/^\///				if $wanttopflags;
+ $epgsummary =~ s/\/$//				if $wanttopflags;
+@@ -324,9 +401,12 @@
+ $epgsummary .= " $flags " 			if $flags and $wanttopflags;
+ $epgsummary .= "|"				if $epgsummary;
+ 
+-$epgsummary .= "|$shortsummary|"		if $shortsummary;
+ $epgsummary .= "|$wertung|"			if $wertung;
++$epgsummary .= "|$shortsummary|"		if $shortsummary;
+ $epgsummary .= "|$summary|" 			if $summary;
++$epgsummary .= "|Themes: $themes"		if $themes;
++$epgsummary .= "|Moderator: $moderator"		if $moderator;
++$epgsummary .= "|Guest: $guest"			if $guest;
+ $epgsummary .= "|Director: $regie "		if $regie;
+ $epgsummary .= "||Cast: $darsteller"		if $darsteller;
+ $epgsummary .= "|Category: $kategory" 		if $kategory and $wantbottomflags;
+@@ -336,8 +416,14 @@
+ $epgsummary .= "|Originaltitle: $origtitle" 	if $origtitle and $wantbottomflags;
+ $epgsummary .= "|Audio: $audio" 		if $audio and $wantbottomflags;
+ $epgsummary .= "|Format: $format"		if $format and $wantbottomflags;
++$epgsummary .= "|Duration: $mduration"		if $mduration && $wantbottomflags;
+ $epgsummary .= "|FSK: $fsk" 			if $fsk and $wantbottomflags;
+ $epgsummary .= "|Episode: $folge" 		if $folge and $wantbottomflags;
++$epgsummary .= "|Eplist_Season: $e_season"	if $e_season;
++$epgsummary .= "|Eplist_Episode: $e_episode"	if $e_episode;
++$epgsummary .= "|Eplist_Number: $e_number"	if $e_number;
++$epgsummary .= "|Eplist_Status: $e_status"	if $e_status;
++$epgsummary .= "|Eplist_Bugfix: code $e_bugfixescode"	if $e_bugfixescode;
+ $epgsummary .= "|Rating: $bewertung" 		if $bewertung and $wantbottomflags;
+ $epgsummary .= "|";
+ $epgsummary =~ s|^, ||;
+@@ -454,40 +540,40 @@
+   $line=~s/&mdash;/--/g;
+   $line=~s/&lsquo;/'/g;
+   $line=~s/&euro;/EUR/g;
+-  $line=~s/&deg;/°/g;
+-  $line=~s/&ordm;/º/g;
+-  $line=~s/&iacute;/í/g;
++  $line=~s/&deg;/Â°/g;
++  $line=~s/&ordm;/Âº/g;
++  $line=~s/&iacute;/Ã­/g;
+   $line=~s/&hellip;/.../g;
+-  $line=~s/&uuml;/ü/g;
+-  $line=~s/&auml;/ä/g; 
+-  $line=~s/&ouml;/ö/g;
++  $line=~s/&uuml;/Ã¼/g;
++  $line=~s/&auml;/Ã¤/g; 
++  $line=~s/&ouml;/Ã¶/g;
+   $line=~s/&quot;/"/g; 
+-  $line=~s/&szlig;/ß/g; 
++  $line=~s/&szlig;/ÃŸ/g; 
+   $line=~s/&amp;/\&/g; 
+-  $line=~s/&middot;/·/g; 
+-  $line=~s/&Ouml;/Ö/g; 
+-  $line=~s/&Auml;/Ä/g;
+-  $line=~s/&Uuml;/Ü/g ;
+-  $line=~s/&eacute;/é/g;
+-  $line=~s/&aacute;/á/g;
+-  $line=~s/&deg;/°/g;
+-  $line=~s/&ordm;/º/g;
+-  $line=~s/&ecirc;/ê/g;
+-  $line=~s/&ecirc;/ê/g;
+-  $line=~s/&ccedil;/ç/g;
+-  $line=~s/&curren;/¤/g;
+-  $line=~s/&curren;/¤/g;
+-  $line=~s/&Ccedil;/Ç/g;
+-  $line=~s/&ocirc;/ô/g;
+-  $line=~s/&egrave;/è/g;
+-  $line=~s/&agrave;/à/g;
++  $line=~s/&middot;/Â·/g; 
++  $line=~s/&Ouml;/Ã–/g; 
++  $line=~s/&Auml;/Ã„/g;
++  $line=~s/&Uuml;/Ãœ/g ;
++  $line=~s/&eacute;/Ã©/g;
++  $line=~s/&aacute;/Ã¡/g;
++  $line=~s/&deg;/Â°/g;
++  $line=~s/&ordm;/Âº/g;
++  $line=~s/&ecirc;/Ãª/g;
++  $line=~s/&ecirc;/Ãª/g;
++  $line=~s/&ccedil;/Ã§/g;
++  $line=~s/&curren;/Â¤/g;
++  $line=~s/&curren;/Â¤/g;
++  $line=~s/&Ccedil;/Ã‡/g;
++  $line=~s/&ocirc;/Ã´/g;
++  $line=~s/&egrave;/Ã¨/g;
++  $line=~s/&agrave;/Ã /g;
+   $line=~s/&quot;/"/g;
+-  $line=~s/&Ouml;/Ö/g;
+-  $line=~s/&Uuml;/Ü/g;
+-  $line=~s/&Auml;/Ä/g;
+-  $line=~s/&ouml;/ö/g;
+-  $line=~s/&uuml;/ü/g;
+-  $line=~s/&auml;/ä/g;
++  $line=~s/&Ouml;/Ã–/g;
++  $line=~s/&Uuml;/Ãœ/g;
++  $line=~s/&Auml;/Ã„/g;
++  $line=~s/&ouml;/Ã¶/g;
++  $line=~s/&uuml;/Ã¼/g;
++  $line=~s/&auml;/Ã¤/g;
+   $line=~s/&lt;/</g;
+   $line=~s/&gt;/>/g;
+   $line=~s/&ndash;/-/g;
+diff -Nur org/inc/hoerzufetch new/inc/hoerzufetch
+--- org/inc/hoerzufetch	2007-06-13 14:03:33.000000000 +0200
++++ new/inc/hoerzufetch	2008-02-18 13:18:34.000000000 +0100
+@@ -4,15 +4,15 @@
+ $hoerzuRating{2}="";
+ $hoerzuRating{3}="Annehmbar";
+ $hoerzuRating{4}="Gelungen";
+-$hoerzuRating{5}="Großartig";
++$hoerzuRating{5}="GroÃŸartig";
+ 
+ $hoerzuTipp{1}="Spartentipp";
+ $hoerzuTipp{2}="Tipp";
+ $hoerzuTipp{3}="Tagestipp";
+ 
+-# 1:Spartentip => Pro Sparte (außer Spielfilm) einen Tip täglich
++# 1:Spartentip => Pro Sparte (auÃŸer Spielfilm) einen Tip tÃ¤glich
+ # 2:weitere Tips => Pro Sparte diverse weitere Tips
+-# 3:Tagestip => fast Immer Spielfilm, 1x täglich
++# 3:Tagestip => fast Immer Spielfilm, 1x tÃ¤glich
+ 
+ $hoerzuKategory{100}="Spielfilm";
+ $hoerzuKategory{200}="Serie";
+@@ -141,21 +141,20 @@
+ 		}
+ 		
+ 	#hoerzu downloads a fixed set of 7 days
+-	if ($days2download >7) {
+-		$days2download=7;
++	if ($days2download >14) {
++		$days2download=14;
+ 	}
+ 	our @events="";
+ 	my %hoerzuchannels = "";
+ 
+-	# zuerst alle hoerzukanäle in ein Hash, etwas schneller ...
++	# zuerst alle hoerzukanÃ¤le in ein Hash, etwas schneller ...
+ 	foreach $sender (keys(%chan)) {
+ 		if ($chan_wanted{$sender} eq $identifier) {
+ 			$hoerzuchannels{$chan{$sender}[4]} = $sender;
+ 		}
+ 	}
+ 
+-	$converter = Text::Iconv->new("utf-8", "latin1");
+-
++	$converter = Text::Iconv->new("utf-8", "utf-8");
+ 
+ 	# jeden einzelnen Tag abarbeiten
+ 	for ($days=0;$days < $days2download ;$days++) {
+@@ -170,7 +169,11 @@
+ 		eval 'use Archive::Zip qw( :ERROR_CODES :CONSTANTS )';
+ 		my $zip = Archive::Zip->new();
+ 
+-		die 'read error' unless $zip->read("$downloadprefix$filenamezip") == AZ_OK;
++		if ($zip->read("$downloadprefix$filenamezip") != AZ_OK) {
++			unlink("$downloadprefix$filenamezip");
++			next;
++		}
++
+ 		my @xmlfiles = $zip->membersMatching( "$now_string_.*\.xml" );
+ 		$xmlfile=shift(@xmlfiles)->fileName;
+ 		doexit() if $please_exit;
+@@ -208,9 +211,10 @@
+ 			next if $xmlc->[$index]->{d3} ne 0; #Regionalsendung
+ 			
+ 			# ok, das Parsen kann losgehen
+-			$start=$datum=$vps=$duration=$eventid=$title=$subtitle=$summary=$genre="";
++			$start=$datum=$vps=$duration=$eventid=$title=$subtitle=$summary=$genre=$shortsummary="";
+ 			$kategory=$fsk=$audio=$flags=$episode=$rating=$tipp=$country="";
+ 			$year=$regie=$cast=$rating2=$image=$imagename="";
++			$themes=$moderator=$guest="";
+ 			$format = "4:3";
+ 			$subtitle = ".";
+ 
+@@ -221,7 +225,7 @@
+ 			$vps		=$xmlc->[$index]->{d8};
+ 			$vps = UnixDate($vps, "%H:%M:%S");
+ 			
+-			# Kanal für VPS konfiguriert ?
++			# Kanal fÃ¼r VPS konfiguriert ?
+ 			if ($vps_wanted{$sender} eq "1") {
+ 				if ($vps == "") {
+ 					$vpsstart = $start;
+@@ -236,7 +240,10 @@
+ 			$eventid	=$xmlc->[$index]->{d0}%65536;
+ 			$title		=$converter->convert($xmlc->[$index]->{d19});
+ 			$subtitle	=$converter->convert($xmlc->[$index]->{d20});
+-			$summary	=$converter->convert($xmlc->[$index]->{d21});
++#			$summary	=$converter->convert($xmlc->[$index]->{d21});
++                        $shortsummary   =$converter->convert($xmlc->[$index]->{d23});
++                        $summary        =$converter->convert($xmlc->[$index]->{d21});
++
+ 			$genre		=$hoerzuGenre{$xmlc->[$index]->{d25}};
+ 			$kategory	=$hoerzuKategory{$xmlc->[$index]->{d10}};
+ 			$fsk		=$converter->convert($xmlc->[$index]->{d16});
+@@ -245,9 +252,10 @@
+ 			$audio.=" Hoerfilm" if $xmlc->[$index]->{d15} eq 1;
+ 			$format="16:9"  if $xmlc->[$index]->{d29} eq 1;
+ 
+-			$flags .= " [SchwarzWeiß]" 	if $xmlc->[$index]->{d11} eq 1;
++			$flags .= " [SchwarzWeiÃŸ]" 	if $xmlc->[$index]->{d11} eq 1;
+ 			$flags .= " [VT150]"		if $xmlc->[$index]->{d13} eq 1;
+-			$flags .= " [Live]"		if $xmlc->[$index]->{d18} eq 1; #0=nicht, 1=live, 2=aufzeichnung
++			$flags .= " [Live]"		if $xmlc->[$index]->{d17} eq 1; #0=nicht, 1=live, 2=aufzeichnung
++			#$flags .= " [Neu]"             if $xmlc->[$index]->{d17} eq 1; #0=nicht, 1=neu
+ 
+ 			$episode	=$converter->convert($xmlc->[$index]->{d26});
+ 			$rating		=$hoerzuRating{$xmlc->[$index]->{d30}};
+@@ -256,10 +264,17 @@
+ 			$tipp		= $converter->convert($hoerzuTipp{$xmlc->[$index]->{d18}});
+ 			$tipp .= " " . $hoerzuKategory{$xmlc->[$index]->{d10}} if $xmlc->[$index]->{d18} eq 1;
+ 			$country	=$converter->convert($xmlc->[$index]->{d32});
++			$country    =~ s/\|/ /g if $country;
+ 			$year 		=$converter->convert($xmlc->[$index]->{d33});
+-			$summary .="|Thema:".$converter->convert($xmlc->[$index]->{d24}) if $xmlc->[$index]->{d24};
+-			$summary .="|Moderator:".$converter->convert($xmlc->[$index]->{d34}) if $xmlc->[$index]->{d34};
+-			$summary .="|Gast:".$converter->convert($xmlc->[$index]->{d35}) if $xmlc->[$index]->{d35};
++#			$summary .="|Thema:".$converter->convert($xmlc->[$index]->{d24}) if $xmlc->[$index]->{d24};
++#			$summary .="|Moderator:".$converter->convert($xmlc->[$index]->{d34}) if $xmlc->[$index]->{d34};
++#			$summary .="|Gast:".$converter->convert($xmlc->[$index]->{d35}) if $xmlc->[$index]->{d35};
++
++            		$themes     = $converter->convert($xmlc->[$index]->{d24}) if $xmlc->[$index]->{d24};
++            		$themes     =~ s/\|/ /g if $themes;
++            		$moderator  = $converter->convert($xmlc->[$index]->{d34}) if $xmlc->[$index]->{d34};
++            		$guest      = $converter->convert($xmlc->[$index]->{d35}) if $xmlc->[$index]->{d35};
++                       
+ 			$regie		=$converter->convert($xmlc->[$index]->{d36});
+ 			$cast		=$converter->convert($xmlc->[$index]->{d37});
+ 
+@@ -295,9 +310,9 @@
+ 			makeEPGevent($eventid.$identifier,$start,$duration,$title,$subtitle,$eventid,"original",
+ 				$summary,$regie,$cast,$genre,$kategory,$country,
+ 				$year,$audio,$format,$flags,"",$fsk,$episode,
+-				$rating,$hoerzuchannels{$xmlc->[$index]->{d2}},"","",$vpsstart);
++				$rating,$hoerzuchannels{$xmlc->[$index]->{d2}},$shortsummary,"",$vpsstart,$themes,$moderator,$guest);
+ 		
+-		$vpsstart="";                                                                                                                                                                                                                 
++			$vpsstart="";                                                                                                                                                                                                                 
+ 		} # foreach $index
+ 	# Speicher explizit freigeben
+ 	undef $xmlc;
+@@ -325,6 +340,7 @@
+ 			$XML{$sender} = [ @temp ];
+ 		}
+ 	}
++
+ } # sub ProcessEpg
+ 	
+ 		
+diff -Nur org/inc/infosatfetch new/inc/infosatfetch
+--- org/inc/infosatfetch	2007-06-13 14:03:33.000000000 +0200
++++ new/inc/infosatfetch	2008-02-18 13:18:34.000000000 +0100
+@@ -61,7 +61,7 @@
+ 					}
+ 				}
+ 
+-				# Nicht im Hash gefunden, weiter mit nächstes Sender. ##########################
++				# Nicht im Hash gefunden, weiter mit nÃ¤chstes Sender. ##########################
+ 				#
+ 				last if $import eq "no";
+ 			
+@@ -183,7 +183,7 @@
+ 					$folge = $1 if $subtitle =~ m/Folge (\d+)/;
+ 					$folge = $1 if $subtitle =~ m/Kapitel (\d+)/;
+ 					$flags .= "[Premiere]" if $subtitle =~ m/Deutschland-Premiere/;
+-					$flags .= "[Erstaufführung]" if $subtitle =~ m/Deutsche Erstaufführung/;
++					$flags .= "[ErstauffÃ¼hrung]" if $subtitle =~ m/Deutsche ErstauffÃ¼hrung/;
+ 					$flags .= "[Live]" if $subtitle =~ m/live/i;
+ 					$rate = "Tipp" if $subtitle =~ m/TIPP/;
+ 					$origtitle =$1 if $subtitle =~ m/\((.*?)\)/;
+diff -Nur org/inc/premierefetch new/inc/premierefetch
+--- org/inc/premierefetch	2007-06-13 14:03:33.000000000 +0200
++++ new/inc/premierefetch	2008-02-18 13:18:34.000000000 +0100
+@@ -22,7 +22,7 @@
+ 	foreach $sender (keys(%chan)) {
+ 		doexit() if $please_exit;
+ 
+-		# Kanal für premiere konfiguriert ?
++		# Kanal fÃ¼r premiere konfiguriert ?
+ 		next if $chan_wanted{$sender} != $identifier;
+ 		$channelnumber++;
+ 		$id = 1;
+@@ -59,10 +59,10 @@
+                   $line .= $1 if m|^\s*(.*?)\s*$|;
+                   }
+ 
+-                $line =~ s|^.*<!--Anfang : Anzeige wenn Programmtag gewählt-->(.*?)<!--Ende : Anzeige wenn Programmtag gewählt-->.*$|$1<!-- Anzeige Programmtag auswählbar-->|s;
++                $line =~ s|^.*<!--Anfang : Anzeige wenn Programmtag gewÃ¤hlt-->(.*?)<!--Ende : Anzeige wenn Programmtag gewÃ¤hlt-->.*$|$1<!-- Anzeige Programmtag auswÃ¤hlbar-->|s;
+ 
+-                while ($line ne "<!-- Anzeige Programmtag auswählbar-->") {
+-                  $line =~ s|^.*?<!-- Anzeige Programmtag auswählbar-->.*?" title='(\d+.\d+.\d+).*?setPTAuswahl\((\d,\d).*?(<!-- Anzeige Programmtag auswählbar-->.*)$|$3|s;
++                while ($line ne "<!-- Anzeige Programmtag auswÃ¤hlbar-->") {
++                  $line =~ s|^.*?<!-- Anzeige Programmtag auswÃ¤hlbar-->.*?" title='(\d+.\d+.\d+).*?setPTAuswahl\((\d,\d).*?(<!-- Anzeige Programmtag auswÃ¤hlbar-->.*)$|$3|s;
+                   $tempDate=$1;
+                   $tempCode=$2; $tempCode =~ s/^(\d+),(\d+)$/PT$1$2/;
+                   $premDayCode{$tempDate}=$tempCode;
+@@ -157,12 +157,12 @@
+ $audio="DolbyDigital" 	if $audios =~ m|Dolby Digital|;
+ 
+ 
+-$attrib="Neu;Letzte;Serie;HDTV;SchwarzWeiß;Untertitel;169;";
++$attrib="Neu;Letzte;Serie;HDTV;SchwarzWeiÃŸ;Untertitel;169;";
+ $attrib =~ s/Neu;// 		if $flagline =~ m|Symbol Neu \(bei Premiere\) not|;
+ $attrib =~ s/Letzte;// 		if $flagline =~ m|Symbol Letztausstrahlung not|;
+ $attrib =~ s/Serie;// 		if $flagline =~ m|Symbol Serie not|;
+ $attrib =~ s/HDTV;// 		if $flagline =~ m|Symbol HDTVnot|;
+-$attrib =~ s/SchwarzWeiß;// 	if $flagline =~ m|Symbol s/w not|;
++$attrib =~ s/SchwarzWeiÃŸ;// 	if $flagline =~ m|Symbol s/w not|;
+ $attrib =~ s/Untertitel;// 	if $flagline =~ m|Symbol Untertitel not|;
+ $attrib =~ s/169;// 		if $flagline =~ m|Symbol 16:9 Breitbild not|;
+ 
+@@ -170,7 +170,7 @@
+ $flags .= "[LetzteFolge]" 	if $attrib =~ m|Letzte|;
+ $flags .= "[Serie]" 		if $attrib =~ m|Serie|;
+ $flags .= "[HDTV]" 		if $attrib =~ m|HDTV|;
+-$flags .= "[SchwarzWeiß]" 	if $attrib =~ m|SchwarzWeiß|;
++$flags .= "[SchwarzWeiÃŸ]" 	if $attrib =~ m|SchwarzWeiÃŸ|;
+ $flags .= "[Untertitel]" 	if $attrib =~ m|Untertitel|;
+ $format = "16:9" 		if $attrib =~ m|169|;
+ 
+diff -Nur org/inc/tvmoviefetch new/inc/tvmoviefetch
+--- org/inc/tvmoviefetch	2007-06-13 14:03:33.000000000 +0200
++++ new/inc/tvmoviefetch	2008-02-18 13:18:34.000000000 +0100
+@@ -34,7 +34,7 @@
+ 		foreach $rfcid (keys %chan) {
+ 			doexit() if $please_exit;
+ 
+-			# Kanal für tvmovie konfiguriert ?
++			# Kanal fÃ¼r tvmovie konfiguriert ?
+ 			next if $chan_wanted{$rfcid} != $identifier;
+ 
+ 			$filenamexml = "$now_string"."_$chan{$rfcid}[1].xml";
+@@ -59,7 +59,7 @@
+ 	foreach $rfcid (keys %chan) {
+ 		doexit() if $please_exit;
+ 
+-		# Kanal für tvmovie konfiguriert ?
++		# Kanal fÃ¼r tvmovie konfiguriert ?
+ 		next if $chan_wanted{$rfcid} != $identifier;
+ 
+ 		$filenamexml = "$now_string"."_$chan{$rfcid}[1].xml";
+@@ -83,7 +83,7 @@
+ 
+ sub unscramble
+ {
+-    #Position .gz, Positon .tvm, Länge
++    #Position .gz, Positon .tvm, LÃ¤nge
+     #0x0000, 0x006A, 6
+     #0x0006, 0x0064, 6
+     #0x000C, 0x0070, 88
+@@ -180,7 +180,7 @@
+ 		$audio .= " - O-Ton"		if $event =~ m|<originaltitel />|;
+ 		$format = "16:9"		if $event =~ m|<breitband />|;
+ 		$flags .= " [Premiere]"		if $event =~ m|<tvpremiere />|;
+-		$flags .= " [SchwarzWeiß]"	if $event =~ m|<sw />|;
++		$flags .= " [SchwarzWeiÃŸ]"	if $event =~ m|<sw />|;
+ 		$flags .= " [Untertitel]"	if $event =~ m|<untertitel />|;
+ 		$flags .= " [Live]"		if $event =~ m|<live />|;
+ 		$flags .= " [Neu]"		if $event =~ m|<neu />|;
+@@ -269,7 +269,7 @@
+ 		$start = UnixDate("$datum $zeit", "%s");
+ 		next if (UnixDate($heute, "%s") > $start+$dauer); # ist die Sendung schon vorbei ?
+ 		
+-		# Kanal für VPS konfiguriert ?
++		# Kanal fÃ¼r VPS konfiguriert ?
+ 		if ($vps_wanted{$sender} eq "1") {
+ 				if ($vps == "") {
+ 					$vpsstart = $start;
+@@ -317,7 +317,7 @@
+ 	GetUpdateFiles() unless ($useupdate == 0);
+ 
+ 	foreach $sender (keys(%chan)) {
+-		# Kanal für tvmovie konfiguriert ?
++		# Kanal fÃ¼r tvmovie konfiguriert ?
+ 		next if $chan_wanted{$sender} != $identifier;
+ 		doexit() if $please_exit;
+ 
+@@ -338,6 +338,13 @@
+ 			$now_string = DateCalc($heute,"+ $days tage",\$err,0);
+ 			$now_string = UnixDate($now_string, "%Y%m%d");
+ 			$xmlfile = "$downloadprefix"."tvmovie_"."$now_string"."_"."$chan{$sender}[1].xml";
++
++# TK RECODE ANFANG
++			#print "-$xmlfile-\n";
++			my $rc=system("recode iso8859-1..utf-8 \"$xmlfile\"");
++			#print "rc=$rc\n";
++# TK ENDE
++
+ 			print "tvmovie: reading $downloadprefix"."tvmovie_"."$now_string"."_"."$chan{$sender}[1].xml into memory\n";
+ 			ReadXMLFile("original");
+ 		} # for ($days=0;$days < $days2download ;$days++) {
+@@ -354,7 +361,7 @@
+ 		$XML{$sender} = [ @temp ];
+ 
+ 		next unless ($useupdate == 1);
+-		# XML enthält jetzt alle Daten des Senders. jetzt Updatefiles parsen und Einträge aktualisieren
++		# XML enthÃ¤lt jetzt alle Daten des Senders. jetzt Updatefiles parsen und EintrÃ¤ge aktualisieren
+ 		$now_string = UnixDate($heute, "%Y%m%d");
+ 		$xmlfile = "$updateprefix"."tvmovie_"."$now_string"."_"."$chan{$sender}[1].xml";
+ 		print "tvmovie: reading $updateprefix"."tvmovie_"."$now_string"."_"."$chan{$sender}[1].xml into memory\n";
+@@ -369,7 +376,7 @@
+ 			$last = $_->{start};
+ 		}
+ 		$XML{$sender} = [ @temp ];
+-		# XML enthält jetzt auch die Änderungen, 
++		# XML enthÃ¤lt jetzt auch die Ã„nderungen, 
+ 		# aber leider auch die durch updates ausgefallenen Sendungen ..
+ 
+ 
+@@ -381,8 +388,8 @@
+ 				@{$XML{$sender}}[$j+1]->{stop}  <= @{$XML{$sender}}[$j]->{stop}) {
+ # wird auskommentiert, weil nichtmal der clickfinder das korrekt kann.
+ #
+-#				@{$XML{$sender}}[$j+1]->{state}        = 0; # gelöschte Sendung
+-# print "@{$XML{$sender}}[$j+1]->{title} @{$XML{$sender}}[$j+1]->{event_id} @{$XML{$sender}}[$j+1]->{state} wird gelöscht\n";
++#				@{$XML{$sender}}[$j+1]->{state}        = 0; # gelÃ¶schte Sendung
++# print "@{$XML{$sender}}[$j+1]->{title} @{$XML{$sender}}[$j+1]->{event_id} @{$XML{$sender}}[$j+1]->{state} wird gelÃ¶scht\n";
+ 			}
+ 		} # for 
+ 
+diff -Nur org/inc/tvtodayfetch new/inc/tvtodayfetch
+--- org/inc/tvtodayfetch	2007-06-15 11:43:54.000000000 +0200
++++ new/inc/tvtodayfetch	2008-02-18 13:18:34.000000000 +0100
+@@ -18,7 +18,7 @@
+ 	foreach $sender (sort keys(%chan)) {
+ 		doexit() if $please_exit;
+ 
+-		# Kanal für tvtoday konfiguriert ?
++		# Kanal fÃ¼r tvtoday konfiguriert ?
+ 		next if $chan_wanted{$sender} != $identifier;
+ 		$channelnumber++;
+ 		$id = 1;
+@@ -66,8 +66,8 @@
+ 		    $stop =~ s|\.|:|;
+ 
+ 		    # Kategorien geradebiegen ...
+-		    $category="Sport" if $genre =~m/Formel 1|Fußball|Football|Eishockey|Motorsport|Pferdesport|Sportnachrichten/i;
+-		    $category="Spielfilm" if $genre =~m/thriller|action|komödie|drama|groteske|abenteuer|horror|klamauk|animation|krimi|melodram/i;
++		    $category="Sport" if $genre =~m/Formel 1|FuÃŸball|Football|Eishockey|Motorsport|Pferdesport|Sportnachrichten/i;
++		    $category="Spielfilm" if $genre =~m/thriller|action|komÃ¶die|drama|groteske|abenteuer|horror|klamauk|animation|krimi|melodram/i;
+ 		    $category="Magazin" if $genre =~ m/Nachrichten/i;
+ 
+ 		    $category="Serie" if $genre =~ s|^(.*)serie$|$1|i;
+diff -Nur org/tvm2vdr new/tvm2vdr
+--- org/tvm2vdr	2007-06-13 14:03:33.000000000 +0200
++++ new/tvm2vdr	2008-02-18 14:52:51.000000000 +0100
+@@ -18,6 +18,7 @@
+ use IO::Socket;
+ use Getopt::Std;
+ use Date::Manip;
++
+ &Date_Init("Language=German","DateFormat=non-US");
+ 
+ push (@INC, "./config");
+@@ -26,6 +27,18 @@
+ require ("channels_wanted.pl");
+ require ("channels_vps_wanted.pl");
+ 
++if ( $EplistsEnabled ) {
++  if (eval "require Eplists") {
++    Eplists->import("Eplists_Version", "Eplists_Date", "Eplists_Update", "Eplists_Search");
++    $EplistsEnabled = 1;
++  } else {
++    $EplistsEnabled = 0;
++    print STDERR "Module Eplists not found, please install Eplists\n";
++  }
++}
++
++use Data::Dumper;
++
+ push (@INC, "./inc");
+ require ("helperfunc");
+ 
+@@ -41,14 +54,16 @@
+          -n                    no VDR present,write EPG direct
+          -s	               Simulation Mode
+          -h	               Show this help text
++         -k	               Keep old files, don't clean up
+ };
+ 
+ our ($sim,$verbose,$novdr) = 0;
+-die $Usage if (!getopts('d:p:t:x:c:b:vhsn')||$opt_h);
++die $Usage if (!getopts('d:p:t:x:c:b:vhksn')||$opt_h);
+ 
+ our $verbose = 1 if $opt_v;
+ our $sim = 1 if $opt_s;
+ $novdr = 1 if $opt_n;
++$noclean = 1 if $opt_k;
+ 
+ our $Dest = $opt_d ||"localhost";
+ our $Port = $opt_p ||2001;
+@@ -56,6 +71,10 @@
+ 
+ $heute   = UnixDate("heute", "%Y%m%d");
+ $gestern = UnixDate("gestern", "%Y%m%d");
++$heute      = UnixDate("heute", "%Y%m%d");
++$gestern    = UnixDate("gestern", "%Y%m%d");
++$vorgestern = $gestern-1;
++$morgen     = UnixDate("morgen", "%Y%m%d");
+ 
+ if ($cleanupoldfiles) {
+ 	print "cleanup old files ..\n";
+@@ -263,6 +282,16 @@
+   die "Fehler beim Beenden der Verbindung:$result" if ($sim == 0 and !$result =~ /vdr closing connection/);
+   $SVDRP->close;
+   }
++
++if ( defined $Eplists::Global_Info{MissingEplists} ) {
++  open FILE, ">missing_eplists.txt";
++  my %missing_eplists = %{$Eplists::Global_Info{MissingEplists}};
++  foreach my $key ( sort keys %missing_eplists ) {
++    print FILE $key, "\t", $missing_eplists{$key}{count}, "\n";
++  }
++  close FILE;
++}
++
+ exit;
+ 
+ sub WriteEPG {

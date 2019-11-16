@@ -1,0 +1,28 @@
+Q: How can I get new eplists daily?
+
+A: After installation, edit /etc/eplists/cron.d-eplists.example, change
+   hour, minute, user and option "-o" (the path to your lists directory)
+   to your needs. Then copy the file to /etc/cron.d/eplists.
+
+------------------------------------------------------------------------
+
+Q: How often should I fetch the eplists?
+
+A: Usually 1x a day is enough.
+
+------------------------------------------------------------------------
+
+Q: For what is the patch in contrib/?
+
+A: If you use tvmovie2vdr Version 0.5.14, then you can patch it and
+   tvmovie2vdr will include the season number, episode number...
+   into the EPG.
+
+------------------------------------------------------------------------
+
+Q: How can I use it with epgsearch?
+
+A: Read after installation the comment in
+   /etc/eplists/epgsearch-vdrseriestimer.conf.example
+
+------------------------------------------------------------------------

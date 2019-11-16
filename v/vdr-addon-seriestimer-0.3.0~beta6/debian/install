@@ -1,0 +1,2 @@
+debian/epgsearchuservars.conf    etc/vdr/plugins/epgsearch/
+etc/vdrseriestimer.conf          etc/eplists/

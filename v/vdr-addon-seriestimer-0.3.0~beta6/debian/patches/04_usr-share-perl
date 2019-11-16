@@ -1,0 +1,11 @@
+--- vdr-addon-seriestimer-0.3.0~beta6.orig/Makefile
++++ vdr-addon-seriestimer-0.3.0~beta6/Makefile
+@@ -10,7 +10,7 @@ DESTDIR   ?=
+ CONFDIR    = /etc/eplists
+ PREFIX    ?= /usr
+ 
+-MODULEDIR ?= $(shell perl -e '$$prefix = "$(PREFIX)"; $$prefix =~ s|/$$||; foreach (@INC) { if ( m|$${prefix}/+lib| ) { print $$_."\n"; exit 0; } } print "/tmp"; exit 1;')
++MODULEDIR ?= $(shell perl -e '$$prefix = "$(PREFIX)"; $$prefix =~ s|/$$||; foreach (@INC) { if ( m|$${prefix}/+share| ) { print $$_."\n"; exit 0; } } print "/tmp"; exit 1;')
+ 
+ MANDIR     = $(PREFIX)/share/man
+ SCRIPTDIR  = $(PREFIX)/bin

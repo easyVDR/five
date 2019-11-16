@@ -1,0 +1,17 @@
+With this patch tvmovie2vdr inserts the episode information into the EPG:
+
+Eplist_Season: 04
+Eplist_Episode: 22
+Eplist_Number: 088
+
+This can be used als search criterion in epgsearch etc.
+
+Installation
+------------
+
+Go to the tvmovie2vdr source dir and do
+
+patch -p1 < tvmovie2vdr-0.5.14-eplists-utf8-patch11.diff
+
+
+Note: This patch changes all text in tvmovie2vdr into UTF-8.

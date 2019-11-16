@@ -1,0 +1,5 @@
+etc/cron.daily-eplists.sh.example
+etc/cron.d-eplists.example
+etc/epgsearch-vdrseriestimer.conf.example
+etc/series.conf.example
+etc/vdrseriestimer.conf.example

@@ -1,0 +1,32 @@
+#
+# Global configuration file for VDRSeriesTimer.pl.
+# See "VDRSeriesTimer.pl --help" for help.
+#
+ListsDir          = "~/.eplists/lists"
+SeriesConfsDir    = "~/.eplists/series.conf"
+UseShortTitle     = no
+ListLanguage      = "de,en"
+Protected         = yes
+FormatPrefix      = "%D~%T~"
+Format            = "%sx%e - %n. %S"
+FormatSpacer      = " / "
+Fuzzy             = 0.20
+SendEMail         = no
+EMailTo           = "name@domain.local"
+EMailSubject      = "Season data missing"
+ChangeEPG         = no
+KeepEPGSubtitle   = no
+VDRHost           = "localhost"
+SVDRPPort         = 2001
+SVDRPTimeout      = 30
+MultiRegex        = "(?:\s*)(?:(\d+)\.\s+)?(.*?)\s*(?:\/|$)"
+MultiDetection    = no
+CompareSubtitle   = yes
+CompareEpisode    = no
+Directory         = "Series"
+Category          = ""
+Genre             = ""
+Verbose           = 0
+LogFile           = "~/.eplists/log/VDRSeriesTimer.log"
+DoubleIfLongerAs  = 0
+Fallback          = yes

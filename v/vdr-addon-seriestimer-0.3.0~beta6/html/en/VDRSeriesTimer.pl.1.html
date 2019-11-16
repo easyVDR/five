@@ -1,0 +1,395 @@
+<?xml version="1.0" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>VDRSeriesTimer.pl Version 0.3.0-beta3</title>
+<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+<link rev="made" href="mailto:root@localhost" />
+</head>
+
+<body style="background-color: white">
+
+<p><a name="__index__"></a></p>
+<!-- INDEX BEGIN -->
+
+<ul>
+
+	<li><a href="#name">NAME</a></li>
+	<li><a href="#synopsis">SYNOPSIS</a></li>
+	<li><a href="#options">OPTIONS</a></li>
+	<li><a href="#description">DESCRIPTION</a></li>
+	<li><a href="#content">CONTENT</a></li>
+	<li><a href="#1__installation">1. Installation</a></li>
+	<ul>
+
+		<li><a href="#1_1_format">1.1 -format</a></li>
+	</ul>
+
+	<li><a href="#2__episodes_file">2. Episodes file</a></li>
+	<ul>
+
+		<li><a href="#2_x_keywords">2.x Keywords</a></li>
+		<li><a href="#2_1_seasonlist______seasonlist">2.1 <strong>SEASONLIST ... /SEASONLIST</strong></a></li>
+		<li><a href="#2_5_complete">2.5 <strong>COMPLETE</strong></a></li>
+		<li><a href="#2_7_short__text_">2.7 <strong>SHORT &lt;text</strong>&gt;</a></li>
+	</ul>
+
+	<li><a href="#3__vdrseriestimer_conf__the_configuration_file">3. VDRSeriesTimer.conf - The configuration file</a></li>
+	<li><a href="#4__per_series_configuration_file">4. ``Per series'' configuration file</a></li>
+	<li><a href="#5__examples">5. Examples</a></li>
+	<li><a href="#6__how_to_get_episode_files">6. How to get episode files</a></li>
+	<li><a href="#7__copyright_and_license">7. COPYRIGHT and LICENSE</a></li>
+</ul>
+<!-- INDEX END -->
+
+<hr />
+<p>
+</p>
+<h1><a name="name">NAME</a></h1>
+<p><em>VDRSeriesTimer.pl</em> - Script to find season and episode number with the help of episode lists</p>
+<p>
+</p>
+<hr />
+<h1><a name="synopsis">SYNOPSIS</a></h1>
+<p><strong>VDRSeriesTimer.pl</strong> ( -c=&lt;&gt; | -ec=&lt;&gt; ) --t=&lt;&gt; (--sub=&lt;&gt; | --ep=&lt;&gt;) [options...]</p>
+<p>
+</p>
+<hr />
+<h1><a name="options">OPTIONS</a></h1>
+<p>Help options:</p>
+<pre>
+   --help | -h | -?             brief help message
+   --man                        full documentation</pre>
+<p>Needed options:</p>
+<pre>
+     At least one of them:</pre>
+<pre>
+   --title | -t                 series title
+   --subtitle | -s              series subtitle
+   --lists | -l                 lists episodes files
+   --options                    print options/variables and exit</pre>
+<p>Optional options:</p>
+<pre>
+   --summary                    series summary</pre>
+<pre>
+   --episode | -ep              overall episode number</pre>
+<pre>
+   --formatprefix | -fp         First part of the output string, default: &quot;%D~%T~&quot;</pre>
+<pre>
+   --format | -f                Output format, default: &quot;%sx%e - %n. %S&quot;</pre>
+<pre>
+   --formatspacer | -fs         How to seperate the subtitles if there is more than one,
+                                default: &quot; / &quot;</pre>
+<pre>
+                                  %T - Title
+                                  %S - Subtitle
+                                  %s - Season number
+                                  %e - Episode number
+                                  %n - Episode number over all
+                                  %D - Directory
+                                  %C - Category
+                                  %G - Genre</pre>
+<pre>
+                                Example:
+                                  Smallville~05x10 - 098. Lex gegen Jonathan</pre>
+<pre>
+   --category                   category
+   --genre                      genre
+   --date                       date
+   --time                       time
+   --timet                      timestamp
+   --channel                    channel number</pre>
+<pre>
+   --useshorttitle | -short     use / don't use the SHORT keyword in episode list, defaults to &quot;use&quot;
+   --nouseshorttitle | -noshort</pre>
+<pre>
+   --verbose | -v               verbosity, increasing by using it more than one times, up to three times
+   --dry-run | -dry             don't change EPG via SVDRP or any file
+   --version | -V               show version number</pre>
+<p>
+</p>
+<hr />
+<h1><a name="description">DESCRIPTION</a></h1>
+<p><strong>VDRSeriesTimer.pl</strong> is called out of the epgsearchuservars.conf with some parameters.</p>
+<p>It needs VDR &gt; 1.4.0 and epgsearch &gt; 0.9.19.</p>
+<p>This allows you to configure the timer which is set by an series-searchtimer.</p>
+<p>Normally, if the EPG contains something like this:</p>
+<pre>
+ Title:    The Simpsons
+ Subtitle: My Big Fat Geek Wedding</pre>
+<p>you will get an Timer like this</p>
+<pre>
+ The Simpsons~My Big Fat Geek Wedding</pre>
+<p>With this Script you can get this</p>
+<pre>
+ The Simpsons~15x17 - 330. My Big Fat Geek Wedding</pre>
+<p>or this</p>
+<pre>
+ The Simpsons~15.17 My Big Fat Geek Wedding</pre>
+<p>or this</p>
+<pre>
+ The Simpsons~S15E17 My Big Fat Geek Wedding</pre>
+<p>The Script recognize also some multi epiosodes with the EPG-format which RTL II uses in germany.</p>
+<p>With</p>
+<pre>
+ Title:    Andromeda
+ Subtitle: 15. Episode 1 / 16. Episode 2</pre>
+<p>you get</p>
+<pre>
+ Andromeda~01x15 - 15. Episode 1 / 01x16 - 16. Episode 2</pre>
+<p>
+</p>
+<hr />
+<h1><a name="content">CONTENT</a></h1>
+<pre>
+ 1. Installation
+ 1.1 --format
+ 2. Episodes file
+ 2.x Keywords
+ 3. VDRSeriesTimer.conf - The configuration file
+ 4. &quot;Per series&quot; configuration file
+ 5. Examples
+ 6. How to get episode files
+ 7. COPYRIGHT and LICENSE</pre>
+<p>
+</p>
+<hr />
+<h1><a name="1__installation">1. Installation</a></h1>
+<p>Copy the Script VDRSeriesTimer.pl somewhere in the $PATH.</p>
+<p>Then edit <em>epgsearchuservars</em> and add one of the following:</p>
+<p>A) If you've extended EPG (tvmovie, hörzu, etc.):</p>
+<pre>
+ %Season%=system(/usr/local/bin/VDRSeriesTimer.pl,--title %Title% --subtitle %Subtitle% --episode %Episode% --category %Category% --genre %Genre% --date %date% --time %time% --channel %chnr% --timet %time_lng%)</pre>
+<pre>
+ %DateVar%=%time_w% %date% %time% 
+ %SeriesSD%=%Subtitle% ? %Subtitle% : %DateVar%
+ %SeriesVar3%=Series~%Title%~%Episodes%. %SeriesSD%
+ %SeriesVar4%=Series~%Title%~%SeriesSD% 
+ %SeriesVar1%=%Episode% ? %SeriesVar3% : %SeriesVar4%</pre>
+<pre>
+ %Series%=%Season% ? %Season% : %SeriesVar1%</pre>
+<p>B) If you dont't have extended EPG with category, genre etc., but the episode number, you can use a shorter version.</p>
+<pre>
+ %Season%=system(/usr/local/bin/VDRSeriesTimer.pl,--title %Title% --subtitle %Subtitle% --episode %Episode% --channel %chnr% --timet %time_lng%)
+ 
+ %DateVar%=%time_w% %date% %time%
+ %SeriesSD%=%Subtitle% ? %Subtitle% : %DateVar%
+ %SeriesVar3%=Series~%Title%~%Episodes%. %SeriesSD%
+ %SeriesVar4%=Series~%Title%~%SeriesSD% 
+ %SeriesVar1%=%Episode% ? %SeriesVar3% : %SeriesVar4%</pre>
+<pre>
+ %Series%=%Season% ? %Season% : %SeriesVar1%</pre>
+<p>C) If you don't have an episode number in EPG:</p>
+<pre>
+ %Season%=system(/usr/local/bin/VDRSeriesTimer.pl,--title %Title% --subtitle %Subtitle% --channel %chnr% --timet %time_lng%)
+ 
+ %DateVar%=%time_w% %date% %time%
+ %SeriesSD%=%Subtitle% ? %Subtitle% : %DateVar%
+ %SeriesVar1%=Series~%Title%~%SeriesSD%</pre>
+<pre>
+ %Series%=%Season% ? %Season% : %SeriesVar1%</pre>
+<p>In this short version, the script always tries to find an matching subtitle in the episodes list.</p>
+<p>Then use in the searchtimer the variable %Series% as Path.</p>
+<p>The episode files must have as filename the title of the series with the suffix <em>.episodes</em>.</p>
+<p>So for the series <em>The Simpsons</em>, it searches for <em>The Simpsons.episodes</em>.</p>
+<p>The Script allows per default a difference of 20 percent of the title, subtitle and the filename.</p>
+<p>
+</p>
+<h2><a name="1_1_format">1.1 --format</a></h2>
+<p>With <em>--formatprefix &lt;string</em>&gt;, <em>--format &lt;string</em>&gt; and <em>--formatspacer &lt;string</em>&gt; you can define how the
+output should look. The default is:</p>
+<pre>
+ &quot;%D~%T~&quot;         for --formatprefix &lt;string&gt;
+ &quot;%sx%e - %n. %S&quot; for --format &lt;string&gt;
+ &quot; / &quot;            for --formatspacer &lt;string&gt;</pre>
+<p>Call ``VDRSeriesTimer.pl -help'' to see what each variable means.</p>
+<p>You can also change how many zeroes will be prefixed.</p>
+<pre>
+ &quot;%s&quot; results in &quot;02&quot;
+ 
+ &quot;%5s&quot; results in &quot;00002&quot;</pre>
+<p>This can be used with %s, %e and %n. Don't try this with %D, %T, %S, %C and %G.</p>
+<p>
+</p>
+<hr />
+<h1><a name="2__episodes_file">2. Episodes file</a></h1>
+<p>The file contains the episodes in the following format. Each field is seperated by one tab.</p>
+<pre>
+ #Season        Episode Number  Subtitle
+ 01     1       1       Season one, Episode one
+ 01     2       2       Season one, Episode two
+ 01     3       3       Season one, Episode three
+ 02     1       4       Sesaon two, Episode one
+ 02     2       5       Season two, Episode two
+ ...</pre>
+<p>At the beginning of the file you can use some special keywords.
+Each keyword must begin with ``# ''.</p>
+<p>Take a look on some of the ``ready to use'' lists, Webaddress at the end of this file.</p>
+<p>
+</p>
+<h2><a name="2_x_keywords">2.x Keywords</a></h2>
+<p>Description of the available keywords.</p>
+<p>
+</p>
+<h2><a name="2_1_seasonlist______seasonlist">2.1 <strong>SEASONLIST ... /SEASONLIST</strong></a></h2>
+<p>If you don't have a complete episode list but your EPG contains the episode number,
+you can define which season contains which episodes. Then this script can calculate
+the needed data. Episodes, which are not in this file will be added.</p>
+<pre>
+ # SEASONLIST
+ # 1    1       22
+ # 2    23      44
+ # 3    45      66
+ # /SEASONLIST</pre>
+<p>The format is &lt;Season&gt; TAB &lt;first episode in season&gt; TAB &lt;last episode in season&gt;</p>
+<p>
+</p>
+<h2><a name="2_5_complete">2.5 <strong>COMPLETE</strong></a></h2>
+<pre>
+ # COMPLETE</pre>
+<p>The script assume that the episode list is complete, nothing will be changed in the file.</p>
+<p>
+</p>
+<h2><a name="2_7_short__text_">2.7 <strong>SHORT &lt;text</strong>&gt;</a></h2>
+<p>This text will be used as series title. So you can use this</p>
+<pre>
+ # SHORT DS9</pre>
+<p>to get ``DS9'', if the title in the EPG is ``Deep Space Nine''</p>
+<p>You can use your own short title by using a ``per series'' configuration file. See chapter 4.</p>
+<p>
+</p>
+<hr />
+<h1><a name="3__vdrseriestimer_conf__the_configuration_file">3. VDRSeriesTimer.conf - The configuration file</a></h1>
+<p>If the configuration file .VDRSeriesTimer.conf in the users does not
+exist, an file with default values named .VDRSeriesTimer.conf will be created in your
+current $HOME.</p>
+<p>Thes settings are:</p>
+<p><strong>ListsDir</strong>          = ``''</p>
+<p>Path to the episodes list.</p>
+<p><strong>SeriesConfsDir</strong>          = ``''</p>
+<p>Path where to find the ``per series'' configuration.</p>
+<p><strong>UseShortTitle</strong>     = yes</p>
+<p>Replace the title with the short title found in the ``per series'' configuration file or
+the .episodes file.</p>
+<p><strong>Protected</strong>         = no</p>
+<p>Don't change any file.</p>
+<p><strong>FormatPrefix</strong>      = ``%D~%T~''</p>
+<p><strong>Format</strong>            = ``%sx%e - %n. %S''</p>
+<p><strong>FormatSpacer</strong>      = `` / ''</p>
+<p>Output format.</p>
+<p><strong>Fuzzy</strong>             = 0.20</p>
+<p>Fuzzy matching in percent.
+0.00 means must match 100%.
+1.00 means must match 0%.</p>
+<p>Useful is something between 0.00 and 0.25.</p>
+<p><strong>SendEMail</strong>         = no</p>
+<p>Send an e-mail if something gets wrong, eg. an epiosde list cannot be found.</p>
+<p><strong>EMailTo</strong>           = ``''</p>
+<p>E-mail recipient.</p>
+<p><strong>EMailSubject</strong>      = ``Season data missing''</p>
+<p>Subject.</p>
+<p><strong>ChangeEPG</strong>         = no</p>
+<p>Add the season data to the epg summary. The script does this via svdrp.</p>
+<p><strong>KeepEPGSubtitle</strong>   = yes</p>
+<p>If the subtitle in the episode list differs from the one from EPG, don't change it
+to the subtitle from list.</p>
+<p><strong>CompareSubtitle</strong>   = no</p>
+<p>If yes, search the list by comparing the subtitle to get the season and episode numbers.</p>
+<p><strong>CompareEpisode</strong>    = no</p>
+<p>If yes, search the list by comparing the episode number to get the subtitle.</p>
+<p><strong>Fallback</strong>          = yes</p>
+<p>First, the script tries to compare Subtitle if CompareSubtitle is set.
+If this fails, it fall back to use other information to guess the missing data.
+If you don't want this, set this to no and the script returns
+unknown (?x? - ?.) if the first try fails.</p>
+<p><strong>VDRHost</strong>           = ``localhost''
+<strong>SVDRPPort</strong>         = 2001
+<strong>SVDRPTimeout</strong>      = 30</p>
+<p>SVDRP settings.</p>
+<p><strong>MultiRegex</strong>        = ``(?:\s*)(?:(\d+)\.\s+)?(.*?)\s*(?:\/|$)''</p>
+<p>How to detect multi episodes like Andromeda or Stargate on german RTL II.
+Fields are EpisodeNr, Subtitle.
+Dont' change this if you don't know what you do. ;)</p>
+<p><strong>Verbose</strong>           = 0</p>
+<p>Verbosity, increasing by using it more than one times, up to three times</p>
+<p><strong>LogFile</strong>           = ``''</p>
+<p>File to log to.</p>
+<p>
+</p>
+<hr />
+<h1><a name="4__per_series_configuration_file">4. ``Per series'' configuration file</a></h1>
+<p>If you define the path <strong>SeriesConfsDir</strong>, you can put there one configuration file per series.</p>
+<p>File needs to be named as the episodes file, but with ``.episodes'' replaced with ``.conf'', for
+example: <strong>Lost.conf</strong>.</p>
+<p>Settings from this file will overwrite the global ones from VDRSeriesTimer.conf.</p>
+<p>Possible settings are:</p>
+<p><strong>UseShortTitle</strong>     = no</p>
+<p><strong>Protected</strong>         = yes</p>
+<p><strong>FormatPrefix</strong>      = ``%D~%T~''
+<strong>Format</strong>            = ``%sx%e - %n. %S''
+<strong>FormatSpacer</strong>      = `` / ''</p>
+<p><strong>Fuzzy</strong>             = 0.20</p>
+<p><strong>SendEMail</strong>         = no</p>
+<p><strong>ChangeEPG</strong>         = yes</p>
+<p><strong>KeepEPGSubtitle</strong>   = yes</p>
+<p>See previous chapter for description.</p>
+<p><strong>CompareSubtitle</strong>   = no</p>
+<p>If yes, search the list by comparing the subtitle to get the season and episode numbers.</p>
+<p><strong>CompareEpisode</strong>    = no</p>
+<p>If yes, search the list by comparing the episode number to get the subtitle.</p>
+<p><strong>Fallback</strong>          = yes</p>
+<p>First, the script tries to compare Subtitle if CompareSubtitle is set.
+If this fails, it fall back to use other information to guess the missing data.
+If you don't want this, set this to no and the script returns
+unknown (?x? - ?.) if the first try fails.</p>
+<p><strong>EpisodeIncrement</strong>  = +0</p>
+<p>If the episode number in the EPG isn't correct, you can increment or decrement the episode number.
+For example, +5 or -5.</p>
+<p><strong>StartWithSeason</strong>   = 0</p>
+<p>Start the comaparing with this season number. Needed for ``24'', because there are the same subtitles in
+each season.</p>
+<p><strong>MultiRegex</strong>        = ``(?:\s*)(?:(\d+)\.\s+)?(.*?)\s*(?:\/|$)''</p>
+<p>How to detect multi episodes like Andromeda or Stargate on german RTL II.
+Fields are EpisodeNr, Subtitle.
+Dont' change this if you don't know what you do. ;)</p>
+<p><strong>Verbose</strong>           = 0</p>
+<p>Verbosity, increasing by using it more than one times, up to three times</p>
+<p><strong>LogFile</strong>           = ``''</p>
+<p>File to log to.</p>
+<p>
+</p>
+<hr />
+<h1><a name="5__examples">5. Examples</a></h1>
+<pre>
+ VDRSeriesTimer.pl --config /etc/vdr.conf/plugins/epgsearch/data/ --title 'Smallville' --subtitle 'Lex gegen Jonathan'</pre>
+<p>Results in:</p>
+<pre>
+ Smallville~05x10 - 098. Lex gegen Jonathan</pre>
+<pre>
+ VDRSeriesTimer.pl --title 'Smallville' --subtitle 'Lex gegen Jonathan' --format &quot;%T~%3s.%e (%4n) %S&quot;</pre>
+<p>Results in:</p>
+<pre>
+ Smallville~005.10 (0098) Lex gegen Jonathan</pre>
+<p>
+</p>
+<hr />
+<h1><a name="6__how_to_get_episode_files">6. How to get episode files</a></h1>
+<p>The episode files can be found there:</p>
+<p><code>http://eplists.constabel.net/eplists/eplist.cgi</code></p>
+<p>If you like git, see there:</p>
+<p>Overview:</p>
+<p><code>http://eplists.constabel.net/git/gitweb.cgi?p=eplists.git;a=tree</code></p>
+<p>Download:</p>
+<p><code>cg-clone http://eplists.constabel.net/git/eplists.git</code></p>
+<p>
+</p>
+<hr />
+<h1><a name="7__copyright_and_license">7. COPYRIGHT and LICENSE</a></h1>
+<p>Copyright (c) 2007 Mike Constabel</p>
+<p><a href="http://www.constabel.net/vdr/">http://www.constabel.net/vdr/</a></p>
+<p>This  is free software.  You may redistribute copies of it under the terms of the GNU General Public License &lt;http://www.gnu.org/licenses/gpl.html&gt;.
+There is NO WARRANTY, to the extent permitted by law.</p>
+
+</body>
+
+</html>

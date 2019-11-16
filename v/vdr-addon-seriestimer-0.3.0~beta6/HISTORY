@@ -1,0 +1,238 @@
+-------
+HISTORY
+-------
+
+2008-06-10: Version 0.3.0-beta6
+------------------------------------------------
+Fixes:
+- Try to fix module loading with perl 5.10
+
+New:
+- Added example config for epgsearch's new conf.d
+
+2008-03-16: Version 0.3.0-beta5
+------------------------------------------------
+Fixes:
+- Add README to tvmovie2vdr patch
+
+2008-03-09: Version 0.3.0-beta4
+------------------------------------------------
+Fixes:
+- Some minor internal fixes
+
+2008-03-05: Version 0.3.0-beta3
+------------------------------------------------
+Fixes:
+- Bugfix in DoubleIfLongerAs
+- Bugfix in tvmovie2vdr patch
+
+2008-03-04: Version 0.3.0-beta2
+------------------------------------------------
+New:
+- Multi language eplists
+  Now eplists can have names like "Bones.en.episodes"
+  with english episode names in it.
+  Two letter country code.
+- New config variable "ListLanguage" = "de,en"
+  Searches first for "Bones.de.episodes", then
+  "Bones.en.episodes"
+  Files without country code are equal to "de"
+
+2008-03-02: Version 0.3.0-beta1
+------------------------------------------------
+New:
+- Added an Makefile to update i18n and to install
+  the files
+  See INSTALL
+- Added i18n + german language
+  see README.i18n
+- Updated svdrpsend-ng.pl to version 0.3.0-beta1
+- Added VDREplistChecker.pl to package
+- Added patch vor tvmovie2vdr version 0.5.14
+
+2007-12-30: Version 0.2.6 (public release)
+------------------------------------------
+Fixes:
+- fix in detecting subtitle in title
+New:
+- Converted files to UTF-8
+- Updated svdrpsend-ng.pl to version 0.2.0-beta5
+
+2007-07-11: Version 0.2.5.2 (public bugfix release)
+---------------------------------------------------
+Fixes:
+- script exits after upgrading conf files
+
+2007-07-10: Version 0.2.5.1 (public bugfix release)
+---------------------------------------------------
+Fixes:
+- added locale and set it do de to support german
+  chars like ß
+
+2007-06-30: Version 0.2.5 (public release)
+------------------------------------------
+New:
+- Optimized finding subtitle in title
+
+2007-06-04: Version 0.2.4.2 (public bugfix release)
+---------------------------------------------------
+Fixes:
+- Bug if parenthesis are in subtitle
+
+2007-05-04: Version 0.2.4.1 (public bugfix release)
+---------------------------------------------------
+Fixes:
+- Bug in versions-check after upgrading confs
+  to 0.2.4, thanks to SledgeHammer
+
+2007-04-21: Version 0.2.4 (public release)
+------------------------------------------
+  No changes since 0.2.4-beta3
+
+2007-03-07: Version 0.2.4-beta3
+-------------------------------
+New:
+- Detection of not needed (.*) after subtitle.
+  Thanks to bassdscho.
+
+2007-02-24: Version 0.2.4-beta1
+-------------------------------
+Fixes:
+- Bug in reading CompareEpisode from SeriesConf
+  for MultiDetect
+
+New:
+- Remove ", +Teil \d+" from title
+
+2007-02-19: Version 0.2.3 (public release)
+------------------------------------------
+New:
+- Added script svdrpsend-ng.pl to archiv.
+  This script is compatible with the original one
+  delivered with vdr but has additional options
+  to upload/download/check eplists. See --help.
+
+2007-02-14: Version 0.2.3-beta5
+-------------------------------
+New:
+- Remove ", Folge \d+" from subtitle
+
+2007-02-12: Version 0.2.3-beta4
+-------------------------------
+Fixes:
+- Bug in manual, changed -sub to -s
+
+2007-01-16: Version 0.2.3-beta3
+-------------------------------
+Fixes:
+- Add missing chdir to ListDir
+- Modified detection of subtitle in title
+
+New:
+- New Variable "Fallback" to return "unknown
+  episode" if CompareSubtitle fails
+- Remove episode number from title
+- Added GuessTitle to fuzzy find matching
+  serial conf
+
+2007-01-14: Version 0.2.2 (public release)
+------------------------------------------
+Fixes:
+- Minor updates in subtitle searching logic
+- Minor updates in the man page
+
+2007-01-08: Version 0.2.1 (public release)
+------------------------------------------
+Fixes:
+- Option ShortTitle missed in per series conf
+- Fixed removing subtitle from title
+- Fixed overwriting symlink while upgrading etc.
+
+2007-01-01: Version 0.2.0 (public release)
+------------------------------------------
+New:
+- Newline "\n" can be used in format string, example for
+  epgsearchcmds.conf:
+  --cut--
+  Episodennummer checken  : VDRSeriesTimer.sh
+  --cut--
+
+  VDRSeriesTimer.sh:
+  --cut--
+  #!/bin/sh
+  VDRSeriesTimer.pl --title "$1" --subtitle "$6" --formatprefix "" --format 'Title: %T\nSubtitle: %S\n\nSeason: %s\nEpisode: %e\nNumber: %1n\n\nDirectory: %D\n'
+  --cut--
+
+2007-01-01: Version 0.2.0beta5
+------------------------------
+New:
+- New config variable "MultiDetection = <no|yes>"
+  Enable/Disable Multidetection, defaults to "no"
+- New option "--forceupgrade", "--upgrade" now upgrades only old conf's
+
+Changes:
+- Changed some variable names: ConfsDir => SeriesConfsDir
+
+2006-12-31: Version 0.2.0beta
+-----------------------------
+New:
+- Rewrote some parts, now the triple episodes of 24 on
+  RTL II are detected.
+- New Option "upgrade" to upgrade the conf's
+- New Variable: StartWithSeason
+  Begin comparing with this season, needed for "24" where
+  each season has (nearly) the same subtitles
+
+Changes:
+- Changed some Variablenames:
+  SearchEpisode  => CompareSubtitle
+  SearchSubtitle => CompareEpisode
+  "Format" splitted into
+     FormatPrefix = "%D~%T~"
+     Format       = "%sx%e - %n. %S"
+     FormatSpacer = " / "
+  FormatDouble dropped
+  DoubleRegex replaced with
+  MultiRegex = '(?:\s*)(?:(\d+)\.\s+)?(.*?)\s*(?:\/|$)'
+
+2006-12-??: Version 0.1.4
+-------------------------
+Fixes:
+- Bugfix: increment episode number only if episode number is given
+
+New:
+- Added option "--length" to commandline, needed for the next
+- Added Option DoubleIfLongerAs
+  If an event ist longer, think it's some of the broken
+  EPG like on RTL II (Stargate, Andromeda)
+  Example: "Die Rückkehr von Orlin (1)" 20:15 - 22:15
+  This is wrong, it's an double episode.
+  If DoubleIfLongerAs=90 is set and "--length 7200" is
+  given the script corrects it to:
+  09x10 - 184. Die Rückkehr von Orlin (1) / 09x11 - 185. Die Rückkehr von Orlin (2)
+- Correct this: "Mankells Wallander: Am Rande der Finsternis"
+  to this (if there is no subtile):
+  Title: "Mankells Wallander"; Subtitle: "Am Rande der Finsternis"
+
+2006-12-13: Version 0.1.3 (public release)
+------------------------------------------
+New:
+- Uses now module Text::LevenshteinXS instead of
+  Text::WagnerFischer, now it's really fast. :)
+
+2006-12-11: Version 0.1.2 (public release)
+------------------------------------------
+New:
+- Speed optimized with new function str_distance
+- Default "Directory" is empty and not longer "Series"
+
+2006-11-18: Version 0.1.1 (public release)
+------------------------------------------
+Fixes:
+- Bug in removing subtitle from title, now only removing
+  if subtitle is > 5 chars long and the whole subtitle
+  can be found in the title
+
+2006-11-10: Version 0.1.0 (public release)
+------------------------------------------
+- First public release

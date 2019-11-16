@@ -1,0 +1,15 @@
+--- vdr-addon-seriestimer-0.3.0~beta6.orig/Makefile
++++ vdr-addon-seriestimer-0.3.0~beta6/Makefile
+@@ -88,10 +88,10 @@ install-conf:
+ # Documentation:
+ 
+ install-doc:
+-	@mkdir -p $(DESTDIR)$(DOCDIR)
++	#@mkdir -p $(DESTDIR)$(DOCDIR)
+ 	@mkdir -p $(DESTDIR)$(MANDIR)/man1
+ 	@mkdir -p $(DESTDIR)$(MANDIR)/man5
+-	@cp --remove-destination -R COPYING HISTORY INSTALL UPGRADE *README* FAQ contrib html $(DESTDIR)$(DOCDIR)/
++	#@cp --remove-destination -R COPYING HISTORY INSTALL UPGRADE *README* FAQ contrib html $(DESTDIR)$(DOCDIR)/
+ 	@cp --remove-destination man/en/*.1.gz $(DESTDIR)$(MANDIR)/man1/
+ 
+ dist: i18n clean

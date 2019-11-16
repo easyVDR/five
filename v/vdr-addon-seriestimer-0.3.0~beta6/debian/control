@@ -1,0 +1,19 @@
+Source: vdr-addon-seriestimer
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), gettext, perl (>= 5.6.0-16), perl-modules
+Standards-Version: 3.9.1
+Homepage: http://eplists.constabel.net/projects/eplists
+
+Package: vdr-addon-seriestimer
+Architecture: all
+Depends: ${misc:Depends}, perl-modules,
+ libintl-perl, libunicode-string-perl, libio-socket-ssl-perl, 
+ libconfig-general-perl, libio-compress-perl, libtext-levenshteinxs-perl,
+ vdr-plugin-epgsearch, vdr
+Description: Provides episode information of TV series to VDR's EPGSearch plugin
+ The VDRSeriesTimer addon allows the EPGSearch plugin of the Linux Video Disc
+ Recorder (VDR) to retrieve season information for TV shows from an online
+ database. This makes it possible to automatically record TV shows with
+ their season and episode numbers.

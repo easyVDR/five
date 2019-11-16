@@ -1,0 +1,14 @@
+# Fetch new eplists
+
+SHELL=/bin/sh
+PATH=/usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin
+
+# Change the first X and the second X to the minute / hour you want.
+
+# Change Option "-o" to *your* episodes lists dir!
+
+# Change User "vdr" to *your* vdr user!
+
+# Use TGET (since|newer than) x (minutes|hours|days|weeks|months|years).
+
+X X  * * * vdr svdrpsend-ng.pl -d eplists.constabel.net -p 2006 -c -o "/tmp/LISTSDIR" TGET newer than 25 hours

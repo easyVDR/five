@@ -1,0 +1,27 @@
+# Copy this into plugins/epgsearch/conf.d/ inside the vdr
+# config directory to get access to %AutoSerie%
+#
+# For more info read "man epgsearchuservars.conf" and "man epgsearchuserdirs.conf"
+#
+
+[epgsearchdirs]
+
+%AutoSerie%
+
+[epgsearchuservars]
+
+%EmptyVar%=
+
+%Staffel%=system(VDRSeriesTimer.pl,--title %Title% --subtitle %Subtitle% --episode %Episode% --category %Category% --genre %Genre% --date %date% --time %time% --channel %chnr% --timet %time_lng% --length %length% --summary %htmlsummary%)
+
+# Wochentag, Datum, Uhrzeit
+%Datum%=%time_w% %date% %time%
+
+# Subtitle oder Datum
+%SerieSD%=%Subtitle% ? %Subtitle% : %Datum%
+
+%SerieVar3%=Serie~%Title%~%Episode%. %SerieSD%
+%SerieVar4%=Serie~%Title%~%SerieSD% 
+%SerieVar1%=%Episode% ? %SerieVar3% : %SerieVar4%
+
+%AutoSerie%=%Staffel% ? %Staffel% : %SerieVar1%

@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+export DH_VERBOSE=1
+%:
+	dh  $@
+
+DESTDIR=$(CURDIR)/debian/vdr-addon-seriestimer
+
+override_dh_auto_install:
+	dh_auto_install
+	find $(DESTDIR) -name "*.example" -exec rm {} \;
+	mv -v $(DESTDIR)/usr/bin/VDRSeriesTimer.pl $(DESTDIR)/usr/bin/vdrseriestimer
+	mv -v $(DESTDIR)/usr/bin/svdrpsend-ng.pl $(DESTDIR)/usr/bin/svdrpsend-ng
+	mv -v $(DESTDIR)/usr/bin/VDREplistChecker.pl $(DESTDIR)/usr/bin/VDREplistChecker
+	mv -v $(DESTDIR)/usr/share/man/man1/svdrpsend-ng.pl.1.gz $(DESTDIR)/usr/share/man/man5/svdrpsend-ng.5.gz
+	mv -v $(DESTDIR)/usr/share/man/man1/VDRSeriesTimer.pl.1.gz $(DESTDIR)/usr/share/man/man5/vdrseriestimer.5.gz
+	
+override_dh_installexamples:
+	dh_installexamples
+	chmod -x $(DESTDIR)/usr/share/doc/vdr-addon-seriestimer/examples/cron.d-eplists.example  

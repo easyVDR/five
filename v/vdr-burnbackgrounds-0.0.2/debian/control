@@ -1,0 +1,15 @@
+Source: vdr-burnbackgrounds
+Section: misc
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: mango <vdr@gmx.de>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+
+
+Package: vdr-burnbackgrounds
+Architecture: any
+Depends: vdr-plugin-burn (>= 0.1.0~pre21)
+Description: Background images for burn plugin with Moronimo patch
+ Some genre background images provided by Thomas_d and Karsten.
+

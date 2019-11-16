@@ -1,0 +1,305 @@
+Upgrade to >= 0.3.0-beta
+------------------------
+
+Please remove *any* old files. Their names are
+
+VDRSeriesTimer.pl
+svdrpsend-ng.pl
+Eplists.pm
+EplistsClient.pm
+VDREplistChecker.pl
+
+Run:
+
+find / \( -name "VDRSeriesTimer.pl" -o -name "svdrpsend-ng.pl" -o -name "Eplists.pm" -o -name "EplistsClient.pm" -o -name "VDREplistChecker.pl" \) -a ! -wholename '*/VDRSeriesTimer-*/src/*' -print
+
+If this give you the correct files, run:
+
+find /etc \( -name "VDRSeriesTimer.pl" -o -name "svdrpsend-ng.pl" -o -name "Eplists.pm" -o -name "EplistsClient.pm" -o -name "VDREplistChecker.pl" \) -a ! -wholename '*/VDRSeriesTimer-*/src/*' -delete
+
+Then see next paragraph, A, 1, 2a.
+
+Installation Version >= 0.3.0-beta
+----------------------------------
+
+A. cd VDRSeriesTimer.pl-0.3.0-beta1
+
+   make install
+
+   You can also set an path:
+
+   make PREFIX=/usr/local MODULEDIR=/usr/local/lib/perl/5.8.8 install
+
+   Needed perl modules:
+
+   On Debian:
+
+   aptitude install perl-modules libintl-perl libunicode-string-perl libio-socket-ssl-perl libconfig-general-perl
+
+   perl -MCPAN -e 'install Text::LevenshteinXS'
+
+   perl -MCPAN -e 'install IO::Uncompress::Gunzip'
+
+1. Global configuration file
+
+   cp /etc/eplists/vdrseriestimer.conf.example /etc/eplists/vdrseriestimer.conf
+
+2a. If you already have an ~/.VDRSeriesTimer.conf:
+
+    mkdir -p ~/.eplists
+
+    mv ~/.VDRSeriesTimer.conf ~/.eplists/vdrseriestimer.conf
+
+2b. else:
+
+   cp /etc/eplists/vdrseriestimer.conf.example ~/.eplists/vdrseriestimer.conf
+
+3a. Please set the path to the episodes lists in the configuration file, globally in
+    /etc/eplists/vdrseriestimer.conf, per user in ~/.eplists/vdrseriestimer.conf
+
+3b. If you want this Script together with egsearch,
+    cp /etc/eplists/epgsearch-vdrseriestimer.conf <VDR-CONF-DIR>/plugins/epgsearch/conf.d/
+
+4. VDRSeriesTimer.pl --options
+
+$ VDRSeriesTimer.pl --options
+
+Hash %Config:
+-------------
+Category¹²³          => 
+ChangeEPG¹²          => yes
+Channel³             => 
+ConfsDir¹            => /etc/vdr.conf/plugins/epgsearch/episodes.conf/
+Date³                => 
+Directory¹²          => Serie
+DoubleRegex¹²        => ^\s*(\d+)\.\s*(.*?)\s*\/\s*(\d+)\.\s*(.*?)\s*$
+DryRun³              => no
+EMailSubject¹        => Season data missing
+EMailTo¹             => vejoun@herakles.zh.local
+EpisodeIncrement²    => no
+EpisodeOverAll³      => no
+Format¹²³            => %D~%T~%sx%e - %n. %S
+FormatDouble¹²³      => %D~%T~%s1x%e1 - %n1. %S1 / %s2x%e2 - %n2. %S2
+Fuzzy¹²              => 0.2
+Genre¹²³             => 
+KeepEPGSubtitle¹²    => yes
+ListFile             => 
+ListsDir¹³           => /etc/vdr.conf/plugins/epgsearch/episodes/
+MissingFile          => 
+PrintOptions         => yes
+Protected¹²          => no
+SVDRPPort¹           => 2001
+SVDRPTimeout¹        => 30
+SearchEpisode¹²      => no
+SearchSubtitle¹²     => no
+SendEMail¹²          => yes
+ShortTitle           => 
+Subtitle³            => 
+Time³                => 
+TimeT³               => no
+Title³               => 
+UseShortTitle¹²      => no
+UserConf             => /home/vdr1/.VDRSeriesTimer.conf
+VDRHost¹             => localhost
+Verbose³             => no
+
+¹ Changeable in "/home/vdr1/.VDRSeriesTimer.conf"
+² Changeable in "episodes list configuration file"
+³ Changeable on commandline
+
+Hash %SeriesData:
+-----------------
+Category             => 
+Changes              => 0
+Complete             => 0
+DoubleEpisode        => 0
+EpisodeOverAll       => 0
+EpisodeOverAll1      => 0
+EpisodeOverAll2      => 0
+Genre                => 
+Season               => 0
+Season1              => 0
+Season1Start         => 0
+Season2              => 0
+Season2Start         => 0
+SeasonStart          => 0
+ShortTitle           => 
+Subtitle             => 
+Subtitle1            => 
+Subtitle2            => 
+Title                => 
+TitleCleaned         => 0
+
+Hint: check ListsDir and ConfsDir.
+
+The setting are described in the man-page (VDRSeriesTimer.pl --man).
+
+
+5. VDRSeriesTimer.pl --lists
+
+--lists zeigt die gefundenen Listen.
+
+6. ConfsDir
+
+You can use an own conf per series, which overwrites the global setting.
+
+E.g. for Stargate:
+
+cp /etc/eplists/series.conf.example $ConfsDir/
+
+7. Test it
+
+$ VDRSeriesTimer.pl --title 'Star Trek: Das nächste Jahrhundert' --subtitle 'Angriff der Borg, Teil 2' --episode '153' -vv
+
+Hash %Config:
+-------------
+Category¹²³          => 
+ChangeEPG¹²          => yes
+Channel³             => 
+ConfsDir¹            => /etc/vdr.conf/plugins/epgsearch/episodes.conf/
+Date³                => 
+Directory¹²          => Serie
+DoubleRegex¹²        => ^\s*(\d+)\.\s*(.*?)\s*\/\s*(\d+)\.\s*(.*?)\s*$
+DryRun³              => no
+EMailSubject¹        => Season data missing
+EMailTo¹             => vejoun@herakles.zh.local
+EpisodeIncrement²    => no
+EpisodeOverAll³      => 153
+Format¹²³            => %D~%T~%sx%e - %n. %S
+FormatDouble¹²³      => %D~%T~%s1x%e1 - %n1. %S1 / %s2x%e2 - %n2. %S2
+Fuzzy¹²              => 0.2
+Genre¹²³             => 
+KeepEPGSubtitle¹²    => no
+ListFile             => /etc/vdr.conf/plugins/epgsearch/episodes/Star Trek: Das nächste Jahrhundert.episodes
+ListsDir¹³           => /etc/vdr.conf/plugins/epgsearch/episodes/
+MissingFile          => /etc/vdr.conf/plugins/epgsearch/episodes/Star Trek: Das nächste Jahrhundert.missing
+PrintOptions         => yes
+Protected¹²          => no
+SVDRPPort¹           => 2001
+SVDRPTimeout¹        => 30
+SearchEpisode¹²      => no
+SearchSubtitle¹²     => yes
+SendEMail¹²          => yes
+ShortTitle           => 
+Subtitle³            => Angriff der Borg
+Time³                => 
+TimeT³               => no
+Title³               => Star Trek: Das nächste Jahrhundert
+UseShortTitle¹²      => no
+UserConf             => /home/vdr1/.VDRSeriesTimer.conf
+VDRHost¹             => localhost
+Verbose³             => no
+
+¹ Changeable in "/home/vdr1/.VDRSeriesTimer.conf"
+² Changeable in "/etc/vdr.conf/plugins/epgsearch/episodes/Star Trek: Das nächste Jahrhundert.episodes"
+³ Changeable on commandline
+
+Hash %SeriesData:
+-----------------
+Category             => 
+Changes              => 0
+Complete             => 0
+DoubleEpisode        => 0
+EpisodeOverAll       => 153
+EpisodeOverAll1      => 0
+EpisodeOverAll2      => 0
+Genre                => 
+Season               => 0
+Season1              => 0
+Season1Start         => 0
+Season2              => 0
+Season2Start         => 0
+SeasonStart          => 0
+ShortTitle           => 
+Subtitle             => Angriff der Borg
+Subtitle1            => 
+Subtitle2            => 
+Title                => Star Trek: Das nächste Jahrhundert
+TitleCleaned         => 0
+
+===============
+
+8. epgsearchuservars.conf
+
+%Season%=system(VDRSeriesTimer.pl,--title %Title% --subtitle %Subtitle% --episode %Episode% --category %Category% --genre %Genre% --date %date% --time %time% --channel %chnr% --timet %time_lng%)
+
+%DateVar%=%time_w% %date% %time%
+%SerieSD%=%Subtitle% ? %Subtitle% : %DateVar%
+%SerieVar1%=Serie~%Title%~%SerieSD%
+%Serie%=%Season% ? %Season% : %SerieVar1%
+
+
+
+Examples:
+---------
+
+ SearchEpisode = yes
+ KeepEPGSubtitle = no
+
+$ VDRSeriesTimer.pl --title 'Star Trek: Das nächste Jahrhundert' --subtitle 'Angriff der Borg' --episode '153' -v       
+
+File <Star Trek: Das nächste Jahrhundert> is like title <Star Trek: Das nächste Jahrhundert> with a distance from 0 (max 7),
+using file </etc/vdr.conf/plugins/epgsearch/episodes/Star Trek: Das nächste Jahrhundert.episodes>
+
+Verbose: 1
+
+Found "153" is equal to the given "153", so using
+<07 1 153 Angriff der Borg (Teil 2)>
+
+
+Script VDRSeriesTimer.pl info: Start 1162114896; End: 1162114897; Runs for 1s; Changes count: 0; Title: <Star Trek: Das nächste Jahrhundert>; Subtitle: <Angriff der Borg>
+
+Result:
+
+Serie~Star Trek: Das nächste Jahrhundert~07x01 - 153. Angriff der Borg (Teil 2)
+
+---------------
+
+ SearchSubtitle = yes
+ KeepEPGSubtitle = no
+
+$ VDRSeriesTimer.pl --title 'Star Trek: Das nächste Jahrhundert' --subtitle 'Angriff der Borg, Teil 2' --episode '153' -v
+
+File <Star Trek: Das nächste Jahrhundert> is like title <Star Trek: Das nächste Jahrhundert> with a distance from 0 (max 7),
+using file </etc/vdr.conf/plugins/epgsearch/episodes/Star Trek: Das nächste Jahrhundert.episodes>
+
+Verbose: 1
+
+Run 1: Found "Angriff der Borg (Teil 1)", changed to "Angriff der Borg (Teil 1)",
+       is like the given "Angriff der Borg, Teil 2", changed to "Angriff der Borg, Teil 2",
+       with a distance from 4 (max 5), so using
+       <06 26 152 Angriff der Borg (Teil 1)>
+
+Run 1: Found "Angriff der Borg (Teil 2)", changed to "Angriff der Borg (Teil 2)",
+       is like the given "Angriff der Borg, Teil 2", changed to "Angriff der Borg, Teil 2",
+       with a distance from 3 (max 5), so using
+       <07 1 153 Angriff der Borg (Teil 2)>
+
+Run 2: Found "Angriff der Borg (Teil 1)", changed to "Angriff der Borg 1",
+       is like the given "Angriff der Borg, Teil 2", changed to "Angriff der Borg 2",
+       with a distance from 1 (max 4), so using
+       <06 26 152 Angriff der Borg (Teil 1)>
+
+Run 2: Found "Angriff der Borg (Teil 2)", changed to "Angriff der Borg 2",
+       is like the given "Angriff der Borg, Teil 2", changed to "Angriff der Borg 2",
+       with a distance from 0 (max 4), so using
+       <07 1 153 Angriff der Borg (Teil 2)>
+
+
+Script VDRSeriesTimer.pl info: Start 1162115051; End: 1162115056; Runs for 5s; Changes count: 0; Title: <Star Trek: Das nächste Jahrhundert>; Subtitle: <Angriff der Borg, Teil 2>
+
+Result:
+
+Serie~Star Trek: Das nächste Jahrhundert~07x01 - 153. Angriff der Borg (Teil 2)
+
+
+
+
+
+Contact
+=======
+
+  Mike Constabel (vejoun @ vdrportal)
+  eplists (at) constabel (dot) net
+
+(c)2008 Mike Constabel

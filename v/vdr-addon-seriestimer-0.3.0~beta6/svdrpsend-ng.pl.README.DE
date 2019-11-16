@@ -1,0 +1,163 @@
+
+Episodenlisten Server auf ASCII-Protokoll Basis
+===============================================
+
+Einführung
+==========
+
+Ich habe einen Episodenlisten Server auf ASCII-Protokoll Basis geschrieben,
+da ich die Benutzung einer Weboberfläche bzw. svn als zu umständlich
+empfinde und Scripte die gar nicht können.
+
+In erster Linie dient er zum einfachen (automatischen) Datenaustausch
+mit anderen Scripten. Sei es um Listen zu holen oder geänderte Listen zu
+senden.
+
+Verwendung findet er in Zukunft in
+ - VDRSeriesTimer.pl (ab Version 0.3.x)
+ - svdrpsend-ng.pl (ab Version 0.1.2)
+
+Der Server läuft unter
+
+eplists.constabel.net:2006
+
+Da er genau wie die SVDRP-Schnittstelle des VDR oder jede andere ACSII-protokoll
+basierende Anwendung funktioniert, kann man wie folgt darauf zugreifen:
+
+a) per telnet
+   ----------
+
+telnet eplists.constabel.net 2006
+
+ help
+ info
+
+
+b) per svdrpsend.pl
+   ----------------
+
+svdrpsend.pl -d eplists.constabel.net -p 2006 help
+
+svdrpsend.pl -d eplists.constabel.net -p 2006 info
+
+
+c) svdrpsend-ng.pl
+   ---------------
+
+svdrpsend-ng.pl ist kompatibel zu svdrpsend.pl, bietet
+aber mehr Möglichkeiten, die nicht nur für die Episodenlisten
+nützlich sind:
+
+	- SSL gesicherte Übertragung
+	- Gzip komprimierte Übertragung
+	- Speichern der Ausgabe
+	- Senden einer Datei (PUT mit "-i")
+	(Hint: lste und Option -c)
+
+"svdrpsend-ng.pl -h" zeigt die Kommandozeilen-Optionen
+
+
+Beispiele:
+==========
+
+Hilfe über die Server-Befehle
+-----------------------------
+
+svdrpsend-ng.pl -d eplists.constabel.net -p 2006 HELP
+
+svdrpsend-ng.pl -d eplists.constabel.net -p 2006 LHELP
+
+
+Info über Liste Stargate
+------------------------
+
+svdrpsend-ng.pl -d eplists.constabel.net -p 2006 INFO Stargate
+
+
+Alle Listen nach /listen/ herunterzuladen:
+------------------------------------------
+
+svdrpsend-ng.pl -d eplists.constabel.net -p 2006 -c -o /listen/ GET all
+
+
+Alle Listen neuer als 4 Tage nach /listen/ herunterzuladen:
+-----------------------------------------------------------
+
+svdrpsend-ng.pl -d eplists.constabel.net -p 2006 -c -o /listen/ TGET newer than 4 days
+
+
+Befehle, die ein Nutzerkonto vorraussetzen: DEL PUT LINK
+--------------------------------------------------------
+
+svdrpsend-ng.pl -d eplists.constabel.net -p 2006 -u <username> -s <passwort> <Befehl>
+
+Username und Passwort sind dieselben wie für die Weboberfläche.
+
+Die Registrierung erfolgt über die Webseite:
+
+	http://eplists.constabel.net/eplists/eplist.cgi
+
+Eine Registrierung direkt über den Listenserver ist in Planung.
+
+Listen heraufladen:
+-------------------
+
+svdrpsend-ng.pl -d eplists.constabel.net -p 2006 -u username -s passwort -i NeueDatei PUT NeuerName
+
+
+/Beispiele
+==========
+
+
+(Wichtig ist die Option -c, mit der die svdrp-codes unterdrückt werden.)
+
+
+Datenbestand
+============
+
+Dieser Episedenlisten Server greift auf denselben Datenbestand zu wie das
+Webformular.
+
+Ein abgleich mit dem GIT-Repository erfolgt nach Prüfung meinerseits.
+
+Daher enthält das GIT-Repository theoretisch die "korrektesten Daten",
+praktisch ist aber der aktuellste Bestand per Episodenlisten Server
+oder Webformular auch genauso gut zu verwenden.
+
+
+Download
+========
+
+Die aktuellsten Versionen der Scripte und Listen können also per GIT bezogen
+werden, wie, steht auf dieser Seite:
+
+http://eplists.constabel.net/
+
+Die offitielle Downloadseite für stabile Versionen ist:
+
+http://www.constabel.net/vdr/scripts.de.htm
+
+Installation
+============
+
+svdrpsend-ng.pl kann das originale svdrpsend.pl ersetzen. Es benötigt aber
+andere/zusätzliche Module:
+
+Net::hostent
+File::Basename
+IO::Socket::INET
+
+Für den Zugriff zum Listenserver:
+
+IO::Socket::SSL        (optional, aber sinnvoll)
+IO::Uncompress::Gunzip (optional, aber sinnvoll)
+
+
+Kontakt
+=======
+
+  Mike Constabel (vejoun @ vdrportal)
+  eplists (at) constabel punkt net
+
+(c)2007 Mike Constabel
+

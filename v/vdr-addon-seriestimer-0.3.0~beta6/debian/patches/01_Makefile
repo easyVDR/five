@@ -1,0 +1,28 @@
+--- vdr-addon-seriestimer-0.3.0~beta6.orig/Makefile
++++ vdr-addon-seriestimer-0.3.0~beta6/Makefile
+@@ -8,7 +8,7 @@ SCRIPT     = VDRSeriesTimer.pl
+ 
+ DESTDIR   ?=
+ CONFDIR    = /etc/eplists
+-PREFIX    ?= /usr/local
++PREFIX    ?= /usr
+ 
+ MODULEDIR ?= $(shell perl -e '$$prefix = "$(PREFIX)"; $$prefix =~ s|/$$||; foreach (@INC) { if ( m|$${prefix}/+lib| ) { print $$_."\n"; exit 0; } } print "/tmp"; exit 1;')
+ 
+@@ -58,11 +58,16 @@ $(I18Nmsgs): $(LOCALEDIR)/%/LC_MESSAGES/
+ 	@mkdir -p $(dir $@)
+ 	cp $< $@
+ 
++
+ install-i18n:
+ 	@mkdir -p $(DESTDIR)$(LOCDIR)
+ 	@(cd $(LOCALEDIR); cp -r --parents * $(DESTDIR)$(LOCDIR))
+ 
+ # Install the files:
++test:	all
++all:
++	@echo "Done."
++
+ 
+ install: i18n install-script install-conf install-doc install-i18n installed_msg
+ 

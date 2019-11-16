@@ -1,0 +1,262 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: <eplists@constabel.net>\n"
+"POT-Creation-Date: 2008-06-10 19:41+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/EplistsClient.pm:98 src/EplistsClient.pm:102 src/EplistsClient.pm:105
+#: src/Eplists.pm:72
+msgid "Module"
+msgstr ""
+
+#: src/EplistsClient.pm:98 src/EplistsClient.pm:102 src/EplistsClient.pm:105
+#: src/EplistsClient.pm:276 src/Eplists.pm:72
+msgid "not found"
+msgstr ""
+
+#: src/EplistsClient.pm:98
+msgid "please install it or edit EplistsClient.pm and set"
+msgstr ""
+
+#: src/EplistsClient.pm:102
+msgid "try to load"
+msgstr ""
+
+#: src/EplistsClient.pm:102 src/EplistsClient.pm:109
+msgid "without"
+msgstr ""
+
+#: src/EplistsClient.pm:105
+msgid "please install"
+msgstr ""
+
+#: src/EplistsClient.pm:105 src/EplistsClient.pm:109
+msgid "or"
+msgstr ""
+
+#: src/EplistsClient.pm:109
+msgid "Using"
+msgstr ""
+
+#: src/EplistsClient.pm:109
+msgid "To disable this warning install"
+msgstr ""
+
+#: src/EplistsClient.pm:109
+msgid "edit EplistsClient.pm and set"
+msgstr ""
+
+#: src/EplistsClient.pm:156 src/EplistsClient.pm:419
+msgid "failed"
+msgstr ""
+
+#: src/EplistsClient.pm:184
+msgid "Unidentified Line"
+msgstr ""
+
+#: src/EplistsClient.pm:276 src/Eplists.pm:595
+msgid "File"
+msgstr ""
+
+#: src/EplistsClient.pm:288
+msgid "Port isn't numeric"
+msgstr ""
+
+#: src/EplistsClient.pm:297
+msgid "Cannot connect to"
+msgstr ""
+
+#: src/EplistsClient.pm:324
+msgid "Please provide username and password"
+msgstr ""
+
+#: src/Eplists.pm:72
+msgid "please install it or edit Eplists.pm and set"
+msgstr ""
+
+#: src/Eplists.pm:269
+msgid "Please provide Title and Subtitle or Title and EpisodeOverAll or PrintLists"
+msgstr ""
+
+#: src/Eplists.pm:291
+msgid "No matching list for this event found"
+msgstr ""
+
+#: src/Eplists.pm:336
+msgid "Please check ListsDir, directory doesn't exist"
+msgstr ""
+
+#: src/Eplists.pm:567
+msgid "Lists found"
+msgstr ""
+
+#: src/Eplists.pm:595
+msgid "is like title"
+msgstr ""
+
+#: src/Eplists.pm:595 src/Eplists.pm:941 src/Eplists.pm:953
+#: src/Eplists.pm:1006
+msgid "with a distance from"
+msgstr ""
+
+#: src/Eplists.pm:595
+msgid "using file"
+msgstr ""
+
+#: src/Eplists.pm:598
+msgid "No episode lists found for"
+msgstr ""
+
+#: src/Eplists.pm:730 src/Eplists.pm:731
+msgid "Changeable in"
+msgstr ""
+
+#: src/Eplists.pm:731
+msgid "episodes list configuration file"
+msgstr ""
+
+#: src/Eplists.pm:732
+msgid "Changeable on commandline"
+msgstr ""
+
+#: src/Eplists.pm:789
+msgid "No episode number found, try searching by comparing subtitle"
+msgstr ""
+
+#: src/Eplists.pm:795
+msgid "Only episode number found, try searching by comparing episode number"
+msgstr ""
+
+#: src/Eplists.pm:939 src/Eplists.pm:951
+msgid "Run"
+msgstr ""
+
+#: src/Eplists.pm:939 src/Eplists.pm:977
+msgid "Found title"
+msgstr ""
+
+#: src/Eplists.pm:939 src/Eplists.pm:940 src/Eplists.pm:951 src/Eplists.pm:952
+msgid "changed to"
+msgstr ""
+
+#: src/Eplists.pm:940 src/Eplists.pm:952
+msgid "is like the given"
+msgstr ""
+
+#: src/Eplists.pm:941 src/Eplists.pm:977 src/Eplists.pm:1006
+msgid "so using"
+msgstr ""
+
+#: src/Eplists.pm:951 src/VDREplistChecker.pl:242
+msgid "Warning"
+msgstr ""
+
+#: src/Eplists.pm:953
+msgid "but max distance is"
+msgstr ""
+
+#: src/Eplists.pm:977
+msgid "is equal to the given"
+msgstr ""
+
+#: src/Eplists.pm:1006
+msgid "is like"
+msgstr ""
+
+#: src/Eplists.pm:1006
+msgid "as subtitle"
+msgstr ""
+
+#: src/Eplists.pm:1039
+msgid "Writing changed episodes list to file"
+msgstr ""
+
+#: src/Eplists.pm:1040
+msgid "Cannot open file"
+msgstr ""
+
+#: src/Eplists.pm:1049
+msgid "Cannot write changes of episodes list to file"
+msgstr ""
+
+#: src/Eplists.pm:1049
+msgid "File is COMPLETE or PROTECTED"
+msgstr ""
+
+#: src/Eplists.pm:1091 src/Eplists.pm:1092
+msgid "Cannot find episode title in episode list"
+msgstr ""
+
+#: src/svdrpsend-ng.pl:96 src/svdrpsend-ng.pl~:97
+msgid "Error"
+msgstr ""
+
+#: src/svdrpsend-ng.pl:96 src/svdrpsend-ng.pl~:97
+msgid "Missing command"
+msgstr ""
+
+#: src/VDREplistChecker.pl:94
+msgid "Please provide an existing file or a path with parameter"
+msgstr ""
+
+#: src/VDREplistChecker.pl:110
+msgid "Cannot open input file"
+msgstr ""
+
+#: src/VDREplistChecker.pl:123
+msgid "Output file already exists! Specify -f if you want me to force overwriting it"
+msgstr ""
+
+#: src/VDREplistChecker.pl:206
+msgid "Syntax error: Please check the line, especially the season and episode numbering"
+msgstr ""
+
+#: src/VDREplistChecker.pl:223 src/VDREplistChecker.pl:226
+msgid "Skipping not needed line"
+msgstr ""
+
+#: src/VDREplistChecker.pl:232
+msgid "Skipping not needed empty line"
+msgstr ""
+
+#: src/VDREplistChecker.pl:242
+msgid "Skipping unknown line"
+msgstr ""
+
+#: src/VDREplistChecker.pl:274
+msgid "Cannot open output file"
+msgstr ""
+
+#: src/VDREplistChecker.pl:289
+msgid "File not accepted"
+msgstr ""
+
+#: src/VDREplistChecker.pl:289
+msgid "errors"
+msgstr ""
+
+#: src/VDREplistChecker.pl:289 src/VDREplistChecker.pl:291
+msgid "warnings"
+msgstr ""
+
+#: src/VDREplistChecker.pl:289 src/VDREplistChecker.pl:291
+#: src/VDREplistChecker.pl:293
+msgid "infos"
+msgstr ""
+
+#: src/VDREplistChecker.pl:291 src/VDREplistChecker.pl:293
+#: src/VDREplistChecker.pl:295
+msgid "File accepted"
+msgstr ""

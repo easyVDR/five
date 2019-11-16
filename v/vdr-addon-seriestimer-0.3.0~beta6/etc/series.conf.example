@@ -1,0 +1,28 @@
+#
+# Per series configuration file for VDRSeriesTimer.pl.
+# See "VDRSeriesTimer.pl --help" for help.
+#
+#UseShortTitle     = no
+#ShortTitle        = ""
+#ListLanguage      = "de,en"
+#Protected         = yes
+#FormatPrefix      = "%D~%T~"
+#Format            = "%sx%e - %n. %S"
+#FormatSpacer      = " / "
+#Fuzzy             = 0.20
+#SendEMail         = no
+#ChangeEPG         = no
+#KeepEPGSubtitle   = yes
+#MultiRegex        = "(?:\s*)(?:(\d+)\.\s+)?(.*?)\s*(?:\/|$)"
+#MultiDetection    = no
+#CompareSubtitle   = no
+#CompareEpisode    = no
+#EpisodeIncrement  = 0
+#Directory         = ""
+#Category          = ""
+#Genre             = ""
+#Verbose           = 0
+#LogFile           = ""
+#DoubleIfLongerAs  = 0
+#StartWithSeason   = 0
+#Fallback          = yes
