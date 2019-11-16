@@ -1,0 +1,24 @@
+Source: vdr-plugin-favorites
+Section: video
+Priority: extra
+Maintainer: Reiner Paulus <flex0r@gmx.net>
+Uploaders: Reiner Paulus <flex0r@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 2.2.0), pkg-config, gettext
+Standards-Version: 3.9.1
+Homepage: http://www.vdr-portal.de/board1-news/board2-vdr-news/109972-announce-vdr-favorites-0-0-2/
+
+Package: vdr-plugin-favorites
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Favorite Channels Plugin for VDR
+ Favorites is a VDR-Plugin that implements a favorite channels menu.
+ It makes it easy to recall (switch to) your favorite channels.
+
+Package: vdr-plugin-favorites-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-favorites (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-favorites
+ .
+ This package contains only the debugging symbols for vdr-plugin-favorites

@@ -1,0 +1,110 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@cadsoft.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <vdr@joachim-wilke.de>\n"
+"POT-Creation-Date: 2011-01-01 16:52+0100\n"
+"PO-Revision-Date: 2007-08-12 20:41+0200\n"
+"Last-Translator: Joachim Wilke <vdr@joachim-wilke.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "AltShift"
+msgstr "Alternative \"Heartbeat\"-Signalisierung"
+
+msgid "BackLight"
+msgstr "Hintergrundbeleuchtung"
+
+msgid "BackLightWait"
+msgstr ""
+
+msgid "Charmap"
+msgstr "Zeichenkodierung"
+
+msgid "FullCycle"
+msgstr "Zyklusdauer Statuszeile"
+
+msgid "HighClientPriority"
+msgstr ""
+
+msgid "LCDproc output"
+msgstr "LCDproc Ausgabe"
+
+msgid "Left channel"
+msgstr "Linker Kanal"
+
+msgid "Mute"
+msgstr "Stumm"
+
+msgid "No EPG info available."
+msgstr "Keine EPG Information verfügbar."
+
+msgid "NormalClientPriority"
+msgstr ""
+
+msgid "OutputNumber"
+msgstr "Zahl der Ausgänge am LCD"
+
+msgid "PrioWait"
+msgstr ""
+
+msgid "RECORDING"
+msgstr "AUFNAHME "
+
+msgid "Recording status"
+msgstr "Aufnahemstatus"
+
+msgid "Right channel"
+msgstr "Rechter Kanal"
+
+msgid "Scrollspeed"
+msgstr "Rollgeschwindigkeit"
+
+msgid "Scrollwait"
+msgstr "Zeit bis Text rollen"
+
+msgid "SetClientPriority"
+msgstr ""
+
+msgid "Show subtitle"
+msgstr "Untertitel anzeigen"
+
+msgid "Show time"
+msgstr "Zeit anzeigen"
+
+msgid "Stereo"
+msgstr "Stereo"
+
+msgid "TimeDateCycle"
+msgstr "davon Dauer Zeitanzeige"
+
+msgid "Volume "
+msgstr "Lautstärke "
+
+msgid "VolumeKeep"
+msgstr "Anzeigedauer Lautstärke"
+
+msgid "Waiting for EPG info."
+msgstr "Suche nach EPG Information."
+
+msgid "auto"
+msgstr "auto"
+
+msgid "detailed"
+msgstr "detailiert"
+
+msgid "off"
+msgstr "aus"
+
+msgid "on"
+msgstr "an"
+
+msgid "simple"
+msgstr "einfach"

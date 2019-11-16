@@ -1,0 +1,204 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Originaly written by:           Kai Tobias Burwieck <kai-at-burwieck.net>
+                                "Interpohl" <interpohl-at-vdr-portal.de>
+                                Onno Kreuzinger <o.kreuzinger-at-kreuzinger.biz>
+                                Andreas Brachold <vdr07 at deltab.de>
+
+Maintainer:                     Andreas Brachold <vdr07 at deltab.de>
+
+Project homepage:               http://projects.vdr-developer.org/projects/plg-image
+
+Some files are from the mp3/MPlayer Plugin.	Thanks to Stefan Hülswitt
+
+
+Required:
+-----------
+- fullfeatured dvb card
+- vdr 1.5.8+
+- plugin depends follow packages
+    + ffmpeg (tested with ffmpeg-0.4.8/ffmpeg-0.4.9pre1/ffmpeg-cvs)
+        http://ffmpeg.sourceforge.net
+    + for build you need 'pkg-config'
+        http://pkgconfig.freedesktop.org/
+    + libexif-0.6.13 ... 0.6.15 (see below for build without this)
+        http://libexif.sourceforge.net/
+    + for running your will need also package netpbm
+        http://netpbm.sourceforge.net/
+        netpbm 10.0+ (check for "anytopnm", if  it does not exist upgrade/install netpbm)
+    + not necessary but useful utils/file (file) for better imagetyp detection, 
+        this tools is used by script anytopnm
+        ftp://ftp.astron.com/pub/file
+
+Important Note:
+if tools are installed by source absolutely also for it provide that the 
+programs (anytopnm pnmscale pnmfile pnmcut pnmflip) are inside the search-path, 
+otherwise adapt the variable "PATH"  within the file imageplugin.sh.
+
+Install:
+------------
+Install the plugin part as usual (see vdr docs if you not know already).
+You will need a full source tree from vdr, to build this plugins.
+copy source to below defined folder.
+
+    cd $VDRSOURCE/PLUGINS/src
+    tar -xzvf vdr-image-x.x.x.tgz
+    ln -s image-x.x.x image
+
+Compile depends package ffmpeg, libexif. later for running your 
+need netpbm for image conversion.
+
+ build ffmpeg
+    $ configure --enable-shared && make && make install
+
+ build libexif 
+    $ configure && make && make install
+
+ now compile plugin
+
+    $ cd $VDRSOURCE
+    $ make plugins
+
+ or if you need, defined a ffmpeg source folder ¹) 
+ this essential if build ffmpeg without "--enable-shared"
+
+    $ make plugins FFMDIR=/usr/src/ffmpeg-cvs
+
+ compile without swscaler to convert images via ffmpeg
+   (WITHOUT_SWSCALER=1 use img_convert, needed for older versions from ffmpeg)
+    
+    $ make plugins WITHOUT_SWSCALER=1
+
+ compile without libexif ¹)
+    
+    $ make plugins WITHOUT_LIBEXIF=1
+
+ to install plugin
+
+    $ make plugins-install
+
+
+¹) Build options can also defined inside $VDRSOURCE/Make.config
+
+
+
+In the ./examples directory you can find a sample file for
+imagesources.conf, change this file if needed and place it in
+the plugins folder in your config folder (the video folder by default).
+
+The syntax is :
+<path>;<name in vdr menu>;<0/1>;<pattern to filter file display>
+
+examples:
+/media/cdrom;CDROM;1;*.jpg *.jpeg *.png *.tif* *.bmp
+/archive/photos/holiday;Holiday pictures;0;DSC10*.jpg
+
+0/1 is for media that need to be mounted (uses the same mount.sh
+as mplayer/mp3 plugin).
+
+
+The file ./scripts/imageplugin.sh could go to /usr/bin, or any other folder in your path.
+You can also use the plugin options (vdr -help after installing the plugin) to specify
+the path's to the files, if you don't want to those files in you system.
+[ e.g.: ./vdr '-Pimage -C /usr/local/bin/imageplugin.sh -m /usr/local/bin/mount.sh' ...]
+
+All plugin options :
+
+  -m CMD,   --mount=CMD    use CMD to mount/unmount/eject image sources
+                           (default: "mount.sh")
+  -C CMD,   --convert=CMD  use CMD when converting images
+                           (default: "imageplugin.sh")
+  -c PATH,  --config=PATH  to specify directory of configuration data
+                           relative to VDR Plugin configuration directory
+                           (default: "" )
+
+
+Manual:
+------------
+Start the plugin, than select a file (or folder) and press OK.
+
+
+At all modi
+   OK          toggle OSD informations
+   Play/Pause  begin/halt slide
+   Stop/Blue   stop plugin
+ 
+While watching pictures
+   Back        stop plugin
+   Red         open menu with imagecommands
+   Info        show exif informations 
+ 
+   Left        previous picture
+   Right       next picture
+   Down        jump three pictures back
+   Up          jump three pictures forward
+
+   7           jump five pictures back
+   9           jump five pictures forward
+ 
+   0           view original image
+   1           Rotate 90 Grad counter clockwise
+   3           Rotate 90 Grad clockwise direction
+ 
+   4 	       slide show - decrease the time (seconds) each picture shows
+   6 	       slide show - increase the time (seconds) each picture shows
+   5           Zoom inside image
+   8           Zoom outside image and call Jumpmenu
+ 
+'Zoom menu'
+   Back        Zoom outside image 
+   Red         open menu with imagecommands
+   Info        show exif informations 
+ 
+   Left        scroll zoomedframe inside picture to left
+   Right       scroll zoomedframe inside picture to right
+   Down        scroll zoomedframe inside picture to left
+   Up          scroll zoomedframe inside picture to up
+ 
+   0           view original image
+   5           Zoom inside image
+   8           Zoom outside image 
+  
+'Jump menu' (3x3 preview):
+   Back        view original image
+  
+   Left        previous picture group (go 9 pictures back)
+   Right       next picture group (go to the next 9 pictures)
+  
+   0           view original image
+   1 ... 9     pick the corresponding image
+
+(thx for the english readme/keymapping description to Kai Steinbach)
+
+image commands
+------------
+The file imagecmds.conf can be used to define commands that can be applied to the 
+currently viewed image. The syntax is exactly the same as described for the 
+file commands.conf, see "man 5 vdr". If only one instruction is indicated, 
+the filename of the image will be appended to the command string, 
+separated by a blank and enclosed in single quotes.
+
+Format> Menutext ?: command %s
+?  - Confirmation request (optionally)
+%s - placeholder for filename (optionally)
+
+See for a sample at examples/imagecmds.conf .
+
+
+Diagnosis of the scripts and installation
+-----------------------------------------
+If the script does not work like it should, start the Script to test from the console.
+
+imageplugin.sh [infile] [outfile] [WIDTH] [HEIGHT] [ZOOMFACTOR] [LEFTPOS] [TOPPOS] {FLIPCMD}
+e.g. imageplugin.sh myimage.png outfile.pnm 720 576 0 0 0 original
+
+and please examine the produced syslog messages at /var/log/message or messages on console
+
+if that does not help repeats the procedure with > export DEBUG=yes;
+
+export DEBUG=yes;imageplugin.sh myimage.png outfile.pnm 720 576 0 0 0 original
+
+and examine the expenditure on the screendump
+
+*) if script work for your, it's could reduce the message on syslog, 
+if your change on imageplugin.sh inside from VERBOSE=yes to VERBOSE=no

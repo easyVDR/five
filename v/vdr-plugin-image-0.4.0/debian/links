@@ -1,0 +1,2 @@
+etc/vdr/plugins/imagesources.conf var/lib/vdr/plugins/imagesources.conf
+etc/vdr/plugins/imagecmds.conf    var/lib/vdr/plugins/imagecmds.conf

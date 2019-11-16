@@ -1,0 +1,140 @@
+# translation of de_DE.po to
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+#
+# Klaus Schmidinger <kls@cadsoft.de>, 2000.
+# Holger Brunn <filebrowser@vdr.nasenbaeren.net>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: de_DE\n"
+"Report-Msgid-Bugs-To: <filebrowser@vdr.nasenbaeren.net>\n"
+"POT-Creation-Date: 2010-09-15 21:47+0200\n"
+"PO-Revision-Date: 2008-04-09 14:08+0100\n"
+"Last-Translator: Bruno ROUSSEL <bruno.roussel@free.fr>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Other"
+msgstr "Autre"
+
+msgid "Other Commands"
+msgstr "Autres Commande"
+
+msgid "Mark"
+msgstr "Marquer"
+
+msgid "Mark all"
+msgstr "Tout Marquer"
+
+msgid "Unmark"
+msgstr "Démarquer"
+
+msgid "Unm. all"
+msgstr "Tout Démarquer"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Abort"
+msgstr "Annuler"
+
+msgid "New"
+msgstr "Nouveau"
+
+msgid "New file"
+msgstr "Nouveau Fichier"
+
+msgid "Threads"
+msgstr "Processus"
+
+#, c-format
+msgid "Threads (%d of %d running)"
+msgstr ""
+
+msgid "Sources"
+msgstr "Sources"
+
+msgid "View"
+msgstr "Voir"
+
+msgid "Play"
+msgstr "Jouer"
+
+msgid "Plugin to browse through files and execute actions on them"
+msgstr ""
+
+msgid "Filebrowser"
+msgstr "Gestionnaire de fichier"
+
+msgid "Access code needed"
+msgstr "Code d'accès nécéssaire"
+
+msgid "Code"
+msgstr "Code"
+
+msgid "Wrong code!"
+msgstr "Mauvais Code !"
+
+msgid "Select Destination"
+msgstr "Sélectionner la destination"
+
+msgid "Failed to load directory"
+msgstr "Erreur de chargement du répertoire"
+
+msgid "No Updates"
+msgstr "Pas de mise à jour"
+
+msgid "Updates"
+msgstr "Mise à jour"
+
+msgid "Resume"
+msgstr "Reprendre"
+
+msgid "Pause"
+msgstr "Pause"
+
+msgid "Kill"
+msgstr "Arrêter"
+
+msgid "Show hidden files"
+msgstr "Voir les fichiers cachés"
+
+msgid "Show full path in title"
+msgstr "Voir le chemin complet dans le titre"
+
+msgid "Running threads"
+msgstr "Processus en cours"
+
+msgid "Kill?"
+msgstr "Arrêter ?"
+
+msgid "Remove"
+msgstr "Supprimer"
+
+msgid "Active"
+msgstr "Actif"
+
+msgid "Finished"
+msgstr "Fini"
+
+msgid "Paused"
+msgstr "Pause"
+
+msgid "Running"
+msgstr "En cours"
+
+msgid "The command has requested additional input"
+msgstr "La commande nécéssite des paramètres supplémentaires"
+
+msgid "Input"
+msgstr "Entrée"
+
+msgid "Password"
+msgstr "Password"
+
+msgid " to "
+msgstr " vers"

@@ -1,0 +1,93 @@
+#!/bin/sh /usr/share/dpatch/dpatch-run
+
+## 02_Makefile-nosilent.dpatch by Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Removes output-suppresions from the Makefiles
+
+@DPATCH@
+diff -urNad vdr-plugin-games-0.6.3~/Makefile vdr-plugin-games-0.6.3/Makefile
+--- vdr-plugin-games-0.6.3~/Makefile	2006-04-30 10:55:23.000000000 +0200
++++ vdr-plugin-games-0.6.3/Makefile	2006-05-02 22:38:26.000000000 +0200
+@@ -57,18 +57,18 @@
+ all:
+ 	@echo
+ 	@echo -n "Building $(TARGET) "
+-	@for GAME in $(GAMES); do cd $$GAME; make -s all; cd -; done
++	for GAME in $(GAMES); do cd $$GAME; make all; cd -; done
+ 	@rm -f $(TARGET)
+-	@make -s $(TARGET)
++	@make $(TARGET)
+ 	@echo " done"
+ 	@echo
+ 
+ libvdr-games.so: $(OBJS)
+-	@g++ $(OBJS) $(LFLAGS) $(ARCHIVES) -o $@
++	g++ $(OBJS) $(LFLAGS) $(ARCHIVES) -o $@
+ 	@cp $@ $(LIBDIR)/$@.$(APIVERSION)
+ 
+ sdl-games: $(OBJS)
+-	@g++ $(OBJS) $(LFLAGS) $(ARCHIVES) -o $@
++	g++ $(OBJS) $(LFLAGS) $(ARCHIVES) -o $@
+ 
+ install: all
+ 	@cp $(LIBDIR)/libvdr-games.so.$(VDRVER) /mnt/vdr/lib/plugins/
+@@ -86,11 +86,11 @@
+ clean:
+ 	@echo
+ 	@echo -n "Cleaning source tree "
+-	@for GAME in $(GAMES); do cd $$GAME; make -s clean; cd -; done
++	@for GAME in $(GAMES); do cd $$GAME; make clean; cd -; done
+ 	@rm -f *.o *.a $(TARGET)
+ 	@echo " done"
+ 	@echo
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	@$(COMPILE.cpp) $(DEFINES) $(CFLAGS) -c $< $(OUTPUT_OPTION)
++	$(COMPILE.cpp) $(DEFINES) $(CFLAGS) -c $< $(OUTPUT_OPTION)
+diff -urNad vdr-plugin-games-0.6.3~/minesweeper/Makefile vdr-plugin-games-0.6.3/minesweeper/Makefile
+--- vdr-plugin-games-0.6.3~/minesweeper/Makefile	2006-05-02 22:36:12.000000000 +0200
++++ vdr-plugin-games-0.6.3/minesweeper/Makefile	2006-05-02 22:36:12.000000000 +0200
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	@g++ $(CFLAGS) -c $<
++	g++ $(CFLAGS) -c $<
+diff -urNad vdr-plugin-games-0.6.3~/snake/Makefile vdr-plugin-games-0.6.3/snake/Makefile
+--- vdr-plugin-games-0.6.3~/snake/Makefile	2006-05-02 22:36:12.000000000 +0200
++++ vdr-plugin-games-0.6.3/snake/Makefile	2006-05-02 22:36:12.000000000 +0200
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	@g++ $(CFLAGS) -c $<
++	g++ $(CFLAGS) -c $<
+diff -urNad vdr-plugin-games-0.6.3~/tetris/Makefile vdr-plugin-games-0.6.3/tetris/Makefile
+--- vdr-plugin-games-0.6.3~/tetris/Makefile	2006-05-02 22:36:12.000000000 +0200
++++ vdr-plugin-games-0.6.3/tetris/Makefile	2006-05-02 22:36:12.000000000 +0200
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	@g++ $(CFLAGS) -c $<
++	g++ $(CFLAGS) -c $<
+diff -urNad vdr-plugin-games-0.6.3~/tictactoe/Makefile vdr-plugin-games-0.6.3/tictactoe/Makefile
+--- vdr-plugin-games-0.6.3~/tictactoe/Makefile	2006-05-02 22:36:12.000000000 +0200
++++ vdr-plugin-games-0.6.3/tictactoe/Makefile	2006-05-02 22:36:12.000000000 +0200
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	@g++ $(CFLAGS) -c $<
++	g++ $(CFLAGS) -c $<
+diff -urNad vdr-plugin-games-0.6.3~/tron/Makefile vdr-plugin-games-0.6.3/tron/Makefile
+--- vdr-plugin-games-0.6.3~/tron/Makefile	2006-05-02 22:36:12.000000000 +0200
++++ vdr-plugin-games-0.6.3/tron/Makefile	2006-05-02 22:36:12.000000000 +0200
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	@g++ $(CFLAGS) -c $<
++	g++ $(CFLAGS) -c $<

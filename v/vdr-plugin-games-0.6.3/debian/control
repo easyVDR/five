@@ -1,0 +1,17 @@
+Source: vdr-plugin-games
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.20)
+Standards-Version: 3.9.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-games/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-games/trunk/
+Homepage: http://1541.org/vdr-games/
+
+Package: vdr-plugin-games
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin providing OSD games like tetris, snake and more
+ This plugin for VDR allows one to play Tetris, TicTacToe, Tron
+ and Snake via VDR's OSD (On Screen Display).

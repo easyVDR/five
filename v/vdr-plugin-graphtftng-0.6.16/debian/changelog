@@ -1,0 +1,1116 @@
+vdr-plugin-graphtftng (0.6.16-1easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 14:49:01 +0100
+
+vdr-plugin-graphtftng (0.6.16-1easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Jan 2019 01:25:19 +0100
+
+vdr-plugin-graphtftng (0.6.16-1easyVDR4~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 20:18:04 +0100
+
+vdr-plugin-graphtftng (0.6.16-1easyVDR3~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:34:13 +0100
+
+vdr-plugin-graphtftng (0.6.16-1easyVDR2~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 29 Jun 2017 17:41:49 +0200
+
+vdr-plugin-graphtftng (0.6.16-1easyVDR1~trusty) trusty; urgency=high
+
+  * fix graphtft-fe start script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 03 Mar 2017 22:31:09 +0100
+
+vdr-plugin-graphtftng (0.6.16-1easyVDR0~trusty) trusty; urgency=high
+
+  * remove new x-check
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 19 Feb 2017 15:22:28 +0100
+
+vdr-plugin-graphtftng (0.6.16-0easyVDR2~trusty) trusty; urgency=high
+
+  * fix patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 18 Feb 2017 22:03:10 +0100
+
+vdr-plugin-graphtftng (0.6.16-0easyVDR1~trusty) trusty; urgency=high
+
+  * added new x-check
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 18 Feb 2017 21:24:09 +0100
+ 
+vdr-plugin-graphtftng (0.6.16-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:25e7c4a - change: porting to newer libavutil and g++ 6.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 14 Feb 2017 22:24:14 +0100
+
+vdr-plugin-graphtftng (0.6.14-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 25 May 2016 23:26:17 +0200
+
+vdr-plugin-graphtftng (0.6.14-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 24 May 2016 22:42:47 +0200
+
+vdr-plugin-graphtftng (0.6.14-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:3163f7b - bugfix: Fixed timer state handling for epg2vdr timer
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 16 May 2016 23:15:15 +0200
+
+vdr-plugin-graphtftng (0.6.10-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 17 Apr 2016 17:49:53 +0200
+
+vdr-plugin-graphtftng (0.6.10-2easyVDR5~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 15 Apr 2016 20:38:31 +0200
+
+vdr-plugin-graphtftng (0.6.10-2easyVDR4~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 15 Apr 2016 01:43:44 +0200
+
+vdr-plugin-graphtftng (0.6.10-2easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 15 Apr 2016 01:31:44 +0200
+
+vdr-plugin-graphtftng (0.6.10-2easyVDR2~trusty) trusty; urgency=high
+
+  * postinst
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Apr 2016 01:03:28 +0200
+
+vdr-plugin-graphtftng (0.6.10-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:46:34 +0200
+
+vdr-plugin-graphtftng (0.6.10-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 24 Feb 2016 00:43:20 +0100
+
+vdr-plugin-graphtftng (0.6.10-1easyVDR4~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 22 Feb 2016 21:32:55 +0100
+
+vdr-plugin-graphtftng (0.6.10-1easyVDR3~trust) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 21 Feb 2016 23:29:37 +0100
+
+vdr-plugin-graphtftng (0.6.10-1easyVDR2~trusty) trusty; urgency=high
+
+  * added new themes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 19 Feb 2016 22:11:33 +0100
+
+vdr-plugin-graphtftng (0.6.10-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Feb 2016 23:31:42 +0100
+
+vdr-plugin-graphtftng (0.6.10-1easyVDR0~trusty) trusty; urgency=high
+
+  * added nOpacity-themes patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 17 Feb 2016 23:44:39 +0100
+
+vdr-plugin-graphtftng (0.6.10-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * added startscript patch
+  * added touch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Feb 2016 22:37:18 +0100
+
+vdr-plugin-graphtftng (0.6.9-0easyVDR1~trusty) trusty; urgency=high
+
+  * added touch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 04 Feb 2016 20:51:14 +0100
+
+vdr-plugin-graphtftng (0.6.9-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 04 Feb 2016 18:45:30 +0100
+
+vdr-plugin-graphtftng (0.6.4+git20160201.1003-1easyVDR0~trusty) trusty; urgency=high
+
+  * add start-script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 01 Feb 2016 14:54:46 +0100
+
+vdr-plugin-graphtftng (0.6.4+git20160201.1003-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version 0.6.4
+  * bugfix: Fixed patch für vdr 2.2.0 and 2.3.1 (no recording data was displayed)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 01 Feb 2016 14:30:17 +0100
+
+vdr-plugin-graphtftng (0.6.2+git20151225-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Dec 2015 18:07:34 +0100
+
+vdr-plugin-graphtftng (0.6.2+git20151225-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Dec 2015 17:55:00 +0100
+
+vdr-plugin-graphtftng (0.6.2+git20151225-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * commit:886db923 - scrapers banner and poster support
+  * added depends ffmpeg-opti
+  * add touch & old-patch
+  * add start-script
+  * add disable_iso2utf on setup  
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Dec 2015 17:33:12 +0100
+
+vdr-plugin-graphtftng (0.5.4+git20151122-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:886db923 - scrapers banner and poster support
+  * added depends ffmpeg-opti
+  * add touch & old-patch
+  * add start-script
+  * add disable_iso2utf on setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Nov 2015 22:58:00 +0100
+
+vdr-plugin-graphtftng (0.4.14+git20150226-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:12:51 +0200
+
+vdr-plugin-graphtftng (0.4.14+git20150226-1easyVDR1~trusty) trusty; urgency=high
+
+  * correct path
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Mar 2015 13:23:32 +0100
+
+vdr-plugin-graphtftng (0.4.14+git20150226-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 03:59:16 +0100
+
+vdr-plugin-graphtftng (0.4.14+git20150226-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * add touch
+  * add start-script
+  * add disable_iso2utf on setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 02:58:20 +0100
+
+vdr-plugin-graphtftng (0.4.6+git20131231-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 02:49:15 +0100
+
+vdr-plugin-graphtftng (0.4.6+git20131231-1easyVDR2~trusty) trusty; urgency=high
+
+  * symlink correct vdr version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 19 Oct 2014 01:42:00 +0200
+
+vdr-plugin-graphtftng (0.4.6+git20131231-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:43:36 +0200
+
+vdr-plugin-graphtftng (0.4.6+git20131231-1easyVDR0~trusty) trusty; urgency=high
+
+  * add libs to graphtft-fe Makefile
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Feb 2014 23:47:01 +0100
+
+vdr-plugin-graphtftng (0.4.6+git20131231-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyvdr
+  * add touch
+  * add start-script
+  * add disable_iso2utf on setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Feb 2014 03:38:04 +0100
+
+vdr-plugin-graphtftng (0.4.6+git20131231-0yavdr0~trusty) trusty; urgency=medium
+
+  * build for trusty 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 13:54:51 +0100
+
+vdr-plugin-graphtftng (0.4.6+git20131231-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 10:09:12 +0100
+
+vdr-plugin-graphtftng (0.4.5-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 11 Dec 2013 14:14:23 +0100
+
+vdr-plugin-graphtftng (0.4.4+git201312101439-2yavdr0~precise) precise; urgency=medium
+
+  * update patch 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 10 Dec 2013 16:12:40 +0100
+
+vdr-plugin-graphtftng (0.4.4+git201312101439-1yavdr0~precise) precise; urgency=medium
+
+  * test fix 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 10 Dec 2013 15:40:25 +0100
+
+vdr-plugin-graphtftng (0.4.4+git201312101439-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 10 Dec 2013 14:38:21 +0100
+
+vdr-plugin-graphtftng (0.4.4+git20131210-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 10 Dec 2013 14:03:26 +0100
+
+vdr-plugin-graphtftng (0.4.1-5yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 27 Oct 2013 09:03:08 +0100
+
+vdr-plugin-graphtftng (0.4.1-5yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:36:25 +0200
+
+vdr-plugin-graphtftng (0.4.1-5yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:05:09 +0200
+
+vdr-plugin-graphtftng (0.4.1-5yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 00:59:06 +0200
+
+vdr-plugin-graphtftng (0.4.1-5yavdr0~precise) precise; urgency=medium
+
+  * update version comparison 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 17:42:17 +0200
+
+vdr-plugin-graphtftng (0.4.1-4yavdr0~precise) precise; urgency=medium
+
+  * fix debian/control 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 17:23:26 +0200
+
+vdr-plugin-graphtftng (0.4.1-3yavdr0~precise) precise; urgency=medium
+
+  * add theme dir to postinst
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 16:59:59 +0200
+
+vdr-plugin-graphtftng (0.4.1-2yavdr0~precise) precise; urgency=medium
+
+  * add breaks and replaces 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 16:41:08 +0200
+
+vdr-plugin-graphtftng (0.4.1-1yavdr0~precise) precise; urgency=medium
+
+  * fix link 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 16:30:20 +0200
+
+vdr-plugin-graphtftng (0.4.1-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 16:24:38 +0200
+
+vdr-plugin-graphtftng (0.4.0-5yavdr0~precise) precise; urgency=medium
+
+  * fix paths 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 15:53:45 +0200
+
+vdr-plugin-graphtftng (0.4.0-4yavdr0~precise) precise; urgency=medium
+
+  * vdr-tft-standard dependency for dummy package
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 15:28:17 +0200
+
+vdr-plugin-graphtftng (0.4.0-3yavdr0~precise) precise; urgency=medium
+
+  * add dummy package 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 15:17:13 +0200
+
+vdr-plugin-graphtftng (0.4.0-2yavdr0~precise) precise; urgency=medium
+
+  * add conflict 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 14:56:59 +0200
+
+vdr-plugin-graphtftng (0.4.0-1yavdr0~precise) precise; urgency=medium
+
+  * fix path 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 14:54:35 +0200
+
+vdr-plugin-graphtftng (0.4.0-0yavdr1~precise) precise; urgency=medium
+
+  [ Lars Hanisch ]
+  * rebuild
+
+  [ Alexander Grothe ]
+  * rename 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 14:48:36 +0200
+
+vdr-plugin-graphtft (0.4.0-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 13 May 2013 22:53:15 +0200
+
+vdr-plugin-graphtft (0.3.10-0yavdr0~precise) precise; urgency=medium
+
+  * ne wupstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Mon, 15 Apr 2013 14:46:40 +0200
+
+vdr-plugin-graphtft (0.3.6-3yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:48:08 +0200
+
+vdr-plugin-graphtft (0.3.6-3yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:48:38 +0100
+
+vdr-plugin-graphtft (0.3.6-3yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 00:59:39 +0100
+
+vdr-plugin-graphtft (0.3.6-3yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:49:33 +0100
+
+vdr-plugin-graphtft (0.3.6-3yavdr1~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:21:44 +0100
+
+vdr-plugin-graphtft (0.3.6-3yavdr0~precise) precise; urgency=medium
+
+  * refactored patch for vdr 1.7.33
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 06 Mar 2013 20:32:01 +0100
+
+vdr-plugin-graphtft (0.3.6-2yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:25:05 +0100
+
+vdr-plugin-graphtft (0.3.6-2yavdr0~precise) precise; urgency=medium
+
+  * add patch for vdr 1.7.33
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 18:49:48 +0100
+
+vdr-plugin-graphtft (0.3.6-1yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:05:59 +0100
+
+vdr-plugin-graphtft (0.3.6-1yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:52:55 +0100
+
+vdr-plugin-graphtft (0.3.6-1yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:04:27 +0100
+
+vdr-plugin-graphtft (0.3.6-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:35:31 +0100
+
+vdr-plugin-graphtft (0.3.6-1yavdr0~precise) precise; urgency=medium
+
+  * create dbg-package
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 14 Oct 2012 10:56:47 +0200
+
+vdr-plugin-graphtft (0.3.6-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:15:48 +0200
+
+vdr-plugin-graphtft (0.3.6-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Thu, 27 Sep 2012 16:08:53 +0200
+
+vdr-plugin-graphtft (0.3.5-0yavdr2~precise) precise; urgency=medium
+
+  * added gtft-0.35-0.36 patch
+
+ -- Alexander Grothe <alexander@XPSM1330>  Thu, 27 Sep 2012 14:49:15 +0200
+
+vdr-plugin-graphtft (0.3.5-0yavdr1~precise) precise; urgency=medium
+
+  * added tempview.patch to allow temporary VIEW changes 
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Wed, 26 Sep 2012 22:41:22 +0200
+
+vdr-plugin-graphtft (0.3.5-0yavdr0~precise) precise; urgency=medium
+
+  * experimental build with non-tv-mode
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 26 Sep 2012 12:35:33 +0200
+
+vdr-plugin-graphtft (0.3.4+urknall-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 06 Sep 2012 00:06:37 +0200
+
+vdr-plugin-graphtft (0.3.4+urknall-0yavdr1~precise) precise; urgency=medium
+
+  * Fix recording-api-fixes.patch
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sat, 12 May 2012 19:41:37 +0200
+
+vdr-plugin-graphtft (0.3.4+urknall-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream version 0.3.4 (this time really)
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sat, 12 May 2012 19:08:33 +0200
+
+vdr-plugin-graphtft (0.3.4+svn20120509.1627-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 10 May 2012 17:17:52 +0200
+
+vdr-plugin-graphtft (0.3.4-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream release
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 06 May 2012 11:11:05 +0200
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20100331.2200-27yavdr0~precise) precise; urgency=medium
+
+  * added recording-api-fixes.patch
+  * added remove-i18n.patch
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 26 Mar 2012 21:43:54 +0200
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20100331.2200-26yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:23:03 +0200
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20100331.2200-26yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:15:02 +0100
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20100331.2200-26yavdr0~precise) precise; urgency=medium
+
+  * Added 10_graphtft_ChannelSwitch.patch
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:13:39 +0100
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20100331.2200-4yavdr1) lucid; urgency=low
+
+  * added ffmpeg patches
+  * source/format 3.0
+  * Bumped standards version to 3.8.4
+  * ${misc:Depends} vdr-plugin-graphtft, graphtft-fe 
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 14 Jun 2010 23:07:52 +0200
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20090728.2153-5tvt1) karmic; urgency=low
+
+  * added lost graphtft-fe frontend
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 29 Dec 2009 11:59:11 +0100
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20090728.2153-4tvt1) karmic; urgency=low
+
+  * updated ABI version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 25 Dec 2009 21:03:06 +0100
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20090728.2153-3tvt1) karmic; urgency=low
+
+  * rebuild for vdr 1.7.10
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 24 Nov 2009 15:47:08 +0100
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20090728.2153-2ubuntu1) karmic; urgency=low
+
+  * ubuntu karmic 
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 20 Oct 2009 13:44:07 +0200
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20090728.2153-2) experimental; urgency=low
+
+  * Added 03_gcc44.dpatch
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 10 Oct 2009 23:53:59 +0200
+
+vdr-plugin-graphtft (0.3.2~rc2+svn20090728.2153-1) experimental; urgency=low
+
+  * New Upstream Snapshot
+  * Added get-orig-source target to debian/rules to download the newest
+    svn-snapshot
+  * Updated 02_ffmpeg.dpatch
+  * Build-Depend on libmagick++9-dev | libmagick++-dev
+  * Bumped standards version to 3.8.1
+  * Changed section to "video"
+  * Changed Maintainer to Debian VDR Team
+  * Updated debian/copyright
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 28 Jul 2009 23:54:39 +0200
+
+vdr-plugin-graphtft (0.3.2~rc2-1) experimental; urgency=low
+
+  * New upstream release
+  * Updated 02_ffmpeg.dpatch
+  * Updated debian/watch to take care of rc versions
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 03 May 2009 22:08:49 +0200
+
+vdr-plugin-graphtft (0.2.2-1) experimental; urgency=low
+
+  * New upstream release
+  * Removed 03_disable-x-frontend.dpatch
+  * Removed 04_gcc43.dpatch
+  * Updated 02_ffmpeg.dpatch
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 23 Nov 2008 18:21:01 +0100
+
+vdr-plugin-graphtft (0.1.17~alpha-4) experimental; urgency=low
+
+  * Updated 02_ffmpeg.dpatch to support newer ffmpeg
+  * Added 04_gcc43.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 27 Jul 2008 16:04:51 +0200
+
+vdr-plugin-graphtft (0.1.17~alpha-3) experimental; urgency=low
+
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Jul 2008 15:53:16 +0200
+
+vdr-plugin-graphtft (0.1.17~alpha-2) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 00:56:10 +0200
+
+vdr-plugin-graphtft (0.1.17~alpha-1) experimental; urgency=low
+
+  * New upstream release
+  * Using COMPAT=5 now
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 05 Apr 2008 16:30:24 +0200
+
+vdr-plugin-graphtft (0.1.6.alpha-10) experimental; urgency=low
+
+  * Build-Depend on vdr-dev (>= 1.6.0)
+  * Bumped Standards-Version to 3.7.3
+  * Added Homepage field to debian/control
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 24 Mar 2008 20:14:11 +0100
+
+vdr-plugin-graphtft (0.1.6.alpha-9) experimental; urgency=low
+
+  * Force rebuild for vdr 1.5.15
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:32:47 +0100
+
+vdr-plugin-graphtft (0.1.6.alpha-8) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:46 +0100
+
+vdr-plugin-graphtft (0.1.6.alpha-7) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:41 +0100
+
+vdr-plugin-graphtft (0.1.6.alpha-6) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:31 +0100
+
+vdr-plugin-graphtft (0.1.6.alpha-5) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:51:11 +0200
+
+vdr-plugin-graphtft (0.1.6.alpha-4) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 28 Aug 2007 01:01:22 +0200
+
+vdr-plugin-graphtft (0.1.6.alpha-3) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:23 +0200
+
+vdr-plugin-graphtft (0.1.6.alpha-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:33 +0200
+
+vdr-plugin-graphtft (0.1.6.alpha-1) unstable; urgency=low
+
+  * New upstream release
+  * Added 03_disable-x-frontend.dpatch to disable X frontend
+
+ -- Tobias Grimm <tg@e-tobi.net>  Thu, 12 Jul 2007 21:46:05 +0200
+
+vdr-plugin-graphtft (0.1.5.alpha-1) unstable; urgency=low
+
+  * New upstream release
+  * Dropped 03_disable-softmpeg.dpatch
+  * Dropped 91_graphtft-0.0.16-1.5.0.dpatch
+  * Depend on libgtop2-dev
+  * Removed version from Build-Dependancy to dpatch - even Sarge has the
+    required version
+  * debian/copyright:
+    - Added full GPL license header
+    - Added copyright years and listed all copyright holders
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 10 Jul 2007 22:09:27 +0200
+
+vdr-plugin-graphtft (0.0.16-4) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.5
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:02:58 +0200
+
+vdr-plugin-graphtft (0.0.16-3) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:01:04 +0200
+
+vdr-plugin-graphtft (0.0.16-2) unstable; urgency=low
+
+  * Added build-dependency to libmagick++9-dev | libmagick++6-dev
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 23 Mar 2007 22:54:50 +0100
+
+vdr-plugin-graphtft (0.0.16-1) unstable; urgency=low
+
+  [ Tobias Grimm ]
+  * New upstream release
+
+  [ Thomas Günther ]
+  * Release for vdrdevel 1.5.1
+  * Added 91_graphtft-0.0.16-1.5.0.dpatch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:31 +0100
+
+vdr-plugin-graphtft (0.0.15-1) unstable; urgency=low
+
+  * Removed 90_APIVERSION.dpatch
+  * Removed 01_build.dpatch
+  * Removed 03_frame_rate.dpatch
+  * Removed 04_g++4.1.dpatch
+  * Removed 10_graphTFT-0.0.8-addon-TftUpdate.dpatch
+  * Removed 11_graphtft-0.0.8-fix-channelnames.dpatch
+  * Removed 12_graphtft-0.0.8-widht.dpatch
+  * Removed 13_graphtft-0.0.8-1.3.38.dpatch
+  * Removed 14_usedosd-bugfix.dpatch
+  * Remoced 15_ffmpeg-0.4.9.dpatch
+  * Updated 02_ffmpeg.dpatch
+  * Changed new upstream location in debian/watch and debian/copyright
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 26 Jan 2007 21:59:03 +0100
+
+vdr-plugin-graphtft (0.0.8-38) unstable; urgency=low
+
+  [ Thomas Günther ]
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 19:34:05 +0100
+
+vdr-plugin-graphtft (0.0.8-37) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 11:45:39 +0100
+
+vdr-plugin-graphtft (0.0.8-36) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 23 Sep 2006 20:32:56 +0200
+
+vdr-plugin-graphtft (0.0.8-35) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.2-1)
+  * Bumped Standards-Version to 3.7.2
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 27 Aug 2006 14:39:30 +0200
+
+vdr-plugin-graphtft (0.0.8-34) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.1-1)
+  * Tobias Grimm <tg@e-tobi.net>
+    - Added 04_g++4.1.dpatch to fix some g++/gcc 4.1 issues
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Fri, 16 Jun 2006 21:32:25 +0200
+
+vdr-plugin-graphtft (0.0.8-33) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Added 14_usedosd-bugfix.dpatch (fixes upstream bug)
+    - Added 15_ffmpeg-0.4.9 (fixes bug with ffmpeg 0.4.9)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 17 May 2006 22:56:48 +0200
+
+vdr-plugin-graphtft (0.0.8-32) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Increased build dependecy of libavcodec-dev to >= 0.cvs20060329-4
+    - Modified 02_ffmpeg.dpatch to not use --plugin-libs anymore, because
+      libavcodec is now linked dynamically
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sat, 13 May 2006 20:50:54 +0200
+
+vdr-plugin-graphtft (0.0.8-31) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.0-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  3 May 2006 23:06:51 +0200
+
+vdr-plugin-graphtft (0.0.8-30) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.48-1)
+    - Added 90_APIVERSION.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 24 Apr 2006 22:08:31 +0200
+
+vdr-plugin-graphtft (0.0.8-29) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.46-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 12 Apr 2006 22:14:04 +0200
+
+vdr-plugin-graphtft (0.0.8-28) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.45-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 27 Mar 2006 21:15:08 +0200
+
+vdr-plugin-graphtft (0.0.8-27) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.41-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 Jan 2006 01:40:49 +0100
+
+vdr-plugin-graphtft (0.0.8-26) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr-dev (>=1.3.40-1)
+  * Thomas Günther <tom@toms-cafe.de>
+    - Added 13_graphtft-0.0.8-1.3.38.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 25 Jan 2006 23:48:32 +0100
+
+vdr-plugin-graphtft (0.0.8-25) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.37-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat,  3 Dec 2005 20:56:24 +0100
+
+vdr-plugin-graphtft (0.0.8-24) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - Added 12_graphtft-0.0.8-widht.dpatch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 24 Nov 2005 23:16:24 +0100
+
+vdr-plugin-graphtft (0.0.8-23) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.33-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  2 Oct 2005 10:33:52 +0200
+
+vdr-plugin-graphtft (0.0.8-22) unstable; urgency=low
+
+  * Depend on libavcodec-dev (>= 0.cvs20050811-2sarge2)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 16 Sep 2005 09:13:25 +0200
+
+vdr-plugin-graphtft (0.0.8-21) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.32-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed, 14 Sep 2005 19:17:58 +0200
+
+vdr-plugin-graphtft (0.0.8-20) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.31-1)
+  * Conflict with vdr (>=1.3.31.99)
+  * Use dependencies.sh from vdr-dev to set vdr dependencies and
+    conflicts
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 30 Aug 2005 23:07:10 +0200
+
+vdr-plugin-graphtft (0.0.8-19) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.30-1)
+  * Conflict with vdr (>=1.3.30.99)
+  * Synced with vdrdevel:
+    - Added 11_graphtft-0.0.8-fix-channelnames.dpatch
+  
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 22 Aug 2005 17:28:29 +0200
+
+vdr-plugin-graphtft (0.0.8-18) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.29-1)
+  * Conflict with vdr (>=1.3.30)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 15 Aug 2005 21:12:01 +0200
+
+vdr-plugin-graphtft (0.0.8-17) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.28-1)
+  * Conflict with vdr (>=1.3.29)
+  * Using official Debian ffmpeg 0.cvs20050626-2sarge1 now
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon,  8 Aug 2005 20:25:07 +0200
+
+vdr-plugin-graphtft (0.0.8-16) unstable; urgency=low
+
+  * vdrdevel -> vdr
+  * Depend/Build-Depend on vdr (>=1.3.27-1)
+  * Conflict with vdr (>=1.3.28)
+  * Bumped Standards-Version to 3.6.2
+  * Made debian/rules svn-buildpackage-save
+   
+ -- Tobias Grimm <tg@e-tobi.net>  Mon,  4 Jul 2005 19:29:34 +0200
+
+vdrdevel-plugin-graphtft (0.0.8-15) unstable; urgency=low
+
+  * VDR-1.3.27
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 21 Jun 2005 00:21:12 +0200
+
+vdrdevel-plugin-graphtft (0.0.8-14) unstable; urgency=low
+
+  * VDR-1.3.26
+
+ -- Thomas Günther <tom@toms-cafe.de>  Fri, 17 Jun 2005 12:49:39 +0200
+
+vdrdevel-plugin-graphtft (0.0.8-13) unstable; urgency=low
+
+  * VDR-1.3.25
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon, 13 Jun 2005 17:22:07 +0200
+
+vdrdevel-plugin-graphtft (0.0.8-12) unstable; urgency=low
+
+  * Removed graphtft-1.3.18 patch
+  * Added graphTFT-0.0.8-addon-TftUpdate patch
+  * Upgraded 95_vdrdevel.dpatch to version 0.1.0
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed,  8 Jun 2005 11:09:15 +0200
+
+vdrdevel-plugin-graphtft (0.0.8-11) unstable; urgency=low
+
+  * VDR-1.3.25
+  * Upgraded 95_vdrdevel.dpatch to version 0.0.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon, 30 May 2005 23:56:37 +0200
+
+vdrdevel-plugin-graphtft (0.0.8-10) unstable; urgency=low
+
+  * VDR-1.3.24
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 10 May 2005 02:41:30 +0200
+
+vdrdevel-plugin-graphtft (0.0.8-9) unstable; urgency=low
+
+  * VDR-1.3.23
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 20 Mar 2005 23:27:22 +0100
+
+vdrdevel-plugin-graphtft (0.0.8-8) unstable; urgency=low
+
+  * VDR-1.3.22-4
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 10 Mar 2005 01:49:19 +0100
+
+vdrdevel-plugin-graphtft (0.0.8-7) unstable; urgency=low
+
+  * VDR-1.3.22
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon, 28 Feb 2005 02:41:55 +0100
+
+vdrdevel-plugin-graphtft (0.0.8-6) unstable; urgency=low
+
+  * VDR-1.3.21
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 15 Feb 2005 17:37:18 +0100
+
+vdrdevel-plugin-graphtft (0.0.8-5) unstable; urgency=low
+
+  * VDR-1.3.20
+  * Updated 95_vdrdevel.dpatch to version 0.0.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  8 Feb 2005 11:33:53 +0100
+
+vdrdevel-plugin-graphtft (0.0.8-4) unstable; urgency=low
+
+  * Made graphtft-1.3.18 patch compatible with VDR < 1.3.18
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon,  7 Feb 2005 15:45:29 +0100
+
+vdrdevel-plugin-graphtft (0.0.8-3) unstable; urgency=low
+
+  * VDR-1.3.19
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 23 Jan 2005 22:42:35 +0100
+
+vdrdevel-plugin-graphtft (0.0.8-2) unstable; urgency=low
+
+  * Updated graphtft-1.3.18 patch
+  * Updated 95_vdrdevel.dpatch to version 0.0.7
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 19 Jan 2005 11:46:25 +0100
+
+vdrdevel-plugin-graphtft (0.0.8-1) unstable; urgency=low
+
+  * New upstream release
+  * VDR 1.3.18
+  * Adapted build patch to new upstream
+  * Removed gcc295 patch (integrated in upstream)
+  * Added graphtft-1.3.18 patch
+  * Updated 95_vdrdevel.dpatch to version 0.0.6
+  * Updated debian/watch file
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 13 Jan 2005 22:58:53 +0100
+
+vdrdevel-plugin-graphtft (0.0.7-3) unstable; urgency=low
+
+  * vdrdevel-1.3.17-5: changed patchlevel
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon,  3 Jan 2005 16:28:14 +0100
+
+vdrdevel-plugin-graphtft (0.0.7-2) unstable; urgency=low
+
+  * Added patch to make it compile with gcc 2.95 (Woody).
+  * Made vdr-plugin-graphtft depend on vdr-tft-standard, because at least
+    one theme is required.
+
+ -- Tobias Grimm <tg@e-tobi.net>  Thu, 25 Nov 2004 02:30:00 +0100
+
+vdrdevel-plugin-graphtft (0.0.7-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 23 Nov 2004 17:16:18 +0100

@@ -1,0 +1,166 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2007-08-18 08:13+0200\n"
+"Last-Translator: FULL NAME <EMAIL at ADDRESS>\n"
+"Language-Team: <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Convert..."
+msgstr "Konwertuj..."
+
+msgid "Select picture via key 1..9!"
+msgstr "Wybierz obraz za pomocą klawiszy 1..9"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Operation failed"
+msgstr "Operacja zakończona niepowodzeniem"
+
+msgid "Commands"
+msgstr "Polecenia"
+
+msgid "Show exif informations from image"
+msgstr "Pokaż informacje EXIF"
+
+msgid "Could not load exif data from image!"
+msgstr "Nie mogę oczytać informacji EXIF"
+
+msgid "Marker"
+msgstr "Zaznaczenie"
+
+msgid "Tags"
+msgstr "Znacznik"
+
+msgid "Back"
+msgstr "Wstecz"
+
+msgid "A Image Viewer plugin"
+msgstr "Plugin Przeglądarka Obrazów"
+
+msgid "Images"
+msgstr "Obrazy"
+
+msgid "Select"
+msgstr "Wybierz"
+
+msgid "Parent"
+msgstr "Nadrzędny"
+
+msgid "Error scanning directory!"
+msgstr "Błąd skanowania katalogu"
+
+msgid "Mount"
+msgstr "Zamontuj"
+
+msgid "Unmount"
+msgstr "Odmontuj"
+
+msgid "Eject"
+msgstr "Wysuń"
+
+msgid "Selected data medium is not mounted!"
+msgstr "Wybrane źródło danych nie jest zamontowane"
+
+msgid "Mount failed!"
+msgstr "Montowanie nieudane!"
+
+msgid "Mount succeeded"
+msgstr "Montowanie zakończone sukcesem"
+
+msgid "Unmount succeeded!"
+msgstr "Odmontowanie zakończone sukcesem!"
+
+msgid "Unmount failed!"
+msgstr "Odmontowanie nieudane!"
+
+msgid "Eject failed!"
+msgstr "Wysunięcie nieudane!"
+
+msgid "Execute"
+msgstr "Uruchom"
+
+msgid "Image browser"
+msgstr "Przeglądarka obrazów"
+
+msgid "Play"
+msgstr "Odtwórz"
+
+msgid "Data medium"
+msgstr "Źródło danych"
+
+msgid "Image source"
+msgstr "Źródło obrazów"
+
+msgid "No files!"
+msgstr "Brak plików!"
+
+msgid "Image couldn't load"
+msgstr "Obraz nie może zostać odczytany"
+
+msgid "Script execution failed"
+msgstr "Błąd wykonania skryptu"
+
+msgid "Slide show"
+msgstr "Pokaz slajdów"
+
+msgid "Slide duration (sec)"
+msgstr "Czas trwania slajdu (sekundy)"
+
+msgid "Repeat slide show"
+msgstr "Powtórz pokaz slajdów"
+
+msgid "Show numbers on index image"
+msgstr "Pokaż numery na obrazach"
+
+msgid "Hide main menu entry"
+msgstr "Ukryj pozycje w głównym menu"
+
+msgid "Send encoded frame several times"
+msgstr "Wyślij zakodowaną ramkę kilka razy"
+
+msgid "Live Audio from primary Device"
+msgstr "Live Audio dla głównego urządzenia"
+
+msgid "Directory with temporary files"
+msgstr "Katalog na pliki tymczasowe"
+
+msgid "Remove temporary files immediately"
+msgstr "Usuń natychmiast pliki tymczasowe"
+
+msgid "Remove temporary files"
+msgstr "Usuń pliki tymczasowe"
+
+msgid "Border for Underscan (Height)"
+msgstr "Ramka dla Underscan (Wysokość)"
+
+msgid "Border for Underscan (Width)"
+msgstr "Ramka dla Underscan (Szerokość)"
+

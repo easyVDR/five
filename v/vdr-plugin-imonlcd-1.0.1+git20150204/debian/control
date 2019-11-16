@@ -1,0 +1,19 @@
+Source: vdr-plugin-imonlcd
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.0.0), gettext, pkg-config, libfontconfig1-dev
+Standards-Version: 3.9.4
+Homepage: http://projects.vdr-developer.org/wiki/plg-imonlcd
+Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-imonlcd.git
+Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr-plugin-imonlcd.git
+
+Package: vdr-plugin-imonlcd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin to show information on SoundGraph iMON LCD displays
+ imonlcd is a plugin for the Linux Video Disc Recorder and allows one to
+ show information about the current state of VDR on a SoundGraph iMON LCD
+ display.
+XB-VDR-Patchlevel: ${vdr:Patchlevel}

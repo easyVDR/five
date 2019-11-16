@@ -1,0 +1,11 @@
+--- a/lcd.c
++++ b/lcd.c
+@@ -866,7 +866,7 @@
+ 						  PresentSubtitle = Present->ShortText();
+ 						  if ( (LcdSetup.ShowSubtitle) &&  (!isempty(PresentTitle)) && (!isempty(PresentSubtitle)) )
+ 							  SetRunning(false,Present->GetTimeString(),PresentTitle,PresentSubtitle);
+-						  else if ( (LcdSetup.ShowSubtitle) && !isempty(PresentTitle)) SetRunning(false,Present->GetTimeString(),PresentTitle);
++						  else if ( !isempty(PresentTitle)) SetRunning(false,Present->GetTimeString(),PresentTitle);
+ 					  } else
+ 						  SetRunning(false,tr("No EPG info available."), NULL);
+ 					  if ((Present = Schedule->GetFollowingEvent()) != NULL)

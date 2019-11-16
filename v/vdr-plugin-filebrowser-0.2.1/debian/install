@@ -1,0 +1,6 @@
+libvdr-filebrowser.so.*      usr/lib/vdr/plugins/
+debian/tmp/usr/share/locale
+debian/commands.conf         etc/vdr/plugins/filebrowser/
+debian/order.conf            etc/vdr/plugins/filebrowser/
+debian/othercommands.conf    etc/vdr/plugins/filebrowser/
+debian/sources.conf          etc/vdr/plugins/filebrowser/ 

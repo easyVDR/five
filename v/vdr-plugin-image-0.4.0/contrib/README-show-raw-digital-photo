@@ -1,0 +1,6 @@
+This patch is use to show raw digital photo from many digital cameras.
+
+You will need build dcraw, from http://www.cybercom.net/~dcoffin/dcraw/
+and patch for anytopnm with show-raw-digital-photo.patch
+
+anytopnm comes from netpbm package.

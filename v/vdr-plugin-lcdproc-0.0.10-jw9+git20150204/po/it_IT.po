@@ -1,0 +1,118 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Alberto Carraro <bertocar@tin.it>, 2001
+# Antonio Ospite <ospite@studenti.unina.it>, 2003
+# Sean Carlos <seanc@libero.it>, 2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <vdr@joachim-wilke.de>\n"
+"POT-Creation-Date: 2011-01-01 16:52+0100\n"
+"PO-Revision-Date: 2011-03-05 16:24+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team:  <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "AltShift"
+msgstr "Alt Shift"
+
+msgid "BackLight"
+msgstr "Luminosità sfondo"
+
+msgid "BackLightWait"
+msgstr "Attesa luminosità sfondo"
+
+msgid "Charmap"
+msgstr "Mappa caratteri"
+
+msgid "FullCycle"
+msgstr "Ciclo completo"
+
+msgid "HighClientPriority"
+msgstr "Priorità alta client"
+
+msgid "LCDproc output"
+msgstr "Uscita LCDproc"
+
+msgid "Left channel"
+msgstr "Canale sinistro"
+
+msgid "Mute"
+msgstr "Muto"
+
+msgid "No EPG info available."
+msgstr "Nessun info EPG disponibile"
+
+msgid "NormalClientPriority"
+msgstr "Priorità normale client"
+
+msgid "OutputNumber"
+msgstr "Numero uscita"
+
+msgid "PrioWait"
+msgstr "Priorità attesa"
+
+msgid "RECORDING"
+msgstr "REGISTRAZIONE"
+
+msgid "Recording status"
+msgstr "Stato registrazione"
+
+msgid "Right channel"
+msgstr "Canale destro"
+
+msgid "Scrollspeed"
+msgstr "Velocità scorrimento"
+
+msgid "Scrollwait"
+msgstr "Attesa scorrimento"
+
+msgid "SetClientPriority"
+msgstr "Imposta priorità client"
+
+msgid "Show subtitle"
+msgstr "Mostra sottotitoli"
+
+msgid "Show time"
+msgstr "Mostra ora"
+
+msgid "Stereo"
+msgstr "Stereo"
+
+msgid "TimeDateCycle"
+msgstr "Ciclo Data/Ora"
+
+msgid "Volume "
+msgstr "Volume"
+
+msgid "VolumeKeep"
+msgstr "Mantieni volume"
+
+msgid "Waiting for EPG info."
+msgstr "Attesa info EPG"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "detailed"
+msgstr "dettagliato"
+
+msgid "off"
+msgstr "disattivo"
+
+msgid "on"
+msgstr "attivo"
+
+msgid "simple"
+msgstr "semplice"
+
+#~ msgid "Schedule - %s"
+#~ msgstr "Programmi - %s"

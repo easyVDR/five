@@ -1,0 +1,360 @@
+vdr-plugin-favorites (0.0.2-1easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 15:31:20 +0100
+
+vdr-plugin-favorites (0.0.2-1easyVDR4~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 20:16:55 +0100
+
+vdr-plugin-favorites (0.0.2-1easyVDR3~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:28:24 +0100
+
+vdr-plugin-favorites (0.0.2-1easyVDR2~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 29 Jun 2017 17:12:57 +0200
+
+vdr-plugin-favorites (0.0.2-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Oct 2016 23:44:32 +0200
+
+vdr-plugin-favorites (0.0.2-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * added patch for new Makefile
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Jul 2016 22:58:27 +0200
+
+vdr-plugin-favorites (0.0.2-3frodo6~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 03 Jun 2016 19:47:30 +0200
+
+vdr-plugin-favorites (0.0.2-3frodo6~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 29 May 2016 22:02:16 +0200
+
+vdr-plugin-favorites (0.0.2-3frodo5~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 May 2016 22:55:40 +0200
+
+vdr-plugin-favorites (0.0.2-3frodo4~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 04 Feb 2016 18:01:46 +0100
+
+vdr-plugin-favorites (0.0.2-3frodo4~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 Jan 2016 20:50:42 +0100
+
+vdr-plugin-favorites (0.0.2-3frodo4~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 22 Dec 2015 20:47:06 +0100
+
+vdr-plugin-favorites (0.0.2-3frodo3~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 20 Dec 2015 00:36:48 +0100
+
+vdr-plugin-favorites (0.0.2-3frodo2~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 24 Aug 2015 21:20:47 +0200
+
+vdr-plugin-favorites (0.0.2-3frodo1~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 08 Aug 2015 22:16:55 +0200
+
+vdr-plugin-favorites (0.0.2-3frodo0~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Jul 2015 11:05:33 +0200
+
+vdr-plugin-favorites (0.0.2-2yavdr1~trusty) trusty; urgency=medium
+
+  * copy from yavdr unstable-vdr
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 12 Jul 2015 17:52:50 +0200
+
+vdr-plugin-favorites (0.0.2-2yavdr1~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 25 May 2015 17:37:42 +0200
+
+vdr-plugin-favorites (0.0.2-2yavdr0~trusty) trusty; urgency=medium
+
+  * rework debian dir 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 23 Apr 2015 16:27:13 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr19~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Fri, 03 Apr 2015 15:17:14 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr18~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 20 Feb 2015 11:12:23 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr17~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Feb 2015 00:32:36 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr16~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 08 Feb 2015 16:16:24 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr15~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 01 Feb 2015 16:15:07 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr14~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 18 Jan 2015 16:33:40 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr13~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:29:20 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr12~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:02:54 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr10~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 15:56:49 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr9~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:35:18 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:04:12 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 00:58:11 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:22:02 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:47:11 +0200
+
+vdr-plugin-favorites (0.0.2-1yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:47:29 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 00:58:42 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:48:30 +0100
+
+vdr-plugin-favorites (0.0.2-1yavdr0~precise) precise; urgency=medium
+
+  * don't include Make.global
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 12 Mar 2013 15:20:50 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr14~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 12 Mar 2013 14:02:10 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr13~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:23:57 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr12~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:04:25 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr11~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:51:38 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr10~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:03:02 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr9~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:34:35 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:15:03 +0200
+
+vdr-plugin-favorites (0.0.2-0yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:22:11 +0200
+
+vdr-plugin-favorites (0.0.2-0yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:14:10 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:12:47 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 08:56:50 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Feb 2012 20:03:27 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr3~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 29 Dec 2011 11:07:31 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr2~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:45:03 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 24 Dec 2011 11:34:16 +0100
+
+vdr-plugin-favorites (0.0.2-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version 0.0.2: hide main menu entry is now working
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 11 Dec 2011 09:59:37 +0100
+
+vdr-plugin-favorites (0.0.1-1yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 17 Oct 2011 15:57:01 +0200
+
+vdr-plugin-favorites (0.0.1-1yavdr7~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 05 Sep 2011 18:32:06 +0200
+
+vdr-plugin-favorites (0.0.1-1yavdr6~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 25 Aug 2011 18:05:42 +0200
+
+vdr-plugin-favorites (0.0.1-1yavdr5~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 18 Aug 2011 20:12:44 +0200
+
+vdr-plugin-favorites (0.0.1-1yavdr4~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 15 Jun 2011 13:55:42 +0200
+
+vdr-plugin-favorites (0.0.1-1yavdr3~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 14 Jun 2011 20:51:46 +0200
+
+vdr-plugin-favorites (0.0.1-1yavdr2~natty) natty; urgency=low
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Jun 2011 10:40:17 +0200

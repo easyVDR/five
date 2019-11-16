@@ -1,0 +1,166 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2007-08-18 08:13+0200\n"
+"Last-Translator: FULL NAME <EMAIL at ADDRESS>\n"
+"Language-Team: <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Convert..."
+msgstr "Converso..."
+
+msgid "Select picture via key 1..9!"
+msgstr "Selecione o retrato através da tecla 1..9!"
+
+msgid "Zoom"
+msgstr "Zumbido"
+
+msgid "Operation failed"
+msgstr "A operação falhou"
+
+msgid "Commands"
+msgstr "Comandos"
+
+msgid "Show exif informations from image"
+msgstr "Mostre a informação do exif da imagem"
+
+msgid "Could not load exif data from image!"
+msgstr "Não podia carregar dados do exif da imagem!"
+
+msgid "Marker"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Back"
+msgstr "Voltar"
+
+msgid "A Image Viewer plugin"
+msgstr "Um visor da imagem plugin"
+
+msgid "Images"
+msgstr "Imagens"
+
+msgid "Select"
+msgstr "Seleto"
+
+msgid "Parent"
+msgstr "precursor"
+
+msgid "Error scanning directory!"
+msgstr "Diretório da exploração do erro!"
+
+msgid "Mount"
+msgstr "Montagem"
+
+msgid "Unmount"
+msgstr "unmount"
+
+msgid "Eject"
+msgstr ""
+
+msgid "Selected data medium is not mounted!"
+msgstr "O meio de dados selecionado não é montado!"
+
+msgid "Mount failed!"
+msgstr "A montagem falha!"
+
+msgid "Mount succeeded"
+msgstr "Montagem sucedida"
+
+msgid "Unmount succeeded!"
+msgstr "Unmount sucedido!"
+
+msgid "Unmount failed!"
+msgstr "Unmount falhado!"
+
+msgid "Eject failed!"
+msgstr "Ejete falhado!"
+
+msgid "Execute"
+msgstr "Execute"
+
+msgid "Image browser"
+msgstr "Browser da imagem"
+
+msgid "Play"
+msgstr "Play"
+
+msgid "Data medium"
+msgstr "Meio de dados"
+
+msgid "Image source"
+msgstr "Fonte da imagem"
+
+msgid "No files!"
+msgstr "Nenhumas Limas!"
+
+msgid "Image couldn't load"
+msgstr "A imagem não podia carregar"
+
+msgid "Script execution failed"
+msgstr "A execução do certificado falhou"
+
+msgid "Slide show"
+msgstr "Mostra de corrediça"
+
+msgid "Slide duration (sec)"
+msgstr "Deslize a duração (segundo)"
+
+msgid "Repeat slide show"
+msgstr "Repita a mostra de corrediça"
+
+msgid "Show numbers on index image"
+msgstr "Mostre números na imagem do índice"
+
+msgid "Hide main menu entry"
+msgstr ""
+
+msgid "Send encoded frame several times"
+msgstr ""
+
+msgid "Live Audio from primary Device"
+msgstr "Áudio vivo do dispositivo preliminar"
+
+msgid "Directory with temporary files"
+msgstr "Diretório com limas provisórias"
+
+msgid "Remove temporary files immediately"
+msgstr ""
+
+msgid "Remove temporary files"
+msgstr "Remova as limas provisórias"
+
+msgid "Border for Underscan (Height)"
+msgstr "Beira para Underscan (altura)"
+
+msgid "Border for Underscan (Width)"
+msgstr "Beira para Underscan (largura)"
+

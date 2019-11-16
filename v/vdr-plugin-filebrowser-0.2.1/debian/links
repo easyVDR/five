@@ -1,0 +1,4 @@
+etc/vdr/plugins/filebrowser/commands.conf         var/lib/vdr/plugins/filebrowser/commands.conf
+etc/vdr/plugins/filebrowser/order.conf            var/lib/vdr/plugins/filebrowser/order.conf
+etc/vdr/plugins/filebrowser/othercommands.conf    var/lib/vdr/plugins/filebrowser/othercommands.conf
+etc/vdr/plugins/filebrowser/sources.conf          var/lib/vdr/plugins/filebrowser/sources.conf

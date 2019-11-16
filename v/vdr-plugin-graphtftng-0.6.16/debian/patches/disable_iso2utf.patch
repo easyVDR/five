@@ -1,0 +1,13 @@
+Index: vdr-plugin-graphtftng-0.6.2+git20151225/setup.c
+===================================================================
+--- vdr-plugin-graphtftng-0.6.2+git20151225.orig/setup.c	2015-12-25 17:36:24.639691696 +0100
++++ vdr-plugin-graphtftng-0.6.2+git20151225/setup.c	2015-12-25 17:36:24.635691676 +0100
+@@ -37,7 +37,7 @@
+     index = 0;
+     Level=0;
+     LogDevice=0;
+-    Iso2Utf = yes;
++    Iso2Utf = no;
+     HideMainMenu = 0;
+     yBorder = 5;
+     xBorder = 25;

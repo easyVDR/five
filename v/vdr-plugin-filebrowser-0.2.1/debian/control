@@ -1,0 +1,17 @@
+Source: vdr-plugin-filebrowser
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>, Thomas Schmidt <tschmidt@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 7), cdbs, vdr-dev (>= 1.6.0-5)
+Standards-Version: 3.8.3
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-filebrowser/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-filebrowser/trunk/
+
+Package: vdr-plugin-filebrowser
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin for file browsing and executing shell commands
+ With this plugin it's possible to browse the file system in VDR's OSD.
+ It's possible to define commands, that can be executed with the currently
+ selected files. The commands will be executed asynchronously in background.

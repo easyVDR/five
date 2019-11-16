@@ -1,0 +1,4 @@
+graphlcd/channels.alias		etc/vdr/plugins/graphlcd/
+debian/fonts.conf           usr/share/vdr/plugins/graphlcd/
+debian/plugin.graphlcd.conf     etc/vdr/plugins/
+debian/vdr-plugin-graphlcd.groups    usr/share/vdr/groups.d/

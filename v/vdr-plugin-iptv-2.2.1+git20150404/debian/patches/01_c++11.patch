@@ -1,0 +1,22 @@
+Index: vdr-plugin-iptv-2.2.1+git20150404/common.h
+===================================================================
+--- vdr-plugin-iptv-2.2.1+git20150404.orig/common.h	2015-04-04 13:13:22.000000000 +0200
++++ vdr-plugin-iptv-2.2.1+git20150404/common.h	2017-07-02 17:24:42.420249497 +0200
+@@ -14,7 +14,7 @@
+ 
+ #define ELEMENTS(x)                     (sizeof(x) / sizeof(x[0]))
+ 
+-#define IPTV_BUFFER_SIZE                MEGABYTE(1)
++#define IPTV_BUFFER_SIZE                KILOBYTE(2048)
+ 
+ #define IPTV_DVR_FILENAME               "/tmp/vdr-iptv%d.dvr"
+ 
+@@ -36,7 +36,7 @@
+   do {                                                              \
+      if (exp) {                                                     \
+         char tmp[64];                                               \
+-        esyslog("[%s,%d]: "errstr": %s", __FILE__, __LINE__,        \
++        esyslog("[%s,%d]: " errstr ": %s", __FILE__, __LINE__,      \
+                 strerror_r(errno, tmp, sizeof(tmp)));               \
+         func;                                                       \
+         ret;                                                        \

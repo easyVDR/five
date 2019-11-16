@@ -1,0 +1,3 @@
+version=2
+opts="uversionmangle=s/(.*)(rc.*)/\1~\2/" \
+  http://www.jwendel.de/vdr/vdr-graphtft-(.*)\.tar\.bz2

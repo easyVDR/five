@@ -1,0 +1,4 @@
+02_Makefile-nosilent.patch
+03_games-0.6.3-fix-INCLUDES.patch
+04_gcc-4.6.patch
+osd-size.patch

@@ -1,0 +1,167 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# * Rolf Ahrenberg <rahrenbe@cc.hut.fi>, 2003
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2007-08-18 08:13+0200\n"
+"Last-Translator: Rolf Ahrenberg <rahrenbe at cc.hut.fi>\n"
+"Language-Team: <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Convert..."
+msgstr "Konvertoi..."
+
+msgid "Select picture via key 1..9!"
+msgstr "Valitse kuva näppäimillä 1..9!"
+
+msgid "Zoom"
+msgstr "Suurenna"
+
+msgid "Operation failed"
+msgstr "Toiminto epäonnistui"
+
+msgid "Commands"
+msgstr "Komennot"
+
+msgid "Show exif informations from image"
+msgstr "Näytä kuvien Exif-tiedot"
+
+msgid "Could not load exif data from image!"
+msgstr "Exif-tiedon lukeminen epäonnistui!"
+
+msgid "Marker"
+msgstr "Markkerit"
+
+msgid "Tags"
+msgstr "Tagit"
+
+msgid "Back"
+msgstr "Takaisin"
+
+msgid "A Image Viewer plugin"
+msgstr "Katso valokuvia ruudullasi"
+
+msgid "Images"
+msgstr "Kuvat"
+
+msgid "Select"
+msgstr "Valitse"
+
+msgid "Parent"
+msgstr "Takaisin"
+
+msgid "Error scanning directory!"
+msgstr "Hakemiston selaus epäonnistui!"
+
+msgid "Mount"
+msgstr "Kiinnitä"
+
+msgid "Unmount"
+msgstr "Irrota"
+
+msgid "Eject"
+msgstr "Avaa"
+
+msgid "Selected data medium is not mounted!"
+msgstr "Valittua lähdettä ei ole kiinnitetty!"
+
+msgid "Mount failed!"
+msgstr "Kiinnittäminen epäonnistui!"
+
+msgid "Mount succeeded"
+msgstr "Kiinnittäminen onnistui"
+
+msgid "Unmount succeeded!"
+msgstr "Irrottaminen onnistui!"
+
+msgid "Unmount failed!"
+msgstr "Irrottaminen epäonnistui!"
+
+msgid "Eject failed!"
+msgstr "Avaaminen epäonnistui!"
+
+msgid "Execute"
+msgstr "Suorita"
+
+msgid "Image browser"
+msgstr "Kuvat - selain"
+
+msgid "Play"
+msgstr "Toista"
+
+msgid "Data medium"
+msgstr "Lähde"
+
+msgid "Image source"
+msgstr "Kuvat - lähteet"
+
+msgid "No files!"
+msgstr "Ei tiedostoja!"
+
+msgid "Image couldn't load"
+msgstr "Kuvan lukeminen epäonnistui"
+
+msgid "Script execution failed"
+msgstr "Skriptin suoritus epäonnistui"
+
+msgid "Slide show"
+msgstr "Käytä diaesitystä"
+
+msgid "Slide duration (sec)"
+msgstr "Dian esitysaika (s)"
+
+msgid "Repeat slide show"
+msgstr "Diaesityksen uudelleentoisto"
+
+msgid "Show numbers on index image"
+msgstr "Näytä numerot indeksikuvassa"
+
+msgid "Hide main menu entry"
+msgstr "Piilota valinta päävalikosta"
+
+msgid "Send encoded frame several times"
+msgstr ""
+
+msgid "Live Audio from primary Device"
+msgstr "Live-ääni ensisijaiselta sovittimelta"
+
+msgid "Directory with temporary files"
+msgstr "Väliaikaistiedostot"
+
+msgid "Remove temporary files immediately"
+msgstr ""
+
+msgid "Remove temporary files"
+msgstr "Tyhjennä väliaikaistiedostot"
+
+msgid "Border for Underscan (Height)"
+msgstr "Reunuksen korkeus keskitykselle"
+
+msgid "Border for Underscan (Width)"
+msgstr "Reunuksen leveys keskitykselle"
+

@@ -1,0 +1,26 @@
+how to anonymously get the current source
+=========================================
+
+git clone git://projects.vdr-developer.org/vdr-plugin-image.git image
+
+how to make a new release
+=========================
+
+adapt version in image.c and HISTORY
+
+set date in HISTORY
+
+#> git commit
+#> git status # must be clean
+#> git tag -a -m 'new release' '0.3.1'
+#> git push --tags
+
+Build package
+
+#> make dist
+
+in the project configuration, add new version 0.3.1
+upload vdr-image-0.3.1.tgz
+
+announce new version at vdr@linuxtv.org
+

@@ -1,0 +1,38 @@
+#!/usr/bin/make -f
+
+
+DEB_INSTALL_CHANGELOGS_ALL = documents/HISTORY
+
+.PHONY: override_dh_auto_build override_dh_auto_clean override_dh_strip override_dh_auto_install override_dh_auto_test
+
+override_dh_auto_build:
+	$(MAKE) all
+	$(MAKE) -C graphtft-fe all
+
+override_dh_auto_clean:
+	$(MAKE) -o .dependencies clean
+	$(MAKE) -C graphtft-fe -o .dependencies clean $(MAKE_OPTIONS)
+	rm -f libvdr-*.so.*
+
+override_dh_strip:
+	dh_strip --dbg-package=vdr-plugin-graphtftng-dbg
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/vdr-plugin-graphtftng
+
+override_dh_auto_test:
+
+%:
+	dh $@
+
+common-binary-predeb-arch::
+	sh /usr/share/vdr-dev/dependencies.sh
+
+VERSION_ID = $(shell echo $(DEB_UPSTREAM_VERSION) | sed 's/\+svn.*//')+svn$(shell date --utc +%0Y%0m%0d.%0k%0M)
+get-orig-source::
+	echo Downloading $(DEB_SOURCE_PACKAGE) $(VERSION_ID) from svn...
+	svn export -q https://vdr-graphtft.svn.sourceforge.net/svnroot/vdr-graphtft $(DEB_SOURCE_PACKAGE)-$(VERSION_ID)
+	tar czf ../$(DEB_SOURCE_PACKAGE)_$(VERSION_ID).orig.tar.gz $(DEB_SOURCE_PACKAGE)-$(VERSION_ID)
+	rm -rf $(DEB_SOURCE_PACKAGE)-$(VERSION_ID)
+	dch -v "$(VERSION_ID)-1" "New Upstream Snapshot"
+	

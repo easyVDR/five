@@ -1,0 +1,165 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2007-08-18 08:13+0200\n"
+"Last-Translator: Oktay Yolgeçen <oktay_73 at yahoo.de>\n"
+"Language-Team: <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-9\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Convert..."
+msgstr "Çevir..."
+
+msgid "Select picture via key 1..9!"
+msgstr "1..9 tuþu ile resim seç!"
+
+msgid "Zoom"
+msgstr "Yaklaþtýr"
+
+msgid "Operation failed"
+msgstr "Ýþletme baþarýsýz"
+
+msgid "Commands"
+msgstr "Komutlar"
+
+msgid "Show exif informations from image"
+msgstr "Resimden exif bilgisini göster"
+
+msgid "Could not load exif data from image!"
+msgstr "Resimden exif bilgisi okunamadý!"
+
+msgid "Marker"
+msgstr "Ýþaret"
+
+msgid "Tags"
+msgstr "Etikeler"
+
+msgid "Back"
+msgstr "Geri"
+
+msgid "A Image Viewer plugin"
+msgstr "Resim gösterme eklentisi"
+
+msgid "Images"
+msgstr "Resimler"
+
+msgid "Select"
+msgstr "Seç"
+
+msgid "Parent"
+msgstr "Üste"
+
+msgid "Error scanning directory!"
+msgstr "Klasör tarama hatasý!"
+
+msgid "Mount"
+msgstr "Baðlantýyý kur"
+
+msgid "Unmount"
+msgstr "Baðlantýyý kaldýr"
+
+msgid "Eject"
+msgstr "Dýþarý at"
+
+msgid "Selected data medium is not mounted!"
+msgstr "Seçilen data medyumu baðlý deðil!"
+
+msgid "Mount failed!"
+msgstr "Baðlantý kurma hatasý"
+
+msgid "Mount succeeded"
+msgstr "Baðlantý kuruldu"
+
+msgid "Unmount succeeded!"
+msgstr "Baðlantý kaldýrýldý!"
+
+msgid "Unmount failed!"
+msgstr "Baðlantý kaldýrma hatasý!"
+
+msgid "Eject failed!"
+msgstr "Çýkartma hatasý!"
+
+msgid "Execute"
+msgstr "Çalýþtýr"
+
+msgid "Image browser"
+msgstr "Resim browseri"
+
+msgid "Play"
+msgstr "Göster"
+
+msgid "Data medium"
+msgstr "Data medyum"
+
+msgid "Image source"
+msgstr "Resim kaynaðý"
+
+msgid "No files!"
+msgstr "Dosya yok!"
+
+msgid "Image couldn't load"
+msgstr "Resim yüklenemedi"
+
+msgid "Script execution failed"
+msgstr "Not uygulama hatasý"
+
+msgid "Slide show"
+msgstr "Slideshow"
+
+msgid "Slide duration (sec)"
+msgstr "Slide süresi (sn)"
+
+msgid "Repeat slide show"
+msgstr "Slideshow'u tekrarla"
+
+msgid "Show numbers on index image"
+msgstr "Ýndeks resimlerde numara göster"
+
+msgid "Hide main menu entry"
+msgstr "Ana menüde sakla"
+
+msgid "Send encoded frame several times"
+msgstr "Kodlanmýþ frame'i birkaç defa gönder"
+
+msgid "Live Audio from primary Device"
+msgstr "Primer aygýtdan naklen audio"
+
+msgid "Directory with temporary files"
+msgstr "Geçici dosyalý klasör"
+
+msgid "Remove temporary files immediately"
+msgstr ""
+
+msgid "Remove temporary files"
+msgstr "Geçici dosyalarý sil"
+
+msgid "Border for Underscan (Height)"
+msgstr "Alt tarama sýnýrý (Yükseklik)"
+
+msgid "Border for Underscan (Width)"
+msgstr "Alt tarama sýnýrý (Geniþlik)"

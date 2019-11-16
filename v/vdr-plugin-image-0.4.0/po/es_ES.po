@@ -1,0 +1,167 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# * Jesús Bravo Álvarez  <EMAIL at ADDRESS>
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2007-08-18 08:13+0200\n"
+"Last-Translator: Jesús Bravo Álvarez <EMAIL at ADDRESS>\n"
+"Language-Team: <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Convert..."
+msgstr "Convertir..."
+
+msgid "Select picture via key 1..9!"
+msgstr "¡Seleccione la imagen con los botones 1..9!"
+
+msgid "Zoom"
+msgstr "Ampliación"
+
+msgid "Operation failed"
+msgstr "Operación fallida"
+
+msgid "Commands"
+msgstr "Órdenes"
+
+msgid "Show exif informations from image"
+msgstr "Mostrar información exif de la imagen"
+
+msgid "Could not load exif data from image!"
+msgstr "¡No se pudo cargar los datos exif de la imagen!"
+
+msgid "Marker"
+msgstr "Marca"
+
+msgid "Tags"
+msgstr "Etiquetas"
+
+msgid "Back"
+msgstr "Atrás"
+
+msgid "A Image Viewer plugin"
+msgstr "Un plugin para visualizar imágenes"
+
+msgid "Images"
+msgstr "Imágenes"
+
+msgid "Select"
+msgstr "Seleccionar"
+
+msgid "Parent"
+msgstr "Superior"
+
+msgid "Error scanning directory!"
+msgstr "¡Error al leer la carpeta!"
+
+msgid "Mount"
+msgstr "Montar"
+
+msgid "Unmount"
+msgstr "Desmontar"
+
+msgid "Eject"
+msgstr ""
+
+msgid "Selected data medium is not mounted!"
+msgstr "¡El medio de datos no está montado!"
+
+msgid "Mount failed!"
+msgstr "¡Fallo al montar!"
+
+msgid "Mount succeeded"
+msgstr "Montaje correcto"
+
+msgid "Unmount succeeded!"
+msgstr "¡Desmontaje correcto!"
+
+msgid "Unmount failed!"
+msgstr "¡Fallo al desmontar!"
+
+msgid "Eject failed!"
+msgstr "¡No se puede expulsar!"
+
+msgid "Execute"
+msgstr "Ejecutar"
+
+msgid "Image browser"
+msgstr "Examinador de imágenes"
+
+msgid "Play"
+msgstr "Play"
+
+msgid "Data medium"
+msgstr "Medio de datos"
+
+msgid "Image source"
+msgstr "Fuente de imágenes"
+
+msgid "No files!"
+msgstr "¡No hay ficheros!"
+
+msgid "Image couldn't load"
+msgstr "No se pudo cargar la imagen"
+
+msgid "Script execution failed"
+msgstr "Fallo al ejecutar el script"
+
+msgid "Slide show"
+msgstr "Presentación de imágenes"
+
+msgid "Slide duration (sec)"
+msgstr "Duración de cada imagen (sg)"
+
+msgid "Repeat slide show"
+msgstr "Repetir la presentación"
+
+msgid "Show numbers on index image"
+msgstr "Mostrar números en la imagen índice"
+
+msgid "Hide main menu entry"
+msgstr ""
+
+msgid "Send encoded frame several times"
+msgstr ""
+
+msgid "Live Audio from primary Device"
+msgstr "Usar audio del dispositivo primario"
+
+msgid "Directory with temporary files"
+msgstr "Directorio para ficheros temporales"
+
+msgid "Remove temporary files immediately"
+msgstr ""
+
+msgid "Remove temporary files"
+msgstr "Borrar los ficheros temporales"
+
+msgid "Border for Underscan (Height)"
+msgstr "Margen para underscan (altura)"
+
+msgid "Border for Underscan (Width)"
+msgstr "Margen para underscan (anchura)"
+

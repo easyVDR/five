@@ -1,0 +1,31 @@
+From 07a3c498ab114fdbd35848ba0385ce369d572173 Mon Sep 17 00:00:00 2001
+From: Lucian Muresan <lucianm@users.sourceforge.net>
+Date: Sun, 29 Jan 2017 02:23:42 +0100
+Subject: using mutex in cGraphLCDDisplay::SetBrightness
+
+
+diff --git a/display.c b/display.c
+index 54c93f1..0158366 100644
+--- a/display.c
++++ b/display.c
+@@ -492,7 +492,7 @@ void cGraphLCDDisplay::SetMenuCurrent()
+ 
+ void cGraphLCDDisplay::SetBrightness()
+ {
+-    //mutex.Lock();
++    mMutex.Lock();
+     bool bActive = bBrightnessActive
+                    || (mState == StateMenu)
+                    || (GraphLCDSetup.ShowVolume && mShowVolume)
+@@ -521,7 +521,7 @@ void cGraphLCDDisplay::SetBrightness()
+             }
+         }
+     }
+-    //mutex.Unlock();
++    mMutex.Unlock();
+ }
+ 
+ void cGraphLCDDisplay::ForceUpdateBrightness() {
+-- 
+cgit v0.10.2
+

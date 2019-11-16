@@ -1,0 +1,166 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-13 16:48+0100\n"
+"PO-Revision-Date: 2013-02-12 23:02+0100\n"
+"Last-Translator: Yarema aka Knedlyk <yupadmin@gmail.com>\n"
+"Language-Team:  <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.4\n"
+
+msgid "Convert..."
+msgstr "Конвертування..."
+
+msgid "Select picture via key 1..9!"
+msgstr "Вибрати малюнок клавішами 1..9!"
+
+msgid "Zoom"
+msgstr "Змінити розмір"
+
+msgid "Operation failed"
+msgstr "Операція не вдалася"
+
+msgid "Commands"
+msgstr "Команди"
+
+msgid "Show exif informations from image"
+msgstr "Показати інформацію exif з малюнку "
+
+msgid "Could not load exif data from image!"
+msgstr "Неможливо завантажити дані exif з малюнку!"
+
+msgid "Marker"
+msgstr "Маркер"
+
+msgid "Tags"
+msgstr "Мітки"
+
+msgid "Back"
+msgstr "Назад"
+
+msgid "A Image Viewer plugin"
+msgstr "Додаток для перегляду малюнків"
+
+msgid "Images"
+msgstr "Малюнки"
+
+msgid "Select"
+msgstr "Вибрати"
+
+msgid "Parent"
+msgstr "Наверх"
+
+msgid "Error scanning directory!"
+msgstr "Помилка сканування теки"
+
+msgid "Mount"
+msgstr "Монтування"
+
+msgid "Unmount"
+msgstr "Відмонтування"
+
+msgid "Eject"
+msgstr "Витягнення"
+
+msgid "Selected data medium is not mounted!"
+msgstr "Вибрані пристрій не змонтовано!"
+
+msgid "Mount failed!"
+msgstr "Монтування не вдалося!"
+
+msgid "Mount succeeded"
+msgstr "Монтування вдалося"
+
+msgid "Unmount succeeded!"
+msgstr "Відмонтування вдалося"
+
+msgid "Unmount failed!"
+msgstr "Відмонтування не вдалося!"
+
+msgid "Eject failed!"
+msgstr "Витягнення не вдалося!"
+
+msgid "Execute"
+msgstr "Виконати"
+
+msgid "Image browser"
+msgstr "Переглядач малюнків"
+
+msgid "Play"
+msgstr "Програвання"
+
+msgid "Data medium"
+msgstr "Пристрій з даними"
+
+msgid "Image source"
+msgstr "Джерело малюнків"
+
+msgid "No files!"
+msgstr "Немає файлів!"
+
+msgid "Image couldn't load"
+msgstr "Неможливо завантажити малюнок"
+
+msgid "Script execution failed"
+msgstr "Не вдалося запустити скрипт"
+
+msgid "Slide show"
+msgstr "Показ слайдів"
+
+msgid "Slide duration (sec)"
+msgstr "Тривалість слайду (сек)"
+
+msgid "Repeat slide show"
+msgstr "Повторення показу слайдів"
+
+msgid "Show numbers on index image"
+msgstr "Показати номери на малюнку індексів"
+
+msgid "Hide main menu entry"
+msgstr "Приховати пункт меню"
+
+msgid "Send encoded frame several times"
+msgstr "Вислати розкодовану рамку кілька разів"
+
+msgid "Live Audio from primary Device"
+msgstr "Живе аудіо з головного пристрою"
+
+msgid "Directory with temporary files"
+msgstr "Тека з тимчасовими файлами"
+
+msgid "Remove temporary files immediately"
+msgstr "Негайно вилучити тимчасові файли"
+
+msgid "Remove temporary files"
+msgstr "Вилучити тимчасові файли"
+
+msgid "Border for Underscan (Height)"
+msgstr "Границя для сканування (Висота)"
+
+msgid "Border for Underscan (Width)"
+msgstr "Границя для сканування (Ширина)"

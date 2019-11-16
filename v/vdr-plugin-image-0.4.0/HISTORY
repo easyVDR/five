@@ -1,0 +1,387 @@
+VDR Plugin 'image' Revision History
+-----------------------------------
+
+2013-03-23: Version 0.4.0
+- Update french translation (Patch submit by Bernard Jaulin, Peter Münster)
+- Update italian translation (Patch submit by Diego Pierotto)
+- Add ukrainian translation (Patch submit by Yarema)
+- Update polish translation (Patch submit by Marx)
+
+2013-02-11 (Release and Patch submit by Ulrich Eckhardt)
+- Release Version 0.3.3
+- Various Makefile fixes for VDR > 1.7.36
+
+2013-02-02
+- Release Version 0.3.2
+- Support for VDR > 1.7.35
+- Compiles with recent ffmpeg
+
+2011-03-19
+- Release Version 0.3.1
+- Adjust to compile plugin with VDR >= 1.7.17
+
+2010-03-06
+- Fix to compile plugins with VDR >= 1.7.13 (Thomas Günther, for submit a patch)
+
+2008-12-14
+- Release Version 0.3.0
+
+2008-06-24
+- Updated italian translation (Thanks to Diego Pierotto)
+
+2008-05-13
+- Add turkish translation (Thanks to Oktay Yolgeçen)
+
+2008-01-04
+- Clear device buffer, before start playback (need by PVR350) (suggest by Martin Dauskardt)
+
+2008-01-02
+- Reimplement "Playback mode via 'DeviceStillPicture'" 
+   active if 'Send encoded frame several times' set to 'no'
+
+2007-12-30
+- Updated italian translations.
+
+2007-10-08
+- Check for codec only at startup
+- Add setup option to hide main menu entry (Thanks to Alf Fahland, for submit a patch)
+
+2007-08-22
+- begin developer series 0.3.x
+- Use now gettext for i18n texts, introduced with vdr-1.5.8 (Required)
+
+2007-06-10
+- for build now 'pkg-config' needed
+- Use swscale to converting image (Thanks to Holger Brunn, for submit a patch)
+
+2007-01-02
+- Release Version 0.2.7
+
+2006-12-24
+- Add checks for sanity of memory buffers.
+
+2006-08-27 
+- Create LIBDIR if'nt exist
+
+2006-05-30
+- Updated some i18n text
+
+2006-05-18
+- Updated French translations. (Thanks to NIVAL Michaël)
+
+2006-04-23
+- Updated finnish translations. (Thanks to Rolf Ahrenberg)
+- Warn if wrong APIVERSION used
+
+2006-04-23
+- Release Version 0.2.6
+
+2006-04-18
+- Use now APIVERSION introduced with vdr-1.3.47 (Required)
+
+2006-01-29  
+- Remove unnecessary DVBDIR from Makefile
+- Rename README.de to LIESMICH
+
+2006-01-27  
+- Add service wrapper. (provided by Holger Brunn)
+
+2006-01-22  
+- Updated Spanish translations. (Thanks to Jesús Bravo Álvarez)
+
+2006-01-22  
+- Release Version 0.2.5
+
+2006-01-20
+- split exif page to two page for tags and marker nodes
+
+2006-01-19
+- fix wrong limits on NTSC zoom mode 
+- fix consider the border values at zoom mode
+
+2006-01-18
+- fix first image was'nt rotation depends founded exif data
+- fix show vdr info screen via official vdr way
+
+2006-01-14
+- now inital rotation depends founded exif data
+
+2006-01-13
+- revert changes from 2005-12-17, throw is failed with other plugins thats use ffmpeg
+
+2006-01-12
+- fix build failed without defined FFMDIR 
+- add exif support, show vdr info screen (required libexif)
+
+2006-01-11
+- fix wrong register_avcodec (Thanks to Peter Holik)
+
+2006-01-08
+- Bounce to vdr-1.3.38 (required now vdr-1.3.38)
+
+2006-01-06
+- add italian/dutch/portuguese/spanish translations via babelfish
+
+2006-01-01
+- add contrib/show-raw-digital-photo.patch for anytopnm to show raw digital photo from many digital cameras.
+
+2005-12-28
+- realised that least VDR 1.3.29 required, and update entrys at documentation
+
+2005-12-19
+- add russian translation
+- add french translation
+- prepare for Hrvatski/Eesti/Dansk translation
+
+2005-12-17
+- now only necessarily ffmpeg codec loaded, before all available ffmpeg codec was loaded.
+
+2005-11-18
+- Updated finnish translations. (Thanks to Rolf Ahrenberg)
+
+2005-11-17  
+- Release Version 0.2.4
+
+2005-10-29
+- Deny VDR-EITScanner on active Live Audio
+- Add plugin options to specify directory of configuration data (wished by Ronny Kornexl)
+
+2005-10-22
+- add FFMDIR to liboutput/Makefile, for build again ffmpeg directory
+
+2005-08-20
+- rename maverickplugin.sh to magickplugin.sh
+- fix scripts/magickplugin.sh: better resolution retrieval (provided by kc_captain-at-vdr-portal de)
+
+2005-08-16
+- remove redundant code
+- now for compiled are at the least VDR 1.3.28 required
+
+2005-07-27
+- add option for border of underscan
+
+2005-07-26
+- rotate pictures now in several 90° steps
+
+2005-07-18
+- add alternative script (scripts/magickplugin.sh) for image converting with imagemagick
+
+2005-07-17 (provided by Tobias Grimm)
+- adjust encoding parameter for new ffmpeg-releases, downwards compatible
+- remove linking with dlfcn at runtime of libavcodec.so, now are linked at compiled time
+- some code refactoring, to enhance readability 
+
+2005-01-09  Version 0.2.3
+- Bounce to vdr-1.3.18
+- Add -fPIC to CXXFLAGS (suggest by Thomas Schmidt)
+- plugin: add reload image after commands execution, if image changed
+
+2004-12-06
+- Fix missing environ variable for examples/imagecmds.conf (Reported by Thomas Günther)
+- Fix wrong folder flags on distribute archives (Reported by Thomas Günther)
+
+2004-12-05
+- Use now threadsafe functions replacement of strerror
+
+2004-12-02
+- Add missing -lz for static build with ffmpeg-0.4.9-pre1
+
+2004-11-03 Version 0.2.2a
+- bugfix release
+
+2004-10-18
+- plugin: include support for ffmpeg-0.4.9-pre1
+
+2004-09-03
+- plugin: enlarge encode memory-areas, avoid encode failing (Reported by Christan Jacobsen)
+
+2004-09-01 Version 0.2.2
+- plugin: remove unused code on BuildPesPacket, avoid SIGSEGV on some cases (Reported by Tobias Grimm)
+
+2004-08-29
+- plugin: add header and format description on imagesources.conf/imagecmds.conf
+
+2004-08-24
+- plugin: change internal handling of delay for slideshow
+- plugin: add DeviceFreeze/DevicePlay control, for better image change
+
+2004-08-22 Version 0.2.1
+- plugin: fix typo on housekeeping tmp-files
+
+2004-08-21
+- plugin: Updated finnish translations. (Thanks to Rolf Ahrenberg)
+- plugin: include DVBDIR on libout/Makefile  (Suggest by Rolf Ahrenberg)
+- script: enable PATH by default (Suggest by Ronny Kornexl)
+
+2004-08-19 Version 0.2.0
+- plugin: check temporary file and try it to remove if it also existed.
+- plugin: call of OSD_ErrorMsg only from OSD thread
+- plugin: add new default housekeeping mode 
+  ( use temporary filenames and remove this files at exit,
+    for use image_pregen.sh your must disable housekeeping at setup )
+- plugin: rewrite zoom
+- plugin: remove option "Playback mode 'use DeviceStillPicture'"
+- script: now error messages dumped to syslog, (/var/log/messages)
+- Move functions to encode MPEG Frame from Script to Pluginssource 
+  ( now plugin only depends package libavcodec1-dev to compile, 
+    and package netpbm and libavcodec1 to run )
+- script: full rewrite to simple single script which only depends anytopnm / pnmscale, pnmfile, pnmcut, pnmflip
+          convert.sh/convert_jump.sh/convert_zoom.sh merged to one file, called imageplugin.sh
+- plugin: rewrite generation of indexview
+- plugin: use xpm-files for numbers as overlay and errorimage
+- plugin: read ppm/pbm/pgm Files direct (see libimage)
+- plugin: encode images with ffmpeg to playbackloop inside plugin (see liboutput)
+
+2004-07-31 Version 0.1.1
+- new release
+
+2004-07-30
+- plugin: add parser for placeholder %s on imagecmds.conf
+-         load imagecmds.conf now on menu open
+- Exif State Viewer (see examples/imagecmds.conf with jpegtopnm -dumpexif %s > /dev/null ... )
+
+2004-07-27
+- plugin: remove blocking umount, (thanks to Peter Juszack)
+  reorder slideshow management, outside player-image.c
+
+2004-07-26  
+- scripts: change mkdir -v -p to mkdir -p, for work with busybox
+- convert.sh: fix mkdir order before first use this folder
+
+2004-07-17
+- convert_jump.sh: Show if used, number on indexview inside image
+
+2004-07-07  
+- scripts: prevent some zerosize files, e.g. vdr-image.pnm if pbmmake fail
+
+2004-07-03 Version 0.1.0
+- new release
+
+2004-07-01
+- some script bugfixes (thanks to Ronny Kornexl)
+
+2004-06-28
+- fix slow browser starting
+- new faster threadmode, without polling on ProcessKey
+   + prepared for housekeeping and image pre-generation
+- remove blocking key on converting, for commadostacking
+- remove anymore necessary parts for create black.mpg, e.g. uuencode, gunzip
+
+2004-06-27
+- Implement a precompiled image, which show on detected error
+- Include a used sample, other images possible with edit Makefile and "make errorimage"
+  + artwork be inspired on two icons from Nuvola vector icon theme which created by David Vignoni <dvgn-at-libero-dot-it> 
+- Plugin use now the real generated file, image.mpg is now out of use
+- Little Scripts speedup
+-Remove the last script step copy xxx.mpg to image.mpg, nocopy is now default
+  + update: contrib/image_pregen.sh
+  + update: all scripts/convert.sh,convert_functions.sh,convert_jump.sh,convert_zoom.sh
+-Remove legacy around ImageMagick, to speedup scripts
+  + update: all scripts/convert.sh,convert_functions.sh,convert_jump.sh,convert_zoom.sh
+
+2004-06-20 Version 0.0.9
+- Redesign OSD for vdr-1.3.7+, thats work with skins
+  Hide Setup for ShowDate, therefore is'nt work anymore for vdr-1.3.7+
+- Change text around progressbar on part vdr-1.3.7+
+
+2004-06-08
+- Added finnish translations. (Thanks to Rolf Ahrenberg)
+
+2004-06-06            
+- Fix my mistake on zoom, (thanks to Thosten Schnebeck)
+
+2004-06-02 Version 0.0.9-rc2
+- Fix index view
+
+2004-06-02 Version 0.0.9-rc1
+- Fix plugin hangs on reassign files from browser, thanks <steffx-at-vdr-portal-de> to reportings this
+- Added playback live audio from primary device, since VDR-1.3.8 support this
+
+2004-06-01 Version 0.0.9-pre6
+- Fix unquoted strings on scripts, thanks <steffx-at-vdr-portal-de> to reportings this
+- Added check inside scripts for requirement external files
+
+2004-05-16 Version 0.0.9-pre5
+- update to VDR 1.3.7
+
+2004-04-01
+- protect plugin before hang vdr on DeviceStillImage, if image.mpg has zero size 
+- extend error messages
+- control environent from Plugin, to set ASPECT_RATIO,SHOW_NUMBERS,CONVERT_TEMPDIR
+
+2004-03-28: Verison 0.0.9-pre1
+- integrated scripts from Andreas Holzhammer, now no more ImageMagick !!!!!!!!!!
+- changed zoom code, to start at 768x576 and Zoom level 1x
+- fixup on some small issues in the scripts
+- example scripts handling changed
+
+2004-03-27:
+- make statusmessage for graphlcd-plugin recognizable, with prefix [image]
+
+2004-03-17:
+- handle more error's 
+- add menu with commandos for images (userdefined imagecmd.conf)
+
+2004-03-14:
+- changed if single file selected, 
+    generate a slideshow for this folder start at selected file
+- cleanup OSD/RC-Layouts for more usability
+
+2004-03-13: Verison 0.0.8     
+- fixed to install.sh
+- online readme is now the readme
+- made history avail online
+- readme and faq updated
+- removed debian stuff, debian port now maintained by Tobias Grimm, see donwload area for more info
+
+2004-03-04: Version 0.0.8-rc2 
+- changed background file, now generated using netpbm tools and placed in the cache folder
+- enhanced slideshow time to max. 300 sec., no need to limit to 60 sec....
+
+2004-03.03: Version 0.0.8-rc-1
+- Fix for commandline parsing (thx to Hollymolly and Henning from vdr-portal.de)
+- README now has a DOUBLE NOTE if installing tools from source, use "./configure --prefix=/usr" !
+
+2004-02-23: Version 0.0.8-pre-5
+- Added other File-Filterimplemation with more feature see examples/imagesources.conf.example
+
+2004-02-22: Version 0.0.8-pre-4  (onno <kreuzinger.biz>)
+- Reworked convert* scripts for better aspect scaling
+- Started to optionally replace ImageMagick by netpbm tools, check README.SCRIPTS
+- Cleanup obsolete code from scripts
+- Added image_pregen.sh to pre generate a file or folder (cron/at/..)
+
+
+2004-02-22: Version 0.0.8-pre-3
+
+- Add Filter for filetype (by Onno Kreuzinger)
+- Implement Interface to Statusmonitor (this use e.g. GLCD-Plugin)
+- Fix "Error: unknow config paramater ..."
+- Make the most text translatable
+- Change setupmenu form Integer 0/1 to yes/no Selection
+- Remove some old file form mp3-plugins, and reformated the source with indent
+- Fix Header with correct copyright
+- Cleanup errorlog (esyslog)
+- Remove some possible bufferoverflows throw sprint() 
+
+2004-02-20: all versions between 0.0.5a and 0.0.8-pre are by Interpohl@vdr-portal.de
+
+Updated by Interpohl
+ 
+ Extensions in V0.0.6
+ - Autorepeat 	=> default 0 => setup-parameter for endless loop of pictureshow
+ - remotelayouts => default 0 => setup-parameter for switching remote layout (see below)
+ - Using of function DeviceStillPicture or function send_pes_packet
+ 		=> default 1 => setup-parameter
+ 		=> DeviceStillPicture seems to be not works in VDR1.2.2(-6ct)
+ - Implementation of jumps (like as MP3- bzw. MPlayer-Plugin)
+ - Implementation of zooms (1..10) with possibility of navigation
+ 
+ V0.0.6_1
+ 
+     Reworks on Jumpmenu (red button)
+     Now you get a 3x3 Matrix to navigate
+
+2003-01-31: Version 0.0.4	First Version	
+
+- Initial revision.

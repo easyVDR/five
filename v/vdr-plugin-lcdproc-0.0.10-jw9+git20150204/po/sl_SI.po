@@ -1,0 +1,111 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Miha Setina <mihasetina@softhome.net>, 2000
+# Matjaz Thaler <matjaz.thaler@guest.arnes.si>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <vdr@joachim-wilke.de>\n"
+"POT-Creation-Date: 2011-01-01 16:52+0100\n"
+"PO-Revision-Date: 2007-08-12 20:41+0200\n"
+"Last-Translator: Matjaz Thaler <matjaz.thaler@guest.arnes.si>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "AltShift"
+msgstr "AltShift"
+
+msgid "BackLight"
+msgstr "BackLight"
+
+msgid "BackLightWait"
+msgstr ""
+
+msgid "Charmap"
+msgstr "Charmap"
+
+msgid "FullCycle"
+msgstr "FullCycle"
+
+msgid "HighClientPriority"
+msgstr ""
+
+msgid "LCDproc output"
+msgstr ""
+
+msgid "Left channel"
+msgstr ""
+
+msgid "Mute"
+msgstr ""
+
+msgid "No EPG info available."
+msgstr "No EPG info available."
+
+msgid "NormalClientPriority"
+msgstr ""
+
+msgid "OutputNumber"
+msgstr "OutputNumber"
+
+msgid "PrioWait"
+msgstr ""
+
+msgid "RECORDING"
+msgstr ""
+
+msgid "Recording status"
+msgstr ""
+
+msgid "Right channel"
+msgstr ""
+
+msgid "Scrollspeed"
+msgstr "Scrollspeed"
+
+msgid "Scrollwait"
+msgstr "Scrollwait"
+
+msgid "SetClientPriority"
+msgstr ""
+
+msgid "Show subtitle"
+msgstr ""
+
+msgid "Show time"
+msgstr ""
+
+msgid "Stereo"
+msgstr ""
+
+msgid "TimeDateCycle"
+msgstr "TimeDateCycle"
+
+msgid "Volume "
+msgstr ""
+
+msgid "VolumeKeep"
+msgstr "VolumeKeep"
+
+msgid "Waiting for EPG info."
+msgstr "Scanning for EPG info."
+
+msgid "auto"
+msgstr ""
+
+msgid "detailed"
+msgstr ""
+
+msgid "off"
+msgstr ""
+
+msgid "on"
+msgstr ""
+
+msgid "simple"
+msgstr ""

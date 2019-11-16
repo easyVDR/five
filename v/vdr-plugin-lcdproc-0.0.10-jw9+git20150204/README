@@ -1,0 +1,130 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Martin Hammerschmid <martin@hammerschmid.com>
+Adapted for recent VDRs by:  Joachim Wilke <vdr@joachim-wilke.de>
+
+Project's homepage:          home.pages.at/linux/dvb.html 
+
+Latest version available at: http://home.pages.at/linux/dvb.html 
+
+See the file COPYING for license information.
+
+Description: Output to LCD modules that are supported by LCDproc 
+
+-------------------------------------------------------------------------
+
+vdr -Plcdproc or -P"lcdproc -h <host> -p <port>" ... makes vdr connect to a LCDd.
+
+Current channel info and menus are then displayed on the LCD too.
+
+I had a 4x20 character display in mind but it should
+work with 4x16 up to 4x40 and 2x40.
+2x16+ displays should work too but are NOT fully supported.
+
+LCDd can be used in an xterm or console too, so it
+might be useful even without having the hardware. 
+( ./LCDd -d curses )
+
+lcdtranstbl.h is used to map characters for output to LCDd.
+Depending on the LCD hardware some characters may not displayed
+correctly, you can fix that by selecting a in the setup menu: (Charmap)
+
+0 ... nomap         no mapping, useful for the curses driver
+1 ... hd44780       
+2 ... CFontz        Thanks to Stephan Schreiber <stephan@sschreiber.de>
+3 ... SGX120        Thanks to Harald Milz <hm@seneca.muc.de>
+
+lcdkeyconf.h is used to configure the plugin for a keypad.
+you can use a different file instead with
+LCDKEYCONF=/path/to/your/lcdkeyconf.h 
+during compile time.
+
+Mattia Rossi <mattia@technologist.com> added support for the output pins 
+that some Matrix Orbital displays have (lcdm001 and glk driver). 
+So the card status among other things can be indecated by led.
+
+
+Brief description of the setup menue:
+
+FullCycle / TimeDateCycle 
+  during recording the same display toggles between time/date and card status
+  FullCycle (seconds) is the time for a complete cycle while
+  TimeDateCycle (seconds) is the duration where time/date is shown.
+
+VolumeKeep
+  ( 1/10 seconds ) how long the volume is shown on the display
+  
+Scrollwait
+  ( 1/8 seconds )  duration before scrolling is started
+
+Scrollspeed
+  ( 1/8 seconds )  higher value means slower scrolling
+
+Charmap
+  see above. 
+
+AltShift
+  when a keypad is used and a shiftkey is defined the type of shiftkey
+  indication ( done by LCDproc's 'heartbeat' ) can be changed.
+
+BackLight
+  backlight on/off 
+
+OutputNumber
+  implemented by Mattia Rossi <mattia@technologist.com> 
+  sets how many output pins should be used to indicate 
+  states like on/off, card status, ...
+  
+RecordingStatus
+  configures whether the recording status is displayed "detailed" 
+  (for every dvb card) or only "simple".
+
+ShowTime
+  implemented by Sebastian Frei <sebastian@schnapsleichen.de>
+  disable this if you have a small display and don't want to have
+  the time displayed in the top line
+
+LCDproc is available at http://lcdproc.omnipotent.net/
+or here http://sourceforge.net/projects/lcdproc/
+
+  What's needed to run a LCD?
+  
+   Hardware:
+
+     I used a single 4x20 LCD that works with the hd44780 8-bit driver on 
+     the printer port. 
+     ( availible at http://www.conrad.com/ product ID: 187275 
+       or see http://www.lcd-module.de/eng/doma/standard.htm )
+
+     printer port    LCD
+     ----------------------------------------------------------------------
+                     GND  (1) (used the PC's power suppy (black cable))
+                     +5V  (2) (used the PC's power suppy (red cable))
+                     Vadj (3) (contrast, conneced to GND works fine for me)
+
+     D0    (2)       D0   (7)
+     D1    (3)       D1   (8)
+     D2    (4)       D2   (9)
+     D3    (5)       D3  (10)
+     D4    (6)       D4  (11)
+     D5    (7)       D5  (12)
+     D6    (8)       D6  (13)
+     D7    (9)       D7  (14)
+     nSTRB (1)       EN   (6)
+     INIT (16)       RS   (4)
+                     RW   (5) (connected to GND (1) of the LCD)
+     GND  (18-25)
+                     --- optional for LCDs with background illumination ---
+                                   
+                     LED+ (15) (connected to +5V over a 100Ohm resisitor
+                                to make it not too bright)
+                     LED- (16) (connected to GND) 
+
+   Software:
+
+     Last tested with lcdproc-0.4.1 ( http://prdownloads.sourceforge.net/lcdproc/lcdproc-0.4.1.tar.gz )
+     LCDd -d HD44780 "-p 0x3bc -c winamp"
+     should run LCDd for the hardware described above conneceted to the
+     printer port (in my case the port's base address is 0x3bc).
+
+Martin 

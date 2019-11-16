@@ -1,0 +1,910 @@
+vdr-plugin-games (0.6.3-49easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 16:00:01 +0100
+
+vdr-plugin-games (0.6.3-49easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 20:17:40 +0100
+
+vdr-plugin-games (0.6.3-49easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:33:53 +0100
+
+vdr-plugin-games (0.6.3-49easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 01 Jul 2017 22:29:46 +0200
+
+vdr-plugin-games (0.6.3-49easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:48:24 +0200
+
+vdr-plugin-games (0.6.3-49easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:33:12 +0200
+
+vdr-plugin-games (0.6.3-49easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:37:07 +0200
+
+vdr-plugin-games (0.6.3-49easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:56:13 +0200
+
+vdr-plugin-games (0.6.3-49easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:38:29 +0100
+
+vdr-plugin-games (0.6.3-49easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:34:29 +0100
+
+vdr-plugin-games (0.6.3-48easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:12:14 +0200
+
+vdr-plugin-games (0.6.3-48easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 22:59:42 +0100
+
+vdr-plugin-games (0.6.3-48easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:21:44 +0100
+
+vdr-plugin-games (0.6.3-48easyVDR2~trusty) trusty; urgency=high
+
+  * change osd-size to max
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Feb 2015 03:23:08 +0100
+
+vdr-plugin-games (0.6.3-48easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Feb 2015 01:06:14 +0100
+
+vdr-plugin-games (0.6.3-48easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Feb 2015 01:01:33 +0100
+
+vdr-plugin-games (0.6.3-10easyVDR11~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Feb 2015 00:36:10 +0100
+
+vdr-plugin-games (0.6.3-10easyVDR10~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Feb 2015 00:31:16 +0100
+
+vdr-plugin-games (0.6.3-47yavdr45~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 20 Feb 2015 11:13:13 +0100
+
+vdr-plugin-games (0.6.3-47yavdr44~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Feb 2015 00:33:25 +0100
+
+vdr-plugin-games (0.6.3-47yavdr43~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 08 Feb 2015 16:17:22 +0100
+
+vdr-plugin-games (0.6.3-47yavdr42~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 01 Feb 2015 16:16:00 +0100
+
+vdr-plugin-games (0.6.3-47yavdr41~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 18 Jan 2015 16:34:29 +0100
+
+vdr-plugin-games (0.6.3-47yavdr40~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:30:09 +0200
+
+vdr-plugin-games (0.6.3-47yavdr39~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:03:52 +0200
+
+vdr-plugin-games (0.6.3-47yavdr37~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 15:57:42 +0100
+
+vdr-plugin-games (0.6.3-47yavdr36~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:35:58 +0200
+
+vdr-plugin-games (0.6.3-47yavdr35~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:04:44 +0200
+
+vdr-plugin-games (0.6.3-47yavdr34~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 00:58:42 +0200
+
+vdr-plugin-games (0.6.3-47yavdr33~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:22:34 +0200
+
+vdr-plugin-games (0.6.3-47yavdr32~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:47:43 +0200
+
+vdr-plugin-games (0.6.3-47yavdr31~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:48:08 +0100
+
+vdr-plugin-games (0.6.3-47yavdr30~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 00:59:14 +0100
+
+vdr-plugin-games (0.6.3-47yavdr28~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:49:06 +0100
+
+vdr-plugin-games (0.6.3-47yavdr27~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:21:15 +0100
+
+vdr-plugin-games (0.6.3-47yavdr26~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:24:35 +0100
+
+vdr-plugin-games (0.6.3-47yavdr25~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:05:19 +0100
+
+vdr-plugin-games (0.6.3-47yavdr24~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:52:23 +0100
+
+vdr-plugin-games (0.6.3-47yavdr23~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:03:50 +0100
+
+vdr-plugin-games (0.6.3-47yavdr22~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:35:09 +0100
+
+vdr-plugin-games (0.6.3-47yavdr21~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:15:35 +0200
+
+vdr-plugin-games (0.6.3-47yavdr20~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:22:48 +0200
+
+vdr-plugin-games (0.6.3-47yavdr19~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:14:47 +0100
+
+vdr-plugin-games (0.6.3-47yavdr18~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:13:24 +0100
+
+vdr-plugin-games (0.6.3-47yavdr17~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 08:57:27 +0100
+
+vdr-plugin-games (0.6.3-47yavdr16~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Feb 2012 20:04:06 +0100
+
+vdr-plugin-games (0.6.3-47yavdr16~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 29 Dec 2011 11:08:10 +0100
+
+vdr-plugin-games (0.6.3-47yavdr15~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:36:40 +0100
+
+vdr-plugin-games (0.6.3-47yavdr14~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 24 Dec 2011 11:23:55 +0100
+
+vdr-plugin-games (0.6.3-47yavdr13~precise) precise; urgency=medium
+
+  * Initial version for precise
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 16 Dec 2011 23:08:18 +0100
+
+vdr-plugin-games (0.6.3-31) unstable; urgency=low
+
+  * Build-depend on vdr-dev (>= 1.7.20)
+  * Standards-Version: 3.9.2
+  * Fixed spelling errors in description
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 20 Aug 2011 15:25:37 +0200
+
+vdr-plugin-games (0.6.3-30) unstable; urgency=low
+
+  * Fixed FTBS with GCC 4.6 (Closes: #628113)
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 28 May 2011 17:55:48 +0200
+
+vdr-plugin-games (0.6.3-29) unstable; urgency=low
+
+  * Build-depend on vdr-dev (>= 1.7.18)
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 17 Apr 2011 20:06:29 +0200
+
+vdr-plugin-games (0.6.3-28) unstable; urgency=low
+
+  * Build-depend on vdr-dev >= 1.7.17
+  * Updated debian/copyright
+  * Standards-Version: 3.9.1
+  * Switched to debhelper 7 and dropped cdbs
+
+ -- Tobias Grimm <etobi@debian.org>  Thu, 07 Apr 2011 22:01:08 +0200
+
+vdr-plugin-games (0.6.3-27) unstable; urgency=low
+
+  * Build-depend on vdr-dev >= 1.6.0-16
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 28 Mar 2010 15:06:01 +0200
+
+vdr-plugin-games (0.6.3-26) unstable; urgency=low
+
+  * Added 03_games-0.6.3-fix-INCLUDES.dpatch
+  * Removed 01_Makefile-fPIC-fix.dpatch
+  * Removed DVBDIR from debian/rules
+  * Standards-Version: 3.8.4
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Mar 2010 23:36:46 +0100
+
+vdr-plugin-games (0.6.3-25) unstable; urgency=low
+
+  * Removed non-standard shebang line from debian/rules (Closes: #552641)
+  * Added README.source
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 08 Nov 2009 23:26:41 +0100
+
+vdr-plugin-games (0.6.3-24) unstable; urgency=low
+
+  * Updated debian/watch
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 04 Oct 2009 12:46:52 +0200
+
+vdr-plugin-games (0.6.3-23) unstable; urgency=low
+
+  * Release for vdrdevel 1.7.6
+  * Added ${misc:Depends}
+  * Bumped standards version to 3.8.1
+  * Updated debian/copyright to our new format
+  * Changed section to "video"
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 29 Apr 2009 23:10:54 +0200
+
+vdr-plugin-games (0.6.3-22) unstable; urgency=low
+
+  [ Tobias Grimm ]
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Sat, 19 Jul 2008 17:46:04 +0200
+
+vdr-plugin-games (0.6.3-21) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Sun, 08 Jun 2008 23:24:23 +0200
+
+vdr-plugin-games (0.6.3-20) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 12:58:34 +0200
+
+vdr-plugin-games (0.6.3-19) experimental; urgency=low
+
+  [ Thomas Schmidt ]
+  * Build-Depend on vdr-dev (>=1.6.0)
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+  * Added Homepage field to debian/control
+  * Renamed XS-Vcs-* fields to Vcs-* in debian/control
+  * Bumped Standards-Version to 3.7.3
+
+  [ Tobias Grimm ]
+  * Using COMPAT=5 now
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 04 Apr 2008 00:17:06 +0200
+
+vdr-plugin-games (0.6.3-18) experimental; urgency=low
+
+  * Force rebuild for vdr 1.5.15
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:08:05 +0100
+
+vdr-plugin-games (0.6.3-17) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:33 +0100
+
+vdr-plugin-games (0.6.3-16) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:19 +0100
+
+vdr-plugin-games (0.6.3-15) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:12 +0100
+
+vdr-plugin-games (0.6.3-14) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:50:53 +0200
+
+vdr-plugin-games (0.6.3-13) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 28 Aug 2007 01:01:04 +0200
+
+vdr-plugin-games (0.6.3-12) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:00 +0200
+
+vdr-plugin-games (0.6.3-11) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:14 +0200
+
+vdr-plugin-games (0.6.3-10) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.5
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:02:35 +0200
+
+vdr-plugin-games (0.6.3-9) unstable; urgency=low
+
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields to debian/control
+  * Removed version from Build-Dependancy to dpatch - even Sarge has the
+    required version
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Mon, 28 May 2007 19:43:31 +0200
+
+vdr-plugin-games (0.6.3-8) experimental; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:00:27 +0200
+
+vdr-plugin-games (0.6.3-7) experimental; urgency=low
+
+  * Release for vdrdevel 1.5.1
+  * Added myself to Uploaders
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:15 +0100
+
+vdr-plugin-games (0.6.3-6) experimental; urgency=low
+
+  [ Thomas Günther ]
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 20:24:15 +0100
+
+vdr-plugin-games (0.6.3-5) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+  * Edited Description
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 13:47:30 +0100
+
+vdr-plugin-games (0.6.3-4) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Wed, 27 Sep 2006 08:26:36 +0200
+
+vdr-plugin-games (0.6.3-3) unstable; urgency=low
+
+  * Bumped Standards-Version to 3.7.2
+  * Added note about the Debian Maintainers to debian/copyright
+  * Added Tobias Grimm to Uploaders
+  * Build-Depend on vdr-dev (>=1.4.2-1)
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Mon, 28 Aug 2006 21:02:30 +0200
+
+vdr-plugin-games (0.6.3-2) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.1-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 18 Jun 2006 15:53:46 +0200
+
+vdr-plugin-games (0.6.3-1) unstable; urgency=low
+
+  * New upstream release
+  * Tobias Grimm <tg@e-tobi.net>
+    - Removed 90_APIVERSION.dpatch
+    - Updated 02_Makefile-nosilent.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  3 May 2006 22:14:01 +0200
+
+vdr-plugin-games (0.6.2-18) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.0-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 30 Apr 2006 21:20:18 +0200
+
+vdr-plugin-games (0.6.2-17) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.48-1)
+  * Tobias Grimm <tg@e-tobi.net>
+    - Added 90_APIVERSION.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 24 Apr 2006 20:16:34 +0200
+
+vdr-plugin-games (0.6.2-16) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.46-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 13 Apr 2006 00:28:28 +0200
+
+vdr-plugin-games (0.6.2-15) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.45-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 27 Mar 2006 23:17:22 +0200
+
+vdr-plugin-games (0.6.2-14) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Depend/Build-Depend on vdr (>=1.3.41-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 Jan 2006 20:03:20 +0100
+
+vdr-plugin-games (0.6.2-13) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr-dev (>=1.3.40-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 26 Jan 2006 19:12:52 +0100
+
+vdr-plugin-games (0.6.2-12) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.39-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 22 Jan 2006 12:35:22 +0100
+
+vdr-plugin-games (0.6.2-11) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.38-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 10 Jan 2006 17:01:40 +0100
+
+vdr-plugin-games (0.6.2-10) unstable; urgency=low
+ 
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.37-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 28 Nov 2005 22:53:03 +0100
+
+vdr-plugin-games (0.6.2-9) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.35-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  2 Nov 2005 16:54:07 +0100
+
+vdr-plugin-games (0.6.2-8) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.33-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun,  2 Oct 2005 12:16:20 +0200
+
+vdr-plugin-games (0.6.2-7) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.32-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 11 Sep 2005 18:47:23 +0200
+
+vdr-plugin-games (0.6.2-6) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.31-1)
+    - Use dependencies.sh from vdr-dev to set vdr dependencies and
+      conflicts to the right vdr version when building the package
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Fri,  2 Sep 2005 18:02:19 +0200
+
+vdr-plugin-games (0.6.2-5) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Depend/Build-Depend on vdr (>=1.3.30-1)
+    - Conflict with vdr (>=1.3.30.99)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 23 Aug 2005 19:18:24 +0200
+
+vdr-plugin-games (0.6.2-4) unstable; urgency=low
+ 
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.29-1)
+    - Conflict with vdr (>=1.3.29.99)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 15 Aug 2005 19:24:40 +0200
+
+vdr-plugin-games (0.6.2-3) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.28-1)
+    - Conflict with vdr (>=1.3.29)
+    - Removed "Replaces/Conflicts: vdr-plugin-tetris, vdr-plugin-tictactoe",
+      this was only needed for some inofficial, very old packages
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue,  9 Aug 2005 22:17:12 +0200
+
+vdr-plugin-games (0.6.2-2) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - Adapted patches for new dpatch >= 2.0.9
+    - Using debian/compat now
+    - Adapted debian/control, debian/install, debian/docs and debian/rules
+      to vdrdevel-plugin-games
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun,  7 Aug 2005 20:18:38 +0200
+
+vdr-plugin-games (0.6.2-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+    - Shortened debian/copyright and updated upstream authors email address
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun,  7 Aug 2005 12:29:16 +0200
+
+vdr-plugin-games (0.6.1-12) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Bumped Standards-Version to 3.6.2
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 29 Jun 2005 17:46:18 +0200
+
+vdr-plugin-games (0.6.1-11) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.27-1)
+    - Conflict with vdr (>=1.3.28)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 19 Jun 2005 17:51:07 +0200
+
+vdr-plugin-games (0.6.1-10) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.26-1)
+    - Conflict with vdr (>=1.3.27)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 12 Jun 2005 17:04:11 +0200
+
+vdr-plugin-games (0.6.1-9) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.25-1)
+    - Conflict with vdr (>=1.3.26)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 May 2005 14:48:24 +0200
+
+vdr-plugin-games (0.6.1-8) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.24-1)
+    - Conflict with vdr (>=1.3.25)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon,  9 May 2005 17:21:50 +0200
+
+vdr-plugin-games (0.6.1-7) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.23-1)
+    - Conflict with vdr (>=1.3.24)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 10 Apr 2005 13:55:41 +0200
+
+vdr-plugin-games (0.6.1-6) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Re-added dpatches which somehow got lost when we changed the
+      repository from cvs to svn, this should fix the FTBFS on some
+      architectures
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sat, 26 Mar 2005 17:31:05 +0100
+
+vdr-plugin-games (0.6.1-5) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Use patchlevel.sh subst in debian/rules not the old code,
+      therefore Build-Depend on vdr (>=1.2.6-7)
+    - Changed my email-address to the debian one
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sat, 26 Mar 2005 17:29:07 +0100
+
+vdr-plugin-games (0.6.1-4) unstable; urgency=low
+
+  * Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>
+    - Build-depend on dpatch (>= 2.0.9)
+    - Converted existing dpatch-files to the new short format
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 26 Oct 2004 11:51:53 +0200
+
+vdr-plugin-games (0.6.1-3) unstable; urgency=low
+
+  * Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>
+    - Use dpatch, so build-dep on dpatch 
+    - Add 01_Makefile-fPIC-fix.dpatch, to fix FTBFS (closes: #266793)
+    - Add 02_Makefile-nosilent.dpatch, to not suppress the output of
+      the make and g++-calls
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 19 Aug 2004 16:52:32 +0200
+
+vdr-plugin-games (0.6.1-2) unstable; urgency=low
+
+  * Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>
+    - Now really changed architecture to any
+    - Changed debian/watch and debian/copyright to the new upstream url
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 16 Aug 2004 21:36:50 +0200
+
+vdr-plugin-games (0.6.1-1) unstable; urgency=low
+
+  * Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de> 
+    - New upstream release
+    - Changed architecture to any	 
+    - Use dh_install
+    - Changed maintainer to Debian VDR Team 
+      <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+    - First upload to official Debian-archive (closes: Bug#229223)
+    - Added patchlevel-mechanism, to be compatible with c't-vdr
+    - Added watch-file
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Fri, 30 Jul 2004 14:39:34 +0200
+
+vdr-plugin-games (0.6.0-4) unstable; urgency=low
+
+  * Rebuild for vdr 1.2.6
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 16 Nov 2003 15:00:13 +0100
+
+vdr-plugin-games (0.6.0-3) unstable; urgency=low
+
+  * Rebuild for vdr 1.2.5
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Wed, 17 Sep 2003 20:15:37 +0200
+
+vdr-plugin-games (0.6.0-2) unstable; urgency=low
+
+  * changed the plugin-dir to /usr/lib/vdr/plugins, to be FHS compliant
+    Thanks to Henning Glawe <glaweh@physik.fu-berlin.de> for pointing me 
+    to this one
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 14 Sep 2003 16:25:39 +0200
+
+vdr-plugin-games (0.6.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sat, 13 Sep 2003 10:18:10 +0200
+
+vdr-plugin-games (0.4.2-3) unstable; urgency=low
+
+  * Changed debian/rules and debian/control (added debian/control.template),
+    so that the correct dependancy to vdr is filled out automatically on the
+    version of vdr-dev, you have installed
+  * Bump Standards-Version to 3.6.1
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Wed, 10 Sep 2003 10:22:32 +0200
+
+vdr-plugin-games (0.4.2-2) unstable; urgency=low
+
+  * Rebuild for vdr 1.2.2
+  * Bump Standards-Version to 3.6.0
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Wed, 13 Aug 2003 10:48:33 +0200
+
+vdr-plugin-games (0.4.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Bump Standard-Version to 3.5.10
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 13 Jul 2003 15:55:12 +0200
+
+vdr-plugin-games (0.4.1-4) unstable; urgency=low
+
+  * Rebuild for vdr 1.2.1
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Mon,  9 Jun 2003 19:03:16 +0200
+
+vdr-plugin-games (0.4.1-3) unstable; urgency=low
+
+  * Rebuild for vdr 1.2.0
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun,  1 Jun 2003 21:57:29 +0200
+
+vdr-plugin-games (0.4.1-2) unstable; urgency=low
+
+  * Rebuild for vdr 1.1.29
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Wed, 30 Apr 2003 17:56:16 +0200
+
+vdr-plugin-games (0.4.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Rebuild for vdr 1.1.28
+  * New game: tictactoe - replaces separate tictactoe-plugin
+  * Bump Standards-Version to 3.5.9
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Tue, 22 Apr 2003 12:45:28 +0200
+
+vdr-plugin-games (0.4.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Upstream namechange to vdr-games - please edit your vdr-startscript to
+	 reflect the change (change -Ptetris to -Pgames)
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 13 Apr 2003 15:51:51 +0200
+
+vdr-plugin-tetris (0.2.2-3) unstable; urgency=low
+
+  * rebuild for vdr 1.1.25 
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Wed,  5 Mar 2003 19:55:46 +0100
+
+vdr-plugin-tetris (0.2.2-2) unstable; urgency=low
+
+  * changed wrong package description
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun,  2 Feb 2003 15:35:19 +0100
+
+vdr-plugin-tetris (0.2.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 12 Jan 2003 22:43:18 +0100
+
+vdr-plugin-tetris (0.2.0-4) unstable; urgency=low
+
+  * compiled for vdr 1.1.20
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 15 Dec 2002 19:00:07 +0100
+
+vdr-plugin-tetris (0.2.0-3) unstable; urgency=low
+
+  * compiled for vdr 1.1.19
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Mon,  9 Dec 2002 23:46:56 +0100
+
+vdr-plugin-tetris (0.2.0-2) unstable; urgency=low
+
+  * compiled for vdr 1.1.18
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Mon,  2 Dec 2002 12:48:35 +0100
+
+vdr-plugin-tetris (0.2.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Tue, 19 Nov 2002 14:15:26 +0100
+
+vdr-plugin-tetris (0.1.3-1) unstable; urgency=low
+
+  * New upstream release
+  * compiled for vdr 1.1.16
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Mon, 11 Nov 2002 11:51:31 +0100
+
+vdr-plugin-tetris (0.1.2-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Mon,  4 Nov 2002 00:55:58 +0100

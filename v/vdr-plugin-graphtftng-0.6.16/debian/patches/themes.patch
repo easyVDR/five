@@ -1,0 +1,111 @@
+Index: vdr-plugin-graphtftng-0.6.14/themes/nOpacity.theme
+===================================================================
+--- vdr-plugin-graphtftng-0.6.14.orig/themes/nOpacity.theme	2016-05-16 23:12:25.302452114 +0200
++++ vdr-plugin-graphtftng-0.6.14/themes/nOpacity.theme	2016-05-16 23:12:25.274451975 +0200
+@@ -10,12 +10,13 @@
+ // -------------------------------------
+ // set paths to fit your environment
+ // -------------------------------------
++// mango 02/16/2016 - added logos-path for easyVDR
+ 
+-var chanLogos = "/usr/share/vdr-skins/logos4nOpacity";
++var chanLogos = "/usr/share/vdr-skins/skinnopacity/";
+ // var chanLogos = "/usr/share/vdr/plugins/skinnopacity/logos";
+ 
+ var varEPGimagesPath_1 = "/var/cache/vdr/epgimages/";
+-var varEPGimagesPath_2 = "/video0/epgimages/";
++var varEPGimagesPath_2 = "/var/cache/vdr/epgimages/";
+ 
+ // -------------------------------------
+ // select color scheme
+@@ -195,7 +196,7 @@
+ 
+    // Senderlogo Logo oben rechts
+ 
+-   Image debug=channellogo,x=1152,y=0,width=190,height=115,bg_x=1140,bg_y=2,bg_width=205,bg_height=120,fit=yes,aspect_ratio=no,
++   Image debug=channellogo,x=1152,y=0,width=180,height=115,bg_x=1140,bg_y=2,bg_width=205,bg_height=120,fit=yes,aspect_ratio=no,
+        path={chanLogos}/{presentChannelName/lower}.png,path2=symbols/channellogoback.png,on_click=Schedule;
+    
+    // Aktuelle Sendung
+@@ -212,7 +213,7 @@
+ 
+    Image debug=pepgimage,x=15,y=155,width=230,height=200,
+      path={varEPGimagesPath_1}{presentID}_(0-9).jpg:
+-       {varEPGimagesPath_2}{presentID}.png,
++       {varEPGimagesPath_2}{presentID}.jpg,
+        fit=yes,aspect_ratio=yes,delay=5;
+  
+    // Kommende Sendung
+@@ -229,7 +230,7 @@
+ 
+    Image debug=fepgimage,x=15,y=460,width=230,height=200,
+      path={varEPGimagesPath_1}{followingID}_(0-9).jpg:
+-     {varEPGimagesPath_2}{followingID}.png,
++     {varEPGimagesPath_2}{followingID}.jpg,
+      fit=yes,aspect_ratio=yes,delay=5; 
+ 
+    // Iconleiste
+@@ -385,7 +386,7 @@
+ 
+    Image debug=pepgimage,x=15,y=155,width=230,height=200,
+      path={varEPGimagesPath_1}{presentID}_(0-9).jpg:
+-       {varEPGimagesPath_2}{presentID}.png,
++       {varEPGimagesPath_2}{presentID}.jpg,
+        fit=yes,aspect_ratio=yes,delay=5;
+  
+    // Banner
+@@ -540,7 +541,7 @@
+    
+    MenuImageMap file=menulogos/epgsearch.png,name=Programm;
+    MenuImageMap file=menulogos/chanman.png,name=Kanäle;
+-   MenuImageMap file=menulogos/timers.png,name=Timer;
++   MenuImageMap file=menulogos/Timer.png,name=Timer;
+    MenuImageMap file=menulogos/extrecmenu.png,name=Video;
+    MenuImageMap file=menulogos/cdplayer.png,name=Audio;
+    MenuImageMap file=menulogos/audio.png,name=Squeezebox;
+@@ -569,7 +570,26 @@
+    MenuImageMap file=menulogos/systeminfo.png,name=Systeminformationen;
+    MenuImageMap file=menulogos/block.png,name=Childlock;
+    MenuImageMap file=menulogos/sleeptimer.png,name=Remote wakeup;
+-
++   MenuImageMap file=menulogos/mpv.png,name=Mediaplayer;
++   MenuImageMap file=menulogos/weatherforecast.png,name=Wetter;
++   MenuImageMap file=menulogos/Timer & Info ....png,name=Timer & Info ...;
++   MenuImageMap file=menulogos/Timer & Info....png,name=Timer & Info...;
++   MenuImageMap file=menulogos/Medien ....png,name=Medien ...;
++   MenuImageMap file=menulogos/Medien ....png,name=Medien...;
++   MenuImageMap file=menulogos/Extras ....png,name=Extras ...;
++   MenuImageMap file=menulogos/Extras....png,name=Extras...;
++   MenuImageMap file=menulogos/System & Einstellungen ....png,name=System & Einstellungen ...;
++   MenuImageMap file=menulogos/System & Einstellungen....png,name=System & Einstellungen...; 
++   MenuImageMap file=menulogos/Run Kodi.png,name=Run Kodi;
++   MenuImageMap file=menulogos/tvguideng.png,name=TV Guide NG;
++   MenuImageMap file=menulogos/undelete.png,name=Aufnahmen wiederherstellen; 
++   MenuImageMap file=menulogos/pulsecontrol.png,name=Pulsecontrol;
++   MenuImageMap file=menulogos/Befehle ....png,name=Befehle ...;
++   MenuImageMap file=menulogos/Befehle....png,name=Befehle...;
++   MenuImageMap file=menulogos/devstatus.png,name=Gerätestatus; 
++   MenuImageMap file=menulogos/EPG ....png,name=EPG ...;
++   MenuImageMap file=menulogos/EPG....png,name=EPG...;
++   
+ //***************************************************************************
+ // EPG Menu Common Part
+ //***************************************************************************
+@@ -925,7 +945,7 @@
+ 
+    Image x=1130,y=62,width=210,height=200,
+      path={varEPGimagesPath_1}{eventID}_(0-9).jpg:
+-          {varEPGimagesPath_2}{eventID}.png,
++          {varEPGimagesPath_2}{eventID}.jpg,
+      fit=yes,delay=5,aspect_ratio=yes;
+ 
+    // EPG Detailinformationen
+@@ -963,7 +983,7 @@
+ 
+    Image x=1130,y=65,width=210,height=200,
+           path={varEPGimagesPath_1}{selectedRowEventID}_(0-9).jpg:
+-               {varEPGimagesPath_2}{selectedRowEventID}.png,
++               {varEPGimagesPath_2}{selectedRowEventID}.jpg,
+           fit=yes,aspect_ratio=yes;
+ 
+ //***************************************************************************

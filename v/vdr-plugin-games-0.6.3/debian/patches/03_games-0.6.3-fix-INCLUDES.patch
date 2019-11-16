@@ -1,0 +1,128 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 03_games-0.6.3-fix-INCLUDES.dpatch by Thomas Günther <tom@toms-cafe.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Fixes compilation with VDR >= 1.7.13.
+
+@DPATCH@
+--- games-0.6.3/Makefile
++++ games-0.6.3/Makefile
+@@ -48,7 +48,7 @@
+ 
+ 	TARGET    = libvdr-games.so
+ 	OBJS     += $(VDROBJS)
+-	CFLAGS   += -fPIC -I$(VDRDIR) -I$(DVBDIR)/include
++	CFLAGS   += $(INCLUDES) -I$(VDRDIR)/include
+ 	LFLAGS   += -shared --whole-archive
+ 	DEFINES  += -D_GNU_SOURCE -DVDRVERSNUM=$(VDRNUM)
+ 
+@@ -57,7 +57,7 @@
+ all:
+ 	@echo
+ 	@echo -n "Building $(TARGET) "
+-	for GAME in $(GAMES); do cd $$GAME; make all; cd -; done
++	for GAME in $(GAMES); do cd $$GAME; make all DEFINES="$(DEFINES)" CFLAGS="$(CFLAGS)"; cd -; done
+ 	@rm -f $(TARGET)
+ 	@make $(TARGET)
+ 	@echo " done"
+--- games-0.6.3/minesweeper/Makefile
++++ games-0.6.3/minesweeper/Makefile
+@@ -1,6 +1,6 @@
+ GAME     = minesweeper
+ OBJS     = minesweeper.o
+-CFLAGS   = -g -pipe -O2 -Wall -Woverloaded-virtual
++CFLAGS  ?= -g -pipe -O2 -Wall -Woverloaded-virtual
+ 
+ all: $(OBJS)
+ 	@ar -r $(GAME).a $(OBJS)
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	g++ $(CFLAGS) -c $<
++	g++ $(DEFINES) $(CFLAGS) -c $<
+--- games-0.6.3/snake/Makefile
++++ games-0.6.3/snake/Makefile
+@@ -1,6 +1,6 @@
+ GAME     = snake
+ OBJS     = snake.o
+-CFLAGS   = -g -pipe -O2 -Wall -Woverloaded-virtual
++CFLAGS  ?= -g -pipe -O2 -Wall -Woverloaded-virtual
+ 
+ all: $(OBJS)
+ 	@ar -r $(GAME).a $(OBJS)
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	g++ $(CFLAGS) -c $<
++	g++ $(DEFINES) $(CFLAGS) -c $<
+--- games-0.6.3/tetris/Makefile
++++ games-0.6.3/tetris/Makefile
+@@ -1,6 +1,6 @@
+ GAME     = tetris
+ OBJS     = tetris.o
+-CFLAGS   = -g -pipe -O2 -Wall -Woverloaded-virtual
++CFLAGS  ?= -g -pipe -O2 -Wall -Woverloaded-virtual
+ 
+ all: $(OBJS)
+ 	@ar -r $(GAME).a $(OBJS)
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	g++ $(CFLAGS) -c $<
++	g++ $(DEFINES) $(CFLAGS) -c $<
+--- games-0.6.3/tictactoe/Makefile
++++ games-0.6.3/tictactoe/Makefile
+@@ -1,6 +1,6 @@
+ GAME     = tictactoe
+ OBJS     = tictactoe.o
+-CFLAGS   = -g -pipe -O2 -Wall -Woverloaded-virtual
++CFLAGS  ?= -g -pipe -O2 -Wall -Woverloaded-virtual
+ 
+ all: $(OBJS)
+ 	@ar -r $(GAME).a $(OBJS)
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	g++ $(CFLAGS) -c $<
++	g++ $(DEFINES) $(CFLAGS) -c $<
+--- games-0.6.3/tron/Makefile
++++ games-0.6.3/tron/Makefile
+@@ -1,6 +1,6 @@
+ GAME     = tron
+ OBJS     = tron.o
+-CFLAGS   = -g -pipe -O2 -Wall -Woverloaded-virtual
++CFLAGS  ?= -g -pipe -O2 -Wall -Woverloaded-virtual
+ 
+ all: $(OBJS)
+ 	@ar -r $(GAME).a $(OBJS)
+@@ -11,4 +11,4 @@
+ 
+ .cpp.o:
+ 	@echo -n "."
+-	g++ $(CFLAGS) -c $<
++	g++ $(DEFINES) $(CFLAGS) -c $<
+--- games-0.6.3/plugin.cpp
++++ games-0.6.3/plugin.cpp
+@@ -1,5 +1,5 @@
+-#include <plugin.h>
+-#include <osd.h>
++#include <vdr/plugin.h>
++#include <vdr/osd.h>
+ 
+ extern int launcher_menu(char ***m);
+ extern int launcher_start(int g, int x, int y, int s, int c);
+--- games-0.6.3/screen.cpp
++++ games-0.6.3/screen.cpp
+@@ -5,7 +5,7 @@
+ #ifdef SDL
+ 	#include <SDL.h>
+ #else
+-	#include <osd.h>
++	#include <vdr/osd.h>
+ #endif
+ 
+ #include "defines.h"

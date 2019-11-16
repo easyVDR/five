@@ -1,0 +1,166 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2013 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2007-08-18 08:13+0200\n"
+"Last-Translator: Andreas Brachold <anbr at users.berlios.de>\n"
+"Language-Team: <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Convert..."
+msgstr "Wandle..."
+
+msgid "Select picture via key 1..9!"
+msgstr "Bildauswahl über Taste 1..9!"
+
+msgid "Zoom"
+msgstr "Vergrößere"
+
+msgid "Operation failed"
+msgstr "Vorgang fehlgeschlagen"
+
+msgid "Commands"
+msgstr "Befehle"
+
+msgid "Show exif informations from image"
+msgstr "Zeigt Exif Informationen zum Bild"
+
+msgid "Could not load exif data from image!"
+msgstr "Konnte Exif Daten nicht vom Bild laden!"
+
+msgid "Marker"
+msgstr "Merkzeichen"
+
+msgid "Tags"
+msgstr "Bezeichnung"
+
+msgid "Back"
+msgstr "Zurück"
+
+msgid "A Image Viewer plugin"
+msgstr "Ein Bildbetrachter Plugin"
+
+msgid "Images"
+msgstr "Bilder"
+
+msgid "Select"
+msgstr "Auswählen"
+
+msgid "Parent"
+msgstr "Zurück"
+
+msgid "Error scanning directory!"
+msgstr "Fehler beim Lesen des Verzeichnisses!"
+
+msgid "Mount"
+msgstr "Einbinden"
+
+msgid "Unmount"
+msgstr "Aushängen"
+
+msgid "Eject"
+msgstr "Auswerfen"
+
+msgid "Selected data medium is not mounted!"
+msgstr "Ausgewählter Datenträger ist nicht eingebunden!"
+
+msgid "Mount failed!"
+msgstr "Einbinden fehlgeschlagen!"
+
+msgid "Mount succeeded"
+msgstr "Einbinden erfolgreich"
+
+msgid "Unmount succeeded!"
+msgstr "Aushängen erfolgreich!"
+
+msgid "Unmount failed!"
+msgstr "Aushängen fehlgeschlagen!"
+
+msgid "Eject failed!"
+msgstr "Auswerfen fehlgeschlagen!"
+
+msgid "Execute"
+msgstr "Ausführen"
+
+msgid "Image browser"
+msgstr "Bilder Verzeichnisanzeige"
+
+msgid "Play"
+msgstr "Wiedergabe"
+
+msgid "Data medium"
+msgstr "Datenträger"
+
+msgid "Image source"
+msgstr "Bilder-Datenträger"
+
+msgid "No files!"
+msgstr "Keine Dateien!"
+
+msgid "Image couldn't load"
+msgstr "Konnte Bild nicht lesen"
+
+msgid "Script execution failed"
+msgstr "Scriptausführung fehlgeschlagen"
+
+msgid "Slide show"
+msgstr "Diavorführung"
+
+msgid "Slide duration (sec)"
+msgstr "Anzeigedauer (Sek)"
+
+msgid "Repeat slide show"
+msgstr "Wiederholung der Diavorführung"
+
+msgid "Show numbers on index image"
+msgstr "Zeige Zahlen im Indexbild"
+
+msgid "Hide main menu entry"
+msgstr "Hauptmenueintrag verstecken"
+
+msgid "Send encoded frame several times"
+msgstr "Sende enkodierte Bilddaten mehrfach"
+
+msgid "Live Audio from primary Device"
+msgstr "Live Audio vom primären Gerät"
+
+msgid "Directory with temporary files"
+msgstr "Verzeichnis mit temporären Dateien"
+
+msgid "Remove temporary files immediately"
+msgstr "Temporäre Dateien unverzüglich löschen"
+
+msgid "Remove temporary files"
+msgstr "Lösche temporäre Dateien"
+
+msgid "Border for Underscan (Height)"
+msgstr "Rand für Underscan (Höhe)"
+
+msgid "Border for Underscan (Width)"
+msgstr "Rand für Underscan (Breite)"
+

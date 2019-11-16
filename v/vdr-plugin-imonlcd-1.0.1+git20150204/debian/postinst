@@ -1,0 +1,13 @@
+#!/bin/sh
+case "$1" in
+  configure)
+    if [ -e /usr/bin/lsusb ]; then
+      if [ $(lsusb -d 15c2:0038 | wc -l) -gt 0 ]; then
+        echo "found iMON 15c2:0038"
+        sed -i -e "s/\-d\ \/dev\/lcd0\ \-p\ 0038/\-d\ \/dev\/imon_0038 \-p\ 0038/" "/etc/vdr/plugins/plugin.imonlcd.conf"
+      elif [ $(lsusb -d 15c2:ffdc | wc -l) -gt 0 ]; then
+         echo "found iMON 15c2:ffdc"
+         sed -i -e "s/\-d\ \/dev\/lcd0\ \-p\ 0038/\-d\ \/dev\/imon_ffdc \-p\ ffdc/" "/etc/vdr/plugins/plugin.imonlcd.conf"
+      fi
+    fi
+esac

@@ -1,0 +1,3 @@
+usr/share/fonts/truetype/ttf-bitstream-vera/Vera.ttf  var/lib/vdr/plugins/graphtftng/fonts/Vera.ttf
+etc/vdr/plugins/plugin.graphtftng.conf  var/lib/vdr/plugins/graphtftng.conf
+usr/lib/vdr/plugins/libvdr-graphtftng.so.2.2.0  usr/lib/vdr/plugins/libvdr-graphtft.so.2.2.0

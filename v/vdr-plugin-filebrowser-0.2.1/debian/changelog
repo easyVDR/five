@@ -1,0 +1,547 @@
+vdr-plugin-filebrowser (0.2.1-16easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 15:31:40 +0100
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 20:17:18 +0100
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:28:43 +0100
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 29 Jun 2017 17:13:15 +0200
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:48:04 +0200
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:32:52 +0200
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:36:45 +0200
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:55:52 +0200
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:38:07 +0100
+
+vdr-plugin-filebrowser (0.2.1-16easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Nov 2015 22:06:49 +0100
+
+vdr-plugin-filebrowser (0.2.1-15easyVDR4~trusty) trusty; urgency=high
+
+  * added new conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 09 Nov 2015 00:30:15 +0100
+
+vdr-plugin-filebrowser (0.2.1-15easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:11:35 +0200
+
+vdr-plugin-filebrowser (0.2.1-15easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 22:59:24 +0100
+
+vdr-plugin-filebrowser (0.2.1-15easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 Mar 2015 22:37:59 +0100
+
+vdr-plugin-filebrowser (0.2.1-14easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:42:31 +0200
+
+vdr-plugin-filebrowser (0.2.1-14easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 02 May 2014 03:44:11 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr39~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:29:41 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr38~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:03:18 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr36~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 15:57:10 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr35~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:35:37 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr34~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:04:27 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr33~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 00:58:25 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr32~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:22:17 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr31~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:47:26 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr30~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:47:48 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr29~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 00:58:57 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr27~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:48:47 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr26~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:20:36 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr25~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:24:12 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr24~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:04:53 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr23~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:51:59 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr22~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:03:24 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr21~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:34:51 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr20~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:15:18 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr19~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:22:28 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr18~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:14:27 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr17~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:13:04 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr16~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 08:57:07 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr15~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Feb 2012 20:03:45 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr15~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 29 Dec 2011 11:07:49 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr14~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:36:20 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr13~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 24 Dec 2011 11:23:35 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr12~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 17 Oct 2011 15:16:21 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr11~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 05 Sep 2011 18:12:35 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr10~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 25 Aug 2011 17:52:27 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr9~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 18 Aug 2011 20:02:32 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr8~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 15 Jun 2011 13:43:28 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr7~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 14 Jun 2011 20:41:25 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr6~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 25 May 2011 13:52:12 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr5~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 22 May 2011 22:53:29 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr4~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Tue, 19 Apr 2011 19:50:37 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr3~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Sun, 03 Apr 2011 22:04:10 +0200
+
+vdr-plugin-filebrowser (0.2.1-13yavdr2~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Tue, 22 Mar 2011 23:07:57 +0100
+
+vdr-plugin-filebrowser (0.2.1-13yavdr1~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Mon, 14 Mar 2011 22:07:40 +0100
+
+vdr-plugin-filebrowser (0.2.1-12yavdr1~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 03 Mar 2011 08:29:07 +0100
+
+vdr-plugin-filebrowser (0.2.1-11yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 18 Feb 2011 23:22:44 +0100
+
+vdr-plugin-filebrowser (0.2.1-10yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 15 Feb 2011 14:47:16 +0100
+
+vdr-plugin-filebrowser (0.2.1-9yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 10 Feb 2011 08:34:40 +0100
+
+vdr-plugin-filebrowser (0.2.1-8yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 09 Feb 2011 01:01:53 +0100
+
+vdr-plugin-filebrowser (0.2.1-7yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 08 Feb 2011 23:13:17 +0100
+
+vdr-plugin-filebrowser (0.2.1-6yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 16 Jan 2011 21:45:53 +0100
+
+vdr-plugin-filebrowser (0.2.1-5yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 08 Jan 2011 21:18:11 +0100
+
+vdr-plugin-filebrowser (0.2.1-4yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 07 Jan 2011 19:25:43 +0100
+
+vdr-plugin-filebrowser (0.2.1-3yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 03 Jan 2011 19:37:38 +0100
+
+vdr-plugin-filebrowser (0.2.1-2yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 02 Nov 2010 19:56:56 +0100
+
+vdr-plugin-filebrowser (0.2.1-1yavdr3) lucid; urgency=low
+
+  * reb. yavdr
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 30 Sep 2010 09:10:41 +0200
+
+vdr-plugin-filebrowser (0.2.1-1) experimental; urgency=low
+
+  * New upstream release
+  * Removed 91_gcc-4.4.dpatch and 92_glibc210.dpatch (fixed upstream)
+  * Removed dependency to dpatch
+  * source/format 3.0 (quilt)
+  * Removed README.source
+  * Updated debian/copyright
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 29 Sep 2010 10:55:08 +0200
+
+vdr-plugin-filebrowser (0.2.0-3) experimental; urgency=low
+
+  * Added gcc 4.4 fix
+  * Added 92_glibc210.dpatch
+  * Standards-Version: 3.8.3
+  * Removed non-standard shebang line from debian/rules
+  * Added README.source
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 26 Oct 2009 20:44:32 +0100
+
+vdr-plugin-filebrowser (0.2.0-2) experimental; urgency=low
+
+  * Release for vdrdevel 1.7.6
+  * Added ${misc:Depends}
+  * Bumped standards version to 3.8.1
+  * Updated debian/copyright
+  * Changed section to "video"
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 29 Apr 2009 23:10:53 +0200
+
+vdr-plugin-filebrowser (0.2.0-1) experimental; urgency=low
+
+  * New upstream release
+  * Changed my maintainer/uploader email address
+  * Fixed debian/watch
+  * Updated debian/copyright (licence changed to GPL-3!)
+  * Removed 01_Makefile-fPIC-fix.dpatch (fixed upstream)
+  * Removed 90_filebrowser-0.0.6-1.5.4.dpatch (fixed upstream)
+  * Bumped Standards-Version to 3.8.0
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 15 Nov 2008 17:55:02 +0100
+
+vdr-plugin-filebrowser (0.0.6b-9) experimental; urgency=low
+
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Jul 2008 19:24:57 +0200
+
+vdr-plugin-filebrowser (0.0.6b-8) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 12:56:54 +0200
+
+vdr-plugin-filebrowser (0.0.6b-7) experimental; urgency=low
+
+  * Build-depend on vdr-dev (>= 1.6.0)
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+  * Renamed XS-Vcs-* fields to Vcs-* in debian/control
+  * Bumped Standards-Version to 3.7.3
+  * Using COMPAT=5 now
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 04 Apr 2008 13:05:03 +0200
+
+vdr-plugin-filebrowser (0.0.6b-6) experimental; urgency=low
+
+  * Force rebuild for vdr 1.5.15
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:07:57 +0100
+
+vdr-plugin-filebrowser (0.0.6b-5) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:32 +0100
+
+vdr-plugin-filebrowser (0.0.6b-4) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:17 +0100
+
+vdr-plugin-filebrowser (0.0.6b-3) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:11 +0100
+
+vdr-plugin-filebrowser (0.0.6b-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:50:52 +0200
+
+vdr-plugin-filebrowser (0.0.6b-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed 10_smarter-conf-files.dpatch (now integrated in upstream)
+  * Added full license disclaimer and copyright years to debian/copyright
+
+ -- Thomas Günther <tom@toms-cafe.de>  Fri, 28 Sep 2007 00:07:24 +0200
+
+vdr-plugin-filebrowser (0.0.6-7) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 28 Aug 2007 01:01:03 +0200
+
+vdr-plugin-filebrowser (0.0.6-6) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+  * Updated debian/watch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:08:58 +0200
+
+vdr-plugin-filebrowser (0.0.6-5) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:12 +0200
+
+vdr-plugin-filebrowser (0.0.6-4) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.5
+  * Added 90_filebrowser-0.0.6-1.5.4.dpatch
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields to debian/control
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:40:32 +0200
+
+vdr-plugin-filebrowser (0.0.6-3) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:00:25 +0200
+
+vdr-plugin-filebrowser (0.0.6-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.1
+  * Added myself to Uploaders
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:14 +0100
+
+vdr-plugin-filebrowser (0.0.6-1) unstable; urgency=low
+
+  * Initial release (Closes: #409433)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat,  3 Feb 2007 01:51:53 +0100
+

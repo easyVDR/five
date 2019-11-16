@@ -1,0 +1,170 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# * 
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+# Michaël NIVAL  <mnival at club-internet.fr>, 2006.
+# Bernard Jaulin <bernard.jaulin@gmail.com>, 2013.
+
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2007-08-22 18:13+0200\n"
+"Last-Translator:  Benrard JAULIN <bernard.jaulin at gmail.com>\n"
+"Language-Team: <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Convert..."
+msgstr "Conversion..."
+
+msgid "Select picture via key 1..9!"
+msgstr "Sélectionner l'image (touches 1..9) !"
+
+msgid "Zoom"
+msgstr "Zoom"
+
+msgid "Operation failed"
+msgstr "L'opération a échoué"
+
+msgid "Commands"
+msgstr "Commandes"
+
+msgid "Show exif informations from image"
+msgstr "Montre les informations exif de l'image"
+
+msgid "Could not load exif data from image!"
+msgstr "Les données exif de l'image n'ont pu être chargées !"
+
+msgid "Marker"
+msgstr "Marquer"
+
+msgid "Tags"
+msgstr "Étiquettes"
+
+msgid "Back"
+msgstr "Retour"
+
+msgid "A Image Viewer plugin"
+msgstr "Module de visualisation d'images"
+
+msgid "Images"
+msgstr "Images"
+
+msgid "Select"
+msgstr "Sélectionner"
+
+msgid "Parent"
+msgstr "Parent"
+
+msgid "Error scanning directory!"
+msgstr "Erreur en parcourant le répertoire !"
+
+msgid "Mount"
+msgstr "Monter"
+
+msgid "Unmount"
+msgstr "Démonter"
+
+msgid "Eject"
+msgstr "Éjecter"
+
+msgid "Selected data medium is not mounted!"
+msgstr "La source séléctionnée n'est pas montée !"
+
+msgid "Mount failed!"
+msgstr "Le montage a échoué !"
+
+msgid "Mount succeeded"
+msgstr "Montage réussi"
+
+msgid "Unmount succeeded!"
+msgstr "Démontage réussi !"
+
+msgid "Unmount failed!"
+msgstr "Le démontage a échoué !"
+
+msgid "Eject failed!"
+msgstr "L'éjection a échoué !"
+
+msgid "Execute"
+msgstr "Exécuter"
+
+msgid "Image browser"
+msgstr "Navigateur d'image"
+
+msgid "Play"
+msgstr "Lire"
+
+msgid "Data medium"
+msgstr "Source"
+
+msgid "Image source"
+msgstr "Source image"
+
+msgid "No files!"
+msgstr "Pas de fichiers !"
+
+msgid "Image couldn't load"
+msgstr "Impossible de charger l'image"
+
+msgid "Script execution failed"
+msgstr "Impossible d'exécuter le script"
+
+msgid "Slide show"
+msgstr "Diaporama"
+
+msgid "Slide duration (sec)"
+msgstr "Durée entre les images (s)"
+
+msgid "Repeat slide show"
+msgstr "Répéter le diaporama"
+
+msgid "Show numbers on index image"
+msgstr "Numéroter les images sur la page d'index"
+
+msgid "Hide main menu entry"
+msgstr "Masquer dans le menu principal"
+
+msgid "Send encoded frame several times"
+msgstr "Diffuse plusieurs fois l'image encodée"
+
+msgid "Live Audio from primary Device"
+msgstr "Direct audio sur périphérique primaire"
+
+msgid "Directory with temporary files"
+msgstr "Répertoire temporaire"
+
+msgid "Remove temporary files immediately"
+msgstr "Supprimer immédiatement les fichiers temporaires"
+
+msgid "Remove temporary files"
+msgstr "Effacer les fichiers temporaires"
+
+msgid "Border for Underscan (Height)"
+msgstr "Bordure pour l'Underscan (Hauteur)"
+
+msgid "Border for Underscan (Width)"
+msgstr "Bordure pour l'Underscan (Largeur)"
+
+

@@ -1,0 +1,25 @@
+Source: vdr-plugin-lcdproc
+Section: video
+Priority: extra
+Maintainer: Peter Siering <ps@ctmagazin.de>
+Origin: ctvdr
+Bugs: mailto:pkg-vdr-dvb-devel@lists.alioth.debian.org
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.18), gettext, pkg-config
+Standards-Version: 3.9.2
+Homepage: http://projects.vdr-developer.org/projects/show/plg-lcdproc
+
+Package: vdr-plugin-lcdproc
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, lcdproc (>=0.4.3-13)
+Description: Plugin to vdr that connects to lcdproc
+ This plugin for vdr connect the digital PVR to lcdproc.
+
+Package: vdr-plugin-lcdproc-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-lcdproc (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-lcdproc
+ .
+ This package contains only the debugging symbols for vdr-plugin-lcdproc
+

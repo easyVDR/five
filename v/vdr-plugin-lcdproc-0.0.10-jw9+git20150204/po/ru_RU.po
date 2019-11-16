@@ -1,0 +1,112 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Vyacheslav Dikonov <sdiconov@mail.ru>, 2004
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.7.16\n"
+"Report-Msgid-Bugs-To: <vdr@joachim-wilke.de>\n"
+"POT-Creation-Date: 2011-01-01 16:52+0100\n"
+"PO-Revision-Date: 2011-01-19 23:59+0100\n"
+"Last-Translator: Jakob Kais <schpuntik@freenet.de>\n"
+"Language-Team:  <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Russian\n"
+"X-Poedit-Country: RUSSIAN FEDERATION\n"
+
+msgid "AltShift"
+msgstr ""
+
+msgid "BackLight"
+msgstr "Подсветка"
+
+msgid "BackLightWait"
+msgstr ""
+
+msgid "Charmap"
+msgstr "Кодировка"
+
+msgid "FullCycle"
+msgstr "Длительность полного цикла"
+
+msgid "HighClientPriority"
+msgstr "Высокий приоритет"
+
+msgid "LCDproc output"
+msgstr "Вывод LCDproc "
+
+msgid "Left channel"
+msgstr "Левый канал"
+
+msgid "Mute"
+msgstr "Выкл. Звука"
+
+msgid "No EPG info available."
+msgstr "Нету информации Телегида"
+
+msgid "NormalClientPriority"
+msgstr " Нормальный приоритет"
+
+msgid "OutputNumber"
+msgstr "Количество выходов на LCD"
+
+msgid "PrioWait"
+msgstr ""
+
+msgid "RECORDING"
+msgstr "Запись"
+
+msgid "Recording status"
+msgstr "Статус записи"
+
+msgid "Right channel"
+msgstr "Правый канал"
+
+msgid "Scrollspeed"
+msgstr "Скорость движения текста"
+
+msgid "Scrollwait"
+msgstr "Время движения текста"
+
+msgid "SetClientPriority"
+msgstr "Установка приоритета клиента"
+
+msgid "Show subtitle"
+msgstr "Показать описание"
+
+msgid "Show time"
+msgstr "Показать время"
+
+msgid "Stereo"
+msgstr "Стерео"
+
+msgid "TimeDateCycle"
+msgstr "Временная балка"
+
+msgid "Volume "
+msgstr "Громкость"
+
+msgid "VolumeKeep"
+msgstr "Время показа балки Громкости"
+
+msgid "Waiting for EPG info."
+msgstr "Поиск информации Телегида"
+
+msgid "auto"
+msgstr "авто"
+
+msgid "detailed"
+msgstr "подробно"
+
+msgid "off"
+msgstr "выкл"
+
+msgid "on"
+msgstr "вкл"
+
+msgid "simple"
+msgstr "просто"

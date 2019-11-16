@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+
+    # Change owner of directory for temporary files
+    /bin/chown -R vdr:vdr /var/lib/vdr/plugins/graphlcd || true
+
+    # Make vdr a member of the groups required by the plugin
+    /bin/sh /usr/lib/vdr/vdr-groups.sh --add vdr-plugin-graphlcd
+fi
+
+#DEBHELPER#

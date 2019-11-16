@@ -1,0 +1,2 @@
+debian/plugin.imonlcd.conf     etc/vdr/plugins/
+debian/92-imon.rules		lib/udev/rules.d/

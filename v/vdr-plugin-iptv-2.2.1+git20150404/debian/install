@@ -1,0 +1,2 @@
+iptv/*	usr/share/vdr/plugins/iptv/
+debian/plugin.iptv.conf    etc/vdr/plugins/

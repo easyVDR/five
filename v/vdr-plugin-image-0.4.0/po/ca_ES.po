@@ -1,0 +1,166 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2007-08-18 08:13+0200\n"
+"Last-Translator: FULL NAME <EMAIL at ADDRESS>\n"
+"Language-Team: <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Convert..."
+msgstr ""
+
+msgid "Select picture via key 1..9!"
+msgstr ""
+
+msgid "Zoom"
+msgstr ""
+
+msgid "Operation failed"
+msgstr ""
+
+msgid "Commands"
+msgstr "Ordres"
+
+msgid "Show exif informations from image"
+msgstr ""
+
+msgid "Could not load exif data from image!"
+msgstr ""
+
+msgid "Marker"
+msgstr ""
+
+msgid "Tags"
+msgstr ""
+
+msgid "Back"
+msgstr "Retornar"
+
+msgid "A Image Viewer plugin"
+msgstr ""
+
+msgid "Images"
+msgstr ""
+
+msgid "Select"
+msgstr "Escollir"
+
+msgid "Parent"
+msgstr "Anterior"
+
+msgid "Error scanning directory!"
+msgstr "Error al llegir una carpeta!"
+
+msgid "Mount"
+msgstr ""
+
+msgid "Unmount"
+msgstr ""
+
+msgid "Eject"
+msgstr ""
+
+msgid "Selected data medium is not mounted!"
+msgstr "l'Origen sel.leccionat no està muntat!"
+
+msgid "Mount failed!"
+msgstr "No he pogut muntar!"
+
+msgid "Mount succeeded"
+msgstr "mount correcte"
+
+msgid "Unmount succeeded!"
+msgstr "unmount amb èxit!"
+
+msgid "Unmount failed!"
+msgstr "No puc desmontar!"
+
+msgid "Eject failed!"
+msgstr "No puc expulsar!"
+
+msgid "Execute"
+msgstr ""
+
+msgid "Image browser"
+msgstr ""
+
+msgid "Play"
+msgstr "Reproduir"
+
+msgid "Data medium"
+msgstr "Orígen"
+
+msgid "Image source"
+msgstr ""
+
+msgid "No files!"
+msgstr ""
+
+msgid "Image couldn't load"
+msgstr ""
+
+msgid "Script execution failed"
+msgstr ""
+
+msgid "Slide show"
+msgstr ""
+
+msgid "Slide duration (sec)"
+msgstr ""
+
+msgid "Repeat slide show"
+msgstr ""
+
+msgid "Show numbers on index image"
+msgstr ""
+
+msgid "Hide main menu entry"
+msgstr ""
+
+msgid "Send encoded frame several times"
+msgstr ""
+
+msgid "Live Audio from primary Device"
+msgstr ""
+
+msgid "Directory with temporary files"
+msgstr ""
+
+msgid "Remove temporary files immediately"
+msgstr ""
+
+msgid "Remove temporary files"
+msgstr ""
+
+msgid "Border for Underscan (Height)"
+msgstr ""
+
+msgid "Border for Underscan (Width)"
+msgstr ""
+

@@ -1,0 +1,11 @@
+--- a/plugin.cpp
++++ b/plugin.cpp
+@@ -16,7 +16,7 @@
+ 
+ static int  x = -8;    // x position
+ static int  y = -8;    // y position
+-static int  s =  2;    // osd size
++static int  s =  3;    // osd size
+ static int  c =  2;    // computer skill
+ static int  g = -1;    // selected game
+ 

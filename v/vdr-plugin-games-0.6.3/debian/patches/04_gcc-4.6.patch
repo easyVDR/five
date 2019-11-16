@@ -1,0 +1,15 @@
+Description: Fixes FTBS with GCC 4.6
+Author: Tobias Grimm <etobi@debian.org>
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=628113
+
+--- vdr-plugin-games-0.6.3.orig/Makefile
++++ vdr-plugin-games-0.6.3/Makefile
+@@ -49,7 +49,7 @@ else
+ 	TARGET    = libvdr-games.so
+ 	OBJS     += $(VDROBJS)
+ 	CFLAGS   += $(INCLUDES) -I$(VDRDIR)/include
+-	LFLAGS   += -shared --whole-archive
++	LFLAGS   += -shared
+ 	DEFINES  += -D_GNU_SOURCE -DVDRVERSNUM=$(VDRNUM)
+ 
+ endif

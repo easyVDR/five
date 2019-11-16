@@ -1,0 +1,104 @@
+# vdr-imonlcd-plugin language source file.
+# Copyright (C) Diego Pierotto <vdr-italian at tiscali.it>
+# This file is distributed under the same license as the PACKAGE package.
+# Diego Pierotto <vdr-italian at tiscali.it> 2009-2010
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-imonlcd-plugin 1.0.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2010-11-19 19:23+0100\n"
+"PO-Revision-Date: 2010-08-09 20:18+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Control a iMON LCD"
+msgstr "Controlla un LCD iMON"
+
+msgid "iMON LCD"
+msgstr "LCD iMON"
+
+msgid "Contrast"
+msgstr "Contrasto"
+
+msgid "Default font"
+msgstr "Carattere predefinito"
+
+msgid "Height of big font"
+msgstr "Altezza del carattere grande"
+
+msgid "Height of small font"
+msgstr "Altezza del carattere piccolo"
+
+msgid "Disc spinning mode"
+msgstr "Modalità rotazione disco"
+
+msgid "Slim disc"
+msgstr "Disco leggero"
+
+msgid "Full disc"
+msgstr "Disco pieno"
+
+msgid "Single line"
+msgstr "Linea singola"
+
+msgid "Dual lines"
+msgstr "Linee doppie"
+
+msgid "Only topic"
+msgstr "Solo titolo"
+
+msgid "Render mode"
+msgstr "Modalità visione"
+
+msgid "Do nothing"
+msgstr "Non fare nulla"
+
+msgid "Showing clock"
+msgstr "Mostra orologio"
+
+msgid "Turning backlight off"
+msgstr "Spegni retroilluminazione"
+
+msgid "Show next timer"
+msgstr "Mostra prossimo timer"
+
+msgid "Wake up on next timer"
+msgstr "Risveglia al prossimo timer"
+
+msgid "Exit mode"
+msgstr "Modalità d'uscita"
+
+msgid "Margin time at wake up (min)"
+msgstr "Margine di tempo al risveglio (min)"
+
+msgid "Never"
+msgstr "Mai"
+
+msgid "Resume on activities"
+msgstr "Riprendi attività"
+
+msgid "Only per time"
+msgstr "Solo per l'ora"
+
+msgid "Suspend display at night"
+msgstr "Sospendi schermo la notte"
+
+msgid "Beginning of suspend"
+msgstr "Inizio sospensione"
+
+msgid "End time of suspend"
+msgstr "Fine sospensione"
+
+msgid "None active timer"
+msgstr "Nessun timer attivo"
+
+msgid "Unknown title"
+msgstr "Titolo sconosciuto"

@@ -1,0 +1,13 @@
+Index: vdr-plugin-graphtftng-0.6.14/Makefile
+===================================================================
+--- vdr-plugin-graphtftng-0.6.14.orig/Makefile	2016-05-16 23:14:00.142922403 +0200
++++ vdr-plugin-graphtftng-0.6.14/Makefile	2016-05-16 23:14:00.138922383 +0200
+@@ -13,7 +13,7 @@
+ # User settings
+ 
+ # like to support a touch screen ?
+-#WITH_TOUCH = 1
++WITH_TOUCH = 1
+ 
+ # like the X renderer to display directly on local xorg (grpahtft-fe not needed) 
+ WITH_X = 1

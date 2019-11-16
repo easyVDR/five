@@ -1,0 +1,267 @@
+vdr-plugin-imonlcd (1.0.1+git20150204-2easyVDR0~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 22:06:33 +0100
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 16:00:41 +0100
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 21:21:27 +0100
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:34:32 +0100
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 02 Jul 2017 17:09:40 +0200
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:49:08 +0200
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:33:57 +0200
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:37:35 +0200
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:56:52 +0200
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:39:18 +0100
+
+vdr-plugin-imonlcd (1.0.1+git20150204-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:36:01 +0100
+
+vdr-plugin-imonlcd (1.0.1+git20150204-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:13:21 +0200
+
+vdr-plugin-imonlcd (1.0.1+git20150204-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 01:00:52 +0100
+
+vdr-plugin-imonlcd (1.0.1+git20150204-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 Mar 2015 23:53:16 +0100
+
+vdr-plugin-imonlcd (1.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:44:11 +0200
+
+vdr-plugin-imonlcd (1.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Jun 2014 01:59:48 +0200
+
+vdr-plugin-imonlcd (1.0.1-6yavdr5~trusty) trusty; urgency=medium
+
+  * rebuild for testing-vdr
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Tue, 08 Apr 2014 18:38:54 +0200
+
+vdr-plugin-imonlcd (1.0.1-6yavdr5~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:30:55 +0200
+
+vdr-plugin-imonlcd (1.0.1-6yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:04:57 +0200
+
+vdr-plugin-imonlcd (1.0.1-6yavdr2~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 15:58:37 +0100
+
+vdr-plugin-imonlcd (1.0.1-6yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:36:42 +0200
+
+vdr-plugin-imonlcd (1.0.1-6yavdr0~precise) precise; urgency=medium
+
+  * update udev rule for kernel 3.8
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 28 Sep 2013 15:05:07 +0200
+
+vdr-plugin-imonlcd (1.0.1-5yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:05:22 +0200
+
+vdr-plugin-imonlcd (1.0.1-5yavdr0~precise) precise; urgency=medium
+
+  * set group vdr for all iMon devices 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 07 Sep 2013 11:54:47 +0200
+
+vdr-plugin-imonlcd (1.0.1-4yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 00:59:19 +0200
+
+vdr-plugin-imonlcd (1.0.1-4yavdr0~precise) precise; urgency=medium
+
+  * added autoconfiguration for common display types 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 26 Jun 2013 08:15:02 +0200
+
+vdr-plugin-imonlcd (1.0.1-3yavdr0~precise) precise; urgency=medium
+
+  * added udev-rule for imon lcds 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 25 Jun 2013 10:09:56 +0200
+
+vdr-plugin-imonlcd (1.0.1-2yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:23:15 +0200
+
+vdr-plugin-imonlcd (1.0.1-2yavdr0~precise) precise; urgency=low
+
+  * Build-depend on vdr-dev (>= 2.0.0)
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 31 Mar 2013 13:58:55 +0200
+
+vdr-plugin-imonlcd (1.0.1-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 24 Mar 2013 15:43:10 +0100
+
+vdr-plugin-imonlcd (1.0.0+git20130322-2) unstable; urgency=low
+
+  * Build-depend on vdr-dev (>= 1.7.42)
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 23 Mar 2013 20:52:02 +0100
+
+vdr-plugin-imonlcd (1.0.0+git20130322-1) unstable; urgency=low
+
+  * New Upstream Snapshot (commit e8e1361)
+  * Standards-Version: 3.9.4
+  * Build-depend in vdr-dev (>= 1.7.41)
+  * Use debhelper 9
+
+ -- Tobias Grimm <etobi@debian.org>  Fri, 22 Mar 2013 22:50:54 +0100
+
+vdr-plugin-imonlcd (1.0.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Standards-Version: 3.9.3
+  * debhelper / COMPAT=9
+  * Dropped cdbs and switched to using dh
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 15 Jul 2012 15:33:59 +0200
+
+vdr-plugin-imonlcd (0.0.5+git20120512-1) lucid; urgency=low
+
+  * New Upstream Snapshot (commit a654926)
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 12 May 2012 21:02:17 +0200
+
+vdr-plugin-imonlcd (0.0.5-2) lucid; urgency=low
+
+  * Switched to GIT using pristine tar
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 29 Oct 2011 19:51:06 +0200
+
+vdr-plugin-imonlcd (0.0.5-1) lucid; urgency=low
+
+  * Standards-Version: 3.9.1
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 08 Nov 2010 20:37:18 +0100
+
+vdr-plugin-imonlcd (0.0.5-0yavdr1) lucid; urgency=low
+
+  * New upstream release
+  * Corrected debian/watch
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 08 Nov 2010 18:57:50 +0100
+
+vdr-plugin-imonlcd (0.0.4-1) unstable; urgency=low
+
+  * New upstream release
+  * source/format 1.0
+  * Standards-Version: 3.8.4
+
+ -- Tobias Grimm <etobi@debian.org>  Thu, 06 May 2010 19:34:33 +0200
+
+vdr-plugin-imonlcd (0.0.2-2) unstable; urgency=low
+
+  * Removed non-standard shebang line from debian/rules
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 09 Nov 2009 19:36:29 +0100
+
+vdr-plugin-imonlcd (0.0.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Bumped standards version to 3.8.2
+  * Changed section to "video"
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 12 Jul 2009 20:02:58 +0200
+
+vdr-plugin-imonlcd (0.0.1-2) unstable; urgency=low
+
+  * Fixed debian/copyright
+  * Added debian/watch
+  * Fixed maintainer address
+  * Fixed package description
+  * Added missing build dependency to libfontconfig1-dev
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 26 May 2009 18:39:06 +0200
+
+vdr-plugin-imonlcd (0.0.1-1) unstable; urgency=low
+
+  * Initial release
+
+ -- hotzenplotz5 <hotzenplotz5@gmx.de>  Fri, 22 May 2009 14:30:20 +0200

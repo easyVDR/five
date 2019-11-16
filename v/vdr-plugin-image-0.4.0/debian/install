@@ -1,0 +1,5 @@
+debian/imagesources.conf etc/vdr/plugins/
+debian/plugin.image.conf etc/vdr/plugins/
+examples/imagecmds.conf etc/vdr/plugins/
+scripts/*.sh usr/share/vdr-plugin-image/
+

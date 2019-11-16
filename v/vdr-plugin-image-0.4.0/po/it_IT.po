@@ -1,0 +1,169 @@
+# *
+# * Image plugin to VDR (C++)
+# *
+# * (C) 2004 - 2007 Andreas Brachold    <anbr at users.berlios.de>
+# * based on (C) 2003 Kai Tobias Burwieck      <kai-at-burwieck.net>
+# *
+# * This code is free software; you can redistribute it and/or
+# * modify it under the terms of the GNU General Public License
+# * as published by the Free Software Foundation; either version 2
+# * of the License, or (at your option) any later version.
+# *
+# * This code is distributed in the hope that it will be useful,
+# * but WITHOUT ANY WARRANTY; without even the implied warranty of
+# * MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+# * GNU General Public License for more details.
+# *
+# * You should have received a copy of the GNU General Public License
+# * along with this program; if not, write to the Free Software
+# * Foundation, Inc., 59 Temple Place - Suite 330, Boston, MA 02111-1307, USA.
+# * Or, point your browser to http://www.gnu.org/copyleft/gpl.html
+# *
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-image 0.4.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 18:44+0100\n"
+"PO-Revision-Date: 2013-02-19 20:04+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team:  <vdr at linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Convert..."
+msgstr "Conversione..."
+
+msgid "Select picture via key 1..9!"
+msgstr "Seleziona immagine con i tasti 1..9!"
+
+msgid "Zoom"
+msgstr "Ingrandisci"
+
+msgid "Operation failed"
+msgstr "Operazione fallita"
+
+msgid "Commands"
+msgstr "Comandi"
+
+msgid "Show exif informations from image"
+msgstr "Mostra informazioni exif dell'immagine"
+
+msgid "Could not load exif data from image!"
+msgstr "Impossibile caricare i dati exif dell'immagine!"
+
+msgid "Marker"
+msgstr "Produttore"
+
+msgid "Tags"
+msgstr "Etichette"
+
+msgid "Back"
+msgstr "Indietro"
+
+msgid "A Image Viewer plugin"
+msgstr "Visualizzatore di immagini"
+
+msgid "Images"
+msgstr "Immagini"
+
+msgid "Select"
+msgstr "Seleziona"
+
+msgid "Parent"
+msgstr "Precedente"
+
+msgid "Error scanning directory!"
+msgstr "Errore scansione directory!"
+
+msgid "Mount"
+msgstr "Monta"
+
+msgid "Unmount"
+msgstr "Smonta"
+
+msgid "Eject"
+msgstr "Espelli"
+
+msgid "Selected data medium is not mounted!"
+msgstr "Il tipo di dati selezionato non è montato!"
+
+msgid "Mount failed!"
+msgstr "Montaggio fallito!"
+
+msgid "Mount succeeded"
+msgstr "Montaggio riuscito"
+
+msgid "Unmount succeeded!"
+msgstr "Smontaggio riuscito!"
+
+msgid "Unmount failed!"
+msgstr "Smontaggio fallito!"
+
+msgid "Eject failed!"
+msgstr "Espulsione fallita!"
+
+msgid "Execute"
+msgstr "Esegui"
+
+msgid "Image browser"
+msgstr "Sfoglia immagini"
+
+msgid "Play"
+msgstr "Riproduci"
+
+msgid "Data medium"
+msgstr "Tipo di dati"
+
+msgid "Image source"
+msgstr "Fonte immagine"
+
+msgid "No files!"
+msgstr "Nessun file!"
+
+msgid "Image couldn't load"
+msgstr "Impossibile caricare l'immagine"
+
+msgid "Script execution failed"
+msgstr "Esecuzione script fallita"
+
+msgid "Slide show"
+msgstr "Proiezione di diapositive"
+
+msgid "Slide duration (sec)"
+msgstr "Durata sequenza (sec)"
+
+msgid "Repeat slide show"
+msgstr "Ripeti proiezione diapositive"
+
+msgid "Show numbers on index image"
+msgstr "Mostra n° immagine indice"
+
+msgid "Hide main menu entry"
+msgstr "Nascondi voce menu principale"
+
+msgid "Send encoded frame several times"
+msgstr "Invia frame codificati più volte"
+
+msgid "Live Audio from primary Device"
+msgstr "Audio dal vivo scheda primaria"
+
+msgid "Directory with temporary files"
+msgstr "Directory file temporanei"
+
+msgid "Remove temporary files immediately"
+msgstr "Rimuovi file temporanei immediatamente"
+
+msgid "Remove temporary files"
+msgstr "Rimuovi file temporanei"
+
+msgid "Border for Underscan (Height)"
+msgstr "Bordo per Underscan (altezza)"
+
+msgid "Border for Underscan (Width)"
+msgstr "Bordo per Underscan (largh.)"
+

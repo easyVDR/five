@@ -1,0 +1,44 @@
+Source: vdr-plugin-graphtftng
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>, Thomas Schmidt <tschmidt@debian.org>, Wolfgang Mangold <vdr@gmx.de>
+Origin: ctvdr
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.2.0), pkg-config,
+ libtool, gettext, libexif-dev,
+ libimlib2-dev, libavcodec-dev, libgtop2-dev,
+ libmagick++-dev|libmagick++5-dev, libswscale-dev, libswresample-dev, xorg-dev
+Standards-Version: 3.8.4
+Homepage: http://www.jwendel.de/vdr/
+
+Package: vdr-plugin-graphtft
+Depends: vdr-plugin-graphtftng, ${misc:Depends}
+Architecture: all
+Section: oldlibs
+Description: transitional dummy package
+  This is a transitional dummy package. It can be safely removed
+
+Package: vdr-plugin-graphtftng
+Architecture: any
+Replaces: vdr-plugin-graphtft (<< 0.4.1)
+Breaks: vdr-plugin-graphtft (<< 0.4.1)
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, ttf-bitstream-vera, vdr-tftng-easyvdr, graphtft-fe, vdr-plugin-graphtft
+Description: GraphTFT Plugin for VDR
+ This Plugin uses a Framebuffer or VDR device to show Status Informations.
+ So you can use a cheap mini-TFT to show infos about your VDR.
+
+Package: vdr-plugin-graphtftng-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-graphtftng (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-graphtftng
+ .
+ This package contains only the debugging symbols for vdr-plugin-graphtft
+
+Package: graphtft-fe
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, vdr-plugin-graphtftng
+Description: Frontend for GraphTFT Plugin for VDR
+ This Plugin uses a Framebuffer or X-Server to show Status Informations.
+ So you can use a cheap mini-TFT to show infos about your VDR.
