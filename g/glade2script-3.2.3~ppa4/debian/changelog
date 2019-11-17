@@ -1,0 +1,11 @@
+glade2script (3.2.3~ppa4) focal; urgency=high
+
+  * rebuild for easyVDR focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 17 Nov 2019 20:47:15 +0100
+
+glade2script (3.2.3~ppa4) xenial; urgency=low
+
+  * Sources creation
+
+ -- Yann MRN <yannubuntu@gmail.com>  Thu, 22 Sep 2017 15:14:14 +0200
