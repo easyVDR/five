@@ -1,0 +1,6 @@
+easyvdr-x-depends
+easyvdr-softhdd-vaapi
+i965-va-driver | i965-va-driver-shaders
+gstreamer1.0-vaapi
+libvdpau-va-gl1
+vdr-plugin-softhddevice-vaapi

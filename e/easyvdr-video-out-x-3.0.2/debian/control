@@ -1,0 +1,15 @@
+Source: easyvdr-video-out-x
+Section: misc
+Priority: optional
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Uploaders: Wolfgang mangold <vdr@gmx.de>
+Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 8)
+
+Package: easyvdr-video-out-x
+Architecture: any
+Depends: ${misc:Depends}, ${easyvdr-video-out-x}
+Conflicts: easyvdr-video-out,nvidia-common,nvidia,nvidia-settings,fglrx,fglrx-amdcccle
+Provides: easyvdr-video-out
+Description: X packages for easyVDR
+  Metapackage for easyVDR and many Graphiccards

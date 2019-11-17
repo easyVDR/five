@@ -1,0 +1,137 @@
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR19~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:18:01 +0100
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR18~bionic) bionic; urgency=high
+
+  * clean up daemon easyvdr-irmplircd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 16 Mar 2019 15:53:33 +0200
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR17~bionic) bionic; urgency=high
+
+  * repair easyvdr-irmplircd status
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Mar 2019 20:52:04 +0200
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR16~bionic) bionic; urgency=high
+
+  * bugfix easyvdr-irmplircd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Feb 2019 22:45:15 +0200
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR15~bionic) bionic; urgency=high
+
+  * change systemd to daemon
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Feb 2019 21:26:50 +0100
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR14~bionic) bionic; urgency=high
+
+  * bugfix post-removal
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Feb 2019 15:51:48 +0200
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR13~bionic) bionic; urgency=high
+
+  * remove wait for file in systemd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Feb 2019 15:19:05 +0200
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR12~bionic) bionic; urgency=high
+
+  * systemd update & adding wait for file in systemd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 21 Jan 2019 21:02:36 +0100
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR9~bionic) bionic; urgency=high
+
+  * rebuild easyvdr-irmplircd script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 16 Jan 2019 20:20:00 +0200
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR8~bionic) bionic; urgency=high
+
+  * edit easyvdr-irmplircd script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 Jan 2019 11:38:53 +0200
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR7~bionic) bionic; urgency=high
+
+  * disable initctl
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Jul 2018 09:20:00 +0100
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR6~bionic) bionic; urgency=high
+
+  * rebuild for systemd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Jul 2018 08:15:00 +0100
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR5~bionic) bionic; urgency=high
+
+  * rebuild for systemd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Jul 2018 08:00:00 +0100
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR4~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 22:19:54 +0100
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR3~zesty) zesty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 05:19:21 +0100
+
+easyvdr-usb-irmp (2.2.4-git20150611-1easyVDR0~trusty) trusty; urgency=high
+
+  * change start
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 24 Apr 2017 21:57:23 +0200
+
+easyvdr-usb-irmp (2.2.4-git20150611-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Jun 2015 20:15:55 +0200
+
+easyvdr-usb-irmp (2.2.3-git2013112-3easyVDR0~trusty) trusty; urgency=high
+
+  * repeate bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 02 Sep 2014 14:55:15 +0200
+
+easyvdr-usb-irmp (2.2.3-git2013112-2easyVDR0~trusty) trusty; urgency=high
+
+  * integration in easyvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Jan 2014 09:58:42 +0100
+
+easyvdr-usb-irmp (2.2.3-git2013112-1easyVDR2~trusty) trusty; urgency=high
+
+  * renamed package
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Dec 2013 17:49:55 +0100
+
+usb-irmp (2.2.3-git2013112-1easyVDR1~trusty) trusty; urgency=high
+
+  * changed symlink, depend
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 09 Dec 2013 13:24:50 +0100
+
+usb-irmp (2.2.3-git2013112-0easyVDR2~trusty) trusty; urgency=high
+
+  * fix for missing map file
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 08 Dec 2013 17:32:26 +0100
+
+usb-irmp (2.2.3-0easyVDR10~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 20 Nov 2013 15:58:08 +0100

@@ -1,0 +1,415 @@
+easyvdr-video-out-x (3.0.2-1easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:18:49 +0100
+
+easyvdr-video-out-x (3.0.2-1easyVDR1~bionic) bionic; urgency=high
+
+  * remove composite extension in xorg.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 06 Jul 2018 15:35:06 +0200
+
+easyvdr-video-out-x (3.0.2-1easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 23 Jun 2018 23:35:22 +0200
+
+easyvdr-video-out-x (3.0.2-0easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+  * remove obsolet depends  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 23 Jun 2018 22:45:22 +0200
+
+easyvdr-video-out-x (3.0.0-2easyVDR0~trusty) trusty; urgency=medium
+
+  * moved depends to easyvdr-x-depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 21 Feb 2016 08:27:26 +0100
+
+easyvdr-video-out-x (0.3.0-4easyVDR4~trusty) trusty; urgency=high
+
+  * disable screensaver -> xorg.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 04 Jan 2016 01:01:23 +0100
+
+easyvdr-video-out-x (0.3.0-4easyVDR2~trusty) trusty; urgency=high
+
+  * remove xvba-va-driver
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 27 Jun 2015 16:14:58 +0200
+
+easyvdr-video-out-x (0.3.0-4easyVDR0~trusty) trusty; urgency=high
+
+  * added mesa vdpau drivers
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Jun 2015 13:35:14 +0200
+
+easyvdr-video-out-x (0.3.0-3easyVDR8~trusty) trusty; urgency=high
+
+  * added vaapi
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Nov 2014 22:08:35 +0100
+
+easyvdr-video-out-x (0.3.0-3easyVDR7~trusty) trusty; urgency=high
+
+  * add depends easyvdr-xbmc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 03 May 2014 01:50:17 +0200
+
+easyvdr-video-out-x (0.3.0-3easyVDR6~trusty) trusty; urgency=high
+
+  * added externalplayer
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 30 Apr 2014 14:47:19 +0200
+
+easyvdr-video-out-x (0.3.0-3easyVDR5~trustyubuntu) trusty; urgency=high
+
+  * change nvidia depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 09 Feb 2014 11:58:41 +0100
+
+easyvdr-video-out-x (0.3.0-3easyVDR3~trusty) trusty; urgency=high
+
+  * change xorg.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 28 Nov 2013 18:04:59 +0100
+
+easyvdr-video-out-x (0.3.0-3easyVDR2~trusty) trusty; urgency=high
+
+  * removed xineliboutput-config
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Nov 2013 14:59:21 +0100
+
+easyvdr-video-out-x (0.3.0-3easyVDR0~trusty) trusty; urgency=high
+
+  * added xorg depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 Nov 2013 23:58:58 +0100
+
+easyvdr-video-out-x (0.3.0-2easyVDR0~trusty) trusty; urgency=high
+
+  * initial trusty release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 29 Oct 2013 10:51:39 +0100
+
+easyvdr-video-out-x (0.3.0-2easyVDR2~raring) raring; urgency=high
+
+  * added depends 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Oct 2013 21:32:14 +0200
+
+easyvdr-video-out-x (0.3.0-2easyVDR1~raring) raring; urgency=high
+
+  * changes for vaapi 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Sep 2013 18:13:34 +0200
+
+easyvdr-video-out-x (0.3.0-2easyVDR0~raring) raring; urgency=high
+
+  * no default plugins
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 26 Apr 2013 16:55:08 +0200
+
+easyvdr-video-out-x (0.3.0-1easyVDR0~raring) raring; urgency=high
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 20 Apr 2013 09:30:20 +0200
+
+easyvdr-video-out-x (0.3.0-0easyVDR1~raring) raring; urgency=high
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Apr 2013 17:56:17 +0200
+
+easyvdr-video-out-x (0.3.0-0easyVDR0.1~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 13:45:17 +0200
+
+easyvdr-video-out-x (0.3.0-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * paths over easyvdr-config-loader
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 11:21:02 +0200
+
+easyvdr-video-out-x (0.2.1-0easyVDR0.4) oneiric; urgency=high
+
+  * added markad
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Jun 2012 19:57:29 +0200
+
+easyvdr-video-out-x (0.2.1-0easyVDR0.1) oneiric; urgency=high
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 Jun 2012 13:13:25 +0200
+
+easyvdr-video-out-x (0.2.0-1easyVDR1.2) oneiric; urgency=high
+
+  * added externalplayer
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 29 May 2012 09:05:53 +0200
+
+easyvdr-video-out-x (0.2.0-1easyVDR1.1) oneiric; urgency=high
+
+  * new depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 May 2012 13:00:19 +0200
+
+easyvdr-video-out-x (0.2.0-1easyVDR1.0) oneiric; urgency=high
+
+  * added headless config
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 May 2012 12:36:39 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR3.4) oneiric; urgency=high
+
+  * lxde
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 31 Mar 2012 18:30:15 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR3.3) oneiric; urgency=high
+
+  * debugged samba-config
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 03 Mar 2012 09:42:45 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR3.2) oneiric; urgency=emergency
+
+  * fixed type mismatch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 16 Feb 2012 23:15:14 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR3.1) oneiric; urgency=low
+
+  * added dm140vfd-entries to setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 16 Feb 2012 15:54:58 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR3.0) oneiric; urgency=low
+
+  * debugged pluginlist in sysconfig
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 16 Feb 2012 09:34:39 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.9) oneiric; urgency=high
+
+  * set correct depencies in video-out-metapackages
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 Feb 2012 21:28:21 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.8) oneiric; urgency=high
+
+  * added new package to Meta
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Jan 2012 13:34:45 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.7) oneiric; urgency=high
+
+  * removed vdr, added easyvdr-lists to Meta
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Jan 2012 19:01:35 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.6) oneiric; urgency=high
+
+  * unified vdr-setup.xml and vdr-menu.xml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 10 Jan 2012 21:28:28 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.5) oneiric; urgency=low
+
+  * menu
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 29 Dec 2011 09:15:42 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.4) oneiric; urgency=medium
+
+  * protect config in /var
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 23 Dec 2011 17:34:33 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.3) oneiric; urgency=high
+
+  * fixed Livestart and Teletextfolder
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 19 Dec 2011 18:50:20 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.2) oneiric; urgency=high
+
+  * added vdr-manager-Plugin
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 23 Nov 2011 10:16:20 +0100
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.1) oneiric; urgency=high
+
+  * debugged skin-management
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 21 Oct 2011 19:32:42 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR2.0) oneiric; urgency=high
+
+  * new skins
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 21 Oct 2011 17:09:00 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.9) oneiric; urgency=high
+
+  * debugged lirc in setup.xml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Oct 2011 20:28:04 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.8) oneiric; urgency=low
+
+  * removed xserver-xorg-input-evtouch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 18 Sep 2011 13:25:27 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.7) oneiric; urgency=low
+
+  * added mailbox-plugin to vdr-setup.xml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 14 Sep 2011 16:06:41 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.6) oneiric; urgency=low
+
+  * build for easyVDR-Oneiric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 10 Sep 2011 00:08:06 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.5) lucid; urgency=low
+
+  * added Ramdisk-Support
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 25 Aug 2011 15:43:51 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.4) lucid; urgency=high
+
+  * changed sysconfig
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Jul 2011 12:38:45 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.3) lucid; urgency=low
+
+  * changed vdr-setup.xml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 04 Jul 2011 12:12:48 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.2) lucid; urgency=low
+
+  * little changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Jun 2011 11:35:37 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.1) lucid; urgency=low
+
+  * added dvbs2-ff and pvr350 to vdr-setup.xml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 May 2011 10:47:36 +0200
+
+easyvdr-video-out-x (0.0.1-1easyVDR1.0) lucid; urgency=low
+
+  * New Package build from nvidia
+
+ -- Duffy <duffy@easy-vdr.de>  Mon, 23 May 2011 18:17:24 +0200
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR2.5) lucid; urgency=high
+
+  * set Anthra-Skin to default
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 May 2011 22:48:28 +0200
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR2.4) lucid; urgency=high
+
+  * changed writing of setup.state in postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 19 May 2011 08:56:13 +0200
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR2.3) lucid; urgency=high
+
+  * changed postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 May 2011 08:29:15 +0200
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR2.2) lucid; urgency=low
+
+  * Samba-Workgoup set to default
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 11 May 2011 16:59:33 +0200
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR2.1) lucid; urgency=high
+
+  * corrected conflicts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 08 May 2011 12:23:09 +0200
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR2.0) lucid; urgency=high
+
+  * debugged wrong packagename in meta
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 07 May 2011 11:59:13 +0200
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.9) lucid; urgency=low
+
+  * added default-Plugins to nvidia-Metapackage
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 06 May 2011 21:30:40 +0200
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.8) lucid; urgency=low
+
+  * added write-status to setup.state
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Feb 2011 12:31:27 +0100
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.7) lucid; urgency=low
+
+  * added modprobe nvidia-current to postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 Feb 2011 09:04:43 +0100
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.6) lucid; urgency=low
+
+  * added wmdrawer
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Feb 2011 14:27:19 +0100
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.5) lucid; urgency=low
+
+  * changed files to correct mediadir
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Feb 2011 14:59:10 +0100
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.4) lucid; urgency=low
+
+  * removed alsa-dkms from Metapackage causing no sound
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Jan 2011 15:44:06 +0100
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.3) lucid; urgency=low
+
+  * added alsa-dkms to Metapackage
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Jan 2011 18:42:46 +0100
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.2) lucid; urgency=low
+
+  * changed keymap
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Jan 2011 17:05:20 +0100
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.1) lucid; urgency=low
+
+  * little debuggings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Jan 2011 17:59:52 +0100
+
+easyvdr-video-out-nvidia (0.0.1-1easyVDR1.0) lucid; urgency=low
+
+  * Initial Release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 31 Dez 2010 14:10:19 +0100
+

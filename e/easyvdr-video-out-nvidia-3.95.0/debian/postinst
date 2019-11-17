@@ -1,0 +1,32 @@
+#!/bin/bash
+##set -e
+#
+
+. /usr/share/easyvdr/setup/easyvdr-setup-defines    # common defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+. $SETUP_STATUS                                     # Statusfile auslesen
+
+. $SETUP/default_settings/General_Settings          # Plugins und Settings fur alle MetaPakete
+. $SETUP/default_settings/MetaPack_Settings         # Plugins und Settings fur das aktive MetaPaket
+
+
+Write_Status()
+ {
+ sed -i '/"*postinst vom MetaPaket Video-Out"*/d' $SETUP_STATUS
+ echo "# `date` postinst vom MetaPaket Video-Out zuletzt ausgefuehrt" >> $SETUP_STATUS
+ sed -i '/"*easyvdr_video_out="*/d' $SETUP_STATUS
+ echo "easyvdr_video_out=\"$MetaPack\"" >> $SETUP_STATUS
+ }
+
+
+if [ "$1" = "configure" ]; then
+
+    /usr/share/easyvdr/setup/easyvdr-postinst-video-out
+
+#    modprobe nvidia-current
+    # if (( $? == 0 )); then
+       Write_Status
+    # fi
+fi
+#DEBHELPER#
+

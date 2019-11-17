@@ -1,0 +1,6 @@
+usr/lib/easyvdr/easyvdr-start/easyvdr-irmplircd		usr/lib/easyvdr/easyvdr-start/
+#debian/easyvdr-irmplircd.service			etc/systemd/easyvdr/
+irmpexec				  		usr/bin/
+irmplircd				  		usr/bin/
+
+

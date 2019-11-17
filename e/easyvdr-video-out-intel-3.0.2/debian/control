@@ -1,0 +1,14 @@
+Source: easyvdr-video-out-intel
+Section: misc
+Priority: optional
+Maintainer: Bleifuss <Bleifuss2@gmx.net>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 8)
+
+Package: easyvdr-video-out-intel
+Architecture: any
+Depends: ${misc:Depends}, ${easyvdr-video-out-intel}
+Conflicts: easyvdr-video-out, xvba-va-driver, nvidia, fglrx
+Provides: easyvdr-video-out
+Description: Intel VAAPI Driver

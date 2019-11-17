@@ -1,0 +1,53 @@
+easyvdr-x-depends (0.01.0-4easyVDR7~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:19:04 +0100
+
+easyvdr-x-depends (0.01.0-4easyVDR6~bionic) bionic; urgency=high
+
+  * remove install xorg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 05 May 2019 23:42:32 +0200
+
+easyvdr-x-depends (0.01.0-4easyVDR5~bionic) bionic; urgency=high
+
+  * remove skinflatplus
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 28 Feb 2018 22:44:58 +0100
+
+easyvdr-x-depends (0.01.0-4easyVDR4~bionic) bionic; urgency=high
+
+  * adding python-xdg for openbox, adding skinflatplus
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 22 Feb 2018 13:34:37 +0100
+
+easyvdr-x-depends (0.01.0-4easyVDR1~bionic) bionic; urgency=high
+
+  * remove skinflatplus
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Dec 2017 15:59:54 +0100
+
+easyvdr-x-depends (0.01.0-4easyVDR0~bionic) bionic; urgency=high
+
+  * initial bionic
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Dec 2017 14:38:33 +0100
+
+easyvdr-x-depends (0.01.0-3easyVDR3~zesty) zesty; urgency=high
+
+  * initial zesty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 29 Sep 2017 09:53:57 +0200
+
+easyvdr-x-depends (0.01.0-3easyVDR0~trusty) trusty; urgency=high
+
+  * more depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 21 Feb 2016 08:28:10 +0100
+
+easyvdr-x-depends (0.00.1-0easyVDR0~trusty) trusty; urgency=medium
+
+  * initial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 20 Feb 2016 13:07:47 +0100

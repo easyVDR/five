@@ -1,0 +1,14 @@
+#!/bin/sh
+#set -e
+
+if [ "$1" = "configure" ]; then
+
+     if [ ! -f $PLUGIN_CFG_DIR/xineliboutput/config ]; then
+
+	cp var/lib/vdr/plugins/xineliboutput/config.default var/lib/vdr/plugins/xineliboutput/config
+
+     fi
+
+fi
+
+#DEBHELPER#

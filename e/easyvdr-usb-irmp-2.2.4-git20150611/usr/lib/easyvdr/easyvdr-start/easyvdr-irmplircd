@@ -1,0 +1,58 @@
+#!/bin/bash
+#V 0.1  Bleifuss
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+LOGGER="logger -t easyvdr-irmplircd"
+
+[ -f /usr/bin/irmplircd  ]                                        || { exit 0; }
+[ -f $CFG_DIR/sysconfig             ] && . $CFG_DIR/sysconfig     || { exit 0; }
+[ x"$LIRC_HW_CONF" = x"irmp_lirc"   ]                             || { exit 0; }
+[ ! -d /var/run/lirc                ] &&  mkdir -p /var/run/lirc
+$LOGGER "Starting  irmplircd"
+
+[ -f /var/lib/vdr/irmp_keymap ] && KEY_OPTION="-t /var/lib/vdr/irmp_keymap" || KEY_OPTION=""
+
+EXEC_CMD="/usr/bin/irmplircd -f -r 150 $KEY_OPTION /dev/input/ir-auto_dtc"
+
+kill_daemon ()
+{
+ PID=$(pidof -x $1)
+
+ if [ $? -eq 0 ] ;then
+   kill $PID
+ fi
+}
+
+status_daemon ()
+{
+ PID=$(pidof -x $1)
+
+ if [ $? -eq 0 ] ;then
+  echo "$EXEC_CMD is running"
+ fi
+}
+
+case "$1" in
+        start)
+                $EXEC_CMD &
+            ;;
+
+        stop)
+                kill_daemon $EXEC_CMD
+            ;;
+
+        status)
+                status_daemon $EXEC_CMD
+            ;;
+        restart)
+                kill_daemon $EXEC_CMD
+                sleep 1
+                $EXEC_CMD &
+            ;;
+
+        *)
+            echo $"Usage: $0 {start|stop|restart|status}"
+            exit 1
+
+esac

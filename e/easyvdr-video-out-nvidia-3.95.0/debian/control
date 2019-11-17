@@ -1,0 +1,15 @@
+Source: easyvdr-video-out-nvidia
+Section: misc
+Priority: optional
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Standards-Version: 3.9.4
+Build-Depends: debhelper (>= 7)
+
+Package: easyvdr-video-out-nvidia
+Architecture: any
+Depends: ${misc:Depends}, ${easyvdr-video-out-nvidia}
+Conflicts: easyvdr-video-out
+Replaces: easyvdr-video-out
+Provides: easyvdr-video-out
+Description: xineliboutput packages for easyVDR
+  Metapackage easyvdr-xineliboutput for easyVDR and NVidia-Cards

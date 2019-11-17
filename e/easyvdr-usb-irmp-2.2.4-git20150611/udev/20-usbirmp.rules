@@ -1,0 +1,4 @@
+#BUS=="usb", KERNEL=="hiddev?", SYSFS{idVendor}=="4243", SYSFS{idProduct}=="ee08", SYMLINK+="usb/hiddev9", GROUP="vdr", MODE="0660"
+#SYSFS{idVendor}=="4243", SYSFS{idProduct}=="ee21", GROUP="lp", MODE="0660"
+
+KERNEL=="hidraw*", ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="27d9", RUN+="/bin/mkdir /var/run/lirc", RUN+="/usr/bin/irmplircd /dev/%k", RUN+="/bin/ln -s /var/run/lirc/lircd /dev/input/ir-auto_dtc"

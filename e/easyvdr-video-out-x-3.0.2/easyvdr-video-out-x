@@ -1,0 +1,10 @@
+easyvdr-x-depends
+easyvdr-softhdd
+i965-va-driver
+gstreamer1.0-vaapi
+mesa-vdpau-drivers
+libvdpau1
+libvdpau-va-gl1
+libxineliboutput-sxfe
+vdr-plugin-softhddevice
+

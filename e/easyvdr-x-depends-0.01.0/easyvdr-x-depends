@@ -1,0 +1,12 @@
+#easyvdr-kodi
+kodi
+#python-xdg for openbox autostart
+python-xdg
+openbox
+vainfo
+vdpauinfo
+easyvdr-xineliboutput
+vdrsymbols-ttf
+vlc
+xineliboutput-sxfe
+#xorg

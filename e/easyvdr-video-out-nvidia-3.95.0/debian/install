@@ -1,0 +1,3 @@
+setup/default_settings/*                     usr/share/easyvdr/setup/default_settings/
+xine/config                                  var/lib/vdr/plugins/xine/
+xine/keymap                                  var/lib/vdr/plugins/xine/

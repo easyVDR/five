@@ -1,0 +1,10 @@
+media.xvdr.num_buffers_hd:4000
+engine.buffers.video_num_frames:35
+
+audio.synchronization.force_rate:48000
+audio.synchronization.resample_mode:on
+engine.buffers.audio_num_buffers:500
+audio.device.alsa_default_device:default
+audio.device.alsa_front_device:default
+audio.device.alsa_surround40_device:default
+audio.device.alsa_surround51_device:default

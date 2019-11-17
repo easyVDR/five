@@ -1,0 +1,36 @@
+easyvdr-xineliboutput (1.0.0-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:19:21 +0100
+
+easyvdr-xineliboutput (1.0.0-0easyVDR2~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+  * fix prefix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 21:54:25 +0100
+
+easyvdr-xineliboutput (1.0.0-0easyVDR~zesty) zesty; urgency=high
+
+  * initial zesty build
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 29 Sep 2017 09:43:55 +0200
+
+easyvdr-xineliboutput (1.0.0-0easyVDR~trusty) trusty; urgency=medium
+
+  * setup skript moved 2 setup package
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 17 Oct 2016 09:58:31 +0200
+
+easyvdr-xineliboutput (0.0.1-0easyVDR4~trusty) trusty; urgency=high
+
+  * added xineliboutput config
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Nov 2013 14:58:33 +0100
+
+easyvdr-xineliboutput (0.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * initial build
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 13 Nov 2013 19:05:43 +0100

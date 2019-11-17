@@ -1,0 +1,12 @@
+Source: easyvdr-usb-irmp
+Section: video
+Priority: extra
+Maintainer: Martin Neubauer <easyvdr-dev@easy-vdr.de>
+Build-Depends: debhelper (>= 8.0.0), liblircclient-dev
+Standards-Version: 3.9.4
+
+Package: usb-irmp
+Architecture: any
+Depends: usb-ircontrol
+Description: USB IRMP Client ...
+

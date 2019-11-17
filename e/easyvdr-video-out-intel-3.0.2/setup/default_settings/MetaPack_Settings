@@ -1,0 +1,42 @@
+#
+# Definition von Default-Plugins und Parametern die bei einem bestimmten Metapack zutreffend sind
+#
+#
+
+MetaPack="intel"
+
+XorgConfIncluded="yes"
+
+MetaPack_Default_Plugins="dvdswitch epgsearch skinflatplus"
+
+unset MetaPack_Sysconfig_Params
+# Achtung, ohne = und ohne Anführungszeichen um den Wert ...
+MetaPack_Sysconfig_Params[0]="VDR_FRONTEND Softhddevice"
+MetaPack_Sysconfig_Params[1]=""
+
+unset MetaPack_SetupConf_Params
+MetaPack_SetupConf_Params[0]="FontFixSize 33"
+MetaPack_SetupConf_Params[1]="FontFixSizeP 0.031000"
+MetaPack_SetupConf_Params[2]="FontOsdSize 41"
+MetaPack_SetupConf_Params[3]="FontOsdSizeP 0.038000"
+MetaPack_SetupConf_Params[4]="FontSmlSize 38"
+MetaPack_SetupConf_Params[5]="FontSmlSizeP 0.035000"
+
+MetaPack_SetupConf_Params[6]="OSDAspect 1.000000"
+MetaPack_SetupConf_Params[7]="OSDHeight 1080"
+MetaPack_SetupConf_Params[8]="OSDHeightP 1.000000"
+MetaPack_SetupConf_Params[9]="OSDLeft 0"
+MetaPack_SetupConf_Params[10]="OSDLeftP 0.000000"
+MetaPack_SetupConf_Params[11]="OSDSkin flatPlus"
+MetaPack_SetupConf_Params[12]="OSDTheme default"
+MetaPack_SetupConf_Params[13]="OSDTop 0"
+MetaPack_SetupConf_Params[14]="OSDTopP 0.000000"
+MetaPack_SetupConf_Params[15]="OSDWidth 1920"
+MetaPack_SetupConf_Params[16]="OSDWidthP  1.000000"
+
+MetaPack_SetupConf_Params[17]="softhddevice.ClearOnSwitch 1"
+MetaPack_SetupConf_Params[18]="softhddevice.1080i.Deinterlace 3"
+MetaPack_SetupConf_Params[19]="softhddevice.1080i_fake.Deinterlace 3"
+MetaPack_SetupConf_Params[20]="softhddevice.576i.Deinterlace 3"
+MetaPack_SetupConf_Params[21]="softhddevice.720p.Deinterlace 3"
+MetaPack_SetupConf_Params[22]=""
