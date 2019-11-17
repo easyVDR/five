@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE menuplugin SYSTEM "../../../dtd/displaymenuplugin.dtd">
+
+<menuplugin x="0" y="0" width="100%" height="100%" fadetime="0">
+
+    <!-- Available Variables in detailheader and tab:
+    {summary}                           short summary of weather
+    {icon}                              path to use in <drawimage> to display appropriate weather icon
+    {city}                              configured city to display weather for
+    {latitude}                          latitude
+    {longitude}                         longitude
+
+    {daily[]}                           array with up to 7 daily forecasts
+    {daily[day]}                        day of forecast in dd.mm
+    {daily[dayname]}                    three letter abbrivated day name
+    {daily[temperaturemin]}             minimum temperature at this day in °C
+    {daily[temperaturemintime]}         time of minimum temperature
+    {daily[temperaturemax]}             maximum temperature at this day in °C
+    {daily[temperaturemaxtime]}         time of maximum temperature
+    {daily[summary]}                    short summary
+    {daily[icon]}                       path to use in <drawimage> to display appropriate weather icon
+    {daily[precipitationintensity]}     precipitation intensity in l/qm    
+    {daily[precipitationprobability]}   precipitation probability in %
+    {daily[precipitationtype]}          precipitation type (snow, ...)
+    {daily[humidity]}                   humidity in %
+    {daily[windspeed]}                  wind speed in km/h
+    {daily[windbearing]}                wind bearing in degrees
+    {daily[windbearingstring]}          wind bearing as human readable string (e.g NE, NNE, ...)
+    {daily[visibility]}                 visibility in km
+    {daily[cloudcover]}                 cloud cover in %
+    {daily[pressure]}                   pressure in HPa
+    {daily[ozone]}                      Ozone in DU (Dobson Unit)
+    -->
+
+    <detailheader>
+    </detailheader>
+
+    <tab name="tab" x="0" y="0" width="100%" height="100%" layer="2" scrollheight="{areaheight}/4">
+    </tab>
+</menuplugin>

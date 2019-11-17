@@ -1,0 +1,70 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Louis Braun <louis.braun@gmx.de>
+
+Project's homepage:          http://projects.vdr-developer.org/projects/plg-weatherforecast
+
+Latest version available at: http://projects.vdr-developer.org/git/vdr-plugin-weatherforecast.git/
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Description:
+------------
+
+WeatherForecast provides a weather forecast (who'd have thought? ;) ) based on
+forecast.io data. 
+
+Requirements:
+-------------
+- VDR 1.7.x     
+- libSkindesignerAPI (see skindesigner README for installation procedure)
+- libcurl
+- jansson
+
+Installation, configuration:
+----------------------------
+
+To download the plugin from the GIT repository, do a
+
+git clone git://projects.vdr-developer.org/vdr-plugin-weatherforecast.git
+
+Install the plugin depending on your used distribution.
+
+The plugin has no startup parameters. During first startup of the plugin
+(and everytime the VDR setup parameter "weatherforecast.city" is empty) 
+automatically an online lookup is done to detect your location (city, longitude,
+latitude) by your used public ip. The latitude and longitude results are used 
+by the plugin to fetch appropriate data from forecast.io. The city is just
+used for displaying purposes.
+
+Since weatherforecast.io allows only 1000 API calls per day for free, the results 
+from forecast.io are cached up to 20h in 
+
+<PLUGINCACHEDIR>/weatherforecast/weather.json
+
+If this file does not exist on Plugin startup, a new online lookup is done anyway.
+
+city, longitude and latitude are stored and can be adapted manually in the plugin
+setup menu. f you change latitude or longitude, just delete the cached
+weather.json file and restart VDR to achieve new data for the newly configured
+location.
+
+You can configure your own API Key in Plugin Setup. If an own API Key is configured,
+you're allowed to change the update frequency from forecast.io individually, update
+frequency can then be a value between 1 and 24h.
+
+Usage:
+------
+
+The plugin provides three different menus: "current weather", "next 48 hours" 
+and "next 7 days". Additionally the plugin provides a service interface so that
+skins and other plugins are able to achieve weather data from the plugin.
+
+Even if the plugin runs with every skin, best results can be reached by using a
+skindesigner skin which implements the weather plugin templates.
+
+

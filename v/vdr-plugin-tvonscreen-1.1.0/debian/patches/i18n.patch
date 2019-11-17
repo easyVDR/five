@@ -1,0 +1,20 @@
+--- a/tvonscreen.cpp
++++ b/tvonscreen.cpp
+@@ -8,7 +8,6 @@
+ #include <vdr/plugin.h>
+ #include "magazine.h"
+ #include "config.h"
+-#include "i18n.h"
+ 
+ #if defined(MAINMENUHOOKSVERSNUM) & !defined(MAINMENUHOOKSVERSION)
+ #undef  MAINMENUHOOKSVERSNUM
+@@ -74,9 +73,6 @@
+ bool cPluginTvOnscreen::Initialize(void)
+ {
+     // Initialize any background activities the plugin shall perform.
+-#if (APIVERSNUM < 10507)
+-    RegisterI18n(tvoPhrases);
+-#endif
+     return true;
+ }
+ 

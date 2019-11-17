@@ -1,0 +1,316 @@
+vdr-plugin-tvguide (1.2.2+git20170603-0easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 00:31:18 +0100
+
+vdr-plugin-tvguide (1.2.2+git20170603-0easyVDR4~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:09:04 +0100
+
+vdr-plugin-tvguide (1.2.2+git20170603-0easyVDR3~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:14:15 +0100
+
+vdr-plugin-tvguide (1.2.2+git20170603-0easyVDR2~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 11 Jul 2017 22:38:40 +0200
+
+vdr-plugin-tvguide (1.2.2+git20170603-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 06 Jul 2017 19:35:44 +0200
+
+vdr-plugin-tvguide (1.2.2+git20170603-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:8287bb5 - Added MetrixHD Theme
+  * added tvguide-for-vdr-2.3.5.diff
+  * added tvguide-for-last-tvscraper.diff
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 03 Jun 2017 22:38:32 +0200
+
+vdr-plugin-tvguide (1.2.2+git20151123-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:47:25 +0200
+
+vdr-plugin-tvguide (1.2.2+git20151123-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:48:13 +0200
+
+vdr-plugin-tvguide (1.2.2+git20151123-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:48:57 +0200
+
+vdr-plugin-tvguide (1.2.2+git20151123-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:08:29 +0200
+
+vdr-plugin-tvguide (1.2.2+git20151123-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:53:01 +0100
+
+vdr-plugin-tvguide (1.2.2+git20151123-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:2014-09-27 - Added MetrixHD Theme
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 23:37:06 +0100
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR8~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 19:06:39 +0200
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:28:54 +0200
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:35:24 +0100
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:25:57 +0100
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:33:20 +0100
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:58:11 +0100
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:03:23 +0200
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:28:55 +0200
+
+vdr-plugin-tvguide (1.2.1.git20140208.0909-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Feb 2014 23:18:39 +0100
+
+vdr-plugin-tvguide (1.2.0.git20140206.1845-0easyVDR1~trusty) trusty; urgency=high
+
+  * rename logo-path
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 08 Feb 2014 04:02:09 +0100
+
+vdr-plugin-tvguide (1.2.0.git20140206.1845-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 07 Feb 2014 01:04:48 +0100
+
+vdr-plugin-tvguide (1.2.0.git20140103.1626-0easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 09 Jan 2014 22:05:10 +0100
+
+vdr-plugin-tvguide (1.2.0.git20140103.1626-0easyVDR2~trusty) trusty; urgency=high
+
+  * rm link icons
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Jan 2014 22:50:14 +0100
+
+vdr-plugin-tvguide (1.2.0.git20140103.1626-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Jan 2014 22:44:28 +0100
+
+vdr-plugin-tvguide (1.2.0.git20140103.1626-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Jan 2014 22:28:19 +0100
+
+vdr-plugin-tvguide (1.1.0.git20130826-0easyVDR1~trusty) trusty; urgency=high
+
+  * logo path
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 10 Dec 2013 02:26:17 +0100
+
+vdr-plugin-tvguide (1.1.0.git20130826-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Oct 2013 06:08:01 +0100
+
+vdr-plugin-tvguide (1.1.0.git20130826-0easyVDR0~raring) raring; urgency=high
+
+  * new upstream snapshot - support tvscraper
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 26 Aug 2013 00:30:16 +0200
+
+vdr-plugin-tvguide (1.0.0-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild for easyvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 24 Jul 2013 18:06:54 +0200
+
+vdr-plugin-tvguide (1.0.0-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release 1.0.0 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 24 Jul 2013 12:28:34 +0200
+
+vdr-plugin-tvguide (0.0.5+git20130718-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 18 Jul 2013 12:05:13 +0200
+
+vdr-plugin-tvguide (0.0.5+git20130602-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:09:32 +0200
+
+vdr-plugin-tvguide (0.0.5+git20130602-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:34:08 +0200
+
+vdr-plugin-tvguide (0.0.5+git20130602-0yavdr0~precise) precise; urgency=medium
+
+  *  new upstream release
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 04 Jun 2013 23:40:40 +0200
+
+vdr-plugin-tvguide (0.0.2+git20130410-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 10 Apr 2013 20:04:10 +0200
+
+vdr-plugin-tvguide (0.0.1-1yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:58:44 +0200
+
+vdr-plugin-tvguide (0.0.1-1yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:59:43 +0100
+
+vdr-plugin-tvguide (0.0.1-1yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:10:05 +0100
+
+vdr-plugin-tvguide (0.0.1-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 22:00:40 +0100
+
+vdr-plugin-tvguide (0.0.1-1yavdr0~precise) precise; urgency=medium
+
+  * don't include Make.global
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 12 Mar 2013 15:24:42 +0100
+
+vdr-plugin-tvguide (0.0.1-0yavdr9~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 12 Mar 2013 14:43:16 +0100
+
+vdr-plugin-tvguide (0.0.1-0yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:33:42 +0100
+
+vdr-plugin-tvguide (0.0.1-0yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:17:46 +0100
+
+vdr-plugin-tvguide (0.0.1-0yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 16:02:47 +0100
+
+vdr-plugin-tvguide (0.0.1-0yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 21:46:17 +0100
+
+vdr-plugin-tvguide (0.0.1-0yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:42:52 +0100
+
+vdr-plugin-tvguide (0.0.1-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:22:31 +0200
+
+vdr-plugin-tvguide (0.0.1-0yavdr2~precise) precise; urgency=medium
+
+  * more changes from Murry, pathes for epg images and channellogos
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 29 Aug 2012 19:33:04 +0200
+
+vdr-plugin-tvguide (0.0.1-0yavdr1~precise) precise; urgency=medium
+
+  * themes where missing, thanks Murry
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 26 Aug 2012 18:04:36 +0200
+
+vdr-plugin-tvguide (0.0.1-0yavdr0~precise) precise; urgency=medium
+
+  * Initial release
+  
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 26 Aug 2012 16:57:29 +0200
+

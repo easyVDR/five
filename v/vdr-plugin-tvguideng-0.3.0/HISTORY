@@ -1,0 +1,55 @@
+VDR Plugin 'tvguideng' Revision History
+---------------------------------------
+
+2015-01-26: Version 0.0.1
+
+- Initial revision.
+
+Version 0.0.2
+
+- fixed bug that timemanager does not use configured display time
+- fixed crash if a channel group is empty
+- fixed display of background if recmenu was hidden
+- fixed bug that recmenu was not hide when displaying detailed view
+  in some cases
+- fixed translations
+- added dedicated hor. and ver. viewelements for header, 
+  footer and time
+- completed tokens for time viewelement in detailed view
+
+Version 0.0.3
+
+- introduced libskindesignerapi
+
+Version 0.1.0
+
+- added wraparound scrolling in recording menus
+- fixed bug that red button also works in detailed view
+
+Version 0.1.1
+
+- fixed missing delete of channel group grid
+- adapted makefile for LCLBLD
+
+Version 0.1.2
+
+- fixed crash when closing tvguide with active blinking icon
+
+Version 0.1.3
+
+- added optional intelligent channel switch mode
+- added shortcuts for keys 2, 5 and 8
+
+Version 0.1.4
+
+- added year and day token in time in detailview
+
+Version 0.1.5
+
+- fixed bug saving intelligentSwitch setup option
+
+Version 0.1.6
+
+- fixed bug that menuitem number is not calculated correctly
+  if recording menu scrolls
+- made default time before a switchtimer switches configurable

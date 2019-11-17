@@ -1,0 +1,27 @@
+Source: vdr-plugin-vompserver
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Marten Richter <marten.richter@freenet.de>, Tobias Grimm <etobi@debian.org>, Wolfgang Mangold <vdr@gmx.de>
+Origin: ctvdr
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.2.0), pkg-config
+Standards-Version: 3.9.5
+
+Package: vdr-plugin-vompserver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, tftp
+Conflicts: vdr-plugin-mediamvp, vdr-vompclient-mvp (<< 0.5.0)
+Replaces: vdr-plugin-mediamvp
+Description: vdr-plugin for vdr on mediamvp(VOMP)
+ This VDR plugin is a server for the Hauppauge MediaMvp using the
+ free firmware form the mediamvp(VOMP) Project.
+
+Package: vdr-plugin-vompserver-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-vompserver (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-vompserver
+ .
+ This package contains only the debugging symbols for vdr-plugin-vompserver
+

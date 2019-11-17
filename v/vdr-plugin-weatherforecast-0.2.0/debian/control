@@ -1,0 +1,22 @@
+Source: vdr-plugin-weatherforecast
+Section: video
+Priority: extra
+Maintainer: Frodo <frodo.vdr@gmx.net> 
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de> 
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config, gettext, libcurl4-openssl-dev, libjansson-dev, libskindesignerapi-dev (>= 0.1.2)
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/plg-skindesigner
+
+Package: vdr-plugin-weatherforecast
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, libskindesignerapi0 (>= 0.1.2), vdr-plugin-skindesigner (>= 1.2.1)
+Description: weatherforecast plugin for VDR
+
+Package: vdr-plugin-weatherforecast-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-weatherforecast (= ${binary:Version}), ${misc:Depends}
+Description: weatherforecast plugin for VDR - debugging symbols
+ .
+ This package contains the debugging symbols.

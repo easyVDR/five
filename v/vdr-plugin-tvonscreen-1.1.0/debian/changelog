@@ -1,0 +1,127 @@
+vdr-plugin-tvonscreen (1.1.0-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 00:32:11 +0100
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:09:36 +0100
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:14:50 +0100
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 06 Jul 2017 19:36:19 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:03:11 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:49:05 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:49:47 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:09:18 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:53:59 +0100
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 00:59:12 +0100
+
+vdr-plugin-tvonscreen (1.1.0-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:29:21 +0200
+
+vdr-plugin-tvonscreen (1.1.0-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:35:49 +0100
+
+vdr-plugin-tvonscreen (1.1.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 18:44:06 +0100
+
+vdr-plugin-tvonscreen (1.1.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:03:50 +0200
+
+vdr-plugin-tvonscreen (1.1.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:29:36 +0200
+
+vdr-plugin-tvonscreen (1.1.0-0easyVDR0~trusty) trusty; urgency=high
+
+   * Bumped Standards-Version to 3.9.4
+   * Switched to debhelper 8
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 15 Jan 2014 00:08:53 +0100
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR2.3) oneiric; urgency=high
+
+  * rebuild for stable PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 May 2012 17:19:00 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR2.2) oneiric; urgency=high
+
+  * fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 May 2012 19:43:10 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR2.1) oneiric; urgency=high
+
+  * dirs
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 May 2012 19:04:40 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR2.0) oneiric; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 May 2012 08:38:47 +0200
+
+vdr-plugin-tvonscreen (1.1.0-1easyVDR1.0) oneiric; urgency=high
+
+  * new build for vdr-1.7.27 fix i18n
+
+ -- mango <vdr@gmx.de>  Fri, 04 May 2012 19:52:37 +0200
+

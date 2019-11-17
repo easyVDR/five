@@ -1,0 +1,955 @@
+# VDR plugin language source file.
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-tvguide 1.1.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2014-05-10 17:24+0200\n"
+"PO-Revision-Date: 2013-09-15 00:12+0100\n"
+"Last-Translator: Milan Hrala <hrala.milan@gmail.com>\n"
+"Language-Team: \n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Main Program"
+msgstr "Hlavný program"
+
+msgid "Channel"
+msgstr "Kanál"
+
+msgid "min"
+msgstr "min"
+
+msgid "Reruns of "
+msgstr ""
+
+msgid "No reruns found"
+msgstr ""
+
+msgid "No EPG Information available"
+msgstr "®iadne EPG údaje nie sú k dispozícii"
+
+msgid "Search & Rec"
+msgstr "Hlada» & Nahra»"
+
+msgid "Channels back"
+msgstr "kanálov spä»"
+
+msgid "Channels forward"
+msgstr "kanálov dopredu"
+
+msgid "Switch to Channel"
+msgstr "Prepnú» na kanál"
+
+msgid "Detailed EPG"
+msgstr "Podrobné EPG"
+
+msgid "Close detailed EPG"
+msgstr ""
+
+msgid "Favorites"
+msgstr ""
+
+msgid "images"
+msgstr ""
+
+msgid "root video folder"
+msgstr "Hlavný video adresár"
+
+msgid "Transp."
+msgstr "Transp."
+
+msgid "Timer Conflict"
+msgstr "Konflikt plánu"
+
+msgid "all Channels"
+msgstr "v¹etky kanály"
+
+msgid "unknown channel"
+msgstr "neznámy Kanal"
+
+msgid "Duration"
+msgstr "Då¾ka"
+
+msgid "recorded at"
+msgstr "Zaznamenané"
+
+msgid "from"
+msgstr "z"
+
+msgid "Timers for"
+msgstr ""
+
+msgid "Rec"
+msgstr ""
+
+msgid "No Timers active"
+msgstr ""
+
+msgid "inactive"
+msgstr ""
+
+msgid "active timers"
+msgstr ""
+
+msgid "recordings done"
+msgstr ""
+
+msgid "What's on now"
+msgstr ""
+
+msgid "What's on next"
+msgstr ""
+
+msgid "Instant Record"
+msgstr "Okam¾ite nahra»"
+
+msgid "Delete Timer"
+msgstr "Vymaza» plán nahrávania"
+
+msgid "Edit Timer"
+msgstr "Upravi» plán nahrávania"
+
+msgid "Timer Timeline"
+msgstr ""
+
+msgid "Create Search Timer"
+msgstr "Vytvori» vyhµadávaè plánov nahrávania"
+
+msgid "Search Timers"
+msgstr ""
+
+msgid "Create Series Timer"
+msgstr "Vytvori» sériový plán nahrávania"
+
+msgid "Create Switch Timer"
+msgstr "Vytvori» prepínací plán"
+
+msgid "Delete Switch Timer"
+msgstr "Vymaza» prepínací plán"
+
+msgid "Search"
+msgstr "Hµada»"
+
+msgid "Check for Timer Conflicts"
+msgstr "Skontrolova» konflikty plánu"
+
+msgid "Search in Recordings"
+msgstr "Vyhµada» v nahrávkach"
+
+msgid "Set Folder for"
+msgstr "Nastavi» adresár pre"
+
+msgid "Timer created"
+msgstr "Plán vytvorený"
+
+msgid "Timer NOT created"
+msgstr "Plán nie je vytvorený"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Timer deleted"
+msgstr "Plán vymazaný"
+
+msgid "Timer"
+msgstr "Plán"
+
+msgid "still recording - really delete?"
+msgstr "Práve nahráva - naozaj zmaza»?"
+
+msgid "Yes"
+msgstr "Áno"
+
+msgid "No"
+msgstr "Nie"
+
+msgid "One"
+msgstr "Jeden"
+
+msgid "detected"
+msgstr "nájdených"
+
+msgid "Timer Conflicts"
+msgstr "Konflikty plánov"
+
+msgid "Show conflict"
+msgstr "Zobrazi» konflikt"
+
+msgid "timers involved"
+msgstr "plány komplikované"
+
+msgid "Ignore Conflicts"
+msgstr "Ignorova» konflikty"
+
+msgid "Ignore Conflict"
+msgstr "Ignorova» konflikt"
+
+msgid "No Timer Conflicts found"
+msgstr "Nena¹li sa ¾iadne konflikty plánu"
+
+msgid "Close"
+msgstr "Zavrie»"
+
+msgid "reruns for"
+msgstr ""
+
+msgid "rerun for"
+msgstr ""
+
+msgid "found"
+msgstr ""
+
+msgid "Ignore reruns"
+msgstr ""
+
+msgid "No reruns found for Event"
+msgstr ""
+
+msgid "Timer for"
+msgstr ""
+
+msgid "replaced by rerun"
+msgstr ""
+
+msgid "Timer Active"
+msgstr "Plán aktívny"
+
+msgid "Priority"
+msgstr "Priorita"
+
+msgid "Lifetime"
+msgstr "®ivotnos»"
+
+msgid "Day"
+msgstr "Deò"
+
+msgid "Timer start time"
+msgstr "Plán zaèína"
+
+msgid "Timer stop time"
+msgstr "Plán konèí"
+
+msgid "Timer File"
+msgstr ""
+
+msgid "New Folder"
+msgstr ""
+
+msgid "Save"
+msgstr "Ulo¾i»"
+
+msgid "Cancel"
+msgstr "Zru¹i»"
+
+msgid "Create Series Timer based on"
+msgstr "Vytvorenie plánu na základe série"
+
+msgid "Series Timer start time"
+msgstr "Sériový plán zaèína"
+
+msgid "Series Timer stop time"
+msgstr "Sériový plán konèí"
+
+msgid "Days to record"
+msgstr "Dni"
+
+msgid "Day to start"
+msgstr "Zaèína dòa"
+
+msgid "Create Timer"
+msgstr "Vytvori» plán"
+
+msgid "Series Timer created"
+msgstr "Vytvorený sériový plán"
+
+msgid "Start"
+msgstr "©tart"
+
+msgid "Stop"
+msgstr "Stop"
+
+msgid "Configure Search Timer based on"
+msgstr "Vyhµadávanie plánu nastavi» na základe"
+
+msgid "Search Expression:"
+msgstr "Hµadaný výraz:"
+
+msgid "Continue"
+msgstr "Ïal¹ie"
+
+msgid "Configure Search Timer for Search String"
+msgstr "Konfigurácia vyhµadávania plánu pre hµadané kµúèové slovo "
+
+msgid "Manually configure Options"
+msgstr "Ruène konfigurova» mo¾nosti"
+
+msgid "Use Template"
+msgstr "pou¾itie ¹ablóny"
+
+msgid "EPGSearch Search Timers"
+msgstr ""
+
+msgid "No Search Timers Configured"
+msgstr ""
+
+msgid "Configure Search Timer Options"
+msgstr ""
+
+msgid "Save Search Timer"
+msgstr ""
+
+msgid "Search String"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Search Mode"
+msgstr "Re¾im vyhµadávania"
+
+msgid "Use Title"
+msgstr "Pou¾i» názov"
+
+msgid "Use Subtitle"
+msgstr "Pou¾i» titulky"
+
+msgid "Use Description"
+msgstr "Pou¾i» popis"
+
+msgid "Limit Channels"
+msgstr "Obmedzi» kanály"
+
+msgid "Use Time"
+msgstr "Pou¾i» èas"
+
+msgid "Display advanced Options"
+msgstr ""
+
+msgid "Limit Days of the Week"
+msgstr ""
+
+msgid "Time margin for start in minutes"
+msgstr ""
+
+msgid "Time margin for stop in minutes"
+msgstr ""
+
+msgid "Series Recording"
+msgstr ""
+
+msgid "Folder"
+msgstr ""
+
+msgid "Use VPS"
+msgstr ""
+
+msgid "Avoid Repeats"
+msgstr ""
+
+msgid "Use in Favorites"
+msgstr ""
+
+msgid "Hide advanced Options"
+msgstr ""
+
+msgid "Display Results for Search Timer"
+msgstr "Pozrie» výsledky pre vyhµadávanie plánov"
+
+msgid "Start Channel"
+msgstr "Od kanálu"
+
+msgid "Stop Channel"
+msgstr "Po kanál"
+
+msgid "Start after"
+msgstr "Zaèiatok po"
+
+msgid "Start before"
+msgstr "Zaèiatok pred"
+
+msgid "Select Days"
+msgstr ""
+
+msgid "Number of allowed repeats"
+msgstr ""
+
+msgid "Compare Title"
+msgstr ""
+
+msgid "Compare Subtitle"
+msgstr ""
+
+msgid "Compare Description"
+msgstr ""
+
+msgid "Really delete Search Timer"
+msgstr ""
+
+msgid "Delete only Search Timer"
+msgstr ""
+
+msgid "Delete Search Timer and created Timers"
+msgstr ""
+
+msgid "Search Timer sucessfully created."
+msgstr "Vyhµadávaè plánu vytvorený."
+
+msgid "Search Timer update initialised"
+msgstr "Vyhladávaè plánu inicializovaný"
+
+msgid "Search Timer NOT sucessfully created"
+msgstr "Vyhµadávaè plánu nie je kompletne vytvorený"
+
+msgid "Creating Search Timer"
+msgstr "Vytvorenie vyhµadávacieho plánu"
+
+msgid "Search Term"
+msgstr "kµúèové slovo"
+
+msgid "Using Template"
+msgstr "¹ablóna"
+
+msgid "Use other Template"
+msgstr "Pou¾i» inú ¹ablónu"
+
+msgid "search results for Favorite"
+msgstr ""
+
+msgid "search result for Favorite"
+msgstr ""
+
+msgid "search results for Search Timer"
+msgstr "nájdené výsledky vyhµadávania plánu"
+
+msgid "search result for Search Timer"
+msgstr "nájdený výsledok vyhµadávania plánu"
+
+msgid "Nothing found for Search String"
+msgstr "Hµadaný výraz sa nena¹iel"
+
+msgid "Configure Options for Switchtimer"
+msgstr "Konfigurova» mo¾nosti pre prepínací plán"
+
+msgid "Minutes before switching"
+msgstr "Minúty pred prepnutím"
+
+msgid "switch"
+msgstr "Prepnú»"
+
+msgid "announce only"
+msgstr "iba oznámi»"
+
+msgid "ask for switch"
+msgstr "opýta» sa na prepnutie"
+
+msgid "Switch Mode"
+msgstr "Prepínací re¾im"
+
+msgid "Create"
+msgstr "Vytvori»"
+
+msgid "Switch Timer sucessfully created"
+msgstr "Prepnutie je naplánované"
+
+msgid "Switch Timer NOT sucessfully created"
+msgstr "Plán prepnutia nie je vytvorený"
+
+msgid "Switch Timer deleted"
+msgstr "Plán prepnutia vymazaný"
+
+msgid "Channel to Search"
+msgstr "Hµada» na kanále"
+
+msgid "Search in title"
+msgstr "Hµada» v názve"
+
+msgid "Search in Subtitle"
+msgstr "Hµada» v titulkách"
+
+msgid "Search in Description"
+msgstr "Hµada» v popise"
+
+msgid "Show Search Options"
+msgstr "Zobrazi» mo¾nosti vyhµadávania"
+
+msgid "Perform Search"
+msgstr "Vykona» vyhµadávanie"
+
+msgid "search results for"
+msgstr "vyhµadané výsledky pre"
+
+msgid "search result for"
+msgstr "vyhµadaný výsledok pre"
+
+msgid "Adapt Search"
+msgstr "Prispôsobi» vyhµadávanie"
+
+msgid "Search String has to have at least three letters"
+msgstr ""
+
+msgid "Found"
+msgstr "Nájdené"
+
+msgid "recording"
+msgstr "nahrávka"
+
+msgid "recordings"
+msgstr "nahrávky"
+
+msgid "for"
+msgstr "pre"
+
+msgid "No recordings found for"
+msgstr "Nena¹li sa nahrávky s názvom "
+
+msgid "No Favorites available"
+msgstr ""
+
+msgid "whole term must appear"
+msgstr "kompletný výraz"
+
+msgid "all terms must exist"
+msgstr "v¹etky slová"
+
+msgid "one term must exist"
+msgstr "jeden pojem musí existova»"
+
+msgid "exact match"
+msgstr "presná zhoda"
+
+msgid "regular expression"
+msgstr "regulárny výraz"
+
+msgid "General Settings"
+msgstr "V¹eobecné nastavenia"
+
+msgid "Screen Presentation"
+msgstr "Mo¾nosti zobrazenia"
+
+msgid "Fonts and Fontsizes"
+msgstr "Písma a veµkosti písma"
+
+msgid "Recording Menus and Favorites"
+msgstr ""
+
+msgid "Image Loading and Caching"
+msgstr ""
+
+msgid "x channels back / forward"
+msgstr "x kanálov spä» / vpred"
+
+msgid "previous / next channel group"
+msgstr "Predchádzajúce / ïal¹ie skupiny kanálov"
+
+msgid "Blue: Channel Switch, Ok: Detailed EPG"
+msgstr "Modré: Prepnú» kanál, OK: Podrobné EPG"
+
+msgid "Blue: Detailed EPG, Ok: Channel Switch"
+msgstr "Modré: podrobné EPG, OK: prepnú» kanál"
+
+msgid "Blue: Favorites / Switch, Ok: Detailed EPG"
+msgstr ""
+
+msgid "Timely Jump"
+msgstr ""
+
+msgid "Jump to specific channel"
+msgstr ""
+
+msgid "never"
+msgstr "nikdy"
+
+msgid "if exists"
+msgstr "ak sú k dispozícii"
+
+msgid "always"
+msgstr "v¾dy"
+
+msgid "Show Main Menu Entry"
+msgstr "Zobrazi» v hlavnom menu"
+
+msgid "Replace VDR Schedules Menu"
+msgstr "Zameni» VDR menu (tv program)"
+
+msgid "Use appropriate nOpacity Theme"
+msgstr ""
+
+msgid "Theme"
+msgstr "Téma"
+
+msgid "Time to display in minutes"
+msgstr "Zobrazený èas v minútach"
+
+msgid "Rounded Corners"
+msgstr "Zaoblené rohy"
+
+msgid "Channel Jump Mode (Keys Green / Yellow)"
+msgstr "Re¾ím skoku kanála (klávesy zelená / ¾ltá)"
+
+msgid "Keys Blue and OK"
+msgstr "Tlaèidlá modré a OK"
+
+msgid "Close TVGuide after channel switch"
+msgstr "Zavrie» TVGuide po prepnutí kanálu"
+
+msgid "Functionality of numeric Keys"
+msgstr ""
+
+msgid "Hide last Channel Group"
+msgstr "Skry» poslednú skupinu kanálov"
+
+msgid "Big Step (Keys 1 / 3) in hours"
+msgstr "Veµké skoky (tlaèidlá 1 / 3) v hodinách"
+
+msgid "Huge Step (Keys 4 / 6) in hours"
+msgstr "Veµmi veµké skoky (tlaèidlá 4 / 6) v hodinách"
+
+msgid "Time Format (12h/24h)"
+msgstr "Formát èasu (12h/24h)"
+
+msgid "EPG Window Text Scrolling Speed"
+msgstr ""
+
+msgid "Display Reruns in detailed EPG View"
+msgstr "Reprízy v podrobnom zobrazení relácie EPG"
+
+msgid "Number of reruns to display"
+msgstr "Poèet zobrazovaných repríz"
+
+msgid "Use Subtitle for reruns"
+msgstr "Titulky pre vyhµadanie repríz"
+
+msgid "Display Mode"
+msgstr "Re¾ím zobrazenia"
+
+msgid "Height of Channel Header (Perc. of osd height)"
+msgstr "Vý¹ka hlavièky kanálov (% z OSD vý¹ky)"
+
+msgid "Width of Timeline (Perc. of osd width)"
+msgstr "©írka èasovej osi (% z OSD vý¹ky)"
+
+msgid "Number of Channels to display"
+msgstr "Poèet zobrazených kanálov"
+
+msgid "Width of Channel Header (Perc. of osd width)"
+msgstr "©írka hlavièky kanálov (% z OSD ¹írky)"
+
+msgid "Height of Timeline (Perc. of osd height)"
+msgstr "Vý¹ka èasovej osi (% z OSD vý¹ky)"
+
+msgid "Display time in EPG Grids"
+msgstr "Zobrazi» èas v EPG mrie¾ke"
+
+msgid "Height of Headers (Status Header and EPG View, Perc. of osd height)"
+msgstr ""
+
+msgid "Height of Footer (Perc. of osd height)"
+msgstr ""
+
+msgid "Display status header"
+msgstr "Zobrazi» stavovú hlavièku"
+
+msgid "Scale video to upper right corner"
+msgstr "©kálovatelné video v pravom hornom rohu"
+
+msgid "Rounded corners around video frame"
+msgstr "Zaoblené rohy do okna videa"
+
+msgid "Display Channel Names in Header"
+msgstr "Zobrazi» mená kanálu v hlavièke"
+
+msgid "Display channel groups"
+msgstr "Zobrazi» skupiny kanálov"
+
+msgid "Height of channel groups (Perc. of osd height)"
+msgstr "Vý¹ka skupiny kanála (% z OSD vý¹ky)"
+
+msgid "Width of channel groups (Perc. of osd width)"
+msgstr "©írka skupiny kanála (% z OSD ¹írky)"
+
+msgid "Display current time baseline"
+msgstr ""
+
+msgid "Show Channel Logos"
+msgstr "Zobrazi» logá kanálov"
+
+msgid "Logo Path used"
+msgstr "Umiestnenie pou¾itého loga"
+
+msgid "Logo Extension"
+msgstr "Logo prípona"
+
+msgid "Logo width ratio"
+msgstr "©írka loga"
+
+msgid "Logo height ratio"
+msgstr "Vý¹ka loga"
+
+msgid "Text Border in Detailed View (pixel)"
+msgstr ""
+
+msgid "Show EPG Images"
+msgstr "Zobrazi» EPG obrázky"
+
+msgid "EPG Images Path used"
+msgstr "Umiestnenie EPG obrázkov"
+
+msgid "EPG Image width"
+msgstr "©írka EPG obrázku"
+
+msgid "EPG Image height"
+msgstr "Vý¹ka EPG obrázku"
+
+msgid "Number of additional EPG Images"
+msgstr "Poèet ïal¹ích EPG obrázkov"
+
+msgid "Additional EPG Image width"
+msgstr "©írka ïal¹ích EPG obrázkov"
+
+msgid "Additional EPG Image height"
+msgstr "Vý¹ka ïal¹ích EPG obrázkov"
+
+msgid "Font"
+msgstr "Písmo"
+
+msgid "Status Header Font Size"
+msgstr "Veµkos» písma stavovej hlavièky"
+
+msgid "Status Header Large Font Size"
+msgstr "Veµkos» veµkého písma stavovej hlavièky"
+
+msgid "Detail EPG View Font Size"
+msgstr "Veµkos» písma v detailnom EPG pohµade"
+
+msgid "Detail EPG View Header Font Size"
+msgstr "Veµkos» písma hlavièky v detailnom EPG pohµade"
+
+msgid "Message Font Size"
+msgstr "Veµkos» písma správy"
+
+msgid "Message Large Font Size"
+msgstr "Veµkos» veµkého písma správy"
+
+msgid "Button Font Size"
+msgstr "Veµkos» písma tlaèidla"
+
+msgid "Channel Header Font Size"
+msgstr "Veµkos» písma hlavièky kanála"
+
+msgid "Channel Groups Font Size"
+msgstr "Veµkos» písma skupín kanálu"
+
+msgid "Grid Font Size"
+msgstr "Veµkos» písma mrie¾ky"
+
+msgid "Grid Font Small Size"
+msgstr "Veµkos» malého písma mrie¾ky"
+
+msgid "Timeline Weekday Font Size"
+msgstr "Veµkos» písma dòa èasovej osi"
+
+msgid "Timeline Date Font Size"
+msgstr "Veµkos» písma dátumu èasovej osi"
+
+msgid "Timeline Time Font Size"
+msgstr "Veµkos» písma hodín èasovej osi"
+
+msgid "Search & Recording Menu Font Size"
+msgstr "Hµada» & Nahra» menu písmo"
+
+msgid "Search & Recording Menu Small Font Size"
+msgstr "Hµada» & Nahra» menu malé písmo"
+
+msgid "Search & Recording Menu Header Font Size"
+msgstr ""
+
+msgid "Always use root video folder"
+msgstr ""
+
+msgid "Select from folder list"
+msgstr ""
+
+msgid "Use fixed folder"
+msgstr ""
+
+msgid "Folder for instant Recordings"
+msgstr ""
+
+msgid "Use Remotetimers"
+msgstr "Pou¾i» vzdialený plánovaè"
+
+msgid "Use \"What's on now\" in favorites"
+msgstr ""
+
+msgid "Use \"What's on next\" in favorites"
+msgstr ""
+
+msgid "Use user defined time 1 in favorites"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Use user defined time 2 in favorites"
+msgstr ""
+
+msgid "Use user defined time 3 in favorites"
+msgstr ""
+
+msgid "Use user defined time 4 in favorites"
+msgstr ""
+
+msgid "Limit channels in favorites"
+msgstr ""
+
+msgid "Create Log Messages for image loading"
+msgstr ""
+
+msgid "Limit Logo Cache"
+msgstr ""
+
+msgid "Maximal number of logos to cache"
+msgstr ""
+
+msgid "Number of  logos to cache at start"
+msgstr ""
+
+msgid "Cache Sizes"
+msgstr ""
+
+msgid "OSD Element Cache"
+msgstr ""
+
+msgid "Logo cache"
+msgstr ""
+
+msgid "EPG Grid Cache"
+msgstr ""
+
+msgid "Channel Groups Cache"
+msgstr ""
+
+msgid "Recording Menus Icon Cache"
+msgstr ""
+
+msgid "No Cast available"
+msgstr ""
+
+msgid "Cast"
+msgstr ""
+
+msgid "EPG Info"
+msgstr ""
+
+msgid "Reruns"
+msgstr ""
+
+msgid "Recording Information"
+msgstr ""
+
+msgid "Image Galery"
+msgstr ""
+
+msgid "TheTVDB Info"
+msgstr ""
+
+msgid "TheTVDB Information"
+msgstr ""
+
+msgid "Episode"
+msgstr ""
+
+msgid "Season"
+msgstr ""
+
+msgid "Episode Overview"
+msgstr ""
+
+msgid "First aired"
+msgstr ""
+
+msgid "Guest Stars"
+msgstr ""
+
+msgid "TheMovieDB Rating"
+msgstr ""
+
+msgid "Series Overview"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "TheMovieDB Information"
+msgstr ""
+
+msgid "Original Title"
+msgstr ""
+
+msgid "Tagline"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "Adult"
+msgstr ""
+
+msgid "Collection"
+msgstr ""
+
+msgid "Budget"
+msgstr ""
+
+msgid "Revenue"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "Release Date"
+msgstr ""
+
+msgid "Runtime"
+msgstr ""
+
+msgid "minutes"
+msgstr ""
+
+msgid "TheMovieDB Popularity"
+msgstr ""
+
+msgid "TheMovieDB Vote Average"
+msgstr ""
+
+#~ msgid "RERUNS OF THIS SHOW"
+#~ msgstr "Repríza tohto programu"
+
+#~ msgid "Actors"
+#~ msgstr "Herci"
+
+#~ msgid "Use folders for instant records"
+#~ msgstr "Pou¾i» adresáre pre okam¾ité nahrávky"
+
+#~ msgid "Height of status header (Perc. of osd height)"
+#~ msgstr "Vý¹ka stavovej hlavièky (% z OSD vý¹ky)"
+
+#~ msgid "Configure Search Timer Options for Search String"
+#~ msgstr "Konfigurova» mo¾nosti plánov pre vyhµadávanie kµúèových slov"

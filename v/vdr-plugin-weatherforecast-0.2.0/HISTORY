@@ -1,0 +1,25 @@
+VDR Plugin 'weatherforecast' Revision History
+---------------------------------------------
+
+2015-01-15: Version 0.0.1
+
+- Initial revision.
+
+- Added possibility to use own API Key, with own API Key
+  it is possible to configure individual cache duration
+  of forecast
+
+Version 0.0.2
+
+- adapted libskindesigner
+
+Version 0.0.3
+
+- introduced libskindesignerapi
+
+Version 0.1.0
+
+- adapted makefile for LCLBLD
+
+Version 0.1.1
+

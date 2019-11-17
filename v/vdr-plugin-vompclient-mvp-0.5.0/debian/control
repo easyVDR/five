@@ -1,0 +1,17 @@
+Source: vdr-plugin-vompclient-mvp
+Section: misc
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), po-debconf
+Standards-Version: 3.9.5
+
+
+Package: vdr-plugin-vompclient-mvp
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, debconf
+Pre-Depends: vdr-plugin-vompserver (>= 0.5.0)
+Description: mediamvp client firmware for vomp
+ This is the client firmware from the mediamvp(VOMP) Project, that will be
+ loaded into the Hauppauge MediaMvp by the built-in TFTP server of the
+ VDR vompserver plugin.

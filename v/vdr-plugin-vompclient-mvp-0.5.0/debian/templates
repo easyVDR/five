@@ -1,0 +1,10 @@
+Template: vdr-vompclient-mvp/bootpserver_on_init
+Type: boolean
+Default: true
+_Description: Activate firmware loader (BOOTP/TFTP) of VDR vompserver plugin?
+ To automatically load the firmware, it has to be made available to the
+ Hauppauge MediaMVP device by a BOOTP/TFTP server. The VDR vompserver plugin
+ has such a BOOTP/TFTP server, which is disabled by default.
+ .
+ If you don't use a separate TFTP server, you should activate the built-in
+ BOOTP/TFTP Server with this option.

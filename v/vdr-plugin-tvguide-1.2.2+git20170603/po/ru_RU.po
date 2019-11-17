@@ -1,0 +1,955 @@
+# VDR plugin language source file.
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-tvguide 1.0.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2014-05-10 17:24+0200\n"
+"PO-Revision-Date: 2013-09-25 17:49+0400\n"
+"Last-Translator: AmiD, ilya\n"
+"Language-Team: Russia-Cherepovets(wm.amid@gmail.com)\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Main Program"
+msgstr "Основная программа"
+
+msgid "Channel"
+msgstr "Канал"
+
+msgid "min"
+msgstr "мин"
+
+msgid "Reruns of "
+msgstr ""
+
+msgid "No reruns found"
+msgstr ""
+
+msgid "No EPG Information available"
+msgstr "Нет доступной EPG информации"
+
+msgid "Search & Rec"
+msgstr "Поиск & Запись"
+
+msgid "Channels back"
+msgstr "Предыдущих каналов"
+
+msgid "Channels forward"
+msgstr "Следующих каналов"
+
+msgid "Switch to Channel"
+msgstr "Переключиться"
+
+msgid "Detailed EPG"
+msgstr "Подробный EPG"
+
+msgid "Close detailed EPG"
+msgstr ""
+
+msgid "Favorites"
+msgstr ""
+
+msgid "images"
+msgstr ""
+
+msgid "root video folder"
+msgstr "Главная видео директория"
+
+msgid "Transp."
+msgstr "Трансп."
+
+msgid "Timer Conflict"
+msgstr "Таймер-конфликт"
+
+msgid "all Channels"
+msgstr "все каналы"
+
+msgid "unknown channel"
+msgstr "неизвестный канал"
+
+msgid "Duration"
+msgstr "Продолжительность"
+
+msgid "recorded at"
+msgstr "записано"
+
+msgid "from"
+msgstr "от"
+
+msgid "Timers for"
+msgstr ""
+
+msgid "Rec"
+msgstr ""
+
+msgid "No Timers active"
+msgstr ""
+
+msgid "inactive"
+msgstr ""
+
+msgid "active timers"
+msgstr ""
+
+msgid "recordings done"
+msgstr ""
+
+msgid "What's on now"
+msgstr ""
+
+msgid "What's on next"
+msgstr ""
+
+msgid "Instant Record"
+msgstr "Записать"
+
+msgid "Delete Timer"
+msgstr "Удалить таймер"
+
+msgid "Edit Timer"
+msgstr "Редактировать таймер"
+
+msgid "Timer Timeline"
+msgstr ""
+
+msgid "Create Search Timer"
+msgstr "Создать поисковый таймер"
+
+msgid "Search Timers"
+msgstr ""
+
+msgid "Create Series Timer"
+msgstr "Создать циклический таймер"
+
+msgid "Create Switch Timer"
+msgstr "Создать таймер переключения"
+
+msgid "Delete Switch Timer"
+msgstr "Удалить таймер переключения"
+
+msgid "Search"
+msgstr "Поиск"
+
+msgid "Check for Timer Conflicts"
+msgstr "Поиск таймер-конфликтов"
+
+msgid "Search in Recordings"
+msgstr "Искать в записях"
+
+msgid "Set Folder for"
+msgstr "Укажите каталог для"
+
+msgid "Timer created"
+msgstr "Таймер создан"
+
+msgid "Timer NOT created"
+msgstr "Таймер НЕ создан"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Timer deleted"
+msgstr "Таймер удален"
+
+msgid "Timer"
+msgstr "Таймер"
+
+msgid "still recording - really delete?"
+msgstr "Идет запись - уверены что хотите удалить?"
+
+msgid "Yes"
+msgstr "Да"
+
+msgid "No"
+msgstr "Нет"
+
+msgid "One"
+msgstr "Один"
+
+msgid "detected"
+msgstr "обнаружен"
+
+msgid "Timer Conflicts"
+msgstr "Таймер-конфликты"
+
+msgid "Show conflict"
+msgstr "Показать конфликты"
+
+msgid "timers involved"
+msgstr "Таймер"
+
+msgid "Ignore Conflicts"
+msgstr "Игнорировать конфликты"
+
+msgid "Ignore Conflict"
+msgstr "Игнорировать конфликт"
+
+msgid "No Timer Conflicts found"
+msgstr "Таймер-конфликты не найдены"
+
+msgid "Close"
+msgstr "Закрыть"
+
+msgid "reruns for"
+msgstr ""
+
+msgid "rerun for"
+msgstr ""
+
+msgid "found"
+msgstr ""
+
+msgid "Ignore reruns"
+msgstr ""
+
+msgid "No reruns found for Event"
+msgstr ""
+
+msgid "Timer for"
+msgstr ""
+
+msgid "replaced by rerun"
+msgstr ""
+
+msgid "Timer Active"
+msgstr "Таймер активен"
+
+msgid "Priority"
+msgstr "Приоритет"
+
+msgid "Lifetime"
+msgstr "Срок хранения (дней)"
+
+msgid "Day"
+msgstr "День"
+
+msgid "Timer start time"
+msgstr "Время c"
+
+msgid "Timer stop time"
+msgstr "Время до"
+
+msgid "Timer File"
+msgstr ""
+
+msgid "New Folder"
+msgstr ""
+
+msgid "Save"
+msgstr "Сохранить"
+
+msgid "Cancel"
+msgstr "Отменить"
+
+msgid "Create Series Timer based on"
+msgstr "Настроить циклический таймер"
+
+msgid "Series Timer start time"
+msgstr "Время с"
+
+msgid "Series Timer stop time"
+msgstr "Время до"
+
+msgid "Days to record"
+msgstr "Дни недели"
+
+msgid "Day to start"
+msgstr "Начиная с"
+
+msgid "Create Timer"
+msgstr "Создать"
+
+msgid "Series Timer created"
+msgstr "Циклический таймер создан"
+
+msgid "Start"
+msgstr "Старт"
+
+msgid "Stop"
+msgstr "Стоп"
+
+msgid "Configure Search Timer based on"
+msgstr "Настроить поисковый таймер"
+
+msgid "Search Expression:"
+msgstr "Искать выражение:"
+
+msgid "Continue"
+msgstr "Продолжить"
+
+msgid "Configure Search Timer for Search String"
+msgstr "Настройка таймера поиска по ключевым словам"
+
+msgid "Manually configure Options"
+msgstr "Ручная настройка параметров"
+
+msgid "Use Template"
+msgstr "Использовать шаблоны"
+
+msgid "EPGSearch Search Timers"
+msgstr ""
+
+msgid "No Search Timers Configured"
+msgstr ""
+
+msgid "Configure Search Timer Options"
+msgstr ""
+
+msgid "Save Search Timer"
+msgstr ""
+
+msgid "Search String"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Search Mode"
+msgstr "Режим поиска"
+
+msgid "Use Title"
+msgstr "Искать в названиях"
+
+msgid "Use Subtitle"
+msgstr "Искать в эпизодах"
+
+msgid "Use Description"
+msgstr "Искать в описаниях"
+
+msgid "Limit Channels"
+msgstr "Ограничить список каналов"
+
+msgid "Use Time"
+msgstr "Время"
+
+msgid "Display advanced Options"
+msgstr ""
+
+msgid "Limit Days of the Week"
+msgstr ""
+
+msgid "Time margin for start in minutes"
+msgstr ""
+
+msgid "Time margin for stop in minutes"
+msgstr ""
+
+msgid "Series Recording"
+msgstr ""
+
+msgid "Folder"
+msgstr ""
+
+msgid "Use VPS"
+msgstr ""
+
+msgid "Avoid Repeats"
+msgstr ""
+
+msgid "Use in Favorites"
+msgstr ""
+
+msgid "Hide advanced Options"
+msgstr ""
+
+msgid "Display Results for Search Timer"
+msgstr "Тест"
+
+msgid "Start Channel"
+msgstr "С канала"
+
+msgid "Stop Channel"
+msgstr "По канал"
+
+msgid "Start after"
+msgstr "С"
+
+msgid "Start before"
+msgstr "До"
+
+msgid "Select Days"
+msgstr ""
+
+msgid "Number of allowed repeats"
+msgstr ""
+
+msgid "Compare Title"
+msgstr ""
+
+msgid "Compare Subtitle"
+msgstr ""
+
+msgid "Compare Description"
+msgstr ""
+
+msgid "Really delete Search Timer"
+msgstr ""
+
+msgid "Delete only Search Timer"
+msgstr ""
+
+msgid "Delete Search Timer and created Timers"
+msgstr ""
+
+msgid "Search Timer sucessfully created."
+msgstr "Поисковый таймер создан"
+
+msgid "Search Timer update initialised"
+msgstr "Поисковый таймер обновляется"
+
+msgid "Search Timer NOT sucessfully created"
+msgstr "Поисковый таймер НЕ создан"
+
+msgid "Creating Search Timer"
+msgstr "Создается поисковый таймер"
+
+msgid "Search Term"
+msgstr "Ключевое слово"
+
+msgid "Using Template"
+msgstr "Использовать шаблон"
+
+msgid "Use other Template"
+msgstr "Использовать другие шаблоны"
+
+msgid "search results for Favorite"
+msgstr ""
+
+msgid "search result for Favorite"
+msgstr ""
+
+msgid "search results for Search Timer"
+msgstr "Совпадений найдено"
+
+msgid "search result for Search Timer"
+msgstr "Совпадение найдено"
+
+msgid "Nothing found for Search String"
+msgstr "Совпадений НЕ найдено"
+
+msgid "Configure Options for Switchtimer"
+msgstr "Настройка таймера переключения"
+
+msgid "Minutes before switching"
+msgstr "Минут до события"
+
+msgid "switch"
+msgstr "Переключить"
+
+msgid "announce only"
+msgstr "Только предупредить"
+
+msgid "ask for switch"
+msgstr "Спросить о переключении"
+
+msgid "Switch Mode"
+msgstr "Режим переключения"
+
+msgid "Create"
+msgstr "Создать"
+
+msgid "Switch Timer sucessfully created"
+msgstr "Таймер переключения создан"
+
+msgid "Switch Timer NOT sucessfully created"
+msgstr "Таймер переключения НЕ был создан!"
+
+msgid "Switch Timer deleted"
+msgstr "Таймер переключения удален"
+
+msgid "Channel to Search"
+msgstr "Канал для поиска"
+
+msgid "Search in title"
+msgstr "Искать в названиях"
+
+msgid "Search in Subtitle"
+msgstr "Искать в эпизодах"
+
+msgid "Search in Description"
+msgstr "Искать в описаниях"
+
+msgid "Show Search Options"
+msgstr "Показать параметры поиска"
+
+msgid "Perform Search"
+msgstr "Найти"
+
+msgid "search results for"
+msgstr "Найдено по запросу"
+
+msgid "search result for"
+msgstr "Найден по запросу"
+
+msgid "Adapt Search"
+msgstr "Изменить"
+
+msgid "Search String has to have at least three letters"
+msgstr ""
+
+msgid "Found"
+msgstr "Найдено"
+
+msgid "recording"
+msgstr "запись"
+
+msgid "recordings"
+msgstr "записей"
+
+msgid "for"
+msgstr "для"
+
+msgid "No recordings found for"
+msgstr "Не найдено записей:"
+
+msgid "No Favorites available"
+msgstr ""
+
+msgid "whole term must appear"
+msgstr "фраза"
+
+msgid "all terms must exist"
+msgstr "все слова"
+
+msgid "one term must exist"
+msgstr "хотя бы одно слово"
+
+msgid "exact match"
+msgstr "точное совпадение"
+
+msgid "regular expression"
+msgstr "регулярные выражения"
+
+msgid "General Settings"
+msgstr "Основные настройки"
+
+msgid "Screen Presentation"
+msgstr "Графические настройки"
+
+msgid "Fonts and Fontsizes"
+msgstr "Шрифты и размер шрифтов"
+
+msgid "Recording Menus and Favorites"
+msgstr ""
+
+msgid "Image Loading and Caching"
+msgstr ""
+
+msgid "x channels back / forward"
+msgstr "x Каналов Назад/Вперед"
+
+msgid "previous / next channel group"
+msgstr "Предыдущая/Следующая группа"
+
+msgid "Blue: Channel Switch, Ok: Detailed EPG"
+msgstr "Синяя: Переключить канал, OK: Подробный EPG"
+
+msgid "Blue: Detailed EPG, Ok: Channel Switch"
+msgstr "Синяя: Подробный EPG, OK: Переключить канал"
+
+msgid "Blue: Favorites / Switch, Ok: Detailed EPG"
+msgstr ""
+
+msgid "Timely Jump"
+msgstr ""
+
+msgid "Jump to specific channel"
+msgstr ""
+
+msgid "never"
+msgstr "никогда"
+
+msgid "if exists"
+msgstr "если существует"
+
+msgid "always"
+msgstr "всегда"
+
+msgid "Show Main Menu Entry"
+msgstr "Показывать пункт в главном меню"
+
+msgid "Replace VDR Schedules Menu"
+msgstr "Заменять телегид VDR"
+
+msgid "Use appropriate nOpacity Theme"
+msgstr ""
+
+msgid "Theme"
+msgstr "Тема"
+
+msgid "Time to display in minutes"
+msgstr "Время показа в минутах"
+
+msgid "Rounded Corners"
+msgstr "Закруглять углы"
+
+msgid "Channel Jump Mode (Keys Green / Yellow)"
+msgstr "Режим прокрутки каналов (Зеленая/Желтая кнопки)"
+
+msgid "Keys Blue and OK"
+msgstr "Синяя кнопка и OK"
+
+msgid "Close TVGuide after channel switch"
+msgstr "Закрывать TVGuide при переключении канала"
+
+msgid "Functionality of numeric Keys"
+msgstr ""
+
+msgid "Hide last Channel Group"
+msgstr "Скрывать последнюю группу каналов"
+
+msgid "Big Step (Keys 1 / 3) in hours"
+msgstr "Прыжок (Кнопки 1 / 3) в часах"
+
+msgid "Huge Step (Keys 4 / 6) in hours"
+msgstr "Большой прыжок (Кнопки 4 / 6) в часах"
+
+msgid "Time Format (12h/24h)"
+msgstr "Формат времени (12h/24h)"
+
+msgid "EPG Window Text Scrolling Speed"
+msgstr ""
+
+msgid "Display Reruns in detailed EPG View"
+msgstr "Показывать повторы в подробном EPG"
+
+msgid "Number of reruns to display"
+msgstr "Кол-во"
+
+msgid "Use Subtitle for reruns"
+msgstr "Показывать эпизод"
+
+msgid "Display Mode"
+msgstr "Режим отображения"
+
+msgid "Height of Channel Header (Perc. of osd height)"
+msgstr "Высота заголовка канала (% от высоты OSD)"
+
+msgid "Width of Timeline (Perc. of osd width)"
+msgstr "Ширина таймлинии (% от ширины OSD)"
+
+msgid "Number of Channels to display"
+msgstr "Кол-во отображаемых каналов"
+
+msgid "Width of Channel Header (Perc. of osd width)"
+msgstr "Ширина заголовка канала (% от ширины OSD)"
+
+msgid "Height of Timeline (Perc. of osd height)"
+msgstr "Высота таймлинии (% от высоты OSD)"
+
+msgid "Display time in EPG Grids"
+msgstr "Показывать время в сетке EPG"
+
+msgid "Height of Headers (Status Header and EPG View, Perc. of osd height)"
+msgstr ""
+
+msgid "Height of Footer (Perc. of osd height)"
+msgstr ""
+
+msgid "Display status header"
+msgstr "Показывать верхнюю панель"
+
+msgid "Scale video to upper right corner"
+msgstr "Показывать видео в правом верхнем углу"
+
+msgid "Rounded corners around video frame"
+msgstr "Скруглять углы видео рамки"
+
+msgid "Display Channel Names in Header"
+msgstr "Показывать наименования каналов в верхней панели"
+
+msgid "Display channel groups"
+msgstr "Показывать группы каналов"
+
+msgid "Height of channel groups (Perc. of osd height)"
+msgstr "Высота группы каналов (% от высоты OSD)"
+
+msgid "Width of channel groups (Perc. of osd width)"
+msgstr "Ширина группы каналов (% от ширины OSD)"
+
+msgid "Display current time baseline"
+msgstr ""
+
+msgid "Show Channel Logos"
+msgstr "Показывать логотипы каналов"
+
+msgid "Logo Path used"
+msgstr "Путь к папке с логотипами"
+
+msgid "Logo Extension"
+msgstr "Расширения файлов с логотипами"
+
+msgid "Logo width ratio"
+msgstr "Ширина логотипов"
+
+msgid "Logo height ratio"
+msgstr "Высота логотипов"
+
+msgid "Text Border in Detailed View (pixel)"
+msgstr ""
+
+msgid "Show EPG Images"
+msgstr "Показывать картинки EPG"
+
+msgid "EPG Images Path used"
+msgstr "Путь к папке с картинками EPG"
+
+msgid "EPG Image width"
+msgstr "Ширина картирок EPG (пикселей)"
+
+msgid "EPG Image height"
+msgstr "Высота картинок EPG (пикселей)"
+
+msgid "Number of additional EPG Images"
+msgstr "Кол-во дополнительных EPG картинок"
+
+msgid "Additional EPG Image width"
+msgstr "Ширина дополнительных EPG картинок"
+
+msgid "Additional EPG Image height"
+msgstr "Высота дополнительных EPG картинок"
+
+msgid "Font"
+msgstr "Шрифт"
+
+msgid "Status Header Font Size"
+msgstr "Размер шрифта в верхней панели"
+
+msgid "Status Header Large Font Size"
+msgstr "Размер крупного шрифта в верхней панели"
+
+msgid "Detail EPG View Font Size"
+msgstr "Размер шрифта подробный EPG"
+
+msgid "Detail EPG View Header Font Size"
+msgstr "Размер шрифта верхней панели меню подробный EPG"
+
+msgid "Message Font Size"
+msgstr "Размер шрифта сообщений"
+
+msgid "Message Large Font Size"
+msgstr "Размер крупного шрифта сообщений"
+
+msgid "Button Font Size"
+msgstr "Размер шрифта кнопок"
+
+msgid "Channel Header Font Size"
+msgstr "Размер шрифта названий каналов"
+
+msgid "Channel Groups Font Size"
+msgstr "Размер шрифта групп каналов"
+
+msgid "Grid Font Size"
+msgstr "Размер шрифта сетки"
+
+msgid "Grid Font Small Size"
+msgstr "Размер маленького шрифта сетки"
+
+msgid "Timeline Weekday Font Size"
+msgstr "Размер шрифта таймлинии"
+
+msgid "Timeline Date Font Size"
+msgstr "Размер шрифта даты таймлинии"
+
+msgid "Timeline Time Font Size"
+msgstr "Размер шрифта времени таймлинии"
+
+msgid "Search & Recording Menu Font Size"
+msgstr "Размер шрифта меню Поиск & Запись"
+
+msgid "Search & Recording Menu Small Font Size"
+msgstr "Размер маленького шрифта меню Поиск & Запись"
+
+msgid "Search & Recording Menu Header Font Size"
+msgstr ""
+
+msgid "Always use root video folder"
+msgstr ""
+
+msgid "Select from folder list"
+msgstr ""
+
+msgid "Use fixed folder"
+msgstr ""
+
+msgid "Folder for instant Recordings"
+msgstr ""
+
+msgid "Use Remotetimers"
+msgstr "RemoteTimers benutzen"
+
+msgid "Use \"What's on now\" in favorites"
+msgstr ""
+
+msgid "Use \"What's on next\" in favorites"
+msgstr ""
+
+msgid "Use user defined time 1 in favorites"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Use user defined time 2 in favorites"
+msgstr ""
+
+msgid "Use user defined time 3 in favorites"
+msgstr ""
+
+msgid "Use user defined time 4 in favorites"
+msgstr ""
+
+msgid "Limit channels in favorites"
+msgstr ""
+
+msgid "Create Log Messages for image loading"
+msgstr ""
+
+msgid "Limit Logo Cache"
+msgstr ""
+
+msgid "Maximal number of logos to cache"
+msgstr ""
+
+msgid "Number of  logos to cache at start"
+msgstr ""
+
+msgid "Cache Sizes"
+msgstr ""
+
+msgid "OSD Element Cache"
+msgstr ""
+
+msgid "Logo cache"
+msgstr ""
+
+msgid "EPG Grid Cache"
+msgstr ""
+
+msgid "Channel Groups Cache"
+msgstr ""
+
+msgid "Recording Menus Icon Cache"
+msgstr ""
+
+msgid "No Cast available"
+msgstr ""
+
+msgid "Cast"
+msgstr ""
+
+msgid "EPG Info"
+msgstr ""
+
+msgid "Reruns"
+msgstr ""
+
+msgid "Recording Information"
+msgstr ""
+
+msgid "Image Galery"
+msgstr ""
+
+msgid "TheTVDB Info"
+msgstr ""
+
+msgid "TheTVDB Information"
+msgstr ""
+
+msgid "Episode"
+msgstr ""
+
+msgid "Season"
+msgstr ""
+
+msgid "Episode Overview"
+msgstr ""
+
+msgid "First aired"
+msgstr ""
+
+msgid "Guest Stars"
+msgstr ""
+
+msgid "TheMovieDB Rating"
+msgstr ""
+
+msgid "Series Overview"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "TheMovieDB Information"
+msgstr ""
+
+msgid "Original Title"
+msgstr ""
+
+msgid "Tagline"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "Adult"
+msgstr ""
+
+msgid "Collection"
+msgstr ""
+
+msgid "Budget"
+msgstr ""
+
+msgid "Revenue"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "Release Date"
+msgstr ""
+
+msgid "Runtime"
+msgstr ""
+
+msgid "minutes"
+msgstr ""
+
+msgid "TheMovieDB Popularity"
+msgstr ""
+
+msgid "TheMovieDB Vote Average"
+msgstr ""
+
+#~ msgid "RERUNS OF THIS SHOW"
+#~ msgstr "ПОВТОРЫ ЭТОЙ ПЕРЕДАЧИ"
+
+#~ msgid "Actors"
+#~ msgstr "Актеры"
+
+#~ msgid "Use folders for instant records"
+#~ msgstr "Использовать директории для быстрой записи"
+
+#~ msgid "Height of status header (Perc. of osd height)"
+#~ msgstr "Высота верхней панели (% от высоты OSD)"
+
+#~ msgid "Configure Search Timer Options for Search String"
+#~ msgstr "Настроить параметры таймера"

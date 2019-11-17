@@ -1,0 +1,6 @@
+#!/bin/sh
+
+. /usr/share/debconf/confmodule
+
+db_input high vdr-vompclient-mvp/bootpserver_on_init || false
+db_go

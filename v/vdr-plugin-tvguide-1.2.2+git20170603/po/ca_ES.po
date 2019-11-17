@@ -1,0 +1,958 @@
+# VDR plugin language source file.
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-tvguide 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2014-05-10 17:24+0200\n"
+"PO-Revision-Date: 2013-09-21 17:49+0200\n"
+"Last-Translator: My friend <Sampep> Thanks David <Gabychan> <gbonich@gmail.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Catala\n"
+"X-Poedit-Country: Catalunya\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "Main Program"
+msgstr "Programa principal"
+
+msgid "Channel"
+msgstr "Canal"
+
+msgid "min"
+msgstr "min"
+
+msgid "Reruns of "
+msgstr ""
+
+msgid "No reruns found"
+msgstr ""
+
+msgid "No EPG Information available"
+msgstr "No hi ha informació EPG"
+
+msgid "Search & Rec"
+msgstr "Cerca & Enregistra"
+
+msgid "Channels back"
+msgstr "Canals enrere"
+
+msgid "Channels forward"
+msgstr "Canals endavant"
+
+msgid "Switch to Channel"
+msgstr "Canvia al canal"
+
+msgid "Detailed EPG"
+msgstr "EPG Detallat"
+
+msgid "Close detailed EPG"
+msgstr ""
+
+msgid "Favorites"
+msgstr ""
+
+msgid "images"
+msgstr ""
+
+msgid "root video folder"
+msgstr "Directori principal per a vídeo"
+
+msgid "Transp."
+msgstr "Transp."
+
+msgid "Timer Conflict"
+msgstr "Temporitzador en conflicte"
+
+msgid "all Channels"
+msgstr "tots els canals"
+
+msgid "unknown channel"
+msgstr "canal desconegut"
+
+msgid "Duration"
+msgstr "Durada"
+
+msgid "recorded at"
+msgstr "enregistrat a"
+
+msgid "from"
+msgstr "des de"
+
+msgid "Timers for"
+msgstr ""
+
+msgid "Rec"
+msgstr ""
+
+msgid "No Timers active"
+msgstr ""
+
+msgid "inactive"
+msgstr ""
+
+msgid "active timers"
+msgstr ""
+
+msgid "recordings done"
+msgstr ""
+
+msgid "What's on now"
+msgstr ""
+
+msgid "What's on next"
+msgstr ""
+
+msgid "Instant Record"
+msgstr "Enregistra a l'instant"
+
+msgid "Delete Timer"
+msgstr "Esborra temporitzador"
+
+msgid "Edit Timer"
+msgstr "Edita temporitzador"
+
+msgid "Timer Timeline"
+msgstr ""
+
+msgid "Create Search Timer"
+msgstr "Cerca temporitzadors"
+
+msgid "Search Timers"
+msgstr ""
+
+msgid "Create Series Timer"
+msgstr "Programa enregistrament de Sèries"
+
+msgid "Create Switch Timer"
+msgstr "Canvia temporitzadors"
+
+msgid "Delete Switch Timer"
+msgstr "Esborra canvis de temporitzadors"
+
+msgid "Search"
+msgstr "Cerca"
+
+msgid "Check for Timer Conflicts"
+msgstr "Comprova conflictes de temporitzadors"
+
+msgid "Search in Recordings"
+msgstr "Cerca a les gravacions"
+
+msgid "Set Folder for"
+msgstr "Programa carpeta per"
+
+msgid "Timer created"
+msgstr "Temporitzador creat"
+
+msgid "Timer NOT created"
+msgstr "Temporitzador NO creat"
+
+msgid "OK"
+msgstr "OK"
+
+msgid "Timer deleted"
+msgstr "Temporitzador esborrat"
+
+msgid "Timer"
+msgstr "Temporitzador"
+
+msgid "still recording - really delete?"
+msgstr "gravació en curs - segur que vols esborrar-la?"
+
+msgid "Yes"
+msgstr "Sí"
+
+msgid "No"
+msgstr "No"
+
+msgid "One"
+msgstr "Un"
+
+msgid "detected"
+msgstr "detectat"
+
+msgid "Timer Conflicts"
+msgstr "Conflicte al temporitzador"
+
+msgid "Show conflict"
+msgstr "Mostra conflicte"
+
+msgid "timers involved"
+msgstr "temporitzadors involucrats"
+
+msgid "Ignore Conflicts"
+msgstr "Ignora conflictes"
+
+msgid "Ignore Conflict"
+msgstr "Ignora conflicte"
+
+msgid "No Timer Conflicts found"
+msgstr "No s'han trobat conflictes"
+
+msgid "Close"
+msgstr "Tanca"
+
+msgid "reruns for"
+msgstr ""
+
+msgid "rerun for"
+msgstr ""
+
+msgid "found"
+msgstr ""
+
+msgid "Ignore reruns"
+msgstr ""
+
+msgid "No reruns found for Event"
+msgstr ""
+
+msgid "Timer for"
+msgstr ""
+
+msgid "replaced by rerun"
+msgstr ""
+
+msgid "Timer Active"
+msgstr "Temporitzador actiu"
+
+msgid "Priority"
+msgstr "Prioritat"
+
+msgid "Lifetime"
+msgstr "Temps restant"
+
+msgid "Day"
+msgstr "dia"
+
+msgid "Timer start time"
+msgstr "Inici temporitzador"
+
+msgid "Timer stop time"
+msgstr "Final temporitzador"
+
+msgid "Timer File"
+msgstr ""
+
+msgid "New Folder"
+msgstr ""
+
+msgid "Save"
+msgstr "Desa"
+
+msgid "Cancel"
+msgstr "Cancel·la"
+
+msgid "Create Series Timer based on"
+msgstr "Programa enregistrament de Sèries segons"
+
+msgid "Series Timer start time"
+msgstr "Inici temporitzador Sèries"
+
+msgid "Series Timer stop time"
+msgstr "Final temporitzador Sèries"
+
+msgid "Days to record"
+msgstr "Dies a enregistrar"
+
+msgid "Day to start"
+msgstr "Dia d'inici"
+
+msgid "Create Timer"
+msgstr "Crea temporitzador"
+
+msgid "Series Timer created"
+msgstr "Sèrie programada"
+
+msgid "Start"
+msgstr "Inici"
+
+msgid "Stop"
+msgstr "Final"
+
+msgid "Configure Search Timer based on"
+msgstr "Configura cerca de temporitzadors segons"
+
+msgid "Search Expression:"
+msgstr "Cerca expressió:"
+
+msgid "Continue"
+msgstr "Continua"
+
+msgid "Configure Search Timer for Search String"
+msgstr "Configura cerca de temporitzadors amb text"
+
+msgid "Manually configure Options"
+msgstr "Opcions de configuració manual"
+
+msgid "Use Template"
+msgstr "Utilitza plantilla"
+
+msgid "EPGSearch Search Timers"
+msgstr ""
+
+msgid "No Search Timers Configured"
+msgstr ""
+
+msgid "Configure Search Timer Options"
+msgstr ""
+
+msgid "Save Search Timer"
+msgstr ""
+
+msgid "Search String"
+msgstr ""
+
+msgid "Active"
+msgstr ""
+
+msgid "Search Mode"
+msgstr "Mode de cerca"
+
+msgid "Use Title"
+msgstr "Utilitza títol"
+
+msgid "Use Subtitle"
+msgstr "Utilitza subtítol"
+
+msgid "Use Description"
+msgstr "Utilitza descripció"
+
+msgid "Limit Channels"
+msgstr "Canals restringits"
+
+msgid "Use Time"
+msgstr "Utilitza temps"
+
+msgid "Display advanced Options"
+msgstr ""
+
+msgid "Limit Days of the Week"
+msgstr ""
+
+msgid "Time margin for start in minutes"
+msgstr ""
+
+msgid "Time margin for stop in minutes"
+msgstr ""
+
+msgid "Series Recording"
+msgstr ""
+
+msgid "Folder"
+msgstr ""
+
+msgid "Use VPS"
+msgstr ""
+
+msgid "Avoid Repeats"
+msgstr ""
+
+msgid "Use in Favorites"
+msgstr ""
+
+msgid "Hide advanced Options"
+msgstr ""
+
+msgid "Display Results for Search Timer"
+msgstr "Mostra resultats de la cerca"
+
+msgid "Start Channel"
+msgstr "Inicia canal"
+
+msgid "Stop Channel"
+msgstr "Atura canal"
+
+msgid "Start after"
+msgstr "Comença després"
+
+msgid "Start before"
+msgstr "Comença abans"
+
+msgid "Select Days"
+msgstr ""
+
+msgid "Number of allowed repeats"
+msgstr ""
+
+msgid "Compare Title"
+msgstr ""
+
+msgid "Compare Subtitle"
+msgstr ""
+
+msgid "Compare Description"
+msgstr ""
+
+msgid "Really delete Search Timer"
+msgstr ""
+
+msgid "Delete only Search Timer"
+msgstr ""
+
+msgid "Delete Search Timer and created Timers"
+msgstr ""
+
+msgid "Search Timer sucessfully created."
+msgstr "S'ha creat cerca de temporitzador"
+
+msgid "Search Timer update initialised"
+msgstr "Actualització de temporitzador iniciada"
+
+msgid "Search Timer NOT sucessfully created"
+msgstr "No s'ha creat cerca de temporitzador"
+
+msgid "Creating Search Timer"
+msgstr "Creant cerca de temporitzador"
+
+msgid "Search Term"
+msgstr "Cercant terme"
+
+msgid "Using Template"
+msgstr "Utilitzant plantilla"
+
+msgid "Use other Template"
+msgstr "Utilitza una altra plantilla"
+
+msgid "search results for Favorite"
+msgstr ""
+
+msgid "search result for Favorite"
+msgstr ""
+
+msgid "search results for Search Timer"
+msgstr "cerca resultats per temporitzador"
+
+msgid "search result for Search Timer"
+msgstr "cerca resultat per temporitzador"
+
+msgid "Nothing found for Search String"
+msgstr "No s'ha trobat la cadena de text"
+
+msgid "Configure Options for Switchtimer"
+msgstr "Opcions de configuració de canvi de temporitzador"
+
+msgid "Minutes before switching"
+msgstr "Minuts abans del canvi"
+
+msgid "switch"
+msgstr "canvia"
+
+msgid "announce only"
+msgstr "només anunci"
+
+msgid "ask for switch"
+msgstr "pregunta pel canvi"
+
+msgid "Switch Mode"
+msgstr "Mode de canvi"
+
+msgid "Create"
+msgstr "Crea"
+
+msgid "Switch Timer sucessfully created"
+msgstr "Canvi de temporitzador creat"
+
+msgid "Switch Timer NOT sucessfully created"
+msgstr "No s'ha creat el canvi de temporitzador"
+
+msgid "Switch Timer deleted"
+msgstr "Canvi de temporitzador esborrat"
+
+msgid "Channel to Search"
+msgstr "Canal a cercar"
+
+msgid "Search in title"
+msgstr "Cerca al títol"
+
+msgid "Search in Subtitle"
+msgstr "Cerca al subtítol"
+
+msgid "Search in Description"
+msgstr "Cerca a la descripció"
+
+msgid "Show Search Options"
+msgstr "Mostra opcions de cerca"
+
+msgid "Perform Search"
+msgstr "Realitza la cerca"
+
+msgid "search results for"
+msgstr "resultats de cerca per"
+
+msgid "search result for"
+msgstr "resultat de cerca per"
+
+msgid "Adapt Search"
+msgstr "Cerca adaptada"
+
+msgid "Search String has to have at least three letters"
+msgstr ""
+
+msgid "Found"
+msgstr "Trobada"
+
+msgid "recording"
+msgstr "gravació"
+
+msgid "recordings"
+msgstr "gravacions"
+
+msgid "for"
+msgstr "per"
+
+msgid "No recordings found for"
+msgstr "No s'han trobat gravacions per"
+
+msgid "No Favorites available"
+msgstr ""
+
+msgid "whole term must appear"
+msgstr "expressió completa"
+
+msgid "all terms must exist"
+msgstr "totes les paraules"
+
+msgid "one term must exist"
+msgstr "alguna paraula"
+
+msgid "exact match"
+msgstr "coincidència exacta"
+
+msgid "regular expression"
+msgstr "expressió regular"
+
+msgid "General Settings"
+msgstr "Preferències"
+
+msgid "Screen Presentation"
+msgstr "Presentació de pantalla"
+
+msgid "Fonts and Fontsizes"
+msgstr "Tipus i mida de lletra"
+
+msgid "Recording Menus and Favorites"
+msgstr ""
+
+msgid "Image Loading and Caching"
+msgstr ""
+
+msgid "x channels back / forward"
+msgstr "x canals enrere / endavant"
+
+msgid "previous / next channel group"
+msgstr "anterior / següent grup de canals"
+
+msgid "Blue: Channel Switch, Ok: Detailed EPG"
+msgstr "Blau: Canvi de canal, OK: EPG detallat"
+
+msgid "Blue: Detailed EPG, Ok: Channel Switch"
+msgstr "Blau: EPG detallat, OK: Canvi de canal"
+
+msgid "Blue: Favorites / Switch, Ok: Detailed EPG"
+msgstr ""
+
+msgid "Timely Jump"
+msgstr ""
+
+msgid "Jump to specific channel"
+msgstr ""
+
+msgid "never"
+msgstr "mai"
+
+msgid "if exists"
+msgstr "si existeix"
+
+msgid "always"
+msgstr "sempre"
+
+msgid "Show Main Menu Entry"
+msgstr "Mostra entrada del menú principal"
+
+msgid "Replace VDR Schedules Menu"
+msgstr "Canvia el menú Programació VDR"
+
+msgid "Use appropriate nOpacity Theme"
+msgstr ""
+
+msgid "Theme"
+msgstr "Plantilla"
+
+msgid "Time to display in minutes"
+msgstr "Temps a mostrar en minuts"
+
+msgid "Rounded Corners"
+msgstr "Cantells rodons"
+
+msgid "Channel Jump Mode (Keys Green / Yellow)"
+msgstr "Mode de salt de canal (Botons Verd / Groc)"
+
+msgid "Keys Blue and OK"
+msgstr "Botons Blau i OK"
+
+msgid "Close TVGuide after channel switch"
+msgstr "Tanca GuiaTV després del canvi de canal"
+
+msgid "Functionality of numeric Keys"
+msgstr ""
+
+msgid "Hide last Channel Group"
+msgstr "Amaga el darrer grup de canals"
+
+msgid "Big Step (Keys 1 / 3) in hours"
+msgstr "Salt (Botons 1 / 3) en hores"
+
+msgid "Huge Step (Keys 4 / 6) in hours"
+msgstr "Salt (Botons 4 / 6) en hores"
+
+msgid "Time Format (12h/24h)"
+msgstr "Format de temps (12h/24h)"
+
+msgid "EPG Window Text Scrolling Speed"
+msgstr ""
+
+msgid "Display Reruns in detailed EPG View"
+msgstr "Mostre reemissions a l'EPG detallat"
+
+msgid "Number of reruns to display"
+msgstr "Nombre de reemissions a mostrar"
+
+msgid "Use Subtitle for reruns"
+msgstr "Utilitza subtítol per reemissions"
+
+msgid "Display Mode"
+msgstr "Mode de visualització"
+
+msgid "Height of Channel Header (Perc. of osd height)"
+msgstr "Alçada de la capçalera del Canal (% alçada OSD)"
+
+msgid "Width of Timeline (Perc. of osd width)"
+msgstr "Amplada cronologia (% amplada OSD)"
+
+msgid "Number of Channels to display"
+msgstr "Nombre de Canals a mostrar"
+
+msgid "Width of Channel Header (Perc. of osd width)"
+msgstr "Amplada de la capçalera del Canal (% amplada OSD)"
+
+msgid "Height of Timeline (Perc. of osd height)"
+msgstr "Alçada cronologia (% alçada OSD)"
+
+msgid "Display time in EPG Grids"
+msgstr "Mostra el temps a l'EPG"
+
+msgid "Height of Headers (Status Header and EPG View, Perc. of osd height)"
+msgstr ""
+
+msgid "Height of Footer (Perc. of osd height)"
+msgstr ""
+
+msgid "Display status header"
+msgstr "Mostra capçalera d'estat"
+
+msgid "Scale video to upper right corner"
+msgstr "Escala de vídeo a cantonada superior dreta"
+
+msgid "Rounded corners around video frame"
+msgstr "Cantells rodons als fotogrames de vídeo"
+
+msgid "Display Channel Names in Header"
+msgstr "Mostra nom del canal a la capçalera"
+
+msgid "Display channel groups"
+msgstr "Mostra grups de canals"
+
+msgid "Height of channel groups (Perc. of osd height)"
+msgstr "Alçada dels grups de canals (% alçada OSD)"
+
+msgid "Width of channel groups (Perc. of osd width)"
+msgstr "Amplada dels grups de canals (% amplada OSD)"
+
+msgid "Display current time baseline"
+msgstr ""
+
+msgid "Show Channel Logos"
+msgstr "Mosta Logotip del canal"
+
+msgid "Logo Path used"
+msgstr "Origen logotip utilitzat"
+
+msgid "Logo Extension"
+msgstr "Extensió del Logotip"
+
+msgid "Logo width ratio"
+msgstr "Proporció amplada logotip"
+
+msgid "Logo height ratio"
+msgstr "Proporció alçada logotip"
+
+msgid "Text Border in Detailed View (pixel)"
+msgstr ""
+
+msgid "Show EPG Images"
+msgstr "Mostra imatges EPG"
+
+msgid "EPG Images Path used"
+msgstr "Origen imatges EPG utilitzades"
+
+msgid "EPG Image width"
+msgstr "Amplada imatge EPG"
+
+msgid "EPG Image height"
+msgstr "Alçada imatge EPG"
+
+msgid "Number of additional EPG Images"
+msgstr "Nombre addicional d'imatges EPG"
+
+msgid "Additional EPG Image width"
+msgstr "Amplada imatge addicional EPG"
+
+msgid "Additional EPG Image height"
+msgstr "Alçada imatge addicional EPG"
+
+msgid "Font"
+msgstr "Font"
+
+msgid "Status Header Font Size"
+msgstr "Mida de la Font - capçalera d'estat"
+
+msgid "Status Header Large Font Size"
+msgstr "Mida de la Font gran - capçalera d'estat"
+
+msgid "Detail EPG View Font Size"
+msgstr "Mida de la Font - EPG detallat"
+
+msgid "Detail EPG View Header Font Size"
+msgstr "Mida de la Font - capçalera EPG detallat"
+
+msgid "Message Font Size"
+msgstr "Mida de la Font - missatges"
+
+msgid "Message Large Font Size"
+msgstr "Mida de la Font gran - missatges"
+
+msgid "Button Font Size"
+msgstr "Mida de la Font dels botons"
+
+msgid "Channel Header Font Size"
+msgstr "Mida de la Font - capçalera canal"
+
+msgid "Channel Groups Font Size"
+msgstr "Mida de la Font - grups de canals"
+
+msgid "Grid Font Size"
+msgstr "Mida de la Font - graelles"
+
+msgid "Grid Font Small Size"
+msgstr "Mida de la Font petita - graelles"
+
+msgid "Timeline Weekday Font Size"
+msgstr "Mida de la Font - dia setmana cronologia"
+
+msgid "Timeline Date Font Size"
+msgstr "Mida de la Font - data cronologia"
+
+msgid "Timeline Time Font Size"
+msgstr "Mida de la Font - temps cronologia"
+
+msgid "Search & Recording Menu Font Size"
+msgstr "Mida de la Font - Menú Cerca & Enregistra"
+
+msgid "Search & Recording Menu Small Font Size"
+msgstr "Mida de la Font petita - Menú Cerca & Enregistra"
+
+msgid "Search & Recording Menu Header Font Size"
+msgstr ""
+
+msgid "Always use root video folder"
+msgstr ""
+
+msgid "Select from folder list"
+msgstr ""
+
+msgid "Use fixed folder"
+msgstr ""
+
+msgid "Folder for instant Recordings"
+msgstr ""
+
+msgid "Use Remotetimers"
+msgstr "Utilitza temporitzadors remots"
+
+msgid "Use \"What's on now\" in favorites"
+msgstr ""
+
+msgid "Use \"What's on next\" in favorites"
+msgstr ""
+
+msgid "Use user defined time 1 in favorites"
+msgstr ""
+
+msgid "Description"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Use user defined time 2 in favorites"
+msgstr ""
+
+msgid "Use user defined time 3 in favorites"
+msgstr ""
+
+msgid "Use user defined time 4 in favorites"
+msgstr ""
+
+msgid "Limit channels in favorites"
+msgstr ""
+
+msgid "Create Log Messages for image loading"
+msgstr ""
+
+msgid "Limit Logo Cache"
+msgstr ""
+
+msgid "Maximal number of logos to cache"
+msgstr ""
+
+msgid "Number of  logos to cache at start"
+msgstr ""
+
+msgid "Cache Sizes"
+msgstr ""
+
+msgid "OSD Element Cache"
+msgstr ""
+
+msgid "Logo cache"
+msgstr ""
+
+msgid "EPG Grid Cache"
+msgstr ""
+
+msgid "Channel Groups Cache"
+msgstr ""
+
+msgid "Recording Menus Icon Cache"
+msgstr ""
+
+msgid "No Cast available"
+msgstr ""
+
+msgid "Cast"
+msgstr ""
+
+msgid "EPG Info"
+msgstr ""
+
+msgid "Reruns"
+msgstr ""
+
+msgid "Recording Information"
+msgstr ""
+
+msgid "Image Galery"
+msgstr ""
+
+msgid "TheTVDB Info"
+msgstr ""
+
+msgid "TheTVDB Information"
+msgstr ""
+
+msgid "Episode"
+msgstr ""
+
+msgid "Season"
+msgstr ""
+
+msgid "Episode Overview"
+msgstr ""
+
+msgid "First aired"
+msgstr ""
+
+msgid "Guest Stars"
+msgstr ""
+
+msgid "TheMovieDB Rating"
+msgstr ""
+
+msgid "Series Overview"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "TheMovieDB Information"
+msgstr ""
+
+msgid "Original Title"
+msgstr ""
+
+msgid "Tagline"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "Adult"
+msgstr ""
+
+msgid "Collection"
+msgstr ""
+
+msgid "Budget"
+msgstr ""
+
+msgid "Revenue"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "Release Date"
+msgstr ""
+
+msgid "Runtime"
+msgstr ""
+
+msgid "minutes"
+msgstr ""
+
+msgid "TheMovieDB Popularity"
+msgstr ""
+
+msgid "TheMovieDB Vote Average"
+msgstr ""
+
+#~ msgid "RERUNS OF THIS SHOW"
+#~ msgstr "REEMISSIONS"
+
+#~ msgid "Actors"
+#~ msgstr "Actors"
+
+#~ msgid "Use folders for instant records"
+#~ msgstr "Utilitza carpetes per gravacions a l'instant"
+
+#~ msgid "Height of status header (Perc. of osd height)"
+#~ msgstr "Alçada capçalera d'estat (% alçada OSD)"
+
+#~ msgid "Configure Search Timer Options for Search String"
+#~ msgstr "Configura opcions de cerca de temporitzadors amb text"

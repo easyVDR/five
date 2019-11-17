@@ -1,0 +1,121 @@
+vdr-plugin-vompclient-mvp (0.5.0-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:46:06 +0100
+
+vdr-plugin-vompclient-mvp (0.5.0-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:21:56 +0100
+
+vdr-plugin-vompclient-mvp (0.5.0-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:28:17 +0100
+
+vdr-plugin-vompclient-mvp (0.5.0-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 08 Jul 2017 16:26:58 +0200
+
+vdr-plugin-vompclient-mvp (0.5.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+  * add new dongle & dongle.ver
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Apr 2017 23:35:46 +0200
+
+vdr-plugin-vompclient-mvp (0.4.1-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:04:18 +0200
+
+vdr-plugin-vompclient-mvp (0.4.1-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:50:12 +0200
+
+vdr-plugin-vompclient-mvp (0.4.1-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:50:55 +0200
+
+vdr-plugin-vompclient-mvp (0.4.1-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:10:21 +0200
+
+vdr-plugin-vompclient-mvp (0.4.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:55:40 +0100
+
+vdr-plugin-vompclient-mvp (0.4.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 01:03:17 +0100
+
+vdr-plugin-vompclient-mvp (0.4.1-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:31:29 +0200
+
+vdr-plugin-vompclient-mvp (0.4.1-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:38:54 +0100
+
+vdr-plugin-vompclient-mvp (0.4.1-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 18:28:31 +0100
+
+vdr-plugin-vompclient-mvp (0.4.1-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:20:42 +0200
+
+vdr-plugin-vompclient-mvp (0.4.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:31:25 +0200
+
+vdr-plugin-vompclient-mvp (0.4.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * add new dongle & dongle.ver
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 11 Mar 2014 23:28:59 +0100
+
+vdr-plugin-vompclient-mvp (0.4.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 13:21:31 +0100
+
+vdr-plugin-vompclient-mvp (0.4.0-0easyVDR1~raring) raring; urgency=high
+
+  * add dongle.ver
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 19 Jul 2013 03:30:12 +0200
+
+vdr-plugin-vompclient-mvp (0.4.0-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+  * quilt
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Jul 2013 14:33:54 +0200

@@ -1,0 +1,208 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Alberto Carraro <bertocar@tin.it>, 2001
+# Antonio Ospite <ospite@studenti.unina.it>, 2003
+# Sean Carlos <seanc@libero.it>, 2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.6.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2012-05-05 02:10+0200\n"
+"PO-Revision-Date: 2010-08-09 19:08+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team:  <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "font size"
+msgstr ""
+
+msgid "transparency"
+msgstr ""
+
+msgid "replace original schedule"
+msgstr ""
+
+#, fuzzy
+msgid "show only minutes"
+msgstr "Mostra nomi canali"
+
+msgid "show channel logos"
+msgstr "Mostra loghi canali"
+
+msgid "show channel names"
+msgstr "Mostra nomi canali"
+
+msgid "show logos in black&white"
+msgstr "Mostra loghi in bianco e nero"
+
+msgid "hide info line"
+msgstr "Nascondi riga informazioni"
+
+msgid "user point in time 1 (Key 4)"
+msgstr "Punto utente ora 1 (tasto 4)"
+
+msgid "user point in time 2 (Key 5)"
+msgstr "Punto utente ora 2 (tasto 5)"
+
+msgid "user point in time 3 (Key 6)"
+msgstr "Punto utente ora 3 (tasto 6)"
+
+msgid "jump to next day point if ago"
+msgstr "Vai al giorno succ. se scaduto"
+
+msgid "show search item itself"
+msgstr "Mostra termini di ricerca"
+
+msgid "Press 1 for help"
+msgstr "Premi 1 per Aiuto"
+
+#, c-format
+msgid "%d-%m"
+msgstr "%d-%m"
+
+msgid "o'clock"
+msgstr "in punto"
+
+msgid "NORMAL MODE:"
+msgstr "MODALITA' NORMALE:"
+
+msgid ""
+"arrows\n"
+"\tmove view"
+msgstr ""
+"Frecce\n"
+"\tSposta visualizzazione"
+
+msgid ""
+"back\n"
+"\tclose TV OnScreen"
+msgstr ""
+"Indietro\n"
+"\tChiudi TV OnScreen"
+
+msgid ""
+"red/blue\n"
+"\t-/+ one day"
+msgstr ""
+"Rosso/Blu\n"
+"\t-/+ un giorno"
+
+msgid ""
+"green/yellow\n"
+"\tone page left/right"
+msgstr ""
+"Verde/Giallo\n"
+"\tUna pagina sinistra/destra"
+
+msgid ""
+"7/9\n"
+"\tone page left/right"
+msgstr ""
+"7/9\n"
+"\tUna pagina sinistra/destra"
+
+msgid ""
+"8\n"
+"\tgoto current channel"
+msgstr ""
+"8\n"
+"\tVai al canale attuale"
+
+msgid ""
+"0\n"
+"\tgoto now"
+msgstr ""
+"0\n"
+"\tVai adesso"
+
+msgid ""
+"4/5/6\n"
+"\tgoto configured time"
+msgstr ""
+"4/5/6\n"
+"\tVai all'ora configurata"
+
+msgid ""
+"ok\n"
+"\tswitch to edit mode\n"
+msgstr ""
+"OK\n"
+"\tPassa in modalità modifica\n"
+
+msgid "EDIT MODE:"
+msgstr "MODALITA' MODIFICA:"
+
+msgid ""
+"back\n"
+"\tback to normal mode"
+msgstr ""
+"Indietro\n"
+"\tTorna alla modalità normale"
+
+msgid ""
+"arrows\n"
+"\tmove selected schedule"
+msgstr ""
+"Frecce\n"
+"\tSposta programma selezionato"
+
+msgid ""
+"record\n"
+"\tcreate timer"
+msgstr ""
+"Registra\n"
+"\tCrea timer"
+
+msgid ""
+"ok\n"
+"\tshow details"
+msgstr ""
+"OK\n"
+"\tMostra dettagli"
+
+msgid "Added AutoTimer to vdradmin."
+msgstr "Aggiunto timer automatico a VDRAdmin"
+
+msgid "Startoption 'vdradminfile' not set!"
+msgstr "Opzione avvio file 'vdradmin' non impostata!"
+
+msgid "Search"
+msgstr "Cerca"
+
+msgid "Search for"
+msgstr "Ricerca di"
+
+msgid "Searching..."
+msgstr "Ricerca..."
+
+msgid "Record"
+msgstr "Registra"
+
+msgid "Details"
+msgstr "Dettagli"
+
+msgid "in all"
+msgstr "in tutto"
+
+msgid "Back"
+msgstr "Indietro"
+
+msgid "Nothing found!"
+msgstr "Trovato niente!"
+
+msgid "AutoTimer"
+msgstr "Timer automatico"
+
+msgid "Shows the EPG info in form of a typical TV magazine"
+msgstr "Mostra informazioni EPG in forma di un tipico magazine TV"
+
+msgid "TV-OnScreen"
+msgstr "TV OnScreen"

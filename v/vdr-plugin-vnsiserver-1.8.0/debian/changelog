@@ -1,0 +1,706 @@
+vdr-plugin-vnsiserver (2:1.8.0-0easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:45:44 +0100
+
+vdr-plugin-vnsiserver (2:1.8.0-0easyVDR0~bionic) bionic; urgency=high
+
+  * new release 1.8.0
+  * commit:49003f0 -  Merge pull request #117 from FernetMenta/FernetMenta-patch-1
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Dec 2018 13:14:07 +0100
+
+vdr-plugin-vnsiserver (2:1.7.0~git20180809-0easyVDR0~bionic) bionic; urgency=high
+
+  * new upstream snapshot
+  * commit:2ed5d19 - fix compilation against vdr 2.2.0
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 09 Aug 2018 16:10:23 +0200
+
+vdr-plugin-vnsiserver (2:1.6.0~git20180626-0easyVDR0~bionic) bionic; urgency=high
+
+  * new upstream snapshot
+  * commit:0b44ed8 - Merge pull request #109 from mglae/recordings_update
+                   - Speed up larger recording updates
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 26 Jun 2018 12:25:27 +0200
+
+vdr-plugin-vnsiserver (2:1.5.2~git20180220-0easyVDR2~bionic) bionic; urgency=high
+
+  * new upstream snapshot
+  * commit:31c8f71 - drop setting current channel on device - obsolete cam (activation) hack
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 20 Feb 2018 21:27:14 +0100
+
+
+vdr-plugin-vnsiserver (2:1.5.2~git20180123-0easyVDR2~bionic) bionic; urgency=high
+
+  * fix postinst
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Feb 2018 19:25:07 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20180123-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Feb 2018 17:39:07 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20180123-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d73b847 - fix deadlock when saving channel filters
+                   - improve signal strenght display (dvbapi 5 or 3)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 24 Jan 2018 00:01:25 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20171022-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:21:44 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20171022-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:14:05 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20171022-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 01:25:15 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20171022-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:63d8151 - fix retune if we have no videoInput
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 Oct 2017 16:57:35 +0200
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170908-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1fd5aee - protocol 12, report length in msec for recordings
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Sep 2017 17:26:17 +0200
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170815-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:cca2047 - SignalInfo: correct returned CardIndex
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Aug 2017 19:27:28 +0200
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170807-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:dad54ed - check schedule for nullptr
+  * commit:b1b961a - protocol 11, improve report of playing times
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 07 Aug 2017 16:44:10 +0200
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170616-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2c42df3 - fix invalid locking sequence
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 16 Jun 2017 02:33:09 +0200
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170513-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:a710278 - Added Messgae "Low disk space!" to list of ignored messages
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 13 May 2017 15:16:10 +0200
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170306-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:615a077 - fix segfault if recording has no title
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Mar 2017 23:02:25 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170228-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:4bc0eff - fix typo
+  * commit:aef3380 - make grouping of series recordings configurable
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Feb 2017 22:12:37 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170214-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:56ad368 - Fix building against musl C library
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 14 Feb 2017 21:17:09 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170115-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:41e62a5 - update history
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 15 Jan 2017 20:27:39 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20170104-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d6847c3 - fix backwards compatibility to protocol 9
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 06 Jan 2017 20:05:31 +0100
+
+vdr-plugin-vnsiserver (2:1.5.2~git20161224-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:f649006 - fixes for search timers
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Dec 2016 22:21:58 +0100
+
+vdr-plugin-vnsiserver (2:1.5.1~git20161206-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2c1f90b - add copy contructor for cVNSIProvider
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 06 Dec 2016 22:36:58 +0100
+
+vdr-plugin-vnsiserver (2:1.5.1~git20161115-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d47c0bb - fixes for epg update
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Nov 2016 22:19:40 +0100
+
+vdr-plugin-vnsiserver (2:1.5.1~git20160928.9b19e98-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:04:04 +0200
+
+vdr-plugin-vnsiserver (2:1.5.1~git20160928.9b19e98-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:50:00 +0200
+
+vdr-plugin-vnsiserver (2:1.5.1~git20160928.9b19e98-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:9b19e98 - Some cVideoInput cleanup
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Sep 2016 21:05:21 +0200
+
+vdr-plugin-vnsiserver (2:1.5.1~git20160926.15b8d86-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:15b8d86 - Update History for 1.5.1
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 26 Sep 2016 23:51:31 +0200
+
+vdr-plugin-vnsiserver (2:1.5.0~git20160924.39721f9-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:39721f9 - fixes for searchtimer, some comments to cam handling hacks
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Sep 2016 00:57:34 +0200
+
+vdr-plugin-vnsiserver (2:1.5.0~git20160824.abd24d5-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:abd24d5 - Avoid division by zero on BBC-SATBACK channels (27.5W)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 24 Aug 2016 19:59:30 +0200
+
+vdr-plugin-vnsiserver (2:1.5.0~git20160817.1b96c6a-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1b96c6a - fix resetting cam
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 17 Aug 2016 20:35:38 +0200
+
+vdr-plugin-vnsiserver (2:1.5.0~git20160801-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5f956c0 - update history for 1.5.0
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 01 Aug 2016 20:59:47 +0200
+
+vdr-plugin-vnsiserver (2:1.5.0~git20160713-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:87b14f7 - Fix rangeles's Fix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Jul 2016 17:59:05 +0200
+
+vdr-plugin-vnsiserver (2:1.5.0~git20160707-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:80799f1 - demuxer: fix SetChannelStreams
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Jul 2016 17:25:13 +0200
+
+vdr-plugin-vnsiserver (2:1.5.0~git20160606-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:51a0882 - reset parsers if stream is scrambled
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Jun 2016 23:45:33 +0200
+
+vdr-plugin-vnsiserver (2:1.3.1+git20160405-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:c63d8e8 - add proto9 method for timer types
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 15 Apr 2016 21:19:52 +0200
+
+vdr-plugin-vnsiserver (2:1.3.1+git20160226-2easyVDR3) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 01:02:57 +0200
+
+vdr-plugin-vnsiserver (2:1.3.1+git20160226-2easyVDR2~trustyubuntu1) trusty; urgency=high
+
+  * remove auto allowed_hosts.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 11 Mar 2016 19:26:35 +0100
+
+vdr-plugin-vnsiserver (2:1.3.1+git20160226-2easyVDR1~trusty) trusty; urgency=high
+
+  * added fix-encoding patch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 Mar 2016 17:12:23 +0100
+
+vdr-plugin-vnsiserver (2:1.3.1+git20160226-2easyVDR0~trusty) trusty; urgency=high
+
+  * added new postinst
+  * added new extend_allowed_hosts.conf patch  
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Mar 2016 22:46:01 +0100
+
+vdr-plugin-vnsiserver (2:1.3.1+git20160226-1easyVDR0~trusty) trusty; urgency=high
+
+  * added set_network_range.patch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Feb 2016 23:32:10 +0100
+
+vdr-plugin-vnsiserver (2:1.3.1+git20160226-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:7497fe3 - More informative logging and thread names
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 27 Feb 2016 19:06:53 +0100
+
+vdr-plugin-vnsiserver (2:1.3.1+git20160215-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:00b5779 - Don't send "Shutting down in ..." to OSD over and over 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 15 Feb 2016 18:34:08 +0100
+
+vdr-plugin-vnsiserver (2:1.3.1+git20151204-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:55:24 +0100
+
+vdr-plugin-vnsiserver (2:1.3.1+git20151204-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * commit:3f42c55 - Code cleanup, sync with pvr.vdr.vnsi
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 06 Dec 2015 01:35:33 +0100
+
+vdr-plugin-vnsiserver (2:1.3.0+git20150813-2easyVDR0~trusty) trusty; urgency=high
+
+  * added depends kodi-pvr-vdr-vnsi
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 06 Dec 2015 01:17:20 +0100
+
+vdr-plugin-vnsiserver (2:1.3.0+git20150813-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 23:03:57 +0100
+
+vdr-plugin-vnsiserver (2:1.3.0+git20150813-0mangoVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:34:26 +0200
+
+vdr-plugin-vnsiserver (2:1.3.0+git20150813-0mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Aug 2015 22:26:20 +0200
+
+vdr-plugin-vnsiserver (2:1.3.0+git20150813-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * [eab5d83] fix duration for h264 frames in case of timestamps jumping back
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 13 Aug 2015 22:41:38 +0200
+
+vdr-plugin-vnsiserver (2:1.3.0+git20150720-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild for VDR-2.2.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 25 Jul 2015 00:56:18 +0200
+
+vdr-plugin-vnsiserver (2:1.3.0+git20150720-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 20 Jul 2015 23:58:38 +0200
+
+vdr-plugin-vnsiserver (2:1.3.0+git20150720-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit 1c63a8a: fix memleak caused by duplicate new of osd provider
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 20 Jul 2015 23:52:30 +0200
+
+vdr-plugin-vnsiserver (2:1.2.1~git20150208-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:31:09 +0200
+
+vdr-plugin-vnsiserver (2:1.2.1~git20150208-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 31 Mar 2015 12:44:19 +0200
+
+vdr-plugin-vnsiserver (2:1.2.1~git20150208-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:38:36 +0100
+
+vdr-plugin-vnsiserver (2:1.2.1~git20150208-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release:
+    - add cmd line switch for setting tcp port
+    - fix potential segfault on stop streaming
+    - stop triggering epg updates if client does not fetch epg
+  * increase version	
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 Mar 2015 00:11:36 +0100
+
+vdr-plugin-vnsiserver (2:1.1.0~git20140518-7d4aa813cc-1easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:26:29 +0100
+
+vdr-plugin-vnsiserver (2:1.1.0~git20140518-7d4aa813cc-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:34:11 +0100
+
+vdr-plugin-vnsiserver (2:1.1.0~git20140518-7d4aa813cc-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 23:00:11 +0100
+
+vdr-plugin-vnsiserver (2:1.1.0~git20140518-7d4aa813cc-1easyVDR3~trusty) trusty; urgency=high
+
+  * remove vnsiserver5 dummy-packages
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 14 Sep 2014 02:36:31 +0200
+
+vdr-plugin-vnsiserver (2:1.1.0~git20140518-7d4aa813cc-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 29 Aug 2014 22:18:46 +0200
+
+vdr-plugin-vnsiserver (2:1.1.0~git20140518-7d4aa813cc-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:20:07 +0200
+
+vdr-plugin-vnsiserver (2:1.1.0~git20140518-7d4aa813cc-0easyVDR1~trusty) trusty; urgency=high
+
+  * increase version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Jun 2014 02:54:16 +0200
+
+vdr-plugin-vnsiserver (1:1.1.0~git20140518-7d4aa813cc-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 27 Jun 2014 23:44:39 +0200
+
+vdr-plugin-vnsiserver5 (1:0.9.4+git20140504-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * add depends pvr-vdr-vnsi
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 06 May 2014 00:16:53 +0200
+
+vdr-plugin-vnsiserver5 (1:0.9.4+git20140304-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * add depends pvr-vdr-vnsi  
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 09 Mar 2014 22:33:20 +0100
+
+vdr-plugin-vnsiserver5 (1:0.9.4+git20140304-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 05 Mar 2014 22:58:47 +0100
+
+vdr-plugin-vnsiserver5 (0.9.6+git20140205-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 05 Feb 2014 12:25:52 +0100
+
+vdr-plugin-vnsiserver5 (0.9.5+git20131217-0yavdr0~precise) precise; urgency=medium
+
+  * increase version number 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 31 Dec 2013 10:29:09 +0100
+
+vdr-plugin-vnsiserver5 (0.9.2+git20131217-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot for vnsiserver5 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 31 Dec 2013 10:04:57 +0100
+
+vdr-plugin-vnsiserver3 (2:0.9.1+git20131213.1417-e1c3fb1-6yavdr0~precise) precise; urgency=medium
+
+  * fix build path 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 30 Dec 2013 23:34:37 +0100
+
+vdr-plugin-vnsiserver3 (2:0.9.1+git20131213.1417-e1c3fb1-5yavdr0~precise) precise; urgency=medium
+
+  * increase version number for yavdr ppa 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 30 Dec 2013 14:58:10 +0100
+
+vdr-plugin-vnsiserver3 (0.9.1+git20131213.1417-e1c3fb1-4yavdr0~precise) precise; urgency=medium
+
+  * move config file 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 30 Dec 2013 14:36:47 +0100
+
+vdr-plugin-vnsiserver3 (0.9.1+git20131213.1417-e1c3fb1-3yavdr0~precise) precise; urgency=medium
+
+  * fix control file 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 30 Dec 2013 14:20:35 +0100
+
+vdr-plugin-vnsiserver3 (0.9.1+git20131213.1417-e1c3fb1-2yavdr0~precise) precise; urgency=medium
+
+  * fix install file 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 30 Dec 2013 14:13:50 +0100
+
+vdr-plugin-vnsiserver3 (0.9.1+git20131213.1417-e1c3fb1-1yavdr0~precise) precise; urgency=medium
+
+  * rebuild 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 30 Dec 2013 14:04:23 +0100
+
+vdr-plugin-vnsiserver3 (0.9.1+git20131213.1417-e1c3fb1-yavdr0~precise) precise; urgency=medium
+
+  * reupload 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 30 Dec 2013 13:58:12 +0100
+
+vdr-plugin-vnsiserver3 (0.9.1+git20131213.1417-e1c3fb1-0yavdr0~precise) precise; urgency=medium
+
+  * rename package 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 30 Dec 2013 13:44:41 +0100
+
+vdr-plugin-vnsiserver (1:0.9.2~git20130714.1106-5b20fa5-0yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 27 Oct 2013 09:16:49 +0100
+
+vdr-plugin-vnsiserver (1:0.9.2~git20130714.1106-5b20fa5-0yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 19:06:26 +0200
+
+vdr-plugin-vnsiserver (1:0.9.2~git20130714.1106-5b20fa5-0yavdr2~precise) precise; urgency=medium
+
+  * changed config file dir from vnsiserver3 to vnsiserver4
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 17 Sep 2013 19:50:56 +0200
+
+vdr-plugin-vnsiserver (1:0.9.2~git20130714.1106-5b20fa5-0yavdr1~precise) precise; urgency=medium
+
+  * changed config file dir from vnsiserver3 to vnsiserver4
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 16 Sep 2013 23:27:40 +0200
+
+vdr-plugin-vnsiserver (1:0.9.2~git20130714.1106-5b20fa5-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 16 Sep 2013 23:21:43 +0200
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130714.1106-5b20fa5~0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+  * added override_dh_gencontrol
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 16 Sep 2013 00:08:02 +0200
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-5yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:16:16 +0200
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-5yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:10:06 +0200
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-5yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:34:44 +0200
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-5yavdr0~precise) precise; urgency=medium
+
+  * fix NFS recording NOATIME
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 07 Apr 2013 16:14:12 +0200
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-4yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:59:21 +0200
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-4yavdr1~precise) precise; urgency=medium
+
+  * change connfiles 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 29 Mar 2013 19:56:36 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-4yavdr0~precise) precise; urgency=medium
+
+  * rename 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 21 Mar 2013 21:51:35 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-1yavdr2~precise) precise; urgency=medium
+
+  * fix typo 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 21 Mar 2013 21:48:19 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-1yavdr0~precise) precise; urgency=medium
+
+  * fix config dir 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 21 Mar 2013 21:30:49 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130320-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 20 Mar 2013 18:23:30 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130214-1yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 16:00:27 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130214-1yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:10:55 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130214-1yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 22:01:30 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130214-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 11 Mar 2013 00:16:06 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130214-1yavdr0~precise) precise; urgency=medium
+
+  * rebuild, add pkg-config
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 14 Feb 2013 11:12:02 +0100
+
+vdr-plugin-vnsiserver (1:0.9.1.git20130214-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot, new Makefile system 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 14 Feb 2013 11:01:51 +0100
+
+vdr-plugin-vnsiserver (0.9.9.git20121119-0yavdr1~precise) precise; urgency=medium
+
+  * update 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 19 Nov 2012 11:47:36 +0100
+
+vdr-plugin-vnsiserver (0.9.0.git20120606-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:23:18 +0200
+
+vdr-plugin-vnsiserver (0.9.0.git20120606-0yavdr0~precise) precise; urgency=medium
+
+  * New Upstream Snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 06 Jun 2012 11:22:48 +0100
+
+vdr-plugin-vnsiserver (0.9.0.git20110526-0yavdr0~natty) natty; urgency=low
+
+  * New Upstream Snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 12 Jun 2011 23:47:24 +0200
+
+vdr-plugin-vnsiserver (0.0.2+svn20110425.2354-1yavdr1~natty) natty; urgency=low
+
+  * New Upstream Snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 25 Apr 2011 16:37:11 +0200
+
+vdr-plugin-vnsiserver (0.0.2+svn20110415.2353-0yavdr0~natty) natty; urgency=low
+
+  * New Upstream Snapshot https://github.com/pipelka/xbmc/commits/master
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 Apr 2011 00:30:59 +0200
+
+vdr-plugin-vnsiserver (0.0.2+svn20110325.2320-0yavdr0~natty) natty; urgency=low
+
+  * New Upstream Snapshot https://github.com/pipelka/xbmc/commits/master
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 25 Mar 2011 23:20:01 +0200
+
+vdr-plugin-vnsiserver (0.0.2+svn20100409-1yavdr1) lucid; urgency=low
+
+  * Initial release for yaVDR, thanks aelo for packaging
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 05 Apr 2010 22:27:56 +0200

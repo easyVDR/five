@@ -1,0 +1,25 @@
+Source: vdr-plugin-tvguideng
+Section: video
+Priority: extra
+Maintainer: Frodo <frodo.vdr@gmx.net>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9.0.0), vdr-dev (>= 2.3.0), gettext, libmagick++-dev, pkg-config, libskindesignerapi-dev (>= 0.1.2)
+Standards-Version: 3.9.5
+Homepage: http://www.vdr-portal.de/index.php?page=Thread&postID=1089913#post1089913
+
+Package: vdr-plugin-tvguideng
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, libskindesignerapi0 (>= 0.1.2), vdr-plugin-skindesigner (>= 1.2.1)
+Recommends:
+Description: TVGuide
+ TVGuide
+
+Package: vdr-plugin-tvguideng-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-tvguideng (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-tvguideng
+ .
+ This package contains only the debugging symbols for vdr-plugin-tvguideng
+

@@ -1,0 +1,103 @@
+--- a/detailview.c
++++ b/detailview.c
+@@ -20,14 +20,14 @@
+ }
+ 
+ void cDetailView::InitiateView(void) {
+-    static cPlugin *pScraper2Vdr = cPluginManager::GetPlugin("scraper2vdr");
++    static cPlugin *pScraper = GetScraperPlugin();
+     ScraperGetEventType call;
+     if (!event)
+         return;
+     call.event = event;
+-    if (!pScraper2Vdr) {
++    if (!pScraper) {
+         view = new cEPGView();
+-    } else if (pScraper2Vdr->Service("GetEventType", &call)) {
++    } else if (pScraper->Service("GetEventType", &call)) {
+         if (call.type == tMovie) {
+             view = new cMovieView(call.movieId);
+         } else if (call.type == tSeries) {
+--- a/statusheader.c
++++ b/statusheader.c
+@@ -104,11 +104,11 @@
+     ScraperGetPoster posterScraper2Vdr;
+     int posterWidth = 0;
+     int posterHeight = 0;
+-    static cPlugin *pScraper2Vdr = cPluginManager::GetPlugin("scraper2vdr");
+-    if (pScraper2Vdr) {
++    static cPlugin *pScraper = GetScraperPlugin();
++    if (pScraper) {
+         posterScraper2Vdr.event = event;
+         posterScraper2Vdr.recording = NULL;
+-        if (pScraper2Vdr->Service("GetPoster", &posterScraper2Vdr)) {
++        if (pScraper->Service("GetPoster", &posterScraper2Vdr)) {
+             hasPoster = true;
+             int posterWidthOrig = posterScraper2Vdr.poster.width;
+             int posterHeightOrig = posterScraper2Vdr.poster.height;
+--- a/tools.c
++++ b/tools.c
+@@ -8,10 +8,18 @@
+ #include <stdio.h>
+ #include <vdr/osd.h>
+ #include <vdr/plugin.h>
++#include <vdr/skins.h>
+ #include "services/epgsearch.h"
+ 
+ #include "tools.h"
+ 
++cPlugin *GetScraperPlugin(void) {
++    static cPlugin *pScraper = cPluginManager::GetPlugin("scraper2vdr");
++    if( !pScraper ) // if it doesn't exit, try tvscraper
++        pScraper = cPluginManager::GetPlugin("tvscraper");
++    return pScraper;
++}
++
+ /****************************************************************************************
+ *            CUTTEXT
+ ****************************************************************************************/
+--- a/tools.h
++++ b/tools.h
+@@ -5,6 +5,9 @@
+ #include <vector>
+ #include <vdr/font.h>
+ #include <vdr/recording.h>
++#include <vdr/plugin.h>
++
++cPlugin *GetScraperPlugin(void);
+ 
+ std::string CutText(std::string text, int width, const cFont *font);
+ std::string StrToLowerCase(std::string str);
+--- a/view.c
++++ b/view.c
+@@ -641,12 +641,12 @@
+ }
+ 
+ void cSeriesView::LoadMedia(void) {
+-    static cPlugin *pScraper2Vdr = cPluginManager::GetPlugin("scraper2vdr");
+-    if (!pScraper2Vdr || seriesId < 1)
++    static cPlugin *pScraper = GetScraperPlugin();
++    if (!pScraper || seriesId < 1)
+         return;
+     series.seriesId = seriesId;
+     series.episodeId = episodeId;
+-    pScraper2Vdr->Service("GetSeries", &series);
++    pScraper->Service("GetSeries", &series);
+ }
+ 
+ void cSeriesView::SetTabs(void) {
+@@ -863,11 +863,11 @@
+ }
+ 
+ void cMovieView::LoadMedia(void) {
+-    static cPlugin *pScraper2Vdr = cPluginManager::GetPlugin("scraper2vdr");
+-    if (!pScraper2Vdr || movieId < 1)
++    static cPlugin *pScraper = GetScraperPlugin();
++    if (!pScraper || movieId < 1)
+         return;
+     movie.movieId = movieId;
+-    pScraper2Vdr->Service("GetMovie", &movie);    
++    pScraper->Service("GetMovie", &movie);
+ }
+ 
+ void cMovieView::SetTabs(void) {

@@ -1,0 +1,5 @@
+libvdr-tvonscreen.so.*    usr/lib/vdr/plugins/
+debian/plugin.tvonscreen.conf    etc/vdr/plugins/
+debian/tv-logos    usr/share/vdr-plugin-tvonscreen
+debian/tmp/usr/share/locale
+

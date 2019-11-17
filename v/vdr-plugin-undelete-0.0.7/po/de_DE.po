@@ -1,0 +1,371 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@tvdr.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <martin.dummer@gmx.net>\n"
+"POT-Creation-Date: 2012-10-04 12:47+0200\n"
+"PO-Revision-Date: 2012-06-27 16:35+0200\n"
+"Last-Translator: Martin Dummer <martin.dummer@gmx.net>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "undelete for recordings"
+msgstr "Gelöschte Aufnahmen wiederherstellen"
+
+msgid "Choice$salvage"
+msgstr "wiederherst."
+
+msgid "Choice$purge"
+msgstr "löschen"
+
+msgid "Choice$none"
+msgstr "ohne"
+
+msgid "Choice$top"
+msgstr "oben"
+
+msgid "Choice$bottom"
+msgstr "unten"
+
+msgid "Choice$top and bottom"
+msgstr "oben & unten"
+
+msgid "Choice$open/summary"
+msgstr "Öffnen/Inhalt"
+
+msgid "Choice$purge all"
+msgstr "alle löschen"
+
+msgid "Choice$salvage all"
+msgstr "alle wiederh."
+
+msgid "Choice$open"
+msgstr "Öffnen"
+
+msgid "Choice$summary"
+msgstr "Inhalt"
+
+msgid "Choice$switch hotkeys to 1"
+msgstr "Tastenbel. 1"
+
+msgid "Choice$switch hotkeys to 2"
+msgstr "Tastenbel. 2"
+
+msgid "Choice$Display keys"
+msgstr "Tastenanzeige"
+
+msgid "Display$purge"
+msgstr "Löschen"
+
+msgid "Display$salvage"
+msgstr "Wiederherst."
+
+msgid "Display$purge all"
+msgstr "alle Löschen"
+
+msgid "Display$salvage all"
+msgstr "alle Wieder."
+
+msgid "Open"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Display$<--1"
+msgstr "<--1"
+
+msgid "Display$2-->"
+msgstr "2-->"
+
+msgid "Display$disp. keys"
+msgstr "Tastenanzeige"
+
+msgid "Red"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Choice$User"
+msgstr "Benutzer"
+
+msgid "Menu$Undelete recordings"
+msgstr "Aufnahmen wiederherstellen"
+
+msgid "Bytes"
+msgstr ""
+
+msgid "Up"
+msgstr ""
+
+msgid "Down"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Ok"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "Record"
+msgstr ""
+
+msgid "FastFwd"
+msgstr ""
+
+msgid "FastRew"
+msgstr ""
+
+msgid "Power"
+msgstr ""
+
+msgid "ChanUp"
+msgstr ""
+
+msgid "ChanDn"
+msgstr ""
+
+msgid "VolUp"
+msgstr ""
+
+msgid "VolDn"
+msgstr ""
+
+msgid "Mute"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
+msgid "Channels"
+msgstr ""
+
+msgid "Timers"
+msgstr ""
+
+msgid "Recordings"
+msgstr ""
+
+msgid "Setup"
+msgstr ""
+
+msgid "Commands"
+msgstr ""
+
+msgid "User1"
+msgstr ""
+
+msgid "User2"
+msgstr ""
+
+msgid "User3"
+msgstr ""
+
+msgid "User4"
+msgstr ""
+
+msgid "User5"
+msgstr ""
+
+msgid "User6"
+msgstr ""
+
+msgid "User7"
+msgstr ""
+
+msgid "User8"
+msgstr ""
+
+msgid "User9"
+msgstr ""
+
+msgid "none"
+msgstr ""
+
+msgid "Kbd"
+msgstr ""
+
+msgid "Salvage"
+msgstr "Wiederherstellung"
+
+msgid "Purge"
+msgstr "Löschung"
+
+msgid "DeleteLine"
+msgstr "ZeileLöschen"
+
+msgid "HelpKeys"
+msgstr "HilfeTasten"
+
+msgid "unknown"
+msgstr "unbekannt"
+
+msgid "Deleted Recordings"
+msgstr "Gelöschte Aufnahmen"
+
+msgid "Display$prepare recording display..."
+msgstr "Listenanzeige wird vorbereitet..."
+
+msgid "Error while accessing recording!"
+msgstr ""
+
+msgid "Display$Purge all records ..."
+msgstr "Alle Aufnahmen endgültig löschen ..."
+
+msgid "Display$Salvage all records ..."
+msgstr "Alle Aufnahmen wiederherstellen ..."
+
+msgid "Question$Purge recording?"
+msgstr "Aufnahme endgültig löschen?"
+
+msgid "Question$Purge recordings in diretory?"
+msgstr "Aufnahmen in Verzeichnis endgültig löschen?"
+
+msgid "Question$Salvage recording?"
+msgstr "Aufnahme wiederherstellen?"
+
+msgid "Question$Salvage recordings in directory?"
+msgstr "Aufnahmen in Verzeichnis wiederherstellen?"
+
+msgid "Question$Purge all recordings?"
+msgstr "Alle Aufnahmen endgültig löschen?"
+
+msgid "Question$Salvage all recordings?"
+msgstr "Alle Aufnahmen wiederherstellen?"
+
+msgid "Display$please wait ..."
+msgstr "bitte warten ..."
+
+msgid "Error$Recording with the same name exists!"
+msgstr "Aufnahme mit selben Namen ist vorhanden!"
+
+msgid "Error$error while read last filenumber"
+msgstr "Fehler beim lesen der letzten Dateinummer"
+
+#, c-format
+msgid "Error$error accessing vdrfile %03d"
+msgstr "Fehler beim lesen der Videodatei %03d"
+
+msgid "Error$error accessing indexfile"
+msgstr "Fehler beim lesen der Indexdatei"
+
+msgid "Menu$assigned keys"
+msgstr "Zugewiesene Tasten"
+
+msgid "Edit"
+msgstr ""
+
+msgid "Help$key\tfunction"
+msgstr "Taste\tFunktion"
+
+msgid "Help$OK"
+msgstr "OK"
+
+msgid "Help$numerickey"
+msgstr "Numerntaste"
+
+msgid "Setup$Display deleted recordings now"
+msgstr "Gelöschte Aufnahmen jetzt anzeigen"
+
+msgid "Setup$Prefer Command Line Parameter"
+msgstr "Kommandozeile hat Vorrang"
+
+msgid "Setup$Visible in Mainmenu"
+msgstr "Im Hauptmenü sichtbar"
+
+msgid "Setup$  Name for Mainmenu"
+msgstr "  Eintragname im Hauptmenü"
+
+msgid "Setup$Confirm purge deleted recordings"
+msgstr "Aufnahme löschen bestätigen"
+
+msgid "Setup$Confirm purge directories"
+msgstr "Verzeichnisse löschen bestätigen"
+
+msgid "Setup$Confirm purge all deleted recordings"
+msgstr "Alles löschen bestätigen"
+
+msgid "Setup$Confirm salvage deleted recordings"
+msgstr "Wiederherstellung Aufn. bestätigen"
+
+msgid "Setup$Confirm salvage directories"
+msgstr "Wiederherstellung Verz. bestätigen"
+
+msgid "Setup$Confirm salvage all deleted recordings"
+msgstr "Bestätigung alles wiederherstellen"
+
+msgid "Setup$Purgeline position"
+msgstr "Löschzeilenposition"
+
+msgid "Setup$  Display bottom purge ex lines"
+msgstr "  Anzahl Einträge für Darstellung"
+
+msgid "Setup$Salvageline position"
+msgstr "Wiederherstellungszeilenposition"
+
+msgid "Setup$  Display bottom salvage ex lines"
+msgstr "  Anzahl Einträge für Darstellung"
+
+msgid "Setup$  inward lines"
+msgstr "  Innenliegende Zeilen"
+
+msgid "Setup$Change assigned functionkeys"
+msgstr "Ändern der Tastenbelegung"
+
+#, c-format
+msgid "Setup$  Key for function-%s"
+msgstr "  Taste für Funktion-%s"
+
+msgid "Setup$  ** Special handled keys **"
+msgstr "  ** Spezialtasten **"
+
+msgid "Setup$  OK-key function"
+msgstr "  Funktion der OK-Taste"
+
+msgid "Setup$  Numeric key selects the entry and"
+msgstr "  Auswahl mit Nummern und"
+
+msgid "Setup$Verbose Log Mode"
+msgstr "Ausführliche Protokollierung"
+
+#, c-format
+msgid "Error$Key for function %s and %s is identical."
+msgstr "Tasten von %s und %s sind gleich."
+
+msgid "Setup$Select"
+msgstr "Auswahl"

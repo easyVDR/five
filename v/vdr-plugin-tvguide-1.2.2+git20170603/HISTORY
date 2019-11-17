@@ -1,0 +1,140 @@
+VDR Plugin 'tvguide' Revision History
+-------------------------------------
+
+2012-08-12: Version 0.0.1
+
+- Initial revision.
+
+2013-01-17: Version 0.0.2
+
+- Changed color buttons to nOpacity style
+- Changed channelheader to display transparent logos properly
+- Added "style nOpacity" for backgrounds and theme nOpacity
+
+2013-05-13: Version 0.0.3
+
+- Added dummy grids if no EPG information is available for a certain
+  time
+- Completely rewrote code for creation of epg grids for a channel column
+- Completely rewrote code for scrolling forward and backward in time
+- Added status header with epg information of currently selected 
+  schedule and scaled video picture
+
+2013-05-24: Version 0.0.4
+
+- Introduced horizontal display
+
+2013-06-01: Version 0.0.5
+
+- Added Theme DarkRed
+- Fixed some Bugs (position of video, deadlock)
+- Added Theme IceBlue
+- setup of usage of blending now done with clrDoBlending theme color
+  variable and not by setup
+- font color of active grid themable
+- avoided nasty font pixelation effects with theme iceblue
+- Display of channel groups
+- Buttons green / yellow can be configured to jump to prev / next channel
+  group
+- Added setup option to hide last channel group
+- Display of Main Menu Entry configurable
+- Eliminated setup option "Number of channels to jump", directly jump 
+  number of channel columns / rows with green / yellow
+- Added setup option to switch functionality of keys "Blue" and "OK"
+- Setup option to hide schedules time display in horizontal EPG grids
+
+2013-07-08: Version 0.0.6
+
+- added frame around scaled video picture
+- added theme "keep it simple" (thanks @saman)
+- display of additional EPG pictures in detailed epg view
+- Introduction of "Search & Recording" Menu
+- added possibility to replace original VDR schedules menu
+- changed channel jump logic
+- red button also available in detail view
+- page scrolling with keys left and right in detail view
+- added possibility to choose folder for instant recording, possible
+  folders are read from VDRs folders list
+- recording folder also choosable for series timers
+- blue button also available in detail view
+- color buttons displayed as configured in VDR
+- Added Setup Option to define if tvguide closes after channel switching
+- Added remotetimers support (thanks @Saman for providing a patch)
+- Pimped timeline
+
+2013-07-23: Version 1.0.0
+
+- added tvscraper support
+
+Version 1.1.0
+
+- changed build system
+- introduced image caching
+- introduced new "graphical" style
+- added new graphical default theme and theme darkred NG corresponding 
+  to nOpacity themes
+- using automatically configured nOpacity theme if available
+- adapted startup options to nOpacity startup options:
+  -e epgimages directory
+  -i icons directory
+  -l logo directory
+- changed detailed epg view using full screen, some further optimisations
+- search for <event_id>_0.jpg beside <event_id>.jpg as epg image
+- implemented GraphicsMagick compatibility (thanks @Manuel Reimer
+  for providing the patch)
+- changed Makefile to support both ImageMagick and GraphicsMagick
+  (configurable in Makefile)
+- Added russian and catalan translation
+- Added slovakian translation
+- fixed channel switching with blue key if detailed epg view is opened and
+  if "close tvguide on channel switch" is configured
+- fixed wrong font for clock in horizontal view
+- Added feature to jump to a specific channel with number keys
+- Fixed Bug 1484
+- Added Event Short Text (if available) to RecName (Closes Ticket 1490)
+- Fixed OSD Background Color (Closes Ticket 1474)
+- Rounded Corners for color buttons (Closes Ticket 1475)
+- Fixed some issues with text backgrounds in flat themes (closes 
+  Tickets 1480 and 1486)
+- Added possibility to search for reruns in case of a timer conflict
+- Added timer Timeline view in red button recording menu
+- Current channel positioned in middle of channellist when tvguide is 
+  opened
+- Added possibility to manage EPG Search Timers in red button recording 
+  menu
+- completely refactored recording menu
+- restructured detailöed EPG View that tv frame and status buttons 
+  are displayed
+- Favorites menu with EPG Search favorite timers with blue key
+- Display baseline for current time
+- Added possibility to create timer from favorites results
+- left / right scroll page up / down in recmenu result lists
+- Improved favorites menu with whats on now / next and up to four user
+  defined times
+- also check default paths when images and icons are loaded
+- directory for timers can be edited in timer edit menu
+- series recording can be configured in searchtimer menus
+- directory for searchtimers can be set and edited in searchtimer menus
+- set blue key favorite mode as new default
+
+Version 1.2.0
+
+- changed video directory choosage behaviour: added possibility to use 
+  a fixed recording dir which also supports epgsearch variables
+- fixed a bug when scrolling page up and the menu footer is active
+- order of search timers in search timer list in alphabetical order
+- changed order of actions on search timer menu items
+
+Version 1.2.1
+
+- changed event result lists that it is possible to scroll page up and
+  down directly with left / right. A recording is triggered now with the
+  red key.
+- Added possibility to create a recording from search timer result list
+- Set minimum time to display in Plugin Setup from 120 to 60 minutes
+- made order of search timer list case insensitive
+
+Version 1.2.2
+
+- added scraper2vdr support
+- introduced tabbed EPG detail view

@@ -1,0 +1,18 @@
+Source: vdr-plugin-vdrmanager
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Holger Schvestka <hotzenplotz5@gmx.de>, Tobias Grimm <etobi@debian.org>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.0.0), pkg-config, zlib1g-dev, libssl-dev
+Standards-Version: 3.9.4
+Homepage: http://projects.vdr-developer.org/projects/vdr-manager
+Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-vdrmanager.git
+Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr-plugin-vdrmanager.git
+
+Package: vdr-plugin-vdrmanager
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin providing service for the VDR-Manager Android App
+ This plugin for the Linux Video Disc Recorder (VDR) is required to use
+ the VDR-Manager Android App. It provides the necessary service interface
+ which allows the VDR Manager App to control the VDR.

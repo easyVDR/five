@@ -1,0 +1,115 @@
+# Copyright (C) 2015 
+# This file is distributed under the same license as the PACKAGE package.
+# iFIRST AUTHOR <louis.braun@gmx.de>, 2015.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-weatherforecast 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2016-01-04 06:42+0100\n"
+"PO-Revision-Date: 2015-01-12 11:46+0100\n"
+"Last-Translator: Louis Braun <louis.braun@gmx.de>\n"
+"Language-Team: \n"
+"Language: de_DE \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "City"
+msgstr "Wohnort"
+
+msgid "Latitude"
+msgstr "Latitude"
+
+msgid "Longitude"
+msgstr "Longitude"
+
+msgid "API Key"
+msgstr ""
+
+msgid "Update Frequency in hours"
+msgstr "Update Frequenz in Stunden"
+
+msgid "WeatherForecast"
+msgstr "Wetter"
+
+msgid "Weather Forecast"
+msgstr "Wetter"
+
+msgid "Current Weather"
+msgstr "Aktuelles Wetter"
+
+msgid "Next 48 Hours"
+msgstr "Die nächsten 48 Stunden"
+
+msgid "Next 7 Days"
+msgstr "Nächste 7 Tage"
+
+msgid "Weather for"
+msgstr "Wetter für"
+
+msgid "Current Temperature"
+msgstr "Aktuelles Wetter"
+
+msgid "Apparent Temperature"
+msgstr "Gefühlte Temperatur"
+
+msgid "Minimum Temperature today"
+msgstr "Heutige minimale Temperatur"
+
+msgid "Maximum Temperature today"
+msgstr "Heutige maximale Temperatur"
+
+msgid "Precipitation Probability"
+msgstr "Niederschlagswahrscheinlichkeit"
+
+msgid "Precipitation Intensity"
+msgstr "Regenintensität"
+
+msgid "Humidity"
+msgstr "Luftfeuchtigkeit"
+
+msgid "Wind Speed"
+msgstr "Windgeschwindigkeit"
+
+msgid "Wind Bearing"
+msgstr "Windrichtung"
+
+msgid "Visibility"
+msgstr "Sichtweite"
+
+msgid "Cloud Cover"
+msgstr "Bewölkung"
+
+msgid "Pressure"
+msgstr "Luftdruck"
+
+msgid "Ozone"
+msgstr "Ozon"
+
+msgid "Weather in the next 48 Hours"
+msgstr "Wetter in den nächsten 48 Stunden"
+
+msgid "Temperature"
+msgstr "Temperatur"
+
+msgid "felt"
+msgstr "gefühlt"
+
+msgid "Intensity"
+msgstr "Stärke"
+
+msgid "Wind"
+msgstr "Wind"
+
+msgid "Weather the next 7 days"
+msgstr "Wetter in den nächsten 7 Tagen"
+
+msgid "Minimum Temperature"
+msgstr "Minimale Temperatur"
+
+msgid "at"
+msgstr "um"
+
+msgid "Maximum Temperature"
+msgstr "Maximale Temperatur"

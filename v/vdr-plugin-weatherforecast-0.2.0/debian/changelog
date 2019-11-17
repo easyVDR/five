@@ -1,0 +1,230 @@
+vdr-plugin-weatherforecast (1:0.2.0-1easyVDR7~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:53:49 +0100
+
+vdr-plugin-weatherforecast (1:0.2.0-1easyVDR6~bionic) bionic; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 20 Jan 2019 19:54:55 +0100
+
+vdr-plugin-weatherforecast (1:0.2.0-1easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:22:19 +0100
+
+vdr-plugin-weatherforecast (1:0.2.0-1easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:28:43 +0100
+
+vdr-plugin-weatherforecast (1:0.2.0-1easyVDR3~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 09 Jul 2017 00:13:05 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:49:35 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:50:36 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 11 Sep 2016 00:43:02 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0easyVDR8~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Sep 2016 02:30:37 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:51:19 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:58:16 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0easyVDR5~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 08 May 2016 23:08:19 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0easyVDR4~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 07 May 2016 17:28:56 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 07 May 2016 17:08:57 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 06 May 2016 23:49:21 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for my ppa
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 17 Apr 2016 00:40:54 +0200
+
+vdr-plugin-weatherforecast (1:0.2.0-0yavdr1~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 11 Feb 2016 17:49:57 +0100
+
+vdr-plugin-weatherforecast (1:0.2.0-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 842b086: adaptions skindesigner 0.8.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 Jan 2016 21:29:22 +0100
+
+vdr-plugin-weatherforecast (1:0.1.1-7frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 36f7ac9: Version 0.1.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 24 Aug 2015 22:23:23 +0200
+
+vdr-plugin-weatherforecast (1:0.1.1-6frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 36f7ac9: Version 0.1.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 24 Aug 2015 22:22:49 +0200
+
+vdr-plugin-weatherforecast (1:0.1.1-5frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 36f7ac9: Version 0.1.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 21 Jul 2015 20:13:51 +0200
+
+vdr-plugin-weatherforecast (1:0.1.1-4frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 36f7ac9: Version 0.1.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 20 Jul 2015 20:25:18 +0200
+
+vdr-plugin-weatherforecast (1:0.1.1-3frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 36f7ac9: Version 0.1.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Jul 2015 18:17:25 +0200
+
+vdr-plugin-weatherforecast (1:0.1.1-2frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 36f7ac9: Version 0.1.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Jul 2015 17:42:53 +0200
+
+vdr-plugin-weatherforecast (1:0.1.1-1yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 36f7ac9: Version 0.1.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 14 Jul 2015 19:37:38 +0200
+
+vdr-plugin-weatherforecast (0.1.1-1-36f7ac94-0yavdr0~trusty) trusty; urgency=medium
+
+  * copy from yavdr unstable-vdr
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 12 Jul 2015 18:09:17 +0200
+
+vdr-plugin-weatherforecast (0.1.1-1-36f7ac94-0yavdr0~trusty) trusty; urgency=medium
+
+  * fix wrong commit id for source
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 12 Jul 2015 10:52:12 +0200
+
+vdr-plugin-weatherforecast (0.1.1-0-g36f7ac9-1yavdr3~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 31 May 2015 13:42:05 +0200
+
+vdr-plugin-weatherforecast (0.1.1-0-g36f7ac9-1yavdr2~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 25 May 2015 17:53:47 +0200
+
+vdr-plugin-weatherforecast (0.1.1-0-g36f7ac9-1yavdr1~trusty) trusty; urgency=medium
+
+  * rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 23 May 2015 20:11:08 +0200
+
+vdr-plugin-weatherforecast (0.1.1-0-g36f7ac9-1yavdr0~trusty) trusty; urgency=medium
+
+  * reworked debian dir
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 14 May 2015 20:24:07 +0200
+
+vdr-plugin-weatherforecast (0.1.1-0-g36f7ac9-0yavdr0~trusty) trusty; urgency=low
+
+  * 36f7ac9: Version 0.1.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 13 Apr 2015 13:10:43 +0200
+
+vdr-plugin-weatherforecast (0.1.0-0-gb2ae607-16yavdr0~trusty) trusty; urgency=low
+
+  * b2ae607: Version 0.1.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 10 Apr 2015 23:42:21 +0200
+
+vdr-plugin-weatherforecast (0.1.0-0-gb2ae607-14yavdr0~trusty) trusty; urgency=low
+
+  * b2ae607: Version 0.1.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 10 Apr 2015 23:01:54 +0200
+
+vdr-plugin-weatherforecast (0.1.0-0-gb2ae607-12yavdr0~trusty) trusty; urgency=low
+
+  * b2ae607: Version 0.1.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 19:01:34 +0200
+
+vdr-plugin-weatherforecast (0.1.0-0-gb2ae607-11yavdr0~trusty) trusty; urgency=low
+
+  * b2ae607: Version 0.1.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 21:39:25 +0200
+
+vdr-plugin-weatherforecast (0.1.0-0-gb2ae607-0yavdr0~trusty) trusty; urgency=low
+
+  * b2ae607: Version 0.1.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 21:34:32 +0200
+

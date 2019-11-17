@@ -1,0 +1,277 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Louis Braun <louis DOT braun AT gmx DOT de>
+
+Project's homepage:          http://projects.vdr-developer.org/projects/plg-tvguide 
+
+Latest version available at: http://projects.vdr-developer.org/projects/plg-tvguide/files
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Requirements
+------------
+
+- Clone Git Repository: git clone git://projects.vdr-developer.org/vdr-plugin-tvguide.git
+- VDR version >= 2.0.0
+- Installed ImageMagick or GraphiksMagick for showing png/jpg Channel Logos, EPG Images 
+  and menu icons
+- for scaling the video picture to fit into the VDR menu window please use
+  softhddevice plugin revision 87c1c7be (2013-01-01) or newer.
+- Installed epgsearch Plugin for extended search & recording features.
+- Installed remotetimers Plugin for creating timers on a vdr server remotely from a 
+  vdr client.
+
+
+Description
+-----------
+
+"TvGuide" is a highly customizable 2D EPG viewer plugin. The "Search & Recordings"
+Menü provided by the red button allows to search in the EPG and manage timers,
+search timers, series timers and switch timers in an convenient way.  
+
+Installation
+------------
+
+After "normal" Plugin installation you have to care about the paths for the
+used Icons, the channel logos and epg images. The following paths can be set
+at startup:
+
+-l path, --logodir=path
+    Path to the logos (Default: <ResourceDirectory>/plugins/tvguide/channellogos/).
+
+-e path, --epgimages=path
+    Path to the epgimages (Default: <CacheDirectory>/plugins/tvguide/epgimages/).
+
+-i path, --icons=path
+    Path to the icons directory (Default: <ResourceDirectory>/plugins/tvguide/epgimages/).
+
+<ResourceDirectory> and <CacheDirectory> is taken from your VDR configuration 
+(make.config or vdr.pc).
+
+During a "make install" the Icons are automatically copied from <PlgSourceDirectory>/icons/
+to the default path. Included Theme files are also copied from <PlgSourceDirectory>/themes/
+to <ConfigDirectory>/themes/
+
+If directories for channel logos or icons are set via startup 
+parameters, images are searched first in these directories. If the image
+is not available, an additional search in the according default directory
+will be performed.
+
+I recommend to use channel logos from https://github.com/3PO/Senderlogos
+To download them just change in the directory you want to place the logos
+and do a:
+
+git clone https://github.com/3PO/Senderlogos.git logos
+
+An update of the logos can then be done with a "git pull" just inside this
+directory.
+
+For S2-6400 Users: Disable High Level OSD, otherwise the plugin will not be
+loaded because lack of true color support
+
+For Xine-Plugin Users: Set "Blend scaled Auto" as OSD display mode to achieve
+an suitable true color OSD.
+
+For Xineliboutput Users: Start vdr-sxfe with the --hud option enabled
+
+Usage
+-----
+
+Remote Control Keys:
+
+Up/Down/Left/Right:    Navigation in the EPG grid
+Ok:                    Detailed EPG View of the selected grid
+                       2nd Ok closes the detailed view
+Red:                   Search & Recording Menu
+Green / Yellow:	       Jump (default) five channels back / forward
+Blue:                  Depends on configured Mode:
+                       Default: Favorites Menu, Switch to channel in 
+                       detailed EPG View
+                       Optional: Switch to currently selected channel
+                       Optional: Open detailed EPG view (OK switches
+                       then to channel)
+
+Numeric Keys: If Setup Option "Functionality of numeric Keys" is configured
+to "Jump to specific channel", the numeric keys are used for channel number
+input. If "Timely Jump" is configured, the keys are used as follows:
+
+1 / 3:                 Big jump (default 3h) back / forward in time
+4 / 6:                 huge jump (default 24h) back / forward in time
+7 / 9:                 jump to previous / next prime time (8pm)
+
+Exit:                  closes plugin
+
+In Search & Recording menu the following options are available:
+
+- Instant Record: create a timer for the currently selected program. An
+  check for timer conflicts will be performed, if a timer conflict occurs,
+  the involved timers can be adapted to solve the conflict. Alternatively
+  reruns can be searched and used to solve timer conflicts. 
+- Delete / Edit Timer: if a timer already exists for the currently selected
+  broadcast, this timer can be deleted or edited.
+- Timer Timeline: displays active timers per day
+- Create Search Timer: create an search timer with epgsearch. The most
+  important options can be defined directly in the menu, expert options
+  are available via the "advanced options" button.
+- Manage Search Timers: edit, delete and check results of search timers  
+- Create Series Timer: create a periodical timer for a dedicated time on
+  dedicated days.
+- Create Switch Timer: create a switch timer for the currently selected
+  program.
+- Search: search with epgsearch
+- Check for Timer Conflicts: check for timer conflicts with epgsearch.
+- Search in Recordings: check if a recording already exists for the currently
+  selected program.
+
+The search & recordings menu is intended to present a convenient interface
+to different VDR core recording features and additional epgsearch features.
+The main goal is to reach better usability for "non expert users".
+
+The navigation through the search & recording menu can be done easily with
+up/down, left/right and the ok key. In scrolling lists, with left/right
+(after the first/last option of the displayed list element is selected) you
+jump to the next page of the list. Pressing up on the first / down on the 
+last list item jumpps to the end / start of the list.
+
+In the Plugin Setup Menu in Section "Recording Menus and Favorites" you can
+choose three alternatives for the option "Folder for instant Recordings":
+- "Always use root video folder": the recording will always be placed in the
+  video root folder
+- "Select from folder list": before creating a timer, you'll get asked in which
+  directory the recording should be placed. If the epgsearch plugin is not 
+  available, the entries from VDRs <VDRCONFIG>/folders.conf will be used. If
+  the epgsearch plugin is available, the more sophisticated epgsearch mechanism
+  will be used to identify the possible folders (folders from 
+  <VDRCONFIG>/folders.conf and epgsearchfolders.conf and all already existing 
+  folders in the video directory).
+- "Use fixed folder": the configured folder will always be used. If this string
+  is a epgsearch variable ("%variable%"), epgsearch will be used to replace 
+  the variable with a concrete folder. All values defined in the epgsearch config
+  file "epgsearchuservars.conf" can be used. These variables use the definitions
+  from "epgsearchcats.conf". For a detailed description see the epgsearch Manual.
+  With that and a with an EPG with detailed information about movies and series 
+  it is possible to create sophisticated paths for timers automatically (for 
+  instance with series season and episode in the filename).   
+
+For a search timer also all folders and the defined dedicated folder can be used.
+
+Favorites Menu: if configured, the blue key provides a favorite menu. In this
+menu the current scheduling ("What's on now") and the next upcomming Shows 
+("What's on next") can be listed. Via the Plugin Setup Menu up to four user 
+defined times can be configured with a dedicated description (for instance 
+"Primetime" for 8:15 pm). These user defined times are also shown as options in 
+the favorites menu. Finally all search timers with the option "use as favorite" 
+enabled are displayed in the favorites menu. By selecting this entry, all hits
+for this search timer are shown.
+
+Setup Options
+-------------
+
+* General Settings:
+
+- Show Main Menu Entry
+  Display "tvguide" in main menu
+- Replace VDR Schedules Menu
+  If set to "yes", the original VDR schedules menu will be replaced by tvguide
+- Use appropriate nOpacity Theme: if nOpacity is configured as VDR skin, you can 
+  configure TVGuide to select the choosen nOpacity theme automatically also as 
+  TVGuide theme. If the appropriate theme is not avaiable, the default theme
+  will be used. If set to "no", you can configure the theme independend of
+  nOpacity
+  - Theme: nOpacity independent theme to use
+- Time to display in minutes: period of time to display in main EPG view
+- Rounded Corners
+  Use rounded corners for displayed boxes
+- Channel Jump Mode (Keys Green / Yellow)
+  select between jumping x channels back/forward or to the previous / next 
+  channel group
+- Keys Blue and OK
+  Blue: Favorites in normal view, channel switch in det. EPG View, Ok: det. EPG View
+  or 
+  Blue: Channel Switch, Ok: Detailed EPG 
+  or
+  Blue: Detailed EPG, Ok: Channel Switch
+- Close TVGuide after channel switch: If set to "no", tvguide will not be closed
+  after a channel switch.
+- Functionality of numeric Keys: see chapter Usage / Remote Control Keys
+- Hide last Channel Group
+  If set to yes, the channels of the last channel group will not be displayed
+- Big Step (Keys 1 / 3) in hours
+  Hours to jump vertically with keys 1 / 3
+- Huge Step (Keys 4 / 6) in hours
+  Hours to jump vertically with keys 4 / 6
+- Time Format (12h/24h)
+- Display Reruns in detailed EPG View
+
+* Screen Presentation:
+
+- Display Mode
+  Choose between horizontal or vertical display of the channels. All further
+  width / height settings are dependend of this setting
+- Width/Height of Channel Header (% of osd width/height)
+- Width/Height of Timeline (% of osd width/height)
+- Number of Channels to display
+- Height of Headers (Status Header and EPG View Header, % of osd height)
+- Height of Footer
+- Display status header
+  - Scale video to upper right corner
+  - Rounded corners around video frame
+- Display channel names in Header
+- Display channel groups
+  - Width/Height of channel groups (% of osd width/height)
+- Display current time baseline
+- Show Channel Logos
+  show / hide channel logos, if logos are shown:
+  - Logo Extension
+    jpg / png
+  - Logo width ratio
+  - Logo height ratio
+- Text Border in Detailed EPG View (in pixel)
+- Show EPG Images
+  show / hide EPG images, if images are shown:
+  - EPG Image width ratio
+  - EPG Image height ratio
+  - Number of additional EPG Images: number of additional EPG
+    images displayed at the bottom of the detailed EPG view.
+  - Additional EPG Image width (in Pixel)
+  - Additional EPG Image height (in Pixel)
+	
+* Fonts and Fontsizes:
+
+- Font:
+  Used Font, all Fonts installed on your system are shown
+- adjust various font sizes:
+  the defined value is added to / subtracted from the default font size
+
+* Recording Menus and Favorites
+
+- Folder for instant Recordings: (see chapter "Usage" for detailed description)
+  - Always use root video folder
+  - Select from folder list
+  - Use fixed folder
+- Use Remotetimers: Timers are handled not locally but on a VDR Server defined
+  with the remotetimers plugin.
+- Use "What's on now" in favorites
+- Use "What's on next" in favorites
+- Use user defined time 1 (to 4) in favorites
+  - Description (1 - 4)
+  - Time (1 - 4)
+- Limit channels in favorites: if set to yes, only the configured channel range
+  is used to display favorite results (except for search timer favorites)
+  - start channel
+  - stop channel
+
+* Image Caching
+
+- Create Log Messages for image loading: enable debug messages for image loading
+- Limit Logo Cache: if set to "no", every channel logo is cached. if set to "yes",
+  only the amount configured for "Maximal number of logos to cache" is cached, all
+  other logos are always loaded "on the fly"
+  - Maximal number of logos to cache
+- Number of  logos to cache at start: number of logos to pre cache at plugin startup
+  (a too large number causes a slower VDR start)
+- Information about image cache sizes

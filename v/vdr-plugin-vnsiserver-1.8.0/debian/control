@@ -1,0 +1,24 @@
+Source: vdr-plugin-vnsiserver
+Section: video
+Priority: extra
+Maintainer: Alexander Grothe <seahawk1986@hotmail.com>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.17), gettext, pkg-config
+Standards-Version: 3.9.1
+Homepage: https://github.com/FernetMenta/vdr-plugin-vnsiserver
+
+Package: vdr-plugin-vnsiserver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, kodi-pvr-vdr-vnsi
+Description: VDR-Network-Streaming-Interface
+ VDR-Network-Streaming-Interface
+
+Package: vdr-plugin-vnsiserver-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-vnsiserver (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-vnsiserver
+ .
+ This package contains only the debugging symbols for vdr-plugin-vnsiserver
+

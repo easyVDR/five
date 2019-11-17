@@ -1,0 +1,3 @@
+version=3
+http://projects.vdr-developer.org/projects/plg-tvguide/files .*/vdr-tvguide-(.*)\.tgz
+

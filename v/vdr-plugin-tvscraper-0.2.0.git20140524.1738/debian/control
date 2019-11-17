@@ -1,0 +1,25 @@
+Source: vdr-plugin-tvscraper
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.0.0), pkg-config, gettext, libsqlite3-dev, libcurl4-dev, libxml2-dev, libjansson-dev 
+Standards-Version: 3.9.4
+Homepage: http://projects.vdr-developer.org/projects/skin-nopacity
+
+Package: vdr-plugin-tvscraper
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Suggests: vdr-plugin-skinnopacity (>= 0.1.4)
+Description: Metadata scraper for VDR
+ tvscraper is a metadata scraper for the Linux Video Disc Recorder VDR.
+
+Package: vdr-plugin-tvscraper-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-tvscraper (= ${binary:Version}), ${misc:Depends}
+Description: tvscraper for VDR - debugging symbols
+ tvscraper is a metadata scraper for the Linux Video Disc Recorder VDR.
+ This package contains the debugging symbols.
+

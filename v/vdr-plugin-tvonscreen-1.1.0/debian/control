@@ -1,0 +1,13 @@
+Source: vdr-plugin-tvonscreen
+Section: video
+Priority: extra
+Maintainer: mango <vdr@gmx.de>
+Build-Depends: cdbs, debhelper (>= 8.0.0), vdr-dev (>= 1.7.27), gettext
+Standards-Version: 3.9.4
+Homepage: http://www.js-home.org/vdr
+
+Package: vdr-plugin-tvonscreen
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: This plugins shows the EPG data
+ This plugins shows the EPG data

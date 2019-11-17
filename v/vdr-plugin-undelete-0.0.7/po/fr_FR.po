@@ -1,0 +1,374 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Jean-Claude Repetto <jc@repetto.org>, 2001
+# Olivier Jacques <jacquesolivier@hotmail.com>, 2003
+# Gregoire Favre <greg@magma.unil.ch>, 2003
+# Nicolas Huillard <nhuillard@e-dition.fr>, 2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <martin.dummer@gmx.net>\n"
+"POT-Creation-Date: 2012-10-04 12:47+0200\n"
+"PO-Revision-Date: 2012-06-27 16:35+0200\n"
+"Last-Translator: Nicolas Huillard <nhuillard@e-dition.fr>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "undelete for recordings"
+msgstr "Restaurer enregistrement"
+
+msgid "Choice$salvage"
+msgstr "restaurer"
+
+msgid "Choice$purge"
+msgstr "effacer"
+
+msgid "Choice$none"
+msgstr "sans"
+
+msgid "Choice$top"
+msgstr "en haut"
+
+msgid "Choice$bottom"
+msgstr "en bas"
+
+msgid "Choice$top and bottom"
+msgstr "en haut & en bas"
+
+msgid "Choice$open/summary"
+msgstr "Ouvrir/contenu"
+
+msgid "Choice$purge all"
+msgstr "effacer tout"
+
+msgid "Choice$salvage all"
+msgstr "restaurer tout"
+
+msgid "Choice$open"
+msgstr "ouvrir"
+
+msgid "Choice$summary"
+msgstr "Contenu"
+
+msgid "Choice$switch hotkeys to 1"
+msgstr "Choix touche 1"
+
+msgid "Choice$switch hotkeys to 2"
+msgstr "Choix touche 2"
+
+msgid "Choice$Display keys"
+msgstr "Affiche des touches"
+
+msgid "Display$purge"
+msgstr "Effacer"
+
+msgid "Display$salvage"
+msgstr "Restaurer"
+
+msgid "Display$purge all"
+msgstr "effacer tout"
+
+msgid "Display$salvage all"
+msgstr "restaurer tout"
+
+msgid "Open"
+msgstr ""
+
+msgid "Info"
+msgstr ""
+
+msgid "Summary"
+msgstr ""
+
+msgid "Display$<--1"
+msgstr "<--1"
+
+msgid "Display$2-->"
+msgstr "2-->"
+
+msgid "Display$disp. keys"
+msgstr "Afficher les touches"
+
+msgid "Red"
+msgstr ""
+
+msgid "Green"
+msgstr ""
+
+msgid "Yellow"
+msgstr ""
+
+msgid "Blue"
+msgstr ""
+
+msgid "Choice$User"
+msgstr "Utilisateur"
+
+msgid "Menu$Undelete recordings"
+msgstr "Restaurer enregistrement"
+
+msgid "Bytes"
+msgstr ""
+
+msgid "Up"
+msgstr ""
+
+msgid "Down"
+msgstr ""
+
+msgid "Menu"
+msgstr ""
+
+msgid "Ok"
+msgstr ""
+
+msgid "Back"
+msgstr ""
+
+msgid "Left"
+msgstr ""
+
+msgid "Right"
+msgstr ""
+
+msgid "Play"
+msgstr ""
+
+msgid "Pause"
+msgstr ""
+
+msgid "Stop"
+msgstr ""
+
+msgid "Record"
+msgstr ""
+
+msgid "FastFwd"
+msgstr ""
+
+msgid "FastRew"
+msgstr ""
+
+msgid "Power"
+msgstr ""
+
+msgid "ChanUp"
+msgstr ""
+
+msgid "ChanDn"
+msgstr ""
+
+msgid "VolUp"
+msgstr ""
+
+msgid "VolDn"
+msgstr ""
+
+msgid "Mute"
+msgstr ""
+
+msgid "Schedule"
+msgstr ""
+
+msgid "Channels"
+msgstr ""
+
+msgid "Timers"
+msgstr ""
+
+msgid "Recordings"
+msgstr ""
+
+msgid "Setup"
+msgstr ""
+
+msgid "Commands"
+msgstr ""
+
+msgid "User1"
+msgstr ""
+
+msgid "User2"
+msgstr ""
+
+msgid "User3"
+msgstr ""
+
+msgid "User4"
+msgstr ""
+
+msgid "User5"
+msgstr ""
+
+msgid "User6"
+msgstr ""
+
+msgid "User7"
+msgstr ""
+
+msgid "User8"
+msgstr ""
+
+msgid "User9"
+msgstr ""
+
+msgid "none"
+msgstr ""
+
+msgid "Kbd"
+msgstr ""
+
+msgid "Salvage"
+msgstr "Restaurer"
+
+msgid "Purge"
+msgstr "Vider"
+
+msgid "DeleteLine"
+msgstr "Effacer ligne"
+
+msgid "HelpKeys"
+msgstr "Touche d'aide"
+
+msgid "unknown"
+msgstr "inconnu"
+
+msgid "Deleted Recordings"
+msgstr "Enregistrements effacés"
+
+msgid "Display$prepare recording display..."
+msgstr "L'affichage liste en préparation..."
+
+msgid "Error while accessing recording!"
+msgstr ""
+
+msgid "Display$Purge all records ..."
+msgstr "Effacer tous les enregistrement définitivement ..."
+
+msgid "Display$Salvage all records ..."
+msgstr "Restaurer tout les enregistrements ..."
+
+msgid "Question$Purge recording?"
+msgstr ""
+
+msgid "Question$Purge recordings in diretory?"
+msgstr ""
+
+msgid "Question$Salvage recording?"
+msgstr "Restaurer enregistrement?"
+
+msgid "Question$Salvage recordings in directory?"
+msgstr "Restaurer l'enregistrement dans dossier?"
+
+msgid "Question$Purge all recordings?"
+msgstr ""
+
+msgid "Question$Salvage all recordings?"
+msgstr "Restaurer tout les enregistrements?"
+
+msgid "Display$please wait ..."
+msgstr "attendez, merci"
+
+msgid "Error$Recording with the same name exists!"
+msgstr "Des enregistrements avec le même nom existent!"
+
+msgid "Error$error while read last filenumber"
+msgstr ""
+
+#, c-format
+msgid "Error$error accessing vdrfile %03d"
+msgstr ""
+
+msgid "Error$error accessing indexfile"
+msgstr ""
+
+msgid "Menu$assigned keys"
+msgstr "Touches assignées"
+
+msgid "Edit"
+msgstr ""
+
+msgid "Help$key\tfunction"
+msgstr "Touch\tFonction"
+
+msgid "Help$OK"
+msgstr "OK"
+
+msgid "Help$numerickey"
+msgstr "Touch numérique"
+
+msgid "Setup$Display deleted recordings now"
+msgstr "Afficher les enregistrements effacés"
+
+msgid "Setup$Prefer Command Line Parameter"
+msgstr "La ligne de commande a priorité"
+
+msgid "Setup$Visible in Mainmenu"
+msgstr "Visible dans le menu principal"
+
+msgid "Setup$  Name for Mainmenu"
+msgstr "  Nom afficher pour le menu principal"
+
+msgid "Setup$Confirm purge deleted recordings"
+msgstr "Confirmer effacer enregistrement"
+
+msgid "Setup$Confirm purge directories"
+msgstr "Confirmer effacer dossier"
+
+msgid "Setup$Confirm purge all deleted recordings"
+msgstr "Confirmation effacer tout"
+
+msgid "Setup$Confirm salvage deleted recordings"
+msgstr "Confirmer restaurer enregistrement"
+
+msgid "Setup$Confirm salvage directories"
+msgstr "Confirmer restaurer dossier"
+
+msgid "Setup$Confirm salvage all deleted recordings"
+msgstr "Confirmer restaurer tout"
+
+msgid "Setup$Purgeline position"
+msgstr "Position de la ligne d'éffacement"
+
+msgid "Setup$  Display bottom purge ex lines"
+msgstr "  Nombre de ligne d'affichage d'effacement"
+
+msgid "Setup$Salvageline position"
+msgstr "Position de la ligne de restauration"
+
+msgid "Setup$  Display bottom salvage ex lines"
+msgstr "  Nombre de ligne d'affichage"
+
+msgid "Setup$  inward lines"
+msgstr "  Ligne interrieur"
+
+msgid "Setup$Change assigned functionkeys"
+msgstr "Changer la configuration des touches"
+
+#, c-format
+msgid "Setup$  Key for function-%s"
+msgstr "  Touch pour fonction-%s"
+
+msgid "Setup$  ** Special handled keys **"
+msgstr "  ** Touche spéciale **"
+
+msgid "Setup$  OK-key function"
+msgstr "  Fonction touch OK"
+
+msgid "Setup$  Numeric key selects the entry and"
+msgstr "  Choix avec numéro et"
+
+msgid "Setup$Verbose Log Mode"
+msgstr "Protokolle mode complet"
+
+#, c-format
+msgid "Error$Key for function %s and %s is identical."
+msgstr "Touche de %s et %s sont les mêmes."
+
+msgid "Setup$Select"
+msgstr "Choix"
