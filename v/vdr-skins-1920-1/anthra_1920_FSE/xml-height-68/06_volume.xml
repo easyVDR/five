@@ -1,0 +1,11 @@
+ <display id="volume">
+	<window x1="0" x2="1920" y1="940" y2="1080" bpp="8"/>
+		<image x1="0" x2="1920" y1="940" y2="1080" colors="64" path="images/volume.png" />
+		<!-- trans('Volume') -->
+		<text x1="100" x2="960" y1="963" y2="990" align="right" color="TextHigh" condition="not({IsMute})" font="VDRSymbols Sans:Book@27">Volume</text>
+		<text x1="961" x2="1820" y1="963" y2="990" align="left" color="TextHigh" condition="not({IsMute})" font="VDRSymbols Sans:Book@27">: {VolumeCurrent}</text>		
+		<!--trans('Mute') -->
+		<text x1="100" x2="1820" y1="963" y2="990" align="center" color="TextHigh" condition="{IsMute}" font="VDRSymbols Sans:Book@27">Mute</text>
+		<progress x1="0" x2="1920" y1="1007" y2="1013" color="BarFill" current="{VolumeCurrent}" total="{VolumeTotal}"/>
+		<rectangle x1="0" x2="1920" y1="1007" y2="1013" condition="{IsMute}" color="BarBlock" />
+</display>

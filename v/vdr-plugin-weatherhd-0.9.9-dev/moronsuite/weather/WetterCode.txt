@@ -1,0 +1,22 @@
+## Wettercode "weatherhd" 
+## mango 09.02.2013
+
+diese Webseite öffnen
+http://accuweather.telegraph.co.uk/dailyTelegraph/weather_results.asp
+und bei "Enter the name of the city" den Namen der gewünschten Stadt eingeben.
+z.B Hamburg werden mehrere Städte gefunden Deine auswählen.
+In der Adress-Zeile findet Ihr am Schluss -> loccode=EUR|DE|GM006|HAMBURG
+diesen Code EUR|DE|GM006|HAMBURG nun in die setup.conf eintragen oder über das OSD
+eingeben.
+
+setup.conf
+
+weatherhd.ID1 = EUR|DE|GM001|WEIL AM RHEIN
+weatherhd.ID1_NAME = Weil am Rhein
+weatherhd.ID2 = EUR|DE|GM001|ELLWANGEN
+weatherhd.ID2_NAME = Ellwangen
+weatherhd.ID3 = EUR|DE|GM006|HAMBURG
+weatherhd.ID3_NAME = Hamburg
+
+Have Fun!
+

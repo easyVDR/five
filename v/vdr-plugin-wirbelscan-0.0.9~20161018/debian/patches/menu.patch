@@ -1,0 +1,14 @@
+Index: vdr-plugin-wirbelscan-0.0.9~20161018/menusetup.c
+===================================================================
+--- vdr-plugin-wirbelscan-0.0.9~20161018.orig/menusetup.c	2016-10-18 16:03:04.772923324 +0200
++++ vdr-plugin-wirbelscan-0.0.9~20161018/menusetup.c	2016-10-18 16:03:04.772923324 +0200
+@@ -98,6 +98,9 @@
+     CountryNames[i] = (char *) malloc(strlen(country_list[i].full_name) + 1);
+     strcpy(CountryNames[i], country_list[i].full_name);
+     }
++    
++   SetMenuCategory(mcPluginSetup);
++   
+ 
+   SetSection(tr("Setup"));
+   AddCategory(tr("General"));

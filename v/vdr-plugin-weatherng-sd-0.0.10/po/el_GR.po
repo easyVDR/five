@@ -1,0 +1,152 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Dimitrios Dimitrakos <mail@dimitrios.de>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <djoimania.de>\n"
+"POT-Creation-Date: 2012-08-06 21:29+0200\n"
+"PO-Revision-Date: 2008-01-15 22:39+0100\n"
+"Last-Translator: Dimitrios Dimitrakos <mail@dimitrios.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-7\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Night"
+msgstr ""
+
+msgid "Day"
+msgstr ""
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Radar"
+msgstr ""
+
+msgid "More.."
+msgstr ""
+
+msgid "Parent.."
+msgstr ""
+
+msgid "High temperature: "
+msgstr ""
+
+msgid "Low temperature: "
+msgstr ""
+
+msgid "Wind comes from: "
+msgstr ""
+
+msgid "Wind speed: "
+msgstr ""
+
+msgid "Humitidy: "
+msgstr ""
+
+msgid " %"
+msgstr ""
+
+msgid "Precipitation: "
+msgstr ""
+
+msgid "DAY"
+msgstr ""
+
+msgid "On  "
+msgstr ""
+
+msgid "in "
+msgstr ""
+
+msgid " dayover"
+msgstr ""
+
+msgid "The temperature varies between  "
+msgstr ""
+
+msgid "  and  "
+msgstr ""
+
+msgid "  Grad"
+msgstr ""
+
+msgid "The sun comes up at  "
+msgstr ""
+
+msgid " and goes at  "
+msgstr ""
+
+msgid " down"
+msgstr ""
+
+msgid "NIGHT"
+msgstr ""
+
+msgid " nightover"
+msgstr ""
+
+msgid "Weather for: "
+msgstr ""
+
+msgid "Weather.com: Weather forecast"
+msgstr ""
+
+msgid "Weatherng-SD-FF"
+msgstr ""
+
+msgid "Update data on start"
+msgstr ""
+
+msgid "Use one 8-bit area"
+msgstr ""
+
+msgid "Radarbitmap left"
+msgstr ""
+
+msgid "Radarbitmap top"
+msgstr ""
+
+msgid "Radarbitmap width"
+msgstr ""
+
+msgid "Radarbitmap height"
+msgstr ""
+
+msgid "Offset horizontal"
+msgstr ""
+
+msgid "Offset vertical"
+msgstr ""
+
+msgid "Use dithering for images"
+msgstr ""
+
+msgid "Transparency for images"
+msgstr ""
+
+msgid "Image quality >=slower"
+msgstr ""
+
+msgid "Location 1 (ID)"
+msgstr ""
+
+msgid "Location 1 (Name)"
+msgstr ""
+
+msgid "Location 2 (ID)"
+msgstr ""
+
+msgid "Location 2 (Name)"
+msgstr ""
+
+msgid "Location 3 (ID)"
+msgstr ""
+
+msgid "Location 3 (Name)"
+msgstr ""

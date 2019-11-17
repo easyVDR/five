@@ -1,0 +1,13 @@
+<display id="message">
+	<window x1="50" x2="934" y1="521" y2="551" bpp="8"/>
+    
+		<block condition="or({MessageInfo},{MessageStatus},{MessageWarning},{MessageError})">
+			
+			<image x="50"  y="521" colors="64" path="images/messageBG.png"/>		
+	
+			<text x1="50" x2="934" y1="524" y2="544" align="center" color="TextHigh"  font="Osd">{MessageInfo}</text>
+			<text x1="50" x2="934" y1="524" y2="544" align="center" color="GreenHigh" font="Osd">{MessageStatus}</text>
+			<text x1="50" x2="934" y1="524" y2="544" align="center" color="YellowHigh" font="Osd">{MessageWarning}</text>
+			<text x1="50" x2="934" y1="524" y2="544" align="center" color="RedHigh"  font="Osd">{MessageError}</text> 
+		</block>
+</display>

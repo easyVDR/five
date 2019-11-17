@@ -1,0 +1,16 @@
+Index: b/xineDevice.c
+===================================================================
+--- a/xineDevice.c
++++ b/xineDevice.c
+@@ -1200,7 +1200,11 @@
+       int pid = TsPid(Data);
+       if (pid == 0)
+         patPmtParser.ParsePat(Data, TS_SIZE);
++#if VDRVERSNUM < 10733
+       else if (pid == patPmtParser.PmtPid())
++#else
++      else if (patPmtParser.IsPmtPid(pid))
++#endif
+         patPmtParser.ParsePmt(Data, TS_SIZE);
+       else if (pid == patPmtParser.Vpid())
+       {

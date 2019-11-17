@@ -1,0 +1,22 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+
+DEB_INSTALL_CHANGELOGS_ALL = HISTORY
+
+MAKE_OPTIONS = DVBDIR=/usr VDRDIR=/usr/include/vdr LIBDIR=. \
+               LOCALEDIR=locale
+
+common-build-arch::
+	$(MAKE) all $(MAKE_OPTIONS)
+
+binary-install/vdr-plugin-weatherhd::
+	chmod a+x debian/vdr-plugin-weatherhd/var/lib/vdr/plugins/moronsuite/weather/scripts/weather.sh
+	chmod a+x debian/vdr-plugin-weatherhd/var/lib/vdr/plugins/moronsuite/weather/scripts/pngtoxpm.sh
+
+cleanbuilddir::
+	$(MAKE) -o .dependencies clean $(MAKE_OPTIONS)
+	rm -f libvdr-*.so.*
+
+common-binary-predeb-arch::
+	sh /usr/share/vdr-dev/dependencies.sh

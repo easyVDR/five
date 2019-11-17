@@ -1,0 +1,145 @@
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 23:26:44 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:35:26 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:33:20 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 08 Jul 2017 17:21:15 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:51:20 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:52:30 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:53:31 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:12:48 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:58:43 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 01:13:12 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:35:02 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:47:01 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 17:42:20 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild ofr easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Dec 2014 01:57:47 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr8~trusty) trusty; urgency=medium
+
+  * rebuild for testing-vdr
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Tue, 08 Apr 2014 18:53:45 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr8~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:44:34 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr7~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:26:09 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr5~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 16:21:29 +0100
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:50:35 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:17:29 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:11:17 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:35:57 +0200
+
+vdr-plugin-zappilot (0.0.4+git20130404-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 04 Apr 2013 10:04:49 +0200
+
+vdr-plugin-zappilot (0.0.4-0yavdr2) lucid; urgency=low
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 06 Aug 2010 21:15:55 +0200
+
+

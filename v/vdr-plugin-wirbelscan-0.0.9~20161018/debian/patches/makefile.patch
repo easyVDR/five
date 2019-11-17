@@ -1,0 +1,59 @@
+Description: <short summary of the patch>
+ TODO: Put a short summary on the line above and replace this paragraph
+ with a longer explanation of this change. Complete the meta-information
+ with other relevant fields (see below for details). To make it easier, the
+ information below has been extracted from the changelog. Adjust it or drop
+ it.
+ .
+ vdr-plugin-wirbelscan (0.0.9-0yavdr0~utopic) utopic; urgency=medium
+ .
+   * new upstream version
+Author: Gerald Dachs <gda@dachsweb.de>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: https://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+Index: vdr-plugin-wirbelscan-0.0.9~20161018/Makefile
+===================================================================
+--- vdr-plugin-wirbelscan-0.0.9~20161018.orig/Makefile	2016-10-18 16:02:35.292777140 +0200
++++ vdr-plugin-wirbelscan-0.0.9~20161018/Makefile	2016-10-18 16:02:35.292777140 +0200
+@@ -28,7 +28,29 @@
+ 
+ ### Make sure that necessary options are included:
+ 
++MAKEGLOBAL := $(wildcard $(VDRDIR)/Make.global)
++
++ifeq ($(MAKEGLOBAL),$(VDRDIR)/Make.global)
++
++### vdr version >= 1.7.13:
++# Make.global is required
++# Make.config is optional
++###
+ include $(VDRDIR)/Make.global
++-include $(VDRDIR)/Make.config
++
++else
++
++### vdr version < 1.7.13:
++# enshure that at least -fPIC is given
++# Make.config is optional
++###
++-include $(VDRDIR)/Make.config
++CFLAGS   += -fPIC
++CXXFLAGS += -fPIC
++DEFINES += -D_FILE_OFFSET_BITS=64 -D_LARGEFILE_SOURCE -D_LARGEFILE64_SOURCE
++
++endif
+ 
+ ### Allow user defined options to overwrite defaults:
+ 

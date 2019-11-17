@@ -1,0 +1,152 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@cadsoft.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <djoimania.de>\n"
+"POT-Creation-Date: 2012-08-06 00:48+0200\n"
+"PO-Revision-Date: 2008-01-15 22:39+0100\n"
+"Last-Translator: Klaus Schmidinger <kls@cadsoft.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Night"
+msgstr "Nachts"
+
+msgid "Day"
+msgstr "Am Tage"
+
+msgid "Refresh"
+msgstr "Erneuern"
+
+msgid "Radar"
+msgstr "Radarbild"
+
+msgid "More.."
+msgstr "Mehr"
+
+msgid "Parent.."
+msgstr "Zurück.."
+
+msgid "High temperature: "
+msgstr "Höchsttemperatur: "
+
+msgid "Low temperature: "
+msgstr "Tiefsttemperatur: "
+
+msgid "Wind comes from: "
+msgstr "Wind kommt von: "
+
+msgid "Wind speed: "
+msgstr "Windgeschwindigkeit: "
+
+msgid "Humitidy: "
+msgstr "Max. Luftfeuchtigkeit: "
+
+msgid " %"
+msgstr " %"
+
+msgid "Precipitation: "
+msgstr "Niederschlag möglich: "
+
+msgid "DAY"
+msgstr "AM TAGE"
+
+msgid "On  "
+msgstr "Am  "
+
+msgid "in "
+msgstr "in "
+
+msgid " dayover"
+msgstr " tagsüber"
+
+msgid "The temperature varies between  "
+msgstr "Die Temperatur schwankt zwischen   "
+
+msgid "  and  "
+msgstr "  und  "
+
+msgid "  Grad"
+msgstr "  Grad"
+
+msgid "The sun comes up at  "
+msgstr "Die Sonne geht um  "
+
+msgid " and goes at  "
+msgstr " auf und um  "
+
+msgid " down"
+msgstr " unter"
+
+msgid "NIGHT"
+msgstr "IN DER NACHT"
+
+msgid " nightover"
+msgstr " nachts"
+
+msgid "Weather for: "
+msgstr "Wetter für: "
+
+msgid "Weather.com: Weather forecast"
+msgstr "9 Tage Wettervorhersage"
+
+msgid "Weatherng-SD-FF"
+msgstr "Wetterbericht-SD-FF"
+
+msgid "Update data on start"
+msgstr "Update von Daten bei Start"
+
+msgid "Use one 8-bit area"
+msgstr "Nutze eine 8-bit area"
+
+msgid "Radarbitmap left"
+msgstr "Radarbild von links"
+
+msgid "Radarbitmap top"
+msgstr "Radarbild von oben"
+
+msgid "Radarbitmap width"
+msgstr "Radarbild Breite"
+
+msgid "Radarbitmap height"
+msgstr "Radarbild Höhe"
+
+msgid "Offset horizontal"
+msgstr "Offset horizontal"
+
+msgid "Offset vertical"
+msgstr "Offset vertikal"
+
+msgid "Use dithering for images"
+msgstr "Nutze Dithering für Bilder"
+
+msgid "Transparency for images"
+msgstr "Transparenz für Bilder"
+
+msgid "Image quality >=slower"
+msgstr "Bildqualität >=langsamer"
+
+msgid "Location 1 (ID)"
+msgstr "Ort 1 (ID)"
+
+msgid "Location 1 (Name)"
+msgstr "Ort 1 (Name)"
+
+msgid "Location 2 (ID)"
+msgstr "Ort 2 (ID)"
+
+msgid "Location 2 (Name)"
+msgstr "Ort 2 (Name)"
+
+msgid "Location 3 (ID)"
+msgstr "Ort 3 (ID)"
+
+msgid "Location 3 (Name)"
+msgstr "Ort 3 (Name)"

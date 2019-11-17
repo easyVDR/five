@@ -1,0 +1,84 @@
+#    README for the anthra-SD skin for text2skin
+#
+#    Copyright (C) 2010   Tomas Saxer <tsaxer@gmx.de> 
+#
+#    This program is free software; you can redistribute it and/or modify it under the terms of 
+#    the GNU General Public License as published by the Free Software Foundation; either 
+#    version 2 of the License, or (at your option) any later version.
+#
+#    This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; 
+#    without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. 
+#    See the GNU General Public License for more details.
+#
+#    You should have received a copy of the GNU General Public License along with this program; 
+#    if not, write to the Free Software Foundation, Inc., 51 Franklin St, Fifth Floor, Boston, 
+#    MA 02110, USA
+
+
+Latest version available at: http://justlinux.de/vdr/
+
+Description: anthra_SD-skin is a dark, anthracite skin for Klaus Schmidingers VDR (http://www.tvdr.de/).
+
+The resolution of the skin is 720x576 and it is not scalable.
+
+Users with FullHD- or HD-Ready-capable hardware should have a look at anthra-Full-HD and anthra-HD-Ready-skins
+
+e.g. http://vdrportal.de/board/thread.php?threadid=99886
+
+anthra_SD-skin is designed to work with softdecoders like vdr-xine and xineliboutput - both preferred with vdpau - 
+but it is also succesfully tested with eHD-cards.
+
+The skin will not work with Fullfeaturd-DVB-Cards with only original (2MB) memory
+and DXR3-Cards.
+
+Fullfeaturd-DVB-Cards with extended memory (modded) should be tested.
+
+
+1. Requirements:
+
+	anthra_SD-skin needs text2skin Version 1.3 (or higher)
+	
+	
+2. The *.po files for the translations of *Volume* and *Mute* are taken from
+	VDR-sources. Thanks a lot to all translators and especially to
+	Klaus Schmidinger for developing VDR !
+	
+3. Makefile settings:
+
+	a. LOGOSLEFT = 1
+	
+		For German broadcasting corporations channellogos
+		designed by Oliver Ranke (liqidolze@vdrportal.de) are available. 
+	
+		!!!Please notice!!!
+	
+		So-called liquid-logos4anthra are exclusively destined for 
+		personal use in association with VDR.
+		!!!Copyright holder of the original logos are the broadcasting corporations!!!
+
+		Download:
+	
+		http://justlinux.de/vdr/liquid-logos4anthra_SD.tar.gz
+
+		Just unpack the liquid-logos4anthra_SD.tar.gz to <VDRPLUGINDIR>/text2skin
+		change the CHANNELLOGOS-option in anthra_SD's Makefile to "LOGOSLEFT = 1",
+		and recompile the Skinfile with 
+
+		make && make clean
+		
+	b. NOMARQUEE = 1
+	
+		if you don't want to have marquee in Menus uncomment NOMARQUEE = 1
+		and recompile the Skinfile
+		
+This is a very early version of anthra_SD, stay tuned the development will go on.
+
+If you encounter any bugs, problems, or have any issues,
+please don't hesitate to contact me or place a post at vdrportal.de
+even in English.
+
+Screenshots of anthra_SD are available at:
+
+www.justlinux.de/vdr/screenshots_SD
+
+Have fun!

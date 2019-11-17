@@ -1,0 +1,119 @@
+vdr-plugin-weatherng-sd (0.0.10-3easyVDR7~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:54:49 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-3easyVDR6~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:23:02 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-3easyVDR5~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:29:27 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-3easyVDR4~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 09 Jul 2017 00:13:47 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-3easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:50:14 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-3easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 19 Nov 2016 23:36:46 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-3easyVDR1~trusty) trusty; urgency=high
+
+  * fix postinst
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 19 Nov 2016 20:07:25 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-3easyVDR0~trusty) trusty; urgency=high
+
+  * added new url for pic & weather xml
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 19 Nov 2016 17:35:21 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:06:33 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:51:20 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-2easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:52:02 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-2easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:11:23 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:56:59 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 01:06:30 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:33:00 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:40:29 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 20 Mar 2015 23:26:27 +0100
+
+vdr-plugin-weatherng-sd (0.0.10-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:23:21 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:33:33 +0200
+
+vdr-plugin-weatherng-sd (0.0.10-1easyVDR0~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 Nov 2013 21:31:47 +0100

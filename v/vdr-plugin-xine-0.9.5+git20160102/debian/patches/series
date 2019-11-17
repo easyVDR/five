@@ -1,0 +1,6 @@
+01_fully_support_plugin_yaepg.patch
+#02_xine-plugin-0.9.4-grab.patch
+#03_remove-i18n.patch
+#04_xine-vdr-1.7.33.patch
+#05_vdr-xine-0.9.4_scaling-without-YAEPG-vdr.1.7.33_v2.patch
+#06_vdr_2.1.10_compat.diff

@@ -1,0 +1,20 @@
+<display id="message">
+	<window x1="0" x2="1920" y1="987" y2="1055" bpp="8"/>
+	
+		<block condition="or({MessageInfo},{MessageStatus},{MessageWarning},{MessageError})">
+			<image x1="0" x2="1920" y1="987" y2="1055" colors="64" path="images/message.png" />
+			
+			<rectangle x1="50" x2="1870" y1="1003" y2="1004" condition="{MessageStatus}" color="BlueLow" />
+			<rectangle x1="50" x2="1870" y1="1005" y2="1007" condition="{MessageStatus}" color="BlueHigh" />
+			<rectangle x1="50" x2="1870" y1="1003" y2="1004" condition="{MessageInfo}" color="GreenLow" />
+			<rectangle x1="50" x2="1870" y1="1005" y2="1007"  condition="{MessageInfo}" color="GreenHigh" />
+			<rectangle x1="50" x2="1870" y1="1003" y2="1004" condition="{MessageWarning}" color="YellowLow" />
+			<rectangle x1="50" x2="1870" y1="1005" y2="1007" condition="{MessageWarning}" color="YellowHigh" />
+			<rectangle x1="50" x2="1870" y1="1003" y2="1004" condition="{MessageError}" color="RedLow" />
+			<rectangle x1="50" x2="1870" y1="1005" y2="1007" condition="{MessageError}" color="RedHigh" />
+			<text x1="0" x2="1920" y1="1011" y2="1043" align="center" color="TextButton"  font="VDRSymbols Sans:Book@27">{MessageInfo}</text>
+			<text x1="0" x2="1920" y1="1011" y2="1043" align="center" color="TextButton" font="VDRSymbols Sans:Book@27">{MessageStatus}</text>
+			<text x1="0" x2="1920" y1="1011" y2="1043" align="center" color="TextButton"  font="VDRSymbols Sans:Book@27">{MessageWarning}</text>
+			<text x1="0" x2="1920" y1="1011" y2="1043" align="center" color="TextButton"  font="VDRSymbols Sans:Book@27">{MessageError}</text>  
+		</block>
+</display>

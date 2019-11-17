@@ -1,0 +1,129 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: anthra_1920_FSE\n"
+"Report-Msgid-Bugs-To: <>\n"
+"POT-Creation-Date: 2012-01-08 23:04+0100\n"
+"PO-Revision-Date: 2011-11-22 07:16+0100\n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: \n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Schedule"
+msgstr "Programm"
+
+msgid "Channels"
+msgstr "Kanäle"
+
+msgid "Timers"
+msgstr "Timer"
+
+msgid "Recordings"
+msgstr "Aufzeichnungen"
+
+msgid "Setup"
+msgstr "Einstellungen"
+
+msgid "Commands"
+msgstr "Befehle"
+
+msgid "What's on now?"
+msgstr "Was läuft jetzt?"
+
+msgid "What's on next?"
+msgstr "Was läuft jetzt?"
+
+msgid "until"
+msgstr "bis"
+
+msgid "Now"
+msgstr "Jetzt"
+
+msgid "Next"
+msgstr "Nächste"
+
+msgid "Directory browser"
+msgstr "Verzeichnisbrowser"
+
+msgid "hour"
+msgstr "Uhr"
+
+msgid "cutted"
+msgstr "geschnitten"
+
+msgid "Channel"
+msgstr "Kanal"
+
+msgid "Filesize"
+msgstr "Dateigröße"
+
+msgid "Volume"
+msgstr "Lautstärke "
+
+msgid "Mute"
+msgstr "Stumm"
+
+#, fuzzy
+#~ msgid "Timer"
+#~ msgstr "Timer"
+
+#~ msgid "Video"
+#~ msgstr "Video"
+
+#~ msgid "Applications"
+#~ msgstr "Applikationen"
+
+#~ msgid "Web"
+#~ msgstr "Web"
+
+#~ msgid "Internet"
+#~ msgstr "Internet"
+
+#~ msgid "Media"
+#~ msgstr "Medien"
+
+#~ msgid "XBMC on graphtft Display"
+#~ msgstr "XBMC on graphtft Display"
+
+#~ msgid "Games"
+#~ msgstr "Spiele"
+
+#~ msgid "Tools"
+#~ msgstr "Tools"
+
+#~ msgid "Xterm"
+#~ msgstr "Xtrem"
+
+#~ msgid "System"
+#~ msgstr "System"
+
+#~ msgid "Safely remove usb mass storage"
+#~ msgstr "USB Massenspeicher sicher entfernen"
+
+#~ msgid "Update vdr recordings list"
+#~ msgstr "Aufnahmen-Liste aktualisieren"
+
+#~ msgid "Restart vdr"
+#~ msgstr "VDR neu starten"
+
+#~ msgid "Reboot system"
+#~ msgstr "Rechner neu starten"
+
+#~ msgid "Shutdown system"
+#~ msgstr "System herunterfahren"
+
+#~ msgid "Audio"
+#~ msgstr "Audio"
+
+#~ msgid "Length"
+#~ msgstr "Länge"
+
+#~ msgid "bis"
+#~ msgstr "until"

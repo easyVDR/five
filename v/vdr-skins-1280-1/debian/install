@@ -1,0 +1,14 @@
+anthra_1280_OS9			usr/share/vdr-skins/
+anthra_1280_OS9/themes/*		var/lib/vdr/themes/
+anthra_1280_FS9			usr/share/vdr-skins/
+anthra_1280_FS9/themes/*		var/lib/vdr/themes/
+
+anthra_1280_OS8                  usr/share/vdr-skins/
+anthra_1280_OS8/themes/*             var/lib/vdr/themes/
+anthra_1280_FS8                  usr/share/vdr-skins/
+anthra_1280_FS8/themes/*             var/lib/vdr/themes/
+
+anthra_1280_OSt			usr/share/vdr-skins/
+anthra_1280_OSt/themes/*		var/lib/vdr/themes/
+anthra_1280_FSt			usr/share/vdr-skins/
+anthra_1280_FSt/themes/*		var/lib/vdr/themes/

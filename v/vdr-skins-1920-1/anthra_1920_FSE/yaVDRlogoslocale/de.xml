@@ -1,0 +1,25 @@
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Applikationen')" path="mainmenulogos/Applications.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Audio')" path="mainmenulogos/Audio.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Aufnahmen-Liste aktualisieren')" path="mainmenulogos/Update_VDR_recording_list.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Befehle')" path="mainmenulogos/commands.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Dienstprogramme')" path="mainmenulogos/Commands.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Internet')" path="mainmenulogos/Internet.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Medien')" path="mainmenulogos/Media.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Rechner neu starten')" path="mainmenulogos/Reboot_System.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Recordings')" path="mainmenulogos/recordings.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Remote wakeup')" path="mainmenulogos/Remote_Wakeup.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Spiele')" path="mainmenulogos/Games.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Suche')" path="mainmenulogos/search.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Schnellsuche')" path="mainmenulogos/quickepgsearch.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'System')" path="mainmenulogos/System.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'System herunterfahren')" path="mainmenulogos/Shutdown_System.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Timer')" path="mainmenulogos/Timer.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Timer-Konflikte')" path="mainmenulogos/TimerConflict.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Tools')" path="mainmenulogos/Tools.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'USB Massenspeicher sicher entfernen')" path="mainmenulogos/Safely_remove_USB_drive.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'VDR neu starten')" path="mainmenulogos/Restart_VDR.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Video')" path="mainmenulogos/Video.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Web')" path="mainmenulogos/Web.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'XBMC')" path="mainmenulogos/XBMC.png"/>
+<!--yaVDRMAINMENULOGOS-->		<image x="15" y="5" condition="equal({MenuCurrent:clean},'Xterm')" path="mainmenulogos/Xterm.png"/>
+<!--yaVDR--><!--END-->

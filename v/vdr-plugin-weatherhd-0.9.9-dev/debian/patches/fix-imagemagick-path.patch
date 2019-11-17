@@ -1,0 +1,24 @@
+--- a/Makefile
++++ b/Makefile
+@@ -13,7 +13,7 @@
+ ## default Imlib2 
+ ## =============================
+ HAVE_IMAGEMAGICK=1
+-IMAGEMAGICKDIR=/usr/include/ImageMagick
++#IMAGEMAGICKDIR=/usr/include/ImageMagick
+ 
+ ## =============================
+ ## enable debug
+@@ -81,9 +81,9 @@
+ #endif
+ 
+ ifdef HAVE_IMAGEMAGICK
+-	INCLUDES += -I$(IMAGEMAGICKDIR)
+-	LIBS += $(shell Magick++-config --libs)
+-	DEFINES += -DHAVE_IMAGEMAGICK
++        LIBS += $(shell pkg-config --libs Magick++)
++        INCLUDES += $(shell pkg-config --cflags Magick++)
++        DEFINES += -DHAVE_IMAGEMAGICK
+ else
+ 	INCLUDES += -I$(IMLIB)/src
+ 	LIBS += $(shell imlib2-config --libs)

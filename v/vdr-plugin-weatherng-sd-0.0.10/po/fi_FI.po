@@ -1,0 +1,156 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Hannu Savolainen <hannu@opensound.com>, 2002
+# Jaakko Hyvätti <jaakko@hyvatti.iki.fi>, 2002
+# Niko Tarnanen <niko.tarnanen@hut.fi>, 2003
+# Rolf Ahrenberg <rahrenbe@cc.hut.fi>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <djoimania.de>\n"
+"POT-Creation-Date: 2012-08-06 21:29+0200\n"
+"PO-Revision-Date: 2008-01-15 22:39+0100\n"
+"Last-Translator: Rolf Ahrenberg <rahrenbe@cc.hut.fi>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Night"
+msgstr "YÖ"
+
+msgid "Day"
+msgstr "PÄIVÄ"
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Radar"
+msgstr ""
+
+msgid "More.."
+msgstr ""
+
+msgid "Parent.."
+msgstr ""
+
+msgid "High temperature: "
+msgstr "Ylin lämpötila: "
+
+msgid "Low temperature: "
+msgstr "Alin lämpötila: "
+
+msgid "Wind comes from: "
+msgstr "Tuulen suunta: "
+
+msgid "Wind speed: "
+msgstr "Tuulen nopeus: "
+
+msgid "Humitidy: "
+msgstr "Ilmankosteus: "
+
+msgid " %"
+msgstr " %"
+
+msgid "Precipitation: "
+msgstr "Sateen tod.näk.: "
+
+msgid "DAY"
+msgstr "PÄIVÄ"
+
+msgid "On  "
+msgstr ""
+
+msgid "in "
+msgstr ""
+
+msgid " dayover"
+msgstr ""
+
+msgid "The temperature varies between  "
+msgstr ""
+
+msgid "  and  "
+msgstr ""
+
+msgid "  Grad"
+msgstr ""
+
+msgid "The sun comes up at  "
+msgstr ""
+
+msgid " and goes at  "
+msgstr ""
+
+msgid " down"
+msgstr ""
+
+msgid "NIGHT"
+msgstr "YÖ"
+
+msgid " nightover"
+msgstr ""
+
+msgid "Weather for: "
+msgstr "Sää: "
+
+msgid "Weather.com: Weather forecast"
+msgstr "Weather.com:in sääennusteet"
+
+#, fuzzy
+msgid "Weatherng-SD-FF"
+msgstr "Sääennuste"
+
+msgid "Update data on start"
+msgstr "Päivitä säätiedot käynnistettäessä"
+
+msgid "Use one 8-bit area"
+msgstr ""
+
+msgid "Radarbitmap left"
+msgstr "Tutkakuvan vaakakeskitys"
+
+msgid "Radarbitmap top"
+msgstr "Tutkakuvan pystykeskitys"
+
+msgid "Radarbitmap width"
+msgstr "Tutkakuvan leveys"
+
+msgid "Radarbitmap height"
+msgstr "Tutkakuvan korkeus"
+
+msgid "Offset horizontal"
+msgstr "Vaakakeskitys"
+
+msgid "Offset vertical"
+msgstr "Pystykeskitys"
+
+msgid "Use dithering for images"
+msgstr "Ditteroi kuvat"
+
+msgid "Transparency for images"
+msgstr "Kuvien läpinäkyvyys"
+
+msgid "Image quality >=slower"
+msgstr "Kuvanlaatu"
+
+msgid "Location 1 (ID)"
+msgstr ""
+
+msgid "Location 1 (Name)"
+msgstr ""
+
+msgid "Location 2 (ID)"
+msgstr ""
+
+msgid "Location 2 (Name)"
+msgstr ""
+
+msgid "Location 3 (ID)"
+msgstr ""
+
+msgid "Location 3 (Name)"
+msgstr ""

@@ -1,0 +1,14 @@
+Source: vdr-skins-1024
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Origin: easyVDR
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.8.3
+
+Package: vdr-skins-1024
+Architecture: any
+Depends: vdr-plugin-text2skin (>= 1.3), vdr-skins-logos
+Description: all Skins for VDR's with Resolution of 1024
+ all Skins for VDR's with Resolution 1024

@@ -1,0 +1,35 @@
+Source: vdr-plugin-xine
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), gettext, pkg-config, libxine2-dev
+Standards-Version: 3.9.5
+#Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-xine/trunk/
+#Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-xine/trunk/
+Homepage: http://home.vrweb.de/~rnissl/
+
+Package: vdr-plugin-xine
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, xine-ui, libxine2-vdr
+Suggests: y4mscaler, mjpegtools, netpbm
+Description: allows xine to be a display for vdr, the Video Disk Recorder
+ Plugin for vdr which allows you to use xine, gxine or some other frontend 
+ for libxine as a display, instead of relying on an MPEG decoder / TV 
+ output card.
+ .
+ xine >= 0.99.2 and gxine >= 0.4.0 have built-in support for vdr. Other 
+ frontends may need to be patched.
+ .
+ If you want to use the SVDRP 'grab' command, you'll need mjpegtools 
+ (from Christian Marillat's archive) and y4mscaler.
+
+Package: vdr-plugin-xine-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-xine (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-xine
+ .
+ This package contains only the debugging symbols for vdr-plugin-xine 
+

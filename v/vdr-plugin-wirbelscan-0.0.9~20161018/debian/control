@@ -1,0 +1,41 @@
+Source: vdr-plugin-wirbelscan
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.6.0-5), gettext, libzvbi-dev
+Standards-Version: 3.9.1
+Homepage: http://wirbel.htpc-forum.de/wirbelscan/index2.html
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-wirbelscan/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-wirbelscan/trunk/
+
+Package: vdr-plugin-wirbelscan
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Channelscan plugin for VDR
+ This plugin allows you to scan for new channels. DVB-T/T2 and DVB-C are supported
+ as well as DVB-S and pvrinput/ptv (analog) scan.
+
+Package: vdr-plugin-wirbelscan-dev
+Architecture: all
+Depends: ${misc:Depends}, debhelper, linux-libc-dev (>= 3.0)
+Suggests: dh-make, make
+Description: Channelscan plugin for VDR
+ This plugin allows you to scan for new channels. DVB-T/T2 and DVB-C are supported
+ as well as DVB-S and pvrinput/ptv (analog) scan.
+ .
+ This package contains the header files of vdr-plugin-wirbelscan.
+ You need this package to be able to build vdr-plugins that depends on
+ the plugin wirbelscan!
+
+Package: vdr-plugin-wirbelscan-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: ${misc:Depends}, vdr-plugin-wirbelscan (= ${binary:Version}), gdb
+Description: Debug symbols for the Channelscan plugin for VDR
+ This plugin allows you to scan for new channels. DVB-T/T2 and DVB-C are supported
+ as well as DVB-S and pvrinput/ptv (analog) scan.
+ .
+ This package contains the debugging symbols for wirbelscan plugin.
+

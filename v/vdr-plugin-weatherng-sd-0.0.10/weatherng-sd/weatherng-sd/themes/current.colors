@@ -1,0 +1,30 @@
+<SKIN-ID>Mpeg-WINAMP6E
+## LINE "MUST" END WITH THE COLORVALUE AND WITHOUT SPACES
+## 0xAARRGGBB
+#
+#
+## TOP: 2 colors 
+<value> clrTopBG              =0xFF1C2128
+<value> clrTopFG              =0xFFA2F828
+#
+## BACKGROUND1
+<value> clrBG1                =0xFF26303A
+#
+## BACKGROUND2
+<value> clrBG2                =0xFF0C0C0C
+#
+## TEXT
+<value> clrHighFG             =0xFFF2A00C
+<value> clrIconFG             =0xFFDDFE00
+<value> clrTextFG             =0xFFF2A00C
+<value> clrDateFG             =0xFF9BBAD7
+#
+## STATUSBAR : 6 colors
+<value> clrStatusBG           =0xFF1C2128
+<value> clrStatusFG           =0xFFCE7B00
+<value> clrStatusRed          =0xFFC00000
+<value> clrStatusGreen        =0xFF00FF00
+<value> clrStatusYellow       =0xFFE0E222
+<value> clrStatusBlue         =0xFF3B96FD
+#
+#

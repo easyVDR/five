@@ -1,0 +1,51 @@
+text2skin-anthra_1920_FSE Revision History
+-------------------------------------------
+
+2012-01-08: Version 0.0.5
+- Fixed typo in yaVDRlogoslocale/en.xml reported by talpa@vdrportal
+- Added double-sided scrollbars for submenus suggested by nvertigo@vdrportal
+- Added special-colored separators in submenus e.g. separators in
+	channelmenu or day separators in epgsearch (suggested by iNOB@vdrportal)
+- Fixed code for NOMENULOGOS (reported by iNOB@vdrportal)
+
+2011-11-24: Version 0.0.4
+- Switched color of running, blinking timers in mainmenu 
+	from White to DarkGrey (Code by nvertigo@vdrportal)
+- Fixed CHANNELLOGOPATH of Submenu-Channellogos
+- Fixed display of RecordingName in recording-descriptions (second try ;))
+- Changed order of small buttons in channeldisplay (suggested by CKone@vdrportal)
+- Increased widht of VIDEOSIZE-button in channeldisplay,
+	VIDEOSIZE is now displayed in width and height e.g. 1920x1080
+- Added several menulogos (thanks to talpa@vdrportal for his convenient suggestions)
+- Added display for scrollability of submenulists (no *real* scrollbars ;))
+- Added special files for yaVDR-users which enable to have menulogos
+	in German and English yaVDR-menu, have a look at README for configuration.
+
+2011-11-18: Version 0.0.3
+- Added optional HEIGHT58 for taller and more menuentries 
+	(suggested and prepared by jack-itb@vdrportal)
+- Added display of timerconflicts in channelInfo and mainmenu 
+	(suggested by nvertigo@vdrportal)
+- Added display of videosize of the currently broadcasted event
+	in channelInfo (suggested by Taipan@vdrportal)
+- Removed redundance in code for mainmenulogos
+- Modified display of currently running timers: no date, only "until stoptime"
+	is shown (suggested and prepared by nvertigo@vdrportal)
+- Switched color of running, blinking timers in mainmenu 
+	from red to white, to avoid distorted text
+- Added copying of sub- and mainmenufolder to Makefile 
+	(suggested by rudirabbit@vdrportal)
+- Fixed and added several translations
+- Fixed a lot of typos (reported by kind 'community'@vdrportal)
+- Fixed display of RecordingName in recording-descriptions
+
+2011-11-15: Version 0.0.2
+- Fixed typos in README (reported by liquidolze@vdrportal)
+- Fixed textcolor of SMALL- and LARGEMENUFONT (reported by caps!@vdrportal)
+- Fixed condition of RECORDINGIMAGES (reported by caps!@vdrportal)
+- Added background for mainmenu
+- New design for next timers in mainmenu
+- Added NO_RUNNING_TIMER_BLINK
+
+2011-11-14: Initial release of Version 0.0.1
+- Based on anthra_1920_FSt with particulary new design and layout

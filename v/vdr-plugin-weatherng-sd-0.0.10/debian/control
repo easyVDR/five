@@ -1,0 +1,16 @@
+Source: vdr-plugin-weatherng-sd
+Section: video
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8.0.0), cdbs, vdr-dev (>= 1.7.21), libimlib2-dev
+Standards-Version: 3.9.4
+Homepage: http://www.glaserei-franz.de
+
+Package: vdr-plugin-weatherng-sd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, wget, imagemagick
+Description: VDR plugin for FF-SD to download and display weather maps and forecasts
+ This plugin can download weather maps from the Internet and display them on
+ VDR's OSD. With a freely available licence from www.weather.com it will
+ also display weather forecast information for the next 9 days.

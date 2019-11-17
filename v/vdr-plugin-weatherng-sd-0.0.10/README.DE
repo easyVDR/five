@@ -1,0 +1,137 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Sascha Bajonczak <BEE-JAY@gmx.net>
+
+Project's homepage:          http://vdr.glaserei-franz.de
+
+Latest version available at: http://vdr.glaserei-franz.de
+
+See the file COPYING for license information.
+
+===================================================================================
+
+
+=======================================================================================================
+Bevor man weiterliest und die Beispiele in weatherng.sh benutzt , erklaert man , dass man seitens "The Weather Channel",
+kurz "TWC" die Erlaubnis hat , auf deren Datei zuzugreifen und deren "Terms of Use" akzeptiert.
+Zu finden unter http://www.weather.com .
+Auch muss man fuer kopiergeschuetzte Satelitenbilder die Erlaubnis des jeweiligen Rechteinhabers,
+fuer das Herunterladen und Anzeigen, besitzen.
+========================================================================================================
+
+
+
+Beschreibung:
+
+Zeigt das Die Wettervorhersage für die nächsten 10 Tage an. 
+
+Der Aufruf heisst nun "-P weatherng" und nicht mehr  "-P wetter" oder "-P Weather-NG"
+
+
+================
+Vorraussetzungen:
+=================
+ImageMagick oder Imlib2 (Beachte dazu die Info in der Datei "Makefile")
+Internet optional ;o)
+
+
+=============
+Quickinstall:
+=============
+
+Plugin in $VDRSOURCE/PLUGINS/src/ entpacken
+Verlinken mit "weatherng" (ln -s weatherng-version weatherng)
+Fertige lib von $VDRSOURCE/PLUGINS/lib zu den anderen Plugin-libs kopieren
+Den Ordner weatherng nach $VDR/$PLUGINCONFIG kopieren und weatherng.sh editieren.
+Im Scrit den Parameter $SETUPCONF (Pfad zur setup.conf von VDR , zB /etc/vdr) anpassen.
+Auch dort seinen Key und die 6 Urls zu den Radarmaps eintragen.
+
+VDR mit "-P weatherng" starten .
+In das Setup vom Plugin wechseln und die Einstellungen vornehmen .
+Vor allem die Locations anpassen.
+
+Dann das Plugin "Wetterbericht" aufrufen (Internetverbindung sollte bestehen)
+Zuerst werden keine Daten angezeigt. Deshalb die Daten mit Taste OK aktualisieren.
+Bei korrekter "weatherng.sh" sollten nun ein Wartesymbol erscheinen und die Wetterdaten/Radarmaps heruntergeladen werden.
+
+
+=============
+Installation:
+=============
+
+1.
+Plugin entpacken und wie gewohnt kompilieren.
+Dann die fertige lib zu den anderen Plugins kopieren.
+
+2.
+Die Optionen festlegen!
+
+Startet das Plugin mit den Optionen "-D"/"--data"  "I"/"--images" "S"/"--script"
+
+-I	Dort ist das Verzeichniss wo sich der "images" Ordner befindet
+	Somit ist es nun möglich auch die images auf die CF zu laden oder auf das Ramdrive.
+
+-D      Dort werden die Daten abgelegt.
+
+-S      Pfad zu "weatherng.sh" (z.B.: /usr/local/bin oder dort wo man das images Verzeichnis hinkopiert hat)
+
+-C      Pfad zum Verzeichnis weatherng (zb. /etc/vdr/plugins )
+	
+Werden die Optionen nicht angeben so wird standardmaessig $PLUGINCONFIG/weatherng benutzt.
+
+
+Struktur :
+Angenommen das Verzeichnis fuer die Konfigurationen der plugins liegt in
+/etc/VDR/plugins , dann muss das so aussehen fuer korrekte Funktionen :
+
+Aufrufbeispiele:
+==================
+
+./vdr -P weatherng 
+
+/etc/VDR/plugins/weatherng
+/etc/VDR/plugins/weatherng/images/*.png
+/etc/VDR/plugins/weatherng/weatherng.sh
+
+
+
+./vdr -P'weatherng -D /tmp/wetter -I /mnt/Ramdisk -S /usr/local/bin'
+
+/tmp/wetter
+/mnt/Ramdisk/images/*.png
+/usr/local/bin/weatherng.sh
+
+
+3. 
+Dann muss noch das Script "weatherng.sh" (findet man im Verzeichnisn "examples") angepasst
+werden .
+Fuer die Beispiele muss man die Erlaubnis fuer das Herunterladen/Anzeigen besitzen und eigene URLs eintragen.
+Auf keinen Fall ist fuer korrekte Funktion der Dateiname zu aendern.
+
+Das Verzeichnis "images" beinhaltet die Wettersymbole und muss zur Anzeige in das
+Konfigurationsverzeichnis des Plugin , solange --images nicht angegeben ,kopiert werden.
+
+Dann muss man seine Einstellungen im script "weatherng.sh" machen.
+
+Die eigene ID kann man folgendermassen herausfinden:
+
+Ruft die Seite http://www.weather.com auf. 
+
+Geb dort eure Stadt ein zb "Herne"
+
+Nach dem Suchen bekommt Ihr ein Link zur eurer Stadt, in der URL steht ein Code,
+der wie folgt aufgebaut ist 
+GMXX0056 (Angabe für den Ort Herne)
+wobei 0056 ausgetauscht wird, mit der Nummer die für den jeweiligen Ort angegeben wurde.
+
+
+____________________________________________
+Bedienung.
+
+Im Vorhersagemodus:
+	Links= Springt ein Tag zurück
+	Rechts = Springt ein Tag vor
+        Back = Beenden
+
+Im Satelitenmodus:
+	Back = Kommt wieder in den Vorhersagemodus

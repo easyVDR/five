@@ -1,0 +1,230 @@
+vdr-plugin-xine (0.9.5+git20160102-1easyVDR0~focal) focal; urgency=high
+
+  * remove 02_xine-plugin-0.9.4-grab.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 18:00:12 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR8~focal) focal; urgency=high
+
+  * fix 02_xine-plugin-0.9.4-grab.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 17:54:33 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR7~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 17:22:01 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR6~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 17:00:30 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR5~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 16:47:06 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR4~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 19:21:45 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:55:32 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:34:41 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR1~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:32:41 +0100
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR0~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * debhelper 9
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 08 Jul 2017 17:06:28 +0200
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:50:33 +0200
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:51:39 +0200
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:52:26 +0200
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:11:42 +0200
+
+vdr-plugin-xine (0.9.5+git20160102-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit: 47cb5839 - update Makefile to new scheme
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Jan 2016 19:13:00 +0100
+
+vdr-plugin-xine (0.9.5+git20151119-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:57:26 +0100
+
+vdr-plugin-xine (0.9.5+git20151119-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit: 47cb5839 - update Makefile to new scheme
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 19 Nov 2015 23:34:14 +0100
+
+vdr-plugin-xine (0.9.4-15easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild for new ffmepg-2.7.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:25:35 +0200
+
+vdr-plugin-xine (0.9.4-15easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for new ffmepg-2.7.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Aug 2015 23:59:33 +0200
+
+vdr-plugin-xine (0.9.4-15easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 20 Aug 2015 22:28:43 +0200
+
+vdr-plugin-xine (0.9.4-15easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 22:10:30 +0200
+
+vdr-plugin-xine (0.9.4-15easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 22 Jun 2015 22:13:59 +0200
+
+vdr-plugin-xine (0.9.4-15easyVDR1~trusty) trusty; urgency=high
+
+  * add depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 14 Apr 2015 18:29:41 +0200
+
+vdr-plugin-xine (0.9.4-14easyVDR11~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:33:30 +0200
+
+vdr-plugin-xine (0.9.4-14easyVDR10~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:45:24 +0100
+
+vdr-plugin-xine (0.9.4-14easyVDR9~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:27:03 +0100
+
+vdr-plugin-xine (0.9.4-14easyVDR8~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:35:34 +0100
+
+vdr-plugin-xine (0.9.4-14easyVDR7~trusty) trusty; urgency=high
+
+  * add compat patch for vdr 2.1.10 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Feb 2015 01:43:49 +0100
+
+vdr-plugin-xine (0.9.4-14easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 26 Jan 2015 00:27:20 +0100
+
+vdr-plugin-xine (0.9.4-14easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 23:02:17 +0100
+
+vdr-plugin-xine (0.9.4-14easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:23:51 +0200
+
+vdr-plugin-xine (0.9.4-14easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:34:08 +0200
+
+vdr-plugin-xine (0.9.4-14easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 15 Apr 2014 01:41:37 +0200
+
+vdr-plugin-xine (0.9.4-14easyVDR1~trusty) trusty; urgency=high
+
+  * remove grab patch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 15 Jan 2014 01:22:51 +0100
+
+vdr-plugin-xine (0.9.4-14easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 15 Jan 2014 01:09:16 +0100
+
+vdr-plugin-xine (0.9.4-10easyVDR1~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Nov 2013 21:13:08 +0100
+
+vdr-plugin-xine (0.9.4-10easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 08 Oct 2013 01:14:02 +0200
+
+vdr-plugin-xine (0.9.4-1easyVDR0~raring) raring; urgency=high
+
+  * new release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 06 Oct 2013 02:23:25 +0200

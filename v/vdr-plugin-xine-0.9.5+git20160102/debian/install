@@ -1,0 +1,5 @@
+#libvdr-xine.so.*                usr/lib/vdr/plugins/
+debian/plugin.xine.conf         etc/vdr/plugins/
+xineplayer                      usr/bin/
+#locale	                        usr/share/
+data/*.mpg		        usr/share/vdr-plugin-xine/

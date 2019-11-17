@@ -1,0 +1,1149 @@
+# VDR language source file.
+# Copyright (C) 2008 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Oktay Yolgeçen <oktay_73@yahoo.de>, 2007, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.6.0\n"
+"Report-Msgid-Bugs-To: <>\n"
+"POT-Creation-Date: 2011-11-20 16:51+0100\n"
+"PO-Revision-Date: 2011-11-18 05:35+0100\n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: Turkish\n"
+"Language: tr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Channels"
+msgstr "Kanallar"
+
+msgid "Timers"
+msgstr "Zamanlayıcı"
+
+#, fuzzy
+msgid "Schedule"
+msgstr "Program"
+
+msgid "Setup"
+msgstr "Ayarlar"
+
+msgid "Commands"
+msgstr "Komutlar"
+
+msgid "Recordings"
+msgstr "Kayıtlar"
+
+msgid "Now"
+msgstr ""
+
+#, fuzzy
+msgid "Next"
+msgstr "Sonraki"
+
+msgid "Directory browser"
+msgstr ""
+
+msgid "hour"
+msgstr ""
+
+msgid "cutted"
+msgstr ""
+
+msgid "Channel"
+msgstr "Kanal"
+
+#, fuzzy
+msgid "Filesize"
+msgstr "Kütük"
+
+msgid "Volume"
+msgstr "Volüm "
+
+msgid "Mute"
+msgstr "Sessiz"
+
+#~ msgid "*** Invalid Channel ***"
+#~ msgstr "*** Geçersiz kanal ***"
+
+#, fuzzy
+#~ msgid "Channel locked by LNB!"
+#~ msgstr "Kanal geçersiz (kayıt ediliyor)!"
+
+#~ msgid "Channel not available!"
+#~ msgstr "Kanal kullanılamıyor!"
+
+#~ msgid "Can't start Transfer Mode!"
+#~ msgstr "Transfer modu başlatılamıyor!"
+
+#~ msgid "off"
+#~ msgstr "kapalı"
+
+#~ msgid "auto"
+#~ msgstr "otomatik"
+
+#~ msgid "none"
+#~ msgstr "hiç"
+
+#~ msgid "Polarization"
+#~ msgstr "Kutuplaşma"
+
+#~ msgid "Srate"
+#~ msgstr "Srate"
+
+#~ msgid "Inversion"
+#~ msgstr "İnversiyon"
+
+#~ msgid "CoderateH"
+#~ msgstr "CoderateH"
+
+#~ msgid "CoderateL"
+#~ msgstr "CoderateL"
+
+#~ msgid "Modulation"
+#~ msgstr "Modülasyon"
+
+#~ msgid "Bandwidth"
+#~ msgstr "Bant genişliği"
+
+#~ msgid "Transmission"
+#~ msgstr "İletim"
+
+#~ msgid "Guard"
+#~ msgstr "Koruma"
+
+#~ msgid "Hierarchy"
+#~ msgstr "Hiyerarşi"
+
+#~ msgid "Starting EPG scan"
+#~ msgstr "EPG tarama başlıyor"
+
+#~ msgid "No title"
+#~ msgstr "İsim yok"
+
+#~ msgid "LanguageName$English"
+#~ msgstr "Türkçe"
+
+#~ msgid "LanguageCode$eng"
+#~ msgstr "tur"
+
+#~ msgid "Phase 1: Detecting RC code type"
+#~ msgstr "Faz 1: Kumandanın kodu aranıyor"
+
+#~ msgid "Press any key on the RC unit"
+#~ msgstr "Kumandada herhangi bir tuşa bas"
+
+#~ msgid "RC code detected!"
+#~ msgstr "Kumandanın kodu bulundu!"
+
+#~ msgid "Do not press any key..."
+#~ msgstr "Tuşlara basma..."
+
+#~ msgid "Phase 2: Learning specific key codes"
+#~ msgstr "Faz 2: Belirli tuş kodu eğitiliyor"
+
+#~ msgid "Press key for '%s'"
+#~ msgstr "'%s' için tuş seç"
+
+#~ msgid "Press 'Up' to confirm"
+#~ msgstr "Onaylamak için 'Yukarı' bas"
+
+#~ msgid "Press 'Down' to continue"
+#~ msgstr "Devam etmek için 'Aşağı' bas"
+
+#~ msgid "(press 'Up' to go back)"
+#~ msgstr "(Geri dönmek için 'Yukarı' bas)"
+
+#~ msgid "(press 'Down' to end key definition)"
+#~ msgstr "(Bitirmek için 'Aşağı' bas)"
+
+#~ msgid "(press 'Menu' to skip this key)"
+#~ msgstr "(Tuşu atlamak için 'Menü' bas)"
+
+#~ msgid "Learning Remote Control Keys"
+#~ msgstr "Uzaktan kumandanın tuşları eğitiliyor"
+
+#~ msgid "Phase 3: Saving key codes"
+#~ msgstr "Faz 3: Tuş ayarlarını kesinleştir"
+
+#~ msgid "Press 'Up' to save, 'Down' to cancel"
+#~ msgstr "Kesinleştirmek için 'Yukarı', Iptal etmek için 'Aşağı' bas"
+
+#~ msgid "Key$Up"
+#~ msgstr "Yukarı"
+
+#~ msgid "Key$Down"
+#~ msgstr "Aşağı"
+
+#~ msgid "Key$Menu"
+#~ msgstr "Menü"
+
+#~ msgid "Key$Ok"
+#~ msgstr "Tamam"
+
+#~ msgid "Key$Back"
+#~ msgstr "Geri"
+
+#~ msgid "Key$Left"
+#~ msgstr "Sol"
+
+#~ msgid "Key$Right"
+#~ msgstr "Sağ"
+
+#~ msgid "Key$Red"
+#~ msgstr "Kırmızı"
+
+#~ msgid "Key$Green"
+#~ msgstr "Yeşil"
+
+#~ msgid "Key$Yellow"
+#~ msgstr "Sarı"
+
+#~ msgid "Key$Blue"
+#~ msgstr "Mavi"
+
+#~ msgid "Key$Info"
+#~ msgstr "Bilgi"
+
+#~ msgid "Key$Play"
+#~ msgstr "Göster"
+
+#~ msgid "Key$Pause"
+#~ msgstr "Durakla"
+
+#~ msgid "Key$Stop"
+#~ msgstr "Durdur"
+
+#~ msgid "Key$Record"
+#~ msgstr "Kayıt et"
+
+#~ msgid "Key$FastFwd"
+#~ msgstr "İleri sar"
+
+#~ msgid "Key$FastRew"
+#~ msgstr "Geri sar"
+
+#~ msgid "Key$Prev"
+#~ msgstr "Önceki"
+
+#~ msgid "Key$Power"
+#~ msgstr "Kapat"
+
+#~ msgid "Key$Channel+"
+#~ msgstr "Kanal+"
+
+#~ msgid "Key$Channel-"
+#~ msgstr "Kanal-"
+
+#~ msgid "Key$PrevChannel"
+#~ msgstr "Önceki kanal"
+
+#~ msgid "Key$Volume+"
+#~ msgstr "Volüm+"
+
+#~ msgid "Key$Volume-"
+#~ msgstr "Volüm-"
+
+#~ msgid "Key$Audio"
+#~ msgstr "Audio"
+
+#~ msgid "Key$Subtitles"
+#~ msgstr "Altyazı"
+
+#~ msgid "Key$Schedule"
+#~ msgstr "Program"
+
+#~ msgid "Key$Channels"
+#~ msgstr "Kanallar"
+
+#~ msgid "Key$Timers"
+#~ msgstr "Zamanlayıcı"
+
+#~ msgid "Key$Recordings"
+#~ msgstr "Kayıtlar"
+
+#~ msgid "Key$Setup"
+#~ msgstr "Ayarlar"
+
+#~ msgid "Key$Commands"
+#~ msgstr "Komutlar"
+
+#~ msgid "Key$User0"
+#~ msgstr "Kullanıcı0"
+
+#~ msgid "Key$User1"
+#~ msgstr "Kullanıcı1"
+
+#~ msgid "Key$User2"
+#~ msgstr "Kullanıcı2"
+
+#~ msgid "Key$User3"
+#~ msgstr "Kullanıcı3"
+
+#~ msgid "Key$User4"
+#~ msgstr "Kullanıcı4"
+
+#~ msgid "Key$User5"
+#~ msgstr "Kullanıcı5"
+
+#~ msgid "Key$User6"
+#~ msgstr "Kullanıcı6"
+
+#~ msgid "Key$User7"
+#~ msgstr "Kullanıcı7"
+
+#~ msgid "Key$User8"
+#~ msgstr "Kullanıcı8"
+
+#~ msgid "Key$User9"
+#~ msgstr "Kullanıcı9"
+
+#~ msgid "Disk"
+#~ msgstr "Disk"
+
+#~ msgid "free"
+#~ msgstr "boş"
+
+#~ msgid "Free To Air"
+#~ msgstr "Şifresiz"
+
+#~ msgid "encrypted"
+#~ msgstr "Şifreli"
+
+#~ msgid "Edit channel"
+#~ msgstr "Kanal ayarlarını değiştir"
+
+#~ msgid "Name"
+#~ msgstr "İsim"
+
+#~ msgid "Source"
+#~ msgstr "Kaynak"
+
+#~ msgid "Frequency"
+#~ msgstr "Frekans"
+
+#~ msgid "Vpid"
+#~ msgstr "Vpid"
+
+#~ msgid "Ppid"
+#~ msgstr "Ppid"
+
+#~ msgid "Apid1"
+#~ msgstr "Apid1"
+
+#~ msgid "Apid2"
+#~ msgstr "Apid2"
+
+#~ msgid "Dpid1"
+#~ msgstr "Dpid1"
+
+#~ msgid "Dpid2"
+#~ msgstr "Dpid2"
+
+#~ msgid "Spid1"
+#~ msgstr "Spid1"
+
+#~ msgid "Spid2"
+#~ msgstr "Spid2"
+
+#~ msgid "Tpid"
+#~ msgstr "Tpid"
+
+#~ msgid "CA"
+#~ msgstr "CA"
+
+#~ msgid "Sid"
+#~ msgstr "Sid"
+
+#, fuzzy
+#~ msgid "Rid"
+#~ msgstr "Sid"
+
+#~ msgid "Channel settings are not unique!"
+#~ msgstr "Kanal ayarları belli değıl!"
+
+#~ msgid "Button$Edit"
+#~ msgstr "Değiştir"
+
+#~ msgid "Button$New"
+#~ msgstr "Yeni"
+
+#~ msgid "Button$Delete"
+#~ msgstr "Sil"
+
+#~ msgid "Button$Mark"
+#~ msgstr "İşaretle"
+
+#~ msgid "Channel is being used by a timer!"
+#~ msgstr "Kanal zamanlayıcıdan kullanılıyor!"
+
+#~ msgid "Delete channel?"
+#~ msgstr "Kanalı sil?"
+
+#~ msgid "Edit timer"
+#~ msgstr "Zamanlayıcıyı ayarla"
+
+#~ msgid "Active"
+#~ msgstr "Aktif"
+
+#~ msgid "Day"
+#~ msgstr "Gün"
+
+#~ msgid "Start"
+#~ msgstr "Başlangıç"
+
+#~ msgid "Stop"
+#~ msgstr "Bitiş"
+
+#~ msgid "VPS"
+#~ msgstr "VPS"
+
+#~ msgid "Priority"
+#~ msgstr "Öncelik"
+
+#~ msgid "Lifetime"
+#~ msgstr "Ömrü"
+
+#~ msgid "yes"
+#~ msgstr "evet"
+
+#~ msgid "no"
+#~ msgstr "hayır"
+
+#~ msgid "First day"
+#~ msgstr "İlk gün"
+
+#~ msgid "Button$On/Off"
+#~ msgstr "Aç/Kapat"
+
+#~ msgid "Button$Info"
+#~ msgstr "Bilgi"
+
+#~ msgid "Delete timer?"
+#~ msgstr "Zamanlayıcıyı sil"
+
+#~ msgid "Timer still recording - really delete?"
+#~ msgstr "Zamanlayıcı kayıt ediyor - buna rağmen sil?"
+
+#~ msgid "Event"
+#~ msgstr "Yayın"
+
+#~ msgid "Button$Timer"
+#~ msgstr "Zamanlayıcı"
+
+#~ msgid "Button$Record"
+#~ msgstr "Kayıt et"
+
+#~ msgid "Button$Switch"
+#~ msgstr "Değiştir"
+
+#~ msgid "What's on now?"
+#~ msgstr "Şimdiki yayınlar"
+
+#~ msgid "What's on next?"
+#~ msgstr "Gelecek yayınlar"
+
+#~ msgid "Button$Next"
+#~ msgstr "Sonra"
+
+#~ msgid "Button$Now"
+#~ msgstr "Şimdi"
+
+#~ msgid "Button$Schedule"
+#~ msgstr "Program"
+
+#~ msgid "Can't switch channel!"
+#~ msgstr "Kanala değiştirelemiyor!"
+
+#~ msgid "Schedule - %s"
+#~ msgstr "Program - %s"
+
+#~ msgid "This event - %s"
+#~ msgstr "Bu yayın - %s"
+
+#~ msgid "This event - all channels"
+#~ msgstr "Bu yayın - tüm kanallar"
+
+#~ msgid "All events - all channels"
+#~ msgstr "Tüm yayınlar - tüm kanallar"
+
+#~ msgid "Please enter %d digits!"
+#~ msgstr "Lütfen %d rakam veriniz!"
+
+#~ msgid "CAM not responding!"
+#~ msgstr "CAM yanıt vermiyor!"
+
+#~ msgid "Recording info"
+#~ msgstr "Kayıt bilgisi"
+
+#~ msgid "Button$Play"
+#~ msgstr "Göster"
+
+#~ msgid "Button$Rewind"
+#~ msgstr "Baslangıç"
+
+#, fuzzy
+#~ msgid "Rename recording"
+#~ msgstr "Kayıtı sil?"
+
+#, fuzzy
+#~ msgid "Date"
+#~ msgstr "Srate"
+
+#, fuzzy
+#~ msgid "PES"
+#~ msgstr "VPS"
+
+#, fuzzy
+#~ msgid "Delete marks information?"
+#~ msgstr "Kayıtı sil?"
+
+#, fuzzy
+#~ msgid "Delete resume information?"
+#~ msgstr "Kayıtı sil?"
+
+#~ msgid "Error while accessing recording!"
+#~ msgstr "Kayıt okuma hatası!"
+
+#~ msgid "Button$Open"
+#~ msgstr "Aç"
+
+#~ msgid "Delete recording?"
+#~ msgstr "Kayıtı sil?"
+
+#~ msgid "Error while deleting recording!"
+#~ msgstr "Kayıt silme hatası!"
+
+#~ msgid "Recording commands"
+#~ msgstr "Kayıt komutları"
+
+#~ msgid "never"
+#~ msgstr "hiç"
+
+#~ msgid "skin dependent"
+#~ msgstr "yüzeye bağimli"
+
+#~ msgid "always"
+#~ msgstr "hep"
+
+#~ msgid "OSD"
+#~ msgstr "OSD"
+
+#~ msgid "Setup.OSD$Language"
+#~ msgstr "Dil"
+
+#~ msgid "Setup.OSD$Skin"
+#~ msgstr "Yüzey"
+
+#~ msgid "Setup.OSD$Theme"
+#~ msgstr "Tema"
+
+#, fuzzy
+#~ msgid "Setup.OSD$WarEagle icons"
+#~ msgstr "Küçük font"
+
+#~ msgid "Setup.OSD$Left (%)"
+#~ msgstr "Sol (%)"
+
+#~ msgid "Setup.OSD$Top (%)"
+#~ msgstr "Üst (%)"
+
+#~ msgid "Setup.OSD$Width (%)"
+#~ msgstr "Genişlik (%)"
+
+#~ msgid "Setup.OSD$Height (%)"
+#~ msgstr "Yükseklik (%)"
+
+#~ msgid "Setup.OSD$Message time (s)"
+#~ msgstr "Mesaj gösterme zamanı (sn)"
+
+#~ msgid "Setup.OSD$Use small font"
+#~ msgstr "Küçük font kullan"
+
+#~ msgid "Setup.OSD$Anti-alias"
+#~ msgstr "Anti-alias"
+
+#~ msgid "Setup.OSD$Default font"
+#~ msgstr "Olağan font"
+
+#~ msgid "Setup.OSD$Small font"
+#~ msgstr "Küçük font"
+
+#~ msgid "Setup.OSD$Fixed font"
+#~ msgstr "Çakılı font"
+
+#~ msgid "Setup.OSD$Default font size (%)"
+#~ msgstr "Olağan font boyutu (%)"
+
+#~ msgid "Setup.OSD$Small font size (%)"
+#~ msgstr "Küçük font boyutu (%)"
+
+#~ msgid "Setup.OSD$Fixed font size (%)"
+#~ msgstr "Çakılı font boyutu (%)"
+
+#~ msgid "Setup.OSD$Channel info position"
+#~ msgstr "Kanal bilgi pozisyonu"
+
+#~ msgid "bottom"
+#~ msgstr "alt"
+
+#~ msgid "top"
+#~ msgstr "üst"
+
+#~ msgid "Setup.OSD$Channel info time (s)"
+#~ msgstr "Kanal bilgi gösterme zamanı (sn)"
+
+#~ msgid "Setup.OSD$Info on channel switch"
+#~ msgstr "Kanal değiştirme bilgisi"
+
+#~ msgid "Setup.OSD$Timeout requested channel info"
+#~ msgstr "Kanal bilginin zaman aşımı"
+
+#~ msgid "Setup.OSD$Scroll pages"
+#~ msgstr "Sayfa kaydırma"
+
+#~ msgid "Setup.OSD$Scroll wraps"
+#~ msgstr "Sarım kaydırma"
+
+#~ msgid "Setup.OSD$Menu key closes"
+#~ msgstr "Menü düğmesi kapatıyor"
+
+#~ msgid "Setup.OSD$Recording directories"
+#~ msgstr "Kayıt dizinleri"
+
+#, fuzzy
+#~ msgid "Setup.OSD$Main menu command position"
+#~ msgstr "Kanal bilgi pozisyonu"
+
+#, fuzzy
+#~ msgid "Setup.OSD$Show valid input"
+#~ msgstr "Küçük font"
+
+#~ msgid "EPG"
+#~ msgstr "EPG"
+
+#~ msgid "Button$Scan"
+#~ msgstr "Tara"
+
+#~ msgid "Setup.EPG$EPG scan timeout (h)"
+#~ msgstr "EPG tarama zaman aşımı (sa)"
+
+#~ msgid "Setup.EPG$EPG bugfix level"
+#~ msgstr "EPG hata çözümleme ölçüsü"
+
+#~ msgid "Setup.EPG$EPG linger time (min)"
+#~ msgstr "Eski EPG göster (dak)"
+
+#~ msgid "Setup.EPG$Set system time"
+#~ msgstr "Bilgisayar saatini ayarla"
+
+#~ msgid "Setup.EPG$Use time from transponder"
+#~ msgstr "Bilgisayar saati için uydu alıcı-verici"
+
+#~ msgid "Setup.EPG$Preferred languages"
+#~ msgstr "Dil tercihleri"
+
+#~ msgid "Setup.EPG$Preferred language"
+#~ msgstr "Dil tercihi"
+
+#~ msgid "pan&scan"
+#~ msgstr "pan&scan"
+
+#~ msgid "letterbox"
+#~ msgstr "letterbox"
+
+#~ msgid "center cut out"
+#~ msgstr "center cut out"
+
+#~ msgid "names only"
+#~ msgstr "sırf isimler"
+
+#~ msgid "PIDs only"
+#~ msgstr "sırf PID'ler"
+
+#~ msgid "names and PIDs"
+#~ msgstr "İsimler ve PID'ler"
+
+#~ msgid "add new channels"
+#~ msgstr "yeni kanallar ekle"
+
+#~ msgid "add new transponders"
+#~ msgstr "yeni uydu alıcı-verici ekle"
+
+#~ msgid "DVB"
+#~ msgstr "DVB"
+
+#, fuzzy
+#~ msgid "Setup.DVB$Use DVB receivers"
+#~ msgstr "Dolby Dijital ses kullan"
+
+#~ msgid "Setup.DVB$Primary DVB interface"
+#~ msgstr "Primer DVB arayüzü"
+
+#~ msgid "Setup.DVB$Video format"
+#~ msgstr "Video formatı"
+
+#~ msgid "Setup.DVB$Video display format"
+#~ msgstr "Video görüntü biçimi"
+
+#~ msgid "Setup.DVB$Use Dolby Digital"
+#~ msgstr "Dolby Dijital ses kullan"
+
+#~ msgid "Setup.DVB$Update channels"
+#~ msgstr "Kanalları yenile"
+
+#, fuzzy
+#~ msgid "Setup.DVB$channel binding by Rid"
+#~ msgstr "Kanal bilgi pozisyonu"
+
+#~ msgid "Setup.DVB$Audio languages"
+#~ msgstr "Audio dilleri"
+
+#~ msgid "Setup.DVB$Audio language"
+#~ msgstr "Audio dili"
+
+#~ msgid "Setup.DVB$Display subtitles"
+#~ msgstr "Altyazı gÃster"
+
+#~ msgid "Setup.DVB$Subtitle languages"
+#~ msgstr "Altyazı dilleri"
+
+#~ msgid "Setup.DVB$Subtitle language"
+#~ msgstr "Altyazı dili"
+
+#~ msgid "Setup.DVB$Subtitle offset"
+#~ msgstr "Altyazı ofset"
+
+#~ msgid "Setup.DVB$Subtitle foreground transparency"
+#~ msgstr "Altyazı Ãn şeffaflık"
+
+#~ msgid "Setup.DVB$Subtitle background transparency"
+#~ msgstr "Altyazı arka şeffaflık"
+
+#~ msgid "LNB"
+#~ msgstr "LNB"
+
+#, fuzzy
+#~ msgid "Setup.LNB$Log LNB usage"
+#~ msgstr "Alt LNB frekansı (MHz)"
+
+#~ msgid "Setup.LNB$Use DiSEqC"
+#~ msgstr "DiSEqC kullan"
+
+#~ msgid "Setup.LNB$SLOF (MHz)"
+#~ msgstr "SLOF (MHz)"
+
+#~ msgid "Setup.LNB$Low LNB frequency (MHz)"
+#~ msgstr "Alt LNB frekansı (MHz)"
+
+#~ msgid "Setup.LNB$High LNB frequency (MHz)"
+#~ msgstr "Üst LNB frekansı (MHz)"
+
+#~ msgid "CAM reset"
+#~ msgstr "CAM sıfırlandı"
+
+#~ msgid "CAM present"
+#~ msgstr "CAM mevcut"
+
+#~ msgid "CAM ready"
+#~ msgstr "CAM hazır"
+
+#~ msgid "CAM"
+#~ msgstr "CAM"
+
+#~ msgid "Button$Menu"
+#~ msgstr "Menü"
+
+#~ msgid "Button$Reset"
+#~ msgstr "Sıfırla"
+
+#~ msgid "Opening CAM menu..."
+#~ msgstr "CAM menüsü açılıyor..."
+
+#~ msgid "Can't open CAM menu!"
+#~ msgstr "CAM menüsü açılamıyor!"
+
+#~ msgid "CAM is in use - really reset?"
+#~ msgstr "CAM kullanılıyor - gerçekden sıfırla?"
+
+#~ msgid "Can't reset CAM!"
+#~ msgstr "CAM sıfırlanamadı!"
+
+#~ msgid "Recording"
+#~ msgstr "Kayıt"
+
+#~ msgid "Setup.Recording$Margin at start (min)"
+#~ msgstr "Başında tolerans (dak)"
+
+#~ msgid "Setup.Recording$Margin at stop (min)"
+#~ msgstr "Sonunda tolerans (dak)"
+
+#~ msgid "Setup.Recording$Primary limit"
+#~ msgstr "Primer limit"
+
+#~ msgid "Setup.Recording$Default priority"
+#~ msgstr "Olağan priorite"
+
+#~ msgid "Setup.Recording$Default lifetime (d)"
+#~ msgstr "Olağan çekim ömrü (gün)"
+
+#~ msgid "Setup.Recording$Pause priority"
+#~ msgstr "Duraklama prioritesi"
+
+#~ msgid "Setup.Recording$Pause lifetime (d)"
+#~ msgstr "Duraklama ömrü (gün)"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Video directory policy"
+#~ msgstr "Kayıt dizinleri"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Number of video directories"
+#~ msgstr "Kayıt dizinleri"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Video %d priority"
+#~ msgstr "Duraklama prioritesi"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Video %d min. free MB"
+#~ msgstr "Maksimum Video kütük büyüklügü (MB)"
+
+#~ msgid "Setup.Recording$Use episode name"
+#~ msgstr "Episod ismini kullan"
+
+#~ msgid "Setup.Recording$Use VPS"
+#~ msgstr "VPS kullan"
+
+#~ msgid "Setup.Recording$VPS margin (s)"
+#~ msgstr "VPS tolerans (s)"
+
+#~ msgid "Setup.Recording$Mark instant recording"
+#~ msgstr "Derhal çekimi işaretle"
+
+#~ msgid "Setup.Recording$Name instant recording"
+#~ msgstr "Derhal çekimi isimlendir"
+
+#~ msgid "Setup.Recording$Instant rec. time (min)"
+#~ msgstr "Derhal çekim süresi (dak)"
+
+#~ msgid "Setup.Recording$Max. video file size (MB)"
+#~ msgstr "Maksimum Video kütük büyüklügü (MB)"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Max. recording size (GB)"
+#~ msgstr "Maksimum Video kütük büyüklügü (MB)"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Hard Link Cutter"
+#~ msgstr "Derhal çekimi işaretle"
+
+#~ msgid "Setup.Recording$Split edited files"
+#~ msgstr "Düzenlenmiş kütükleri ayır"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Show date"
+#~ msgstr "Düzenlenmiş kütükleri ayır"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Show time"
+#~ msgstr "Duraklama ömrü (gün)"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Show length"
+#~ msgstr "VPS kullan"
+
+#~ msgid "Replay"
+#~ msgstr "Tekrar"
+
+#~ msgid "Setup.Replay$Multi speed mode"
+#~ msgstr "Katlı hız sarma"
+
+#~ msgid "Setup.Replay$Show replay mode"
+#~ msgstr "Gösteriş bilgisi"
+
+#~ msgid "Setup.Replay$Resume ID"
+#~ msgstr "Gösteriş ID'si"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Jump Seconds"
+#~ msgstr "VPS kullan"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Jump Seconds Slow"
+#~ msgstr "VPS kullan"
+
+#, fuzzy
+#~ msgid "Setup.Recording$Jump Seconds (Repeat)"
+#~ msgstr "Episod ismini kullan"
+
+#, fuzzy
+#~ msgid "Setup.Replay$Jump&Play"
+#~ msgstr "Gösteriş ID'si"
+
+#, fuzzy
+#~ msgid "Setup.Replay$Play&Jump"
+#~ msgstr "Gösteriş ID'si"
+
+#, fuzzy
+#~ msgid "Setup.Replay$Pause at last mark"
+#~ msgstr "Katlı hız sarma"
+
+#, fuzzy
+#~ msgid "Setup.Replay$Reload marks"
+#~ msgstr "Gösteriş ID'si"
+
+#, fuzzy
+#~ msgid "Setup.Miscellaneous$only in channelinfo"
+#~ msgstr "Açılışdaki kanal"
+
+#, fuzzy
+#~ msgid "Setup.Miscellaneous$only in progress display"
+#~ msgstr "Açılışdaki kanal"
+
+#~ msgid "Miscellaneous"
+#~ msgstr "Diğerler"
+
+#~ msgid "Setup.Miscellaneous$Min. event timeout (min)"
+#~ msgstr "Minimum olay zaman aşımı (dak)"
+
+#~ msgid "Setup.Miscellaneous$Min. user inactivity (min)"
+#~ msgstr "Minimum kullanıcı hareketsizliği (dak)"
+
+#~ msgid "Setup.Miscellaneous$SVDRP timeout (s)"
+#~ msgstr "SVDRP zaman aşımı (sn) "
+
+#~ msgid "Setup.Miscellaneous$Zap timeout (s)"
+#~ msgstr "Zaping zaman aşımı (sn)"
+
+#~ msgid "Setup.Miscellaneous$Channel entry timeout (ms)"
+#~ msgstr "Kanal giriş zaman aşımı (ms)"
+
+#~ msgid "Setup.Miscellaneous$Initial channel"
+#~ msgstr "Açılışdaki kanal"
+
+#~ msgid "Setup.Miscellaneous$as before"
+#~ msgstr "önceki gibi"
+
+#~ msgid "Setup.Miscellaneous$Initial volume"
+#~ msgstr "Açılışdaki ses"
+
+#~ msgid "Setup.Miscellaneous$Emergency exit"
+#~ msgstr "Acil cıkış"
+
+#, fuzzy
+#~ msgid "Setup.Miscellaneous$Lirc repeat delay"
+#~ msgstr "Acil cıkış"
+
+#, fuzzy
+#~ msgid "Setup.Miscellaneous$Lirc repeat freq"
+#~ msgstr "önceki gibi"
+
+#, fuzzy
+#~ msgid "Setup.Miscellaneous$Lirc repeat timeout"
+#~ msgstr "Minimum olay zaman aşımı (dak)"
+
+#, fuzzy
+#~ msgid "Setup.Miscellaneous$Volume ctrl with left/right"
+#~ msgstr "Acil cıkış"
+
+#, fuzzy
+#~ msgid "Setup.Miscellaneous$Channelgroups with left/right"
+#~ msgstr "Kanal giriş zaman aşımı (ms)"
+
+#, fuzzy
+#~ msgid "Setup.Miscellaneous$Search fwd/back with left/right"
+#~ msgstr "önceki gibi"
+
+#~ msgid "Plugins"
+#~ msgstr "Eklentiler"
+
+#~ msgid "This plugin has no setup parameters!"
+#~ msgstr "Bu eklentinin düzenek parametresi yok!"
+
+#~ msgid "Restart"
+#~ msgstr "Yeniden başlat"
+
+#~ msgid "Really restart?"
+#~ msgstr "Gerçekten yeniden başlat?"
+
+#~ msgid " Stop recording "
+#~ msgstr " Çekimi bitir "
+
+#~ msgid "VDR"
+#~ msgstr "VDR"
+
+#~ msgid " Stop replaying"
+#~ msgstr " Gösterişi bitir"
+
+#~ msgid "Button$Audio"
+#~ msgstr "Audio"
+
+#~ msgid "Button$Pause"
+#~ msgstr "Durakla"
+
+#~ msgid "Button$Stop"
+#~ msgstr "Durdur"
+
+#~ msgid "Button$Resume"
+#~ msgstr "Sürdür"
+
+#~ msgid " Cancel editing"
+#~ msgstr " Kesimi iptal et"
+
+#~ msgid "Stop recording?"
+#~ msgstr "Kayıtı durdur?"
+
+#~ msgid "Cancel editing?"
+#~ msgstr "Kesimi iptal et?"
+
+#~ msgid "No audio available!"
+#~ msgstr "Audio yok!"
+
+#~ msgid "No subtitles"
+#~ msgstr "Altyazı yok"
+
+#~ msgid "Button$Subtitles"
+#~ msgstr "Altyazı"
+
+#~ msgid "No subtitles available!"
+#~ msgstr "Altyazı bulunamadı"
+
+#~ msgid "Not enough disk space to start recording!"
+#~ msgstr "Kayıt için yeterince kapasite yok!"
+
+#~ msgid "No free DVB device to record!"
+#~ msgstr "Kullanılmayan DVB kartı bulunmadı!"
+
+#~ msgid "Pausing live video..."
+#~ msgstr "Naklen yayın duraklatılıyor..."
+
+#~ msgid "Jump: "
+#~ msgstr "Atla: "
+
+#~ msgid "No editing marks defined!"
+#~ msgstr "Kesim işaretleri belirtilmemiş!"
+
+#~ msgid "Can't start editing process!"
+#~ msgstr "Kesim başlatılamıyor!"
+
+#~ msgid "Editing process started"
+#~ msgstr "Kesim başlandı"
+
+#~ msgid "Editing process already active!"
+#~ msgstr "Kesim henüz aktif!"
+
+#~ msgid "FileNameChars$ abcdefghijklmnopqrstuvwxyz0123456789-.,#~\\^$[]|()*+?{}/:%@&"
+#~ msgstr " abcçdefgğhıijklmnoöprsştuüvyz0123456789-.,#~\\^$[]|()*+?{}/:%@&"
+
+#~ msgid "CharMap$ 0\t-.,1#~\\^$[]|()*+?{}/:%@&\tabc2\tdef3\tghi4\tjkl5\tmno6\tpqrs7\ttuv8\twxyz9"
+#~ msgstr " 0\t-.,1#~\\^$[]|()*+?{}/:%@&\tabcç2\tdef3\tgğhıi4\tjkl5\tmnoö6\tprsş7\ttuüv8\tyz9"
+
+#~ msgid "Button$ABC/abc"
+#~ msgstr "ABC/abc"
+
+#~ msgid "Button$Overwrite"
+#~ msgstr "Üstüne yaz"
+
+#~ msgid "Button$Insert"
+#~ msgstr "Ekle"
+
+#~ msgid "Plugin"
+#~ msgstr "Eklenti"
+
+#~ msgid "Up/Dn for new location - OK to move"
+#~ msgstr "'Yukarı/Aşağı' yeni posizyon seç - 'Tamam' taşı"
+
+#~ msgid "Channel locked (recording)!"
+#~ msgstr "Kanal geçersiz (kayıt ediliyor)!"
+
+#~ msgid "Low disk space!"
+#~ msgstr "Kayıt kapasitesi az!"
+
+#~ msgid "Can't shutdown - option '-s' not given!"
+#~ msgstr "Kapatılamıyor - '-s' seçeneği verilmemiş!"
+
+#~ msgid "Editing - shut down anyway?"
+#~ msgstr "Kesim aktif - buna rağmen kapat?"
+
+#~ msgid "Recording - shut down anyway?"
+#~ msgstr "Kayıt ediliyor - buna rağmen kapat?"
+
+#~ msgid "Recording in %ld minutes, shut down anyway?"
+#~ msgstr "Kayıt %ld dakikada başlıyor - buna rağmen kapat?"
+
+#~ msgid "shut down anyway?"
+#~ msgstr "buna rağmen kapat?"
+
+#~ msgid "Plugin %s wakes up in %ld min, continue?"
+#~ msgstr "Eklenti %s %ld dakikada açılıyor, devam et?"
+
+#~ msgid "Editing - restart anyway?"
+#~ msgstr "Kesim aktif - buna rağmen yeniden başlat?"
+
+#~ msgid "Recording - restart anyway?"
+#~ msgstr "Kayıt ediliyor - buna rağmen yeniden başlat?"
+
+#~ msgid "restart anyway?"
+#~ msgstr "buna rağmen yeniden başlat?"
+
+#~ msgid "Classic VDR"
+#~ msgstr "Klasik VDR"
+
+#~ msgid "ST:TNG Panels"
+#~ msgstr "ST:TNG paneli"
+
+#~ msgid "MTWTFSS"
+#~ msgstr "PSÇPCCP"
+
+#~ msgid "MonTueWedThuFriSatSun"
+#~ msgstr "PztSalÇarPerCumCmtPaz"
+
+#~ msgid "Monday"
+#~ msgstr "Pazartesi"
+
+#~ msgid "Tuesday"
+#~ msgstr "Salı"
+
+#~ msgid "Wednesday"
+#~ msgstr "Çarşamba"
+
+#~ msgid "Thursday"
+#~ msgstr "Perşembe"
+
+#~ msgid "Friday"
+#~ msgstr "Cuma"
+
+#~ msgid "Saturday"
+#~ msgstr "Cumartesi"
+
+#~ msgid "Sunday"
+#~ msgstr "Pazar"
+
+#~ msgid "Upcoming recording!"
+#~ msgstr "Çekim yakında başlıyor!"
+
+#~ msgid "Recording started"
+#~ msgstr "Kayıt başlandı"
+
+#~ msgid "VDR will shut down later - press Power to force"
+#~ msgstr "VDR daha sonra kapanacak - zorlamak için Kapat'a bas"
+
+#~ msgid "Press any key to cancel shutdown"
+#~ msgstr "Kapatmayı iptal etmek için herhangi bir tuşa bas"
+
+#~ msgid "Switching primary DVB..."
+#~ msgstr "Primer DVB arayüzü değiştiriliyor..."
+
+#~ msgid "Editing process failed!"
+#~ msgstr "Kesim başarısız!"
+
+#~ msgid "Editing process finished"
+#~ msgstr "Kesim bitti"
+
+#~ msgid "Press any key to cancel restart"
+#~ msgstr "Yeniden başlatmayı iptal etmek için herhangi bir tuşa bas"
+
+#~ msgid "VDR will shut down in %s minutes"
+#~ msgstr "VDR %s dakikada kapanacak"

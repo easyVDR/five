@@ -1,0 +1,10 @@
+usr/share/vdr-skins/anthra_1280_FS9				var/lib/vdr/plugins/text2skin/anthra_1280_FS9
+usr/share/vdr-skins/anthra_1280_OS9				var/lib/vdr/plugins/text2skin/anthra_1280_OS9
+
+usr/share/vdr-skins/anthra_1280_FS8             var/lib/vdr/plugins/text2skin/anthra_1280_FS8
+usr/share/vdr-skins/anthra_1280_OS8             var/lib/vdr/plugins/text2skin/anthra_1280_OS8
+
+usr/share/vdr-skins/anthra_1280_FSt             var/lib/vdr/plugins/text2skin/anthra_1280_FSt
+usr/share/vdr-skins/anthra_1280_OSt             var/lib/vdr/plugins/text2skin/anthra_1280_OSt
+
+#var/lib/vdr/plugins/text2skin                           etc/vdr/plugins/text2skin

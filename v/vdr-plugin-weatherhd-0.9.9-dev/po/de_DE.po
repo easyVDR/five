@@ -1,0 +1,361 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@cadsoft.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <djoimania@web.de>\n"
+"POT-Creation-Date: 2013-04-05 10:49+0200\n"
+"PO-Revision-Date: 2008-06-02 02:25+0100\n"
+"Last-Translator: Morone <djoimania@web.de>\n"
+"Language-Team:  <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Night"
+msgstr "Nachts"
+
+msgid "Day"
+msgstr "Am Tage"
+
+msgid "Refresh"
+msgstr "Aktualisieren"
+
+msgid "Radar"
+msgstr "Radarbild"
+
+msgid "More.."
+msgstr "Mehr"
+
+msgid "Parent.."
+msgstr "Zurück.."
+
+msgid "High temperature:"
+msgstr "Höchsttemperatur:"
+
+msgid "Low temperature:"
+msgstr "Tiefsttemperatur:"
+
+msgid "Wind-Chill-Index:"
+msgstr "Temperaturen gefühlt:"
+
+msgid "Wind:"
+msgstr "Wind:"
+
+msgid "from "
+msgstr "von "
+
+msgid " with "
+msgstr " mit "
+
+msgid "Max. UV Index:"
+msgstr "Max. UV-Index:"
+
+msgid "Amount of Precipitation:"
+msgstr "Niederschlag:"
+
+msgid " mm/qm"
+msgstr " mm/qm"
+
+msgid "Tstorm probability:"
+msgstr "Gewitter möglich:"
+
+msgid "a couple of"
+msgstr "auftretenden"
+
+msgid "A couple of"
+msgstr "Auftretend"
+
+msgid "Very"
+msgstr "Sehr"
+
+msgid "very"
+msgstr "sehr"
+
+msgid "with"
+msgstr " mit"
+
+msgid "sunshine"
+msgstr "Sonnenschein"
+
+msgid "Sunshine"
+msgstr "Sonnenschein"
+
+msgid "clouds"
+msgstr "Wolken"
+
+msgid "Clouds"
+msgstr "Wolken"
+
+msgid "cloudy"
+msgstr "wolkig"
+
+msgid "Cloudy"
+msgstr "Wolkig"
+
+msgid "and"
+msgstr "und"
+
+msgid "Partly"
+msgstr "Teilweise"
+
+msgid "partly"
+msgstr "teilweise"
+
+msgid "sunny"
+msgstr "sonnig"
+
+msgid "Sunny"
+msgstr "Sonnig"
+
+msgid "not as"
+msgstr "nicht mehr so"
+
+msgid "Not as"
+msgstr "Nicht mehr so"
+
+msgid "not"
+msgstr "nicht"
+
+msgid "Not"
+msgstr "nicht"
+
+msgid "as"
+msgstr "als"
+
+msgid "Warm"
+msgstr "Warm"
+
+msgid "warm"
+msgstr "warm"
+
+msgid "pleasant"
+msgstr "trocken"
+
+msgid "Pleasant"
+msgstr "Trocken"
+
+msgid "Mostly"
+msgstr "Meist"
+
+msgid "mostly"
+msgstr "meist"
+
+msgid "Warmer"
+msgstr "Wärmer"
+
+msgid "warmer"
+msgstr "wärmer"
+
+msgid "time"
+msgstr "zeitweise"
+
+msgid "Time"
+msgstr "Zeitweise"
+
+msgid "times"
+msgstr "Zeiten"
+
+msgid "Times"
+msgstr "Zeiten"
+
+msgid "of"
+msgstr "von"
+
+msgid "sun"
+msgstr "Sonne"
+
+msgid "Sun"
+msgstr "Sonne"
+
+msgid "mild"
+msgstr "mild"
+
+msgid "Mild"
+msgstr "Mild"
+
+msgid "increasing"
+msgstr "aufziehenden"
+
+msgid "increalsing"
+msgstr "aufziehenden"
+
+msgid "pachy"
+msgstr "vereinzelt"
+
+msgid "pachty"
+msgstr "vereinzelt"
+
+msgid "Cooler"
+msgstr "Kälter"
+
+msgid "cooler"
+msgstr "kälter"
+
+msgid "rain"
+msgstr "Regen"
+
+msgid "Rain"
+msgstr "Regen"
+
+msgid "snow"
+msgstr "Schnee"
+
+msgid "Snow"
+msgstr "Schnee"
+
+msgid "cloudiness"
+msgstr "Wolken"
+
+msgid "Cloudiness"
+msgstr "Wolken"
+
+msgid "some"
+msgstr "vereinzelt"
+
+msgid "Some"
+msgstr "Vereinzelt"
+
+msgid "shower"
+msgstr "Schauer"
+
+msgid "Shower"
+msgstr "Schauer"
+
+msgid "Sunday"
+msgstr "Sonntag"
+
+msgid "Monday"
+msgstr "Montag"
+
+msgid "Tuesday"
+msgstr "Dienstag"
+
+msgid "Wednesday"
+msgstr "Mittwoch"
+
+msgid "Thursday"
+msgstr "Donnerstag"
+
+msgid "Friday"
+msgstr "Freitag"
+
+msgid "Saturday"
+msgstr "Samstag"
+
+msgid "E"
+msgstr "O"
+
+msgid "W"
+msgstr "W"
+
+msgid "S"
+msgstr "S"
+
+msgid "N"
+msgstr "N"
+
+#, fuzzy
+msgid "Accuweather.com: Weather forecast"
+msgstr "Weather.com: 10 Tage Wettervorhersage"
+
+#, fuzzy
+msgid "Weather-HD"
+msgstr "Wetter-HD"
+
+msgid "Update data on start"
+msgstr "Update von Daten bei Start"
+
+msgid "Use one 8-bit area"
+msgstr "Nutze eine 8-bit area"
+
+msgid "Radarbitmap left"
+msgstr "Radarbild von links"
+
+msgid "Radarbitmap top"
+msgstr "Radarbild von oben"
+
+msgid "Radarbitmap width"
+msgstr "Radarbild Breite"
+
+msgid "Radarbitmap height"
+msgstr "Radarbild Höhe"
+
+msgid "Offset horizontal"
+msgstr "Offset horizontal"
+
+msgid "Offset vertical"
+msgstr "Offset vertikal"
+
+msgid "Use dithering for images"
+msgstr "Nutze Dithering für Bilder"
+
+msgid "Transparency for images"
+msgstr "Transparenz für Bilder"
+
+msgid "Image quality >=slower"
+msgstr "Bildqualität >=langsamer"
+
+msgid "Days to forecast"
+msgstr "Tage Vorhersage"
+
+msgid "Location 1 (ID)"
+msgstr "Ort 1 (ID)"
+
+msgid "Location 1 (Name)"
+msgstr "Ort 1 (Name)"
+
+msgid "Location 2 (ID)"
+msgstr "Ort 2 (ID)"
+
+msgid "Location 2 (Name)"
+msgstr "Ort 2 (Name)"
+
+msgid "Location 3 (ID)"
+msgstr "Ort 3 (ID)"
+
+msgid "Location 3 (Name)"
+msgstr "Ort 3 (Name)"
+
+#~ msgid "Weather for: "
+#~ msgstr "Wetter für: "
+
+#~ msgid "DAY"
+#~ msgstr "AM TAGE"
+
+#~ msgid "On  "
+#~ msgstr "Am  "
+
+#~ msgid "in "
+#~ msgstr "ist es in "
+
+#~ msgid " dayover"
+#~ msgstr " tagsüber"
+
+#~ msgid "The temperature varies between  "
+#~ msgstr "Die Temperatur schwankt zwischen   "
+
+#~ msgid "  and  "
+#~ msgstr "  und  "
+
+#~ msgid "  Grad"
+#~ msgstr "  Grad"
+
+#~ msgid "The sun comes up at  "
+#~ msgstr "Die Sonne geht um  "
+
+#~ msgid " and goes at  "
+#~ msgstr " Uhr  auf und um  "
+
+#~ msgid " down"
+#~ msgstr " unter"
+
+#~ msgid "NIGHT"
+#~ msgstr "IN DER NACHT"
+
+#~ msgid " nightover"
+#~ msgstr " nachts"

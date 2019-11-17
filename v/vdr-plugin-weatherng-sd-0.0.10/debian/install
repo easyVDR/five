@@ -1,0 +1,6 @@
+libvdr-weatherng-sd.so.*           usr/lib/vdr/plugins/
+weatherng-sd/*		var/lib/vdr/plugins/
+debian/tmp/usr/share/locale
+
+
+

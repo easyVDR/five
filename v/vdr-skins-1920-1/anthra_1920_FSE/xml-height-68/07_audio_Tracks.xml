@@ -1,0 +1,18 @@
+ <display id="audioTracks">
+	<window x1="0" x2="1920" y1="800" y2="1010" bpp="8"/>
+	<list  x1="1364" x2="1920" y1="800" y2="1010">
+	<item height="68"/>
+		<rectangle x1="20" x2="21"  y1="7" y2="74"  color="#FF141414"/>
+		<rectangle x1="21" x2="22"  y1="7" y2="74"  color="#FF2d2d2d"/>
+		<rectangle x1="22" x2="23"  y1="7" y2="74"  color="#FF414141"/>
+		<rectangle x1="23" x2="24"  y1="7" y2="74"  color="#FF595959"/>
+		<rectangle x1="24" x2="25"  y1="7" y2="74"  color="#FF6d6d6d"/>
+		<rectangle x1="25" x2="26"  y1="7" y2="74"  color="#FF868686"/>
+		<rectangle x1="28" x2="556"  y1="6" y2="7"  color="Black"/>				
+		<image x1="25" x2="556"  y1="8" y2="74"  condition="not(IsMenuCurrent)"  path="images/menuBGLow.png"/>
+		<image x1="25" x2="556"  y1="7" y2="73"  condition="{IsMenuCurrent}"  path="images/menuBG.png"/>
+		<text x1="40" x2="150" y1="18" y2="54" condition="{MenuCurrent}" color="TextHigh" font="VDRSymbols Sans:Book@32" align="left"> {MenuTitle}:</text>
+		<text x1="160" x2="510" y1="18" y2="54" color="TextLow" font="VDRSymbols Sans:Book@32" align="right">{MenuItem}</text>
+		<text x1="160" x2="510" y1="18" y2="54" color="TextHigh" font="VDRSymbols Sans:Book@32" align="left"> {MenuCurrent}</text>
+	</list>	
+</display>

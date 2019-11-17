@@ -1,0 +1,259 @@
+<description> MORONEHD
+#
+## LINE "MUST" END WITH THE COLORVALUE AND WITHOUT SPACES
+#
+## COLORS in 0xAARRGGBB
+<value> .clrTxtBG.			=0xFFee4c4c
+<value> .clrTextBG.			=0x00000000
+<value> .clrStatusFG.			=0xFFFFFFFF
+<value> .clrTextFG.			=0xFFFFFFFF
+<value> .clrHighTempFG.			=0xFFF2A00C
+<value> .clrLowTempFG.			=0xFFFFFFFF
+<value> .clrFeelTempFG.			=0xFFFFFFFF
+<value> .clrWindFG.			=0xFFFFFFFF
+<value> .clrUVFG.			=0xFFFFFFFF
+<value> .clrRainFG.			=0xFFFFFFFF
+<value> .clrThunderFG.			=0xFFFFFFFF
+<value> .clrDateFG.			=0xFFFFFFFF
+<value> .clrStatusRedFG.		=0xFF992900
+<value> .clrStatusGreenFG.		=0xFF6CB752
+<value> .clrStatusYellowFG.		=0xFFCE7B00
+<value> .clrStatusBlueFG.		=0xFF52B3B7
+
+7even
+Grzanka
+Kapsules
+Nova
+## GENERAL
+<value> .Theme.				=MORONEHD2
+<value> .BigIconTheme.			=7even/big/
+<value> .SmallIconTheme.		=7even/small/
+<value> .OsdWidth.			=1920
+<value> .OsdHeight.			=1080
+<value> .OsdTop.			=0
+<value> .OsdLeft.			=0
+<value> .OsdAlpha.			=175
+<value> .OsdBgrd.			=MoroneHD2.png
+<value> .FontHeight.			=50
+<value> .SmallFontHeight.		=42
+
+
+## OBJECTS && PIXMAPS
+BgrdPixmap
+<value> .Bgrd_Layer.			=0
+<value> .Bgrd_Left.			=0
+<value> .Bgrd_Top.			=0
+<value> .Bgrd_Width.			=1920
+<value> .Bgrd_Height.			=1080
+
+RadarPixmap
+<value> .Radar_Layer.			=7
+<value> .Radar_Left.			=730
+<value> .Radar_Top.			=200
+<value> .Radar_Width.			=1060
+<value> .Radar_Height.			=696
+
+Icon1Pixmap
+<value> .Icon1_Layer.			=1
+<value> .Icon1_Left.			=93
+<value> .Icon1_Top.			=132
+<value> .Icon1_Width.			=400
+<value> .Icon1_Height.			=400
+
+Icon2Pixmap
+<value> .Icon2_Layer.			=6
+<value> .Icon2_Left.			=860
+<value> .Icon2_Top.			=300
+<value> .Icon2_Width.			=128
+<value> .Icon2_Height.			=128
+
+Icon3Pixmap
+<value> .Icon3_Layer.			=6
+<value> .Icon3_Left.			=1350
+<value> .Icon3_Top.			=300
+<value> .Icon3_Width.			=128
+<value> .Icon3_Height.			=128
+
+StatusPixmap
+<value> .Status_Layer.			=4
+<value> .Status_Left.			=35
+<value> .Status_Top.			=80
+<value> .Status_Width.			=520
+<value> .Status_Height.			=32
+
+HighTempPixmap
+<value> .HighTemp_Layer.		=5
+<value> .HighTemp_Left.			=35
+<value> .HighTemp_Top.			=550
+<value> .HighTemp_Width.		=520
+<value> .HighTemp_Height.		=32
+<value> .HighTemp_Align.		=1
+
+LowTempPixmap
+<value> .LowTemp_Layer.			=5
+<value> .LowTemp_Left.			=35
+<value> .LowTemp_Top.			=620
+<value> .LowTemp_Width.			=520
+<value> .LowTemp_Height.		=32
+<value> .LowTemp_Align.			=1
+
+FeelTempPixmap
+<value> .FeelTemp_Layer.		=5
+<value> .FeelTemp_Left.			=35
+<value> .FeelTemp_Top.			=684
+<value> .FeelTemp_Width.		=520
+<value> .FeelTemp_Height.		=32
+<value> .FeelTemp_Align.		=1
+
+WindPixmap
+<value> .Wind_Layer.			=5
+<value> .Wind_Left.			=35
+<value> .Wind_Top.			=738
+<value> .Wind_Width.			=520
+<value> .Wind_Height.			=32
+<value> .Wind_Align.			=1
+
+UVPixmap
+<value> .UV_Layer.			=5
+<value> .UV_Left.			=35
+<value> .UV_Top.			=792
+<value> .UV_Width.			=520
+<value> .UV_Height.			=32
+<value> .UV_Align.			=1
+
+RainPixmap
+<value> .Rain_Layer.			=5
+<value> .Rain_Left.			=35
+<value> .Rain_Top.			=846
+<value> .Rain_Width.			=520
+<value> .Rain_Height.			=32
+<value> .Rain_Align.			=1
+
+ThunderPixmap
+<value> .Thunder_Layer.			=5
+<value> .Thunder_Left.			=35
+<value> .Thunder_Top.			=900
+<value> .Thunder_Width.			=520
+<value> .Thunder_Height.		=32
+<value> .Thunder_Align.			=1
+
+DatePixmap
+<value> .Date_Layer.			=5
+<value> .Date_Left.			=35
+<value> .Date_Top.			=80
+<value> .Date_Width.			=520
+<value> .Date_Height.			=32
+<value> .Date_Align.			=0
+
+
+ButtonPixmap
+## taCenter = 0 , taLeft = 1 , taRight = 2
+<value> .Button_Layer.			=6
+<value> .Button_Left.			=936
+<value> .Button_Top.			=1004
+<value> .Button_Width.			=917
+<value> .Button_Height.			=40
+<value> .Button_Align.			=0
+<value> .ButtonText1posx.		=0
+<value> .ButtonText2posx.		=244
+<value> .ButtonText3posx.		=484
+<value> .ButtonText4posx.		=740
+<value> .ButtonText1posy.		=0
+<value> .ButtonText2posy.		=0
+<value> .ButtonText3posy.		=0
+<value> .ButtonText4posy.		=0
+<value> .Button1w.			=194
+<value> .Button2w.			=194
+<value> .Button3w.			=194
+<value> .Button4w.			=194
+
+
+SecondDay
+<value> .SecondDay_Layer.		=5
+<value> .SecondDay_Left.		=758
+<value> .SecondDay_Top.			=240
+<value> .SecondDay_Width.		=340
+<value> .SecondDay_Height.		=500
+<value> .SecondDay_Align.		=0
+<value> .SecondDay_HighTemp_Top.	=180
+<value> .SecondDay_LowTemp_Top.		=230
+<value> .SecondDay_FeelTemp_Top.	=270
+<value> .SecondDay_Wind_Top.		=310
+<value> .SecondDay_UV_Top.		=350
+<value> .SecondDay_Rain_Top.		=390
+<value> .SecondDay_Thunder_Top.		=430
+<value> .SecondDay_Date_Top.		=0
+<value> .SecondDay_FontHeight.		=32
+
+
+ThirdDay
+<value> .ThirdDay_Layer.		=5
+<value> .ThirdDay_Left.			=1245
+<value> .ThirdDay_Top.			=240
+<value> .ThirdDay_Width.		=340
+<value> .ThirdDay_Height.		=500
+<value> .ThirdDay_Align.		=0
+<value> .ThirdDay_HighTemp_Top.		=180
+<value> .ThirdDay_LowTemp_Top.		=230
+<value> .ThirdDay_FeelTemp_Top.		=270
+<value> .ThirdDay_Wind_Top.		=310
+<value> .ThirdDay_UV_Top.		=350
+<value> .ThirdDay_Rain_Top.		=390
+<value> .ThirdDay_Thunder_Top.		=430
+<value> .ThirdDay_Date_Top.		=0
+<value> .ThirdDay_FontHeight.		=32
+
+
+
+## FONTS
+<value> .FONTSTATUS.		=0
+<value> .FONTSTATUSNAME.	=VDRSymbols Sans:Book
+<value> .FONTSTATUSSIZE.	=22
+
+<value> .FONTHIGHTEMP.		=0
+<value> .FONTHIGHTEMPNAME.	=Tahoma Symbol Cap:Bold
+<value> .FONTHIGHTEMPSIZE.	=32
+
+<value> .FONTLOWTEMP.		=0
+<value> .FONTLOWTEMPNAME.	=Tahoma Symbol Cap:Bold
+<value> .FONTLOWTEMPSIZE.	=28
+
+<value> .FONTFEELTEMP.		=0
+<value> .FONTFEELTEMPNAME.	=Tahoma Symbol Cap:Bold
+<value> .FONTFEELTEMPSIZE.	=22
+
+<value> .FONTWIND.		=0
+<value> .FONTWINDNAME.		=Tahoma Symbol Cap:Bold
+<value> .FONTWINDSIZE.		=22
+
+<value> .FONTUV.		=0
+<value> .FONTUVNAME.		=Tahoma Symbol Cap:Bold
+<value> .FONTUVSIZE.		=22
+
+<value> .FONTRAIN.		=0
+<value> .FONTRAINNAME.		=Tahoma Symbol Cap:Bold
+<value> .FONTRAINSIZE.		=22
+
+<value> .FONTTHUNDER.		=0
+<value> .FONTTHUNDERNAME.	=Tahoma Symbol Cap:Bold
+<value> .FONTTHUNDERSIZE.	=22
+
+<value> .FONTDATE.		=0
+<value> .FONTDATENAME.		=VDRSymbols Sans:Book
+<value> .FONTDATESIZE.		=22
+
+<value> .FONTTEXT.		=0
+<value> .FONTTEXTNAME.		=Tahoma Symbol Cap:Bold
+<value> .FONTTEXTSIZE.		=32
+
+<value> .FONTBUTTON.		=0
+<value> .FONTBUTTONNAME.	=VDRSymbols Sans:Book
+<value> .FONTBUTTONSIZE.	=22
+
+<value> .FONTSECONDDAY.		=0
+<value> .FONTSECONDDAYNAME.	=VDRSymbols Sans:Book
+<value> .FONTSECONDDAYSIZE.	=18
+
+<value> .FONTRHIRDDAY.		=0
+<value> .FONTRHITDDAYNAME.	=VDRSymbols Sans:Book
+<value> .FONTTHIRDDAYSIZE.	=18

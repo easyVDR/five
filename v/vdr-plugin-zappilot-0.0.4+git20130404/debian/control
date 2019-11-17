@@ -1,0 +1,20 @@
+Source: vdr-plugin-zappilot
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Origin: ctvdr
+Bugs: mailto:pkg-vdr-dvb-devel@lists.alioth.debian.org
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.0.0), pkg-config
+Standards-Version: 3.9.4
+Homepage: http://projects.vdr-developer.org/projects/show/plg-zappilot
+
+Package: vdr-plugin-zappilot
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Zappilot plugin for vdr 
+ Zappilot is a plugin for VDR that brings the ability to to fastly browse 
+ the EPG information without being forced to switch to a
+ channel. It makes it easy to see what is going on on other channels while
+ still watching the current channel. The plugin adds the possibility of 
+ having detailed information of the event and launching timers

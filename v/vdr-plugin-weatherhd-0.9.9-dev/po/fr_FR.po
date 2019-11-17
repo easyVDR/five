@@ -1,0 +1,351 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Jean-Claude Repetto <jc@repetto.org>, 2001
+# Olivier Jacques <jacquesolivier@hotmail.com>, 2003
+# Gregoire Favre <greg@magma.unil.ch>, 2003
+# Nicolas Huillard <nhuillard@e-dition.fr>, 2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <djoimania@web.de>\n"
+"POT-Creation-Date: 2013-04-05 10:49+0200\n"
+"PO-Revision-Date: 2008-01-15 22:39+0100\n"
+"Last-Translator: Nicolas Huillard <nhuillard@e-dition.fr>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Night"
+msgstr "NUIT"
+
+msgid "Day"
+msgstr "JOUR"
+
+msgid "Refresh"
+msgstr ""
+
+msgid "Radar"
+msgstr ""
+
+msgid "More.."
+msgstr ""
+
+msgid "Parent.."
+msgstr ""
+
+#, fuzzy
+msgid "High temperature:"
+msgstr "Temp. haute: "
+
+#, fuzzy
+msgid "Low temperature:"
+msgstr "Temp. basse: "
+
+msgid "Wind-Chill-Index:"
+msgstr ""
+
+msgid "Wind:"
+msgstr ""
+
+msgid "from "
+msgstr ""
+
+msgid " with "
+msgstr ""
+
+msgid "Max. UV Index:"
+msgstr ""
+
+#, fuzzy
+msgid "Amount of Precipitation:"
+msgstr "PrÃ©cipitation: "
+
+msgid " mm/qm"
+msgstr ""
+
+msgid "Tstorm probability:"
+msgstr ""
+
+msgid "a couple of"
+msgstr ""
+
+msgid "A couple of"
+msgstr ""
+
+msgid "Very"
+msgstr ""
+
+msgid "very"
+msgstr ""
+
+msgid "with"
+msgstr ""
+
+msgid "sunshine"
+msgstr ""
+
+msgid "Sunshine"
+msgstr ""
+
+msgid "clouds"
+msgstr ""
+
+msgid "Clouds"
+msgstr ""
+
+msgid "cloudy"
+msgstr ""
+
+msgid "Cloudy"
+msgstr ""
+
+msgid "and"
+msgstr ""
+
+msgid "Partly"
+msgstr ""
+
+msgid "partly"
+msgstr ""
+
+msgid "sunny"
+msgstr ""
+
+msgid "Sunny"
+msgstr ""
+
+msgid "not as"
+msgstr ""
+
+msgid "Not as"
+msgstr ""
+
+msgid "not"
+msgstr ""
+
+msgid "Not"
+msgstr ""
+
+msgid "as"
+msgstr ""
+
+msgid "Warm"
+msgstr ""
+
+msgid "warm"
+msgstr ""
+
+msgid "pleasant"
+msgstr ""
+
+msgid "Pleasant"
+msgstr ""
+
+msgid "Mostly"
+msgstr ""
+
+msgid "mostly"
+msgstr ""
+
+msgid "Warmer"
+msgstr ""
+
+msgid "warmer"
+msgstr ""
+
+msgid "time"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "times"
+msgstr ""
+
+msgid "Times"
+msgstr ""
+
+msgid "of"
+msgstr ""
+
+msgid "sun"
+msgstr ""
+
+msgid "Sun"
+msgstr ""
+
+msgid "mild"
+msgstr ""
+
+msgid "Mild"
+msgstr ""
+
+msgid "increasing"
+msgstr ""
+
+msgid "increalsing"
+msgstr ""
+
+msgid "pachy"
+msgstr ""
+
+msgid "pachty"
+msgstr ""
+
+msgid "Cooler"
+msgstr ""
+
+msgid "cooler"
+msgstr ""
+
+msgid "rain"
+msgstr ""
+
+msgid "Rain"
+msgstr ""
+
+msgid "snow"
+msgstr ""
+
+msgid "Snow"
+msgstr ""
+
+msgid "cloudiness"
+msgstr ""
+
+msgid "Cloudiness"
+msgstr ""
+
+msgid "some"
+msgstr ""
+
+msgid "Some"
+msgstr ""
+
+msgid "shower"
+msgstr ""
+
+msgid "Shower"
+msgstr ""
+
+msgid "Sunday"
+msgstr ""
+
+msgid "Monday"
+msgstr ""
+
+msgid "Tuesday"
+msgstr ""
+
+msgid "Wednesday"
+msgstr ""
+
+msgid "Thursday"
+msgstr ""
+
+msgid "Friday"
+msgstr ""
+
+msgid "Saturday"
+msgstr ""
+
+msgid "E"
+msgstr ""
+
+msgid "W"
+msgstr ""
+
+msgid "S"
+msgstr ""
+
+msgid "N"
+msgstr ""
+
+#, fuzzy
+msgid "Accuweather.com: Weather forecast"
+msgstr "Weather.com: PrÃ©vision mÃ©tÃ©o"
+
+#, fuzzy
+msgid "Weather-HD"
+msgstr "PrÃ©vision MÃ©tÃ©o-NG"
+
+msgid "Update data on start"
+msgstr ""
+
+msgid "Use one 8-bit area"
+msgstr ""
+
+msgid "Radarbitmap left"
+msgstr "Gauche de la carte"
+
+msgid "Radarbitmap top"
+msgstr "Haut de la carte"
+
+msgid "Radarbitmap width"
+msgstr "Largeur de la carte"
+
+msgid "Radarbitmap height"
+msgstr "Hauteur de la carte"
+
+msgid "Offset horizontal"
+msgstr "Offset horizontal"
+
+msgid "Offset vertical"
+msgstr "Offset vertical"
+
+msgid "Use dithering for images"
+msgstr ""
+
+msgid "Transparency for images"
+msgstr ""
+
+msgid "Image quality >=slower"
+msgstr ""
+
+msgid "Days to forecast"
+msgstr ""
+
+msgid "Location 1 (ID)"
+msgstr ""
+
+msgid "Location 1 (Name)"
+msgstr ""
+
+msgid "Location 2 (ID)"
+msgstr ""
+
+msgid "Location 2 (Name)"
+msgstr ""
+
+msgid "Location 3 (ID)"
+msgstr ""
+
+msgid "Location 3 (Name)"
+msgstr ""
+
+#~ msgid "Weather for: "
+#~ msgstr "PrÃ©vision pour: "
+
+#~ msgid "DAY"
+#~ msgstr "JOUR"
+
+#~ msgid "NIGHT"
+#~ msgstr "NUIT"
+
+#, fuzzy
+#~ msgid " %%"
+#~ msgstr " %"
+
+#~ msgid "Wind comes from: "
+#~ msgstr "Provenance du vent: "
+
+#, fuzzy
+#~ msgid "Speed: "
+#~ msgstr "Vitesse du vent: "
+
+#~ msgid "Humitidy: "
+#~ msgstr "Taux d'humiditÃ©: "

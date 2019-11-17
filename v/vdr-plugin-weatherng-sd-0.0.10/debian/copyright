@@ -1,0 +1,18 @@
+This package was debianized by Tobias Grimm <tg@e-tobi.net> on
+Tue,  6 Sep 2005 20:29:31 +0200.
+
+It was downloaded from 
+
+http://www.glaserei-franz.de/VDR/Moronimo2/vdrplugins.htm
+
+Upstream Author: Sascha Bajonczak <BEE-JAY@gmx.net>
+
+Copyright:
+
+It may be redistributed under the terms of the GNU GPL, Version 2
+found on Debian systems in the file /usr/share/common-licenses/GPL .
+
+Some of the images are copyrighted by Stardock Corporation. These images
+are freely available for non-commercial usage only.
+See /usr/share/doc/vdr-plugin-weatherng/permission.txt
+

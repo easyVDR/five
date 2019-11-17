@@ -1,0 +1,76 @@
+<display id="channelInfo">
+	<window x1="50" x2="934" y1="381" y2="422" bpp="8"/>
+	<window x1="50" x2="934" y1="423" y2="528" bpp="8"/>
+	<window x1="50" x2="934" y1="529" y2="552" bpp="8"/>
+	
+		<image x="50" y="381"  path="images/progressChannel.png"/>
+		<ellipse x1="48" x2="55" y1="381" y2="396" arc="-2" color="#0000000"/>
+		<ellipse x1="928" x2="935" y1="381" y2="396"  arc="-1" color="#0000000"/>
+		
+		<progress  x1="67" x2="915" y1="415" y2="419" color="BarFill" current="{PresentProgress}"  total="{PresentDuration}"/>
+<!--NOLOGOS-->		<text x1="65"  x2="125" y1="385" y2="405" color="TextButton" align="center" font="Osd">{ChannelNumber}</text>
+<!--NOLOGOS-->		<text x1="135" x2="450" y1="385" y2="405" color="TextButton" font="Osd">{ChannelName}</text>
+<!--NOLOGOS-->		<text x1="650" x2="918" y1="385" y2="405" color="TextButton" align="right" font="Sml">{DateTime:%a %d.%m.%Y}   {DateTime:%H\:%M}</text>
+<!--NOLOGOS-->		<rectangle x1="50" x2="933" y1="423" y2="528"  color="Background"/>
+<!--NOLOGOS-->		<text x1="65"  x2="125"  y1="427" y2="447" color="TextHigh" font="Osd">{PresentStartDateTime:%H\:%M}</text>
+<!--NOLOGOS-->		<marquee x1="135"  x2="814" y1="427" y2="447" color="TextHigh" font="Osd">{PresentTitle}</marquee>
+<!--NOLOGOS-NOMARQUEE-->		<text x1="135"  x2="814" y1="427" y2="447" color="TextHigh" font="Osd">{PresentTitle}</text>
+<!--NOLOGOS-->		<text x1="834" x2="918" y1="427" y2="447" condition="{PresentRemaining}" color="TextHigh" align="right" font="Sml">{PresentRemaining:%m}/{PresentDuration:%m}</text>
+<!--NOLOGOS-->		<marquee x1="145"  x2="928" y1="452"  y2="472"  color="TextButton" align="left" font="Sml">{PresentShortText}</marquee>
+<!--NOLOGOS-NOMARQUEE-->		<text x1="145"  x2="928" y1="452"  y2="472"  color="TextButton" align="left" font="Sml">{PresentShortText}</text>
+<!--NOLOGOS-->		<text x1="65"  x2="125"  y1="477"  y2="497" color="TextHigh" font="Osd">{FollowingStartDateTime:%H\:%M}</text>
+<!--NOLOGOS-->		<marquee x1="135"  x2="814" y1="477"  y2="497" color="TextHigh" font="Osd">{FollowingTitle}</marquee>
+<!--NOLOGOS-NOMARQUEE-->		<text x1="135"  x2="814" y1="477"  y2="497" color="TextHigh" font="Osd">{FollowingTitle}</text>
+<!--NOLOGOS-->		<text x1="834" x2="918" y1="477"  y2="497" condition="{FollowingDuration}" color="TextButton" align="right" font="Sml">{FollowingDuration:%m}</text>
+<!--NOLOGOS-->		<marquee x1="145"  x2="928" y1="502"  y2="522" color="TextButton" align="left" font="Sml">{FollowingShortText}</marquee>
+<!--NOLOGOS-NOMARQUEE-->		<text x1="145"  x2="928" y1="502"  y2="522" color="TextButton" align="left" font="Sml">{FollowingShortText}</text>
+
+
+<!--LOGOSLEFT-->		<text x1="65"  x2="231" y1="385" y2="405" color="TextButton" align="center" font="Osd">{ChannelNumber}</text>
+<!--LOGOSLEFT-->		<text x1="245" x2="640" y1="385" y2="405" color="TextButton" font="Osd">{ChannelName}</text>
+<!--LOGOSLEFT-->		<text x1="650" x2="918" y1="385" y2="405" color="TextButton" align="right" font="Sml">{DateTime:%a %d.%m.%Y}   {DateTime:%H\:%M}</text>
+<!--LOGOSLEFT-->		<rectangle x1="50" x2="933" y1="423" y2="528"  color="Background"/>
+<!--LOGOSLEFT-->		<image x1="65" x2="231" y1="428"  y2="521" condition="file('../liquid-logos4anthra_HD/{ChannelName}.png')" path="../liquid-logos4anthra_HD/{ChannelName}.png"/>
+<!--LOGOSLEFT-->		<image x1="65" x2="231" y1="428"  y2="521"  condition="not(file('../liquid-logos4anthra_HD/{ChannelName}.png'))" path="../liquid-logos4anthra_HD/logobg.png"/>		
+<!--LOGOSLEFT-->		<ellipse x1="65" x2="68" y1="428" y2="431"   arc="-2" color="Background"/>
+<!--LOGOSLEFT-->		<ellipse x1="65" x2="68" y1="518" y2="521"   arc="-3" color="Background"/>
+<!--LOGOSLEFT-->		<ellipse x1="228" x2="231" y1="428" y2="431"   arc="-1" color="Background"/>
+<!--LOGOSLEFT-->		<ellipse x1="228" x2="231" y1="518" y2="521"   arc="-4" color="Background"/>
+<!--LOGOSLEFT-->		<text x1="245"  x2="305"  y1="427" y2="447" color="TextHigh" font="Osd">{PresentStartDateTime:%H\:%M}</text>
+<!--LOGOSLEFT-->		<marquee x1="315"  x2="814" y1="427" y2="447" color="TextHigh" font="Osd">{PresentTitle}</marquee>
+<!--LOGOSLEFT-NOMARQUEE-->		<text x1="315"  x2="814" y1="427" y2="447" color="TextHigh" font="Osd">{PresentTitle}</text>
+<!--LOGOSLEFT-->		<text x1="834" x2="918" y1="427" y2="447" condition="{PresentRemaining}" color="TextHigh" align="right" font="Sml">{PresentRemaining:%m}/{PresentDuration:%m}</text>
+<!--LOGOSLEFT-->		<marquee x1="325"  x2="928" y1="452"  y2="472"  color="TextButton" align="left" font="Sml">{PresentShortText}</marquee>
+<!--LOGOSLEFT-NOMARQUEE-->		<text x1="325"  x2="928" y1="452"  y2="472"  color="TextButton" align="left" font="Sml">{PresentShortText}</text>
+<!--LOGOSLEFT-->		<text x1="245"  x2="305"  y1="477"  y2="497" color="TextHigh" font="Osd">{FollowingStartDateTime:%H\:%M}</text>
+<!--LOGOSLEFT-->		<marquee x1="315"  x2="814" y1="477"  y2="497" color="TextHigh" font="Osd">{FollowingTitle}</marquee>
+<!--LOGOSLEFT-NOMARQUEE-->		<text x1="315"  x2="814" y1="477"  y2="497" color="TextHigh" font="Osd">{FollowingTitle}</text>
+<!--LOGOSLEFT-->		<text x1="834" x2="918" y1="477"  y2="497" condition="{FollowingDuration}" color="TextButton" align="right" font="Sml">{FollowingDuration:%m}</text>
+<!--LOGOSLEFT-->		<marquee x1="325"  x2="928" y1="502"  y2="522" color="TextButton" align="left" font="Sml">{FollowingShortText}</marquee>
+<!--LOGOSLEFT-NOMARQUEE-->		<text x1="325"  x2="928" y1="502"  y2="522" color="TextButton" align="left" font="Sml">{FollowingShortText}</text>
+	
+		<image  x="50"  y="529" colors="128" path="images/buttonsChannel.png"/>		
+		<ellipse x1="48" x2="53" y1="542" y2="552" arc="-3" color="#0000000"/>
+		<ellipse x1="930" x2="935" y1="542" y2="552"  arc="-4" color="#0000000"/>
+		
+		<text x1="70"  x2="150" y1="533" y2="544" color="TextHigh" align="center" font="VDRSymbols Sans:Book@11">STR: {FrontendSTR}%</text>
+		<text x1="151" x2="231" y1="533" y2="544" color="TextHigh" align="center" font="VDRSymbols Sans:Book@11">SNR: {FrontendSNR}%</text>
+		<text  x1="584" x2="649" y1="533" y2="544" align="center" condition="{HasTeletext}" color="TextSmallButton" font="VDRSymbols Sans:Book@11">VTX</text>
+		<text  x1="650" x2="715" y1="533" y2="544" align="center" condition="{HasDolby}" color="TextSmallButton" font="VDRSymbols Sans:Book@11">DOLBY</text>
+		<text  x1="716" x2="779" y1="533" y2="544" align="center" condition="equal({AudioChannel},'stereo')" color="TextSmallButton" font="VDRSymbols Sans:Book@11">STEREO</text>
+		<text  x1="780" x2="846" y1="533" y2="544" align="center" condition="{IsEncrypted}"  color="TextSmallButton" font="VDRSymbols Sans:Book@11">CRYPT</text>
+		<blink x1="847" x2="910" y1="533" y2="544" align="center" delay="600" condition="{IsRecording}" color="TextSmallButton" font="VDRSymbols Sans:Book@11">REC</blink>
+		<text x1="584" x2="649" y1="533" y2="544" align="center" condition="not({HasTeletext})" color="TextButton" font="VDRSymbols Sans:Book@11">VTX</text>
+		<text x1="650" x2="715" y1="533" y2="544" align="center" condition="not({HasDolby})" color="TextButton" font="VDRSymbols Sans:Book@11">DOLBY</text>
+		<text x1="716" x2="779" y1="533" y2="544" align="center" condition="not(equal({AudioChannel},'stereo'))" color="TextButton" font="VDRSymbols Sans:Book@11">STEREO</text>
+		<text x1="780" x2="846" y1="533" y2="544" align="center" condition="not({IsEncrypted})" color="TextSmallButton" font="VDRSymbols Sans:Book@11">FTA</text>
+		<text x1="847" x2="910" y1="533" y2="544" align="center" condition="not({IsRecording})" color="TextButton" font="VDRSymbols Sans:Book@11">REC</text>
+		
+		<block condition="or({MessageInfo},{MessageStatus},{MessageWarning},{MessageError})">
+			<image x="50"  y="521" colors="64" path="images/messageBG.png"/>
+			<text x1="50" x2="934" y1="524" y2="544" align="center" color="TextHigh"  font="Osd">{MessageInfo}</text>
+			<text x1="50" x2="934" y1="524" y2="544" align="center" color="GreenHigh" font="Osd">{MessageStatus}</text>
+			<text x1="50" x2="934" y1="524" y2="544" align="center" color="YellowHigh" font="Osd">{MessageWarning}</text>
+			<text x1="50" x2="934" y1="524" y2="544" align="center" color="RedHigh"  font="Osd">{MessageError}</text> 
+		</block>
+</display>

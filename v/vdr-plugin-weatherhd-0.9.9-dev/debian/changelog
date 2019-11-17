@@ -1,0 +1,153 @@
+vdr-plugin-weatherhd (0.9.9-dev-4easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:54:11 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev-4easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:22:32 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev-4easyVDR1~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:28:58 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev-4easyVDR0~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix imagemagick path
+  * fix depends  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 09 Jul 2017 16:03:20 +0200
+ 
+vdr-plugin-weatherhd (0.9.9-dev-3easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:49:47 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev-3easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:50:52 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev-3easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:51:33 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev-3easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:10:55 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev-3easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:56:25 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Nov 2015 00:42:20 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR11~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 18:59:30 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR10~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:32:20 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR9~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:39:54 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR8~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 02:14:02 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:34:47 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Feb 2015 03:52:55 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 23:01:07 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:22:48 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:32:12 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Oct 2013 06:17:54 +0100
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR1~saucy) saucy; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Sep 2013 00:34:40 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR1~raring) raring; urgency=high
+
+  * rebuild vdr-2.0.2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 07 Jul 2013 02:25:52 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR0~raring) raring; urgency=high
+
+  * fix easyvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 30 Jun 2013 22:48:20 +0200
+
+vdr-plugin-weatherhd (0.9.9-dev2easyVDR~raring) raring; urgency=high
+
+  * rebuild raring
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Jun 2013 02:18:22 +0200
+ 
+vdr-plugin-weatherhd (0.9.9-dev1easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * first build easyVDR 1.7.21
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Feb 2013 10:46:06 +0100
+
+

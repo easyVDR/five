@@ -1,0 +1,6 @@
+libvdr-weatherhd.so.*           usr/lib/vdr/plugins/
+moronsuite/weather		var/lib/vdr/plugins/moronsuite/
+locale/*   usr/share/locale
+
+
+

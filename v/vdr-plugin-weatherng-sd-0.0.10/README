@@ -1,0 +1,65 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Sascha Bajonczak <BEE-JAY@gmx.net> 
+Project's homepage:          http://vdr.glaserei-franz.de
+
+Latest version available at: http://vdr.glaserei-franz.de
+
+See the file COPYING for license information.
+
+Description:
+=============
+10 days weather forecast 
+
+For now have a look in the german README.DE , only short description here;)
+
+Short (and maybe not completed) way:
+
+You need imlib2 or imagemagick (tested with newest one, see info in "Makefile").
+
+Unpack and Compile the plugin (see VDR docs).
+Copy whole folder "weatherng" to $PLUGINCONFIGDIR
+Edit "weatherng.sh".
+Start VDR with "-P weatherng".
+
+
+optional :
+Commandline parameters : -D --data  -I --images -S --script -C --config
+
+-D = Path to your data and radarmaps (data1.xml)
+-I = Path to folder "images"
+-S = Path to weatherng.sh
+-C = Path to config ( e.g /etc/vdr/plugins )
+
+If you dont set parameters , the default for them are:
+$PLUGINCONFIG/weatherng
+
+
+
+=================================================================================
+Before you use the examples of URLs in weatherng.sh ,you agree with the "Terms of Use" from
+"The Weather Channel" , short TWC , which you can found at http://www.weather.com 
+and that you have the permission to use the downloaded files.
+The same for copyrighted radarmaps.
+=================================================================================
+
+Then start VDR again with  or without commandline parameter (-P weatherng).
+Goto setup and change what you like.
+
+
+To get your Station Id move with your internetbrowser to :
+http://www.weather.com
+Type in the name of your town (e.g. "London" and hit enter.
+Now have a look at the link for your town which you hopefully got after you hit return.
+If you dont got one , try with a bigger town next to you.
+For "Herne, Germany" you get something like ....GMXX0056.... .
+so GMXX0056 is the StationId for you if you live in "Herne,Germany" ;)
+
+
+Key RIGHT                    : day forward or next radarmap
+Key LEFT                     : previous day or previous radarmap
+Key Back/Escape              : back to forecast or ext
+the oher are selfexplaining.....
+
+If you dont update , you wont see any radarmaps/weatherdata.
+So press  green Key "Refresh" after first run.
