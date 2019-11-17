@@ -1,0 +1,101 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@tvdr.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-01-26 11:52+0100\n"
+"PO-Revision-Date: 2011-07-31 11:48+0200\n"
+"Last-Translator: Klaus Schmidinger <kls@tvdr.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Sleeptimer"
+msgstr "Sleeptimer"
+
+msgid "Autoswitch"
+msgstr "Automatisch"
+
+msgid "Disable"
+msgstr "Deaktivieren"
+
+msgid "Not active"
+msgstr "Nicht aktiv"
+
+msgid "Shutdown [min]"
+msgstr "Shutdown [min]"
+
+msgid "Shutdown (time)"
+msgstr "Shutdown (Uhrzeit)"
+
+#, c-format
+msgid "Disable sleeptimer in %d minutes"
+msgstr "Sleeptimer in %d Minuten abbrechen"
+
+msgid "Shutdown"
+msgstr "Herunterfahren"
+
+msgid "Mute"
+msgstr "Stummschalten"
+
+msgid "Execute command"
+msgstr "Befehl ausführen"
+
+msgid "Default Timespan [min]"
+msgstr "Standard-Zeitspanne [min]"
+
+msgid "Action"
+msgstr "Aktion"
+
+msgid "Command"
+msgstr "Befehl"
+
+msgid "Use default for autoswitch"
+msgstr "Standard in Automatik"
+
+msgid "No"
+msgstr "Nein"
+
+msgid "Yes"
+msgstr "Ja"
+
+msgid "Confirm"
+msgstr "Bestätigen"
+
+msgid "Going to sleep in about one minute"
+msgstr "Sleeptimer in einer Minute"
+
+msgid "Disable sleeptimer?"
+msgstr "Sleeptimer deaktivieren?"
+
+#, c-format
+msgid "Activate sleeptimer at %i:%.2i?"
+msgstr "Sleeptimer um %i:%.2i aktivieren?"
+
+msgid "Timespan shorter than 2 minutes"
+msgstr "Zeitspanne kürzer 2 Minuten"
+
+#, c-format
+msgid "Activate sleeptimer in %i minutes?"
+msgstr "Sleeptimer in %i Minuten aktivieren?"
+
+#, c-format
+msgid "Sleeptimer in %i minute"
+msgstr "Sleeptimer in %i Minute"
+
+#, c-format
+msgid "Sleeptimer in %i minutes"
+msgstr "Sleeptimer in %i Minuten"
+
+msgid "Sleeptimer disabled"
+msgstr "Sleeptimer inaktiv"
+
+#, c-format
+msgid "Enable sleeptimer in %i minutes?"
+msgstr "Sleeptimer in %i Minuten?"

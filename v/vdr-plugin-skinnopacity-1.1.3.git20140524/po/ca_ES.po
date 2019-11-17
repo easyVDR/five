@@ -1,0 +1,702 @@
+# VDR plugin language source file.
+# Copyright (C) 2012
+# This file is distributed under the same license as the PACKAGE package.
+# louis, 2012.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: skinnopacity 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2014-05-24 15:11+0200\n"
+"PO-Revision-Date: 2013-03-19 22:56+0100\n"
+"Last-Translator: Gabychan <gbonich@gmail.com>\n"
+"Language-Team: \n"
+"Language: ca\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Català\n"
+"X-Poedit-Country: Catalunya\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "No Cast available"
+msgstr ""
+
+msgid "Cast"
+msgstr ""
+
+msgid "EPG Info"
+msgstr ""
+
+msgid "Reruns"
+msgstr ""
+
+msgid "Recording Information"
+msgstr ""
+
+msgid "Image Galery"
+msgstr ""
+
+msgid "TheTVDB Info"
+msgstr ""
+
+msgid "TheTVDB Information"
+msgstr ""
+
+msgid "Episode"
+msgstr ""
+
+msgid "Season"
+msgstr ""
+
+msgid "Episode Overview"
+msgstr ""
+
+msgid "First aired"
+msgstr ""
+
+msgid "Guest Stars"
+msgstr ""
+
+msgid "TheMovieDB Rating"
+msgstr ""
+
+msgid "Series Overview"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "TheMovieDB Information"
+msgstr ""
+
+msgid "Original Title"
+msgstr ""
+
+msgid "Tagline"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "yes"
+msgstr "sí"
+
+msgid "no"
+msgstr "no"
+
+msgid "Adult"
+msgstr ""
+
+msgid "Collection"
+msgstr ""
+
+msgid "Budget"
+msgstr ""
+
+msgid "Revenue"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "Release Date"
+msgstr ""
+
+msgid "Runtime"
+msgstr ""
+
+msgid "minutes"
+msgstr ""
+
+msgid "TheMovieDB Popularity"
+msgstr ""
+
+msgid "TheMovieDB Vote Average"
+msgstr ""
+
+msgid "free"
+msgstr "lliure"
+
+msgid "Volume"
+msgstr "Volum"
+
+msgid "images"
+msgstr "imatges"
+
+msgid "min"
+msgstr "min"
+
+msgid "Reruns of "
+msgstr ""
+
+msgid "No reruns found"
+msgstr ""
+
+msgid "Size"
+msgstr "Mida"
+
+msgid "cut"
+msgstr "retalla"
+
+msgid "Length"
+msgstr "Durada"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Est. bitrate"
+msgstr "Bitrate estimat"
+
+msgid "Search timer"
+msgstr "Cerca timer"
+
+msgid "Transp."
+msgstr "Transponedor"
+
+msgid "No EPG Information found"
+msgstr "No hi ha informació EPG"
+
+msgid "Duration"
+msgstr "Durada"
+
+msgid "recording"
+msgstr "gravació"
+
+msgid "recordings"
+msgstr "gravacions"
+
+msgid "new"
+msgstr "nou"
+
+msgid "Font"
+msgstr "Font"
+
+msgid "VDR Menu: Common Settings"
+msgstr "Menu VDR: Preferències"
+
+msgid "VDR Menu: Main and Setup Menu"
+msgstr "Menu VDR: Menú principal i configuració"
+
+msgid "VDR Menu: Schedules Menu"
+msgstr "Menu VDR: Menú programació"
+
+msgid "VDR Menu: Channels Menu"
+msgstr "Menu VDR: Menú canals"
+
+msgid "VDR Menu: Timers Menu"
+msgstr "Menu VDR: Menú timer"
+
+msgid "VDR Menu: Recordings Menu"
+msgstr "Menu VDR: Menu gravacions"
+
+msgid "VDR Menu: Detailed EPG & Recordings View"
+msgstr ""
+
+msgid "Channel Switching"
+msgstr "Canvi de canal"
+
+msgid "Replay"
+msgstr "Reproducció"
+
+msgid "Audio Tracks"
+msgstr "Pistes d'àudio"
+
+msgid "Messages"
+msgstr "Missatges"
+
+msgid "Image Caching"
+msgstr "Cache d'imatge"
+
+msgid "right"
+msgstr "dreta"
+
+msgid "left"
+msgstr "esquerra"
+
+msgid "Carriage Return"
+msgstr "Retorn"
+
+msgid "Forward and Back again"
+msgstr "Avançar i retrocedir de nou"
+
+msgid "off"
+msgstr "off"
+
+msgid "slow"
+msgstr "lent"
+
+msgid "medium"
+msgstr "normal"
+
+msgid "fast"
+msgstr "ràpid"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "Create Log Messages for image loading"
+msgstr "Crea Log d'imatges carregades"
+
+msgid "Number of Default Menu Entries per Page"
+msgstr "Nombre d'entrades de menú per pàgina"
+
+msgid "Adjust Font Size - Default Menu Item"
+msgstr "Ajust Mida de la Font - Opció de Menú"
+
+msgid "Adjustment of narrow menus"
+msgstr "Ajust dels menús limitats"
+
+msgid "Scale Video size to fit into menu window"
+msgstr "Ajust de la mida de video a la finestra del menú"
+
+msgid "Header Height (Percent of OSD Height)"
+msgstr "Alçada de la capçalera (% Alçada OSD)"
+
+msgid "Footer Height (Percent of OSD Height)"
+msgstr "Alçada del peu de pàgina (% Alçada OSD)"
+
+msgid "Rounded Corners for menu items and buttons"
+msgstr "Cantells rodons als elements de menú i botons"
+
+msgid "Radius of rounded corners"
+msgstr "Radi dels cantells rodons"
+
+msgid "Use Channel Logo background"
+msgstr "Utilitza logo del canal de fons"
+
+msgid "Fade-In Time in ms (Zero for switching off fading)"
+msgstr "Fosa d'entrada, temps en ms (0 per desactivació)"
+
+msgid "Menu Items Scroll Style"
+msgstr "Estil del Menu desplaçament"
+
+msgid "Menu Items Scrolling Speed"
+msgstr "Velocitat desplaçament elements de menú"
+
+msgid "Menu Items Scrolling Delay in s"
+msgstr "Retard desplaçament elements de menú en s"
+
+msgid "Adjust Font Size - Header"
+msgstr "Ajusta mida de la Font - capçalera"
+
+msgid "Adjust Font Size - Date"
+msgstr "Ajusta mida de la Font - Data"
+
+msgid "Adjust Font Size - Color Buttons"
+msgstr "Ajusta mida de la Font - Botons de color"
+
+msgid "Adjust Font Size - Messages"
+msgstr "Ajusta mida de la Font - Missatges"
+
+msgid "Adjust Font Size - Detail View Text"
+msgstr "Ajusta mida de la Font - Vista detall del text"
+
+msgid "Adjust Font Size - Detail View Text Small"
+msgstr "Ajusta mida de la Font -  Vista detall text petit"
+
+msgid "Adjust Font Size - Detail View Header"
+msgstr "Ajusta mida de la Font - Vista detall capçalera"
+
+msgid "Adjust Font Size - Detail View Header Large"
+msgstr "Ajusta mida de la Font - Vista més detall capçalera"
+
+msgid "\"VDR\" plus VDR version"
+msgstr "\"VDR\" versió plus VDR"
+
+msgid "only VDR version"
+msgstr "només versió VDR"
+
+msgid "no title"
+msgstr "sense títol"
+
+msgid "free time in hours"
+msgstr "temps lliure en hores"
+
+msgid "free space in GB"
+msgstr "espai lliure en GB"
+
+msgid "small without logo"
+msgstr "petit sense logo"
+
+msgid "Use narrow main menu"
+msgstr "Utilitza menú principal limitat"
+
+msgid "Width (Percent of OSD Width)"
+msgstr "Amplada (% amplada OSD)"
+
+msgid "Use narrow setup menu"
+msgstr "Utilitza configuració limitada"
+
+msgid "Number of entires per page"
+msgstr "Nombre d'entrades per pàgina"
+
+msgid "Use menu icons"
+msgstr "Utilitza menú d'icones"
+
+msgid "Main menu title style"
+msgstr "Estil de títol al menú principal"
+
+msgid "Display Disk Usage"
+msgstr "Mostra Ús del disc"
+
+msgid "Size (square, Percent of OSD Width)"
+msgstr "Mida (quadrat, % amplada OSD)"
+
+msgid "Free Disc Display"
+msgstr "Mostra espai lliure al disc"
+
+msgid "Adjust Font Size - free"
+msgstr "Ajusta mida de la Font - lliure"
+
+msgid "Adjust Font Size - percent"
+msgstr "Ajusta mida de la Font - percentatge"
+
+msgid "Display Timers"
+msgstr "Mostra timers"
+
+msgid "Maximum number of Timers"
+msgstr "Nombre màxim de timers"
+
+msgid "Width of Timers (Percent of OSD Width)"
+msgstr "Amplada dels timers (% amplada OSD)"
+
+msgid "Width of Channel Logos (Percent of Timer Width)"
+msgstr "Ample dels Logos Canal (% Amplada temporitzador)"
+
+msgid "Adjust Font Size - Title"
+msgstr "Ajusta mida de la Font - Títol"
+
+msgid "Show Timer Conflicts"
+msgstr "Mostra conflictes timers"
+
+msgid "Header Logo Width"
+msgstr "Amplada logo capçalera"
+
+msgid "Header Logo Height"
+msgstr "Alçada logo capçalera"
+
+msgid "Adjust Font Size - Menu Items"
+msgstr "Ajusta mida de la font - Elements de menú"
+
+msgid "window"
+msgstr "finestre"
+
+msgid "full screen"
+msgstr "pantalla completa"
+
+msgid "Use narrow menu"
+msgstr "Utilitza menú limitat"
+
+msgid "Mode of EPG Window"
+msgstr "Mode pantalla EPG"
+
+msgid "EPG Window Fade-In Time in ms (Zero for switching off fading)"
+msgstr "Fosa d'entrada finestra EPG, temps en ms (0 per desactivació)"
+
+msgid "EPG Window Display Delay in s"
+msgstr "Temps visualització finestra EPG en s"
+
+msgid "EPG Window Scroll Delay in s"
+msgstr "Temps retard desplaçament finestra EPG en s"
+
+msgid "EPG Window Text Scrolling Speed"
+msgstr "Velocitat desplaçament text finestra EPG"
+
+msgid "Height of EPG Info Window (Percent of OSD Height)"
+msgstr "Alçada Finestra Info EPG (% alçada OSD)"
+
+msgid "Adjust Font Size - Menu Item"
+msgstr "Ajusta mida de la Font - Element de menú"
+
+msgid "Adjust Font Size - Menu Item Small"
+msgstr "Ajusta mida de la Font - Element petit de menú"
+
+msgid "Adjust Font Size - EPG Info Window"
+msgstr "Ajusta mida de la Font - Finestra Info EPG"
+
+msgid "Adjust Font Size - EPG Info Window Header"
+msgstr "Ajusta mida de la Font - Finestra Info EPG encapçalament "
+
+msgid "Transponder Information"
+msgstr "Informació Transponedor"
+
+msgid "Current Schedule"
+msgstr "Programació actual"
+
+msgid "Plain Channels"
+msgstr "Canals plans"
+
+msgid "Menu Items display mode"
+msgstr "Mode visualització Elements de menú"
+
+msgid "Display schedules with time info"
+msgstr "Veure horaris amb informació en temps"
+
+msgid "Number of EPG Entries in Schedules Info Window"
+msgstr "Nombre d'entrades EPG a la Finestra de Programació"
+
+msgid "never"
+msgstr "mai"
+
+msgid "always"
+msgstr "sempre"
+
+msgid "only if no tvscraper media available"
+msgstr "Sols si tvscraper media no disponible"
+
+msgid "Mode of recording Window"
+msgstr "Mode de gravació"
+
+msgid "Border around detailed recording view"
+msgstr "Vora al voltant de vista registre detallat"
+
+msgid "Use folder poster if available"
+msgstr "Utilitzeu carpeta cartell si està disponible"
+
+msgid "Width of manually set recording poster"
+msgstr "Ample del cartell de gravació ajustat manualment"
+
+msgid "Height of manually set recording poster"
+msgstr "Alçada del cartell de gravació ajustat manualment"
+
+msgid "if exists"
+msgstr "si existeix"
+
+msgid "Border around view"
+msgstr ""
+
+msgid "Scroll Speed with up / down (number of lines)"
+msgstr ""
+
+msgid "Header Height detailed EPG view (Perc. of OSD Height)"
+msgstr ""
+
+msgid "Header Height detailed recording view (Perc. of OSD Height)"
+msgstr ""
+
+msgid "Number of reruns to display"
+msgstr "Nombre de reemissions a mostrar"
+
+msgid "Use Subtitle for reruns"
+msgstr "Utilitza subtítols a les reemissions"
+
+msgid "EPG Image Width"
+msgstr ""
+
+msgid "EPG Image Height"
+msgstr ""
+
+msgid "Large EPG Image Width"
+msgstr ""
+
+msgid "Large EPG Image Height"
+msgstr ""
+
+msgid "transparent channel logo"
+msgstr "Logo del canal transparent"
+
+msgid "full osd width"
+msgstr "Amplada total OSD"
+
+msgid "do not display"
+msgstr "no mostrar"
+
+msgid "top"
+msgstr ""
+
+msgid "middle"
+msgstr ""
+
+msgid "bottom"
+msgstr ""
+
+msgid "show elapsed time"
+msgstr "mostra temps transcorregut"
+
+msgid "show remaining time"
+msgstr "mostra temps restant"
+
+msgid "Height of Channel Display (Percent of OSD Height)"
+msgstr "Alçada Visualització Canal (% alçada OSD)"
+
+msgid "Left & Right Border Width"
+msgstr "Amplada vores esquerra i dreta"
+
+msgid "Bottom Border Height"
+msgstr "Alçada vora botó"
+
+msgid "Background Transparency in Percent"
+msgstr "Transparència de fons en percentatge"
+
+msgid "Background Style"
+msgstr "Estil del Fons"
+
+msgid "Rounded Corners"
+msgstr "Cantells rodons"
+
+msgid "Vertical Channel Logo Alignment"
+msgstr ""
+
+msgid "Channel Logo Position"
+msgstr "Posició Logo Canal"
+
+msgid "Channel Logo original Width"
+msgstr "Amplada Original Logo del canal"
+
+msgid "Channel Logo original Height"
+msgstr "Alçada Original Logo del canal"
+
+msgid "Kind of time display for current schedule"
+msgstr "Tipus de visualització per la programació actual"
+
+msgid "Display Signal Strength & Quality"
+msgstr "Mostra qualitat i intensitat del senyal"
+
+msgid "Display Channel Source & Rec. Info"
+msgstr ""
+
+msgid "Display Poster or Fanart from TVScraper"
+msgstr "Mostra Poster o Fanart de TVScraper"
+
+msgid "Border in Pixel"
+msgstr "Final del Pixel"
+
+msgid "Display previous and next Channel Group"
+msgstr "Mostra grups de canals anterior i posterior"
+
+msgid "Adjust Font Size - EPG Text"
+msgstr "Ajusta mida de la Font - Text EPG"
+
+msgid "Adjust Font Size - EPG Infotext"
+msgstr "Ajusta mida de la Font - Infotext EPG"
+
+msgid "Adjust Font Size - Channel Source Info"
+msgstr "Ajusta mide de la Font - Info del Canal"
+
+msgid "Adjust Font Size - Channel Group"
+msgstr "Ajusta mida de la Font - Grup de canals"
+
+msgid "Adjust Font Size - Next/Prev Channel Group"
+msgstr "Ajusta mida de la Font - Post/Ant Grup Canals"
+
+msgid "Height of Replay Display (Percent of OSD Height)"
+msgstr "Alçada Visualització Reproducció (% alcada OSD)"
+
+msgid "Adjust Font Size - Text"
+msgstr "Ajusta mida de la Font - Text"
+
+msgid "Width of Tracks Display (Percent of OSD Width)"
+msgstr "Amplada Visualització Pistes (% amplada OSD)"
+
+msgid "Height of Track Items (in pixels)"
+msgstr "Alçada Elements de Pistes (en píxels)"
+
+msgid "Position (0: bot. center, 1: bot. left, ... , 7: bot. right)"
+msgstr "Posició (0: bot. central, 1: bot. esq., ... , 7: bot. dret)"
+
+msgid "Border Left / Right"
+msgstr "Vora esquerra / dreta"
+
+msgid "Border Top / Bottom"
+msgstr "Vora superior / inferior"
+
+msgid "Adjust Font Size - Buttons"
+msgstr "Ajusta mida de la Font - Botons"
+
+msgid "Width of Message Display (Percent of OSD Height)"
+msgstr "Amplada del missatge (% Amplada OSD)"
+
+msgid "Height of Message Display (Percent of OSD Height)"
+msgstr "Alçada del missatge (% alçada OSD)"
+
+msgid "Adjust Font Size"
+msgstr "Ajusta mida de la Font"
+
+msgid "Volume Display"
+msgstr "Mostra volum"
+
+msgid "Width of Volume Display (Percent of OSD Height)"
+msgstr "Amplada Visualització volum (% Amplada OSD)"
+
+msgid "Height of Volume Display (Percent of OSD Height)"
+msgstr "Alçada Visualització volum (% Alçada OSD)"
+
+msgid "Limit Logo Cache"
+msgstr "Limit Cache Logo"
+
+msgid "Maximal number of logos to cache"
+msgstr "Màxim nombre de logos a la cache"
+
+msgid "Number of  logos to cache at start"
+msgstr "Nombre de logos a la cache al començar"
+
+msgid "Cache Sizes"
+msgstr "Mida cache"
+
+msgid "Menu Icon cache"
+msgstr "Menu cache icona"
+
+msgid "Skin Icon image cache"
+msgstr "Pell Icona imatge cache"
+
+msgid "Logo cache"
+msgstr "Cache Logo"
+
+msgid "Menu Item Logo cache"
+msgstr "Element Menu cache Logo"
+
+msgid "Timer Logo cache"
+msgstr "Cache Timer logo"
+
+msgid "Background Images cache"
+msgstr "Cache imatges de fons"
+
+msgid "conflict"
+msgstr "conflicte"
+
+msgid "conflicts"
+msgstr "conflictes"
+
+#~ msgid "Display additional EPG Pictures in detailed recording View"
+#~ msgstr "Mostra imatges EPG addicionals a vista detallada gravacions"
+
+#~ msgid "Number of EPG pictures to display"
+#~ msgstr "Nombre d'imatges EPG a mostrar"
+
+#~ msgid "Border around detailed EPG view"
+#~ msgstr "Vora al voltant de vista detallada EPG"
+
+#~ msgid "Display Reruns in detailed EPG View"
+#~ msgstr "Mostra Reemissions a vista detallada EPG"
+
+#~ msgid "Display additional EPG Pictures in detailed EPG View"
+#~ msgstr "Mostra imatges addicionals a vista detallada EPG"
+
+#~ msgid "Detail EPG View EPG Image Width"
+#~ msgstr "Amplada imatges a vista detallada EPG"
+
+#~ msgid "Detail EPG View EPG Image Height"
+#~ msgstr "Alçada imatges a vista detallada EPG"
+
+#~ msgid "Detail EPG View additional EPG Image Width"
+#~ msgstr "Amplada imatges addicionals a vista detallada EPG"
+
+#~ msgid "Detail EPG View additional EPG Image Height"
+#~ msgstr "Alçada imatges addicionals a vista detallada EPG"
+
+#~ msgid "RERUNS OF THIS SHOW"
+#~ msgstr "REEMISSIONS"
+
+#~ msgid "Actors"
+#~ msgstr "Actors"
+
+#~ msgid "Display Channel Source information"
+#~ msgstr "Mostra informació del canal"

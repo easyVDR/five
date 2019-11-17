@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+
+#DH_VERBOSE=1
+
+MAKE_OPTIONS = STRIP=/bin/true
+
+.PHONY: override_dh_auto_build override_dh_strip override_dh_auto_install override_dh_gencontrol
+
+override_dh_auto_build:
+	dh_auto_build -- $(MAKE_OPTIONS)
+
+override_dh_strip:
+	dh_strip --dbg-package=vdr-plugin-skinsoppalusikka-dbg
+
+override_dh_auto_install:
+	dh_auto_install --destdir=debian/vdr-plugin-skinsoppalusikka
+
+override_dh_gencontrol:
+	sh /usr/share/vdr-dev/dependencies.sh
+	dh_gencontrol
+
+%:
+	dh $@
+

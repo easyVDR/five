@@ -1,0 +1,47 @@
+VDR Plugin 'sleeptimer' Revision History
+----------------------------------------
+2011-07-21: Version 0.8
+  - Fixed crashing if a sleeptimer was disabled and within the next 10s
+    a new sleeptimer was activated.
+  - Updated translations, added use of gettext, correction to vdr's
+    historical language support capabilities
+  - The first option in the main menu is now 'Shutdown [min]' if there
+    is no sleeptimer running at present. With an active sleeptimer the
+    first option will be to 'Disable sleeptimer'.
+  - Added 'Default Timespan' option to the plugins setup which lets
+    the user predefine a default value for 'Shutdown [min]' in the
+    main menu.
+  - Added Autoswitch function which lets the user switch through a 
+    predefined array of values. Especially convenient in combination
+    with the use of keymacros. The keys User1-User9 are accepted. 
+    (Inspired by an idea / feature request by grindo)
+
+2006-01-22: Version 0.7
+  - Fixed language support in Sleep-Timer menu, earlier only German 
+    was supported (Thanks to Mika Karjunen)
+
+2004-07-18: Version 0.6
+  - Made sleeptimer compile and work with VDR 1.3.x (Thanks to 
+    Klaus Schmidinger)
+
+2004-04-02: Version 0.5
+
+ - Enter absolut shutdown time (Thanks to Michael Maucher)
+   Note: if VDRs Version is below 1.3.7 you have to patch VDR for this. Look 
+   at the "patches" directory.
+
+2004-03-08: Version 0.4
+
+ - Don't display shutdown warning while shutting down (Thanks to Tobias Grimm)
+
+2004-02-22: Version 0.3
+
+- Bugfix in parameter parsing (Thanks to Andreas Brachold)
+
+2003-09-11: Version 0.2
+
+- Some language fixes.
+
+2003-05-12: Version 0.1
+
+- Initial revision.

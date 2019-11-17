@@ -1,0 +1,29 @@
+Source: vdr-plugin-softhddevice-openglosd
+Section: video
+Priority: extra
+Maintainer: yaVDR Team <team@yavdr.org>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), gettext, pkg-config, libva-dev, libx11-xcb-dev, libxcb-dpms0-dev, libxcb-xv0-dev, libxcb-glx0-dev, libxcb-randr0-dev, libxcb-screensaver0-dev, libxcb-image0-dev, libxcb-util-dev, libxcb-icccm4-dev, libxcb-ewmh-dev, libxcb-keysyms1-dev, libavcodec-dev, libavformat-dev, libswresample-dev, i965-va-driver, vdpau-va-driver, libasound2-dev, libgl1-mesa-dev, libglu1-mesa-dev, libvdpau-dev, libxcb-ewmh-dev, libglm-dev, libglew-dev, freeglut3-dev, libfreetype6-dev
+Standards-Version: 3.9.5
+Homepage: https://github.com/louisbraun/softhddevice-openglosd
+
+Package: vdr-plugin-softhddevice-openglosd
+Architecture: any
+Conflicts: vdr-plugin-softhddevice-vaapi
+Replaces: vdr-plugin-softhddevice-vaapi
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Plugin for VDR. A software and GPU emulated HD device
+ This plugin for the Linux Video Disc Recorder VDR. 
+ A software and GPU emulated HD device
+
+Package: vdr-plugin-softhddevice-openglosd-dbg
+Conflicts: vdr-plugin-softhddevice-vaapi-dbg
+Replaces: vdr-plugin-softhddevice-vaapi-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-softhddevice-openglosd (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-softhddevice-openglosd
+ .
+ This package contains only the debugging symbols for vdr-plugin-softhddevice-openglosd
+

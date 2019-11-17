@@ -1,0 +1,137 @@
+# VDR plugin language source file.
+# Copyright (C) 2007-2015 Rolf Ahrenberg
+# This file is distributed under the same license as the skinsoppalusikka package.
+# Arthur Konovalov
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skinsoppalusikka 2.2.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2015-04-04 04:04+0300\n"
+"PO-Revision-Date: 2015-04-04 04:04+0300\n"
+"Last-Translator: Arthur Konovalov\n"
+"Language-Team: Estonian <vdr@linuxtv.org>\n"
+"Language: et\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-13\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Button$Flush cache"
+msgstr "Tühjenda"
+
+msgid "Show auxiliary information"
+msgstr "Lisainfo kuvamine"
+
+msgid "Define whether any auxiliary information is shown in info menus."
+msgstr "Menüüs lisainfo kuvamise määritlemine."
+
+msgid "Show progressbar"
+msgstr "Edenemisriba kuvamine"
+
+msgid "Define whether a progressbar is shown in schedule menu."
+msgstr "Kavas edenemisriba kuvamise määritlemine."
+
+msgid "Show symbols"
+msgstr "Sümbolite kuvamine"
+
+msgid "Define whether symbols are shown in recordings and schedule menus."
+msgstr "Kavas sümbolite kuvamise määritlemine."
+
+msgid "Show VPS in channel info"
+msgstr "VPS kanaliinfos"
+
+msgid "Define whether VPS information is shown in channel info menu."
+msgstr "Kanaliinfos VPS kuvamise määritlemine."
+
+msgid "Show event duration in channel info"
+msgstr "Saate kestus kanaliinfos"
+
+msgid "remaining"
+msgstr "aeg lõpuni"
+
+msgid "total"
+msgstr "täiskestus"
+
+msgid "Define whether remaining or total event duration is shown in channel info menu."
+msgstr "Kanaliinfos saate kestuse kuvamise määritlemine."
+
+msgid "Show channel logos"
+msgstr "Kanalilogo kuvamine"
+
+msgid ""
+"Define whether channels logos are shown in channel info menu.\n"
+"\n"
+"Only XPM format is accepted: 64x48 pixel and max. 13 colors."
+msgstr ""
+"Kanalilogo kuvamise määritlemine.\n"
+"\n"
+"Ainult 64x48px ja max 13 värvi XPM formaat toetatud."
+
+msgid "Channel logo cache size"
+msgstr "Kanalilogo vahemälu suurus"
+
+msgid ""
+"Define the cache size for channel logos.\n"
+"\n"
+"The bigger cache results faster zapping."
+msgstr ""
+"Kanalilogo vahemälu suuruse määritlemine.\n"
+"\n"
+"Mida suurem seda kiirem kanalivahetus."
+
+msgid "Flushing channel logo cache..."
+msgstr "Kanalilogo vahemälu tühjendamine..."
+
+msgid "Help"
+msgstr "Abi"
+
+msgid "Soppalusikka skin"
+msgstr "Soppalusikka kest"
+
+msgid "*** Invalid Channel ***"
+msgstr "*** Vigane kanal ***"
+
+msgid "min"
+msgstr "min"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "EBU"
+msgstr "EBU"
+
+msgid "Duration"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Priority"
+msgstr "Prioriteet"
+
+msgid "Lifetime"
+msgstr "Eluiga"
+
+msgid "Format"
+msgstr ""
+
+msgid "Auxiliary information"
+msgstr "Lisainfo"
+
+msgid "Mute"
+msgstr "Hääletu"
+
+msgid "Volume"
+msgstr "Helitugevus"
+
+msgid "Stereo"
+msgstr "Stereo"
+
+msgid "Left"
+msgstr "Vasak"
+
+msgid "Right"
+msgstr "Parem"
+
+msgid "Soppalusikka"
+msgstr "Soppalusikka"

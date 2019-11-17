@@ -1,0 +1,433 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Louis Braun <louis DOT braun AT gmx DOT de>
+
+Project's homepage:          http://projects.vdr-developer.org/projects/skin-nopacity/
+
+Latest version available at: http://projects.vdr-developer.org/projects/skin-nopacity/files
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Requirements
+------------
+
+- VDR version >= 1.7.34
+
+- Installed ImageMagick or GraphicsMagick for displaying png/jpg Icons, Channel Logos 
+  and EPG Images
+
+- for scaling the video picture to fit into the VDR menu window please use 
+  softhddevice plugin revision 87c1c7be (2013-01-01) or newer.
+
+- epgsearch Git since commit ba7c6277 (2013-01-03) to correctly replace the schedules
+  menu with epgsearch
+
+Description
+-----------
+
+"nOpacity" is a highly customizable native true color skin for the Video Disc Recorder.
+
+Installation 
+------------
+
+After "normal" Plugin installation you have to care about the paths for the
+used Icons, the channel logos and epg images. The following paths can be set
+at startup:
+
+-i path, --iconpath=path
+    Path to the icons (Default: <ResourceDirectory>/plugins/skinnopacity/icons/)
+
+-l path, --logopath=path
+    Path to the logos (Default: <ResourceDirectory>/plugins/skinnopacity/logos/)
+
+-e path, --epgimages=path
+    Path to the epgimages (Default: <CacheDirectory>/plugins/skinnopacity/epgimages/)
+
+ResourceDirectory and CacheDirectory are taken from your VDR configuration (make.config
+or vdr.pc). 
+
+During a "make install" the Icons are automatically copied from <SkinSourceDirectory>/icons/
+to the default path. Included Theme files are also copied from  <SkinSourceDirectory>/themes/
+to <ConfigDirectory>/themes/ 
+
+Additionally with a "make install" also the theme specific configuration files 
+(see chapter "Theme specific configurations" below) are copied automatically
+from  <SkinSourceDirectory>/conf/ to the plugin config directory 
+(<VDRConfigDir>/plugins/skinnopacity/themeconfigs).
+
+I recommend to use channel logos from https://github.com/3PO/Senderlogos
+To download them just change in the directory you want to place the logos
+and do a:
+git clone https://github.com/3PO/Senderlogos.git logos
+An update of the logos can then be done with a "git pull" just inside this
+directory.
+
+If directories for channel logos, icons or epg images are set via startup 
+parameters, images are searched first in these directories. If the image
+is not available, an additional search in the according default directory
+will be performed.
+With this it is possible to use user images and images provided by a
+package maintainer or distributor in parallel.
+
+For S2-6400 Users: Disable High Level OSD, otherwise the plugin will not be
+loaded because lack of true color support
+
+For Xine-Plugin Users: Set "Blend scaled Auto" as OSD display mode to achieve
+an suitable true color OSD.
+
+For Xineliboutput Users: Start vdr-sxfe with the --hud option enabled
+
+Usage
+-----
+
+After installation first activate then skin in the VDR OSD menu. nOpacity scales to 
+every screen resolution, but in lower resolutions than 1920 * 1080 it may be necessary
+to change some default settings for dimensions and font sizes to achieve the best result
+(see "setup options" below). In the folder "screenResSetup" in the plugin source directory
+exemplarily setup options for SD and HDReady resolutions are provided.
+
+nOpacity respects the OSD settings for OSD top, left, width and height. If these values
+are not set to top&left: 0, width&height: 100, you'll get a border around every displayed
+skin element. Additionally you are able to configure an individual border for almost every
+displayed skin element (channel switching, recordings, volume, audio tracks) in the 
+skin setup. Only the menu uses the full screen if not configured differently in the 
+OSD settings.  
+
+As already mentioned, font sizes are customizable via the skins setup menu. The skin 
+calculates the font sizes for the used screen resolution individually. The value
+for the different font sizes in the setup options is always the delta to the calculated
+(default) values. If you set a value for a font size of -2 for instance, the default
+font size is decreased by 2, analogue the font size will be increased by setting a 
+positive value.
+
+As described in "installation", you should use a special channel logo pack with transparent
+channel logos. In this logo pack all files are named only with lower case letters. 
+nOpacity uses the channel name CONVERTED TO LOWER CASE LETTERS to search for an 
+appropriate channel logo. With this, approximately 90% of the channel logos should work 
+immediately after placing the channel logos in the correct place. So if you have to change
+the name of a channel logo (may be by inserting a space or a hyphen) so that it fits to
+the channel name, only use lower case letters, and not the name of the channel with upper 
+and lower letters as displayed inside VDR.
+If no logo is found for the channel name, additionally a search for a logo named as the
+ChannelID is performed. Analog to the channel name the ChannelID is also converted to lower 
+case letters. This allows channel logos for channels with changing names (for instance
+Sky Feed Channels).
+Additional hint: some channels have slashes in their name (in germany nick/comedy for instance).
+In this example, as a dirty hack just create a folder in your channel logo directory named 
+"nick" and place an image named "comedy.png" inside this folder.
+
+In the folder "logoconverter" a script and some backgrounds are provided to create logos
+with fancy backgrounds from the transparent logos. Before running the script, just adapt the 
+config variables in the header of the script according to your needs. If you place the newly 
+created logos in a subfolder of your logo directory named exactly as the used Theme name, 
+nOpacity uses these logos only for the appropriate theme automatically.
+
+Themes, Theme types, Theme specific Configurations and Icons
+------------------------------------------------------------
+
+nOpacity is fully themable with different "theme types". Examples for theme files with all 
+possible color settings are included in <SkinSourceDirectory>/themes/. As already mentioned 
+these themes are automatically copied during a "make install" into the VDR themes directory 
+and can be choosed in VDRs OSD setup menu.
+
+The following skin characteristics are theme dependend:
+- theme default configuration
+- theme configuration
+- theme colors
+- graphical skin elements (for "graphical" themes, see below)
+- theme icons and images
+
+Theme types:
+............
+
+nOpacity supports three different theme types named "flat", "blending" and "graphical". This
+type can be set with the config option "displayType" (flat: displayType = 0, blending: 
+displayType = 1, graphical: displayType = 2) which has to be provided via the theme specific
+configuration file (see below). If this value is not provided by the theme designer, the default 
+value "blending" is used.
+
+flat style: "basic" skin type with almost no effects, areas are just filled with plain colors
+blended style: skin elemements like menu items are drawn with a main and a blended color which
+are provided via the color theme file, skin elements are drawn with a blended effect.
+graphical style: almost all skin elements are drawn by using dedicated PNG images. These PNGs
+have to be placed in the <themename>/skinElements/ icon directory. See the default theme for 
+examples for this style and the used images.
+
+Theme specific configuration:
+.............................
+
+Because the "look&feel" of nOpacity is strongly dependend of the choosen setup configuration
+options.
+
+On the one hand it is possible for the theme designer to provide a dedicated default 
+config for every theme. This theme configuration has to be named "theme-<themename>.conf" and
+has to be placed in <VDRConfigDir>/plugins/skinnopacity/themeconfigs. As already mentioned all 
+theme configs which are available in the skin source directory <SkinSourceDirectory>/conf/ are
+copied automatically to the destination directory with a "make install". The syntax for this 
+theme configuration file is just straight forward a "configoption = value" per line. The possible 
+configuration options and the default values can be checked in the file config.c in the function
+cNopacityConfig::LoadDefaults(void).
+
+On the other hand, all configuration changes done by the user are only valid for the currently 
+choosen theme. That means that every theme has it's individual configuration. If the theme is 
+changed via the VDR Setup/OSD Menu, the configuration for this theme is loaded in the following way:
+
+- first the general default settings from cNopacityConfig::LoadDefaults() are used
+- after that the settings from the theme config file (if available) are looked up, every available
+  config option in this file replaces the default config option
+- after that the settings the user has individually customized are used and replace the corresponding
+  default settings
+
+Theme specific icons and images:
+................................
+
+Icons and images are first looked up in <IconPath>/<ThemeName>/. If there is no appropriate
+icon found, <IconPath>/ is used. With that it is possible to use specific icons for every
+different theme.
+
+Two types of icons are used:
+    - statically named icons for standard main and setup menu entries, recording folders, 
+      active timers and other menu decorations.
+    - icons for plugins with a main menu entry: if a plugin has a main menu entry, the icon
+      has to be named as the plugin name so that the appropriate icon will be shown in the
+      main menu.
+
+Image Caching
+-------------
+
+nOpacity uses an image cache to achieve best performance also on systems with low performance.
+The image cache loads all necessary images (icons, skin elements, channel logos) at startup and
+also after a change in screen resolution or leaving the nOpacity setup menu. Depending on the 
+system hardware and the configured number of channel logos to cache (see below) this cache reload
+can need some seconds.
+
+In the plugin setup menu in the submenu "image caching" it is possible to configure the number of 
+channel logos to be cached at startup and the maximum number of channel logos to cache. Channel logos
+are always cached in the order the channels appear in your channels.conf file. If you configure for
+example to cache 50 logos and you set the maximum number of logos to 100, the logos for the first 50
+channels in your channels.conf are cached at startup. If logos from channels 51 - 100 are needed,
+the image is created once, all further requests for that logo are fulfilled by the cache. Logos for
+channels > 100 are not cached and are always created from the source PNGs on your storage medium.
+
+In the "image cache" setup sub menu the current cache usage for the different types of images and the
+memory used is displayed as additional information.
+
+Customizing, Skin Setup Options
+-------------------------------
+
+* General Options (only non self-explanatory options are described)
+
+- Font: Used Font, all Fonts installed on your system are shown
+
+* VDR menu: Common Settings:
+
+- Create Log Messages for image loading: show log message for each image loading process. Usefull
+  for debugging, but causes many log entries
+- Number of Default Menu Entries: Number of menu items for the default menu view.
+- Adjust Font Size - Default Menu Item
+- Adjustment of narrow menus: the narrow menus (main, schedules, channels, timers,
+  setup) can either be adjusted left or right.
+- Scale Video size to fit into menu window: no / yes / auto: with "auto" the video  window is resized 
+  when the detailed EPG Window is displayed in Schedules and Recordings menu to be completely visible.
+- Header Height (% of OSD Height): Default: 7%
+- Header Icon Size (Square Header Menu Icons)
+- Footer Height (% of OSD Height): Default: 7%
+- Rounded Corners for menu items and buttons
+  - Radius of rounded corners: if rounded corners are used, radius in px.
+- Use Channel Logo background: display theme specific background (clrMenuChannelLogoBack) for channel
+  logos in menus what's on now / next, channels, timers
+- Fade-In Time in ms (Zero for switching off fading): Default 0, active fading
+  for main menu caused sometimes trouble in some special setups. Activate on
+  own risk ;)
+- Menu Items Scroll Style: "Carriage Return" after scrolling is complete, or "Forward and Back again"
+- Menu Items Scrolling Speed
+- Menu Items Scrolling Delay in s: period which menu element has to be selected
+  till scrolling starts
+- Adjust Font Size - Header
+- Adjust Font Size - Date
+- Adjust Font Size - Color Buttons: Font for color buttons
+- Adjust Font Size - Messages  
+- Adjust Font Size - Detail View Text: Font for detailed EPG & recordings view text
+- Adjust Font Size - Detail View Header: Font for Header date/time and short text 
+- Adjust Font Size - Detail View Header Large: Font for detailed EPG & recordings 
+  view title
+
+* VDR Menu: Main and Setup Menu
+
+- Use narrow main menu: display main menu in narrow or standard style
+  - Width (Percent of OSD Width): if displayed narrow, width of this menu
+- Use narrow setup menu: display setup menu in narrow or standard style
+  - Width (Percent of OSD Width): if displayed narrow, width of this menu
+- Number of entires per page: number of menu items shown per screen
+- Use menu icons: yes/no
+- Main menu title style: way how VDR version in menu header is displayed:
+  "VDR" plus VDR version, only VDR version, no title
+- Display Disk Usage: Display Disk Usage in Main Menu
+  - Size (square, Percent of OSD Width)
+  - Free Disc Display: free time in hours (estimated) or free disc space in GB
+  - Adjust Font Size - free
+  - Adjust Font Size - percent
+- Display Timers: Display active Timers in Main Menu: "yes", "small without channel
+  logos", "no"
+  - Maximum number of timers to show in main menu
+  - Width of Timers (% of OSD Width)
+  - Width of channel logos (% of timers width)
+  - Adjust Font Size - Header
+  - Adjust Font Size - Title
+- Show Timer Conflicts
+- Header Logo Width / Height: Header Logo is scaled to fit into the header, these
+  values are used for correct scaling
+- Adjust Font Size - Menu Items
+
+* VDR Menu: Schedules Menu
+
+- Use narrow menu: display menu in narrow or standard style
+  - Width (Percent of OSD Width): if displayed narrow, width of this menu
+- Number of entires per page
+- Mode of EPG Window: "small window" with settings for fade in and scroll speed / delay
+  or "full screen" 
+- EPG Window Fade-In Time in ms (Zero for switching off fading)
+- EPG Window Display Delay in s: period which schedules menu element has to be
+  selected till fade in of epg window starts
+- EPG Window Scroll Delay in s: period which epg window has to be opened till 
+  window text starts to scroll
+- Height of EPG Info Window (Percent of OSD Height): Height of text window which
+  is shown for schedules menu elements
+- Border around detailed EPG view: border to be displayed in detailed EPG view
+- Display Reruns in detailed EPG View: via epgsearch service
+  - Number of reruns to display: Default 5
+  - Use Subtitle for reruns
+- Display additional EPG Pictures in detailed EPG View: if set to yes, additional
+  EPG pictures will be shown at the end of the detailed EPG view. The pictures have
+  to be named as eventid_number.jpg with number from 1 to 9.
+  - Number of EPG pictures to display
+- Detail EPG View EPG Image Width: Default 210px
+- Detail EPG View EPG Image Height: Default 160px
+- Detail EPG View additional EPG Image Width: Default: 525 px
+- Detail EPG View additional EPG Image Height: Default: 400 px
+- Adjust Font Size - Menu Item
+- Adjust Font Size - Menu Item Small
+- Adjust Font Size - EPG Info Window
+- Adjust Font Size - EPG Info Window Header
+
+* VDR Menu: Channels Menu
+
+- Use narrow menu: display menu in narrow or standard style
+  - Width (Percent of OSD Width): if displayed narrow, width of this menu
+- Menu Items display mode: Transponder Information / Current Schedule / None
+  - If "Current Schedule": Schedules with time information
+- Number of EPG Entries in Schedules Info Window
+- Adjust Font Size - Menu Item
+- Adjust Font Size - Menu Item Small
+
+* VDR Menu: Timers Menu
+
+- Use narrow menu: display menu in narrow or standard style
+  - Width (Percent of OSD Width): if displayed narrow, width of this menu
+- Adjust Font Size - Menu Item
+- Adjust Font Size - Menu Item Small
+
+* VDR Menu: Recordings Menu
+
+- Use narrow menu: display menu in narrow or standard style
+  - Width (Percent of OSD Width): if displayed narrow, width of this menu
+- Number of entires per page
+- Mode of recording Window: window / full screen
+- Border around detailed recording view: analogue to "detailed EPG Info"
+- Display additional EPG Pictures in detailed recording View: if set to yes, additional
+  pictures will be shown at the end of the detailed recording view. All jpegs in the
+  recording directory will be used.
+  - Number of EPG pictures to display
+- Use folder poster if available: use folder poster provided by tvscraper
+- Width / Height of manually set recording poster: used for correct scaling
+- Adjust Font Size - Menu Item
+- Adjust Font Size - Menu Item Small
+  
+* Channel Switching:
+
+- Fade-In Time in ms (Zero for switching off fading): Default 300ms
+- Height of Channel Display (% of OSD Height): Default 25%
+- Left & Right Border Width: Default 15px
+- Bottom Border Height: Default 15px
+- Background Transparency in Percent: for graphical themes, sets transparency of background
+- Background Style: only for non graphical themes, transparent logo background or not
+- Channel Logo Position: left / right / do not display. If set to "do not display",
+  the whole screen width is used for channel display.
+  - Channel Logo original Width: Default 260px (used for correct scaling)
+  - Channel Logo original Height: Default 200px (used for correct scaling)
+  - Use Channel Logo background: use theme specific image (skinElements/channellogoback.png)
+    as backgrond image for channel logos
+- Kind of time display for current schedule: elapsed or remaining time
+- Display Source Information: display Channel Source Information (used Satelite)
+- Display Signal Strength & Quality: Set this to Zero if you want to disable the
+  display of signal strength & quality (for instance if your dvb drivers does not
+  deliver this values)
+- Display Poster or Fanart from TVScraper
+  - Border in px around poster / fanart
+- Display previous and next Channel Group
+- Adjust Font Size - Header: Font for Channel / Channelgroup Name
+- Adjust Font Size - Date
+- Adjust Font Size - EPG Text
+- Adjust Font Size - EPG Infotext
+- Adjust Font Size - Channel Source Info
+- Adjust Font Size - Channel Group
+- Adjust Font Size - Next/Prev Channel Group
+
+
+* Replay:
+
+- Fade-In Time in ms (Zero for switching off fading)
+- Height of Replay Display (% of OSD Height)
+- Left & Right Border Width
+- Bottom Border Height
+- Adjust Font Size - Header
+- Adjust Font Size - Text
+
+* Audio Tracks:
+
+- Fade-In Time in ms (Zero for switching off fading)
+- Width of Tracks Display (% of OSD Height)
+- Height of Tracks Display (% of OSD Height)
+- Position (0: bot. center, 1: bot. left, ... , 7: bot. right): The following 
+  positions are possible, starting at bottom middle:
+  0: bottom center
+  1: bottom left
+  2: middle left
+  3: top left
+  4: top middle
+  5: top right
+  6: middle right
+  7: bottom right
+- Border Top / Bottom
+- Border Left / Right
+- Adjust Font Size - Header
+- Adjust Font Size - Buttons
+
+* Messages:
+
+- Fade-In Time in ms (Zero for switching off fading): Default 300ms
+- Width of Message Display (% of OSD Height): Default 90%
+- Height of Message Display (% of OSD Height): Default 10%
+- Bottom Border Height: Default 10px
+  Remark: with different sizes and a large value for the bottom border height you
+  are able to achieve a positioning for the messages box analogue to the positioning 
+  of the audio tracks display.
+- Adjust Font Size
+
+* Volume Display:
+
+- Fade-In Time in ms (Zero for switching off fading): Default 300ms
+- Width of Volume Display (% of OSD Height): Default 40%
+- Height of Volume Display (% of OSD Height): Default 10%
+- Bottom Border Height: Default 10px
+  Remark: the volume display is always positioned in the center of the screen,
+  with bottom border it can be moved to the top.
+- Adjust Font Size
+
+
+Legal Remark: some of the menu icons used in this skin are from http://icons8.com/
+Thanks @icons8.com for provide these icons for free.

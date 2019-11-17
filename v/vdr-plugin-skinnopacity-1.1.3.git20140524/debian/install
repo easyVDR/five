@@ -1,0 +1,3 @@
+debian/plugin.skinnopacity.conf    etc/vdr/plugins/
+themes/*.theme  var/lib/vdr/themes/
+logoconverter/* var/lib/vdr/plugins/skinnopacity/logoconverter/

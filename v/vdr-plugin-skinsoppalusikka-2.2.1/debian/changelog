@@ -1,0 +1,534 @@
+vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 00:15:23 +0100
+
+vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 01:12:17 +0100
+
+vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Nov 2017 01:22:50 +0100
+
+vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR3~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 04 Jul 2017 22:31:13 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:59:29 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:44:58 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR0~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 08 Sep 2016 20:05:22 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:46:08 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:05:47 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:49:14 +0100
+
+vdr-plugin-skinsoppalusikka (2.2.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 22:24:03 +0100
+
+vdr-plugin-skinsoppalusikka (2.2.1-1mangoVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:33:54 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-1mangoVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Aug 2015 22:25:51 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-1mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 22:00:12 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-1mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jun 2015 22:01:08 +0200
+
+vdr-plugin-skinsoppalusikka (2.2.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new stable release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 04 Jun 2015 16:40:23 +0200
+
+vdr-plugin-skinsoppalusikka (2.0.3-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:24:31 +0200
+
+vdr-plugin-skinsoppalusikka (2.0.3-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:24:56 +0100
+
+vdr-plugin-skinsoppalusikka (2.0.3-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 20:34:49 +0100
+
+vdr-plugin-skinsoppalusikka (2.0.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 02:51:11 +0100
+
+vdr-plugin-skinsoppalusikka (2.0.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 30 Oct 2014 00:52:35 +0100
+
+vdr-plugin-skinsoppalusikka (2.0.3-0fnu6~trusty) trusty; urgency=high
+
+  * another try to fix debug symbols in extra package 
+
+ -- Frank Neumann <fnu@yavdr.org>  Fri, 04 Apr 2014 15:39:07 +0200
+
+vdr-plugin-skinsoppalusikka (2.0.3-0fnu5~precise) precise; urgency=high
+
+  * Automatic rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 26 Mar 2014 21:55:24 +0100
+
+vdr-plugin-skinsoppalusikka (2.0.3-0fnu4~precise) precise; urgency=high
+
+  * fixed building debug symbols
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 23 Mar 2014 15:10:00 +0100
+
+vdr-plugin-skinsoppalusikka (2.0.3-0fnu1~precise) precise; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 23 Feb 2014 22:17:48 +0100
+
+vdr-plugin-skinsoppalusikka (2.0.3-0fnu0~precise) precise; urgency=high
+
+  * new stable release 
+
+ -- Frank Neumann <fnu@yavdr.org>  Sat, 22 Feb 2014 20:22:53 +0100
+
+vdr-plugin-skinsoppalusikka (2.0.1-0fnu3~precise) precise; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 21 Oct 2013 22:16:54 +0200
+
+vdr-plugin-skinsoppalusikka (2.0.1-0fnu2~precise) precise; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 21 Oct 2013 10:42:23 +0200
+
+vdr-plugin-skinsoppalusikka (2.0.1-0fnu1~precise) precise; urgency=high
+
+  * Build for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 12 Sep 2013 02:56:53 +0200
+
+vdr-plugin-skinsoppalusikka (2.0.1-0fnu0~precise) precise; urgency=high
+
+  * New upstream version
+  * inkl. dpg symbols 
+
+ -- Frank Neumann <fnu@yavdr.org>  Fri, 26 Apr 2013 09:39:55 +0200
+
+vdr-plugin-skinsoppalusikka (2.0.0-4yavdr0~lucid) lucid; urgency=high
+
+  * rebuild inkl. dbg symbols 
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 04 Apr 2013 12:51:42 +0200
+
+vdr-plugin-skinsoppalusikka (2.0.0-2yavdr0~lucid) lucid; urgency=high
+
+  * new stable release
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 04 Apr 2013 12:18:46 +0200
+
+vdr-plugin-skinsoppalusikka (1.7.9-4) experimental; urgency=low
+
+  * Build-depend on vdr-dev (>= 2.0.0)
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 31 Mar 2013 13:59:16 +0200
+
+vdr-plugin-skinsoppalusikka (1.7.9-3) experimental; urgency=low
+
+  * Build-depend on vdr-dev (>= 1.7.42)
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 23 Mar 2013 20:52:23 +0100
+
+vdr-plugin-skinsoppalusikka (1.7.9-2) experimental; urgency=low
+
+  * Build-depend on vdr-dev (>= 1.7.41)
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 17 Mar 2013 20:20:30 +0100
+
+vdr-plugin-skinsoppalusikka (1.7.9-1) experimental; urgency=low
+
+  * New upstream release
+  * Using debhelper 9
+  * Updated debian/copyright
+  * Build-depend on vdr-dev (>= 1.7.40)
+  * Standards-Version: 3.9.4
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 10 Mar 2013 22:26:46 +0100
+
+vdr-plugin-skinsoppalusikka (1.7.6-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 06 May 2012 10:55:32 +0200
+
+vdr-plugin-skinsoppalusikka (1.7.5-1) experimental; urgency=low
+
+  * New upstream release
+  * Standards-Version: 3.9.2
+  * Dropped dpatch
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 12 Dec 2011 21:52:31 +0100
+
+vdr-plugin-skinsoppalusikka (1.7.4-1) experimental; urgency=low
+
+  * New upstream release
+  * Build-depend on vdr-dev (>= 1.7.21)
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 18 Sep 2011 20:56:36 +0200
+
+vdr-plugin-skinsoppalusikka (1.7.2-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 20 Mar 2011 02:36:56 +0100
+
+vdr-plugin-skinsoppalusikka (1.7.1-2) experimental; urgency=low
+
+  * Allow `make clean` without vdr-dev beeing installed
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 05 Oct 2010 23:07:03 +0200
+
+vdr-plugin-skinsoppalusikka (1.7.1-1) experimental; urgency=low
+
+  * New upstream release for vdr 1.7.x
+  * Standards-Version: 3.8.4
+  * Updated debian/copyright
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 20 Mar 2010 00:15:40 +0100
+
+vdr-plugin-skinsoppalusikka (1.6.4-5) UNRELEASED; urgency=low
+
+  * Switched to GIT using pristine tar
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 29 Oct 2011 19:51:17 +0200
+
+vdr-plugin-skinsoppalusikka (1.6.4-4) UNRELEASED; urgency=low
+
+  * Standards-Version: 3.8.4
+  * Updated debian/copyright
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Fri, 02 Apr 2010 14:04:33 +0200
+
+vdr-plugin-skinsoppalusikka (1.6.4-3) experimental; urgency=low
+
+  * Removed non-standard shebang line from debian/rules
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 09 Nov 2009 19:36:23 +0100
+
+vdr-plugin-skinsoppalusikka (1.6.4-2) experimental; urgency=low
+
+  * Release for vdrdevel 1.7.6
+  * Changed section to "video"
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 29 Apr 2009 23:11:06 +0200
+
+vdr-plugin-skinsoppalusikka (1.6.4-1) experimental; urgency=low
+
+  * New upstream release
+  * Added ${misc:Depends}
+  * Bumped standards version to 3.8.1
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 19 Apr 2009 16:51:06 +0200
+
+vdr-plugin-skinsoppalusikka (1.6.3-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 21 Feb 2009 19:12:58 +0100
+
+vdr-plugin-skinsoppalusikka (1.6.2-1) experimental; urgency=low
+
+  * New upstream release
+  * Changed my maintainer/uploader email address
+  * Fixed debian/watch
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 15 Nov 2008 11:01:39 +0100
+
+vdr-plugin-skinsoppalusikka (1.6.1-1) experimental; urgency=low
+
+  * New upstream release
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+  * Using COMPAT=5 now
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Jul 2008 19:27:18 +0200
+
+vdr-plugin-skinsoppalusikka (1.6.0-2) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 13:10:11 +0200
+
+vdr-plugin-skinsoppalusikka (1.6.0-1) experimental; urgency=low
+
+  * New upstream release
+  * Build-depend on vdr-dev (>=1.6.0)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Thu, 03 Apr 2008 23:52:53 +0200
+
+vdr-plugin-skinsoppalusikka (1.1.2-2) experimental; urgency=low
+
+  [ Tobias Grimm ]
+  * Merged devel branch
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+  * Added Homepage field to debian/control
+  * Renamed XS-Vcs-* fields to Vcs-* in debian/control
+  * Bumped Standards-Version to 3.7.3
+
+  [ Thomas Günther ]
+  * New upstream release
+  * Added gettext to Build-Depends
+  * Added installation of locale files
+  * Removed installation of logos (not in upstream package any more)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 19 Feb 2008 01:23:35 +0100
+
+vdr-plugin-skinsoppalusikka (1.0.4-6) unstable; urgency=low
+
+  [ Thomas Günther ]
+  * Fixed debian-rules-ignores-make-clean-error
+  * Added full license disclaimer and copyright years to debian/copyright
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 26 Nov 2007 19:35:36 +0100
+
+vdr-plugin-skinsoppalusikka (1.0.4-5) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:51:01 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.4-4) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 28 Aug 2007 01:01:12 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.4-3) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:09 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.4-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:22 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.4-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 29 Jul 2007 11:57:21 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.3-3) experimental; urgency=low
+
+  [ Thomas Schmidt ]
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields to debian/control
+
+  [ Thomas Günther ]
+  * Release for vdrdevel 1.5.5
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:02:44 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.3-2) experimental; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:00:40 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.3-1) experimental; urgency=low
+
+  * New upstream release
+  * Release for vdrdevel 1.5.1
+  * Updated creation of logo links in debian/rules
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:21 +0100
+
+vdr-plugin-skinsoppalusikka (1.0.2-4) experimental; urgency=low
+
+  [ Thomas Günther ]
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 20:19:49 +0100
+
+vdr-plugin-skinsoppalusikka (1.0.2-3) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 11:45:45 +0100
+
+vdr-plugin-skinsoppalusikka (1.0.2-2) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 23 Sep 2006 20:33:03 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.2-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 17 Sep 2006 20:54:17 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.1-2) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.2-1)
+  * Bumped Standards-Version to 3.7.2
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 27 Aug 2006 14:39:37 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.1-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 18 Jun 2006 16:20:25 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.0-2) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.4.1-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Fri, 16 Jun 2006 22:11:24 +0200
+
+vdr-plugin-skinsoppalusikka (1.0.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr-dev (>=1.4.0-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  3 May 2006 23:09:19 +0200
+
+vdr-plugin-skinsoppalusikka (0.4.0-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+    - Build-Depend on vdr (>=1.3.48-1)
+    - Removed DVBDIR from debian/rules
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 24 Apr 2006 23:03:06 +0200
+
+vdr-plugin-skinsoppalusikka (0.2.0-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+    - Removed dpatch build dependency
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 17 Apr 2006 00:06:30 +0200
+
+vdr-plugin-skinsoppalusikka (0.1.0-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 13 Apr 2006 22:19:25 +0200
+
+vdr-plugin-skinsoppalusikka (0.0.7-2) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.46-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 12 Apr 2006 22:14:10 +0200
+
+vdr-plugin-skinsoppalusikka (0.0.7-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun,  2 Apr 2006 18:12:13 +0200
+
+vdr-plugin-skinsoppalusikka (0.0.6-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+    - Build-Depend on vdr (>=1.3.45-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 27 Mar 2006 21:39:21 +0200
+
+vdr-plugin-skinsoppalusikka (0.0.5-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - New upstream release
+    - Removed 01_skinsoppalusikka-0.0.4-german.dpatch
+    - Changed link creation in debian/rules so that we could use the
+      pristine upstream package
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 19 Mar 2006 21:50:34 +0100
+
+vdr-plugin-skinsoppalusikka (0.0.4-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sat, 18 Mar 2006 16:31:29 +0100
+

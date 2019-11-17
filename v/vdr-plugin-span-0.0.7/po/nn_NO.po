@@ -1,0 +1,85 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Christian Leuschen <christian.leuschen@gmx.de>
+# This file is distributed under the same license as the VDR package.
+# Jørgen Tvedt <pjtvedt@online.no>, 2001
+# Truls Slevigen <truls@slevigen.no>, 2002
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.9\n"
+"Report-Msgid-Bugs-To: christian.leuschen@gmx.de\n"
+"POT-Creation-Date: 2007-09-28 13:24+0200\n"
+"PO-Revision-Date: 2007-09-28 13:24+0200\n"
+"Last-Translator: Truls Slevigen <truls@slevigen.no>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: menu.c:33
+msgid "Menu.Span$Span: Service providers"
+msgstr ""
+
+#: menu.c:45
+msgid "Menu.Span$Providers:"
+msgstr ""
+
+#: menu.c:59 menu.c:78
+msgid "activated"
+msgstr ""
+
+#: menu.c:59 menu.c:78
+msgid "deactivated"
+msgstr ""
+
+#: menu.c:59 menu.c:78
+msgid "idle"
+msgstr ""
+
+#: menu.c:59
+msgid "providing"
+msgstr ""
+
+#: menu.c:65
+msgid "Menu.Span$Visualizations:"
+msgstr ""
+
+#: menu.c:78
+msgid "visualizing"
+msgstr ""
+
+#: setup.c:59
+msgid "Setup.Span$Activate spectrum analyzer?"
+msgstr ""
+
+#: setup.c:59 setup.c:61 setup.c:62 setup.c:67
+msgid "no"
+msgstr ""
+
+#: setup.c:59 setup.c:61 setup.c:62 setup.c:67
+msgid "yes"
+msgstr ""
+
+#: setup.c:60
+msgid "Setup.Span$Visualization delay (in ms)"
+msgstr ""
+
+#: setup.c:61
+msgid "Setup.Span$Use logarithmic diagram"
+msgstr ""
+
+#: setup.c:62
+msgid "Hide mainmenu entry"
+msgstr ""
+
+#: setup.c:67
+msgid "Setup.Span$Use pure (unequalized) data"
+msgstr ""
+
+#: span.c:40
+msgid "Spectrum Analyzer for music-data"
+msgstr ""
+
+#: span.c:41
+msgid "Spectrum Analyzer"
+msgstr ""

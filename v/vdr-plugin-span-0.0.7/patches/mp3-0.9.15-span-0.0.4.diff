@@ -1,0 +1,145 @@
+diff -Naur mp3-0.9.15/mp3.c mp3-0.9.15-span/mp3.c
+--- mp3-0.9.15/mp3.c	2006-08-30 17:39:24.000000000 +0200
++++ mp3-0.9.15-span/mp3.c	2006-09-27 14:05:13.000000000 +0200
+@@ -1786,6 +1786,12 @@
+       }
+     return true;
+     }
++  else if (strcmp(Id, SPAN_PROVIDER_CHECK_ID) == 0) {
++      if(Data) {
++        *((Span_Provider_Check_1_0*)Data)->isActive = true;
++      }
++      return true;
++    }
+   return false;
+ }
+ 
+diff -Naur mp3-0.9.15/player-mp3.c mp3-0.9.15-span/player-mp3.c
+--- mp3-0.9.15/player-mp3.c	2006-07-30 19:59:31.000000000 +0200
++++ mp3-0.9.15-span/player-mp3.c	2006-09-27 14:21:42.000000000 +0200
+@@ -34,6 +34,7 @@
+ #include <vdr/ringbuffer.h>
+ #include <vdr/thread.h>
+ #include <vdr/tools.h>
++#include <vdr/plugin.h>
+ 
+ #include "common.h"
+ #include "setup-mp3.h"
+@@ -1304,6 +1305,23 @@
+       outlen+=(sizeof(header)-6);
+       buff[4+FHS]=outlen>>8;
+       buff[5+FHS]=outlen;
++      
++// Spectrum Analyzer: Hand over the PCM16-data to SpAn
++      int offset = sizeof(header)+FHS;
++      Span_SetPcmData_1_0 SetPcmData;
++      cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, NULL);
++      if (Plugin)
++      {
++	      SetPcmData.length = (unsigned int)(outlen-offset);
++// the timestamp (ms) of the frame(s) to be visualized:
++	      SetPcmData.index = index;
++// tell SpAn the ringbuffer's size for it's internal bookkeeping of the data to be visualized:
++	      SetPcmData.bufferSize = MP3BUFSIZE;
++	      SetPcmData.data = buff + offset + 1; // get rid of the header
++	      SetPcmData.bigEndian = true;
++	      cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, &SetPcmData);
++      }
++      
+       f=new cFrame(buff,-(outlen+6+FHS),ftUnknown,index);
+       }
+     if(!f) free(buff);
+@@ -1469,8 +1487,25 @@
+   fh->samplerate=sr;
+   cFrame *f=0;
+   unsigned int outlen=scale.ScaleBlock(buff+FHS,sizeof(buff)-FHS,Samples,Data[0],Data[1],MP3Setup.AudioMode?amDitherLE:amRoundLE);
+-  if(outlen) 
++  if(outlen)
++  {
++// Spectrum Analyzer: Hand over the PCM16-data to SpAn
++      int offset = FHS;
++      Span_SetPcmData_1_0 SetPcmData;
++      cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, NULL);
++      if (Plugin)
++      {
++	      SetPcmData.length = (unsigned int)(outlen-offset);
++// the timestamp (ms) of the frame(s) to be visualized:
++	      SetPcmData.index = index;
++// tell SpAn the ringbuffer's size for it's internal bookkeeping of the data to be visualized:
++	      SetPcmData.bufferSize = MP3BUFSIZE;
++	      SetPcmData.data = buff + offset + 1; // get rid of the header
++	      SetPcmData.bigEndian = false;
++	      cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, &SetPcmData);
++      }
+     f=new cFrame(buff,outlen+FHS,ftUnknown,index);
++  }
+   return f;
+ }
+ 
+@@ -1592,6 +1627,7 @@
+ #ifdef DEBUG_DELAY
+   int lastwrite=0;
+ #endif
++  bool frameIncomplete = true;
+ 
+   dsyslog("mp3: player thread started (pid=%d)", getpid());
+   state=msStop;
+@@ -1658,10 +1694,23 @@
+ #endif
+       int w=output->Output(p,pc,SOF);
+       if(w>0) {
++// Spectrum Analyzer: Tell SpAn which timestamp is currently playing
++	 	if ( frameIncomplete )
++	 	{
++			Span_SetPlayindex_1_0 SetPlayindexData;
++			cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PLAYINDEX_ID, NULL);
++			if (Plugin)
++			{
++				SetPlayindexData.index = playindex;
++			  	cPluginManager::CallFirstService(SPAN_SET_PLAYINDEX_ID, &SetPlayindexData);
++			}
++			frameIncomplete = false;
++	 	}
+         p+=w; pc-=w;
+         if(pc<=0) {
+           ringBuffer->Drop(pframe);
+           pframe=0;
++          frameIncomplete = true;
+           goto next;
+           }
+         }
+diff -Naur mp3-0.9.15/player-mp3.h mp3-0.9.15-span/player-mp3.h
+--- mp3-0.9.15/player-mp3.h	2006-07-30 19:59:20.000000000 +0200
++++ mp3-0.9.15-span/player-mp3.h	2006-09-27 14:13:31.000000000 +0200
+@@ -27,6 +27,31 @@
+ 
+ // -------------------------------------------------------------------
+ 
++#define SPAN_PROVIDER_CHECK_ID  "Span-ProviderCheck-v1.0"
++#define SPAN_SET_PCM_DATA_ID    "Span-SetPcmData-v1.1"
++#define SPAN_SET_PLAYINDEX_ID   "Span-SetPlayindex-v1.0"
++
++//Span requests to collect possible providers / clients
++struct Span_Provider_Check_1_0 {
++    bool *isActive;
++	bool *isRunning;
++};
++
++// SpanData
++struct Span_SetPcmData_1_0 {
++	unsigned int length;		// the length of the PCM-data
++	const unsigned char *data;	// the PCM-Data
++	int index;					// the timestamp (ms) of the frame(s) to be visualized
++	unsigned int bufferSize;	// for span-internal bookkeeping of the data to be visualized
++	bool bigEndian;				// are the pcm16-data coded bigEndian?
++};
++
++struct Span_SetPlayindex_1_0 {
++	int index;					// the timestamp (ms) of the frame(s) being currently played
++};
++
++// -------------------------------------------------------------------
++
+ class cRingBufferFrame;
+ class cFrame;
+ 

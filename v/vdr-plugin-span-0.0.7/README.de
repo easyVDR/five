@@ -1,0 +1,318 @@
+Dies ist ein 'Sp'ectrum 'An'alyzer Plugin für den Video Disk Recorder (VDR).
+
+Geschrieben von:                   Christian Leuschen (christian.leuschen.gmx.de)
+
+Projekt-Homepage:                  http://lcr.vdr-developer.org/
+
+Aktuelle Versionen erhältlich auf: http://lcr.vdr-developer.org/downloads/
+
+In der Datei COPYING stehen die Lizenzinformationen.
+In der Datei CONTRIBUTORS sind die Personen aufgelistet, die in irgendeiner Art zu
+diesem Plugin beigetragen haben und denen ich mich dafür herzlich bedanken möchte.
+
+Anforderungen:
+
+VDR >= 1.5.7 & (lib)fftw3
+
+Beschreibung:
+
+Ein Plugin, das PCM-Daten von anderen Plugins (z.B. mp3ng bzw. bei music bereits von
+Hause aus integriert) empfangen
+und auswerten kann, so dass es anderen Plugins das Abrufen der
+Frequenzdaten und Darstellen eines 'Sp'ectrum 'An'alyzers ermöglicht.
+Es soll als eine Art Middleware zwischen den Datenquell-Plugins und
+Visualisierungs-Plugins dienen, um eine generische Schnittstelle anzubieten,
+die es ermöglicht, eine Visualisierung auf allen möglichen Ausgabegeräten
+darzustellen (OSD, lcd, graphlcd, framebuffer, etc.).
+				
+Kleine Skizze der Architektur:
+| Datenquelle schickt PCM-Daten ---> | SpAn-Plugin | >--- Visualisierungs-Clients
+				holen sich die Spektren-Daten ab "und machen was schickes draus" |
+
+
+Bedienung:
+---
+
+Installation:
+
+cd /put/your/path/here/VDR/PLUGINS/src
+tar -xzf /put/your/path/here/vdr-span-X.Y.Z.tar.bz2
+ln -s span-X.Y.Z span
+cd /put/your/path/here/VDR
+make
+make plugins
+./vdr -P span
+
+
+Parameter:
+---
+
+
+Setup:
+
+Activate spectrum analyzer?	ja/nein
+De-(Aktiviert) das Plugin.
+ja: Das Plugin nimmt Daten entgegen (nur, falls auch Clients danach fragen)
+und gibt die Ergebnisse an Clients weiter.
+nein: In diesem Fall bekommen alle Datenquellen- und
+Visualisierungs-Plugins eine Abfuhr, wenn sie Daten übergeben möchten bzw.
+nach Daten fragen.
+
+Visualization delay (in ms) 0-2000
+Korrigiert den Unterschied zwischen einer zu frühen Visualisierung und den
+zugrundeliegenden Audiodaten. Ursache dafür ist der Audio-Buffer. Softdevice hat
+z.B. einen recht großen Buffer, so dass sich eine merkliche Lücke zwischen
+Visualisierung und Ton ergibt. Bei der Wiedergabe von Stereo bei 44.1 kHz ist
+diese Lücke ca. 1000ms groß, sprich: Die Visualisierung ist viel zu früh dran ;-).
+
+Use logarithmic diagram		ja/nein
+Ein (bisher naiver) Versuch, die Höhen der Frequenzbalken ein wenig zu
+entzerren. Tiefere Frequenzen dominieren das Spektrum und es ergibt sich
+soz. ein hoher "dynamic range der Balkenhöhen" (= meist links wenige extrem
+hohe Balken, weiter rechts immer weniger bzw. oft gar nichts).
+ja: Schliesst ein "nein" bei "Use pure (unequalized) data" aus. Skaliert die
+Höhen der Balken logarithmisch.
+nein: Keine logarithmische Skalierung.
+Für Tips, diese Darstellungsform zu verbessern, bin sehr dankbar!
+
+Hide mainmenu entry		ja/nein
+Sollte klar sein.
+
+Use pure (unequalized) data	ja/nein
+ja: Wirklich die puren Daten berechnen, ohne den Versuch einer Entzerrung
+der Balkenhöhen.
+nein: Die Werte der höheren Frequenzen werden höher gewichtet und es ergibt sich
+ein "klein wenig schönerer Frequenzverlauf" als mit puren Daten.
+
+
+Bemerkungen:
+- Getestet auf VDR-1.4.3 mit einer FF-DVB-s 2MB (CPU = PIII 1,2GHz)
+  mit mp3ng/music-plugin als selbstgestrickter Datenquelle und auch Visualisierungsclient.
+  Zusätzlich wurden das lcdproc- und graphlcd-Plugin als Visualisierungsclients
+  eingebunden. Damit waren drei Clients gleichzeitig aktiv.
+- Außerdem getestet auf VDR-1.4.5 mit Softdevice (xv) (CPU = Athlon64 3000+)
+  mit mp3ng/music-plugin als selbstgestrickter Datenquelle und auch Visualisierungsclient.
+- Ich würde mich sehr freuen, falls die Autoren von Plugins zur Darstellung auf
+  (externen) Displays (graphlcd/graphtft/lcdproc/etc.) oder dem
+  OSD (mp3/cdda/muggle?) die Daten zur Visualisierung eines Spectrum
+  Analyzers nutzen würden.
+- Die Höhen der Balken sind auf 100% normalisiert. So ist eine Skalierung auf die
+  Höhe bei der jeweiligen Visualisierung sehr einfach.
+- Um noch einmal klarer heraus zu stellen, was der Begriff "untätig" im SpAn-Plugin-Menü
+  bedeutet, wenn irgendeine Art von Music abgespielt wird:
+  Im Plugin-Menü werden Visualisierungs-Clients als "untätig" deklariert, wenn sie dies
+  auch wirklich sind. Denn wenn die Statusanzeige auf dem OSD sichtbar ist, wird ja nichts
+  visualisiert. Ergo werden auch keine Daten angefordert -> "untätig".
+  Wenn aber (mal angenommen) z.B. atmolight laufen würde, würde es als Client- und mp3(ng)
+  bzw. music bzw. cdda (je nachdem, welches Plugin gerade spielt) als Quelle-"tätig"
+  angezeigt werden.
+
+
+Generisches Beispiel zur Nutzung:
+Die Beschreibung des Service-Protokolls ist in "defines.h" enthalten.
+
+Datenquelle (aus angepasstem music-plugin - player-mp3.c):
+
+  if(outlen)
++  {
++// Spectrum Analyzer: Hand over the PCM16-data to SpAn
++       int offset = FHS;
++       Span_SetPcmData_1_0 SetPcmData;
++       cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, NULL);
++       if (Plugin)
++       {
++            SetPcmData.length = (unsigned int)(outlen-offset);
++            // the timestamp (ms) of the frame(s) to be visualized:
++            SetPcmData.index = index;
++            // tell SpAn the ringbuffer's size for it's internal bookkeeping of the data to be visualized:
++            SetPcmData.bufferSize = MP3BUFSIZE;
++            SetPcmData.data = buff + offset + 1; // get rid of the header
++            SetPcmData.bigEndian = false;
++            cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, &SetPcmData);
++       }
++
+     f=new cFrame(buff,outlen+FHS,ftUnknown,index);
++  }
+   return f;
+ }
+
+...
+
+  if(w>0) {
++// Spectrum Analyzer: Tell SpAn which timestamp is currently playing
++          if ( frameIncomplete )
++          {
++              Span_SetPlayindex_1_0 SetPlayindexData;
++              cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PLAYINDEX_ID, NULL);
++              if (Plugin)
++              {
++                  SetPlayindexData.index = playindex;
++                  cPluginManager::CallFirstService(SPAN_SET_PLAYINDEX_ID, &SetPlayindexData);
++              }
++              frameIncomplete = false;
++          }
++
+         p+=w; pc-=w;
+         if(pc<=0) {
+           ringBuffer->Drop(pframe);
+           pframe=0;
++	  frameIncomplete = true;
+           goto next;
+           }
+         }
+
+
+Visualization-client (from adapted graphlcd-plugin - display.c):
+
+// Spectrum Analyzer visualization
+	if ( GraphLCDSetup.enableSpectrumAnalyzer )
+	{
+		if (cPluginManager::CallFirstService(SPAN_GET_BAR_HEIGHTS_ID, NULL))
+		{
+			Span_GetBarHeights_v1_0 GetBarHeights;
+			
+			int bandsSA = 20;
+			int falloffSA = 8;
+			int channelsSA = 1;
+			
+			unsigned int bar;
+			unsigned int *barHeights = new unsigned int[bandsSA];
+			unsigned int *barHeightsLeftChannel = new unsigned int[bandsSA];
+			unsigned int *barHeightsRightChannel = new unsigned int[bandsSA];
+			unsigned int volumeLeftChannel;
+			unsigned int volumeRightChannel;
+			unsigned int volumeBothChannels;
+			unsigned int *barPeaksBothChannels = new unsigned int[bandsSA];
+			unsigned int *barPeaksLeftChannel = new unsigned int[bandsSA];
+			unsigned int *barPeaksRightChannel = new unsigned int[bandsSA];
+							
+			GetBarHeights.bands 					= bandsSA;
+			GetBarHeights.barHeights				= barHeights;
+			GetBarHeights.barHeightsLeftChannel 	= barHeightsLeftChannel;
+			GetBarHeights.barHeightsRightChannel	= barHeightsRightChannel;
+			GetBarHeights.volumeLeftChannel			= &volumeLeftChannel;
+			GetBarHeights.volumeRightChannel		= &volumeRightChannel;
+			GetBarHeights.volumeBothChannels		= &volumeBothChannels;
+			GetBarHeights.name						= "graphlcd";
+			GetBarHeights.falloff					= falloffSA;
+			GetBarHeights.barPeaksBothChannels		= barPeaksBothChannels;
+			GetBarHeights.barPeaksLeftChannel		= barPeaksLeftChannel;
+			GetBarHeights.barPeaksRightChannel		= barPeaksRightChannel;
+			
+			if ( cPluginManager::CallFirstService(SPAN_GET_BAR_HEIGHTS_ID, &GetBarHeights ))
+			{
+				int i;
+				int barWidth = 2;
+				int saStartX = FRAME_SPACE_X;
+				int saEndX = saStartX + barWidth*bandsSA*2 + bandsSA/4 - 1;
+				int saStartY = FRAME_SPACE_Y;
+				int saEndY = FRAME_SPACE_Y + bitmap->Height()/2 - 3;
+				
+				LastTimeSA.Set(100);
+				
+				if ( GraphLCDSetup.SAShowVolume )
+				{
+					
+					saStartX = FRAME_SPACE_X  + bitmap->Width()/2 - (barWidth*bandsSA*2 + bandsSA/4)/2 - 2;
+					saEndX = saStartX + barWidth*bandsSA*2 + bandsSA/4 - 1;
+					
+					// left volume
+					bitmap->DrawRectangle(FRAME_SPACE_X,
+						saStartY,
+						saStartX-1,
+						saEndY + 1,
+						GLCD::clrWhite, true);
+					
+					for ( i=0; (i<logo->Width()/2-2) && (i<3*(volumeLeftChannel*saStartX)/100); i++)
+					{
+						bitmap->DrawRectangle(saStartX - i - 2,
+							saStartY + saEndY/2 - i,
+							saStartX - i - 4,
+							saStartY + saEndY/2 + i,
+							GLCD::clrBlack, true);
+					}
+					
+					// right volume
+					bitmap->DrawRectangle(saEndX + 1,
+						saStartY,
+						bitmap->Width() - 1,
+						saEndY + 1,
+						GLCD::clrWhite, true);
+					
+					for ( i=0; (i<logo->Width()/2-2) && (i<3*(volumeRightChannel*saStartX)/100); i++)
+					{
+						bitmap->DrawRectangle(saEndX + 2 + i,
+							saStartY + saEndY/2 - i,
+							saEndX + i + 4,
+							saStartY + saEndY/2 + i,
+							GLCD::clrBlack, true);
+					}
+				}
+				// black background
+				bitmap->DrawRectangle(saStartX,
+					saStartY,
+					saEndX,
+					saEndY + 1,
+					GLCD::clrBlack, true);
+
+				for ( i=0; i < bandsSA; i++ )
+				{
+/*					if ( channelsSA == 2 )
+					{
+						bar = barHeightsLeftChannel[i];
+						bar = barHeightsRightChannel[i];
+					}*/
+					if ( channelsSA == 1)
+					{
+						// the bar
+						bar = (barHeights[i]*(saEndY-saStartY))/100;
+						bitmap->DrawRectangle(saStartX + barWidth*2*(i)+ barWidth + 1,
+							saEndY,
+							saStartX + barWidth*2*(i) + barWidth+ barWidth + 1,
+							saEndY - bar,
+							GLCD::clrWhite, true);
+						
+						// the peak
+						bar = (barPeaksBothChannels[i]*(saEndY-saStartY))/100;
+						if ( bar > 0 )
+						{
+							bitmap->DrawRectangle(saStartX + barWidth*2*(i)+ barWidth + 1,
+								saEndY - bar,
+								saStartX + barWidth*2*(i) + barWidth+ barWidth + 1,
+								saEndY - bar+1,
+								GLCD::clrWhite, true);
+						}
+					}
+				}
+			}
+			
+			delete [] barHeights;
+			delete [] barHeightsLeftChannel;
+			delete [] barHeightsRightChannel;
+			delete [] barPeaksBothChannels;
+			delete [] barPeaksLeftChannel;
+			delete [] barPeaksRightChannel;
+		}
+	}
+
+// Service protocol to identify pcm-data-provider- and visualization-client-plugins (taken from music):
+bool cPluginMp3::Service(const char *Id, void *Data)
+{
+	if (strcmp(Id, SPAN_PROVIDER_CHECK_ID) == 0)
+	{
+		if (Data != NULL)
+			*((Span_Provider_Check_1_0*)Data)->isActive = true;
+		return true;
+	}
+	
+	if (strcmp(Id, SPAN_CLIENT_CHECK_ID) == 0)
+	{
+		if ( MP3Setup.enableSpectrumAnalyzer && (Data != NULL) )
+		{
+			*((Span_Client_Check_1_0*)Data)->isActive = true;
+		}
+		return true;
+	}
+	
+	return false;
+}

@@ -1,0 +1,331 @@
+diff -Naur --exclude='.*' --exclude='Makefile*' mp3ng-0.0.10_alpha/mp3control.c /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/mp3control.c
+--- mp3ng-0.0.10_alpha/mp3control.c	2006-09-02 05:54:47.000000000 +0200
++++ /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/mp3control.c	2006-09-08 14:52:36.000000000 +0200
+@@ -1136,19 +1136,23 @@
+       }
+ 
+ // Spectrum Analyzer visualization
+-         if ( MP3Setup.EnableSpectrumAnalyzer )	{
++         if ( MP3Setup.EnableSpectrumAnalyzer && ( player != NULL) )
++         {
+ 
+ 
+ 
+ 	   if (cPluginManager::CallFirstService(SPAN_GET_BAR_HEIGHTS_ID, NULL) && ShowSA)	{
+ 	     Span_GetBarHeights_v1_0 GetBarHeights;
+- 	     int bar;
+- 	     int *barHeights = new int[bandsSA];
+- 	     int *barHeightsLeftChannel = new int[bandsSA];
+- 	     int *barHeightsRightChannel = new int[bandsSA];
+- 	     int volumeLeftChannel;
+- 	     int volumeRightChannel;
+- 	     int volumeBothChannels;
++ 	     unsigned int bar;
++ 	     unsigned int *barHeights = new unsigned int[bandsSA];
++ 	     unsigned int *barHeightsLeftChannel = new unsigned int[bandsSA];
++ 	     unsigned int *barHeightsRightChannel = new unsigned int[bandsSA];
++ 	     unsigned int volumeLeftChannel;
++ 	     unsigned int volumeRightChannel;
++ 	     unsigned int volumeBothChannels;
++ 	     unsigned int *barPeaksBothChannels = new unsigned int[bandsSA];
++ 	     unsigned int *barPeaksLeftChannel = new unsigned int[bandsSA];
++ 	     unsigned int *barPeaksRightChannel = new unsigned int[bandsSA];
+  								
+  	     GetBarHeights.bands 					= bandsSA;
+  	     GetBarHeights.barHeights				        = barHeights;
+@@ -1159,6 +1163,9 @@
+  	     GetBarHeights.volumeBothChannels		                = &volumeBothChannels;
+  	     GetBarHeights.name						= "MP3-NextGen";
+  	     GetBarHeights.falloff					= MP3Setup.FalloffSA;
++ 	     GetBarHeights.barPeaksBothChannels		= barPeaksBothChannels;
++ 	     GetBarHeights.barPeaksLeftChannel		= barPeaksLeftChannel;
++ 	     GetBarHeights.barPeaksRightChannel		= barPeaksRightChannel;
+  			
+  	     if ( cPluginManager::CallFirstService(SPAN_GET_BAR_HEIGHTS_ID, &GetBarHeights )) {
+ 
+@@ -1167,9 +1174,12 @@
+ //lh +5*fh +fh/2 -1 -128
+  					
+ 	       int i;
++	       int barPeakHeight = 3;
+                int barWidth =0;
+ 	       int coverleft= x1 -128 -3*fw;
+-	       int covertop = lh +5*fh +fh/2 -127;
++	       int covertop = lh +5*fh + (int)(0.5*fh) -129;
++	       int barBase = 122;
++	       int barPeak = 0;
+ 
+  	       for ( i=0; i < bandsSA; i++ ) {
+ 
+@@ -1177,30 +1187,55 @@
+ 		   case 1:
+  	               barWidth = 128/bandsSA;
+ //printf("CASE 1 AKTIV: barwidth=%d channels=%d bands=%d\n", barWidth, channelsSA, bandsSA);
+- 		       if (player != NULL) {
+- 		         bar = barHeights[i];
+- 		         osd->DrawRectangle(coverleft +(i*barWidth), covertop, coverleft + (i*barWidth) +barWidth -1, covertop + 110 - bar, clrBlack);
+-		       }
++ 		         bar = (barHeights[i]*118)/100;
++ 		         barPeak = (barPeaksBothChannels[i]*118)/100;
++ 		       		if ( barPeak > 0 )
++ 		       		{
++ 		       			osd->DrawRectangle(coverleft +(i*barWidth), covertop, coverleft + (i*barWidth) +barWidth -1, covertop + barBase - barPeak - barPeakHeight, clrBlack);
++ 		       			osd->DrawRectangle(coverleft +(i*barWidth), covertop + barBase - barPeak+1, coverleft + (i*barWidth) +barWidth -1, covertop + barBase - bar, clrBlack);
++ 		       		}
++ 		       		else
++ 		       		{
++ 		       			osd->DrawRectangle(coverleft +(i*barWidth), covertop, coverleft + (i*barWidth) +barWidth -1, covertop + barBase - bar, clrBlack);
++ 		       		}
+ 		       break;
+ 		   case 2:
+  	               barWidth = 64/bandsSA;
+ //printf("CASE 2 AKTIV: barwidth=%d channels=%d bands=%d\n", barWidth, channelsSA, bandsSA);
+- 		       if (player != NULL) {
+- 		         bar = barHeightsLeftChannel[i];
+- 		         osd->DrawRectangle(coverleft +(i*barWidth)    , covertop, coverleft +(i*barWidth) +barWidth -1    , covertop + 110 - bar, clrBlack);
+- 		         bar = barHeightsRightChannel[i];
+- 		         osd->DrawRectangle(coverleft +64 +(i*barWidth), covertop, coverleft +64 +(i*barWidth) +barWidth -1, covertop + 110 - bar, clrBlack);
+-		       }
++
++ 		         bar = (barHeightsLeftChannel[i]*118)/100;
++ 		         barPeak = (barPeaksLeftChannel[i]*118)/100;
++ 		         if ( barPeak > 0 )
++ 		       		{
++ 		       			osd->DrawRectangle(coverleft +(i*barWidth), covertop, coverleft + (i*barWidth) +barWidth -1, covertop + barBase - barPeak - barPeakHeight, clrBlack);
++ 		       			osd->DrawRectangle(coverleft +(i*barWidth), covertop + barBase - barPeak+1, coverleft + (i*barWidth) +barWidth -1, covertop + barBase - bar, clrBlack);
++ 		       		}
++ 		       		else
++ 		       		{
++ 		       			osd->DrawRectangle(coverleft +(i*barWidth)    , covertop, coverleft +(i*barWidth) +barWidth -1    , covertop + barBase - bar, clrBlack);
++ 		       		}
++ 		       	 bar = (barHeightsRightChannel[i]*118)/100;
++ 		         barPeak = (barPeaksRightChannel[i]*118)/100;
++ 		         if ( barPeak > 0 )
++ 		       		{
++ 		       			osd->DrawRectangle(coverleft +64 +(i*barWidth), covertop, coverleft +64 +(i*barWidth) +barWidth -1, covertop + barBase - barPeak - barPeakHeight, clrBlack);
++						osd->DrawRectangle(coverleft +64 +(i*barWidth), covertop + barBase - barPeak+1, coverleft +64 +(i*barWidth) +barWidth -1, covertop + barBase - bar, clrBlack);
++ 		       		}
++ 		       		else
++ 		       		{
++ 		       			osd->DrawRectangle(coverleft +64 +(i*barWidth), covertop, coverleft +64 +(i*barWidth) +barWidth -1, covertop + barBase - bar, clrBlack);
++ 		       		}
+ 		       break;
+                    case 3:
+  	               barWidth = 64;
+-//printf("CASE 2 AKTIV: barwidth=%d channels=%d bands=%d\n", barWidth, channelsSA, bandsSA);
+-		       osd->DrawRectangle(coverleft           , covertop, coverleft +(barWidth -1), covertop + 110 - volumeLeftChannel,  clrBlack);
+- 		       osd->DrawRectangle(coverleft +barWidth , covertop, coverleft +128          , covertop + 110 - volumeRightChannel, clrBlack);
++//printf("CASE 3 AKTIV: barwidth=%d channels=%d bands=%d\n", barWidth, channelsSA, bandsSA);
++		       osd->DrawRectangle(coverleft           , covertop, coverleft +(barWidth -1), covertop + barBase - (volumeLeftChannel*118)/100,  clrBlack);
++ 		       osd->DrawRectangle(coverleft +barWidth , covertop, coverleft +128          , covertop + barBase - (volumeRightChannel*118)/100, clrBlack);
+                        break;
+ 		   default: break;
+-		 }         
+-	       }
++		 }
++ 	       }         
++//	       }
+ 
+ /* 	       if (channelsSA == 1) {
+ 		 osd->DrawRectangle(x1 - 4*fh -4*fw +i*barWidth, lh, x1 - 4*fh - 4*fw +i*barWidth+barWidth, lh + 110 - volumeLeftChannel, clrInfoBG2);
+@@ -1218,9 +1253,12 @@
+  	       flush = true;
+  	     }
+  				
+- 	     delete barHeights;
+- 	     delete barHeightsLeftChannel;
+- 	     delete barHeightsRightChannel;
++ 	     delete [] barHeights;
++ 	     delete [] barHeightsLeftChannel;
++ 	     delete [] barHeightsRightChannel;
++ 	     delete [] barPeaksBothChannels;
++ 	     delete [] barPeaksLeftChannel;
++ 	     delete [] barPeaksRightChannel;
+  	   }
+  	 }
+  
+@@ -1670,10 +1708,9 @@
+ #endif	  	  
+         }
+     default:
+-      ShowSA=true;
+       return osUnknown;
+     }
+-
++  ShowSA=true;
+   return osContinue;
+   }
+ }
+diff -Naur --exclude='.*' --exclude='Makefile*' mp3ng-0.0.10_alpha/mp3ng.c /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/mp3ng.c
+--- mp3ng-0.0.10_alpha/mp3ng.c	2006-09-02 05:49:47.000000000 +0200
++++ /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/mp3ng.c	2006-09-06 11:44:48.000000000 +0200
+@@ -114,6 +114,7 @@
+   else isyslog("mp3ng: Loading themefile\n");     
+   i18n_name=Name();
+   MP3Sources.Load(AddDirectory(ConfigDirectory(),"mp3ng/mp3sources.conf"));
++  dsyslog("%s", ConfigDirectory());
+   if(MP3Sources.Count()<1) {
+      esyslog("ERROR: you should have defined at least one source in mp3sources.conf");
+      fprintf(stderr,"No source(s) defined in mp3sources.conf\n");
+@@ -375,4 +376,24 @@
+ #endif
+ }
+ 
++bool cPluginMp3::Service(const char *Id, void *Data)
++{
++	if (strcmp(Id, SPAN_PROVIDER_CHECK_ID) == 0)
++	{
++		*((Span_Provider_Check_1_0*)Data)->isActive = true;
++		return true;
++	}
++	
++	if (strcmp(Id, SPAN_CLIENT_CHECK_ID) == 0)
++	{
++		if ( MP3Setup.EnableSpectrumAnalyzer && (Data != NULL) )
++		{
++			*((Span_Client_Check_1_0*)Data)->isActive = true;
++		}
++		return true;
++	}
++	
++	return false;
++}
++
+ VDRPLUGINCREATOR(cPluginMp3); // Don't touch this!
+diff -Naur --exclude='.*' --exclude='Makefile*' mp3ng-0.0.10_alpha/mp3ng.h /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/mp3ng.h
+--- mp3ng-0.0.10_alpha/mp3ng.h	2006-09-01 09:01:05.000000000 +0200
++++ /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/mp3ng.h	2006-09-06 11:30:03.000000000 +0200
+@@ -30,6 +30,7 @@
+   virtual cOsdObject *MainMenuAction(void);
+   virtual cMenuSetupPage *SetupMenu(void);
+   virtual bool SetupParse(const char *Name, const char *Value);
++  virtual bool Service(const char *Id, void *Data);
+ };
+ 
+ class cMenuSetupMP3 : public cMenuSetupPage {
+diff -Naur --exclude='.*' --exclude='Makefile*' mp3ng-0.0.10_alpha/player-mp3.c /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/player-mp3.c
+--- mp3ng-0.0.10_alpha/player-mp3.c	2006-08-31 23:59:42.000000000 +0200
++++ /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/player-mp3.c	2006-09-08 10:55:11.000000000 +0200
+@@ -1869,15 +1869,14 @@
+ // |--;--|--;--|--;--|--;--|	(|=border of int, - = 1 byte, ; = border of channels)
+ //  LL RR LL RR LL RR LL RR		LL/RR = two byte for the left/right channel
+  
+-      if (MP3Setup.EnableSpectrumAnalyzer) {
+ 	Span_SetPcmData_1_0 SetPcmData;
+ 	cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, NULL);
+ 	int z;
+         //TODO: fix this section
+         int offset = FHS+1; // empirically found out
+-	SetPcmData.length = (int)pc-offset;
++	SetPcmData.length = (unsigned int)pc-offset;
+ 	if (SetPcmData.length > PCM_FRAME_SIZE)
+-	  SetPcmData.length = (int)PCM_FRAME_SIZE;
++	  SetPcmData.length = (unsigned int)PCM_FRAME_SIZE;
+ 	else if (SetPcmData.length < 0)
+ 	  SetPcmData.length = 0;
+ 	if (SetPcmData.length > 10) {
+@@ -1890,27 +1889,26 @@
+  			
+ 	  memcpy(p_castedL,p+offset,(SetPcmData.length-offset)*sizeof(unsigned char));
+ 	  memcpy(p_castedR,p+offset+2,(SetPcmData.length-offset-2)*sizeof(unsigned char));
+-	  SetPcmData.length = SetPcmData.length/sizeof(int);
++	  SetPcmData.length = (unsigned int)SetPcmData.length/sizeof(int);
+ 	  if (Plugin) {
+           ////	offset = 4;
+           //	for (z = 0; z < SetPcmData.length/2; z+=4) {
+           //	  SetPcmData.data[z/4] = ((p[z+offset])<<8)|((p[z+offset+1]));
+           //	  SetPcmData.data[SetPcmData.length/8 + z/4] = ((p[z+offset+2])<<8)|((p[z+offset+3]));
+           //	}
+-            for (z = 0; z < SetPcmData.length/2; z++) {
++            for (z = 0; z < (int)SetPcmData.length/2; z++) {
+ 	      SetPcmData.data[z] = (int)(p_castedL[z]>>16);
+ 	      }
+-	    for (z = SetPcmData.length/2; z < SetPcmData.length; z++) {
++	    for (z = (int)SetPcmData.length/2; z < (int)SetPcmData.length; z++) {
+ 	      SetPcmData.data[z] = (int)(p_castedR[z]>>16);
+ 	      }
+             //SetPcmData.length = SetPcmData.length/sizeof(signed int);
+ 	    cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, &SetPcmData);
+ 	  }
+-	  delete data;
+-	  delete p_castedL;
+-	  delete p_castedR;
++	  delete [] data;
++	  delete [] p_castedL;
++	  delete [] p_castedR;
+ 	}
+-      }
+  				   
+       if(w>0) {
+         p+=w; pc-=w;
+diff -Naur --exclude='.*' --exclude='Makefile*' mp3ng-0.0.10_alpha/player-mp3.h /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/player-mp3.h
+--- mp3ng-0.0.10_alpha/player-mp3.h	2006-08-30 22:09:21.000000000 +0200
++++ /usr/local/src/vdr-1.4.0/PLUGINS/src/mp3ng-0.0.10_alpha/player-mp3.h	2006-09-08 13:17:29.000000000 +0200
+@@ -26,37 +26,49 @@
+ #include <vdr/player.h>
+ 
+ #include <mad.h>
+-#include <fftw3.h>
+ 
+ /*
+  * Macros.
+  */ 
+ #define PCM_FRAME_SIZE 2048
+ 
+-#define SPAN_SET_PCM_DATA_ID "Span-SetPcmData-v1.0"
++#define SPAN_PROVIDER_CHECK_ID 	"Span-ProviderCheck-v1.0"
++#define SPAN_CLIENT_CHECK_ID 	"Span-ClientCheck-v1.0"
++#define SPAN_SET_PCM_DATA_ID 	"Span-SetPcmData-v1.0"
+ #define SPAN_GET_BAR_HEIGHTS_ID "Span-GetBarHeights-v1.0"
++
++//Span requests to collect possible providers / clients
++struct Span_Provider_Check_1_0 {
++	bool *isActive;
++	bool *isRunning;
++};
++
++struct Span_Client_Check_1_0 {
++	bool *isActive;
++	bool *isRunning;
++};
++
+ // SpanData
+ struct Span_SetPcmData_1_0 {
+-	int length; // the length of the PCM-data
+-	int *data;	// the PCM-Data as 32-bit int, however only the lower 16-bit are used
++	unsigned int length;	// the length of the PCM-data
++	int *data;		// the PCM-Data as 32-bit int, however only the lower 16-bit are used
+ 				// and you have to take care to hand in such data!
+ };
+ 
+ struct Span_GetBarHeights_v1_0 {
+-	int bands;						// number of bands to compute
+-	int *barHeights;				// the heights of the bars of the two channels combined
+-	int *barHeightsLeftChannel;		// the heights of the bars of the left channel
+-	int *barHeightsRightChannel;	// the heights of the bars of the right channel
+-	int *volumeLeftChannel;			// the volume of the left channels
+-	int *volumeRightChannel;		// the volume of the right channels
+-	int *volumeBothChannels;		// the combined volume of the two channels
+-	const char *name;				// name of the plugin that wants to get the data
+-									// (must be unique for each client!)
+-	int falloff;                    // bar falloff value
+-	// barPeaks[peak-value]
+-	// it is planned to support peaks falling as if they were subject to gravity
+-	// NOT supported yet!
+-	int *barPeaks;
++	unsigned int bands;			// number of bands to compute
++	unsigned int *barHeights;		// the heights of the bars of the two channels combined
++	unsigned int *barHeightsLeftChannel;	// the heights of the bars of the left channel
++	unsigned int *barHeightsRightChannel;	// the heights of the bars of the right channel
++	unsigned int *volumeLeftChannel;	// the volume of the left channels
++	unsigned int *volumeRightChannel;	// the volume of the right channels
++	unsigned int *volumeBothChannels;	// the combined volume of the two channels
++	const char *name;			// name of the plugin that wants to get the data
++						// (must be unique for each client!)
++	unsigned int falloff;                   // bar falloff value
++	unsigned int *barPeaksBothChannels;     // bar peaks of the two channels combined
++	unsigned int *barPeaksLeftChannel;      // bar peaks of the left channel
++	unsigned int *barPeaksRightChannel;     // bar peaks of the right channel
+ };
+ 
+ // -------------------------------------------------------------------

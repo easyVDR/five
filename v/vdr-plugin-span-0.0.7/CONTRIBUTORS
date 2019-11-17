@@ -1,0 +1,12 @@
+Many thanks to those people who sent hints/tips/bug-reports/new ideas ...
+
+Stefan Hülswitt <s.huelswitt@gmx.de>
+  Suggestions about better ways of handling the PCM16-data and the support
+  during the design of their implementation. (for span-0.0.4)
+
+Morone <from vdr-portal>
+  Reporting stopping visaulization after pausing and starting playback again.
+  (fixed in span-0.0.6)
+
+Diego Pierotto <vdr-italian@tiscali.it>
+  Provided the italian translations (0.0.7)

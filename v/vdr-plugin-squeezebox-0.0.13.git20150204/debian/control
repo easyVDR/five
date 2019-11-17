@@ -1,0 +1,24 @@
+Source: vdr-plugin-squeezebox
+Section: video
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), gettext, curl, libmagick++-dev, pkg-config, libalsa-ocaml-dev, libasound2-dev, libflac-dev, libmad0-dev, libvorbis-dev, libfaad-dev, libmpg123-dev, libssl-dev, libcurl4-openssl-dev
+Standards-Version: 3.9.5
+Homepage: https://github.com/horchi/vdr-plugin-squeezebox
+
+Package: vdr-plugin-squeezebox
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, libmagick++5, libcurl3, libldap-2.4-2, libgssapi-krb5-2, libsasl2-2, liblqr-1-0, squeezelite
+Description: Plugin Squeezebox 
+ Plugin Squeezebox A Software Client For Logitech Media Server (LMS)
+
+Package: vdr-plugin-squeezebox-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-squeezebox (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-squeezebox
+ .
+ This package contains only the debugging symbols for vdr-plugin-squeezebox
+

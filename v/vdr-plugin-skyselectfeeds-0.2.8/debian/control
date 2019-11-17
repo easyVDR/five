@@ -1,0 +1,23 @@
+Source: vdr-plugin-skyselectfeeds
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.0.0), pkg-config
+Standards-Version: 3.9.4
+Homepage: https://github.com/lucianm/vdr-plugin-skyselectfeeds
+
+Package: vdr-plugin-skyselectfeeds
+Architecture: any
+Provides: vdr-plugin-arghdirector
+Replaces: vdr-plugin-arghdirector (<< 0.2.6d)
+Conflicts: vdr-plugin-arghdirector (<< 0.2.6d)
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: skyselectfeeds plugin for vdr to use multifeed option
+ SkySelectFeeds is a plugin to use the multifeed option of some Sky
+ channels (Skyselect).
+
+Package: vdr-plugin-arghdirector
+Depends: ${misc:Depends}, vdr-plugin-skyselectfeeds
+Architecture: all
+Description: Transitional dummy package
+ Package was renamed from vdr-plugin-arghdirector to vdr-plugin-skyselectfeeds

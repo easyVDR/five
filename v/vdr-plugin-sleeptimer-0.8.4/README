@@ -1,0 +1,73 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Originally written by:                  Thomas Koch <tom@linvdr.org>
+Development since 0.8:                  Michael Schneider <vdrportal_midas <at> gmx <dot> de>
+Old project's homepage:          http://www.linvdr.org/projects/sleeptimer/
+New homepage:                    http://projects.vdr-developer.org/projects/plg-sleeptimer
+
+Latest version available at: Project's homepage
+
+See the file COPYING for license information.
+
+*******************************
+*** Command Line Parameters ***
+*******************************
+
+The -e parameter temporarily overrides the 'Command' option in the plugins setup. Note
+that overriding makes the 'Command' option become unselectable and show the command 
+defined at the command line ignoring the value currently stored in setup.conf.
+
+********************
+*** Plugin Setup ***
+********************
+
+Default Timespan [min]:
+-defines the default timespan till shutdown, which is shown in the plugins main menu entry
+
+Action:
+-'Shutdown' sends an internal shutdown signal to vdr. Represents exactly the same way
+ as if the Power key would be pressed. This way vdr itself handles the shutdown
+ procedure, delays the shutdown if needed, sets timers correctly etc.
+-'Mute' mutes audio if not already muted
+-'Execute command' invokes a system call to 'Command'
+-'Command' defines the executable to be invoked on sleeptimer timeout (default: /sbin/poweroff)
+ overridden by command line parameter -e. If overriden this option becomes unselectable 
+ (see above).
+
+Use Autoswitch with default:
+-Integrates the default timespan in the predefined values and makes the Autoswitch function
+ start with this value.
+
+Confirm:
+-makes the Autoswitch function offer the predefined timespans but does not activate
+ the sleeptimer unless the user explicitly confirms by pressing Ok.
+
+*****************
+*** Main Menu ***
+*****************
+
+Not Active / Disable sleeptimer:
+-Allows disabling of an active sleeptimer. If there is no active sleeptimer 'Not Active' is
+ displayed.
+
+Shutdown [min]:
+-Denotes the timespan for a sleeptimer in minutes. Values < 2 minutes are not allowed. 
+ Activation by Ok.
+
+Shutdown (time):
+-Denotes the time for a sleeptimer. Values < 2 minutes are not allowd. Activation by Ok.
+
+Red / Autoswitch (inspired by an idea / feature request by grindo):
+-Switches through a set of predefined values (min). Especially convenient in combination with
+ the use of keymacros. Just add for example
+ User7     @sleeptimer Red
+ in vdr's keymacros.conf file and make sure User7 is mapped in remote.conf. This makes the
+ user switch through the predefined values by just pressing one key and without hassling with
+ vdr's main menu. By default the predefined values are:
+ Disabling, 15, 30, 45, 60, 90, 120, 180
+ In combination with 'Use default for Autoswitch' the 'Default Timespan' value will be
+ integrated in this sequence and calling the autoswitch function will start with this
+ value.
+
+Green / Disable:
+-Disables an active sleeptimer. 

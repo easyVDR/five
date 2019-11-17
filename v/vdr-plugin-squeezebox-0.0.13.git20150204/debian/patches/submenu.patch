@@ -1,0 +1,155 @@
+diff -ruN a/menu.c b/menu.c
+--- a/menu.c	2014-07-24 19:48:33.000000000 +0200
++++ b/menu.c	2014-07-29 04:24:47.344312749 +0200
+@@ -111,7 +111,7 @@
+ // Definition of the Menu Structure
+ //***************************************************************************
+ 
+-cSubMenu::Query cSubMenu::queries[] =
++cSSubMenu::Query cSSubMenu::queries[] =
+ {
+    { LmcCom::rqtPlaylists, LmcTag::tPlaylistId, LmcCom::rqtUnknown    },
+    { LmcCom::rqtGenres,    LmcTag::tGenreId,    LmcCom::rqtArtists    },
+@@ -131,7 +131,7 @@
+ // Menu
+ //***************************************************************************
+ 
+-cSubMenu::cSubMenu(cMenuBase* aParent, const char* title, LmcCom* aLmc, 
++cSSubMenu::cSSubMenu(cMenuBase* aParent, const char* title, LmcCom* aLmc, 
+                    LmcCom::RangeQueryType aQueryType, LmcCom::Parameters* aFilters)
+    : cMenuSqueeze(title, aLmc)
+ {
+@@ -147,7 +147,7 @@
+ 
+    if (queryType == LmcCom::rqtRadioApps)
+    {
+-      cSubMenuItem* item = (cSubMenuItem*)parent->Get(parent->getCurrent());   
++      cSSubMenuItem* item = (cSSubMenuItem*)parent->Get(parent->getCurrent());   
+ 
+       if (parent)
+       {
+@@ -177,7 +177,7 @@
+                   if ((*it).command.empty())
+                      (*it).command = item->getItem()->command;
+ 
+-                  Add(new cSubMenuItem(&(*it)));
++                  Add(new cSSubMenuItem(&(*it)));
+                }
+             }
+          }
+@@ -196,7 +196,7 @@
+          LmcCom::RangeList::iterator it;
+          
+          for (it = list.begin(); it != list.end(); ++it)
+-            Add(new cSubMenuItem(&(*it)));
++            Add(new cSSubMenuItem(&(*it)));
+          
+          if (total > maxElements)
+             tell(eloAlways, "Warning: %d more, only maxElements supported", total-maxElements);
+@@ -205,7 +205,7 @@
+ 
+    // #TODO, change help info with current item while scrolling
+ 
+-   cSubMenuItem* item = (cSubMenuItem*)Get(0);
++   cSSubMenuItem* item = (cSSubMenuItem*)Get(0);
+ 
+    if (item && item->getItem()->isAudio)
+       setHelp(tr("Close"), tr("Insert"), tr("Append"), tr("Play"));
+@@ -213,7 +213,7 @@
+       setHelp(tr("Close"), 0, 0, 0);
+ }
+ 
+-cSubMenu::~cSubMenu() 
++cSSubMenu::~cSSubMenu() 
+ { 
+ }
+ 
+@@ -221,7 +221,7 @@
+ // Process Key
+ //***************************************************************************
+ 
+-int cSubMenu::ProcessKey(int key)
++int cSSubMenu::ProcessKey(int key)
+ {
+    int state;
+    char flt[500];
+@@ -229,7 +229,7 @@
+    if ((state = cMenuBase::ProcessKey(key)) != ignore)
+       return state;
+ 
+-   cSubMenuItem* item = (cSubMenuItem*)Get(getCurrent());
++   cSSubMenuItem* item = (cSSubMenuItem*)Get(getCurrent());
+ 
+    if (key == kOk)
+    {
+@@ -246,7 +246,7 @@
+                     queryType == LmcCom::rqtYears ? item->getItem()->content.c_str() : item->getItem()->id.c_str());
+             pars.push_back(flt);
+             
+-            AddSubMenu(new cSubMenu(this, subTitle, lmc, toSubLevelQuery(queryType), &pars));
++            AddSubMenu(new cSSubMenu(this, subTitle, lmc, toSubLevelQuery(queryType), &pars));
+             free(subTitle);
+          }
+       }
+@@ -382,15 +382,15 @@
+       {
+          switch (getCurrent())
+          {
+-            case 0: return AddSubMenu(new cSubMenu(this, item->getText(), lmc, LmcCom::rqtArtists));
+-            case 1: return AddSubMenu(new cSubMenu(this, item->getText(), lmc, LmcCom::rqtAlbums));
+-            case 2: return AddSubMenu(new cSubMenu(this, item->getText(), lmc, LmcCom::rqtGenres));
+-            case 3: return AddSubMenu(new cSubMenu(this, item->getText(), lmc, LmcCom::rqtYears));
++            case 0: return AddSubMenu(new cSSubMenu(this, item->getText(), lmc, LmcCom::rqtArtists));
++            case 1: return AddSubMenu(new cSSubMenu(this, item->getText(), lmc, LmcCom::rqtAlbums));
++            case 2: return AddSubMenu(new cSSubMenu(this, item->getText(), lmc, LmcCom::rqtGenres));
++            case 3: return AddSubMenu(new cSSubMenu(this, item->getText(), lmc, LmcCom::rqtYears));
+             case 4: lmc->randomTracks(); return done;
+-            case 5: return AddSubMenu(new cSubMenu(this, item->getText(), lmc, LmcCom::rqtPlaylists));
+-            case 6: return AddSubMenu(new cSubMenu(this, item->getText(), lmc, LmcCom::rqtRadios));
+-            case 7: return AddSubMenu(new cSubMenu(this, item->getText(), lmc, LmcCom::rqtFavorites));
+-            case 8: return AddSubMenu(new cSubMenu(this, item->getText(), lmc, LmcCom::rqtNewMusic));
++            case 5: return AddSubMenu(new cSSubMenu(this, item->getText(), lmc, LmcCom::rqtPlaylists));
++            case 6: return AddSubMenu(new cSSubMenu(this, item->getText(), lmc, LmcCom::rqtRadios));
++            case 7: return AddSubMenu(new cSSubMenu(this, item->getText(), lmc, LmcCom::rqtFavorites));
++            case 8: return AddSubMenu(new cSSubMenu(this, item->getText(), lmc, LmcCom::rqtNewMusic));
+          }
+       }
+ 
+diff -ruN a/menu.h b/menu.h
+--- a/menu.h	2014-07-24 19:48:33.000000000 +0200
++++ b/menu.h	2014-07-29 04:24:47.344312749 +0200
+@@ -29,14 +29,14 @@
+ // Sub Menu Item
+ //***************************************************************************
+ 
+-class cSubMenuItem : public cMenuItem
++class cSSubMenuItem : public cMenuItem
+ {
+    public:
+    
+-      cSubMenuItem(LmcCom::ListItem* aItem) : cMenuItem(aItem->content.c_str()) 
++      cSSubMenuItem(LmcCom::ListItem* aItem) : cMenuItem(aItem->content.c_str()) 
+       { item = *aItem; }
+ 
+-      virtual ~cSubMenuItem()
++      virtual ~cSSubMenuItem()
+       { }
+ 
+       const char* getText()              { return item.content.c_str(); }
+@@ -114,13 +114,13 @@
+ // Sub Menu
+ //***************************************************************************
+ 
+-class cSubMenu : public cMenuSqueeze
++class cSSubMenu : public cMenuSqueeze
+ {
+    public:
+ 
+-      cSubMenu(cMenuBase* aParent, const char* title, LmcCom* aLmc, 
++      cSSubMenu(cMenuBase* aParent, const char* title, LmcCom* aLmc, 
+                LmcCom::RangeQueryType aQueryType, LmcCom::Parameters* aFilters = 0);
+-      virtual ~cSubMenu();
++      virtual ~cSSubMenu();
+       virtual int ProcessKey(int key);
+ 
+    protected:

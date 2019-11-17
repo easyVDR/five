@@ -1,0 +1,132 @@
+# VDR plugin language source file.
+# Copyright (C) 2007-2015 Rolf Ahrenberg
+# This file is distributed under the same license as the skinsoppalusikka package.
+# Thomas Günther
+# Jörg Bornkessel
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skinsoppalusikka 2.2.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2015-04-04 04:04+0300\n"
+"PO-Revision-Date: 2015-04-04 04:04+0300\n"
+"Last-Translator: Jörg Bornkessel\n"
+"Language-Team: German <vdr@linuxtv.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Button$Flush cache"
+msgstr "Cache leeren"
+
+msgid "Show auxiliary information"
+msgstr "Zusatzinfo anzeigen"
+
+msgid "Define whether any auxiliary information is shown in info menus."
+msgstr ""
+
+msgid "Show progressbar"
+msgstr "Fortschrittbalken anzeigen"
+
+msgid "Define whether a progressbar is shown in schedule menu."
+msgstr ""
+
+msgid "Show symbols"
+msgstr "Symbole anzeigen"
+
+msgid "Define whether symbols are shown in recordings and schedule menus."
+msgstr ""
+
+msgid "Show VPS in channel info"
+msgstr "VPS anzeigen"
+
+msgid "Define whether VPS information is shown in channel info menu."
+msgstr ""
+
+msgid "Show event duration in channel info"
+msgstr ""
+
+msgid "remaining"
+msgstr ""
+
+msgid "total"
+msgstr ""
+
+msgid "Define whether remaining or total event duration is shown in channel info menu."
+msgstr ""
+
+msgid "Show channel logos"
+msgstr "Kanal-Logos anzeigen"
+
+msgid ""
+"Define whether channels logos are shown in channel info menu.\n"
+"\n"
+"Only XPM format is accepted: 64x48 pixel and max. 13 colors."
+msgstr ""
+
+msgid "Channel logo cache size"
+msgstr "Größe des Logo-Caches"
+
+msgid ""
+"Define the cache size for channel logos.\n"
+"\n"
+"The bigger cache results faster zapping."
+msgstr ""
+
+msgid "Flushing channel logo cache..."
+msgstr "Logo-Cache wird geleert..."
+
+msgid "Help"
+msgstr "Hilfe"
+
+msgid "Soppalusikka skin"
+msgstr "Soppalusikka Oberfläche"
+
+msgid "*** Invalid Channel ***"
+msgstr "*** Ungültiger Kanal ***"
+
+msgid "min"
+msgstr "min"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "EBU"
+msgstr "EBU"
+
+msgid "Duration"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Priority"
+msgstr "Priorität"
+
+msgid "Lifetime"
+msgstr "Lebensdauer"
+
+msgid "Format"
+msgstr ""
+
+msgid "Auxiliary information"
+msgstr "Zusatzinfo"
+
+msgid "Mute"
+msgstr "Stumm"
+
+msgid "Volume"
+msgstr "Lautstärke"
+
+msgid "Stereo"
+msgstr "Stereo"
+
+msgid "Left"
+msgstr "Links"
+
+msgid "Right"
+msgstr "Rechts"
+
+msgid "Soppalusikka"
+msgstr "Soppalusikka"

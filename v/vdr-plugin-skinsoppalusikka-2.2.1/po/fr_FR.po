@@ -1,0 +1,138 @@
+# VDR plugin language source file.
+# Copyright (C) 2007-2015 Rolf Ahrenberg
+# This file is distributed under the same license as the skinsoppalusikka package.
+# Michaël Nival
+# neptunvasja@VDRPortal
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skinsoppalusikka 2.2.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2015-04-04 04:04+0300\n"
+"PO-Revision-Date: 2015-04-04 04:04+0300\n"
+"Last-Translator: NIVAL Michaël <mnival@club-internet.fr>\n"
+"Language-Team: French <vdr@linuxtv.org>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Button$Flush cache"
+msgstr "Supprimer cache"
+
+msgid "Show auxiliary information"
+msgstr "Afficher information auxiliaire"
+
+msgid "Define whether any auxiliary information is shown in info menus."
+msgstr "Définit si les informations auxiliaire sont affichées dans le menu info."
+
+msgid "Show progressbar"
+msgstr "Afficher barre de progression"
+
+msgid "Define whether a progressbar is shown in schedule menu."
+msgstr "Définit si la barre de progression est affiché dans le menu programme."
+
+msgid "Show symbols"
+msgstr "Afficher symbole"
+
+msgid "Define whether symbols are shown in recordings and schedule menus."
+msgstr "Définit si les symboles sont affichés dans les menus enregistrement et programme."
+
+msgid "Show VPS in channel info"
+msgstr "Afficher VPS dans l'info. de la chaîne"
+
+msgid "Define whether VPS information is shown in channel info menu."
+msgstr "Définit si les informations VPS doivent être affichés dans les menu info de la chaine."
+
+msgid "Show event duration in channel info"
+msgstr ""
+
+msgid "remaining"
+msgstr ""
+
+msgid "total"
+msgstr ""
+
+msgid "Define whether remaining or total event duration is shown in channel info menu."
+msgstr ""
+
+msgid "Show channel logos"
+msgstr "Afficher logo des chaînes"
+
+msgid ""
+"Define whether channels logos are shown in channel info menu.\n"
+"\n"
+"Only XPM format is accepted: 64x48 pixel and max. 13 colors."
+msgstr ""
+"Définit si le logo des chaînes est affiché dans le menu info de la chaîne.\n"
+"\n"
+"Seul le format XPM est accepté : 64x48 pixel et max. 13 couleurs."
+
+msgid "Channel logo cache size"
+msgstr "Taille du cache des logo"
+
+msgid ""
+"Define the cache size for channel logos.\n"
+"\n"
+"The bigger cache results faster zapping."
+msgstr ""
+"Définit la taille du cache pour le logo des chaînes.\n"
+"\n"
+"Un plus grand cache donne un zapping plus rapide."
+
+msgid "Flushing channel logo cache..."
+msgstr "Suppression du cache..."
+
+msgid "Help"
+msgstr "Aide"
+
+msgid "Soppalusikka skin"
+msgstr "Skin Soppalusikka"
+
+msgid "*** Invalid Channel ***"
+msgstr "*** Chaîne invalide! ***"
+
+msgid "min"
+msgstr "min"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "EBU"
+msgstr "EBU"
+
+msgid "Duration"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Priority"
+msgstr "Priorité"
+
+msgid "Lifetime"
+msgstr "Durée de vie"
+
+msgid "Format"
+msgstr ""
+
+msgid "Auxiliary information"
+msgstr "Information auxiliare"
+
+msgid "Mute"
+msgstr "Muet"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "Stereo"
+msgstr "Stéréo"
+
+msgid "Left"
+msgstr "Gauche"
+
+msgid "Right"
+msgstr "Droite"
+
+msgid "Soppalusikka"
+msgstr "Soppalusikka"

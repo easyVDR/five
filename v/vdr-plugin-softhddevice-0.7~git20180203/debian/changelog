@@ -1,0 +1,774 @@
+vdr-plugin-softhddevice (3:0.7~git20180203-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 16:51:05 +0100
+
+vdr-plugin-softhddevice (3:0.7~git20180203-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Jan 2019 01:26:02 +0100
+
+vdr-plugin-softhddevice (3:0.7~git20180203-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Feb 2018 22:59:08 +0100
+
+vdr-plugin-softhddevice (3:0.7~git20180203-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Feb 2018 20:17:38 +0100
+
+vdr-plugin-softhddevice (3:0.7~git20180203-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice
+  * commit:c99afc2 - Switch to posix compaatible sched_yield
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Feb 2018 00:16:03 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20180121-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/ua0lnj/vdr-plugin-softhddevice
+  * commit:cf09d0c - Add PlayTsVideo function to play TS packets
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 21 Jan 2018 00:05:20 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20171212-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Dec 2017 16:05:39 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20171212-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/pesintta/vdr-plugin-softhddevice
+  * commit:4e5da1a - Support DCI 4K OSD resolution
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Dec 2017 15:07:24 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20171105-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice
+  * commit:56c7dcc - Fix memory leak
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 05 Nov 2017 15:10:44 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170707-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.3.8
+
+ -- Wolfgang Mangold <email address hidden>  Thu, 17 Aug 2017 21:22:04 +0200
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170707-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice
+  * commit:9c90c5a - Consolidate wrong interlace detection
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 14 Aug 2017 20:42:51 +0200
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170408-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice
+  * commit:ec5cb4d - Silence some compilation warnings
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 08 Apr 2017 15:09:52 +0200
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170328-1easyVDR0~trusty) trusty; urgency=high
+
+  * switch to quilt
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 31 Mar 2017 15:38:58 +0200
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170328-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice/tree/vpp_support_hevc
+  * commit:deae373 - Enable DEBUG flag for stderr messages.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 31 Mar 2017 15:10:24 +0200
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170122-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice/tree/vpp_support_hevc
+  * commit:3e65824 - Initial HEVC Support
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 05 Mar 2017 22:57:05 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170114-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added makefile patch
+  * switch to quilt
+  * sources: https://github.com/jojo61/vdr-plugin-softhddevice
+  * commit:6fc9d74 - prepare for UHD
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 14 Jan 2017 16:28:29 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170113-0easyVDR1~trusty) trusty; urgency=high
+
+  * remove depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 13 Jan 2017 22:24:18 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20170113-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/jojo61/vdr-plugin-softhddevice
+  * commit:6fc9d74 - prepare for UHD
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 13 Jan 2017 21:54:26 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20151103-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 08 Jan 2017 15:12:40 +0100
+
+vdr-plugin-softhddevice (3:0.6.1rc1.git20151103-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 04 Jan 2017 23:54:15 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR9~trusty) trusty; urgency=high
+
+  * depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 04 Jan 2017 23:21:29 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR8~trusty) trusty; urgency=high
+
+  * added ffmpeg3.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 04 Jan 2017 23:11:36 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:00:11 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:45:46 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:46:50 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:06:29 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 22 Mar 2016 23:14:00 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR2~trusty) trusty; urgency=high
+
+  * added combined.diff
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 03 Mar 2016 00:12:19 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:50:04 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20151103-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit: 6dfa88ae - Preparations for new ffmpeg VDPAU API.
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Nov 2015 00:52:23 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150925-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 22:37:12 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150925-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * Add support for new API of vdr 2.3.1
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 31 Oct 2015 17:34:04 +0100
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150619-0mangoVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:34:03 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150619-0mangoVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild for new ffmepg-2.7.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Aug 2015 23:57:59 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150619-0mangoVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Aug 2015 22:26:00 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150619-0mangoVDR4~trusty) trusty; urgency=high
+
+  * added DH264_EOS_TRICKSPEED in Makefile
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Aug 2015 23:23:43 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150619-0mangoVDR3~trusty) trusty; urgency=high
+
+  * added git c138a66:
+  * Fix bug: wrong and crash, if vdr draws pixmaps outside OSD
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 23 Jul 2015 22:30:15 +0200
+ 
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150619-0mangoVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 22:00:21 +0200 
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150619-0mangoVDR1~trusty) trusty; urgency=high
+
+  * rebuild for new libva
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 22 Jun 2015 21:56:59 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150619-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * Fix bug: wrong version number check for av_frame_alloc()
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 19 Jun 2015 19:46:51 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150426-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added depends ffmpeg-opti
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jun 2015 20:58:38 +0200
+
+vdr-plugin-softhddevice (2:0.6.1rc1.git20150130-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 31 Jan 2015 06:47:16 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20140604-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:00:10 +0200
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20140604-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Jun 2014 00:45:30 +0200
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-7easyVDR3~trusty) trusty; urgency=high
+
+  * disable vaapi & opengl
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Feb 2014 23:07:31 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-7easyVDR2~trusty) trusty; urgency=high
+
+  * add support vaapi & opengl
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Feb 2014 22:52:04 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-6easyVDR2~trusty) trusty; urgency=high
+
+  * rm patch libavutils
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Jan 2014 16:40:21 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-6easyVDR1~trusty) trusty; urgency=high
+
+  * add depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Jan 2014 02:05:43 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-6easyVDR~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 Jan 2014 14:20:05 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-6yavdr0~trusty) trusty; urgency=medium
+
+  * unify patches for libav 9.10
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 13:21:23 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-5yavdr0~trusty) trusty; urgency=medium
+
+  * add it to codec.c, too 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 13:08:51 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-4yavdr0~trusty) precise; urgency=medium
+
+  * fix include for libavutils/mem.h 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 13:05:15 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-3yavdr0~trusty) trusty; urgency=medium
+
+  * fox include for string.h in softhddev.c 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 12:57:18 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-2yavdr0~trusty) trusty; urgency=medium
+
+  * fix include for libavutil/channel_layout.h 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 11:22:18 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-1yavdr0~trusty) trusty; urgency=medium
+
+  * add alternative dependency for libxcb-ewmh-dev
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 09:55:42 +0100
+
+vdr-plugin-softhddevice (1:0.6.1rc1.git20131220.2124-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 20 Dec 2013 22:24:54 +0100
+
+vdr-plugin-softhddevice (1:0.6.0.git.20131008-1yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Alexander Grothe <release@yavdr.org>  Tue, 12 Nov 2013 11:02:50 +0100
+
+vdr-plugin-softhddevice (1:0.6.0.git.20131008-1yavdr0~precise) precise; urgency=medium
+
+  * disable -DH264_EOS_TRICKSPEED build option 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 09 Nov 2013 16:29:40 +0100
+
+vdr-plugin-softhddevice (1:0.6.0.git.20131008-0yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 27 Oct 2013 09:13:36 +0100
+
+vdr-plugin-softhddevice (1:0.6.0.git.20131008-0yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 19:06:12 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20131008-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot, uses monotonic clock 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 08 Oct 2013 10:31:32 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130806-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:14:01 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130806-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 06 Aug 2013 10:20:20 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130721-0yavdr0~precise) precise; urgency=medium
+
+  * new upstram snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 22 Jul 2013 11:47:15 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130718-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 18 Jul 2013 10:10:29 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130516-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:08:04 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130516-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:32:15 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130516-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 04 Jun 2013 23:43:43 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130429.2052-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 29 Apr 2013 20:54:18 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130412.1226-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Apr 2013 12:26:28 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130317.1945-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:57:02 +0200
+
+vdr-plugin-softhddevice (1:0.6.0.git.20130317.1945-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 17 Mar 2013 19:49:28 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130312.1053-1yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:57:57 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130312.1053-1yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:08:32 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130312.1053-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:58:56 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130312.1053-1yavdr0~precise) precise; urgency=low
+
+  * test CONFIG += -DUSE_MPEG_COMPLETE and CONFIG += -DUSE_VDR_SPU 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 12 Mar 2013 11:40:26 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130312.1053-0yavdr2~precise) precise; urgency=medium
+
+  * plugin installs it self without debian/install
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 12 Mar 2013 11:19:38 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130312.1053-0yavdr1~precise) precise; urgency=medium
+
+  * 0.6 rc3
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 12 Mar 2013 10:53:09 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130303.1729-0yavdr1~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 11 Mar 2013 00:38:44 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130303.1729-0yavdr0~precise) precise; urgency=medium
+
+  * rebuild 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 03 Mar 2013 17:29:12 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130129.1106-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 29 Jan 2013 11:05:40 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130115.1455-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 15 Jan 2013 14:55:03 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20130108.1648-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 08 Jan 2013 16:48:05 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121220.0825-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 20 Dec 2012 08:25:12 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121126.0959-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:31:45 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121126.0959-1yavdr0~precise) precise; urgency=medium
+
+  * add patch for seduatmo
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 08 Dec 2012 11:51:10 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121126.0959-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:15:11 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121126.0959-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 16:00:25 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121126.0959-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 26 Nov 2012 09:56:38 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121115.2130-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:11:32 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121115.2130-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:41:07 +0100
+
+vdr-plugin-softhddevice (1:0.5.2.git.20121115.2130-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release 0.5.2 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 16 Nov 2012 08:23:56 +0100
+
+vdr-plugin-softhddevice (1:0.5.1.git.20121031.2010-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 31 Oct 2012 20:12:45 +0100
+
+vdr-plugin-softhddevice (1:0.5.1.git.20121029.2020-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 29 Oct 2012 20:20:37 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git.20121024.1813-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 24 Oct 2012 18:13:00 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git.20120915.2204-2yavdr0~precise) precise; urgency=medium
+
+  * higher version number to build on Launchpad 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 28 Sep 2012 11:11:37 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git.20120915.2204-1yavdr0~preciseubuntu2) precise; urgency=medium
+
+  * added patch to improve vdpau queue error handling
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 27 Sep 2012 12:13:02 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git.20120915.2204-1yavdr0~preciseubuntu1) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 16 Sep 2012 13:05:10 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git.20120912.2208-1yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 12 Sep 2012 22:12:00 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git20120706.0004-1yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 06 Sep 2012 00:11:42 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git20120706.0004-1yavdr1~precise) precise; urgency=high
+
+  * added USE_YAEPG 
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 29 Aug 2012 16:39:42 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git20120706.0004-1yavdr0~precise) precise; urgency=medium
+
+  * add -dbg package
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Mon, 09 Jul 2012 18:05:12 +0200
+
+vdr-plugin-softhddevice (1:0.5.1.git20120706.0004-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 08 Jul 2012 20:55:30 +0200
+
+vdr-plugin-softhddevice (1:0.5.1rc2.git20120630.1340-0yavdr0~precise) precise; urgency=medium
+
+  * use override_dh_auto_install to disable "make install"
+  * rebuild with epoch version number
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 08 Jul 2012 20:39:05 +0200
+
+vdr-plugin-softhddevice (0.6.1rc2.git20120630.1340-1yavdr0~precise) precise; urgency=medium
+
+  * remove target install from Makefile
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 01 Jul 2012 10:37:21 +0200
+
+vdr-plugin-softhddevice (0.6.1rc2.git20120630.1340-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+  * workaround for include error with dpkg-buildpackage
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 30 Jun 2012 21:45:16 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120629.1839-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 29 Jun 2012 20:40:52 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120628.1651-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 28 Jun 2012 18:52:31 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120626.2101-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Tue, 26 Jun 2012 23:02:40 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120610.1956-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 10 Jun 2012 21:57:16 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120523.0717-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 23 May 2012 09:18:42 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120518.1732-0yavdr1~precise) precise; urgency=medium
+
+  * Rebuild
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 18 May 2012 20:29:33 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120518.1732-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 18 May 2012 19:33:32 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120516.1902-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 16 May 2012 21:04:01 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120513.1645-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 13 May 2012 18:46:22 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120510.1611-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 10 May 2012 18:14:38 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120509.1824-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 09 May 2012 20:26:06 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120503.1705-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 03 May 2012 19:06:43 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120501.1033-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Tue, 01 May 2012 12:34:56 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120429.2113-0yavdr1~precise) precise; urgency=medium
+
+  * fix softhddevice-grab.patch
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 29 Apr 2012 23:51:06 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120429.2113-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+  * softhddevice-grab.patch
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 29 Apr 2012 23:31:05 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120424.1954-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Tue, 24 Apr 2012 21:57:53 +0200
+
+vdr-plugin-softhddevice (0.6.0.git20120420.2007-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 20 Apr 2012 16:04:43 +0200
+
+vdr-plugin-softhddevice (0.5.0.git20120329-0yavdr0~precise) precise; urgency=medium
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 12 Mar 2012 21:06:37 +0200
+

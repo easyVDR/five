@@ -1,0 +1,129 @@
+diff -Naur --exclude='Makefile*' mp3-0.9.15pre14.old/mp3.c mp3-0.9.15pre14/mp3.c
+--- mp3-0.9.15pre14.old/mp3.c	2006-09-08 22:31:45.000000000 +0200
++++ mp3-0.9.15pre14/mp3.c	2006-09-08 22:55:20.000000000 +0200
+@@ -1786,6 +1786,12 @@
+       }
+     return true;
+     }
++
++	if (strcmp(Id, SPAN_PROVIDER_CHECK_ID) == 0)
++	{
++		*((Span_Provider_Check_1_0*)Data)->isActive = true;
++		return true;
++	}
+   return false;
+ }
+ 
+diff -Naur --exclude='Makefile*' mp3-0.9.15pre14.old/player-mp3.c mp3-0.9.15pre14/player-mp3.c
+--- mp3-0.9.15pre14.old/player-mp3.c	2006-09-08 22:31:45.000000000 +0200
++++ mp3-0.9.15pre14/player-mp3.c	2006-09-08 22:46:53.000000000 +0200
+@@ -1657,6 +1657,58 @@
+       }
+ #endif
+       int w=output->Output(p,pc,SOF);
++
++// Spectrum Analyzer: Push data to analyze
++// Since I needed some time to figure it out:
++// As reminder: "pc" is the counter for the bytes that have been written to p (unsigned char)
++//				However, PCM data seems to consist of ([signed|unsigned]int).
++//				That's why the length that's communicated to the span-plugin has to be smaller,
++//				i.e pc/sizeof/(signed int) = pc/4.
++// The PCM-data is stored interleaved: e.g. 16-bit stereo means, that there are:
++//
++// |--;--|--;--|--;--|--;--|	(|=border of int, - = 1 byte, ; = border of channels)
++//  LL RR LL RR LL RR LL RR		LL/RR = two byte for the left/right channel
++ 
++ 	Span_SetPcmData_1_0 SetPcmData;
++	cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, NULL);
++	int z;
++	//TODO: fix this section
++	int offset = FHS+1; // empirically found out
++	SetPcmData.length = (unsigned int)pc-offset;
++	if (SetPcmData.length > PCM_FRAME_SIZE)
++		SetPcmData.length = (unsigned int)PCM_FRAME_SIZE;
++	else if (SetPcmData.length < 0)
++		SetPcmData.length = 0;
++	if (SetPcmData.length > 10) {
++		int *data = new int[SetPcmData.length];
++		SetPcmData.data = data;
++
++		// nasty trick to get the 16-bit data (interleaved in 32-bit (int))
++		int *p_castedL = new int[SetPcmData.length];
++		int *p_castedR = new int[SetPcmData.length];
++		memcpy(p_castedL,p+offset,(SetPcmData.length-offset)*sizeof(unsigned char));
++		memcpy(p_castedR,p+offset+2,(SetPcmData.length-offset-2)*sizeof(unsigned char));
++		SetPcmData.length = (unsigned int)SetPcmData.length/sizeof(int);
++		if (Plugin) {
++		////	offset = 4;
++		//	for (z = 0; z < SetPcmData.length/2; z+=4) {
++		//	  SetPcmData.data[z/4] = ((p[z+offset])<<8)|((p[z+offset+1]));
++		//	  SetPcmData.data[SetPcmData.length/8 + z/4] = ((p[z+offset+2])<<8)|((p[z+offset+3]));
++		//	}
++			for (z = 0; z < (int)SetPcmData.length/2; z++) {
++				SetPcmData.data[z] = (int)(p_castedL[z]>>16);
++			}
++			for (z = (int)SetPcmData.length/2; z < (int)SetPcmData.length; z++) {
++				SetPcmData.data[z] = (int)(p_castedR[z]>>16);
++			}
++			//SetPcmData.length = SetPcmData.length/sizeof(signed int);
++			cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, &SetPcmData);
++		}
++		delete [] data;
++		delete [] p_castedL;
++		delete [] p_castedR;
++	}
++      
+       if(w>0) {
+         p+=w; pc-=w;
+         if(pc<=0) {
+diff -Naur --exclude='Makefile*' mp3-0.9.15pre14.old/player-mp3.h mp3-0.9.15pre14/player-mp3.h
+--- mp3-0.9.15pre14.old/player-mp3.h	2006-09-08 22:31:45.000000000 +0200
++++ mp3-0.9.15pre14/player-mp3.h	2006-09-08 22:55:51.000000000 +0200
+@@ -24,6 +24,47 @@
+ 
+ #include <vdr/thread.h>
+ #include <vdr/player.h>
++#include <vdr/plugin.h>
++
++#define PCM_FRAME_SIZE 2048
++
++#define SPAN_PROVIDER_CHECK_ID 	"Span-ProviderCheck-v1.0"
++#define SPAN_CLIENT_CHECK_ID 	"Span-ClientCheck-v1.0"
++#define SPAN_SET_PCM_DATA_ID 	"Span-SetPcmData-v1.0"
++#define SPAN_GET_BAR_HEIGHTS_ID "Span-GetBarHeights-v1.0"
++
++//Span requests to collect possible providers / clients
++struct Span_Provider_Check_1_0 {
++	bool *isActive;
++	bool *isRunning;
++};
++
++struct Span_Client_Check_1_0 {
++	bool *isActive;
++	bool *isRunning;
++};
++// SpanData
++struct Span_SetPcmData_1_0 {
++	unsigned int length;	// the length of the PCM-data
++	int *data;		// the PCM-Data as 32-bit int, however only the lower 16-bit are used
++				// and you have to take care to hand in such data!
++};
++
++struct Span_GetBarHeights_v1_0 {
++	unsigned int bands;			// number of bands to compute
++	unsigned int *barHeights;		// the heights of the bars of the two channels combined
++	unsigned int *barHeightsLeftChannel;	// the heights of the bars of the left channel
++	unsigned int *barHeightsRightChannel;	// the heights of the bars of the right channel
++	unsigned int *volumeLeftChannel;	// the volume of the left channels
++	unsigned int *volumeRightChannel;	// the volume of the right channels
++	unsigned int *volumeBothChannels;	// the combined volume of the two channels
++	const char *name;			// name of the plugin that wants to get the data
++						// (must be unique for each client!)
++	unsigned int falloff;                   // bar falloff value
++	unsigned int *barPeaksBothChannels;     // bar peaks of the two channels combined
++	unsigned int *barPeaksLeftChannel;      // bar peaks of the left channel
++	unsigned int *barPeaksRightChannel;     // bar peaks of the right channel
++};
+ 
+ // -------------------------------------------------------------------
+ 

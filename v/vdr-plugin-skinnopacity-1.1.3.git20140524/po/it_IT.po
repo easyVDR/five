@@ -1,0 +1,693 @@
+# VDR plugin language source file.
+# Copyright (C) 2012
+# This file is distributed under the same license as the PACKAGE package.
+# louis, 2012.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: skinnopacity 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2014-05-24 15:11+0200\n"
+"PO-Revision-Date: 2013-03-19 22:56+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team: \n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Italian\n"
+"X-Poedit-Country: ITALY\n"
+"X-Poedit-SourceCharset: utf-8\n"
+
+msgid "No Cast available"
+msgstr ""
+
+msgid "Cast"
+msgstr ""
+
+msgid "EPG Info"
+msgstr ""
+
+msgid "Reruns"
+msgstr ""
+
+msgid "Recording Information"
+msgstr ""
+
+msgid "Image Galery"
+msgstr ""
+
+msgid "TheTVDB Info"
+msgstr ""
+
+msgid "TheTVDB Information"
+msgstr ""
+
+msgid "Episode"
+msgstr ""
+
+msgid "Season"
+msgstr ""
+
+msgid "Episode Overview"
+msgstr ""
+
+msgid "First aired"
+msgstr ""
+
+msgid "Guest Stars"
+msgstr ""
+
+msgid "TheMovieDB Rating"
+msgstr ""
+
+msgid "Series Overview"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "TheMovieDB Information"
+msgstr ""
+
+msgid "Original Title"
+msgstr ""
+
+msgid "Tagline"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "Adult"
+msgstr ""
+
+msgid "Collection"
+msgstr ""
+
+msgid "Budget"
+msgstr ""
+
+msgid "Revenue"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "Release Date"
+msgstr ""
+
+msgid "Runtime"
+msgstr ""
+
+msgid "minutes"
+msgstr ""
+
+msgid "TheMovieDB Popularity"
+msgstr ""
+
+msgid "TheMovieDB Vote Average"
+msgstr ""
+
+msgid "free"
+msgstr "disponibili"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "images"
+msgstr ""
+
+msgid "min"
+msgstr "min"
+
+msgid "Reruns of "
+msgstr ""
+
+msgid "No reruns found"
+msgstr ""
+
+msgid "Size"
+msgstr "Dimensione"
+
+msgid "cut"
+msgstr "taglia"
+
+msgid "Length"
+msgstr "Durata"
+
+msgid "Format"
+msgstr "Formato"
+
+msgid "Est. bitrate"
+msgstr "Bitrate estimato"
+
+msgid "Search timer"
+msgstr ""
+
+msgid "Transp."
+msgstr "Transponder"
+
+msgid "No EPG Information found"
+msgstr ""
+
+msgid "Duration"
+msgstr "Durata"
+
+msgid "recording"
+msgstr "registrazione"
+
+msgid "recordings"
+msgstr "registrazioni"
+
+msgid "new"
+msgstr "nuovo"
+
+msgid "Font"
+msgstr "Carattere"
+
+msgid "VDR Menu: Common Settings"
+msgstr "Menu VDR: Impostazioni comuni"
+
+msgid "VDR Menu: Main and Setup Menu"
+msgstr "Menu VDR: Menu principale e opzioni"
+
+msgid "VDR Menu: Schedules Menu"
+msgstr "Menu VDR: Menu programmi"
+
+msgid "VDR Menu: Channels Menu"
+msgstr "Menu VDR: Menu canali"
+
+msgid "VDR Menu: Timers Menu"
+msgstr "Menu VDR: Menu timer"
+
+msgid "VDR Menu: Recordings Menu"
+msgstr "Menu VDR: Menu registrazioni"
+
+msgid "VDR Menu: Detailed EPG & Recordings View"
+msgstr ""
+
+msgid "Channel Switching"
+msgstr "Cambio canale"
+
+msgid "Replay"
+msgstr "Riproduzione"
+
+msgid "Audio Tracks"
+msgstr "Tracce audio"
+
+msgid "Messages"
+msgstr "Messaggi"
+
+msgid "Image Caching"
+msgstr ""
+
+msgid "right"
+msgstr "destra"
+
+msgid "left"
+msgstr "sinistra"
+
+msgid "Carriage Return"
+msgstr ""
+
+msgid "Forward and Back again"
+msgstr ""
+
+msgid "off"
+msgstr "disattivo"
+
+msgid "slow"
+msgstr "lento"
+
+msgid "medium"
+msgstr "medio"
+
+msgid "fast"
+msgstr "veloce"
+
+msgid "auto"
+msgstr ""
+
+msgid "Create Log Messages for image loading"
+msgstr ""
+
+msgid "Number of Default Menu Entries per Page"
+msgstr "Numero di voci per pagina menu predefinito"
+
+msgid "Adjust Font Size - Default Menu Item"
+msgstr "Adatta dim. caratteri - Voce menu predefinito"
+
+msgid "Adjustment of narrow menus"
+msgstr "Adattamento menu ridotti"
+
+msgid "Scale Video size to fit into menu window"
+msgstr "Scala dimensione video nel menu finestra"
+
+msgid "Header Height (Percent of OSD Height)"
+msgstr "Altezza intestazione (% altezza OSD)"
+
+msgid "Footer Height (Percent of OSD Height)"
+msgstr "Altezza piè pagina (% altezza OSD)"
+
+msgid "Rounded Corners for menu items and buttons"
+msgstr "Angoli smussati per voci menu e tasti"
+
+msgid "Radius of rounded corners"
+msgstr "Raggio angoli smussati"
+
+msgid "Use Channel Logo background"
+msgstr ""
+
+msgid "Fade-In Time in ms (Zero for switching off fading)"
+msgstr "Tempo comparsa in ms (0 per disattivazione)"
+
+msgid "Menu Items Scroll Style"
+msgstr ""
+
+msgid "Menu Items Scrolling Speed"
+msgstr "Velocità scorrimento voci menu"
+
+msgid "Menu Items Scrolling Delay in s"
+msgstr "Ritardo scorrimento voci menu in sec"
+
+msgid "Adjust Font Size - Header"
+msgstr "Adatta dim. caratteri - Intestazione"
+
+msgid "Adjust Font Size - Date"
+msgstr "Adatta dim. caratteri - Data"
+
+msgid "Adjust Font Size - Color Buttons"
+msgstr "Adatta dim. caratteri - Colore tasti"
+
+msgid "Adjust Font Size - Messages"
+msgstr "Adatta dim. caratteri - Messaggi"
+
+msgid "Adjust Font Size - Detail View Text"
+msgstr "Adatta dim. caratteri - Testo vista dettagli"
+
+msgid "Adjust Font Size - Detail View Text Small"
+msgstr ""
+
+msgid "Adjust Font Size - Detail View Header"
+msgstr "Adatta dim. caratteri - Intestazione vista dettagli"
+
+msgid "Adjust Font Size - Detail View Header Large"
+msgstr "Adatta dim. caratteri - Intestazione grande vista dettagli"
+
+msgid "\"VDR\" plus VDR version"
+msgstr ""
+
+msgid "only VDR version"
+msgstr ""
+
+msgid "no title"
+msgstr ""
+
+msgid "free time in hours"
+msgstr ""
+
+msgid "free space in GB"
+msgstr ""
+
+msgid "small without logo"
+msgstr ""
+
+msgid "Use narrow main menu"
+msgstr "Usa menu principale ridotto"
+
+msgid "Width (Percent of OSD Width)"
+msgstr "Larghezza (% larghezza OSD)"
+
+msgid "Use narrow setup menu"
+msgstr "Usa menu opzioni ridotto"
+
+msgid "Number of entires per page"
+msgstr ""
+
+msgid "Use menu icons"
+msgstr "Usa icone menu"
+
+msgid "Main menu title style"
+msgstr ""
+
+msgid "Display Disk Usage"
+msgstr "Mostra utilizzo disco"
+
+msgid "Size (square, Percent of OSD Width)"
+msgstr "Dimensione (quadrato, % larghezza OSD)"
+
+msgid "Free Disc Display"
+msgstr ""
+
+msgid "Adjust Font Size - free"
+msgstr "Adatta dim. caratteri - Disponibili"
+
+msgid "Adjust Font Size - percent"
+msgstr "Adatta dim. caratteri - Percentuale"
+
+msgid "Display Timers"
+msgstr "Mostra timer"
+
+msgid "Maximum number of Timers"
+msgstr ""
+
+msgid "Width of Timers (Percent of OSD Width)"
+msgstr "Larghezza di Timer (% larghezza OSD)"
+
+msgid "Width of Channel Logos (Percent of Timer Width)"
+msgstr ""
+
+msgid "Adjust Font Size - Title"
+msgstr "Adatta dim. caratteri - Titolo"
+
+msgid "Show Timer Conflicts"
+msgstr "Mostra conflitti timer"
+
+msgid "Header Logo Width"
+msgstr "Larghezza logo intestazione"
+
+msgid "Header Logo Height"
+msgstr "Altezza logo intestazione"
+
+msgid "Adjust Font Size - Menu Items"
+msgstr "Adatta dim. caratteri - Voci menu"
+
+msgid "window"
+msgstr ""
+
+msgid "full screen"
+msgstr ""
+
+msgid "Use narrow menu"
+msgstr "Usa menu ridotto"
+
+msgid "Mode of EPG Window"
+msgstr ""
+
+msgid "EPG Window Fade-In Time in ms (Zero for switching off fading)"
+msgstr "Tempo comparsa finestra EPG in ms (0 per disattivazione)"
+
+msgid "EPG Window Display Delay in s"
+msgstr "Ritardo schermo finestra EPG in sec"
+
+msgid "EPG Window Scroll Delay in s"
+msgstr "Ritardo scorrimento finestra EPG in sec"
+
+msgid "EPG Window Text Scrolling Speed"
+msgstr "Velocità scorrimento testo finestra EPG"
+
+msgid "Height of EPG Info Window (Percent of OSD Height)"
+msgstr "Altezza di Finestra info EPG (% altezza OSD)"
+
+msgid "Adjust Font Size - Menu Item"
+msgstr "Adatta dim. caratteri - Voce menu"
+
+msgid "Adjust Font Size - Menu Item Small"
+msgstr "Adatta dim. caratteri - Voce menu piccolo"
+
+msgid "Adjust Font Size - EPG Info Window"
+msgstr "Adatta dim. caratteri - Finestra info EPG"
+
+msgid "Adjust Font Size - EPG Info Window Header"
+msgstr ""
+
+msgid "Transponder Information"
+msgstr ""
+
+msgid "Current Schedule"
+msgstr ""
+
+msgid "Plain Channels"
+msgstr ""
+
+msgid "Menu Items display mode"
+msgstr ""
+
+msgid "Display schedules with time info"
+msgstr ""
+
+msgid "Number of EPG Entries in Schedules Info Window"
+msgstr ""
+
+msgid "never"
+msgstr "mai"
+
+msgid "always"
+msgstr "sempre"
+
+msgid "only if no tvscraper media available"
+msgstr ""
+
+msgid "Mode of recording Window"
+msgstr ""
+
+msgid "Border around detailed recording view"
+msgstr ""
+
+msgid "Use folder poster if available"
+msgstr ""
+
+msgid "Width of manually set recording poster"
+msgstr ""
+
+msgid "Height of manually set recording poster"
+msgstr ""
+
+msgid "if exists"
+msgstr "se esiste"
+
+msgid "Border around view"
+msgstr ""
+
+msgid "Scroll Speed with up / down (number of lines)"
+msgstr ""
+
+msgid "Header Height detailed EPG view (Perc. of OSD Height)"
+msgstr ""
+
+msgid "Header Height detailed recording view (Perc. of OSD Height)"
+msgstr ""
+
+msgid "Number of reruns to display"
+msgstr "Numero di repliche da mostrare"
+
+msgid "Use Subtitle for reruns"
+msgstr "Usa sottotitoli per repliche"
+
+msgid "EPG Image Width"
+msgstr ""
+
+msgid "EPG Image Height"
+msgstr ""
+
+msgid "Large EPG Image Width"
+msgstr ""
+
+msgid "Large EPG Image Height"
+msgstr ""
+
+msgid "transparent channel logo"
+msgstr ""
+
+msgid "full osd width"
+msgstr ""
+
+msgid "do not display"
+msgstr "non mostrare"
+
+msgid "top"
+msgstr ""
+
+msgid "middle"
+msgstr ""
+
+msgid "bottom"
+msgstr ""
+
+msgid "show elapsed time"
+msgstr ""
+
+msgid "show remaining time"
+msgstr ""
+
+msgid "Height of Channel Display (Percent of OSD Height)"
+msgstr "Altezza di Mostra canale (% altezza OSD)"
+
+msgid "Left & Right Border Width"
+msgstr "Larghezza bordi sinistro e destro"
+
+msgid "Bottom Border Height"
+msgstr "Altezza bordo inferiore"
+
+msgid "Background Transparency in Percent"
+msgstr ""
+
+msgid "Background Style"
+msgstr ""
+
+msgid "Rounded Corners"
+msgstr ""
+
+msgid "Vertical Channel Logo Alignment"
+msgstr ""
+
+msgid "Channel Logo Position"
+msgstr "Posizione logo canale"
+
+msgid "Channel Logo original Width"
+msgstr ""
+
+msgid "Channel Logo original Height"
+msgstr ""
+
+msgid "Kind of time display for current schedule"
+msgstr ""
+
+msgid "Display Signal Strength & Quality"
+msgstr "Mostra qualità e intensità segnale"
+
+msgid "Display Channel Source & Rec. Info"
+msgstr ""
+
+msgid "Display Poster or Fanart from TVScraper"
+msgstr ""
+
+msgid "Border in Pixel"
+msgstr ""
+
+msgid "Display previous and next Channel Group"
+msgstr ""
+
+msgid "Adjust Font Size - EPG Text"
+msgstr "Adatta dim. caratteri - Testo EPG"
+
+msgid "Adjust Font Size - EPG Infotext"
+msgstr "Adatta dim. caratteri - Info testo EPG"
+
+msgid "Adjust Font Size - Channel Source Info"
+msgstr ""
+
+msgid "Adjust Font Size - Channel Group"
+msgstr ""
+
+msgid "Adjust Font Size - Next/Prev Channel Group"
+msgstr ""
+
+msgid "Height of Replay Display (Percent of OSD Height)"
+msgstr "Altezza di Mostra riproduzione (% altezza OSD)"
+
+msgid "Adjust Font Size - Text"
+msgstr "Adatta dim. caratteri - Testo"
+
+msgid "Width of Tracks Display (Percent of OSD Width)"
+msgstr "Larghezza di Mostra tracce (% larghezza OSD)"
+
+msgid "Height of Track Items (in pixels)"
+msgstr ""
+
+msgid "Position (0: bot. center, 1: bot. left, ... , 7: bot. right)"
+msgstr "Posizione (0: basso centrale, 1: basso sin., ... , 7: basso destra)"
+
+msgid "Border Left / Right"
+msgstr "Bordo sinistro / destro"
+
+msgid "Border Top / Bottom"
+msgstr "Bordo superiore / inferiore"
+
+msgid "Adjust Font Size - Buttons"
+msgstr "Adatta dim. caratteri - Tasti"
+
+msgid "Width of Message Display (Percent of OSD Height)"
+msgstr "Larghezza di Mostra messaggio (% altezza OSD)"
+
+msgid "Height of Message Display (Percent of OSD Height)"
+msgstr "Altezza di Mostra messaggio (% altezza OSD)"
+
+msgid "Adjust Font Size"
+msgstr "Adatta dim. caratteri"
+
+msgid "Volume Display"
+msgstr "Mostra volume"
+
+msgid "Width of Volume Display (Percent of OSD Height)"
+msgstr "Larghezza di Mostra volume (% altezza OSD)"
+
+msgid "Height of Volume Display (Percent of OSD Height)"
+msgstr "Altezza di Mostra volume (% altezza OSD)"
+
+msgid "Limit Logo Cache"
+msgstr ""
+
+msgid "Maximal number of logos to cache"
+msgstr ""
+
+msgid "Number of  logos to cache at start"
+msgstr ""
+
+msgid "Cache Sizes"
+msgstr ""
+
+msgid "Menu Icon cache"
+msgstr ""
+
+msgid "Skin Icon image cache"
+msgstr ""
+
+msgid "Logo cache"
+msgstr ""
+
+msgid "Menu Item Logo cache"
+msgstr ""
+
+msgid "Timer Logo cache"
+msgstr ""
+
+msgid "Background Images cache"
+msgstr ""
+
+msgid "conflict"
+msgstr "conflitto"
+
+msgid "conflicts"
+msgstr "conflitti"
+
+#~ msgid "Display additional EPG Pictures in detailed recording View"
+#~ msgstr "Mostra immagini EPG aggiuntivo nella vista dettagli registrazione"
+
+#~ msgid "Number of EPG pictures to display"
+#~ msgstr "Numero di immagini EPG da mostrare"
+
+#~ msgid "Display Reruns in detailed EPG View"
+#~ msgstr "Mostra repliche in vista dettagli EPG"
+
+#~ msgid "Display additional EPG Pictures in detailed EPG View"
+#~ msgstr "Mostra immagini EPG aggiuntivo in vista dettagli EPG"
+
+#~ msgid "Detail EPG View EPG Image Width"
+#~ msgstr "Larghezza immagine vista dettagli EPG"
+
+#~ msgid "Detail EPG View EPG Image Height"
+#~ msgstr "Altezza immagine vista dettagli EPG"
+
+#~ msgid "Detail EPG View additional EPG Image Width"
+#~ msgstr "Larghezza immagine EPG aggiuntivo vista dettagli EPG"
+
+#~ msgid "Detail EPG View additional EPG Image Height"
+#~ msgstr "Altezza immagine EPG aggiuntivo vista dettagli EPG"
+
+#~ msgid "RERUNS OF THIS SHOW"
+#~ msgstr "REPLICHE DI QUESTO SPETTACOLO"

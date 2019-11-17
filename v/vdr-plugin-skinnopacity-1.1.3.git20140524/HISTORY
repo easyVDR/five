@@ -1,0 +1,436 @@
+VDR Plugin 'nOpacity' Revision History
+---------------------------------------
+
+2012-11-17: Version 0.0.1
+
+- Initial revision.
+
+2012-11-18: Version 0.0.2
+
+- Fixed a bug trying to delete uninitialized Fonts in cMenuDetailViewText
+- Fixed a typo in README
+- Added dsyslog messages for image loading (only shown with VDR Loglevel 3)
+- Added themes "SoftBlue" and "GoldBlue"
+- Added templates in directory iconTemplates/ in Gimp and PNG Format as 
+  basis for creating new icons  
+  
+2012-11-24: Version 0.0.3
+
+- Fixed a bug that fade in time for channels switching was not stored
+- Fixed a bug that signal strength and screen resolution are not shown if
+  fade in time was set to zero.
+- Fixed a bug that Title was not shown when displaying a EPG Search Result
+- Fixed a bug that VDR crashes if empty channels where shown in "What's next"
+- Fixed a bug that VDR crashes if channels named "." where shown in 
+  Channels menu
+- Fixed a bug that display for jumping in recordings was not shown
+- Changed default path for channel logos, icons and epg images. FHS standard
+  introduced in VDR 1.7.30 is used.
+  channel logos: {ResourceDirectory}/logos/
+  icons:		 {ResourceDirectory}/icons/
+  epg images:	 {CacheDirectory}/epgimages/
+- If directories for channel logos, icons or epg images are set via startup 
+  parameters, images are searched first in these directories. If the image
+  is not available, an additional search in the according default directory
+  will be performed.
+  With this it is possible to use user images and images provided by a
+  package maintainer or distributor in parallel.
+- rewrote column width handling so that for calculating the width of a column
+  the actually used font size is used.
+- if the width of the text in a column in a default menu is lager than the
+  width of the column itself, the text is cutted to an appropriate width.
+- implemented cSkin::GetTextAreaWidth() and cSkin::GetTextAreaFont()
+- added patch that scales video display into the visible frame
+  if a narrow menu is displayed. Thanks @Zoolook for providing this patch.
+- added a setup option which allows to enable / disable this video scaling
+- Avoided some compiler warnings
+- Clear Message Box in Menu also if Caller not clears it himself
+- Fixed bug when calculating height of schedules menu item
+
+2012-12-05: Version 0.0.4
+
+- Fixed a bug displaying wrong colors in replay progressbar (thanks @maverick-me)
+- Fixes a bug that individually set up color buttons were not assumed
+  (thanks @maverick-me)
+- optical redesign of displayVolume (thanks @maverick-me)
+- Display of reruns of shows in detailed EPG view using epgseach.
+- completely rewrote epgsearch handling in schedules views (see README for
+  more information about epgsearch integration)
+- Fixed "fade in" bug, cancelling threads correctly (Thanks to everybody who 
+  was involved)
+- Fixed a crash when trying to access channel name in epg detail view
+- Fixed a crash when changing values in setup menu
+- Fixed a crash when opening and closing epg menus
+- Fixed a bug to only use epgsearchmenu.conf if lines for all possible 
+  menus are set
+
+2012-12-29: Version 0.0.5
+
+- VDR version 1.7.34 mandatory
+- Introducing of scrolling in menu elements if text is longer than 
+  available space
+- displaying first found jpeg in recordings folder as epg image for this
+  recording in recording detail view
+- Configurable display of disc usage and timers in main menu
+- yaepg patch no longer needed to scale video window, using native VDR 
+  functionality now (thanks @Zoolook for providing the new code)
+- Complete rewrite of menu category detection by using the eMenuCategory 
+  enumeration integrated in VDR 1.7.31 - 34
+- Usage of new VDR interfaces SetItemsEvent(), SetItemsChannels for dispalying 
+  Schedules menus and Channel menus
+  See README explaining consequences of this changes
+- Displaying of detailed EPG information directly in schedules views in a 
+  separate window if according menu item is selected a specific configurable time
+- Some Improvements in menu element scrolling behaviour (suggeted by Taipan)
+- Using narrow menu items in "Settings" category (thanks @BooStar for providing 
+  the new icons)
+- Split of skins VDR menu configuration section in "Common", "Geometry" and "Fonts" 
+  sections for clearer arrangement
+- different minor changes and fixes
+
+2012-02-07: Version 0.0.6
+
+- Introduced new narrow displayed Recordings menu
+- Fixed displaying configurable color buttons
+- Fixed some nullpointer accesses in Schedules Menus
+- Improved cutting of scrolled text
+- Added Separator Items for Schedule Menus
+- Adapted video scaling to new implementation (thanks @Zoolook for the patch)
+- Fixed showing current show as rerun in epg detail view
+- Added some recording information (channel, size, cutted size, format, 
+  est. bitrate) in detailed recording view
+- Added channel logos in main menu timers list
+- Changed channel info icons in DisplayChannel
+- Fixed a possible division by zero in DisplayChannel
+- Fixed a segfault with newer ImageMagick Versions
+- Added display of Timer Conflicts with epgsearch in Main Menu
+- Changed makefile to work also with newer ImageMagick versions
+- Introduced Theme specific icons. These icons have to be placed 
+  in a subdirectory in icons directory, this subdirectory has to 
+  be named exactly as the theme (without "nOpacity-").
+- Added Theme "green" and appropriate icons
+- Added displaying of additional EPG images in detailed EPG view. The epg
+  images have to be stored as EventID_number.jpg (as some external epg
+  plugins do). Whether additional images should be displayed in general is
+  configurable, just as the number of images to display.
+- Changed Disc Usage Info display, size individually configurable
+- Added Theme DarkRed (Thanks @TheChief)
+- Changed buttons in DisplayReplay so that only the active button is 
+  highlighted
+- Added screen resolution icon in DisplayReplay
+- Changed Makefile to avoid warnings with newer ImageMagick versions
+
+Version 0.1.0:
+- Width of narrow menus (main, schedule, channel, recordings, settings) 
+  individually configurable
+- Display of free disk space in recordings menu header
+- Usage of narrow menus (main, schedule, channel, recordings, settings)
+  configurable via plugin setup. If option is set to "no", the "normal"
+  style for this menu will be used.
+- Introduced narrow display of timers menu (Usage of narrow timer menu 
+  and width also configurable)
+- Introduced rounded corners for menuitems and buttons configurable via
+  plugin setup menu, corner radius also configurable.
+- Display only active timers in main menu
+- Support for remote timers in main menu timer display
+- Display timer title in main menu also if no event is set for the timer
+- Fixed a bug with cdplayer plugin, this plugin calls no "clear()" before
+  showing menu
+- disabled fading for displaymenu per default
+- Fixed display of timers channel name in main menu if no channel logo
+  is available
+- display all jpegs in a recording folder in detailed recording view
+- Fixed a bug that Setup option narrowRecordingMenu was not stored
+- Fixed displaying remotetimers in main menu
+- Usage of menu icons in main and setup menu configurable
+- "nOpacity mirrored": narrow menus can be adjusted on the right side via 
+  plugin setup
+- trying to load channel separator icon. It has to be named as the channel
+  separator in low letters. If no icon is found, a generic icon is used.
+- if rounded corners for menuitems are used, also epg images are drawn with
+  rounded corners with the same corner radius
+- Changed plugin icons filename for loading icons in main menu, plugin name
+  is now used
+- Restructured Setup Menü
+- Position of channel logos in channel display now configurable. Possible
+  values are left (default), right and none. If value is set to none, the
+  comlete screen width is used for channel display.
+- Updated README
+- Added more plugin icons (thanks @BooStar)
+- Added Slovak translation
+
+Version 0.1.1
+- graphical progress bar if default menu item style for schedules is used 
+  for epgsearchs What's on now
+- Main menu title style configurable
+- Maximum number of timers in main menu configurable
+- Added alternative main menu header icons (thanks @BooStar)
+- Display grapical progress bar in every default style VDR menu, fixed 
+  progress bar detection
+- Added Channel Number in Channel Menu
+- Improved display of non selectable header lines in default menus
+- Added italian translation
+- Restructured icons directory. Now different directories in main icon
+  directory and theme specific icon directories are used:
+  - skinIcons: all directly skin related icons
+  - menuIcons: all standard icons for main and setup menu
+  - pluginIcons: icons for VDR plugins with main menu entires
+  - extraIcons: further icons for non standard menu elements (added 
+    via menuorg or similar)
+- Searching in folder <channellogofolder>/separatorlogos for channel
+  separator logos
+- time display for current schedule in channel display configurable
+  (elapsed / remaining)
+- fixed a bug that extraIcons directory was not used
+- added background pixmaps for main menu timers and epg info window
+  to avoid nasty font pixelation effect
+- changed tracks display to fixed track item height
+- changed stereo and ac3 icons in tracks display
+- Added RSS Feed support
+- Fixed crash on initial startup with xine plugin as output device
+- Fixed crash / hang if menu is opened with small screen size
+- Background of ChannelDisplay configurable also to cover channel logo
+- Added standalone RSS Feed
+- check for Slash at end of startup path parameters
+- changed scaling of EPG info window font size
+- Added and changed some icons
+
+Version 0.1.2
+- changed some color settings and icons in theme darkred
+- added option "auto" for video scaling: with this option the video window
+  is resized when the detailed EPG Window is displayed in Schedules and
+  Recordings menu to be completely visible.
+- Added Channel Number in narrow Timer menu
+- Added display of next Schedules in Channel Menu in separate Info Window. 
+  The Number of displayed Schedules can be configured in Plugin Channels 
+  Menu Setup.
+- Display of disc status in main menu configurable: either remaining recording 
+  time in hours or free disc space in GB is displayed
+- Fixed a bug that slow motion trick speed during recording replay was not 
+  displayed
+- Added previous and next Channel Group in Channel Display
+- Introduced "plain" style without any blending effects configurable by
+  dedicated theme color
+- Added theme "iceblue" based on the introduced plain display style
+- Fixed display of recording duration in recordings menu when a cut is
+  running in the background
+- Additional information in channels menu configurable: choice between
+  transponder information and current schedule
+- Added optional dedicated status icons in channel display
+- Added optional display of channel source information in channel display
+- Fixed a bug if switching to a invalid channel
+
+Version 0.1.3
+- Added TVScraper support, if TVScraper is used scraped images are
+  displayed in various EPG views
+
+Version 0.1.4
+- changed service interface for tvscraper
+- fixed an possible uninitialised variable in recordings menu
+- fixed a bug that epg info is not displayed in schedules menu if fade
+  in is set to zero
+- fixed a bug that poster or banner is not displayed in displayChannel
+  if fade in is set to zero
+- Added setup option in detailed EPG view and in detailed recordings view 
+  to select if additional EPG pictures are shown if tvscraper media 
+  is available
+- Added Deadlock Patch
+- Changed default Channelseparator Icon (closes Bug 1412)
+- Display correct recording date even if recording info is empty (closes Bug 1448)
+- Added option to display plain channels and EPG information without time in
+  channels menu (closes Feature 1377)
+- Added name of search timer which created recording in detailed recording
+  information (closes Feature 1401)
+- Added channel number in display of reruns in detailed EPG view 
+  (closes Feature 1402)
+- Changed display of trick speed in displayReplay (closes Feature 1433)
+- Improved display of channel separators (closes tickets 1477 and 1482)
+- Added REC Icon in displayChannel for current and next event (closes
+  Feature 1403)
+- Display stereo symbol in displayChannel if at least one mpeg track 
+  is available (and not two, closes Feature 1404)
+- Added script and background images to create fancy channel logos with
+  theme dependend background
+- searching channel logos first in <logopath>/theme, then in 
+  <defaltlogopath>/theme, then in <logopath> and finally in <defaultlogopath>
+  to allow theme dependend channel logos
+- if no channel logo is found for channel name, the ChannelID is used to allow
+  logos for (feed) channels with changing names. Analog to the channel name
+  the ChannelID is also converted to lower case letters.
+- added exemplarily setup options for SD and HDReady
+- introduced dedicated theme font colors for different message types and 
+  different buttons (closes Feature 1462)
+- dedicated theme colors in display channel for current event, current event
+  info, next evet and next event info (closes Feature 1466)
+- dedicated theme colors for timer backgrounds in main menu (closes Feature
+  1463)
+- dedicated theme colors for RSS Feed (closes Feature 1485)
+- added event length in header in detailed EPG and recording view (closes
+  Feature 1469)
+- added separate configurable border around detailed epg view and detailed
+  recording view
+- new "fullscreen" display mode in narrow schedules and recordings view. If
+  fullscreen mode is configured in plugin setup, the right area next to the
+  list of events /recordings is completely used to display immeditately the
+  detailed information of the selected event / recording.
+- added some rounded corners (if activated in setup) for posters and banners
+- added rounded corners for message display
+- fixed issue with gradient display for newer imagemagick versions
+- added setup option to display poster or fanart in channel display
+- possibility to set manual poster for recordings. This manual poster has to
+  be named as "cover_vdr.jpg" and has to be placed directly in the recording
+  folder. For series it is also possible to place a common poster for all
+  series in a folder two or three directories above the actual recording
+  folders. If a manual poster is found, all tvscraper information is ignored.
+- changed narrow recordings menu style
+- improved function to float text around poster in textwindow
+- fixed nasty font pixelation with non blending themes for timer display in
+  main menu
+- optimized some theme colors in displaychannel and displaymessage
+- display of channel logo in main menu timer display configurable
+- fixed a bug that progress bar is too long for too long schedules
+- if background color and blending color in displayChannel and displayReplay
+  are the same, no blending effect is shown
+- updated slovak translation
+- Added cache for images and fonts
+- Changed and added some color definitions
+- Added theme "Keep it light" (thanks @Saman for providing the theme)
+- Added additional configurable channel logo cache
+- Fixed a bug that running instant recording is not displayed in 
+  displayChannel
+- Configurable Menu Item Scroll Mode: "Carriage Return" or "Forward and
+  Back again"
+- channel logo cache is built with channelID as key (not with channelNumber
+  anymore)
+- Removed RSS Feed support completely, maybe this will get a standalone
+  plugin in the future
+- Implemented theme dependend configuration. Each theme has now it's own
+  configuration. Default configurations for each theme can be set in the
+  appropriate conf/theme-themename.conf file. This file has to be placed 
+  in <PLGCONFDIR>/themeconfigs. With that each theme can be shipped with
+  its individual settings and the plugin settings can be changed 
+  individually for each theme without affecting other themes.
+- All skin background and button elements can now be individual PNGs. For
+  that the config value displayType has to be set to the value 2 in the
+  theme specific configuration.
+- Added new Theme "freestyle" with individual graphics for the different
+  skin elements.
+- Rewriting and cleanup of displayChannel:
+  - separated drawing code in dedicated class
+  - removed "simple" status icon bar, now only graphical icons are supported
+  - changed screen resolution icon to same height but 3 times larger width
+    as other status icons.
+  - status icons scale to size of footer height
+  - fixed bug that progress bar sometimes was not displayed when switching
+  - adapted the status icons for the different themes
+    the channel
+- Cleaned up pixmaps in menuitems
+- Avoided font pixelation on default menu items
+- Searching for epgimages named eventID.jpg and eventID_0.jpg in detailed
+  epg view
+- Fixed clearing pixmap in displaychannel if no epg is available
+- Changed display of channel groups in displaychannel
+- Added configurable transparency for channeldisplay background
+- Added background with dedicated theme color for status icons in 
+  displaychannel
+- Added background with dedicated theme color for channel logos in menus
+- Improved Display of Poster or Banner in displaychannel
+- implemented cDisplayChannel::SetMessage()
+- display not selectable menu elements with dedicated font color
+- changed way of calculating number of menu items in narrow menus. This
+  value is not calculated by icon sizes anymore, these values are now
+  configurable via plugin setup menu. The number of menu items in 
+  schedules menu also sets the number of menu items in channels and
+  timers menu.
+- improved display of text progress bar in wide menus
+- changed header icons to scale automatically
+- Added Setup Option to generate log messages when trying to load
+  pictures (VDR Menu -> Common Settings)
+- Added complete date for events longer than one day in the future 
+  in schedules menu
+- changed build environment that every class is build seperately
+  (thanks @Helmut Auer)
+- changed channel logos in main menu timers display to scale 
+  automatically
+- fixed a bug that rounded corners of color buttons in menus were
+  not drawn correctly
+- added possibility to add background image in freestyle themes
+  in displaymenu header (headerback.png, header_mirroredback.png)
+- fixed timer display in main menu so that setting "small without logo"
+  uses correct height
+- size of channel logos in main menu timers display configurable as
+  percent of timer width
+- Added theme dependend background for status icon in displayreplay
+- Fixed editing of text if text is scrolling (closes Bug 1572)
+- Cutting too long recording name in displayreplay
+- implemented GraphicsMagick compatibility (thanks @Manuel Reimer
+  for providing the patch)
+- changed Makefile to support both ImageMagick and GraphicsMagick
+  (configurable in Makefile)
+- updated slovakian translation
+- Added EPG Info in narrow Timers Menu
+- Freestyle Theme new default theme, old default renamed to "blue"
+- Changed Disc Usage Icon for default theme
+- Added logo backgrounds in displaychannel also for blended themes
+- Usage of channel logo background in displaychannel and on 
+  menuelements configurable via plugin setup
+- Fixed a bug that setup values are not stored if theme is changed
+
+Version 1.0.0
+
+- improved image scaling by using internal scaling libary from
+  Nikolaus Meine (thanks @Soeren Moch for providing the patch)
+- fixed a crash with dvb cards which deliver negative signal values
+- added theme darkredNG
+- updated ca_es po file
+
+Version 1.0.1
+
+- fixed a bug in cImageLoader::FirstImageInFolder()
+- added more Exception Handling for Image Loading
+- fixed a crash for recordings without valid title in info file
+- darkened borders of menubuttons and scrollbar in theme darkredNG
+
+Version 1.0.2
+
+- Extended image loading logging only if activated in setup
+- Fixed a possible crash if recording directory is no longer available
+
+Version 1.0.3
+
+- Fixed bugs that configured OSD top and left values are not correctly
+  used in DisplayChannel, DisplayTracks, DisplayVolume and
+  DisplayMessages (closes Tickets 1659 and 1696)
+- Fixed a bug with xine as output plugin that VDR crashes if xine plugin
+  gets closed (closes Ticket 1675)
+- Fixed bug that messages are not displayed during replay of a recording
+  if DisplayReplay is active (closes Ticket 1698)
+- Added information about running recordings in DisplayChannel (thanks
+  @Soeren Moch for providing a patch)
+
+Version 1.1.0
+
+- Added scraper2vdr support
+
+Version 1.1.1
+
+- Fixed a crash if no images exists for a movie
+- Only display poster in detailed EPG View if really available
+- Only display poster in detailed recordings view
+- fixed crash in detailed epg view
+
+Version 1.1.2
+
+- Restructured detailed EPG and recordings view
+- fixed naming of reruns tab when displaying recordings
+- scroll speed with up / down configurable (lines per click)
+- fixed bug that floating text is not shown completely
+- cleaned up and restructured setup menu
+
+Version 1.1.3
+
+- Vertical channel logo alignment configurable in displaychannel
+- added dedicated background pixmap in detailview
+- added support for tvscraper again, tvscraper Version 0.2.0 needed
+- fixed possible division by zero
+- updated theme darkred

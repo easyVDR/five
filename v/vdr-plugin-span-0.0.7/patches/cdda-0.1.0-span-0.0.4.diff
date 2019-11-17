@@ -1,0 +1,179 @@
+diff -Naur --exclude='Makefile*' cdda-0.1.0/audio_player.c cdda-0.1.0-span/audio_player.c
+--- cdda-0.1.0/audio_player.c	2006-09-28 12:45:20.000000000 +0200
++++ cdda-0.1.0-span/audio_player.c	2006-09-28 12:42:33.000000000 +0200
+@@ -26,7 +26,9 @@
+ #elif defined(PLUGIN_CDDA)
+ cAudioPlayer::cAudioPlayer(cAudioPlaylist *playlist) : cPlayer(cCddaConfiguration::GetInstance().isAudioOnly() ? pmAudioOnly : pmAudioOnlyBlack), cThread("CDDA Player"),
+ #endif
+-  m_indexTrack(true), m_curFrame(INT_MAX), m_maxFrames(INT_MAX), m_playMode(pmNone),
++//  m_indexTrack(true), m_curFrame(INT_MAX), m_maxFrames(INT_MAX), m_playMode(pmNone),
++// m_maxFrames(INT_MAX) apparently kills lcdproc randomly (resulting string is too big)
++  m_indexTrack(true), m_curFrame(INT_MAX), m_maxFrames(0), m_playMode(pmNone),
+   mpo_readFrame(NULL), mpo_playFrame(NULL), mpo_ringBufferFrame(NULL),
+   mpo_decoder(NULL), mpo_playlist(playlist) {
+ 
+@@ -45,6 +47,10 @@
+   bool skipTrack = false;
+   uint8_t *b = NULL, *data = new uint8_t[MAX_FRAME_PAYLOAD];
+   int bc = 0;
++  bool frameIncomplete = false;
++  int millisecs = 0;
++  int sizeCounter = 0;
++  int frameCounter = 0;
+ 
+   cEncapsulator oEncapsulator;
+   cAudioDecoders oDecoders;
+@@ -109,8 +115,37 @@
+           bc = oEncapsulator.Data((uint8_t *)data, len);
+           bc = oEncapsulator.ToPcm((uint8_t **)&b);
+           bc = oEncapsulator.ToPes((uint8_t **)&b);
+-
+-          mpo_readFrame = new cFrame(b, bc, ftUnknown, MSecondsToFrames(mpo_decoder->GetCurrentTime()));
++          
++          if ( frameCounter != mpo_decoder->GetCurrentTime() )
++          {
++          	frameCounter = mpo_decoder->GetCurrentTime();
++          	sizeCounter = 0;
++          	millisecs = mpo_decoder->GetCurrentTime();
++          }
++          sizeCounter += len;
++          if ( sizeCounter >= 2*MAX_FRAME_PAYLOAD )
++          {
++          	millisecs += sizeCounter * 1000 / (mpo_decoder->GetChannels() * 2 *mpo_decoder->GetSampleRate());
++          	sizeCounter = 0;
++          }
++// Spectrum Analyzer: Hand over the PCM16-data to SpAn
++	      int offset = PES_HEADER_LEN + LPCM_HEADER_LEN;
++	      Span_SetPcmData_1_0 SetPcmData;
++	      cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, NULL);
++	      if (Plugin)
++	      {
++		      SetPcmData.length = (unsigned int)(len-offset);
++// the timestamp (ms) of the frame(s) to be visualized:
++		      SetPcmData.index = millisecs;
++		      
++// tell SpAn the ringbuffer's size for it's internal bookkeeping of the data to be visualized:
++		      SetPcmData.bufferSize = PLAYERBUFSIZE;
++		      SetPcmData.data = b + offset + 1; // get rid of the header
++		      SetPcmData.bigEndian = true;
++		      cPluginManager::CallFirstService(SPAN_SET_PCM_DATA_ID, &SetPcmData);
++	      }
++          mpo_readFrame = new cFrame(b, bc, ftUnknown, millisecs);
++          
+           b = NULL;
+           bc = 0;
+         } else
+@@ -136,12 +171,24 @@
+           // new song
+           if (m_curFrame > mpo_playFrame->Index())
+             m_maxFrames = MSecondsToFrames(mpo_decoder->GetTime());
+-          m_curFrame = mpo_playFrame->Index();
++          m_curFrame = MSecondsToFrames(mpo_playFrame->Index());
+         }
+         if (b) {
+           int i = 0;
+           i = PlayPes(b, bc, false);
+           if (0 < i) {
++// Spectrum Analyzer: Tell SpAn which timestamp is currently playing
++		 	if ( frameIncomplete )
++		 	{
++				Span_SetPlayindex_1_0 SetPlayindexData;
++				cPlugin *Plugin = cPluginManager::CallFirstService(SPAN_SET_PLAYINDEX_ID, NULL);
++				if (Plugin)
++				{
++					SetPlayindexData.index = mpo_playFrame->Index();
++				  	cPluginManager::CallFirstService(SPAN_SET_PLAYINDEX_ID, &SetPlayindexData);
++				}
++				frameIncomplete = false;
++		 	}
+             b += i;
+             bc -= i;
+           }
+@@ -150,6 +197,7 @@
+           mpo_ringBufferFrame->Drop(mpo_playFrame);
+           mpo_playFrame = NULL;
+           b = NULL;
++          frameIncomplete = true;
+         }
+       }
+     } // if (DevicePoll ...
+@@ -320,9 +368,9 @@
+   int next = mpo_playlist->GetCurrent() + offset;
+ 
+ #if defined(PLUGIN_DAAP)
+-  if (FramesToSeconds(m_curFrame) > (unsigned int)cDaapConfiguration::GetInstance().GetSkipBackMargin() &&
++  if (MSecondsToFrames(m_curFrame) > (unsigned int)cDaapConfiguration::GetInstance().GetSkipBackMargin() &&
+ #elif defined(PLUGIN_CDDA)
+-  if (FramesToSeconds(m_curFrame) > (unsigned int)cCddaConfiguration::GetInstance().GetSkipBackMargin() &&
++  if (MSecondsToFrames(m_curFrame) > (unsigned int)cCddaConfiguration::GetInstance().GetSkipBackMargin() &&
+ #endif
+       next == mpo_playlist->GetCurrent() - 1) {
+     {
+diff -Naur --exclude='Makefile*' cdda-0.1.0/audio_player.h cdda-0.1.0-span/audio_player.h
+--- cdda-0.1.0/audio_player.h	2006-09-28 12:45:20.000000000 +0200
++++ cdda-0.1.0-span/audio_player.h	2006-09-27 15:55:15.000000000 +0200
+@@ -11,12 +11,36 @@
+ 
+ #include <stdint.h>
+ #include <vdr/player.h>
++#include <vdr/plugin.h>
+ #include "audio_playlist.h"
+ #include "audio_decoder.h"
+ 
+ #define PLAYERBUFSIZE	         MEGABYTE(1)
+ #define MAX_FRAME_PAYLOAD      2000
+ 
++#define SPAN_PROVIDER_CHECK_ID  "Span-ProviderCheck-v1.0"
++#define SPAN_SET_PCM_DATA_ID    "Span-SetPcmData-v1.1"
++#define SPAN_SET_PLAYINDEX_ID   "Span-SetPlayindex-v1.0"
++
++//Span requests to collect possible providers / clients
++struct Span_Provider_Check_1_0 {
++    bool *isActive;
++	bool *isRunning;
++};	
++
++// SpanData
++struct Span_SetPcmData_1_0 {
++	unsigned int length;		// the length of the PCM-data
++	const unsigned char *data;	// the PCM-Data
++	int index;					// the timestamp (ms) of the frame(s) to be visualized
++	unsigned int bufferSize;	// for span-internal bookkeeping of the data to be visualized
++	bool bigEndian;				// are the pcm16-data coded bigEndian?
++};
++
++struct Span_SetPlayindex_1_0 {
++	int index;					// the timestamp (ms) of the frame(s) being currently played
++};
++
+ inline unsigned long MSecondsToFrames(unsigned long n) {
+   return n / 40;
+ }
+diff -Naur --exclude='Makefile*' cdda-0.1.0/cdda.c cdda-0.1.0-span/cdda.c
+--- cdda-0.1.0/cdda.c	2006-09-28 12:45:20.000000000 +0200
++++ cdda-0.1.0-span/cdda.c	2006-09-27 15:53:11.000000000 +0200
+@@ -38,6 +38,7 @@
+   virtual cOsdObject *MainMenuAction(void);
+   virtual cMenuSetupPage *SetupMenu(void);
+   virtual bool SetupParse(const char *Name, const char *Value);
++  virtual bool Service(const char *Id, void *Data = NULL);
+   };
+ 
+ cPluginCdda::cPluginCdda(void)
+@@ -185,4 +186,16 @@
+   return true;
+ }
+ 
++bool cPluginCdda::Service(const char *Id, void *Data)
++{
++	if (strcmp(Id, SPAN_PROVIDER_CHECK_ID) == 0)
++	{
++		if (Data)
++			*((Span_Provider_Check_1_0*)Data)->isActive = true;
++		return true;
++	}
++
++	return false;
++}
++
+ VDRPLUGINCREATOR(cPluginCdda); // Don't touch this!

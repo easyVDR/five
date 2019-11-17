@@ -1,0 +1,861 @@
+diff -Naur --exclude='.*' lcdproc-0.0.10.old/i18n.c lcdproc-span/i18n.c
+--- lcdproc-0.0.10.old/i18n.c	2006-09-07 15:45:51.000000000 +0200
++++ lcdproc-span/i18n.c	2006-09-04 16:33:48.000000000 +0200
+@@ -188,5 +188,22 @@
+     "OutputNumber",// TODO
+     "OutputNumber",// TODO
+   },
++  { "Enable spectrum analyzer",
++    "Spectrum Analyzer darstellen",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++    "",// TODO
++  },
+   { NULL }
+   };
+diff -Naur --exclude='.*' lcdproc-0.0.10.old/lcd.c lcdproc-span/lcd.c
+--- lcdproc-0.0.10.old/lcd.c	2006-09-07 15:45:51.000000000 +0200
++++ lcdproc-span/lcd.c	2006-09-07 11:04:28.000000000 +0200
+@@ -1,3 +1,7 @@
++
++#ifndef ___LCD_C
++#define ___LCD_C
++
+ #include <stdio.h>
+ #include <stdlib.h>
+ #include <unistd.h>
+@@ -11,6 +15,7 @@
+ #include "lcd.h"
+ #include "sockets.h"
+ #include "i18n.h"
++#include <vdr/plugin.h>
+ 
+ #ifdef LCD_EXT_KEY_CONF 
+ #include LCD_EXT_KEY_CONF 
+@@ -27,10 +32,16 @@
+ #define LCDMISC   3
+ #define LCDVOL    4
+ 
++//span-start
++// unfortunalety, I can put any number (1-4) here and the bars always begin at the bottom of the display
++#define SA_Y 4
++//span-end
++
+ // public:
+ 
+ cLcd::cLcd() {
+   int i,j;
++  channelSwitched = false;
+   connected=false; ThreadStateData.showvolume=false; ThreadStateData.newscroll=false; sock=wid=hgt=cellwid=cellhgt=0;closing = false;
+   replayDvbApi=NULL; primaryDvbApi=NULL;
+   
+@@ -48,6 +59,7 @@
+ cLcd::~cLcd() {
+   if (connected) { /*cLcd::Stop();*/  cLcd::Close(); }   //YYYY
+ }
++  
+ 
+ bool cLcd::Connect( char *host, unsigned int port ) {
+ 
+@@ -83,7 +95,19 @@
+   sock_send_string(sock,"widget_add VDR line4 string\n"); sock_recv(sock, istring, 1024);
+   sock_send_string(sock,"widget_add VDR prbar hbar\n"); sock_recv(sock, istring, 1024);
+   sock_send_string(sock,"widget_set VDR prbar 1 1 0\n"); sock_recv(sock, istring, 1024);
++//span-start
++	char cmd[160];
++	for(i = 0; i < wid; i++)
++	{
++		snprintf(cmd, 160, "widget_add VDR SaBar%d vbar\n", i+1);
++		sock_send_string(sock,cmd); sock_recv(sock, istring, 1024);
++		snprintf(cmd, 160, "widget_set VDR SaBar%d %d %d 15\n",i+1,i+1,SA_Y);
++		sock_send_string(sock,cmd); sock_recv(sock, istring, 1024);
++	}
+   
++	sock_send_string(sock,"widget_add VDR SaScroller scroller\n"); sock_recv(sock, istring, 1024);
++	SAScroller = true;
++//span-end
+   for (i=0; i<LcdMaxKeys;i++) {
+     sprintf(istring,"client_add_key %c\n",LcdUsedKeys[i]);
+     sock_send_string(sock,istring); 
+@@ -139,6 +163,7 @@
+ void cLcd::SetMain( unsigned int n, const char *string) {
+   if (!connected) return;
+  
++ 
+   char line2[wid+1];
+   char line3[wid+1];
+ 
+@@ -159,6 +184,24 @@
+   }
+ }
+ 
++//span-start
++void cLcd::ClearSaBars()
++{
++  unsigned int i;
++  char cmd[80];
++  for(i = 0; i < wid; i++)
++  {
++    sprintf(cmd, "widget_set VDR SaBar%d %d %d %d\n",i+1,i+1,SA_Y,0);
++    sock_send_string(sock, cmd);
++    if ( SAScroller )
++    {
++    	sock_send_string(sock,"widget_del VDR SaScroller\n");
++	SAScroller = false;
++    }
++  }
++}
++//span-end
++
+ void cLcd::SetHelp( unsigned int n, const char *Red, const char *Green, const char *Yellow, const char *Blue) {
+   if (!connected) return;
+ 
+@@ -294,7 +337,7 @@
+ 
+   char workstring[256];
+ 
+-  if (percent>100) percent=100; if (percent<0) percent=0;
++  if (percent>100) percent=100; else if (percent<0) percent=0;
+   if (begin==NULL) {
+     BeginMutualExclusion();
+       ThreadStateData.barx=1; ThreadStateData.bary=1; ThreadStateData.barl=0;
+@@ -442,7 +485,17 @@
+     if (ThreadStateData.State != newstate) { 
+       cLcd::LastState[(++LastStateP)%LCDMAXSTATEBUF]=newstate;
+       ThreadStateData.State=newstate; 
+-      ThreadStateData.barx=1, ThreadStateData.bary=1, ThreadStateData.barl=0; 
++      ThreadStateData.barx=1, ThreadStateData.bary=1, ThreadStateData.barl=0;
++
++//span-start
++      unsigned int i;
++      char cmd[80];
++	for(i = 0; i < wid; i++)
++	{
++		sprintf(cmd, "widget_set VDR SaBar%d %d %d %d\n",i+1,i+1,SA_Y,0);
++		sock_send_string(sock, cmd);
++	}
++//span-end
+     }
+   EndMutualExclusion(); 
+ }
+@@ -586,7 +639,11 @@
+   if ( offset || !( ShowStates && ((t%LcdSetup.FullCycle) >= LcdSetup.TimeCycle) )) {  
+     if (wid > 19) 
+       snprintf(string,wid+1,"<%s %02d.%02d %02d:%02d:%02d>",
++#if VDRVERSNUM >= 10318
++       *WeekDayName(now->tm_wday), now->tm_mday, now->tm_mon+1, now->tm_hour, now->tm_min,now->tm_sec);
++#else
+         WeekDayName(now->tm_wday), now->tm_mday, now->tm_mon+1, now->tm_hour, now->tm_min,now->tm_sec);
++#endif
+     else
+       snprintf(string,wid+1,"<%02d.%02d %02d:%02d:%02d>",
+         now->tm_mday, now->tm_mon+1, now->tm_hour, now->tm_min,now->tm_sec);
+@@ -613,6 +670,10 @@
+   bool Lcddirty[LCDMAXSTATES][4];
+   bool LcdShiftkeyPressed=false;
+   char priostring[35];
++  // RT
++  static int rtcycle;
++  // LCR
++  static int lcrCycle;
+   
+   // backlight init 
+   if ((lastBackLight=LcdSetup.BackLight))
+@@ -629,7 +690,8 @@
+     sock_send_string(sock,priostring);
+   } 
+   lastPrioN=LcdSetup.ClientPrioN;
+-      
++  
++  
+   syslog(LOG_INFO, "LCD output thread started (pid=%d), display size: %dx%d", getpid(),hgt,wid);
+   cLcd::Write(1," Welcome  to  V D R\0"); 
+   cLcd::Write(2,"--------------------\0"); 
+@@ -664,12 +726,19 @@
+   
+   voltime.tv_sec=0;
+   for (i=0;i<LCDMAXSTATES;i++) for (j=0;j<4;j++) Lcddirty[i][j]=true;
+-  time_t nextLcdUpdate = (time(NULL)/60)*60+60;
+ 
++  time_t nextLcdUpdate = 0; // trigger first update immediately
++  
+   while (true) { // main loop, wakes up every WakeUpCycle, any output to LCDd is done here  
+     gettimeofday(&now,NULL);
+ 
+-    //  epg update
++//  epg update
++    if (channelSwitched)
++    {
++      channelSwitched = false;
++      nextLcdUpdate = 0; //trigger next epg update
++    }
++
+ 
+ #ifdef OLDVDR
+ 
+@@ -693,12 +762,12 @@
+                SetRunning(false,tr("No EPG info available."), NULL);
+             if ((Present = Schedule->GetFollowingEvent()) != NULL)
+               nextLcdUpdate=(Present->GetTime()<nextLcdUpdate)?Present->GetTime():nextLcdUpdate;
++	    rtcycle = 10; // RT
++	    lcrCycle = 10; // LCR
+          }
+       }
+      if ( nextLcdUpdate <= time(NULL) )
+          nextLcdUpdate=(time(NULL)/60)*60+60;
+-      else if ( nextLcdUpdate > time(NULL)+60 )
+-         nextLcdUpdate=(time(NULL)/60)*60+60;
+     }
+ 
+ #else
+@@ -724,26 +793,125 @@
+                SetRunning(false,tr("No EPG info available."), NULL); 
+             if ((Present = Schedule->GetFollowingEvent()) != NULL)
+               nextLcdUpdate=(Present->StartTime()<nextLcdUpdate)?Present->StartTime():nextLcdUpdate;
++	    rtcycle = 10; // RT
++	    lcrCycle = 10; // LCR
+          }
+       }
+      if ( nextLcdUpdate <= time(NULL) )
+          nextLcdUpdate=(time(NULL)/60)*60+60;
+-      else if ( nextLcdUpdate > time(NULL)+60 )
+-         nextLcdUpdate=(time(NULL)/60)*60+60;
+     }  
+ 
+ #endif
+ 
++#if VDRVERSNUM >= 10330
++    // get&display Radiotext
++    if (++rtcycle > 10) {	// every 10 times
++        cPlugin *p;
++	p = cPluginManager::CallFirstService("RadioTextService-v1.0", NULL);
++	if (p) {
++	    RadioTextService_v1_0 rtext;
++    	    if (cPluginManager::CallFirstService("RadioTextService-v1.0", &rtext)) {
++    		if (rtext.rds_info == 2 && strstr(rtext.rds_title, "---") == NULL) {
++		    char timestr[20];
++    		    sprintf(timestr, "%02d:%02d", rtext.title_start->tm_hour, rtext.title_start->tm_min);
++        	    SetRunning(false, timestr, rtext.rds_title, rtext.rds_artist);
++		    }
++		else if (rtext.rds_info > 0) {
++        	    SetRunning(false, NULL, rtext.rds_text);
++		    }
++		}
++	    }
++	rtcycle = 0;
++	}
++#endif
++
++#if VDRVERSNUM >= 10330
++    // get&display LcrData
++    if (lcrCycle++ == 10) // every 10 times
++    {
++    	lcrCycle = 0;
++        cPlugin *p;
++	p = cPluginManager::CallFirstService("LcrService-v1.0", NULL);
++	if (p)
++	{
++	    LcrService_v1_0 lcrData;
++    	    if (cPluginManager::CallFirstService("LcrService-v1.0", &lcrData))
++	    {
++	    	if ( strstr( lcrData.destination, "---" ) == NULL )
++		{
++		  SetRunning(false, (const char *)lcrData.destination, (const char *)lcrData.price, (const char *)lcrData.pulse);
++		  nextLcdUpdate = 0; //trigger next epg update
++		}
++	    }
++	}
++    }
++
++#endif
++
+     // replaying
+-    
+-    if ( (now.tv_usec < WakeUpCycle) && (replayDvbApi) ) {
++//    if ( (now.tv_usec < WakeUpCycle) && (replayDvbApi) ) {
++    if ( (replayDvbApi) ) {
+       char tempbuffer[16];
+       replayDvbApi->GetIndex(Current, Total, false); Total=(Total==0)?1:Total;
+       sprintf(tempbuffer,IndexToHMSF(Total));
+       SetProgress(IndexToHMSF(Current),tempbuffer, (100 * Current) / Total);
+-    } 
+ 
+-    
++//span-start
++	if ( LcdSetup.enableSpectrumAnalyzer && ThreadStateData.State != LCDMENU && cPluginManager::CallFirstService(SPAN_GET_BAR_HEIGHTS_ID, NULL))
++	{
++		Span_GetBarHeights_v1_0 GetBarHeights;
++	  	char cmd[160];
++		unsigned int *barHeights = new unsigned int[wid];
++		unsigned int *barHeightsLeftChannel = new unsigned int[wid];
++		unsigned int *barHeightsRightChannel = new unsigned int[wid];
++		unsigned int volumeLeftChannel;
++		unsigned int volumeRightChannel;
++		unsigned int volumeBothChannels;
++		const char *saClient = "lcdproc";
++		unsigned int *barPeaksBothChannels = new unsigned int[wid];
++		unsigned int *barPeaksLeftChannel = new unsigned int[wid];
++		unsigned int *barPeaksRightChannel = new unsigned int[wid];
++
++		GetBarHeights.bands 			= wid;
++		GetBarHeights.barHeights		= barHeights;
++		GetBarHeights.barHeightsLeftChannel 	= barHeightsLeftChannel;
++		GetBarHeights.barHeightsRightChannel	= barHeightsRightChannel;
++		GetBarHeights.volumeLeftChannel		= &volumeLeftChannel;
++		GetBarHeights.volumeRightChannel	= &volumeRightChannel;
++		GetBarHeights.volumeBothChannels	= &volumeBothChannels;
++		GetBarHeights.name			= saClient;
++		GetBarHeights.falloff			= 8;
++		GetBarHeights.barPeaksBothChannels	= barPeaksBothChannels;
++		GetBarHeights.barPeaksLeftChannel	= barPeaksLeftChannel;
++		GetBarHeights.barPeaksRightChannel	= barPeaksRightChannel;
++
++		if ( cPluginManager::CallFirstService(SPAN_GET_BAR_HEIGHTS_ID, &GetBarHeights ))
++		{
++			BeginMutualExclusion();
++			OutStateData.State = ThreadStateData.State = SA;
++			for(i = 0; i < wid; i++)
++		        {
++				sprintf(cmd, "widget_set VDR SaBar%d %d %d %d\n",i+1,i+1,SA_Y,((cellhgt*(hgt/2))*barHeights[i])/100);
++				sock_send_string(sock, cmd);
++			}
++			EndMutualExclusion();
++		}
++		delete [] barHeights;
++		delete [] barHeightsLeftChannel;
++		delete [] barHeightsRightChannel;
++		delete [] barPeaksBothChannels;
++		delete [] barPeaksLeftChannel;
++		delete [] barPeaksRightChannel;
++		
++	}
++
++	if ( OutStateData.State != SA && SAScroller == true )
++	{
++		sock_send_string(sock,"widget_del VDR SaScroller\n");
++		SAScroller = false;
++	}
++//span-end
++    } 
+     
+     // copy 
+     
+@@ -762,10 +930,10 @@
+     if ( (OutStateData.State==PrevState) && ( OutStateData.State == Replay || OutStateData.State == Menu || OutStateData.State == Title ) ) {
+       switch (OutStateData.State) {
+ 	case Replay:
+-	  ScrollState=LCDREPLAY; ScrollLine=1;	
++	  ScrollState=LCDREPLAY; ScrollLine=1;
+ 	break;  	
+ 	case Menu:
+-	  ScrollState=LCDMENU;   ScrollLine=1;	
++	  ScrollState=LCDMENU;   ScrollLine=1;
+ 	break;  	
+ 	case Title:
+ 	  if (!ToggleMode) {
+@@ -818,7 +986,7 @@
+       } else {
+ 	volume=true;      
+ 	OutStateData.barx=1; OutStateData.bary=((hgt==2)?2:3);
+-	OutStateData.barl=(cellwid*((hgt==2)?2:1)*wid*OutStateData.volume)/255;      
++	OutStateData.barl=(cellwid*((hgt==2)?2:1)*wid*OutStateData.volume)/255;
+       }	      
+     }	    
+     if (volume) OutStateData.State = Vol;
+@@ -836,8 +1004,8 @@
+         for (i=0;i<4;i++) if (Lcddirty[LCDMENU][i]) {
+           cLcd::Write(i+1,OutStateData.lcdbuffer[LCDMENU][i]);
+           Lcddirty[LCDMENU][i]=false;
+-        }        
+-        PrevState=Menu; 
++        }
++	PrevState=Menu; 
+       break;
+ 
+       case Title: // Display 'titlescsreen' = 1
+@@ -845,17 +1013,22 @@
+         if ( (now.tv_usec < WakeUpCycle) || (PrevState != Title) ) { 
+           cLcd::GetTimeDateStat(workstring,OutStateData.CardStat);
+           cLcd::Write(1,workstring);
++	
+         } 
+         if (PrevState != Title) for (i=1;i<4;i++) Lcddirty[LCDTITLE][i]=true;
+-        for (i=1;i<4;i++) if (Lcddirty[LCDTITLE][i]) { 
++	for (i=1;i<4;i++) if (Lcddirty[LCDTITLE][i]) { 
+           cLcd::Write(i+1,OutStateData.lcdbuffer[LCDTITLE][i]); 
+           Lcddirty[LCDTITLE][i]=false; 
+         }
++	
+         PrevState = Title;
+       break;
+ 
+       case Replay: // Display date/time during replaying = 2
+         LineMode=1;
++//span-start
++	OutStateData.bary = hgt;
++//span-end
+         if ( !ToggleMode && ((now.tv_usec < WakeUpCycle) || (PrevState != Replay)) ) { 
+           cLcd::GetTimeDateStat(workstring,OutStateData.CardStat);
+           cLcd::Write(1,workstring);
+@@ -865,9 +1038,49 @@
+           cLcd::Write(i+1,OutStateData.lcdbuffer[LCDREPLAY][i]); 
+           Lcddirty[LCDREPLAY][i]=false; 
+         }
+-        PrevState = Replay;
++        
++	PrevState = Replay;
+       break;
+-
++//span-start
++	case SA: // display the SA, move the progressbar to top and show the title on just one line (scrolling)
++	LineMode=0;
++
++	if ( PrevState != SA )
++	{
++		sprintf(replayTextTmp, " "); // triggers e.g. a menu-display right before
++	}
++	sprintf(workstring,"%s",OutStateData.lcdfullbuffer[LCDREPLAY]);
++	
++	if ( strcasecmp(workstring,replayTextTmp) != 0 )
++	{
++		if ( SAScroller )
++		{
++			sock_send_string(sock,"widget_del VDR SaScroller\n");
++			sock_send_string(sock,"widget_add VDR SaScroller scroller\n");
++		}
++		else
++		{
++			sock_send_string(sock,"widget_add VDR SaScroller scroller\n");
++		}
++		SAScroller = true;
++		sprintf(replayTextTmp,"%s",OutStateData.lcdfullbuffer[LCDREPLAY]);
++		sprintf(workstring,"widget_set VDR SaScroller %d %d %d %d m 3 \"%s\"\n",1,2,wid,2,replayTextTmp);
++		sock_send_string(sock,workstring);
++	}
++	BeginMutualExclusion();
++	Lcddirty[LCDREPLAY][0]=false;
++	cLcd::Write(1,OutStateData.lcdbuffer[LCDREPLAY][3]);
++	cLcd::Write(3," ");
++	cLcd::Write(4," ");
++	Lcddirty[LCDREPLAY][2]=false;
++	Lcddirty[LCDREPLAY][1]=false;
++	Lcddirty[LCDREPLAY][3]=false;
++	OutStateData.bary = 1;
++	EndMutualExclusion();
++
++	PrevState = SA;
++	break;
++//span-end	      
+       case Misc: // Display messages  = 3
+         LineMode=0;
+         if (PrevState != Misc) for (i=0;i<4;i++) Lcddirty[LCDMISC][i]=true;
+@@ -900,7 +1113,6 @@
+     }
+ 
+     // backlight
+-    
+     if ( lastBackLight != LcdSetup.BackLight) {
+       lastBackLight=LcdSetup.BackLight;
+       if (lastBackLight)
+@@ -908,7 +1120,6 @@
+       else
+ 	sock_send_string(sock,"backlight off\n");
+     }	    
+-    
+     // keys
+     
+     if ( LcdMaxKeys && (lastAltShift != LcdSetup.AltShift) ) {
+@@ -1018,6 +1229,15 @@
+          sock_send_string(sock,lcdCommand);
+      }
+     }
++
+     usleep(WakeUpCycle-(now.tv_usec%WakeUpCycle)); // sync to systemtime for nicer time output 
+   }
+ }
++
++void cLcd::ChannelSwitched()
++{
++	channelSwitched = true;
++}
++
++#endif //___LCD_C
++
+diff -Naur --exclude='.*' lcdproc-0.0.10.old/lcd.h lcdproc-span/lcd.h
+--- lcdproc-0.0.10.old/lcd.h	2006-09-07 15:45:51.000000000 +0200
++++ lcdproc-span/lcd.h	2006-09-07 11:03:22.000000000 +0200
+@@ -9,8 +9,10 @@
+ 
+ #define LCDPORT 13666
+ #define LCDHOST "localhost"
+-#define LCDMAXSTATES 5
+-#define LCDMAXSTATEBUF 5
++//span-start
++#define LCDMAXSTATES 6
++#define LCDMAXSTATEBUF 6
++//span-end
+ #define LCDMAXWID 40
+ #define LCDMAXCARDS 4
+ #define LCDMAXFULLSTRING 1024
+@@ -19,7 +21,7 @@
+   public:
+     cControl *replayDvbApi;	  
+     cDevice *primaryDvbApi;	  
+-    enum ThreadStates {Menu=0, Title=1, Replay=2, Misc=3, Vol=4};
++    enum ThreadStates {Menu=0, Title=1, Replay=2, Misc=3, Vol=4, SA=5};
+     ThreadStates LastState[LCDMAXSTATEBUF];
+     int LastStateP,LineMode;
+     bool ToggleMode;
+@@ -38,6 +40,7 @@
+     void Info();
+     void SetTitle( const char *string);
+     void SetMain( unsigned int n, const char *string);
++    void ClearSaBars();
+     void SetHelp( unsigned int n, const char *Red, const char *Green, const char *Yellow, const char *Blue);
+     void SetStatus( const char *string);
+     void SetWarning( const char *string);
+@@ -57,11 +60,17 @@
+     void PopThreadState();
+     void SetReplayDevice(cControl *DvbApi);
+     void SetPrimaryDevice(cDevice *DvbApi);
++    void ChannelSwitched(); //to propagate "ChannelSwitched"-Event from cLcdFeed to cLcd
+   private:
+     char *SummaryText;
++//span-start
++    char replayTextTmp[1024];
++    bool SAScroller;
++//span-end
+     unsigned int SummaryTextL;
+     unsigned int SummaryCurrent;
+     bool connected;
++    bool channelSwitched;
+     struct StateData ThreadStateData;
+     time_t LastProgress;
+     cMutex CriticalArea;
+@@ -74,7 +83,64 @@
+     void Write(int line, const char *string);
+     void GetTimeDateStat( char *string, unsigned int OutStateData[] );
+     void Action(void);
+-    int closing ;
++    int closing;
++    
++};
++    // Radiotext
++    struct RadioTextService_v1_0 {
++      int rds_info;
++      int rds_pty;
++      char *rds_text;
++      char *rds_title;
++      char *rds_artist;
++      struct tm *title_start;    
++};
++
++// LcrData
++struct LcrService_v1_0 {
++  cString destination;
++  cString price;
++  cString pulse;
+ };
+ 
++//span-start
++#define SPAN_PROVIDER_CHECK_ID 	"Span-ProviderCheck-v1.0"
++#define SPAN_CLIENT_CHECK_ID 	"Span-ClientCheck-v1.0"
++#define SPAN_SET_PCM_DATA_ID 	"Span-SetPcmData-v1.0"
++#define SPAN_GET_BAR_HEIGHTS_ID "Span-GetBarHeights-v1.0"
++
++//Span requests to collect possible providers / clients
++struct Span_Provider_Check_1_0 {
++	bool *isActive;
++	bool *isRunning;
++};
++		
++struct Span_Client_Check_1_0 {
++	bool *isActive;
++	bool *isRunning;
++};
++				
++// Span data
++struct Span_SetPcmData_1_0 {
++	unsigned int length;	// the length of the PCM-data
++	int *data;		// the PCM-Data as 32-bit int, however only the lower 16-bit are used
++				// and you have to take care to hand in such data!
++};
++
++struct Span_GetBarHeights_v1_0 {
++	unsigned int bands;			// number of bands to compute
++	unsigned int *barHeights;		// the heights of the bars of the two channels combined
++	unsigned int *barHeightsLeftChannel;	// the heights of the bars of the left channel
++	unsigned int *barHeightsRightChannel;	// the heights of the bars of the right channel
++	unsigned int *volumeLeftChannel;	// the volume of the left channels
++	unsigned int *volumeRightChannel;	// the volume of the right channels
++	unsigned int *volumeBothChannels;	// the combined volume of the two channels
++	const char *name;			// name of the client that wants to get the data
++						// (must be unique for each client!)
++	unsigned int falloff;			// bar falloff value
++	unsigned int *barPeaksBothChannels;     // bar peaks of the two channels combined
++	unsigned int *barPeaksLeftChannel;      // bar peaks of the left channel
++	unsigned int *barPeaksRightChannel;     // bar peaks of the right channel
++};
++//span-end
+ #endif //__LCD_H
+diff -Naur --exclude='.*' lcdproc-0.0.10.old/lcdproc.c lcdproc-span/lcdproc.c
+--- lcdproc-0.0.10.old/lcdproc.c	2006-09-07 15:45:51.000000000 +0200
++++ lcdproc-span/lcdproc.c	2006-09-05 10:03:50.000000000 +0200
+@@ -6,6 +6,9 @@
+  * $Id$
+  */
+ 
++#ifndef ___LCDPROC_C
++#define ___LCDPROC_C
++
+ #include <getopt.h>
+ #include <ctype.h>
+ #include <vdr/plugin.h>
+@@ -16,7 +19,11 @@
+ #include "lcd.h"
+ #include "lcdtranstbl.h"
+ 
+-static const char *VERSION        = "0.0.10";
++#include <string>
++
++using namespace std;
++
++static const char *VERSION        = "0.0.10-span-patched";
+ static const char *MAINMENUENTRY  = NULL;
+ static const char *DESCRIPTION    = "LCDproc output";
+ 
+@@ -51,8 +58,13 @@
+ class cLcdFeed : public cStatus {
+ protected:
+   virtual void ChannelSwitch(const cDevice *Device, int ChannelNumber);
++#if VDRVERSNUM < 10338
+   virtual void Recording(const cDevice *Device, const char *Name);
+   virtual void Replaying(const cControl *DvbPlayerControl, const char *Name);
++#else
++  virtual void Recording(const cDevice *Device, const char *Name, const char *FileName, bool On);
++  virtual void Replaying(const cControl *DvbPlayerControl, const char *Name, const char *FileName, bool On);
++#endif
+   virtual void SetVolume(int Volume, bool Absolute);
+   virtual void OsdClear(void);
+   virtual void OsdTitle(const char *Title);
+@@ -73,34 +85,102 @@
+       LCDproc->SetLine(1,2," "); 
+       LCDproc->SetLine(1,3," ");
+       LCDproc->SetRunning(false,tr("Waiting for EPG info."), NULL); 
++      LCDproc->ChannelSwitched();
+       switched = true; 
+     } else switched = false;
+     LCDproc->SetPrimaryDevice( (cDevice *) Device );
+   }
+ }
+-
++#if VDRVERSNUM < 10338
+ void cLcdFeed::Recording(const cDevice *Device, const char *Name)
++#else
++void cLcdFeed::Recording(const cDevice *Device, const char *Name, const char *FileName, bool On) 
++#endif
+ {
+   //syslog(LOG_INFO, "lcdproc: cLcdFeed::Recording  %d %s", Device->CardIndex(), Name);
++#if VDRVERSNUM < 10338
+   if (Name)
++#else
++  if (On)
++#endif
+     LCDproc->SetCardStat(Device->CardIndex(),2);
+   else
+     LCDproc->SetCardStat(Device->CardIndex(),1);	  
+ }
+-
++#if VDRVERSNUM < 10338
+ void cLcdFeed::Replaying(const cControl *DvbPlayerControl, const char *Name)
++#else
++void cLcdFeed::Replaying(const cControl *DvbPlayerControl, const char *Name, const char *FileName, bool On)
++#endif
+ {
+   //syslog(LOG_INFO, "lcdproc: cLcdFeed::Replaying %s",  Name);
++#if VDRVERSNUM < 10338
+   replaymode=(Name)?true:false;
++#else
++  replaymode=On;
++#endif
++  int slen = 0;
++  string name;
++  bool bFound = false;
++  if ( !isempty(FileName) )
++    slen = strlen(FileName);
++
++  ///////////////////////////////////////////////////////////////////////
++  //Looking for mp3-Plugin Replay : [LS] (444/666) title
++  //
++  if (slen > 6 &&
++	*(FileName+0)=='[' &&
++	*(FileName+3)==']' &&
++	*(FileName+5)=='(')
++	{
++		unsigned int i;
++		for (i=6; *(FileName + i) != '\0'; ++i) //search for [xx] (xxxx) title
++		{
++			if(*(FileName+i)==' ' && *(FileName+i-1)==')')
++			{
++				bFound = true;
++				break;
++			}
++		}
++		if (bFound) //found MP3-Plugin replaymessage
++		{
++		unsigned int j;
++		for(j=0;*(FileName+i+j) != '\0';++j) //trim name
++		{
++			if(*(FileName+i+j)!=' ')
++			break;
++		}
++
++		if (strlen(FileName+i+j) > 0)
++		{ //if name isn't empty, then copy
++			name = FileName + i + j;
++		}
++		else
++		{ //if Name empty, set fallback title
++			name = tr("Unknown title");
++		}
++	}
++  }
++
++
++  
+   if ( replaymode ) {
+     LCDproc->SetReplayDevice( (cDvbPlayerControl *) DvbPlayerControl);
+-    LCDproc->SetMain(2, Name);
++    if ( bFound )
++    {
++    	LCDproc->SetMain(2, name.c_str());
++    }
++    else
++    {
++    	LCDproc->SetMain(2, Name);
++    }
+     LCDproc->SetThreadState( (cLcd::ThreadStates) 2); // Replaying
+   } else {
+     LCDproc->SetReplayDevice(NULL); 
+     LCDproc->SetProgress(NULL);
+     LCDproc->SetLineC(1,1,tempstringbuffer); 
+     LCDproc->SetThreadState( (cLcd::ThreadStates) 1); // Title
++    LCDproc->ClearSaBars();
+   }
+   menumode=false; 
+ }
+@@ -180,8 +260,11 @@
+      switching= isdigit(Text[i]) && Text[i+1]=='-'  ;  
+   }
+   
+-  if (switched || switching) 
++  if (switched || switching)
++  {
+     LCDproc->SetThreadState( (cLcd::ThreadStates) 1); // TITLE
++    LCDproc->ChannelSwitched();
++  }
+   else 
+     LCDproc->SetThreadState( (cLcd::ThreadStates) 3); // MISC
+  
+@@ -233,6 +316,7 @@
+   virtual cOsdMenu *MainMenuAction(void);
+   virtual cMenuSetupPage *SetupMenu(void);
+   virtual bool SetupParse(const char *Name, const char *Value);
++  virtual bool Service(const char *Id, void *Data = NULL);
+   };
+ 
+ cPluginLcd::cPluginLcd(void)
+@@ -351,13 +435,15 @@
+   Add(new cMenuEditStraItem( tr("SetClientPriority"),  &newLcdSetup.SetPrio, 3, PrioBackFunctionText));
+   Add(new cMenuEditIntItem( tr("NormalClientPriority"),&newLcdSetup.ClientPrioN,0,255));
+   Add(new cMenuEditIntItem( tr("HighClientPriority"),  &newLcdSetup.ClientPrioH,0,255));
+-  Add(new cMenuEditIntItem( tr("BackLightWait"),       &newLcdSetup.BackLightWait,1,99));
++  Add(new cMenuEditIntItem( tr("BackLightWait"),       &newLcdSetup.BackLightWait,0,99));
+   Add(new cMenuEditIntItem( tr("PrioWait"),            &newLcdSetup.PrioWait,1,99));
+   Add(new cMenuEditIntItem( tr("OutputNumber"),        &newLcdSetup.OutputNumber));
+   for (int i =0 ; i <  newLcdSetup.OutputNumber; i++){
+     sprintf(str2,"%s %d",tr("OutputNumber"),i);
+     Add(new cMenuEditStraTrItem( str2, &newLcdSetup.OutputFunction[i],14, OutputFunctionText));
+   }
++
++  Add(new cMenuEditBoolItem( tr("Enable spectrum analyzer"),        &newLcdSetup.enableSpectrumAnalyzer));
+ }
+ 
+ void cMenuSetupLcd::Store(void)
+@@ -374,13 +460,14 @@
+   SetupStore("SetPrio",     LcdSetup.SetPrio     = newLcdSetup.SetPrio);
+   SetupStore("ClientPrioN", LcdSetup.ClientPrioN = newLcdSetup.ClientPrioN);
+   SetupStore("ClientPrioH", LcdSetup.ClientPrioH = newLcdSetup.ClientPrioH);
+-  SetupStore("BackLightWait", LcdSetup.ClientPrioH = newLcdSetup.BackLightWait);
+-  SetupStore("PrioWait",    LcdSetup.ClientPrioH = newLcdSetup.PrioWait);
++  SetupStore("BackLightWait", LcdSetup.BackLightWait = newLcdSetup.BackLightWait);
++  SetupStore("PrioWait",    LcdSetup.PrioWait = newLcdSetup.PrioWait);
+   SetupStore("OutputNumber",LcdSetup.OutputNumber   = newLcdSetup.OutputNumber);
+   for (int i =0 ; i <  newLcdSetup.OutputNumber; i++){
+     sprintf(str2,"OutputNumber %d",i);
+     SetupStore(str2,   LcdSetup.OutputFunction[i]   = newLcdSetup.OutputFunction[i]);
+   }
++  SetupStore("enableSpectrumAnalyzer",LcdSetup.enableSpectrumAnalyzer   = newLcdSetup.enableSpectrumAnalyzer);
+ }
+ 
+ 
+@@ -417,9 +504,27 @@
+   else if (!strcasecmp(Name, "OutputNumber 7")) LcdSetup.OutputFunction[7]   = atoi(Value);
+   else if (!strcasecmp(Name, "OutputNumber 8")) LcdSetup.OutputFunction[8]   = atoi(Value);
+   else if (!strcasecmp(Name, "OutputNumber 9")) LcdSetup.OutputFunction[9]   = atoi(Value);
++  else if (!strcasecmp(Name, "enableSpectrumAnalyzer"))     LcdSetup.enableSpectrumAnalyzer = atoi(Value);
+   else
+   return false;
+   return true;
+ }
+ 
++bool cPluginLcd::Service(const char *Id, void *Data)
++{
++	if (strcmp(Id, SPAN_CLIENT_CHECK_ID) == 0)
++	{
++		if ( LcdSetup.enableSpectrumAnalyzer && (Data != NULL) )
++		{
++			*((Span_Client_Check_1_0*)Data)->isActive = true;
++		}
++		return true;
++	}
++
++	return false;
++}
++
+ VDRPLUGINCREATOR(cPluginLcd); // Don't touch this!
++
++#endif //___LCDPROC_C
++
+diff -Naur --exclude='.*' lcdproc-0.0.10.old/setup.c lcdproc-span/setup.c
+--- lcdproc-0.0.10.old/setup.c	2006-09-07 15:45:51.000000000 +0200
++++ lcdproc-span/setup.c	2006-09-04 16:33:48.000000000 +0200
+@@ -20,5 +20,6 @@
+   OutputNumber   =  0;
+   for (int i = 0; i < LCDMAXOUTPUTS; i++)
+     OutputFunction[i] = 0;
++  enableSpectrumAnalyzer = 1;
+ }
+ 
+diff -Naur --exclude='.*' lcdproc-0.0.10.old/setup.h lcdproc-span/setup.h
+--- lcdproc-0.0.10.old/setup.h	2006-09-07 15:45:51.000000000 +0200
++++ lcdproc-span/setup.h	2006-09-04 16:33:48.000000000 +0200
+@@ -20,6 +20,7 @@
+   int PrioWait;  
+   int OutputNumber;
+   int OutputFunction[LCDMAXOUTPUTS];
++  int enableSpectrumAnalyzer;
+ public:
+   cLcdSetup(void);
+   };

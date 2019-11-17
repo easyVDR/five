@@ -1,0 +1,427 @@
+vdr-plugin-sleeptimer (0.8.4-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 00:16:04 +0100
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 01:12:42 +0100
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Nov 2017 01:19:45 +0100
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 04 Jul 2017 22:31:33 +0200
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:59:48 +0200
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:45:16 +0200
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:46:25 +0200
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:06:06 +0200
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:49:35 +0100
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 00:42:13 +0100
+
+vdr-plugin-sleeptimer (0.8.4-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:25:01 +0200
+
+vdr-plugin-sleeptimer (0.8.4-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:25:24 +0100
+
+vdr-plugin-sleeptimer (0.8.4-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 20:46:50 +0100
+
+vdr-plugin-sleeptimer (0.8.4-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 02:51:26 +0100
+
+vdr-plugin-sleeptimer (0.8.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * switch to quilt
+  * add new makefile vdr >= 1.7.36
+  * add debugging symbols
+  
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 23 Oct 2014 01:40:44 +0200
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR0.1) oneiric; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 May 2012 08:37:19 +0200
+
+vdr-plugin-sleeptimer (0.8.4-1easyVDR0.1) oneiric; urgency=high
+
+  * new build for vdr-1.7.27
+
+ -- mango <vdr@gmx.de>  Fri, 04 May 2012 21:52:37 +0200
+
+vdr-plugin-sleeptimer (0.8.3-201205011141dev) experimental; urgency=low
+
+  * added missing include to i18n.h. thanx to nox again
+  * changed -Woverloaded-virtual to -Werror=overloaded-virtual in Makefile
+
+ -- Midas <vdrportal_midas <at> gmx <dot> de>  Tue, 01 May 2012 11:41:30 +0200
+
+vdr-plugin-sleeptimer (0.8.3-DEV) experimental; urgency=low
+
+  * Non-maintainer upload.
+  * Developer version (WIP). Don't expect it to work.
+
+ -- Midas <vdrportal_midas <at> gmx <dot> de>  Sat, 06 Aug 2011 13:01:26 +0200
+
+vdr-plugin-sleeptimer (0.8.2) experimental; urgency=low
+
+  * Non-maintainer upload.
+  * New upstream release.
+
+ -- Midas <vdrportal_midas <at> gmx <dot> de>  Tue, 02 Aug 2011 02:48:53 +0200
+
+vdr-plugin-sleeptimer (0.8.1) experimental; urgency=low
+
+  * Non-maintainer upload.
+  * New upstream release
+
+ -- Midas <vdrportal_midas at gmx dot de>  Sun, 31 Jul 2011 09:08:16 +0200
+
+vdr-plugin-sleeptimer (0.8-1) experimental; urgency=low
+
+  * Non-maintainer upload.
+  * New upstream release
+
+ -- Midas <vdrportal_midas at gmx dot de>  Thu, 21 Jul 2011 07:29:16 +0200
+
+vdr-plugin-sleeptimer (0.7-21) experimental; urgency=low
+
+  * Removed non-standard shebang line from debian/rules
+  * Added README.source
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 09 Nov 2009 20:52:24 +0100
+
+vdr-plugin-sleeptimer (0.7-20) experimental; urgency=low
+
+  * Release for vdr 1.7.6
+  * Added ${misc:Depends}
+  * Bumped standards version to 3.8.1
+  * Changed section to "video"
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 29 Apr 2009 23:11:31 +0200
+
+vdr-plugin-sleeptimer (0.7-19) experimental; urgency=low
+
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+  * Using COMPAT=5 now
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Jul 2008 15:54:28 +0200
+
+vdr-plugin-sleeptimer (0.7-18) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 00:56:58 +0200
+
+vdr-plugin-sleeptimer (0.7-17) experimental; urgency=low
+
+  * Build-Depend on vdr-dev (>= 1.6.0)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 24 Mar 2008 20:14:27 +0100
+
+vdr-plugin-sleeptimer (0.7-16) experimental; urgency=low
+
+  * Force rebuild for vdr 1.5.15
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:33:29 +0100
+
+vdr-plugin-sleeptimer (0.7-15) unstable; urgency=low
+
+  * Release for vdr 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:50 +0100
+
+vdr-plugin-sleeptimer (0.7-14) unstable; urgency=low
+
+  * Release for vdr 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:48 +0100
+
+vdr-plugin-sleeptimer (0.7-13) unstable; urgency=low
+
+  * Release for vdr 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:38 +0100
+
+vdr-plugin-sleeptimer (0.7-12) unstable; urgency=low
+
+  * Release for vdr 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:51:17 +0200
+
+vdr-plugin-sleeptimer (0.7-11) unstable; urgency=low
+
+  * Release for vdr 1.5.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 28 Aug 2007 01:01:28 +0200
+
+vdr-plugin-sleeptimer (0.7-10) unstable; urgency=low
+
+  * Release for vdr 1.5.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:31 +0200
+
+vdr-plugin-sleeptimer (0.7-9) unstable; urgency=low
+
+  * Release for vdr 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:40 +0200
+
+vdr-plugin-sleeptimer (0.7-8) unstable; urgency=low
+
+  * Release for vdr 1.5.5
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:03:10 +0200
+
+vdr-plugin-sleeptimer (0.7-7) unstable; urgency=low
+
+  * Release for vdr 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:01:19 +0200
+
+vdr-plugin-sleeptimer (0.7-6) unstable; urgency=low
+
+  * Release for vdr 1.5.1
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:38 +0100
+
+vdr-plugin-sleeptimer (0.7-5) unstable; urgency=low
+
+  [ Thomas Günther ]
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 19:17:49 +0100
+
+vdr-plugin-sleeptimer (0.7-4) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 11:45:43 +0100
+
+vdr-plugin-sleeptimer (0.7-3) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 23 Sep 2006 20:33:00 +0200
+
+vdr-plugin-sleeptimer (0.7-2) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.2-1)
+  * Bumped Standards-Version to 3.7.2
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 27 Aug 2006 14:39:35 +0200
+
+vdr-plugin-sleeptimer (0.7-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+    - Removed 02_sleeptimer-1.3.32.dpatch
+    - Removed 90_APIVERSION.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 18 Jun 2006 16:16:58 +0200
+
+vdr-plugin-sleeptimer (0.6-15) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.1-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Fri, 16 Jun 2006 22:08:01 +0200
+
+vdr-plugin-sleeptimer (0.6-14) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.0-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  3 May 2006 23:08:25 +0200
+
+vdr-plugin-sleeptimer (0.6-13) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.48-1)
+    - Added 90_APIVERSION.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 24 Apr 2006 22:08:34 +0200
+
+vdr-plugin-sleeptimer (0.6-12) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.46-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 12 Apr 2006 22:14:07 +0200
+
+vdr-plugin-sleeptimer (0.6-11) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.45-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 27 Mar 2006 21:29:39 +0200
+
+vdr-plugin-sleeptimer (0.6-10) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.41-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 Jan 2006 01:40:52 +0100
+
+vdr-plugin-sleeptimer (0.6-9) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.40-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 26 Jan 2006 14:22:39 +0100
+
+vdr-plugin-sleeptimer (0.6-8) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.37-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat,  3 Dec 2005 20:56:28 +0100
+
+vdr-plugin-sleeptimer (0.6-7) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.33-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  2 Oct 2005 10:48:38 +0200
+
+vdr-plugin-sleeptimer (0.6-6) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.32-1)
+  * Thomas Günther <tom@toms-cafe.de>
+    - Added 02_sleeptimer-1.3.32.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed, 14 Sep 2005 19:18:01 +0200
+
+vdr-plugin-sleeptimer (0.6-5) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.31-1)
+  * Conflict with vdr (>=1.3.31.99)
+  * Use dependencies.sh from vdr-dev to set vdr dependencies and
+    conflicts
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 30 Aug 2005 23:08:00 +0200
+
+vdr-plugin-sleeptimer (0.6-4) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.30-1)
+  * Conflict with vdr (>=1.3.30.99)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 22 Aug 2005 17:31:23 +0200
+
+vdr-plugin-sleeptimer (0.6-3) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.29-1)
+  * Conflict with vdr (>=1.3.30)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 15 Aug 2005 21:16:13 +0200
+
+vdr-plugin-sleeptimer (0.6-2) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.28-1)
+  * Conflict with vdr (>=1.3.29)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon,  8 Aug 2005 20:25:54 +0200
+
+vdr-plugin-sleeptimer (0.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed makefile patch (integrated in upstream)
+  * Using debian/compat now
+  * Adapted patches for new dpatch >= 2.0.9
+  * Bumped Standards-Version to 3.6.2
+  * Depend/Build-Depend on vdr (>=1.3.27-1)
+  * Conflict with vdr (>=1.3.28)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 25 Jul 2005 18:37:33 +0200
+
+vdr-plugin-sleeptimer (0.4-2) unstable; urgency=low
+
+  * Added Makefile-fPIC-fix patch to fix potential FTBFS
+  * Adapted control file to alioth packages
+  * Using patchlevel.sh and custom control field "vdr-patchlevel"
+  * Using dh_install now
+  * Removed debian/dirs
+  * Changed path to poweroffvdr for VDR 1.2.6-27
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed, 29 Sep 2004 21:20:00 +0200
+
+vdr-plugin-sleeptimer (0.4-1) unstable; urgency=low
+
+  * new upstream release
+  * added debian/watch file for uscan
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 08 Mar 2004 23:52:00 +0200
+
+vdr-plugin-sleeptimer (0.2-2) unstable; urgency=low
+
+  * small bug fix to upstream source: after calling shutdown script,
+    no more "going down..." -message is shown
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 02 Mar 2004 23:50:00 +0200
+
+vdr-plugin-sleeptimer (0.2-1) unstable; urgency=low
+
+  * debianized
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 16 Feb 2004 22:11:00 +0200

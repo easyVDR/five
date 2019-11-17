@@ -1,0 +1,385 @@
+vdr-plugin-span (0.0.7-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 01:01:52 +0100
+
+vdr-plugin-span (0.0.7-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 01:13:07 +0100
+
+vdr-plugin-span (0.0.7-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Nov 2017 01:20:24 +0100
+
+vdr-plugin-span (0.0.7-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Jul 2017 19:43:46 +0200
+
+vdr-plugin-span (0.0.7-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:00:31 +0200
+
+vdr-plugin-span (0.0.7-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:46:19 +0200
+
+vdr-plugin-span (0.0.7-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:47:08 +0200
+
+vdr-plugin-span (0.0.7-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:06:47 +0200
+
+vdr-plugin-span (0.0.7-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:50:23 +0100
+
+vdr-plugin-span (0.0.7-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 00:48:16 +0100
+
+vdr-plugin-span (0.0.7-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:26:06 +0200
+
+vdr-plugin-span (0.0.7-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:26:26 +0100
+
+vdr-plugin-span (0.0.7-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 21:02:35 +0100
+
+vdr-plugin-span (0.0.7-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:00:27 +0200
+
+vdr-plugin-span (0.0.7-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:26:38 +0200
+
+vdr-plugin-span (0.0.7-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 02 Dec 2013 20:44:05 +0100
+
+vdr-plugin-span (0.0.7-15fnu3~trusty) trusty; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 27 Oct 2013 13:18:11 +0100
+
+vdr-plugin-span (0.0.7-15fnu3~precise) precise; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 23 Oct 2013 17:57:08 +0200
+
+vdr-plugin-span (0.0.7-15fnu2~precise) precise; urgency=high
+
+  * Rebuild for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 23 Oct 2013 17:19:08 +0200
+
+vdr-plugin-span (0.0.7-15fnu1~precise) precise; urgency=high
+
+  * Build for my PPA
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 12 Sep 2013 02:57:08 +0200
+
+vdr-plugin-span (0.0.7-15fnu0~precise) precise; urgency=high
+
+  * rebuild for my ppa
+  * changes rules, drop cdbs
+  * add debug symbols 
+
+ -- Frank Neumann <fnu@yavdr.org>  Fri, 26 Apr 2013 09:47:30 +0200
+
+vdr-plugin-span (0.0.7-13yavdr30~lucid) lucid; urgency=high
+
+  * rebuild for yavdr 0.3.4 
+
+ -- Frank Neumann <fnu@yavdr.org>  Fri, 22 Mar 2013 10:58:56 +0100
+
+vdr-plugin-span (0.0.7-13yavdr30~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:58:19 +0100
+
+vdr-plugin-span (0.0.7-13yavdr29~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:08:50 +0100
+
+vdr-plugin-span (0.0.7-13yavdr27~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:59:15 +0100
+
+vdr-plugin-span (0.0.7-13yavdr26~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:34:53 +0100
+
+vdr-plugin-span (0.0.7-13yavdr25~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:32:13 +0100
+
+vdr-plugin-span (0.0.7-13yavdr24~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:15:49 +0100
+
+vdr-plugin-span (0.0.7-13yavdr23~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 16:00:58 +0100
+
+vdr-plugin-span (0.0.7-13yavdr22~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:11:49 +0100
+
+vdr-plugin-span (0.0.7-13yavdr21~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:41:19 +0100
+
+vdr-plugin-span (0.0.7-13yavdr20~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:21:06 +0200
+
+vdr-plugin-span (0.0.7-13yavdr19~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:29:17 +0200
+
+vdr-plugin-span (0.0.7-13yavdr18~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:21:18 +0100
+
+vdr-plugin-span (0.0.7-13yavdr17~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:20:15 +0100
+
+vdr-plugin-span (0.0.7-13yavdr16~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 09:04:23 +0100
+
+vdr-plugin-span (0.0.7-13yavdr15~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Feb 2012 20:11:34 +0100
+
+vdr-plugin-span (0.0.7-13yavdr15~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 29 Dec 2011 11:15:17 +0100
+
+vdr-plugin-span (0.0.7-13yavdr14~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:41:13 +0100
+
+vdr-plugin-span (0.0.7-13yavdr13~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 24 Dec 2011 11:29:38 +0100
+
+vdr-plugin-span (0.0.7-13yavdr12~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 17 Oct 2011 15:44:25 +0200
+
+vdr-plugin-span (0.0.7-13yavdr11~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 05 Sep 2011 18:25:52 +0200
+
+vdr-plugin-span (0.0.7-13yavdr10~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 25 Aug 2011 18:00:16 +0200
+
+vdr-plugin-span (0.0.7-13yavdr9~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 18 Aug 2011 20:08:18 +0200
+
+vdr-plugin-span (0.0.7-13yavdr8~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 15 Jun 2011 13:50:20 +0200
+
+vdr-plugin-span (0.0.7-13yavdr7~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 14 Jun 2011 20:47:17 +0200
+
+vdr-plugin-span (0.0.7-13yavdr6~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 25 May 2011 13:58:05 +0200
+
+vdr-plugin-span (0.0.7-13yavdr5~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 22 May 2011 22:59:17 +0200
+
+vdr-plugin-span (0.0.7-13yavdr4~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Tue, 19 Apr 2011 19:57:12 +0200
+
+vdr-plugin-span (0.0.7-13yavdr3~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Sun, 03 Apr 2011 22:17:32 +0200
+
+vdr-plugin-span (0.0.7-13yavdr2~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Tue, 22 Mar 2011 23:14:10 +0100
+
+vdr-plugin-span (0.0.7-13yavdr1~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Mon, 14 Mar 2011 22:20:28 +0100
+
+vdr-plugin-span (0.0.7-12yavdr1~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 03 Mar 2011 09:12:05 +0100
+
+vdr-plugin-span (0.0.7-11yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 18 Feb 2011 23:26:41 +0100
+
+vdr-plugin-span (0.0.7-10yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 15 Feb 2011 14:51:26 +0100
+
+vdr-plugin-span (0.0.7-9yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 10 Feb 2011 08:38:36 +0100
+
+vdr-plugin-span (0.0.7-8yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 09 Feb 2011 01:06:17 +0100
+
+vdr-plugin-span (0.0.7-7yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 08 Feb 2011 23:17:19 +0100
+
+vdr-plugin-span (0.0.7-6yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 16 Jan 2011 21:49:56 +0100
+
+vdr-plugin-span (0.0.7-5yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 08 Jan 2011 21:22:06 +0100
+
+vdr-plugin-span (0.0.7-4yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 07 Jan 2011 19:29:45 +0100
+
+vdr-plugin-span (0.0.7-3yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 03 Jan 2011 19:41:37 +0100
+
+vdr-plugin-span (0.0.7-2yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 02 Nov 2010 20:01:33 +0100
+
+vdr-plugin-span (0.0.7-1yavdr3) lucid; urgency=low
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 31 Oct 2010 11:50:20 +0200

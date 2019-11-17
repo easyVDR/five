@@ -1,0 +1,20 @@
+--- admin.c.orig	2012-12-28 14:40:39.000000000 +0100
++++ admin.c	2012-12-28 14:20:13.000000000 +0100
+@@ -95,6 +95,8 @@ cMenuSetupAdmin::cMenuSetupAdmin(void)
+    char *p1, *p2;
+    char buffer[512];
+    
++   SetMenuCategory(mcSetupPlugins);
++
+    usePageUpDn = false;
+ 
+    bChanged = false;
+@@ -331,6 +333,8 @@ cMenuSetupAdmin::cMenuSetupAdmin( ADMIN_
+    isSubmenu = true;
+    char * title = NULL;
+ 
++   SetMenuCategory(mcSetupPlugins);
++
+    grpNum = groupNum;
+    usePageUpDn = true;
+    bDontCheckChanged = false;

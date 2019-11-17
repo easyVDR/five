@@ -1,0 +1,27 @@
+Source: vdr-plugin-span
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), gettext, pkg-config, libfontconfig1-dev, libfftw3-dev
+Standards-Version: 3.9.4
+Homepage: http://lcr.vdr-developer.org/htmls/span-plugin.html
+
+Package: vdr-plugin-span
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: display a 'Sp'ectrum 'An'alyzer
+ A plugin that can receive PCM-data from other plugins (e.g. mp3ng or already
+ included in music resp.)
+ to compute frequency-data and to provide them to other plugins
+ to display a 'Sp'ectrum 'An'alyzer.
+
+Package: vdr-plugin-span-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-span (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-span
+ .
+ This package contains only the debugging symbols for vdr-plugin-span
+

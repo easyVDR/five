@@ -1,0 +1,28 @@
+Source: vdr-plugin-skinsoppalusikka
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Günther <tom@toms-cafe.de>, Tobias Grimm <etobi@debian.org>, Thomas Schmidt <tschmidt@debian.org>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.2.0), gettext, pkg-config
+Standards-Version: 3.9.4
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-skinsoppalusikka/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-skinsoppalusikka/trunk/
+Homepage: http://www.saunalahti.fi/~rahrenbe/vdr/soppalusikka/
+
+Package: vdr-plugin-skinsoppalusikka
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Suggests: vdr-xpmlogos
+Description: Skin plugin for vdr
+ .
+ The "Soppalusikka" is a standalone skin based on the "enElchi" text2skin addon.
+
+Package: vdr-plugin-skinsoppalusikka-dbg
+Architecture: any
+Section: debug
+Depends: vdr-plugin-skinsoppalusikka (= ${binary:Version}), ${misc:Depends}
+Priority: extra
+Description: debugging symbols for vdr-plugin-skinsoppalusikka
+ .
+ This package contains only the debugging symbols for vdr-plugin-skinsoppalusikka
+

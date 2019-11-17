@@ -1,0 +1,237 @@
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 15:31:03 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Jan 2019 01:26:25 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Feb 2018 22:59:19 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Feb 2018 20:17:47 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice
+  * commit:c99afc2 - Switch to posix compaatible sched_yield
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Feb 2018 00:16:03 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20171212-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Dec 2017 16:05:49 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20171212-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/pesintta/vdr-plugin-softhddevice
+  * commit:4e5da1a - Support DCI 4K OSD resolution
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Dec 2017 15:07:39 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20171105-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice
+  * commit:56c7dcc - Fix memory leak
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 05 Nov 2017 15:04:21 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170707-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.3.8
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 17 Aug 2017 21:22:26 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170707-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.3.8
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 14 Aug 2017 20:42:51 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170707-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice
+  * commit:9c90c5a - Consolidate wrong interlace detection
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 07 Jul 2017 23:05:43 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170408-0easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 22 May 2017 21:40:01 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170408-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 19 May 2017 22:28:00 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170408-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 17 Apr 2017 21:17:04 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170408-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice
+  * commit:ec5cb4d - Silence some compilation warnings
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 08 Apr 2017 15:17:54 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170328-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice/tree/vpp_support_hevc
+  * commit:deae373 - Enable DEBUG flag for stderr messages.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 31 Mar 2017 15:28:37 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170311-1easyVDR0~trusty) trusty; urgency=high
+
+  * remove depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Mar 2017 00:08:53 +0100
+
+vdr-plugin-softhddevice-vaapi (1:0.6.1rc1~git20170311-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * sources: https://github.com/rofafor/vdr-plugin-softhddevice/tree/vpp_support_hevc
+  * commit:ad21656 - Fix compilation issues
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Mar 2017 00:04:23 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-1easyVDR7~trusty) trusty; urgency=high
+
+  * rebuild for test hevc
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 03 Jan 2017 00:40:56 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-1easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:00:22 +0200
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:46:08 +0200
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:47:00 +0200
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:06:39 +0200
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 22 Mar 2016 23:14:11 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:50:15 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-1easyVDR0~trusty) trusty; urgency=high
+
+  * added patch disable_filters
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Dec 2015 20:22:58 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20151110-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 10 Nov 2015 22:11:57 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150619-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 16 Jul 2015 22:08:20 +0200
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150619-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 22 Jun 2015 23:03:30 +0200
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150310-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:25:50 +0200
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150310-1easyVDR2~trusty) trusty; urgency=high
+
+  * add conflicts & replaces
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 31 Mar 2015 18:47:54 +0200
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150310-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Mar 2015 04:19:34 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150310-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de.de>  Wed, 25 Mar 2015 04:00:27 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150310-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added squeezebox.patch
+  
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 01:07:39 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150130-1easyVDR1~trusty) trusty; urgency=high
+
+  * added squeezebox.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de.de>  Tue, 24 Mar 2015 00:09:49 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150130-0easyVDR1~trusty) trusty; urgency=high
+
+  * addad VA-API-VPP-support patch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Feb 2015 01:53:03 +0100
+
+vdr-plugin-softhddevice-vaapi (0.6.1rc1.git20150130-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial release
+  * add suffix vaapi
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 31 Jan 2015 06:57:16 +0100

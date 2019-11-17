@@ -1,0 +1,60 @@
+===================================
+VDR Plugin 'span' Revision History
+===================================
+
+2008-08-13: Version 0.0.7
+- Cleaned up the translation.
+- Added italian translations. Thanks to Diego Pierotto for providing them.
+- Switched to gettext for internationalization (vdr >= 1.5.7 required).
+
+2007-05-03: Version 0.0.6
+- Fixed visualization after pausing and starting playback again.
+  Thanks to Morone for pointing out this one.
+
+2007-03-23: Version 0.0.5
+- Introduced a new setup parameter "Visualization delay (in ms)" to correct the
+  gap when visualization is done way too early (e.g. when using softdevice).
+
+
+2007-03-19: Version 0.0.4
+- Changed the way PCM16-providers interact with SpAn (all providers must adapt
+  the changes) - thx to Stefan Huelswitt for the suggestions and support.
+  Only really visualized data is now being processed by the FFT, resulting
+  in the positive side-effect that the CPU load of SpAn is slightly decreased.
+  As to that change the define SPAN_SET_PCM_DATA_ID has now changed either to
+  "Span-SetPcmData-v1.1"
+- Updated the patches for mp3, cdda, graphlcd.
+- Thanks to Morone there is no patch needed for his latest music-plugin = 
+  "The Amazing Plugin Formerly Known As Mp3ng" (TAPFKAM).
+
+
+2006-09-08: Version 0.0.3
+- Bars falling completely now when pausing the replay
+- Updated the patches for mp3ng*
+
+
+2006-09-07: Version 0.0.2
+- Implemented bar peaks (used in the graphlcd-patch and mp3ng).
+- Therefore a change in the protocol "Span-GetBarHeights-v1.0" was neccessary, please
+  adopt the changes. In this early stage the protocol version number is not increased.
+- Slightly modified the management of clients and providers (for better performance).
+- Modified the algorithm to calculate the bar heights and introduced some "default-
+  optimizations" (for 16/20/32 bands) to make the spectrum look "more intuitive".
+- Introduced the MainMenuAction that displays service-providers and their status.
+- Introduced two new service protocols to be able to display service-providers and their
+  status:
+  "Span-ProviderCheck-v1.0" and "Span-ClientCheck-v1.0"
+  All plugins (pcm-providers- and visualization-client-plugins) should implement
+  them in order to inform the user about the capabilities of each plugin.
+  Have a look at the README to get to know how to use them.
+- Added patches to the "patches" folder:
+  for mp3ng-0.9.13-MKIV-pre3-span.diff (enabling it to
+  	provide pcm-data and to do the visualization)
+  for lcdproc-0.0.10 (enabling it to do the visualization - tested only on 4x20 chars)
+  for cdda-0.1.0 (enabling it to provide pcm-data to span)
+  for graphlcd-0.1.3 (enabling it to do the visualization - tested only on 128*64px)
+  for mp3ng-0.0.10-alpha (enabling it to display the peaks)
+
+
+2006-08-30: Version 0.0.1
+- Initial revision.

@@ -1,0 +1,4 @@
+smarttvweb.conf            var/lib/vdr/plugins/smarttvweb
+widget.conf                var/lib/vdr/plugins/smarttvweb
+web/*                      var/lib/vdr/plugins/smarttvweb/web
+debian/smarttvweb.log      var/log/smarttvweb

@@ -1,0 +1,696 @@
+# VDR plugin language source file.
+# Copyright (C) 2012
+# This file is distributed under the same license as the PACKAGE package.
+# louis, 2012.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: skinnopacity 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2014-05-24 15:11+0200\n"
+"PO-Revision-Date: 2012-11-11 17:49+0200\n"
+"Last-Translator: louis\n"
+"Language-Team: \n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "No Cast available"
+msgstr "Keine Besetzung vorhanden"
+
+msgid "Cast"
+msgstr "Besetzung"
+
+msgid "EPG Info"
+msgstr "EPG Info"
+
+msgid "Reruns"
+msgstr "Wiederholungen"
+
+msgid "Recording Information"
+msgstr "Aufnahme Infos"
+
+msgid "Image Galery"
+msgstr "Bildergalerie"
+
+msgid "TheTVDB Info"
+msgstr "TheTVDB Info"
+
+msgid "TheTVDB Information"
+msgstr "TheTVDB Information"
+
+msgid "Episode"
+msgstr "Episode"
+
+msgid "Season"
+msgstr "Staffel"
+
+msgid "Episode Overview"
+msgstr "Episodenüberblick"
+
+msgid "First aired"
+msgstr "Erstausstrahlung"
+
+msgid "Guest Stars"
+msgstr "Gast Stars"
+
+msgid "TheMovieDB Rating"
+msgstr "TheMovieDB Wertung"
+
+msgid "Series Overview"
+msgstr "Serienüberblick"
+
+msgid "Genre"
+msgstr "Genre"
+
+msgid "Network"
+msgstr "Sendeanstalt"
+
+msgid "Status"
+msgstr "Status"
+
+msgid "TheMovieDB Information"
+msgstr "TheMovieDB Information"
+
+msgid "Original Title"
+msgstr "Original Titel"
+
+msgid "Tagline"
+msgstr "Zusammenfassung"
+
+msgid "Overview"
+msgstr "Überblick"
+
+msgid "yes"
+msgstr "ja"
+
+msgid "no"
+msgstr "nein"
+
+msgid "Adult"
+msgstr "Nur für Erwachsene"
+
+msgid "Collection"
+msgstr "Kollektion"
+
+msgid "Budget"
+msgstr "Budget"
+
+msgid "Revenue"
+msgstr "Einnahmen"
+
+msgid "Homepage"
+msgstr "Homepage"
+
+msgid "Release Date"
+msgstr "Veröffentlicht"
+
+msgid "Runtime"
+msgstr "Laufzeit"
+
+msgid "minutes"
+msgstr "Minuten"
+
+msgid "TheMovieDB Popularity"
+msgstr "TheMovieDB Popularität"
+
+msgid "TheMovieDB Vote Average"
+msgstr "TheMovieDB durchschnittliche Bewertung"
+
+msgid "free"
+msgstr "frei"
+
+msgid "Volume"
+msgstr "Lautstärke"
+
+msgid "images"
+msgstr "Bilder"
+
+msgid "min"
+msgstr "min"
+
+msgid "Reruns of "
+msgstr "Wiederholungen der Sendung "
+
+msgid "No reruns found"
+msgstr "Keine Wiederholungen gefunden"
+
+msgid "Size"
+msgstr "Größe"
+
+msgid "cut"
+msgstr "geschnitten"
+
+msgid "Length"
+msgstr "Länge"
+
+msgid "Format"
+msgstr "Format"
+
+msgid "Est. bitrate"
+msgstr "Geschätzte Bitrate"
+
+msgid "Search timer"
+msgstr "Suchtimer"
+
+msgid "Transp."
+msgstr "Transp."
+
+msgid "No EPG Information found"
+msgstr "Keine EPG Informationen verfügbar"
+
+msgid "Duration"
+msgstr "Dauer"
+
+msgid "recording"
+msgstr "Aufnahme"
+
+msgid "recordings"
+msgstr "Aufnahmen"
+
+msgid "new"
+msgstr "neu"
+
+msgid "Font"
+msgstr "Schriftart"
+
+msgid "VDR Menu: Common Settings"
+msgstr "VDR Menü: Allgemeine Einstellungen"
+
+msgid "VDR Menu: Main and Setup Menu"
+msgstr "VDR Menü: Haupt- und Setup Menü"
+
+msgid "VDR Menu: Schedules Menu"
+msgstr "VDR Menü: Programm Menü"
+
+msgid "VDR Menu: Channels Menu"
+msgstr "VDR Menü: Kanal Menü"
+
+msgid "VDR Menu: Timers Menu"
+msgstr "VDR Menü: Timer Menü"
+
+msgid "VDR Menu: Recordings Menu"
+msgstr "VDR Menü: Aufzeichnungs Menü"
+
+msgid "VDR Menu: Detailed EPG & Recordings View"
+msgstr "Detaillierte EPG- & Aufnahmeansicht"
+
+msgid "Channel Switching"
+msgstr "Kanalwechsel"
+
+msgid "Replay"
+msgstr "Wiedergabe von Aufzeichnungen"
+
+msgid "Audio Tracks"
+msgstr "Audio Spuren"
+
+msgid "Messages"
+msgstr "Nachrichten"
+
+msgid "Image Caching"
+msgstr "Bilder Cache"
+
+msgid "right"
+msgstr "rechts"
+
+msgid "left"
+msgstr "links"
+
+msgid "Carriage Return"
+msgstr "Wagenrücklauf"
+
+msgid "Forward and Back again"
+msgstr "Vor- und wieder Rückwärts"
+
+msgid "off"
+msgstr "aus"
+
+msgid "slow"
+msgstr "langsam"
+
+msgid "medium"
+msgstr "mittel"
+
+msgid "fast"
+msgstr "schnell"
+
+msgid "auto"
+msgstr "auto"
+
+msgid "Create Log Messages for image loading"
+msgstr "Log Nachrichten beim Bilder laden erzeugen"
+
+msgid "Number of Default Menu Entries per Page"
+msgstr "Anzahl der Default-Menüelemente pro Seite"
+
+msgid "Adjust Font Size - Default Menu Item"
+msgstr "Schriftgröße anpassen - Default Menübuttons"
+
+msgid "Adjustment of narrow menus"
+msgstr "Ausrichtung der schmalen Menüs"
+
+msgid "Scale Video size to fit into menu window"
+msgstr "TV-Bildgröße in Menüfenster einpassen"
+
+msgid "Header Height (Percent of OSD Height)"
+msgstr "Header Höhe (in % der OSD Höhe)"
+
+msgid "Footer Height (Percent of OSD Height)"
+msgstr "Footer Höhe (in % der OSD Höhe)"
+
+msgid "Rounded Corners for menu items and buttons"
+msgstr "Abgerundete Ecken für Menüelemente und Buttons"
+
+msgid "Radius of rounded corners"
+msgstr "Radius der abgerundeten Ecken"
+
+msgid "Use Channel Logo background"
+msgstr "Hintergrund für Kanallogos benutzen"
+
+msgid "Fade-In Time in ms (Zero for switching off fading)"
+msgstr "Fade-In Zeit in ms (Null zum Abschalten)"
+
+msgid "Menu Items Scroll Style"
+msgstr "Scrollstil der Menüelemente"
+
+msgid "Menu Items Scrolling Speed"
+msgstr "Scroll Geschwindigkeit der Menüelemente"
+
+msgid "Menu Items Scrolling Delay in s"
+msgstr "Scroll Verzögerung der Menüelemente in s"
+
+msgid "Adjust Font Size - Header"
+msgstr "Schriftgröße anpassen - Header"
+
+msgid "Adjust Font Size - Date"
+msgstr "Schriftgröße anpassen - Datum und Uhrzeit"
+
+msgid "Adjust Font Size - Color Buttons"
+msgstr "Schriftgröße anpassen - Farbbuttons"
+
+msgid "Adjust Font Size - Messages"
+msgstr "Schriftgröße anpassen - Nachrichten"
+
+msgid "Adjust Font Size - Detail View Text"
+msgstr "Schriftgröße anpassen - Text EPG Detailanzeige"
+
+msgid "Adjust Font Size - Detail View Text Small"
+msgstr "Schriftgröße anpassen - Text EPG Detailanzeige klein"
+
+msgid "Adjust Font Size - Detail View Header"
+msgstr "Schriftgröße anpassen - Header EPG Detailanzeige"
+
+msgid "Adjust Font Size - Detail View Header Large"
+msgstr "Schriftgröße anpassen - Header Groß EPG Detailanzeige"
+
+msgid "\"VDR\" plus VDR version"
+msgstr "\"VDR\" und VDR Version"
+
+msgid "only VDR version"
+msgstr "nur VDR Version"
+
+msgid "no title"
+msgstr "kein Titel"
+
+msgid "free time in hours"
+msgstr "freie Zeit in Stunden"
+
+msgid "free space in GB"
+msgstr "freier Platz in GB"
+
+msgid "small without logo"
+msgstr "klein ohne Logo"
+
+msgid "Use narrow main menu"
+msgstr "Schmales Hauptmenü verwenden"
+
+msgid "Width (Percent of OSD Width)"
+msgstr "Breite (% der OSD Breite)"
+
+msgid "Use narrow setup menu"
+msgstr "Schmales Setup Menü verwenden"
+
+msgid "Number of entires per page"
+msgstr "Menüelemente pro Seite"
+
+msgid "Use menu icons"
+msgstr "Menü Icons benutzen"
+
+msgid "Main menu title style"
+msgstr "Titel Stil im Hauptmenü"
+
+msgid "Display Disk Usage"
+msgstr "Festplattenstatus anzeigen"
+
+msgid "Size (square, Percent of OSD Width)"
+msgstr "Größe (quadr., % der OSD Breite)"
+
+msgid "Free Disc Display"
+msgstr "Anzeige des verfügbaren Plattenplatzes"
+
+msgid "Adjust Font Size - free"
+msgstr "Schriftgröße anpassen - frei"
+
+msgid "Adjust Font Size - percent"
+msgstr "Schriftgröße anpassen - %"
+
+msgid "Display Timers"
+msgstr "Timer anzeigen"
+
+msgid "Maximum number of Timers"
+msgstr "Maximale Timer Anzahl"
+
+msgid "Width of Timers (Percent of OSD Width)"
+msgstr "Breite der Timer (% der OSD Breite)"
+
+msgid "Width of Channel Logos (Percent of Timer Width)"
+msgstr "Channel Logo Breite (% der Timer Breite)"
+
+msgid "Adjust Font Size - Title"
+msgstr "Schriftgröße anpassen - Titel"
+
+msgid "Show Timer Conflicts"
+msgstr "Timer Konflikte anzeigen"
+
+msgid "Header Logo Width"
+msgstr "Header Logo Breite"
+
+msgid "Header Logo Height"
+msgstr "Header Logo Höhe"
+
+msgid "Adjust Font Size - Menu Items"
+msgstr "Schriftgröße anpassen - Menüelemente"
+
+msgid "window"
+msgstr "Fenster"
+
+msgid "full screen"
+msgstr "Vollbild"
+
+msgid "Use narrow menu"
+msgstr "Schmales Menü verwenden"
+
+msgid "Mode of EPG Window"
+msgstr "EPG Fenster Modus"
+
+msgid "EPG Window Fade-In Time in ms (Zero for switching off fading)"
+msgstr "Fade-In Zeit des EPG Fensters in ms (Null zum Abschalten)"
+
+msgid "EPG Window Display Delay in s"
+msgstr "Anzeigeverzögerung des EPG Fensters in s"
+
+msgid "EPG Window Scroll Delay in s"
+msgstr "Scroll Verzögerung des EPG Fensters in s"
+
+msgid "EPG Window Text Scrolling Speed"
+msgstr "Text Scroll Geschwindigkeit des EPG Fensters"
+
+msgid "Height of EPG Info Window (Percent of OSD Height)"
+msgstr "Höhe des EPG Info Fensters (% der OSD Höhe)"
+
+msgid "Adjust Font Size - Menu Item"
+msgstr "Schriftgröße anpassen - Menüelement"
+
+msgid "Adjust Font Size - Menu Item Small"
+msgstr "Schriftgröße anpassen - Menüelement klein"
+
+msgid "Adjust Font Size - EPG Info Window"
+msgstr "Schriftgröße anpassen - EPG Infofenster"
+
+msgid "Adjust Font Size - EPG Info Window Header"
+msgstr "Schriftgröße anpassen - EPG Infofenster Header"
+
+msgid "Transponder Information"
+msgstr "Transponder Information"
+
+msgid "Current Schedule"
+msgstr "Aktuelles Programm"
+
+msgid "Plain Channels"
+msgstr "Nur Kanäle"
+
+msgid "Menu Items display mode"
+msgstr "Anzeigemodus Menüelemente"
+
+msgid "Display schedules with time info"
+msgstr "Programm mit Zeitinformation anzeigen"
+
+msgid "Number of EPG Entries in Schedules Info Window"
+msgstr "Anzahl der EPG Einträge im Programm Info Fenster"
+
+msgid "never"
+msgstr "nie"
+
+msgid "always"
+msgstr "immer"
+
+msgid "only if no tvscraper media available"
+msgstr "falls keine tvscraper medien verfügbar"
+
+msgid "Mode of recording Window"
+msgstr "Aufnahme Fenster Modus"
+
+msgid "Border around detailed recording view"
+msgstr "Rahmen um detailierte Aufnahmeansicht"
+
+msgid "Use folder poster if available"
+msgstr "Zeige Poster für Ordner falls verfügbar"
+
+msgid "Width of manually set recording poster"
+msgstr "Breite der manuell gesetzen Poster"
+
+msgid "Height of manually set recording poster"
+msgstr "Höhe der manuell gesetzten Poster"
+
+msgid "if exists"
+msgstr "falls vorhanden"
+
+msgid "Border around view"
+msgstr "Rahmen um Ansicht"
+
+msgid "Scroll Speed with up / down (number of lines)"
+msgstr "Scroll Geschwindigkeit mit hoch / runter (Anz. Zeilen)"
+
+msgid "Header Height detailed EPG view (Perc. of OSD Height)"
+msgstr "Header Höhe in det. EPG Ansicht (% OSD Höhe)"
+
+msgid "Header Height detailed recording view (Perc. of OSD Height)"
+msgstr "Header Höhe in det. Aufnahmeansicht (% der OSD Höhe)"
+
+msgid "Number of reruns to display"
+msgstr "Anzahl der dargestellten Wiederholungen"
+
+msgid "Use Subtitle for reruns"
+msgstr "Untertitel für Wiederholungssuche nutzen"
+
+msgid "EPG Image Width"
+msgstr "EPG Bild Breite"
+
+msgid "EPG Image Height"
+msgstr "EPG Bild Höhe"
+
+msgid "Large EPG Image Width"
+msgstr "Großes EPG Bild Breite"
+
+msgid "Large EPG Image Height"
+msgstr "Großes EPG Bild Höhe"
+
+msgid "transparent channel logo"
+msgstr "Kanallogo transparent"
+
+msgid "full osd width"
+msgstr "volle OSD Breite"
+
+msgid "do not display"
+msgstr "nicht anzeigen"
+
+msgid "top"
+msgstr "oben"
+
+msgid "middle"
+msgstr "mittig"
+
+msgid "bottom"
+msgstr "unten"
+
+msgid "show elapsed time"
+msgstr "vergangene Zeit anzeigen"
+
+msgid "show remaining time"
+msgstr "verbleibende Zeit anzeigen"
+
+msgid "Height of Channel Display (Percent of OSD Height)"
+msgstr "Höhe der Kanalwechsel Anzeige (% der OSD Höhe)"
+
+msgid "Left & Right Border Width"
+msgstr "Breite des linken und rechten Rands"
+
+msgid "Bottom Border Height"
+msgstr "Höhe des unteren Rands"
+
+msgid "Background Transparency in Percent"
+msgstr "Hintergrundtransparenz in %"
+
+msgid "Background Style"
+msgstr "Hintergrund Stil"
+
+msgid "Rounded Corners"
+msgstr "Abgerundete Ecken"
+
+msgid "Vertical Channel Logo Alignment"
+msgstr "Vertikale Ausrichtung des Kanallogos"
+
+msgid "Channel Logo Position"
+msgstr "Kanallogo Position"
+
+msgid "Channel Logo original Width"
+msgstr "Kanallogo original Breite"
+
+msgid "Channel Logo original Height"
+msgstr "Kanallogo original Höhe"
+
+msgid "Kind of time display for current schedule"
+msgstr "Art der Zeitanzeige für die laufende Sendung"
+
+msgid "Display Signal Strength & Quality"
+msgstr "Signalstärke- und Qualität anzeigen"
+
+msgid "Display Channel Source & Rec. Info"
+msgstr "Kanal- und Aufnahmeinfo anzeigen"
+
+msgid "Display Poster or Fanart from TVScraper"
+msgstr "Poster bzw. Fanart von TVScraper anzeigen"
+
+msgid "Border in Pixel"
+msgstr "Rahmen in Pixel"
+
+msgid "Display previous and next Channel Group"
+msgstr "Vorherige und nächste Kanalgruppe anzeigen"
+
+msgid "Adjust Font Size - EPG Text"
+msgstr "Schriftgröße anpassen - EPG Text"
+
+msgid "Adjust Font Size - EPG Infotext"
+msgstr "Schriftgröße anpassen - EPG Infotext"
+
+msgid "Adjust Font Size - Channel Source Info"
+msgstr "Schriftgröße anpassen - Kanalquelleninfo"
+
+msgid "Adjust Font Size - Channel Group"
+msgstr "Schriftgräße Anpassen - Kanalgruppen"
+
+msgid "Adjust Font Size - Next/Prev Channel Group"
+msgstr "Schriftgräße Anpassen - vorh./nächste Kanalgruppe"
+
+msgid "Height of Replay Display (Percent of OSD Height)"
+msgstr "Höhe der Wiedergabe Anzeige (% der OSD Höhe)"
+
+msgid "Adjust Font Size - Text"
+msgstr "Schriftgröße anpassen - Anzeigetext"
+
+msgid "Width of Tracks Display (Percent of OSD Width)"
+msgstr "Breite der Audio Tracks Anzeige (% der OSD Breite)"
+
+msgid "Height of Track Items (in pixels)"
+msgstr "Höhe der Track Elemente (in Pixel)"
+
+msgid "Position (0: bot. center, 1: bot. left, ... , 7: bot. right)"
+msgstr "Position (0: unten mitte, 1: unten links, ... , 7: unten rechts)"
+
+msgid "Border Left / Right"
+msgstr "Rand links und rechts"
+
+msgid "Border Top / Bottom"
+msgstr "Rand oben und unten"
+
+msgid "Adjust Font Size - Buttons"
+msgstr "Schriftgröße anpassen - Buttons"
+
+msgid "Width of Message Display (Percent of OSD Height)"
+msgstr "Breite der Nachrichten Anzeige (% der OSD Breite)"
+
+msgid "Height of Message Display (Percent of OSD Height)"
+msgstr "Höhe der Nachrichten Anzeige (% der OSD Höhe)"
+
+msgid "Adjust Font Size"
+msgstr "Schriftgröße anpassen"
+
+msgid "Volume Display"
+msgstr "Lautstärke Anzeige"
+
+msgid "Width of Volume Display (Percent of OSD Height)"
+msgstr "Breite der Lautstärken Anzeige (% der OSD Breite)"
+
+msgid "Height of Volume Display (Percent of OSD Height)"
+msgstr "Höhe der Lautstärken Anzeige (% der OSD Höhe)"
+
+msgid "Limit Logo Cache"
+msgstr "Logo Cache beschränken"
+
+msgid "Maximal number of logos to cache"
+msgstr "Maximale Anzahl Logos"
+
+msgid "Number of  logos to cache at start"
+msgstr "Anzahl der zu cachenden Logos beim Start"
+
+msgid "Cache Sizes"
+msgstr "Cache Größe"
+
+msgid "Menu Icon cache"
+msgstr "Menü Icon Cache"
+
+msgid "Skin Icon image cache"
+msgstr "Skin Icon Cache"
+
+msgid "Logo cache"
+msgstr "Logo Cache"
+
+msgid "Menu Item Logo cache"
+msgstr "Menüelement Logo Cache"
+
+msgid "Timer Logo cache"
+msgstr "Timer Logo Cache"
+
+msgid "Background Images cache"
+msgstr "Hintergrundbilder Cache"
+
+msgid "conflict"
+msgstr "Konflikt"
+
+msgid "conflicts"
+msgstr "Konflikte"
+
+#~ msgid "Display additional EPG Pictures in detailed recording View"
+#~ msgstr "Weitere EPG Bilder in der detaillierten Aufnahmeansicht anzeigen"
+
+#~ msgid "Number of EPG pictures to display"
+#~ msgstr "Anzahl der zusätzlichen EPG Bilder"
+
+#~ msgid "Border around detailed EPG view"
+#~ msgstr "Rahmen um detailierte EPG Ansicht"
+
+#~ msgid "Display Reruns in detailed EPG View"
+#~ msgstr "Wiederholungen in der detailierten EPG Ansicht anzeigen"
+
+#~ msgid "Display additional EPG Pictures in detailed EPG View"
+#~ msgstr "Weitere EPG Bilder in der detaillierten EPG Ansicht anzeigen"
+
+#~ msgid "Detail EPG View EPG Image Width"
+#~ msgstr "Breite der EPG Bilder in der EPG Detailanzeige"
+
+#~ msgid "Detail EPG View EPG Image Height"
+#~ msgstr "Höhe der EPG Bilder in der EPG Detailanzeige"
+
+#~ msgid "Detail EPG View additional EPG Image Width"
+#~ msgstr "Breite der zusätzlichen EPG Bilder"
+
+#~ msgid "Detail EPG View additional EPG Image Height"
+#~ msgstr "Höhe der zusätzlichen EPG Bilder"
+
+#~ msgid "RERUNS OF THIS SHOW"
+#~ msgstr "Wiederholungen dieser Sendung"
+
+#~ msgid "Actors"
+#~ msgstr "Schauspieler"

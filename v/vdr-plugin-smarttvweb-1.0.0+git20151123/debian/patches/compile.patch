@@ -1,0 +1,13 @@
+Index: vdr-plugin-smarttvweb-1.0.0+git20151123/responsememblk.c
+===================================================================
+--- vdr-plugin-smarttvweb-1.0.0+git20151123.orig/responsememblk.c	2017-07-05 20:34:00.344262310 +0200
++++ vdr-plugin-smarttvweb-1.0.0+git20151123/responsememblk.c	2017-07-05 20:34:00.296262072 +0200
+@@ -2085,7 +2085,7 @@
+ 	 << mRequest->getOwnIp()
+ 	 << ":" << mRequest->mServerPort;
+ 
+-  *(mLog->log()) << " Ownhost= " << own_host << endl;
++  *(mLog->log()) << " Ownhost= " << own_host.str() << endl;
+ 
+   *mResponseMessage = "<html><head>"
+     "<title>SmartTVWeb Bookmarklets</title>"

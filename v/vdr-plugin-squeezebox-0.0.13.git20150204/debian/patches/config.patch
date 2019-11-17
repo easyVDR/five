@@ -1,0 +1,11 @@
+--- a/config.c
++++ b/config.c
+@@ -21,7 +21,7 @@
+    lmcPort = 9090;
+    lmcHttpPort = 9000;
+ 
+-   squeezeCmd = strdup("/usr/local/bin/squeezelite");
++   squeezeCmd = strdup("/usr/bin/squeezelite");
+    playerName = strdup("VDR-squeeze");
+    audioDevice = strdup("");
+    alsaOptions = strdup("");

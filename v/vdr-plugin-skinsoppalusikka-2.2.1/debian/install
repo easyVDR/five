@@ -1,0 +1,2 @@
+themes/*.theme                          var/lib/vdr/themes/
+debian/plugin.skinsoppalusikka.conf     etc/vdr/plugins/

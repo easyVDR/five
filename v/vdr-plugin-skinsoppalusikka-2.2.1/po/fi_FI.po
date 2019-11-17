@@ -1,0 +1,137 @@
+# VDR plugin language source file.
+# Copyright (C) 2007-2015 Rolf Ahrenberg
+# This file is distributed under the same license as the skinsoppalusikka package.
+# Rolf Ahrenberg
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skinsoppalusikka 2.2.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2015-04-04 04:04+0300\n"
+"PO-Revision-Date: 2015-04-04 04:04+0300\n"
+"Last-Translator: Rolf Ahrenberg\n"
+"Language-Team: Finnish <vdr@linuxtv.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Button$Flush cache"
+msgstr "Tyhjennä"
+
+msgid "Show auxiliary information"
+msgstr "Näytä lisätiedot"
+
+msgid "Define whether any auxiliary information is shown in info menus."
+msgstr "Määrittele, näytetäänkö lisätietoja tallenteiden ja tapahtumien tiedoissa."
+
+msgid "Show progressbar"
+msgstr "Näytä aikajana"
+
+msgid "Define whether a progressbar is shown in schedule menu."
+msgstr "Määrittele, näytetäänkö aikajana ohjelmistovalikossa."
+
+msgid "Show symbols"
+msgstr "Näytä symbolit"
+
+msgid "Define whether symbols are shown in recordings and schedule menus."
+msgstr "Määrittele, näytetäänkö symboleita tallenne- ja ohjelmistovalikossa."
+
+msgid "Show VPS in channel info"
+msgstr "Näytä VPS kanavatiedossa"
+
+msgid "Define whether VPS information is shown in channel info menu."
+msgstr "Määrittele, näytetäänkö VPS-tiedot kanavatietovalikossa."
+
+msgid "Show event duration in channel info"
+msgstr "Näytä ohjelman kesto kanavatiedossa"
+
+msgid "remaining"
+msgstr "jäljellä"
+
+msgid "total"
+msgstr "koko"
+
+msgid "Define whether remaining or total event duration is shown in channel info menu."
+msgstr "Määrittele, näytetäänkö ohjelman jäljellä oleva vai koko kestoaika kanavatietovalikossa."
+
+msgid "Show channel logos"
+msgstr "Näytä kanavalogot"
+
+msgid ""
+"Define whether channels logos are shown in channel info menu.\n"
+"\n"
+"Only XPM format is accepted: 64x48 pixel and max. 13 colors."
+msgstr ""
+"Määrittele, näytetäänkö kanavalogot kanavatietovalikossa.\n"
+"\n"
+"Vain XPM-formaatti on tuettu: 64x48 pikseliä ja max. 13 väriä."
+
+msgid "Channel logo cache size"
+msgstr "Välimuistin koko kanavalogoille"
+
+msgid ""
+"Define the cache size for channel logos.\n"
+"\n"
+"The bigger cache results faster zapping."
+msgstr ""
+"Määrittele kanavalogojen välimuistin koko.\n"
+"\n"
+"Isompi välimuisti nopeuttaa kanavanvaihtoja."
+
+msgid "Flushing channel logo cache..."
+msgstr "Tyhjennetään välimuistia..."
+
+msgid "Help"
+msgstr "Opaste"
+
+msgid "Soppalusikka skin"
+msgstr "Soppalusikka-ulkoasu"
+
+msgid "*** Invalid Channel ***"
+msgstr "*** Virheellinen kanavavalinta ***"
+
+msgid "min"
+msgstr "min"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "EBU"
+msgstr "EBU"
+
+msgid "Duration"
+msgstr "Kesto"
+
+msgid "Size"
+msgstr "Koko"
+
+msgid "Priority"
+msgstr "Prioriteetti"
+
+msgid "Lifetime"
+msgstr "Elinikä"
+
+msgid "Format"
+msgstr "Tiedostomuoto"
+
+msgid "Auxiliary information"
+msgstr "Lisätiedot"
+
+msgid "Mute"
+msgstr "Mykistetty"
+
+msgid "Volume"
+msgstr "Äänenvoimakkuus"
+
+msgid "Stereo"
+msgstr "Stereo"
+
+msgid "Left"
+msgstr "Vasen"
+
+msgid "Right"
+msgstr "Oikea"
+
+msgid "Soppalusikka"
+msgstr "Soppalusikka"

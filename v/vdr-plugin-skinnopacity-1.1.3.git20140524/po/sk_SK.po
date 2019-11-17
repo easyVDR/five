@@ -1,0 +1,699 @@
+# VDR plugin language source file.
+# Copyright (C) 2012
+# This file is distributed under the same license as the PACKAGE package.
+# louis, 2012.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skinnopacity\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2014-05-24 15:11+0200\n"
+"PO-Revision-Date: 2013-11-11 20:52+0100\n"
+"Last-Translator: Milan Hrala <hrala.milan@gmail.com>\n"
+"Language-Team: \n"
+"Language: sk\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=iso-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "No Cast available"
+msgstr ""
+
+msgid "Cast"
+msgstr ""
+
+msgid "EPG Info"
+msgstr ""
+
+msgid "Reruns"
+msgstr ""
+
+msgid "Recording Information"
+msgstr ""
+
+msgid "Image Galery"
+msgstr ""
+
+msgid "TheTVDB Info"
+msgstr ""
+
+msgid "TheTVDB Information"
+msgstr ""
+
+msgid "Episode"
+msgstr ""
+
+msgid "Season"
+msgstr ""
+
+msgid "Episode Overview"
+msgstr ""
+
+msgid "First aired"
+msgstr ""
+
+msgid "Guest Stars"
+msgstr ""
+
+msgid "TheMovieDB Rating"
+msgstr ""
+
+msgid "Series Overview"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
+
+msgid "Network"
+msgstr ""
+
+msgid "Status"
+msgstr ""
+
+msgid "TheMovieDB Information"
+msgstr ""
+
+msgid "Original Title"
+msgstr ""
+
+msgid "Tagline"
+msgstr ""
+
+msgid "Overview"
+msgstr ""
+
+msgid "yes"
+msgstr "áno"
+
+msgid "no"
+msgstr "nie"
+
+msgid "Adult"
+msgstr ""
+
+msgid "Collection"
+msgstr ""
+
+msgid "Budget"
+msgstr ""
+
+msgid "Revenue"
+msgstr ""
+
+msgid "Homepage"
+msgstr ""
+
+msgid "Release Date"
+msgstr ""
+
+msgid "Runtime"
+msgstr ""
+
+msgid "minutes"
+msgstr ""
+
+msgid "TheMovieDB Popularity"
+msgstr ""
+
+msgid "TheMovieDB Vote Average"
+msgstr ""
+
+msgid "free"
+msgstr "voµné"
+
+msgid "Volume"
+msgstr "Hlasitos»"
+
+msgid "images"
+msgstr "obrázkov"
+
+msgid "min"
+msgstr "min"
+
+msgid "Reruns of "
+msgstr ""
+
+msgid "No reruns found"
+msgstr ""
+
+msgid "Size"
+msgstr "Veµkos»"
+
+msgid "cut"
+msgstr "zostrihané"
+
+msgid "Length"
+msgstr "Då¾ka"
+
+msgid "Format"
+msgstr "Formát"
+
+msgid "Est. bitrate"
+msgstr "Odhadovaná prenosová rýchlos»"
+
+msgid "Search timer"
+msgstr "Vyhµada» plán"
+
+msgid "Transp."
+msgstr "Transp."
+
+msgid "No EPG Information found"
+msgstr "Nena¹li sa EPG informácie"
+
+msgid "Duration"
+msgstr "Då¾ka"
+
+msgid "recording"
+msgstr "nahraté"
+
+msgid "recordings"
+msgstr "nahrávky"
+
+msgid "new"
+msgstr "nový"
+
+msgid "Font"
+msgstr "Písmo"
+
+msgid "VDR Menu: Common Settings"
+msgstr "VDR ponuka: V¹eobecné nastavenia"
+
+msgid "VDR Menu: Main and Setup Menu"
+msgstr "VDR ponuka: hlavná ponuka a ponuka Nastavenie"
+
+msgid "VDR Menu: Schedules Menu"
+msgstr "VDR ponuka: TV program"
+
+msgid "VDR Menu: Channels Menu"
+msgstr "VDR ponuka: Kanály"
+
+msgid "VDR Menu: Timers Menu"
+msgstr "VDR ponuka: Plány nahrávania"
+
+msgid "VDR Menu: Recordings Menu"
+msgstr "VDR ponuka: Nahrávky"
+
+msgid "VDR Menu: Detailed EPG & Recordings View"
+msgstr ""
+
+msgid "Channel Switching"
+msgstr "Prepínanie kanálu"
+
+msgid "Replay"
+msgstr "Prehrávanie nahrávok"
+
+msgid "Audio Tracks"
+msgstr "Zvuková stopa"
+
+msgid "Messages"
+msgstr "Správy"
+
+msgid "Image Caching"
+msgstr "Vyrovnávacia pamä» obrázkov"
+
+msgid "right"
+msgstr "vpravo"
+
+msgid "left"
+msgstr "vµavo"
+
+msgid "Carriage Return"
+msgstr "vpred a znova od zaèiatku"
+
+msgid "Forward and Back again"
+msgstr "vpred a zase spä»"
+
+msgid "off"
+msgstr "vypnuté"
+
+msgid "slow"
+msgstr "pomaly"
+
+msgid "medium"
+msgstr "stredne"
+
+msgid "fast"
+msgstr "rýchlo"
+
+msgid "auto"
+msgstr "automaticky"
+
+msgid "Create Log Messages for image loading"
+msgstr "Vytvori» protokolovanie správ pre naèítanie obrázka"
+
+msgid "Number of Default Menu Entries per Page"
+msgstr "Poèet polo¾iek základného menu na stránke"
+
+msgid "Adjust Font Size - Default Menu Item"
+msgstr "Nastavenie veµkosti písma - Základné polo¾ky ponuky"
+
+msgid "Adjustment of narrow menus"
+msgstr "Umiestnenie úzkej ponuky"
+
+msgid "Scale Video size to fit into menu window"
+msgstr "Zmeni» veµkos» videa, aby sa zmestil do okna ponuky"
+
+msgid "Header Height (Percent of OSD Height)"
+msgstr "Vý¹ka hlavièky (percento z èasti OSD vý¹ky)"
+
+msgid "Footer Height (Percent of OSD Height)"
+msgstr "Vý¹ka zápätia (percento z èasti OSD vý¹ky)"
+
+msgid "Rounded Corners for menu items and buttons"
+msgstr "Zaoblené rohy pre polo¾ky menu a tlaèidiel"
+
+msgid "Radius of rounded corners"
+msgstr "Polomer zaoblenia rohov"
+
+msgid "Use Channel Logo background"
+msgstr ""
+
+msgid "Fade-In Time in ms (Zero for switching off fading)"
+msgstr "èas efektu zmiznutia v ms (nula vypnú»)"
+
+msgid "Menu Items Scroll Style"
+msgstr "©týl rolovania menu polo¾iek"
+
+msgid "Menu Items Scrolling Speed"
+msgstr "Rýchlos» rolovania polo¾iek menu"
+
+msgid "Menu Items Scrolling Delay in s"
+msgstr "Polo¾ky ponuky rolova» s me¹kaním (s)"
+
+msgid "Adjust Font Size - Header"
+msgstr "Nastavenie veµkosti písma - záhlavie"
+
+msgid "Adjust Font Size - Date"
+msgstr "Nastavenie veµkosti písma - dátum a èas"
+
+msgid "Adjust Font Size - Color Buttons"
+msgstr "Nastavenie veµkosti písma - farebné tlaèidlá"
+
+msgid "Adjust Font Size - Messages"
+msgstr "Nastavenie veµkosti písma - správy"
+
+msgid "Adjust Font Size - Detail View Text"
+msgstr "Nastavenie veµkosti písma - Podrobné zobrazenie textu"
+
+msgid "Adjust Font Size - Detail View Text Small"
+msgstr "Prispôsobenie veµkosti písma - Podrobné zobrazenie malého textu"
+
+msgid "Adjust Font Size - Detail View Header"
+msgstr "Nastavenie veµkosti písma - Podrobné zobrazenie hlavièky"
+
+msgid "Adjust Font Size - Detail View Header Large"
+msgstr "Nastavenie veµkosti písma - Podrobné zobrazenie veµkej hlavièky"
+
+msgid "\"VDR\" plus VDR version"
+msgstr "\"VDR\" plus VDR verzia"
+
+msgid "only VDR version"
+msgstr "iba VDR verzia"
+
+msgid "no title"
+msgstr "¾iadny názov"
+
+msgid "free time in hours"
+msgstr "voµný èas v hodinách"
+
+msgid "free space in GB"
+msgstr "voµné miesto v GB"
+
+msgid "small without logo"
+msgstr "malá bez loga"
+
+msgid "Use narrow main menu"
+msgstr "Úzke hlavné menu"
+
+msgid "Width (Percent of OSD Width)"
+msgstr "©írka (Percent z OSD ¹írky)"
+
+msgid "Use narrow setup menu"
+msgstr "Úzke menu nastavenia"
+
+msgid "Number of entires per page"
+msgstr "Poèet polo¾iek na stranu"
+
+msgid "Use menu icons"
+msgstr "Pou¾i» ikony ponuky"
+
+msgid "Main menu title style"
+msgstr "©týl názvu hlavného menu"
+
+msgid "Display Disk Usage"
+msgstr "Zobrazi» vyu¾itie disku"
+
+msgid "Size (square, Percent of OSD Width)"
+msgstr "Veµkos» (do ¹tvorca, percento z OSD ¹írky)"
+
+msgid "Free Disc Display"
+msgstr "Zobrazi» vyu¾itie disku"
+
+msgid "Adjust Font Size - free"
+msgstr "Nastavenie veµkosti písma - voµné"
+
+msgid "Adjust Font Size - percent"
+msgstr "Nastavenie veµkosti písma - percento"
+
+msgid "Display Timers"
+msgstr "Zobrazi» plány nahrávania"
+
+msgid "Maximum number of Timers"
+msgstr "Maximálny poèet zobrazených plánov"
+
+msgid "Width of Timers (Percent of OSD Width)"
+msgstr "©írka zobrazeného plánu nahrávania (Percento s OSD ¹írky)"
+
+msgid "Width of Channel Logos (Percent of Timer Width)"
+msgstr "©írka loga kanálov (Percento z ¹írky plánu)"
+
+msgid "Adjust Font Size - Title"
+msgstr "Nastavenie veµkosti písma - Názov"
+
+msgid "Show Timer Conflicts"
+msgstr "Zobrazi» konflikty plánu nahrávania"
+
+msgid "Header Logo Width"
+msgstr "©írka loga hlavièky"
+
+msgid "Header Logo Height"
+msgstr "Vý¹ka loga hlavièky"
+
+msgid "Adjust Font Size - Menu Items"
+msgstr "Nastavenie veµkosti písma - Polo¾ky menu"
+
+msgid "window"
+msgstr "v okienku"
+
+msgid "full screen"
+msgstr "na celej obrazovke"
+
+msgid "Use narrow menu"
+msgstr "Pou¾i» úzku ponuku"
+
+msgid "Mode of EPG Window"
+msgstr "Spôsob zobrazenia EPG okna"
+
+msgid "EPG Window Fade-In Time in ms (Zero for switching off fading)"
+msgstr "Èas efektu zmiznutia EPG okna v ms (nula vypne efekt)"
+
+msgid "EPG Window Display Delay in s"
+msgstr "Okno EPG zobrazi» z oneskorením (s)"
+
+msgid "EPG Window Scroll Delay in s"
+msgstr "Oneskorenie rolovania textu v okne EPG. (s)"
+
+msgid "EPG Window Text Scrolling Speed"
+msgstr "Rýchlos» rolovania textu v okne EPG"
+
+msgid "Height of EPG Info Window (Percent of OSD Height)"
+msgstr "Vý¹ka informaèného EPG okna (Percent z OSD vý¹ky)"
+
+msgid "Adjust Font Size - Menu Item"
+msgstr "Nastavenie veµkosti písma - polo¾ky ponuky"
+
+msgid "Adjust Font Size - Menu Item Small"
+msgstr "Nastavenie veµkosti písma - Malé polo¾ky ponuky"
+
+msgid "Adjust Font Size - EPG Info Window"
+msgstr "Nastavenie veµkosti písma - EPG informaèné okno"
+
+msgid "Adjust Font Size - EPG Info Window Header"
+msgstr "Nastavenie veµkosti písma - Hlavièka EPG info okna"
+
+msgid "Transponder Information"
+msgstr "s informáciami o transportéri"
+
+msgid "Current Schedule"
+msgstr "s aktuálnou reláciou"
+
+msgid "Plain Channels"
+msgstr "iba kanály"
+
+msgid "Menu Items display mode"
+msgstr "Re¾im zobrazenia menu polo¾iek"
+
+msgid "Display schedules with time info"
+msgstr "Zobrazi» reláciu s èasom vysielania"
+
+msgid "Number of EPG Entries in Schedules Info Window"
+msgstr "Poèet EPG polo¾iek v okne TV programu"
+
+msgid "never"
+msgstr "nikdy"
+
+msgid "always"
+msgstr "v¾dy"
+
+msgid "only if no tvscraper media available"
+msgstr "iba ak je tvscraper dostupný"
+
+msgid "Mode of recording Window"
+msgstr "Spôsob zobrazenia okna nahrávok"
+
+msgid "Border around detailed recording view"
+msgstr "Okraj okolo podrobného zobrazenia nahrávky"
+
+msgid "Use folder poster if available"
+msgstr "Pou¾i» zlo¾ku plagát ak je k dispozícii"
+
+msgid "Width of manually set recording poster"
+msgstr "Ruène nastavi» ¹írku plagátov nahrávok"
+
+msgid "Height of manually set recording poster"
+msgstr "Ruène nastavi» vý¹ku plagátov nahrávok"
+
+msgid "if exists"
+msgstr "ak je k dispozícii"
+
+msgid "Border around view"
+msgstr ""
+
+msgid "Scroll Speed with up / down (number of lines)"
+msgstr ""
+
+msgid "Header Height detailed EPG view (Perc. of OSD Height)"
+msgstr ""
+
+msgid "Header Height detailed recording view (Perc. of OSD Height)"
+msgstr ""
+
+msgid "Number of reruns to display"
+msgstr "Poèet repríz na zobrazenie"
+
+msgid "Use Subtitle for reruns"
+msgstr "Pou¾i» titulky pre reprízu"
+
+msgid "EPG Image Width"
+msgstr ""
+
+msgid "EPG Image Height"
+msgstr ""
+
+msgid "Large EPG Image Width"
+msgstr ""
+
+msgid "Large EPG Image Height"
+msgstr ""
+
+msgid "transparent channel logo"
+msgstr "priesvitné logo kanálu"
+
+msgid "full osd width"
+msgstr "celá OSD ¹írka"
+
+msgid "do not display"
+msgstr "nezobrazova»"
+
+msgid "top"
+msgstr ""
+
+msgid "middle"
+msgstr ""
+
+msgid "bottom"
+msgstr ""
+
+msgid "show elapsed time"
+msgstr "zobrazi» uplynulý èas"
+
+msgid "show remaining time"
+msgstr "zobrazi» zostávajúci èas"
+
+msgid "Height of Channel Display (Percent of OSD Height)"
+msgstr "Vý¹ka zobrazeného kanálu"
+
+msgid "Left & Right Border Width"
+msgstr "©írka µavého a pravého okraja"
+
+msgid "Bottom Border Height"
+msgstr "Vý¹ka spodného okraja"
+
+msgid "Background Transparency in Percent"
+msgstr "Priehµadnos» pozadia v percentách"
+
+msgid "Background Style"
+msgstr "©týl pozadia"
+
+msgid "Rounded Corners"
+msgstr "Zaoblené rohy"
+
+msgid "Vertical Channel Logo Alignment"
+msgstr ""
+
+msgid "Channel Logo Position"
+msgstr "Pozícia loga kanálu"
+
+msgid "Channel Logo original Width"
+msgstr "Pôvodná ¹írka loga kanála"
+
+msgid "Channel Logo original Height"
+msgstr "Pôvodná vý¹ka loga kanála"
+
+msgid "Kind of time display for current schedule"
+msgstr "Druh zobrazenia èasu pre aktuálnu reláciu"
+
+msgid "Display Signal Strength & Quality"
+msgstr "Zobrazi» silu a kvalitu signálu"
+
+msgid "Display Channel Source & Rec. Info"
+msgstr ""
+
+msgid "Display Poster or Fanart from TVScraper"
+msgstr "Zobrazenie plagátu alebo Fanartu z TVScraper"
+
+msgid "Border in Pixel"
+msgstr "Okraj v pixeloch"
+
+msgid "Display previous and next Channel Group"
+msgstr "Zobrazi» predchádzajúcu a nasledujúcu skupinu kanálu"
+
+msgid "Adjust Font Size - EPG Text"
+msgstr "Nastavenie veµkosti písma - EPG text"
+
+msgid "Adjust Font Size - EPG Infotext"
+msgstr "Nastavenie veµkosti písma - EPG informaèný text"
+
+msgid "Adjust Font Size - Channel Source Info"
+msgstr "Nastavenie veµkosti písma - Info zdroja kanála"
+
+msgid "Adjust Font Size - Channel Group"
+msgstr "Nastavenie veµkosti písma - Skupina kanálu"
+
+msgid "Adjust Font Size - Next/Prev Channel Group"
+msgstr "Nastavenie veµkosti písma - Predchádzajúca/nasledujúca skupina kanálu"
+
+msgid "Height of Replay Display (Percent of OSD Height)"
+msgstr "Vý¹ka zobrazenia prehrávania (Percento s OSD vý¹ky)"
+
+msgid "Adjust Font Size - Text"
+msgstr "Nastavenie veµkosti písma - textu"
+
+msgid "Width of Tracks Display (Percent of OSD Width)"
+msgstr "©írka zobrazenia výberu stopy (Percent z OSD ¹írky)"
+
+msgid "Height of Track Items (in pixels)"
+msgstr "Vý¹ka polo¾iek zvukových stôp (v pixeloch)"
+
+msgid "Position (0: bot. center, 1: bot. left, ... , 7: bot. right)"
+msgstr "Pozícia (0: dole uprostred, 1: vµavo dole, ... , 7: vpravo dole)"
+
+msgid "Border Left / Right"
+msgstr "Okraje vµavo / vpravo"
+
+msgid "Border Top / Bottom"
+msgstr "okraje navrchu / na spodku"
+
+msgid "Adjust Font Size - Buttons"
+msgstr "Nastavenie veµkosti písma - Tlaèítka"
+
+msgid "Width of Message Display (Percent of OSD Height)"
+msgstr "©írka zobrazenej správy (percento z èasti OSD)"
+
+msgid "Height of Message Display (Percent of OSD Height)"
+msgstr "Vý¹ka zobrazenej správy (Percento s OSD vý¹ky)"
+
+msgid "Adjust Font Size"
+msgstr "Nastavenie veµkosti písma"
+
+msgid "Volume Display"
+msgstr "Zobrazenie hlasitosti"
+
+msgid "Width of Volume Display (Percent of OSD Height)"
+msgstr "©írka zobrazenia hlasitosti (Percent z OSD ¹írky)"
+
+msgid "Height of Volume Display (Percent of OSD Height)"
+msgstr "Vý¹ka zobrazenia hlasitosti (Percento z OSD vý¹ky)"
+
+msgid "Limit Logo Cache"
+msgstr "Limit vyrovnávacej pamäte loga"
+
+msgid "Maximal number of logos to cache"
+msgstr "Maximálny poèet lóg do pamäte"
+
+msgid "Number of  logos to cache at start"
+msgstr "Poèet lóg do vyrovnávacej pamäte pri ¹tarte"
+
+msgid "Cache Sizes"
+msgstr "Veµkos» vyrovnávacej pamäte"
+
+msgid "Menu Icon cache"
+msgstr "Vyrovnávacia pamä» ikony menu"
+
+msgid "Skin Icon image cache"
+msgstr "Vyrovnávacia pamä» ikon vzhµadu"
+
+msgid "Logo cache"
+msgstr "Medzipamä» loga"
+
+msgid "Menu Item Logo cache"
+msgstr "Medzipamä» loga menu polo¾ky"
+
+msgid "Timer Logo cache"
+msgstr "Medzipamä» loga plánu nahrávania"
+
+msgid "Background Images cache"
+msgstr "Medzipamä» obrázkov pozadia"
+
+msgid "conflict"
+msgstr "konflikt"
+
+msgid "conflicts"
+msgstr "konflikty"
+
+#~ msgid "Display additional EPG Pictures in detailed recording View"
+#~ msgstr "Zobrazi» ïal¹ie EPG obrázky v podrobnom zobrazení nahrávky"
+
+#~ msgid "Number of EPG pictures to display"
+#~ msgstr "Poèet EPG obrázkov na obrazovke"
+
+#~ msgid "Border around detailed EPG view"
+#~ msgstr "Okraj okolo podrobného zobrazenia EPG"
+
+#~ msgid "Display Reruns in detailed EPG View"
+#~ msgstr "Zobrazi» reprízy v podrobnostiach EPG"
+
+#~ msgid "Display additional EPG Pictures in detailed EPG View"
+#~ msgstr "Zobrazi» viac obrázkov v podrobnostiach EPG"
+
+#~ msgid "Detail EPG View EPG Image Width"
+#~ msgstr "©írka obrázku v podrobnom zobrazení EPG"
+
+#~ msgid "Detail EPG View EPG Image Height"
+#~ msgstr "Vý¹ka obrázku v podrobnom zobrazení EPG"
+
+#~ msgid "Detail EPG View additional EPG Image Width"
+#~ msgstr "©írka ïal¹ieho obrázku v podrobnom zobrazení EPG"
+
+#~ msgid "Detail EPG View additional EPG Image Height"
+#~ msgstr "Vý¹ka ïal¹ieho obrázku v podrobnom zobrazení EPG"
+
+#~ msgid "RERUNS OF THIS SHOW"
+#~ msgstr "Repríza"
+
+#~ msgid "Actors"
+#~ msgstr "Herci"
+
+#~ msgid "Display Channel Source information"
+#~ msgstr "Zobrazi» zdroj kanálu"

@@ -1,0 +1,138 @@
+# VDR plugin language source file.
+# Copyright (C) 2007-2015 Rolf Ahrenberg
+# This file is distributed under the same license as the skinsoppalusikka package.
+# Alexander Gross <Bikalexander@gmail.com>, 2008.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skinsoppalusikka 2.2.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2015-04-04 04:04+0300\n"
+"PO-Revision-Date: 2015-04-04 04:04+0300\n"
+"Last-Translator: Alexander Gross <Bikalexander@gmail.com>\n"
+"Language-Team: Russian <vdr@linuxtv.org>\n"
+"Language: ru\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+msgid "Button$Flush cache"
+msgstr "Очистить кэш"
+
+msgid "Show auxiliary information"
+msgstr "Показать дополнительную информацию"
+
+msgid "Define whether any auxiliary information is shown in info menus."
+msgstr "Включает или выключает показ дополнительной информации в меню инфы."
+
+msgid "Show progressbar"
+msgstr "Показать прогресс-индикатор"
+
+msgid "Define whether a progressbar is shown in schedule menu."
+msgstr "Включает или выключает отображение прогресс-индикатора в меню телегида."
+
+msgid "Show symbols"
+msgstr "Показать символы"
+
+msgid "Define whether symbols are shown in recordings and schedule menus."
+msgstr "Включает или выключает отображение символов в меню записей и телегида."
+
+msgid "Show VPS in channel info"
+msgstr "Показать VPS"
+
+msgid "Define whether VPS information is shown in channel info menu."
+msgstr "Включает или выключает отображение VPS информации в меню информации канала"
+
+msgid "Show event duration in channel info"
+msgstr ""
+
+msgid "remaining"
+msgstr ""
+
+msgid "total"
+msgstr ""
+
+msgid "Define whether remaining or total event duration is shown in channel info menu."
+msgstr ""
+
+msgid "Show channel logos"
+msgstr "Показать логотипы каналов"
+
+msgid ""
+"Define whether channels logos are shown in channel info menu.\n"
+"\n"
+"Only XPM format is accepted: 64x48 pixel and max. 13 colors."
+msgstr ""
+"Включает или выключает показ логотипов в меню информации канала. \n"
+"\n"
+"Допустимый формат только XPM: 64x48 пикселей и макс. 13 цветов."
+
+msgid "Channel logo cache size"
+msgstr "Размер кэша логотипа"
+
+msgid ""
+"Define the cache size for channel logos.\n"
+"\n"
+"The bigger cache results faster zapping."
+msgstr ""
+"Внесите размер кэша для логотипов каналов. \n"
+"\n"
+"Чем больше кэш, тем быстрее зеппинг "
+
+msgid "Flushing channel logo cache..."
+msgstr "Кэш очищается ...."
+
+msgid "Help"
+msgstr "Справка"
+
+msgid "Soppalusikka skin"
+msgstr "Скин Soppalusikka"
+
+msgid "*** Invalid Channel ***"
+msgstr "*** Неправильный канал ***"
+
+msgid "min"
+msgstr "мин"
+
+msgid "VPS"
+msgstr "VPS"
+
+msgid "EBU"
+msgstr "EBU"
+
+msgid "Duration"
+msgstr ""
+
+msgid "Size"
+msgstr ""
+
+msgid "Priority"
+msgstr "Приоритет"
+
+msgid "Lifetime"
+msgstr "Срок хранения"
+
+msgid "Format"
+msgstr ""
+
+msgid "Auxiliary information"
+msgstr "Дополнительная информация"
+
+msgid "Mute"
+msgstr "Выкл. звук"
+
+msgid "Volume"
+msgstr "Громкость"
+
+msgid "Stereo"
+msgstr "Стерео"
+
+msgid "Left"
+msgstr "Слева"
+
+msgid "Right"
+msgstr "Справа"
+
+msgid "Soppalusikka"
+msgstr "Soppalusikka"
