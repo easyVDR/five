@@ -1,3 +1,9 @@
+easyvdr-setup (3.0.15-1easyVDR0~focal) focal; urgency=high
+
+  * added ITE8708 CIR transceiver
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 17 Nov 2019 23:56:50 +0100
+
 easyvdr-setup (3.0.15-0easyVDR33~focal) focal; urgency=high
 
   * automatic rebuild

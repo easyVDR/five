@@ -615,6 +615,17 @@ paraset_e[49]="iMON Remote"
 #paraset_d[49]="iMON Remote*"
 #paraset_e[49]="iMON Remote"
 
+ # ITE8708 CIR transceiver
+ hw_name[50]="ITE8708_CIReceiver"
+hw_ident[50]="ITE8708 CIR transceiver"
+det_method[50]="chk_hdet"
+ins_method[50]="inst_lirc"
+paraset_a[50]="ID_TXT"
+paraset_b[50]="dev_input irkeytab rc5 rc6 nec"
+paraset_c[50]="Event"
+paraset_d[50]="ITE8708 CIR transceiver"
+paraset_e[50]="ITE8708 CIR"
+
 # Formosa MCE IR-Receiver IR605A/Q
 hw_name[51]="Formosa MCE IR-Receiver IR605A/Q"
 hw_ident[51]="147a:e03e"
