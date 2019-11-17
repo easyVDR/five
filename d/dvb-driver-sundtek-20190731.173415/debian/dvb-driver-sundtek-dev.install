@@ -1,0 +1,6 @@
+/usr/include/sundtek/mediacmds.h
+/usr/include/sundtek/dmx.h
+/usr/include/sundtek/frontend.h
+/usr/include/sundtek/videodev2.h
+/usr/include/sundtek/mediaclient.h
+/usr/include/sundtek/mcsimple.h

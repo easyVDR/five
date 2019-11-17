@@ -1,0 +1,11 @@
+--- a/df10choutputdriver.c
++++ b/df10choutputdriver.c
+@@ -104,7 +104,7 @@
+ };
+ 
+ #ifndef HAVE_LIBUSB_STRERROR
+-static const char *libusb_strerror(int rc) {
++const char *libusb_strerror(int rc) {
+   switch (rc) {
+   case LIBUSB_SUCCESS:
+     return ("Success (no error)");

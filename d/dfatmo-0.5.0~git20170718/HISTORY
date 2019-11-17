@@ -1,0 +1,69 @@
+--- Version 0.4.0
+Changed behavior of parameter uniform_brightness and calculation of uniform brightness
+to be more compatible to "classic" VDR Atmolight plugin.
+VDR plugin: Do send black color output only once when suspended.
+
+--- Version 0.3.5
+Send color output data at least every 500ms to trigger atmo controller idle watchdog
+Added support for xbmc v13
+
+--- Version 0.3.4
+Added support for vdr 2.x
+
+--- Version 0.3.3
+Fixed script error when stopping service while video is running in XBMC addon
+
+--- Version 0.3.2
+Added support for XBMC V13 git revision past Feb. 10 2013
+Note: Within XBMC V12.0 Frodo stable the DFAtmo support is brocken!!!
+Added untested Makefile 'vdr2plug.mk' to build plugin for recent vdr versions
+Added SVDRP command to vdr plugin to enable/disable plugin
+
+--- Version 0.3.1
+Added new parameter "weight_limit"
+Fixed dynamic linking issue for recent gcc/linux versions
+Support for config version 3 of DF10CH
+
+--- Version 0.3.0
+Optimize performance of image analysis algorithm:
+    1. By introducing a new weight table so that only calculation for pixel
+       with relevant weight (currently > 5%) is done.
+    2. Do not calculate windowed histograms if windowing size is 0.
+Fixed calculation of weight table for border sections.
+Fixed analysis error for saturation window size 0.
+Serial output driver:
+    Extend maximum output package length to 1023 bytes to support SEDU B0 mode. 
+    Enhanced protocol descriptor syntax:
+      For constant values a repeat count or fill up count could be
+      specified to define a arbitrary number of bytes with the same
+      constant value.
+      A couple of RGB groups within the same area with monotone
+      increasing or decreasing sections could be defined with the
+      new shortcut operators '+n' and '-n'.
+README:
+    Added performance hints.
+    Added enhanced protocol descriptor syntax.
+    Added SEDU protocol example.
+
+--- Version 0.2.1
+VDR plugin: Added suspend mode handling
+VDR plugin: Fixed incorrect change of setup parameters when changeing temporary parameters
+
+--- Version 0.2
+
+Added support for VDR with new DFAtmo VDR plugin.
+Added parameter for configuration of output rate.
+Ensure first packet send to controller turn lights off.
+Correction to mean filter to prevent flickering.
+Added some more description for the filter parameters.
+Increase maximum size of a data package in serial output driver to 512 bytes.
+Increase maximum size of driver parameter to 2048 bytes.
+Added more speed values to linux version of serial output driver.
+Added ampersand as a additional driver parameter option separator to satisfy xinelib plugin parameter parsing.
+Added support for amblone and karatelight controller.
+Open Addon settings dialog if no settings file exists.
+
+--- Version 0.1
+
+First version of DFAtmo.
+

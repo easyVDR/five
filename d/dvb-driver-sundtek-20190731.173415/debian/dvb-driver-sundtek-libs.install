@@ -1,0 +1,11 @@
+/etc/ld.so.conf.d
+/etc/ld.so.conf.d/optlib.conf
+/etc/hal/fdi/preprobe
+/etc/hal/fdi/preprobe/sundtek.fdi
+/etc/udev/rules.d/80-mediasrv-sundtek.rules
+/opt/bin/mediasrv
+/opt/bin/dvb
+/opt/bin/getinput.sh
+/opt/lib/*.so
+/opt/lib/pm/10mediasrv
+/usr/lib/pm-utils/sleep.d/10mediasrv

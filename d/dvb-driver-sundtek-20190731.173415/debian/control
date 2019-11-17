@@ -1,0 +1,42 @@
+Source: dvb-driver-sundtek
+Section: misc
+Priority: extra
+Maintainer: Gerald Dachs <gda@dachsweb.de>
+Build-Depends: cdbs, debhelper (>= 7.0.50~), libasound2-dev, libpulse-dev
+Standards-Version: 3.8.4
+
+Package: dvb-driver-sundtek
+Architecture: any
+Depends: dvb-driver-sundtek-mediaclient (= ${binary:Version}), dvb-driver-sundtek-libs (= ${binary:Version})
+Description: Sundtek DVB driver
+ Sundtek DVB driver
+
+Package: dvb-driver-sundtek-libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sundtek DVB driver libraries
+ Sundtek DVB driver libraries
+
+Package: dvb-driver-sundtek-mediaclient
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sundtek DVB driver mediaclient
+ Sundtek DVB driver mediaclient
+
+Package: dvb-driver-sundtek-audio
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sundtek DVB driver audio files
+ Sundtek DVB driver audio files for analogtv
+
+Package: dvb-driver-sundtek-dev
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, dvb-driver-sundtek-libs (= ${binary:Version})
+Description: Sundtek DVB driver header files
+ Sundtek DVB driver header files for development
+
+Package: dvb-driver-sundtek-docs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Sundtek DVB driver doc files
+ Sundtek DVB driver doc files

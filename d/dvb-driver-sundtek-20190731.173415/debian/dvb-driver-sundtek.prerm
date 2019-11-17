@@ -1,0 +1,16 @@
+#!/bin/sh
+
+case "$1" in
+    remove|upgrade|deconfigure)
+        if [ -e /etc/ld.so.preload ]; then
+            echo "removing driver "
+            sed -i 's#/opt/lib/libmediaclient.so ##' /etc/ld.so.preload
+
+        fi
+    ;;
+    *)
+        echo "prerm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+

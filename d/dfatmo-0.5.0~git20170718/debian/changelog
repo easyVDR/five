@@ -1,0 +1,274 @@
+dfatmo (0.5.0~git20170718-1easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 23:12:09 +0100
+
+dfatmo (0.5.0~git20170718-1easyVDR5~bionic) bionic; urgency=medium
+
+  * rebuild 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:26:39 +0200
+
+dfatmo (0.5.0~git20170718-1easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 23:20:07 +0100
+
+dfatmo (0.5.0~git20170718-1easyVDR3~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 20:56:50 +0100
+
+dfatmo (0.5.0~git20170718-1easyVDR2~zesty) zesty; urgency=high
+
+  * added dir /var/lib/vdr/kodi-addons-zip
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 21 Jul 2017 00:01:01 +0200
+
+dfatmo (0.5.0~git20170718-1easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 19 Jul 2017 16:38:07 +0200
+
+dfatmo (0.5.0~git20170718-1easyVDR0~trusty) trusty; urgency=high
+
+  * fix depends
+  * added plugin version patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 18 Jul 2017 22:18:16 +0200
+
+dfatmo (0.5.0~git20170718-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:21d467e - removed xbmc frodo addon
+  * added debhelper 9
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 18 Jul 2017 13:07:40 +0200
+
+dfatmo (0.4-0+git20140213.1304-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Sep 2016 01:18:49 +0200
+
+dfatmo (0.4-0+git20140213.1304-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:31:55 +0200
+
+dfatmo (0.4-0+git20140213.1304-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:50:49 +0200
+
+dfatmo (0.4-0+git20140213.1304-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:32:04 +0100
+
+dfatmo (0.4-0+git20140213.1304-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Nov 2015 23:35:16 +0100
+
+dfatmo (0.4-0+git20140213.1304-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:03:48 +0200
+
+dfatmo (0.4-0+git20140213.1304-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 03:28:10 +0100
+
+dfatmo (0.4-0+git20140213.1304-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 19 Mar 2015 01:50:52 +0100
+
+dfatmo (0.4-0+git20140213.1304-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:20:36 +0100
+
+dfatmo (0.4-0+git20140213.1304-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:31:38 +0100
+
+dfatmo (0.4-0+git20140213.1304-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 20 Sep 2014 01:46:02 +0200
+
+dfatmo (0.4-0+git20140213.1304-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 15 Apr 2014 02:08:29 +0200
+
+dfatmo (0.4-0+git20140213.1304-2yavdr0~trusty) trusty; urgency=medium
+
+  * change static to non-static declaration in df10choutputdriver.c 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 05 Apr 2014 11:55:55 +0200
+
+dfatmo (0.4-0+git20140213.1304-1yavdr4~trusty) trusty; urgency=medium
+
+  * build for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Fri, 04 Apr 2014 23:18:48 +0200
+
+dfatmo (0.4-0+git20140213.1304-1yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 21:56:15 +0200
+
+dfatmo (0.4-0+git20140213.1304-1yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 15:51:22 +0100
+
+dfatmo (0.4-0+git20140213.1304-1yavdr0~precise) precise; urgency=medium
+
+  * also copy xbmc frodo addon
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 13 Feb 2014 14:53:18 +0100
+
+dfatmo (0.4-0+git20140213.1304-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 13 Feb 2014 14:06:01 +0100
+
+dfatmo (0.4-0+git20140205.0657-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 05 Feb 2014 07:58:57 +0100
+
+dfatmo (0.4-0+git20140204.2157-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Tue, 04 Feb 2014 23:03:03 +0100
+
+dfatmo (0.3-5+git20140112.0816-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 12 Jan 2014 09:19:02 +0100
+
+dfatmo (0.3-4+git20130404.2003-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 27 Oct 2013 08:57:32 +0100
+
+dfatmo (0.3-4+git20130404.2003-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:25:40 +0200
+
+dfatmo (0.3-4+git20130404.2003-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:01:12 +0200
+
+dfatmo (0.3-4+git20130404.2003-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 00:55:17 +0200
+
+dfatmo (0.3-4+git20130404.2003-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:18:54 +0200
+
+dfatmo (0.3-4+git20130404.2003-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 04 Apr 2013 22:04:05 +0200
+
+dfatmo (0.3-4+git20130404.1029-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 04 Apr 2013 12:31:49 +0200
+
+dfatmo (0.3-4) precise; urgency=low
+
+  * Added support for vdr 2.0.0
+  * Migrate debian/rules to cdbs
+
+ -- Andreas Auras <andy@media>  Tue, 02 Apr 2013 19:39:47 +0200
+
+dfatmo (0.3-3) precise; urgency=low
+
+  * New upstream version
+
+ -- Andreas Auras <yak54@inkennet.de>  Sun, 17 Feb 2013 00:36:00 +0100
+
+dfatmo (0.3-2) precise; urgency=low
+
+  * New upstream version
+
+ -- Andreas Auras <yak54@inkennet.de>  Sun, 10 Feb 2013 22:19:01 +0100
+
+dfatmo (0.3-1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Andreas Auras <yak54@inkennet.de>  Sun, 15 Nov 2012 22:20:38 +0100
+
+dfatmo (0.3-0) lucid; urgency=low
+
+  * New upstream version
+
+ -- Andreas Auras <yak54@inkennet.de>  Sun, 11 Nov 2012 22:59:38 +0100
+
+dfatmo (0.2-1) lucid; urgency=low
+
+  * New upstream version
+
+ -- Andreas Auras <yak54@inkennet.de>  Sun, 13 May 2012 00:19:24 +0200
+
+dfatmo (0.2-0) lucid; urgency=low
+
+  * Added vdr-plugin-dfatmo package
+
+ -- Andreas Auras <yak54@inkennet.de>  Thu, 26 Apr 2012 14:04:42 +0200
+
+dfatmo (0.1-1) lucid; urgency=low
+
+  * Changed xine-lib dependency to libxine2-dev
+
+ -- Andreas Auras <yak54@inkennet.de>  Sun, 29 Jan 2012 09:41:36 +0100
+
+dfatmo (0.1-0) lucid; urgency=low
+
+  * First version of DFAtmo
+
+ -- Andreas Auras <yak54@inkennet.de>  Mon, 12 Sep 2011 14:51:57 +0200
+

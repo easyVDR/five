@@ -1,0 +1,13 @@
+Index: dfatmo-0.5.0~git20170718/vdrplug_dfatmo.cpp
+===================================================================
+--- dfatmo-0.5.0~git20170718.orig/vdrplug_dfatmo.cpp	2017-07-18 00:58:20.487569071 +0200
++++ dfatmo-0.5.0~git20170718/vdrplug_dfatmo.cpp	2017-07-18 22:15:39.466814180 +0200
+@@ -110,7 +110,7 @@
+ } // extern "C"
+ 
+ 
+-static const char *VERSION        = "0.4.0";
++static const char *VERSION        = "0.5.0";
+ static const char *DESCRIPTION    = trNOOP("The driver for 'Atmolight' controllers");
+ static const char *MAINMENUENTRY  = "DFAtmo";
+ 

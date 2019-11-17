@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+
+    # add user vdr to group dialout
+    adduser vdr dialout
+
+    # copy xbmc plugin to the addon dir
+    cp /usr/lib/dfatmo/dfatmo-xbmc-addon.zip /var/lib/vdr/kodi-addons-zip
+    chown -R vdr:vdr /var/lib/vdr/kodi-addons-zip
+fi
+
+#DEBHELPER#

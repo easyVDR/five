@@ -1,0 +1,2189 @@
+dvb-driver-sundtek (20190731.173415-0easyVDR0~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 00:23:53 +0100
+
+dvb-driver-sundtek (20190731.173415-1yavdr1~bionic) bionic; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 31 Jul 2019 18:39:07 +0200
+
+dvb-driver-sundtek (20130928.195126-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 28 Sep 2013 23:58:01 +0200
+
+dvb-driver-sundtek (20130917.203820-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 20 Sep 2013 22:25:19 +0200
+
+dvb-driver-sundtek (20130731.171232-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 31 Jul 2013 20:56:57 +0200
+
+dvb-driver-sundtek (20130609.050951-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 09 Jun 2013 06:18:26 +0200
+
+dvb-driver-sundtek (20130315.225747-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 Mar 2013 00:17:45 +0100
+
+dvb-driver-sundtek (20130313.175000-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 13 Mar 2013 18:17:50 +0100
+
+dvb-driver-sundtek (20130310.090911-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 10 Mar 2013 12:17:48 +0100
+
+dvb-driver-sundtek (20130309.224216-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 09 Mar 2013 23:17:49 +0100
+
+dvb-driver-sundtek (20130308.213533-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 08 Mar 2013 23:17:50 +0100
+
+dvb-driver-sundtek (20130303.194734-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 03 Mar 2013 20:17:53 +0100
+
+dvb-driver-sundtek (20130224.044101-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 24 Feb 2013 05:17:52 +0100
+
+dvb-driver-sundtek (20130220.225648-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Feb 2013 23:17:48 +0100
+
+dvb-driver-sundtek (20130220.172113-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Feb 2013 19:19:29 +0100
+
+dvb-driver-sundtek (20130219.205311-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 19 Feb 2013 21:17:48 +0100
+
+dvb-driver-sundtek (20130216.153357-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 Feb 2013 17:17:48 +0100
+
+dvb-driver-sundtek (20130214.135607-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 14 Feb 2013 14:17:48 +0100
+
+dvb-driver-sundtek (20130214.032606-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 14 Feb 2013 05:17:49 +0100
+
+dvb-driver-sundtek (20130213.222522-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 13 Feb 2013 23:17:48 +0100
+
+dvb-driver-sundtek (20130212.025911-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 12 Feb 2013 04:17:51 +0100
+
+dvb-driver-sundtek (20130210.134617-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 10 Feb 2013 14:17:50 +0100
+
+dvb-driver-sundtek (20130201.160757-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 01 Feb 2013 17:17:49 +0100
+
+dvb-driver-sundtek (20130127.232723-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 28 Jan 2013 02:17:48 +0100
+
+dvb-driver-sundtek (20130126.134838-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 26 Jan 2013 14:17:47 +0100
+
+dvb-driver-sundtek (20130123.192839-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 23 Jan 2013 20:17:47 +0100
+
+dvb-driver-sundtek (20130122.120332-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 22 Jan 2013 13:17:46 +0100
+
+dvb-driver-sundtek (20130114.115403-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 14 Jan 2013 12:17:50 +0100
+
+dvb-driver-sundtek (20130109.125056-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 09 Jan 2013 13:17:44 +0100
+
+dvb-driver-sundtek (20130103.230841-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 04 Jan 2013 00:17:47 +0100
+
+dvb-driver-sundtek (20130101.232903-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 03 Jan 2013 11:17:53 +0100
+
+dvb-driver-sundtek (20121229.184321-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 29 Dec 2012 19:17:46 +0100
+
+dvb-driver-sundtek (20121219.170033-1yavdr2~precise) precise; urgency=medium
+
+  * added openwrtmipsr3 to clean target in Makefile
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 19 Dec 2012 23:25:11 +0100
+
+dvb-driver-sundtek (20121219.170033-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 19 Dec 2012 18:17:47 +0100
+
+dvb-driver-sundtek (20121218.193330-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 18 Dec 2012 21:17:48 +0100
+
+dvb-driver-sundtek (20121218.164325-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 18 Dec 2012 17:17:47 +0100
+
+dvb-driver-sundtek (20121218.142431-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 18 Dec 2012 15:17:50 +0100
+
+dvb-driver-sundtek (20121218.115009-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 18 Dec 2012 12:17:53 +0100
+
+dvb-driver-sundtek (20121218.014915-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 18 Dec 2012 03:17:47 +0100
+
+dvb-driver-sundtek (20121214.003931-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 14 Dec 2012 01:17:49 +0100
+
+dvb-driver-sundtek (20121210.173258-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 10 Dec 2012 18:17:48 +0100
+
+dvb-driver-sundtek (20121205.190106-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 05 Dec 2012 20:17:46 +0100
+
+dvb-driver-sundtek (20121012.102926-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 12 Oct 2012 11:17:18 +0200
+
+dvb-driver-sundtek (20121010.220349-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 10 Oct 2012 23:17:17 +0200
+
+dvb-driver-sundtek (20121010.202938-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 10 Oct 2012 21:17:16 +0200
+
+dvb-driver-sundtek (20121009.203043-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 09 Oct 2012 21:17:18 +0200
+
+dvb-driver-sundtek (20121009.043241-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 09 Oct 2012 08:18:01 +0200
+
+dvb-driver-sundtek (20121008.224057-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 08 Oct 2012 23:17:16 +0200
+
+dvb-driver-sundtek (20121008.195620-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 08 Oct 2012 21:17:19 +0200
+
+dvb-driver-sundtek (20121008.171453-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 08 Oct 2012 18:17:18 +0200
+
+dvb-driver-sundtek (20121008.023947-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 08 Oct 2012 03:17:16 +0200
+
+dvb-driver-sundtek (20121007.154617-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 07 Oct 2012 17:17:17 +0200
+
+dvb-driver-sundtek (20121006.224357-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 06 Oct 2012 23:17:17 +0200
+
+dvb-driver-sundtek (20121006.192540-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 06 Oct 2012 20:17:17 +0200
+
+dvb-driver-sundtek (20121006.173914-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 06 Oct 2012 18:17:18 +0200
+
+dvb-driver-sundtek (20121006.141244-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 06 Oct 2012 15:17:17 +0200
+
+dvb-driver-sundtek (20121006.130124-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 06 Oct 2012 14:17:15 +0200
+
+dvb-driver-sundtek (20121006.071031-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 06 Oct 2012 08:19:26 +0200
+
+dvb-driver-sundtek (20121005.065517-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 05 Oct 2012 08:17:19 +0200
+
+dvb-driver-sundtek (20121005.001942-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 05 Oct 2012 01:17:22 +0200
+
+dvb-driver-sundtek (20121004.114844-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 04 Oct 2012 13:17:23 +0200
+
+dvb-driver-sundtek (20121004.092837-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 04 Oct 2012 10:17:21 +0200
+
+dvb-driver-sundtek (20121004.0747-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 04 Oct 2012 08:17:35 +0200
+
+dvb-driver-sundtek (20120929.1642-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 29 Sep 2012 17:17:17 +0200
+
+dvb-driver-sundtek (20120927.2117-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 27 Sep 2012 22:17:16 +0200
+
+dvb-driver-sundtek (20120926.2329-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 27 Sep 2012 00:17:17 +0200
+
+dvb-driver-sundtek (20120920.1451-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 20 Sep 2012 15:17:18 +0200
+
+dvb-driver-sundtek (20120907.0103-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 07 Sep 2012 02:17:19 +0200
+
+dvb-driver-sundtek (20120906.1440-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 06 Sep 2012 16:17:18 +0200
+
+dvb-driver-sundtek (20120904.1356-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 04 Sep 2012 16:17:19 +0200
+
+dvb-driver-sundtek (20120904.0958-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 04 Sep 2012 10:17:32 +0200
+
+dvb-driver-sundtek (20120904.0423-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 04 Sep 2012 05:17:23 +0200
+
+dvb-driver-sundtek (20120822.2259-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 22 Aug 2012 23:17:17 +0200
+
+dvb-driver-sundtek (20120807.0235-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 07 Aug 2012 04:17:24 +0200
+
+dvb-driver-sundtek (20120806.1317-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 06 Aug 2012 14:17:18 +0200
+
+dvb-driver-sundtek (20120803.2038-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 03 Aug 2012 21:17:42 +0200
+
+dvb-driver-sundtek (20120803.1313-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 03 Aug 2012 14:17:20 +0200
+
+dvb-driver-sundtek (20120730.2330-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 31 Jul 2012 10:17:19 +0200
+
+dvb-driver-sundtek (20120720.2210-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 20 Jul 2012 23:17:17 +0200
+
+dvb-driver-sundtek (20120719.2200-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 19 Jul 2012 22:17:15 +0200
+
+dvb-driver-sundtek (20120715.2233-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 15 Jul 2012 23:17:18 +0200
+
+dvb-driver-sundtek (20120713.1715-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 13 Jul 2012 18:17:16 +0200
+
+dvb-driver-sundtek (20120713.0153-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 13 Jul 2012 02:17:18 +0200
+
+dvb-driver-sundtek (20120712.2308-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 13 Jul 2012 00:17:18 +0200
+
+dvb-driver-sundtek (20120711.1422-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 11 Jul 2012 15:17:14 +0200
+
+dvb-driver-sundtek (20120709.1605-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 09 Jul 2012 17:17:17 +0200
+
+dvb-driver-sundtek (20120707.1532-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 07 Jul 2012 16:17:17 +0200
+
+dvb-driver-sundtek (20120623.2344-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 24 Jun 2012 00:17:19 +0200
+
+dvb-driver-sundtek (20120620.2022-1yavdr3~precise) precise; urgency=medium
+
+  * cleanup
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 21 Jun 2012 19:47:16 +0200
+
+dvb-driver-sundtek (20120620.2022-1yavdr2~precise) precise; urgency=medium
+
+  * new upstream version
+  * removed udevsrv
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Jun 2012 21:42:46 +0200
+
+dvb-driver-sundtek (20120620.1252-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Jun 2012 13:17:15 +0200
+
+dvb-driver-sundtek (20120620.0118-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Jun 2012 02:17:17 +0200
+
+dvb-driver-sundtek (20120620.0040-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Jun 2012 01:17:17 +0200
+
+dvb-driver-sundtek (20120619.2339-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Jun 2012 00:17:19 +0200
+
+dvb-driver-sundtek (20120611.2321-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 11 Jun 2012 23:36:32 +0200
+
+dvb-driver-sundtek (20120611.1906-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 11 Jun 2012 20:17:18 +0200
+
+dvb-driver-sundtek (20120603.2036-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 03 Jun 2012 21:17:42 +0200
+
+dvb-driver-sundtek (20120603.1645-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 03 Jun 2012 17:17:27 +0200
+
+dvb-driver-sundtek (20120525.1249-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 25 May 2012 13:17:25 +0200
+
+dvb-driver-sundtek (20120525.0802-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 25 May 2012 08:17:29 +0200
+
+dvb-driver-sundtek (20120521.0526-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 21 May 2012 06:17:30 +0200
+
+dvb-driver-sundtek (20120519.0156-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 19 May 2012 02:17:44 +0200
+
+dvb-driver-sundtek (20120518.1454-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 18 May 2012 15:17:26 +0200
+
+dvb-driver-sundtek (20120517.1754-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 17 May 2012 18:17:31 +0200
+
+dvb-driver-sundtek (20120517.1629-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 17 May 2012 17:17:27 +0200
+
+dvb-driver-sundtek (20120517.1238-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 17 May 2012 13:18:15 +0200
+
+dvb-driver-sundtek (20120516.1021-1yavdr2~precise) precise; urgency=medium
+
+  * changed dependencies
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 16 May 2012 22:21:42 +0200
+
+dvb-driver-sundtek (20120516.1021-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 16 May 2012 11:17:25 +0200
+
+dvb-driver-sundtek (20120515.1913-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 May 2012 21:07:28 +0200
+
+dvb-driver-sundtek (20120515.1219-1yavdr2~natty) natty; urgency=medium
+
+  * new subpackage dvb-driver-sundtek-libs
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 May 2012 20:20:48 +0200
+
+dvb-driver-sundtek (20120515.1219-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 May 2012 13:17:29 +0200
+
+dvb-driver-sundtek (20120514.1047-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 14 May 2012 11:17:25 +0200
+
+dvb-driver-sundtek (20120514.0928-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 14 May 2012 10:17:25 +0200
+
+dvb-driver-sundtek (20120514.0701-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 14 May 2012 07:17:27 +0200
+
+dvb-driver-sundtek (20120511.2247-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 11 May 2012 17:17:12 +0200
+
+dvb-driver-sundtek (20120511.2109-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 11 May 2012 16:17:27 +0200
+
+dvb-driver-sundtek (20120507.0852-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 May 2012 09:17:25 +0200
+
+dvb-driver-sundtek (20120505.0521-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 05 May 2012 06:17:28 +0200
+
+dvb-driver-sundtek (20120504.1141-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 04 May 2012 12:17:28 +0200
+
+dvb-driver-sundtek (20120503.1948-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 03 May 2012 20:17:29 +0200
+
+dvb-driver-sundtek (20120503.0936-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 03 May 2012 10:17:28 +0200
+
+dvb-driver-sundtek (20120502.1549-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 02 May 2012 16:17:26 +0200
+
+dvb-driver-sundtek (20120502.1435-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 02 May 2012 15:17:23 +0200
+
+dvb-driver-sundtek (20120423.1206-1yavdr3~natty) natty; urgency=medium
+
+  * added triggers file
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 28 Apr 2012 23:17:11 +0200
+
+dvb-driver-sundtek (20120423.1206-1yavdr2~precise) precise; urgency=medium
+
+  * added libmediaclient.so to ld.so.preload again
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 26 Apr 2012 19:47:14 +0200
+
+dvb-driver-sundtek (20120423.1206-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 23 Apr 2012 12:17:30 +0200
+
+dvb-driver-sundtek (20120419.1417-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 19 Apr 2012 15:17:26 +0200
+
+dvb-driver-sundtek (20120417.0812-2yavdr2~natty) natty; urgency=medium
+
+  * fixed install file
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 18 Apr 2012 10:52:59 +0200
+
+dvb-driver-sundtek (20120417.0812-2yavdr1) unstable; urgency=medium
+
+  * mediaclient has now its own package
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 17 Apr 2012 22:15:18 +0200
+
+dvb-driver-sundtek (20120417.0812-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 17 Apr 2012 09:17:30 +0200
+
+dvb-driver-sundtek (20120416.0915-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 16 Apr 2012 10:17:30 +0200
+
+dvb-driver-sundtek (20120412.0623-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 12 Apr 2012 07:17:30 +0200
+
+dvb-driver-sundtek (20120411.0530-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 11 Apr 2012 06:17:28 +0200
+
+dvb-driver-sundtek (20120409.1156-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 09 Apr 2012 12:17:32 +0200
+
+dvb-driver-sundtek (20120409.0921-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 09 Apr 2012 10:17:28 +0200
+
+dvb-driver-sundtek (20120404.2217-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 04 Apr 2012 23:17:29 +0200
+
+dvb-driver-sundtek (20120403.2207-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 03 Apr 2012 22:17:29 +0200
+
+dvb-driver-sundtek (20120403.0735-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 03 Apr 2012 08:17:26 +0200
+
+dvb-driver-sundtek (20120403.0414-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 03 Apr 2012 05:17:30 +0200
+
+dvb-driver-sundtek (20120402.1415-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 02 Apr 2012 15:17:29 +0200
+
+dvb-driver-sundtek (20120330.1108-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 30 Mar 2012 11:17:28 +0200
+
+dvb-driver-sundtek (20120329.1611-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 29 Mar 2012 18:17:26 +0200
+
+dvb-driver-sundtek (20120328.1958-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 28 Mar 2012 20:17:27 +0200
+
+dvb-driver-sundtek (20120323.1222-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 23 Mar 2012 13:17:37 +0100
+
+dvb-driver-sundtek (20120305.1507-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 05 Mar 2012 15:17:29 +0100
+
+dvb-driver-sundtek (20120302.2307-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 02 Mar 2012 23:17:28 +0100
+
+dvb-driver-sundtek (20120302.2112-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 02 Mar 2012 22:17:34 +0100
+
+dvb-driver-sundtek (20120302.1219-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 02 Mar 2012 13:17:28 +0100
+
+dvb-driver-sundtek (20120228.1621-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 28 Feb 2012 17:17:28 +0100
+
+dvb-driver-sundtek (20120226.1437-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 26 Feb 2012 15:17:27 +0100
+
+dvb-driver-sundtek (20120225.1943-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 25 Feb 2012 20:17:31 +0100
+
+dvb-driver-sundtek (20120225.1022-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 25 Feb 2012 11:17:26 +0100
+
+dvb-driver-sundtek (20120225.0036-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 25 Feb 2012 01:17:28 +0100
+
+dvb-driver-sundtek (20120224.1324-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 24 Feb 2012 22:08:38 +0100
+
+dvb-driver-sundtek (20120224.0149-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 24 Feb 2012 02:17:29 +0100
+
+dvb-driver-sundtek (20120218.2253-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 18 Feb 2012 23:17:27 +0100
+
+dvb-driver-sundtek (20120218.2139-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 18 Feb 2012 22:17:26 +0100
+
+dvb-driver-sundtek (20120218.2037-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 18 Feb 2012 21:17:25 +0100
+
+dvb-driver-sundtek (20120218.1639-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 18 Feb 2012 18:17:41 +0100
+
+dvb-driver-sundtek (20120217.1901-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 17 Feb 2012 19:18:56 +0100
+
+dvb-driver-sundtek (20120213.1917-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 13 Feb 2012 20:18:08 +0100
+
+dvb-driver-sundtek (20120213.0728-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 13 Feb 2012 08:17:27 +0100
+
+dvb-driver-sundtek (20120211.1406-1yavdr2~natty) natty; urgency=medium
+
+  * target clean removes more dirs
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 11 Feb 2012 19:00:04 +0100
+
+dvb-driver-sundtek (20120211.1406-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 11 Feb 2012 14:17:27 +0100
+
+dvb-driver-sundtek (20120208.1600-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 08 Feb 2012 16:17:28 +0100
+
+dvb-driver-sundtek (20120208.1400-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 08 Feb 2012 14:17:28 +0100
+
+dvb-driver-sundtek (20120207.1527-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 07 Feb 2012 16:17:26 +0100
+
+dvb-driver-sundtek (20120117.0033-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 18 Jan 2012 19:35:05 +0100
+
+dvb-driver-sundtek (20111207.1931-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 06 Dec 2011 20:17:28 +0100
+
+dvb-driver-sundtek (20111202.1854-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 02 Dec 2011 19:17:21 +0100
+
+dvb-driver-sundtek (20111130.1910-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 30 Nov 2011 19:17:20 +0100
+
+dvb-driver-sundtek (20111129.1000-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 29 Nov 2011 10:17:21 +0100
+
+dvb-driver-sundtek (20111125.1111-1yavdr1~natty) natty; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 25 Nov 2011 11:17:20 +0100
+
+dvb-driver-sundtek (20111124.1000-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 23 Nov 2011 22:17:22 +0100
+
+dvb-driver-sundtek (20111122.0835-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 22 Nov 2011 09:17:22 +0100
+
+dvb-driver-sundtek (20111106.0140-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 05 Nov 2011 19:17:21 +0100
+
+dvb-driver-sundtek (20111105.0414-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 04 Nov 2011 21:17:20 +0100
+
+dvb-driver-sundtek (20111101.2343-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 01 Nov 2011 17:17:19 +0100
+
+dvb-driver-sundtek (20111029.2310-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 29 Oct 2011 23:17:19 +0200
+
+dvb-driver-sundtek (20111028.0210-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 28 Oct 2011 02:17:20 +0200
+
+dvb-driver-sundtek (20111025.0933-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 25 Oct 2011 10:17:19 +0200
+
+dvb-driver-sundtek (20111023.1530-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 23 Oct 2011 16:17:17 +0200
+
+dvb-driver-sundtek (20111023.1426-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 23 Oct 2011 15:17:18 +0200
+
+dvb-driver-sundtek (20111021.0100-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 21 Oct 2011 01:17:19 +0200
+
+dvb-driver-sundtek (20111020.2242-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 20 Oct 2011 23:17:20 +0200
+
+dvb-driver-sundtek (20111020.1914-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 20 Oct 2011 20:17:18 +0200
+
+dvb-driver-sundtek (20111020.1625-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 20 Oct 2011 17:17:22 +0200
+
+dvb-driver-sundtek (20111020.1537-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 20 Oct 2011 16:17:18 +0200
+
+dvb-driver-sundtek (20111020.1440-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 20 Oct 2011 15:17:21 +0200
+
+dvb-driver-sundtek (20111017.0823-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 17 Oct 2011 09:17:18 +0200
+
+dvb-driver-sundtek (20111012.1442-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 12 Oct 2011 15:17:22 +0200
+
+dvb-driver-sundtek (20111001.1658-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 01 Oct 2011 17:17:20 +0200
+
+dvb-driver-sundtek (20111001.1241-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 01 Oct 2011 13:17:19 +0200
+
+dvb-driver-sundtek (20110930.1432-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 30 Sep 2011 15:17:19 +0200
+
+dvb-driver-sundtek (20110930.1304-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 30 Sep 2011 13:17:19 +0200
+
+dvb-driver-sundtek (20110928.2037-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 28 Sep 2011 21:17:26 +0200
+
+dvb-driver-sundtek (20110927.2222-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 27 Sep 2011 23:17:26 +0200
+
+dvb-driver-sundtek (20110927.2018-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 27 Sep 2011 21:17:21 +0200
+
+dvb-driver-sundtek (20110925.2150-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 25 Sep 2011 22:17:18 +0200
+
+dvb-driver-sundtek (20110924.1044-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 24 Sep 2011 11:17:19 +0200
+
+dvb-driver-sundtek (20110914.1443-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 14 Sep 2011 15:17:21 +0200
+
+dvb-driver-sundtek (20110912.0130-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 12 Sep 2011 02:17:19 +0200
+
+dvb-driver-sundtek (20110911.1648-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 11 Sep 2011 17:17:34 +0200
+
+dvb-driver-sundtek (20110911.1405-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 11 Sep 2011 14:17:19 +0200
+
+dvb-driver-sundtek (20110911.0846-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 11 Sep 2011 09:17:19 +0200
+
+dvb-driver-sundtek (20110910.0117-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 10 Sep 2011 01:17:21 +0200
+
+dvb-driver-sundtek (20110909.2213-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 09 Sep 2011 23:17:20 +0200
+
+dvb-driver-sundtek (20110909.1537-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 09 Sep 2011 16:17:18 +0200
+
+dvb-driver-sundtek (20110909.1249-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 09 Sep 2011 13:17:21 +0200
+
+dvb-driver-sundtek (20110909.0923-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 09 Sep 2011 10:17:20 +0200
+
+dvb-driver-sundtek (20110908.2012-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 08 Sep 2011 21:17:19 +0200
+
+dvb-driver-sundtek (20110908.0111-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 08 Sep 2011 02:17:19 +0200
+
+dvb-driver-sundtek (20110902.1201-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 02 Sep 2011 12:17:19 +0200
+
+dvb-driver-sundtek (20110902.1024-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 02 Sep 2011 11:17:24 +0200
+
+dvb-driver-sundtek (20110902.0714-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 02 Sep 2011 08:17:20 +0200
+
+dvb-driver-sundtek (20110901.2227-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 01 Sep 2011 23:17:18 +0200
+
+dvb-driver-sundtek (20110901.1327-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 01 Sep 2011 14:17:22 +0200
+
+dvb-driver-sundtek (20110901.1218-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 01 Sep 2011 13:17:18 +0200
+
+dvb-driver-sundtek (20110901.0610-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 01 Sep 2011 07:17:32 +0200
+
+dvb-driver-sundtek (20110831.1645-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 31 Aug 2011 20:17:27 +0200
+
+dvb-driver-sundtek (20110831.1241-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 31 Aug 2011 13:18:18 +0200
+
+dvb-driver-sundtek (20110830.1311-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 30 Aug 2011 16:17:18 +0200
+
+dvb-driver-sundtek (20110829.1456-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 29 Aug 2011 15:17:18 +0200
+
+dvb-driver-sundtek (20110829.1021-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 29 Aug 2011 11:17:19 +0200
+
+dvb-driver-sundtek (20110826.0900-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 26 Aug 2011 09:17:23 +0200
+
+dvb-driver-sundtek (20110825.0113-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 25 Aug 2011 14:17:19 +0200
+
+dvb-driver-sundtek (20110825.0024-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 25 Aug 2011 01:17:18 +0200
+
+dvb-driver-sundtek (20110824.1024-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 24 Aug 2011 11:17:18 +0200
+
+dvb-driver-sundtek (20110824.0443-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 24 Aug 2011 05:17:17 +0200
+
+dvb-driver-sundtek (20110822.0907-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 22 Aug 2011 09:17:17 +0200
+
+dvb-driver-sundtek (20110819.1658-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 19 Aug 2011 18:17:24 +0200
+
+dvb-driver-sundtek (20110812.1019-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 12 Aug 2011 11:17:22 +0200
+
+dvb-driver-sundtek (20110811.1223-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 11 Aug 2011 13:17:19 +0200
+
+dvb-driver-sundtek (20110808.2006-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 08 Aug 2011 23:17:18 +0200
+
+dvb-driver-sundtek (20110808.1957-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 08 Aug 2011 20:17:28 +0200
+
+dvb-driver-sundtek (20110807.0842-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 07 Aug 2011 21:17:21 +0200
+
+dvb-driver-sundtek (20110726.1912-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 26 Jul 2011 20:17:18 +0200
+
+dvb-driver-sundtek (20110702.2112-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 02 Jul 2011 21:17:22 +0200
+
+dvb-driver-sundtek (20110630.2237-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 30 Jun 2011 23:17:18 +0200
+
+dvb-driver-sundtek (20110630.1946-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 30 Jun 2011 20:17:17 +0200
+
+dvb-driver-sundtek (20110630.1830-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 30 Jun 2011 19:17:21 +0200
+
+dvb-driver-sundtek (20110630.1220-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 30 Jun 2011 13:17:20 +0200
+
+dvb-driver-sundtek (20110629.1500-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 29 Jun 2011 15:17:19 +0200
+
+dvb-driver-sundtek (20110628.0933-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 28 Jun 2011 10:17:20 +0200
+
+dvb-driver-sundtek (20110622.0229-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 22 Jun 2011 11:17:18 +0200
+
+dvb-driver-sundtek (20110620.2240-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 20 Jun 2011 23:17:18 +0200
+
+dvb-driver-sundtek (20110615.1556-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 15 Jun 2011 16:17:19 +0200
+
+dvb-driver-sundtek (20110530.0631-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 30 May 2011 07:17:12 +0200
+
+dvb-driver-sundtek (20110528.0514-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 28 May 2011 05:17:18 +0200
+
+dvb-driver-sundtek (20110526.1218-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 26 May 2011 13:17:20 +0200
+
+dvb-driver-sundtek (20110525.1443-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 25 May 2011 15:17:21 +0200
+
+dvb-driver-sundtek (20110503.1217-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 03 May 2011 07:17:19 +0200
+
+dvb-driver-sundtek (20110428.1403-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 28 Apr 2011 08:17:18 +0200
+
+dvb-driver-sundtek (20110427.1523-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 27 Apr 2011 10:17:30 +0200
+
+dvb-driver-sundtek (20110425.0251-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 25 Apr 2011 09:17:18 +0200
+
+dvb-driver-sundtek (20110424.0659-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 24 Apr 2011 01:19:18 +0200
+
+dvb-driver-sundtek (20110420.0519-1yavdr3~natty) natty; urgency=low
+
+  * added pkgconfig support
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Apr 2011 22:05:07 +0200
+
+dvb-driver-sundtek (20110420.0519-1yavdr2~natty) natty; urgency=low
+
+  * added /opt/lib/ to ld.so.conf
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Apr 2011 21:31:24 +0200
+
+dvb-driver-sundtek (20110420.0519-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Apr 2011 06:17:13 +0200
+
+dvb-driver-sundtek (20110420.0411-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 20 Apr 2011 04:17:18 +0200
+
+dvb-driver-sundtek (20110416.1549-1yavdr2~natty) natty; urgency=low
+
+  * don't add libmediaclient.so to ld.so.preload
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 18 Apr 2011 23:37:41 +0200
+
+dvb-driver-sundtek (20110416.1549-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 Apr 2011 16:17:19 +0200
+
+dvb-driver-sundtek (20110414.0139-1yavdr1~natty) natty; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 14 Apr 2011 02:19:23 +0200
+
+dvb-driver-sundtek (20110404.1412-1yavdr1~lucid) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 04 Apr 2011 14:17:19 +0200
+
+dvb-driver-sundtek (20110404.0929-1yavdr1~lucid) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 04 Apr 2011 10:17:25 +0200
+
+dvb-driver-sundtek (20110404.0846-1yavdr1~lucid) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 04 Apr 2011 09:17:32 +0200
+
+dvb-driver-sundtek (20110328.1618-1yavdr2~lucid) lucid; urgency=low
+
+  *  fixed nameing
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 30 Mar 2011 08:23:17 +0200
+
+dvb-driver-sundtek (20110328.1618-1yavdr1~natty) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 28 Mar 2011 17:17:21 +0200
+
+dvb-driver-sundtek (20110326.0242-1yavdr1~lucid) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 26 Mar 2011 03:17:18 +0100
+
+dvb-driver-sundtek (20110321.1812-1yavdr2~lucid) lucid; urgency=low
+
+  * new upstream version
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 24 Mar 2011 23:14:27 +0100
+
+dvb-driver-sundtek (20110306.2340-1yavdr2~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Wed, 09 Mar 2011 10:40:28 +0100
+
+dvb-driver-sundtek (20110306.2340-1yavdr1) lucid; urgency=low
+
+  * wrong upstream version number
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Mar 2011 08:28:08 +0100
+
+dvb-driver-sundtek (20110406.2340-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Mar 2011 00:17:21 +0100
+
+dvb-driver-sundtek (20110306.2126-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 06 Mar 2011 22:17:28 +0100
+
+dvb-driver-sundtek (20110306.1656-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 06 Mar 2011 17:17:22 +0100
+
+dvb-driver-sundtek (20110304.1504-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 04 Mar 2011 15:17:25 +0100
+
+dvb-driver-sundtek (20110303.1253-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 03 Mar 2011 13:17:26 +0100
+
+dvb-driver-sundtek (20110302.0823-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 02 Mar 2011 09:17:24 +0100
+
+dvb-driver-sundtek (20110227.1837-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 27 Feb 2011 19:17:31 +0100
+
+dvb-driver-sundtek (20110224.1808-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 24 Feb 2011 18:17:20 +0100
+
+dvb-driver-sundtek (20110222.0734-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 22 Feb 2011 08:17:19 +0100
+
+dvb-driver-sundtek (20110218.1926-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 18 Feb 2011 20:17:23 +0100
+
+dvb-driver-sundtek (20110218.1536-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 18 Feb 2011 16:17:21 +0100
+
+dvb-driver-sundtek (20110217.1813-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 17 Feb 2011 18:17:27 +0100
+
+dvb-driver-sundtek (20110217.1230-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 17 Feb 2011 12:17:39 +0100
+
+dvb-driver-sundtek (20110215.1350-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 Feb 2011 14:17:23 +0100
+
+dvb-driver-sundtek (20110215.1229-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 Feb 2011 13:17:31 +0100
+
+dvb-driver-sundtek (20110215.1131-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 Feb 2011 12:21:23 +0100
+
+dvb-driver-sundtek (20110215.1020-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 Feb 2011 11:17:32 +0100
+
+dvb-driver-sundtek (20110215.0845-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 Feb 2011 09:17:24 +0100
+
+dvb-driver-sundtek (20110215.0506-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 15 Feb 2011 05:17:21 +0100
+
+dvb-driver-sundtek (20110209.2132-1yavdr2) lucid; urgency=low
+
+  * don't remove libmcsimple.so
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 12 Feb 2011 22:40:43 +0100
+
+dvb-driver-sundtek (20110209.2132-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 09 Feb 2011 22:17:33 +0100
+
+dvb-driver-sundtek (20110209.0523-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 09 Feb 2011 06:17:02 +0100
+
+dvb-driver-sundtek (20110208.2055-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 08 Feb 2011 21:17:02 +0100
+
+dvb-driver-sundtek (20110208.1030-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 08 Feb 2011 11:17:02 +0100
+
+dvb-driver-sundtek (20110207.2248-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Feb 2011 23:17:03 +0100
+
+dvb-driver-sundtek (20110207.2131-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Feb 2011 22:17:03 +0100
+
+dvb-driver-sundtek (20110207.1733-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Feb 2011 18:17:03 +0100
+
+dvb-driver-sundtek (20110207.1505-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Feb 2011 15:17:03 +0100
+
+dvb-driver-sundtek (20110207.0319-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Feb 2011 04:17:02 +0100
+
+dvb-driver-sundtek (20110207.0109-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Feb 2011 01:17:03 +0100
+
+dvb-driver-sundtek (20110207.0007-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 07 Feb 2011 00:17:03 +0100
+
+dvb-driver-sundtek (20110206.2230-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 06 Feb 2011 23:17:03 +0100
+
+dvb-driver-sundtek (20110204.0709-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 04 Feb 2011 07:17:03 +0100
+
+dvb-driver-sundtek (20110202.1734-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 02 Feb 2011 18:17:03 +0100
+
+dvb-driver-sundtek (20110202.1655-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 02 Feb 2011 17:17:03 +0100
+
+dvb-driver-sundtek (20110202.1403-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 02 Feb 2011 14:17:03 +0100
+
+dvb-driver-sundtek (20110131.1746-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 31 Jan 2011 18:17:03 +0100
+
+dvb-driver-sundtek (20110129.1517-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 29 Jan 2011 16:17:05 +0100
+
+dvb-driver-sundtek (20110129.0100-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 29 Jan 2011 01:17:03 +0100
+
+dvb-driver-sundtek (20110128.0345-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 28 Jan 2011 04:17:03 +0100
+
+dvb-driver-sundtek (20110119.2057-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 20 Jan 2011 15:17:27 +0100
+
+dvb-driver-sundtek (20110119.1607-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 19 Jan 2011 20:39:48 +0100
+
+dvb-driver-sundtek (20110119.0142-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 19 Jan 2011 13:26:36 +0100
+
+dvb-driver-sundtek (20110104-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 05 Jan 2011 00:53:46 +0100
+
+dvb-driver-sundtek (20110103-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 04 Jan 2011 15:32:17 +0100
+
+dvb-driver-sundtek (20110102-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 02 Jan 2011 21:52:36 +0100
+
+dvb-driver-sundtek (20110101-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 01 Jan 2011 22:57:38 +0100
+
+dvb-driver-sundtek (20101229-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 29 Dec 2010 13:40:46 +0100
+
+dvb-driver-sundtek (20101221-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 25 Dec 2010 17:40:10 +0100
+
+dvb-driver-sundtek (20101218-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 20 Dec 2010 11:42:09 +0100
+
+dvb-driver-sundtek (20101217-1yavdr2) lucid; urgency=low
+
+  * this time with driver
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 18 Dec 2010 15:03:47 +0100
+
+dvb-driver-sundtek (20101217-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 18 Dec 2010 13:23:36 +0100
+
+dvb-driver-sundtek (20101215-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 15 Dec 2010 13:07:50 +0100
+
+dvb-driver-sundtek (20101214-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 14 Dec 2010 14:59:49 +0100
+
+dvb-driver-sundtek (20101213-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 13 Dec 2010 22:21:56 +0100
+
+dvb-driver-sundtek (20101209-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 09 Dec 2010 20:55:23 +0100
+
+dvb-driver-sundtek (20101207-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 08 Dec 2010 11:28:44 +0100
+
+dvb-driver-sundtek (20101206-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 06 Dec 2010 16:47:19 +0100
+
+dvb-driver-sundtek (20101204-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 04 Dec 2010 12:30:25 +0100
+
+dvb-driver-sundtek (20101203-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 03 Dec 2010 20:32:44 +0100
+
+dvb-driver-sundtek (20101202-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 02 Dec 2010 20:44:32 +0100
+
+dvb-driver-sundtek (20101201-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 01 Dec 2010 19:50:57 +0100
+
+dvb-driver-sundtek (20101129-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 29 Nov 2010 22:36:18 +0100
+
+dvb-driver-sundtek (20101127-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 28 Nov 2010 18:13:09 +0100
+
+dvb-driver-sundtek (20101118-1yavdr1) lucid; urgency=low
+
+  *  New upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 20 Nov 2010 13:07:39 +0100
+
+dvb-driver-sundtek (20101109-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 09 Nov 2010 16:39:40 +0100
+
+dvb-driver-sundtek (20101107-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+  * get version from debian/changelog
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 08 Nov 2010 11:09:25 +0100
+
+dvb-driver-sundtek (20101105-1yavdr2) lucid; urgency=low
+
+  * wrong version in makefile
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 06 Nov 2010 13:30:28 +0100
+
+dvb-driver-sundtek (20101105-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 06 Nov 2010 13:24:46 +0100
+
+dvb-driver-sundtek (20101104-1yavdr2) lucid; urgency=low
+
+  * use of DEB_HOST_ARCH instead of DEB_BUILD_ARCH
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 04 Nov 2010 10:39:14 +0100
+
+dvb-driver-sundtek (20101104-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 04 Nov 2010 10:07:17 +0100
+
+dvb-driver-sundtek (20101102-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 03 Nov 2010 20:54:24 +0100
+
+dvb-driver-sundtek (20101030-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 31 Oct 2010 10:31:03 +0100
+
+dvb-driver-sundtek (20101028-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 28 Oct 2010 17:53:48 +0200
+
+dvb-driver-sundtek (20101013-1yavdr4) lucid; urgency=low
+
+  * postinst cleanup
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 Oct 2010 20:40:53 +0200
+
+dvb-driver-sundtek (20101013-1yavdr3) lucid; urgency=low
+
+  * moved postrm to prerm
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 Oct 2010 16:05:46 +0200
+
+dvb-driver-sundtek (20101013-1yavdr2) lucid; urgency=low
+
+  * let libmediaclient.so preload
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 Oct 2010 15:47:11 +0200
+
+dvb-driver-sundtek (20101013-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 16 Oct 2010 14:22:59 +0200
+
+dvb-driver-sundtek (20101008-1yavdr2) lucid; urgency=low
+
+  * small change for armel compatibility
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 11 Oct 2010 01:11:46 +0200
+
+dvb-driver-sundtek (20101008-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+  * removed debian/source
+  * added /opt/bin/udevsrv LOAD
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 08 Oct 2010 23:06:09 +0200
+
+dvb-driver-sundtek (20101007-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+  * udev rules cleanup
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 07 Oct 2010 23:32:33 +0200
+
+dvb-driver-sundtek (20100929-1yavdr1) lucid; urgency=low
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 29 Sep 2010 19:42:50 +0200
+
+dvb-driver-sundtek (20100926-2yavdr1) lucid; urgency=low
+
+  * new package layout
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 28 Sep 2010 20:24:18 +0200
+
+dvb-driver-sundtek (20100926-1yavdr2) lucid; urgency=low
+
+  * made sundtek installer executable
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 26 Sep 2010 23:46:28 +0200
+
+dvb-driver-sundtek (20100926-1yavdr1) lucid; urgency=low
+
+  * new upstream release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 26 Sep 2010 23:18:21 +0200
+
+dvb-driver-sundtek (20100924-2yavdr4) lucid; urgency=low
+
+  * typo in architecture fixed
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 26 Sep 2010 20:07:22 +0200
+
+dvb-driver-sundtek (20100924-2yavdr3) lucid; urgency=low
+
+  * fixed build requirements again
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 25 Sep 2010 17:04:41 +0200
+
+dvb-driver-sundtek (20100924-2yavdr2) lucid; urgency=low
+
+  * fixed build requirements
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 25 Sep 2010 16:27:03 +0200
+
+dvb-driver-sundtek (20100924-2yavdr1) lucid; urgency=low
+
+  * complete new package design
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 25 Sep 2010 14:30:45 +0200
+
+dvb-driver-sundtek (20100924-1yavdr3) lucid; urgency=low
+
+  * rebuild for dockstar
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 25 Sep 2010 02:09:27 +0200
+
+dvb-driver-sundtek (20100924-1yavdr2) lucid; urgency=low
+
+  * added build requirement libasound2 | lib64asound2
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 24 Sep 2010 23:49:45 +0200
+
+dvb-driver-sundtek (20100924-1yavdr1) lucid; urgency=low
+
+  * Initial release.
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 24 Sep 2010 17:53:28 +0200
+

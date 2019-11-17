@@ -1,0 +1,32 @@
+Source: dfatmo
+Section: libs
+Priority: extra
+Maintainer: Andreas Auras <yak54@inkennet.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), cdbs, pkg-config, zip, libusb-1.0-0-dev, python-dev, libxine2-dev, vdr-dev (>= 2.2.0)
+Standards-Version: 3.9.5
+
+Package: dfatmo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libxine-dfatmo-plugin
+Description: DFAtmo the driver for 'Atmolight' controllers for VDR, XBMC and xinelib based video players
+ The DFAtmo driver analyze the video picture and generates
+ output data for so called 'Atmolight' controllers.
+ This package contains the native Python DFAtmo driver module, the native DFAtmo output drivers and
+ the DFAtmo XBMC addon installation zip file.
+
+Package: libxine-dfatmo-plugin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, dfatmo
+Description: DFAtmo the driver for 'Atmolight' controllers for VDR, XBMC and xinelib based video players
+ The DFAtmo xinelib post plugin analyze the video picture and generates
+ output data for so called "atmolight" controllers.
+ This package contains the DfAtmo xinelib post plugin.
+
+Package: vdr-plugin-dfatmo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, dfatmo
+Description: DFAtmo the driver for 'Atmolight' controllers for VDR, XBMC and xinelib based video players
+ The DFAtmo xinelib post plugin analyze the video picture and generates
+ output data for so called "atmolight" controllers.
+ This package contains the DfAtmo VDR plugin.
