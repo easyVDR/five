@@ -1,0 +1,254 @@
+#! /bin/bash
+
+### BEGIN INIT INFO
+# Provides:          easyvdr-runvdr
+# Short-Description: easyVDR Start Script
+# Description:       start vdr and manage dvb-driver
+### END INIT INFO
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+# Do NOT "set -e"
+#
+# Changelog:
+# V1.0 Initial Version
+# V1.1 added udev reload 18.12.11 - Captain_Beefheart
+# V1.2 removed udev reload 23.01.12 - Captain_Beefheart
+# V1.3 Bugfix in dynamite-Abfrage 14.03.13 - Michel8, SurfaceCleanerZ
+# V1.3 XAUTHORITY Variable gesetzt 08.1.15 Bleifuss
+# V1.3 Pulseaudio restart 27.04.15 Bleifuss
+# V1.4 Windowsfreundliche Dateinamen 25.5.15 Michel8
+# V1.4 Pulseaudio restart entfernt 25.06.15 Bleifuss 
+# V1.5 20.11.17 Änderungen für start als Daemon
+
+NAME=$(basename $0)
+LOGGER="logger -t easyvdr-runvdr"
+KILLWAIT=30
+RUNVDRPIDFILE="/var/run/$NAME"
+SHORTRUNTIMES=0
+TERMTIMEOUT=30
+KILLTIMEOUT=30
+RESTARTTIME=10
+
+test -x $VDRBIN || exit 0
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/lib/vdr/easyvdr-config-loader
+
+test "$ENABLE_SHUTDOWN" = "1" && VDRSHUTDOWN="/usr/lib/vdr/easyvdr-shutdown.wrapper" || VDRSHUTDOWN="/usr/lib/vdr/easyvdr-vdr-shutdown-message"
+
+. /usr/lib/vdr/easyvdr-commands-loader
+. /usr/lib/vdr/easyvdr-module-loader
+. /usr/lib/vdr/easyvdr-frontend-loader
+. /usr/lib/vdr/easyvdr-lcd-loader
+. /usr/lib/vdr/easyvdr-graphtft-loader
+
+
+if [ -f $RUNVDRPIDFILE ] ;then
+ #Kill easyvdr-runvdr and restart
+ $LOGGER "error easyvdr-runvdr is running: $RUNVDRPIDFILE"
+ $LOGGER "kill easyvdr-runvdr and start it again"
+ # Kill easyvdr-runvdr
+ kill $(cat $RUNVDRPIDFILE)
+fi
+
+
+if [ -f $RUNVDRPIDFILE ] ;then
+ #Kill easyvdr-runvdr and restart
+ $LOGGER "error easyvdr-runvdr is running: $RUNVDRPIDFILE"
+ $LOGGER "kill easyvdr-runvdr and start it again"
+ # Warten bis erste instanz beendet ist
+ for wait in {0..20};
+  do
+   if [ ! -f $RUNVDRPIDFILE ];then
+    #Instanz ist beendet
+    break
+   fi
+  sleep 1 
+ done
+
+ if [ -f $RUNVDRPIDFILE ] ;then
+  #Programm hängt
+  PID=$(cat $RUNVDRPIDFILE) 
+  kill -9 $PID
+  $LOGGER "kill signal -9 easyvdr-runvdr"
+  sleep 2
+  rm $RUNVDRPIDFILE
+ fi
+fi
+
+#Save pid easyvdr-runvdr
+echo $$ > $RUNVDRPIDFILE
+
+LANG_ENV="export LANG=$VDR_LANG;export LC_ALL=$VDR_LANG"
+if [ -n "$VDR_CHARSET_OVERRIDE" ] ; then
+	LANG_ENV="$LANG_ENV;export VDR_CHARSET_OVERRIDE=$VDR_CHARSET_OVERRIDE"
+fi
+$LANG_ENV
+
+
+configure_lcd
+configure_graphtft
+unloaddriver
+loaddriver
+mergecommands "commands"
+mergecommands "reccmds"
+configure_frontend
+
+[ -d $VIDEO_DIR ] || mkdir -p $VIDEO_DIR
+
+##### Zeichensatz fuer SKY OSD #####
+export VDR_CHARSET_OVERRIDE="ISO-8859-9"
+
+##### Manage LIRC / Remote #####
+case "$REMOTE_TYPE" in
+	"keine")
+		KEYBOARD=""
+	;;
+	"remote")
+		if [ x"$INVERT_SIGNAL" = x"yes" ]; then
+			LOADKEYS_PARAM="-i"
+		fi
+		if pidof av7110_loadkeys 2>&1> /dev/null ; then
+			 killall av7110_loadkeys
+		fi
+		/usr/bin/av7110_loadkeys $LOADKEYS_PARAM /usr/share/dvb/av7110_loadkeys/default.rc5 > /proc/av7110_ir
+		##### Add -Premote to $PLUGINS #####
+		add_plugin "remote $REMOTEPARAM"
+	;;
+esac
+
+
+##### AC3 #####
+case "$AC3DECODER" in
+	"ac3dec")
+		AC3SETTINGS="\"-a /usr/bin/ac3dec $AC3_SETS\""
+	;;
+	"a52dec")
+		AC3SETTINGS="\"-a /usr/bin/a52dec $AC3_SETS\""
+	;;
+	*)
+		AC3SETTINGS=""
+	;;
+esac
+
+##### Add Setup-Plugin static #####
+plugin_active "setup" || add_plugin "setup"
+
+##### Start dynamite at last #####
+if plugin_active "dynamite"  ; then
+	delete_plugin "dynamite"
+	add_plugin "dynamite"
+fi
+
+while (true) do
+	$LOGGER "Starting VDR"
+
+	# Trap some signals sent to this script
+	trap "SIG=HUP" SIGHUP
+	trap "SIG=INT" SIGINT
+	trap "SIG=QUIT" SIGQUIT
+	trap "SIG=TERM" SIGTERM
+	trap "SIG=USR1" SIGUSR1
+	trap "SIG=USR2" SIGUSR2
+
+	# Clean up signal variable
+	SIG=
+
+
+	# Remember start time
+	VDRSTARTTIME=`date +%s`
+
+	# Freundliche Dateinamen fuer Windows-Netzwerke
+	if [ "X$FRIENDLY_FILENAMES" == "Xyes" ]; then
+	  VFAT="--dirnames=,,1"
+	else
+	  VFAT=""
+	fi
+
+
+	VDRCMD="$VDRBIN $VFAT $VDR_DEVICES --user=$USER --grab=$GRAB_DIR --lib=$PLUGIN_DIR $PLUGINLIST --record=$REC_CMD --video=$VIDEO_DIR --config=$CFG_DIR --watchdog=$WATCHDOG --log=$VDRLOGLEVEL --epgfile=$EPG_FILE --port=$SVDRP_PORT --shutdown=$VDRSHUTDOWN $AC3SETTINGS $KEYBOARD $VDRLIRCPARAM  < /dev/tty$KEYB_TTY > /dev/null 1> /dev/null 2> /dev/null"
+#	DISPLAY=$FRONTEND_DISPLAY eval "$VDRCMD &"
+	#User ID ermitteln
+	VDRUID=$(id -u $USER)
+	XDG_RUNTIME_DIR=/run/user/$VDRUID eval "$VDRCMD &"
+
+	# Remember PID of VDR process
+	VDRPID=$!
+
+	export VDRSTARTTIME
+
+	# Wait for VDR to end or signal to arrive
+	wait $VDRPID
+
+	# Remember return value of VDR
+	RET=$?
+
+	# Remember stop time
+	VDRSTOPTIME=`date +%s`
+
+	# Count, if time is less than RESTARTTIME in seconds,
+	# forget otherwise
+	if [ "$RESTARTTIME" -gt 0 -a $((VDRSTOPTIME-VDRSTARTTIME)) -le "$RESTARTTIME" ] ; then
+		SHORTRUNTIMES=$((SHORTRUNTIMES+1))
+		$LOGGER "VDR died within $RESTARTTIME seconds, this happened $SHORTRUNTIMES time(s)."
+	else
+		SHORTRUNTIMES=0
+	fi
+
+	case "$SIG" in
+		HUP | INT | QUIT | TERM)
+			$LOGGER "Terminating by request"
+			# Kill remaining VDR traces
+			WaitKill $VDRPID $VDRBIN $TERMTIMEOUT $KILLTIMEOUT
+			# and exit
+			break
+		;;
+		USR1)
+			$LOGGER "Restarting VDR by request"
+			# Kill remaining VDR traces
+			WaitKill $VDRPID $VDRBIN $TERMTIMEOUT $KILLTIMEOUT
+			# and loop
+		;;
+		USR2)
+			$LOGGER "Restarting VDR and DVB by request"
+			# Kill remaining VDR traces
+			WaitKill $VDRPID $VDRBIN $TERMTIMEOUT $KILLTIMEOUT
+			# reload DVB stuff
+			unloaddriver
+			loaddriver
+		;;
+		*)  # Non-signal termination
+			if [ $RET -eq 0 -o $RET -eq 2 ] ; then
+				$LOGGER "Terminating by error level $RET"
+				# Kill remaining VDR traces
+				WaitKill $VDRPID $VDRBIN $TERMTIMEOUT $KILLTIMEOUT
+				# and exit
+				break
+			fi
+			
+			if [ $SHORTRUNTIMES -ge 10 ] ; then
+				$LOGGER "Terminating because VDR died 10 times in a row quickly"
+				# Kill remaining VDR traces
+				WaitKill $VDRPID $VDRBIN $TERMTIMEOUT $KILLTIMEOUT
+				# and exit
+				break
+			fi
+
+			$LOGGER "Restarting VDR and DVB by error level $RET"
+			# Kill remaining VDR traces
+			WaitKill $VDRPID $VDRBIN $TERMTIMEOUT $KILLTIMEOUT
+			# reload DVB
+			unloaddriver
+			loaddriver
+			# and loop
+		;;
+	esac
+
+	# Catch remaining in-between signals
+	case "$SIG" in
+		HUP | INT | QUIT | TERM)
+			break
+		;;
+	esac
+done
+
+[ -r "$RUNVDRPIDFILE" ] && rm $RUNVDRPIDFILE >&- 2>&-
+

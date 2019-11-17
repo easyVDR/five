@@ -1,0 +1,17 @@
+#! /bin/bash
+
+### BEGIN INIT INFO
+# Provides:          stopvdr
+# Short-Description: EasyVDR-script to stop vdr for non root-user
+# Description:       stop vdr
+# 08.10.17           bleifuss
+### END INIT INFO
+
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+
+# Do NOT "set -e"
+
+#set -x
+
+sudo /usr/lib/easyvdr/easyvdr-start/easyvdr-frontend stop
+sudo /usr/lib/easyvdr/easyvdr-start/easyvdr-vdr stop

@@ -1,0 +1,4 @@
+www/				var/
+sudoers-easyportal		etc/sudoers.d/
+patches/			/usr/share/easyvdr/
+etc/lighttpd/lighttpd.conf.easyvdr  etc/lighttpd/

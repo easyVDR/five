@@ -1,0 +1,29 @@
+# Sudoers-File for easyportal
+# placed in /etc/sudoers.d
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# See the man page for details on how to write a sudoers file.
+#
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+Cmnd_Alias EASYPORTAL = /var/www/scripts/easyportal.sh
+Cmnd_Alias EASYINFO = /var/www/scripts/easyinfo2.sh
+Cmnd_Alias EASYINFOERROR = /var/www/scripts/easyinfo_error.sh
+Cmnd_Alias EASYBACKUP = /var/www/scripts/backup.sh
+Cmnd_Alias EASYUPDATE = /var/www/scripts/update.sh
+Cmnd_Alias SETSETTINGS = /usr/lib/vdr/easyvdr-set-settings
+Cmnd_Alias BEFEHL = /var/www/scripts/befehl.sh
+
+
+vdr ALL=NOPASSWD: EASYPORTAL
+vdr ALL=NOPASSWD: EASYINFO
+vdr ALL=NOPASSWD: EASYINFOERROR
+vdr ALL=NOPASSWD: EASYBACKUP
+vdr ALL=NOPASSWD: EASYUPDATE
+vdr ALL=NOPASSWD: SETSETTINGS
+vdr ALL=NOPASSWD: BEFEHL

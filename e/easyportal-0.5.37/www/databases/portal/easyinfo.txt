@@ -1,0 +1,67 @@
+id#Befehl#Name#Kategorie#Highlight#Beschreibung
+int#str#str#str#str#str
+#####
+0##ERRORS IM LOGFILE#all#E#Übersicht der Fehler vom syslog und xorg.log. Es wird noch eine Zeile vor und hinter dem Fehler angezeigt.<br/><br/>Direkt zu den Log-Files:<br/>* <a href="view_easyinfo.php?wahl=/var/log/syslog">syslog</a><br/>* <a href="view_easyinfo.php?wahl=cat /var/log/Xorg.0.log">Xorg.0.log</a>
+1#cat /etc/isoinfo#Installations-Iso#all##Zeigt das Installations-Iso an.
+2#ifconfig#ifconfig#net#S#Zeigt die konfigurierten Netzwerk "interfaces" an.
+3#iwconfig#iwconfig#net#S#Zeigt W-LAN Interfaces an.
+4#cat /etc/network/interfaces#interfaces#net#H#Die Datei /etc/network/interfaces ist eine Konfigurationsdatei, in der alle Netzwerk-Schnittstellen aufgelistet sind und konfiguriert werden können.
+5#cat /etc/resolv.conf#resolv.conf#net#H#Die Datei resolv.conf im Verzeichnis /etc wird für die Namensauflösung entsprechend dem Domain Name System (DNS) verwendet.<br/><br/><i><b>nameserver</b></i> ist die IP-Adresse eines Nameservers, den der Resolver abfragen soll. Bis zu drei Server werden in der Reihenfolge abgefragt, in der sie aufgezählt sind.<br/><i><b>search</i></b> definiert die Suchliste mit Domain-Namen zum Auflösen von Hostnamen. Die Liste wird durch den Domain-Teil des Hostnamens festgelegt. domain benennt den Domain-Namen.
+6#cat /var/lib/vdr/sysconfig | grep LAN#sysconfig | grep LAN#net#HI#Netzwerkeinstellungen in der sysconfig
+7#lsmod#lsmod#net#1#Auflistung der geladenen Module<br/><br/>Er zeigt alle geladenen Module im Format "Name", "Größe", "Wie-oft-gebraucht" und "Liste der Module, die das Modul benötigen". Dieser Befehl dient also hauptsächlich dazu, zu überprüfen, ob ein bestimmtes Modul geladen ist oder nicht.
+8#hwinfo --netcard#hwinfo --netcard#net#S#Zeigt Hardware-Infos über die Netzwerkkarte
+9#aplay -l#aplay -l#audio#S#Mittels "aplay -l" kann geprüft werden welche Anschlüsse für die Tonausgabe verfügbar sind. Diese Anschlüsse sind für die Tonausgabe auf den VDR relevant. 
+10#aplay -L#aplay -L#audio#S#list all PCMs defined
+11#cat /etc/modprobe.d/sound.conf#/etc/modprobe.d/sound.conf#audio##
+12#ls -l /etc/asound.conf#ls -l /etc/asound.conf#audio#L#
+13#cat /etc/asound.conf#cat /etc/asound.conf#audio#H#
+14#cat /proc/asound/version#cat /proc/asound/version#audio##
+15#alsactl --version#alsactl --version#audio##Zeigt die alsactl Versions-Nummer.
+16#cat /var/log/easyvdr/easyvdr-config-audio.log#var/log/easyvdr/easyvdr-config-audio.log#audio##
+17#cat /var/lib/vdr/plugins/xineliboutput/config | grep audio#/var/lib/vdr/plugins/xineliboutput/config#audio##
+18#cat /home/easyvdr/.xbmc/userdata/guisettings.xml#/home/easyvdr/.xbmc/userdata/guisettings.xml#audio#M#
+19#cat /var/lib/vdr/easyvdr-frontend-softhddevice.conf#/var/lib/vdr/easyvdr-frontend-softhddevice.conf#audio#I#
+20#hwinfo --pci#hwinfo --pci#audio#S#
+21#cat /var/log/easyvdr/easyvdr-resolution.log#/var/log/easyvdr/easyvdr-resolution.log#audio#HI#Auflösungen
+22#cat /var/log/easyvdr/easyvdr-config-video-details.log#easyvdr-config-video-details.log#audio##
+23#tail -n 4000 /var/log/syslog#/var/log/syslog#vdr#E#Die Haupt-Log-Datei des vdr's
+24#cat /usr/share/easyvdr/easyvdr-version#/usr/share/easyvdr/easyvdr-version#vdr#I#Zeigt die EasyVDR-Version und Subversion.
+25#cat /var/lib/vdr/setup.conf#setup.conf#vdr#I#Die /var/lib/vdr/setup.conf.
+26#cat /var/lib/vdr/sysconfig#sysconfig#vdr#HI#System configuration für den VDR
+27#cat /var/lib/vdr/plugins/setup/vdr-setup.xml#vdr-setup.xml#vdr#M#Siehe auch Setup-Plugin
+28#uptime#uptime/load#vdr##Der Befehl "uptime" gibt die aktuelle Uhrzeit, die Uptime des Systems, die Zahl der angemeldeten Benutzer sowie den Load Average über die letzten 1, 5 und 15 Minuten aus.
+29#ps -ax#ps -ax#vdr#1#Die einfachste Möglichkeit der Auflistung aller laufenden Prozesse ist ps -ax. Es werden alle Prozesse aufgelistet, auch diejenigen, die nicht vom aktuellen Benutzer gestartet wurden und die, die nicht mit einem Terminal verbunden sind (also im Hintergrund laufen).
+30#sudo femon -H -c5 -a0#femon -H -c5 -a0#vdr#1#Zeigt DVB-Signalinformationen an<br>Die Parameter STR (Signalstärke), SNR (Signal-Rausch-Verhältnis), BER (Fehler-Bitrate) und UNC (fehlerhafte Blöcke) geben Auskunft über die Güte der empfangenen Signale.<br/>Je nach verwendeter Hardware sind erhebliche Unterschiede zu beobachten.
+31#sudo femon -H -c5 -a1#femon -H -c5 -a1#vdr#1#Zeigt DVB-Signalinformationen an<br>Die Parameter STR (Signalstärke), SNR (Signal-Rausch-Verhältnis), BER (Fehler-Bitrate) und UNC (fehlerhafte Blöcke) geben Auskunft über die Güte der empfangenen Signale.<br/>Je nach verwendeter Hardware sind erhebliche Unterschiede zu beobachten.
+32#DISPLAY=:0 vdpauinfo#vdpauinfo#vdr##Abfrage der Fähigkeiten eines VDPAU Gerät.
+33#cat /etc/X11/xorg.conf#cat /etc/X11/xorg.conf#vdr#HX#Die Konfigurationsdateien des X-Servers sind im Verzeichnis /etc/X11/ abgelegt. Die zentrale Konfigurationsdatei ist /etc/X11/xorg.conf. 
+34#cat /var/log/Xorg.0.log#cat /var/log/Xorg.0.log#vdr#Y#Die Log-Datei des X-Servers
+35#dpkg -l easyvdr*#dpkg -l easyvdr*#vdr#DM#Ruft dpkg-query auf und gibt eine Liste mit Status, Version und einer Kurzbeschreibung der Pakete aus, deren Namen mit easyvdr beginnen.
+36#dpkg -l vdr*#dpkg -l vdr*#vdr#DM#Ruft dpkg-query auf und gibt eine Liste mit Status, Version und einer Kurzbeschreibung der Pakete aus, deren Namen mit vdr beginnen.
+37#dpkg -l linux*#dpkg -l linux*#vdr#DM#Ruft dpkg-query auf und gibt eine Liste mit Status, Version und einer Kurzbeschreibung der Pakete aus, deren Namen mit linux beginnen.
+38#uname -a#uname -a#vdr##uname gibt den Namen, Versionsnummer und andere Details des Computers und des Betriebssystems aus.
+39#lspci -nn#lspci -nn#hw##lspci ist ein Linux-Befehl der detaillierte Informationen über die PCI-Geräte und -Busse im System ausgibt.
+40#lsusb#lsusb#hw##Mittels lsusb wird das USB-System durchsucht, und es werden Informationen über die gefundenen Geräte ausgegeben. 
+41#hdet#hdet#hw##hdet - Ein Hardware-Detection-Tool von Wirbel
+42#hwinfo --disk#hwinfo --disk#hw#S#Zeigt Hardware-Infos über die Laufwerke
+43#hwinfo --cdrom#hwinfo --cdrom#hw#S#Zeigt Hardware-Infos über CD-ROMs
+44#hwinfo --cpu#hwinfo --cpu#hw#S#Zeigt Hardware-Infos über den Prozessor
+45#hwinfo --memory#hwinfo --memory#hw#S#Zeigt Hardware-Infos über den Speicher
+46#cat /var/lib/vdr/remote.conf#cat /var/lib/vdr/remote.conf#remote##Die Datei remote.conf enthält die Tasten-Zuordnungen aller konfigurierten Fernbedienungen zu VDR-Tasten bzw. VDR-Aktionen.
+47#cat /etc/lirc/lircd.conf#cat /etc/lirc/lircd.conf#remote#H#Fernbedienungskonfigurationsdatei
+48#cat /var/lib/vdr/sysconfig | grep LIRC#cat /var/lib/vdr/sysconfig | grep LIRC#remote#HI#LIRC-Einstellungen in der sysconfig
+49#cat /var/lib/vdr/sysconfig | grep REMOTE#cat /var/lib/vdr/sysconfig | grep REMOTE#remote#HI#REMOTE-Einstellungen in der sysconfig
+50#ls -l /dev/input#ls -l /dev/input#remote#L#
+51#hwinfo --disk#hwinfo --disk#hd#S#Zeigt Hardware-Infos über die Laufwerke
+52#hwinfo --cdrom#hwinfo --cdrom#hd#S#Zeigt Hardware-Infos über CD-ROMs
+53#fdisk -l#fdisk -l#hd##Einen Überblick über alle Datenträger (inklusive Festplatten, aber ohne CD- und DVD-Laufwerke) gibt das Kommando “fdisk -l”.
+54#df -h#df -h#hd#1#disk free zeigt den freien Speicherplatz des gesamten Dateisystems an 
+55#cat /var/log/easyvdr/easyvdr-config-audio.log#cat easyvdr-config-audio.log#setup##
+56#cat /var/log/easyvdr/easyvdr-HW-detect_install.log#cat easyvdr-HW-detect_install.log#setup#H#
+57#cat /var/log/easyvdr/easyvdr-HW-detect.log#cat easyvdr-HW-detect.log#setup#H#
+58#cat /var/log/easyvdr/easyvdr-setup-extras.log#cat easyvdr-setup-extras.log#setup##
+59#cat /var/log/easyvdr/setup.state#cat setup.state#setup#H#
+60#cat /var/log/easyvdr/update.log#cat update.log#setup##
+61#tail -n 30 /var/log/easyvdr/easyvdr-systemstart.log#tail -n 30 easyvdr-systemstart.log#setup##Die letzten 30 Zeilen von easyvdr-systemstart.log
+62#dkms status#dkms status#setup##Dynamic Kernel Module Support Status
+63#cat /var/log/easyvdr/easyvdr-runtime.csv#easyvdr-runtime#setup##In der easyvdr-runtime.csv sieht man, wann der PC startet, wie lange er gelaufen ist und ob er korrekt heruntergefahren ist.

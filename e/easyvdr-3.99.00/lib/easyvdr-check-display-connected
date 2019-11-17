@@ -1,0 +1,24 @@
+#!/bin/bash
+#14.02.15  V 0.1 Bleifuss
+
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+CONF_FILE="/etc/vdr/easyvdr/easyvdr-video-settings.conf"
+. $CONF_FILE
+
+LOGGER=" logger -t easyvdr-display-check-connected"
+DISPLAY_PATH=/tmp/vdr_display_connected
+GRAPHTFT_DISPLAY_PATH=/tmp/graphtft_display_connected
+
+ 
+###########  main   ##################
+ #TV eingeschaltet / angeschlossen?
+ sleep 1
+ if [ $(DISPLAY=$FRONTEND_DISPLAY xrandr --verbose | grep -c "$VDR_SCREEN_CONNECTOR connected") -eq "1" ] ;then
+   touch $DISPLAY_PATH
+ fi
+ 
+ if [ $VDR_GRAPHTFT_CONNECTOR != "none" ];then
+  if [ $(DISPLAY=$FRONTEND_DISPLAY xrandr --verbose | grep -c "$VDR_GRAPHTFT_CONNECTOR connected") -eq "1" ] ;then
+   touch $GRAPHTFT_DISPLAY_PATH
+  fi
+ fi 

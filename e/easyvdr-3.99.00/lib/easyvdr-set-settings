@@ -1,0 +1,951 @@
+#! /bin/bash    
+
+### BEGIN INIT INFO
+#
+# Change origin Setup-Files 
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+#
+# Changelog:
+# V1.0 Initial Version
+# V1.2 changed /etc/dhcp3 to /etc/dhcp  -- adaption for oneiric 06.10.11 C.B.
+# V1.3 stop/start for dhcp/network/samba 10.10.11 C.B.
+# V1.4 added lirc-device dev_input  18.10.11  C.B.
+# V1.5 removed lirc_mceusb2 22.10.11 C.B.
+# V1.6 lirc_atiusb => libatiusb    09.11.11 C.B.
+# testversion 17.11.11  C.B.
+# V1.7 changes on "lirc" added "fbcontrol" 18.12.11  C.B.
+# V1.7.1 fixes on fbcontrol
+# V1.8 added mce_usb  07.01.12 C.B.
+# V1.9 added kbd_i2c  11.01.12 C.B.
+# V1.10 small fix on remotes 23.01.12 C.B.
+# V1.11 small fix on remotes 26.01.12 C.B.
+# V1.12 added ser_alsa  02.02.12 C.B.  # test
+# V1.13 added samsung 05.02.12 C.B. #test
+# V1.14 added samba /filme1/2/3
+# V1.15 changes for inputlirc & moved lirc start 17.03.12 C.B.
+# V1.16 fix on remotes  18.04.12 C.B.
+# V1.17 added support for RC-keymaps  / /media -> /media/easyvdr01
+# V1.18 bugfix 13.05.12 c.b.
+# V1.19 added tt_usbir 19.06.12 c.b.
+# V1.20 modified Imon FB ( c.b.)  added softdevicehd ( sinai)  25.06.12
+# V1.21 added Igor FB-Receiver ( c.b ) 30.06.12
+# V1.22 remove modules, if not used anymore - hid_samsung; mceusb
+# V1.23 added irtrans & cleanup fb-controller c.b. 19.09.12
+# V1.24 added udp_ir c.b. 04.10.12
+# V1.25 added XBMC/advancedsetting  c.b. 16.11.12
+# V1.26 added easyvdr-setup-defines & irmp  c.b. 01.01.14
+# V1.27 resolv.conf working with resolver michel8 05.02.14
+# V1.28 generate lircmap.xml when select fb-controller michel8 02.05.14
+# V1.29 service networking vorerst weiter aus ubuntu 1310 wegen Umstellung von 1404 doppelter service-start 16.05.14
+# V1.30 $LIRC_HW_CONF="None" und "irman" hinzugefuegt um auch ganz ohne FB-Empfaenger konfigurieren zu koennen
+# V1.31 Samba START/STOP now quiet
+# V1.32 Autorestart von lirc (nicht lircd) in alter udev-rule /lib/udev/rules.d/85-lirc.rules deaktiviert
+# V1.33 xbmc nach kodi angepasst
+# V1.34 Network-Settings auf Nutzung des Networkmanagers umgestellt
+# V1.35 Jetzt auch updatefaehig fuer NM
+# V1.36 change to lirc-0.10.0 lirc_options.conf
+#set -x
+
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+SETUPSCRIPTS="easyvdr-addon-hw-wakeup.conf easyvdr-addon-extb-wakeup.conf easyvdr-addon-acpi-wakeup.conf easyvdr-addon-nvram-wakeup.conf"
+NODM_CONF="/etc/default/nodm"
+DM_CONF="/etc/X11/default-display-manager"
+FSTAB="/etc/fstab"
+HDDTEMP_CONF="/etc/default/hddtemp"
+LIRC_HW_CONF_FILE="/etc/lirc/lirc_options.conf"
+INTERFACES_CONF="/etc/network/interfaces"
+RESOLV_CONF="/etc/resolvconf/resolv.conf.d/tail" #"/etc/resolv.conf"
+HOSTNAME_CONF="/etc/hostname"
+HOST_CONF="/etc/hosts"
+DHCP_CONF="/etc/dhcp/dhclient.conf"
+SAMBACONFIG="/etc/samba/smb.conf"
+SMARTMON_CONF="/etc/default/smartmontools"
+FTP_CONFIG="/etc/proftpd/proftpd.conf"
+FTP_DEFAULT="/etc/default/proftpd"
+VDRADMIN_DEFAULT="/etc/default/vdradmin-am"
+XXV_DEFAULT="/etc/default/vdr-xxv"
+LOGGER="logger -s easyvdr-set-settings"
+SMB_USERMAP="/etc/samba/smbuser.map"
+SMBUSER="easyvdr"
+SMBPASSWD="easyvdr"
+NFS_KERNEL_SERVER_DEFAULT="/etc/default/nfs-kernel-server"
+NFS_COMMON_DEFAULT=/"etc/default/nfs-common"
+RMT_CONTR_DIR="$CFG_DIR/remotes"
+VDR_REMOTE_CONF="$CFG_DIR/remote.conf"
+
+
+
+##### start wakeup #####
+disable_wakeup() {
+	for script in $SETUPSCRIPTS; do
+		if [ -e /etc/vdr/$script ]; then
+			sed -i -e "s|^\(ENABLED\)=.*|\1=\"no\"|;" /etc/vdr/$script
+		fi
+	done
+}
+
+enable_wakeup() {
+	if [ -e /etc/vdr/$1 ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"yes\"|;" /etc/vdr/$1
+	fi
+}
+
+write_TimeAdds() {
+	if [ -e /etc/vdr/$1 ]; then
+		sed -i -e "s|^\(REGULAR_DAYS\)=.*|\1=\"$WAKEUP_REGULAR_DAYS\"|;" /etc/vdr/$1
+		sed -i -e "s|^\(REGULAR_TIME\)=.*|\1=\"$WAKEUP_REGULAR_TIME\"|;" /etc/vdr/$1
+		sed -i -e "s|^\(START_AHEAD\)=.*|\1=\"$WAKEUP_START_AHEAD\"|;" /etc/vdr/$1
+	fi
+}
+
+write_NvramAdds() {
+	if [ -e /etc/vdr/$1 ]; then
+		sed -i -e "s|^\(COMMANDLINE\)=.*|\1=\"$NVRAM_COMMANDLINE\"|;" /etc/vdr/$1
+		sed -i -e "s|^\(FORCE_REBOOT\)=.*|\1=\"$NVRAM_FORCE_REBOOT\"|;" /etc/vdr/$1
+	fi
+}
+
+set_wakeup() {
+	# First disable all
+	disable_wakeup
+
+	#enable the right one;
+	case $SHUTDOWNMETHOD in
+		"ACPI")
+			enable_wakeup "easyvdr-addon-acpi-wakeup.conf"
+			write_TimeAdds "easyvdr-addon-acpi-wakeup.conf"
+		;;
+		"Nvram-Wakeup")
+			enable_wakeup "easyvdr-addon-nvram-wakeup.conf"
+			write_TimeAdds "easyvdr-addon-nvram-wakeup.conf"
+			write_NvramAdds "easyvdr-addon-nvram-wakeup.conf"
+		;;
+		"Extb")
+			enable_wakeup "easyvdr-addon-extb-wakeup.conf"
+		;;
+		"Jepsen-HW-Wakeup")
+			enable_wakeup "easyvdr-addon-hw-wakeup.conf"
+		;;
+	esac
+}
+##### end wakeup #####
+
+##### start frontend #####
+disable_X() {
+	if [ -e $NODM_CONF ]; then
+		sed -i -e "s|^\(NODM_ENABLED\)=.*|\1=false|;" $NODM_CONF
+	fi
+
+	if [ -e $DM_CONF ]; then
+	    echo "disabled" > $DM_CONF
+	fi
+}
+
+enable_X() {
+	if [ -e $NODM_CONF ]; then
+		sed -i -e "s|^\(NODM_ENABLED\)=.*|\1=true|;" $NODM_CONF
+		sed -i -e "s|^\(NODM_USER\)=.*|\1=easyvdr|;" $NODM_CONF
+		sed -i -e "s|^\(NODM_MIN_SESSION_TIME\)=.*|\1=60|;" $NODM_CONF
+		sed -i -e "s|^\(NODM_X_OPTIONS\)=.*|\1=\":0.0 vt7 -nolisten tcp\"|;" $NODM_CONF
+	fi
+
+	if [ -e $DM_CONF ]; then
+	    echo "/usr/sbin/nodm" > $DM_CONF
+	fi
+}
+
+set_frontend()
+{
+case $VDR_FRONTEND in
+      "DVB-FF") disable_X ;;
+    "DVBS2-FF") disable_X ;;
+     "reelbox") disable_X ;;
+      "PVR350") disable_X ;;
+    "vdr-sxfe") enable_X  ;;	
+        "xine") enable_X  ;;
+        "KODI") enable_X  ;;
+        "ENNA") enable_X  ;;
+"Softhddevice") enable_X  ;;
+esac
+}
+##### end frontend #####
+
+##### start fstab #####
+setmediainfstab() {
+	if [ ! -b $MEDIADEVICE ]; then
+		$LOGGER "$MEDIADEVICE existiert nicht"
+		exit 1
+	fi
+
+	NEW_UUID=$(blkid -o value -s UUID $MEDIADEVICE)
+	OLD_UUID=$(cat $FSTAB | grep -iv "#" | awk '/media/ {printf $1}' | cut -f2 -d"=")
+	FILESYSTEM=$(blkid -o value -s TYPE $MEDIADEVICE)
+	DEFAULTS="defaults"
+	[ -z "$FILESYSTEM" ] && FILESYSTEM="auto"
+	if [ x"$FILESYSTEM" =  x"ntfs" ]; then
+	   FILESYSTEM="ntfs-3g"
+           DEFAULTS="defaults,force,locale=de_DE.UTF-8"
+	fi
+
+	if [ -n "$OLD_UUID" ]; then
+	    NEWLINE="UUID=$NEW_UUID /media/easyvdr01          $FILESYSTEM    $DEFAULTS 0       2"
+	    sed -i -e "s|UUID=$OLD_UUID /media/easyvdr01.*|$NEWLINE|" $FSTAB
+	else
+	    echo -e "# /media/easyvdr01 was added from easyvdr-set-settings"                          >> $FSTAB
+	    echo -e "UUID=$NEW_UUID /media/easyvdr01          $FILESYSTEM    $DEFAULTS 0       2"    >> $FSTAB
+	fi
+}
+##### end fstab #####
+
+
+##### start hddtemp ##### 
+enable_hddtemp() {
+	if [ -e $HDDTEMP_CONF ]; then
+		sed -i -e "s|^\(RUN_DAEMON\)=.*|\1=\"true\"|;" $HDDTEMP_CONF
+		sed -i -e "s|^\(DISKS\)=.*|\1=\"$HDDTEMP_DRIVES\"|;" $HDDTEMP_CONF
+		sed -i -e "s|^\(DISKS_NOPROBE\)=.*|\1=\"$HDDTEMP_DRIVES_WO_SENSORS\"|;" $HDDTEMP_CONF
+		sed -i -e "s|^\(INTERFACE\)=.*|\1=\"$HDDTEMP_INTERFACE\"|;" $HDDTEMP_CONF
+		sed -i -e "s|^\(PORT\)=.*|\1=\"$HDDTEMP_PORT\"|;" $HDDTEMP_CONF
+		sed -i -e "s|^\(RUN_SYSLOG\)=.*|\1=\"$HDDTEMP_INTERVALL\"|;" $HDDTEMP_CONF
+		sed -i -e "s|^\(OPTIONS\)=.*|\1=\"$HDDTEMP_OPTS\"|;" $HDDTEMP_CONF
+	fi
+}
+
+disable_hddtemp() {
+	if [ -e $HDDTEMP_CONF ]; then
+		sed -i -e "s|^\(start_smartd\)=.*|\1=\"false\"|;" $HDDTEMP_CONF
+	fi
+}
+##### end hddtemp ##### 
+
+##### start lirc ##### 
+do_write_lirc_hardware() {
+ 	sed -i~ -r '/code =/ s/^# +//' $LIRC_HW_CONF_FILE
+	sed -i~ -r '/modinit/ s/^# +//' $LIRC_HW_CONF_FILE
+	sed -i -e "
+		s|^\(REMOTE\)=.*|\1= \"$REMOTE\"|;
+		s|^\(driver          \)=.*|\1=\ $REMOTE_DRIVER\ |;
+		s|^\(code \)=.*|\1=\ $REMOTE_MODULES\ |;
+		s|^\(device          \)=.*|\1=\ $REMOTE_DEVICE\ |;
+		s|^\(output          \)=.*|\1=\ $REMOTE_SOCKET\ |;
+		s|^\(REMOTE_LIRCD_CONF\)=.*|\1=\"$REMOTE_LIRCD_CONF\"|;
+		s|^\(REMOTE_LIRCD_ARGS\)=.*|\1=\"$REMOTE_LIRCD_ARGS\"|;
+		s|^\(TRANSMITTER\)=.*|\1=\"$TRANSMITTER\"|;
+		s|^\(TRANSMITTER_MODULES\)=.*|\1=\"$TRANSMITTER_MODULES\"|;
+		s|^\(TRANSMITTER_DRIVER\)=.*|\1=\"$TRANSMITTER_DRIVER\"|;
+		s|^\(TRANSMITTER_DEVICE\)=.*|\1=\"$TRANSMITTER_DEVICE\"|;
+		s|^\(TRANSMITTER_SOCKET\)=.*|\1=\"$TRANSMITTER_SOCKET\"|;
+		s|^\(TRANSMITTER_LIRCD_CONF\)=.*|\1=\"$TRANSMITTER_LIRCD_CONF\"|;
+		s|^\(TRANSMITTER_LIRCD_ARGS\)=.*|\1=\"$TRANSMITTER_LIRCD_ARGS\"|;
+		s|^\(START_LIRCD\)=.*|\1=\"$START_LIRCD\"|;
+		s|^\(LOAD_MODULES\)=.*|\1=\"$LOAD_MODULES\"|;
+		s|^\(LIRCMD_CONF\)=.*|\1=\"$LIRCMD_CONF\"|;
+		s|^\(FORCE_NONINTERACTIVE_RECONFIGURATION\)=.*|\1=\"$FORCE_NONINTERACTIVE_RECONFIGURATION\"|;
+		s|^\(START_LIRCMD\)=.*|\1=\"$START_LIRCMD\"|;
+		" $LIRC_HW_CONF_FILE
+}
+
+do_write_lirc_com1() {
+cat > /etc/modprobe.d/serial-ir.conf <<EOF
+#COM1 equivalent, /dev/ttyS0
+options serial_ir irq=4 io=0x3f8
+options lirc_sir irq=4 io=0x3f8
+#COM2 equivalent, /dev/ttyS1
+#options lirc_serial irq=3 io=0x2f8
+#options lirc_sir irq=3 io=0x2f8
+EOF
+
+cat > /etc/serial.conf << EOF
+/dev/ttyS0 uart none
+EOF
+}
+
+do_write_lirc_com2() {
+cat > /etc/modprobe.d/serial-ir.conf <<EOF
+#COM1 equivalent, /dev/ttyS0
+#options lirc_serial irq=4 io=0x3f8
+#options lirc_sir irq=4 io=0x3f8
+#COM2 equivalent, /dev/ttyS1
+options serial_ir irq=3 io=0x2f8
+options lirc_sir irq=3 io=0x2f8
+EOF
+
+cat > /etc/serial.conf << EOF
+/dev/ttyS1 uart none
+EOF
+}
+
+do_set_lirc_vars() {
+	case "$LIRC_HW_CONF" in
+		"udp_ir")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DRIVER="udp"
+			REMOTE_DEVICE=""
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_hardware
+		;;
+		"igor_usb")
+			REMOTE=""
+			REMOTE_MODULES="modprobe lirc_igorplugusb"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_hardware
+		;;
+		"ser_alsa")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DEVICE="hw@44100,r"
+			REMOTE_DRIVER="audio_alsa"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			do_write_lirc_hardware
+		;;
+		"kbd_i2c")
+			REMOTE=""
+			REMOTE_MODULES="modprobe lirc_dev ir_kbd_i2c"
+			REMOTE_DRIVER="devinput"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_hardware
+		;;
+		"mce_usb")
+			REMOTE=""
+			REMOTE_MODULES="modprobe lirc_dev mceusb"
+			REMOTE_DRIVER="devinput"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_hardware
+		;;
+		"atilib_usb")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DRIVER="atilibusb"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_hardware
+		;;
+		"dev_input")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DRIVER="devinput"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="true"
+			do_write_lirc_hardware
+		;;
+		"com1")
+			REMOTE=""
+			REMOTE_MODULES="modprobe serial_ir"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_com1
+			do_write_lirc_hardware
+		;;
+		"com2")
+			REMOTE=""
+			REMOTE_MODULES="modprobe serial_ir"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_com2
+			do_write_lirc_hardware
+		;;
+		"dvico")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_DRIVER="dvico"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			do_write_lirc_hardware
+		;;
+		"samsung")
+			REMOTE=""
+			REMOTE_MODULES="modprobe hid_samsung"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_DRIVER="samsung"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			do_write_lirc_hardware
+		;;
+		"imon")
+			REMOTE=""
+			REMOTE_MODULES="modprobe lirc_imon"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			do_write_lirc_hardware
+		;;
+		"X10_und_com1")
+			REMOTE=""
+			REMOTE_MODULES="modprobe serial_ir"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/lirc0"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			REMOTE_LIRCD_ARGS=""
+			TRANSMITTER_MODULES="lirc_atiusb "
+			TRANSMITTER_DRIVER="default"
+			TRANSMITTER_DEVICE="/dev/lirc1"
+			TRANSMITTER_SOCKET="/var/run/lirc/lircd"
+			TRANSMITTER_LIRCD_ARGS=""
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_com1
+			do_write_lirc_hardware
+		;;
+		"X10_und_com2")
+			REMOTE=""
+			REMOTE_MODULES="modprobe serial_ir"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/lirc0"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			TRANSMITTER_MODULES="lirc_atiusb"
+			TRANSMITTER_DRIVER="default"
+			TRANSMITTER_DEVICE="/dev/lirc1"
+			TRANSMITTER_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			REMOTE_LIRCD_ARGS=""
+			LOAD_MODULES="false"
+			TRANSMITTER_LIRCD_ARGS=""
+			do_write_lirc_com2
+			do_write_lirc_hardware
+		;;	
+		"com1_alt"|"extb1")
+			REMOTE=""
+			REMOTE_MODULES="modprobe serial_ir"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/lirc0"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_com1
+			do_write_lirc_hardware
+		;;
+		"com2_alt"|"extb1")
+			REMOTE=""
+			REMOTE_MODULES="modprobe serial_ir"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/lirc0"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_com2
+			do_write_lirc_hardware
+		;;
+		"sir1")
+			REMOTE=""
+			REMOTE_MODULES="modprobe lirc_sir"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/lirc0"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_com1
+			do_write_lirc_hardware
+		;;
+		"sir2")
+			REMOTE=""
+			REMOTE_MODULES="modprobe lirc_sir"
+			REMOTE_DRIVER="default"
+			REMOTE_DEVICE="/dev/lirc0"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="false"
+			do_write_lirc_com2
+			do_write_lirc_hardware
+		;;
+		"ivtv")
+			# Event Numer ermitteln
+			EVENT_NR=$(ls -l /dev/input/ir | awk '{print $NF }' | sed 's#[^0-9]\+##')
+			# Keymap fuer die PVR-350 FB erweitern
+			input-kbd -f /etc/vdr/loadkeys/pvr350-remote.keys $EVENT_NR
+			REMOTE_MODULES="modprobe ivtv ir_kbd_i2c evdev"
+			REMOTE_DRIVER="dev/input"
+			REMOTE_DEVICE="/dev/input/event$EVENT_NR"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			do_write_lirc_hardware
+		;;
+		"input_lirc")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DEVICE=""
+			START_LIRCD="false"
+			START_LIRCMD="false"
+			do_write_lirc_hardware
+               ;;
+		"irtrans_server")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DEVICE=""
+			START_LIRCD="false"
+			START_LIRCMD="false"
+			do_write_lirc_hardware
+               ;;
+		"irmp_lirc")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DEVICE=""
+			START_LIRCD="false"
+			START_LIRCMD="false"
+			do_write_lirc_hardware
+               ;;
+		"irman")
+			REMOTE=""
+			REMOTE_MODULES=""
+			REMOTE_DRIVER="irman"
+			REMOTE_DEVICE="/dev/input/ir-auto_dtc"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			LOAD_MODULES="true"
+			do_write_lirc_hardware
+               ;;
+		"None")
+			REMOTE=""
+			REMOTE_MODULES=""
+			#REMOTE_DEVICE=""    # leider will vdr nicht ohne LIRC
+			#REMOTE_DRIVER=""    #   daher vorerst ueber alsa
+			#REMOTE_SOCKET=""    #   in der Hoffnung, dass es 
+			#START_LIRCD="false" #   ohne mic nicht knallt
+			REMOTE_DEVICE="hw@44100,r"
+			REMOTE_DRIVER="audio_alsa"
+			REMOTE_SOCKET="/var/run/lirc/lircd"
+			START_LIRCD="true"
+			START_LIRCMD="false"
+			#LOAD_MODULES="false"
+			do_write_lirc_hardware
+               ;;
+	esac
+}
+
+do_write_fb_controller()
+{
+FOUND_RMT_CONTR_CF="$RMT_CONTR_DIR/$FB_CONTROLLER/lircd.conf.$LIRC_HW_CONF"
+LIRC_CNF_DIR="/etc/lirc"
+IR_TRANS_CNF_DIR="/usr/share/irtrans/remotes"
+FOUND_REMOTE_CONF="$RMT_CONTR_DIR/$FB_CONTROLLER/remote.conf"
+STDRT_REMOTE_CONF="$RMT_CONTR_DIR/.default.remote.conf"
+KODI_ADVANCE_DIR="/var/lib/vdr/.kodi/userdata"
+KODI_ADVANCE_CONF="$KODI_ADVANCE_DIR/advancedsettings.xml"
+
+#FOUND_KODI_CONF="$RMT_CONTR_DIR/$FB_CONTROLLER/KODI/advancedsettings.xml"
+FOUND_KODI_CONF="$RMT_CONTR_DIR/$FB_CONTROLLER/XBMC/advancedsettings.xml"
+
+STDRT_KODI_CONF="$RMT_CONTR_DIR/.advancedsettings.xml"
+
+if [[ ! -d $KODI_ADVANCE_DIR ]]; then
+  mkdir -p -m 777 $KODI_ADVANCE_DIR
+  chown vdr:vdr $KODI_ADVANCE_DIR
+  chmod 777 /var/lib/vdr/.kodi
+  chown vdr:vdr /var/lib/vdr/.kodi
+fi
+
+if [[ -e $FOUND_RMT_CONTR_CF ]]; then
+  [[ -e $FOUND_REMOTE_CONF ]] && USE_REMOTE_CONF=$FOUND_REMOTE_CONF || USE_REMOTE_CONF=$STDRT_REMOTE_CONF
+  [[ -e $FOUND_KODI_CONF ]]   && USE_KODI_CONF=$FOUND_KODI_CONF     || USE_KODI_CONF=$STDRT_KODI_CONF
+  case  $LIRC_HW_CONF in
+                "None") x=0							      ;;
+      "irtrans_server") cp -afL $FOUND_RMT_CONTR_CF $IR_TRANS_CNF_DIR/irtrans.rem
+                        Remote_Cnf_To_Lower $USE_REMOTE_CONF $VDR_REMOTE_CONF
+                        cp -af              $USE_KODI_CONF $KODI_ADVANCE_CONF         ;;
+                     *) cp -afL $FOUND_RMT_CONTR_CF $LIRC_CNF_DIR/lircd.conf
+                        cp -af              $USE_REMOTE_CONF $VDR_REMOTE_CONF
+                        cp -af              $USE_KODI_CONF $KODI_ADVANCE_CONF         ;;
+  esac
+fi
+}
+
+do_remove_lirc_modules()
+{
+lirc_modul_list="serial_ir lirc_sir lirc_imon lirc_mceusb lirc_ttusbir lirc_igorplugusb hid_samsung mceusb"
+for lirc_modul in $lirc_modul_list
+  do
+    modprobe -r "$lirc_modul" >/dev/null 2>&1
+  done
+}
+
+Stop_Rmt_Daemons()
+{
+RMT_RECEIVER_DAEMONS="lircd.socket lircd.service easyvdr-inputlirc easyvdr-irtrans easyvdr-irmplircd"
+for RMT_DAEMON in $RMT_RECEIVER_DAEMONS
+  do
+    (systemctl status $RMT_DAEMON | grep -q running ) && stop $RMT_DAEMON  >/dev/null 2>&1 
+  done
+}
+
+#### remote.conf in kleinbuchstaben - fuer irtrans
+Remote_Cnf_To_Lower()
+{
+SOURE_REMOTE_CONF=$1
+TARGET_REMOTE_CONF=$2
+LIRC_PART=/tmp/.lirc.part
+REST_PART=/tmp/.rest.part
+TRANSFER=/tmp/.transfer.part
+GREPPER="LIRC."
+
+## Muell beseitigen
+[ -e $TRANSFER ] && rm -f $TRANSFER
+
+## aufsplitten in lirc und rest
+grep -v $GREPPER $SOURE_REMOTE_CONF   > $REST_PART
+grep    $GREPPER $SOURE_REMOTE_CONF   > $LIRC_PART
+
+## Datei Zeilenweise in Array
+OLD_IFS=$IFS
+IFS=$'\n'
+LIRC_PART_ARRAY=($(cat "$LIRC_PART"))
+IFS=$OLD_IFS
+
+## Umwandeln in Kleinbuchstaben
+LIRC_PART_COUNT=${#LIRC_PART_ARRAY[@]}                        ## Anzahl der Arrayelemente ( der Zeilen )
+for ((i=0;i<$LIRC_PART_COUNT;i++))
+  do
+    LIRC_LINE=${LIRC_PART_ARRAY[$i]}                          ## eine Zeile
+    LIRC_LINE_ARRAY=($LIRC_LINE)                              ## jede Zeile in Array splitten
+    LIRC_LINE_EL1=${LIRC_LINE_ARRAY[0]}                       ## erste  Element der Zeile
+    LIRC_LINE_dummy=${LIRC_LINE_ARRAY[1]}                     ## zweite Element der Zeile
+    LIRC_LINE_EL2=${LIRC_LINE_dummy,,}                        ## zweite Element der Zeile in Kleinbuchstaben 
+    echo "$LIRC_LINE_EL1     	$LIRC_LINE_EL2" >> $TRANSFER  ## lirc-teil wieder zusamenbauen
+  done
+
+cat $TRANSFER $REST_PART >  $TARGET_REMOTE_CONF               ## alles zusammen als neue remote.conf
+
+##aufrauumen
+[ -e  $TRANSFER ] && rm -f $TRANSFER
+[ -e $REST_PART ] && rm -f $REST_PART
+[ -e $LIRC_PART ] && rm -f $LIRC_PART
+}
+
+
+##### end lirc #####
+
+##### start network #####
+do_write_hostname_config() {
+	echo -e "$HOSTNAME"		> $HOSTNAME_CONF
+	sed -i -e "s|^127.0.1.1.*|127.0.1.1	$HOSTNAME|" $HOST_CONF
+        hostname $HOSTNAME
+}
+
+do_write_dhcp_hostname_config()
+{
+MAC_ADDR="00:00:00:00:00:00:00"
+sed -i -e "s|.*send dhcp-client-identifier.*|send dhcp-client-identifier $MAC_ADDR;|" $DHCP_CONF
+sed -i -e "s|.*send host-name.*|send host-name \"$HOSTNAME\";|" $DHCP_CONF
+#dhclient -r && dhclient
+}
+
+do_write_resolv_config() {
+    rm -f $RESOLV_CONF
+    echo -e " "                                                          > $RESOLV_CONF
+    echo -e "# Additional static entries generated by easyvdr-set-settings (easyvdr-network-setup)" >> $RESOLV_CONF
+                             echo -e "nameserver \t 127.0.0.1"          >> $RESOLV_CONF
+    if [ -n "$DOMAIN" ]; then
+	echo -e "domain     \t $DOMAIN"		        		>> $RESOLV_CONF
+    else
+	echo -e "domain     \t easyVDR" 				>> $RESOLV_CONF
+    fi
+}
+
+do_write_interfaces_config() {
+    echo -e "# This file names only the loopback interface on your system"               > $INTERFACES_CONF
+    echo -e "# all the other interfaces are managed by ubuntu NetworkManager."		>> $INTERFACES_CONF
+    echo -e "# This file was automtically generated by easyvdr-setup. Don't change it!" >> $INTERFACES_CONF
+    echo -e ""										>> $INTERFACES_CONF
+    echo -e "# The loopback network interface"						>> $INTERFACES_CONF
+    echo -e "auto lo"									>> $INTERFACES_CONF
+    echo -e "iface lo inet loopback"							>> $INTERFACES_CONF
+    echo -e ""										>> $INTERFACES_CONF
+}
+
+##### end network ##### 
+
+##### start samba #####
+samba_global()
+{
+echo "[global]"                                                      > $SAMBACONFIG
+echo "workgroup = $SAMBA_WORKGROUP"                                 >> $SAMBACONFIG
+echo "netbios name = $HOSTNAME"                                     >> $SAMBACONFIG
+echo "server string = $SAMBA_SERVER_STRING"                         >> $SAMBACONFIG
+echo "unix charset = UTF-8"                                         >> $SAMBACONFIG
+echo "follow symlinks = yes"                                        >> $SAMBACONFIG
+echo "wide links = yes"                                             >> $SAMBACONFIG
+echo "unix extensions = no"                                         >> $SAMBACONFIG
+echo "deadtime = 5"                                                 >> $SAMBACONFIG
+echo "guest account = root"                                         >> $SAMBACONFIG
+echo "os level = 2"                                                 >> $SAMBACONFIG
+echo "null passwords = yes"                                         >> $SAMBACONFIG
+echo "username map = $SMB_USERMAP"                                  >> $SAMBACONFIG
+echo "encrypt passwords = yes"                                      >> $SAMBACONFIG
+#echo "socket options = TCP_NODELAY SO_RCVBUF=16384 SO_SNDBUF=16384" >> $SAMBACONFIG
+echo "log level = 2"                                                >> $SAMBACONFIG
+echo "syslog only = yes"                                            >> $SAMBACONFIG
+echo "max log size = 50"                                            >> $SAMBACONFIG
+echo "preferred master = no"                                        >> $SAMBACONFIG
+echo "local master = no"                                            >> $SAMBACONFIG
+echo "wins support = no"                                            >> $SAMBACONFIG
+echo "wins proxy = no"                                              >> $SAMBACONFIG
+echo "load printers = no"                                           >> $SAMBACONFIG
+echo "printcap name = /dev/null"                                    >> $SAMBACONFIG
+if [ $SAMBA_LOG="yes" ]
+  then
+    echo "log file = /var/log/samba.log"                            >> $SAMBACONFIG
+  else
+    echo "log file = /dev/null"                                     >> $SAMBACONFIG
+fi
+echo ""                                                             >> $SAMBACONFIG
+[ -e $SMB_USERMAP ] || create_smbusermap
+}
+
+create_smbusermap()
+{
+(echo $SMBPASSWD; echo $SMBPASSWD) | sudo smbpasswd -as $SMBUSER > /dev/null
+echo -e "${SMBUSER} = ${SMBUSER}" >> $SMB_USERMAP
+}
+
+writestandardsettings()
+{
+echo "delete readonly = yes"                                        >> $SAMBACONFIG
+echo "writeable = yes"                                              >> $SAMBACONFIG
+echo "force directory mode = 777"                                   >> $SAMBACONFIG
+echo "force group = root"                                           >> $SAMBACONFIG
+echo "force create mode = 777"                                      >> $SAMBACONFIG
+echo "force user = root"                                            >> $SAMBACONFIG
+echo "create mode = 777"                                            >> $SAMBACONFIG
+echo "directory mode = 777"                                         >> $SAMBACONFIG
+echo ""                                                             >> $SAMBACONFIG
+}
+
+create_share()
+{
+echo "[$1]"                                                         >> $SAMBACONFIG
+echo "path = $2"                                                    >> $SAMBACONFIG
+writestandardsettings
+}
+##### end samba #####
+
+##### start smartmon #####
+set_smartmon() {
+	if [ -e $SMARTMON_CONF ]; then
+		sed -i -e "s|^\(start_smartd\)=.*|\1=\"$START_SMARTMON\"|;" $SMARTMON_CONF
+		sed -i -e "s|^\(enable_smartd\)=.*|\1=\"$SMARTMON_DRIVES\"|;" $SMARTMON_CONF
+		sed -i -e "s|^\(enable_opts\)=.*|\1=\"$SMARTMON_OPTS\"|;" $SMARTMON_CONF
+	fi
+}
+##### end smartmon #####
+
+##### start proftpd #####
+enable_proftpd() {
+	if [ -e $FTP_DEFAULT ]; then
+		sed -i -e "s|^\(RUN\)=.*|\1=\"yes\"|;" $FTP_DEFAULT
+	fi
+}
+
+disable_proftpd() {
+	if [ -e $FTP_DEFAULT ]; then
+		sed -i -e "s|^\(RUN\)=.*|\1=\"no\"|;" $FTP_DEFAULT
+	fi
+}
+
+Write_FTP_Config() {
+	NewValue="$2"
+	NewValue=${NewValue//\//\\/}
+	if [ $1 = UserPassword ]; then
+		#set var for username
+		OldValue=$(grep -w ^$1 $FTP_CONFIG | awk '{print $2}')
+		OldValue=${OldValue//\//\\/}
+
+		#set var for Password
+		OldValue2=$(grep -w ^$1 $FTP_CONFIG | awk '{print $3}')
+		OldValue2=${OldValue2//\//\\/}
+		NewValue2="$3"
+		NewValue2=${NewValue2//\//\\/}
+		#do it
+		sed -i 's/'$1' '$OldValue' '$OldValue2'/'$1' '$NewValue' '$NewValue2'/' $FTP_CONFIG
+	else
+		# for the another vars
+		OldValue=$(grep -w ^$1 $FTP_CONFIG | awk '{print $2}')
+		OldValue=${OldValue//\//\\/}
+		sed -i 's/'$1'\t'$OldValue'/'$1'\t'$NewValue'/' $FTP_CONFIG
+	fi
+}
+
+do_write_proftp_config() {
+	if [ x"$START_PROFTPD" = x"yes" ]; then
+		enable_proftpd
+		#write from OSD-Config
+		Write_FTP_Config ServerName "\"$HOSTNAME\""
+		Write_FTP_Config Port $FTPD_PORT
+		Write_FTP_Config DefaultChdir $FTPD_DEFAULT_DIR
+		Write_FTP_Config DefaultRoot $FTPD_DEFAULT_DIR
+		# get the password and make a hash
+		PASSWD=$(openssl passwd $FTPD_PASSWD)
+		PW_CONFIG="$FTPD_USER $PASSWD"
+		Write_FTP_Config UserPassword $FTPD_USER $PASSWD
+		#write the Hostname for localhost in /etc/hosts
+		OldValueInHosts=$(grep -w ^127.0.0.1 /etc/hosts | awk '{print $3}')
+		sed -i 's/127.0.0.1\tlocalhost\t$'OldValueInHosts'/127.0.0.1\tlocalhost\t'$HOSTNAME'/' /etc/hosts
+		#optional; activate log
+		if [ $FTPD_LOG = "yes" ]; then
+			CHECKLOG=$(grep -w "#Serverlog /var/log/proftpd.debug.log" $FTP_CONFIG)
+			CHECKLOG=$?
+			if [ $CHECKLOG = "0" ]; then
+				sed -i 's/#Serverlog \/var\/log\/proftpd.debug.log/Serverlog \/var\/log\/proftpd.debug.log/' $FTP_CONFIG
+			fi
+		fi
+		if [ $FTPD_LOG = "no" ]; then
+			CHECKLOG=$(grep -w "#Serverlog /var/log/proftpd.debug.log" $FTP_CONFIG)
+			CHECKLOG=$?
+			if [ $CHECKLOG = "1" ]; then
+				sed -i 's/Serverlog \/var\/log\/proftpd.debug.log/#Serverlog \/var\/log\/proftpd.debug.log/' $FTP_CONFIG
+			fi
+		fi
+		ConfigVarName=FTPD_WRITE_CONF
+		ConfigValue=no
+		SetupConfigs
+	else
+		disable_proftpd
+	fi
+}
+##### end proftpd #####
+
+##### start vdradmin-am #####
+enable_vdradmin() {
+	if [ -e $VDRADMIN_DEFAULT ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"true\"|;" $VDRADMIN_DEFAULT
+	fi
+}
+
+disable_vdradmin() {
+	if [ -e $VDRADMIN_DEFAULT ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"false\"|;" $VDRADMIN_DEFAULT
+	fi
+}
+##### stop vdradmin-am #####
+
+##### start xxv #####
+enable_xxv() {
+	if [ -e $XXV_DEFAULT ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"true\"|;" $XXV_DEFAULT
+	fi
+}
+
+disable_xxv() {
+	if [ -e $XXV_DEFAULT ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"false\"|;" $XXV_DEFAULT
+	fi
+}
+##### stop xxv #####
+
+
+##### start nfsd #####
+enable_nfsd() {
+	if [ -e $NFS_KERNEL_SERVER_DEFAULT ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"true\"|;" $NFS_KERNEL_SERVER_DEFAULT
+	fi
+	if [ -e $NFS_COMMON_DEFAULT ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"true\"|;" $NFS_COMMON_DEFAULT
+	fi
+}
+
+disable_nfsd() {
+	if [ -e $NFS_KERNEL_SERVER_DEFAULT ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"false\"|;" $NFS_KERNEL_SERVER_DEFAULT
+	fi
+	if [ -e $NFS_COMMON_DEFAULT ]; then
+		sed -i -e "s|^\(ENABLED\)=.*|\1=\"false\"|;" $NFS_COMMON_DEFAULT
+	fi
+}
+##### stop nfsd #####
+
+##### MAIN #####
+case "$1" in
+      "vdradmin") [ x"$START_VDRADMIN" = x"yes" ] && enable_vdradmin || disable_vdradmin ;;
+           "xxv") [ x"$START_XXV" = x"yes" ] && enable_xxv || disable_xxv ;;
+"shutdownmethod") set_wakeup ;;
+      "frontend") set_frontend ;;
+         "fstab") [ -n "$MEDIADEVICE" ] && setmediainfstab ;;
+       "hddtemp") [ x"$START_HDDTEMP" = x"yes" ] && enable_hddtemp || disable_hddtemp ;;
+          "lirc") Stop_Rmt_Daemons
+                  do_remove_lirc_modules
+                  rm -f /usr/share/irtrans/remotes/*	# damit kein alter Schrott fuer irtrans bleibt
+        	  if [ -f /lib/udev/rules.d/85-lirc.rules ]; then
+                    sed -i 's/^ACTION==\(.*\)KERNEL==\"lirc\[0-9\]\"/# ACTION==\1KERNEL==\"lirc\[0-9\]\"/g' /lib/udev/rules.d/85-lirc.rules
+                  fi					# damit auch diese Altlast aus dem lirc-Paket deaktiviert
+                  if (pidof vdr > /dev/null 2>&1); then
+                    $DETECT/easyvdr-detect -OSD_Remot
+                    . $CFG_DIR/sysconfig
+                  fi
+                  do_set_lirc_vars
+                  do_write_fb_controller
+                  (pidof vdr > /dev/null 2>&1)  &&  $SETUP/easyvdr-make-remote-mapping kodi quiet >/dev/null 2>&1  ;; ## nur wenn ueber OSD ;;
+     "fbcontrol") Stop_Rmt_Daemons
+                  do_write_fb_controller
+                  $DETECT/easyvdr-post-detect -Fb_Contr -RUN_UDEV
+                  (pidof vdr > /dev/null 2>&1) && { initctl emit simu-start-vdr; sleep 0.5; }
+                  $SETUP/easyvdr-make-remote-mapping kodi quiet >/dev/null 2>&1 ;;
+       "network") echo "easyvdr-set-settings called"
+		    sleep 5 ;;
+    "network_ng") if [ -n "$HOSTNAME" ]; then
+                    do_write_hostname_config
+                    do_write_dhcp_hostname_config
+                  fi
+                  do_write_interfaces_config
+                  do_write_resolv_config
+                  sudo resolvconf -u >/dev/null 2>&1
+                  sudo service network-manager restart >/dev/null 2>&1 ;;
+         "samba") samba_global
+                  (pidof smbd > /dev/null 2>&1) && stop smbd > /dev/null 2>&1; (pidof nmbd > /dev/null 2>&1) && stop nmbd > /dev/null 2>&1
+                  if [ x"$START_SAMBA" = x"yes" ]; then
+                    [ x"$SAMBA_SHARE_ROOT"   = x"yes" ] && create_share "ROOT"   "/"
+                    [ x"$SAMBA_SHARE_MEDIA"  = x"yes" ] && create_share "MEDIA"  "/media/easyvdr01"
+                    [ x"$SAMBA_SHARE_MP3"    = x"yes" ] && create_share "MP3"    "/media/easyvdr01/mp3"
+                    [ x"$SAMBA_SHARE_PHOTOS" = x"yes" ] && create_share "PHOTOS" "/media/easyvdr01/photos"
+                    [ x"$SAMBA_SHARE_VIDEO0" = x"yes" ] && create_share "VIDEO"  "/media/easyvdr01/video0"
+                    [ x"$SAMBA_SHARE_FILME1" = x"yes" ] && create_share "FILME1" "/media/easyvdr01/filme1"
+                    [ x"$SAMBA_SHARE_FILME2" = x"yes" ] && create_share "FILME2" "/media/easyvdr01/filme2"
+                    [ x"$SAMBA_SHARE_FILME3" = x"yes" ] && create_share "FILME3" "/media/easyvdr01/filme3"
+                    start nmbd > /dev/null 2>&1; start smbd > /dev/null 2>&1
+                  fi ;;
+      "smartmon") set_smartmon ;;
+       "proftpd") do_write_proftp_config ;;
+          "nfsd") [ x"$START_NFSD" = x"yes" ] && enable_nfsd || disable_nfsd ;;
+esac
+

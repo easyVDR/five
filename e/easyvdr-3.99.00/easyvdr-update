@@ -1,0 +1,157 @@
+#!/bin/bash
+# Update Skript V 0.4
+# Erstellt von sinai
+# um X-Anzeige erweitert von Bleifuss2
+# um Graphlcd-Anzeige erweitert von SurfaceCleanerZ (14.03.13)
+# Bugfix, um Updates bei VPS-Timer zu ermoeglichen von sinai (14.03.13)
+# In Anlehnung an easyvdr-update.sh aus easyVDR 0.8
+#
+# 0.5 Martin distupgrade ohne Überschreiben configs
+# 0.6 michel8 Kopieren der Channels.conf ausgelagert in separates Kommando
+
+##### definitions
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+
+UPDLOG="$EASYVDR_LOGDIR/update.log"
+GLCD_PIC_PATH="/usr/share/vdr-plugin-graphlcd/logos/update"
+
+
+#### declare functions
+Print_Help()
+{
+echo "Syntax: ist  sh easyvdr-update [-Parameter]"
+echo " -i : Update via Internet"
+echo " -n : Test auf neue Pakete"
+echo " -e : OSD-Updatemeldung an/abschalten"
+echo " -d : Grafikanzeige auf X-Server"
+exit
+}
+
+Display_Message()       					  # Zeigt Bild auf dem Desktop fuer x Sekunden an
+{
+export DISPLAY=:0
+/usr/bin/view_picture /usr/share/easyvdr/program-changer/pictures/please-wait-install.gif 15
+}
+
+Display_glcd()
+{
+if [[ X$LCD == X"graphlcd"  ]]; then                              # Zeigt Bild auf gLCD, wenn Graphlcd-Plugin aktiv
+    showpic -c /etc/graphlcd.conf -d $LCD_DRIVER $GLCD_PIC_PATH/warten_glcd_240x128.bmp
+fi
+}
+
+Online_Update()
+{
+DATUM=`date +%Y-%m-%d-%R`
+echo ""                                                           >> $UPDLOG
+echo "--------------------"                                       >> $UPDLOG
+echo $DATUM                                                       >> $UPDLOG
+echo "Teste auf Internetverbindung..."                            >> $UPDLOG
+if (ping -c 1 www.google.de) ;then
+    echo "Online..."                                              >> $UPDLOG
+    echo "Test auf laufende Aufnahme..."                          >> $UPDLOG
+    RECORD_STR=$(cut -d: -f1 $CFG_DIR/timers.conf) 		  # Alle Zeilen aus Datei in String lesen
+    for RECORD in $RECORD_STR; do
+    echo "Wert aus timers.conf: $RECORD"                          >> $UPDLOG
+        if [ $RECORD -gt 8 ] ;then 				  # Abfrage, ob groesser 8 - dann Aufnahme aktiv
+            RECORD_AKTIV="1"
+                echo "Record aktiv:" $RECORD_AKTIV                >> $UPDLOG
+                echo "Bitte Update erneut starten, wenn die $RECORD_AKTIV Aufnahmen beendet sind!"
+                break
+            fi
+    done
+
+    if [ "$RECORD_AKTIV" == "1" ] ;then
+        echo "Aufnahme laeuft - Update abgebrochen!!!"            >> $UPDLOG
+        svdrpsend MESG "Aufnahme laeuft - Systemupdate abgebrochen!!!"
+    else
+    echo "Keine Aufnahme!!!"                                      >> $UPDLOG
+        Check_av_Updates
+    if (($UP_AV_STATUS != 0)) ;then 
+        svdrpsend MESG "Systemupdate wird durchgefuehrt und VDR gestoppt!"
+        sleep 5
+        echo "Update wird durchgefuehrt!"                         >> $UPDLOG
+        echo "Stoppe VDR..."                                      >> $UPDLOG
+        Check_install_packages
+        echo ""                                                   >> $UPDLOG
+        echo "Folgende Pakete werden upgedatet:"                  >> $UPDLOG
+        echo $INSTALL_PACKAGES                                    >> $UPDLOG
+        echo ""	                                                  >> $UPDLOG
+        stopvdr
+#       Display_glcd
+        X_RUNNING=$(ps -ax | grep -c X)
+        if (($X_RUNNING != 0)) ; then
+	    easyvdr-update -d &
+        fi
+        #cp -f $CFG_DIR/channels.conf $CFG_DIR/channels/channels.$DATUM.conf
+        #echo "Aktive channels.conf wird als channels.$DATUM.conf gesichert!" >> $UPDLOG
+        #apt-get --yes dist-upgrade
+        apt-get -y -o Dpkg::Options::=--force-confdef dist-upgrade
+	pkill view_picture
+        echo "Starte VDR"                                         >> $UPDLOG
+        startvdr
+        sleep 10
+        echo "Systemupdate wurde erfolgreich durchgefuehrt!"      >> $UPDLOG
+        svdrpsend MESG "Systemupdate erfolgreich durchgefuehrt!!!"
+    else
+        echo "Kein Systemupdate erforderlich!"                    >> $UPDLOG
+        svdrpsend MESG "Kein Systemupdate erforderlich!"
+    fi
+  fi
+else
+  echo "Nicht online!!!"          >> $UPDLOG;exit 0	   		  ##  das ";exit 0"  is imho gar nich noetig
+fi
+}
+
+New_Packages()
+{
+if (ping -c 1 www.google.de) ;then
+    sleep 10
+    Check_av_Updates
+    (($UP_AV_STATUS != 0)) && svdrpsend MESG "Neue Pakete unter -Systemupdate- verfuegbar..."
+fi
+}
+
+Enable_Disable_Updatemessage()
+{
+DATUM=`date +%Y-%m-%d-%R`
+echo ""                                                            >> $UPDLOG
+echo "--------------------"                                        >> $UPDLOG
+echo $DATUM                                                        >> $UPDLOG
+if [[ X$SHOW_NEW_PACKAGES == X"yes"  ]] ;then
+    SetSysconfig SHOW_NEW_PACKAGES "no"
+    echo "Updatemeldung ausgeschaltet!"                            >> $UPDLOG
+    svdrpsend MESG "Systemupdates werden beim VDR-Start NICHT angezeigt!"
+else
+    SetSysconfig SHOW_NEW_PACKAGES "yes"
+    echo "Updatemeldung eingeschaltet!"                            >> $UPDLOG
+    svdrpsend MESG "Systemupdates werden beim VDR-Start angezeigt!"
+fi
+}
+
+Check_install_packages() 					   ## Pruefe, welche Pakete installiert werden muessen.
+{
+INSTALL_PACKAGES=$( apt-get -s dist-upgrade | grep Inst | awk -FInst '{ print $2 }' )
+}
+
+Check_av_Updates()						   ## Test, ob Updates verfuegbar sind.
+{
+apt-get update
+sleep 5
+UP_AV_STATUS=$( su easyvdr -c "apt-get -s dist-upgrade | grep -c 'Die folgenden Pakete werden aktualisiert'" )
+}
+
+
+################## Main ####################
+PARM=$1
+
+case "$PARM" in
+    -i)  Online_Update;;
+    -d)  Display_Message;;
+    -n)  New_Packages;;
+    -e)  Enable_Disable_Updatemessage;;
+     *)  Print_Help;;
+esac
+

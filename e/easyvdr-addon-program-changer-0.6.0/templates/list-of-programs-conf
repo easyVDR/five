@@ -1,0 +1,1373 @@
+#V 0.1    09.07.2013 Bleifuss
+#V 0.2    14.09.2014 Bleifuss
+#V 0.2    18.02.2015 Update gb / Bleifuss
+#V 0.2    06.12.2015 Update gb / Bleifuss
+#V 0.3    05.03.2016 Update (easyPortal Start Options) Bleifuss / gb
+#V 0.4    01.04.2016 Update (easyPortal default Options) Bleifuss / gb
+#
+#1  Standarde Menü
+#10 Internet Programme
+#20 System Programme
+#30 Systemsteuerung
+
+#Die Version wird im Setup ausgewertet, ist in der datei /config/version eine andere Version wird die Datei config/setup.conf gelöscht.
+#Es werden alle default Einstellungen wie bei einer neu Installation übernommen, Ausnahme ist die list-of-programs-user.conf
+Version = 1.1
+
+
+start-config  
+ button-name			= Vdr-Frontend
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-vdr.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= "no"
+ start-program			= "easyvdr-frontend start"
+ start-program-easyportal	= "easyvdr-frontend start"
+ stop-program			= "easyvdr-frontend stop"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config		
+
+start-config 
+ button-name			= KODI 
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-kodi.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= "/usr/lib/vdr/easyvdr-kodi-change-skins vdr_shutdown"
+ start-program			= "easyvdr-kodi start"
+ start-program-easyportal	= "echo KODI > /tmp/.pch-exec"
+ stop-program			= "easyvdr-kodi stop"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "kodi $PULSEAUDIO_INSTALL"
+end-config		
+
+start-config 
+ button-name			= KODI&WOL-Server
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-kodi.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= no
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= "$UTILITIES wol_server &"
+ start-program			= "easyvdr-kodi start"
+ start-program-easyportal	= "echo KODI > /tmp/.pch-exec"
+ stop-program			= "easyvdr-kodi stop"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "kodi etherwake $PULSEAUDIO_INSTALL"
+end-config		
+
+start-config
+ button-name			= Firefox 
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-firefox.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes 
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM firefox -browser -new-instance &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL firefox -browser -new-instance &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de $PULSEAUDIO_INSTALL"
+end-config		
+
+
+################ Google-Chrome
+
+start-config
+ button-name			= Google-Chrome
+ button-picture			= /usr/share/easyvdr/program-changer/pictures/button-google-chrome.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes
+ pre-start			= "$UTILITIES install_google_chrome $1"
+ start-program			= "$START_PROGRAM google-chrome -browser -new-instance &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL google-chrome -browser -new-instance &"
+ stop-program			= "chrome"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+################ Chromium-Browser
+
+start-config
+ button-name			= Chromium-Browser
+ button-picture			= /usr/share/easyvdr/program-changer/pictures/button-chromium-browser.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes
+ pre-start			= "no"
+ start-program			= "$START_PROGRAM chromium-browser -browser -new-instance &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL  chromium-browser -browser -new-instance &"
+ stop-program			= "chromium-browser"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "chromium-browser"
+end-config
+
+start-config
+ button-name			= Thunderbird 
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-thunderbird.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes 
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM thunderbird &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL thunderbird &"
+ stop-program			= "thunderbird"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "thunderbird thunderbird-locale-de"
+end-config		
+
+start-config
+ button-name			= Supertuxkart 
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-supertuxkart.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes 
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM supertuxkart &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL supertuxkart &"
+ stop-program			= "supertuxkart"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "supertuxkart $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config		
+
+start-config
+ button-name			= Toppler 
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-toppler.gif
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes 
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM toppler -f &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL toppler -f &"
+ stop-program			= "toppler"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "toppler $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config		
+
+start-config
+ button-name			= Gianas-Return 
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-gianas-return.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes 
+ pre-start 			= "cd /opt;[ ! -e giana ] && wget http://www.retroguru.com/gianas-return/gianas-return-v.latest-linux.tar.gz;gunzip gianas-return-v.latest-linux.tar.gz;tar -xf *.tar;$UTILITIES init_gaming_mod"
+ start-program			= "cd /opt/giana ;$START_PROGRAM ./giana_linux64 -fs -aa -b24 -a44 &"
+ start-program-easyportal	= "cd /opt/giana ;$START_PROGRAM_EASYPORTAL ./giana_linux64 -fs -aa -b24 -a44 &"
+ stop-program			= "giana_linux64"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "freeglut3 libsdl-mixer1.2  $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config		
+
+start-config
+ button-name			= Frogatto
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-frogatto.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes 
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM frogatto --widescreen --fullscreen &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL frogatto --widescreen --fullscreen &"
+ stop-program			= "game"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "frogatto $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Online-Hilfe
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-help.jpg
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox wiki.easy-vdr.de/index.php/Bedienung &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox wiki.easy-vdr.de/index.php/Bedienung &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= VLC-Player
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-vlc.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM $UTILITIES vlc &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES vlc &"
+ stop-program			= "vlc"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "vlc-nox $PULSEAUDIO_INSTALL"
+end-config
+
+start-config
+ button-name			= Plex-Home-Theather
+ button-picture			= /usr/share/easyvdr/program-changer/pictures/button-plex-hometheater.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start			= no
+ start-program			= "$START_PROGRAM plexhometheater.sh &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL plexhometheater.sh &"
+ stop-program			= "plexhometheater"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "plexhometheater $PULSEAUDIO_INSTALL"
+end-config
+
+start-config
+ button-name			= Desktop
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-desktop.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= no 
+ pre-start 			= "no"
+ start-program			= "echo läuft schon"
+ start-program-easyportal	= "echo läuft schon"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "$PULSEAUDIO_INSTALL"
+end-config
+
+########## System Programme
+
+start-config
+ button-name			= Terminal
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-gnome-terminal.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= yes
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM roxterm &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL roxterm &"
+ stop-program			= "roxterm"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "roxterm $PULSEAUDIO_INSTALL"
+end-config
+
+start-config
+ button-name			= Root-Terminal
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-gnome-terminal.png
+ default-button			= no
+ default-button-easyportal	= yes
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= yes
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM roxterm &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL roxterm &"
+ stop-program			= "roxterm"
+ kill-program			= yes
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "roxterm"
+end-config
+
+start-config
+ button-name			= Midnight-Commander
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-mc.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= yes
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "roxterm -e mc &"
+ start-program-easyportal	= "roxterm -e mc &"
+ stop-program			= "mc"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "mc"
+end-config
+
+start-config
+ button-name			= Root-Mid.-Com.
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-mc.png
+ default-button			= no
+ default-button-easyportal	= yes
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= yes
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "roxterm -e mc &"
+ start-program-easyportal	= "roxterm -e mc &"
+ stop-program			= "mc"
+ kill-program			= yes
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "roxterm mc"
+end-config
+
+start-config
+ button-name			= Grsync
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-grsync.gif
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM grsync &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL grsync &"
+ stop-program			= "grsync"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "grsync"
+end-config
+
+start-config
+ button-name			= Root-Grsync
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-grsync.gif
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM grsync &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL grsync &"
+ stop-program			= "grsync"
+ kill-program			= yes
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "grsync"
+end-config
+
+start-config
+ button-name			= Gnome-Commander
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-gnome-commander.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM gnome-commander &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL gnome-commander &"
+ stop-program			= "gnome-commander"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "gnome-commander"
+end-config
+
+start-config
+ button-name			= Gedit
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-gedit.png
+ default-button			= no
+ default-button-easyportal	= yes
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM gedit &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL gedit &"
+ stop-program			= "gedit"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "gedit"
+end-config
+
+start-config
+ button-name			= Gnome-Disks
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-gnome-disks.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= no
+ start-program			= "$START_PROGRAM gnome-disks &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL gnome-disks &"
+ stop-program			= "gnome-disks"
+ kill-program			= yes
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= K3B
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-k3b.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM k3b &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL k3b &"
+ stop-program			= "k3b"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "k3b language-pack-kde-de"
+end-config
+
+start-config
+ button-name			= Handbrake
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-handbrake.jpg
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM handbrake-gtk &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL handbrake-gtk &"
+ stop-program			= -none-
+ kill-program			= no
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "handbrake"
+end-config
+
+start-config
+ button-name			= Asunder
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-asunder.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no 
+ pre-start 			= no
+ start-program			= "$START_PROGRAM asunder &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL asunder &"
+ stop-program			= "asunder"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "asunder flac wavpack lame $PULSEAUDIO_INSTALL"
+end-config
+
+start-config
+ button-name			= Steam-installieren
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-steam.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no 
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES install_steam &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES install_steam &"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "$PULSEAUDIO_INSTALL"
+end-config
+
+start-config
+ button-name			= Steam-User-Setup
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-steam-user-setup.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no 
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM /usr/share/easyvdr/program-changer/program-changer-set-steam-user.sh &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL /usr/share/easyvdr/program-changer/program-changer-set-steam-user.sh &"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+
+#Icon http://findicons.com/icon/168868/network_local
+#Designer: YellowIcon 
+#Lizenz: GNU/GPL 
+
+start-config
+ button-name			= Server/Nas-starten
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-wol.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "$UTILITIES wol_server &"
+ start-program			= "easyvdr-frontend start"
+ start-program-easyportal	= "easyvdr-frontend start"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "etherwake"
+end-config
+
+start-config
+ button-name			= Nvidia-Einstellungen
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-nvidia-settings.jpg
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 20
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= no
+ start-program			= "$START_PROGRAM $UTILITIES nvidia_tv_settings &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES nvidia_tv_settings &"
+ stop-program			= "nvidia_tv_settings"
+ kill-program			= yes
+ root-rights			= yes
+ vdr-remote-on			= no
+# install-pakage		= "nvidia-settings"
+ install-pakage			= ""
+end-config
+
+#################### Systemsteuerung ###################
+
+start-config
+ button-name			= Frontend-Softhddevice
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-vdr.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "/usr/share/easyvdr/program-changer/switch-frontend.sh Softhddevice"
+ start-program-easyportal	= "/usr/share/easyvdr/program-changer/switch-frontend.sh Softhddevice"
+ stop-program			= "easyvdr-frontend stop"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= Frontend-Xinelibout
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-vdr.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "/usr/share/easyvdr/program-changer/switch-frontend.sh vdr-sxfe"
+ start-program-easyportal	= "/usr/share/easyvdr/program-changer/switch-frontend.sh vdr-sxfe"
+ stop-program			= "easyvdr-frontend stop"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= Frontend-Xine
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-vdr.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "/usr/share/easyvdr/program-changer/switch-frontend.sh xine"
+ start-program-easyportal	= "/usr/share/easyvdr/program-changer/switch-frontend.sh xine"
+ stop-program			= "easyvdr-frontend stop"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= Frontend-KODI
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-kodi.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "/usr/share/easyvdr/program-changer/switch-frontend.sh KODI"
+ start-program-easyportal	= "/usr/share/easyvdr/program-changer/switch-frontend.sh KODI"
+ stop-program			= "easyvdr-frontend stop"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+
+###########
+
+start-config
+ button-name			= Frontend-Restart
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-frontend-restart.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "easyvdr-frontend start"
+ start-program-easyportal	= "easyvdr-frontend start"
+ stop-program			= "easyvdr-frontend stop"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= VDR-Restart
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-vdr-restart.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "$UTILITIES vdr_restart"
+ start-program-easyportal	= "$UTILITIES vdr_restart"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= VDR-Reboot
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-reboot.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "init 6 &"
+ start-program-easyportal	= "echo REBOOT > /tmp/.pch-exec"
+ stop-program			= "init 6 &"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= VDR-Shutdown
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-shutdown.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "$UTILITIES vdr_shutdown &"
+ start-program-easyportal	= "echo SHUTDOWN > /tmp/.pch-exec"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= easyVDR-Setup
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-easyvdr-setup.gif
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "$UTILITIES easyvdr_setup &"
+ start-program-easyportal	= "$UTILITIES easyvdr_setup &"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= Program-Changer-Setup
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-pchanger-setup.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "$UTILITIES pch_setup &"
+ start-program-easyportal	= "$UTILITIES pch_setup &"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= easyVDR-Update
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-easyvdr-update.png
+ default-button			= yes
+ default-button-easyportal	= yes
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "$UTILITIES easyvdr_update &"
+ start-program-easyportal	= "$UTILITIES easyvdr_update &"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= easyVDR-Paketquellen
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-source-list1.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM software-properties-gtk --open-tab=1 &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL software-properties-gtk --open-tab=1 &"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+
+start-config
+ button-name			= Xbox-mapping-wechseln
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-xbox-360.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= no
+ pre-start 			= "no"
+ start-program			= "$UTILITIES switch_xboxdriver"
+ start-program-easyportal	= "$UTILITIES switch_xboxdriver"
+ stop-program			= "-none-"
+ kill-program			= no
+ root-rights			= yes
+ vdr-remote-on			= no
+ install-pakage			= "$GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Joystick/Pad-Setup
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-joystick-setup.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= no
+ menu-page 			= 30
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "jstest-gtk &"
+ start-program-easyportal	= "jstest-gtk &"
+ stop-program			= "jstest-gtk"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "jstest-gtk joystick $GAMES_INSTALL"
+end-config
+
+############# Anwender Programme 
+
+start-config
+ button-name			= Oolite
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-oolite.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM oolite &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL oolite &"
+ stop-program			= "oolite"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "oolite $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Secret-Maryo 
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-smc.jpg
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= yes
+ quit-program			= yes 
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM smc &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL smc &"
+ stop-program			= "smc"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "smc $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config		
+
+start-config
+ button-name			= Kapman
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-kapman.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM kapman &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL kapman &"
+ stop-program			= "kapman"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "kapman $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Mathe-Spiel
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-tuxmath.jpg
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM tuxmath &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL tuxmath &"
+ stop-program			= "tuxmath"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "tuxmath $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Eisenbahn-Spiel
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-ri-li.gif
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM ri-li &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL ri-li &"
+ stop-program			= "ri-li"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "ri-li $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Kinder-Spiele
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-gcompris.gif
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM gcompris &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL gcompris &"
+ stop-program			= "gcompris"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "gcompris gcompris-sound-de gnucap gnuchess tuxpaint $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Blinken-Spiel
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-blinken.gif
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM blinken &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL blinken &"
+ stop-program			= "blinken"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "blinken $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Kartoffelknülch
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-ktuberling.gif
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM ktuberling &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL ktuberling &"
+ stop-program			= "ktuberling"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "ktuberling $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Supertux
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-supertux.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM supertux &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL supertux &"
+ stop-program			= "supertux"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "supertux-stable $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Gimp
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-gimp.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM gimp &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL gimp &"
+ stop-program			= "gimp"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "gimp language-pack-gnome-de"
+end-config
+
+start-config
+ button-name			= Kinderspiele-2
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-childsplay.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM childsplay &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL childsplay &"
+ stop-program			= "childsplay"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "childsplay $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Playonlinux
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-playonlinux.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM playonlinux &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL playonlinux &"
+ stop-program			= "playonlinux"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "playonlinux $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+
+###################### keine Freeware
+
+start-config
+ button-name			= Steam-User-1
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-steam.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= "$UTILITIES init_gaming_mod chk_steam_passwd_1 ; . $PROGRAM_CHANGER_SCRIPT_CONF"
+ start-program			= "$START_PROGRAM steam -login ${STEAM_USER_NAME[0]} ${STEAM_USER_PASSWORD[0]} &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL steam -login ${STEAM_USER_NAME[0]} ${STEAM_USER_PASSWORD[0]} &"
+ stop-program			= "steam"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= Steam-User-2
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-steam.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= "$UTILITIES init_gaming_mod chk_steam_passwd_2; . $PROGRAM_CHANGER_SCRIPT_CONF"
+ start-program			= "$START_PROGRAM steam -login ${STEAM_USER_NAME[1]} ${STEAM_USER_PASSWORD[1]} &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL steam -login ${STEAM_USER_NAME[1]} ${STEAM_USER_PASSWORD[1]} &"
+ stop-program			= steam
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+start-config
+ button-name			= Steam-User-3
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-steam.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= "$UTILITIES init_gaming_mod chk_steam_passwd_3; . $PROGRAM_CHANGER_SCRIPT_CONF"
+ start-program			= "$START_PROGRAM steam -login ${STEAM_USER_NAME[2]} ${STEAM_USER_PASSWORD[2]} &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL steam -login ${STEAM_USER_NAME[2]} ${STEAM_USER_PASSWORD[2]} &"
+ stop-program			= "steam"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "-none-"
+end-config
+
+
+#################### Internet Bookmarks
+
+start-config
+ button-name			= Plugins-verwalten
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-easyportal-plugin.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox http://localhost/addons.php  &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox http://localhost/addons.php &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= easyVDR
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-easyvdr.jpg
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.easy-vdr.de &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.easy-vdr.de &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= VDR-Portal
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-vdr-portal.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox vdr-portal.de  &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox vdr-portal.de  &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= N-TV
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-n-tv.jpg
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.n-tv.de &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.n-tv.de &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= Spiegel
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-spiegel.gif
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.spiegel.de &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.spiegel.de &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= Wetter-online
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-wetteronline.gif
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.wetteronline.de &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.wetteronline.de &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= Heise
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-heise.gif
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.heise.de &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.heise.de &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= Consors-Börse
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-consors.gif
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.cortalconsors.de/Kurse-Maerkte &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.cortalconsors.de/Kurse-Maerkte &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= Kinder-Insel
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-br-kinderinsel.jpg
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.br-online.de/kinder &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.br-online.de/kinder &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+start-config
+ button-name			= Blindekuh
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-blindekuh.png
+ default-button			= yes
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.blindekuh.de &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.blindekuh.de &"
+ stop-program			= "firefox"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config

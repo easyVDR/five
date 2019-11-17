@@ -1,0 +1,49 @@
+### BEGIN INIT INFO
+#
+# This file is called by /usr/sbin/easyvdr-runvdr
+#
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+#
+# Changelog:
+# V1.0 Initial Version
+# V1.1 24.11.2017 waif for DVB device bleifuss
+
+logger -t easyvdr-module-loader "run"
+
+if [[ -f /etc/vdr/easyvdr/easyvdr-systemstart.conf ]];then
+ . /etc/vdr/easyvdr/easyvdr-systemstart.conf
+else
+ WAIT_FOR_DVB_DEVICE=0.1
+fi
+
+loaddriver() {
+	DVBSTARTHOOKS=`find $DVBSTARTHOOKSDIR -maxdepth 1 -xtype f | sort`
+
+	for hook in $DVBSTARTHOOKS; do
+		if [ -x $hook ]; then
+			logger -t dvbstart "executing $hook $action"
+			$hook
+		else
+			logger -t dvbstart "executing $hook $action as shell script"
+			/bin/bash $hook
+		fi
+	done
+
+#Auf DVB warten
+logger -t easyvdr-module-loader "wait for DVB Device"  "$WAIT_FOR_DVB_DEVICE"s
+sleep $WAIT_FOR_DVB_DEVICE
+}
+
+unloaddriver() {
+	DVBSTOPHOOKS=`find $DVBSTOPHOOKSDIR -maxdepth 1 -xtype f | sort`
+
+	for hook in $DVBSTOPHOOKS; do
+		if [ -x $hook ]; then
+			logger -t dvbstop "executing $hook $action"
+			$hook
+		else
+			logger -t dvbstop "executing $hook $action as shell script"
+			/bin/bash $hook
+		fi
+	done
+}

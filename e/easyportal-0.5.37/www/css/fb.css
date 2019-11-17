@@ -1,0 +1,99 @@
+
+.zeile {
+  text-align:center; 
+  width:100%;
+  padding: 0px;
+  white-space: nowrap;
+}
+
+.button, .button:visited {
+  background-color: #637aad;
+  background-repeat: no-repeat;
+  background-position: center;
+  border:1px solid #314179;
+  display:inline-block;
+  width:31%;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:1em;
+  font-weight:bold;
+  padding:0px 0px;
+  margin: 1px;
+  text-decoration:none;
+  line-height:40px;
+  text-align:center;
+}
+
+
+.button4, .button4:visited {
+  background-color: #637aad;
+  border:1px solid #314179;
+  display:inline-block;
+  width:23%;
+  cursor:pointer;
+  color:#ffffff;
+  font-family:Arial;
+  font-size:1em;
+  font-weight:bold;
+  padding:0px 0px;
+  margin: 1px;
+  text-decoration:none;
+  line-height:40px;
+  text-align:center;
+}
+
+@media (max-width: 300px) {
+  .b_vdr {
+    background-image: url(/images/logo2.png); 
+    background-size: 30px;
+  }
+}
+@media (min-width: 300px) {
+  .b_vdr {
+    background-image: url(/images/logo.png); 
+    background-size: 90px;
+  }
+}
+.b_kodi {
+  background-image: url(/images/KODI.png); 
+  background-size: 90px;
+}
+
+/* VDR Fernbedienung */
+
+.b_stop {
+  background-image: url(/images/fb/stop.png); 
+  background-size: 20px;
+}
+.b_play {
+  background-image: url(/images/fb/play.png); 
+  background-size: 20px;
+}
+.b_pause {
+  background-image: url(/images/fb/pause.png); 
+  background-size: 20px;
+}
+.b_rec {
+  background-image: url(/images/fb/rec.png); 
+  background-size: 20px;
+}
+.b_fast_rewind {
+  background-image: url(/images/fb/fast_rewind.png); 
+  background-size: 20px;
+}
+.b_fast_forward {
+  background-image: url(/images/fb/fast_forward.png); 
+  background-size: 20px;
+}
+
+/* Kodi Fernbedienung */
+
+.bgcolor2 {
+  background-color: green; 
+  /* background-color: #6e87bf; */
+}
+.text_shadow  {
+  text-shadow: 1px 1px 1px black, 1px -1px 1px black, -1px  1px 1px black, -1px -1px 1px black;
+}
+

@@ -1,0 +1,187 @@
+#1  Standarde Menü
+#10 Internet Programme
+#20 System Programme
+#30 Systemsteuerung
+
+
+## Beispiele wie man ein Programm hinzufügt:
+
+#start-config
+# button-name           	= Mathe-Spiel									-> Name des Buttons
+# button-picture        	= /usr/share/easyvdr/program-changer/pictures/button-tuxmath.jpg		-> Name des Button Icons oder	= ""
+# default-button        	= yes										-> Soll der Button im Setup vorgewählt werden?
+# default-button-easyportal	= yes										-> Soll der Button im Setup vorgewählt werden?
+# mouse-emulation       	= yes										-> Mit der Fernbedienung die Maus steuern?
+# menu-page             	= 20										-> Zu was für einer Menü Seite gehört der Button
+# adjust-alsamixer      	= no										-> Soll die Masterlautstärke über FB geändert werden sollange das Programm läuft?
+# quit-program          	= yes										-> Programm beim wechseln auf was anderes beenden?
+# pre-start             	= ""	  							                -> Befehl der vor dem Program ausgeführt wird
+# start-program         	= "$START_PROGRAM tuxmath &"							-> Programm Befehlszeile wichtig & sonst bleibt das Pchangermenü offen
+#													-> $START_PROGRAM, damit wird nach Programm Ende der Pchanger autmatisch angezeigt.
+# start-program-easyportal= "$START_PROGRAM_EASYPORTAL tuxmath &"					-> Programm Befehlszeile wichtig & sonst bleibt das Pchangermenü offen
+# stop-program          	= "tuxmath"									-> Befehlszeile für Programm beenden, oder Name der Programm Datei die mit kill beendet wird
+# kill-program          	= yes										-> Befehl kill mit dem Namen von stop-program ausführen (kill tuxmath)
+# root-rights           	= no										-> no das Programm läuft als Benutzter easvdr, yes als root
+# vdr-remote-on         	= no										-> Die Fernbedienung im VDR deaktivieren solange das Programm läuft.
+# install-pakage        	= "tuxmath $PULSEAUDIO_INSTALL"						-> Alles was installiert werden muss damit das Programm läuft
+#end-config
+
+######### Firefox & Softhd gleichzeitig
+######### Vorraussetzung Softhd ist das aktuelle Frontend 
+
+start-config  
+ button-name			= Firef&VDR/only-Softhd
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-vdr.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= no
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes 
+ pre-start 			= 'su easyvdr -c "firefox -browser -new-instance &" '
+ start-program			= "start easyvdr-frontend"
+ start-program-easyportal	= "start easyvdr-frontend"
+ stop-program			= "stop easyvdr-frontend"
+ kill-program			= yes
+ root-rights			= yes
+ vdr-remote-on			= yes
+ install-pakage			= "-none-"
+end-config		
+
+#################### Internet Bookmarks
+
+start-config
+ button-name			= Wetteronline
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-www-wetteronline.gif
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 10
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "no"
+ start-program			= "$START_PROGRAM $UTILITIES start_firefox www.wetteronline.de &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL $UTILITIES start_firefox www.wetteronline.de &"
+ stop-program			= firefox
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "firefox firefox-locale-de"
+end-config
+
+
+################# Keine Freeware
+
+start-config
+ button-name			= Rochard
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/button-rochard.png
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM /media/easyvdr01/Spiele/Rochard_x86/Rochard &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL /media/easyvdr01/Spiele/Rochard_x86/Rochard &"
+ stop-program			= "Rochard"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "$PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Dynamitejack
+ button-picture 		= 
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "cd /opt/dynamitejack ; $START_PROGRAM run_me &"
+ start-program-easyportal	= "cd /opt/dynamitejack ; $START_PROGRAM_EASYPORTAL run_me &"
+ stop-program			= "run_me"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "$PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Swords-Soldiers
+ button-picture 		= 
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM /opt/swordsandsoldiers/SwordsAndSoldiers.bin &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL /opt/swordsandsoldiers/SwordsAndSoldiers.bin &"
+ stop-program			= "SwordsAndSoldiers.bin"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "$PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Waking-Mars
+ button-picture 		= 
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM /opt/wakingmars/wakingmars &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL /opt/wakingmars/wakingmars &"
+ stop-program			= "wakingmars"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "$PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= Crayon-physics
+ button-picture 		= 
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM /opt/crayon-physics-deluxe/launcher &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL /opt/crayon-physics-deluxe/launcher &"
+ stop-program			= "crayon"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "$PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config
+
+start-config
+ button-name			= bit-trip-runner
+ button-picture 		= /usr/share/easyvdr/program-changer/pictures/bit.trip.runner.jpg
+ default-button			= no
+ default-button-easyportal	= no
+ mouse-emulation		= yes
+ menu-page 			= 1
+ adjust-alsamixer		= no
+ quit-program			= yes
+ pre-start 			= "$UTILITIES init_gaming_mod"
+ start-program			= "$START_PROGRAM bit.trip.runner &"
+ start-program-easyportal	= "$START_PROGRAM_EASYPORTAL bit.trip.runner &"
+ stop-program			= "bit.trip.runner"
+ kill-program			= yes
+ root-rights			= no
+ vdr-remote-on			= no
+ install-pakage			= "$PULSEAUDIO_INSTALL $GAMES_INSTALL"
+end-config

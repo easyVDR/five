@@ -1,0 +1,6 @@
+var/lib/vdr/noad_channels.conf                      etc/vdr/noad_channels.conf
+usr/share/vdr/shutdown-hooks/10_shutdown.noad       etc/vdr/shutdown-hooks/10_shutdown.noad
+usr/share/vdr/command-hooks/reccmds.noad.conf       etc/vdr/command-hooks/reccmds.noad.conf
+usr/share/vdr/recording-hooks/11_recording.noad     etc/vdr/recording-hooks/11_recording.noad
+usr/share/vdr/recording-hooks/12_epgimages.noad     etc/vdr/recording-hooks/12_epgimages.noad
+

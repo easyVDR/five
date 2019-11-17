@@ -1,0 +1,35 @@
+### BEGIN INIT INFO
+#
+# This file is called by /usr/bin/easyvdr-runvdr
+#
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+# Do NOT "set -e"
+#
+# Changelog:
+# V1.0 Initial Version
+
+configure_lcd() {
+	##### LCD handling #####
+	case "$LCD" in
+		"graphlcd")
+			$LOGGER "starting graphlcd"
+			plugin_active "graphlcd" || add_plugin "graphlcd -c /etc/graphlcd.conf -d $LCD_DRIVER"
+		;;
+		"lcdproc")
+			LCDPROCTIMEOUT=10
+			until [ -e /dev/lcd0 -o $LCDPROCTIMEOUT -eq 0 ] ; do
+				sleep 1
+				echo -n "."
+				LCDPROCTIMEOUT=$((LCDPROCTIMEOUT-1))
+			done
+			
+			add_plugin "lcdproc"
+
+			if [ "x$(pidof LCDd)" = "x" ]; then
+				LCDd -s 1 -c /etc/LCDd.conf &
+			else
+				$LOGGER "can not start LCD-lcdproc, /dev/lcd0 not available"
+			fi
+		;;
+	esac
+}

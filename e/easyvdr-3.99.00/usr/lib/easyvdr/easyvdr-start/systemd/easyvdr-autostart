@@ -1,0 +1,79 @@
+#!/bin/bash
+# Starts easyvdr-system
+#
+# version 0.2   28.08.14 Initial Version Bleifuss
+# Martin 09/23/14 homedir perms
+# Bleifuss 12/03/14 fix errors
+# Bleifuss 05.01.2017 bugfix
+# Diser upstart wird beim booten ausgeführt
+# In disem Upstart kann man eigene Funktionen einbauen
+# 20.04.2017 Auf Netzwerk warten angepasst
+# 26.02.2018 System Updates
+
+#description     "autostart"
+#author          "Bleifuss"
+
+
+LOGGER="logger -t easyvdr-autostart"
+
+
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+[ -f $CFG_DIR/sysconfig              ] && . $CFG_DIR/sysconfig || { stop; exit 0; }   # einbinden der sysconfig
+
+
+############
+
+
+#Conf einlesen
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+
+
+############################### Alles was hier eingebaut wird startet vor X11
+
+$LOGGER "wait for network"
+ wait_for_network
+ if [ $? -ne "0" ]; then
+  $LOGGER  "Wait more than 40 seconds for network initialization - give up"
+  #break
+ fi
+
+############################### Alles was hier eingebaut wird startet vor X11, das Netzwerk läuft (falls vorhanden) 
+
+### Ist es ein X11 System?
+
+case $VDR_FRONTEND in                                                                         # check auf X11-Frontend
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+
+if [ $FRONTEND_CLASS == "USE_X11" ] ;then
+ ########## Auf x warten
+ wait_for_X
+fi
+
+############################### X läuft jetzt, vdr usw. wird jetzt auch gestartet
+# Beispiel für einen dconf Eintrag
+## Bildschirmschoner deaktivieren
+#$LOGGER "disable screen saver"
+#su $STANDARD_DESKTOP_USER -c "DISPLAY=$FRONTEND_DISPLAY dconf write /org/gnome/desktop/session/idle-delay uint32\ 0"
+
+$LOGGER "starting easyvdr-power-save"
+/usr/lib/vdr/easyvdr-power-save &
+
+#Prüfen ob easyvdr verzeichniss vorhanden ist, wenn ja rechte anpassen
+ if [ -d /home/easyvdr ];then 
+  #Rechte Homedir setzen
+  $LOGGER "set homedir perms started"
+  chown -R easyvdr:easyvdr /home/easyvdr
+  $LOGGER "set homedir perms finished"
+ fi
+####

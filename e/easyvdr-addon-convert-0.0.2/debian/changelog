@@ -1,0 +1,53 @@
+easyvdr-addon-convert (0.0.2-2easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 21:33:04 +0100
+
+easyvdr-addon-convert (0.0.2-2easyVDR0~bionic) bionic; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 Feb 2019 15:39:42 +0100
+
+easyvdr-addon-convert (0.0.2-1easyVDR4~bionic) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:32:31 +0200
+
+easyvdr-addon-convert (0.0.2-1easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 18:08:49 +0100
+
+easyvdr-addon-convert (0.0.2-1easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 17:42:57 +0100
+
+easyvdr-addon-convert (0.0.2-1easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 27 Jun 2017 23:41:43 +0200
+
+easyvdr-addon-convert (0.0.2-1easyVDR0~trusty) trusty; urgency=high
+
+  * added depends HandBrake-CLI
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 08 Dec 2015 21:21:31 +0100
+
+easyvdr-addon-convert (0.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * increment version number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 16 Oct 2015 19:06:56 +0200
+
+easyvdr-addon-convert (0.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial Release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 05 Oct 2015 20:30:51 +0200

@@ -1,0 +1,298 @@
+#!/bin/bash
+# 
+# Displaymanager Konfiguration  fuer easyVDR
+#
+#
+# vers. 0.1  07.07.15 Bleifuss  
+# vers  0.2  18.10.15 Bleifuss bugfix 
+# vers  0.2  22.12.16 set default display manager, Bleifuss
+# vers  0.3  24.01.18 gdm updates, Bleifuss
+# vers  0.4  04.01.19 dialog lightdm disable, gb
+#################################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+. /usr/lib/vdr/functions/easyvdr-functions-lib         ## common functions
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. $SETUP_STATUS
+GDM_CONF_PATH=/etc/gdm3/custom.conf
+LIGHTDM_CONF_PATH="/usr/share/lightdm/lightdm.conf.d"
+ACCOUNTSERVICE_PATH="/var/lib/AccountsService/users/vdr"
+XSESSION_PATH=/usr/share/xsessions
+
+LOGGER=" logger -t easyvdr-config-display-manager"
+
+
+#### Prüfen ob GDM conf vorhanden ist, wenn nicht dann erzeugen
+if [ ! -d "/var/lib/AccountsService" ] ;then
+ mkdir "/var/lib/AccountsService"
+fi
+
+if [ ! -d "/var/lib/AccountsService/users" ] ;then
+ mkdir "/var/lib/AccountsService/users"
+fi
+
+if [ ! -f "$ACCOUNTSERVICE_PATH" ] ;then
+ echo "[InputSource0]" > $ACCOUNTSERVICE_PATH
+ echo "xkb=de" >> $ACCOUNTSERVICE_PATH
+ echo "\n" >> $ACCOUNTSERVICE_PATH
+ echo "[User]" >> $ACCOUNTSERVICE_PATH
+ echo "XSession=ubuntu" >> $ACCOUNTSERVICE_PATH
+ echo "SystemAccount=false" >> $ACCOUNTSERVICE_PATH
+fi
+#### Prüfen ob Kodi als X Session aktiv ist, wenn ja deaktivieren
+
+if [ -f "$XSESSION_PATH/kodi.desktop" ] ;then
+  mv "$XSESSION_PATH/kodi.desktop" "$XSESSION_PATH/kodi.desktop_inactivce"
+fi
+
+if [ -f "$XSESSION_PATH/xbmc.desktop" ] ;then
+  mv "$XSESSION_PATH/xbmc.desktop" "$XSESSION_PATH/xbmc.desktop_inactivce"
+fi
+
+
+##################### functions #####################################################
+
+#####
+SET_GDM_CONF()
+{
+ #Wenn der User != vdr ist wurde die conf noch nicht bearbeitet, defaultwerte eintragen
+ if [ $(grep  -c -i -w "AutomaticLogin = vdr" $GDM_CONF_PATH) -ne 1 ];then
+  ROW=$(grep -n -i -w "AutomaticLogin" $GDM_CONF_PATH | cut -d ":" -f1)
+  sed -i -e "$ROW"c"AutomaticLogin = vdr" $GDM_CONF_PATH
+  ROW=$(grep -n -i -w "AutomaticLoginEnable" $GDM_CONF_PATH | cut -d ":" -f1)
+  sed -i -e "$ROW"c"AutomaticLoginEnable = true" $GDM_CONF_PATH
+ fi
+
+ if [ $(grep  -c -i -w "AutomaticLoginEnable = true" $GDM_CONF_PATH) -ne 1 ];then
+  ROW=$(grep -n -i -w "AutomaticLoginEnable" $GDM_CONF_PATH | cut -d ":" -f1)
+  sed -i -e "$ROW"c"AutomaticLoginEnable = true" $GDM_CONF_PATH
+ fi
+ if [ $(grep  -c -i -w "XSession=$1" $ACCOUNTSERVICE_PATH) -ne 1 ];then
+  ROW=$(grep -n -i -w "XSession" $ACCOUNTSERVICE_PATH | cut -d ":" -f1)
+  sed -i -e "$ROW"c"XSession=$1" $ACCOUNTSERVICE_PATH
+ fi
+
+}
+
+#####
+
+ENABLE_DISPLAY_MANAGER_GDM()
+{
+
+if [ "$(cat /etc/X11/default-display-manager 2>/dev/null)" != "/usr/sbin/gdm3" ];then
+ echo "/usr/sbin/gdm3" > /etc/X11/default-display-manager
+fi
+
+
+ case $DESKTOP in
+      Openbox) 
+                $LOGGER "enable openbox"
+                SET_GDM_CONF openbox
+               ;;
+      LUbuntu) 
+                $LOGGER "enable lubuntu"
+                SET_GDM_CONF lubuntu
+               ;;
+         LXDE)
+                $LOGGER "enable LXDE"
+                SET_GDM_CONF LXDE
+               ;;
+         Mate)
+                $LOGGER "enable Mate"
+                SET_GDM_CONF mate
+               ;;
+         XFCE) 
+                $LOGGER "enable xfce"
+                SET_GDM_CONF xfce
+               ;;
+          KDE) 
+                $LOGGER "enable KDE"
+                SET_GDM_CONF kde
+               ;;
+ fvwm-crystal) 
+                $LOGGER "enable fvwm-crystal"
+                SET_GDM_CONF fvwm-crystal
+               ;;
+            *) 
+                $LOGGER "enable openbox"
+                SET_GDM_CONF openbox
+               ;;
+ esac
+
+
+#  if ( ! grep -q "report_crashes=false" /etc/default/whoopsie );then
+#    sed -i '/report_crashes/d' /etc/default/whoopsie
+#    echo "report_crashes=false" >> /etc/default/whoopsie
+#  fi
+  if [ -f /etc/default/apport ];then
+   if (  grep -q "enabled=1" /etc/default/apport );then
+     sed -i '/enabled=1/d' /etc/default/apport
+     echo "enabled=0" >> /etc/default/apport
+   fi
+  fi
+  
+
+  #fvwm-crystal Autostart anpassen
+  if [ -f /usr/share/fvwm-crystal/fvwm/preferences/Startup ];then
+   if (! grep -q easyvdr-set-monitor-layout /usr/share/fvwm-crystal/fvwm/preferences/Startup );then
+    echo "Exec /usr/lib/vdr/easyvdr-set-monitor-layout" >> /usr/share/fvwm-crystal/fvwm/preferences/Startup
+   fi
+   if (! grep -q easyvdr-set-x-settings /usr/share/fvwm-crystal/fvwm/preferences/Startup );then
+    echo "Exec /usr/lib/vdr/easyvdr-set-x-settings" >> /usr/share/fvwm-crystal/fvwm/preferences/Startup
+   fi
+  fi
+}
+#####
+
+ENABLE_DISPLAY_MANAGER_LIGHTDM()
+{
+
+ if [ "$(cat /etc/X11/default-display-manager 2>/dev/null)" != "/usr/sbin/lightdm" ];then
+  echo "/usr/sbin/lightdm" > /etc/X11/default-display-manager
+ fi
+
+ case $DESKTOP in
+      Openbox) if [ -f $LIGHTDM_CONF_PATH/50-openbox.conf-inactive ];then
+                $LOGGER "enable openbox"
+                cp $LIGHTDM_CONF_PATH/50-openbox.conf-inactive $LIGHTDM_CONF_PATH/50-openbox.conf
+               fi
+               ;;
+      LUbuntu) if [ -f $LIGHTDM_CONF_PATH/20-lubuntu.conf-inactive ];then
+                $LOGGER "enable lubuntu"
+                cp $LIGHTDM_CONF_PATH/20-lubuntu.conf-inactive $LIGHTDM_CONF_PATH/20-lubuntu.conf
+               fi
+               ;;
+         LXDE) if [ -f $LIGHTDM_CONF_PATH/50-lxde.conf-inactive ];then
+                $LOGGER "enable lxde"
+                cp $LIGHTDM_CONF_PATH/50-lxde.conf-inactive $LIGHTDM_CONF_PATH/50-lxde.conf
+               fi
+               ;;
+         Mate) if [ -f $LIGHTDM_CONF_PATH/50-mate.conf-inactive ];then
+                $LOGGER "enable lxde"
+                cp $LIGHTDM_CONF_PATH/50-mate.conf-inactive $LIGHTDM_CONF_PATH/50-mate.conf
+               fi
+               ;;
+
+         XFCE) if [ -f $LIGHTDM_CONF_PATH/50-xfce4.conf-inactive ];then
+                $LOGGER "enable xfce"
+                cp $LIGHTDM_CONF_PATH/50-xfce4.conf-inactive $LIGHTDM_CONF_PATH/50-xfce4.conf
+               fi
+               ;;
+          KDE) if [ -f $LIGHTDM_CONF_PATH/40-kde-plasma-kf5.conf-inactive ];then
+                $LOGGER "enable kde"
+                cp $LIGHTDM_CONF_PATH/40-kde-plasma-kf5.conf-inactive $LIGHTDM_CONF_PATH/40-kde-plasma-kf5.conf
+               fi
+               ;;
+ fvwm-crystal) if [ -f $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf-inactive ];then
+                $LOGGER "fvwm-crystal"
+                cp $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf-inactive $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf
+               fi
+               ;;
+            *) if [ -f $LIGHTDM_CONF_PATH/50-openbox.conf-inactive ];then
+                $LOGGER "enable openbox"
+                cp $LIGHTDM_CONF_PATH/50-openbox.conf-inactive $LIGHTDM_CONF_PATH/50-openbox.conf
+               fi
+               ;;
+ esac
+
+
+#  if ( ! grep -q "report_crashes=false" /etc/default/whoopsie );then
+#    sed -i '/report_crashes/d' /etc/default/whoopsie
+#    echo "report_crashes=false" >> /etc/default/whoopsie
+#  fi
+  if [ -f /etc/default/apport ];then
+   if (  grep -q "enabled=1" /etc/default/apport );then
+     sed -i '/enabled=1/d' /etc/default/apport
+     echo "enabled=0" >> /etc/default/apport
+   fi
+  fi
+  
+
+  #fvwm-crystal Autostart anpassen
+  if [ -f /usr/share/fvwm-crystal/fvwm/preferences/Startup ];then
+   if (! grep -q easyvdr-set-monitor-layout /usr/share/fvwm-crystal/fvwm/preferences/Startup );then
+    echo "Exec /usr/lib/vdr/easyvdr-set-monitor-layout" >> /usr/share/fvwm-crystal/fvwm/preferences/Startup
+   fi
+   if (! grep -q easyvdr-set-x-settings /usr/share/fvwm-crystal/fvwm/preferences/Startup );then
+    echo "Exec /usr/lib/vdr/easyvdr-set-x-settings" >> /usr/share/fvwm-crystal/fvwm/preferences/Startup
+   fi
+  fi
+ #KDE session file anpassen 
+  if [ -f $LIGHTDM_CONF_PATH/40-kde-plasma.conf ];then
+   if (! grep -q vdr $LIGHTDM_CONF_PATH/40-kde-plasma.conf );then
+    echo "autologin-user=vdr" >> $LIGHTDM_CONF_PATH/40-kde-plasma.conf
+    echo "autologin-user-timeout=0" >> $LIGHTDM_CONF_PATH/40-kde-plasma.conf
+    chown root:root $LIGHTDM_CONF_PATH/40-kde-plasma.conf >/dev/null 2>&1 
+    apt-get -y remove gdm >/dev/null 2>&1 
+   fi
+  fi
+}
+#####
+
+DISABLE_XDG_AUTOSTART()
+(
+  # Testen ob schon deaktiviert wurde
+  if [  -f /etc/xdg/autostart/update-notifier.desktop ];then
+   mv /etc/xdg/autostart/update-notifier.desktop /etc/xdg/autostart/update-notifier.desktop-inactive
+   mv /etc/xdg/autostart/print-applet.desktop /etc/xdg/autostart/print-applet.desktop-inactive
+   mv /etc/xdg/autostart/pulseaudio.desktop /etc/xdg/autostart/pulseaudio.desktop-inactive
+  fi
+
+
+  if [ x$Audio_configured_Pulse == x"On" ]; then
+   if [ -f /etc/xdg/autostart/pulseaudio.desktop-inactive ];then
+     mv /etc/xdg/autostart/pulseaudio.desktop-inactive /etc/xdg/autostart/pulseaudio.desktop
+   fi
+  else
+   if [ ! -f /etc/xdg/autostart/pulseaudio.desktop-inactive ];then
+     mv /etc/xdg/autostart/pulseaudio.desktop /etc/xdg/autostart/pulseaudio.desktop-inactive
+   fi
+  fi
+
+ 
+  if [ -f $LIGHTDM_CONF_PATH/50-openbox.conf ] && [ $DESKTOP != Openbox ];then
+   rm $LIGHTDM_CONF_PATH/50-openbox.conf
+  fi 
+  if [ -f $LIGHTDM_CONF_PATH/20-lubuntu.conf ] && [ $DESKTOP != Lubuntu ] ;then
+   rm $LIGHTDM_CONF_PATH/20-lubuntu.conf
+  fi
+  if [ -f $LIGHTDM_CONF_PATH/50-lxde.conf ] && [ $DESKTOP != LXDE ];then
+   rm $LIGHTDM_CONF_PATH/50-lxde.conf
+  fi
+  if [ -f $LIGHTDM_CONF_PATH/50-xfce4.conf ] && [ $DESKTOP != XFCE ];then
+   rm $LIGHTDM_CONF_PATH/50-xfce4.conf
+  fi
+  if [ -f $LIGHTDM_CONF_PATH/40-kde-plasma.conf ] && [ $DESKTOP != KDE ];then
+   rm $LIGHTDM_CONF_PATH/40-kde-plasma.conf
+  fi
+  if [ -f $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf ] && [ $DESKTOP != fvwm-crystal ];then
+   rm $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf
+  fi
+  if [ -f $LIGHTDM_CONF_PATH/50-ubuntu.conf ];then
+   rm $LIGHTDM_CONF_PATH/50-ubuntu.conf
+  fi
+
+)
+
+######################################### main ####################################################
+
+ $LOGGER "disable xdg ubuntu services"
+ DISABLE_XDG_AUTOSTART 
+ 
+ #default Display Manager setzen, momentan wird nur gdm oder lightdm unterstützt
+ if [ "$(cat /etc/X11/default-display-manager 2>/dev/null)" != "/usr/sbin/lightdm" ];then
+  $LOGGER "enable display-manager lightdm"
+#  dialog --title "Displaymanager wählen" --msgbox "Falls als nächstes ein Auswahämenü erscheint,\nlightdm wählen." 8 50
+  dpkg-reconfigure lightdm
+ fi
+ ENABLE_DISPLAY_MANAGER_LIGHTDM
+
+# GDM aktuell deaktivieren
+#  #default Display Manager setzen, momentan wird nur gdm oder lightdm unterstützt
+#  $LOGGER "enable display-manager GDM"
+#  ENABLE_DISPLAY_MANAGER_GDM
+
+
+

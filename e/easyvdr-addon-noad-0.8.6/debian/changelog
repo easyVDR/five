@@ -1,0 +1,258 @@
+easyvdr-addon-noad (0.8.6-7easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 21:34:04 +0100
+
+easyvdr-addon-noad (0.8.6-7easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Jan 2019 01:12:10 +0100
+
+easyvdr-addon-noad (0.8.6-7easyVDR2~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 16 Jul 2018 21:18:33 +0200
+
+easyvdr-addon-noad (0.8.6-7easyVDR1~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 16 Jul 2018 21:13:00 +0200
+
+easyvdr-addon-noad (0.8.6-7easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 16 Jul 2018 21:02:28 +0200
+
+easyvdr-addon-noad (0.8.6-6easyVDR0~trusty) trusty; urgency=high
+
+  * added new patch for ffmpeg
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 16 Apr 2018 16:19:20 +0200
+
+easyvdr-addon-noad (0.8.6-5easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 17 Apr 2017 20:38:04 +0200
+
+easyvdr-addon-noad (0.8.6-5easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 07 Apr 2017 14:27:19 +0200
+
+easyvdr-addon-noad (0.8.6-5easyVDR0~trusty) trusty; urgency=high
+
+  * test ffmpeg3
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 07 Apr 2017 12:41:13 +0200
+
+easyvdr-addon-noad (0.8.6-4easyVDR12~trusty) trusty; urgency=high
+
+  * test ffmpeg3
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Apr 2017 20:14:15 +0200
+
+easyvdr-addon-noad (0.8.6-4easyVDR11~trusty) trusty; urgency=high
+
+  * test ffmpeg3
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Apr 2017 19:32:04 +0200
+
+easyvdr-addon-noad (0.8.6-4easyVDR10~trusty) trusty; urgency=high
+
+  * test ffmpeg3
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Apr 2017 18:29:46 +0200
+
+easyvdr-addon-noad (0.8.6-4easyVDR9~trusty) trusty; urgency=high
+
+  * test ffmpeg3
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Mar 2017 11:14:28 +0200
+ 
+easyvdr-addon-noad (0.8.6-4easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 22 Mar 2016 18:21:04 +0100
+
+easyvdr-addon-noad (0.8.6-4easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 21 Mar 2016 23:29:49 +0100
+
+easyvdr-addon-noad (0.8.6-4easyVDR4~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 Jan 2016 22:30:59 +0100
+
+easyvdr-addon-noad (0.8.6-4easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Jan 2016 21:42:12 +0100
+ 
+easyvdr-addon-noad (0.8.6-4easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Jan 2016 21:11:08 +0100
+ 
+easyvdr-addon-noad (0.8.6-4easyVDR1~trusty) trusty; urgency=high
+
+  * remove 10_recording.custom
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Jan 2016 20:41:08 +0100
+ 
+easyvdr-addon-noad (0.8.6-4easyVDR0~trusty) trusty; urgency=high
+
+  * added 10_recording.custom
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Jan 2016 20:01:08 +0100
+
+easyvdr-addon-noad (0.8.6-3easyVDR1~trusty) trusty; urgency=high
+
+  * fix postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 10 Dec 2015 16:53:23 +0100
+
+easyvdr-addon-noad (0.8.6-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Dec 2015 22:50:19 +0100
+
+easyvdr-addon-noad (0.8.6-2easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 12 Sep 2014 23:02:14 +0200
+
+easyvdr-addon-noad (0.8.6-1easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild for ffmpeg-2.3.3
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 12 Sep 2014 02:47:58 +0200
+
+easyvdr-addon-noad (0.8.6-1easyVDR1~trusty) trusty; urgency=high
+
+  * remove conflict to markad
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 22 Apr 2014 00:30:03 +0200
+
+easyvdr-addon-noad (0.8.6-1easyVDR0~trusty) trusty; urgency=high
+
+  * new noad 0.8.6 bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 21 Mar 2014 21:24:45 +0100
+
+easyvdr-addon-noad (0.8.6-0easyVDR0~trusty) trusty; urgency=high
+
+  * new noad 0.8.6
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 20 Mar 2014 23:09:32 +0100
+
+easyvdr-addon-noad (0.8.5-1easyVDR6~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 08 Mar 2014 03:29:52 +0100
+
+easyvdr-addon-noad (0.8.5-0easyVDR6~trusty) trusty; urgency=high
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 08 Mar 2014 03:18:25 +0100
+
+easyvdr-addon-noad (0.8.5-0easyVDR5~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 05 Mar 2014 18:32:42 +0100
+
+easyvdr-addon-noad (0.8.5-0easyVDR4~trusty) trusty; urgency=high
+
+  * added conflicts to vdr-plugin-markad
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 04 Mar 2014 01:10:53 +0100
+
+easyvdr-addon-noad (0.8.5-0easyVDR3~trusty) trusty; urgency=high
+
+  * add epgimages.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 01 Mar 2014 06:09:42 +0100
+
+easyvdr-addon-noad (0.8.5-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 01 Mar 2014 02:26:34 +0100
+
+easyvdr-addon-noad (0.8.5-0easyVDR1~trusty) trusty; urgency=high
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 01 Mar 2014 01:35:48 +0100
+
+easyvdr-addon-noad (0.8.5-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 28 Feb 2014 23:42:17 +0100
+
+easyvdr-addon-noad (0.8.5-1easyVDR1.0) oneiric; urgency=low
+
+  * new noad 0.8.5 for HD recordings
+  * remove confligt to markad
+  
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 25 Oct 2012 00:45:11 +0200  
+
+easyvdr-addon-noad (0.7.2-1easyVDR3.4) lucid; urgency=low
+
+  * added confligt to markad
+  
+  -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 19 Feb 2011 15:14:39 +0100
+
+easyvdr-addon-noad (0.7.2-1easyVDR3.3) lucid; urgency=low
+
+  * added conflicts to vdr-plugin-markad
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Feb 2011 14:13:54 +0100
+
+easyvdr-addon-noad (0.7.2-1easyVDR3.2) lucid; urgency=low
+
+  * bug in install fixed
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 31 Dec 2010 17:52:11 +0100
+
+easyvdr-addon-noad (0.7.2-1easyVDR3.1) lucid; urgency=low
+
+  * debugging noad
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 31 Dec 2010 13:52:39 +0100
+
+easyvdr-addon-noad (0.7.2-1easyVDR3) lucid; urgency=low
+
+  * no changes - rebuild because Packager left easyVDR-Team
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Nov 2010 13:48:28 +0100
+
+easyvdr-addon-noad (0.7.2-1easyVDR2) lucid; urgency=low
+
+  * rebuild for easyVDR PPA.
+
+ -- Karl-Heinz Winzer <khwinzer@gmx.de>  Sun, 25 Jul 2010 05:02:44 +0200
+
+easyvdr-addon-noad (0.7.2-1easyVDR1) lucid; urgency=low
+
+  * Noad for easyVDR
+
+ -- Uwe Kiehl <uwe@easy-vdr.de>  Thu, 23 Mar 2010 20:45:36 +0100

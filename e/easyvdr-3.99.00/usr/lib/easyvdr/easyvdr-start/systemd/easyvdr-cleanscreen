@@ -1,0 +1,11 @@
+#!/bin/bash
+# 26.02.18 systemd update Bleifuss
+
+#description	"clean and blank vt1,vt7 and vt10"
+#author 		"Uwe Kiehl <uwe@easy-vdr.de>"
+
+LOGGER="logger -t easyvdr-cleanscreen"
+
+setterm clear powersave off powerdown 0 foreground black cursor off store >/dev/tty1
+setterm clear powersave off powerdown 0 foreground black cursor off store >/dev/tty7
+setterm clear powersave off powerdown 0 foreground black cursor off store >/dev/tty10

@@ -1,0 +1,3 @@
+usr/share/vdr/shutdown-hooks
+etc/vdr
+var/lib/vdr

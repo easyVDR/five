@@ -1,0 +1,18 @@
+noad          usr/bin/
+
+allnewnoad    usr/bin/
+allnoad       usr/bin/
+allnoadnice   usr/bin/
+allnoaduncut  usr/bin/
+checkAllMarks usr/bin/
+clearlogos    usr/bin/
+noadifnew     usr/bin/
+stat2html     usr/bin/
+
+debian/noad_channels.conf         var/lib/vdr
+debian/reccmds.noad.conf          usr/share/vdr/command-hooks
+debian/11_recording.noad          usr/share/vdr/recording-hooks
+debian/12_epgimages.noad          usr/share/vdr/recording-hooks
+debian/10_shutdown.noad           usr/share/vdr/shutdown-hooks
+debian/R10.noad                   etc/vdr/recording-hooks
+

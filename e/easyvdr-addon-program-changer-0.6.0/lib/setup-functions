@@ -1,0 +1,367 @@
+#######################################################################################
+#Program-Changer Setup Funktions
+#13.03.2016 gb
+#01.04.2016 gb Update easyPortal default select
+#05.04.2016 gb Update read Keyboard Keycode 
+#17.04.2016 gb New setup version, Default settings are loaded
+#23.04.2016 gb Index evaluation renewed
+#04.01.2019 modify easyVDRV4 Xautority and X
+##### includes #####
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+. /usr/share/easyvdr/program-changer/lib/setup-language
+. /usr/share/easyvdr/setup/video-setup/easyvdr-video-lib
+
+##### definitionen #####
+PCH_DIR=/usr/share/easyvdr/program-changer																	#Program-Changer Home Dir 
+DEFAULT_BUTTON=$PCH_DIR/config/setup.conf																	#Config der gesetzen Buttons(PChanger X-Setup)
+LIST_OF_PROGRAMS=$PCH_DIR/config/list-of-programs.conf														#Program-Changer Button-Index
+MAIN_SCRIPT_PARAMETER=$PCH_DIR/config/program-changer-main-script-parameter									#Program-Changer nach Auswahl genrierter Button Index
+MAIN_SCRIPT_PARAMETER_EASYPORTAL=$PCH_DIR/config/program-changer-main-script-parameter-easyvdr-portal		#Program-Changer(easyPortal) nach Auswahl genrierter Button Index
+PCH_KEYBOARD=/etc/vdr/program-changer/program-changer-keyboard.conf
+
+#####Setup Version#####
+if [ ! -e $PCH_DIR/config/version ]; then
+ SETUP_VERSION="updated"
+else
+ SETUP_VERSION=$(cat $PCH_DIR/config/version|grep "Version ="| awk '{ print $3 }')								#Versionsnummer des Setup (zugewiesen von Bleifuss2)
+fi
+########################list-of-programs.conf einlesen#########################
+Get_Buttons_List()
+{
+COUNT_OF_BUTTONS=$(($(cat $LIST_OF_PROGRAMS |grep -v "#"|grep -c "start-config") * 19 ))					#Anzahl der "start-config" in "list-of-programs.conf" x 19
+INDEX_END=$COUNT_OF_BUTTONS																					#da wir später 19 Einträge (button-name und alle 15 Zeilen darunter)
+BUTTON_INDEX=1																								#pro Fund auslesen wollen. Zusätzlich wird noch ein Trenner "--"
+i=1																											#geschrieben was dann Zeile 19 wäre 
+x=$(($COUNT_OF_BUTTONS/19))																				#gehört zum Fortschrittsbalken
+c=$(( $x / 10 ))																						#gehört zum Fortschrittsbalken
+COUNT=0 																								#gehört zum Fortschrittsbalken
+exec 6> >(dialog --backtitle "${TITLE[$LANG]}" --title "easyVDR Program-Changer-Setup VER=$SETUP_VERSION" --gauge "${PROGRESS_AD[$LANG]}" 10 60 0)
+while [ $i -le $COUNT_OF_BUTTONS ]; do
+  BUTTON_NAME[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+1))"p|cut -d "=" -f2)								#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_PICTURE[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+2))"p|cut -d "=" -f2)								#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_ENABLE[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+3))"p|cut -d "=" -f2)								#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_EASYPORTAL_ENABLE[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+4))"p|cut -d "=" -f2)					#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_ENABLE_MOUSE[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+5))"p|cut -d "=" -f2)						#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_MENU_PAGE_NR[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+6))"p|cut -d "=" -f2)						#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_ADJUST_ALSAMIXER[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+7))"p|cut -d "=" -f2)					#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_SHUTDOWN_PROGRAM[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+8))"p|cut -d "=" -f2)					#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_PRE_START_PROGRAM[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+9))"p|cut -d "=" -f2)					#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_START_PROGRAM[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+10))"p|cut -d '"' -f2)						#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_START_PROGRAM_EASYPORTAL[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+11))"p|cut -d '"' -f2)			#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_STOP_PROGRAM[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+12))"p|cut -d '=' -f2|cut -d '"' -f2)		#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_KILL_PROGRAM[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+13))"p|cut -d "=" -f2)						#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_ROOT_RIGHTS[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+14))"p|cut -d "=" -f2)						#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_VDR_REMOTE[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+15))"p|cut -d "=" -f2)							#Gefundenen Eintrag in Arrays+ schreiben
+  BUTTON_INSTALL_APT_GET_PRG[$BUTTON_INDEX]=$(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+16))"p|cut -d '=' -f2|cut -d '"' -f2)	#Gefundenen Eintrag in Arrays+ schreiben
+  if [[ $(cat $LIST_OF_PROGRAMS|grep -v ^#|grep -A 17 "start-config"| sed -ne "$(($i+17))"p) == "end-config"* ]];then
+   if [ $BUTTON_INDEX -eq $c ]; then
+    echo "$COUNT %">&6
+    c=$(( $c + $(( $x / 10 )) ))
+    COUNT=$(($COUNT+10))
+   fi
+  else
+   dialog --backtitle "${TITLE[$LANG]}" --infobox "${INFO_ERR_INDEX[LANG]}$(cat $LIST_OF_PROGRAMS|grep -v "#"|grep -A 17 "start-config"| sed -ne "$(($i+1))"p|cut -d "=" -f2) >>" 5 60
+   sleep 4
+   exit
+  fi
+  let BUTTON_INDEX=$BUTTON_INDEX+1
+  let i=$i+19
+done
+BUTTON_INDEX=$(($BUTTON_INDEX-1))
+exec 6>&-
+sleep 1
+}
+Get_new_Index()
+{
+######################Neuen Index schreiben######################
+i=1
+x=0
+while [ $i -le $BUTTON_INDEX ]; do
+  name_button[$x]=$(echo ${BUTTON_NAME[$i]})
+  picture_button[$x]=$(echo ${BUTTON_PICTURE[$i]})
+  enable_button[$x]=$(echo ${BUTTON_ENABLE[$i]})
+  enable_button_easyportal[$x]=$(echo ${BUTTON_EASYPORTAL_ENABLE[$i]})
+  enable_mouse_button[$x]=$(echo ${BUTTON_ENABLE_MOUSE[$i]})
+  menu_page_nr_button[$x]=$(echo ${BUTTON_MENU_PAGE_NR[$i]})
+  adjust_alsamixer_button[$x]=$(echo ${BUTTON_ADJUST_ALSAMIXER[$i]})
+  shutdown_program_button[$x]=$(echo ${BUTTON_SHUTDOWN_PROGRAM[$i]})
+  pre_start_program_button[$x]=$(echo ${BUTTON_PRE_START_PROGRAM[$i]})
+  start_program_button[$x]=$(echo ${BUTTON_START_PROGRAM[$i]})
+  start_program_easyportal[$x]=$(echo ${BUTTON_START_PROGRAM_EASYPORTAL[$i]})
+  stop_program_button[$x]=$(echo ${BUTTON_STOP_PROGRAM[$i]})
+  kill_program_button[$x]=$(echo ${BUTTON_KILL_PROGRAM[$i]})
+  root_rights_button[$x]=$(echo ${BUTTON_ROOT_RIGHTS[$i]})
+  vdr_remote_button[$x]=$(echo ${BUTTON_VDR_REMOTE[$i]})
+  install_apt_get_prg_button[$x]=$(echo ${BUTTON_INSTALL_APT_GET_PRG[$i]})
+  x=$(( $x + 1 ))
+  let i=$i+1
+done
+x=$(($x-1))
+}
+######################Buttons in Liste ausgeben######################
+Button_List()
+{
+i=0
+W=()
+while [ $i -le $x ]; do
+ if [ $(echo ${enable_button[$i]}) = "yes" ]; then															# Wenn der Button Aktiv gewählt, setze: 
+  SELECT='on'																								#"$SELECT" von --checklist "W+" auf "on"
+ else
+  SELECT='off'																								#"$SELECT" von --checklist "W+" auf "off"
+ fi
+ if [ $(echo ${menu_page_nr_button[$i]}) = $MENU_PAGE_NR ]; then 											#MENU_PAGE_NR = 1,10,20,30 je wie zuvor gesetzt wurde
+    W+=( $i "${name_button[$i]}" $SELECT )																	#w+ Array schreiben
+ fi
+ let i=$i+1
+done 
+SELECT_BUTTON=$(dialog --backtitle "${TITLE[$LANG]}" --title  "Program-Changer Buttons: $MENU_TITLE" \
+--checklist "${BUTTONLIST[$LANG]}" 24 80 17 "${W[@]}" 3>&2 2>&1 1>&3 )
+SELECT=$?
+case $SELECT in
+		0)
+		 Set_Button_List
+		;;
+		255)
+		 Button_List
+		;;
+esac
+}
+
+
+
+####################geänderte Auswahl setzen#########################
+Set_Button_List()
+{
+i=0
+while [ $i -le $x ]; do
+ if [ $(echo ${menu_page_nr_button[$i]}) = $MENU_PAGE_NR ]; then											#MENU_PAGE_NR = 1,10,20,30 je wie zuvor gesetzt wurde
+  enable_button[$i]="no"																					#im Prinzip wird hier erstmal alles auf "no" gesetzt
+  for BUTTON_SELECT in $SELECT_BUTTON; do																	#Hier kommt die Abfrage ob zuvor "on" gewählt wurde
+   if [ $BUTTON_SELECT = $i ]; then
+    enable_button[$i]="yes"																					#wenn ja dann setze enable_button[$i] auf "yes"
+   fi
+  done 
+ fi
+ let i=$i+1
+done
+}
+
+######################easyPortal Buttons in Liste ausgeben######################
+easyPortal_Button_List()
+{
+i=0
+W=()
+while [ $i -le $x ]; do
+ if [ $(echo ${enable_button_easyportal[$i]}) = "yes" ]; then												# Wenn der Button Aktiv gewählt, setze: 
+  SELECT='on'																								#"$SELECT" von --checklist "W+" auf "on"
+ else
+  SELECT='off'																								#"$SELECT" von --checklist "W+" auf "off"
+ fi
+ if [ $(echo ${menu_page_nr_button[$i]}) = $MENU_PAGE_NR ]; then 											#MENU_PAGE_NR = 1,10,20,30 je wie zuvor gesetzt wurde
+    W+=( $i "${name_button[$i]}" $SELECT )																	#w+ Array schreiben
+ fi
+ let i=$i+1
+done 
+SELECT_BUTTON=$(dialog --backtitle "${TITLE[$LANG]}" --title  "Program-Changer Buttons: $MENU_TITLE" \
+--checklist "${BUTTONLIST[$LANG]}" 24 80 17 "${W[@]}" 3>&2 2>&1 1>&3 )
+SELECT=$?
+case $SELECT in
+		0)
+		 Set_easyPortal_Button_List
+		;;
+		255)
+		 easyPortal_Button_List
+		;;
+esac
+}
+
+
+
+####################geänderte Auswahl setzen#########################
+Set_easyPortal_Button_List()
+{
+i=0
+while [ $i -le $x ]; do
+ if [ $(echo ${menu_page_nr_button[$i]}) = $MENU_PAGE_NR ]; then											#MENU_PAGE_NR = 1,10,20,30 je wie zuvor gesetzt wurde
+  enable_button_easyportal[$i]="no"																			#im Prinzip wird hier erstmal alles auf "no" gesetzt
+  for BUTTON_SELECT in $SELECT_BUTTON; do																	#Hier kommt die Abfrage ob zuvor "on" gewählt wurde
+   if [ $BUTTON_SELECT = $i ]; then
+    enable_button_easyportal[$i]="yes"																		#wenn ja dann setze enable_button[$i] auf "yes"
+   fi
+  done 
+ fi
+ let i=$i+1
+done
+}
+
+
+
+#################program-changer-main-script-parameter auslesen################
+pch_main_script_parameter()
+{
+SELECT_BUTTON_PARAMETER=$(cat $MAIN_SCRIPT_PARAMETER|grep -v "#"|grep "name_button"|cut -d"=" -f2)			#Wenn die main-script-parameter einbezogen wird, gilt
+i=0																											#das selbe Prinzip wie zuvor in der Funktion Set_Button_List
+c=$(( $x / 5 ))
+COUNT=20
+exec 6> >(dialog --backtitle "${TITLE[$LANG]}" --title "${MAINSCRIPTREAD[$LANG]}" --gauge "${MAINSCRIPTWAIT[$LANG]}" 10 70 0)
+while [ $i -le $x ]; do
+ enable_button[$i]="no"
+ if [ $i -eq $c ]; then
+  echo "$COUNT %">&6
+  c=$(( $c + $(( $x / 5 )) ))
+  COUNT=$(($COUNT+20))
+ fi
+ for BUTTON_PARAMETER in $SELECT_BUTTON_PARAMETER; do
+  if [ $(echo ${name_button[$i]}) = $BUTTON_PARAMETER ]; then
+   enable_button[$i]="yes"
+  fi
+ done
+ let i=$i+1 
+done
+exec 6>&-
+sleep 1
+}
+
+##############Erstelle program-changer-main-script-parameter################
+Set_Main_Script_Parameter()
+{
+i=0
+INDEX_NEW_MAIN_SCRIPT=0
+echo "BASH_SETUP_VER="$SETUP_VERSION > $MAIN_SCRIPT_PARAMETER
+if [ -e $DEFAULT_BUTTON ];then																						#Hier wird ein Buttonindex für das X Setup erstellt
+  cat $DEFAULT_BUTTON|grep "Portal_Button" > $DEFAULT_BUTTON.tmp; rm $DEFAULT_BUTTON; cat $DEFAULT_BUTTON.tmp > $DEFAULT_BUTTON; rm $DEFAULT_BUTTON.tmp
+fi
+while [ $i -le $x ]; do																							#Ab hier werden die zuvor ausgewählten Buttons in eine
+ if [ $(echo ${enable_button[$i]}) = "yes" ]; then 																#neue program-changer-main-script-parameter geschrieben.
+  echo "PCH_Button "$i >> $DEFAULT_BUTTON																			#Gehört nochmal zum Buttonindex vom X Setup
+  echo "#################################################" >> $MAIN_SCRIPT_PARAMETER
+  echo "name_button["$INDEX_NEW_MAIN_SCRIPT"]="${name_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "picture_button["$INDEX_NEW_MAIN_SCRIPT"]="${picture_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "enable_button["$INDEX_NEW_MAIN_SCRIPT"]="${enable_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "enable_mouse_button["$INDEX_NEW_MAIN_SCRIPT"]="${enable_mouse_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "menu_page_nr_button["$INDEX_NEW_MAIN_SCRIPT"]="${menu_page_nr_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "adjust_alsamixer_button["$INDEX_NEW_MAIN_SCRIPT"]="${adjust_alsamixer_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "shutdown_program_button["$INDEX_NEW_MAIN_SCRIPT"]="${shutdown_program_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "pre_start_program_button["$INDEX_NEW_MAIN_SCRIPT"]="${pre_start_program_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "start_program_button["$INDEX_NEW_MAIN_SCRIPT']="'${start_program_button[$i]}'"' >> $MAIN_SCRIPT_PARAMETER
+  echo 'stop_program_button['$INDEX_NEW_MAIN_SCRIPT']="'${stop_program_button[$i]}'"' >> $MAIN_SCRIPT_PARAMETER
+  echo "kill_program_button["$INDEX_NEW_MAIN_SCRIPT"]="${kill_program_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "root_rights_button["$INDEX_NEW_MAIN_SCRIPT"]="${root_rights_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo "vdr_remote_button["$INDEX_NEW_MAIN_SCRIPT"]="${vdr_remote_button[$i]} >> $MAIN_SCRIPT_PARAMETER
+  echo 'install_apt_get_prg_button['$INDEX_NEW_MAIN_SCRIPT']="'${install_apt_get_prg_button[$i]}'"' >> $MAIN_SCRIPT_PARAMETER
+  echo "" >> $MAIN_SCRIPT_PARAMETER
+  INDEX_NEW_MAIN_SCRIPT=$(( $INDEX_NEW_MAIN_SCRIPT + 1 ))
+ fi
+ let i=$i+1
+done
+}
+
+
+#################program-changer-main-script-parameter-easyvdr-portal auslesen################
+pch_main_script_parameter_easyportal()
+{
+SELECT_BUTTON_PARAMETER=$(cat $MAIN_SCRIPT_PARAMETER_EASYPORTAL|grep -v "#"|grep "name_button"|cut -d"=" -f2|tr A-ZÄÖÜ a-zäöü)
+i=0
+c=$(( $x / 5 ))
+COUNT=20
+exec 6> >(dialog --backtitle "${TITLE[$LANG]}" --title "${MAINSCRIPTREAD_PORTAL[$LANG]}" --gauge "${MAINSCRIPTWAIT[$LANG]}" 10 65 0)
+while [ $i -le $x ]; do
+ enable_button_easyportal[$i]="no"
+ if [ $i -eq $c ]; then
+  echo "$COUNT %">&6
+  c=$(( $c + $(( $x / 5 )) ))
+  COUNT=$(($COUNT+20))
+ fi
+ for BUTTON_PARAMETER in $SELECT_BUTTON_PARAMETER; do
+  if [ $(echo ${name_button[$i]}|tr A-ZÄÖÜ a-zäöü ) = $BUTTON_PARAMETER ]; then
+   enable_button_easyportal[$i]="yes"
+  fi
+ done
+ let i=$i+1 
+done
+exec 6>&-
+sleep 1
+}
+
+
+##############Erstelle program-changer-main-script-parameter-easyvdr-portal################
+Set_Main_Script_Parameter_easyportal()
+{
+i=0
+INDEX_NEW_MAIN_SCRIPT=0
+echo "BASH_SETUP_VER="$SETUP_VERSION > $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+if [ -e $DEFAULT_BUTTON ];then																						#Hier wird ein Buttonindex für das X Setup erstellt
+  cat $DEFAULT_BUTTON|grep "PCH_Button" > $DEFAULT_BUTTON.tmp; rm $DEFAULT_BUTTON; cat $DEFAULT_BUTTON.tmp > $DEFAULT_BUTTON; rm $DEFAULT_BUTTON.tmp
+fi
+while [ $i -le $x ]; do																							#Ab hier werden die zuvor ausgewählten Buttons in eine neue 
+ if [ $(echo ${enable_button_easyportal[$i]}) = "yes" ]; then													#program-changer-main-script-parameter-easyvdr-portal geschrieben.
+  echo "Portal_Button "$i >> $DEFAULT_BUTTON																		#Gehört nochmal zum Buttonindex vom X Setup
+  echo "#################################################" >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "name_button["$INDEX_NEW_MAIN_SCRIPT"]="${name_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "picture_button["$INDEX_NEW_MAIN_SCRIPT"]="${picture_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "enable_button["$INDEX_NEW_MAIN_SCRIPT"]="${enable_button_easyportal[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "enable_mouse_button["$INDEX_NEW_MAIN_SCRIPT"]="${enable_mouse_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "menu_page_nr_button["$INDEX_NEW_MAIN_SCRIPT"]="${menu_page_nr_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "adjust_alsamixer_button["$INDEX_NEW_MAIN_SCRIPT"]="${adjust_alsamixer_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "shutdown_program_button["$INDEX_NEW_MAIN_SCRIPT"]="${shutdown_program_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "pre_start_program_button["$INDEX_NEW_MAIN_SCRIPT"]="${pre_start_program_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "start_program_button["$INDEX_NEW_MAIN_SCRIPT']="'${start_program_easyportal[$i]}'"' >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo 'stop_program_button['$INDEX_NEW_MAIN_SCRIPT']="'${stop_program_button[$i]}'"' >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "kill_program_button["$INDEX_NEW_MAIN_SCRIPT"]="${kill_program_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "root_rights_button["$INDEX_NEW_MAIN_SCRIPT"]="${root_rights_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "vdr_remote_button["$INDEX_NEW_MAIN_SCRIPT"]="${vdr_remote_button[$i]} >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo 'install_apt_get_prg_button['$INDEX_NEW_MAIN_SCRIPT']="'${install_apt_get_prg_button[$i]}'"' >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  echo "" >> $MAIN_SCRIPT_PARAMETER_EASYPORTAL
+  INDEX_NEW_MAIN_SCRIPT=$(( $INDEX_NEW_MAIN_SCRIPT + 1 ))
+ fi
+ let i=$i+1
+done
+}
+##############Erstelle program-changer-keyboard.conf################
+Read_Key_Code()
+{
+KEY_CODE=""
+{
+i=0
+COUNT=100
+ while [ $i -le 3 ];do 
+ if [ $i -eq 0 ];then
+  echo $COUNT
+ fi
+ sleep 1 
+ let i=$i+1
+ let COUNT=$COUNT-25
+ echo $COUNT
+ if [ $i -eq 4 ];then
+  sleep 0.5
+  pkill showkey
+ fi
+done }|whiptail --backtitle "${TITLE[$LANG]}" --gauge "$TEXT" 10 65 0 &
+if [ ! $KEY_CODE ];then 
+ KEY_CODE=$(exec 6> >(showkey -k |grep "code"|sed -ne '2'p| awk '{ print $2 }'))
+fi
+exec 6>&-
+sleep 0.5
+if [ ! $KEY_CODE ];then 
+ Read_Key_Code_break
+else
+ Read_Key_Code_ok
+fi
+}
+
+Write_Keyboard_Code()
+{
+echo "# program-changer-keybord.conf Version 0.2 05.04.2016 by Bleifuss2 & gb" > $PCH_KEYBOARD
+echo "" >> $PCH_KEYBOARD
+echo "" >> $PCH_KEYBOARD
+echo "" >> $PCH_KEYBOARD
+echo "key-show-hide-menu =" $key_show_hide_menu >> $PCH_KEYBOARD
+echo "key-red =" $key_red >> $PCH_KEYBOARD
+echo "key-green =" $key_green >> $PCH_KEYBOARD
+echo "key-yellow =" $key_yellow >> $PCH_KEYBOARD
+echo "key-blue =" $key_blue >> $PCH_KEYBOARD
+echo "key-menu =" $key_menu >> $PCH_KEYBOARD
+}

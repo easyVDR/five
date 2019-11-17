@@ -1,0 +1,1 @@
+SUBSYSTEM=="dvb", ENV{DVB_ADAPTER_NUM}=="?*", NAME="dvb/adapter$env{DVB_ADAPTER_NUM}/$env{DVB_DEVICE_TYPE}$env{DVB_DEVICE_NUM}", GROUP="video"

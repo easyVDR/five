@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# mango 10.04.2012
+# scripte *.pls to .*m3u
+# 
+#
+
+# VDR-OSD-Mitteilung.
+/usr/bin/svdrpsend mesg  "Playlisten erstellen gestartet..."
+
+rm -rf /tmp/vtn
+
+sleep 0.5
+
+find /usr/share/vdr-netradio/net-radio.py -exec grep ").pls" {} \; -exec sed -i "s/).pls/).m3u/g" {} \;
+
+sleep 0.5
+python /usr/share/vdr-netradio/net-radio.py
+
+
+
+ 

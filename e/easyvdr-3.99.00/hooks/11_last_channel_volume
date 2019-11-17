@@ -1,0 +1,39 @@
+#
+# Custom VDR Shutdown Hook
+# -------------------------
+#
+#  based on
+#  /usr/share/vdr/shutdown-hooks/11_last_channel_volume
+#  easyVDR - mango 2013
+
+SetupConfigFile="/var/lib/vdr/setup.conf"
+ShutDownLog="/var/log/easyvdr/ShutDown.log"
+
+echo "Last ShutDownSettings:" > $ShutDownLog
+#
+#  Kanal beim Einschalten: wie vorher
+InitialChannel="$(cat $SetupConfigFile | grep InitialChannel | cut -d= -f2)"
+if [ "$InitialChannel" == " " ]; then
+    /usr/bin/svdrpsend -d localhost -p 6419 CHAN > /tmp/last.channel
+    lastchannel=`cat /tmp/last.channel | awk '/^250/ { print $2}'`
+    sed -i "s/^CurrentChannel.*/CurrentChannel = $lastchannel/"  $SetupConfigFile
+    echo "CurrentChannel => LastChannel in Setup.conf = $lastchannel" >> $ShutDownLog
+    sleep 0.2
+else
+    echo "Fixed Channel ($InitialChannel ) as Initial Channel" >> $ShutDownLog
+fi
+
+#
+#  Lautstaerke beim Einschalten: wie vorher
+InitialVolume=$(cat $SetupConfigFile | grep InitialVolume | cut -d= -f2)
+if [ "$InitialVolume" == " -1" ]; then
+    /usr/bin/svdrpsend -d localhost -p 6419 VOLU > /tmp/last.volume
+    lastvolume=`cat /tmp/last.volume | awk '/^250/ { print $5}'`
+    sed -i "s/^CurrentVolume.*/CurrentVolume = $lastvolume"  $SetupConfigFile
+    echo "CurrentVolume => LastVolume in Setup.conf = $lastvolume" >> $ShutDownLog
+    sleep 0.2
+else
+    echo "Fixed Volume ($InitialVolume ) as Initial Volume" >> $ShutDownLog
+fi
+
+chown vdr:vdr $SetupConfigFile

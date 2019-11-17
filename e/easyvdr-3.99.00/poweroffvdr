@@ -1,0 +1,45 @@
+#! /bin/bash
+
+# Safe poweroff for VDR
+
+### BEGIN HISTORY
+# Version 1.0  Initial version
+# Version 1.1  Edited for Lucid
+# Version 1.1a Spellfixes (SCZ) 14.03.13
+# 20131216 poweroff without .pl
+# 20151212 adding remo on gb
+# 20152912 adding frontend start
+### END HISTORY
+#set -x
+
+TIMERS_CONF="/var/lib/vdr/timers.conf"
+BOOTBEFOREREC="300"
+LOGGER="logger -t poweroffvdr"
+SHUTDOWNSCRIPT="/usr/lib/vdr/easyvdr-shutdown.wrapper"
+SVDRPSEND="/usr/bin/svdrpsend"
+
+if pidof vdr 2>&1> /dev/null ; then
+	sleep 2
+	$SVDRPSEND REMO ON
+	$LOGGER "VDR-Poweroff aufgerufen!"
+	$SVDRPSEND HITK Power
+	if (! ps -e | grep -q easyvdr-runfron); then
+	 sleep 2
+	 $SVDRPSEND REMO off
+	fi
+
+else
+	# Time, the system should be up
+	next_timersconf=$(sort -k 3,4 -t : ${TIMERS_CONF} | head -n 1 | cut -d':' -f3,4)
+
+	if  [ -n "$next_timersconf" ]; then
+		NEXTTIMER=$(date --date "${next_timersconf/:/ }" +%s)
+	fi
+
+	if  [ $[$NEXTTIMER+0] -gt 0 ]; then
+		WAKUPTIME=$(($NEXTTIMER-$BOOTBEFOREREC))
+	fi
+
+	$LOGGER "Starte VDR Shutdown-Skript!"
+	$SHUTDOWNSCRIPT $WAKUPTIME
+fi

@@ -1,0 +1,6 @@
+#! /bin/bash
+
+LOGGER="logger -t recordingaction"
+
+$LOGGER "executing /usr/lib/vdr/easyvdr-shutdownaction $@"
+sudo /usr/lib/vdr/easyvdr-shutdownaction $@

@@ -1,0 +1,135 @@
+#!/bin/bash
+
+#
+# VDR shutdown hook for ACPI - Tobias Grimm <vdr@e-tobi.net>
+# --------------------------
+#
+# This shutdown hook sets the wakeup time for the next timer using
+# ACPI.
+#
+# 20161209 javier: Some fixes for easyvdr
+#
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+##########
+
+LOG="logger -t 10-shutdown.acpi"
+AcpiError() {
+	$LOG "No writeable $WAKEALARM found. ACPI needed!!!"
+	echo "ABORT_MESSAGE=\"ACPI not installed, shutdown aborted!\""
+	exit 1
+}
+
+ResetWakeupTime() {
+	$LOG "Resetting ACPI alarm time"
+	if [ -w $WAKEALARM ]; then
+		$LOG "Writing 0 to $WAKEALARM"
+		echo 0 >$WAKEALARM || AcpiError
+	else
+		AcpiError
+	fi
+}
+
+SetWakeupTime() {
+	$LOG "Setting ACPI alarm time to: $1"
+	if [ -w $WAKEALARM ]; then
+		if ResetWakeupTime; then
+			$LOG "Writing 1st time $1 to $WAKEALARM"
+			echo $1 > $WAKEALARM || AcpiError
+			# remember wakeup time for stop script
+			echo $1 > $WAKEUP_FILE
+			return
+		fi
+	fi
+	AcpiError
+}
+
+IsRegularDayOfWeek() {
+    local day
+    for day in $ACPI_REGULAR_DAYS ; do
+        if [ "$day" = "`date -d \"@$1\" +%u`" ] ; then
+            return 0
+        fi
+    done
+    return 1
+}
+
+nop() {
+	# No Operation
+	echo -n ""
+}
+
+if [ "`basename $0`" != "testwakeup" ] ; then
+	# read arguments for acpi-wakeup from conf-file
+	. /etc/vdr/easyvdr-addon-acpi-wakeup.conf
+
+	WAKEUP_FILE="/var/cache/vdr/acpiwakeup.time"
+
+	# take care of UTC setting
+	if [ -f /etc/default/rcS ]; then
+		UTC=$(egrep "^[^#]*UTC=" /etc/default/rcS | tail -n1 | cut -d= -f2)
+	fi
+
+	LOG="logger -t easyvdr-addon-acpi-wakeup"
+else
+	UTC=$UTC
+	WAKEUP_FILE=$WAKEUP_FILE
+	LOG="nop"
+fi
+
+
+if [ "$UTC" = "yes" ]; then
+    TIME_FUNCTION="gmtime"
+else
+    TIME_FUNCTION="localtime"
+fi
+
+# Defaults:
+[ -z "$ENABLED" ] && export ENABLED="yes"
+[ -z "$WAKEUP_REGULAR_DAYS" ] && export WAKEUP_REGULAR_DAYS="0"
+[ -z "$WAKEUP_REGULAR_TIME" ] && export WAKEUP_REGULAR_TIME="00:00"
+[ -z "$WAKEUP_START_AHEAD" ] && export WAKEUP_START_AHEAD="5"
+[ -z "$WAKEALARM" ] && export WAKEALARM="/sys/class/rtc/rtc0/wakealarm"
+
+TIMER=$1
+
+if [ $ENABLED = "yes" ]; then
+
+	if [ $WAKEUP_REGULAR_DAYS -gt 0 ]; then
+		#Check if the WAKEUP_REGULAR_TIME of boot should be today or tomorrow
+                if [ $((`date +%s`))  -lt  $((`date -d "$WAKEUP_REGULAR_TIME" +%s`)) ]; then
+                        DAYS_AFTER_TODAY="0" #VDR should start today. 
+                else
+                        DAYS_AFTER_TODAY=$WAKEUP_REGULAR_DAYS #VDR should start next day according with WAKEUP_REGULAR_DAYS, not today
+                fi
+
+		REGULAR_TIMER=$((`date -d "$WAKEUP_REGULAR_TIME" +%s` + $DAYS_AFTER_TODAY * 24 * 60 * 60))
+
+		# when no vdr timer is set or vdr timer starts later than regular timer:
+		if [ $TIMER -eq 0 ] || [ $TIMER -gt 0 -a $REGULAR_TIMER -lt $TIMER ] ; then
+			TIMER=$REGULAR_TIMER
+		fi
+	fi
+
+	if [ $TIMER -gt 0 ]; then
+		MIN_WAKEUP_START_AHEAD=$((`date +%s` + 60 * $WAKEUP_START_AHEAD))
+		if [ $MIN_WAKEUP_START_AHEAD -gt $TIMER ]; then
+			$LOG "Can not set wakeup time less than $WAKEUP_START_AHEAD minutes ahead."
+			echo "ABORT_MESSAGE=\"Wakeup in less than $WAKEUP_START_AHEAD minutes, aborting!\""
+			exit 1
+		fi
+
+		# adjust wakeup time by WAKEUP_START_AHEAD
+		TIMER=$(($TIMER - 60 * $WAKEUP_START_AHEAD))
+	fi
+
+	if [ $TIMER -eq 0 ]; then
+		ResetWakeupTime
+	else
+		SetWakeupTime "$TIMER"
+	fi
+else
+	$LOG "ACPIWakeup functionality is disabled"
+fi
+

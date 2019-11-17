@@ -1,0 +1,7 @@
+
+# patch 4 easyvdr-portal
+# inserted by easyvdr-setup
+fastcgi.server = ( ".php" => ((
+     "bin-path" => "/usr/bin/php-cgi",
+     "socket" => "/tmp/php.socket"
+     )))

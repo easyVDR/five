@@ -1,0 +1,60 @@
+#!/bin/bash
+# Sichert die channels.conf als My_Channels.conf
+# und schützt sie so vor einem Update
+# Erstellt von michel8 4 easyvdr 04.03.2014
+# Rechte von My_Channels Angepasst 03.01.2015
+
+
+##### definitions
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+
+
+DATUM=`date +%Y-%m-%d-%R`
+    #echo "Test auf laufende Aufnahme..." 
+    RECORD_STR=$(cut -d: -f1 $CFG_DIR/timers.conf) 		  # Alle Zeilen aus Datei in String lesen
+    for RECORD in $RECORD_STR; do
+    #echo "Wert aus timers.conf: $RECORD" 
+        if [ $RECORD -gt 8 ] ;then 				  # Abfrage, ob groesser 8 - dann Aufnahme aktiv
+            RECORD_AKTIV="1"
+                echo "Record aktiv:" $RECORD_AKTIV 
+                echo "Bitte Update erneut starten, wenn die $RECORD_AKTIV Aufnahmen beendet sind!"
+                break
+            fi
+    done
+
+    if [ "$RECORD_AKTIV" == "1" ] ;then
+        echo "Aufnahme laeuft - Sicherung abgebrochen!!!" 
+        svdrpsend MESG "Aufnahme laeuft - Sicherung abgebrochen!!!"  >/dev/null 2>&1
+    else
+	if [ -L /var/lib/vdr/channels.conf ]; then
+    	    svdrpsend MESG "Channels.conf wird als My_Channels.conf gesichert!"  >/dev/null 2>&1
+    	    echo "Channels.conf wird als My_Channels.conf gesichert!"
+	    ChanLink=$(readlink /var/lib/vdr/channels.conf)
+	    if [ $(grep -c "My_Channels.conf" $ChanLink) != 0 ]; then
+    		echo "alte My_Channels.conf als $ChanLink.$DATUM gesichert!"
+    		cp $ChanLink $ChanLink.$DATUM
+            fi
+	    if [ -e $CFG_DIR/channels/My_Channels.conf ]; then
+    		#echo "alte My_Channels.conf als $CFG_DIR/channels/My_Channels.conf.$DATUM gesichert!"
+    		cp $CFG_DIR/channels/My_Channels.conf $CFG_DIR/channels/My_Channels.conf.$DATUM
+            fi
+    	    cp -f $ChanLink $CFG_DIR/channels/My_Channels.conf >/dev/null 2>&1
+    	    chown vdr:vdr $CFG_DIR/channels/My_Channels.conf >/dev/null 2>&1
+    	    chmod 644 $CFG_DIR/channels/My_Channels.conf >/dev/null 2>&1
+	    echo "stoppe vdr"
+    	    sleep 5
+    	    stopvdr >/dev/null 2>&1
+    	    sleep 5
+	    rm -f  $CFG_DIR/channels.conf
+	    ln -s $CFG_DIR/channels/My_Channels.conf $CFG_DIR/channels.conf
+	    SetSysconfig CHANNELLIST My_Channels
+	    SetVDRSetupXML CHANNELLIST My_Channels
+	    echo "starte vdr"
+    	    startvdr >/dev/null 2>&1
+    	    sleep 10
+    	    svdrpsend MESG "My_Channels.conf ist jetzt aktive Kanalliste!"  >/dev/null 2>&1
+    	    echo "Channels.conf ist als My_Channels.conf gesichert und aktiviert!"
+        fi
+    fi

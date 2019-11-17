@@ -1,0 +1,10 @@
+#!/bin/bash
+
+if [ install = "$1" -o upgrade = "$1" ]; then
+ if  pidof program_changer;then
+  systemctl stop easyvdr-program-changer || true > /dev/null 2>&1
+ fi
+fi
+
+#DEBHELPER#
+

@@ -1,0 +1,9 @@
+#! /bin/sh
+set -e
+
+# Remove Directory
+if [ "$1" = "purge" ]; then
+    /bin/rm -rf /usr/share/easyvdr-addon-convert
+fi
+
+#DEBHELPER#

@@ -1,0 +1,10 @@
+int make_keyboard_conf(char *acProgramName);
+extern int Key_Pchanger;
+extern void learn_keys();
+extern int Key_Pchanger;
+extern int Key_Red;
+extern int Key_Green;
+extern int Key_Yellow;
+extern int Key_Blue;
+extern int Key_Menu;
+extern bool bcheck_keypchanger,bcheck_Key_Red,bcheck_Key_Green,bcheck_Key_Yellow,bcheck_Key_Blue,bcheck_Key_Menu;

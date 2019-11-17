@@ -1,0 +1,24 @@
+#! /bin/bash
+
+#set -x
+
+### BEGIN HISTORY
+# Version 1.0 Initial Version
+# Version 1.1 Editet for lucid
+### END HISTORY
+
+# Save reboot for vdr
+
+SVDRPSEND="/usr/bin/svdrpsend"
+
+if pidof vdr 2>&1> /dev/null ; then
+	NEXTIMER=$($SVDRPSEND next rel | grep ^250 | cut -d" " -f3 | tr -d "\r")
+	if [ -n "$NEXTIMER" ] ;then
+		if [ $[$NEXTIMER+0] -le 0 ]; then
+			$SVDRPSEND mesg "Aufnahme läuft; Reboot abgebrochen"
+			exit 1
+		fi
+	fi
+fi
+
+sudo shutdown -r now

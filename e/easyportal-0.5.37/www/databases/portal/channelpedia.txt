@@ -1,0 +1,42 @@
+Quelle#Name#Url
+str#str#str
+##
+DVB-S#DVB-S: S1W - Intelsat 10-02, Thor 5, Thor 6#DVB-S/S1W/S1W
+DVB-S#DVB-S: S4.8E - Astra 4A#DVB-S/S4.8E/S4.8E
+DVB-S#DVB-S: S9E - Eutelsat 9A#DVB-S/S9E/S9E
+DVB-S#DVB-S: S13E - Hot Bird 13A, Hot Bird 13B, Hot Bird 13C#DVB-S/S13E/S13E
+DVB-S#DVB-S: S19.2E - Astra 1KR, Astra 1L, Astra 1M, Astra 1N#DVB-S/S19.2E/S19.2E
+DVB-S#DVB-S: S26E - Badr 4, Badr 5, Badr 6#DVB-S/S26E/S26E
+DVB-S#DVB-S: S28.2E - Astra 2A, Astra 2D, Astra 2E, Astra 2F, Eutelsat 28A#DVB-S/S28.2E/S28.2E
+DVB-S#DVB-S: S36E - Eutelsat 36A, Eutelsat 36B#DVB-S/S36E/S36E
+DVB-S#DVB-S: S42E - #DVB-S/S42E/S42E
+DVB-C#DVB-C: at_salzburg-ag_Saalfelden#DVB-C/at/salzburg-ag/Saalfelden/C%5Bat_salzburg-ag_Saalfelden%5D
+DVB-C#DVB-C: de_AntennenbauMuth_Halle_Saale#DVB-C/de/AntennenbauMuth/Halle/Saale/C%5Bde_AntennenbauMuth_Halle_Saale%5D
+DVB-C#DVB-C: de_KabelBW_Heidelberg#DVB-C/de/KabelBW/Heidelberg/C[de_KabelBW_Heidelberg]
+DVB-C#DVB-C: de_KabelBW_Heilbronn#DVB-C/de/KabelBW/Heilbronn/C[de_KabelBW_Heilbronn]
+DVB-C#DVB-C: de_KabelBW_Loerrach#DVB-C/de/KabelBW/Loerrach/C[de_KabelBW_Loerrach]
+DVB-C#DVB-C: de_KabelDeutschland_Braunschweig#DVB-C/de/KabelDeutschland/Braunschweig/C[de_KabelDeutschland_Braunschweig]
+DVB-C#DVB-C: de_KabelDeutschland_Flensburg#DVB-C/de/KabelDeutschland/Flensburg/C[de_KabelDeutschland_Flensburg]
+DVB-C#DVB-C: de_KabelDeutschland_Muenchen#DVB-C/de/KabelDeutschland/Muenchen/C[de_KabelDeutschland_Muenchen]
+DVB-C#DVB-C: de_KabelDeutschland_Nuernberg#DVB-C/de/KabelDeutschland/Nuernberg/C[de_KabelDeutschland_Nuernberg]
+DVB-C#DVB-C: de_KabelDeutschland_Speyer#DVB-C/de/KabelDeutschland/Speyer/C[de_KabelDeutschland_Speyer]
+DVB-C#DVB-C: de_Martens_Hamburg#DVB-C/de/Martens/Hamburg/C[de_Martens_Hamburg]
+DVB-C#DVB-C: de_Primacom_Halberstadt#DVB-C/de/Primacom/Halberstadt/C[de_Primacom_Halberstadt]
+DVB-C#DVB-C: de_TeleColumbus_Magdeburg#DVB-C/de/TeleColumbus/Magdeburg/C[de_TeleColumbus_Magdeburg]
+DVB-C#DVB-C: de_UnityMediaNRW#DVB-C/de/UnityMediaNRW/C[de_UnityMediaNRW]
+DVB-C#DVB-C: de_WilhelmTel_Hamburg#DVB-C/de/WilhelmTel/Hamburg/C[de_WilhelmTel_Hamburg]
+DVB-C#DVB-C: de_WilhelmTel_Norderstedt#DVB-C/de/WilhelmTel/Norderstedt/C[de_WilhelmTel_Norderstedt]
+DVB-C#DVB-C: fi_DNAWelho_Helsinki#DVB-C/fi/DNAWelho/Helsinki/C[fi_DNAWelho_Helsinki]
+DVB-C#DVB-C: fi_DNAWelho_Rauma#DVB-C/fi/DNAWelho/Rauma/C[fi_DNAWelho_Rauma]
+DVB-T#DVB-T: at_Linz#DVB-T/at/Linz/T[at_Linz]
+DVB-T#DVB-T: at_Wien#DVB-T/at/Wien/T[at_Wien]
+DVB-T#DVB-T: de_Flensburg#DVB-T/de/Flensburg/T[de_Flensburg]
+DVB-T#DVB-T: de_Frankfurt#DVB-T/de/Frankfurt/T[de_Frankfurt]
+DVB-T#DVB-T: de_Hamburg#DVB-T/de/Hamburg/T[de_Hamburg]
+DVB-T#DVB-T: de_Heidelberg#DVB-T/de/Heidelberg/T[de_Heidelberg]
+DVB-T#DVB-T: de_Muenchen#DVB-T/de/Muenchen/T[de_Muenchen]
+DVB-T#DVB-T: de_NordrheinWestfalen#DVB-T/de/NordrheinWestfalen/T[de_NordrheinWestfalen]
+DVB-T#DVB-T: de_Wiesbaden#DVB-T/de/Wiesbaden/T[de_Wiesbaden]
+DVB-T#DVB-T: dk_Tondern#DVB-T/dk/Tondern/T[dk_Tondern]
+DVB-T#DVB-T: ie_Galway#DVB-T/ie/Galway/T[ie_Galway]
+DVB-T#DVB-T: fi_Espoo#DVB-T/fi/Espoo/T[fi_Espoo]

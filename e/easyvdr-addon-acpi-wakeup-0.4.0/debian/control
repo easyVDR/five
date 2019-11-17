@@ -1,0 +1,15 @@
+Source: easyvdr-addon-acpi-wakeup
+Section: misc
+Priority: optional
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Origin: easyVDR
+Build-Depends: debhelper (>> 9)
+Standards-Version: 3.9.5
+
+Package: easyvdr-addon-acpi-wakeup
+Architecture: any
+Depends: ${shlibs:Depends}, perl, vdr (>=2.2.0)
+Conflicts: vdr-addon-acpiwakeup
+Description: Addon that enables vdr to wakeup itself using ACPI
+ This vdr addon uses ACPI to set an alarm time with the next timer,
+ when vdr shuts down.

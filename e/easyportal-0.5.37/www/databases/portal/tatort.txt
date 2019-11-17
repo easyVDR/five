@@ -1,0 +1,972 @@
+SE#EP#No#Title#Ermittler#Ort#Sender#Jahr
+str#int#int#str#str#str#str#str
+#######
+
+01#1#1#Taxi nach Leipzig#Trimmel#Hamburg#NDR#1970
+01#2#2#Saarbrücken an einem Montag#Liersdahl#Saarbrücken#SR#1970
+02#1#3#Kressin und der tote Mann im Fleet#Kressin#Köln#WDR#1971
+02#2#4#Auf offener Straße#Lutz#Stuttgart#SDR#1971
+02#3#5#Kressin und der Laster nach Lüttich#Kressin#Köln#WDR#1971
+02#4#6#Frankfurter Gold#Konrad#Frankfurt#HR#1971
+02#5#7#Kressin stoppt den Nordexpress#Kressin#Köln#WDR#1971
+02#6#8#Blechschaden#Finke#Kiel#NDR#1971
+02#7#9#Exklusiv!#Trimmel#Hamburg#NDR#1971
+02#8#10#AE612 ohne Landeerlaubnis#Trimmel#Hamburg#NDR#1971
+02#9#11#Der Richter in Weiß#Trimmel#Hamburg#NDR#1971
+02#10#12#Mordverdacht#Marek#Wien#ORF#1971
+02#11#13#Der Boß#Kasulke#Berlin#SFB#1971
+03#1#14#Münchner Kindl#Veigl#München#BR#1972
+03#2#15#Wenn Steine sprechen#Pflüger#Baden-Baden#SWF#1972
+03#3#16#Der Fall Geisterbahn#Konrad#Frankfurt#HR#1972
+03#4#17#Kennwort Fähre#Lutz#Stuttgart#SDR#1972
+03#5#18#Kressin und die Frau des Malers#Kressin#Köln#WDR#1972
+03#6#19#Strandgut#Finke#Kiel#NDR#1972
+03#7#20#Kressin und der Mann mit dem gelben Koffer#Kressin#Köln#WDR#1972
+03#8#21#Rechnen Sie mit dem Schlimmsten#Trimmel#Hamburg#NDR#1972
+03#9#22#Rattennest#Kasulke#Berlin#SFB#1972
+03#10#23#Die Samtfalle#Marek#Wien#ORF#1972
+03#11#24#Kennwort Gute Reise#Konrad#Frankfurt#HR#1972
+04#1#25#Tote Taube in der Beethovenstraße#Kressin#Köln#WDR#1973
+04#2#26#Ein ganz gewöhnlicher Mord#Böck#Bremen#RB#1973
+04#3#27#Cherchez la femme oder die Geister vom Mummelsee#Gerber#Baden-Baden#SWF#1973
+04#4#28#Stuttgarter Blüten#Lutz#Stuttgart#SDR#1973
+04#5#29#Jagdrevier#Finke#Kiel#NDR#1973
+04#6#30#Weißblaue Turnschuhe#Veigl#München#BR#1973
+04#7#31#Kressin und die zwei Damen aus Jade#Kressin#Köln#WDR#1973
+04#8#32#Platzverweis für Trimmel#Trimmel#Hamburg#NDR#1973
+04#9#33#Das fehlende Gewicht#Liersdahl#Saarbrücken#SR#1973
+04#10#34#Tote brauchen keine Wohnung#Veigl#München#BR#1973
+04#11#35#Frauenmord#Marek#Wien#ORF#1973
+05#1#36#Nachtfrost#Finke#Kiel#NDR#1974
+05#2#37#Eine todsichere Sache#Konrad#Frankfurt#HR#1974
+05#3#38#Playback oder die Show geht weiter#Gerber#Baden-Baden#SWF#1974
+05#4#39#Acht Jahre später#Haferkamp#Essen#WDR#1974
+05#5#40#3:0 für Veigl#Veigl#München#BR#1974
+05#6#41#Zweikampf#Haferkamp#Essen#WDR#1974
+05#7#42#Gift#Trimmel#Hamburg#NDR#1974
+05#8#43#Gefährliche Wanzen#Lutz#Stuttgart#SDR#1974
+05#9#44#Mord im Ministerium#Marek#Wien#ORF#1974
+05#10#45#Kneipenbekanntschaft#Brammer#Hannover#NDR#1974
+05#11#46#Der Mann aus Zimmer 22#Haferkamp#Essen#WDR#1974
+06#1#47#Die Rechnung wird nachgereicht#Konrad#Frankfurt#HR#1975
+06#2#48#Als gestohlen gemeldet#Veigl#München#BR#1975
+06#3#49#Tod eines Einbrechers#Gerber#Baden-Baden#SWF#1975
+06#4#50#Wodka Bitter-Leomon#Haferkamp#Essen#WDR#1975
+06#5#51#Das zweite Geständnis#Veigl#München#BR#1975
+06#6#52#Die Abrechnung#Haferkamp#Essen#WDR#1975
+06#7#53#Mordgedanken#Brammer#Hannover#NDR#1975
+06#8#54#Schöne Belinda#Lutz#Stuttgart#SDR#1975
+06#9#55#Urlaubsmord#Marek#Wien#ORF#1975
+06#10#56#Treffpunkt Friedhof#Haferkamp#Essen#WDR#1975
+06#11#57#Tod im U-Bahnschacht#Schmidt#Berlin#SFB#1975
+06#12#58#Kurzschluss#Finke#Kiel#NDR#1975
+07#1#59#Augenzeuge#Lutz#Stuttgart#SDR#1976
+07#2#60#Kassensturz#Gerber#Baden-Baden#SWF#1976
+07#3#61#Zwei Leben#Haferkamp#Essen#WDR#1976
+07#4#62#Zwei Flugkarten nach Rio#Konrad#Frankfurt#HR#1976
+07#5#63#Wohnheim Westendstraße#Veigl#München#BR#1976
+07#6#64#Fortuna III#Haferkamp#Essen#WDR#1976
+07#7#65#... und dann ist Zahltag#Brammer#Hannover#NDR#1976
+07#8#66#Annoncen-Mord#Marek#Wien#ORF#1976
+07#9#67#Trimmel und der Tulpendieb#Trimmel#Hamburg#NDR#1976
+07#10#68#Abendstern#Haferkamp#Essen#WDR#1976
+07#11#69#Transit ins Jenseits#Schmidt#Berlin#SFB#1976
+08#1#70#Das Mädchen am Klavier#Veigl#München#BR#1977
+08#2#71#Himmelblau mit Silberstreifen#Lutz#Stuttgart#SDR#1977
+08#3#72#Flieder für Jaczek#Konrad#Frankfurt#HR#1977
+08#4#73#Reifezeugnis#Finke#Kiel#NDR#1977
+08#5#74#Finderlohn#Gerber#Baden-Baden#SWF#1977
+08#6#75#Spätlese#Haferkamp#Essen#WDR#1977
+08#7#76#Wer andern eine Grube gräbt...#Schäfermann#Saarbrücken#SR#1977
+08#8#77#Schüsse in der Schonzeit#Veigl#München#BR#1977
+08#9#78#Drei Schlingen#Haferkamp#Essen#WDR#1977
+08#10#79#Der vergessene Mord#Marek#Wien#ORF#1977
+08#11#80#Feuerzauber#Schmidt#Berlin#SFB#1977
+08#12#81#Das stille Geschäft#Brammer#Hannover#NDR#1977
+08#13#82#Das Mädchen von gegenüber#Haferkamp#Essen#WDR#1977
+09#1#83#rot.. rot.. tot#Lutz#Stuttgart#SDR#1978
+09#2#84#Der Mann auf dem Hochsitz#Buchmüller#Mainz#SWF#1978
+09#3#85#Zürcher Früchte#Bergmann#Frankfurt#HR#1978
+09#4#86#Trimmel hält ein Plädoyer#Trimmel#Hamburg#NDR#1978
+09#5#87#Rechnung mit einer Unbekannten#Haferkamp#Essen#WDR#1978
+09#6#88#Schlußverkauf#Veigl#München#BR#1978
+09#7#89#Lockruf#Haferkamp#Essen#WDR#1978
+09#8#90#Himmelfahrt#Finke#Kiel#NDR#1978
+09#9#91#Der Feinkosthändler#Haferkamp#Essen#WDR#1978
+09#10#92#Mord im Krankenhaus#Marek#Wien#ORF#1978
+09#11#93#Sterne für den Orient#Behnke#Berlin#SFB#1978
+09#12#94#Schwarze Einser#Veigl#München#BR#1978
+10#1#95#Die Kugel im Leib#Haferkamp#Essen#WDR#1979
+10#2#96#Der King#Konrad#Frankfurt#HR#1979
+10#3#97#Alles umsonst#Nagel#Braunschweig#NDR#1979
+10#4#98#30 Liter Super#Schäfermann#Saarbrücken#SR#1979
+10#5#99#Ende einer Vorstellung#Veigl#München#BR#1979
+10#6#100#Ein Schuss zuviel#Haferkamp#Essen#WDR#1979
+10#7#101#Freund Gregor#Delius#Hamburg#NDR#1979
+10#8#102#Zweierlei Knoten#Lutz#Stuttgart#SDR#1979
+10#9#103#Mitternacht, oder kurz danach#Buchmüller#Mainz#SWF#1979
+10#10#104#Gefährliche Träume#Behnke#Berlin#SFB#1979
+10#11#105#Mord im Grand-Hotel#Marek#Wien#ORF#1979
+10#12#106#Schweigegeld#Haferkamp#Essen#WDR#1979
+10#13#107#Maria im Elend#Veigl#München#BR#1979
+11#1#108#Kein Kinderspiel#Lutz#Stuttgart#SDR#1980
+11#2#109#Der gelbe Unterrock#Buchmüller#Mainz#SWF#1980
+11#3#110#Mit nackten Füssen#Sander#Frankfurt#HR#1980
+11#4#111#Der Zeuge#Enders#Essen#WDR#1980
+11#5#112#Hände hoch, Herr Trimmel!#Trimmel#Hamburg#NDR#1980
+11#6#113#Schußfahrt#Haferkamp#Essen#WDR#1980
+11#7#114#Spiel mit Karten#Veigl#München#BR#1980
+11#8#115#Streifschuß#Piper#Bremen#NDR#1980
+11#9#116#Tote reisen nicht umsonst#Schäfermann#Saarbrücken#SR#1980
+11#10#117#Mord auf Raten#Marek#Wien#ORF#1980
+11#11#118#Schönes Wochenende#Haferkamp#Essen#WDR#1980
+11#12#119#Herzjagd#Kreutzer#Essen#WDR#1980
+12#1#120#Nebengeschäfte#Lutz#Stuttgart#SDR#1981
+12#2#121#Schattenboxen#Bergmann#Frankfurt#HR#1981
+12#3#122#Beweisaufnahme#Walther#Berlin#SFB#1981
+12#4#123#Usambaraveilchen#Veigl#München#BR#1981
+12#5#124#Das Lederherz#Wiegand#Baden-Baden#SWF#1981
+12#6#125#Das Zittern der Tenöre#Greve#Hamburg#NDR#1981
+12#7#126#Duisburg-Ruhrort#Schimanski#Duisburg#WDR#1981
+12#8#127#Katz und Mäuse#Walther#Berlin#SFB#1981
+12#9#128#Slalom#Beck#Lübeck#NDR#1981
+12#10#129#Mord in der Oper#Marek#Wien#ORF#1981
+12#11#130#Im Fadenkreuz#Lenz#München#BR#1981
+12#12#131#Grenzgänger#Schimanski#Duisburg#WDR#1981
+13#1#132#Blinde Wut#Lutz#Stuttgart#SDR#1982
+13#2#133#So ein Tag...#Rolfs#Frankfurt#HR#1982
+13#3#134#Der unsichtbare Gegner#Schimanski#Duisburg#WDR#1982
+13#4#135#Tod auf dem Rastplatz#Lenz#München#BR#1982
+13#5#136#Wat Recht is, mutt Recht blieben#Schnoor#Bremerhaven#NDR#1982
+13#6#137#Sterben und sterben lassen#Walther#Berlin#SFB#1982
+13#7#138#Das Mädchen auf der Treppe#Schimanski#Duisburg#WDR#1982
+13#8#139#Blaßlila Briefe#Wiegand#Baden-Baden#SWF#1982
+13#9#140#Kindergeld#Piper#Bremen#NDR#1982
+13#10#141#Trimmel und Isolde#Trimmel#Hamburg#NDR#1982
+13#11#142#Mordkommando#Marek#Wien#ORF#1982
+13#12#143#Kuscheltiere#Schimanski#Duisburg#WDR#1982
+14#1#144#Mord ist kein Geschäft#Lutz#Stuttgart#SDR#1983
+14#2#145#Fluppys Masche#Walther#Berlin#SFB#1983
+14#3#146#Miriam#Schimanski#Duisburg#WDR#1983
+14#4#147#Blütenträume#Bergmann#Frankfurt#HR#1983
+14#5#148#Peggy hat Angst#Wiegand#Baden-Baden#SWF#1983
+14#6#149#Wenn alle Brünnlein fließen#Ronke#Stade#NDR#1983
+14#7#150#Mord in der U-Bahn#Marek#Wien#ORF#1983
+14#8#151#Roulette mit sechs Kugeln#Lenz#München#BR#1983
+14#9#152#Der Schläfer#Delius#Hamburg#NDR#1983
+15#1#153#Rubecks Traum#Rullmann#Heppenheim#HR#1984
+15#2#154#Freiwild#Walther#Berlin#SFB#1984
+15#3#155#Verdeckte Ermittlung#Lutz#Stuttgart#SDR#1984
+15#4#156#Kielwasser#Schimanski#Duisburg#WDR#1984
+15#5#157#Haie vor Helgoland#Stoever#Hamburg#NDR#1984
+15#6#158#Täter und Opfer#Wiegand#Baden-Baden#SFB#1984
+15#7#159#Zweierlei Blut#Schimanski#Duisburg#WDR#1984
+15#8#160#Gelegenheit macht Liebe#Stoever#Hamburg#NDR#1984
+15#9#161#Heißer Schnee#Lenz#München#BR#1984
+15#10#162#Geburtstagsgrüße#Schäfermann#Saarbrücken#SR#1984
+15#11#163#Der Mann mit den Rosen#Hirth#Wien#ORF#1984
+15#12#164#Rechnung ohne Wirt#Schimanski#Duisburg#WDR#1984
+16#1#165#Ordnung ist das halbe Sterben#Walther#Berlin#SFB#1985
+16#2#166#Acht, neun - aus#Dietze#Frankfurt#HR#1985
+16#3#167#Doppelspiel#Schimanski#Duisburg#WDR#1985
+16#4#168#Irren ist tödlich#Stoever#Hamburg#NDR#1985
+16#4#168#Fahrerflucht#Hirth#Wien#ORF#1985
+16#5#169#Miese Tricks#Lutz#Stuttgart#SDR#1985
+16#6#170#Der Mord danach#Wiegand#Baden-Baden#SFB#1985
+16#7#171#Das Haus im Wald#Schimanski#Duisburg#WDR#1985
+16#7#171#Des Glückes Rohstoff#Hirth#Wien#ORF#1985
+16#8#172#Nachtstreife#Hirth#Wien#ORF#1985
+16#9#173#Schmerzensgeld#Brinkmann#Frankfurt#HR#1985
+16#10#174#Tod macht erfinderisch#Bülow#Berlin#SFB#1985
+16#11#175#Baranskis Geschäft#Delius#Hamburg#NDR#1985
+16#12#176#Schicki-Micki#Lenz#München#BR#1985
+17#1#177#Strindbergs Früchte#Hirth#Wien#ORF#1986
+17#1#177#Die kleine Kanaille#Bülow#Berlin#SFB#1986
+17#2#178#Einer sah den Mörder#Lutz#Stuttgart#SDR#1986
+17#3#178#Das Archiv#Hirth#Wien#ORF#1986
+17#4#179#Leiche im Keller#Stoever#Hamburg#NDR#1986
+17#5#180#Der Tausch#Schimanski#Duisburg#WDR#1986
+17#6#181#Riedmüller, Vorname Sigi#Riedmüller#München#BR#1986
+17#7#181#Die Spieler#Hirth#Wien#ORF#1986
+17#8#182#Aus der Traum#Wiegand#Baden-Baden#SWF#1986
+17#9#183#Tödliche Blende#Bülow#Berlin#SFB#1986
+17#10#184#Schwarzes Wochenende#Schimanski#Duisburg#WDR#1986
+17#11#184#Alleingang#Hirth#Wien#ORF#1986
+17#12#185#Tod auf Eis#Stoever#Hamburg#NDR#1986
+17#13#186#Wir werden ihn Mischa nennen#Hirth#Wien#ORF#1986
+17#14#186#Der Schnee vom vergangenen Jahr#Hirth#Wien#ORF#1986
+17#15#187#Automord#Brinkmann#Frankfurt#HR#1986
+17#16#187#Der Tod des Tänzers#Pfeifer#Wien#ORF#1986
+17#17#188#Freunde#Schimanski#Duisburg#WDR#1986
+18#1#189#Die Macht des Schicksals#Lenz#München#BR#1987
+18#1#189#Die offene Rechnung#Pfeifer#Wien#ORF#1987
+18#2#190#Eine Million Mäuse#Schreitle#Stuttgart#SDR#1987
+18#3#191#Blindflug#Brinkmann#Frankfurt#HR#1987
+18#4#192#Tod im Elefantenhaus#Stoever#Hamburg#NDR#1987
+18#4#192#Superzwölfer#Pfeifer#Wien#ORF#1987
+18#5#193#Spiel mit dem Feuer#Wiegand#Baden-Baden#SWF#1987
+18#6#194#Spielverderber#Schimanski#Duisburg#WDR#1987
+18#7#195#Pension Tosca oder Die Sterne lügen nicht#Scherrer#München#BR#1987
+18#8#196#Wunschlos tot#Passini#Wien#ORF#1987
+18#9#197#Gegenspieler#Lenz#München#BR#1987
+18#10#198#Voll auf Haß#Stoever#Hamburg#NDR#1987
+18#11#199#Der letzte Mord#Marek#Wien#ORF#1987
+18#11#199#Atahualpa#Pfeifer#Wien#ORF#1987
+18#11#199#Flucht in den Tod#Pfeifer#Wien#ORF#1987
+18#12#200#Zahn um Zahn#Schimanski#Duisburg#WDR#1987
+19#1#201#Salü Palu#Palu#Saarbrücken#SR#1988
+19#2#202#Schuldlos schuldig?#Bülow#Berlin#SFB#1988
+19#3#203#Sein letzter Wille#Schreitle#Stuttgart#SDR#1988
+19#4#204#Die Brüder#Brinkmann#Frankfurt#HR#1988
+19#5#205#Gebrochene Blüten#Schimanski#Duisburg#WDR#1988
+19#6#206#Ausgeklinkt#Wiegand#Baden-Baden#SWF#1988
+19#7#207#Spuk aus der Eiszeit#Stoever#Hamburg#NDR#1988
+19#8#208#Pleitegeier#Stoever#Hamburg#NDR#1988
+19#9#209#Einzelhaft#Schimanski#Duisburg#WDR#1988
+19#10#210#Tödlicher Treff#Schreitle#Stuttgart#SDR#1988
+19#11#211#Feuerwerk für eine Leiche#Pfeifer#Wien#ORF#1988
+19#12#212#Winterschach#Palu#Saarbrücken#SR#1988
+19#13#213#Programmiert auf Mord#Brandenburg#München#BR#1988
+19#14#214#Moltke#Schimanski#Duisburg#WDR#1988
+20#1#215#Kopflos#Brinkmann#Frankfurt#HR#1989
+20#2#216#Schmutzarbeit#Stoever#Hamburg#NDR#1989
+20#3#217#Der Pott#Schimanski#Duisburg#WDR#1989
+20#4#218#Bier vom Faß#Brandenburg#München#BR#1989
+20#4#218#Geld für einen Griechen#Fichtl#Wien#ORF#1989
+20#5#219#Keine Tricks, Herr Bülow#Bülow#Berlin#SFB#1989
+20#6#220#Armer Nanosh#Stoever#Hamburg#NDR#1989
+20#7#221#Alles Theater#Bülow#Berlin#SFB#1989
+20#8#222#Blutspur#Schimanski#Duisburg#WDR#1989
+20#9#223#Blinde Angst#Fichtl#Wien#ORF#1989
+20#10#224#Die Neue#Odenthal#Ludwigshafen#SWF#1989
+20#11#225#Katjas Schweigen#Schimanski#Duisburg#WDR#1989
+20#12#226#Herzversagen#Palu#Saarbrücken#SR#1989
+21#1#227#Lauf eines Todes#Stoever#Hamburg#NDR#1990
+21#2#228#Tod einer Ärztin#Brinkmann#Frankfurt#HR#1990
+21#3#229#Howalds Fall#Howald#Bern#SFDRS#1990
+21#4#230#Medizinmänner#Schimanski#Duisburg#WDR#1990
+21#5#231#Rendezvous#Odenthal#Ludwigshafen#SWF#1990
+21#6#232#Zabou#Schimanski#Duisburg#WDR#1990
+21#7#233#Zeitzünder#Stoever#Hamburg#NDR#1990
+21#8#234#Schimanskis Waffe#Schimanski#Duisburg#WDR#1990
+21#9#235#Unter Brüdern#Schimanski#Duisburg#WDR#1990
+21#10#236#Seven-Eleven#Fichtl#Wien#ORF#1990
+21#11#237#Blue Lady#Palu#Saarbrücken#SR#1990
+22#1#238#Animals#Batic#München#BR#1991
+22#2#239#Finale am Rothenbaum#Stoever#Hamburg#NDR#1991
+22#3#240#Wer zweimal stirbt#Batic#München#BR#1991
+22#4#241#Rikki#Brinkmann#Frankfurt#HR#1991
+22#5#242#Kameraden#Carlucci#Bern#SFDRS#1991
+22#6#243#Tödliche Vergangenheit#Markowitz#Berlin#SFB#1991
+22#7#244#Bis zum Hals im Dreck#Schimanski#Duisburg#WDR#1991
+22#8#245#Tini#Markowitz#Berlin#SFB#1991
+22#9#246#Tod eines Mädchens#Stoever#Hamburg#NDR#1991
+22#10#247#Telephongeld#Fichtl#Wien#ORF#1991
+22#11#248#Blutwurstwalzer#Markowitz#Berlin#SFB#1991
+22#12#249#Tod im Häcksler#Odenthal#Ludwigshafen#SWF#1991
+22#13#250#Kinderlieb#Schimanski#Duisburg#WDR#1991
+22#14#251#Die chinesische Methode#Batic#München#BR#1991
+22#15#252#Der Fall Schimanski#Schimanski#Duisburg#WDR#1991
+23#1#253#Ein Fall für Ehrlicher#Ehrlicher#Leipzig#MDR#1992
+23#2#254#Camerone#Palu#Saarbrücken#SR#1992
+23#3#255#Verspekuliert#Brinkmann#Frankfurt#HR#1992
+23#4#256#Blindekuh#Stoever#Hamburg#NDR#1992
+23#5#257#Experiment#Stoever#Hamburg#NDR#1992
+23#6#258#Der Mörder und der Prinz#Flemming#Düsseldorf#WDR#1992
+23#7#259#Tod aus der Vergangenheit#Ehrlicher#Leipzig#MDR#1992
+23#8#260#Stoevers Fall#Stoever#Hamburg#NDR#1992
+23#9#261#Kinderspiel#Fichtl#Wien#ORF#1992
+23#10#262#Kainsmale#Batic#München#BR#1992
+23#11#263#Unversöhnlich#Flemming#Düsseldorf#WDR#1992
+23#12#264#Marion#Carlucci#Bern#SFDRS#1992
+23#13#265#Tod eines Wachmanns#Flemming#Düsseldorf#WDR#1992
+23#14#266#Bienzle und der Biedermann#Bienzle#Stuttgart#SDR#1992
+23#15#267#Falsche Liebe#Odenthal#Ludwigshafen#SWF#1992
+24#1#268#Amoklauf#Stoever#Hamburg#NDR#1993
+24#2#269#Berlin - beste Lage#Markowitz#Berlin#SFB#1993
+24#3#270#Renis Tod#Brinkmann#Frankfurt#HR#1993
+24#4#271#Verbranntes Spiel#Ehrlicher#Leipzig#MDR#1993
+24#5#272#Kesseltreiben#Palu#Saarbrücken#SR#1993
+24#6#273#Bienzle und die schöne Lau#Bienzle#Stuttgart#SDR#1993
+24#7#274#Flucht nach Miami#Flemming#Düsseldorf#WDR#1993
+24#8#275#Tod einer alten Frau#Markowitz#Berlin#SFB#1993
+24#9#276#Gehirnwäsche#von Burg#Bern#SFDRS#1993
+24#10#277#Gefährliche Freundschaft#Flemming#Düsseldorf#WDR#1993
+24#11#278#Ein Sommernachtstraum#Batic#München#BR#1993
+24#12#279#Alles Palermo#Batic#München#BR#1993
+24#13#280#Um Haus und Hof#Stoever#Hamburg#NDR#1993
+24#14#281#Stahlwalzer#Fichtl#Wien#ORF#1993
+24#15#282#Die Zärtlichkeit des Monsters#Odenthal#Ludwigshafen#SWF#1993
+24#16#283#Bauernopfer#Ehrlicher#Leipzig#MDR#1993
+24#17#284#Himmel und Erde#Batic#München#BR#1993
+24#18#285#Deserteure#Flemming#Düsseldorf#WDR#1993
+25#1#286#Bienzle und das Narrenspiel#Bienzle#Stuttgart#SDR#1994
+25#2#287#Die Sache Baryschna#Markowitz#Berlin#SFB#1994
+25#3#288#Ein Wodka zuviel#Stoever#Hamburg#NDR#1994
+25#4#289#Der Rastplatzmörder#Brinkmann#Frankfurt#HR#1994
+25#5#290#Mord in der Akademie#Flemming#Düsseldorf#WDR#1994
+25#6#291#Laura mein Engel#Ehrlicher#Leipzig#MDR#1994
+25#7#292#Singvogel#Stoever#Hamburg#NDR#1994
+25#8#293#Klassen-Kampf#Batic#München#BR#1994
+25#9#294#Jetzt und Alles#Ehrlicher#Leipzig#MDR#1994
+25#10#295#Die Frau an der Straße#Flemming#Düsseldorf#WDR#1994
+25#11#296#Geschlossene Akten#Markowitz#Berlin#SFB#1994
+25#12#297#Herrenboxer#von Burg#Bern#SFDRS#1994
+25#13#298#Ostwärts#Fichtl#Wien#ORF#1994
+25#14#299#Der schwarze Engel#Odenthal#Ludwigshafen#SWF#1994
+25#15#300#...und die Musi spielt dazu#Batic#München#BR#1994
+26#1#301#Tod eines Polizisten#Stoever#Hamburg#NDR#1995
+26#2#302#Ein ehrenwertes Haus#Ehrlicher#Leipzig#MDR#1995
+26#3#303#Eine mörderische Rolle#Felber a.D.#Frankfurt#HR#1995
+26#4#304#Die Kampagne#Odenthal#Ludwigshafen#SWF#1995
+26#5#305#Endstation#Markowitz#Berlin#SFB#1995
+26#6#306#Mordnacht#Brinkmann#Frankfurt#HR#1995
+26#7#307#Im Herzen Eiszeit#Batic#München#BR#1995
+26#8#308#Die schwarzen Bilder#Flemming#Düsseldorf#WDR#1995
+26#9#309#Bienzle und der Mord im Park#Bienzle#Stuttgart#SDR#1995
+26#10#310#Tödliche Freundschaft#Stoever#Hamburg#NDR#1995
+26#11#311#Rückfällig#von Burg#Bern#SFDRS#1995
+26#12#312#Falsches Alibi#Ehrlicher#Leipzig#MDR#1995
+26#13#313#Tod eines Auktionators#Flemming#Düsseldorf#WDR#1995
+26#14#314#Mordauftrag#Brinkmann#Frankfurt#HR#1995
+26#15#315#Bienzle und die Feuerwand#Bienzle#Stuttgart#SDR#1995
+26#16#316#Herz As#Flemming#Düsseldorf#WDR#1995
+26#17#317#Die Freundin#Fichtl#Wien#ORF#1995
+26#18#318#Der König kehrt zurück#Stoever#Hamburg#NDR#1995
+26#19#319#Bomben für Ehrlicher#Ehrlicher#Leipzig#MDR#1995
+26#20#320#Eine todsichere Falle#Palu#Saarbrücken#SR#1995
+26#21#321#Blutiger Asphalt#Batic#München#BR#1995
+26#22#322#Frau Bu lacht#Batic#München#BR#1995
+27#1#323#Der Spezialist#Flemming#Düsseldorf#WDR#1996
+27#2#324#Heilig Blut#Flemming#Düsseldorf#WDR#1996
+27#3#325#Freitagsmörder#Brinkmann#Frankfurt#HR#1996
+27#4#326#Schneefieber#Odenthal#Ludwigshafen#SWF#1996
+27#5#327#Wer nicht schweigt, muß sterben#Ehrlicher#Leipzig#MDR#1996
+27#6#328#Tod auf Neuwerk#Stoever#Hamburg#NDR#1996
+27#7#329#Bei Auftritt Mord#Ehrlicher#Leipzig#MDR#1996
+27#8#330#Das Mädchen mit der Puppe#Flemming#Düsseldorf#WDR#1996
+27#9#331#Fetischzauber#Stoever#Hamburg#NDR#1996
+27#10#332#Die Abrechnung#von Burg#Bern#SFDRS#1996
+27#11#333#Kolportage#Fichtl#Wien#ORF#1996
+27#12#334#Lockvögel#Stoever#Hamburg#NDR#1996
+27#13#335#Tod im Jaguar#Roiter#Berlin#SFB#1996
+27#14#336#Frankfurt-Miami#Brinkmann#Frankfurt#HR#1996
+27#15#337#Aida#Batic#München#BR#1996
+27#16#338#Mein ist die Rache#Becker#Wien#ORF#1996
+27#17#339#Der Phoenix-Deal#Roiter#Berlin#SFB#1996
+27#18#340#Schlaflose Nächte#Odenthal#Ludwigshafen#SWF#1996
+27#19#341#Schattenwelt#Batic#München#BR#1996
+27#20#342#Bienzle und der Traum vom Glück#Bienzle#Stuttgart#SDR#1996
+27#21#343#Der kalte Tod#Odenthal#Ludwigshafen#SWF#1996
+27#22#344#Buntes Wasser#Roiter#Berlin#SFB#1996
+27#23#345#Parteifreunde#Stoever#Hamburg#NDR#1996
+27#24#346#Krokodilwächter#Roiter#Berlin#SFB#1996
+27#25#347#Der Entscheider#Palu#Saarbrücken#SR#1996
+27#26#348#Perfect Mind#Batic#München#BR#1996
+27#27#349#Die Reise in den Tod#Ehrlicher#Leipzig#MDR#1996
+28#1#350#Tod im All#Odenthal#Ludwigshafen#SWF#1997
+28#2#351#Akt in der Sonne#Brinkmann#Frankfurt#HR#1997
+28#3#352#Ausgespielt#Stoever#Hamburg#NDR#1997
+28#4#353#Eulenburg#Brinkmann#Frankfurt#HR#1997
+28#5#354#Brüder#Flemming#Düsseldorf#WDR#1997
+28#6#355#Die Kommissarin: Gefährliche Übertragung#Sommer#Hamburg#NDR#1997
+28#7#356#Liebe, Sex, Tod#Batic#München#BR#1997
+28#8#357#Bierkrieg#Ehrlicher#Leipzig#MDR#1997
+28#9#358#Hahnenkampf#Kant#Wien#ORF#1997
+28#10#359#Die Kommissarin: Alptraum#Sommer#Hamburg#NDR#1997
+28#11#360#Morde ohne Leichen#Kant#Wien#ORF#1997
+28#12#361#Mordsgeschäfte#Roiter#Berlin#SFB#1997
+28#13#362#Das Totenspiel#Brinkmann#Frankfurt#HR#1997
+28#14#363#Mord hinterm Deich#Stoever#Hamburg#NDR#1997
+28#15#364#Tödlicher Galopp#Ehrlicher#Leipzig#MDR#1997
+28#16#365#Bienzle und der tiefe Sturz#Bienzle#Stuttgart#SDR#1997
+28#17#366#Der Tod spielt mit#Ehrlicher#Leipzig#MDR#1997
+28#18#367#Der Schlüssel zum Mord#Roiter#Berlin#SFB#1997
+28#19#368#Geld oder Leben#Roiter#Berlin#SFB#1997
+28#20#369#Der Teufel#Batic#München#BR#1997
+28#21#370#Eiskalt#Roiter#Berlin#SFB#1997
+28#22#371#Willkommen in Köln#Ballauf#Köln#WDR#1997
+28#23#372#Bombenstimmung#Ballauf#Köln#WDR#1997
+28#24#373#Nahkampf#Odenthal#Ludwigshafen#SWF#1997
+28#25#374#Undercover-Camping#Stoever#Hamburg#NDR#1997
+28#26#375#Bluthunde#Batic#München#BR#1997
+28#27#376#Inflagranti#Lürsen#Bremen#RB#1997
+29#1#377#Russisches Roulette#von Burg#Bern#SFDRS#1998
+29#2#378#Rosen für Nadja#Brinkmann#Frankfurt#HR#1998
+29#3#379#In der Falle#Batic#München#BR#1998
+29#4#380#Jagdfieber#Odenthal#Ludwigshafen#SWF#1998
+29#5#381#Blick in den Abgrund#Roiter#Berlin#SFB#1998
+29#6#382#Gefährliche Zeugin#Brinkmann#Frankfurt#HR#1998
+29#7#383#Manila#Ballauf#Köln#WDR#1998
+29#8#384#Brandwunden#Lürsen#Bremen#RB#1998
+29#9#385#Am Ende der Welt#von Burg#Bern#SFDRS#1998
+29#10#386#Arme Püppi#Stoever#Hamburg#NDR#1998
+29#11#387#Fürstenschüler#Ehrlicher#Leipzig#MDR#1998
+29#12#388#Bildersturm#Ballauf#Köln#WDR#1998
+29#13#389#Schüsse auf der Autobahn#Stoever#Hamburg#NDR#1998
+29#14#390#Ein Hauch von Hollywood#Roiter#Berlin#SFB#1998
+29#15#391#Tanz auf dem Hochseil#Ehrlicher#Leipzig#MDR#1998
+29#16#392#Money! Money!#Ehrlicher#Leipzig#MDR#1998
+29#17#393#Der zweite Mann#Roiter#Berlin#SFB#1998
+29#18#394#Bienzle und der Champion#Bienzle#Stuttgart#SDR#1998
+29#19#395#Todesbote#Brinkmann#Frankfurt#HR#1998
+29#20#396#Voll ins Herz#Lürsen#Bremen#RB#1998
+29#21#397#Gefallene Engel#Batic#München#BR#1998
+29#22#398#Streng geheimer Auftrag#Ballauf#Köln#WDR#1998
+29#23#399#Engelchen flieg#Odenthal#Ludwigshafen#SWR#1998
+29#24#400#Schwarzer Advent#Batic#München#BR#1998
+29#25#401#Berliner Weisse#Roiter#Berlin#SFB#1998
+29#26#402#Allein in der Falle#Palu#Saarbrücken#SR#1998
+30#1#403#Habgier#Stoever#Hamburg#NDR#1999
+30#2#404#Nie wieder Oper#Eisner#Wien#ORF#1999
+30#3#405#Der Heckenschütze#Brinkmann#Frankfurt#HR#1999
+30#4#406#Restrisiko#Ballauf#Köln#WDR#1999
+30#5#407#Starkbier#Batic#München#BR#1999
+30#6#408#Alp-Traum#von Burg#Bern#SFDRS#1999
+30#7#409#Mordfieber#Odenthal#Ludwigshafen#SWR#1999
+30#8#410#Der Tod fährt Achterbahn#Brinkmann#Frankfurt#HR#1999
+30#9#411#Kinder der Gewalt#Ballauf#Köln#WDR#1999
+30#10#412#Blinde Kuriere#Brinkmann#Frankfurt#HR#1999
+30#11#413#Todesangst#Ehrlicher#Leipzig#MDR#1999
+30#12#414#Traumhaus#Stoever#Hamburg#NDR#1999
+30#13#415#Absolute Diskretion#Eisner#Wien#ORF#1999
+30#14#416#Licht und Schatten#Ballauf#Köln#WDR#1999
+30#15#417#Dagoberts Enkel#Hellmann#Berlin#SFB#1999
+30#16#418#Auf dem Kriegspfad#Ehrlicher#Leipzig#MDR#1999
+30#17#419#Bienzle und der Zuckerbäcker#Bienzle#Stuttgart#SWR#1999
+30#18#420#Der Duft des Geldes#Stoever#Hamburg#NDR#1999
+30#19#421#Strafstoß#Palu#Saarbrücken#SR#1999
+30#20#422#Drei Affen#Ballauf#Köln#WDR#1999
+30#21#423#Das Glockenbachgeheimnis#Batic#München#BR#1999
+30#22#424#Kriegsspuren#Odenthal#Ludwigshafen#SWR#1999
+30#23#425#Die apokalyptischen Reiter#Lürsen#Bremen#RB#1999
+30#24#426#Fluch des Bernsteinzimmers#Ehrlicher#Leipzig#MDR#1999
+30#25#427#Bienzle und die blinde Wut#Bienzle#Stuttgart#SWR#1999
+30#26#428#Norbert#Batic#München#BR#1999
+30#27#429#Martinsfeuer#Ballauf#Köln#WDR#1999
+30#28#430#Tödliches Labryrinth#Hellmann#Berlin#SFB#1999
+30#29#431#Offene Rechnung#Odenthal#Ludwigshafen#SWR#1999
+31#1#432#Einsatz in Leipzig#Ehrlicher#Leipzig#MDR#2000
+31#2#433#Blaues Blut#Stoever#Hamburg#NDR#2000
+31#3#434#Nach eigenen Gesetzen#Brinkmann#Frankfurt#HR#2000
+31#4#435#Der Milleniumsmörder#Eisner#Wien#ORF#2000
+31#5#436#Blüten aus Werder#Hellmann#Berlin#SFB#2000
+31#6#437#Bittere Mandeln#Ballauf#Köln#WDR#2000
+31#7#438#Viktualienmarkt#Batic#München#BR#2000
+31#8#439#Bienzle und der Mann im Dunkeln#Bienzle#Stuttgart#SWR#2000
+31#9#440#Kalte Herzen#Odenthal#Ludwigshafen#SWR#2000
+31#10#441#Chaos#von Burg#Bern#SFDRS#2000
+31#11#442#Tödliches Verlangen#Ehrlicher#Leipzig#MDR#2000
+31#12#443#Der schwarze Ritter#Odenthal#Ludwigshafen#SWR#2000
+31#13#444#Rattenlinie#Stoever#Hamburg#NDR#2000
+31#14#445#Von Bullen und Bären#Hellmann#Berlin#SFB#2000
+31#15#446#Das letzte Rodeo#Hellmann#Berlin#SFB#2000
+31#16#447#Trittbrettfahrer#Ballauf#Köln#WDR#2000
+31#17#448#Passion#Eisner#Wien#ORF#2000
+31#18#449#Direkt ins Herz#Ballauf#Köln#WDR#2000
+31#19#450#Die Möwe#Palu#Saarbrücken#SR#2000
+31#20#451#Der Trippler#Hellmann#Berlin#SFB#2000
+31#21#452#Die kleine Zeugin#Odenthal#Ludwigshafen#SWR#2000
+31#22#453#Kleine Diebe#Batic#München#BR#2000
+31#23#454#Mord am Fluß#Brinkmann#Frankfurt#HR#2000
+31#24#455#Mauer des Schweigens#Brinkmann#Frankfurt#HR#2000
+31#25#456#Der schwarze Skorpion#Stoever#Hamburg#NDR#2000
+31#26#457#Einmal täglich#Batic#München#BR#2000
+31#27#458#Quartett in Leipzig#Ehrlicher#Leipzig#MDR#2000
+31#28#459#Bienzle und das Doppelspiel#Bienzle#Stuttgart#SWR#2000
+31#29#460#Die Frau im Zug#Ballauf#Köln#WDR#2000
+32#1#461#Tod vor Scharhörn#Stoever#Hamburg#NDR#2001
+32#2#462#Nichts mehr im Griff#Eisner#Wien#ORF#2001
+32#3#463#Mördergrube#Ballauf#Köln#WDR#2001
+32#4#464#Ein mörderisches Märchen#Batic#München#BR#2001
+32#5#465#Trübe Wasser#Ehrlicher#Leipzig#MDR#2001
+32#6#466#Berliner Bärchen#Stark#Berlin#SFB#2001
+32#7#467#Unschuldig#Brinkmann#Frankfurt#HR#2001
+32#8#468#Der Präsident#Odenthal#Ludwigshafen#SWR#2001
+32#9#469#Bienzle und der heimliche Zeuge#Bienzle#Stuttgart#SWR#2001
+32#10#470#Gute Freunde#Odenthal#Ludwigshafen#SWR#2001
+32#11#471#Totenmesse#Ehrlicher#Leipzig#MDR#2001
+32#12#472#Kindstod#Ballauf#Köln#WDR#2001
+32#13#473#Der lange Arm des Zufalls#Stark#Berlin#SFB#2001
+32#14#474#Fette Krieger#Odenthal#Ludwigshafen#SWR#2001
+32#15#475#Böses Blut#Eisner#Wien#ORF#2001
+32#16#476#Tot bist Du!#Stark#Berlin#SFB#2001
+32#17#477#Verhängnisvolle Begierde#Ehrlicher#Leipzig#MDR#2001
+32#18#478#Du hast keine Chance#Palu#Saarbrücken#SR#2001
+32#19#479#Bienzle und der Todesschrei#Bienzle#Stuttgart#SWR#2001
+32#20#480#Havarie#Brinkmann#Frankfurt#HR#2001
+32#21#481#Zielscheibe#Palu#Saarbrücken#WDR#2001
+32#22#482#Kalte Wut#Lürsen#Bremen#SR#2001
+32#23#483#Exil!#Casstorff#Hamburg#RB#2001
+32#24#484#Im freien Fall#Batic#München#NDR#2001
+32#25#485#Eine unscheinbare Frau#Lürsen#Bremen#BR#2001
+32#26#486#Hasard!#Casstorff#Hamburg#RB#2001
+32#27#487#Bestien#Ballauf#Köln#NDR#2001
+32#28#488#Gewaltfieber#Odenthal#Ludwigshafen#SWR#2001
+32#29#489#Und dahinter liegt New York#Batic#München#BR#2001
+33#1#490#Schrott und Totschlag#Odenthal#Ludwigshafen#SWR#2002
+33#2#491#Todesfahrt#Ehrlicher#Leipzig#MDR#2002
+33#3#492#Wolf im Schafspelz#Batic#München#BR#2002
+33#4#493#Schützlinge#Ballauf#Köln#WDR#2002
+33#5#494#Bienzle und der Tag der Rache#Bienzle#Stuttgart#SWR#2002
+33#6#495#Zahltag#Stark#Berlin#SFB#2002
+33#7#496#Lastrumer Mischung#Lindholm#Hannover#NDR#2002
+33#8#497#Tödliche Tagung#Eisner#Wien#ORF#2002
+33#9#498#Oskar#Sänger und Dellwo#Frankfurt#HR#2002
+33#10#499#Schlaraffenland#Blum#Konstanz#SWR#2002
+33#11#500#Endspiel#Lürsen#Bremen#RB#2002
+33#12#501#Der Passagier#Casstorff#Hamburg#NDR#2002
+33#13#502#Schlaf, Kindlein, schlaf#Ballauf#Köln#WDR#2002
+33#14#503#Heiße Grüße aus Prag#Ehrlicher#Leipzig#MDR#2002
+33#15#504#Elvis lebt!#Eisner#Wien#ORF#2002
+33#16#505#Bienzle und der süße Tod#Bienzle#Stuttgart#SWR#2002
+33#17#506#Schatten#Lürsen#Bremen#RB#2002
+33#18#507#Flashback#Odenthal#Ludwigshafen#SWR#2002
+33#19#508#Filmriss#Stark#Berlin#SFB#2002
+33#20#509#Verrat#Ballauf#Köln#WDR#2002
+33#21#510#Totentanz#Batic#München#BR#2002
+33#22#511#Der dunkle Fleck#Thiel#Münster#WDR#2002
+33#23#512#Undercover#Casstorff#Hamburg#NDR#2002
+33#24#513#1000 Tode#Blum#Konstanz#SWR#2002
+33#25#514#Rückspiel#Ballauf#Köln#WDR#2002
+33#26#515#Der Fremdwohner#Batic#München#BR#2002
+33#27#516#Alibi für Amelie#Palu#Saarbrücken#SR#2002
+33#28#517#Fakten, Fakten...#Thiel#Münster#WDR#2002
+33#29#518#Zartbitterschoklade#Stark#Berlin#SFB#2002
+33#30#519#Time-Out#von Burg#Bern#SFDRS#2002
+33#31#520#Reise ins Nichts#Palu#Saarbrücken#SR#2002
+34#1#521#Romeo & Julia#Odenthal#Ludwigshafen#SWR#2003
+34#1#521#Romeo und Julia#Odenthal#Ludwigshafen#SWR     %halternative#2003
+34#2#522#Rotkäppchen#Ehrlicher#Leipzig#MDR#2003
+34#3#523#Stiller Tod#Blum#Konstanz#SWR#2003
+34#4#524#Die Liebe und ihr Preis#Stark#Berlin#SFB#2003
+34#5#525#Bienzle und der Tod im Teig#Bienzle#Stuttgart#SWR#2003
+34#6#526#Frauenmorde#Sänger und Dellwo#Frankfurt#HR#2003
+34#7#527#Mutterliebe#Ballauf#Köln#WDR#2003
+34#8#528#Schöner sterben#Odenthal#Ludwigshafen#SWR#2003
+34#9#529#Hexentanz#Lindholm#Hannover#NDR#2003
+34#10#530#Der Prügelknabe#Batic#München#BR#2003
+34#11#531#Schattenlos#Ballauf#Köln#WDR#2003
+34#12#532#Außer Kontrolle#Ehrlicher#Leipzig#MDR#2003
+34#13#533#Der schwarze Troll#Lürsen#Bremen#RB#2003
+34#14#534#Harte Hunde#Casstorff#Hamburg#NDR#2003
+34#15#535#Das Phantom#Ballauf#Köln#WDR#2003
+34#16#536#Tödliche Souvenirs#Eisner#Wien#ORF#2003
+34#17#537#Rosenholz#Stark#Berlin#SFB#2003
+34#18#538#Bienzle und der Taximord#Bienzle#Stuttgart#SWR#2003
+34#19#539#Leyla#Odenthal#Ludwigshafen#SWR#2003
+34#20#540#Bermuda#Ballauf#Köln#WDR#2003
+34#21#541#Mietsache#Casstorff#Hamburg#NDR#2003
+34#22#542#Wenn Frauen Austern essen#Batic#München#BR#2003
+34#23#543#Dreimal schwarzer Kater#Thiel#Münster#WDR#2003
+34#24#544#Dschungelbrüder#Stark#Berlin#SFB#2003
+34#25#545#Sonne und Sturm#Lindholm#Hannover#NDR#2003
+34#26#546#Atlantis#Ehrlicher#Leipzig#MDR#2003
+34#27#547#Die Liebe der Schlachter#Lürsen#Bremen#RB#2003
+34#28#548#Im Visier#Batic#München#BR#2003
+34#29#549#Väter#Borowski#Kiel#NDR#2003
+34#30#550#Der Schächter#Blum#Konstanz#SWR#2003
+34#31#551#Sag nichts#Thiel#Münster#WDR#2003
+34#32#552#Das Böse#Sänger und Dellwo#Frankfurt#HR#2003
+34#33#553#Veras Waffen#Palu#Saarbrücken#SR#2003
+35#1#554#Eine ehrliche Haut#Stark#Berlin#SFB#2004
+35#2#555#Bitteres Brot#Blum#Konstanz#SWR#2004
+35#3#556#Todes-Bande#Casstorff#Hamburg#NDR#2004
+35#4#557#Waidmanns Heil#Ehrlicher#Leipzig#MDR#2004
+35#5#558#Große Liebe#Odenthal#Ludwigshafen#SWR#2004
+35#6#559#Heimspiel#Lindholm#Hannover#NDR#2004
+35#7#560#Tod unter der Orgel#Eisner#Wien#ORF#2004
+35#8#561#Schichtwechsel#Borowski#Kiel#NDR#2004
+35#9#562#Abschaum#Lürsen#Bremen#RB#2004
+35#10#563#Ein Hundeleben#Ballauf#Köln#WDR#2004
+35#11#564#Janus#Sänger und Dellwo#Frankfurt#HR#2004
+35#12#565#Mörderspiele#Thiel#Münster#WDR#2004
+35#13#566#Sechs zum Essen#Batic#München#BR#2004
+35#14#567#Der vierte Mann#Stark#Berlin#RBB#2004
+35#15#568#Abgezockt#Odenthal#Ludwigshafen#SWR#2004
+35#16#569#Odins Rache#Ballauf#Köln#WDR#2004
+35#17#570#Gefährliches Schweigen#Odenthal#Ludwigshafen#SWR#2004
+35#18#571#Bienzle und der steinerne Gast#Bienzle#Stuttgart#SWR#2004
+35#19#572#Der Wächter der Quelle#Eisner#Wien#ORF#2004
+35#20#573#Verraten und verkauft#Ballauf#Köln#WDR#2004
+35#21#574#Stirb und werde#Borowski#Kiel#NDR#2004
+35#22#575#Herzversagen#Sänger und Dellwo#Frankfurt#HR#2004
+35#23#576#Märchenwald#Lindholm#Hannover#NDR#2004
+35#24#577#Teufelskreis#Ehrlicher#Leipzig#MDR#2004
+35#25#578#Nicht jugendfrei#Batic#München#BR#2004
+35#26#579#Teufel im Leib#Palu#Saarbrücken#SR#2004
+35#27#580#Verlorene Töchter#Casstorff#Hamburg#NDR#2004
+35#28#581#Abseits#Ehrlicher#Leipzig#MDR#2004
+35#29#582#Eine Leiche zu viel#Thiel#Münster#WDR#2004
+35#30#583#Vorstadtballade#Batic#München#BR#2004
+36#1#584#Bienzle und der Feuerteufel#Bienzle#Stuttgart#SWR#2005
+36#2#585#Die Spieler#Blum#Konstanz#SWR#2005
+36#3#586#Dunkle Wege#Lindholm#Hannover#NDR#2005
+36#4#587#Ein Glücksgefühl#Casstorff#Hamburg#NDR#2005
+36#5#588#Feuertaufe#Ehrlicher#Leipzig#MDR#2005
+36#6#589#Schürfwunden#Ballauf#Köln#WDR#2005
+36#7#590#Der Name der Orchidee#Blum#Konstanz#SWR#2005
+36#8#591#Todesbrücke#Stark#Berlin#RBB#2005
+36#9#592#Schattenhochzeit#Borowski#Kiel#NDR#2005
+36#10#593#Letzte Zweifel#Odenthal#Ludwigshafen#SWR#2005
+36#11#594#Der Frauenflüsterer#Thiel#Münster#WDR#2005
+36#12#595#Wo ist Max Gravert?#Sänger und Dellwo#Frankfurt#HR#2005
+36#13#596#Am Abgrund#Odenthal#Ludwigshafen#SWR#2005
+36#14#597#Minenspiel#Ballauf#Köln#WDR#2005
+36#15#598#Nur ein Spiel#Batic#München#BR#2005
+36#16#599#Die schlafende Schöne#Eisner#Wien#ORF#2005
+36#17#600#Scheherazade#Lürsen#Bremen#RB#2005
+36#18#601#Tiefer Fall#Ehrlicher#Leipzig#MDR#2005
+36#19#602#Todesengel#Lürsen#Bremen#RB#2005
+36#20#603#Bienzle und der Sizilianer#Bienzle#Stuttgart#SWR#2005
+36#21#604#Der Teufel vom Berg#Eisner#Wien#ORF#2005
+36#22#605#Erfroren#Ballauf#Köln#WDR#2005
+36#23#606#Ohne Beweise#Odenthal#Ludwigshafen#SWR#2005
+36#24#607#Requiem#Lürsen#Bremen#RB#2005
+36#25#608#Borowski in der Unterwelt#Borowski#Kiel#NDR#2005
+36#26#609#Leerstand#Sänger und Dellwo#Frankfurt#HR#2005
+36#27#610#Leiden wie ein Tier#Stark#Berlin#RBB#2005
+36#28#611#Atemnot#Lindholm#Hannover#NDR#2005
+36#29#612#Freischwimmer#Ehrlicher#Leipzig#MDR#2005
+36#30#613#Tod auf der Walz#Batic#München#BR#2005
+36#31#614#Rache-Engel#Palu#Saarbrücken#SR#2005
+36#32#615#Der doppelte Lott#Thiel#Münster#WDR#2005
+36#33#616#Im Alleingang#Casstorff#Hamburg#NDR#2005
+36#34#617#Schneetreiben#Batic#München#BR#2005
+36#35#618#Das Lächeln der Madonna#Blum#Konstanz#SWR#2005
+37#1#619#Sonnenfinsternis#Ehrlicher#Leipzig#MDR#2006
+37#2#620#Blutdiamanten#Ballauf#Köln#WDR#2006
+37#3#621#Schwarzes Herz#Lindholm#Hannover#NDR#2006
+37#4#622#Das ewig Böse#Thiel#Münster#WDR#2006
+37#5#623#Unter Kontrolle#Odenthal#Ludwigshafen#SWR#2006
+37#6#624#Feuerkämpfer#Casstorff#Hamburg#NDR#2006
+37#7#625#Pechmarie#Ballauf#Köln#WDR#2006
+37#8#626#Der schwedische Freund#Blum#Konstanz#SWR#2006
+37#9#627#Sternenkinder#Borowski#Kiel#NDR#2006
+37#10#628#Kunstfehler#Stark#Berlin#RBB#2006
+37#11#629#Revanche#Odenthal#Ludwigshafen#SWR#2006
+37#12#630#Außer Gefecht#Batic#München#BR#2006
+37#13#631#Tödliches Vertrauen#Eisner#Wien#ORF#2006
+37#14#632#Stille Tage#Lürsen#Bremen#RB#2006
+37#15#633#Bienzle und der Tod in der Markthalle#Bienzle#Stuttgart#SWR#2006
+37#16#634#Blutschrift#Ehrlicher#Leipzig#MDR#2006
+37#17#635#Tod aus Afrika#Eisner#Wien#ORF#2006
+37#18#636#Gebrochene Herzen#Blum#Konstanz#SWR#2006
+37#19#637#Schattenspiele#Casstorff#Hamburg#NDR#2006
+37#20#638#Der Lippenstiftmörder#Odenthal#Ludwigshafen#SWR#2006
+37#21#639#Mann über Bord#Borowski#Kiel#NDR#2006
+37#22#640#Pauline#Lindholm#Hannover#NDR#2006
+37#23#641#Bienzle und der Tod im Weinberg#Bienzle#Stuttgart#SWR#2006
+37#24#642#Nachtwanderer#Odenthal#Ludwigshafen#SWR#2006
+37#25#643#Aus der Traum#Kappl#Saarbrücken#SR#2006
+37#26#644#Das letzte Rennen#Sänger und Dellwo#Frankfurt#HR#2006
+37#27#645#Liebe am Nachmittag#Ballauf#Köln#WDR#2006
+37#28#646#Das zweite Gesicht#Thiel#Münster#WDR#2006
+37#29#647#Liebe macht blind#Stark#Berlin#RBB#2006
+37#30#648#Das verlorene Kind#Batic#München#BR#2006
+37#31#649#Der Tag des Jägers#Sänger und Dellwo#Frankfurt#HR#2006
+37#32#650#Schlaflos in Weimar#Ehrlicher#Leipzig#MDR#2006
+38#1#651#Die Blume des Bösen#Ballauf#Köln#WDR#2007
+38#2#652#Bienzle und die große Liebe#Bienzle#Stuttgart#SWR#2007
+38#3#653#Schwelbrand#Lürsen#Bremen#RB#2007
+38#4#654#Roter Tod#Odenthal#Ludwigshafen#SWR#2007
+38#5#655#Das Ende des Schweigens#Borowski#Kiel#NDR#2007
+38#6#656#Der Tote vom Straßenrand#Kappl#Saarbrücken#SR#2007
+38#7#657#Bienzle und sein schwerster Fall#Bienzle#Stuttgart#SWR#2007
+38#8#658#Liebeshunger#Casstorff#Hamburg#NDR#2007
+38#9#659#Ruhe sanft#Thiel#Münster#WDR#2007
+38#10#660#Dornröschens Rache#Stark#Berlin#RBB#2007
+38#11#661#Die Anwältin#Ehrlicher#Leipzig#MDR#2007
+38#12#662#Engel der Nacht#Blum#Konstanz#SWR#2007
+38#13#663#Das namenlose Mädchen#Lindholm#Hannover#NDR#2007
+38#14#664#Der Finger#Batic#München#BR#2007
+38#15#665#Die dunkle Seite#Odenthal#Ludwigshafen#SWR#2007
+38#16#666#Familiensache#Eisner#Wien#ORF#2007
+38#17#667#Racheengel#Ehrlicher#Leipzig#MDR#2007
+38#18#668#Investigativ#Casstorff#Hamburg#NDR#2007
+38#19#669#Tödliche Habgier#Eisner#Wien#ORF#2007
+38#20#670#Sterben für die Erben#Odenthal#Ludwigshafen#SWR#2007
+38#21#671#Strahlende Zukunft#Lürsen#Bremen#RB#2007
+38#22#672#Blutsbande#Blum#Konstanz#SWR#2007
+38#23#673#Macht der Angst#Borowski#Kiel#NDR#2007
+38#24#674#A g'mahdeWies'n#Batic#München#BR#2007
+38#25#675#Nachtgeflüster#Ballauf#Köln#WDR#2007
+38#26#676#Unter uns#Sänger und Dellwo#Frankfurt#HR#2007
+38#27#677#Der Traum von der Au#Batic#München#BR#2007
+38#28#678#Satisfaktion#Thiel#Münster#WDR#2007
+38#29#679#Die Falle#Ehrlicher#Leipzig#MDR#2007
+38#30#680#Bevor es dunkel wird#Sänger und Dellwo#Frankfurt#HR#2007
+38#31#681#Spätschicht#Ballauf#Köln#WDR#2007
+38#32#682#Schleichendes Gift#Stark#Berlin#RBB#2007
+38#33#683#Kleine Herzen#Batic#München#BR#2007
+38#34#684#Wem Ehre gebührt#Lindholm#Hannover#NDR#2007
+38#35#685#Fettkiller#Odenthal#Ludwigshafen#SWR#2007
+39#1#686#Der Kormorankrieg#Blum#Konstanz#SWR#2008
+39#2#687#Verdammt#Ballauf#Köln#WDR#2008
+39#3#688#Borowski und das Mädchen im Moor#Borowski#Kiel#WDR#2008
+39#4#689#Und tschüss#Casstorff#Hamburg#NDR#2008
+39#5#690#Hart an der Grenze#Lannert#Stuttgart#SWR#2008
+39#6#691#Tod einer Heuschrecke#Stark#Berlin#RBB#2008
+39#7#692#Seenot#Blum#Konstanz#SWR#2008
+39#8#693#Erntedank e. V.#Lindholm#Hannover#NDR#2008
+39#9#694#Schatten der Angst#Odenthal#Ludwigshafen#SWR#2008
+39#10#695#Müll#Ballauf#Köln#WDR#2008
+39#11#696#Der oide Depp#Batic#München#BR#2008
+39#12#697#Exitus#Eisner#Wien#ORF#2008
+39#13#698#Der frühe Abschied#Sänger und Dellwo#Frankfurt#HR#2008
+39#14#699#Krumme Hunde#Thiel#Münster#WDR#2008
+39#15#700#Todesstrafe#Saalfeld und Keppler#Leipzig#MDR#2008
+39#16#701#Ausweglos#Saalfeld und Keppler#Leipzig#MDR#2008
+39#17#702#In eigener Sache#Lannert#Stuttgart#SWR#2008
+39#18#703#Blinder Glaube#Stark#Berlin#RBB#2008
+39#19#704#Das schwarze Grab#Kappl#Saarbrücken#SR#2008
+39#20#705#Liebeswirren#Batic#München#BR#2008
+39#21#706#Der glückliche Tod#Odenthal#Ludwigshafen#SWR#2008
+39#22#707#Borowski und die einsamen Herzen#Borowski#Kiel#NDR#2008
+39#23#708#Brandmal#Ballauf#Köln#WDR#2008
+39#24#709#Auf der Sonnenseite#Batu#Hamburg#NDR#2008
+39#25#710#Wolfsstunde#Thiel#Münster#WDR#2008
+39#26#711#Salzleiche#Lindholm#Hannover#NDR#2008
+39#27#712#Häschen in der Grube#Batic#München#BR#2008
+39#28#713#Unbestechlich#Saalfeld und Keppler#Leipzig#MDR#2008
+39#29#714#Waffenschwestern#Sänger und Dellwo#Frankfurt#HR#2008
+39#30#715#Granit#Eisner#Wien#ORF#2008
+39#31#716#Der tote Chinese#Sänger und Dellwo#Frankfurt#HR#2008
+40#1#717#Baum der Erlösung#Eisner#Wien#ORF#2009
+40#2#718#Schwarzer Peter#Saalfeld und Keppler#Leipzig#MDR#2009
+40#3#719#Rabenherz#Ballauf#Köln#WDR#2009
+40#4#720#Kassensturz#Odenthal#Ludwigshafen#SWR#2009
+40#5#721#Familienaufstellung#Lürsen#Bremen#RB#2009
+40#6#722#Neuland#Sänger und Dellwo#Frankfurt#HR#2009
+40#7#723#Herz aus Eis#Blum#Konstanz#SWR#2009
+40#8#724#Tödliche Tarnung#Lannert#Stuttgart#SWR#2009
+40#9#725#Mauerblümchen#Saalfeld und Keppler#Leipzig#MDR#2009
+40#10#726#Das Gespenst#Lindholm#Hannover#NDR#2009
+40#11#727#Höllenfahrt#Thiel#Münster#WDR#2009
+40#12#728#Gesang der toten Dinge#Batic#München#BR#2009
+40#13#729#Häuserkampf#Batu#Hamburg#NDR#2009
+40#14#730#Oben und unten#Stark#Berlin#RBB#2009
+40#15#731#Bittere Trauben#Kappl#Saarbrücken#SR#2009
+40#16#732#Borowski und die heile Welt#Borowski#Kiel#NDR#2009
+40#17#733#Tödlicher Einsatz#Odenthal#Ludwigshafen#SWR#2009
+40#18#734#Schiffe versenken#Lürsen#Bremen#RB#2009
+40#19#735#Kinderwunsch#Eisner#Wien#ORF#2009
+40#20#736#Im Sog des Bösen#Blum#Konstanz#SWR#2009
+40#21#737#Tote Männer#Lürsen#Bremen#RB#2009
+40#22#738#Das Mädchen Galina#Lannert#Stuttgart#SWR#2009
+40#23#739#Mit ruhiger Hand#Ballauf#Köln#WDR#2009
+40#24#740#Architektur eines Todes#Sänger und Dellwo#Frankfurt#HR#2009
+40#25#741#Borowski und die Sterne#Borowski#Kiel#NDR#2009
+40#26#742#Platt gemacht#Ballauf#Köln#WDR#2009
+40#27#743#Vermisst#Odenthal#Ludwigshafen#SWR#2009
+40#28#744#Um jeden Preis#Batic#München#BR#2009
+40#29#745#Tempelräuber#Thiel#Münster#WDR#2009
+40#30#746#Schweinegeld#Stark#Berlin#RBB#2009
+40#31#747#... Es wird Trauer sein und Schmerz#Lindholm#Hannover#NDR#2009
+40#32#748#Falsches Leben#Saalfeld und Keppler#Leipzig#MDR#2009
+40#33#749#Wir sind die Guten#Batic#München#BR#2009
+40#34#750#Altlasten#Lannert#Stuttgart#SWR#2009
+41#1#751#Weil sie böse sind#Sänger und Dellwo#Frankfurt#HR#2010
+41#2#752#Klassentreffen#Ballauf#Köln#WDR#2010
+41#3#753#Der Polizistinnenmörder#Blum#Konstanz#SWR#2010
+41#4#754#Hilflos#Kappl#Saarbrücken#SR#2010
+41#5#755#Vergessene Erinnerungen#Lindholm#Hannover#NDR#2010
+41#6#756#Königskinder#Lürsen#Bremen#RB#2010
+41#7#757#Tod auf dem Rhein#Odenthal#Ludwigshafen#SWR#2010
+41#8#758#Absturz#Saalfeld und Keppler#Leipzig#MDR#2010
+41#9#759#Kaltes Herz#Ballauf#Köln#WDR#2010
+41#10#760#Vergissmeinnicht#Batu#Hamburg#NDR#2010
+41#11#761#Tango für Borowski#Borowski#Kiel#NDR#2010
+41#12#762#Blutgeld#Lannert#Stuttgart#SWR#2010
+41#13#763#Der Fluch der Mumie#Thiel#Münster#WDR#2010
+41#14#764#Hitchcock und Frau Wernicke#Stark#Berlin#RBB#2010
+41#15#765#Schlafende Hunde#Lürsen#Bremen#RB#2010
+41#16#766#Heimwärts#Saalfeld und Keppler#Leipzig#MDR#2010
+41#17#767#Operation Hiob#Eisner#Wien#ORF#2010
+41#18#768#Hauch des Todes#Odenthal#Ludwigshafen#SWR#2010
+41#19#769#Glaube, Liebe, Tod#Eisner#Wien#ORF#2010
+41#20#770#Am Ende des Tages#Sänger und Dellwo#Frankfurt#HR#2010
+41#21#771#Schmale Schultern#Ballauf#Köln#WDR#2010
+41#22#772#Bluthochzeit#Blum#Konstanz#SWR#2010
+41#23#773#Die Unmöglichkeit, sich den Tod vorzustellen#Ritter#Berlin#RBB#2010
+41#24#774#Die Heilige#Batic#München#BR#2010
+41#25#775#Spargelzeit#Thiel#Münster#WDR#2010
+41#26#776#Der Schrei#Odenthal#Ludwigshafen#SWR#2010
+41#27#777#Borowski und eine Frage von reinem Geschmack#Borowski#Kiel#NDR#2010
+41#28#778#Der letzte Patient#Lindholm#Hannover#NDR#2010
+41#29#779#Die Unsichtbare#Lannert#Stuttgart#SWR#2010
+41#30#780#Unsterblich schön#Batic#München#BR#2010
+41#31#781#Wie einst Lilly#Murot#Wiesbaden#HR#2010
+41#32#782#Familienbande#Ballauf#Köln#WDR#2010
+41#33#783#Schön ist anders#Saalfeld und Keppler#Leipzig#MDR#2010
+41#34#784#Nie wieder frei sein#Batic#München#BR#2010
+41#35#785#Borrowski und der vierte Mann#Borowski#Kiel#NDR#2010
+42#1#786#Tödliche Ermittlungen#Odenthal#Ludwigshafen#SWR#2011
+42#2#787#Unter Druck#Ballauf#Köln#WDR#2011
+42#3#788#Der schöne Schein#Blum#Konstanz#SWR#2011
+42#4#789#Heimatfront#Kappl#Saarbrücken#SR#2011
+42#5#790#Stille Wasser#Lürsen#Bremen#RB#2011
+42#6#791#Rendezvous mit dem Tod#Saalfeld und Keppler#Leipzig#MDR#2011
+42#7#792#Leben gegen Leben#Batu#Hamburg#NDR#2011
+42#8#793#Vergeltung#Eisner#Wien#ORF#2011
+42#9#794#Mord in der ersten Liga#Lindholm#Hannover#NDR#2011
+42#10#795#Im Netz der Lügen#Blum#Konstanz#SWR#2011
+42#11#796#Edel sei der Mensch und gesund#Ritter und Stark#Berlin#RBB#2011
+42#12#797#Jagdzeit#Batic und Leitmayr#München#BR#2011
+42#13#798#Grabenkämpfe#Lannert und Bootz#Stuttgart#SWR#2011
+42#14#799#Herrenabend#Thiel und Boerne#Münster#WDR#2011
+42#15#800#Eine bessere Welt#Steier und Mey#Frankfurt#HR#2011
+42#16#801#Der illegale Tod#Lürsen#Bremen#RB#2011
+42#17#802#Ausgelöscht#Eisner#Wien#ORF#2011
+42#18#803#Gestern war kein Tag#Batic und Leitmayr#München#BR#2011
+42#19#804#Nasse Sachen#Saalfeld und Keppler#Leipzig#MDR#2011
+42#20#805#Im Abseits#Odenthal#Ludwigshafen#SWR#2011
+42#21#806#Wunschdenken#Flückiger#Luzern#SF#2011
+42#22#807#Lohn der Arbeit#Eisner#Wien#ORF#2011
+42#23#808#Altes Eisen#Ballauf#Köln#WDR#2011
+42#24#809#Tod einer Lehrerin#Odenthal#Ludwigshafen#SWR#2011
+42#25#810#Zwischen den Ohren#Thiel und Boerne#Münster#WDR#2011
+42#26#811#Auskreuzung#Ballauf und Schenk#Köln#WDR#2011
+42#27#812#Borowski und die Frau am Fenster#Borowski#Kiel#NDR#2011
+42#28#813#Das erste Opfer#Lannert und Bootz#Stuttgart#SWR#2011
+42#29#814#Das schwarze Haus#Blum#Konstanz#SWR#2011
+42#30#815#Mauerpark#Ritter und Stark#Berlin#RBB#2011
+42#31#816#Borowski und der coole Hund#Borowski#Kiel#NDR#2011
+42#32#817#Der Tote im Nachtzug#Steier und Mey#Frankfurt#HR#2011
+42#33#818#Ein ganz normaler Fall#Batic und Leitmayr#München#BR#2011
+42#34#819#Das Dorf#Murot#Wiesbaden#HR#2011
+42#35#820#Schwarze Tiger, weiße Löwen#Lindholm#Hannover#NDR#2011
+42#36#821#Der Weg ins Paradies#Batu#Hamburg#NDR#2011
+43#1#822#Tödliche Häppchen#Odenthal#Ludwigshafen#SWR#2012
+43#2#823#Keine Polizei#Ballauf und Schenk#Köln#WDR#2012
+43#3#824#Todesbilder#Saalfeld und Keppler#Leipzig#MDR#2012
+43#4#825#Verschleppt#Kappl und Deininger#Saarbrücken#SR#2012
+43#5#826#Schmuggler#Blum#Konstanz#SWR#2012
+43#6#827#Kein Entkommen#Eisner#Wien#ORF#2012
+43#7#828#Ordnung im Lot#Lürsen#Bremen#RB#2012
+43#8#829#Der traurige König#Batic und Leitmayr#München#BR#2012
+43#9#830#Scherbenhaufen#Bootz und Lannert#Stuttgart#SWR#2012
+43#10#831#Hinkebein#Thiel und Boerne#Münster#WDR#2012
+43#11#832#Falsch verpackt#Eisner#Wien#ORF#2012
+43#12#833#Alles hat seinen Preis#Ritter und Stark#Berlin#RBB#2012
+43#13#834#Kinderland#Saalfeld und Keppler#Leipzig#MDR#2012
+43#14#835#Ihr Kinderlein kommet#Ballauf und Schenk#Köln#WDR#2012
+43#15#836#Es ist böse#Steier und Mey#Frankfurt#HR#2012
+43#16#837#Die Ballade von Cenk und Valerie#Batu#Hamburg#NDR#2012
+43#17#838#Der Wald steht schwarz und schweiget#Odenthal und Kopper#Ludwigshafen#SWR#2012
+43#18#839#Skalpell#Flückiger#Konstanz#SWR#2012
+43#19#840#Hanglage mit Aussicht#Flückiger#Luzern#SRF#2012
+43#20#841#Fette Hunde#Ballauf und Schenk#Köln#WDR#2012
+43#21#842#Borowski und der stille Gast#Borowski#Kiel#NDR#2012
+43#22#843#Hochzeitsnacht#Lürsen#Bremen#RB#2012
+43#23#844#Alter Ego#Faber#Dortmund#WDR#2012
+43#24#845#Nachtkrapp#Blum#Konstanz#SWR#2012
+43#25#846#Borowski und der freie Fall#Borowski#Kiel#NDR#2012
+43#26#847#Tote Erde#Lannert und Bootz#Stuttgart#SWR#2012
+43#27#848#Ein neues Leben#Batic und Leitmayr#München#BR#2012
+43#28#849#Mein Revier#Faber#Dortmund#WDR#2012
+43#29#850#Dinge, die noch zu tun sind#Ritter und Stark#Berlin#RBB#2012
+43#30#851#Das Wunder von Wolbeck#Thiel und Boerne#Münster#WDR#2012
+43#31#852#Todesschütze#Saalfeld und Keppler#Leipzig#MDR#2012
+43#32#853#Wegwerfmädchen#Lindholm#Hannover#NDR#2012
+43#33#854#Das goldene Band#Lindholm#Hannover#NDR#2012
+43#34#855#Im Namen des Vaters#Steier und Mey#Frankfurt#HR#2012
+43#35#856#Der tiefe Schlaf#Batic und Leitmayr#München#BR#2012
+44#1#857#Scheinwelten#Ballauf und Schenk#Köln#WDR#2013
+44#2#858#Machtlos#Ritter und Stark#Berlin#RBB#2013
+44#3#859#Kaltblütig#Odenthal und Kopper#Ludwigshafen#SWR#2013
+44#4#860#Melinda#Stellbrink#Saarbrücken#SR#2013
+44#5#861#Die schöne Mona ist tot#Blum#Konstanz#SWR#2013
+44#6#862#Schmutziger Donnerstag#Flückiger#Luzern#SRF#2013
+44#7#863#Zwischen den Fronten#Eisner#Wien#ORF#2013
+44#8#864#Puppenspieler#Lürsen#Bremen#RB#2013
+44#9#865#Willkommen in Hamburg#Tschiller#Hamburg#NDR#2013
+44#10#866#Schwarzer Afghane#Saalfeld und Keppler#Leipzig#MDR#2013
+44#11#867#Summ, summ, summ#Thiel und Boerne#Münster#WDR#2013
+44#12#868#Macht und Ohnmacht#Batic und Leitmayr#München#BR#2013
+44#13#869#Eine Handvoll Paradies#Stellbrink#Saarbrücken#SR#2013
+44#14#870#Wer das Schweigen bricht#Steier und Mey#Frankfurt#HR#2013
+44#15#871#Trautes Heim#Ballauf und Schenk#Köln#WDR#2013
+44#16#872#Feuerteufel#Falke#Hamburg#NDR#2013
+44#17#873#Borowski und der brennende Mann#Borowski#Kiel#NDR#2013
+44#18#874#Unvergessen#Eisner#Wien#ORF#2013
+44#19#875#Spiel auf Zeit#Lannert und Bootz#Stuttgart#SWR#2013
+44#20#876#Er wird töten#Lürsen#Bremen#RB#2013
+44#21#877#Die Wahrheit stirbt zuerst#Saalfeld und Keppler#Leipzig#MDR#2013
+44#22#878#Letzte Tage#Blum und Perlmann#Konstanz#SWR#2013
+44#23#879#Geburtstagskind#Flückiger und Ritschard#Luzern#SRF#2013
+44#24#880#Gegen den Kopf#Ritter und Stark#Berlin#RBB#2013
+44#25#881#Angezählt#Eisner und Fellner#Wien#ORF#2013
+44#26#882#Freunde bis in den Tod#Odenthal#Ludwigshafen#SWF#2013
+44#27#883#Die chinesische Prinzessin#Thiel und Boerne#Münster#WDR#2013
+44#28#884#Aus der Tiefe der Zeit#Batic und Leitmayr#München#BR#2013
+44#29#885#Kalter Engel#Funck und Schaffert#Erfurt#MDR#2013
+44#30#886#Eine andere Welt#Faber#Dortmund#WDR#2013
+44#31#887#Mord auf Langeoog#Falke#Hamburg#NDR#2013
+44#32#888#Happy Birthday, Sarah#Lannert#Stuttgart#SWR#2013
+44#33#889#Schwindelfrei#Murot#Wiesbaden#HR#2013
+44#34#890#Allmächtig#Batic und Leitmayr#München#BR#2013
+44#35#891#Die fette Hoppe#Lessing und Dorn#Weimar#MDR#2013
+44#36#892#Borowski und der Engel#Borowski und Brandt#Kiel#NDR#2013
+45#1#893#Türkischer Honig#Saalfeld und Keppler#Leipzig#MDR#2014
+45#2#894#Franziska#Ballauf und Schenk#Köln#WDR#2014
+45#3#895#Der Eskimo#Steier und Mey#Frankfurt#HR#2014
+45#4#896#Todesspiel#Blum und Perlmann#Konstanz#SWR#2014
+45#5#897#Adams Alptraum#Stellbrink und Marx#Saarbrücken#SR#2014
+45#6#898#Auf ewig Dein#Faber, Bönisch, Dalay und Kossik#Dortmund#WDR#2014
+45#7#899#Großer schwarzer Vogel#Ritter und Stark#Berlin#RBB#2014
+45#8#900#Zirkuskind#Odenthal und Kopper#Ludwigshafen#SWR#2014
+45#9#901#Brüder#Lürsen#Bremen#RB#2014
+45#10#902#Abgründe#Eisner und Fellner#Wien#ORF#2014
+45#11#903#Kopfgeld#Tschiller und Gümer#Hamburg#NDR#2014
+45#12#904#Frühstück für immer#Saalfeld und Keppler#Leipzig#MDR#2014
+45#13#905#Der Fall Reinhardt#Ballauf und Schenk#Köln#WDR#2014
+45#14#906#Borowski und das Meer#Borowski und Brandt#Kiel#NDR#2014
+45#15#907#Der Hammer#Thiel und Boerne#Münster#WDR#2014
+45#16#908#Zwischen zwei Welten#Flückiger und Ritschard#Luzern#SRF#2014
+45#17#909#Kaltstart#Falke und Lorenz#Hamburg#NDR#2014
+45#18#910#Am Ende des Flurs#Batic und Leitmayr#München#BR#2014
+45#19#911#Ohnmacht#Ballauf und Schenk#Köln#WDR#2014
+45#20#912#Alle meine Jungs#Lürsen#Bremen#RB#2014
+45#21#913#Freigang#Lannert und Bootz#Stuttgart#SWR#2014
+45#22#914#Paradies#Eisner und Fellner#Wien#ORF#2014
+45#23#915#Verfolgt#Flückiger und Ritschard#Zürich#SRF#2014
+45#24#916#Der Wüstensohn#Batic und Leitmayr#München#BR#2014
+45#25#917#Mord ist die beste Medizin#Thiel und Boerne#Münster#WDR#2014
+45#26#918#Wahre Liebe#Ballauf und Schenk#Köln#WDR#2014
+45#27#919#Winternebel#Blum und Perlmann#Konstanz#SWR#2014
+45#28#920#Im Schmerz geboren#Murot#Wiesbaden#HR#2014
+45#29#921#Blackout#Odenthal und Kopper#Ludwigshafen#SWR#2014
+45#30#922#Vielleicht#Stark#Berlin#SFB#2014
+45#31#923#Eine Frage des Gewissens#Lannert und Bootz#Stuttgart#SWR#2014
+45#32#924#Die Feigheit des Löwen#Falke und Lorenz#Hamburg#NDR#2014
+45#33#925#Der sanfte Tod#Lindholm#Hannover#NDR#2014
+45#34#926#Der Maulwurf#Funck, Schaffert und Grewel#Erfurt#MDR#2014
+45#35#927#Weihnachtsgeld#Stellbrink und Marx#Saarbrücken#SR#2014
+45#36#928#Das verkaufte Lächeln#Batic und Leitmayr#München#BR#2014
+46#1#929#Der irre Iwan#Lessing und Dorn#Weimar#MDR#2015
+46#2#930#Deckname Kidon#Eisner und Fellner#Wien#ORF#2015
+46#3#931#Hydra#Faber, Bönisch, Dalay und Kossik#Dortmund#WDR#2015
+46#4#932#Die Sonne stirbt wie ein Tier#Odenthal und Kopper#Ludwigshafen#SWR#2015
+46#5#933#Borowski und der Himmel über Kiel#Borowski und Brandt#Kiel#NDR#2015
+46#6#934#Freddy tanzt#Ballauf und Schenk#Köln#WDR#2015
+46#7#935#Château Mort#Blum und Perlmann#Konstanz#SWR#2015
+46#8#936#Blutschuld#Saalfeld und Keppler#Leipzig#MDR#2015
+46#9#937#Das Haus am Ende der Straße#Steier#Frankfurt#HR#2015
+46#10#938#Grenzfall#Eisner und Fellner#Wien#ORF#2015
+46#11#939#Die Wiederkehr#Lürsen#Bremen#RB#2015
+46#12#940#Das Muli#Karow und Rubin#Berlin#RBB#2015
+46#13#941#Borowski und die Kinder von Gaarden#Borowski und Brandt#Kiel#NDR#2015
+46#14#942#Frohe Ostern, Falke#Falke und Lorenz#Hamburg#NDR#2015
+46#15#943#Der Himmel ist ein Platz auf Erden#Voss, Ringelhahn, Goldwasser, Fleischer und Schatz#Franken#BR#2015
+46#16#944#Dicker als Wasser#Ballauf und Schenk#Köln#WDR#2015
+46#17#945#Niedere Instinkte#Saalfeld und Keppler#Leipzig#MDR#2015
+46#18#946#Schwerelos#Faber, Bönisch, Dalay und Kossik#Dortmund#WDR#2015
+46#19#947#Kälter als der Tod#Brix und Janneke#Frankfurt#HR#2015
+46#19#947#Kälter als der Tod,Die Liebe ist kälter als der Tod#Brix und Janneke#Frankfurt#HR   %halternative#2015
+46#20#948#Roomservice#Odenthal und Kopper#Ludwigshafen#SWR#2015
+46#21#949#Erkläre Chimäre#Thiel und Boerne#Münster#WDR#2015
+46#22#950#Gier#Eisner und Fellner#Wien#ORF#2015
+46#23#951#Wer Wind erntet, sät Sturm#Lürsen und Stedefreund#Bremen#RB#2015
+46#24#952#Der Inder#Lannert und Bootz#Stuttgart#SWR#2015
+46#25#953#Schutzlos#Flückiger und Ritschard#Luzern#SRF#2015

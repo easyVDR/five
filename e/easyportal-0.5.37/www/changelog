@@ -1,0 +1,476 @@
+0.5.37-4easyVDR0 (mango)
+build for focal
+added 5-*-unstable ppa's
+
+0.5.37-3easyVDR5 (mango)
+fix lighttpd.conf
+
+0.5.37-3easyVDR4 (mango)
+fix patches & postinst
+
+0.5.37-3easyVDR3 (mango)
+rebuild
+
+0.5.37-3easyVDR2 (mango)
+depends to php7.2
+
+0.5.37-3easyVDR1 (mango)
+fix shellinabox https
+
+0.5.37-3easyVDR0 (mango)
+build for bionic
+added 4-unstable ppa's
+depends to php7.1
+
+0.5.37-1easyVDR1 (mango)
+added horchiTft in webif
+fix media-experimental version
+
+0.5.37-1easyVDR0 (mango)
+added vdr-plugin-osd2web in webif
+
+0.5.37-0easyVDR2 (mango)
+fix eplists download
+
+0.5.37-0easyVDR1 (mango)
+added changelog
+
+0.5.37-0easyVDR0 (martin)
+fix for hddsleep
+
+0.5.36-2easyVDR1 (mango)
+zeilenumruch tv/festplatten erkennung
+
+0.5.36-2easyVDR0 (mango)
+added link/pic new forum
+
+0.5.36-1easyVDR1 (mango)
+fix changelog
+
+0.5.36-1easyVDR0 (mango)
+added webif for vdr-epg-daemon
+
+0.5.36-0easyVDR0 (michel8)
+lan setup
+
+0.5.35-1easyVDR1 (mango)
+correct entry for webapp
+
+0.5.35-1easyVDR0 (martin)
+upgrade fix
+
+0.5.35-0easyVDR0 (martin)
+added new spanish language files thx to javier
+
+0.5.32-0easyVDR0 (mango)
+added new english language files thx to javier
+
+0.5.31-1easyVDR0 (mango)
+Quellen für easyVDR-3.0 angepasst
+
+0.5.29-0easyVDR1 (Steevee)
+Fernzugriff: Windowsfreundliche Dateinamen
+Update Kodi-Fernbedienung
+Serie: epgsearchdone Einträge grün
+
+0.5.28-0easyVDR1 (Steevee)
+Startseite: Verkürzung der Landezeit durch Ajax
+
+0.5.27-0easyVDR1 (Steevee)
+Kodi Fernbedienung
+Sprachfiles überarbeitet
+Easyinfo: easyvdr-runtime.csv hinzugefügt
+
+0.5.26-0easyVDR1 (Steevee)
+Soft Scroll-Top
+epgsearchdone.data editieren
+epgsearch Unterstütztung erweitert (timersdone.conf, epgsearchcats.conf, epgsearchchangrps.conf)
+Zebra Tabelle
+sortierbare Tabellen
+Sprachfiles überarbeitet
+Bugfix: Auswahl Addons
+div. Bugfix und Verbesserungen
+
+0.5.25-0easyVDR1 (Steevee)
+Time/Uptime/vdrUptime aktualisiert sich stätig ohne Reload
+Container aus/einblenden überarbeitet
+
+0.5.24-0easyVDR1 (Steevee)
+epgsearchdone / Aufnahmen / Serien überarbeitet
+Menü überarbeitet
+Sprachfiles überarbeitet
+
+0.5.23-0easyVDR1 (Steevee)
+Responsive Webdesign (automat. Spaltenauswahl, scalierbare Bilder, ...)
+Skins auswählbar
+neue Skins: ForumColors, Frogs, She Sells Seashells, Vintage Modern
+Bugfix: Time/Uptime
+Update laufende Services von XBMC nach KODI
+Upgrade/Distupgrade nun mit Option -n
+Container ausblendbar
+
+0.5.22-0easyVDR1 (Steevee)
+Root-Zugang aktivieren
+epgsearchdone.data ansehen
+"meine Serien" als default
+
+0.5.21-0easyVDR1 (Steevee)
+Editieren der Sprachdateien
+Bugfix: php-Warnungen beseitigt
+
+0.5.20-0easyVDR1 (Steevee)
+Plugins beim installieren gleich aktivieren
+
+0.5.19-0easyVDR1 (Steevee)
+Fernbedienung
+Aufnahmen komplett überarbeitet
+Serien / eplist Datenbank
+Tatort Datenbank
+gelöschte Aufnahmen
+Aufnahme-Tools
+Timer anzeigen/bearbeiten/löschen
+Suchtimer anzeigen
+Usereinstellungen hinzugefügt
+Sidemap / Dateiinfo
+Bootlogo ändern und uploaden
+Nachrichten senden und anzeigen
+Kanallisten löschen nach Empfangsart
+Kanalliste umsortieren
+Paketquellen ändern für 2.2 testing
+PPA-News für 2.2 testing
+Datenzugriff verbessert (txt-db)
+Generelle Überarbeitung Quellcode
+Programm-Changer übernimmt Konfig
+Easyportal-Log
+
+0.5.18-0easyVDR1 (Steevee)
+Erweiterung EasyInfo "dkms status" (Easyinfo)
+Fernbedienungen anzeigen (Fernbedienungen)
+Bugfix Verzeichnisse anlegen
+Anzeige media-build-experimental Version & Status (Home)
+Es können auch alle Timer aufgelistet werden (Home)
+Aufnahme Datum (Aufnahmen)
+Netzwerkgeräte Auswahl alle/nur_VDRs (Netzwerk_Geraete)
+Div. Kleinigkeiten
+
+0.5.17-0easyVDR1 (Steevee)
+Aufnahmen können gelöscht werden
+Bugfix (Rechte, Sprachfiles, ...)
+
+0.5.16-0easyVDR1 (Steevee)
+Einstellung 1/2-Spaltig für kleine Monitore (Portal Einstellungen)
+Bugfix Intel Grafik
+
+0.5.15-0easyVDR1 (Steevee)
+Update Icons
+
+0.5.14-0easyVDR1 (Steevee)
+Letzte EasyVDR-Updates im PPA (Tools->Neu im PPA) (ppa_news)
+Expertenmodus (Portal Einstellungen)
+Paketquelle unstable nur im Expertenmode (ppa_news, Paketquellen)
+
+0.5.13-0easyVDR1 (Steevee)
+Mehrsprachig (enlish/deutsch) (Portal Einstellungen)
+Im Setup sind nun Optionen für ausgeschaltetet Features nicht sichtbar (Netzwerk, Fernzugriff, System, Sonstige Einstellungen)
+Code-Optimierung (Netzwerk-Geräte, ...)
+Eingabe IP-Adressen besser (Netzwerk)
+Erweiterung Erkennung TV-Karten (System)
+Grafikinfos Video-Out abhängig (System)
+Grafik-Infos Intel (System)
+
+0.5.12-0easyVDR1 (Steevee)
+Paketquellen aktivieren/deaktivieren stable/testing/unstable (Paketquellen)
+BugFix: Mehrere Plugins gleichzeitig aktivieren/Deaktivieren (Plugins)
+BugFix: tag-Fehler (System)
+Programm Changer Seite (PChanger)
+Erweiterte NVIDIA-Grafik-Infos (System) (Dank an SurfaceCleanerZ)
+
+0.5.11-0easyVDR1 (Steevee)
+xbmc starten und stoppen (Home)
+Link zum xbmc-webif, wenn xbmc gestartet (Home)
+Sensors wird jetzt komplett angezeigt (System)
+NVidia-Temp wird jetzt anders ermittelt (System)
+Mainboard wird jetzt auch angezeigt (System)
+
+0.5.10-0easyVDR1 (Steevee)
+Überarbeitung Anzeige Netzwerkgeräte
+Speichern Liste Netzwerkgeräte
+WOL
+Gradzeichen bei System
+
+0.5.9-0easyVDR1 (Steevee)
+Dauerhaft angemeldet bleiben (Benötigt Cookies)
+Anzeige Netzwerkgeräte (Tools --> Netzwerkgeräte)
+
+0.5.8-0easyVDR1 (Steevee)
+Login für Menüpunkt 'Einstellungen' und 'Tools'
+Löschen von Kanallisten
+Umbenennen von Kanallisten
+Erweiterung EasyInfo (easyvdr-systemstart.log, ...)
+Direkter Button für EasyInfo erstellen und Download
+
+0.5.7-0easyVDR1 (Steevee)
+Überarbeitung Menü. Buttons bleiben gedrückt
+Überarbeitung Installation-Aktivierung
+Kanalliste von Channelpedia runterladen
+Erweiterung view_plugin
+Weitere Anzeigen: Nvidia-Version, Nvidia-Temp, ...
+Div. Kleinigkeiten
+
+0.5.6-0easyVDR1 (Steevee)
+Schönheits- und Rechtschreibfehler korrigiert
+
+0.5.5-0easyVDR1 (Steevee)
+Umstellung auf User vdr
+Kanallisten können angezeigt werden
+
+0.5.4-0easyVDR1 (Steevee)
+Bugfix: Rechteproblem beim Löschen von Backups behoben
+Bugfix: Rechteproblem beim Anzeigen von Plugin-Details behoben
+
+0.5.3-0easyVDR1 (Steevee)
+Addons installieren
+info von Aufnahmen bearbeiten
+Menü Umsortierung
+System: Änderung der Überprüfung VGA-Karte
+View-EasyInfo: Man kann wechseln zwischen aktuell und gespeichertem
+
+0.5.2-0easyVDR1 (Steevee)
+Befehle
+Bugfixe
+
+0.5.1-0easyVDR1 (Steevee)
+Wait-Meldungen
+Update/Upgrade/dist-Upgrade
+
+0.5.0-0easyVDR1 (Steevee)
+Dynamisches Design
+Speichern und Laden von EasyInfo
+Upload von EasyInfo
+Auswahl von EasyInfo
+Weitere Farben bei EasyInfo
+Fehlersuche EasyInfo überarbeitet
+Backup mit tar
+
+0.4.5-0easyVDR1 (Steevee)
+Upload Kanalliste
+PluginInfo-Seite, Links zu den Wikis
+Unterteilung von EasyInfo
+Farbliche Anzeige von EasyInfo
+Systemeinstellungen Editierbar
+
+0.4.0-0easyVDR7 (Sinai)
+SSH-Web-Zugriff mit shellinabox
+Ram-Anzeige debugged
+HD-Erkennung für RAID-Systeme (Danke an compi)
+Pluginverwaltung
+Kanallistenverwaltung
+
+0.4.0-0easyVDR1 (Sinai)
+Anpassung an easyVDR 2.0
+
+0.3.0-1easyVDR4.16 (Sinai)
+Links nach debugged
+
+0.3.0-1easyVDR4.15 (Sinai)
+Zeichensatzfehler eliminiert
+
+0.3.0-1easyVDR4.1 (Sinai)
+syslog verkuerzt (MFG)
+
+0.3.0-1easyVDR4.0 (Sinai)
+logging erweitert
+
+0.3.0-1easyVDR3.9 (Sinai)
+automatische Ermittlung der Portalversion
+
+0.3.0-1easyVDR3.8 (Sinai)
+OSD-Zugriff per telnet
+
+0.3.0-1easyVDR3.7 (Sinai)
+update.log aufgenommen
+
+0.3.0-1easyVDR3.6 (Sinai)
+Passwort VDRAdmin geaendert (mango)
+Streamdev-http integriert
+
+0.3.0-1easyVDR3.5 (Sinai)
+orthographische Verbesserungen
+
+0.3.0-1easyVDR3.4 (Sinai)
+Fixed VCH-Helper (mango)
+
+0.3.0-1easyVDR3.3 (Sinai)
+orthographische Verbesserungen
+
+0.3.0-1easyVDR3.2 (Sinai)
+SSH-Zugriff per Webinterface
+
+0.3.0-1easyVDR3.1 (Sinai)
+unnoetige Funktionen entfernt
+
+0.3.0-1easyVDR3.0 (Sinai)
+easyInfo erweitert
+VDR-Uptime debugged
+Uptime debugged (stefluik)
+
+0.3.0-1easyVDR2.9 (Sinai)
+Fixed Display of easyVDR-Version
+Added Downloadbutton for easyInfo
+
+0.3.0-1easyVDR2.5 (Sinai)
+added ajaxterm (Web based terminal)
+
+0.3.0-1easyVDR2.4 (Sinai)
+easyInfo-Bugfixing
+
+0.3.0-1easyVDR2.3 (Sinai)
+easyInfo nochmals erweitert
+
+0.3.0-1easyVDR2.2 (Sinai)
+easyInfo gesplittet und erweitert
+
+0.3.0-1easyVDR2.1 (Martin)
+Passwortabfrage deaktiviert
+
+0.3.0-1easyVDR1.9 (Sinai)
+Bug #3 behoben (http://bugs.easy-vdr.de/issues/3
+
+0.3.0-1easyVDR1.8 (Sinai)
+Anzeigen für Version und Uptime debugged
+
+0.3.0-1easyVDR1.7 (Sinai)
+Bug #2 behoben (http://bugs.easy-vdr.de/issues/2)
+Bug #1 behoben (http://bugs.easy-vdr.de/issues/1)
+
+0.3.0 (Sinai)
+Anpassungen für easyVDR 0.9
+
+0.2.04 (Sinai)
+Bug in Updateanzeige für easyPortal
+Bug in Versionsanzeige aus Git
+
+0.2.03 (Sinai)
+dynamische Portanzeige für Live
+Vodcatcher-Helper wird in den Diensten angezeigt
+höheres Mainframe
+Servername und IP des VDR wird im Titel angezeigt
+
+0.2.02 (Sinai)
+Updatecheck auf easyVDR 0.8 erweitert
+
+0.2.01 (Sinai)
+Umstellung auf Git
+
+0.2.0 (Sinai)
+Vorbereitung auf Betaportaltests
+Strukturelle Verbessserungen
+dynamische Zeichensatzerkennung
+dynamischer Updatecheck
+Anzeige Aufnahmekapazitaet verbessert
+BUG #359 behoben (http://bugs.easy-vdr.de/view.php?id=359)
+BUG #324 behoben (http://bugs.easy-vdr.de/view.php?id=324)
+BUG #328 behoben (http://bugs.easy-vdr.de/view.php?id=328)
+
+0.1.49 (Sinai)
+Sortierende Pluginverwaltung
+
+0.1.48 (Sinai)
+Fehlende Datei changelog.inc.php 
+
+0.1.47 (Sinai)
+Changelog-View eingebaut
+Bug #201 behoben (http://bugs.easy-vdr.de/view.php?id=201)
+Bug #311 behoben (http://bugs.easy-vdr.de/view.php?id=311)
+Bug #314 behoben (http://bugs.easy-vdr.de/view.php?id=314)
+Bug #316 behoben (http://bugs.easy-vdr.de/view.php?id=316)
+Bug #317 behoben (http://bugs.easy-vdr.de/view.php?id=317)
+
+0.1.46 (Sinai)
+Interface ath0 und wifi0 zur IP-Anzeige eingefuegt
+
+0.1.45 (Sinai)
+Fehler in Version 0.1.44 beseitigt
+
+0.1.44 (Sinai)
+lspci -vn gegen lspci -vvvnn in EasyInfo ausgetauscht
+
+0.1.43 (Sinai)
+Tippfehler beseitigt
+
+0.1.42 (Sinai)
+Tippfehler beseitigt
+
+0.1.41 (Sinai)
+Bug #296 behoben (http://bugs.easy-vdr.de/view.php?id=296)
+
+0.1.40 (Thorsten)
+easyinfo in easyinfo.log umbenannt, wird nun als ZIP-File zum Download angeboten
+http://www.easy-vdr.de/forum/index.php?topic=6100.msg46447#msg46447
+
+0.1.39 (Sinai)
+cat /etc/X11/xorg.conf in EasyInfo eingebaut
+cat /var/log/Xorg0.log in EasyInfo eingebaut
+
+0.1.38 (Thorsten)
+Bug #285 behoben (http://bugs.easy-vdr.de/view.php?id=285)
+
+0.1.37 (Sinai)
+Tippfehler in easyinfo.sh beseitigt
+
+0.1.36 (Sinai)
+cat /var/www/easyportal.ver in EasyInfo eingebaut
+
+0.1.35 (Sinai)
+Tippfehler beseitigt
+
+0.1.34 (Sinai)
+lspci und lsusb in EasyInfo eingebaut
+
+0.1.33 (Thorsten)
+Bug #202 behoben (http://bugs.easy-vdr.de/view.php?id=202)
+Bug #266 behoben (http://bugs.easy-vdr.de/view.php?id=266)
+
+0.1.32 (Sinai)
+Anzeige der VDR-Version mit fuehrender Null hinter dem Komma
+
+0.1.31 (Thorsten)
+Grafiken fehlten
+http://www.easy-vdr.de/forum/index.php?topic=4281.msg34817#msg34817
+EasyInfo: logread durch syslog ersetzt
+
+0.1.30 (Thorsten)
+Links zum Wiki in den Pluginlisten eingefuegt
+Anzahl der anzuzeigenden Timer in der vars.inc.php einstellbar
+Icons in Pluginsanzeige ausgetauscht
+EasyInfo: Ergebnis nun als Datei Downloadbar
+
+0.1.29 (Thorsten)
+Bei schlafenden Platten wird der Zustand durch eine Grafik angezeigt:
+http://www.easy-vdr.de/forum/index.php?topic=4281.msg32615#msg32615
+
+0.1.28 (Thorsten)
+Bug in Plattentemperaturanzeige beseitigt.
+
+0.1.27 (Thorsten)
+Bug in Systemuptime (easyportal.sh) beseitigt
+
+0.1.26 (Thorsten)
+VDR-Uptime eingebaut
+Systemuptime angepasst (Tag,Tage etc...)
+
+0.1.25 (Thorsten)
+Temperaturanzeige in platten.inc.php angepasst (Bug 189)
+
+0.1.24 (Thorsten)
+Uptimescript angepasst (Bug 190)
+
+0.1.23 (Thorsten)
+easyportal_update.sh aus /usr/bin/ in /var/www/scripts/easyportal.sh integriert und damit einen sudoers-Eintrag gespart (Bug 185)
+
+0.1.22 (sinai)
+Versionsanzeige fuer VDR- und Portalversion auf die Startseite
+
+0.0.1 bis 0.1.21
+Aufbau des Portals
+Dank an maxx, Kris, MFG, Wicky und alle, die wir vergessen haben fuer die Hilfe

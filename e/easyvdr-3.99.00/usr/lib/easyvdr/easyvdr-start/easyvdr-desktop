@@ -1,0 +1,75 @@
+#!/bin/sh
+
+#V 0.1  Bleifuss
+
+EXEC_CMD="easyvdr-desktop"
+
+case "$1" in
+        start)
+                /usr/lib/vdr/easyvdr-config-display-manager
+		systemctl start display-manager.service
+            ;;
+         
+        stop)
+		systemctl stop display-manager.service
+		sleep 1
+		#Hängt gdm3 ?
+		while  ( pidof X || pidof Xorg || pidof Xwayland )
+                do
+  		 PID=$(pidof "gdm-x-session")
+		 if [ $? -eq 0 ] ;then
+                  killall  gdm-x-session  2>&1&
+		 fi
+		 #Hängt wayland ?
+		 PID=$(pidof "gdm-wayland-session")
+		 if [ $? -eq 0 ] ;then
+                  killall  gdm-wayland-session  2>&1&
+		 fi
+		 PID=$(pidof "Xorg")
+		 if [ $? -eq 0 ] ;then
+                  killall  Xorg  2>&1&
+		 fi
+                 sleep 1
+                done
+            ;;
+         
+        status)
+		PID=$(pidof "lightdm")
+		if [ $? -eq 0 ] ;then
+		   echo "$EXEC_CMD is running"
+		fi
+		PID=$(pidof "gdm-x-session")
+		if [ $? -eq 0 ] ;then
+		   echo "$EXEC_CMD is running"
+		fi
+
+            ;;
+        restart)
+		systemctl stop display-manager.service
+		sleep 1
+		#Hängt gdm3 ?
+		while  ( pidof X || pidof Xorg || pidof Xwayland )
+                do
+  		 PID=$(pidof "gdm-x-session")
+		 if [ $? -eq 0 ] ;then
+                  killall  gdm-x-session  2>&1&
+		 fi
+		 #Hängt wayland ?
+		 PID=$(pidof "gdm-wayland-session")
+		 if [ $? -eq 0 ] ;then
+                  killall  gdm-wayland-session  2>&1&
+		 fi
+		 PID=$(pidof "Xorg")
+		 if [ $? -eq 0 ] ;then
+                  killall  Xorg  2>&1&
+		 fi
+                 sleep 1
+                done
+		systemctl start display-manager.service
+            ;;
+       
+        *)
+            echo $"Usage: $0 {start|stop|restart|status}"
+            exit 1
+ 
+esac

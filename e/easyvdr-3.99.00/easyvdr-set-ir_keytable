@@ -1,0 +1,37 @@
+#!/bin/bash
+#
+# Wird von udev-rule aufgerufen und setzt ir-keytable entsprechend der eingestellten Fernbedienung
+#
+# von: michel8@easyvdr.de
+
+logfile="/tmp/easyvdr-set_keytab"
+
+sleep 4
+if [ -e $logfile ]; then
+    echo "### Doppelaufruf unterbunden ###" >> $logfile 
+    exit 0
+fi
+
+echo "easyvdr-set-ir_keytable started from udev-rule" > $logfile
+echo "" >> $logfile
+
+if [ -e /dev/input/ir-auto_dtc ]; then
+    Sys_Dev=$(udevadm info --query=all --attribute-walk --name=/dev/input/ir-auto_dtc | grep -B 3 'SUBSYSTEMS=="rc"' | grep KERNELS | cut -d'"' -f 2)
+    echo "Detecting Source von event /dev/input/ir-auto_dtc:" >> $logfile
+    echo "" >> $logfile
+    udevadm info --query=all --attribute-walk --name=/dev/input/ir-auto_dtc >> $logfile 2>&1
+else
+    Sys_Dev=$(udevadm info --query=all --attribute-walk --name=/dev/input/ir-auto_dtc0 | grep -B 3 'SUBSYSTEMS=="rc"' | grep KERNELS | cut -d'"' -f 2)
+    echo "Detecting Source von event /dev/input/ir-auto_dtc0:" >> $logfile
+    echo "" >> $logfile
+    udevadm info --query=all --attribute-walk --name=/dev/input/ir-auto_dtc0 >> $logfile 2>&1
+fi
+echo "==>" >> $logfile
+echo "Setting ir-keytable for $Sys_Dev:" >> $logfile
+echo "" >> $logfile
+/usr/bin/ir-keytable -s $Sys_Dev -c -w /var/lib/vdr/key_irkeytab >> $logfile  2>&1
+
+sudo cp -f $logfile /var/log/easyvdr
+rm -f $logfile
+
+exit 0

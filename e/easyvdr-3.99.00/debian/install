@@ -1,0 +1,119 @@
+easyvdr-runvdr                          usr/sbin/
+easyvdr-runfrontend                     usr/sbin/
+easyvdr-runkodi                         usr/sbin/
+rebootvdr                               usr/bin/
+poweroffvdr                             usr/bin/
+startvdr                                usr/bin/
+stopvdr                                 usr/bin/
+restartvdr                              usr/bin/
+restartvdrx				usr/bin/
+stopx					usr/bin/
+easyvdr-after-vdr-action                usr/bin/
+easyvdr-before-vdr-action               usr/bin/
+easyvdr-versioninfo                     usr/bin/
+easyvdr-update				usr/bin/
+easyvdr-safe_channels			usr/bin/
+
+easyvdr-reccmds				usr/bin/
+easyvdr-edit-marks			usr/bin/
+easyvdr-edit-index			usr/bin/
+easyvdr-set-ir_keytable			usr/bin/
+
+
+etc/01-easyvdr-dvb-default.rules        etc/udev/rules.d/
+etc/easyvdr-lirc-blacklist.conf         etc/modprobe.d/
+etc/easyvdr-network-blacklist.conf      etc/modprobe.d/
+etc/easyvdr-video.conf                  etc/modprobe.d/
+etc/powerbtn.sh.easyvdr                 etc/acpi/
+etc/easyvdr-rc.xml                      etc/openbox/
+etc/menu.xml                            etc/openbox/
+
+debian/sudoers-vdr                      etc/sudoers.d/
+debian/easyvdr-logrotate                etc/cron.daily/
+#debian/vdr                              etc/default/
+
+hooks/commands.system.conf              usr/share/vdr/command-hooks/
+hooks/commands.systeminfos.conf         usr/share/vdr/command-hooks/
+hooks/commands.network.conf             usr/share/vdr/command-hooks/
+hooks/commands.custom.conf              usr/share/vdr/command-hooks/
+hooks/reccmds*                          usr/share/vdr/command-hooks/
+hooks/commands.update-recordings.conf   usr/share/vdr/command-hooks/
+hooks/10_recording.custom               usr/share/vdr/recording-hooks/
+hooks/10_shutdown.custom                usr/share/vdr/shutdown-hooks/
+hooks/10_shutdown.wol                   usr/share/vdr/shutdown-hooks/
+hooks/10_shutdown.logrotate             usr/share/vdr/shutdown-hooks/
+hooks/10_shutdown.handbrake-cli         usr/share/vdr/shutdown-hooks/
+hooks/11_last_channel_volume            usr/share/vdr/shutdown-hooks/
+hooks/10_dvb-start.dvb                  usr/share/vdr/dvb-start-hooks/
+hooks/10_dvb-stop.dvb                   usr/share/vdr/dvb-stop-hooks/
+hooks/10_sound.restore                  usr/share/vdr/after-vdr-hooks/
+hooks/20_system_update			usr/share/vdr/after-vdr-hooks/
+hooks/30_test_setupplugin_running	usr/share/vdr/after-vdr-hooks/
+hooks/99_disable-power-switch-rules	usr/share/vdr/after-vdr-hooks/
+
+
+hooks/order.conf                        etc/vdr/plugins/
+hooks/order.commands.conf               etc/vdr/command-hooks/
+hooks/order.reccmds.conf                etc/vdr/command-hooks/
+
+
+
+lib/easyvdr-dvb-default-driver          var/lib/vdr/
+
+
+apt/*					etc/apt/preferences.d/
+
+lib/functions                           usr/lib/vdr/
+lib/easyvdr-recordingaction             usr/lib/vdr/
+lib/easyvdr-shutdown.wrapper            usr/lib/vdr/
+lib/easyvdr-shutdownaction              usr/lib/vdr/
+lib/easyvdr-set-settings                usr/lib/vdr/
+lib/easyvdr-config-loader               usr/lib/vdr/
+lib/easyvdr-commands-loader             usr/lib/vdr/
+lib/easyvdr-frontend-loader             usr/lib/vdr/
+lib/easyvdr-lcd-loader                  usr/lib/vdr/
+lib/easyvdr-module-loader               usr/lib/vdr/
+lib/easyvdr-shutdown-message            usr/lib/vdr/
+lib/easyvdr-graphtft-loader             usr/lib/vdr/
+lib/easyvdr-set-x-settings		usr/lib/vdr/
+lib/easyvdr-power-save  		usr/lib/vdr/
+lib/easyvdr-check-display-connected  	usr/lib/vdr/
+lib/easyvdr-config-display-manager  	usr/lib/vdr/
+lib/easyvdr-kodi-change-skins		usr/lib/vdr/
+lib/easyvdr-kodi-lib.py			usr/lib/vdr/
+lib/easyvdr-x-launcher                  usr/lib/vdr/
+
+easyvdr-version                         usr/share/easyvdr/
+message-setup-osd			usr/share/easyvdr/
+local-top/bootmessage                   usr/share/initramfs-tools/scripts/local-top/
+
+lightdm.conf.d/*                        usr/share/lightdm/lightdm.conf.d/
+etc/xdg/autostart/*                     etc/xdg/autostart/
+
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-systemstart	usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-create-ramdisk 	usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-save-ramdisk 	usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-alsa-restore 	usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-cleanscreen 	usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-autostart 	usr/lib/easyvdr/easyvdr-start/systemd
+
+
+#etc/systemd/easyvdr/display-manager.service		etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-systemstart.service		etc/systemd/easyvdr
+
+#etc/systemd/easyvdr/easyvdr-vdr.service			etc/systemd/easyvdr
+#etc/systemd/easyvdr/easyvdr-frontend.service		etc/systemd/easyvdr
+
+etc/systemd/easyvdr/easyvdr-alsa-restore.service	etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-create-ramdisk.service	etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-save-ramdisk.service	etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-cleanscreen.service		etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-autostart.service		etc/systemd/easyvdr
+
+usr/lib/easyvdr/easyvdr-start/easyvdr-desktop		usr/lib/easyvdr/easyvdr-start/
+usr/lib/easyvdr/easyvdr-start/easyvdr-vdr		usr/lib/easyvdr/easyvdr-start/
+usr/lib/easyvdr/easyvdr-start/easyvdr-frontend		usr/lib/easyvdr/easyvdr-start/
+usr/lib/easyvdr/easyvdr-start/easyvdr-kodi 		usr/lib/easyvdr/easyvdr-start/
+usr/lib/easyvdr/easyvdr-start/easyvdr-remote 		usr/lib/easyvdr/easyvdr-start/
+
+usr/lib/easyvdr/easyvdr-start/easyvdr-program-changer 	usr/lib/easyvdr/easyvdr-start/

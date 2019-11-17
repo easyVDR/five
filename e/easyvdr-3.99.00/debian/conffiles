@@ -1,0 +1,8 @@
+/var/lib/vdr/easyvdr-dvb-default-driver
+
+/usr/share/vdr/command-hooks/commands.custom.conf
+/usr/share/vdr/command-hooks/reccmds.custom.conf
+/usr/share/vdr/recording-hooks/10_recording.custom
+/usr/share/vdr/shutdown-hooks/10_shutdown.custom
+
+

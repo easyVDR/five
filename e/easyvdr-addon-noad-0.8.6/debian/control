@@ -1,0 +1,16 @@
+Source: easyvdr-addon-noad
+Section: misc
+Priority: optional
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Homepage: http://noad.net23.net
+Build-Depends: debhelper (>= 8), dpatch (>= 2.0.9), autoconf, pkg-config, libavcodec-dev, libavformat-dev, libavutil-dev, libswresample-dev
+Standards-Version: 3.9.5
+
+Package: easyvdr-addon-noad
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, vdr (>=2.0.0), gawk
+Description: VDR-Addon to automatically mark advertisements 
+ noad sets cut marks in recordings from Klaus Schmidingers Video
+ Disk Recorder. It does some magic you can read about at
+ http://www.ktet.fh-muenster.de/ina/node1.html.

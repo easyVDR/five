@@ -1,0 +1,816 @@
+#################################################
+name_button[0]=Vdr-Frontend
+picture_button[0]=/usr/share/easyvdr/program-changer/pictures/button-vdr.png
+enable_button[0]=yes
+enable_mouse_button[0]=no
+menu_page_nr_button[0]=1
+adjust_alsamixer_button[0]=no
+shutdown_program_button[0]=yes 
+pre_start_program_button[0]="no"
+start_program_button[0]="easyvdr-frontend start"
+stop_program_button[0]="easyvdr-frontend stop"
+kill_program_button[0]=no
+root_rights_button[0]=yes
+vdr_remote_button[0]=yes
+install_apt_get_prg_button[0]="-none-"
+
+#################################################
+name_button[1]=KODI 
+picture_button[1]=/usr/share/easyvdr/program-changer/pictures/button-kodi.png
+enable_button[1]=yes
+enable_mouse_button[1]=no
+menu_page_nr_button[1]=1
+adjust_alsamixer_button[1]=no
+shutdown_program_button[1]=yes 
+pre_start_program_button[1]="no"
+start_program_button[1]="initctl emit startup-kodi"
+stop_program_button[1]="kodi"
+kill_program_button[1]=yes
+root_rights_button[1]=yes
+vdr_remote_button[1]=no
+install_apt_get_prg_button[1]="kodi $PULSEAUDIO_INSTALL"
+
+#################################################
+name_button[2]=Firefox 
+picture_button[2]=/usr/share/easyvdr/program-changer/pictures/button-firefox.png
+enable_button[2]=yes
+enable_mouse_button[2]=yes
+menu_page_nr_button[2]=1
+adjust_alsamixer_button[2]=yes
+shutdown_program_button[2]=yes 
+pre_start_program_button[2]="no"
+start_program_button[2]="$START_PROGRAM firefox -browser -new-instance &"
+stop_program_button[2]="firefox"
+kill_program_button[2]=yes
+root_rights_button[2]=no
+vdr_remote_button[2]=no
+install_apt_get_prg_button[2]="firefox firefox-locale-de $PULSEAUDIO_INSTALL"
+
+#################################################
+name_button[3]=Thunderbird 
+picture_button[3]=/usr/share/easyvdr/program-changer/pictures/button-thunderbird.png
+enable_button[3]=yes
+enable_mouse_button[3]=yes
+menu_page_nr_button[3]=1
+adjust_alsamixer_button[3]=yes
+shutdown_program_button[3]=yes 
+pre_start_program_button[3]="no"
+start_program_button[3]="$START_PROGRAM thunderbird &"
+stop_program_button[3]="thunderbird"
+kill_program_button[3]=yes
+root_rights_button[3]=no
+vdr_remote_button[3]=no
+install_apt_get_prg_button[3]="thunderbird thunderbird-locale-de"
+
+#################################################
+name_button[4]=Supertuxkart 
+picture_button[4]=/usr/share/easyvdr/program-changer/pictures/button-supertuxkart.png
+enable_button[4]=yes
+enable_mouse_button[4]=yes
+menu_page_nr_button[4]=1
+adjust_alsamixer_button[4]=yes
+shutdown_program_button[4]=yes 
+pre_start_program_button[4]="$UTILITIES init_gaming_mod"
+start_program_button[4]="$START_PROGRAM supertuxkart &"
+stop_program_button[4]="supertuxkart"
+kill_program_button[4]=yes
+root_rights_button[4]=no
+vdr_remote_button[4]=no
+install_apt_get_prg_button[4]="supertuxkart $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[5]=Toppler 
+picture_button[5]=/usr/share/easyvdr/program-changer/pictures/button-toppler.gif
+enable_button[5]=yes
+enable_mouse_button[5]=yes
+menu_page_nr_button[5]=1
+adjust_alsamixer_button[5]=yes
+shutdown_program_button[5]=yes 
+pre_start_program_button[5]="$UTILITIES init_gaming_mod"
+start_program_button[5]="$START_PROGRAM toppler -f &"
+stop_program_button[5]="toppler"
+kill_program_button[5]=yes
+root_rights_button[5]=no
+vdr_remote_button[5]=no
+install_apt_get_prg_button[5]="toppler $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[6]=Gianas-Return 
+picture_button[6]=/usr/share/easyvdr/program-changer/pictures/button-gianas-return.png
+enable_button[6]=yes
+enable_mouse_button[6]=yes
+menu_page_nr_button[6]=1
+adjust_alsamixer_button[6]=yes
+shutdown_program_button[6]=yes 
+pre_start_program_button[6]="cd /opt;[ ! -e giana ] && wget http://www.retroguru.com/gianas-return/gianas-return-v.latest-linux.tar.gz;gunzip gianas-return-v.latest-linux.tar.gz;tar -xf *.tar;$UTILITIES init_gaming_mod"
+start_program_button[6]="cd /opt/giana ;$START_PROGRAM ./giana_linux64 -fs -aa -b24 -a44 &"
+stop_program_button[6]="giana_linux64"
+kill_program_button[6]=yes
+root_rights_button[6]=no
+vdr_remote_button[6]=no
+install_apt_get_prg_button[6]="freeglut3 libsdl-mixer1.2  $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[7]=Frogatto
+picture_button[7]=/usr/share/easyvdr/program-changer/pictures/button-frogatto.png
+enable_button[7]=yes
+enable_mouse_button[7]=yes
+menu_page_nr_button[7]=1
+adjust_alsamixer_button[7]=yes
+shutdown_program_button[7]=yes 
+pre_start_program_button[7]="$UTILITIES init_gaming_mod"
+start_program_button[7]="$START_PROGRAM frogatto --widescreen --fullscreen &"
+stop_program_button[7]="game"
+kill_program_button[7]=yes
+root_rights_button[7]=no
+vdr_remote_button[7]=no
+install_apt_get_prg_button[7]="frogatto $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[8]=Online-Hilfe
+picture_button[8]=/usr/share/easyvdr/program-changer/pictures/button-help.jpg
+enable_button[8]=yes
+enable_mouse_button[8]=yes
+menu_page_nr_button[8]=1
+adjust_alsamixer_button[8]=yes
+shutdown_program_button[8]=yes 
+pre_start_program_button[8]=no
+start_program_button[8]="$START_PROGRAM $UTILITIES start_firefox wiki.easy-vdr.de/index.php/Bedienung &"
+stop_program_button[8]="firefox"
+kill_program_button[8]=yes
+root_rights_button[8]=no
+vdr_remote_button[8]=no
+install_apt_get_prg_button[8]="firefox firefox-locale-de"
+
+#################################################
+name_button[9]=Desktop
+picture_button[9]=/usr/share/easyvdr/program-changer/pictures/button-desktop.png
+enable_button[9]=yes
+enable_mouse_button[9]=yes
+menu_page_nr_button[9]=1
+adjust_alsamixer_button[9]=yes
+shutdown_program_button[9]=no 
+pre_start_program_button[9]="no"
+start_program_button[9]="echo läuft schon"
+stop_program_button[9]="-none-"
+kill_program_button[9]=no
+root_rights_button[9]=no
+vdr_remote_button[9]=no
+install_apt_get_prg_button[9]="$PULSEAUDIO_INSTALL"
+
+#################################################
+name_button[10]=Terminal
+picture_button[10]=/usr/share/easyvdr/program-changer/pictures/button-gnome-terminal.png
+enable_button[10]=yes
+enable_mouse_button[10]=yes
+menu_page_nr_button[10]=20
+adjust_alsamixer_button[10]=yes
+shutdown_program_button[10]=no 
+pre_start_program_button[10]=no
+start_program_button[10]="$START_PROGRAM roxterm &"
+stop_program_button[10]="roxterm"
+kill_program_button[10]=yes
+root_rights_button[10]=no
+vdr_remote_button[10]=no
+install_apt_get_prg_button[10]="roxterm $PULSEAUDIO_INSTALL"
+
+#################################################
+name_button[11]=Midnight-Commander
+picture_button[11]=/usr/share/easyvdr/program-changer/pictures/button-mc.png
+enable_button[11]=yes
+enable_mouse_button[11]=yes
+menu_page_nr_button[11]=20
+adjust_alsamixer_button[11]=yes
+shutdown_program_button[11]=no 
+pre_start_program_button[11]=no
+start_program_button[11]="roxterm -e mc &"
+stop_program_button[11]="mc"
+kill_program_button[11]=yes
+root_rights_button[11]=no
+vdr_remote_button[11]=no
+install_apt_get_prg_button[11]="mc"
+
+#################################################
+name_button[12]=Grsync
+picture_button[12]=/usr/share/easyvdr/program-changer/pictures/button-grsync.gif
+enable_button[12]=yes
+enable_mouse_button[12]=yes
+menu_page_nr_button[12]=20
+adjust_alsamixer_button[12]=no
+shutdown_program_button[12]=no 
+pre_start_program_button[12]=no
+start_program_button[12]="$START_PROGRAM grsync &"
+stop_program_button[12]="grsync"
+kill_program_button[12]=yes
+root_rights_button[12]=no
+vdr_remote_button[12]=no
+install_apt_get_prg_button[12]="grsync"
+
+#################################################
+name_button[13]=Gnome-Commander
+picture_button[13]=/usr/share/easyvdr/program-changer/pictures/button-gnome-commander.png
+enable_button[13]=yes
+enable_mouse_button[13]=yes
+menu_page_nr_button[13]=20
+adjust_alsamixer_button[13]=no
+shutdown_program_button[13]=yes 
+pre_start_program_button[13]=no
+start_program_button[13]="$START_PROGRAM gnome-commander &"
+stop_program_button[13]="gnome-commander"
+kill_program_button[13]=yes
+root_rights_button[13]=no
+vdr_remote_button[13]=no
+install_apt_get_prg_button[13]="gnome-commander"
+
+#################################################
+name_button[14]=Gnome-Disks
+picture_button[14]=/usr/share/easyvdr/program-changer/pictures/button-gnome-disks.png
+enable_button[14]=yes
+enable_mouse_button[14]=yes
+menu_page_nr_button[14]=20
+adjust_alsamixer_button[14]=no
+shutdown_program_button[14]=no
+pre_start_program_button[14]=no
+start_program_button[14]="$START_PROGRAM gnome-disks &"
+stop_program_button[14]="gnome-disks"
+kill_program_button[14]=yes
+root_rights_button[14]=yes
+vdr_remote_button[14]=no
+install_apt_get_prg_button[14]="-none-"
+
+#################################################
+name_button[15]=K3B
+picture_button[15]=/usr/share/easyvdr/program-changer/pictures/button-k3b.png
+enable_button[15]=yes
+enable_mouse_button[15]=yes
+menu_page_nr_button[15]=20
+adjust_alsamixer_button[15]=no
+shutdown_program_button[15]=no 
+pre_start_program_button[15]=no
+start_program_button[15]="$START_PROGRAM k3b &"
+stop_program_button[15]="k3b"
+kill_program_button[15]=yes
+root_rights_button[15]=no
+vdr_remote_button[15]=no
+install_apt_get_prg_button[15]="k3b language-pack-kde-de"
+
+#################################################
+name_button[16]=Handbrake
+picture_button[16]=/usr/share/easyvdr/program-changer/pictures/button-handbrake.jpg
+enable_button[16]=yes
+enable_mouse_button[16]=yes
+menu_page_nr_button[16]=20
+adjust_alsamixer_button[16]=no
+shutdown_program_button[16]=no 
+pre_start_program_button[16]=no
+start_program_button[16]="$START_PROGRAM handbrake-gtk &"
+stop_program_button[16]=-none-
+kill_program_button[16]=no
+root_rights_button[16]=no
+vdr_remote_button[16]=no
+install_apt_get_prg_button[16]="handbrake"
+
+#################################################
+name_button[17]=Asunder
+picture_button[17]=/usr/share/easyvdr/program-changer/pictures/button-asunder.png
+enable_button[17]=yes
+enable_mouse_button[17]=yes
+menu_page_nr_button[17]=20
+adjust_alsamixer_button[17]=no
+shutdown_program_button[17]=no 
+pre_start_program_button[17]=no
+start_program_button[17]="$START_PROGRAM asunder &"
+stop_program_button[17]="asunder"
+kill_program_button[17]=yes
+root_rights_button[17]=no
+vdr_remote_button[17]=no
+install_apt_get_prg_button[17]="asunder flac wavpack lame $PULSEAUDIO_INSTALL"
+
+#################################################
+name_button[18]=Steam-installieren
+picture_button[18]=/usr/share/easyvdr/program-changer/pictures/button-steam.png
+enable_button[18]=yes
+enable_mouse_button[18]=yes
+menu_page_nr_button[18]=20
+adjust_alsamixer_button[18]=no
+shutdown_program_button[18]=no 
+pre_start_program_button[18]="no"
+start_program_button[18]="$START_PROGRAM $UTILITIES install_steam &"
+stop_program_button[18]="-none-"
+kill_program_button[18]=no
+root_rights_button[18]=yes
+vdr_remote_button[18]=no
+install_apt_get_prg_button[18]="$PULSEAUDIO_INSTALL"
+
+#################################################
+name_button[19]=Server/Nas-starten
+picture_button[19]=/usr/share/easyvdr/program-changer/pictures/button-wol.png
+enable_button[19]=yes
+enable_mouse_button[19]=no
+menu_page_nr_button[19]=20
+adjust_alsamixer_button[19]=no
+shutdown_program_button[19]=no
+pre_start_program_button[19]="$UTILITIES wol_server &"
+start_program_button[19]="easyvdr-frontend start"
+stop_program_button[19]="-none-"
+kill_program_button[19]=no
+root_rights_button[19]=yes
+vdr_remote_button[19]=yes
+install_apt_get_prg_button[19]="etherwake"
+
+#################################################
+name_button[20]=Frontend-Softhddevice
+picture_button[20]=/usr/share/easyvdr/program-changer/pictures/button-vdr.png
+enable_button[20]=yes
+enable_mouse_button[20]=no
+menu_page_nr_button[20]=30
+adjust_alsamixer_button[20]=no
+shutdown_program_button[20]=yes
+pre_start_program_button[20]="no"
+start_program_button[20]="/usr/share/easyvdr/program-changer/switch-frontend.sh Softhddevice"
+stop_program_button[20]="easyvdr-frontend stop"
+kill_program_button[20]=no
+root_rights_button[20]=yes
+vdr_remote_button[20]=yes
+install_apt_get_prg_button[20]="-none-"
+
+#################################################
+name_button[21]=Frontend-Xinelibout
+picture_button[21]=/usr/share/easyvdr/program-changer/pictures/button-vdr.png
+enable_button[21]=yes
+enable_mouse_button[21]=no
+menu_page_nr_button[21]=30
+adjust_alsamixer_button[21]=no
+shutdown_program_button[21]=yes
+pre_start_program_button[21]="no"
+start_program_button[21]="/usr/share/easyvdr/program-changer/switch-frontend.sh vdr-sxfe"
+stop_program_button[21]="easyvdr-frontend stop"
+kill_program_button[21]=no
+root_rights_button[21]=yes
+vdr_remote_button[21]=yes
+install_apt_get_prg_button[21]="-none-"
+
+#################################################
+name_button[22]=Frontend-KODI
+picture_button[22]=/usr/share/easyvdr/program-changer/pictures/button-kodi.png
+enable_button[22]=yes
+enable_mouse_button[22]=no
+menu_page_nr_button[22]=30
+adjust_alsamixer_button[22]=no
+shutdown_program_button[22]=yes
+pre_start_program_button[22]="no"
+start_program_button[22]="/usr/share/easyvdr/program-changer/switch-frontend.sh KODI"
+stop_program_button[22]="easyvdr-frontend stop"
+kill_program_button[22]=no
+root_rights_button[22]=yes
+vdr_remote_button[22]=no
+install_apt_get_prg_button[22]="-none-"
+
+#################################################
+name_button[23]=Frontend-Restart
+picture_button[23]=/usr/share/easyvdr/program-changer/pictures/button-frontend-restart.png
+enable_button[23]=yes
+enable_mouse_button[23]=no
+menu_page_nr_button[23]=30
+adjust_alsamixer_button[23]=no
+shutdown_program_button[23]=no
+pre_start_program_button[23]="no"
+start_program_button[23]="easyvdr-frontend start"
+stop_program_button[23]="easyvdr-frontend stop"
+kill_program_button[23]=no
+root_rights_button[23]=yes
+vdr_remote_button[23]=yes
+install_apt_get_prg_button[23]="-none-"
+
+#################################################
+name_button[24]=VDR-Restart
+picture_button[24]=/usr/share/easyvdr/program-changer/pictures/button-vdr-restart.png
+enable_button[24]=yes
+enable_mouse_button[24]=no
+menu_page_nr_button[24]=30
+adjust_alsamixer_button[24]=no
+shutdown_program_button[24]=no
+pre_start_program_button[24]="no"
+start_program_button[24]="$UTILITIES vdr_restart"
+stop_program_button[24]="-none-"
+kill_program_button[24]=no
+root_rights_button[24]=yes
+vdr_remote_button[24]=yes
+install_apt_get_prg_button[24]="-none-"
+
+#################################################
+name_button[25]=VDR-Reboot
+picture_button[25]=/usr/share/easyvdr/program-changer/pictures/button-reboot.png
+enable_button[25]=yes
+enable_mouse_button[25]=no
+menu_page_nr_button[25]=30
+adjust_alsamixer_button[25]=no
+shutdown_program_button[25]=no
+pre_start_program_button[25]="no"
+start_program_button[25]="init 6 &"
+stop_program_button[25]="init 6 &"
+kill_program_button[25]=no
+root_rights_button[25]=yes
+vdr_remote_button[25]=yes
+install_apt_get_prg_button[25]="-none-"
+
+#################################################
+name_button[26]=VDR-Shutdown
+picture_button[26]=/usr/share/easyvdr/program-changer/pictures/button-shutdown.png
+enable_button[26]=yes
+enable_mouse_button[26]=no
+menu_page_nr_button[26]=30
+adjust_alsamixer_button[26]=no
+shutdown_program_button[26]=no
+pre_start_program_button[26]="no"
+start_program_button[26]="$UTILITIES vdr_shutdown &"
+stop_program_button[26]="-none-"
+kill_program_button[26]=no
+root_rights_button[26]=yes
+vdr_remote_button[26]=yes
+install_apt_get_prg_button[26]="-none-"
+
+#################################################
+name_button[27]=easyVDR-Setup
+picture_button[27]=/usr/share/easyvdr/program-changer/pictures/button-easyvdr-setup.gif
+enable_button[27]=yes
+enable_mouse_button[27]=no
+menu_page_nr_button[27]=30
+adjust_alsamixer_button[27]=no
+shutdown_program_button[27]=no
+pre_start_program_button[27]="no"
+start_program_button[27]="$UTILITIES easyvdr_setup &"
+stop_program_button[27]="-none-"
+kill_program_button[27]=no
+root_rights_button[27]=yes
+vdr_remote_button[27]=no
+install_apt_get_prg_button[27]="-none-"
+
+#################################################
+name_button[28]=Program-Changer-Setup
+picture_button[28]=/usr/share/easyvdr/program-changer/pictures/button-pchanger-setup.png
+enable_button[28]=yes
+enable_mouse_button[28]=no
+menu_page_nr_button[28]=30
+adjust_alsamixer_button[28]=no
+shutdown_program_button[28]=no
+pre_start_program_button[28]="no"
+start_program_button[28]="$UTILITIES pch_setup &"
+stop_program_button[28]="-none-"
+kill_program_button[28]=no
+root_rights_button[28]=yes
+vdr_remote_button[28]=no
+install_apt_get_prg_button[28]="-none-"
+
+#################################################
+name_button[29]=easyVDR-Update
+picture_button[29]=/usr/share/easyvdr/program-changer/pictures/button-easyvdr-update.png
+enable_button[29]=yes
+enable_mouse_button[29]=no
+menu_page_nr_button[29]=30
+adjust_alsamixer_button[29]=no
+shutdown_program_button[29]=no
+pre_start_program_button[29]="no"
+start_program_button[29]="$UTILITIES easyvdr_update &"
+stop_program_button[29]="-none-"
+kill_program_button[29]=no
+root_rights_button[29]=yes
+vdr_remote_button[29]=no
+install_apt_get_prg_button[29]="-none-"
+
+#################################################
+name_button[30]=easyVDR-Paketquellen
+picture_button[30]=/usr/share/easyvdr/program-changer/pictures/button-source-list1.png
+enable_button[30]=yes
+enable_mouse_button[30]=no
+menu_page_nr_button[30]=30
+adjust_alsamixer_button[30]=no
+shutdown_program_button[30]=no
+pre_start_program_button[30]="no"
+start_program_button[30]="$START_PROGRAM software-properties-gtk --open-tab=1 &"
+stop_program_button[30]="-none-"
+kill_program_button[30]=no
+root_rights_button[30]=yes
+vdr_remote_button[30]=no
+install_apt_get_prg_button[30]="-none-"
+
+#################################################
+name_button[31]=Joystick/Pad-Setup
+picture_button[31]=/usr/share/easyvdr/program-changer/pictures/button-joystick-setup.png
+enable_button[31]=yes
+enable_mouse_button[31]=no
+menu_page_nr_button[31]=30
+adjust_alsamixer_button[31]=no
+shutdown_program_button[31]=yes
+pre_start_program_button[31]="no"
+start_program_button[31]="jstest-gtk &"
+stop_program_button[31]="jstest-gtk"
+kill_program_button[31]=yes
+root_rights_button[31]=no
+vdr_remote_button[31]=no
+install_apt_get_prg_button[31]="jstest-gtk joystick $GAMES_INSTALL"
+
+#################################################
+name_button[32]=Secret-Maryo 
+picture_button[32]=/usr/share/easyvdr/program-changer/pictures/button-smc.jpg
+enable_button[32]=yes
+enable_mouse_button[32]=yes
+menu_page_nr_button[32]=1
+adjust_alsamixer_button[32]=yes
+shutdown_program_button[32]=yes 
+pre_start_program_button[32]="$UTILITIES init_gaming_mod"
+start_program_button[32]="$START_PROGRAM smc &"
+stop_program_button[32]="smc"
+kill_program_button[32]=yes
+root_rights_button[32]=no
+vdr_remote_button[32]=no
+install_apt_get_prg_button[32]="smc $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[33]=Kapman
+picture_button[33]=/usr/share/easyvdr/program-changer/pictures/button-kapman.png
+enable_button[33]=yes
+enable_mouse_button[33]=yes
+menu_page_nr_button[33]=1
+adjust_alsamixer_button[33]=no
+shutdown_program_button[33]=yes
+pre_start_program_button[33]="$UTILITIES init_gaming_mod"
+start_program_button[33]="$START_PROGRAM kapman &"
+stop_program_button[33]="kapman"
+kill_program_button[33]=yes
+root_rights_button[33]=no
+vdr_remote_button[33]=no
+install_apt_get_prg_button[33]="kapman $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[34]=Mathe-Spiel
+picture_button[34]=/usr/share/easyvdr/program-changer/pictures/button-tuxmath.jpg
+enable_button[34]=yes
+enable_mouse_button[34]=yes
+menu_page_nr_button[34]=1
+adjust_alsamixer_button[34]=no
+shutdown_program_button[34]=yes
+pre_start_program_button[34]="$UTILITIES init_gaming_mod"
+start_program_button[34]="$START_PROGRAM tuxmath &"
+stop_program_button[34]="tuxmath"
+kill_program_button[34]=yes
+root_rights_button[34]=no
+vdr_remote_button[34]=no
+install_apt_get_prg_button[34]="tuxmath $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[35]=Eisenbahn-Spiel
+picture_button[35]=/usr/share/easyvdr/program-changer/pictures/button-ri-li.gif
+enable_button[35]=yes
+enable_mouse_button[35]=yes
+menu_page_nr_button[35]=1
+adjust_alsamixer_button[35]=no
+shutdown_program_button[35]=yes
+pre_start_program_button[35]="$UTILITIES init_gaming_mod"
+start_program_button[35]="$START_PROGRAM ri-li &"
+stop_program_button[35]="ri-li"
+kill_program_button[35]=yes
+root_rights_button[35]=no
+vdr_remote_button[35]=no
+install_apt_get_prg_button[35]="ri-li $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[36]=Kinder-Spiele
+picture_button[36]=/usr/share/easyvdr/program-changer/pictures/button-gcompris.gif
+enable_button[36]=yes
+enable_mouse_button[36]=yes
+menu_page_nr_button[36]=1
+adjust_alsamixer_button[36]=no
+shutdown_program_button[36]=yes
+pre_start_program_button[36]="$UTILITIES init_gaming_mod"
+start_program_button[36]="$START_PROGRAM gcompris &"
+stop_program_button[36]="gcompris"
+kill_program_button[36]=yes
+root_rights_button[36]=no
+vdr_remote_button[36]=no
+install_apt_get_prg_button[36]="gcompris gcompris-sound-de gnucap gnuchess tuxpaint $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[37]=Kartoffelknülch
+picture_button[37]=/usr/share/easyvdr/program-changer/pictures/button-ktuberling.gif
+enable_button[37]=yes
+enable_mouse_button[37]=yes
+menu_page_nr_button[37]=1
+adjust_alsamixer_button[37]=no
+shutdown_program_button[37]=yes
+pre_start_program_button[37]="$UTILITIES init_gaming_mod"
+start_program_button[37]="$START_PROGRAM ktuberling &"
+stop_program_button[37]="ktuberling"
+kill_program_button[37]=yes
+root_rights_button[37]=no
+vdr_remote_button[37]=no
+install_apt_get_prg_button[37]="ktuberling $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[38]=Supertux
+picture_button[38]=/usr/share/easyvdr/program-changer/pictures/button-supertux.png
+enable_button[38]=yes
+enable_mouse_button[38]=yes
+menu_page_nr_button[38]=1
+adjust_alsamixer_button[38]=no
+shutdown_program_button[38]=yes
+pre_start_program_button[38]="$UTILITIES init_gaming_mod"
+start_program_button[38]="$START_PROGRAM supertux &"
+stop_program_button[38]="supertux"
+kill_program_button[38]=yes
+root_rights_button[38]=no
+vdr_remote_button[38]=no
+install_apt_get_prg_button[38]="supertux-stable $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[39]=Kinderspiele-2
+picture_button[39]=/usr/share/easyvdr/program-changer/pictures/button-childsplay.png
+enable_button[39]=yes
+enable_mouse_button[39]=yes
+menu_page_nr_button[39]=1
+adjust_alsamixer_button[39]=no
+shutdown_program_button[39]=yes
+pre_start_program_button[39]="$UTILITIES init_gaming_mod"
+start_program_button[39]="$START_PROGRAM childsplay &"
+stop_program_button[39]="childsplay"
+kill_program_button[39]=yes
+root_rights_button[39]=no
+vdr_remote_button[39]=no
+install_apt_get_prg_button[39]="childsplay $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[40]=Playonlinux
+picture_button[40]=/usr/share/easyvdr/program-changer/pictures/button-playonlinux.png
+enable_button[40]=yes
+enable_mouse_button[40]=yes
+menu_page_nr_button[40]=1
+adjust_alsamixer_button[40]=no
+shutdown_program_button[40]=yes
+pre_start_program_button[40]="$UTILITIES init_gaming_mod"
+start_program_button[40]="$START_PROGRAM playonlinux &"
+stop_program_button[40]="playonlinux"
+kill_program_button[40]=yes
+root_rights_button[40]=no
+vdr_remote_button[40]=no
+install_apt_get_prg_button[40]="playonlinux $PULSEAUDIO_INSTALL $GAMES_INSTALL"
+
+#################################################
+name_button[41]=Steam-User-1
+picture_button[41]=/usr/share/easyvdr/program-changer/pictures/button-steam.png
+enable_button[41]=yes
+enable_mouse_button[41]=yes
+menu_page_nr_button[41]=1
+adjust_alsamixer_button[41]=no
+shutdown_program_button[41]=yes 
+pre_start_program_button[41]="$UTILITIES init_gaming_mod chk_steam_passwd_1 ; . $PROGRAM_CHANGER_SCRIPT_CONF"
+start_program_button[41]="$START_PROGRAM steam -login ${STEAM_USER_NAME[0]} ${STEAM_USER_PASSWORD[0]} &"
+stop_program_button[41]="steam"
+kill_program_button[41]=yes
+root_rights_button[41]=no
+vdr_remote_button[41]=no
+install_apt_get_prg_button[41]="-none-"
+
+#################################################
+name_button[42]=Plugins-verwalten
+picture_button[42]=/usr/share/easyvdr/program-changer/pictures/button-easyportal-plugin.png
+enable_button[42]=yes
+enable_mouse_button[42]=yes
+menu_page_nr_button[42]=10
+adjust_alsamixer_button[42]=no
+shutdown_program_button[42]=yes
+pre_start_program_button[42]="no"
+start_program_button[42]="$START_PROGRAM $UTILITIES start_firefox http://localhost/addons.php  &"
+stop_program_button[42]="firefox"
+kill_program_button[42]=yes
+root_rights_button[42]=no
+vdr_remote_button[42]=no
+install_apt_get_prg_button[42]="firefox firefox-locale-de"
+
+#################################################
+name_button[43]=easyVDR
+picture_button[43]=/usr/share/easyvdr/program-changer/pictures/button-www-easyvdr.jpg
+enable_button[43]=yes
+enable_mouse_button[43]=yes
+menu_page_nr_button[43]=10
+adjust_alsamixer_button[43]=no
+shutdown_program_button[43]=yes
+pre_start_program_button[43]="no"
+start_program_button[43]="$START_PROGRAM $UTILITIES start_firefox www.easy-vdr.de &"
+stop_program_button[43]="firefox"
+kill_program_button[43]=yes
+root_rights_button[43]=no
+vdr_remote_button[43]=no
+install_apt_get_prg_button[43]="firefox firefox-locale-de"
+
+#################################################
+name_button[44]=VDR-Portal
+picture_button[44]=/usr/share/easyvdr/program-changer/pictures/button-vdr-portal.png
+enable_button[44]=yes
+enable_mouse_button[44]=yes
+menu_page_nr_button[44]=10
+adjust_alsamixer_button[44]=no
+shutdown_program_button[44]=yes
+pre_start_program_button[44]="no"
+start_program_button[44]="$START_PROGRAM $UTILITIES start_firefox vdr-portal.de  &"
+stop_program_button[44]="firefox"
+kill_program_button[44]=yes
+root_rights_button[44]=no
+vdr_remote_button[44]=no
+install_apt_get_prg_button[44]="firefox firefox-locale-de"
+
+#################################################
+name_button[45]=N-TV
+picture_button[45]=/usr/share/easyvdr/program-changer/pictures/button-www-n-tv.jpg
+enable_button[45]=yes
+enable_mouse_button[45]=yes
+menu_page_nr_button[45]=10
+adjust_alsamixer_button[45]=no
+shutdown_program_button[45]=yes
+pre_start_program_button[45]="no"
+start_program_button[45]="$START_PROGRAM $UTILITIES start_firefox www.n-tv.de &"
+stop_program_button[45]="firefox"
+kill_program_button[45]=yes
+root_rights_button[45]=no
+vdr_remote_button[45]=no
+install_apt_get_prg_button[45]="firefox firefox-locale-de"
+
+#################################################
+name_button[46]=Spiegel
+picture_button[46]=/usr/share/easyvdr/program-changer/pictures/button-www-spiegel.gif
+enable_button[46]=yes
+enable_mouse_button[46]=yes
+menu_page_nr_button[46]=10
+adjust_alsamixer_button[46]=no
+shutdown_program_button[46]=yes
+pre_start_program_button[46]="no"
+start_program_button[46]="$START_PROGRAM $UTILITIES start_firefox www.spiegel.de &"
+stop_program_button[46]="firefox"
+kill_program_button[46]=yes
+root_rights_button[46]=no
+vdr_remote_button[46]=no
+install_apt_get_prg_button[46]="firefox firefox-locale-de"
+
+#################################################
+name_button[47]=Wetter-online
+picture_button[47]=/usr/share/easyvdr/program-changer/pictures/button-www-wetteronline.gif
+enable_button[47]=yes
+enable_mouse_button[47]=yes
+menu_page_nr_button[47]=10
+adjust_alsamixer_button[47]=no
+shutdown_program_button[47]=yes
+pre_start_program_button[47]="no"
+start_program_button[47]="$START_PROGRAM $UTILITIES start_firefox www.wetteronline.de &"
+stop_program_button[47]="firefox"
+kill_program_button[47]=yes
+root_rights_button[47]=no
+vdr_remote_button[47]=no
+install_apt_get_prg_button[47]="firefox firefox-locale-de"
+
+#################################################
+name_button[48]=Heise
+picture_button[48]=/usr/share/easyvdr/program-changer/pictures/button-www-heise.gif
+enable_button[48]=yes
+enable_mouse_button[48]=yes
+menu_page_nr_button[48]=10
+adjust_alsamixer_button[48]=no
+shutdown_program_button[48]=yes
+pre_start_program_button[48]="no"
+start_program_button[48]="$START_PROGRAM $UTILITIES start_firefox www.heise.de &"
+stop_program_button[48]="firefox"
+kill_program_button[48]=yes
+root_rights_button[48]=no
+vdr_remote_button[48]=no
+install_apt_get_prg_button[48]="firefox firefox-locale-de"
+
+#################################################
+name_button[49]=Consors-Börse
+picture_button[49]=/usr/share/easyvdr/program-changer/pictures/button-www-consors.gif
+enable_button[49]=yes
+enable_mouse_button[49]=yes
+menu_page_nr_button[49]=10
+adjust_alsamixer_button[49]=no
+shutdown_program_button[49]=yes
+pre_start_program_button[49]="no"
+start_program_button[49]="$START_PROGRAM $UTILITIES start_firefox www.cortalconsors.de/Kurse-Maerkte &"
+stop_program_button[49]="firefox"
+kill_program_button[49]=yes
+root_rights_button[49]=no
+vdr_remote_button[49]=no
+install_apt_get_prg_button[49]="firefox firefox-locale-de"
+
+#################################################
+name_button[50]=Kinder-Insel
+picture_button[50]=/usr/share/easyvdr/program-changer/pictures/button-www-br-kinderinsel.jpg
+enable_button[50]=yes
+enable_mouse_button[50]=yes
+menu_page_nr_button[50]=10
+adjust_alsamixer_button[50]=no
+shutdown_program_button[50]=yes
+pre_start_program_button[50]="no"
+start_program_button[50]="$START_PROGRAM $UTILITIES start_firefox www.br-online.de/kinder &"
+stop_program_button[50]="firefox"
+kill_program_button[50]=yes
+root_rights_button[50]=no
+vdr_remote_button[50]=no
+install_apt_get_prg_button[50]="firefox firefox-locale-de"
+

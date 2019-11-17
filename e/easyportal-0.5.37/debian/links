@@ -1,0 +1,2 @@
+/etc/lighttpd/conf-available/10-fastcgi.conf /etc/lighttpd/conf-enabled/10-fastcgi.conf
+/etc/lighttpd/conf-available/10-proxy.conf /etc/lighttpd/conf-enabled/10-proxy.conf

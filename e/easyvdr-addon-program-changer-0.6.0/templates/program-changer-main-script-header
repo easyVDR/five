@@ -1,0 +1,139 @@
+#Version 0.6 18.02.2013 Bleifuss
+#            18.09.2013 add USER & PCHANGER_DISPLAY
+#            18.09.2013 add switch PULSEAUDIO_DEFAULT
+#            14.05.2014 Change Pulseaudio Support
+#            30.05 2014 added xboxdrv controller driver
+#            04.12.2015 added button 200/2001 gb
+#Wenn in der Zeile ein # Zeichen vorhanden ist wird die ganze Zeile ignoriert
+#Variablen die nicht verwendet werden auf -none- setzen. -none- darf in keiner Datei, Programm oder Skript Namen vorkommen
+#Bei sämtlichen Abfragen wird yes/no als Parameter erwartet
+#Beim Lesen das Button ignorieren dann ist der Sinn des Parameter klar
+#
+#
+#menu_page_nr_button[]				Nummer der Menü Seite, 1->Standard Menü, 10->Bokkmarks, 20->Systemprogramme, 30->Systemsteuerung
+#
+#name_button[]=					Wird vom Programm eingelesen Array Namen nicht ändern!
+#picture_button[]=				Wird vom Programm eingelesen Array Namen nicht ändern!
+#enable_button[]=				Wird vom Programm eingelesen Array Namen nicht ändern!
+#enable_mouse_button[]=				Wird vom Programm eingelesen Array Namen nicht ändern!
+#menu_page_nr_button[]=				Wird vom Programm eingelesen Array Namen nicht ändern!
+#adjust_alsamixer_button[0]=no			Bei yes wird der Masterlautstärkeregler der Soundkarte mit der FB gesteuert
+#                                               Siehe utilities.sh default wird die Karte hw:0 verwendet
+##name_button[0]=				Programm Name für Setup & Info
+#picture_button[0]=				Pfad der Bilddatei.	
+#enable_button[0]=no				Soll diese Funktion einem Button zugeordnet werden?
+#enable_mouse_button[0]=no			Soll die Maus Emulation verwendet werden?
+#menu_page_nr_button[0]=1			Wenn mehr als 10 Buttons gewählt wurden wird hier ausgewählt auf welcher Menü Seite der Button angezeigt wird
+#shutdown_program_button[0]=yes			Soll das Programm beendet werden?
+#pre_start_program_button[0]="  "               Befehl / Funktion wird vor dem Programstart ausgeführt
+#start_program_button[0]="start easyvdr"	Start Befehl für Skript / Funktion / Job / Dienst / Programm
+#stop_program_button[0]=""stop easyvdr"		Stop Script Name, Stop Befehl oder Programm Name.
+#kill_program_button[0]=yes			Soll das Programm mit kill beendet werden (Standard)
+#						Oder soll der Befehl direkt ausgeführt werden
+# z.B: kill_program_button[0]=yes		Skript generiert Bash Befehl: kill stop easyvdr
+# z.B: kill_program_button[0]=no		Skript generiert Bash Befehl: stop easyvdr
+#root_rights_button[0]=yes			Benötigt das Programm root rechte ?
+#
+#vdr_remote_button[0]=yes			Fernbedienung im VDR abschalten?
+#install_apt_get_prg_button[0]=			Name des Pakets für die installation
+
+#Pfad für die Start Skripte
+PATH=$PATH:/usr/lib/easyvdr/easyvdr-start
+DEBUG=no
+MAIN_SCRIPT_HEADER="run"
+
+. /usr/lib/vdr/easyvdr-config-loader
+[ -f $CFG_DIR/sysconfig              ] && . $CFG_DIR/sysconfig || { stop; exit 0; }   # einbinden der sysconfig
+
+PROGRAM_CHANGER_SCRIPT_CONF=/etc/vdr/easyvdr/program-changer/program-changer-script.conf
+. $PROGRAM_CHANGER_SCRIPT_CONF
+
+VDR_USER=vdr
+
+HOME_PATH=$(cat /etc/passwd | grep ^$STANDARD_DESKTOP_USER: | awk -F: '{print $6}')
+#export HOME=/home/$USER
+
+
+PCHANGER_DISPLAY=$FRONTEND_DISPLAY		#Auf diesem Display wird Pchanger angezeigt
+
+#Anderungen an der Variable müssen im Skript show-hide-menu.sh ebenfalls durchgeführt werden
+#Der Variablen Name TMP_FILE_SHOW_PCHANGER wird vom Programm eingelesen Namen nicht ändern!
+TMP_FILE_SHOW_PCHANGER=/tmp/.show_program-changer
+TMP_FILE_PCH_EXEC=/tmp/.pch-exec
+
+
+PLEASE_WAIT_INSTALL_PICTURE=/usr/share/easyvdr/program-changer/pictures/please-wait-install.gif
+START_PROGRAM=/usr/share/easyvdr/program-changer/lib/start-program.sh
+START_PROGRAM_EASYPORTAL=/usr/share/easyvdr/program-changer/lib/start-program-easyportal.sh
+UTILITIES=/usr/share/easyvdr/program-changer/lib/utilities.sh
+PRG_INSTALLER=/usr/share/easyvdr/program-changer/lib/prg_installer
+PULSEAUDIO_INSTALL="paprefs pavucontrol"
+
+GAMES_INSTALL=xboxdrv
+
+
+#################################################
+name_button[200]=Vdr-Frontend
+picture_button[200]=/usr/share/easyvdr/program-changer/pictures/button-vdr.png
+enable_button[200]=no
+enable_mouse_button[200]=no
+menu_page_nr_button[200]=1
+adjust_alsamixer_button[200]=no
+shutdown_program_button[200]=yes 
+pre_start_program_button[200]="no"
+start_program_button[200]="easyvdr-frontend start"
+stop_program_button[200]="easyvdr-frontend stop"
+kill_program_button[200]=no
+root_rights_button[200]=yes
+vdr_remote_button[200]=yes
+install_apt_get_prg_button[200]="-none-"
+
+#################################################
+name_button[201]=KODI 
+picture_button[201]=/usr/share/easyvdr/program-changer/pictures/button-kodi.png
+enable_button[201]=no
+enable_mouse_button[201]=no
+menu_page_nr_button[201]=1
+adjust_alsamixer_button[201]=no
+shutdown_program_button[201]=yes 
+pre_start_program_button[201]="/usr/lib/vdr/easyvdr-kodi-change-skins vdr_shutdown"
+start_program_button[201]="easyvdr-kodi start"
+stop_program_button[201]="easyvdr-kodi stop"
+kill_program_button[201]=no
+root_rights_button[201]=yes
+vdr_remote_button[201]=no
+install_apt_get_prg_button[201]="kodi $PULSEAUDIO_INSTALL"
+
+#################################################
+name_button[210]=VDR-Shutdown
+picture_button[210]=/usr/share/easyvdr/program-changer/pictures/button-shutdown.png
+enable_button[210]=yes
+enable_mouse_button[210]=no
+menu_page_nr_button[210]=30
+adjust_alsamixer_button[210]=no
+shutdown_program_button[210]=no
+pre_start_program_button[210]="no"
+start_program_button[210]="$UTILITIES vdr_shutdown &"
+stop_program_button[210]="-none-"
+kill_program_button[210]=no
+root_rights_button[210]=yes
+vdr_remote_button[210]=yes
+install_apt_get_prg_button[210]="-none-"
+
+#################################################
+name_button[211]=VDR-Reboot
+picture_button[211]=/usr/share/easyvdr/program-changer/pictures/button-shutdown.png
+enable_button[211]=yes
+enable_mouse_button[211]=no
+menu_page_nr_button[211]=30
+adjust_alsamixer_button[211]=no
+shutdown_program_button[211]=no
+pre_start_program_button[211]="no"
+start_program_button[211]="init 6 &"
+stop_program_button[211]="-none-"
+kill_program_button[211]=no
+root_rights_button[211]=yes
+vdr_remote_button[211]=yes
+install_apt_get_prg_button[211]="-none-"
+#################################################
+

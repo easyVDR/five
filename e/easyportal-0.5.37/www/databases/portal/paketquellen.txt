@@ -1,0 +1,12 @@
+Satz#Name#Quelle
+str#str
+##
+stable#3-vdr-stable#http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main
+stable#3-base-stable#http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main
+stable#3-others-stable#http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main
+testing#3-vdr-testing#http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main
+testing#3-base-testing#http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main
+testing#3-others-testing#http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main
+unstable#5-vdr-unstable#http://ppa.launchpad.net/easyvdr-team/5-vdr-unstable/ubuntu focal main
+unstable#5-base-unstable#http://ppa.launchpad.net/easyvdr-team/5-base-unstable/ubuntu focal main
+unstable#5-others-unstable#http://ppa.launchpad.net/easyvdr-team/5-others-unstable/ubuntu focal main

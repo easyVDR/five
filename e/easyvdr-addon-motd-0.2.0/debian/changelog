@@ -1,0 +1,98 @@
+easyvdr-addon-motd (0.2.0-1easyVDR5) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 21:33:20 +0100
+
+easyvdr-addon-motd (0.2.0-1easyVDR4~bionicu) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:33:01 +0200
+
+easyvdr-addon-motd (0.2.0-1easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 21:43:03 +0100
+
+easyvdr-addon-motd (0.2.0-1easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 21:23:12 +0100
+
+easyvdr-addon-motd (0.2.0-1easyVDR1~zesty) zesty; urgency=high
+
+  * added new rules
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 20 Sep 2017 17:06:14 +0200
+
+easyvdr-addon-motd (0.2.0-1easyVDR~zesty) zesty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 Sep 2017 23:35:06 +0200
+
+easyvdr-addon-motd (0.2.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * changes for Ubuntu-Recocnizing
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Nov 2013 09:16:37 +0100
+
+easyvdr-addon-motd (0.2.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:11:55 +0100
+
+easyvdr-addon-motd (0.2.0-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 13:33:42 +0200
+
+easyvdr-addon-motd (0.1.0-1easyVDR2.0) oneiric; urgency=high
+
+  * changed password vor vdradmin
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 13 May 2012 12:40:02 +0200
+
+easyvdr-addon-motd (0.1.0-1easyVDR1.9) oneiric; urgency=low
+
+  * build for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 Jul 2011 10:05:08 +0200
+
+easyvdr-addon-motd (0.1.0-1easyVDR1.9) lucid; urgency=low
+
+  * wrong port in live
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 30 Jan 2011 14:33:42 +0100
+
+easyvdr-addon-motd (0.1.0-1easyVDR1.8) lucid; urgency=low
+
+  * better optic after login
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Jan 2011 21:24:42 +0100
+
+easyvdr-addon-motd (0.1.0-1easyVDR1.7) lucid; urgency=low
+
+  * another little bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Dec 2010 10:17:49 +0100
+
+easyvdr-addon-motd (0.1.0-1easyVDR1.6) lucid; urgency=low
+
+  * little Bugfix to display easyVDR-Version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 27 Nov 2010 08:34:29 +0100
+
+easyvdr-addon-motd (0.1.0-1easyVDR1) lucid; urgency=low
+
+  * Initial Release.
+
+ -- Uwe Kiehl <uwe@easy-vdr.de>  Sat, 16 Jan 2010 18:00:00 +0100
+
+(0.1.1-1easyVDR1)
+ -- Martin , Text optimized

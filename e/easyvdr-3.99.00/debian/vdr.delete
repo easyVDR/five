@@ -1,0 +1,63 @@
+# /etc/default/vdr
+# override VDR-Standard-settings
+
+# Change to yes to enable vdr's init-script
+ENABLED="no"
+
+# Config-Directory
+#CFG_DIR="/var/lib/vdr"
+
+# Plugin-Directory
+#PLUGIN_DIR="/usr/lib/vdr/plugins"
+
+# Plugin Config-Directory
+#PLUGIN_CFG_DIR="/var/lib/vdr/plugins"
+
+# Directory for grabbing images
+#GRAB_DIR="/media/photos"
+
+# Command-Hooks Directory
+#CMDHOOKSDIR="/usr/share/vdr/command-hooks"
+
+# DVB-Start-Hooks Directory
+#DVBSTARTHOOKSDIR="/usr/share/vdr/dvb-start-hooks"
+
+# DVB-Stop-Hooks Directory
+#DVBSTOPHOOKSDIR="/usr/share/vdr/dvb-stop-hooks"
+
+# Commmand executed on start, stop and editing of a recording
+#REC_CMD="/usr/lib/vdr/easyvdr-recordingaction"
+
+# Commmand executed by vdr to shutdown the system
+#SHUTDOWNCMD="shutdown -h now"
+
+# EPG data file
+#EPG_FILE="/var/cache/vdr/epg.data"
+
+# EPG-Images
+#EPGIMAGES_DIR="/var/cache/vdr/epgimages"
+
+# VTX
+#VTX_DIR="/var/cache/vdr/vtx"
+
+# Username under which vdr will run
+#USER=vdr
+
+# Default port for SVDRP
+#SVDRP_PORT=6419
+
+# Enable / Disable automatic shutdown
+#ENABLE_SHUTDOWN=1
+
+# Video-Directory
+#VIDEO_DIR="/media/video.00"
+
+# Default Console for controlling VDR by keyboard.
+#DKEYB_TTY="10"
+#KEYB_TTY_SWITCH=1
+
+# Default Console for controlling VDR by keyboard under X.
+#XKEYB_TTY="7"
+
+#VDR_CHARSET_OVERRIDE=""
+

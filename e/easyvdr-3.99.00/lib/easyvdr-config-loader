@@ -1,0 +1,114 @@
+### BEGIN INIT INFO
+#
+# This file is called by /usr/sbin/easyvdr-runvdr
+#
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+#
+# Changelog:
+# V1.0 Initial Version
+# V1.1 added loading status         11.02.13 Captain_Beefheart
+# V1.1 added STANDARD_DESKTOP_USER  19.09.13 Bleifuss2
+# Defaults - don't touch, edit options for the VDR daemon in
+# /etc/default/vdr !!!
+# V1.2 APT_GET_LOG added            19.3.2014 michel8
+# v1.2 change STANDARD_DESKTOP_USER to vdr 25.06.15
+# v1.3 installerdir 01.03.16
+# v1.4 adding path 29.09.17 bleifuss
+
+# internal: tells whether this lib is loaded 
+stat_easyvdr_config_loader="already_loaded"
+
+
+# Adding easyvdr path
+PATH=$PATH:/usr/lib/easyvdr/easyvdr-start
+
+# Config-Directory
+CFG_DIR="/var/lib/vdr"
+
+VDRBIN="/usr/bin/vdr"
+
+# Plugin-Directory
+PLUGIN_DIR="/usr/lib/vdr/plugins"
+
+# Plugin Config-Directory
+PLUGIN_CFG_DIR="/var/lib/vdr/plugins"
+
+# Directory for grabbing images
+GRAB_DIR="/media/easyvdr01/photos"
+
+# Command-Hooks Directory
+CMDHOOKSDIR="/usr/share/vdr/command-hooks"
+
+# DVB-Start-Hooks Directory
+DVBSTARTHOOKSDIR="/usr/share/vdr/dvb-start-hooks"
+
+# DVB-Stop-Hooks Directory
+DVBSTOPHOOKSDIR="/usr/share/vdr/dvb-stop-hooks"
+
+# Installer-DIR
+INSTALLERDIR="/usr/share/easyvdr/installer"
+
+# Commmand executed on start, stop and editing of a recording
+REC_CMD="/usr/lib/vdr/easyvdr-recordingaction"
+
+# Commmand executed by vdr to shutdown the system
+SHUTDOWNCMD="chvt 0;easyvdr-frontend stop;easyvdr-kodi stop;sleep 1;easyvdr-vdr stop;sleep 10;easyvdr-systemstart stop;shutdown -h now"
+
+# EPG data file
+EPG_FILE="/var/cache/vdr/epg.data"
+
+# EPG-Images
+EPGIMAGES_DIR="/var/cache/vdr/epgimages"
+
+# VTX
+VTX_DIR="/var/cache/vdr/vtx"
+
+# Username under which vdr will run
+USER=vdr
+
+# Username under which KODI and Desktop app's will run
+STANDARD_DESKTOP_USER=vdr
+
+# Default port for SVDRP
+SVDRP_PORT=6419
+
+# Enable / Disable automatic shutdown
+ENABLE_SHUTDOWN=1
+
+# Video-Directory
+VIDEO_DIR="/video0"
+
+# Direktory for easyvdr-logging
+EASYVDR_LOGDIR="/var/log/easyvdr"
+
+# LogDir for logging of apt-get-services used by easyvdr
+APT_GET_LOG="$EASYVDR_LOGDIR/apt-get.log"
+
+# Default Console for controlling VDR by keyboard.
+DKEYB_TTY="10"
+KEYB_TTY_SWITCH=1
+
+# Default Console for controlling VDR by keyboard under X.
+XKEYB_TTY="7"
+
+VDR_CHARSET_OVERRIDE=""
+
+# Enable VFAT file system support by default
+VFAT=1
+
+# get locale which is used for running vdr from /etc/default/locale or
+# /etc/environment or fall back to "C"
+ENV_FILE="none"
+[ -r /etc/environment ] && ENV_FILE="/etc/environment"
+[ -r /etc/default/locale ] && ENV_FILE="/etc/default/locale"
+[ $ENV_FILE = none ] || \
+  for var in LANG LC_ALL; do
+    eval VDR_LANG=$(egrep "^[^#]*${var}=" $ENV_FILE | tail -n1 | cut -d= -f2)
+    [ -z "$VDR_LANG" ] || break
+  done
+[ -z "$VDR_LANG" ] && VDR_LANG="C"
+
+
+[ -f /etc/default/vdr ] && . /etc/default/vdr
+[ -f $CFG_DIR/sysconfig ] && . $CFG_DIR/sysconfig
+

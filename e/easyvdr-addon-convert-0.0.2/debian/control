@@ -1,0 +1,13 @@
+Source: easyvdr-addon-convert
+Section: misc
+Priority: optional
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Origin: easyVDR
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.4
+
+Package: easyvdr-addon-convert
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, handbrake-cli
+Description: Convert VDR-Recordings with HandBrakeCLI  

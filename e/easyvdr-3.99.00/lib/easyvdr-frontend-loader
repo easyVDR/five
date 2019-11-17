@@ -1,0 +1,65 @@
+#
+# This file is called by /usr/sbin/easyvdr-runvdr
+#
+# v 0.2 -  added NON_X11_and_X11 support  Captain_Beefheart 14.05.12
+# v 0.2 -  change softhddevice parameter Bleifuss 16.06.15
+
+[ X"$stat_easyvdr_config_loader" = X"already_loaded" ] || . /usr/lib/vdr/easyvdr-config-loader
+[ X"$stat_easyvdr_functions_lib" = X"already_loaded" ] || . /usr/lib/vdr/functions/easyvdr-functions-lib
+
+[ -f $CFG_DIR/sysconfig              ] && . $CFG_DIR/sysconfig || { stop; exit 0; }   # einbinden der sysconfig
+
+#Testen ob die Variable vorhanden ist
+if [ ! $FRONTEND_DISPLAY ];then
+ SetSysconfig "FRONTEND_DISPLAY" ":0.0"
+ FRONTEND_DISPLAY=":0"  
+fi
+
+set_console()
+{
+DKEYB_TTY=$(echo "$DKEYB_TTY" | sed "s/\/dev\/tty//")
+echo -e "This tty is currently mapped to VDR, keypresses aren't echoed.\r" > /dev/tty$DKEYB_TTY
+echo -n "For a login prompt switch to another console." > /dev/tty$DKEYB_TTY
+if [ "$KEYB_TTY_SWITCH" = "1" ]; then
+  [[  x"$NON_X11_and_X11" = x"true" ]] && chvt $XKEYB_TTY || chvt $DKEYB_TTY
+fi
+KEYB_TTY=$DKEYB_TTY
+}
+
+configure_frontend()
+{
+##### use Keyboard #####
+[ x$VDR_KEYBOARD = x"no" ] && KEYBOARD="--no-kbd"
+
+case $VDR_FRONTEND in
+       "keines") plugin_active "dummydevice"   || add_plugin "dummydevice"
+		 set_console ;;
+       "DVB-FF") plugin_active "dvbsddevice"   || add_plugin "dvbsddevice"
+                 set_console ;;
+     "DVBS2-FF") plugin_active "dvbhddevice"   || add_plugin "dvbhddevice"
+                 set_console ;;
+      "reelbox") plugin_active "reelbox"       || add_plugin "reelbox"
+                 set_console ;;
+       "PVR350") plugin_active "pvr350"        || add_plugin "pvr350"
+                 set_console ;;
+     "vdr-sxfe") plugin_active "xineliboutput" || add_plugin "xineliboutput --local=none --primary --remote=37890"
+                 KEYB_TTY=$XKEYB_TTY
+                 #VDRLIRCPARAM="--lirc=/dev/null"
+                 KEYBOARD="--no-kbd" ;;
+         "xine") plugin_active "xine"          || add_plugin "xine -r"
+                 KEYB_TTY=$XKEYB_TTY
+                 #VDRLIRCPARAM="--lirc=/dev/null"
+                 KEYBOARD="--no-kbd" ;;
+         "KODI") plugin_active "xvdr"          || add_plugin "xvdr"
+                 KEYB_TTY=$XKEYB_TTY
+                 #VDRLIRCPARAM="--lirc=/dev/null"
+                 KEYBOARD="--no-kbd" ;;
+ "Softhddevice") . $CFG_DIR/easyvdr-frontend-softhddevice.conf
+                 SOFTHDDEVICE_PARAMETER="$ACCELERATION $FULLSCREEN $GEOMETRY $VIDEO_DEVICE $FRONTEND_DISPLAY $VIDEO_MISCELLANEOUS_1 $VIDEO_MISCELLANEOUS_2 $AUDIO_DEVICE $AUDIO_DEVICE_PASSTHROUGH $AUDIO_MIXER_CHANNEL"
+                 plugin_active "softhddevice"  || add_plugin "softhddevice $SOFTHDDEVICE_PARAMETER $AUDIO_MISCELLANEOUS $MISCELLANEOUS $CONFIG_FILE $CONNECTSTRING"
+                 KEYB_TTY=$XKEYB_TTY
+                 #VDRLIRCPARAM="--lirc=/dev/null"
+                 KEYBOARD="--no-kbd" ;;
+esac
+}
+

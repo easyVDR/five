@@ -1,0 +1,21 @@
+# Sudoers-File for vdr
+# placed in /etc/sudoers.d
+#
+# This file MUST be edited with the 'visudo' command as root.
+#
+# See the man page for details on how to write a sudoers file.
+#
+
+# Host alias specification
+
+# User alias specification
+
+# Cmnd alias specification
+Cmnd_Alias VDRSHARE = /usr/share/vdr/*/*
+Cmnd_Alias VDRLIB = /usr/lib/vdr/
+Cmnd_Alias VDRSYSCMD = /usr/bin/startvdr, /usr/bin/stopvdr, /usr/bin/restartvdr, /usr/bin/poweroffvdr, /usr/bin/rebootvdr, /usr/bin/easyvdr-update, /usr/bin/restartvdrx, /usr/bin/easyvdr-safe_channels, /usr/bin/HDMIvsAnalog
+Cmnd_Alias SYSCMD = /usr/sbin/ethtool, /sbin/shutdown, /sbin/halt, /sbin/reboot, /sbin/poweroff, /bin/mount, /bin/umount, /sbin/initctl, /sbin/modprobe, /usr/sbin/logrotate, /usr/bin/touch, /bin/echo, /usr/bin/smbpasswd, /usr/sbin/nvram-wakeup
+Cmnd_Alias VDRBACKUP = /usr/lib/vdr/backup/
+#Cmnd_Alias VDRCMDS = VDRSHARE,VDRLIB,VDRSYSCMD,VDRBACKUP,SYSCMD
+
+vdr ALL=NOPASSWD:VDRSHARE,VDRLIB,VDRSYSCMD,VDRBACKUP,SYSCMD

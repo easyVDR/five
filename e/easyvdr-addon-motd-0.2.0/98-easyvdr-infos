@@ -1,0 +1,124 @@
+#! /bin/bash
+
+### BEGIN HISTORY
+# Version 1.0 Initial Version
+# V1.1 Text optimiert, Martin
+### END HISTORY
+
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+
+# Do NOT "set -e"
+
+BARFULL="|||||||||||||||||||||||||||||||||||"
+BAREMPTY="-----------------------------------"
+CAPNAME="Kapazit."
+
+
+LoginCopyright (){
+  if [ -f /etc/redhat-release ]; then
+    cat /etc/redhat-release
+    echo "-------------------------------------------------------"
+  elif [ -f /etc/lsb-release ]; then
+    VERSION=`cat /etc/lsb-release | grep DISTRIB_RELEASE | awk -F'=' '{ print $2 }'`
+    EASYVDRBASEVERS=`cat /usr/share/easyvdr/easyvdr-version | grep EASYVDRBASEVERS | cut -b 18-20`
+    EASYVDRSUBVERS=`cat /usr/share/easyvdr/easyvdr-version | grep EASYVDRSUBVERS | cut -b 17-18`
+    echo "Ubuntu GNU/Linux $VERSION"
+    echo "-------------------------------------------------------"   
+    echo "[0;32mWillkommen zu easyVDR $EASYVDRBASEVERS.$EASYVDRSUBVERS auf Ubuntu-Basis.[0m"
+    else
+    echo "-------------------------------------------------------"
+  fi
+}
+
+IPInfo (){
+  ifconfig | grep "inet Adr"      \
+  | sed -e /127.0.0.1/d          \
+  | sed -e "s/          inet //"
+}
+
+ServerInfo (){
+  set -- `/bin/uname -a`
+  SYSNAME=`/bin/uname -a | awk '{print $1}'` 
+  NODENAME=`/bin/uname -a | awk '{print $2}'`
+  KERNEL=`/bin/uname -a | awk '{print $3}'`
+  KERNELREV=`/bin/uname -a | awk '{print $4}'`
+  KDAYOFWEEK=`/bin/uname -a | awk '{print $5}'`
+  KMONTH=`/bin/uname -a | awk '{print $6}'`
+  KDAY=`/bin/uname -a | awk '{print $7}'`
+  KTIME=`/bin/uname -a | awk '{print $8}'`
+  KTMZ=`/bin/uname -a | awk '{print $9}'`
+  KYEAR=`/bin/uname -a | awk '{print $10}'`
+  KMACHINE=`/bin/uname -a | awk '{print $11}'`
+  PROCESSOR=`/bin/uname -a | awk '{print $12}'`
+  HWPLATFORM=`/bin/uname -a | awk '{print $13}'`
+  SWOS=`/bin/uname -a | awk '{print $14}'`
+  HOSTNAME=`hostname`
+  MEMTOTAL=`cat /proc/meminfo | grep '^MemTotal' | awk '{print $2}'`
+  MT=`cat /proc/meminfo | grep '^MemTotal' | awk '{print $3}'`
+  SWAPT=`cat /proc/meminfo | grep '^SwapTotal:' | awk '{print $2}'`
+  ST=`cat /proc/meminfo | grep '^SwapTotal:' | awk '{print $3}'`
+  PMODEL=`cat /proc/cpuinfo | grep '^model name' | awk '{print $4 $5 $6}' | head -1`
+  PMHZ=`cat /proc/cpuinfo | grep '^cpu MHz' | awk '{print $4}'| sed -e 's/\.[0-9]*//g' | head -1`
+  PVENDOR=`cat /proc/cpuinfo | grep '^vendor_id' | awk '{print $3}' | head -1`
+  PNUMS=`cat /proc/cpuinfo | grep '^processor' | wc -l | awk '{print $1}' | head -1`
+  VDR=`/usr/bin/vdr -V | grep '^vdr ' | cut -d" " -f2`
+  IPADRESS=`ifconfig $DEVICE | awk '/inet/ { print $2 } ' | sed -e s/addr://`
+
+  echo "-------------------------------------------------------"
+  echo "easyVDR-Version:        $EASYVDRBASEVERS.$EASYVDRSUBVERS"
+  echo "VDR-Version:		$VDR"
+  echo "System:"
+  echo "  Hostname:  	     	$HOSTNAME"                  
+  echo "  OS type:   	     	$SYSNAME $KMACHINE"
+  echo "  Kernel:    	     	$KERNEL $KTIME"
+  echo "  Processor: 	     	$PNUMS $PVENDOR ${PMHZ}MHz $PMODEL"	
+  echo "  Memory:    	     	$MEMTOTAL $MT      Swap: $SWAPT $ST"
+}
+
+diskfree (){
+  echo ""
+  echo "Laufwerksbelegung:"
+  df -P | tr -s ' ' '\t' | cut -f5,6 | while read percent filesystem
+  do
+    printf "%-12s %4s "    $filesystem $percent
+    if [ "$percent" != $CAPNAME ]; then
+      GRAPH=$((${#BARFULL}*${percent%\%}/100))
+      echo "${BARFULL:0:$GRAPH}${BAREMPTY:0:${#BARFULL}-$GRAPH}"
+    else
+      echo ""
+    fi
+  done
+}
+
+makeinfo (){
+  echo ""
+  echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+  echo "+   Standard-Logins                                     +"
+  echo "+   ===============                                     +"
+  echo "+                                                       +"
+  echo "+                USER:      PASSWORD:     PORT:         +"
+  echo "+   SSH/Konsole: easyvdr    easyvdr       22            +"
+  echo "+   easyPortal:                           80            +"
+  echo "+   Live:        admin      live          8008          +"
+  echo "+   VDRAdmin:    easyvdr    easyvdr       7001          +"
+  echo "+   XXV:         xxv        xxv           8080          +"
+  echo "+++++++++++++++++++++++++++++++++++++++++++++++++++++++++"
+}
+
+
+end (){
+  echo""
+  echo "[0m---------------------------------------------------------"
+  echo "Viel Spass mit easyVDR"
+  echo "---------------------------------------------------------"
+  echo ""
+}
+
+[ -e /usr/lib/vdr/easyvdr-version ] && source /usr/lib/vdr/easyvdr-version
+
+LoginCopyright
+ServerInfo
+IPInfo
+diskfree
+makeinfo
+end

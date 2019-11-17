@@ -1,0 +1,31 @@
+#!/bin/sh
+
+#V 0.1  Bleifuss
+
+EXEC_CMD="easyvdr-desktop"
+
+case "$1" in
+        start)
+		systemctl start easyvdr-program-changer.service
+            ;;
+         
+        stop)
+		systemctl stop easyvdr-program-changer.service
+            ;;
+#        status)
+#		PID=$(pidof "lightdm")
+#		if [ $? -eq 0 ] ;then
+#		   echo "$EXEC_CMD is running"
+#		fi
+#            ;;
+        restart)
+		systemctl stop easyvdr-program-changer.service
+		sleep 1
+		systemctl start easyvdr-program-changer.service
+            ;;
+       
+        *)
+            echo $"Usage: $0 {start|stop|restart|status}"
+            exit 1
+ 
+esac

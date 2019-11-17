@@ -1,0 +1,64 @@
+#! /bin/bash
+#
+### BEGIN INIT INFO
+# Provides:          restart
+# Short-Description: EasyVDR-script to restart desktop and vdr for non root-user
+# Description:       restart desktop and vdr
+### END INIT INFO
+
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+# adopted for easyvdr 2.0 by michel8
+# 08.10.17 systemd update by bleifuss
+# Do NOT "set -e"
+
+#set -x
+
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+#####
+Get_Frontend_Class()
+{
+case $VDR_FRONTEND in
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+}
+
+
+
+sudo easyvdr-frontend stop >/dev/null 2>&1
+sudo easyvdr-vdr stop >/dev/null 2>&1
+sleep 5
+if ( check_x_running ) >/dev/null 2>&1; then
+  sudo easyvdr-desktop stop >/dev/null 2>&1
+fi
+
+Get_Frontend_Class
+case $FRONTEND_CLASS in
+     "USE_X11") sudo start easyvdr-desktop >/dev/null 2>&1 ;;
+esac
+
+sleep 1
+sudo easyvdr-vdr start                              >/dev/null 2>&1
+sleep 1
+sudo easyvdr-frontend start START_STATE="sysstart"  >/dev/null 2>&1
+
+while true
+  do
+    (pidof vdr) && break
+    sleep 0.2
+  done
+clear
+
+if [[ x"$NON_X11_and_X11" = x"true" ]]; then
+ sudo easyvdr-desktop start>/dev/null 2>&1
+fi

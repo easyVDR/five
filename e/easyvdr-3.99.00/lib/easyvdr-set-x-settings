@@ -1,0 +1,28 @@
+#!/bin/bash
+# V 0.1 19.01.15 Bleifuss
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+
+LOGGER=" logger -t easyvdr-set-x-settings.desktop"
+
+# Keyboard Belegung einlesen
+. /etc/default/keyboard
+
+# Warten bis X läuft
+
+#sleep 0.3
+
+# X für alle Freigeben
+$LOGGER xhost +
+xhost +
+#Tastatur Layout
+$LOGGER "setxkbmap -display $FRONTEND_DISPLAY $XKBLAYOUT" 
+setxkbmap -display $FRONTEND_DISPLAY  $XKBLAYOUT > /dev/null 2>&1
+
+#################################### Bildschirmschoner abschalten
+sleep 1
+$LOGGER "screensaver off xset -dpms && xset s off"
+#DISPLAY=$FRONTEND_DISPLAY xset -dpms >/dev/null 2>&1 || true
+xset -dpms >/dev/null 2>&1 || true
+#DISPLAY=$FRONTEND_DISPLAY xset s off >/dev/null 2>&1 || true
+xset s off >/dev/null 2>&1 || true
+

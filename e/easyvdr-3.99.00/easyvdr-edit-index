@@ -1,0 +1,51 @@
+#!/bin/bash
+#
+# Indexdatei EINER Aufnahme loeschen oder neu erstellen
+#
+# von: hdn
+
+
+#Ausgabe
+function Echo {
+  /usr/bin/svdrpsend MESG "$1" >/dev/null 2>&1
+}
+
+
+# Check
+if [ "$1" != "reccmds" ] || [ "$3" = "" ] ; then
+  echo "Aufruf nur ueber Aufnahmen-Befehlsmenue!"
+  exit 0
+fi
+
+
+ACTION=$2
+REC_DIR=$3
+
+
+# Indexdatei loeschen
+rm -f ${REC_DIR}/index* >/dev/null 2>&1
+
+
+case "${ACTION}" in
+
+  delindex)
+    # Indexdatei geloescht?
+    [ -f ${REC_DIR}/index* ] || Echo "Indexdatei geloescht!"
+  ;;
+
+  genindex)
+    # Indexdatei erstellen
+    Echo "Erstelle Indexdatei..."
+    if [ -f "${REC_DIR}/001.vdr" ] ; then
+      cd ${REC_DIR}
+      /usr/bin/genindex >/dev/null 2>&1
+      [ -f index.vdr.generated ] && mv index.vdr.generated index.vdr >/dev/null 2>&1
+    else
+      vdr --genindex ${REC_DIR}
+    fi
+    [ -f ${REC_DIR}/index* ] && Echo "Indexdatei erstellt!"
+  ;;
+
+esac
+
+exit 0

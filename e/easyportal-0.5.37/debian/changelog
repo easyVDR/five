@@ -1,0 +1,922 @@
+easyportal (0.5.37-4easyVDR0~focal) focal; urgency=medium
+
+  * rebuild for focal
+  * fix depends php7.3-*
+  * added 5-*-unstable ppa's
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:39:33 +0100
+
+easyportal (0.5.37-3easyVDR7~bionic) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:30:06 +0200
+
+easyportal (0.5.37-3easyVDR6~bionic) bionic; urgency=high
+
+  * added STM32-IRMP-Wakeup
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 20 Mar 2018 18:44:12 +0100
+
+easyportal (0.5.37-3easyVDR5~bionic) bionic; urgency=high
+
+  * added lighttpd.conf.easyvdr
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Mar 2018 23:14:02 +0100
+
+easyportal (0.5.37-3easyVDR4~bionic) bionic; urgency=high
+
+  * fix patches & postinst
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Mar 2018 00:12:02 +0100
+
+easyportal (0.5.37-3easyVDR3~bionic) bionic; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Feb 2018 22:00:02 +0100
+ 
+easyportal (0.5.37-3easyVDR2~bionic) trusty; urgency=high
+
+  * depends to php7.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Feb 2018 20:57:18 +0100
+
+easyportal (0.5.37-3easyVDR1~bionic) bionic; urgency=high
+
+  * fix shellinabox https
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Feb 2018 00:02:44 +0100
+
+easyportal (0.5.37-3easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+  * added 4-*-unstable ppa's
+  * depends to php7.1
+  * fix lighttpd,conf server.document-root
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 03 Jan 2018 15:18:56 +0100
+
+easyportal (0.5.37-2easyVDR0~zesty) zesty; urgency=medium
+
+  * depends to php7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 16:49:14 +0100
+
+easyportal (0.5.37-1easyVDR2~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 01:29:04 +0100
+
+easyportal (0.5.37-1easyVDR1~trusty) trusty; urgency=high
+
+  * added horchiTft in webif
+  * fix media-experimental version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 17 Jun 2017 00:06:12 +0200
+
+easyportal (0.5.37-1easyVDR0~trusty) trusty; urgency=high
+
+  * added vdr-plugin-osd2web in webif
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 07 Jun 2017 18:22:27 +0200
+
+easyportal (0.5.37-0easyVDR2~trusty) trusty; urgency=high
+
+  * fix download eplists
+  * added changelog
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 18 Feb 2017 13:40:11 +0100
+
+easyportal (0.5.37-0easyVDR1~trusty) trusty; urgency=high
+
+  * added version in easyportal kopf.php and changelog
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Jan 2017 22:23:27 +0100
+
+easyportal (0.5.37-0easyVDR0~trusty) trusty; urgency=medium
+
+  * spindowndisks
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Jan 2017 14:27:59 +0100
+
+easyportal (0.5.36-2easyVDR1~trusty) trusty; urgency=high
+
+  * zeilenumruch tv/festplatten erkennung
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 20 Sep 2016 21:51:16 +0200
+
+easyportal (0.5.36-2easyVDR0~trusty) trusty; urgency=high
+
+  * added link/pic new forum
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Jul 2016 22:24:13 +0200
+
+easyportal (0.5.36-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Jul 2016 21:33:40 +0200
+
+easyportal (0.5.36-1easyVDR0~trusty) trusty; urgency=high
+
+  * added link webif for vdr-epg-daemon
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Jul 2016 21:13:13 +0200
+
+easyportal (0.5.36-0easyVDR0~trusty) trusty; urgency=high
+
+  * lan setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 28 Apr 2016 15:54:14 +0200
+
+easyportal (0.5.35-1easyVDR1~trusty) trusty; urgency=high
+
+  * correct entry for webapp
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 23 Apr 2016 19:39:26 +0200
+
+easyportal (0.5.35-1easyVDR0~trusty) trusty; urgency=medium
+
+  * upgrade fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 Apr 2016 11:37:56 +0200
+
+easyportal (0.5.35-0easyVDR0~trusty) trusty; urgency=high
+
+  * lang: esp +en-update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 15 Apr 2016 08:27:07 +0200
+
+easyportal (0.5.34-0easyVDR0~trusty) trusty; urgency=medium
+
+  * webapp
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Apr 2016 16:53:38 +0200
+
+easyportal (0.5.33-0easyVDR0~trusty) trusty; urgency=high
+
+  * networksetup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 11 Mar 2016 07:30:17 +0100
+
+easyportal (0.5.32-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 Mar 2016 08:42:05 +0100
+
+easyportal (0.5.32-0easyVDR1~trusty) trusty; urgency=high
+
+  * added version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 02 Mar 2016 04:01:44 +0100
+
+easyportal (0.5.32-0easyVDR0~trusty) trusty; urgency=high
+
+  * added new english language files thx to javier
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Feb 2016 00:38:22 +0100
+
+easyportal (0.5.31-4easyVDR0~trusty) trusty; urgency=high
+
+  * added logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 26 Feb 2016 23:13:43 +0100
+
+easyportal (0.5.31-3easyVDR0~trusty) trusty; urgency=high
+
+  * moved logos 2 easyvdr-logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 13 Feb 2016 18:39:11 +0100
+
+easyportal (0.5.31-1easyVDR0~trusty) trusty; urgency=high
+
+  * correct ppa adr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 21 Dec 2015 16:55:50 +0100
+
+easyportal (0.5.31-0easyVDR0~trusty) trusty; urgency=high
+
+  * update from 2.x and logo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 13 Jul 2015 13:47:43 +0200
+
+easyportal (0.5.28-0easyVDR0~trusty) trusty; urgency=high
+
+  * Startseite: Verkürzung der Landezeit durch Ajax
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 21 Jun 2015 14:20:50 +0200
+
+easyportal (0.5.27-0easyVDR0~trusty) trusty; urgency=high
+
+  * Kodi Fernbedienung
+  * Sprachfiles überarbeitet
+  * Easyinfo: easyvdr-runtime.csv hinzugefügt
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 20 Jun 2015 10:49:57 +0200
+
+easyportal (0.5.26-2easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Jun 2015 23:35:36 +0200
+
+easyportal (0.5.26-1easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Jun 2015 14:50:42 +0200
+
+easyportal (0.5.26-0easyVDR0~trusty) trusty; urgency=high
+
+  * Soft Scroll-Top
+  * epgsearchdone.data editieren
+  * epgsearch Unterstütztung erweitert (timersdone.conf, epgsearchcats.conf, epgsearchchangrps.conf)
+  * Zebra Tabelle
+  * sortierbare Tabellen
+  * Sprachfiles überarbeitet
+  * Bugfix: Auswahl Addons
+  * div. Bugfix und Verbesserungen
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 14 Jun 2015 14:14:11 +0200
+
+easyportal (0.5.25-3easyVDR0~trusty) trusty; urgency=high
+
+  * Time/Uptime/vdrUptime aktualisiert sich stätig ohne Reload
+  * Container aus/einblenden überarbeitet
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 03 Jun 2015 11:47:35 +0200
+
+easyportal (0.5.24-3easyVDR0~trusty) trusty; urgency=high
+
+  * Update Sprachfiles
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Jun 2015 08:52:14 +0200
+
+easyportal (0.5.24-2easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 May 2015 22:27:55 +0200
+
+easyportal (0.5.24-1easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 May 2015 21:22:32 +0200
+
+easyportal (0.5.24-0easyVDR0~trusty) trusty; urgency=high
+
+  * epgsearchdone / Aufnahmen / Serien überarbeitet
+  * Menü überarbeitet
+  * Sprachfiles überarbeitet
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 May 2015 19:20:39 +0200
+
+easyportal (0.5.23-4easyVDR0~trusty) trusty; urgency=high
+
+  * Container können ausgeblendet werden
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 May 2015 18:52:27 +0200
+
+easyportal (0.5.23-3easyVDR0~trusty) trusty; urgency=high
+
+  * weitere Skins: She Sells Seashells, Vintage Modern
+  * Erweiterung Responsive Webdesign, Scalierende Bilder
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 25 May 2015 20:56:52 +0200
+
+easyportal (0.5.23-2easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 24 May 2015 15:00:56 +0200
+
+easyportal (0.5.23-1easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 24 May 2015 12:09:34 +0200
+
+easyportal (0.5.23-0easyVDR0~trusty) trusty; urgency=high
+
+  * Responsive Webdesign
+  * weitere Skins: ForumColors, Frogs
+  * Bugfix: Time/Uptime
+  * Update laufende Services von XBMC nach KODI
+  * Upgrade/Distupgrade nun mit Option -n
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 May 2015 08:46:54 +0200
+
+easyportal (0.5.22-2easyVDR0~trusty) trusty; urgency=high
+
+  * EasyInfo: Easyportalversion hinzugefügt
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 May 2015 19:59:08 +0200
+
+easyportal (0.5.22-1easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 May 2015 00:01:07 +0200
+
+easyportal (0.5.22-0easyVDR0~trusty) trusty; urgency=high
+
+  * Root-Zugang aktivieren
+  * epgsearchdone.data ansehen
+  * "meine Serien" als default
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 08 May 2015 16:41:06 +0200
+
+easyportal (0.5.21-1easyVDR0~trusty) trusty; urgency=high
+
+  * Div
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 05 May 2015 19:15:59 +0200
+
+easyportal (0.5.21-0easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 May 2015 13:42:13 +0200
+
+easyportal (0.5.20-0easyVDR0~trusty) trusty; urgency=high
+
+  * Plugins beim installieren gleich aktivieren
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 May 2015 17:47:13 +0200
+
+easyportal (0.5.19-5easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 28 Apr 2015 19:59:51 +0200
+
+easyportal (0.5.19-4easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 28 Apr 2015 13:49:50 +0200
+
+easyportal (0.5.19-3easyVDR0~trusty) trusty; urgency=high
+
+  * Bootlogo-Update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 25 Apr 2015 18:33:54 +0200
+
+easyportal (0.5.19-2easyVDR0~trusty) trusty; urgency=high
+
+  * Easyportal Log
+  * Plugins deaktivieren vor deinstallieren
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 25 Apr 2015 16:16:10 +0200
+
+easyportal (0.5.19-1easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 19 Apr 2015 12:50:28 +0200
+
+easyportal (0.5.19-0easyVDR0~trusty) trusty; urgency=high
+
+  * Fernbedienung
+  * Aufnahmen komplett überarbeitet
+  * Serien / eplist Datenbank
+  * Tatort Datenbank
+  * gelöschte Aufnahmen
+  * Aufnahme-Tools
+  * Timer anzeigen/bearbeiten/löschen
+  * Suchtimer anzeigen
+  * Usereinstellungen hinzugefügt
+  * Sidemap / Dateiinfo
+  * Bootlogo ändern und uploaden
+  * Nachrichten senden und anzeigen
+  * Kanallisten löschen nach Empfangsart
+  * Kanalliste umsortieren
+  * Paketquellen ändern für 2.2 testing
+  * PPA-News für 2.2 testing
+  * Datenzugriff verbessert (txt-db)
+  * Generelle Überarbeitung Quellcode
+  * Programm-Changer übernimmt Konfig
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 18 Apr 2015 00:07:02 +0200
+
+easyportal (0.5.18-1easyVDR0~trusty) trusty; urgency=high
+
+  * EasyInfo ohne Fritz-Box-Passwort
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Mar 2015 14:29:26 +0100
+
+easyportal (0.5.18-0easyVDR0~trusty) trusty; urgency=high
+
+  * Erweiterung EasyInfo "dkms status" (Easyinfo)
+  * Fernbedinungen anzeigen (Fernbedienungen)
+  * Bugfix Verzeichnisse anlegen
+  * Anzeige media-build-experimental Version & Status (Home)
+  * Es können auch alle Timer aufgelistet werden (Home)
+  * Aufnahme Datum (Aufnahmen)
+  * Netzwerkgeräte Auswahl alle/nur_VDRs (Netzwerk_Geraete)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 20:21:15 +0100
+
+easyportal (0.5.17-5easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix fehlendes Log-Verzeichnis
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Mar 2015 15:22:43 +0100
+
+easyportal (0.5.17-4easyVDR0~trusty) trusty; urgency=high
+
+  * Löschen von Aufzeichnungen
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Mar 2015 14:41:08 +0100
+
+easyportal (0.5.17-3easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Mar 2015 21:11:02 +0100
+
+easyportal (0.5.17-2easyVDR0~trusty) trusty; urgency=high
+
+  * Buxfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 19 Mar 2015 21:45:59 +0100
+
+easyportal (0.5.17-1easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix: ersten Aufruf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Mar 2015 22:51:17 +0100
+
+easyportal (0.5.17-0easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfixe
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Mar 2015 16:14:21 +0100
+
+easyportal (0.5.16-2easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfix Update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Mar 2015 17:42:21 +0100
+
+easyportal (0.5.16-1easyVDR0~trusty) trusty; urgency=high
+
+  * Bugfixe Intel-Grafik, ...
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 16 Mar 2015 18:52:19 +0100
+
+easyportal (0.5.16-0easyVDR0~trusty) trusty; urgency=high
+
+  * Option einspoaltig für kleine Displays
+  * Bugfix Intel grafik
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Mar 2015 13:11:19 +0100
+
+easyportal (0.5.15-0easyVDR0~trusty) trusty; urgency=high
+
+  * Update Icons
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Mar 2015 01:19:39 +0100
+
+easyportal (0.5.14-1easyVDR0~trusty) trusty; urgency=high
+
+  * Letzte EasyVDR-Updates im PPA (Tools->Neu im PPA) (ppa_news)
+  * Expertenmodus (Portal Einstellungen)
+  * Paketquelle unstable nur im Expertenmode (ppa_news, Paketquellen)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Mar 2015 19:37:38 +0100
+
+easyportal (0.5.13-0easyVDR0~trusty) trusty; urgency=high
+
+  * mehrsprachig, ...
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 11 Mar 2015 10:48:52 +0100
+
+easyportal (0.5.12-0easyVDR0~trusty) trusty; urgency=medium
+
+  * paketquellen, pchanger, grafik
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 05 Mar 2015 08:38:07 +0100
+
+easyportal (0.5.11-0easyVDR0~trusty) trusty; urgency=high
+
+  * xbmc, temperatur
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 02 Mar 2015 12:31:32 +0100
+
+easyportal (0.5.10-1easyVDR0~trusty) trusty; urgency=high
+
+  * update netz
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 01 Mar 2015 12:14:10 +0100
+
+easyportal (0.5.10-0easyVDR0~trusty) trusty; urgency=medium
+
+  * Schwerpunkt Netzwerkgeräte
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Feb 2015 10:25:48 +0100
+
+easyportal (0.5.9-0easyVDR0~trusty) trusty; urgency=medium
+
+  * Dauerhaft angemeldet bleben (Benötigt Cookies)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Feb 2015 18:46:26 +0100
+
+easyportal (0.5.8-0easyVDR0~trusty) trusty; urgency=medium
+
+  * login, lot new features
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 07:15:22 +0100
+
+easyportal (0.5.7-1easyVDR0~trusty) trusty; urgency=high
+
+  * delete channels 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 12 Nov 2014 09:48:07 +0100
+
+easyportal (0.5.7-0easyVDR0~trusty) trusty; urgency=high
+
+  * Menu, Install-Aktivierung, Channelpedia, view, nvidia
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 11 Nov 2014 13:19:30 +0100
+
+easyportal (0.5.6-0easyVDR0~trusty) trusty; urgency=high
+
+  * permissions , Kleine Schönheitsfehler, Abstand Ueberschrift, Rechtschreibfehler
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 07 Nov 2014 08:14:15 +0100
+
+easyportal (0.5.5-0easyVDR0~trusty) trusty; urgency=high
+
+  * Umstellung auf User vdr, Kanallisten koennen angezeigt werden, sudoers
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 06 Nov 2014 11:32:11 +0100
+
+easyportal (0.5.4-2easyVDR0~trusty) trusty; urgency=high
+
+  * changed user 2 vdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 04 Nov 2014 20:59:15 +0100
+
+easyportal (0.5.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 04 Nov 2014 07:33:41 +0100
+
+easyportal (0.5.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * lot of chganges from http://www.easy-vdr.de/forum/index.php?topic=16838.msg153441#msg153441
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Nov 2014 21:02:33 +0100
+
+easyportal (0.5.2-1easyVDR0~trusty) trusty; urgency=high
+
+  * fix speichern, Neu: Befehle: vdr starten, vdr stoppen
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 13 Oct 2014 10:18:09 +0200
+
+easyportal (0.5.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * wait, fixes, dist-upgrade
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 12 Oct 2014 11:16:18 +0200
+
+easyportal (0.5.0-2easyVDR0~trusty) trusty; urgency=high
+
+  * fix2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 09 Oct 2014 19:04:55 +0200
+
+easyportal (0.5.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 08 Oct 2014 21:57:43 +0200
+
+easyportal (0.5.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * design, easyinfo, backup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 08 Oct 2014 20:07:33 +0200
+
+easyportal (0.4.8-0easyVDR0~trusty) trusty; urgency=medium
+
+  * Channels-upl, scroll, sensors
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Sep 2014 11:12:47 +0200
+
+easyportal (0.4.7-0easyVDR0~trusty) trusty; urgency=high
+
+  * Steevee part2 
+
+ --  easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 26 Sep 2014 10:28:49 +0200
+
+easyportal (0.4.6-0easyVDR0~trusty) trusty; urgency=high
+
+  * Lot of Changes by Steevee
+
+ --  easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 21 Sep 2014 19:51:24 +0200
+
+easyportal (0.4.0-0easyVDR8~trusty) trusty; urgency=high
+
+  * added Ubuntuversion 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 Jul 2014 15:04:11 +0200
+
+easyportal (0.4.0-0easyVDR7~trusty) trusty; urgency=high
+
+  * added SSH-Web-Access with shellinabox
+  * debugged display memory
+  * added HD-Detection for RAID (thanks to compi)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Jul 2014 08:45:58 +0200
+
+easyportal (0.4.0-0easyVDR5~trusty) trusty; urgency=high
+
+  * new Desgin, new Functions
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 23 Jul 2014 10:23:09 +0200
+
+easyportal (0.4.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * added ISO-Medium-detect
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 04 Jan 2014 18:35:26 +0100
+
+easyportal (0.4.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * miniPortal only with easyInfo for debugging
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Nov 2013 08:35:56 +0100
+
+easyportal (0.4.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * adopted for easyVDR 2.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 04 Nov 2013 09:40:02 +0100
+
+easyportal (0.3.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:10:35 +0100
+
+easyportal (0.3.1-1easyVDR0~raring) raring; urgency=high
+
+  * depends zip
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 05 Jun 2013 08:16:36 +0200
+
+easyportal (0.3.1-0easyVDR1~raring) raring; urgency=high
+
+  * rebuild, depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 13:31:11 +0200
+
+easyportal (0.3.1-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * paths over easyvdr-config-loader
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 10:23:45 +0200
+
+easyportal (0.3.0-1easyVDR4.16~oneiric) oneiric; urgency=high
+
+  * Links verändert
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 Mar 2013 13:42:47 +0100
+
+easyportal (0.3.0-1easyVDR4.15~oneiric) oneiric; urgency=high
+
+  * Zeichensatzproblem gefixt
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 Mar 2013 10:39:36 +0100
+
+easyportal (0.3.0-1easyVDR4.14~oneiric) oneiric; urgency=high
+
+  * easyinfo2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 Feb 2013 23:04:19 +0100
+
+easyportal (0.3.0-1easyVDR4.13) oneiric; urgency=high
+
+  * build for amd64 enabled
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 19 Jul 2012 10:26:34 +0200
+
+easyportal (0.3.0-1easyVDR4.1) oneiric; urgency=high
+
+  * syslog auf 4000 Zeilen verkürzt
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Jul 2012 23:58:14 +0200
+
+easyportal (0.3.0-1easyVDR4.0) oneiric; urgency=high
+
+  * enhanced logging
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 08 Jul 2012 18:53:59 +0200
+
+easyportal (0.3.0-1easyVDR3.9) oneiric; urgency=high
+
+  * automatische Ermittlung der Portalversion 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Jun 2012 11:40:10 +0200
+
+easyportal (0.3.0-1easyVDR3.8) oneiric; urgency=high
+
+  * OSD-Zugriff per Control-Plugin (telnet)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Jun 2012 09:51:25 +0200
+
+easyportal (0.3.0-1easyVDR3.7) oneiric; urgency=medium
+
+  * update.log aufgenommen
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Jun 2012 15:46:18 +0200
+
+easyportal (0.3.0-1easyVDR3.6) oneiric; urgency=high
+
+  * Passwort VDRAdmin geaendert
+    Streamdev-http integriert
+    Fixed VCH-Helper
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 13 May 2012 13:03:36 +0200
+
+easyportal (0.3.0-1easyVDR3.5) oneiric; urgency=high
+
+  * Typo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 30 Apr 2012 22:06:26 +0200
+
+easyportal (0.3.0-1easyVDR3.4) oneiric; urgency=high
+
+  * vch pfad
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 30 Apr 2012 20:27:11 +0200
+
+easyportal (0.3.0-1easyVDR3.3) oneiric; urgency=low
+
+  * orthographic Fixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 27 Apr 2012 14:56:17 +0200
+
+easyportal (0.3.0-1easyVDR3.2) oneiric; urgency=high
+
+  * included Patchfiles for easyPortal (ajaxterm, lighttpd)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 26 Apr 2012 09:28:14 +0200
+
+easyportal (0.3.0-1easyVDR3.1) oneiric; urgency=high
+
+  * removed obsolete functions
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Apr 2012 10:38:30 +0200
+
+easyportal (0.3.0-1easyVDR3.0) oneiric; urgency=high
+
+  * enhanced easyInfo, debugged VDR-Uptime and Uptime (thanks to stefluik)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 19 Apr 2012 17:12:30 +0200
+
+easyportal (0.3.0-1easyVDR2.9) oneiric; urgency=low
+
+  * debugged display of downloadbutton
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 Dec 2011 11:19:31 +0100
+
+easyportal (0.3.0-1easyVDR2.8) oneiric; urgency=low
+
+  * added Downloadbutton for easyInfo, fixed Versiondisplay
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 Dec 2011 09:27:40 +0100
+
+easyportal (0.3.0-1easyVDR2.7) oneiric; urgency=high
+
+  * changes for oneiric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 13 Nov 2011 20:52:46 +0100
+
+easyportal (0.3.0-1easyVDR2.6) oneiric; urgency=high
+
+  * rebuild for easyVDR-Oneiric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Aug 2011 15:54:06 +0200
+
+easyportal (0.3.0-1easyVDR2.5) oneiric; urgency=low
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Aug 2011 16:34:43 +0200
+
+easyportal (0.3.0-1easyVDR2.5) lucid; urgency=low
+
+  * added link for proxy_mod
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Aug 2011 15:29:06 +0200
+
+easyportal (0.3.0-1easyVDR2.4) lucid; urgency=low
+
+  * little bugfixing
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Aug 2011 14:01:22 +0200
+
+easyportal (0.3.0-1easyVDR2.3) lucid; urgency=low
+
+  * enhanced easyInfo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Aug 2011 12:09:54 +0200
+
+easyportal (0.3.0-1easyVDR2.2) lucid; urgency=low
+
+  * splitted and enhanced easyInfo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Aug 2011 08:49:00 +0200
+
+easyportal (0.3.0-1easyVDR2.1) lucid; urgency=low
+
+  * version 2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Jul 2011 20:43:54 +0200
+
+easyportal (0.3.0-1easyVDR1.11) lucid; urgency=low
+
+  * fix version no
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 14 Jul 2011 11:34:19 +0200
+
+easyportal (0.3.0-1easyVDR1.10) lucid; urgency=low
+
+  * password an my-sql deactivated
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Jul 2011 20:36:58 +0200
+
+easyportal (0.3.0-1easyVDR1.9) lucid; urgency=low
+
+  * debugged dynamic port of file
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Feb 2011 15:31:06 +0100
+
+easyportal (0.3.0-1easyVDR1.8) lucid; urgency=low
+
+  * debugged uptime and versions-display
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 30 Jan 2011 14:18:55 +0100
+
+easyportal (0.3.0-1easyVDR1.7) lucid; urgency=low
+
+  * removed Bug #395, #396
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 29 Jan 2011 18:25:33 +0100
+
+easyportal (0.3.0-1easyVDR1.6) lucid; urgency=low
+
+  * added mysql-server to depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 29 Jan 2011 09:36:52 +0100
+
+easyportal (0.3.0-1easyVDR1.5) lucid; urgency=low
+
+  * changed included files for easyportal.sh
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Jan 2011 21:47:35 +0100
+
+easyportal (0.3.0-1easyVDR1.4) lucid; urgency=low
+
+  * changes from last Update to 0.2.04 added
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Jan 2011 21:38:27 +0100
+
+easyportal (0.3.0-1easyVDR1.3) lucid; urgency=low
+
+  * postrm added
+
+ -- Andreas Schott <sinai@easy-vdr.de>  Sat, 13 Nov 2010 23:56:37 +0100
+
+easyportal (0.3.0-1easyVDR1ubuntu2) lucid; urgency=low
+
+  * another buildtest
+
+ -- Andreas Schott <sinai@easy-vdr.de>  Sat, 13 Nov 2010 11:17:40 +0100
+
+easyportal (0.3.0-1easyVDR1ubuntu1) lucid; urgency=low
+
+  * new build
+
+ -- easyVDR <sinai@easy-vdr.de>  Sat, 13 Nov 2010 11:07:33 +0100
+
+easyportal (0.3.0-1easyVDR1) lucid; urgency=low
+
+  * easyPortal for easyVDR
+
+ -- Andreas Schott <andreas@desktop>  Thu, 28 Oct 2010 16:39:53 +0200
+
+easyportal (0.1.0-1easyVDR1) lucid; urgency=low
+
+  * easyportal for easyVDR
+
+ -- Uwe Kiehl <uwe@easy-vdr.de>  Sat, 14 Jan 2010 12:05:36 +0100
+

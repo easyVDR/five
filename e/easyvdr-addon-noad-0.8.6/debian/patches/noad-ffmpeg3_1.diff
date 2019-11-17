@@ -1,0 +1,261 @@
+--- a/audiotools.cpp
++++ b/audiotools.cpp
+@@ -50,9 +50,9 @@
+ uint8_t *outbuf=NULL;
+ AVCodec *codec=NULL;
+ AVCodecContext *codecContext= NULL;
+-#if LIBAVCODEC_VERSION_MAJOR > 54
++//#if LIBAVCODEC_VERSION_MAJOR > 54
+ AVDictionary *avDictionary = NULL;                // "create" an empty dictionary
+-#endif
++//#endif
+ int64_t basepts=0;
+ int64_t audiobasepts=0;
+ //int64_t audiopts=0;
+@@ -79,6 +79,52 @@
+   va_end(vl);
+ }
+ 
++attribute_deprecated int avcodec_decode_audio3(AVCodecContext *avctx, int16_t *samples,
++                         int *frame_size_ptr,
++                         AVPacket *avpkt);
++
++#define attribute_align_arg __attribute__((force_align_arg_pointer))
++int attribute_align_arg avcodec_decode_audio3(AVCodecContext *avctx, int16_t *samples,
++                                              int *frame_size_ptr,
++                                              AVPacket *avpkt)
++{
++    AVFrame *frame = av_frame_alloc();
++    int ret, got_frame = 0;
++
++    if (!frame)
++       return AVERROR(ENOMEM);
++
++    ret = avcodec_decode_audio4(avctx, frame, &got_frame, avpkt);
++
++    if (ret >= 0 && got_frame) {
++        int ch, plane_size;
++        int planar    = av_sample_fmt_is_planar(avctx->sample_fmt);
++        int data_size = av_samples_get_buffer_size(&plane_size, avctx->channels,
++                                                   frame->nb_samples,
++                                                   avctx->sample_fmt, 1);
++        if (*frame_size_ptr < data_size) {
++            av_log(avctx, AV_LOG_ERROR, "output buffer size is too small for "
++                                        "the current frame (%d < %d)\n", *frame_size_ptr, data_size);
++            av_frame_free(&frame);
++            return AVERROR(EINVAL);
++        }
++
++        memcpy(samples, frame->extended_data[0], plane_size);
++
++        if (planar && avctx->channels > 1) {
++            uint8_t *out = ((uint8_t *)samples) + plane_size;
++            for (ch = 1; ch < avctx->channels; ch++) {
++                memcpy(out, frame->extended_data[ch], plane_size);
++                out += plane_size;
++            }
++        }
++        *frame_size_ptr = data_size;
++    } else {
++        *frame_size_ptr = 0;
++    }
++    av_frame_free(&frame);
++    return ret;
++};
+ void initAVCodec()
+ {
+   if( av_codec_initialised )
+@@ -95,7 +141,7 @@
+   avcodec_register_all();
+     
+   /* find the mpeg audio decoder */
+-  codec = avcodec_find_decoder(CODEC_ID_MP3);
++  codec = avcodec_find_decoder(AV_CODEC_ID_MP3);
+   
+   if (!codec) 
+   {
+@@ -108,13 +154,13 @@
+   codecContext = avcodec_alloc_context3(codec);
+ #endif
+ 
+-#if LIBAVCODEC_VERSION_MAJOR > 54
++//#if LIBAVCODEC_VERSION_MAJOR > 54
+    /* open it */
+    if (avcodec_open2(codecContext, codec, &avDictionary) < 0)
+-#else
++//#else
+   /* open it */
+-  if (avcodec_open(codecContext, codec) < 0)
+-#endif
++//  if (avcodec_open(codecContext, codec) < 0)
++//#endif
+   {
+     fprintf(stderr, "could not open codec\n");
+   }
+@@ -129,9 +175,9 @@
+ {
+   free(outbuf);
+   avcodec_close(codecContext);
+-#if LIBAVCODEC_VERSION_MAJOR > 54
++//#if LIBAVCODEC_VERSION_MAJOR > 54
+   av_dict_free(&avDictionary);
+-#endif
++//#endif
+   av_free(codecContext);
+   av_codec_initialised = false;
+ }
+--- a/ffmpeg_decoder.cpp
++++ b/ffmpeg_decoder.cpp
+@@ -60,7 +60,7 @@
+     else
+     {
+       if( logReading )
+-         dsyslog("noad_read read from file, ffmpegFileOffset = %d, length = %d",decoder->ffmpegFileOffset, decoder->ffmpegLength);
++         dsyslog("noad_read read from file, ffmpegFileOffset = %ld, length = %d",decoder->ffmpegFileOffset, decoder->ffmpegLength);
+       if( decoder->ffmpegFileOffset == decoder->ffmpegLastFileOffset )
+         return 0;
+     }
+@@ -113,7 +113,7 @@
+       if( doSeekPos )
+          decoder->ffmpeg_index = cIF->getIndexForFilepos(pos);
+       if( logSeeking )
+-         dsyslog("noad-protocol seek to %lld --> index %d",pos,decoder->ffmpeg_index);
++         dsyslog("noad-protocol seek to %ld --> index %d",pos,decoder->ffmpeg_index);
+ 		decoder->__bufBytes = 0;
+ 	}
+ 	return pos;
+@@ -184,7 +184,7 @@
+ 
+ 	// Retrieve stream information
+ 	resetDecoder();
+-   int openCode2 = av_find_stream_info(pFormatCtx);
++   int openCode2 = avformat_find_stream_info(pFormatCtx, NULL);
+ 	if(openCode2<0)
+ 		return -1; // Couldn't find stream information
+ 
+@@ -205,7 +205,7 @@
+ 	pCodecCtx=pFormatCtx->streams[videoStream]->codec;
+ 	pCodecCtx->flags|=CODEC_FLAG_EMU_EDGE;
+ 
+-	if( pCodecCtx->codec_id == CODEC_ID_PROBE )
++	if( pCodecCtx->codec_id == AV_CODEC_ID_PROBE )
+ 	{
+ 		esyslog("can't detect codec for video!");
+ 		return -1;
+@@ -222,19 +222,19 @@
+ 	if(pCodec->capabilities & CODEC_CAP_TRUNCATED)
+ 		pCodecCtx->flags|=CODEC_FLAG_TRUNCATED;
+ 
+-#if LIBAVCODEC_VERSION_MAJOR > 54
++//#if LIBAVCODEC_VERSION_MAJOR > 54
+ 	// Open codec
+ 	if(avcodec_open2(pCodecCtx, pCodec,&avDictionary) < 0)
+-#else
++//#else
+ 	// Open codec
+-	if(avcodec_open(pCodecCtx, pCodec)<0)
+-#endif
++//	if(avcodec_open(pCodecCtx, pCodec)<0)
++//#endif
+ 		return -1; // Could not open codec
+ 
+ 
+ 
+ 	// Allocate video frame
+-   pFrame=avcodec_alloc_frame();
++   pFrame=av_frame_alloc();
+ 	cont_reading = true;
+    doSeekPos = false;
+    dsyslog("init_ffmpeg done" );
+@@ -253,7 +253,11 @@
+ 	// close the file
+ 	if( pFormatCtx )
+ 	{
++#if LIBAVFORMAT_VERSION_MAJOR < 54	  
+ 		av_close_input_file(pFormatCtx);
++#else
++		avformat_close_input(&pFormatCtx);
++#endif
+ 		pFormatCtx = NULL;
+ 	}
+ 	// Close the codec
+@@ -270,10 +274,10 @@
+       pIOContext = NULL;
+ 	}
+ #endif
+-#if LIBAVCODEC_VERSION_MAJOR > 54
++//#if LIBAVCODEC_VERSION_MAJOR > 54
+    av_dict_free(&avDictionary);
+    avDictionary = NULL;
+-#endif
++//#endif
+ 	return 0;
+ }
+ 
+@@ -505,7 +509,7 @@
+ 	}
+ 	if( pFrame )
+ 		av_free(pFrame);
+-	pFrame=avcodec_alloc_frame();
++	pFrame=av_frame_alloc();
+ 	__bufBytes = 0;
+ }
+ 
+--- a/noad.cpp
++++ b/noad.cpp
+@@ -970,7 +970,7 @@
+ 	decoder->setCallback(BlackframeCallback);
+ 	int flags = DEMUX_RESET;
+ 
+-	dsyslog( "checkBlackFrameOnMark at %d %s (frames %d --> %d)",m->position, bForward ? "forward":"backward",index,end );
++	dsyslog( "checkBlackFrameOnMark at %d %s (frames %d --> %s)",m->position, bForward ? "forward":"backward",index,end );
+ 	while( index < iEnd )
+ 	{
+ 		iCurrentDecodedFrame = index;
+--- a/showindex.cpp
++++ b/showindex.cpp
+@@ -62,8 +62,7 @@
+     {
+       if( Independent/*PictureType == I_FRAME*/ )
+       {
+-        fprintf(stdout,"%s%06d %02d %10d %c %06d",
+-          indents[0],iIndex, FileNumber, FileOffset, pictypes[0], Length);
++        fprintf(stdout,"%s%06d %02d %10ld %c %06d", indents[0],iIndex, FileNumber, FileOffset, pictypes[0], Length);
+         int nextIFrame = cIF->GetNextIFrame( iIndex, true, &FileNumber, &FileOffset, &Length, false);
+         if( nextIFrame < 0 )
+           nextIFrame = cIF->Last();
+@@ -74,8 +73,7 @@
+     else
+     {
+       // check the index-entry
+-      fprintf(stdout,"%s%06d %02d %10d %c %06d",
+-        indents[1],iIndex, FileNumber, FileOffset, pictypes[1], Length);
++      fprintf(stdout,"%s%06d %02d %10ld %c %06d", indents[1],iIndex, FileNumber, FileOffset, pictypes[1], Length);
+       if( Length < 0 )
+       {
+         uint16_t fn;        // current file-number
+--- a/vdr_cl.cpp
++++ b/vdr_cl.cpp
+@@ -331,7 +331,7 @@
+                 LOG_ERROR_STR(fileName);
+             }
+             else
+-              esyslog("ERROR: can't allocate %d bytes for index '%s'", size * sizeof(tIndexTs), fileName);
++              esyslog("ERROR: can't allocate %lx bytes for index '%s'", size * sizeof(tIndexTs), fileName);
+           }
+         }
+         else
+--- a/ffmpeg_decoder.h
++++ b/ffmpeg_decoder.h
+@@ -22,9 +22,9 @@
+ 	int             i, videoStream;
+ 	AVCodecContext  *pCodecCtx;
+ 	AVCodec         *pCodec;
+-#if LIBAVCODEC_VERSION_MAJOR > 54
++//#if LIBAVCODEC_VERSION_MAJOR > 54
+    AVDictionary    *avDictionary;
+-#endif
++//#endif
+ 	AVFrame         *pFrame;
+ 
+ public:

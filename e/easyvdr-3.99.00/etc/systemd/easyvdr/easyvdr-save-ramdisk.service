@@ -1,0 +1,11 @@
+[Unit]
+Description=Easyvdr save Ramdisk
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-safe-ramdisk
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=exit.target

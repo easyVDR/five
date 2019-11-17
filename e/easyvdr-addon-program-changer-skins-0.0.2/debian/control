@@ -1,0 +1,14 @@
+Source: easyvdr-addon-program-changer-skins
+Section: video
+Priority: extra
+Maintainer: Bleifuss2 easyVDR <easyvdr-dev@easy-vdr.de>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.5
+
+Package: easyvdr-addon-program-changer-skins
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts:
+Description: skins for program-changer
+ Version 0.0.1
+

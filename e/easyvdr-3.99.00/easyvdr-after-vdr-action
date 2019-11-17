@@ -1,0 +1,27 @@
+#! /bin/bash
+
+### BEGIN INIT INFO
+#
+#
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+#
+# Changelog:
+# V1.0 Initial Version
+#
+#
+
+LOGGER="logger -t after-vdr-hooks"
+HOOKS_DIR="/usr/share/vdr/after-vdr-hooks"
+
+hooks=`find $HOOKS_DIR -maxdepth 1 -xtype f | sort`
+
+for hook in $hooks; do
+    if [ -x $hook ]; then
+        $LOGGER "executing $hook"
+        $hook $*
+    else
+        $LOGGER "executing $hook $action as shell script"
+        /bin/bash $hook $*
+    fi
+    [ $? -ne 0 ] && $LOGGER "error when executing $hook"
+done

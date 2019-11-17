@@ -1,0 +1,17 @@
+#!/bin/bash
+#V 0.1  Bleifuss
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+EXEC_CMD=""
+
+if [ x"$LIRC_HW_CONF" = x"irmp_lirc"   ];then
+ EXEC_CMD="/usr/lib/easyvdr/easyvdr-start/easyvdr-irmplircd"
+fi
+
+if [ x"$LIRC_HW_CONF" = x"irtrans_server"   ];then
+ EXEC_CMD="/usr/lib/easyvdr/easyvdr-start/easyvdr-irtrans"
+fi
+
+$EXEC_CMD $1
+

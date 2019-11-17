@@ -1,0 +1,104 @@
+#######################################################################################
+#Program-Changer Setup Language DE/EN
+#12.03.2016 gb
+#01.04.2016 English Update by SurfaceCleanerZ
+#17.09.2016 Skin-Auswahl Dialog
+#
+##### Definitionen #####
+LANG=0
+
+#GERMAN
+TITLE[0]=" Setup fuer easyVDR $EASYVDR_VERSION - PChanger "
+PROGRESS_AD[0]="Bitte warten Button-Index wird gelesen...."
+BUTTONLIST[0]="Gewuenschte Buttons aktivieren/deaktivieren"
+MAINSCRIPTREAD[0]="Gespeicherte Program-Changer-Buttons werden gelesen und gesetzt"
+MAINSCRIPTREAD_PORTAL[0]="Gespeicherte easyPortal-Buttons werden gelesen und gesetzt"
+MAINSCRIPTWAIT[0]="Bitte warten ...."
+MENU_SELECTION[0]="Program Changer Menue-Auswahl"
+SKIN_SELECTION[0]="Skin-Auswahl"
+SKIN_STATEMENT[0]="Auswahl einiger Program-Changer Skins"
+SKIN_DIALOG_STATEMENT[0]="Um die Skin-Auswahl zu nutzen, wird ein X Desktop auf dem easyVDR gestartet. Eine Maus, Tastatur und TV bzw Monitor ist am Gerät erforderlich!\n\nBei keiner Eingabe wird abgebrochen."
+REMOTE_SELECTION[0]="Fernbedienung"
+REMOTE_STATEMENT[0]="Fernbedienung & globales Abschalten"
+BUTTON_SELECTION[0]="Button-Menue"
+BUTTON_STATEMENT[0]="PChanger-Buttons an/ab waehlen"
+BUTTON_PORTAL_SELECTION[0]="easyPortal"
+BUTTON_PORTAL_STATEMENT[0]="easyPortal Buttons an/ab waehlen"
+EXIT_SELECTION[0]="Beenden"
+EXIT_STATEMENT[0]="Program-Changer-Setup verlassen"
+BUTTON_PORTAL_SELECTION_TITLE[0]="Program Changer easyPortal Button Auswahl Menue"
+BUTTON_PCHANGER_SELECTION_TITLE[0]="Program Changer Button Auswahl Menue"
+BUTTON_SELECTION_MENU[0]="Auswahl:"
+BUTTON_SELECTION_BACK[0]="Zurueck"
+BUTTON_SELECTION_CONTINUE[0]="Weiter"
+BUTTON_STATEMENT_BACK[0]="Auswahl speichern und zurueck"
+BUTTON_SELECTION_1[0]="Standard-Programme"
+BUTTON_SELECTION_10[0]="Bookmarks"
+BUTTON_SELECTION_20[0]="System-Programme"
+BUTTON_SELECTION_30[0]="Systemsteuerung"
+REMOTE_MAPPING_INFO[0]="Remote-mapping wird geladen..."
+SAVE_SELECTION[0]="Gespeicherte Buttonauswahl laden?"
+SAVE_SELECTION_YES[0]="Ja"
+SAVE_SELECTION_NO[0]="Nein"
+##############Tastatur anlernen#############
+REMOTE_KEYBOARD_SELECTION[0]="Tastatur"
+REMOTE_KEYBOARD_STATEMENT[0]="PChanger Tastaturbedienung konfigurieren"
+SHOW_HIDE_MENU_TEXT[0]='Bitte die <<Program Changer>> Taste vor Ablauf des Countdown druecken'
+KEY_RED_TEXT[0]='Bitte die Taste <<Rot>> vor Ablauf des Countdown druecken'
+KEY_GREEN_TEXT[0]='Bitte die Taste <<Gruen>> vor Ablauf des Countdown druecken'
+KEY_YELLOW_TEXT[0]='Bitte die Taste <<Gelb>> vor Ablauf des Countdown druecken'
+KEY_BLUE_TEXT[0]='Bitte die Taste <<Blau>> vor Ablauf des Countdown druecken'
+KEY_MENU_TEXT[0]='Bitte die Taste <<Menue>> vor Ablauf des Countdown druecken'
+INFO_ERROR[0]="Keine Tasteneingabe, oder doppelt vergeben!"
+INFO_OK[0]="Tasteneingabe erkannt."
+#############################################
+INFO_DEFAULT[0]="Neue Setup-Version, Default-Einstellungen werden geladen."
+INFO_ERR_INDEX[0]="Es wurde ein Fehler im Index festgestellt. Fehler bei Button: <<"
+
+#ENGLISH
+TITLE[1]=" Setup for easyVDR $EASYVDR_VERSION - PChanger "
+PROGRESS_AD[1]="Please wait button-index is read...."
+BUTTONLIST[1]="Enable/disable desired button"
+MAINSCRIPTREAD[1]="Stored Program-Changer buttons are read and set"
+MAINSCRIPTREAD_PORTAL[1]="Stored easyPortal buttons are read and set"
+MAINSCRIPTWAIT[1]="Please wait ...."
+MENU_SELECTION[1]="Program Changer menu selection"
+SKIN_SELECTION[1]="Skin-selection"
+SKIN_STATEMENT[1]="Some selected Program-Changer Skins"
+SKIN_DIALOG_STATEMENT[1]=""
+REMOTE_SELECTION[1]="Remote-control"
+REMOTE_STATEMENT[1]="Remote control & global shutdown"
+BUTTON_SELECTION[1]="Button-menu"
+BUTTON_STATEMENT[1]="Choose PChanger buttons display"
+BUTTON_PORTAL_SELECTION[1]="easyPortal"
+BUTTON_PORTAL_STATEMENT[1]="Choose easyPortal Buttons display"
+EXIT_SELECTION[1]="Exit"
+EXIT_STATEMENT[1]="Exit Program-Changer-Setup"
+BUTTON_PORTAL_SELECTION_TITLE[1]="Program Changer easyPortal button selection menu"
+BUTTON_PCHANGER_SELECTION_TITLE[1]="Program Changer button selection menu"
+BUTTON_SELECTION_MENU[1]="Choose:"
+BUTTON_SELECTION_BACK[1]="Back"
+BUTTON_SELECTION_CONTINUE[1]="Continue"
+BUTTON_STATEMENT_BACK[1]="Save selection and back"
+BUTTON_SELECTION_1[1]="Standard-tools"
+BUTTON_SELECTION_10[1]="Bookmarks"
+BUTTON_SELECTION_20[1]="System-tools"
+BUTTON_SELECTION_30[1]="Control-panel"
+REMOTE_MAPPING_INFO[1]="Remote-mapping loading..."
+SAVE_SELECTION[1]="Restore saved button selection?"
+SAVE_SELECTION_YES[1]="Yes"
+SAVE_SELECTION_NO[1]="No"
+##############teach keyboard#############
+REMOTE_KEYBOARD_SELECTION[1]="Keyboard"
+REMOTE_KEYBOARD_STATEMENT[1]="Configure PChanger keyboard operation"
+SHOW_HIDE_MENU_TEXT[1]='Please press the <<Program Changer>> button before countdown stops'
+KEY_RED_TEXT[1]='Please press the <<red>> button before the countdown stops'
+KEY_GREEN_TEXT[1]='Please press the <<green>> button before the countdown stops'
+KEY_YELLOW_TEXT[1]='Please press the <<yellow>> button before the countdown stops'
+KEY_BLUE_TEXT[1]='Please press the <<blue>> button before the countdown stops'
+KEY_MENU_TEXT[1]='Please press the <<menu>> button before the countdown stops'
+INFO_ERROR[1]="No key input, or key assigned twice!"
+INFO_OK[1]="Key input detected."
+#############################################
+INFO_DEFAULT[1]="New setup version, Default settings are loaded."
+INFO_ERR_INDEX[1]="It was found an error in the Index. Error Button: <<"

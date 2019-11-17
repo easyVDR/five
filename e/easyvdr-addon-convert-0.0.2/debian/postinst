@@ -1,0 +1,10 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "configure" ]; then
+
+    chmod -R a+x /usr/share/easyvdr-addon-convert/*
+
+fi
+#DEBHELPER#
+

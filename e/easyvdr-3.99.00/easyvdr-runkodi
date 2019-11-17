@@ -1,0 +1,191 @@
+#!/bin/bash
+
+# Provides:          easyvdr-runkodi
+# Short-Description: Starts kodi
+# Description:       Starts Starts kodi
+
+
+#V 0.1  20.11.2017 Bleifuss
+
+
+
+NAME=$(basename $0)
+LOGGER="logger -t easyvdr-runkodi"
+KILLWAIT=30
+RUNKODIPIDFILE="/var/run/$NAME"
+SHORTRUNTIMES=0
+TERMTIMEOUT=30
+KILLTIMEOUT=30
+RESTARTTIME=10
+
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+export DISPLAY=$FRONTEND_DISPLAY
+  
+
+
+#Kodi beenden
+#1 User Name
+#2 Parameter Programm Name
+KillKodi ()
+{
+
+PROGRAM_NAME=$2
+P_USER=$1
+
+   #30 -> SIGPWR
+   #SIGNAL="-30"
+   #S15 -> SIGTERM
+   SIGNAL="-15"
+
+   PID=$(pidof -x $PROGRAM_NAME)
+   if [ $? -eq 0 ]; then
+     pkill -u $P_USER $SIGNAL $PROGRAM_NAME
+     sleep 0.1
+   fi
+   #2s warten bis Programm beendet ist
+
+   for wait in {0..20};
+   do
+     PID=$(pgrep -f /$PROGRAM_NAME )
+     if [ $? -ne 0 ]; then
+       #Programm ist beendet
+        break
+     fi
+     sleep 0.1
+   done
+   #Programm hängt
+   PID=$(pgrep $PROGRAM_NAME )
+   if [ $? -eq 0 ]; then 
+    pkill  -u $P_USER -9 $PROGRAM_NAME
+    $LOGGER "kill Kodi"
+   fi
+}
+
+
+if [ -f $RUNKODIPIDFILE ] ;then
+ #Kill Kodi and restart
+ $LOGGER "error easyvdr-runkodi is running: $RUNKODIPIDFILE"
+ $LOGGER "kill easyvdr-runkodi and start it again"
+ # Kill Kodi
+ kill $(cat $RUNKODIPIDFILE)
+ # Warten bis erste instanz beendet ist
+ for wait in {0..20};
+  do
+   if [ ! -f $RUNKODIPIDFILE ];then
+    #Instanz ist beendet
+    break
+   fi
+  sleep 1 
+ done
+
+ if [ -f $RUNKODIPIDFILE ] ;then
+  #Programm hängt
+  PID=$(cat $RUNKODIPIDFILE) 
+  kill -9 $PID
+  $LOGGER "kill signal -9 easyvdr-runkodi"
+  sleep 2
+  rm $RUNKODIPIDFILE
+ fi
+fi
+
+#Save pid easyvdr-runkodi
+echo $$ > $RUNKODIPIDFILE
+
+while (true) do
+	$LOGGER "Starting Kodi"
+
+	# Trap some signals sent to this script
+	trap "SIG=HUP" SIGHUP
+	trap "SIG=INT" SIGINT
+	trap "SIG=QUIT" SIGQUIT
+	trap "SIG=TERM" SIGTERM
+
+
+	# Clean up signal variable
+	SIG=
+	# Remember start time
+	KODISTARTTIME=`date +%s`
+
+	if [ -f "/var/run/lirc/lircd" ]; then
+	 kodiCmd="$(which kodi) --lircdev /var/run/lirc/lircd"
+	else
+	 $LOGGER "error /var/run/lirc/lircd not found"
+	 $LOGGER "start kodi without lirc support"
+	 kodiCmd="$(which kodi)"
+	fi
+	 kodiCmd="$(which kodi) --lircdev /var/run/lirc/lircd"
+
+	if [ $? -ne 0 ];then
+	$LOGGER "Kodi not found"
+	 exit 1
+	fi
+
+	$LOGGER "kodi run"
+        USER=vdr
+  	VDRUID=$(id -u $USER)
+	XDG_RUNTIME_DIR=/run/user/$VDRUID /bin/su -l -c "$kodiCmd" - $STANDARD_DESKTOP_USER &
+
+	# Remember PID of KODI process
+	KODIPID=$!
+
+	export KODISTARTTIME
+
+	# Wait for VDR to end or signal to arrive
+	wait $KODIPID
+
+	# Remember return value of KODI
+	RET=$?
+
+	# Remember stop time
+	KODISTOPTIME=`date +%s`
+
+	# Count, if time is less than RESTARTTIME in seconds,
+	# forget otherwise
+	if [ "$RESTARTTIME" -gt 0 -a $((KODISTOPTIME-KODISTARTTIME)) -le "$RESTARTTIME" ] ; then
+		SHORTRUNTIMES=$((SHORTRUNTIMES+1))
+		$LOGGER "KODI died within $RESTARTTIME seconds, this happened $SHORTRUNTIMES time(s)."
+	else
+		SHORTRUNTIMES=0
+	fi
+
+	case "$SIG" in
+		HUP | INT | QUIT | TERM)
+			$LOGGER "Terminating by request"
+			# Kill Kodi
+        		KillKodi $STANDARD_DESKTOP_USER kodi
+			# and exit
+			break
+		;;
+		*)  # Non-signal termination  
+			if [ $RET -eq 0 -o $RET -eq 143 ] ; then #143 ->Kodi mit sig 15 beendet
+			    $LOGGER "exit kodi"
+			    break
+			fi
+			
+			if [ $SHORTRUNTIMES -ge 10 ] ; then
+				$LOGGER "Terminating because KODI died 10 times in a row quickly"
+				# Kill Kodi
+				KillKodi $STANDARD_DESKTOP_USER kodi
+				# and exit
+				break
+			fi
+
+			$LOGGER "Restarting KODI by error level $RET"
+			# Kill Kodi
+			KillKodi $STANDARD_DESKTOP_USER kodi
+			# and loop
+		;;
+	esac
+
+	# Catch remaining in-between signals
+	case "$SIG" in
+		HUP | INT | QUIT | TERM)
+			break
+		;;
+	esac
+done
+$LOGGER "quit"
+[ -r "$RUNKODIPIDFILE" ] && rm $RUNKODIPIDFILE >&- 2>&-
+

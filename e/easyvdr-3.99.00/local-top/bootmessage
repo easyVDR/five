@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo easyVDR 4.0 wird gestartet...
+echo -e '\033[?17;0;8c'

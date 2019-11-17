@@ -1,0 +1,96 @@
+#!/bin/bash
+
+set -e
+
+if [ "$1" = "configure" ]; then
+
+ #Konsole 8 aktivieren
+ sed -e 's/#NAutoVTs=6/NAutoVTs=8/' /etc/systemd/logind.conf > /tmp/logind.conf
+ cp /tmp/logind.conf /etc/systemd/logind.conf
+
+USER=vdr
+GROUP=vdr
+	if [ -e /etc/sudoers.d/sudoers-vdr ] ; then
+		chmod 440 /etc/sudoers.d/sudoers-vdr
+	fi
+
+	# Set Bash to Standard-Interpreter
+	ln -sf /bin/bash /bin/sh
+
+	[ -e /etc/acpi/powerbtn.sh ] && mv /etc/acpi/powerbtn.sh /etc/acpi/powerbtn.sh.org
+	ln -sf /etc/acpi/powerbtn.sh.easyvdr /etc/acpi/powerbtn.sh
+
+	for name in /root/.bashrc ; do
+		cat /root/.bashrc | sed -e 's/#force_color_prompt=yes/force_color_prompt=yes/' > $name.new
+		mv $name.new $name
+	done
+
+	chmod +x /usr/lib/vdr/easyvdr-recordingaction > /dev/null 2>&1 || true
+	chmod +x /usr/lib/vdr/easyvdr-shutdownaction > /dev/null 2>&1 || true
+	chmod +x /usr/lib/vdr/easyvdr-set-settings > /dev/null 2>&1 || true
+	chmod +x /usr/lib/vdr/easyvdr-shutdown-message > /dev/null 2>&1 || true
+	chmod +x /usr/lib/vdr/easyvdr-shutdown-wrapper > /dev/null 2>&1 || true
+	
+	# make /usr/lib/vdr/vdr-shutdown.wrapper setuid/setgid
+	# (owner root:vdr, mode 6750)
+	if [ -e /usr/lib/vdr/easyvdr-shutdown.wrapper ] ; then
+		chown root:$GROUP /usr/lib/vdr/easyvdr-shutdown.wrapper && \
+		chmod 6750 /usr/lib/vdr/easyvdr-shutdown.wrapper
+	fi
+	
+	if [ -e /var/lib/vdr ] ; then 
+		chown $USER:$GROUP /var/lib/vdr
+		chown $USER:$GROUP /var/lib/vdr/* > /dev/null 2>&1 || true
+	fi
+
+	if [ -e /var/cache/vdr ] ; then
+		chown $USER:$GROUP /var/cache/vdr
+		chown $USER:$GROUP /var/cache/vdr/* > /dev/null 2>&1 || true
+	fi
+
+	mount -a > /dev/null 2>&1 || true
+
+	if [ -e /usr/share/initramfs-tools/scripts/local-top/bootmessage ] ; then
+		chmod +x /usr/share/initramfs-tools/scripts/local-top/bootmessage
+		update-initramfs -u
+	fi
+
+
+# update-rc.d -f easyvdr-save-ramdisk defaults 39 >/dev/null || exit $?
+
+fi
+
+#############################################################################
+######################### Systemd ###########################################
+
+grep -q "ENABLED=\"yes\"" /etc/default/vdr && VDR_START_STAT=0 || VDR_START_STAT=1
+#Ist VDR Start aktiv?
+if [ $VDR_START_STAT -eq "0" ] ; then
+
+ if [ -d /run/systemd/system ] ; then
+  systemctl daemon-reload >/dev/null || true
+ fi
+
+
+ SERVICE[0]="/etc/systemd/easyvdr/easyvdr-systemstart.service"
+ SERVICE[1]="/etc/systemd/easyvdr/easyvdr-alsa-restore.service"
+ SERVICE[2]="/etc/systemd/easyvdr/easyvdr-cleanscreen.service"
+ SERVICE[3]="/etc/systemd/easyvdr/easyvdr-create-ramdisk.service"
+ SERVICE[4]="/etc/systemd/easyvdr/easyvdr-save-ramdisk.service"
+# SERVICE[5]="/etc/systemd/easyvdr/easyvdr-vdr.service"
+# SERVICE[6]="/etc/systemd/easyvdr/easyvdr-frontend.service"
+
+
+ for CHK_SERVICE in ${SERVICE[*]}
+ do
+
+  if [ -f "$CHK_SERVICE" ]; then
+   systemctl enable "$CHK_SERVICE" || true > /dev/null 2>&1
+  fi
+
+ done
+else
+ systemctl disable display-manager.service
+fi
+#DEBHELPER#
+

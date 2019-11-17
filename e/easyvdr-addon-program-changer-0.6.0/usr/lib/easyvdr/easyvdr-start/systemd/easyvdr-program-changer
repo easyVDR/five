@@ -1,0 +1,48 @@
+#!/bin/bash
+# Starts Programm changer
+#
+#
+#
+# 26.06.12   C.B.
+# 04.07.12   Bleifuss2
+# 15.11.12   C.B.  Abfrage auf "configured entfernt
+# 18.03.13   Bleifuss2 Pulse Audio aus & easyvdr-setup eingeb.
+# 14.05.14   Bleifuss2 Pulseaudio funktionen gelöscht
+# 17.02.16   Bleifuss2 Upstart überarbeitet
+# 08-09.17   Anpassungen für Systemd
+
+
+. /usr/lib/vdr/easyvdr-config-loader     ## allgemeine Parameter
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+
+LOGGER="logger -t program-changer"
+
+[ -f $CFG_DIR/sysconfig              ] && . $CFG_DIR/sysconfig || exit 0  		# einbinden der sysconfig
+case $VDR_FRONTEND in                                                                 	# check auf X11-Frontend
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+
+    [ "$FRONTEND_CLASS" = "USE_X11" ] || exit 0
+
+
+if [ -f /var/lib/vdr/.Xauthority ];then
+ export XAUTHORITY=/var/lib/vdr/.Xauthority
+fi
+
+ $LOGGER "Starting pch-run"
+ export DISPLAY=$FRONTEND_DISPLAY
+ check_x_running >/dev/null 2>&1
+ if [ $? -ne "0" ]; then
+  exit 0
+ fi
+ exec /usr/bin/program_changer /etc/vdr/easyvdr/program-changer/program-changer.conf 

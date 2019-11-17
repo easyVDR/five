@@ -1,0 +1,2 @@
+debian/10_shutdown.acpi                           usr/share/vdr/shutdown-hooks/
+debian/easyvdr-addon-acpi-wakeup.conf             etc/vdr/

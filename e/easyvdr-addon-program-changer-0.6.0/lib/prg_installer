@@ -1,0 +1,157 @@
+#!/bin/bash
+#
+#
+# programm installer easyVDR/PChanger
+# v0.2   10.12.12  Captain_Beefheart
+# v0.3   16.12.12 C.B.
+# v0.3.1 12.01.13 bugfix "all_packages"  C.B.
+# v0.4   17.01.13 partly rewrite / fix   C.B.
+# v0.4   03.11.16 adding check index -1
+TITLE=" easyVDR/PChanger Programm Installation "
+TMP_FILE_SHOW_PCHANGER=/tmp/.show_program-changer
+
+########################################## 
+Inst_Show_Progress()
+{
+apt-get --force-yes --yes install $INST_PAC | zenity\
+              --progress\
+              --pulsate\
+              --auto-close\
+              --no-cancel\
+              --title="$TITLE"\
+              --width=500\
+              --height=200\
+              --text "\n\
+         $ACTIONTEXT $PRG_NAME / $INST_PAC\n\n"
+
+#Prüfen ob installiert wurde
+apt-get install $INST_PAC
+ if [ $? -ne 0 ];then
+  yad --center --textinfo --button="OK:70" --title="Fehler ..." --timeout=20 --timeout-indicator=TOP\
+  --text="$INST_PAC kann nicht installiert werden"
+  touch $TMP_FILE_SHOW_PCHANGER
+  exit 0
+ fi
+}
+
+#####
+Run_Install()
+{
+Check_Online 
+[[ $ONLINE == "true" ]] && Inst_Show_Progress || Offline_Mess
+}
+
+#####
+Ask_4_Install()
+{
+OK_CANCEL=99
+    yad --center\
+       --title="$TITLE"\
+       --timeout=60\
+       --timeout-indicator=TOP\
+       --center\
+       --button="Installiere:70"\
+       --button="Abbruch:252"\
+       --width=500\
+       --height=200\
+       --text "\n\
+   <span size=\"larger\">Programmpakete für <b>$PRG_NAME</b> installieren?</span>\n
+   Dieses kann allerdings etwas dauern!"
+    OK_CANCEL=$?
+
+return $OK_CANCEL
+}
+
+#####
+Check_Installed()
+{
+PAKET_STRING=`dpkg --get-selections | grep -w install | cut -f1`       ##  alle installierten Pakete in String
+
+MAIN_ALREADY_INSTALLED="false"
+for PAKET in $PAKET_STRING
+  do
+    if [[ "$PAKET" == "$MAIN_PKG" ]]; then
+       MAIN_ALREADY_INSTALLED="true"
+       break
+    fi
+  done
+
+for PAKET in $PAKET_STRING
+  do
+    for ADD_PAKET in ${ADD_PKG_ARRAY[@]}
+      do 
+        [[ "$PAKET" == "$ADD_PAKET" ]] && INST_ADDS="$ADD_PAKET $INST_ADDS"
+      done
+  done
+
+SIZE_OF_ADD_PKG_ARRAY=${#ADD_PKG_ARRAY[@]}
+
+for ((i=0;i<$SIZE_OF_ADD_PKG_ARRAY;i++))
+  do
+    for INST_ADD in $INST_ADDS
+      do
+        [[ "$INST_ADD" == "${ADD_PKG_ARRAY[$i]}" ]] && unset ADD_PKG_ARRAY[$i]  # gleiche rauschmeissen
+      done
+  done
+
+ADD_PACKAGES="${ADD_PKG_ARRAY[@]}"
+ALL_PACKAGES="$MAIN_PKG $ADD_PACKAGES"
+
+[ -z "$ADD_PACKAGES" ] && ADDS_ALREADY_INSTALLED="true" || ADDS_ALREADY_INSTALLED="false"
+}
+
+#####
+Check_Online()
+{
+ping -c 5 www.google.de >/dev/null 2>&1
+(( $? == 0 )) && ONLINE="true" || ONLINE="false"
+}
+
+#####
+Offline_Mess()
+{
+zenity\
+    --error\
+    --title="$TITLE"\
+    --width=400\
+    --height=200\
+    --text "\n\
+<span size=\"larger\"><b>\
+         Fehler!\
+</b></span>\n
+ keine Internetverbindung                       \n\
+ ohne gehts nich. "
+}
+
+#################### main  #########################
+
+REC_PARA=$*
+REC_PARA_ARRAY=($REC_PARA)
+
+PCHANGER_ARRAY_INDEX=${REC_PARA_ARRAY[0]}; unset REC_PARA_ARRAY[0]
+PRG_NAME=${REC_PARA_ARRAY[1]};             unset REC_PARA_ARRAY[1]
+MAIN_PKG=${REC_PARA_ARRAY[2]};             unset REC_PARA_ARRAY[2]
+
+ADD_PKG_ARRAY=(${REC_PARA_ARRAY[@]})
+
+Ask_4_Install
+if (($?==70)); then
+  Check_Installed
+   if [[ "$MAIN_ALREADY_INSTALLED" == "true" ]]
+     then
+       INST_PAC=$ADD_PACKAGES
+       ACTIONTEXT="Installiere Zusatzpakete"
+       [[ $ADDS_ALREADY_INSTALLED == "true" ]] || Run_Install
+     else
+       INST_PAC=$ALL_PACKAGES
+       ACTIONTEXT="Installiere"
+       Run_Install
+   fi
+  sleep 3
+if (($PCHANGER_ARRAY_INDEX!=-1)); then
+  /usr/share/easyvdr/program-changer/program-changer.sh $PCHANGER_ARRAY_INDEX &
+fi
+else
+touch $TMP_FILE_SHOW_PCHANGER
+fi
+

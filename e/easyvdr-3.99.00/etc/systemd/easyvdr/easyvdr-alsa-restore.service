@@ -1,0 +1,19 @@
+# restore sound card(s') mixer state(s)
+#		"Uwe Kiehl <uwe@easy-vdr.de>"
+#		14.09.17 change to systemd Bleifuss
+
+
+[Unit]
+Description=Easyvdr Restore Alsa Mixer Volume
+After=easyvdr-systemstart.service
+
+
+[Service]
+Type=simple
+ExecStart="/usr/lib/eayvdr/easyvdr-start/systemd/easyvdr-alsa-restore"
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target
+

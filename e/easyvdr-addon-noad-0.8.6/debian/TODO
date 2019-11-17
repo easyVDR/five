@@ -1,0 +1,6 @@
+* Is it a good idea to run autoconf in debian/rules? Maybe it's better to live
+  with a large diff or dpatch containing the changes in configure?
+* Write manpages for scripts in /usr/bin or move scripts to examples
+* Change maintainer to Debian-VDR-Packaging-Team and uploader to Alioth
+* Merge all the helper scripts into a single script with well documented
+  parameters (and a manpage)

@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+#
+#X launcher
+# V 0.1 23.11.2016 Bleifuss
+
+
+LOGGER="logger -t easyvdr-x-launcher"
+path=/usr/lib/vdr
+
+
+#Kennung löschen
+if [ -e /tmp/easyvdr-x-launch-ready ];then
+ rm /tmp/easyvdr-x-launch-ready
+fi
+
+
+$LOGGER "start"
+
+$path/easyvdr-set-monitor-layout
+$path/easyvdr-set-x-settings
+$path/easyvdr-x-lib-pulseaudio
+
+touch /tmp/easyvdr-x-launch-ready
+$LOGGER "end"
+

@@ -1,0 +1,3 @@
+convert/reccmds.convert.conf  /usr/share/vdr/command-hooks/
+convert/*.sh  /usr/share/easyvdr-addon-convert/        
+

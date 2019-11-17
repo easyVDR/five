@@ -1,0 +1,5 @@
+#!/bin/bash
+
+[ -e /usr/share/easyvdr/easyvdr-version ] && . /usr/share/easyvdr/easyvdr-version
+
+echo "$EASYVDRBASEVERS.$EASYVDRSUBVERS"

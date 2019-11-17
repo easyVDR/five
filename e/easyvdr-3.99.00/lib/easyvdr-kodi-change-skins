@@ -1,0 +1,96 @@
+#!/bin/bash
+#Script für Optimierung Kodi verlassen/shutdown/shutdown Timer Button
+#02.01.2016 gb/Bleifuss2
+#09.04.2016 Kodi Skin Confluence Fix
+#16.06.2018 fix for Kodi 18
+
+USR_PFAD=/var/lib/vdr/.kodi/userdata
+#LOG_PFAD=/var/lib/vdr/.kodi/addons
+LOG_PFAD=/usr/share/kodi/addons
+STANDARD_SKIN_PFAD=/usr/share/kodi/addons/*/*/
+USER_SKIN_PFAD=/var/lib/vdr/.kodi/addons/*/*/
+KODI_LIB_FRONTEND="XBMC.RunScript(/usr/lib/vdr/easyvdr-kodi-lib.py,frontend)"
+KODI_LIB_SHUTDOWN="XBMC.RunScript(/usr/lib/vdr/easyvdr-kodi-lib.py,shutdown)"
+KODI_LIB_REBOOT="XBMC.RunScript(/usr/lib/vdr/easyvdr-kodi-lib.py,reboot)"
+#Ist keine Funktion gesetzt = Ende
+if [[ -z $1 ]];then
+ exit
+fi
+rm $LOG_PFAD/changed_buttons.log
+while true; do
+   [ -e $LOG_PFAD/changed_buttons.log ] && break
+   touch $LOG_PFAD/changed_buttons.log
+done
+SKIN_AKTIV=$(find $USR_PFAD/guisettings.xml -type f -exec grep -i "<skin Default>" {} \;|cut -d">" -f2|cut -d"<" -f1)
+SKIN_PATCHED=$(find $LOG_PFAD/$SKIN_AKTIV/*/*.xml -type f -exec grep -li "/usr/lib/vdr/easyvdr-kodi-lib.py" {} \;)
+echo $SKIN_PATCHED >>$LOG_PFAD/changed_buttons.log
+###Buttons auf "global shutdown" optimieren und vorher Original sichern###
+if [ $1 == "vdr_shutdown" ]; then
+ #Suche alle Files mit Inhalt Quit() für Verlassen in Kodi und gepatchten aktiven Skin#
+ files=$(find $STANDARD_SKIN_PFAD*.xml -type f -exec grep -li "Quit()" {} \;)
+ #Suche alle Files mit Inhalt von Variable $KODI_LIB_FRONTEND für Verlassen in Kodi und gepatchten aktiven Skin#
+ files3=$(find $STANDARD_SKIN_PFAD*.xml -type f -exec grep -li $KODI_LIB_FRONTEND {} \;)
+ ###############################################################Hier stehen schon ein paar Skins, die ich ausgeschlossen habe, da jeglicher Versuch fehl schlug#
+ files4=$(find $USER_SKIN_PFAD*.xml -type f -exec grep -li "shutdown" {} \;|grep -v "skin.conq"| grep -v "skin.metropolis"| grep -v "skin.aeonmq6")
+ files2=$(find $USER_SKIN_PFAD*.xml -type f -exec grep -li "Quit" {} \;|grep -v "skin.conq"| grep -v "skin.metropolis"| grep -v "skin.aeonmq6")
+ if [[ -z $files3 ]];then
+  if [[ -z $files ]];then
+   echo "am Standard Skin gibt's nix zu tun"
+  else
+   for file in $files; do
+    fname=$(basename "$file")
+    fdir=$(dirname "$file")
+    #Files existieren nicht, kopiere Datei in selben Ordner/Datei.orig#
+    cp $fdir/$fname $fdir/$fname.orig
+    #Passe Inhalt der gefundenen Datei bei Quit()/Powerdown()/Shutdown()/Reboot() an#
+    find $fdir/$fname -type f -exec sed -i 's!<visible>System.CanSuspend</!<visible>false</!g;s!<visible>System.CanHibernate</!<visible>false</!g;s!<visible>System.CanPowerDown</!<visible></!g;s!<visible>System.CanReboot</!<visible></!g' {} \;
+    find $fdir/$fname -type f -exec sed -i 's!<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</visible>!<visible></visible>!g' {} \;
+    find $fdir/$fname -type f -exec sed -i 's!<onclick>Quit()</onclick>!<onclick>Quit()</onclick>\n\t\t\t\t<onclick>'$KODI_LIB_FRONTEND'</onclick>!g;s!<onclick>Powerdown()</onclick>!<onclick>Quit()</onclick>\n\t\t\t\t<onclick>'$KODI_LIB_SHUTDOWN'</onclick>!g;s!<onclick>Reset()</onclick>!<onclick>Quit()</onclick>\n\t\t\t\t<onclick>'$KODI_LIB_REBOOT'</onclick>!g;s!<onclick>Shutdown()</onclick>!<onclick>Quit()</onclick>\n\t\t\t\t<onclick>'$KODI_LIB_SHUTDOWN'</onclick>!g' {} \;
+    find $fdir/$fname -type f -exec sed -i 's!<onclick>AlarmClock(shutdowntimer,Shutdown())</onclick>!<onclick>AlarmClock(shutdowntimer,'$KODI_LIB_SHUTDOWN')</onclick>!g' {} \;
+   done
+  fi
+ fi
+ for file in $files2; do
+  fname=$(basename "$file")
+  fdir=$(dirname "$file")
+  changed_button=$(egrep -wo $fdir/$fname $LOG_PFAD/changed_buttons.log)
+  if [[ -z $changed_button ]];then
+   changed_button=0
+  fi
+  if [ $fdir/$fname == $changed_button ]; then
+   echo "Quit "$fdir/$fname" patched"
+  else
+   #Passe Inhalt der gefundenen Datei bei Quit() an#
+   find $fdir/$fname -type f -exec sed -i 's!XBMC.quit()!'$KODI_LIB_FRONTEND'!gi;s!XBMC.quit<!'$KODI_LIB_FRONTEND'<!gi;s!<onclick>Quit</!<onclick>'$KODI_LIB_FRONTEND'</!gi;s!<onclick>Quit()</!<onclick>'$KODI_LIB_FRONTEND'</!gi;s!Quit<!'$KODI_LIB_FRONTEND'<!gi;s!>Quit()!>'$KODI_LIB_FRONTEND'!gi' {} \;
+  fi
+ done
+ for file in $files4; do
+  fname=$(basename "$file")
+  fdir=$(dirname "$file")
+  changed_button=$(egrep -wo $fdir/$fname $LOG_PFAD/changed_buttons.log)
+  if [[ -z $changed_button ]];then
+   changed_button=0
+  fi
+  if [ $fdir/$fname == $changed_button ]; then
+   echo "Shutdown "$fdir/$fname" patched"
+  else
+   #Passe Inhalt der gefundenen Datei bei Powerdown()/Shutdown() an#
+   find $fdir/$fname -type f -exec sed -i 's!<visible>System.CanSuspend</!<visible allowhiddenfocus="false">Control.HasFocus(21)</!gi;s!<visible>System.CanHibernate</!<visible allowhiddenfocus="false">Control.HasFocus(21)</!gi;s!<visible>System.CanPowerDown</!<visible></!gi' {} \;
+   find $fdir/$fname -type f -exec sed -i 's!<visible>System.CanPowerDown | System.CanSuspend | System.CanHibernate</!<visible></!gi' {} \;
+   find $fdir/$fname -type f -exec sed -i 's!XBMC.powerdown()!'$KODI_LIB_SHUTDOWN'!gi;s!XBMC.powerdown<!'$KODI_LIB_SHUTDOWN'<!gi;s!<onclick>Powerdown</!<onclick>'$KODI_LIB_SHUTDOWN'</!gi;s!<onclick>Powerdown()</!<onclick>'$KODI_LIB_SHUTDOWN'</!gi;s!>Powerdown()!>'$KODI_LIB_SHUTDOWN'!gi;s!powerdown<!'$KODI_LIB_SHUTDOWN'<!gi;s!>powerdown()!>'$KODI_LIB_SHUTDOWN'!gi' {} \;
+   find $fdir/$fname -type f -exec sed -i 's!XBMC.shutdown()!'$KODI_LIB_SHUTDOWN'!gi;s!>ShutDown()!>'$KODI_LIB_SHUTDOWN'!gi;s!ShutDown<!'$KODI_LIB_SHUTDOWN'<!gi;s!XBMC.shutdown<!'$KODI_LIB_SHUTDOWN'<!gi;s!<onclick>Shutdown</!<onclick>'$KODI_LIB_SHUTDOWN'</!gi;s!<onclick>Shutdown()</!<onclick>'$KODI_LIB_SHUTDOWN'</!gi;s!,ShutDown()!,'$KODI_LIB_SHUTDOWN'!gi' {} \;
+  fi
+ done
+fi
+
+#File für Skin Confluence zurücksichern bei Auswahl default#
+if [ $1 == "skin_restore" ]; then
+ files=$(find $STANDARD_SKIN_PFAD*.orig)
+ for file in $files; do
+  fname=$(basename "$file")
+  fdir=$(dirname "$file")
+  if [ -e $fdir/$fname ]; then
+   mv $fdir/$fname $fdir/$(echo $fname|cut -d. -f1).xml
+  fi
+ done
+fi

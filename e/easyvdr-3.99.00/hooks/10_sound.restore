@@ -1,0 +1,5 @@
+#! /bin/bash
+
+#/sbin/alsactl restore
+/bin/chmod -R a+rwX /dev/snd
+                

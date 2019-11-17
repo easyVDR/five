@@ -1,0 +1,138 @@
+easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 21:32:39 +0100
+
+easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR5~bionic) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:31:52 +0200
+
+easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 18:08:43 +0100
+
+easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 17:42:41 +0100
+
+easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR1~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix rules
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Jul 2017 19:25:44 +0200
+
+easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * fix for wakeup times
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Jan 2017 09:52:06 +0100
+
+easyvdr-addon-acpi-wakeup (0.3.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * shutdown fixes by javier
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 09 Dec 2016 12:29:08 +0100
+
+easyvdr-addon-acpi-wakeup (0.2.0-4easyVDR4~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 22 Apr 2014 03:50:41 +0200
+
+easyvdr-addon-acpi-wakeup (0.2.0-4easyVDR3~trusty) trusty; urgency=high
+
+  * add INIT INFO in the init.d script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 22 Apr 2014 02:45:05 +0200
+
+easyvdr-addon-acpi-wakeup (0.2.0-3easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 21 Apr 2014 23:57:09 +0200
+
+easyvdr-addon-acpi-wakeup (0.2.0-3easyVDR2~trusty) trusty; urgency=high
+
+  * correct path
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 18 Apr 2014 01:00:13 +0200
+
+easyvdr-addon-acpi-wakeup (0.2.0-3easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 Apr 2014 05:07:54 +0200
+
+easyvdr-addon-acpi-wakeup (0.2.0-2easyVDR1~trusty) trusty; urgency=high
+
+  * correct symlink & path
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 Apr 2014 03:50:22 +0200
+
+easyvdr-addon-acpi-wakeup (0.2.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:26:17 +0100
+
+easyvdr-addon-acpi-wakeup (0.2.0-1easyVDR0~raring) raring; urgency=high
+
+  * any platforms
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 18:24:12 +0200
+
+easyvdr-addon-acpi-wakeup (0.2.0-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 13:32:26 +0200
+
+easyvdr-addon-acpi-wakeup (0.2.0-0easyVDR0.1) oneiric; urgency=high
+
+  * paths over easyvdr-config-loader
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 10:28:43 +0200
+
+easyvdr-addon-acpi-wakeup (0.1.2-1easyVDR1.3) oneiric; urgency=low
+
+  * build for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 Jul 2011 00:09:04 +0200
+
+easyvdr-addon-acpi-wakeup (0.1.2-1easyVDR1.3) lucid; urgency=low
+
+  * no changes - rebuild because Packager left easyVDR-Team
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Nov 2010 13:46:32 +0100
+
+easyvdr-addon-acpi-wakeup (0.1.2-1easyVDR1.2) lucid; urgency=low
+
+  * build for easyVDR PPA.
+
+ -- Karl-Heinz Winzer <khwinzer@gmx.de>  Mon, 30 Aug 2010 15:14:08 +0200
+
+easyvdr-addon-acpi-wakeup (0.1.2-1easyVDR1) lucid; urgency=low
+
+  * little debugging again
+
+ -- Uwe Kiehl <uwe@easy-vdr.de>  Mon, 05 Jul 2010 21:55:00 +0200
+
+easyvdr-addon-acpi-wakeup (0.1.1-1easyVDR1) lucid; urgency=low
+
+  * little debugging
+
+ -- Uwe Kiehl <uwe@easy-vdr.de>  Thu, 24 Jun 2010 21:15:00 +0200
+
+easyvdr-addon-acpi-wakeup (0.1.0-1easyVDR1) lucid; urgency=low
+
+  * compiled for easyVDR Lucid
+
+ -- Uwe Kiehl <uwe@easy-vdr.de>  Sat, 20 Feb 2010 17:00:00 +0100

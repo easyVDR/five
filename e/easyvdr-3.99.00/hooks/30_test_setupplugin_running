@@ -1,0 +1,5 @@
+#! /bin/bash
+
+if [ $(svdrpsend PLUG | grep -c setup) != 1 ]; then
+/usr/share/easyvdr/message-setup-osd > /dev/null 2>&1 &
+fi

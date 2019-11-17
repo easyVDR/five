@@ -1,0 +1,24 @@
+#! /bin/bash
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+HALT_CONF="/etc/default/halt"
+LOGGER="logger -t easyvdr-shutdown-wol"
+
+$LOGGER "Starting $0"
+
+if [ $(cat $HALT_CONF | grep -c ^NETDOWN) -eq 0 ]; then
+	echo "NETDOWN=\"no\"" >> $HALT_CONF
+fi
+
+$LOGGER "SHUTDOWN_ETHERNET $SHUTDOWN_ETHERNET"
+
+if [ x"$SHUTDOWN_ETHERNET" = x"no" ]; then
+	sed -i -e "s|^\(NETDOWN\)=.*|\1=\"no\"|;" $HALT_CONF
+else
+	sed -i -e "s|^\(NETDOWN\)=.*|\1=\"yes\"|;" $HALT_CONF
+fi
+
+if [ x"$WAKE_ON_LAN" != x"no" ]; then
+	sudo ethtool -s eth0 wol g
+fi

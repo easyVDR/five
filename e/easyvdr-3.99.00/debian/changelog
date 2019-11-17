@@ -1,0 +1,2389 @@
+easyvdr (3.99.00-1easyVDR0~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 17:07:01 +0100
+
+easyvdr (3.99.00-0easyVDR38~bionic) bionic; urgency=high
+
+  * change easyvdr-x-set-settings screensaver off
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 27 Apr 2019 18:13:49 +0200
+
+easyvdr (3.99.00-0easyVDR37~bionic) bionic; urgency=high
+
+  * change easyvdr-x-set-settings to lirc_options.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 Mar 2019 00:47:18 +0200
+
+easyvdr (3.99.00-0easyVDR36~bionic) bionic; urgency=high
+
+  * add frontend-display easyvdr-x-set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Mar 2019 21:05:54 +0200
+
+easyvdr (3.99.00-0easyVDR35~bionic) bionic; urgency=high
+
+  * rebuild postinstall
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Mar 2019 19:34:16 +0200
+
+easyvdr (3.99.00-0easyVDR34~bionic) bionic; urgency=high
+
+  * disable lirc & display-manager services
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Mar 2019 19:20:58 +0200
+
+easyvdr (3.99.00-0easyVDR33~bionic) bionic; urgency=high
+
+  * bugfix easyvdr-kodi-change-skins
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 15 Feb 2019 21:28:08 +0200
+
+easyvdr (3.99.00-0easyVDR32~bionic) bionic; urgency=high
+
+  * adding remote start daemon irtrans
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Feb 2019 23:45:54 +0200
+
+easyvdr (3.99.00-0easyVDR31~bionic) bionic; urgency=high
+
+  * adding remote start daemon
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Feb 2019 21:39:56 +0100
+
+easyvdr (3.99.00-0easyVDR29~bionic) bionic; urgency=high
+
+  * update lircdinput disabe at startup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 Feb 2019 21:54:59 +0100
+
+easyvdr (3.99.00-0easyVDR28~bionicu) bionic; urgency=high
+
+  * adding remote file forremote start & fix frontend start
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 Feb 2019 21:31:50 +0100
+
+easyvdr (3.99.00-0easyVDR27~bionic) bionic; urgency=high
+
+  * systemd updates 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Jan 2019 22:45:45 +0100
+
+easyvdr (3.99.00-0easyVDR22~bionic) bionic; urgency=high
+
+  * disable lightdm dialog
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 Jan 2019 02:36:48 +0200
+
+easyvdr (3.99.00-0easyVDR21~bionic) bionic; urgency=high
+
+  * disable inputlirc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Jan 2019 13:44:39 +0100
+
+easyvdr (3.99.00-0easyVDR20~bionic) bionic; urgency=high
+
+  * remove easyvdr-vdr and easyvdr-frontend service
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Jul 2018 15:27:52 +0200
+
+easyvdr (3.99.00-0easyVDR3~bionic) bionic; urgency=high
+
+  * enable terminal 8 for setup 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 Jun 2018 21:18:11 +0200
+
+easyvdr (3.99.00-0easyVDR0~bionic) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:30:52 +0200
+
+easyvdr (3.0.13-0easyVDR62~bionic) bionic; urgency=high
+
+  * fix mate desktop
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 20 Mar 2018 23:02:18 +0100
+
+easyvdr (3.0.13-0easyVDR61~bionic) bionic; urgency=high
+
+  * adding Mate
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 06 Mar 2018 01:41:45 +0100
+
+easyvdr (3.0.13-0easyVDR59~bionic) bionic; urgency=high
+
+  * bugfix postrm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 Mar 2018 19:55:22 +0100
+
+easyvdr (3.0.13-0easyVDR56~bionic) bionic; urgency=high
+
+  * ppa upload
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 Feb 2018 22:48:50 +0100
+
+easyvdr (3.0.13-0easyVDR55~bionic) bionic; urgency=high
+
+  * bugfix clearscreen, create ramdisk
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 Feb 2018 22:42:50 +0100
+
+easyvdr (3.0.13-0easyVDR55~bionic) bionic; urgency=high
+
+  * adding create ramdisk, autostart and clearscrean
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Feb 2018 21:53:16 +0100
+
+easyvdr (3.0.13-0easyVDR52~bionic) bionic; urgency=high
+
+  * set-displaymanager update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 21 Feb 2018 18:17:47 +0100
+
+easyvdr (3.0.13-0easyVDR45~bionic) bionic; urgency=high
+
+  * systemd changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 05 Feb 2018 23:01:54 +0100
+
+easyvdr (3.0.13-0easyVDR40~bionic) bionic; urgency=high
+
+  * fix version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 Feb 2018 18:14:59 +0100
+
+easyvdr (3.0.13-0easyVDR39~bionic) bionic; urgency=high
+
+  * update for gdm and Xwayland
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 24 Jan 2018 18:54:46 +0100
+
+easyvdr (3.0.13-0easyVDR31~bionic) bionic; urgency=high
+
+  * update systemstart adding gdm3 support
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 19 Jan 2018 20:07:50 +0100
+
+easyvdr (3.0.13-0easyVDR22~bionic) bionic; urgency=high
+
+  * fix bootmessage
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Jan 2018 15:38:51 +0100
+
+easyvdr (3.0.13-0easyVDR21~bionic) bionic; urgency=high
+
+  * bionic initial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Dec 2017 23:16:55 +0100
+
+easyvdr (3.0.13-0easyVDR20~zesty) zesty; urgency=high
+
+  * change versíon
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Dec 2017 18:03:17 +0100
+
+easyvdr (3.0.13-0easyVDR19~zesty36) zesty; urgency=high
+
+  * update easyvdr runvdr & runkodi
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 20 Nov 2017 23:54:25 +0100
+
+easyvdr (3.0.13-0easyVDR19~zesty28) zesty; urgency=high
+
+  * systemd update 3
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 08 Oct 2017 19:59:38 +0200
+
+easyvdr (3.0.13-0easyVDR19~zesty27) zesty; urgency=high
+
+  * systemd update 2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 08 Oct 2017 17:18:41 +0200
+
+easyvdr (3.0.13-0easyVDR19~zesty26) zesty; urgency=high
+
+  * systemd update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Sep 2017 22:13:01 +0200
+
+easyvdr (3.0.13-0easyVDR19~zesty) zesty; urgency=high
+
+  * zesty update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Sep 2017 23:09:00 +0200
+
+easyvdr (3.0.13-0easyVDR17~trusty) trusty; urgency=high
+
+  * update systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 16 Aug 2017 13:35:37 +0200
+
+easyvdr (3.0.13-0easyVDR12~trusty) trusty; urgency=high
+
+  * systemstart bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 21 Jun 2017 21:52:55 +0200
+
+easyvdr (3.0.13-0easyVDR7~trusty) trusty; urgency=high
+
+  * change systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 May 2017 14:53:37 +0200
+
+easyvdr (3.0.13-0easyVDR6~trusty) trusty; urgency=high
+
+  * systemstart, change vdr restart 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 24 Apr 2017 22:04:07 +0200
+
+easyvdr (3.0.13-0easyVDR5~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 22 Apr 2017 20:15:46 +0200
+
+easyvdr (3.0.13-0easyVDR4~trusty) trusty; urgency=high
+
+  * change systemstart, adding function wait for network
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 22 Apr 2017 18:44:12 +0200
+
+easyvdr (3.0.13-0easyVDR3~trusty) trusty; urgency=high
+
+  * bugfix2 systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 22 Jan 2017 12:46:32 +0100
+
+easyvdr (3.0.13-0easyVDR2~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Jan 2017 13:04:05 +0100
+
+easyvdr (3.0.13-0easyVDR1~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Jan 2017 20:49:04 +0100
+
+easyvdr (3.0.13-0easyVDR0~trusty) trusty; urgency=medium
+
+  * reduced use of powersave.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Jan 2017 18:09:58 +0100
+
+easyvdr (3.0.12-1easyVDR0~trusty) trusty; urgency=medium
+
+  * hdd sleep
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Jan 2017 09:52:50 +0100
+
+easyvdr (3.0.11-0easyVDR6~trusty) trusty; urgency=high
+
+  * bugfix autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 05 Jan 2017 21:29:58 +0100
+
+easyvdr (3.0.11-0easyVDR5~trusty) trusty; urgency=high
+
+  * pulseaudio update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 02 Jan 2017 13:29:57 +0100
+
+easyvdr (3.0.11-0easyVDR4~trusty) trusty; urgency=high
+
+  * set default displaymanager
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 22 Dec 2016 19:49:43 +0100
+
+easyvdr (3.0.11-0easyVDR0~trusty) trusty; urgency=medium
+
+  * easyvdr version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 14 Dec 2016 08:22:37 +0100
+
+easyvdr (3.0.10-1easyVDR9~trusty) trusty; urgency=high
+
+  * change monitor-layout start
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 Nov 2016 22:12:02 +0100
+
+easyvdr (3.0.10-1easyVDR0~trusty) trusty; urgency=medium
+
+  * functionslib genimage 640
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Nov 2016 13:03:52 +0100
+
+easyvdr (3.0.9-0easyVDR0~trustyubuntu1) trusty; urgency=high
+
+  * update x-launcher
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 27 Oct 2016 21:43:00 +0200
+
+easyvdr (3.0.9-0easyVDR0~trusty) trusty; urgency=high
+
+  * cleanup 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 27 Oct 2016 15:18:09 +0200
+
+easyvdr (3.0.8-0easyVDR9~trusty) trusty; urgency=high
+
+  * change x autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Oct 2016 20:59:30 +0200
+
+easyvdr (3.0.8-0easyVDR5~trusty) trusty; urgency=high
+
+  * change wait x
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Oct 2016 13:01:03 +0200
+
+easyvdr (3.0.8-0easyVDR1~trusty) trusty; urgency=high
+
+  * removed x-lib
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Oct 2016 11:09:26 +0200
+
+easyvdr (3.0.7-1easyVDR34~trusty) trusty; urgency=high
+
+  * bugfix wol + pulseaudio lib
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Oct 2016 07:05:24 +0200
+
+easyvdr (3.0.7-1easyVDR2~trusty) trusty; urgency=high
+
+  * nvidia driver update ->370
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 22 Sep 2016 00:13:39 +0200
+
+easyvdr (3.0.7-1easyVDR0~trusty) trusty; urgency=high
+
+  * kodi change skin bugfix (gb)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Apr 2016 00:01:37 +0200
+
+easyvdr (3.0.7-0easyVDR0~trusty) trusty; urgency=high
+
+  * network2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 11 Mar 2016 07:29:17 +0100
+
+easyvdr (3.0.6-0easyVDR0~trusty) trusty; urgency=high
+
+  * network setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 02 Mar 2016 21:54:31 +0100
+
+easyvdr (3.0.5-0easyVDR0~trusty) trusty; urgency=high
+
+  * easyvdr function-lib (convert)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Mar 2016 15:23:20 +0100
+
+easyvdr (3.0.4-0easyVDR3~trusty) trusty; urgency=high
+
+  * autostart fix noX11
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 19 Feb 2016 19:47:24 +0100
+
+easyvdr (3.0.4-0easyVDR2~trusty) trusty; urgency=high
+
+  * new pchanger upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Feb 2016 22:22:24 +0100
+
+easyvdr (3.0.4-0easyVDR1~trusty) trusty; urgency=high
+
+  * removed frontend.confs, removed logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 13 Feb 2016 18:33:54 +0100
+
+easyvdr (3.0.3-0easyVDR13~trusty) trusty; urgency=high
+
+  * adding samba paramter, fix poweroff
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 08 Jan 2016 19:27:10 +0100
+
+easyvdr (3.0.3-0easyVDR12~trusty) trusty; urgency=high
+
+  * KODI hotfix set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 08 Jan 2016 19:03:47 +0100
+
+easyvdr (3.0.3-0easyVDR11~trusty) trusty; urgency=high
+
+  * change poweroff, kodi-upstart and adding kodi scripts from gb
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Dec 2015 14:10:39 +0100
+
+easyvdr (3.0.2-0easyVDR0~trusty) trusty; urgency=medium
+
+  * last channel + audio
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 18 Dec 2015 08:50:11 +0100
+
+easyvdr (3.0.1-0easyVDR4~trusty) trusty; urgency=high
+
+  * bugfix power off from gb
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 12 Dec 2015 12:43:48 +0100
+
+easyvdr (3.0.1-0easyVDR3~trusty1) trusty; urgency=high
+
+  * upload2ppa
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 26 Oct 2015 21:08:54 +0100
+
+easyvdr (3.0.1-0easyVDR0~trusty) trusty; urgency=medium
+
+  * fix apt-pinning
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 26 Oct 2015 18:52:40 +0100
+
+easyvdr (3.0.0-0easyVDR12~trusty) trusty; urgency=high
+
+  * fix shutdown
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Oct 2015 19:06:13 +0100
+
+easyvdr (3.0.0-0easyVDR7~trusty) trusty; urgency=high
+
+  * fix restore last channel
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 22 Oct 2015 07:35:10 +0200
+
+easyvdr (3.0.0-0easyVDR6~trusty) trusty; urgency=high
+
+  * bugfix config-displaymanager
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 18 Oct 2015 12:13:46 +0200
+
+easyvdr (3.0.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * v3, depends 2 easyvdr-depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 02 Sep 2015 12:25:10 +0200
+
+easyvdr (2.3.50-0easyVDR3~trusty) trusty; urgency=high
+
+  * update for kodi
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 10 Aug 2015 20:45:22 +0200
+
+easyvdr (2.3.50-0easyVDR2~trusty) trusty; urgency=high
+
+  * v3
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 04 Aug 2015 09:36:21 +0200
+
+easyvdr (2.3.04-0easyVDR~trusty) trusty; urgency=medium
+
+  * fixes by michel8
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Jul 2015 17:15:49 +0200
+
+easyvdr (2.3.03-easyVDR6~trusty) trusty; urgency=high
+
+  * bugfix kodi as frontend
+  * kodi setup, remotemapping user rights home dir ...
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 23 Jul 2015 09:24:50 +0200
+
+easyvdr (2.3.03-easyVDR5~trusty) trusty; urgency=high
+
+  * kodi frontend bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 22 Jul 2015 19:07:55 +0200
+
+easyvdr (2.3.03-easyVDR1~trusty) trusty; urgency=high
+
+  * adding kodi as frontend
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 22 Jul 2015 15:03:35 +0200
+
+easyvdr (2.3.03-easyVDR0~trusty) trusty; urgency=high
+
+  * logo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 13 Jul 2015 18:26:19 +0200
+
+easyvdr (2.3.02-easyVDR1~trusty) trusty; urgency=high
+
+  * adding displaymanger default on
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 08 Jul 2015 17:33:48 +0200
+
+easyvdr (2.3.01-easyVDR7~trusty) trusty; urgency=medium
+
+  * no more font depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Jul 2015 20:47:24 +0200
+
+easyvdr (2.3.01-0easyVDR4~trusty) trusty; urgency=high
+
+  * adding easyvdr-config-display-manager
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Jul 2015 00:08:05 +0200
+
+easyvdr (2.3.01-0easyVDR3~trusty) trusty; urgency=high
+
+  * remove pulseaudio start, depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 25 Jun 2015 15:06:11 +0200
+
+easyvdr (2.3.01-0easyVDR0~trusty) trusty; urgency=high
+
+  * apt-pinning 2.3, depends, fixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Jun 2015 16:39:46 +0200
+
+easyvdr (2.3.00-1easyVDR1~trusty) trusty; urgency=high
+
+  * earlier create of vdr-user; version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Jun 2015 13:59:55 +0200
+
+easyvdr (2.2.14-1easyVDR~trusty) trusty; urgency=high
+
+  * bugfix frontenddisplay
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Jun 2015 13:13:13 +0200
+
+easyvdr (2.2.14-0easyVDR~trusty) trusty; urgency=high
+
+  * depends fonts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 14 Jun 2015 20:48:02 +0200
+
+easyvdr (2.2.12-0easyVDR3~trusty) trusty; urgency=high
+
+  * runtime logging
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 09 Jun 2015 21:56:36 +0200
+
+easyvdr (2.2.12-0easyVDR1~trusty) trusty; urgency=high
+
+  * Bugfix runtime logging
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 09 Jun 2015 19:00:51 +0200
+
+easyvdr (2.2.12-0easyVDR0~trust) trusty; urgency=high
+
+  * IR Keytable
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 06 Jun 2015 18:02:34 +0200
+
+easyvdr (2.2.11-0easyVDR0~trusty) trusty; urgency=medium
+
+  * some changes by michel8
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 May 2015 07:09:29 +0200
+
+easyvdr (2.2.10-0easyVDR0~trusty) trusty; urgency=medium
+
+  * set-settings set-IR-keytable
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 May 2015 10:46:38 +0200
+
+easyvdr (2.2.01-0easyVDR7~trusty) trusty; urgency=high
+
+  * kodi start for pchanger
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 26 Apr 2015 13:23:48 +0200
+
+easyvdr (2.2.01-0easyVDR2~trusty) trusty; urgency=high
+
+  * change pulse start, adding uptime logging, bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 24 Apr 2015 23:08:14 +0200
+
+easyvdr (2.2.01-0easyVDR0~trusty) trusty; urgency=high
+
+  * version 2.1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 11 Apr 2015 09:03:32 +0200
+
+easyvdr (2.2.00-0easyVDR0~trusty) trusty; urgency=medium
+
+  * apt pinnung 2.2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Mar 2015 11:29:23 +0100
+
+easyvdr (2.01.00-2easyVDR0~trusty) trusty; urgency=high
+
+  * VDR Hooks, Save Channel-List
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 03 Mar 2015 08:13:50 +0100
+
+easyvdr (2.00.06-2easyVDR17~trust) trusty; urgency=high
+
+  * rebuild for ppa
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Feb 2015 15:50:42 +0100
+
+easyvdr (2.00.06-2easyVDR15~trusty) trusty; urgency=high
+
+  * set easyvdr-systemstart_neu as default
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Feb 2015 12:48:58 +0100
+
+easyvdr (2.00.06-2easyVDR13~trusty) trusty; urgency=high
+
+  * systemstart_neu added graphtft
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Feb 2015 17:01:26 +0100
+
+easyvdr (2.00.06-2easyVDR11~trusty) trusty; urgency=high
+
+  * bugfix systemstart_neu optimizing easyvdr-runfrontend
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Feb 2015 08:34:43 +0100
+
+easyvdr (2.00.06-2easyVDR7~trusty) trusty; urgency=high
+
+  * adding check display connected 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 16 Feb 2015 00:10:32 +0100
+
+easyvdr (2.00.06-2easyVDR3~trusty) trusty; urgency=high
+
+  * change path svdprsend
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Feb 2015 23:48:16 +0100
+
+easyvdr (2.00.06-2easyVDR0~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Feb 2015 12:28:40 +0100
+
+easyvdr (2.00.06-1easyVDR2~trusty) trusty; urgency=high
+
+  * bugfix system shutdown
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 08 Feb 2015 14:52:22 +0100
+
+easyvdr (2.00.06-1easyVDR1~trusty) trusty; urgency=high
+
+  * bugfix kde
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 23 Jan 2015 16:08:35 +0100
+
+easyvdr (2.00.06-1easyVDR0~trusty) trusty; urgency=high
+
+  * added lightdm kde
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 23 Jan 2015 11:44:24 +0100
+
+easyvdr (2.00.06-0easyVDR22~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 19 Jan 2015 10:03:34 +0100
+
+easyvdr (2.00.06-0easyVDR17~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Jan 2015 00:35:41 +0100
+
+easyvdr (2.00.06-0easyVDR15~trusty) trusty; urgency=high
+
+  * added lxde xfce4 ... for lightdm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 12 Jan 2015 22:01:19 +0100
+
+easyvdr (2.00.06-0easyVDR13~trusty) trusty; urgency=high
+
+  * bugfix lighdm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 09 Jan 2015 09:45:14 +0100
+
+easyvdr (2.00.06-0easyVDR11~trusty) trusty; urgency=high
+
+  * bugfix lightdm xbmc as frontend
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 08 Jan 2015 21:30:07 +0100
+
+easyvdr (2.00.06-0easyVDR10~trusty) trusty; urgency=high
+
+  * bugfix lighdm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 07 Jan 2015 11:19:26 +0100
+
+easyvdr (2.00.06-0easyVDR9~trusty) trusty; urgency=high
+
+  * bugfix lightdm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 05 Jan 2015 02:51:59 +0100
+
+easyvdr (2.00.06-0easyVDR8~trusty) trusty; urgency=high
+
+  * bugfix lightdm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 05 Jan 2015 01:19:32 +0100
+
+easyvdr (2.00.06-0easyVDR7~trusty) trusty; urgency=high
+
+  * bugfix lightdm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 02 Jan 2015 23:27:58 +0100
+
+easyvdr (2.00.06-0easyVDR6~trusty) trusty; urgency=high
+
+  *  bugfix openbox.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 Jan 2015 17:05:31 +0100
+
+easyvdr (2.00.06-0easyVDR5~trusty) trusty; urgency=high
+
+  * added lightdm openbox.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 Jan 2015 12:39:39 +0100
+
+easyvdr (2.00.06-0easyVDR4~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 24 Dec 2014 15:08:36 +0100
+
+easyvdr (2.00.06-0easyVDR3~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 23 Dec 2014 21:18:44 +0100
+
+easyvdr (2.00.06-0easyVDR2~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 22 Dec 2014 23:44:48 +0100
+
+easyvdr (2.00.06-0easyVDR1~trusty) trusty; urgency=high
+
+  * bugfix systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 22 Dec 2014 22:31:52 +0100
+
+easyvdr (2.00.06-0easyVDR0~trusty) trusty; urgency=high
+
+  * desktop start fix + run/user/888 fix master
+
+Tue, 09 Dec 2014 13:15:49 +0100
+
+easyvdr (2.00.05-1easyVDR4~trusty) trusty; urgency=high
+
+  * bugfix set-monitor-layout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 05 Dec 2014 15:43:17 +0100
+
+easyvdr (2.00.05-1easyVDR3~trusty) trusty; urgency=high
+
+  * add screensaver to monitor layout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 04 Dec 2014 20:07:39 +0100
+
+easyvdr (2.00.05-1easyVDR2~trusty) trusty; urgency=high
+
+  * bugfix autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 04 Dec 2014 18:40:28 +0100
+
+easyvdr (2.00.05-1easyVDR1~trusty) trusty; urgency=high
+
+  * bugfix autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 03 Dec 2014 23:42:47 +0100
+
+easyvdr (2.00.05-1easyVDR0~trusty) trusty; urgency=high
+
+  * extra-depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 03 Dec 2014 13:11:45 +0100
+
+easyvdr (2.00.05-0easyVDR0~trusty) trusty; urgency=medium
+
+  * reccmds fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 28 Nov 2014 21:18:57 +0100
+
+easyvdr (2.00.04easyVDR0~trusty) trusty; urgency=high
+
+  * version 2 stable
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 27 Nov 2014 20:34:09 +0100
+
+easyvdr (2.00.03easyVDR2~trusty) trusty; urgency=high
+
+  * scrennsaver update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Nov 2014 15:42:47 +0100
+
+easyvdr (2.00.03easyVDR1~trusty) trusty; urgency=high
+
+  * scrennsaver update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Nov 2014 16:58:32 +0100
+
+easyvdr (2.00.03easyVDR0~trusty) trusty; urgency=high
+
+  * screensaver
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Nov 2014 09:38:56 +0100
+
+easyvdr (2.00.02easyVDR8~trusty) trusty; urgency=high
+
+  * screensaver disable
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 23:20:11 +0100
+
+easyvdr (2.00.02easyVDR7~trusty) trusty; urgency=high
+
+  * bugfix autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 23:05:33 +0100
+
+easyvdr (2.00.02easyVDR6~trusty) trusty; urgency=high
+
+  * adding chown /run/user/USERID
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 21:59:57 +0100
+
+easyvdr (2.00.02easyVDR5~trusty) trusty; urgency=high
+
+  * bugfix screensaver
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 00:15:14 +0100
+
+easyvdr (2.00.02easyVDR4~trusty) trusty; urgency=high
+
+  * change screen saver settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 16 Nov 2014 18:53:17 +0100
+
+easyvdr (2.00.02easyVDR3~trusty) trusty; urgency=high
+
+  * buxfix alsa restore
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Nov 2014 23:16:24 +0100
+
+easyvdr (2.00.02easyVDR2~trusty) trusty; urgency=high
+
+  * bugfix mount -a
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 13 Nov 2014 21:19:49 +0100
+
+easyvdr (2.00.02easyVDR1~trusty) trusty; urgency=high
+
+  * set keyboard layout de
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 13 Nov 2014 20:43:47 +0100
+
+easyvdr (2.00.02easyVDR0~trusty) trusty; urgency=high
+
+  * samba params (speed)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 08 Nov 2014 09:57:05 +0100
+
+easyvdr (2.00.01easyVDR3~trusty) trusty; urgency=high
+
+  * bugfix sleep hd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 24 Oct 2014 14:05:39 +0200
+
+easyvdr (2.00.01easyVDR2~trusty) trusty; urgency=high
+
+  * set hd time v2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 21 Oct 2014 23:51:07 +0200
+
+easyvdr (2.00.01easyVDR1~trusty) trusty; urgency=high
+
+  * set hd sleep time
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 20 Oct 2014 22:04:20 +0200
+
+easyvdr (2.00.01easyVDR0~trusty) trusty; urgency=high
+
+  * set homedir perms
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 23 Sep 2014 18:53:11 +0200
+
+easyvdr (1.99.4-0easyVDR10~trusty) trusty; urgency=high
+
+  * bugfix wol
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 28 Aug 2014 10:28:04 +0200
+
+easyvdr (1.99.4-0easyVDR9~trusty) trusty; urgency=high
+
+  * added wol for server 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 28 Aug 2014 09:45:22 +0200
+
+easyvdr (1.99.4-0easyVDR8~trusty) trusty; urgency=high
+
+  * bugfix autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Aug 2014 20:46:30 +0200
+
+easyvdr (1.99.4-0easyVDR7~trusty) trusty; urgency=high
+
+  * bugfix power-save
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Aug 2014 17:38:34 +0200
+
+easyvdr (1.99.4-0easyVDR6~trusty) trusty; urgency=high
+
+  * added power-save & user autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Aug 2014 14:53:12 +0200
+
+easyvdr (1.99.4-0easyVDR5~trusty) trusty; urgency=high
+
+  * xbmc frontend bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 20 Aug 2014 21:48:08 +0200
+
+easyvdr (1.99.4-0easyVDR4~trusty) trusty; urgency=high
+
+  * monitor-layout bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Jul 2014 09:39:52 +0200
+
+easyvdr (1.99.4-0easyVDR3~trusty) trusty; urgency=high
+
+  * change monitor-layout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 23 Jul 2014 13:11:20 +0200
+
+easyvdr (1.99.4-0easyVDR2~trust) trusty; urgency=high
+
+  * FRONTEND_DISPLAY bugfix 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Jul 2014 14:11:49 +0200
+
+easyvdr (1.99.4-0easyVDR1~trusty) trusty; urgency=high
+
+  * add depends ethtool
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 10 Jun 2014 21:59:51 +0200
+
+easyvdr (1.99.4-0easyVDR0~trusty) trusty; urgency=medium
+
+  * network fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 May 2014 08:38:49 +0200
+
+easyvdr (1.99.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * rename restart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 15 May 2014 07:15:06 +0200
+
+easyvdr (1.99.2-0easyVDR3~trusty) trusty; urgency=high
+
+  * add new logo
+  * remove old mpg & old png  
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 12 May 2014 23:40:51 +0200
+
+easyvdr (1.99.2-0easyVDR2~trusty) trusty; urgency=high
+
+  * fixes on easyvdr-set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 09 May 2014 01:43:22 +0200
+
+easyvdr (1.99.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * remote-mapping changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 03 May 2014 12:29:29 +0200
+
+easyvdr (1.99.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * defined uid+gid
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 May 2014 10:13:30 +0200
+
+easyvdr (1.99.1-0easyVDR3~trusty) trusty; urgency=high
+
+  * removed easyvdr-addon-nvram
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 29 Apr 2014 22:16:56 +0200
+
+easyvdr (1.99.1-0easyVDR2~trusty) trusty; urgency=high
+
+  * added easyvdr-addon-nvram-wakeup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 Apr 2014 23:02:53 +0200
+
+easyvdr (1.99.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * remove depends nvram-wakeup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Apr 2014 14:35:02 +0200
+
+easyvdr (1.99.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * added easyvdr-addon-nvram-wakeup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 19 Apr 2014 11:49:05 +0200
+
+easyvdr (1.99.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * Version to 2.0 Beta
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 14 Apr 2014 17:26:45 +0200
+
+easyvdr (1.95.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * set-monitor-layout changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 22 Mar 2014 23:26:44 +0100
+
+easyvdr (1.95.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * bugfix configure
+  * add new startlogo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 21 Mar 2014 22:46:00 +0100
+
+easyvdr (1.95.2-0easyVDR0~trusty) trusty; urgency=medium
+
+  * channel-save @update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Mar 2014 17:02:53 +0100
+
+easyvdr (1.95.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * upload to ppa
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 04 Mar 2014 00:46:56 +0100
+
+easyvdr (1.95.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * keep cfgs at upgrade 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Mar 2014 18:14:53 +0100
+
+easyvdr (1.95.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * set-monitor-layout added versions info
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 27 Feb 2014 20:32:59 +0100
+
+easyvdr (1.95.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * bugfix set-monitor-layout 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Feb 2014 19:15:37 +0100
+
+easyvdr (1.95.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * set-monitor-layout added logging
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 24 Feb 2014 20:51:12 +0100
+
+easyvdr (1.95.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * added restart and stopx
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Feb 2014 18:48:54 +0100
+
+easyvdr (1.94.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new startscripts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 22 Feb 2014 17:28:05 +0100
+
+easyvdr (1.93.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * monitor-layout changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 13 Feb 2014 20:04:32 +0100
+
+easyvdr (1.93.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * dns
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 06 Feb 2014 18:02:58 +0100
+
+easyvdr (1.93.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * power hook
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 01 Feb 2014 10:11:27 +0100
+
+easyvdr (1.93.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * added easyvdr-unload-dvb to depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 22 Jan 2014 20:44:50 +0100
+
+easyvdr (1.92.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * fiexes start/stop; power-sw, remove messages
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 19 Jan 2014 17:11:30 +0100
+
+easyvdr (1.91.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * apt-pinning unstable
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 16 Jan 2014 15:50:25 +0100
+
+easyvdr (1.91.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * message-setup-osd 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 12 Jan 2014 19:12:37 +0100
+
+easyvdr (1.91.2-1easyVDR2~trusty) trusty; urgency=high
+
+  * bugfix set-monitor-layout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 11 Jan 2014 17:47:25 +0100
+
+easyvdr (1.91.2-0easyVDR2~trusty) trusty; urgency=high
+
+  * added graphtft support
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 10 Jan 2014 16:53:59 +0100
+
+easyvdr (1.91.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * added OSD-Message if setupplugin fails
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 05 Jan 2014 04:00:48 +0100
+
+easyvdr (1.91.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * easyvdr-set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Jan 2014 09:56:46 +0100
+
+easyvdr (1.91.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * added set-monitor-layout xorg.conf check
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Dec 2013 19:58:13 +0100
+
+easyvdr (1.91.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * added depends to inputlirc, usb-irmp and usb-ircontrol
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Dec 2013 18:07:18 +0100
+
+easyvdr (1.91.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * fix funtions-lib
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Dec 2013 11:36:11 +0100
+
+easyvdr (1.90.1-0easyVDR2~trusty) trusty; urgency=high
+
+  * Improve set-monitor-layout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Dec 2013 17:16:26 +0100
+
+easyvdr (1.90.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * fix Poweroff
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 16 Dec 2013 19:13:46 +0100
+
+easyvdr (1.90.0-0easyVDR5~trusty) trusty; urgency=high
+
+  * debugged network restart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Dec 2013 15:14:14 +0100
+
+easyvdr (1.90.0-0easyVDR4~trusty) trusty; urgency=high
+
+  * change vdr-sxfe user
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 07 Dec 2013 12:53:31 +0100
+
+easyvdr (1.90.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * disable chvt 1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 01 Dec 2013 17:22:07 +0100
+
+easyvdr (1.90.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * change set-monitor-layout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 28 Nov 2013 17:47:49 +0100
+
+easyvdr (1.90.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * apt-pinning + pre V2.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 Nov 2013 20:33:06 +0100
+
+easyvdr (1.21.2-2easyVDR8~trusty) trusty; urgency=high
+
+  * change set-monitor-layout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 15 Nov 2013 22:23:10 +0100
+
+easyvdr (1.21.2-2easyVDR7~trusty) trusty; urgency=high
+
+  * removed depends to easyvdr-softhdd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Nov 2013 13:29:13 +0100
+
+easyvdr (1.21.2-2easyVDR6~trusty) trusty; urgency=high
+
+  * changed easyvdr-version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Nov 2013 09:06:26 +0100
+
+easyvdr (1.21.2-2easyVDR5~trusty) trusty; urgency=high
+
+  * change debian/install
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Nov 2013 15:54:57 +0100
+
+easyvdr (1.21.2-2easyVDR4~trustyubuntu1) trusty; urgency=high
+
+  * change debian/install
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Nov 2013 13:14:45 +0100
+
+easyvdr (1.21.2-2easyVDR3~trusty) trusty; urgency=high
+
+  * add file set-monitor-layout 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Nov 2013 12:24:00 +0100
+
+easyvdr (1.21.2-2easyVDR2~trusty) trusty; urgency=high
+
+  * add set-monitor-layout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 30 Oct 2013 00:14:30 +0100
+
+easyvdr (1.21.2-2easyVDR1~trusty) trusty; urgency=high
+
+  * merge trusty & raring git
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 29 Oct 2013 09:28:14 +0100
+
+easyvdr (1.21.2-2easyVDR0~trusty) trusty; urgency=high
+
+  * depends openbox
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Oct 2013 17:55:24 +0200
+
+easyvdr (1.21.1-easyVDR0~trusty) trusty; urgency=high
+
+  * add depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 22 Oct 2013 23:07:26 +0200
+
+easyvdr (1.21.0-easyVDR0~saucyubuntu1) trusty; urgency=high
+
+  * temp remove depends: hal hwinfo unrar
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 22 Oct 2013 16:08:54 +0200
+
+easyvdr (1.21.0-easyVDR0~saucy) saucy; urgency=high
+
+  * rebuild saucy
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 Aug 2013 22:48:11 +0200
+
+easyvdr (1.21.0-easyVDR0~raring) raring; urgency=high
+
+  * added depends on easyvdr-softhdd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 22 Jul 2013 08:31:10 +0200
+
+easyvdr (1.20.0-easyVDR0~raring) raring; urgency=medium
+
+  * config loader
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 24 Jun 2013 14:38:53 +0200
+
+easyvdr (1.11.0-easyVDR0~raring) raring; urgency=high
+
+  * reverse vdr configdir
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 16 Jun 2013 09:15:19 +0200
+
+easyvdr (1.10.0-0easyVDR0~raring) raring; urgency=high
+
+  * vdr config-dir
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Jun 2013 11:55:30 +0200
+
+easyvdr (1.05.8-1easyVDR0~raring) raring; urgency=high
+
+  * depends lirc easyvdr-hdet
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 May 2013 15:18:09 +0200
+
+easyvdr (1.05.8-0easyVDR0~raring) raring; urgency=high
+
+  * SoftHDDevice AuflÃƒÂ¶sungen
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 May 2013 17:18:37 +0200
+
+easyvdr (1.05.7-1easyVDR0~raring) raring; urgency=high
+
+  * no lirc-depend
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 21 Apr 2013 18:15:59 +0200
+
+easyvdr (1.05.7-0easyVDR1~raring) raring; urgency=high
+
+  * depends (lirc, setup)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Apr 2013 17:34:35 +0200
+
+easyvdr (1.05.6-0easyVDR1~raring) raring; urgency=emergency
+
+  * changed sources in setup for autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Apr 2013 10:27:23 +0200
+
+easyvdr (1.05.6-0easyVDR0~raring) raring; urgency=high
+
+  * wait for x in systemstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Apr 2013 17:56:21 +0200
+
+easyvdr (1.05.5-0easyVDR0~raring) raring; urgency=high
+
+  * fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 13 Apr 2013 18:15:28 +0200
+
+easyvdr (1.05.4-3easyVDR0~raring) raring; urgency=high
+
+  * no depends to samba, nfs-common, nfs-kernel-server
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 08 Apr 2013 17:34:28 +0200
+
+easyvdr (1.05.4-0easyVDR0~raring) raring; urgency=high
+
+  * zusammenfuehrung aller aenderungen
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 08 Apr 2013 08:46:04 +0200
+
+easyvdr (1.05.3-0easyVDR4~raring) raring; urgency=high
+
+  * new libudev-depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 07 Apr 2013 21:54:51 +0200
+
+easyvdr (1.05.2-0easyVDR2~raring) raring; urgency=high
+
+  * /etc/vdr..., default
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 13:29:46 +0200
+
+easyvdr (1.05.1-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild raring
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 12:53:36 +0200
+
+easyvdr (1.05.1-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * paths over easyvdr-config-loader
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 10:25:55 +0200
+
+easyvdr (1.05.0-1easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * startscrips
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 Mar 2013 09:27:06 +0100
+
+easyvdr (1.04.07-1easyVDR0.1~oneiricubuntu1) oneiric; urgency=high
+
+  * installinit
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 Mar 2013 19:41:54 +0100
+
+easyvdr (1.04.07-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * reccmds
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 Mar 2013 18:20:38 +0100
+
+easyvdr (1.04.06-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * div changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 Mar 2013 16:03:31 +0100
+
+easyvdr (1.04.05-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * div changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 Mar 2013 10:52:19 +0100
+
+easyvdr (1.04.04-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * minus libavcodec-extra-53; shutdownhook handbrake
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Mar 2013 15:37:58 +0100
+
+easyvdr (1.04.03-1easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * ramdisk fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 Feb 2013 09:49:02 +0100
+
+easyvdr (1.04.03-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * libs/loader
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Feb 2013 11:02:42 +0100
+
+easyvdr (1.04.02-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * ramdisk
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Feb 2013 09:43:50 +0100
+
+easyvdr (1.04.01-0easyVDR0.1~oneiric) oneiric; urgency=low
+
+  * grub / ramdisk
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 05 Feb 2013 08:33:27 +0100
+
+easyvdr (1.04.00-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 Jan 2013 09:47:09 +0100
+
+easyvdr (1.02.00-0easyVDR3.22~oneiric) oneiric; urgency=low
+
+  * dist-upgrade
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 23 Jan 2013 18:56:44 +0100
+
+easyvdr (1.02.00-0easyVDR3.21~oneiric) oneiric; urgency=high
+
+  * set settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 21 Jan 2013 12:21:20 +0100
+
+easyvdr (1.02.00-0easyVDR3.20~oneiric) oneiric; urgency=high
+
+  * fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 19 Jan 2013 22:55:42 +0100
+
+easyvdr (1.02.00-0easyVDR3.19~oneiric) oneiric; urgency=high
+
+  * set settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 19 Jan 2013 09:33:37 +0100
+
+easyvdr (1.02.00-0easyVDR3.18~oneiric) oneiric; urgency=high
+
+  * upstart or desktop
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 16 Jan 2013 18:53:26 +0100
+
+easyvdr (1.02.00-0easyVDR3.17~oneiric) oneiric; urgency=high
+
+  * recording hooks (hdn)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Dec 2012 09:27:27 +0100
+
+easyvdr (1.0.00-0easyVDR3.15~oneiricubuntu1) oneiric; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Dec 2012 08:58:31 +0100
+
+easyvdr (1.0.00-0easyVDR3.14~oneiric) oneiric; urgency=high
+
+  * xbmc upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Dec 2012 08:51:08 +0100
+
+easyvdr (1.0.00-0easyVDR3.12~oneiric) oneiric; urgency=high
+
+  * console text
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 13 Dec 2012 17:46:57 +0100
+
+easyvdr (1.0.00-0easyVDR3.11~oneiric) oneiric; urgency=high
+
+  * update 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 13 Dec 2012 10:49:30 +0100
+
+easyvdr (1.0.00-0easyVDR3.10) oneiric; urgency=high
+
+  * fix softhdd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 08 Dec 2012 16:38:50 +0100
+
+easyvdr (1.0.00-0easyVDR3.9) oneiric; urgency=high
+
+  * fixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 09 Oct 2012 19:19:14 +0200
+
+easyvdr (1.0.00-0easyVDR3.8) oneiric; urgency=high
+
+  * added ir-trans to depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Sep 2012 10:59:12 +0200
+
+easyvdr (1.0.00-0easyVDR3.7) oneiric; urgency=high
+
+  * again ir-trans-server
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Sep 2012 19:20:49 +0200
+
+easyvdr (1.0.00-0easyVDR3.6) oneiric; urgency=high
+
+  * set-settings for ir-trans
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Sep 2012 19:36:32 +0200
+
+easyvdr (1.0.00-0easyVDR3.5) oneiric; urgency=high
+
+  * new start of softhddevice
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 13 Sep 2012 10:25:14 +0200
+
+easyvdr (1.0.00-0easyVDR3.4) oneiric; urgency=high
+
+  * blacklists, set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 20 Aug 2012 12:54:03 +0200
+
+easyvdr (1.0.00-0easyVDR3.3) oneiric; urgency=high
+
+  * debugged set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 06 Aug 2012 16:22:01 +0200
+
+easyvdr (1.0.00-0easyVDR3.2) oneiric; urgency=high
+
+  * debugged upstart softhddevice
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Jul 2012 22:17:05 +0200
+
+easyvdr (1.0.00-0easyVDR3.1) oneiric; urgency=high
+
+  * xbmc-upstart-fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Jul 2012 22:35:58 +0200
+
+easyvdr (1.0.00-0easyVDR3.0) oneiric; urgency=high
+
+  * type mismatch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 09 Jul 2012 12:09:04 +0200
+
+easyvdr (1.0.00-0easyVDR2.9) oneiric; urgency=high
+
+  * softhddevice with configfile
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 09 Jul 2012 00:06:48 +0200
+
+easyvdr (1.0.00-0easyVDR2.8) oneiric; urgency=high
+
+  * better supportet softhddevice
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 08 Jul 2012 18:19:46 +0200
+
+easyvdr (1.0.00-0easyVDR2.7) oneiric; urgency=high
+
+  * adopted remotes for igorplug
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 03 Jul 2012 09:58:39 +0200
+
+easyvdr (1.0.00-0easyVDR2.6) oneiric; urgency=high
+
+  * generalized frontendcall
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Jun 2012 20:21:26 +0200
+
+easyvdr (1.0.00-0easyVDR2.5) oneiric; urgency=high
+
+  * new remote
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 25 Jun 2012 23:29:35 +0200
+
+easyvdr (1.0.00-0easyVDR2.4) oneiric; urgency=high
+
+  * included Softhddevice 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 25 Jun 2012 13:15:08 +0200
+
+easyvdr (1.0.00-0easyVDR2.3) oneiric; urgency=high
+
+  * fixed easyvdr-desktop.upstart for Softhddevice
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 25 Jun 2012 10:13:35 +0200
+
+easyvdr (1.0.00-0easyVDR2.2) oneiric; urgency=high
+
+  * debugged OSD-Update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 24 Jun 2012 23:56:18 +0200
+
+easyvdr (1.0.00-0easyVDR2.0) oneiric; urgency=emergency
+
+  * check on pchanger while updater running
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 24 Jun 2012 20:05:59 +0200
+
+easyvdr (1.0.00-0easyVDR1.9) oneiric; urgency=high
+
+  * included softhddevice
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 24 Jun 2012 16:42:10 +0200
+
+easyvdr (1.0.00-0easyVDR1.8) oneiric; urgency=high
+
+  * changed xbmc-upstart, fixed OSD-Update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 24 Jun 2012 11:46:56 +0200
+
+easyvdr (1.0.00-0easyVDR1.6) oneiric; urgency=high
+
+  * new upstart for xbmc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Jun 2012 09:23:29 +0200
+
+easyvdr (1.0.00-0easyVDR1.5) oneiric; urgency=high
+
+  * new OSD-Update-Script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 Jun 2012 11:32:15 +0200
+
+easyvdr (1.0.00-0easyVDR1.4) oneiric; urgency=high
+
+  * new remote, blacklist
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 19 Jun 2012 07:51:45 +0200
+
+easyvdr (1.0.00-0easyVDR1.3) oneiric; urgency=high
+
+  * xbmc-upstart with remote on
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 15 Jun 2012 21:42:55 +0200
+
+easyvdr (1.0.00-0easyVDR1.2) oneiric; urgency=high
+
+  * prepared for working XBMC ootb
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 15 Jun 2012 13:01:23 +0200
+
+easyvdr (1.0.00-0easyVDR1.1) oneiric; urgency=high
+
+  * logging of updated packages enabled
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Jun 2012 11:21:46 +0200
+
+easyvdr (1.0.00-0easyVDR1.0) oneiric; urgency=high
+
+  * set version to easyVDR 1.0 RC2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Jun 2012 09:00:10 +0200
+
+easyvdr (0.9.77-0easyVDR1.3) oneiric; urgency=high
+
+  * bugfix in script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Jun 2012 12:01:22 +0200
+
+easyvdr (0.9.77-0easyVDR1.2) oneiric; urgency=high
+
+  * Show new packages message toggle by sysconfig
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Jun 2012 11:55:10 +0200
+
+easyvdr (0.9.77-0easyVDR1.1) oneiric; urgency=high
+
+  * bugfix caused by different greps
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Jun 2012 19:20:21 +0200
+
+easyvdr (0.9.77-0easyVDR1.0) oneiric; urgency=high
+
+  * now enabled true updatefunction ;-)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Jun 2012 18:30:15 +0200
+
+easyvdr (0.9.77-0easyVDR0.9) oneiric; urgency=high
+
+  * enabled true update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Jun 2012 18:27:57 +0200
+
+easyvdr (0.9.77-0easyVDR0.8) oneiric; urgency=high
+
+  * Updatemessages toggle on/off
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Jun 2012 13:44:34 +0200
+
+easyvdr (0.9.77-0easyVDR0.7) oneiric; urgency=high
+
+  * final version of sysupdate-message, set easyvdr-version to 1.0 RC1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Jun 2012 13:41:16 +0200
+
+easyvdr (0.9.77-0easyVDR0.6) oneiric; urgency=emergency
+
+  * another bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Jun 2012 12:56:40 +0200
+
+easyvdr (0.9.77-0easyVDR0.5) oneiric; urgency=high
+
+  * bugfixed sysupdate
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Jun 2012 12:24:15 +0200
+
+easyvdr (0.9.77-0easyVDR0.4) oneiric; urgency=high
+
+  * test for new packages, message by OSD
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Jun 2012 11:46:25 +0200
+
+easyvdr (0.9.77-0easyVDR0.3) oneiric; urgency=high
+
+  * completed Updatefunctions
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Jun 2012 15:37:42 +0200
+
+easyvdr (0.9.77-0easyVDR0.2) oneiric; urgency=high
+
+  * aaded Systemupdate from OSD
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Jun 2012 13:52:18 +0200
+
+easyvdr (0.9.77-0easyVDR0.1) oneiric; urgency=high
+
+  * new version for new iso
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 May 2012 17:38:02 +0200
+
+easyvdr (0.9.76-0easyVDR0.1) oneiric; urgency=high
+
+  * -splash
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 19 May 2012 07:27:47 +0200
+
+easyvdr (0.9.75-0easyVDR0.5) oneiric; urgency=high
+
+  * added headless config
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 May 2012 12:12:58 +0200
+
+easyvdr (0.9.75-0easyVDR0.4) oneiric; urgency=high
+
+  * depend: pchanger
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 14 May 2012 11:19:25 +0200
+
+easyvdr (0.9.75-0easyVDR0.2) oneiric; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 13 May 2012 09:20:33 +0200
+
+easyvdr (0.9.75-0easyVDR0.1) oneiric; urgency=high
+
+  * version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 12 May 2012 10:34:26 +0200
+
+easyvdr (0.2.0-0easyVDR0.1) oneiric; urgency=high
+
+  * settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 11 May 2012 10:59:37 +0200
+
+easyvdr (0.1.0-0easyVDR0.5) oneiric; urgency=high
+
+  * logging
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 May 2012 11:59:30 +0200
+
+easyvdr (0.1.0-0easyVDR0.4) oneiric; urgency=high
+
+  * functions
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 May 2012 08:54:02 +0200
+
+easyvdr (0.1.0-0easyVDR0.3) oneiric; urgency=high
+
+  * desktop upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2012 13:42:49 +0200
+
+easyvdr (0.1.0-0easyVDR0.2) oneiric; urgency=low
+
+  * fix remoteproblem with vdr-setup.xml
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Apr 2012 07:45:40 +0200
+
+easyvdr (0.1.0-0easyVDR0.1) oneiric; urgency=high
+
+  * upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Apr 2012 11:01:15 +0200
+
+easyvdr (0.0.1-1easyVDR10.9) oneiric; urgency=high
+
+  * lxde
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 31 Mar 2012 18:26:35 +0200
+
+easyvdr (0.0.1-1easyVDR10.8) oneiric; urgency=high
+
+  * runvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 21 Mar 2012 10:05:07 +0100
+
+easyvdr (0.0.1-1easyVDR10.7) oneiric; urgency=high
+
+  * fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Mar 2012 09:54:36 +0100
+
+easyvdr (0.0.1-1easyVDR10.6) oneiric; urgency=high
+
+  * depends easyvdr-inputlirc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Mar 2012 09:52:24 +0100
+
+easyvdr (0.0.1-1easyVDR10.5) oneiric; urgency=high
+
+  * new easyvdr-version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 03 Mar 2012 09:39:12 +0100
+
+easyvdr (0.0.1-1easyVDR10.4) oneiric; urgency=low
+
+  * added new carddetectng
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 24 Feb 2012 19:29:28 +0100
+
+easyvdr (0.0.1-1easyVDR10.3) oneiric; urgency=low
+
+  * export VDR_CHARSET_OVERRIDE="ISO-8859-9" 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 16 Feb 2012 15:34:35 +0100
+
+easyvdr (0.0.1-1easyVDR10.2) oneiric; urgency=high
+
+  * added easyvdr-usbmount
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 10 Feb 2012 10:26:04 +0100
+
+easyvdr (0.0.1-1easyVDR10.1) oneiric; urgency=high
+
+  * added ir-keytable
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 09 Feb 2012 08:23:30 +0100
+
+easyvdr (0.0.1-1easyVDR10.0) oneiric; urgency=high
+
+  * FB-Receiver over soundcard
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Feb 2012 09:01:17 +0100
+
+easyvdr (0.0.1-1easyVDR9.9) oneiric; urgency=high
+
+  * added carddetect to depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 Feb 2012 23:03:46 +0100
+
+easyvdr (0.0.1-1easyVDR9.8) oneiric; urgency=high
+
+  * changes for OSD-Remote
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 Feb 2012 21:13:18 +0100
+
+easyvdr (0.0.1-1easyVDR9.7) oneiric; urgency=high
+
+  * debugged package depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Jan 2012 15:50:37 +0100
+
+easyvdr (0.0.1-1easyVDR9.6) oneiric; urgency=high
+
+  * experimental addings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Jan 2012 13:36:41 +0100
+
+easyvdr (0.0.1-1easyVDR9.5) oneiric; urgency=high
+
+  * added vdr to Meta
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Jan 2012 19:00:08 +0100
+
+easyvdr (0.0.1-1easyVDR9.4) oneiric; urgency=high
+
+  * configured new remote
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Jan 2012 17:33:26 +0100
+
+easyvdr (0.0.1-1easyVDR9.3) oneiric; urgency=high
+
+  * added PVR350-IR-Receiver
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 11 Jan 2012 22:00:34 +0100
+
+easyvdr (0.0.1-1easyVDR9.2) oneiric; urgency=low
+
+  * new Controllers
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 07 Jan 2012 18:36:50 +0100
+
+easyvdr (0.0.1-1easyVDR9.1) oneiric; urgency=low
+
+  * small changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 04 Jan 2012 12:55:57 +0100
+
+easyvdr (0.0.1-1easyVDR9.0) oneiric; urgency=high
+
+  * Hardwarechanges with OSD possible
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 19 Dec 2011 18:36:29 +0100
+
+easyvdr (0.0.1-1easyVDR8.9) oneiric; urgency=low
+
+  * set Version to 0.9.60
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 14 Dec 2011 08:55:29 +0100
+
+easyvdr (0.0.1-1easyVDR8.8) oneiric; urgency=high
+
+  * remote test
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 23 Nov 2011 09:56:57 +0100
+
+easyvdr (0.0.1-1easyVDR8.7) oneiric; urgency=high
+
+  * enabled X10
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 12 Nov 2011 20:57:15 +0100
+
+easyvdr (0.0.1-1easyVDR8.6) oneiric; urgency=high
+
+  * start dynamite last
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 29 Oct 2011 20:56:06 +0200
+
+easyvdr (0.0.1-1easyVDR8.5) oneiric; urgency=low
+
+  * Fixes for lirc_mceusb2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 24 Oct 2011 17:46:18 +0200
+
+easyvdr (0.0.1-1easyVDR8.4) oneiric; urgency=high
+
+  * blacklists splitted
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 21 Oct 2011 08:58:55 +0200
+
+easyvdr (0.0.1-1easyVDR8.3) oneiric; urgency=high
+
+  * debugged blacklist-install-file
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 20 Oct 2011 11:11:59 +0200
+
+easyvdr (0.0.1-1easyVDR8.1) oneiric; urgency=high
+
+  * edited blacklist-management
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Oct 2011 17:59:41 +0200
+
+easyvdr (0.0.1-1easyVDR8.0) oneiric; urgency=high
+
+  * added lirc-device dev_input
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Oct 2011 09:02:58 +0200
+
+easyvdr (0.0.1-1easyVDR7.9) oneiric; urgency=high
+
+  * set easyVDR-Version to 0.9.50 for Oneiric-Base
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Oct 2011 11:55:42 +0200
+
+easyvdr (0.0.1-1easyVDR7.8) oneiric; urgency=low
+
+  * network-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 09 Oct 2011 01:07:47 +0200
+
+easyvdr (0.0.1-1easyVDR7.7) oneiric; urgency=low
+
+  * function_lib cleanup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 06 Oct 2011 18:32:10 +0200
+
+easyvdr (0.0.1-1easyVDR7.6) oneiric; urgency=high
+
+  * debugged type-mismatch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 06 Oct 2011 10:43:27 +0200
+
+easyvdr (0.0.1-1easyVDR7.5) oneiric; urgency=high
+
+  * changed easyvdr-set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Oct 2011 20:20:23 +0200
+
+easyvdr (0.0.1-1easyVDR7.4) oneiric; urgency=high
+
+  * changes in function_lib
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 21 Sep 2011 09:05:35 +0200
+
+easyvdr (0.0.1-1easyVDR7.3) oneiric; urgency=high
+
+  * added ramdisk for oneiric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 13 Sep 2011 09:22:49 +0200
+
+easyvdr (0.0.1-1easyVDR7.2) oneiric; urgency=high
+
+  * added ramdisk
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 02 Sep 2011 16:12:54 +0200
+
+easyvdr (0.0.1-1easyVDR7.1) oneiric; urgency=high
+
+  * debugged package depency
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Aug 2011 18:11:57 +0200
+
+easyvdr (0.0.1-1easyVDR7.0) oneiric; urgency=low
+
+  * build for easyVDR
+  * updated ffmpeg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Aug 2011 11:59:32 +0200
+
+easyvdr (0.0.1-1easyVDR6.0) lucid; urgency=high
+
+  * rebuild because of wrong developer
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Jul 2011 12:26:17 +0200
+
+easyvdr (0.0.1-1easyVDR5.9) lucid; urgency=low
+
+  * add GraphTFT support
+
+ -- Sirnova <Sirnova@easyVDR.localdomain>  Tue, 26 Jul 2011 20:11:22 +0200
+
+easyvdr (0.0.1-1easyVDR5.8) lucid; urgency=low
+
+  * revert changes, alsa fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 24 Jul 2011 11:10:39 +0200
+
+easyvdr (0.0.1-1easyVDR5.7) lucid; urgency=low
+
+  * included graphtft-start to easyvdr-runvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Jul 2011 08:30:58 +0200
+
+easyvdr (0.0.1-1easyVDR5.6) lucid; urgency=low
+
+  * new functions-lib
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 Jul 2011 11:02:51 +0200
+
+easyvdr (0.0.1-1easyVDR5.5) lucid; urgency=high
+
+  * ya soundfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Jul 2011 09:48:26 +0200
+
+easyvdr (0.0.1-1easyVDR5.4) lucid; urgency=low
+
+  * sound fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 15 Jul 2011 19:45:44 +0200
+
+
+easyvdr (0.0.1-1easyVDR5.3) lucid; urgency=low
+
+  * added alsactl restore + chmod for /dev/snd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 14 Jul 2011 19:59:51 +0200
+
+easyvdr (0.0.1-1easyVDR5.2) lucid; urgency=high
+
+  * removed backports-alsa causing kernel panic
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 10 Jun 2011 11:01:59 +0200
+
+easyvdr (0.0.1-1easyVDR5.1) lucid; urgency=low
+
+  * added linux-backports-modules-alsa-lucid-generic
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 08 Jun 2011 21:38:42 +0200
+
+easyvdr (0.0.1-1easyVDR5.0) lucid; urgency=high
+
+  * changed lirc settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 05 Jun 2011 16:32:58 +0200
+
+easyvdr (0.0.1-1easyVDR4.9) lucid; urgency=high
+
+  * new function-lib
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 30 May 2011 09:03:25 +0200
+
+easyvdr (0.0.1-1easyVDR4.8) lucid; urgency=high
+
+  * little changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 May 2011 11:19:49 +0200
+
+easyvdr (0.0.1-1easyVDR4.7) lucid; urgency=low
+
+  * removed ivtvfb
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 May 2011 11:41:38 +0200
+
+easyvdr (0.0.1-1easyVDR4.6) lucid; urgency=high
+
+  * added ivtvfb to dvb.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 May 2011 10:33:54 +0200
+
+easyvdr (0.0.1-1easyVDR4.5) lucid; urgency=low
+
+  * added settings for pvr350
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 27 May 2011 22:27:14 +0200
+
+easyvdr (0.0.1-1easyVDR4.4) lucid; urgency=low
+
+  * restart lircd in set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 May 2011 12:09:00 +0200
+
+easyvdr (0.0.1-1easyVDR4.3) lucid; urgency=low
+
+  * debugged other upstart-files
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 11 May 2011 17:48:38 +0200
+
+easyvdr (0.0.1-1easyVDR4.2) lucid; urgency=high
+
+  * debugged easyvdr-frontend.upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 06 May 2011 20:10:18 +0200
+
+easyvdr (0.0.1-1easyVDR4.1) lucid; urgency=low
+
+  * several bugfixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 02 May 2011 08:07:01 +0200
+
+easyvdr (0.0.1-1easyVDR4.0) lucid; urgency=low
+
+  * several bugfixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Apr 2011 16:55:50 +0200
+
+easyvdr (0.0.1-1easyVDR3.9) lucid; urgency=low
+
+  * added dhcp-client-setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 Apr 2011 09:02:38 +0200
+
+easyvdr (0.0.1-1easyVDR3.8) lucid; urgency=low
+
+  * added easyvdr-tripatch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 06 Mar 2011 11:46:50 +0100
+
+easyvdr (0.0.1-1easyVDR3.7) lucid; urgency=low
+
+  * nameserver and domain in set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Feb 2011 12:29:52 +0100
+
+easyvdr (0.0.1-1easyVDR3.6) lucid; urgency=low
+
+  * debugged startvdr, stopvdr, restartvdr; blacklisted nouveau
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 15 Feb 2011 20:31:32 +0100
+
+easyvdr (0.0.1-1easyVDR3.5) lucid; urgency=low
+
+  * added wmdrawer
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Feb 2011 14:26:01 +0100
+
+easyvdr (0.0.1-1easyVDR3.4) lucid; urgency=low
+
+  * some minor changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 06 Feb 2011 23:57:51 +0100
+
+easyvdr (0.0.1-1easyVDR3.3) lucid; urgency=low
+
+  * debugged easyvdr-set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 03 Feb 2011 15:59:48 +0100
+
+easyvdr (0.0.1-1easyVDR3.2) lucid; urgency=low
+
+  * fixed Bug 6 http://bugs.easy-vdr.de/issues/6
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Feb 2011 22:12:51 +0100
+
+easyvdr (0.0.1-1easyVDR3.1) lucid; urgency=low
+
+  * removed video.00
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Feb 2011 14:45:09 +0100
+
+easyvdr (0.0.1-1easyVDR3.0) lucid; urgency=low
+
+  * debugged splashimage
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 29 Jan 2011 09:39:07 +0100
+
+easyvdr (0.0.1-1easyVDR2.9) lucid; urgency=low
+
+  * removed linux-firmware-nonfree
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 27 Jan 2011 23:55:28 +0100
+
+easyvdr (0.0.1-1easyVDR2.8) lucid; urgency=low
+
+  * debugged postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Jan 2011 21:39:54 +0100
+
+easyvdr (0.0.1-1easyVDR2.7) lucid; urgency=low
+
+  * removed ramdisk-management
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Jan 2011 17:43:46 +0100
+
+easyvdr (0.0.1-1easyVDR2.6) lucid; urgency=low
+
+  * added preinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Jan 2011 15:42:33 +0100
+
+easyvdr (0.0.1-1easyVDR2.5) lucid; urgency=low
+
+  * added alsa-base
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Jan 2011 10:09:10 +0100
+
+easyvdr (0.0.1-1easyVDR2.4) lucid; urgency=low
+
+  * added build-essential for correct dkms-building
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Jan 2011 17:45:36 +0100
+
+easyvdr (0.0.1-1easyVDR2.3) lucid; urgency=low
+
+  * several debugs
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 24 Jan 2011 21:09:15 +0100
+
+easyvdr (0.0.1-1easyVDR2.2) lucid; urgency=low
+
+  * splitted vdr and openbox start, added simdock
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Jan 2011 18:47:08 +0100
+
+easyvdr (0.0.1-1easyVDR2.1) lucid; urgency=low
+
+  * debugged set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 10 Jan 2011 08:32:28 +0100
+
+easyvdr (0.0.1-1easyVDR2.0) lucid; urgency=low
+
+  * changed openbox upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Jan 2011 17:03:44 +0100
+
+easyvdr (0.0.1-1easyVDR1.9) lucid; urgency=low
+
+  * changes in easyvdr-set-settings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Jan 2011 17:56:59 +0100
+
+easyvdr (0.0.1-1easyVDR1.8) lucid; urgency=low
+
+  * changes in easyvdr-set-settings for lirc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 31 Dec 2010 13:50:19 +0100
+
+easyvdr (0.0.1-1easyVDR1.7) lucid; urgency=low
+
+  * default vdr-init to "no" that setup starts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 21 Dec 2010 07:53:29 +0100
+
+easyvdr (0.0.1-1easyVDR1.6) lucid; urgency=low
+
+  * changed default vdr init
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 20 Dec 2010 20:42:29 +0100
+
+easyvdr (0.0.1-1easyVDR1.5) lucid; urgency=low
+
+  * changes in frontend and vdr starting
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 19 Dec 2010 01:21:28 +0100
+
+easyvdr (0.0.1-1easyVDR1.4) lucid; urgency=low
+
+  * changes in debian and hooks
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 15 Dec 2010 21:09:27 +0100
+
+easyvdr (0.0.1-1easyVDR1.3) lucid; urgency=low
+
+  * functions included
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 15 Dec 2010 21:06:16 +0100
+
+easyvdr (0.0.1-1easyVDR1.2) lucid; urgency=low
+
+  * fixed little bug in /debian/rules
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 05 Dec 2010 10:45:03 +0100
+
+easyvdr (0.0.1-1easyVDR1.1) lucid; urgency=low
+
+  * removed depends to easyvdr-setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 03 Dec 2010 08:20:45 +0100
+
+easyvdr (0.0.1-1easyVDR1.0) lucid; urgency=low
+
+  * Initial Release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 30 Nov 2010 15:30:19 +0100
+
+
+

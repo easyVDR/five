@@ -1,0 +1,6 @@
+[Desktop Entry]
+Type=Application
+Name=easyvdr x launcher
+Exec=/usr/lib/vdr/easyvdr-x-launcher
+
+

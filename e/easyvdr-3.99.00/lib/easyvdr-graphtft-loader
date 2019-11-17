@@ -1,0 +1,65 @@
+### BEGIN INIT INFO
+#
+# This file is called by /usr/bin/easyvdr-runvdr
+#
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+# Do NOT "set -e"
+#
+# Changelog:
+# V1.0 Initial Version
+# add LOGGING check 24.10.14 Bleifuss
+
+configure_graphtft() {
+        #Testen ob variable vorhanden
+        if [ X$LOGGING = "X" ]; then
+          LOGGING="yes"
+        fi
+	case "$START_GRAPHTFT" in
+		"auf Display 0.0 (Ausgabe ueber x)")
+			add_plugin "graphtft -d none"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT mit Parameter '-d none' und GraphTFT-fe auf Display 0.0 wird gestartet"
+			/usr/bin/start_graphtftfe.sh 0.0
+		;;
+		"auf Display 0.1 (Ausgabe ueber x)")
+			add_plugin "graphtft -d none"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT mit Parameter '-d none' und GraphTFT-fe auf Display 0.1 wird gestartet"
+			/usr/bin/start_graphtftfe.sh 0.1
+		;;
+		"auf Display 1.0 (Ausgabe ueber x)")
+			add_plugin "graphtft -d none"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT mit Parameter '-d none' und GraphTFT-fe auf Display 1.0 wird gestartet"
+			/usr/bin/start_graphtftfe.sh 1.0
+		;;
+		"auf Display 1.1 (Ausgabe ueber x)")
+			add_plugin "graphtft -d none"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT mit Parameter '-d none' und GraphTFT-fe auf Display 1.1 wird gestartet"
+			/usr/bin/start_graphtftfe.sh 1.1
+		;;
+		"ueber FrameBuffer /dev/fb0")
+			add_plugin "graphtft -d /dev/fb0"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT mit Parameter '-d /dev/fb0' wird gestartet"
+		;;
+		"ueber FrameBuffer /dev/fb1")
+			add_plugin "graphtft -d /dev/fb1"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT mit Parameter '-d /dev/fb1' wird gestartet"
+		;;
+		"auf directFB")
+			add_plugin "graphtft -d directFB"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT mit Parameter '-d directFB' wird gestartet"
+		;;
+		"auf vdr/1")
+			add_plugin "graphtft -d vdr/1"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT mit Parameter '-d vdr/1' wird gestartet"
+		;;
+		"no")
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT wird nicht gestartet"
+		;;
+		"auto detect")
+			add_plugin "graphtft -d"
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT wird nicht gestartet"
+		;;
+		*)
+			[ $LOGGING = "yes" ] && $LOGGER "GraphTFT hat eine falsche Einstellung in der sysconfig"
+		;;
+	esac
+}

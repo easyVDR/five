@@ -1,0 +1,89 @@
+#!/bin/bash
+# added USB-Ramdisk 14.07.12  Captain_Beefheart
+#  very lot of changes 01.12.12 C.B.
+#  some fixes          23.12.12 C.B.
+#  changes for Upstart 25.02.18 Bleifuss
+#
+#description	"umount and save /ramdisk"
+#author 		"Uwe Kiehl <uwe@easy-vdr.de> & C.B."
+
+
+LOGGER="logger -t easyvdr-save-ramdisk"
+
+#### definitions ####
+SYNC="rsync -aXW --delete --links"
+SYNC_NODEL="rsync -aXWu --links"
+
+
+EXCLUDES="--exclude=epgimages/ --exclude=vtx/ --exclude=epg.data"
+
+#### functions
+#####
+Save_EPG()
+{
+if [ x"$EPG_RAMDISK" = x"yes" ]; then
+  unlink /var/cache/vdr/epg.data
+  mv -f $UNI_RAMDISK/epg.data /var/cache/vdr/epg.data
+fi
+}
+
+#####
+Save_EPGIM()
+{
+if [ x"$EPGIMAGES_RAMDISK" = x"yes" ]; then
+  umount /var/cache/vdr/epgimages
+  $SYNC $UNI_RAMDISK/epgimages/  /var/cache/vdr/epgimages
+fi
+}
+
+#####
+Save_VAR_CACHE()
+{
+if [ -d $UNI_RAMDISK/var_cache/vdr ]; then
+  umount -l /var/cache || true
+  rsync -aXW --delete $EXCLUDES $UNI_RAMDISK/var_cache/ /var/cache
+fi
+}
+
+###
+Save_VAR_LOG()
+{
+if [ -f $UNI_RAMDISK/var_log/syslog ]; then
+  umount -l /var/log || true
+  rsync -aXW --delete $UNI_RAMDISK/var_log/ /var/log
+fi
+}
+
+#####
+Main_Runs()
+{
+$LOGGER "save Ramdisk-Stuff to Disk"
+
+if [ -e /dev/usbramdisk ]
+  then
+    UNI_RAMDISK="/opt/USB-Ramdisk"
+    Save_VAR_CACHE
+    Save_VAR_LOG
+  else
+    UNI_RAMDISK="/easyvdr_ramdisk"
+    Save_EPG
+    Save_EPGIM
+    umount $UNI_RAMDISK/vtx
+    umount $UNI_RAMDISK
+fi
+}
+
+###########################################
+
+if [ -f /usr/lib/vdr/easyvdr-config-loader ]
+  then
+    . /usr/lib/vdr/easyvdr-config-loader
+    if [ x"$CREATE_RAMDISK" = x"yes" ]
+      then 
+        Main_Runs
+      else 
+        exit 0
+    fi
+  else
+    exit 1
+fi

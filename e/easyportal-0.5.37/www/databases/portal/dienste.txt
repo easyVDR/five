@@ -1,0 +1,20 @@
+Dienst#Name#Port#Link#CheckID
+str#str#str#str#str
+####
+vdr#VDR - Dein easyVDR###a
+vdradmind#VDR-Admin#7001#http://IP:7001#b
+xxvd#XXV#8080#http://IP:8080#b
+proftpd#FTP-Server#21#ftp://IP#b
+sshd#SSH-Server###b
+vch#VCH-Helper#8060#http://IP:8060/news#b
+osd2web#OSD2WEB default#4444#http://IP:4444/skins/default/index.html?theme=default#b
+osd2web#OSD2WEB horchiTft plain#4444#http://IP:4444/skins/horchiTft/index.html?onlyView=yes&theme=plain#b
+osd2web#OSD2WEB horchiTft blue#4444#http://IP:4444/skins/horchiTft/index.html?onlyView=yes&theme=blue#b
+restfulapi#Web-App#8002#http://IP:8002/webapp#b
+epghttpd#EPGD HTTP#9999#http://IP:9999#b
+smbd#Samba###b
+lighttpd#easyPortal#80##b
+live#Live#8008#http://IP:8008#b
+streamdev#Streamdev-Server#3000#http://IP:3000#b
+shellinabox#Shellinabox - Konsole per SSH##ssh_warnung.php#b
+control#OSD per Telnet#2002#telnet://IP:2002#b

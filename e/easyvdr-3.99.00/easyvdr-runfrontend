@@ -1,0 +1,306 @@
+#!/bin/bash
+
+# Provides:          easyvdr-frontend
+# Short-Description: Starts frontend for vdr
+# Description:       Starts frontend for vdr
+
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+#
+# Changelog:
+# V1.0 Initial Version
+# V1.1 Some minor bugfixes
+# V1.2 Added softhddevice  Captain_Beefheart 07.07.12
+# V1.2 XBMC as Frontend minor changes Bleifuss2 12.07.12
+# V1.2 Softhddevice bugfix & Added set_resolution 
+# V1.2 Add Parameter for Softhddevice Systemstart Captain_Beefheart 12.03.13
+# V1.2 Add wait_for_x and modify start event Bleifuss2 13.04.13
+# V1.2 Change Frontend Parameter Bleifuss2 18.09.13
+# V1.2 Remove setvdpau Bleifuss2 19.09.13
+# V1.2 Add set-monitor-layout Bleifusss2 30.10.13
+# V1.2 Change vdr-sxfe user 07.12.13
+# V1.2 remove xbmc_waits_for_vdr 08.01.15 Bleifuss
+# V1.2 optimizing timing for set-monitor-layout
+# V1.3 remove xbmc and adding kodi 
+# V1.3 update wait_for_X_and_set_monitor_layout
+# V1.4 24.11.2017 systemd and softhddevice updates
+
+NAME=$(basename $0)
+LOGGER="logger -t $NAME"
+WAIT=20
+PIDFILE="/var/run/$NAME"
+SOFTHDRUN="/var/run/easyvdr-run-softhddevice"
+TERMTIMEOUT=30
+KILLTIMEOUT=30
+RESTARTTIME=10
+
+
+SOFTHDDEVICE_CHECK_FILE=/tmp/softhddevice_startup
+
+export HOME=/var/lib/vdr
+
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/lib/vdr/easyvdr-config-loader
+export DISPLAY=$FRONTEND_DISPLAY
+
+daemon_not_found() {
+	$LOGGER "exit $DAEMON not found"
+	exit 1
+}
+
+xine_waits_for_vdr() {
+	# Max waiting time in Seconds
+	local loc_WAIT=$WAIT
+	while [ ! -e /tmp/vdr-xine/stream ] ; do
+		(( loc_WAIT=$loc_WAIT-1 ))
+		if [ $loc_WAIT -eq 0 ]; then
+			$LOGGER "Wait more than $WAIT seconds for VDR - give up"
+			exit 1
+		fi
+		sleep 1
+		$LOGGER "wait for vdr"
+	done
+	$LOGGER "Starting $DAEMON"
+	return 0
+}
+
+sxfe_waits_for_vdr() {
+	# Max waiting time in Seconds
+	local loc_WAIT=$WAIT
+	while ! netcat -z localhost 37890; do
+		(( loc_WAIT=$loc_WAIT-1 ))
+		if [ $loc_WAIT -eq 0 ]; then
+			$LOGGER "Wait more than $WAIT seconds for VDR - give up"
+			exit 1
+		fi
+		sleep 1
+		$LOGGER "wait for vdr"
+	done
+	$LOGGER "Starting $DAEMON"
+	return 0
+}
+
+kodi_waits_for_vdr() {
+	# Max waiting time in Seconds
+	local loc_WAIT=$WAIT
+	while ! netcat -z localhost 34891; do
+		(( loc_WAIT=$loc_WAIT-1 ))
+		if [ $loc_WAIT -eq 0 ]; then
+			$LOGGER "Wait more than $WAIT seconds for VDR - give up"
+			exit 1
+		fi
+		sleep 1
+		$LOGGER "wait for vdr"
+	done
+	$LOGGER "Starting $DAEMON"
+	return 0
+}
+
+softhdd_waits_for_vdr()
+{
+# Max waiting time in Seconds
+local loc_WAIT=$WAIT
+while ! ( /usr/bin/svdrpsend PLUG softhddevice DETA | grep -q "closing connection" )
+  do
+    (( loc_WAIT=$loc_WAIT-1 ))
+    if [ $loc_WAIT -eq 0 ]; then
+      $LOGGER "Wait more than $WAIT seconds for VDR - give up"
+      exit 1
+    fi
+    sleep 1
+    $LOGGER "wait for vdr"
+  done
+return 0
+}
+
+
+
+########################################################
+
+if [ -r "$PIDFILE" ] ; then
+	OLDRUNVDRPID=""
+	OLDRUNVDRPID=`<$PIDFILE`
+	[ -z "$TERMINATE"  ] && TERMINATE="$OLDRUNVDRPID"
+fi
+
+if [ "$TERMINATE" != "0" ] ; then
+	if [ -n "$TERMINATE" ] ; then
+		kill $TERMINATE
+		while [ -z "$WAIT" ] || [ "$WAIT" -gt 0 ] ; do
+			ps $TERMINATE >&- || { break; }
+			sleep 1
+			[ -n "$WAIT" ] && let WAIT=WAIT-1
+		done
+	fi
+fi
+
+echo $$ > $PIDFILE
+
+case $VDR_FRONTEND in
+	"Softhddevice")
+		DAEMON="/usr/bin/softhdd_daemon"
+		test -x $DAEMON || daemon_not_found 
+                if [[ ! -f $SOFTHDDEVICE_CHECK_FILE ]]; then
+                 wait_for_X_and_set_monitor_layout
+                 /usr/bin/svdrpsend PLUG softhddevice ATTA
+                 sleep 0.5
+                  if ( /usr/bin/svdrpsend PLUG softhddevice STAT | grep -q SUSPEND_NORMAL ); then
+                   sleep 0.5
+                   svdrpsend PLUG softhddevice RESU
+                  fi
+#                else
+#                 wait_for_X
+                fi 
+		FRONTENDCMD="$DAEMON > /dev/null 2>&1"
+	;;
+	"vdr-sxfe")
+		DAEMON="/usr/bin/vdr-sxfe"
+		test -x $DAEMON || daemon_not_found
+		sxfe_waits_for_vdr
+		wait_for_X_and_set_monitor_layout
+		[ -e $CFG_DIR/easyvdr-frontend-sxfe.conf ] && . $CFG_DIR/easyvdr-frontend-sxfe.conf
+		FRONTENDCMD="DISPLAY=$FRONTEND_DISPLAY su $STANDARD_DESKTOP_USER '-c $DAEMON $ACCELERATION $FULLSCREEN $GEOMETRY $VIDEO_DEVICE $VIDEO_MISCELLANEOUS_1 "
+                FRONTENDCMD="$FRONTENDCMD $VIDEO_MISCELLANEOUS_2 $AUDIO_DEVICE $AUDIO_DEVICE_PASSTHROUGH $AUDIO_MIXER_CHANNEL "
+                FRONTENDCMD="$FRONTENDCMD $AUDIO_MISCELLANEOUS $MISCELLANEOUS $CONFIG_FILE $CONNECTSTRING $XINITPARAMETER > /dev/null 2>&1'"
+	;;
+	"xine")
+		DAEMON="/usr/bin/xine"
+		test -x $DAEMON || daemon_not_found
+		chmod 0777 /tmp
+		xine_waits_for_vdr
+                wait_for_X_and_set_monitor_layout
+		[ -e $CFG_DIR/easyvdr-frontend-xine.conf ] && . $CFG_DIR/easyvdr-frontend-xine.conf
+		FRONTENDCMD="DISPLAY=$FRONTEND_DISPLAY $DAEMON $ACCELERATION $FULLSCREEN $GEOMETRY $VIDEO_DEVICE $VIDEO_MISCELLANEOUS_1 "
+                FRONTENDCMD="$FRONTENDCMD $VIDEO_MISCELLANEOUS_2 $AUDIO_DEVICE $AUDIO_DEVICE_PASSTHROUGH $AUDIO_MIXER_CHANNEL "
+                FRONTENDCMD="$FRONTENDCMD $AUDIO_MISCELLANEOUS $MISCELLANEOUS $CONFIG_FILE $CONNECTSTRING $XINITPARAMETER > /dev/null 2>&1"
+		
+	;;
+	"KODI")
+		DAEMON="/usr/bin/kodi"
+		test -x $DAEMON || daemon_not_found
+		# kodi_waits_for_vdr
+                wait_for_X_and_set_monitor_layout
+		svdrpsend remo off || /bin/true
+		[ -e $CFG_DIR/easyvdr-frontend-kodi.conf ] && . $CFG_DIR/easyvdr-frontend-kodi.conf
+		FRONTENDCMD="DISPLAY=$FRONTEND_DISPLAY su $STANDARD_DESKTOP_USER '-c $DAEMON $MISCELLANEOUS > /dev/null 2>&1'"
+#	        FRONTENDCMD="DISPLAY=:0 su easyvdr '-c  $DAEMON $PARAMETER $XINITPARAMETER > /dev/null 2>&1' "
+	;;
+	*)
+                $LOGGER "no or not correct Frontend; aborting"
+		exit 1
+	;;
+esac
+
+while (true) do
+	$LOGGER "Starting $DAEMON"
+
+	# Trap some signals sent to this script
+	trap "SIG=HUP" SIGHUP
+	trap "SIG=INT" SIGINT
+	trap "SIG=QUIT" SIGQUIT
+	trap "SIG=TERM" SIGTERM
+	trap "SIG=USR1" SIGUSR1
+	trap "SIG=USR2" SIGUSR2
+
+	# clean up signal variable
+	SIG=
+
+	# Remember start time
+	STARTTIME=`date +%s`
+
+
+	eval "$FRONTENDCMD &"
+
+	# Remember PID of DAEMON process
+	DAEMONPID=$!
+
+	# Wait for VDR to end or signal to arrive
+	wait $DAEMONPID
+
+	# Remember return value of DAEMON
+	RET=$?
+
+	# Remember stop time
+	STOPTIME=`date +%s`
+
+	# Count if time is less than RESTARTTIME seconds,
+	# forget otherwise
+	if [ "$RESTARTTIME" -gt 0 -a $((STOPTIME-STARTTIME)) -le "$RESTARTTIME" ] ; then
+		SHORTRUNTIMES=$((SHORTRUNTIMES+1))
+		$LOGGER "$DAEMON died within $RESTARTTIME seconds, this happened $SHORTRUNTIMES time(s)."
+	else
+		SHORTRUNTIMES=0
+	fi
+
+	case "$SIG" in
+		HUP | INT | QUIT | TERM)
+                        if  [[ $VDR_FRONTEND == "Softhddevice" ]]
+                          then
+   			    $LOGGER "Terminating by request"
+			    # Kill remaining DAEMON traces
+                            svdrpsend PLUG softhddevice DETA
+			    # and exit
+                            if [ -f $SOFTHDRUN ];then
+                              rm $SOFTHDRUN
+                            fi
+			    break
+                          else
+			    $LOGGER "Terminating by request"
+			    # Kill remaining DAEMON traces
+			    WaitKill $DAEMONPID $DAEMON $TERMTIMEOUT $KILLTIMEOUT
+			    # and exit
+			    break
+                          fi
+		;;
+		USR1)
+                        if  [[ $VDR_FRONTEND == "Softhddevice" ]]
+                          then
+   			    $LOGGER "Restarting $DAEMON by request"
+			    # Kill remaining DAEMON traces
+                            svdrpsend PLUG softhddevice DETA
+                            if [ -f $SOFTHDRUN ];then
+                              rm $SOFTHDRUN
+                            fi
+                          else
+			    $LOGGER "Restarting $DAEMON by request"
+			    # Kill remaining DAEMON traces
+			    WaitKill $DAEMONPID $DAEMON $TERMTIMEOUT $KILLTIMEOUT
+                          fi
+			# and loop
+		;;
+		*)	# Non-signal termination
+			if [ $SHORTRUNTIMES -ge 10 ] ; then
+                          if  [[ $VDR_FRONTEND == "Softhddevice" ]]
+                            then
+     			      $LOGGER "Terminating because $DAEMON died 10 times in a row quickly"
+			      # Kill remaining DAEMON traces
+                              svdrpsend PLUG softhddevice DETA
+			      # and exit
+                              if [ -f $SOFTHDRUN ];then
+                                rm $SOFTHDRUN
+                              fi
+			      break
+                            else
+			      $LOGGER "Terminating because $DAEMON died 10 times in a row quickly"
+			      # Kill remaining DAEMON traces
+			      WaitKill $DAEMONPID $DAEMON $TERMTIMEOUT $KILLTIMEOUT
+			      # and exit
+			      break
+                          fi
+			fi
+
+			# Kill remaining DAEMON traces
+			WaitKill $DAEMONPID $DAEMON $TERMTIMEOUT $KILLTIMEOUT
+			# and loop
+		;;
+	esac
+
+	# Catch remaining in-between signals
+	case "$SIG" in
+		HUP | INT | QUIT | TERM)
+			break
+		;;
+	esac
+done
+svdrpsend remo on || /bin/true
+[ -e "$PIDFILE" ] && rm $PIDFILE >&- 2>&-
+

@@ -1,0 +1,122 @@
+body {
+  padding: 0px;
+  margin: 0px;
+  background-color: #D0DCE0;
+  font-family: Verdana;
+}
+#kopf {
+  height: 35px;
+  margin: 10px;
+  text-align: center;
+  font-size: 200%;
+  color: red;
+  background-color: #D0DCE0;
+}
+#fuss {
+  margin: 10px 180px;
+  height: 20px;
+  background-color: grey;
+  font-size: 90%;
+  text-align: center;
+  width: 85%;
+}
+#inhalt {
+  margin: 10px 180px;
+  padding: 10px;
+  background-color: #ffffc6;
+  width: 85%;
+  font-family: Verdana;
+}
+#links {
+  position: absolute;
+  top: 0px;
+  left: 10px;
+  width: 160px;
+  height: 300px;
+  background-color: #D0DCE0;
+}
+
+
+.button1 {
+  border: 1px solid black;
+  color: #000000;
+  background: #cfcfcf;
+  padding: 2px;
+  padding-left: 5px;
+  text-align: center;
+  border-spacing: 0px;
+}
+
+.button1:hover {
+  background: #9f9f9f;
+  color: #FF0000
+}
+
+
+/******************************************** roter Rahmen ********************************************/
+
+#rahmen_rot {
+    border-width:2px;
+    border-style:solid;
+    border-color:#FF0000;
+    padding:0.5em;
+    text-align:justify;
+}
+
+/******************************************** tab1 ********************************************/
+
+#tab1 table {
+    border-collapse: collapse;
+    font-size: 0.8em;
+}
+#tab1 th {
+    border-width:1px;
+    border-style:solid;
+    padding: 0.2em;
+    margin: 0px;
+    vertical-align: 1px;
+    text-align: center;
+    background-color: #cc9;
+}
+#tab1 td {
+    border-width:1px;
+    border-style:solid;
+    padding: 0.2em;
+    margin: 0px;
+    vertical-align: 1px;
+    background-color: #eee;
+}
+
+#tab1 td.button1 {
+  border: 1px solid black;
+  color: #000000;
+  background: #cfcfcf;
+  padding: 2px;
+  padding-left: 5px;
+  text-align: center;
+  border-spacing: 0px;
+}
+
+#tab1 td.button1:hover {
+  background: #9f9f9f;
+  color: #FF0000
+}
+
+
+
+/********************************************  ********************************************/
+
+
+p {font-family:Verdana;}
+
+h1		{font-family:Verdana; COLOR:#000000; TEXT-DECORATION:none; font-size:14pt;}
+h2		{font-family:Verdana; COLOR:#000000; TEXT-DECORATION:none; font-size:12pt;}
+h3 		{font-family:Verdana; COLOR:#000000; TEXT-DECORATION:none; font-size:10pt;}
+h4 		{font-family:Verdana; COLOR:#000000; TEXT-DECORATION:none; font-size:8pt;}
+A:link 		{font-family:Verdana; COLOR:#000000; TEXT-DECORATION:none;}                         /* Nicht besuchte Seiten */
+A:visited 	{font-family:Verdana; COLOR:#000000; TEXT-DECORATION:none;}                         /* bereits besuchte Seiten */
+A:active 	{font-family:Verdana; COLOR:#000000;}                                               /* gerade angeklickte Verweise */
+A:hover 	{font-family:Verdana; COLOR:#FF0000;}
+
+td.tableheads_on  {border:1px solid black; color:#ffffff; background:#9f9f9f; padding: 2px; padding-left: 5px; text-align:center; border-spacing:0px;}
+td.tableheads_off {border:1px solid black; color:#ffffff; background:#cfcfcf; padding: 2px; padding-left: 5px; text-align:center; border-spacing:0px;}

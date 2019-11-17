@@ -1,0 +1,17 @@
+#! /bin/bash
+#
+### BEGIN INIT INFO
+# Provides:          restartvdr
+# Short-Description: EasyVDR-script to restart vdr for non root-user
+# Description:       restart vdr
+### END INIT INFO
+
+# Author: Uwe Kiehl <uwe@easy-vdr.de>
+
+# Do NOT "set -e"
+
+#set -x
+
+sudo restart easyvdr-vdr
+# sudo restart easyvdr-frontend   # geaendert C.B.
+sudo start easyvdr-frontend  START_STATE="sysstart"       # geaendert C.B.  

@@ -1,0 +1,17 @@
+#
+# HandBrakeCLI - VdrTranscode shutdown hook script - mango (easyVDR)
+# -------------------------
+#
+# This script checks if HandBrakeCLI is still doing anything, and if so
+# advices VDR to try the shutdown again in 5 minutes
+#
+
+ps -ae | grep -q HandBrakeCLI
+
+if [ $? -eq 0 ] ; then
+  # HandBrakeCLI is still running, so we should defer
+  # the shutdown for 5 minutes
+  echo "TRY_AGAIN=5"
+fi
+
+exit 0

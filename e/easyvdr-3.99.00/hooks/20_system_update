@@ -1,0 +1,15 @@
+#! /bin/bash
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+#[[ X$SHOW_NEW_PACKAGES == X"yes"  ]] && /usr/bin/easyvdr-update -n
+while [ true ]
+  do
+    (pidof program_changer_setup) && sleep 2 || break
+  done
+
+sleep 1
+
+if [[ X$SHOW_NEW_PACKAGES == X"yes"  ]]; then
+  /usr/bin/easyvdr-update -n > /dev/null 2>&1 &
+fi

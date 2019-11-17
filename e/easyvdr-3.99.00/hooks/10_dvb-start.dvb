@@ -1,0 +1,77 @@
+#! /bin/bash
+
+#set -x
+
+KERNEL_MODULES_DIR="/lib/modules/$(uname -r)"
+PCIMAP=$KERNEL_MODULES_DIR/modules.pcimap
+USBMAP=$KERNEL_MODULES_DIR/modules.usbmap
+DVB_MODULES_DEFAULT="/etc/vdr/easyvdr-dvb-default-driver"
+LOADED_MODULES="/var/run/easyvdr-loaded-modules"
+BLACKLIST="/etc/modprobe.d/easyvdr-dvb-blacklist.conf"
+LOADFIRST="dvb_ttpci"
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+DetectPCImodules() {
+	for i in /sys/bus/pci/devices/* ; do
+        	Vendor=$(cat $i/vendor | cut -f 2 -d "x")
+		Device=$(cat $i/device | cut -f 2 -d "x")
+		SV=$(cat $i/subsystem_vendor | cut -f 2 -d "x")
+		SD=$(cat $i/subsystem_device | cut -f 2 -d "x")
+		driver=$(grep "0x0000$Vendor 0x0000$Device 0x0000$SV 0x0000$SD" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
+		if [ "$driver" = "" ] ; then
+			driver=$(grep "0x0000$Vendor 0x0000$Device 0xffffffff 0xffffffff" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
+		fi
+		if [ "$driver" != "" ] ; then
+			[ $(echo $BLACKLISTED | grep -ic "$driver") -gt 0 ] &&  echo "$driver"
+		fi
+	done
+}
+
+DetectUSBmodules() {
+	OLDIFS=$IFS
+	IFS=$'\n'
+	for i in $(lsusb) ; do
+		LINE=${i#*ID }
+		Vendor=$(echo $LINE | cut -b 1-4)
+		Device=$(echo $LINE | cut -b 6-9)
+		Info=$(echo $LINE | cut -f 2- -d " ")
+		if [ "$Vendor" = "0000" ] ; then
+			continue
+		fi
+		driver=$(grep -i "0x$Vendor" $USBMAP | grep -i "0x$Device" | cut -f 1 -d " " | tr "-" "_")
+		if [ "$driver" != "" ] ; then
+			 [ $(echo $BLACKLISTED | grep -ic "$driver") -gt 0 ] &&  echo "$driver"
+		fi
+	done
+	IFS=$OLDIFS
+}
+
+
+loadDVBdriver() {
+	BLACKLISTED=$(cat $BLACKLIST | grep -v ^#)
+	DETECTEDMODULES=$(DetectPCImodules ; DetectUSBmodules | sort -u)
+
+	if [ -e $DVB_MODULES_DEFAULT ] ; then
+		DVBMODULES=$(cat $DVB_MODULES_DEFAULT | grep -v ^#)
+	else
+		DVBMODULES=""
+	fi
+
+	MODULES="$DETECTEDMODULES $DVBMODULES"
+
+	echo $MODULES >  $LOADED_MODULES
+	if [ $(echo $$MODULES | grep -ic $LOADFIRST) -gt 0 ]; then
+    	    MODULES="$LOADFIRST ${MODULES//$LOADFIRST/}"
+    	fi
+
+	for module in $MODULES ; do
+		if [ "$module" = "dvb_ttpci" ]; then
+			modprobe -s $module vidmode=$VIDMODE
+		else
+			modprobe -s $module
+		fi
+	done
+}
+
+loadDVBdriver

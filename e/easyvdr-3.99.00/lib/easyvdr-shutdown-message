@@ -1,0 +1,17 @@
+#!/bin/bash
+
+svdrpsend="/usr/bin/svdrpsend"
+LOGGER="logger -t vdr-shutdown"
+MESSAGE="Shutdown deactivated (see /etc/default/vdr)"
+
+osdmsg() {
+	# OSD message must be deferred, to let VDR display it AFTER the
+	# shutdown script has been executed
+	sleep 2
+	$svdrpsend MESG "$1"
+}
+
+osdmsg $MESSAGE &
+$LOGGER $MESSAGE &
+
+exit 1

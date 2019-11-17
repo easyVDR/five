@@ -1,0 +1,16 @@
+usr/share/vdr/command-hooks/commands.custom.conf       etc/vdr/command-hooks/commands.custom.conf
+usr/share/vdr/command-hooks/reccmds.custom.conf        etc/vdr/command-hooks/reccmds.custom.conf
+
+usr/share/vdr/after-vdr-hooks                          etc/vdr/after-vdr-hooks
+usr/share/vdr/before-vdr-hooks                         etc/vdr/before-vdr-hooks
+
+usr/share/vdr/recording-hooks/10_recording.custom      etc/vdr/recording-hooks/10_recording.custom
+usr/share/vdr/shutdown-hooks/10_shutdown.custom        etc/vdr/shutdown-hooks/10_shutdown.custom
+
+usr/share/vdr/images/easyvdr-logo.png                  usr/share/vdr/images/intro/intro_01.png
+usr/share/vdr/images/easyvdr-logo.png                  usr/share/vdr/images/extro/extro_01.png
+
+var/lib/vdr/easyvdr-dvb-default-driver                 etc/vdr/easyvdr-dvb-default-driver
+
+
+var/lib/vdr						/home/vdr

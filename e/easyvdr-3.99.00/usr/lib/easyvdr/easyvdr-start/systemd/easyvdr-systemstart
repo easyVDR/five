@@ -1,0 +1,399 @@
+#!/bin/bash
+# Starts easyvdr-system
+#
+# version 0.1   22.02.13 Initial Version C.B.
+# version 0.2   26.03.13 Beta Test Version
+# version 0.2   13.04.13 Bugfix for non-X systems
+# version 0.2   27.08.14 adding set-monitor-layout
+# version 0.2   13.08.14 set keyboard layout de, Bleifuss
+# version 0.2   02.01.14 remove keyboard layout de, Bleifuss
+# version 0.3   16.02.15 adding check display connected
+# version 0.4   07.07.15 adding displaymanager
+# version 0.5   01.05.17 adding lircd irmplircd and easyvdr-systemstart.conf
+# Version 0.6   24.11.17 Update Systemd
+
+LOGGER="logger -t easyvdr-systemstart"
+PATH=$PATH:/usr/lib/easyvdr/easyvdr-start
+
+# vdr enabled?
+if [[ -r /etc/default/vdr ]] ;then
+ . /etc/default/vdr
+ if [ "$ENABLED" = "no" ] ;then
+  $LOGGER "vdr is disabled ->/etc/default/vdr"
+  exit 0
+ fi
+fi
+
+
+# Dienste die Probleme machen deaktivieren
+
+ STAT=$(systemctl is-active "lircd-uinput.service") || true > /dev/null 2>&1
+ if [ $STAT != "inactive" ]; then
+   systemctl stop "lircd-uinput.service" || true > /dev/null 2>&1
+ fi
+   
+ STAT=$(systemctl is-enabled "lircd-uinput.service") || true > /dev/null 2>&1
+ if [ X$STAT == "Xenabled" ]; then
+   systemctl disable "lircd-uinput.service" || true > /dev/null 2>&1
+ fi
+ 
+
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /etc/vdr/easyvdr/easyvdr-video-settings.conf
+. /usr/share/easyvdr/setup/video-setup/easyvdr-video-lib
+
+
+if [[ -f /etc/vdr/easyvdr/easyvdr-systemstart.conf ]];then
+ . /etc/vdr/easyvdr/easyvdr-systemstart.conf
+else
+ if ! [[ -d "/etc/vdr/easyvdr" ]];then
+   mkdir "/etc/vdr/easyvdr"
+ fi
+  cp /usr/share/easyvdr/setup/default_settings/easyvdr-systemstart.conf /etc/vdr/easyvdr/easyvdr-systemstart.conf
+ . /etc/vdr/easyvdr/easyvdr-systemstart.conf
+fi
+
+#Version der conf überprüfen
+ if ! [[  $VERSION == "0.4" ]];then
+  mv /etc/vdr/easyvdr/easyvdr-systemstart.conf /etc/vdr/easyvdr/easyvdr-systemstart.old
+  cp /usr/share/easyvdr/setup/default_settings/easyvdr-systemstart.conf /etc/vdr/easyvdr/easyvdr-systemstart.conf
+ . /etc/vdr/easyvdr/easyvdr-systemstart.conf
+ fi
+
+#Prüfen welche Logo Datei vorhanden ist
+if [[ -f "/usr/share/easyvdr/images/easyvdr-logo.png" ]];then
+ EASYVDR_LOGO="/usr/share/easyvdr/images/easyvdr-logo.png"
+else
+ EASYVDR_LOGO="/usr/share/easyvdr/images/easyvdr-logo.jpg"
+fi
+
+
+LOG="/var/log/easyvdr/easyvdr-systemstart.log"
+
+
+VDR_RUNTIME_LOG="/var/log/easyvdr/easyvdr-runtime.csv"
+
+# Für X Berechtigung 
+export XAUTHORITY=/var/lib/vdr/.Xauthority
+
+# Wenn TV gefunden wird dann wird das file angelegt
+DISPLAY_CHECK_FILE=/tmp/vdr_display_connected
+GRAPHTFT_DISPLAY_CHECK_FILE=/tmp/graphtft_display_connected
+SOFTHDDEVICE_CHECK_FILE=/tmp/softhddevice_startup
+SOFTHDDEVICE_CONF=/var/lib/vdr/easyvdr-frontend-softhddevice.conf
+
+################ WOL für Server
+server_wol()  
+{ 
+# Rechner per WOL einschalten?
+if [ $ENABLE_WOL == "yes" ]; then
+ $LOGGER "send magic packet to $WOL_MAC"
+ wakeonlan $WOL_MAC
+ $LOGGER "wait $WOL_BOOT_TIME s"
+ sleep $WOL_BOOT_TIME
+ $LOGGER "mount -a"
+ mount -a  >/dev/null 2>&1 || true
+fi
+}
+
+
+################# Monitorlayout setzen und Splash Screen anzeigen
+set_monitor_layout_fullscreen_and_splash_screen()
+{
+ #Läuft X?
+ if [ -e $DISPLAY_CHECK_FILE ];then
+   $LOGGER "set-monitor-layout"
+   echo  "$(date): $STEP/$LAST_STEP set-monitor-layout" >> $LOG
+   /usr/lib/vdr/easyvdr-set-monitor-layout || true > /dev/null 2>&1
+
+   if [[ $SPLASH_SCREEN == "yes" ]];then
+    $LOGGER "show easyvdr-logo"
+    echo  "$(date): $STEP/$LAST_STEP show easyvdr-logo" >> $LOG
+
+    #Don't view Desktop
+    DISPLAY=$FRONTEND_DISPLAY /usr/bin/view_picture "$EASYVDR_LOGO" 50 || true > /dev/null 2>&1 &
+   else
+    #Don't view Desktop
+    DISPLAY=$FRONTEND_DISPLAY /usr/bin/view_picture "$EASYVDR_LOGO" 4 || true > /dev/null 2>&1 &
+   fi
+ fi
+}
+
+
+################# VDR Starten
+start_vdr()
+{
+$LOGGER "step $STEP/$LAST_STEP starting job easyvdr-vdr"
+echo "$(date): $STEP/$LAST_STEP starting job easyvdr-vdr" >> $LOG
+
+#VDR starten
+/usr/lib/easyvdr/easyvdr-start/easyvdr-vdr start 
+
+#Warten bis VDR läuft
+# Max waiting time in Seconds
+WAIT=40
+loc_WAIT=$WAIT
+while ! ( /usr/bin/svdrpsend VOLU | grep -q "closing connection" )
+  do
+    loc_WAIT=$(($loc_WAIT-1))
+    if [ $loc_WAIT -eq 0 ]; then
+      $LOGGER "Wait more than $WAIT seconds for VDR - give up"
+      echo "$(date): Wait more than $WAIT seconds for VDR - give up" >> $LOG
+      exit 1
+    fi
+    sleep 1
+    $LOGGER "wait for vdr"
+    echo "$(date): wait for vdr" >> $LOG
+  done
+
+ $LOGGER "step $STEP/$LAST_STEP job easyvdr-vdr is running"
+ echo "$(date): $STEP/$LAST_STEP job easyvdr-vdr is running" >> $LOG
+}
+
+
+################# Auf X Server warten
+wait_for_X()
+{
+
+DISPLAY=$FRONTEND_DISPLAY /usr/lib/vdr/easyvdr-check-display-connected
+
+loc_WAIT=15
+  while ! ( /usr/bin/test -e $DISPLAY_CHECK_FILE ) 
+   do
+     (( loc_WAIT=$loc_WAIT-1 ))
+     if [ $loc_WAIT -eq 0 ]; then
+       $LOGGER "$STEP/$LAST_STEP no x server is running"
+       echo "$(date): $STEP/$LAST_STEP  no x server is running" >> $LOG
+       systemctl stop display-manager
+
+       #Softhd detached starten
+       if [[ X$FULLSCREEN != X"-f -D" ]] ; then
+        cat $SOFTHDDEVICE_CONF | sed -e s/"FULLSCREEN=\"-f\""/"FULLSCREEN=\"-f -D\""/g > /tmp/softhddevice.tmp
+        cat /tmp/softhddevice.tmp > $SOFTHDDEVICE_CONF
+       fi
+
+       rm_xauthority 
+       break
+     fi
+     sleep 1
+     DISPLAY=$FRONTEND_DISPLAY /usr/lib/vdr/easyvdr-check-display-connected
+     $LOGGER "$STEP/$LAST_STEP wait for X initialization"
+     echo "$(date): $STEP/$LAST_STEP wait for X initialization" >> $LOG
+   done
+}
+
+
+################# Auf TV EDID Daten warten
+wait_for_display()
+{
+ STAT=1
+
+ #Läuft X mit Haupt Bildschirm ?
+ if [ -e $DISPLAY_CHECK_FILE -a $VDR_GRAPHTFT_CONNECTOR == "none" -o -e $DISPLAY_CHECK_FILE -a -e $GRAPHTFT_DISPLAY_CHECK_FILE ];then
+  #Alle Bildschirme laufen
+  return 
+ fi
+
+
+ #Auf Bildschirme warten
+  while [ $STAT -ne "0" ]
+  do 
+     Check_Display
+     STAT=$?
+     if [ $STAT -ne "0" ];then
+      sleep 25
+     fi
+     $LOGGER "step $STEP/$LAST_STEP wait for primary display STAT: $STAT"
+     echo  "$(date): $STEP/$LAST_STEP wait for primary display STAT: $STAT" >> $LOG
+
+  done
+  rm_xauthority
+
+  systemctl is-active "display-manager" > /dev/null 2>&1
+  if [ $? -ne 0 ]; then
+   $LOGGER "step $STEP/$LAST_STEP display found, starting desktop"
+   echo  "$(date): $STEP/$LAST_STEP display found, starting desktop" >> $LOG
+
+   systemctl start "display-manager" || true > /dev/null 2>&1
+  fi
+  
+  wait_for_X
+  /usr/lib/vdr/easyvdr-set-monitor-layout 
+
+   #Datei löschen damit Frontend gestartet wird
+  if [ -e $SOFTHDDEVICE_CHECK_FILE ];then
+   rm $SOFTHDDEVICE_CHECK_FILE 
+  fi
+
+ 
+  # Läuft X ? Ja vermutlich Graphftft
+#   while ( /usr/bin/test $STAT -equ 0 )
+ #  do
+    # X läuft
+#     sleep 25
+#     $LOGGER "step $STEP/$LAST_STEP wait for primary display"
+
+#     echo  "$(date): $STEP/$LAST_STEP wait for primary display" >> $LOG
+#     /usr/lib/vdr/easyvdr-set-monitor-layout 
+#     STAT=$?   #0=alles passt
+ #  done
+#  else
+ #  # X ist aus
+  # while ! ( /usr/bin/test -e $DISPLAY_CHECK_FILE )
+#    do
+#     startx "/usr/lib/vdr/easyvdr-check-display-connected" --  $FRONTEND_DISPLAY || true > /dev/null 2>&1
+#     sleep 25
+#     $LOGGER "step $STEP/$LAST_STEP wait for display"
+#     echo  "$(date): $STEP/$LAST_STEP wait for display" >> $LOG
+#    done
+
+#    $LOGGER "step $STEP/$LAST_STEP display found, starting desktop"
+#    echo  "$(date): $STEP/$LAST_STEP display found, starting desktop" >> $LOG
+ # fi
+
+}
+
+################# Frontend starten
+start_frontend()
+{
+  $LOGGER "step $STEP/$LAST_STEP starting job easyvdr-frontend"
+  echo "$(date): $STEP/$LAST_STEP starting job easyvdr-frontend" >> $LOG
+
+  if [[ X$FULLSCREEN != X"-f" ]] ;then
+    cat $SOFTHDDEVICE_CONF | sed -e s/"FULLSCREEN=\"-f -D\""/"FULLSCREEN=\"-f\""/g > /tmp/softhddevice.tmp
+    cat /tmp/softhddevice.tmp > $SOFTHDDEVICE_CONF
+  fi
+
+  /usr/lib/easyvdr/easyvdr-start/easyvdr-frontend start
+  #Datei löschen damit Frontend gestartet wird
+  if [ -e $SOFTHDDEVICE_CHECK_FILE ];then
+   rm $SOFTHDDEVICE_CHECK_FILE 
+  fi
+  sleep 0.2
+
+  if [[ $SPLASH_SCREEN == "yes" ]];then
+   #Frontend anzeigen
+   pkill view_picture || true > /dev/null 2>&1
+  fi
+}
+
+
+
+########### Main
+
+case $VDR_FRONTEND in
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+
+STEP=0
+
+#Prüfen ob log vorhanden
+if [ ! -e $VDR_RUNTIME_LOG ];then
+ #csv File erzeugen
+ echo "starting;shutdown;easyvdr runtime" >$VDR_RUNTIME_LOG
+fi
+
+ #Einträge anpassen wenn das System nicht richtig heruntergefahren wurde 
+ cat $VDR_RUNTIME_LOG | sed -e s/"SHUTDOWN-"/"system restart"/g > /tmp/vdr_runtime_log.tmp
+ cat /tmp/vdr_runtime_log.tmp | sed -e s/"UPTIME-"/"system restart"/g > $VDR_RUNTIME_LOG
+
+ echo "$(date);SHUTDOWN-;UPTIME-" >>$VDR_RUNTIME_LOG
+
+
+if [ "$FRONTEND_CLASS" = "USE_X11" -o x"$NON_X11_and_X11" = x"true" ];then
+ LAST_STEP=3
+ echo "*************************************************" >> $LOG
+
+
+######################################
+
+STEP=$((STEP+1))
+
+# auf X Server warten
+ wait_for_X
+
+  #Bei geänderter Xorg.conf keine X Prüfungen
+  if [ $(grep -c XORG_CONF_AUTO_MODE=\"yes\" /etc/X11/xorg.conf) -eq 0 ];then
+   $LOGGER "xorg.conf changed"
+   #No display check
+   touch $DISPLAY_CHECK_FILE
+  fi
+
+############ Monitorlayout setzen, Softhd.conf anpassen, Splash Screen anzeigen
+
+ set_monitor_layout_fullscreen_and_splash_screen
+else
+ LAST_STEP=2
+fi
+############ Auf Netzwerk warten
+
+if [ $WAIT_FOR_NETWORK != "no" ];then
+ wait_for_network
+fi
+
+############ Server mit WOL starten
+server_wol
+
+############ Laufwerk mounten
+if [ $MOUNT != "none" ];then
+  $LOGGER "step $STEP/$LAST_STEP $MOUNT"
+  echo  "$(date): $STEP/$LAST_STEP $MOUNT" >> $LOG
+  $MOUNT
+fi
+
+############ Auf Fernbedienung warten
+$LOGGER "wait for remote $WAIT_FOR_REMOTE s"
+echo  "$(date): wait for remote $WAIT_FOR_REMOTE s" >> $LOG
+sleep $WAIT_FOR_REMOTE
+#VDR starten
+/usr/lib/easyvdr/easyvdr-start/easyvdr-remote start 
+
+############ VDR starten
+ STEP=$((STEP+1))
+
+ #Erkennung für Softhddevice wenn X vor dem VDR Start läuft muss beim Frontend Start nichts passieren
+ touch $SOFTHDDEVICE_CHECK_FILE 
+ start_vdr  
+
+############ Auf X warten
+
+ wait_for_display
+
+########### Start Program Changer, sollte normal schon laufen
+ 
+ systemctl is-active "easyvdr-program-changer" > /dev/null 2>&1
+ if [ $? -ne 0 ]; then
+  $LOGGER "start easyvdr-program-changer"
+  echo  "$(date): $STEP/$LAST_STEP start easyvdr-program-changer" >> $LOG
+
+  systemctl start "easyvdr-program-changer" || true > /dev/null 2>&1
+ fi
+  
+############ Start Frontend
+ STEP=$((STEP+1))
+
+ start_frontend 
+
+$LOGGER "ready" 
+echo "$(date): ready" >> $LOG
+#### Service am leben erhalten
+
+#exit 0
+
+while true
+ do
+  sleep 99999
+ done
+exit 0

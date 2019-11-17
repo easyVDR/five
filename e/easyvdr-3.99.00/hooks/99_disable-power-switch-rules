@@ -1,0 +1,7 @@
+#! /bin/bash
+# vermeidet sofortigen Shutdown von Ubuntu, 
+# nur so kann der Vdr das Event zum Shutdown bekommen und geeignet reagieren
+
+if [ -f /lib/udev/rules.d/70-power-switch.rules ]; then
+    rm -f  /lib/udev/rules.d/70-power-switch.rules
+fi

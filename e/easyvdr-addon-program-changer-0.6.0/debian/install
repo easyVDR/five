@@ -1,0 +1,15 @@
+etc/vdr/easyvdr/program-changer/* 			etc/vdr/easyvdr/program-changer/
+etc/systemd/easyvdr/easyvdr-program-changer.service    	etc/systemd/easyvdr/
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-program-changer	usr/lib/easyvdr/easyvdr-start/systemd/
+program-changer-0.5.6/src/program_changer  		usr/bin/
+program-changer-setup-0.5.6/src/program_changer_setup	usr/bin/
+scripts/* 						usr/share/easyvdr/program-changer/
+templates/*						usr/share/easyvdr/program-changer/templates/
+lib/*							usr/share/easyvdr/program-changer/lib/
+pictures/*    						usr/share/easyvdr/program-changer/pictures/
+windows-scripts/*					/media/easyvdr01/windows-tools/
+
+#windows-scripts/steam_user_2.cmd  			/media/easyvdr01/windows
+#windows-scripts/steam_user_3.cmd  			/media/easyvdr01/windows
+#windows-scripts/steam_user_4.cmd  			/media/easyvdr01/windows
+

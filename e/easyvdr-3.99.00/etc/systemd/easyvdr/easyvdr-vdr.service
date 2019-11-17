@@ -1,0 +1,15 @@
+[Unit]
+Description=Easyvdr vdr
+After=easyvdr-systemstart.service 
+#Beim booten ist die Datei nicht vorhanden, deshalb startet nichts
+ConditionPathExists=/tmp/easyvdr-start-vdr
+
+[Service]
+Type=simple
+#ExecStartPre=
+ExecStart=/usr/sbin/easyvdr-runvdr
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

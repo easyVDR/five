@@ -1,0 +1,167 @@
+### Skript mit den Funktionen 
+# V 0.2 15.09.13 add USER & PCHANGER_DISPLAY
+#       18.09.13 add switch PULSEAUDIO_DEFAULT
+#       14.05.14 change Pulseaudio support
+#	05.01.16 adding reboot/shutdown/kodi/frontend
+#       13.07.16 adding signal SIGPWR for kodi shutdown
+###### Pulseaudio 
+function pulseaudio_restart {
+   #Rechte anpassen, fuer Pulseaudio usw
+#  $LOGGER "chmod ugo+rwx /run/user/$(cat /etc/passwd | grep $STANDARD_DESKTOP_USER | cut -d":" -f3)"
+
+ #Wenn Pulseaudio aktiv Pulseaudio neu starten
+ if [ -e /etc/xdg/autostart/pulseaudio.desktop ] ; then
+  pkill pulseaudio
+ fi
+
+}
+
+
+##### Programm mit der Index nummer des Parameter starten
+function start_index {
+
+ #Datei löschen (Befehl für Pchanger anzeigen)
+ if [ -e $TMP_FILE_SHOW_PCHANGER ]; then
+   rm $TMP_FILE_SHOW_PCHANGER
+ fi
+ ## Pre-Start
+ if [ "${pre_start_program_button[$startindex]}" != "no" ]; then
+  DISPLAY=$PCHANGER_DISPLAY eval ${pre_start_program_button[$startindex]}
+  echo Pre-Start: ${pre_start_program_button[$startindex]}
+ fi
+
+ #Für Test
+ if [ $DEBUG == "yes" ]; then echo "Start Befehl: ${start_program_button[$startindex]} Index:$startindex" ; fi
+ ##
+ ############################## Ab hier von Sirnova ###########################
+ # Pakete installiert?
+ INSTALL=0
+current_install_apt_get_prg=${install_apt_get_prg_button[$startindex]} # Die aktuelle Programmliste wird in eine neue Variable geschrieben
+if [ "$current_install_apt_get_prg" != "-none-" ] ;then ##&& ( ping -c 1 www.easy-vdr.de ); then
+   pkg_counter=$(expr $(echo $current_install_apt_get_prg | grep -o " " | wc -l)+1)
+    for (( i = 1; i <= $pkg_counter; i++ ))
+    do
+    current_pkg=$(echo "$current_install_apt_get_prg" | cut -d " " -f$i) # Die einzelnen Programme werden nacheinander durchlaufen
+    if (($(dpkg -l $current_pkg | grep -c ii) == 0 )); then
+      if [ $DEBUG == "yes" ]; then echo "${name_button[$startindex]} wird installiert" ; fi
+      INSTALL=yes
+    fi
+    done
+ if [ $INSTALL == "yes" ];then
+ view_picture $PLEASE_WAIT_INSTALL_PICTURE 6
+  #Paket wird installiert
+  DISPLAY=$PCHANGER_DISPLAY su root -c " $PRG_INSTALLER $startindex ${name_button[$startindex]} ${install_apt_get_prg_button[$startindex]}" &
+ exit 0
+ fi
+fi
+ ######################## Ab hier ende Sirnova ##############################
+  if [ ${root_rights_button[$startindex]} == "yes" ]; then
+   eval ${start_program_button[$startindex]}
+  else
+   DISPLAY=$PCHANGER_DISPLAY su -l $STANDARD_DESKTOP_USER -c " ${start_program_button[$startindex]} "
+  fi
+  if [ ${vdr_remote_button[$startindex]} = "yes" ]; then
+   svdrpsend remo on
+  else
+   svdrpsend remo off
+  fi
+ sleep 2
+}
+
+##### Alle Programme Stoppen
+function stop_all {
+i=0
+# 15=SIGTERM, 9= SIGKILL, 30= SIGPWR
+
+SIGNAL="-15"
+
+#while [ $i != $LAST_BUTTON ]
+#Bis zuer letzten Variable alles Stoppen
+while [ ${picture_button[$i]} ];
+do
+## Testen ob die Variable existiert
+if [ ${picture_button[$i]} ]; then
+ if [ ${shutdown_program_button[$i]} == "yes" ]; then
+  if [ $(echo "${stop_program_button[$i]}" | grep -F -c -e-none-) -eq 0 ];then
+   if [ ${kill_program_button[$i]} != "yes" ]; then
+    #Für Test
+    if [ $DEBUG == "yes" ]; then echo "Stop Befehl: ${stop_program_button[$i]} Index:$i" ; fi
+    ##
+    ${stop_program_button[$i]}
+   else
+    #Für Test
+    if [ $DEBUG == "yes" ]; then echo "Kill Befehl: ${stop_program_button[$i]} Index:$i" ; fi
+    SIGNAL="-15"
+    PID=$(pgrep ${stop_program_button[$i]} )
+    if [ $? -eq 0 ]; then
+     kill $SIGNAL $PID
+     sleep 0.1
+    fi
+ #2s warten bis Programm beendet ist
+
+    for wait in {0..20};
+    do
+     PID=$(pgrep ${stop_program_button[$i]} )
+     if [ $? -ne 0 ]; then
+      #Programm ist beendet
+      break
+     fi
+     sleep 0.1
+    done
+    #Programm hängt
+    PID=$(pgrep ${stop_program_button[$i]} )
+    if [ $? -eq 0 ]; then kill -9 $PID; fi
+   fi
+  fi
+ fi
+fi
+i=$(( $i + 1 ))
+#  echo ${picture_button[$i]}
+done
+sleep 1
+}
+
+###### Wird der Befehl in einem File übergeben?
+if [ -e $TMP_FILE_PCH_EXEC ];then
+ startindex=$(cat $TMP_FILE_PCH_EXEC)
+ rm $TMP_FILE_PCH_EXEC
+else
+ ###### Parameter Prüfen
+ if [ $# -ne 1 ]; then
+  echo ""
+  echo "Als Parameter wird der Array Index erwartet"
+  exit
+ else
+  startindex=$1
+ fi
+fi
+
+case $startindex in
+    KODI)
+	startindex=201
+	;;
+    FRONTEND)
+	startindex=200
+	;;
+    SHUTDOWN)
+	startindex=210
+	;;
+    REBOOT)
+	startindex=211
+	;;
+    NO_SHUTDOWN)
+      exit 0
+	;;
+esac
+
+##### Alle Programme beenden
+#Wenn das Frontend läuft bei shutdown nichts beenden 
+if  [ $1 != "SHUTDOWN" ] || [ $(ps -e |  grep -c easyvdr-runfron) -ne "1" ]  ;then
+ stop_all 
+##### Pulseaudio
+ #default sink setzen
+ XDG_RUNTIME_DIR=/run/user/2000 su vdr -l -c "/usr/lib/vdr/easyvdr-x-lib-pulseaudio" 
+ # pulseaudio_restart
+fi
+##### Ausgewähltes Programm starten
+start_index

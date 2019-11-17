@@ -1,0 +1,14 @@
+#! /bin/bash
+
+LOADED_MODULES="/var/run/easyvdr-loaded-modules"
+
+unloadDVBdriver() {
+	for module in $(cat $LOADED_MODULES); do
+		logger -t DVB "Unloading <$module>"
+		modprobe -rqs $module
+	done
+
+	rm -f $LOADED_MODULES
+}
+
+unloadDVBdriver

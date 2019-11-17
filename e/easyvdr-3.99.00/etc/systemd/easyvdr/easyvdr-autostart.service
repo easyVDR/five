@@ -1,0 +1,13 @@
+[Unit]
+Description=Easyvdr Autostart
+Conflicts=getty@tty7.service plymouth-quit.service
+After=systemd-user-sessions.service getty@tty7.service plymouth-quit.service 
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-autostart
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

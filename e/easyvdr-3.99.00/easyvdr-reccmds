@@ -1,0 +1,22 @@
+#!/bin/bash
+#
+# Scriptausfuehrung im Hintergrund
+# ueber das Aufnahmen-Befehlsmenue
+#
+# von: hdn
+
+
+# Variablen-Check
+if [ "$2" = "" ] ; then
+  echo "Aufruf nur ueber Aufnahmen-Befehlsmenue!"
+  exit 0
+fi
+
+
+# Hintergrund-Ausfuehrung
+at now <<EOF
+  # Scriptaufruf
+  /usr/bin/$1 reccmds $2 "$3"
+EOF
+
+exit 0

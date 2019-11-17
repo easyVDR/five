@@ -1,0 +1,42 @@
+#!/bin/sh
+
+#V 0.2  Bleifuss
+
+EXEC_CMD="/usr/sbin/easyvdr-runvdr"
+
+kill_daemon ()
+{
+ PID=$(pidof -x $1)
+
+ if [ $? -eq 0 ] ;then
+   kill $PID
+ fi
+}
+
+
+case "$1" in
+        start)
+		$EXEC_CMD &
+            ;;
+         
+        stop)
+		kill_daemon $EXEC_CMD
+            ;;
+         
+        status)
+		PID=$(pidof -x $EXEC_CMD)
+		if [ $? -eq 0 ] ;then
+		   echo "$EXEC_CMD is running"
+		fi
+            ;;
+        restart)
+		kill_daemon $EXEC_CMD
+		sleep 1
+		$EXEC_CMD &
+            ;;
+
+        *)
+            echo $"Usage: $0 {start|stop|restart|status}"
+            exit 1
+ 
+esac

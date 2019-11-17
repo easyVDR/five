@@ -1,0 +1,39 @@
+#!/bin/bash
+#set -e
+
+#cp etc/udev/rules.d/10-joystick_rules /etc/udev/rules.d/10-joystick.rules > /dev/null 2>&1 
+
+
+if [ "$1" = "configure" ]; then
+  /usr/share/easyvdr/program-changer/lib/make-program-changer-script.sh || true > /dev/null 2>&1 
+fi
+
+
+#############################################################################
+######################### Systemd ###########################################
+
+if [ -d /run/systemd/system ] ; then
+	systemctl daemon-reload >/dev/null || true
+fi
+
+SERVICE[0]="/etc/systemd/easyvdr/easyvdr-program-changer.service"
+
+for CHK_SERVICE in ${SERVICE[*]}
+do
+
+ if [ -f "$CHK_SERVICE" ]; then
+  systemctl enable "$CHK_SERVICE" || true > /dev/null 2>&1
+ fi
+
+done
+
+#Pchanger starten
+#Pfand vom Service Namen abschneiden
+SERVICE_NAME=${CHK_SERVICE##*/}
+
+if [ -e /var/log/easyvdr/setup.state ]; then
+  systemctl start $SERVICE_NAME || true > /dev/null 2>&1
+fi
+
+#DEBHELPER#
+

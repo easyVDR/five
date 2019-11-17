@@ -1,0 +1,72 @@
+#! /bin/sh
+### BEGIN INIT INFO
+# Provides:          easyvdr-addon-acpi-wakeup
+# Required-Start:    $local_fs $remote_fs
+# Required-Stop:     $local_fs $remote_fs
+# Default-Start:     2 3 4 5
+# Default-Stop:      0
+# Short-Description: Start easyvdr-addon-acpi-wakeup at boot time
+# Description:       Enable easyvdr-addon-acpi-wakeup start-stop script.
+### END INIT INFO
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+NAME="easyvdr-addon-acpiwakeup"
+WAKEUP_FILE="/var/cache/vdr/acpiwakeup.time"
+
+reset_wakeup_time() {
+    echo "$NAME: Resetting wakeup time"
+    rm -f $WAKEUP_FILE >/dev/null 2>&1
+}
+
+set_wakeup_time() {
+    if [ -e $WAKEUP_FILE ]; then
+        TIME_TO_SET=`cat $WAKEUP_FILE`
+        echo "$NAME: Setting wakeup time to $TIME_TO_SET"
+
+        # Resetting ACPI alarm time
+        echo 0 >$WAKEALARM
+        # Setting ACPI alarm time to: $TIME_TO_SET 
+        echo $TIME_TO_SET >$WAKEALARM
+    fi
+}
+
+show_help() {
+    N=/etc/init.d/$NAME
+    echo "Usage: $N {start|stop|restart|force-reload}" >&2
+    exit 1
+}
+
+load_configuration() {
+    # read arguments for acpi-wakeup from conf-file
+    . /etc/vdr/easyvdr-addon-acpi-wakeup.conf
+	
+    # Defaults:
+    [ -z "$ACPI_ENABLED" ]        && export ACPI_ENABLED="yes"
+    [ -z "$WAKEALARM" ]           && export WAKEALARM="/sys/class/rtc/rtc0/wakealarm"
+}
+
+#
+# main()
+#
+
+load_configuration
+
+if [ ! $ACPI_ENABLED = "yes" ]; then
+    echo "ACPI Wakeup disabled - doing nothing"
+    exit 0
+fi
+
+case "$1" in
+    start)
+        reset_wakeup_time
+        ;;
+    stop|restart|force-reload)
+        set_wakeup_time
+        ;;
+    status)
+        ;;
+    *)
+        show_help
+        ;;
+esac

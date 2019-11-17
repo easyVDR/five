@@ -1,0 +1,12 @@
+Source: easyvdr
+Section: misc
+Priority: optional
+Maintainer: Matthias Kuehne <mkabie@web.de>
+Standards-Version: 4.1.2
+Build-Depends: debhelper (>= 9)
+
+Package: easyvdr
+Architecture: any
+Depends: ${misc:Depends}, ${easyvdr}
+Description: Packages for easyVDR
+  Basispaket easyVDR

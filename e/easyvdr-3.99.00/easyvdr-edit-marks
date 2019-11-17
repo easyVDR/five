@@ -1,0 +1,49 @@
+#!/bin/bash
+#
+# Schnittmarken EINER Aufnahme setzen oder loeschen
+#
+# von: hdn
+
+
+#Ausgabe
+function Echo {
+  /usr/bin/svdrpsend MESG "$1" >/dev/null 2>&1
+}
+
+
+# Check
+if [ "$1" != "reccmds" ] || [ "$3" = "" ] ; then
+  echo "Aufruf nur ueber Aufnahmen-Befehlsmenue!"
+  exit 0
+fi
+
+
+ACTION=$2
+REC_DIR=$3
+
+
+case "${ACTION}" in
+
+  delmarks)
+    # Schnittmarken loeschen
+    rm -f ${REC_DIR}/marks* >/dev/null 2>&1
+    [ -f ${REC_DIR}/marks* ] || Echo "Schnittmarken geloescht!"
+  ;;
+
+  setmarks)
+    # Schnittmarken setzen
+    Echo "Setze Schnittmarken..."
+    markad -G - ${REC_DIR} >/dev/null 2>&1
+    [ -f ${REC_DIR}/marks* ] && Echo "Schnittmarken gesetzt!"
+  ;;
+
+  setmarks-i4)
+    # Schnittmarken setzen
+    Echo "Setze Schnittmarken (Infodatei wird ignoriert)..."
+    markad -i4 -G - ${REC_DIR} >/dev/null 2>&1
+    [ -f ${REC_DIR}/marks* ] && Echo "Schnittmarken gesetzt (Infodatei ignoriert)!"
+  ;;
+
+esac
+
+exit 0

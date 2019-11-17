@@ -1,0 +1,12 @@
+Source: easyportal
+Section: misc
+Priority: optional
+Maintainer: Andreas Schott <sinai@easy-vdr.de>
+Origin: easyVDR
+Build-Depends: debhelper (>> 4.1.16), cdbs
+Standards-Version: 3.9.5
+
+Package: easyportal
+Architecture: any
+Depends: ${easyportal}, ${misc:Depends}, lighttpd | apache2, ajaxterm, shellinabox, php7.3-common, php7.3-cgi, vdr, zip, php7.3-gd, php7.3-mysql
+Description: Web-Frontend for easyVDR

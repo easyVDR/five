@@ -1,0 +1,14 @@
+#!/bin/bash
+# added USB-Ramdisk 14.07.12  Captain_Beefheart
+#  very lot of changes 01.12.12 C.B.
+#  some fixes          23.12.12 C.B.
+#  changes for Upstart 25.02.18 Bleifuss
+#
+#description	"umount and save /ramdisk"
+#author 		"Uwe Kiehl <uwe@easy-vdr.de> & C.B."
+
+
+LOGGER="logger -t easyvdr-alsa-restore"
+
+$LOGGER "restoring alsa settings"
+/usr/sbin/alsactl restore

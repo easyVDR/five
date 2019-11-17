@@ -1,0 +1,13 @@
+[Unit]
+Description=Easyvdr Create Ramdisk
+After=easyvdr-vdr.service 
+
+[Service]
+Type=simple
+#ExecStartPre=
+ExecStart=/usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-create-ramdisk
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

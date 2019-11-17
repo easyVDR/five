@@ -1,0 +1,17 @@
+#! /bin/bash
+
+sleep 20
+if [ $(svdrpsend PLUG | grep -c setup) != 1 ]; then
+ /usr/bin/svdrpsend  MESG "Ein aktives Plugin verursacht ein Problem. Helfen kann Pluginreset im Toolmenü"
+fi
+
+sleep 40
+if [ $(svdrpsend PLUG | grep -c setup) != 1 ]; then
+ /usr/bin/svdrpsend  MESG "Ein aktives Plugin verursacht ein Problem. Helfen kann Pluginreset im Toolmenü"
+fi
+
+
+sleep 90
+if [ $(svdrpsend PLUG | grep -c setup) != 1 ]; then
+ /usr/bin/svdrpsend  MESG "Ein aktives Plugin verursacht ein Problem. Helfen kann Pluginreset im Toolmenü"
+fi

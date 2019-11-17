@@ -1,0 +1,12 @@
+[Unit]
+Description=Easyvdr cleanscreen
+After=systemd-user-sessions.service getty@tty7.service plymouth-quit.service 
+
+[Service]
+Type=simple
+ExecStart=/usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-cleanscreen
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

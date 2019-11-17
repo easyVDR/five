@@ -1,0 +1,4 @@
+[Seat:*]
+autologin-user=vdr
+autologin-user-timeout=0
+autologin-session=LXDE

@@ -1,0 +1,12 @@
+Source: easyvdr-addon-motd
+Section: misc
+Priority: optional
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Origin: easyVDR
+Build-Depends: debhelper (>= 9), cdbs
+Standards-Version: 3.9.5
+
+Package: easyvdr-addon-motd
+Architecture: all
+Description: Shows Infos on login

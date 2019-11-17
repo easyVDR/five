@@ -1,0 +1,43 @@
+#! /bin/bash
+#
+### BEGIN INIT INFO
+# Provides:          stopx
+# Short-Description: EasyVDR-script to stop the x11-desktop for non-root-user
+# Description:       stop desktop and x11-frontend
+### END INIT INFO
+
+# for easyvdr 2.0 by michel8
+# 08.10.17 systemd update by bleifuss
+
+# Do NOT "set -e"
+
+#set -x
+
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+#####
+Get_Frontend_Class()
+{
+case $VDR_FRONTEND in
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+}
+
+
+Get_Frontend_Class
+case $FRONTEND_CLASS in
+     "USE_X11") sudo easyvdr-frontend stop >/dev/null 2>&1 ;;
+esac
+sleep 1
+
+sudo easyvdr-desktop stop >/dev/null 2>&1

@@ -1,0 +1,9 @@
+#!/bin/bash
+#set -e
+
+if [ -e /var/log/easyvdr/setup.state ]; then
+  systemctl start easyvdr-program-changer || true > /dev/null 2>&1
+fi
+
+#DEBHELPER#
+

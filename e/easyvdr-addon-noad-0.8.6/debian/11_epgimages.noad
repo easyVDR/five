@@ -1,0 +1,73 @@
+#
+# Custom VDR Recording Action Hook
+# ----------------------------------
+#
+# This is a custom Recording Action Hook. It gets called by vdr
+# before a recording starts, after a recording ended and after a
+# recording has been edited. It is maintained as a config file in the vdr
+# package. All other recording hooks get executed before this one! 
+#
+# If you want to create your own recording hook that may get executed
+# before any other hook, create it in /usr/share/vdr/recording-hooks or
+# link to this location. All hooks are called in their alphabetical
+# order and should follow this naming scheme: 
+#
+# R<XX>.<identifier>
+#
+# Where <XX> is a two digit number, that mainly specifies the execution order 
+# and <identifier> is a unique descriptor.
+#
+# Two parameters are passed:
+#
+# Parameter 1 can have the values "before", "after" and "edited", depending
+# on whether the recording hook is called before the recording starts,
+# after the recording ends or after the recording has been edited.
+#
+# Parameter 2 is the directory of the recording. Be aware, that this directory 
+# doesn't exist before the recording starts.
+#
+# mango 08.02.2012
+# add copy epgimages
+
+case $1 in
+    before)
+        # do here whatever you would like to do right BEFORE
+        # the recording $2 STARTS
+        ;;
+    after)
+        # do here whatever you would like to do right AFTER
+        # the recording $2 ENDED
+
+### epgimages in verzeichnis *.rec kopieren & bei schnitt in verzeichnis % kopieren ###	
+    EPGIMG_DIR=/var/cache/vdr/epgimages
+    EVENTID=`cat $2/info | sed -n -e 's/^E //p'| awk -F " " '{print $1 }'`
+
+    if [ -f $EPGIMG_DIR/$EVENTID.jpg ]; then
+      cp $EPGIMG_DIR/$EVENTID.jpg $2/thumbnail.jpg
+      ln -s thumbnail.jpg $2/thumbnail_0.jpg
+    fi
+
+    n=0
+
+    for i in $EPGIMG_DIR/${EVENTID}_*.jpg; do
+      if [ -f $i ]; then
+        THUMB=thumbnail_$n.jpg
+        cp $i $2/$THUMB
+        n=`expr $n + 1`
+      fi
+    done
+
+        ;;
+    edited)
+        # do here whatever you would like to do right AFTER
+        # the recording $2 has been EDITED
+
+    SOURCEDIR=`echo "$2"|tr -d %`
+
+    for i in $SOURCEDIR/*.jpg; do
+      PIC=`basename $i`
+      cp $i $2/$PIC
+    done
+
+       ;;
+esac

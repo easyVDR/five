@@ -1,0 +1,175 @@
+#!/bin/bash
+##############################################
+# Power Managmenet
+#
+# v 0.1 27.08.2014  Bleifuss
+# v 0.2 14.01.2017  Martin HDDSpindowntime *60
+LOGGER=" logger -t easyvdr-power-save"
+POWER_SAVE_CONF="/etc/vdr/easyvdr/easyvdr-power-save.conf"
+#
+#
+# Alle Änderungen müssen in der Datei /etc/vdr/easyvdr-power-save.conf erfolgen
+#
+#Testen ob config vorhanden ist
+if [ ! -e $POWER_SAVE_CONF ]; then
+ #Wenn nicht dann erzeugen
+ if [ ! -d /etc/vdr/easyvdr ];then mkdir /etc/vdr/easyvdr ; fi
+
+ echo "#Hier werden die Einstellungen für easyvdr-powersave vorgenommen" >$POWER_SAVE_CONF
+ echo "# 27.08 2014 Bleifuss" >>$POWER_SAVE_CONF
+ echo >>$POWER_SAVE_CONF
+ echo "VERSION=0.1" >>$POWER_SAVE_CONF
+ echo >>$POWER_SAVE_CONF
+ echo "ENABLE_SATA_LINK_POWER_MANAGMENET=no" >>$POWER_SAVE_CONF
+ echo "ENABLE_INTEL_AUDIO_POWER_SAVE=no" >>$POWER_SAVE_CONF
+ echo "DISABLE_NMI_WATCHDOG=no" >>$POWER_SAVE_CONF
+ echo "CHANGE_VM_WRITEBACK_TIME=no" >>$POWER_SAVE_CONF
+ echo "#Alles was mit PCI gefunden wird auf Stromsparen stellen" >>$POWER_SAVE_CONF
+ echo "ENABLE_ALL_PCI_DEVICE_POWER_SAVE=no" >>$POWER_SAVE_CONF
+ echo "ENABLE_ALL_USB_CONTROLLER_POWER_SAVE=no" >>$POWER_SAVE_CONF
+ echo >>$POWER_SAVE_CONF
+ #echo "##############################################" >>$POWER_SAVE_CONF
+ #echo "# Festplatten abschalten" >>$POWER_SAVE_CONF
+ #echo "#Geräte Namen /dev/sdx /dev/sdy" >>$POWER_SAVE_CONF
+ #echo "HDDSPINDOWNDISKS=\"/dev/sdb /dev/sdc\""  >>$POWER_SAVE_CONF
+ #echo >>$POWER_SAVE_CONF
+ #echo "#0 Platte läuft immer oder Sekunden bis zu Standby der Platte" >>$POWER_SAVE_CONF
+ #echo "HDDSPINDOWNTIME=900" >>$POWER_SAVE_CONF
+ #echo >>$POWER_SAVE_CONF
+ #echo >>$POWER_SAVE_CONF
+ echo "##############################################" >>$POWER_SAVE_CONF
+ echo "#Hier kann der PC heruntergefahren werden wenn kein Client mehr läuft" >>$POWER_SAVE_CONF
+ echo "#Für vdr nur geeignet wenn es ein Headless Server ist" >>$POWER_SAVE_CONF
+ echo "#Achtung momentan wird noch nicht geprüft ob eine Aufnahme läuft" >>$POWER_SAVE_CONF
+ echo "#Wenn das gewünscht wird dann im Forum melden" >>$POWER_SAVE_CONF
+ echo "SHUTDOWN=no"  >>$POWER_SAVE_CONF
+ echo >>$POWER_SAVE_CONF
+ echo "#Netzwerk überwachen" >>$POWER_SAVE_CONF
+ echo "#Hier die Namen der Client's eintragen" >>$POWER_SAVE_CONF
+ echo "#Wird keiner der Client's gefunden wird der Server heruntergefahren" >>$POWER_SAVE_CONF
+ echo "CLIENTS=\"vdr-pc pc2 pc3 1.123.3.253\" " >>$POWER_SAVE_CONF
+ echo >>$POWER_SAVE_CONF 
+ echo "#Wenn XXX Sekunden kein Client gefunden wird, dann Server shutdown" >>$POWER_SAVE_CONF
+ echo "#Der PC wird 30 Sekunden vor dem Parken der Festplatte abgeschaltet" >>$POWER_SAVE_CONF
+ echo "WAIT=\$((\$HDDSPINDOWNTIME-30))" >>$POWER_SAVE_CONF
+ echo "#Wenn eine feste Zeit gewünscht wird, dann hier auskommentieren und Zeit eingeben" >>$POWER_SAVE_CONF
+ echo "#WAIT=600" >>$POWER_SAVE_CONF
+ echo >>$POWER_SAVE_CONF
+ echo "#Wenn ein Progamm in der Liste aktiv ist wird der PC nicht herunter gefahren" >>$POWER_SAVE_CONF
+ echo "PROGRAM_RUNNING=\"rsync apt-get mc \" " >>$POWER_SAVE_CONF
+fi 
+
+.  $POWER_SAVE_CONF
+
+##############################################
+
+#Ab hier das Bash Skript
+
+if [ $ENABLE_SATA_LINK_POWER_MANAGMENET == "yes" ]; then
+ #Enable SATA link power Managmenet
+ HOST_NR=0
+ while [ -e /sys/class/scsi_host/host$HOST_NR/link_power_management_policy ]
+ do
+  $LOGGER "set sata link power managment, min_power for host$HOST_NR"
+  echo 'min_power' > /sys/class/scsi_host/host$HOST_NR/link_power_management_policy
+  HOST_NR=$(($HOST_NR+1))
+ done
+fi
+
+#Audiocodec-Energieverwaltung einschalten
+if [ $ENABLE_INTEL_AUDIO_POWER_SAVE == "yes" ];then
+ if [ -e /sys/module/snd_hda_intel/parameters/power_save ];then
+  $LOGGER "set snd_hda_intel powersave on"
+  echo '1' > '/sys/module/snd_hda_intel/parameters/power_save'
+ fi
+fi
+
+#NMI-Watchdog sollte abgeschaltet werden
+if [ $DISABLE_NMI_WATCHDOG == "yes" ];then 
+ if [ -e /proc/sys/kernel/nmi_watchdog ];then
+  $LOGGER "disable nmi_watchdog"
+  echo '0' > '/proc/sys/kernel/nmi_watchdog'
+ fi
+fi
+
+# VM-Rückschreibezeitlimit
+if [ $CHANGE_VM_WRITEBACK_TIME == "yes" ];then
+ if [ -e /proc/sys/vm/dirty_writeback_centisecs ];then
+  $LOGGER "set vm dirty_writeback_centisecs=1500"
+  echo '1500' > '/proc/sys/vm/dirty_writeback_centisecs'
+ fi
+fi
+
+#PCI Device 
+if [ $ENABLE_ALL_PCI_DEVICE_POWER_SAVE == "yes" ];then
+ for PCI_DEVICE in /sys/bus/pci/devices/*/power/control
+ do
+  $LOGGER "set pci device:$PCI_DEVICE, power control auto" 
+  echo 'auto' > $PCI_DEVICE
+ done
+fi
+
+#USB Controller
+if [ $ENABLE_ALL_USB_CONTROLLER_POWER_SAVE == "yes" ];then
+ 
+ for USB_CONTROLLER in /sys/bus/usb/devices/usb*/power/control
+ do 
+  $LOGGER "set usb controler:$USB_CONTROLLER, power control auto" 
+  echo 'auto' > $USB_CONTROLLER
+ done
+fi
+
+###############################################
+#Festplatten parken
+################### Easyvdr Systemconf einlesen ?
+if [ -e /usr/lib/vdr/easyvdr-config-loader ];then
+ . /usr/lib/vdr/easyvdr-config-loader                ## Easyvdr conf einlesen
+ if [ "$HDDSPINDOWNTIME" != "nicht abschalten" ];then
+  HDDSPINDOWNTIME=$(echo $HDDSPINDOWNTIME | cut -d" " -f1)
+  HDDSPINDOWNPAR=$((HDDSPINDOWNTIME*12))
+  for DISK in $HDDSPINDOWNDISKS
+  do
+  $LOGGER "set DISK: $DISK sleep timer $HDDSPINDOWNTIME min"
+  hdparm -S $HDDSPINDOWNPAR $DISK
+  done
+ fi
+fi
+
+###############################################
+#Wenn kein Client läuft PC herunterfahren
+#Das muss am Ende des Skript's stehen:
+
+if [ $SHUTDOWN == "yes" ];then
+ while [ true ]
+ do
+ sleep $WAIT
+ CLIENT_RUNNING=no
+  for CLIENT in $CLIENTS
+  do
+   ping -c 2 $CLIENT
+   if [ $? -eq "0" ];then
+    CLIENT_RUNNING="yes"
+   fi
+  done
+  if [ $CLIENT_RUNNING == "no" ];then
+   echo No Network connection 
+  $LOGGER "no network connection" 
+  #Prüfen ob alle Programme beendet sind
+   for PROGRAM in $PROGRAM_RUNNING
+   do
+    PID=$(pgrep $PROGRAM)
+    if [ $? -eq "0" ]; then
+     #Ein Programm läuft noch
+     CLIENT_RUNNING="yes"
+     $LOGGER "$PROGRAM is activ" 
+    fi
+   done
+   if [ $CLIENT_RUNNING == "no" ];then
+    break;
+   fi
+  fi
+ done
+$LOGGER "shutdown" 
+shutdown -P now
+fi
+

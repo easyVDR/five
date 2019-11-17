@@ -1,0 +1,487 @@
+# v1.2 easyVDR 3.0 01.03.2016
+# v1.3 adding wait_for_network 22.04.2017 Bleifuss
+#
+# internal: tells whether this lib is loaded 
+
+LIB_LOGGER="logger -t easyvdr-functions-lib"
+
+stat_easyvdr_functions_lib="already_loaded"
+
+[ X"$stat_easyvdr_config_loader" = X"already_loaded" ] || . /usr/lib/vdr/easyvdr-config-loader
+
+#################################################################################################
+
+##  General logging functions
+ # schreibe in logfile und screen
+log() 
+{
+[ ! $LOGFILE ] && LOGFILE="$EASYVDR_LOGDIR/easyvdr-functions-lib.log" 
+
+if [ "$1" = "--silent" ]
+  then
+    shift 1; echo "`date` $*" >> $LOGFILE
+  else
+    echo "`date` $*"          >> $LOGFILE; echo "$*"
+fi
+}
+##### check_X_running
+check_x_running()
+{
+ if ( pidof X || pidof Xorg || pidof Xwayland ); then
+  return 0
+ else 
+  return 1
+ fi
+}
+
+
+
+##### wait for X
+#$LIB_LOGGER -> for logging
+
+wait_for_X()
+{
+ # Max waiting time in Seconds
+local loc_WAIT=60
+ while ! ( pidof X || pidof Xorg || pidof Xwayland  ) 
+   do
+     (( loc_WAIT=$loc_WAIT-1 ))
+     if [ $loc_WAIT -eq 0 ]; then
+       $LIB_LOGGER "Wait more than $WAIT seconds for X initialization - give up"
+       exit 1
+     fi
+     sleep 1
+     $LIB_LOGGER "wait for X initialization"
+   done
+return 0
+}
+
+##### wait for X
+#$LIB_LOGGER -> for logging
+
+wait_for_X_and_set_monitor_layout()
+{
+ # Max waiting time in Seconds
+local loc_WAIT=60
+ while ! ( pidof X || pidof Xorg || pidof Xwayland  ) 
+   do
+     (( loc_WAIT=$loc_WAIT-1 ))
+     if [ $loc_WAIT -eq 0 ]; then
+       $LIB_LOGGER "Wait more than $WAIT seconds for X initialization - give up"
+       exit 1
+     fi
+     sleep 1
+     $LIB_LOGGER "wait for X initialization"
+   done
+ #Bildschirme einstellen
+  $LIB_LOGGER "easyvdr-set-monitor-layout"
+ /usr/lib/vdr/easyvdr-set-monitor-layout || /bin/true
+return 0
+}
+#####  Generate InstallerImages ##
+GenImage()
+{
+PANGO="$1.pango"
+OUT="$2"
+IMGDIR=$INSTALLERDIR/images
+#IMGDIR=~/src/tmp/installer-test/images
+convert $IMGDIR/background.png -page 600x300+80+50 -background transparent -font droid-sans-bold.ttf -fill black  pango:@$IMGDIR/$PANGO -composite $IMGDIR/$OUT.png
+}
+
+
+#####  Generate InstallerImages 640x480 ##
+GenImage640()
+{
+PANGO="$1.pango"
+OUT="$2"
+IMGDIR=$INSTALLERDIR/images
+#IMGDIR=~/src/tmp/installer-test/images
+convert $IMGDIR/back640.png -page 640x480+25+15 -background transparent -font droid-sans-bold.ttf -fill black  pango:@$IMGDIR/$PANGO -composite $IMGDIR/$OUT.png
+}
+
+
+#####  used by WaitKill ##
+GetChilds()
+{
+# Get PIDs of all forked childs of PID=$1, binary executable=$2
+# Returns list of PIDs in childlist
+child="$1"
+childlist=$child
+IFSBACKUP="$IFS"
+for (( i=0; i<10; i++ ))
+  do
+    len=${#childlist[*]}
+    IFS=","
+    child=`{ echo "$child" ; pgrep -f "^$2 " -P "${childlist[*]}" ; } | sort -u`
+    IFS="$IFSBACKUP"
+    childlist=$child
+    [ "$len" -eq "${#childlist[*]}" ] && break
+  done
+IFS="$IFSBACKUP"
+}
+
+###################
+WaitKill()
+{
+# Terminates/Kills process $1, binary $2
+GetChilds "$1" "$2"
+echo -n "Sending ${#childlist[*]} processes the TERM signal."
+kill -TERM ${childlist[*]} >&- 2>&-
+for ((i=0;i<$3;i++))
+  do
+    ps ${childlist[*]} >&- 2>&- || { echo terminated. ; return ; }
+    echo -n "."
+    sleep 1
+  done
+kill -KILL ${childlist[*]} >&- 2>&-
+for ((i=0;i<$4;i++))
+  do
+    ps ${childlist[*]} >&- 2>&- || { echo terminated. ; return ; }
+    echo -n "."
+    sleep 1
+  done
+}
+
+###############
+plugin_active()
+{
+[ $(echo $PLUGINLIST | grep -ic "$1") -gt 0 ] && return 0 || return 1
+}
+
+#####
+delete_plugin()
+{
+plugin=""
+PLUGINS=""
+OLDIFS=$IFS
+IFS='\"'
+for plugin in $PLUGINLIST;  do
+    plugint=$(echo $plugin | cut -d" " -f1)
+    [ x"$plugin" = x" " ] || [ x"$plugint" = x"-P$1" ] || PLUGINS="$PLUGINS \"$plugin\""
+  done
+IFS=$OLDIFS
+PLUGINLIST=$PLUGINS
+}
+
+#####
+add_plugin()
+{
+PLUGINLIST="$PLUGINLIST \"-P$1\""
+}
+
+##### Funktion: prueft ob ein Plugin in der vdr-setup.xml vorhanden ist.
+CheckOfNewPlugininXML()
+{
+local PluginName="$1"
+local VAR=$(grep -w -e "<plugin name=\"$PluginName\"" $PLUGIN_CFG_DIR/setup/vdr-setup.xml >&/dev/null; echo $?)
+[ $VAR = 1 ] && return 1 || return 0
+}
+
+##### Funktion: prueft ob ein Plugin in der sysconfig vorhanden ist.
+CheckOfNewPlugininSysconfig()
+{
+local PluginName="$1"
+local VAR=$(grep -w -e "\\\"-P$PluginName" $CFG_DIR/sysconfig >&/dev/null;echo "$?")
+[ $VAR = 1 ] && return 1 || return 0
+}
+
+##### Funktion: um Plugins anhand einer Datei der vdr-setup.xml hinzuzufuegen und ggf in der sysconfig zu aktivieren.
+NewPlugin()
+{
+# Variablen vorgeben
+local PluginInfo=""
+for Options in $@
+  do
+    case "$Options" in
+         -new) local PluginName="$2";    shift; shift ;;
+        -info) local PluginInfo="$2";    shift; shift ;;
+       -param) local PluginParam="$2";   shift; shift ;;
+           -a) local PluginActive="yes"; shift        ;;
+    esac
+  done
+
+#loescht in der vdr-setup.xml alle kommentare
+sed -i '{/^-/d;/^<!--/d}' $PLUGIN_CFG_DIR/setup/vdr-setup.xml 
+
+#suche die letzte Zeile und fuege neue Plugins davor ein
+local LastRow=$(( $( awk '/<\/plugins>/{ print NR }' $PLUGIN_CFG_DIR/setup/vdr-setup.xml ) - 1 ))
+
+if [ ! "empty$PluginParam" = "empty" ]; then
+  #mit dieser Substitution, werden Pfadangeben im Parameter gequotet.
+  local PluginParam=${PluginParam//\//\\/}
+  local PluginParam=" param=\"$PluginParam\""
+fi
+
+#pruefe ob das Plugin vorhanden ist, wenn ja, wird es ersetzt, ansonsten neu hinzugefuegt.
+CheckOfNewPlugininXML $PluginName
+[ "$?" -eq "1" ] && sed -i "$LastRow a\\\t<plugin name=\"$PluginName\"$PluginParam info=\"$PluginInfo\" active=\"no\" \/>" $PLUGIN_CFG_DIR/setup/vdr-setup.xml 
+
+# Pruefung ob das Plugin aktiviert werden soll
+[ "$PluginActive" = "yes" ] && ActivatePlugin $PluginName	
+
+[ -f libvdr-$PluginName.so.* ] && cp libvdr-$PluginName.so.* $PLUGIN_DIR
+}
+
+
+### Funktion: Diese Funktion aendert bzw. erweitert die Sysconfig und vertraegt auch Variablen mit Spaces
+SetSysconfig()
+{
+local ConfigVarName="$1"
+shift
+local ConfigValue="\"$*\""
+
+if [ $(grep -w -e "$ConfigVarName=" $CFG_DIR/sysconfig &>/dev/null; echo $?) = "1"  ]
+  then
+    echo "$ConfigVarName=$ConfigValue" >> $CFG_DIR/sysconfig
+  else
+    ConfigValue=${ConfigValue//\//\\/}
+    sed -i 's/^'$ConfigVarName'=.*$/'$ConfigVarName'='"$ConfigValue"'/' $CFG_DIR/sysconfig
+fi
+}
+
+
+### Funktion: diese Funktions aendert Einträge in der setup.conf
+SetSetupConf()
+{
+local ConfigVarName="$1"
+shift
+local ConfigValue="$*"
+
+if [ $(grep -w -e "$ConfigVarName" $CFG_DIR/setup.conf &>/dev/null; echo $?) = "1"  ]
+  then
+    echo "$ConfigVarName = $ConfigValue" >> $CFG_DIR/setup.conf
+  else
+    ConfigValue=${ConfigValue//\//\\/}
+    sed -i "/^$ConfigVarName =*/ c\\$ConfigVarName = $ConfigValue" $CFG_DIR/setup.conf
+fi
+}
+
+
+### Funktion: diese Funktions liest Einträge in der setup.conf
+GetSetupConf()
+{
+local ConfigVarName="$1"
+
+if [ $(grep -w -e "$ConfigVarName" $CFG_DIR/setup.conf &>/dev/null; echo $?) = "1"  ]
+  then
+    ConfigValue=""
+  else
+    ConfigValue="$(cat $CFG_DIR/setup.conf | grep "$ConfigVarName" | cut -d" " -f3-)"
+fi
+echo "$ConfigValue"
+}
+
+
+####### Funktion: ändert nur die vdr-setup.xml
+SetVDRSetupXML()
+{
+local ConfigVarName="$1"
+local ConfigValue="$2"
+
+#loescht in der vdr-setup.xml alle kommentare
+sed -i '{/^-/d;/^<!--/d}' $PLUGIN_CFG_DIR/setup/vdr-setup.xml 
+
+#mit dieser Substitution, werden Pfadangeben im Parameter gequotet.
+local ConfigValue=${ConfigValue//\//\\/}
+
+# ab in die vdr-setup.xml		
+
+#vorher prüfen wie die alte Variable lautet.
+OldValueInVDRSetupXML=$(grep -w -e 'sysconfig="'$ConfigVarName'"' $PLUGIN_CFG_DIR/setup/vdr-setup.xml | sed -e '{s/\ /\n/g}' | grep value | awk -F "\"" '{print $2}')
+local OldValueInVDRSetupXML=${OldValueInVDRSetupXML//\//\\/}
+
+sed -i '/sysconfig=\"'$ConfigVarName'\"/{s/value=\"'$OldValueInVDRSetupXML'\"/value=\"'$ConfigValue'\"/}' $PLUGIN_CFG_DIR/setup/vdr-setup.xml
+}
+
+
+# mit dieser Funktion kann man vorhande Plugins aktivieren. es findet dabei eine Prüfung 
+# statt, ob das Plugin bereits in der sysconfig bzw der vdr-seup.xml aktiviert wurde, und holt diese ggf nach.
+ActivatePlugin()
+{
+local PluginVar=$*
+
+      writesysconfig()
+      {
+      #prüfen ob das Plugin Parameter hat
+      local HaveParam=$(grep '<plugin name="'$PluginName'"' $PLUGIN_CFG_DIR/setup/vdr-setup.xml | grep 'param="' &>/dev/null; echo $?)
+      if [ $HaveParam = 0 ]
+        then
+          # Plugin besitzt paramater, also müssen die mit in die Sysconfig
+          local PluginParam=$(grep "<plugin name=\"$PluginName\"" $PLUGIN_CFG_DIR/setup/vdr-setup.xml | sed -e 's/<plugin //;s/\/>//' | sed -e 's/\" /\n/g' | grep -w ^param=\"* | sed -e 's/^param=\"//')
+
+          #slashes müssen vorher verquotet werden
+          local PluginParam=${PluginParam//\//\\/}
+
+          # rein damit in die sysconfig
+          sed -i "s/^PLUGINLIST=\"/PLUGINLIST=\" \\\\\"-P$PluginName $PluginParam \\\\\"/" $CFG_DIR/sysconfig
+        else
+          # Plugin hat keine Paramater... 
+          sed -i "s/^PLUGINLIST=\"/PLUGINLIST=\" \\\\\"-P$PluginName \\\\\"/" $CFG_DIR/sysconfig
+      fi
+      }
+
+      writevdrsetupxml()
+      {
+      sed -i '/<plugin name=\"'$PluginName'\"/{s/active=\"no\"/active=\"yes\"/}' $PLUGIN_CFG_DIR/setup/vdr-setup.xml
+      }
+      
+#loescht in der vdr-setup.xml alle kommentare
+sed -i '{/^-/d;/^<!--/d}' $PLUGIN_CFG_DIR/setup/vdr-setup.xml 
+
+#schleife für Batchprocessing
+for PluginName in $PluginVar
+  do
+    #prüfen ob es das Plugin gibt 
+    local PluginExist=$(grep -w -e '<plugin name="'$PluginName'"' $PLUGIN_CFG_DIR/setup/vdr-setup.xml &>/dev/null; echo $?)
+    [ $PluginExist = 1 ] && return 1 
+    
+    local PluginActiveInSysconfig=$(grep -w -e "-P$PluginName[^-]" $CFG_DIR/sysconfig &>/dev/null; echo $?)
+    local PluginActiveInVDRSetupXML=$(grep -w -e "<plugin name=\"$PluginName\"" $PLUGIN_CFG_DIR/setup/vdr-setup.xml | grep -w -e "active=\"yes\"" &>/dev/null; echo $?)
+
+    case $PluginActiveInSysconfig$PluginActiveInVDRSetupXML in
+         11) # sysconfig und vdr-setup schreiben
+             writesysconfig
+             writevdrsetupxml ;;
+         10) # nur sysconfig schreiben
+             writesysconfig   ;;
+         01) # nur vdr-setup schreiben
+             writevdrsetupxml ;;
+         00) # nichts schreiben
+             x=0              ;;
+    esac
+  done
+}
+
+
+##### Funktion: Deaktiviert vorhanden Plugins aus der vdr-setup.xml und löscht den Eintrag aus der sysconfig 
+DeactivatePlugin()
+{
+local PluginVar="$*"
+
+      writesysconfig()
+      {
+      local MatchPlugin=$(grep "^PLUGINLIST" $CFG_DIR/sysconfig | sed -e '{s/\\"/\n/g}' | grep -w -e "-P$PluginName[^-]")
+      #die slashes werden geqoutet
+      local MatchPlugin=${MatchPlugin//\//\\/}		
+       # schreiben
+      sed -i 's/\\"'"$MatchPlugin"'\\" //' $CFG_DIR/sysconfig
+      }
+
+      writevdrsetupxml()
+      {
+      sed -i '/<plugin name=\"'$PluginName'\"/{s/active=\"yes\"/active=\"no\"/}' $PLUGIN_CFG_DIR/setup/vdr-setup.xml
+      }
+
+#loescht in der vdr-setup.xml alle kommentare
+sed -i '{/^-/d;/^<!--/d}' $PLUGIN_CFG_DIR/setup/vdr-setup.xml 
+
+# schleife für Batchvorgang starten
+for PluginName in $PluginVar
+  do
+    #prüfen ob es das Plugin gibt 
+    local PluginExist=$(grep -w -e '<plugin name="'$PluginName'"' $PLUGIN_CFG_DIR/setup/vdr-setup.xml &>/dev/null; echo $?)
+
+    [ $PluginExist = 1 ] && return 1
+
+    # testen ob das Plugin bereits deaktiviert ist in der vdr-setup.xml
+    local PluginDeactiveInVDRSetupXML=$(grep -w -e "<plugin name=\"$PluginName\"" $PLUGIN_CFG_DIR/setup/vdr-setup.xml | grep -w -e "active=\"yes\"" &>/dev/null; echo $?)
+
+    # testen ob das Plugin bereits deaktiviert ist in der sysconfig
+    local PluginDeactiveInSysconfig=$(grep -w -e "^PLUGINLIST" $CFG_DIR/sysconfig | sed -e '{s/\\"-P/\n/g;s/\\"/\n/g;s/\"//g}' | grep -w -e "$PluginName[^-]"&>/dev/null; echo $?)
+
+    case $PluginDeactiveInSysconfig$PluginDeactiveInVDRSetupXML in
+          00) # plugins entfernen
+              writesysconfig
+              writevdrsetupxml ;;
+          10) # nur vdr-setup schreiben
+              writevdrsetupxml ;;
+          01) # nur sysconfig schreiben
+              writesysconfig   ;;
+          11) # nichts schreiben
+              x=0              ;;
+    esac
+  done
+}
+
+#######################################
+DeactivateAllPlugins()
+{
+# Aktive Plugins in der vdr-setup.xml in Liste:
+local ActivatedPluginsInVDRSetupXML=$(grep -w -e "<plugin name=.*active=\"yes\"" $PLUGIN_CFG_DIR/setup/vdr-setup.xml | sed -e 's/.*<plugin name=\"//' | sed -e 's/\".*$//')
+# PluginListe in der sysconfig loeschen
+sed -i 's/^PLUGINLIST=.*$/PLUGINLIST=\" \"/g' $CFG_DIR/sysconfig
+# Alle Plugins deaktivieren
+DeactivatePlugin $ActivatedPluginsInVDRSetupXML
+}
+
+#####
+SortActivatedPlugins()
+{
+# Aktive Plugins in der vdr-setup.xml in Liste:
+local ActivatedPluginsInVDRSetupXML=$(grep -w -e "<plugin name=.*active=\"yes\"" $PLUGIN_CFG_DIR/setup/vdr-setup.xml | sed -e 's/.*<plugin name=\"//' | sed -e 's/\".*$//')
+# Liste invertieren
+local Plugins_to_activate=""
+for i in $ActivatedPluginsInVDRSetupXML
+  do
+    local Plugins_to_activate=$i" "$Plugins_to_activate
+  done
+# PluginListe in der sysconfig loeschen
+sed -i 's/^PLUGINLIST=.*$/PLUGINLIST=\" \"/g' $CFG_DIR/sysconfig
+# Plugins in passender Reihenfolge wieder aktivieren
+ActivatePlugin $Plugins_to_activate
+}
+
+#####
+AddOrCorrektParameterPlugin()
+{
+local PluginName="$1"
+[ -z "$2" ] && local PluginParameter="" || local PluginParameter="$2"
+
+#verqouten
+local PluginParameter=${PluginParameter//\//\\/}
+
+#prüfen ob das Plugin Parameter hat
+local HaveParam=$(grep '<plugin name="'$PluginName'"' $PLUGIN_CFG_DIR/setup/vdr-setup.xml | grep 'param="' &>/dev/null; echo $?)
+			
+if [ $HaveParam = 0 ]
+  then
+    # Plugin besitzt bereits paramater, also wird der parameter ersetzt
+    local OldPluginParam=$(grep "<plugin name=\"$PluginName\"" $PLUGIN_CFG_DIR/setup/vdr-setup.xml  | sed -e 's/<plugin //;s/\/>//' | sed -e 's/\" /\n/g' | grep -w ^param=\"* | sed -e 's/^param=\"//')
+
+    #slashes müssen vorher verquotet werden
+    local OldPluginParam=${OldPluginParam//\//\\/}
+
+    # wenn der neue parameter leer ist, wird der paramater ganz gelöscht.
+    if [ -z "$PluginParameter" ]
+      then
+        sed -i "/<plugin name=\"$PluginName\"/{s/param=\"$OldPluginParam\"//}" $PLUGIN_CFG_DIR/setup/vdr-setup.xml
+      else
+        sed -i "/<plugin name=\"$PluginName\"/{s/param=\"$OldPluginParam\"/param=\"$PluginParameter\"/}" $PLUGIN_CFG_DIR/setup/vdr-setup.xml
+    fi
+  else
+    sed -i "s/<plugin name=\"$PluginName\"/<plugin name=\"$PluginName\" param=\"$PluginParameter\"/" $PLUGIN_CFG_DIR/setup/vdr-setup.xml
+fi	
+}
+
+#Warten bis Netzwerk läuft
+wait_for_network()
+{
+# Max waiting time in Seconds
+WAIT=40
+loc_WAIT=$WAIT
+while ! ( [ $(hostname -I | grep -c ".") != "0" ] )
+  do
+    loc_WAIT=$(($loc_WAIT-1))
+    if [ $loc_WAIT -eq 0 ]; then
+      $LIB_LOGGER "Wait more than $WAIT seconds for network - give up"
+      #exit 1 funktionier mit Upstart nicht
+      break
+    fi
+    sleep 1
+    $LIB_LOGGER "wait for network"
+  done
+# exit 0 funktioniert mit Upstart nicht
+}
+
+
+

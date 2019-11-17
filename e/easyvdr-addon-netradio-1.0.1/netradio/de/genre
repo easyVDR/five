@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+# easyvdr-addon-netradio by mango
+# 02.04.2012
+# 11.02.2014 add start stream directly over osd-menu
+#
+# find Genre in DE (Germany)
+# DE-* clear & make dirs
+# copy files
+# add direct play music files
+#######################
+
+#### defines ####
+GENRE=$1
+MED_DIR="/media/easyvdr01"
+PLACE=$MED_DIR/net-radio/laender
+DIR=$MED_DIR/net-radio/DE-$GENRE
+Del_DE=$MED_DIR/net-radio/DE-* 
+SHORT_GENRE=$( echo $GENRE | cut -d- -f2 )
+
+
+#### clear & make dirs ####
+[ ! -f $Del_DE ] &&  rm -rf $Del_DE
+[ ! -e $DIR ] && mkdir $DIR
+
+
+#### copy files ####
+cp $PLACE/europa/Germany/*$SHORT_GENRE*  $DIR
+
+
+#### Play Files PLG music ####
+DIR_NAME=$(echo /media/easyvdr01/net-radio/DE-* | cut -d- -f3)
+
+cd /media/easyvdr01/net-radio/DE-*
+ls > /media/easyvdr01/net-radio/tmp.m3u
+cd ..
+sed -e 's/^/DE-'$DIR_NAME'\//g' tmp.m3u > @current.m3u
+sleep 0.2
+rm -rf tmp.m3u Int-*
+sleep 0.1
+svdrpsend PLUG music play /media/easyvdr01/net-radio/@current.m3u >/dev/null 2>&1
+

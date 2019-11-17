@@ -1,0 +1,174 @@
+#!/bin/bash
+# added USB-Ramdisk 12.07.12  Captain_Beefheart
+#  .v6 --  very lot of changes 01.12.12 C.B.
+#  .v7 --  small fixes         23.12.12 C.B.
+#  ,v8 --  bugfix              23.02.12 C.B.
+#
+#   changes for Upstart        25.02.18 Bleifuss
+#
+#description	"create and mount /ramdisk"
+#author 		"Uwe Kiehl <uwe@easy-vdr.de> & C.B."
+
+
+LOGGER="logger -t easyvdr-create-ramdisk"
+
+
+#### definitions ####
+SYNC="rsync -aXW --delete --links"
+SYNC_NODEL="rsync -aXWu --links"
+
+
+EPGIM_HDD_DIR="/var/cache/vdr/epgimages"
+EPG_HDD_FILE="/var/cache/vdr/epg.data"
+VTX_HDD_DIR="/var/cache/vdr/vtx"
+
+DEV_USBRAM="/dev/usbramdisk"
+
+
+EXCLUDES="--exclude=epgimages/ --exclude=vtx/ --exclude=epg.data"
+
+
+#### functions
+
+########### Ramdisk  ########
+#####
+Build_Ramdisk()
+{
+[ $[$RAMDISK_SIZE+0] -lt 128 ] && RAMDISK_SIZE=128
+[ -d $UNI_RAMDISK ] || mkdir -p $UNI_RAMDISK
+mount -t tmpfs tmpfs $UNI_RAMDISK -o noatime,size=${RAMDISK_SIZE}M,nr_inodes=${RAMDISK_SIZE}k,mode=777
+}
+
+#####
+Move_VTX()
+{
+if [ x"$VTX_RAMDISK" = x"yes" ]; then
+   [ -d $VTX_HDD_DIR ]     || mkdir -p $VTX_HDD_DIR
+   [ -d $UNI_RAMDISK/vtx ] || mkdir -p $UNI_RAMDISK/vtx
+   /bin/chown -R vdr:vdr $VTX_HDD_DIR
+   mv -f  $VTX_HDD_DIR/* $UNI_RAMDISK/vtx/
+   mount --bind $UNI_RAMDISK/vtx $VTX_HDD_DIR
+fi
+}
+
+#####
+Move_EPG()
+{
+if [ x"$EPG_RAMDISK" = x"yes" ]; then
+  [ -L $EPG_HDD_FILE ] && unlink $EPG_HDD_FILE
+  [ -e $UNI_RAMDISK/epg.data ] || mv -f $EPG_HDD_FILE $UNI_RAMDISK/epg.data
+  [ -e $UNI_RAMDISK/epg.data ] || touch $UNI_RAMDISK/epg.data
+#  [ -e $EPG_HDD_FILE ] || touch $EPG_HDD_FILE;
+#  mount --bind $UNI_RAMDISK/epg.data $EPG_HDD_FILE
+  ln -sf $UNI_RAMDISK/epg.data $EPG_HDD_FILE
+fi
+}
+
+#####
+Move_EPGIM()
+{
+if [ x"$EPGIMAGES_RAMDISK" = x"yes" ]; then
+  [ -d $EPGIM_HDD_DIR ] || mkdir -p $EPGIM_HDD_DIR
+  [ -d $UNI_RAMDISK/epgimages ] || cp -fr $EPGIM_HDD_DIR $UNI_RAMDISK/epgimages
+  [ -d $UNI_RAMDISK/epgimages ] || mkdir -p $UNI_RAMDISK/epgimages
+  mount --bind $UNI_RAMDISK/epgimages $EPGIM_HDD_DIR
+fi
+}
+
+###############  USB-Ramdisk  ######
+#####
+Build_VTX_Ramdisk()
+{
+[ $[$RAMDISK_SIZE+0] -lt 128 ] && RAMDISK_SIZE=128
+[ -d $VTX_RAMDISK ] || mkdir -p $VTX_RAMDISK
+mount -t tmpfs tmpfs $VTX_RAMDISK -o noatime,size=${RAMDISK_SIZE}M,nr_inodes=${RAMDISK_SIZE}k,mode=777
+}
+
+#####
+Move_Var_Cache()
+{
+if [ ! -d $UNI_RAMDISK/var_cache ]; then
+  mkdir -p $UNI_RAMDISK/var_cache
+  chmod 777 $UNI_RAMDISK/var_cache
+fi
+
+rsync -aXW $EXCLUDES /var/cache/ $UNI_RAMDISK/var_cache
+mount --bind $UNI_RAMDISK/var_cache /var/cache
+}
+
+#####
+Move_Var_Log()
+{
+if [ ! -d $UNI_RAMDISK/var_log ]; then
+  mkdir -p $UNI_RAMDISK/var_log
+  chmod 777 $UNI_RAMDISK/var_log
+fi
+
+rsync -aXW  /var/log/ $UNI_RAMDISK/var_log
+mount --bind $UNI_RAMDISK/var_log /var/log
+
+restart rsyslog || true
+}
+
+#####
+Move_VTX2()
+{
+[ -d $VTX_HDD_DIR ] || mkdir -p $VTX_HDD_DIR
+[ -d $VTX_RAMDISK ] || mkdir -p $VTX_RAMDISK
+/bin/chown -R vdr:vdr $VTX_HDD_DIR
+mv -f  $VTX_HDD_DIR/* $VTX_RAMDISK/
+mount --bind $VTX_RAMDISK $VTX_HDD_DIR
+}
+
+#####
+Main_Run()
+{
+i=0
+while true 
+  do
+    [ -e $DEV_USBRAM ] && break || true
+    sleep 0.2
+    i=$[$i+1]
+    [ $i -gt 50 ] && break
+  done
+
+if [ -e $DEV_USBRAM ]
+  then
+    UNI_RAMDISK="/opt/USB-Ramdisk"
+    VTX_RAMDISK="/opt/VTX-Ramdisk"
+    i=0
+    while true 
+      do
+        mount | grep -q  "on $UNI_RAMDISK" && break || true
+        sleep 0.2
+        i=$[$i+1]
+        [ $i -gt 50 ] && {  exit 0; }
+      done
+    Move_Var_Cache
+    Move_Var_Log
+    Build_VTX_Ramdisk
+    Move_VTX2
+   /bin/chown -R vdr:vdr $UNI_RAMDISK
+   /bin/chown -R vdr:vdr $VTX_RAMDISK
+  else
+    UNI_RAMDISK="/easyvdr_ramdisk"
+    Build_Ramdisk
+    Move_VTX
+    Move_EPG
+    Move_EPGIM
+    /bin/chown -R vdr:vdr $UNI_RAMDISK
+fi
+}
+
+#################### main ################################
+
+mount | grep -q "/var_cache on /var/cache" && {  exit 0; } || true
+mount | grep -q "easyvdr_ramdisk"          && {  exit 0; } || true
+
+if [ -f /usr/lib/vdr/easyvdr-config-loader ]
+  then
+    . /usr/lib/vdr/easyvdr-config-loader
+    [ x"$CREATE_RAMDISK" = x"yes" ] && Main_Run || { exit 0; }
+  else
+    exit 1
+fi

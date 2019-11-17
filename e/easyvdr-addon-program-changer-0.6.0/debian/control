@@ -1,0 +1,15 @@
+Source: easyvdr-addon-program-changer
+Section: video
+Priority: extra
+Maintainer: Bleifuss2 easyVDR <easyvdr-dev@easy-vdr.de>
+Build-Depends: debhelper (>= 10.0.0), libgtk-3-dev , liblirc-dev, libxtst-dev, autotools-dev, libtool, libtool-bin, intltool
+#Build-Depends: debhelper (>= 8.0.0), libgtk-dev (>=3), liblircclient-dev, libxtst-dev
+Standards-Version: 3.9.5
+
+Package: easyvdr-addon-program-changer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends},  ttf-ubuntu-font-family, easyvdr-addon-view-picture, libgtk-3-0, liblirc-client0, lirc, libxtst6, gnome-terminal, easyvdr-addon-program-changer-skins
+Conflicts:
+Description: Switch between VDR, KODI, ...
+ Version 0.6.0
+

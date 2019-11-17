@@ -1,0 +1,12 @@
+Package: *
+Pin: release o=LP-PPA-easyvdr-team-5-base-stable
+Pin-Priority: 1002
+
+Package: *
+Pin: release o=LP-PPA-easyvdr-team-5-others-stable
+Pin-Priority: 1002
+
+Package: *
+Pin: release o=LP-PPA-easyvdr-team-5-vdr-stable
+Pin-Priority: 1002
+

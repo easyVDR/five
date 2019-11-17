@@ -1,0 +1,25 @@
+#!/bin/bash
+#############################################################################
+######################### Systemd ###########################################
+
+SERVICE[0]="/etc/systemd/easyvdr/easyvdr-program-changer.service"
+
+
+for CHK_SERVICE in ${SERVICE[*]}
+do
+ #Pfand vom Service Namen abschneiden
+ SERVICE_NAME=${CHK_SERVICE##*/}
+ if [ -f $CHK_SERVICE ] ;then
+  systemctl is-active "$SERVICE_NAME" > /dev/null 2>&1
+  if [ $? -eq 0 ]; then
+   systemctl stop "$SERVICE_NAME" || true > /dev/null 2>&1
+  fi
+
+  if [ -f "$CHK_SERVICE" ] ;then
+   systemctl disable "$SERVICE_NAME" || true > /dev/null 2>&1
+  fi
+ fi
+done
+
+#DEBHELPER#
+
