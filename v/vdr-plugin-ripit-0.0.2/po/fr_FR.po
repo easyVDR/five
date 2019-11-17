@@ -1,0 +1,203 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Jean-Claude Repetto <jc@repetto.org>, 2001
+# Olivier Jacques <jacquesolivier@hotmail.com>, 2003
+# Gregoire Favre <greg@magma.unil.ch>, 2003
+# Nicolas Huillard <nhuillard@e-dition.fr>, 2005
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2012-01-22 21:57+0100\n"
+"PO-Revision-Date: 2011-06-15 18:50+0200\n"
+"Last-Translator: Nicolas Huillard <nhuillard@e-dition.fr>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "ripit is running"
+msgstr ""
+
+msgid "Plugin Options"
+msgstr ""
+
+msgid "Hide mainmenu entry"
+msgstr "Invisible dans le menu principale"
+
+msgid "Show last x lines of log"
+msgstr ""
+
+msgid "Priority of task (nice)"
+msgstr "Prioritée de la procédure (nice)"
+
+msgid "Verbosity"
+msgstr ""
+
+msgid "Rip script Options"
+msgstr ""
+
+msgid "Encoder Options"
+msgstr "Plus d'option pour l'encodeur"
+
+msgid "Free Setting"
+msgstr ""
+
+msgid "mp3 Constant bitrate (CBR)"
+msgstr ""
+
+msgid "mp3 Average bitrate (ABR)"
+msgstr ""
+
+msgid "mp3 Variable bitrate (VBR)"
+msgstr ""
+
+msgid "flac (lossless)"
+msgstr ""
+
+msgid "ogg vorbis"
+msgstr "ogg vorbis"
+
+msgid "Encoding type"
+msgstr ""
+
+msgid "Quality"
+msgstr ""
+
+msgid "Bitrate"
+msgstr "Bitrate"
+
+msgid "Min. bitrate"
+msgstr "Bitrate min."
+
+msgid "Max. bitrate"
+msgstr "Bitrate max."
+
+msgid "Rip script extra Options"
+msgstr ""
+
+msgid "Extra encoder options"
+msgstr "Plus d'option pour l'encodeur"
+
+msgid "Add CRC-code in each frame"
+msgstr ""
+
+msgid "Ripper Options"
+msgstr ""
+
+msgid "Fast ripping"
+msgstr "Extraction rapide"
+
+msgid "Target Options"
+msgstr ""
+
+msgid "Directory for ripped tracks"
+msgstr "Fichiers pour les CD extraits"
+
+msgid "Exclude special Filesystem chars"
+msgstr ""
+
+msgid "Use underscores instead of spaces"
+msgstr ""
+
+msgid "Create playlist"
+msgstr ""
+
+msgid "About"
+msgstr ""
+
+msgid "Help"
+msgstr ""
+
+msgid "AudioCD Ripper"
+msgstr "Extracteur CD"
+
+msgid "Process started..."
+msgstr "Démarrer la transformation"
+
+msgid "Hide"
+msgstr "Retour"
+
+msgid "Abort"
+msgstr "Interrompre"
+
+msgid "Ready To Rumble"
+msgstr "Préts pour la transformation"
+
+msgid "No process started"
+msgstr "Pas de travaux en cours"
+
+msgid "Start"
+msgstr "Depart"
+
+msgid "HELP::ABOUT$"
+msgstr ""
+
+msgid "HELP::Ripit_hidden$"
+msgstr ""
+
+msgid "HELP::Ripit_lastlog$"
+msgstr ""
+
+msgid "HELP::Ripit_nice$"
+msgstr ""
+
+msgid "HELP::Ripit_verbosity$"
+msgstr ""
+
+msgid "HELP::Ripit_encoding_type$"
+msgstr ""
+
+msgid "HELP::Ripit_oggquality$"
+msgstr ""
+
+msgid "HELP::Ripit_lowbitrate_mp3_CBR_ABR$"
+msgstr ""
+
+msgid "HELP::Ripit_lowbitrate_mp3_VBR$"
+msgstr ""
+
+msgid "HELP::Ripit_maxbitrate_mp3_VBR$"
+msgstr ""
+
+msgid "HELP::Ripit_ripopts$"
+msgstr ""
+
+msgid "HELP::Ripit_encopts1$"
+msgstr ""
+
+msgid "HELP::Ripit_crc$"
+msgstr ""
+
+msgid "HELP::Ripit_encopts2$"
+msgstr ""
+
+msgid "HELP::Ripit_encopts3$"
+msgstr ""
+
+msgid "HELP::Ripit_encopts4$"
+msgstr ""
+
+msgid "HELP::Ripit_encopts5$"
+msgstr ""
+
+msgid "HELP::Ripit_fastrip$"
+msgstr ""
+
+msgid "HELP::Ripit_dir$"
+msgstr ""
+
+msgid "HELP::Ripit_excludespecialchars$"
+msgstr ""
+
+msgid "HELP::Ripit_underscores$"
+msgstr ""
+
+msgid "HELP::Ripit_playlist$"
+msgstr ""
+
+msgid "RipIt"
+msgstr "Extracteur CD"

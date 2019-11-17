@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+autotimer2searchtimer="/usr/share/vdradmin-am/autotimer2searchtimer.pl"
+svdrpsend="/usr/bin/svdrpsend"
+vdradmin_at="/var/lib/vdradmin-am/vdradmind.at"
+epgsearch_dir="/var/lib/vdr/plugins/epgsearch"
+epgsearch_conf="$epgsearch_dir/epgsearch.conf"
+
+error()
+{
+    echo "ERROR: $1"
+    exit 1
+}
+
+[ ! -s "$vdradmin_at" ] && error "No VDRAdmim-AM auto timers found"
+[ ! -d "$epgsearch_dir" ] && error "No vdr-plugin-epgsearch installation found"
+
+if $svdrpsend HELP 2>/dev/null | grep -q epgsearch ; then
+    $autotimer2searchtimer -i "$vdradmin_at" -s
+else
+    [ -s "$epgsearch_conf" ] && \
+      error "VDR must be running with the EPGSearch plugin loaded"
+
+    $autotimer2searchtimer -i "$vdradmin_at" -o "$epgsearch_conf"
+    chown vdr:vdr "$epgsearch_conf"
+fi

@@ -1,0 +1,27 @@
+Source: vdr-plugin-remotetimers
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), pkg-config, gettext, svdrpservice-dev
+Standards-Version: 3.9.4
+Homepage: http://vdr.schmirler.de/
+
+Package: vdr-plugin-remotetimers
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, vdr-plugin-svdrpservice
+Description: VDR plugin to edit timers on a remote VDR
+ With the remotetimers plugin you can add/edit/remove timers on both, the
+ local (client) VDR and a remote (server) VDR. You can even move timers
+ between both VDRs. The plugin has its own implementations of the Schedule,
+ Timer and Recordings menus. All of them are feature extended copies of VDR's
+ original menus, adding e.g. multiuser support.
+
+Package: vdr-plugin-remotetimers-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-remotetimers (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-remotetimers
+ .
+ This package contains only the debugging symbols for vdr-plugin-remotetimers

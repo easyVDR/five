@@ -1,0 +1,120 @@
+# vdr-plugin recsearch.
+# Copyright (C) 2013
+# This file is distributed under the same license as the vdr-plugin-recsearch package.
+# Lars Hanisch <dvb@flensrocker.de>, 2013
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-recsearch 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2014-10-14 00:49+0200\n"
+"PO-Revision-Date: 2013-11-18 19:15+0100\n"
+"Last-Translator: Lars Hanisch <dvb@flensrocker.de>\n"
+"Language-Team: German <dvb@flensrocker.de>\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "search your recordings"
+msgstr "durchsuche deine Aufnahmen"
+
+msgid "search recordings"
+msgstr "durchsuche Aufnahmen"
+
+msgid "select category"
+msgstr "Wähle Kategorie"
+
+msgid "<no category>"
+msgstr "<keine Kategorie>"
+
+msgid "load search template"
+msgstr "Suchvorlage laden"
+
+msgid "edit search templates"
+msgstr "Suchvorlage bearbeiten"
+
+msgid "name"
+msgstr "Name"
+
+msgid "search term"
+msgstr "Suchbegriff"
+
+msgid "status"
+msgstr "Status"
+
+msgid "younger than days"
+msgstr "jünger als Tage"
+
+msgid "whatever"
+msgstr "egal"
+
+msgid "hot key"
+msgstr "Schnelltaste"
+
+msgid "no hot key"
+msgstr "keine Schnelltaste"
+
+msgid "category"
+msgstr "Kategorie"
+
+msgid "Button$Save"
+msgstr "Speichern"
+
+msgid "Button$Find"
+msgstr "Finde"
+
+msgid "Button$Delete"
+msgstr "Löschen"
+
+msgid "Button$Load"
+msgstr "Laden"
+
+msgid "Button$Select"
+msgstr "Wählen"
+
+msgid "search template has been saved"
+msgstr "Suchvorlage wurde gespeichert"
+
+msgid "enter something I can search for"
+msgstr "gib etwas ein, nach dem ich suchen kann"
+
+msgid "delete shown search template?"
+msgstr "Angezeigte Suchvorlage löschen?"
+
+msgid "search template was deleted from file"
+msgstr "Suchvorlage wurde aus der Datei gelöscht"
+
+msgid "you have to save a search template first"
+msgstr "zuerst muss eine Suchvorlage gespeichert werden"
+
+msgid "Button$New"
+msgstr "Neu"
+
+msgid "Button$Edit"
+msgstr "Bearbeiten"
+
+msgid "delete selected search template?"
+msgstr "Ausgewählte Suchvorlage löschen?"
+
+msgid "all"
+msgstr "alle"
+
+msgid "only new"
+msgstr "nur neue"
+
+msgid "only edited"
+msgstr "nur geschnittene"
+
+msgid "invalid"
+msgstr "ungültig"
+
+#. TRANSLATORS: note the leading comma and the %d for the number of days
+#, c-format
+msgid ", younger than %d days"
+msgstr ", jünger als %d Tage"
+
+#. TRANSLATORS: note the leading comma and the %d for the number of the hot key
+#, c-format
+msgid ", hot key %d"
+msgstr ", Schnelltaste %d"

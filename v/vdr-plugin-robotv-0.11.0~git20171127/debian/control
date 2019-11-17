@@ -1,0 +1,22 @@
+Source: vdr-plugin-robotv
+Section: misc
+Priority: extra
+Maintainer: Alexander Grothe <seahawk1986@gmx.de>, Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config, libz-dev
+Standards-Version: 3.9.5
+
+Package: vdr-plugin-robotv
+Architecture: any
+Depends: ${shlibs:Depends}, ${vdr:Depends}
+Description: robotv plugin for VDR
+ This plugin for VDR allows android roboTV clients to connect.
+
+Package: vdr-plugin-robotv-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-robotv (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-robotv
+ .
+ This package contains only the debugging symbols for vdr-plugin-robotv 

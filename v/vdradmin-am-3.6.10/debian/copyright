@@ -1,0 +1,71 @@
+Upstream Homepage:
+    http://andreas.vdr-developer.org/vdradmin-am/index.html
+
+Upstream Authors:
+    Andreas Mair <mail@andreas.vdr-developer.org> (current vdradmin-am)
+    Thomas Koch <tom@linvdr.org> (original version)
+
+Debian Maintainers:
+    Tobias Grimm <tg@e-tobi.net>
+    Thomas Schmidt <tschmidt@debian.org>
+
+Copyright:
+    (C) 2001 - 2004 Thomas Koch
+    (C) 2005 - 2011 Andreas Mair
+    (C) 2002        KDE Artists (KDE Crystal theme icons)
+    (C) 2002        Klaus Knopper (Bubble help info boxes)
+    (C) 2004        Tatsuhiko Miyagawa (Template-Plugin-JavaScript)
+    (C) 2006        Mike Constabel (autotimer2searchtimer.pl)
+
+Copyright (Debian packaging):
+    (C) 2003 - 2011 Thomas Schmidt, Tobias Grimm
+
+License:
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+    The complete text of the GNU General Public License can be found
+    in /usr/share/common-licenses/GPL-2 on most Debian systems.
+
+License (Crystal theme icons):
+    This library is free software; you can redistribute it and/or
+    modify it under the terms of the GNU Lesser General Public
+    License as published by the Free Software Foundation; either
+    version 2.1 of the License, or (at your option) any later version.
+
+    This library is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the GNU
+    Lesser General Public License for more details.
+
+    You should have received a copy of the GNU Lesser General Public
+    License along with this library; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA
+    02110-1301, USA.
+
+    The complete text of the GNU General Public License can be found
+    in /usr/share/common-licenses/LGPL-2.1 on most Debian systems.
+
+License (Template-Plugin-JavaScript - JavaScript.pm)
+    This library is free software; you can redistribute it and/or modify
+    it under the same terms as Perl itself. Perl is distributed under 
+    your choice of the GNU General Public License or the Artistic License.
+
+    On Debian GNU/Linux systems, the complete text of the 
+    GNU General Public License can be found in `/usr/share/common-licenses/GPL'
+    and the Artistic Licence in `/usr/share/common-licenses/Artistic'.
+
+License (Debian packaging):
+    The Debian packaging is licensed under the GPL, version 2 or any
+    later version, see /usr/share/common-licenses/GPL-2.

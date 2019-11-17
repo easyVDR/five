@@ -1,0 +1,2 @@
+etc/vdr/plugins/robotv/allowed_hosts.conf   var/lib/vdr/plugins/robotv/allowed_hosts.conf
+etc/vdr/plugins/robotv/plugin.robotv.conf   var/lib/vdr/plugins/robotv/robotv.conf

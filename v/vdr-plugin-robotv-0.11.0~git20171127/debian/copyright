@@ -1,0 +1,12 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: vdr-plugin-robotv
+Upstream-Contact: Alexander Pipelka <alexander.pipelka@gmail.com>
+Source: https://github.com/pipelka/vdr-plugin-robotv
+
+Files: *
+Copyright: 2010-2016 Alexander Pipelka
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2016 Alexander Grothe
+License: GPL-2+

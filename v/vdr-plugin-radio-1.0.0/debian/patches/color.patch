@@ -1,0 +1,18 @@
+Index: vdr-plugin-radio-1.0.0/radioskin.c
+===================================================================
+--- vdr-plugin-radio-1.0.0.orig/radioskin.c	2017-02-17 22:54:43.634663262 +0100
++++ vdr-plugin-radio-1.0.0/radioskin.c	2017-02-18 19:09:35.492428127 +0100
+@@ -14,10 +14,10 @@
+   {
+     // dummy
+     "dummy",
+-    0xFFFCFCFC, // clrTitleBack
+-    0xFF000000, // clrTitleText
++    0xB8003c78, // clrTitleBack
++    0xFFFFFFFF, // clrTitleText
+     0x7F000000, // clrBack
+-    0xFFFCFCFC, // clrText
++    0xB8FFFFDC, // clrText
+   },
+   {
+     // Classic

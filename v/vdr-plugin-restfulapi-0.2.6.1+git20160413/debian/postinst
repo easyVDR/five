@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+
+if [ "$1" = "configure" ]; then
+
+    # Change owner of directory for temporary files
+    /bin/chown -R vdr:vdr /var/lib/vdr/plugins/restfulapi || true
+	/bin/chown vdr:vdr /var/lib/vdr/plugins/restfulapi.conf || true
+
+fi
+
+#DEBHELPER#

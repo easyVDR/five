@@ -1,0 +1,274 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@cadsoft.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2012-01-22 21:57+0100\n"
+"PO-Revision-Date: 2012-01-19 19:53+0100\n"
+"Last-Translator: \n"
+"Language-Team:  <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "ripit is running"
+msgstr "ripit läuft"
+
+msgid "Plugin Options"
+msgstr "Plugin Optionen"
+
+msgid "Hide mainmenu entry"
+msgstr "Hauptmenüeintrag verbergen"
+
+msgid "Show last x lines of log"
+msgstr "Zeige die letzten x Zeichen der Konvertierungsausgabe"
+
+msgid "Priority of task (nice)"
+msgstr "Priorität von Vorgang (nice)"
+
+msgid "Verbosity"
+msgstr "Log Detailtiefe"
+
+msgid "Rip script Options"
+msgstr "Rip Script Optionen"
+
+msgid "Encoder Options"
+msgstr "Encoder Optionen"
+
+msgid "Free Setting"
+msgstr "Freie Einstellung"
+
+msgid "mp3 Constant bitrate (CBR)"
+msgstr "mp3 konstante Bitrate (CBR)"
+
+msgid "mp3 Average bitrate (ABR)"
+msgstr "mp3 durchschnittliche Datenrate (ABR)"
+
+msgid "mp3 Variable bitrate (VBR)"
+msgstr "mp3 variable Datenrate (VBR)"
+
+msgid "flac (lossless)"
+msgstr "flac (verlustfrei)"
+
+msgid "ogg vorbis"
+msgstr "ogg vorbis"
+
+msgid "Encoding type"
+msgstr "Zielformat"
+
+msgid "Quality"
+msgstr "Qualität"
+
+msgid "Bitrate"
+msgstr "Bitrate"
+
+msgid "Min. bitrate"
+msgstr "Minimale Bitrate"
+
+msgid "Max. bitrate"
+msgstr "Maximale Bitrate"
+
+msgid "Rip script extra Options"
+msgstr "Weitere Rip Script Optionen"
+
+msgid "Extra encoder options"
+msgstr "Weitere Encoder Optionen"
+
+msgid "Add CRC-code in each frame"
+msgstr "Den mp3s CRC Prüfsummen hinzufügen"
+
+msgid "Ripper Options"
+msgstr "Ripper Optionen"
+
+msgid "Fast ripping"
+msgstr "Schnelles Rippen"
+
+msgid "Target Options"
+msgstr "Ziel Optionen"
+
+msgid "Directory for ripped tracks"
+msgstr "Speicherort für erstellte Audiodateien"
+
+msgid "Exclude special Filesystem chars"
+msgstr "Spezielle Dateisystem Zeichen Maskieren"
+
+msgid "Use underscores instead of spaces"
+msgstr "Leerzeichen durch Unterstriche ersetzen"
+
+msgid "Create playlist"
+msgstr "Playlist erstellen"
+
+msgid "About"
+msgstr "Über..."
+
+msgid "Help"
+msgstr "Hilfe"
+
+msgid "AudioCD Ripper"
+msgstr "AudioCD Ripper"
+
+msgid "Process started..."
+msgstr "Vorgang gestartet..."
+
+msgid "Hide"
+msgstr "Ausblenden"
+
+msgid "Abort"
+msgstr "Abbrechen"
+
+msgid "Ready To Rumble"
+msgstr "Ready To Rumble"
+
+msgid "No process started"
+msgstr "Kein Vorgang gestartet"
+
+msgid "Start"
+msgstr "Starten"
+
+msgid "HELP::ABOUT$"
+msgstr ""
+"Dieses Plugin \"rippt\" Audio-CDs und wandelt die Titel in Musikdateien um.\n"
+"\n"
+"Dazu wird das Programm ripit [http://www.suwald.com/ripit/news.php] mit den gewählten Einstellungen aufgerufen."
+
+msgid "HELP::Ripit_hidden$"
+msgstr ""
+"Hauptmenüeintrag verbergen:\n"
+"Verhindert das ein Eintrag im VDR Menü erzeugt wird.\n"
+"Nur nützlich wenn das Plugin von anderen Plugins genutzt wird (z.B. das music Plugin)."
+
+msgid "HELP::Ripit_lastlog$"
+msgstr ""
+"Zeige die letzten x Zeichen der Konvertierungsausgabe:\n"
+"Da sich einige Ausgabezeilen über zwei Zeilen erstrecken muss hier etwas weniger eingestellt werden als das Fenster anzeigen kann (Abhängig von der eingestellten Menügrösse und der gewählten Schrift)."
+
+msgid "HELP::Ripit_nice$"
+msgstr ""
+"Priorität von Vorgang (nice):\n"
+"Gibt an wieviel CPU Zeit ripit nutzen darf, dabei gibt -20 (funktioniert evtl. nur wenn der VDR mit root Rechten läuft) ripit die meiste CPU Zeit und 19 die weinigste.\n"
+"Um sicherzustellen das die Nutzung des VDRs nicht gestört wird empfehlen sich höhere Werte (10-19).\n"
+"\n"
+"TIPP: Möchten Sie den VDR nicht mehr nutzen während noch eine Audio-CDs gerippt wird ,schalten Sie den VDR einfach wie gewohnt aus. Der VDR wird mit dem Ausschalten solange warten bis das rippen abgeschlossen ist und sich danach sofort ausschalten."
+
+msgid "HELP::Ripit_verbosity$"
+msgstr ""
+"Log Detailtiefe:\n"
+"Höhere Werte sorgen dafür das mehr Infos ausgegeben werden"
+
+msgid "HELP::Ripit_encoding_type$"
+msgstr ""
+"Zielformat:\n"
+"Hier kann ausgewählt werden welche Art von Audiodateien erzeugt werden soll.\n"
+"\n"
+"Freie Einstellung -> Hier kann die Kommandozeile für ripit frei eingegeben werden.\n"
+"mp3 konstante Bitrate (CBR) -> Erzeugt mp3 Audiodateien mit konstanter Datenrate.\n"
+"mp3 durchschnittliche Datenrate (ABR) -> Erzeugt mp3 Audiodateien mit durchschnittlicher Datenrate.\n"
+"mp3 variable Datenrate (VBR) -> Erzeugt mp3 Audiodateien mit variabler Datenrate.\n"
+"flac (verlustfrei) -> Erzeugt flac Audiodateien. flac Dateien sind verlustfrei, folglich gibt es keine Einstellung zur Quallität.\n"
+"ogg vorbis -> Erzeugt ogg Vorbis Audiodateien."
+
+msgid "HELP::Ripit_oggquality$"
+msgstr ""
+"Qualität:\n"
+"Die Quallitätsstufe der erzeugten Audiodatei. Je höher der Wert desto besser die Tonquallität, allerdings zum Preis einer grösseren Datei."
+
+msgid "HELP::Ripit_lowbitrate_mp3_CBR_ABR$"
+msgstr ""
+"Bitrate:\n"
+"Die Bitrate der erzeugten Audiodatei, je höher der Wert desto besser die Tonquallität, allerdings zum Preis einer grösseren Datei."
+
+msgid "HELP::Ripit_lowbitrate_mp3_VBR$"
+msgstr ""
+"Minimale Bitrate:\n"
+"mp3 Audiodateien mit variabler Datenrate erlauben die Angabe einer minimalen und einer maximalen Bitrate (Höhere Bitraten ergeben eine höhere Tonquallität bei einer grösseren Datei) zwischen der möglichst optimal kompremiert wird.\n"
+"Hier können Sie die minimale Bitrate angeben."
+
+msgid "HELP::Ripit_maxbitrate_mp3_VBR$"
+msgstr ""
+"Maximale Bitrate:\n"
+"mp3 Audiodateien mit variabler Datenrate erlauben die Angabe einer minimalen und einer maximalen Bitrate (Höhere Bitraten ergeben eine höhere Tonquallität bei einer grösseren Datei) zwischen der möglichst optimal kompremiert wird.\n"
+"Hier können Sie die maximale Bitrate angeben."
+
+msgid "HELP::Ripit_ripopts$"
+msgstr ""
+"Weitere Rip Script Optionen:\n"
+"Parameter die dem Aufruf von ripit hinzugefügt werden, hier müssen alle Paramerter stehen die notwendig sind die gewünschten Audiodateien erzeugen zu lassen. \"man ripit\" gibt Auskunft über mögliche Parameter.\n"
+"\n"
+"ACHTUNG: Ungültige Eingaben in diesem Feld können dazu führen das das rippen nicht mehr funktioniert."
+
+msgid "HELP::Ripit_encopts1$"
+msgstr ""
+"Weitere Encoder Optionen:\n"
+"Weitere Optionen für den \"lame\" mp3 Encoder. Normalerweise ist es nicht notwendig hier etwas zu ändern. Schlagen Sie in \"man lame\" nach um mehr über die möglichen Optionen zu erfahren falls Sie spezielle Wünsche an die erzeugten mp3 Audiodateien haben.\n"
+"\n"
+"ACHTUNG: Ungültige Eingaben in diesem Feld können dazu führen das das rippen nicht mehr funktioniert."
+
+msgid "HELP::Ripit_crc$"
+msgstr ""
+"Den mp3s CRC Prüfsummen hinzufügen:\n"
+"Den einzelnen mp3 Frames crc32 Prüfsummen hinzufügen. Dies ermöglicht es mittels spezieller mp3 Prüfprogramme nachzuprüfen ob die mp3 Dateien beschädigt wurden.\n"
+"Es spricht nix dagegen diese Option immer aktiviert zu haben."
+
+msgid "HELP::Ripit_encopts2$"
+msgstr ""
+"Weitere Encoder Optionen:\n"
+"Weitere Optionen für den \"lame\" mp3 Encoder. Normalerweise ist es nicht notwendig hier etwas zu ändern. Schlagen Sie in \"man lame\" nach um mehr über die möglichen Optionen zu erfahren falls Sie spezielle Wünsche an die erzeugten mp3 Audiodateien haben.\n"
+"\n"
+"ACHTUNG: Ungültige Eingaben in diesem Feld können dazu führen das das rippen nicht mehr funktioniert."
+
+msgid "HELP::Ripit_encopts3$"
+msgstr ""
+"Weitere Encoder Optionen:\n"
+"Weitere Optionen für den \"lame\" mp3 Encoder. Normalerweise ist es nicht notwendig hier etwas zu ändern. Schlagen Sie in \"man lame\" nach um mehr über die möglichen Optionen zu erfahren falls Sie spezielle Wünsche an die erzeugten mp3 Audiodateien haben.\n"
+"\n"
+"ACHTUNG: Ungültige Eingaben in diesem Feld können dazu führen das das rippen nicht mehr funktioniert."
+
+msgid "HELP::Ripit_encopts4$"
+msgstr ""
+"Weitere Encoder Optionen:\n"
+"Weitere Optionen für den \"flac\" flac Encoder. Normalerweise ist es nicht notwendig hier etwas zu ändern. Schlagen Sie in \"man flac\" nach um mehr über die möglichen Optionen zu erfahren falls Sie spezielle Wünsche an die erzeugten flac Audiodateien haben.\n"
+"\n"
+"ACHTUNG: Ungültige Eingaben in diesem Feld können dazu führen das das rippen nicht mehr funktioniert."
+
+msgid "HELP::Ripit_encopts5$"
+msgstr ""
+"Weitere Encoder Optionen:\n"
+"Weitere Optionen für den \"oggenc\" ogg vorbis Encoder. Normalerweise ist es nicht notwendig hier etwas zu ändern. Schlagen Sie in \"man oggenc\" nach um mehr über die möglichen Optionen zu erfahren falls Sie spezielle Wünsche an die erzeugten ogg Vorbis Audiodateien haben.\n"
+"\n"
+"ACHTUNG: Ungültige Eingaben in diesem Feld können dazu führen das das rippen nicht mehr funktioniert."
+
+msgid "HELP::Ripit_fastrip$"
+msgstr ""
+"Schnelles Rippen:\n"
+"Schnelles CD rippen ist nicht zu empehlen. Normalerweise sollten Sie \"Schnelles Rippen\" ausschalten um ein fehlerfreies Auslesen der CD zu garantieren."
+
+msgid "HELP::Ripit_dir$"
+msgstr ""
+"Speicherort für erstellte Audiodateien:\n"
+"Das Basisverzeichnis zur Speicherung der erzeugten Audiodateien. Unterhalb dieses Verzeichnisses werden die erzeugten Audiodateien in Unterordnern abgelegt. Bereits bestehende Ordner werden nicht überschrieben.\n"
+"\n"
+"ACHTUNG: Temporär wird hier wesendlich mehr Platz benötigt und es finden sehr viele Schreib-/Leseoperationen statt. Nutzen Sie hier nach Möglichkeit eine interne Festplatte und keine USB Speichermedien oder Speicherkarten."
+
+msgid "HELP::Ripit_excludespecialchars$"
+msgstr ""
+"Spezielle Dateisystem Zeichen Maskieren:\n"
+"Zeichen in Dateinamen, die im gewählten Dateisystem nicht erlaubt sind durch Unterstriche ersetzen. Aktivieren Sie diese Option um sicherzustellen das die Dateien Problemlos auf jedes Gerät kopiert werden könen.\n"
+"\"NTFS\" ist die sicherste Einstellung."
+
+msgid "HELP::Ripit_underscores$"
+msgstr ""
+"Leerzeichen durch Unterstriche ersetzen:\n"
+"Wenn gewählt werden alle Leerzeichen in Verzeichnis-/Dateinamen durch Untestriche ersetzt."
+
+msgid "HELP::Ripit_playlist$"
+msgstr ""
+"Playlist erstellen:\n"
+"Erstellt eine m3u Playliste. Diese wird von vielen Playern verwendet um alle (in der Playlist enthaltenen) Titel in der korrekten Reihenfolge abzuspielen."
+
+msgid "RipIt"
+msgstr "Audio-CDs extrahieren"

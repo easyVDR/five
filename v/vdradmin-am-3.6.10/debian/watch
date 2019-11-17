@@ -1,0 +1,3 @@
+version=2
+http://andreas.vdr-developer.org/vdradmin-am/download.html \
+  download/vdradmin-am-(.*)\.tar\.bz2

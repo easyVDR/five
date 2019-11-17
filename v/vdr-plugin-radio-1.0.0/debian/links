@@ -1,0 +1,5 @@
+usr/share/vdr-plugin-radio/mpegstill    var/lib/vdr/plugins/radio/mpegstill
+usr/share/vdr-plugin-radio/scripts    var/lib/vdr/plugins/radio/scripts
+usr/share/vdr-plugin-radio/symbols    var/lib/vdr/plugins/radio/symbols
+usr/share/vdr-plugin-radio/mpegstill/radio_easy_720.mpg    var/lib/vdr/plugins/radio/radio.mpg
+usr/share/vdr-plugin-radio/mpegstill/rtextUnten-kleo2-replay.mpg    var/lib/vdr/plugins/radio/replay.mpg

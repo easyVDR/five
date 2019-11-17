@@ -1,0 +1,20 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	[ -d locale.backup ] || mv locale locale.backup
+	[ -d po.backup ] || cp -r po po.backup
+	./make.sh po
+	@cp vdradmind.pl debian/vdradmind
+	@cp vdradmind.pl.1 debian/vdradmind.1
+	chmod a+x $(CURDIR)/debian/at2epgsearch
+
+override_dh_auto_clean:
+	rm -rf debian/vdradmind debian/vdradmind.1
+	if [ -d locale.backup ] ; then rm -rf locale; mv locale.backup locale; fi
+	if [ -d po.backup ] ; then rm -rf po; mv po.backup po; fi

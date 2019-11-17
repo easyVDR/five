@@ -1,0 +1,9 @@
+config/mpegstill/*    usr/share/vdr-plugin-radio/mpegstill/
+config/scripts/*    usr/share/vdr-plugin-radio/scripts/
+symbols/*    usr/share/vdr-plugin-radio/symbols/
+debian/plugin.radio.conf    etc/vdr/plugins/
+debian/radio_easy_420.mpg    usr/share/vdr-plugin-radio/mpegstill/
+debian/radio_easy_720.mpg    usr/share/vdr-plugin-radio/mpegstill/
+debian/radio_easy_720_1.mpg    usr/share/vdr-plugin-radio/mpegstill/
+
+

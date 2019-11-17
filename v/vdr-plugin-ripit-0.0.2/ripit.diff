@@ -1,0 +1,29 @@
+--- /home/wolfi/VDR/easyvdr_09-6/ripit-0.0.2/commands/a/vdr-ripit	2012-01-15 19:33:50.000000000 +0100
++++ /home/wolfi/VDR/easyvdr_09-6/ripit-0.0.2/commands/b/vdr-ripit	2013-01-22 18:48:22.410967222 +0100
+@@ -114,7 +114,7 @@ case "$PARAM_MODE" in
+ 					[ -n "$PARAM_ENCOPTS" ] && lameopt="$lameopt $PARAM_ENCOPTS"
+ 					#crcarg "-p"
+ 					[ "$PARAM_CRC" = "1" ] && lameopt="$lameopt -p"
+-					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off --lameopt '$lameopt'"
++					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off -b off --lameopt '$lameopt'"
+ 				;;
+ 				2)
+ 					lameopt="--abr $PARAM_LOWBIT"
+@@ -122,7 +122,7 @@ case "$PARAM_MODE" in
+ 					[ -n "$PARAM_ENCOPTS" ] && lameopt="$lameopt $PARAM_ENCOPTS"
+ 					#crcarg "-p"
+ 					[ "$PARAM_CRC" = "1" ] && lameopt="$lameopt -p"
+-					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off --lameopt '$lameopt'"
++					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off -b off --lameopt '$lameopt'"
+ 				;;
+ 				3)
+ 					lameopt="-V 4 -b $PARAM_LOWBIT -B $PARAM_MAXBIT"
+@@ -130,7 +130,7 @@ case "$PARAM_MODE" in
+ 					[ -n "$PARAM_ENCOPTS" ] && lameopt="$lameopt $PARAM_ENCOPTS"
+ 					#crcarg "-p"
+ 					[ "$PARAM_CRC" = "1" ] && lameopt="$lameopt -p"
+-					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off --lameopt '$lameopt'"
++					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off -b off --lameopt '$lameopt'"
+ 				;;
+ 				4)
+ 					flacopt="--best"

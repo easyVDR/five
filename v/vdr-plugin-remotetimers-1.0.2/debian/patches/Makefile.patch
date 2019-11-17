@@ -1,0 +1,13 @@
+Index: vdr-plugin-remotetimers-1.0.2/Makefile
+===================================================================
+--- vdr-plugin-remotetimers-1.0.2.orig/Makefile	2014-03-13 09:17:43.000000000 +0100
++++ vdr-plugin-remotetimers-1.0.2/Makefile	2015-08-01 23:31:03.987765824 +0200
+@@ -52,7 +52,7 @@
+ DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ 
+ # uncomment this to enable support for the graphtft plugin.
+-#DEFINES += -DUSE_GRAPHTFT
++DEFINES += -DUSE_GRAPHTFT
+ 
+ ### The object files (add further files here):
+ 

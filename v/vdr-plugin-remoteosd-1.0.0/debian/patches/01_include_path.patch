@@ -1,0 +1,19 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## 01_include_path.dpatch by Tobias Grimm <tg@e-tobi.net>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Set correct include path to svdrpservice.h.
+
+@DPATCH@
+diff -urNad vdr-plugin-remoteosd-0.0.2~/menu.h vdr-plugin-remoteosd-0.0.2/menu.h
+--- vdr-plugin-remoteosd-0.0.2~/menu.h	2007-02-23 23:09:12.000000000 +0100
++++ vdr-plugin-remoteosd-0.0.2/menu.h	2007-03-11 18:47:54.000000000 +0100
+@@ -11,7 +11,7 @@
+ #include <vdr/osdbase.h>
+ #include <vdr/plugin.h>
+ #include <vdr/channels.h>
+-#include "svdrpservice.h"
++#include <svdrpservice.h>
+ 
+ class cRemoteOsdMenu: public cOsdMenu {
+ 	private:

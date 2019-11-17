@@ -1,0 +1,87 @@
+vdr-plugin-remotetimers (1.0.2-1easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:08:28 +0100
+
+vdr-plugin-remotetimers (1.0.2-1easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:37:18 +0100
+
+vdr-plugin-remotetimers (1.0.2-1easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:36:44 +0100
+
+vdr-plugin-remotetimers (1.0.2-1easyVDR3~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 22:37:02 +0200
+
+vdr-plugin-remotetimers (1.0.2-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Oct 2016 23:45:06 +0200
+
+vdr-plugin-remotetimers (1.0.2-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:53:32 +0200
+
+vdr-plugin-remotetimers (1.0.2-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 22:21:05 +0100
+
+vdr-plugin-remotetimers (1.0.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild for VDR-2.2.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 01 Aug 2015 23:34:45 +0200
+
+vdr-plugin-remotetimers (1.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * New Release
+  * enable support for plugin graphtft
+  * switch to quilt
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 01 Aug 2015 22:38:31 +0200
+
+vdr-plugin-remotetimers (1.0.1-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:51:37 +0200
+
+vdr-plugin-remotetimers (1.0.1-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:18:34 +0200
+
+vdr-plugin-remotetimers (1.0.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild for trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Nov 2013 18:13:38 +0100
+
+vdr-plugin-remotetimers (1.0.1-1easyVDR0~raring) raring; urgency=high
+
+  * Update to 1.0.1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 15 Aug 2013 07:59:51 +0200
+
+vdr-plugin-remotetimers (1.0.0-1easyVDR0~raring) raring; urgency=high
+
+  * Initial Release
+  * switch to quilt
+  * add dbg package 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Jul 2013 21:23:18 +0200

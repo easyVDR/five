@@ -1,0 +1,167 @@
+vdr-plugin-radio (1.0.0-4easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:07:04 +0100
+
+vdr-plugin-radio (1.0.0-4easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:36:38 +0100
+
+vdr-plugin-radio (1.0.0-4easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:35:53 +0100
+
+vdr-plugin-radio (1.0.0-4easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 21:45:51 +0200
+
+vdr-plugin-radio (1.0.0-4easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 19 Feb 2017 22:05:04 +0100
+
+vdr-plugin-radio (1.0.0-3easyVDR10~trusty) trusty; urgency=high
+
+  * refresh color scheme patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 18 Feb 2017 18:10:24 +0100
+
+vdr-plugin-radio (1.0.0-3easyVDR9~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 17 Feb 2017 22:20:39 +0100
+
+vdr-plugin-radio (1.0.0-3easyVDR8~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 17 Feb 2017 22:15:41 +0100
+
+vdr-plugin-radio (1.0.0-3easyVDR7~trusty) trusty; urgency=high
+
+  * added patch color scheme dummy
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 17 Feb 2017 21:43:03 +0100
+
+vdr-plugin-radio (1.0.0-3easyVDR6~trusty) trusty; urgency=high
+
+  * add new 720 mpg
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 17 Feb 2017 00:05:56 +0100
+
+vdr-plugin-radio (1.0.0-3easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:40:01 +0200 
+
+vdr-plugin-radio (1.0.0-3easyVDR4~trusty) trusty; urgency=high
+
+  * add new 420,720 mpg
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 08 May 2016 16:47:28 +0200
+
+vdr-plugin-radio (1.0.0-3easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:52:46 +0200
+
+vdr-plugin-radio (1.0.0-3easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:44:49 +0100
+
+vdr-plugin-radio (1.0.0-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 20:48:03 +0100
+
+vdr-plugin-radio (1.0.0-2easyVDR10~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 18:54:58 +0200
+
+vdr-plugin-radio (1.0.0-2easyVDR9~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:19:27 +0200
+
+vdr-plugin-radio (1.0.0-2easyVDR8~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:13:04 +0100
+
+vdr-plugin-radio (1.0.0-2easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:23:03 +0100
+
+vdr-plugin-radio (1.0.0-2easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:27:26 +0100
+
+vdr-plugin-radio (1.0.0-2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:47:22 +0100
+
+vdr-plugin-radio (1.0.0-2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:50:34 +0200
+
+vdr-plugin-radio (1.0.0-2easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:17:08 +0200
+
+vdr-plugin-radio (1.0.0-2easyVDR2~trusty) trusty; urgency=high
+
+  * add new 420,720,1080 mpg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 09 Mar 2014 01:08:46 +0100
+
+vdr-plugin-radio (1.0.0-2easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 14 Jan 2014 21:05:11 +0100
+
+vdr-plugin-radio (1.0.0-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Oct 2013 05:14:45 +0100
+
+vdr-plugin-radio (1.0.0-1easyVDR0~raring) raring; urgency=high
+
+  * add 420p, 1080p mpg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 06 Sep 2013 02:58:08 +0200
+
+vdr-plugin-radio (1.0.0-0easyVDR0~raring) raring; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 12 Aug 2013 16:15:06 +0200

@@ -1,0 +1,95 @@
+vdr-plugin-ripit (0.0.2-2easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:09:09 +0100
+
+vdr-plugin-ripit (0.0.2-2easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:37:37 +0100
+
+vdr-plugin-ripit (0.0.2-2easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:37:09 +0100
+
+vdr-plugin-ripit (0.0.2-2easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 22:37:22 +0200
+
+vdr-plugin-ripit (0.0.2-2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:54:54 +0200
+
+vdr-plugin-ripit (0.0.2-2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:40:51 +0200
+
+vdr-plugin-ripit (0.0.2-2easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:43:03 +0200
+
+vdr-plugin-ripit (0.0.2-2easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:02:29 +0200
+
+vdr-plugin-ripit (0.0.2-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:45:41 +0100
+
+vdr-plugin-ripit (0.0.2-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:58:15 +0100
+
+vdr-plugin-ripit (0.0.2-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:21:01 +0200
+
+vdr-plugin-ripit (0.0.2-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 17:23:06 +0100
+
+vdr-plugin-ripit (0.0.2-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 16:43:34 +0100
+
+vdr-plugin-ripit (0.0.2-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:51:52 +0200
+
+vdr-plugin-ripit (0.0.2-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:18:49 +0200
+
+vdr-plugin-ripit (0.0.2-1easyVDR0~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 Nov 2013 21:30:18 +0100

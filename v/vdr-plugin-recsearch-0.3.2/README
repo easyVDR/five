@@ -1,0 +1,112 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Lars Hanisch <dvb@flensrocker.de>
+
+Project's homepage:          https://github.com/flensrocker/vdr-plugin-recsearch
+
+Latest version available at: https://github.com/flensrocker/vdr-plugin-recsearch
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Description:
+Search through your recordings and find the one you are looking for... :)
+
+Files in recsearch's config directory
+-------------------------------------
+
+searches.conf:
+ Contains all search templates you saved with the red button.
+
+last.conf:
+ Contains your last executed search, regardless if it's in your searches.conf
+ or not.
+
+Navigation
+----------
+
+If there are no stored search templates the edit page is opened, see "Edit
+search template". Add as many templates to your searches.conf as you like.
+
+If there are already some templates available, these are shown ordered by
+their categories. The tilde "~" is used as a delimiter for submenus.
+
+OK:
+ Will open the category or execute the selected search.
+
+Red button:
+ If the focus is on a search template it can be edited.
+
+Green button:
+ A new search template can be added.
+
+Yellow button:
+ If the focus is on a search template it can be deleted.
+
+Edit search template
+--------------------
+
+name:
+ The name is just a name and will only be used for displaying the search
+ template in the OSD. If emtpy, a generic name containing the parameters
+ is shown. It is not used by the filter.
+
+search term:
+ Enter one or more search terms splitted with '|' (pipe).
+ Title, short text and description of the recordings will be searched,
+ case will be ignored.
+ If the term starts with "t:" only the title will be scanned, with "s:"
+ only the short text and with "d:" only the description.
+
+status:
+ Restrict the results to only new or edited recordings.
+
+younger than days:
+ Show only recordings that are recorded in the last given days.
+
+hot key:
+ Bind the search template to a hot key between 1 and 9. You can load and
+ execute this search just with pressing the hot key in recsearch's menu.
+ And it's useful in your keymacros.conf, e.g. "User0 @recsearch 1"
+ You must keep track of your used hot keys on your own. If you assign the
+ same hot key to multiple templates the "first" one will be loaded (whatever
+ the "first" one is...).
+
+category:
+ Put this search template into a category to organize your saved templates
+ (see red and blue button). The tilde "~" can be used to divide the categories
+ into "folders".
+
+Red button:
+ Store the shown search template to your searches.conf.
+
+Green button/OK:
+ Start the search and display the results.
+
+Yellow button:
+ Delete the shown search template. If it's in your searches.conf, it will be
+ deleted from that file but the fields are not cleared (you can add it again
+ with the red button). If it's not part of your searches.conf all fields are
+ cleared (if you press yellow twice you really get rid off the template).
+
+Blue button:
+ Load a search template from your searches.conf.
+ If the focus is on the category field you can select one from the available
+ categories.
+
+Syntax of searches.conf
+-----------------------
+
+Each line contains a search template.
+Comments or empty lines are not allowed.
+Each search template is a list of key-value pairs separated with a comma.
+A key is separated with an '=' from its value.
+A key must not contain an '='.
+Values can't contain line breaks.
+Commas and backslashes in a value must be escaped with a backslash.
+
+Valid keys so far (look at cSearchParameter::ToString):
+name, category, term, status, youngerthandays, hotkey

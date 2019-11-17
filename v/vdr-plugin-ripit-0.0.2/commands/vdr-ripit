@@ -1,0 +1,175 @@
+#!/bin/sh
+
+usage(){
+	printf "Usage: $(basename $0) -M <mode start|kill> -d <target directory> [-n <nicelevel -20..19>] [-v <verbosity 0..5>]\n                 [-t <encoding type 0..5>] [-o <encoding quality -1..10>] [-l <low bitrate 32..320>]\n                 [-m <max. bitrate 32..320>] [-e <encoder options>] [-c <crc 0|1>] [-r <rip options>]\n                 [-f <fast rip 0|1>] [ -x <excludes special chars> _|NTFS|HFS] [-u <underscores 0|1>]\n                 [-p <crate playlist 0|1>] -X <lockfile> -L <logfile> -A <stopfile>\n"
+	[ -n "$cmd_error" ] && echo "$cmd_error"
+}
+
+debug(){
+	echo "PARAM_MODE        : >$PARAM_MODE<"
+	echo "PARAM_NICE        : >$PARAM_NICE<"
+	echo "PARAM_VERBOSITY   : >$PARAM_VERBOSITY<"
+	echo "PARAM_DIR         : >$PARAM_DIR<"
+	echo "PARAM_ENCQ        : >$PARAM_ENCQ<"
+	echo "PARAM_LOWBIT      : >$PARAM_LOWBIT<"
+	echo "PARAM_MAXBIT      : >$PARAM_MAXBIT<"
+	echo "PARAM_ENCOPTS     : >$PARAM_ENCOPTS<"
+	echo "PARAM_ENCTYPE     : >$PARAM_ENCTYPE<"
+	echo "PARAM_CRC         : >$PARAM_CRC<"
+	echo "PARAM_FASTRIP     : >$PARAM_FASTRIP<"
+	echo "PARAM_EXCLSPCHARS : >$PARAM_EXCLSPCHARS<"
+	echo "PARAM_UNDERSCORES : >$PARAM_UNDERSCORES<"
+	echo "PARAM_PLAYLIST    : >$PARAM_PLAYLIST<"
+	echo "PARAM_RIPOPTS     : >$PARAM_RIPOPTS<"
+	echo "LOCK_FILE     : >$LOCK_FILE<"
+	echo "LOG_FILE     : >$LOG_FILE<"
+	echo "ABORT_FILE     : >$ABORT_FILE<"
+}
+
+error=""
+while getopts ":M:d:n:v:t:o:l:m:e:c:r:f:x:u:p:X:L:A:" opt; do
+	case "$opt" in
+		M) PARAM_MODE="$OPTARG";;
+		d) PARAM_DIR="$OPTARG";;
+		n) PARAM_NICE="$OPTARG";;
+		v) PARAM_VERBOSITY="$OPTARG";;
+		t) PARAM_ENCTYPE="$OPTARG";;
+		o) PARAM_ENCQ="$OPTARG";;
+		l) PARAM_LOWBIT="$OPTARG";;
+		m) PARAM_MAXBIT="$OPTARG";;
+		e) PARAM_ENCOPTS="$OPTARG";;
+		c) PARAM_CRC="$OPTARG";;
+		r) PARAM_RIPOPTS="$OPTARG";;
+		f) PARAM_FASTRIP="$OPTARG";;
+		x) PARAM_EXCLSPCHARS="$OPTARG";;
+		u) PARAM_UNDERSCORES="$OPTARG";;
+		p) PARAM_PLAYLIST="$OPTARG";;
+		X) LOCK_FILE="$OPTARG";;
+		L) LOG_FILE="$OPTARG";;
+		A) ABORT_FILE="$OPTARG";;
+		--) break;;
+		\?) cmd_error="Error: Error parsing Commandline\n"; break;;
+	esac
+done
+
+([ "$PARAM_MODE" = "start" ] || [ "$PARAM_MODE" = "kill" ]) || cmd_error="${cmd_error}Error: Missing or wrong Mode (-M)\n"
+([ "$PARAM_MODE" = "start" ] && [ -z "$PARAM_DIR" ]) && cmd_error="${cmd_error}Error: Missing Directory Parameter (-d)\n"
+
+[ -n "$cmd_error" ] && usage
+
+if ([ -z "$LOCK_FILE" ] || [ -z "$LOG_FILE" ] || [ -z "$ABORT_FILE" ] ); then
+	cmd_error="${cmd_error}Error: Missing -X, -L or -A\n"
+	usage
+	rm -f "$LOCK_FILE"
+	exit 1
+fi
+
+
+[ "$PARAM_MODE" = "start" ] && rm -f "$LOG_FILE"
+exec >> "$LOG_FILE" 2>&1
+
+if [ -n "$cmd_error" ]; then
+	usage
+	rm -f "$LOCK_FILE"
+	exit 1
+fi
+
+
+case "$PARAM_MODE" in
+	kill)
+		touch "$ABORT_FILE"
+		printf "PROCESS MANUALLY ABORTED\nPlease Wait (max. %s Seconds)...\n" "$(vdr-eject getopentime)"
+		for pid in $(pidof perl); do
+			#echo "$(cat /proc/$pid/cmdline | sed 's/\x00/ /g'|sed 's/^perl //')" > /tmp/a
+			#echo "$(cat $LOCK_FILE|sed "s/'//g"|sed 's/^nice -n [[:digit:]]\{2\} //') " > /tmp/b
+			[ "$(cat /proc/$pid/cmdline | sed 's/\x00/ /g'| sed "s/'//g"| sed 's/^perl //')" = "$(cat $LOCK_FILE|sed "s/'//g"|sed 's/^nice -n [[:digit:]]\{2\} //') " ] && kill $pid
+		done
+	;;
+	start)
+		touch "$LOCK_FILE"
+		rm -f "$ABORT_FILE"
+		[ ! -d "$PARAM_DIR" ] && mkdir -p "$PARAM_DIR"
+		if [ ! -w "$PARAM_DIR" ]; then
+			printf "Error, Directory %s not writable\n" "$PARAM_DIR"
+			touch "$ABORT_FILE"
+		fi
+		vdr-eject open
+		printf "Please insert CD... (start in %s Seconds)\n" "$(vdr-eject getopentime)"
+		sleep $(vdr-eject getopentime)
+		if [ ! -f "$ABORT_FILE" ]; then
+			vdr-eject startburn
+
+			[ -n "$PARAM_NICE" ] && commandline="$(printf "nice -n '%s' " "$PARAM_NICE")"
+			commandline="${commandline}/usr/bin/ripit"
+			commandline="${commandline}$(printf " --nointeraction --device '%s'" "$(vdr-eject getdvddev)")"
+			[ -n "$PARAM_VERBOSITY" ] && commandline="${commandline}$(printf " -x '%s'" "$PARAM_VERBOSITY")"
+
+			case "$PARAM_ENCTYPE" in
+				0)
+					commandline="${commandline} ${PARAM_RIPOPTS}"
+				;;
+				1)
+					lameopt="--cbr -b $PARAM_LOWBIT"
+					#RipitSetup.Ripit_encopts
+					[ -n "$PARAM_ENCOPTS" ] && lameopt="$lameopt $PARAM_ENCOPTS"
+					#crcarg "-p"
+					[ "$PARAM_CRC" = "1" ] && lameopt="$lameopt -p"
+					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off -b off --lameopt '$lameopt'"
+				;;
+				2)
+					lameopt="--abr $PARAM_LOWBIT"
+					#RipitSetup.Ripit_encopts
+					[ -n "$PARAM_ENCOPTS" ] && lameopt="$lameopt $PARAM_ENCOPTS"
+					#crcarg "-p"
+					[ "$PARAM_CRC" = "1" ] && lameopt="$lameopt -p"
+					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off -b off --lameopt '$lameopt'"
+				;;
+				3)
+					lameopt="-V 4 -b $PARAM_LOWBIT -B $PARAM_MAXBIT"
+					#RipitSetup.Ripit_encopts
+					[ -n "$PARAM_ENCOPTS" ] && lameopt="$lameopt $PARAM_ENCOPTS"
+					#crcarg "-p"
+					[ "$PARAM_CRC" = "1" ] && lameopt="$lameopt -p"
+					[ -n "$lameopt" ] && commandline="${commandline} --coder '0' -q off -b off --lameopt '$lameopt'"
+				;;
+				4)
+					flacopt="--best"
+					#RipitSetup.Ripit_encopts
+					[ -n "$PARAM_ENCOPTS" ] && flacopt="$flacopt $PARAM_ENCOPTS"
+					[ -n "$flacopt" ] && commandline="${commandline} --coder '2' -q off --flacopt '$flacopt'"
+				;;
+				5)
+					oggopt="-q $PARAM_ENCQ"
+					#RipitSetup.Ripit_encopts
+					[ -n "$PARAM_ENCOPTS" ] && oggopt="$oggopt $PARAM_ENCOPTS"
+					[ -n "$oggopt" ] && commandline="${commandline} --coder '1' -q off --oggencopt '$oggopt'"
+				;;
+			esac
+
+			#--ripopt
+			[ "$PARAM_FASTRIP" = "1" ] && commandline="${commandline} --ripopt '-Z'"
+
+			commandline="${commandline}$(printf " --outputdir '%s'" "$PARAM_DIR")"
+			[ -n "$PARAM_EXCLSPCHARS" ] && commandline="${commandline}$(printf " -W '%s'" "$PARAM_EXCLSPCHARS")"
+			[ "$PARAM_UNDERSCORES" = "1" ] && commandline="${commandline} -u"
+			[ "$PARAM_PLAYLIST" = "1" ] && commandline="${commandline}$(printf " -p '%s'" "2")" \
+																|| commandline="${commandline}$(printf " -p '%s'" "0")" \
+
+			printf "Ripping process started....\n"
+			printf "Execute: $commandline\n----------------------------------------\n"
+			echo "$commandline" > "$LOCK_FILE"
+			export USER="$(whoami)"
+			eval "$commandline"
+			[ -f "$ABORT_FILE" ] && printf "ABORTED!\n"
+		else
+			printf "ABORTED!\n"
+		fi
+		vdr-eject stopburn
+		rm -f "$ABORT_FILE"
+		rm -f "$LOCK_FILE"
+        sleep 1
+		mv /tmp/ripit.log  /media/easyvdr01/mp3/ripit/ripit_`date +%d-%m-%Y_%H-%M-%S`.log
+    ;;
+esac
+
+exit 0

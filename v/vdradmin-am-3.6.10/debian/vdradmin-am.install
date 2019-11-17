@@ -1,0 +1,6 @@
+locale/                              usr/share/
+template/                            usr/share/vdradmin-am/
+convert.pl                           usr/share/vdradmin-am/
+autotimer2searchtimer.pl             usr/share/vdradmin-am/
+debian/at2epgsearch                  usr/share/vdradmin-am/
+debian/vdradmind                     usr/bin/

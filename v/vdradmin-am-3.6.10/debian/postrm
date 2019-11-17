@@ -1,0 +1,30 @@
+#!/bin/sh -e
+set -e
+
+case "$1" in
+    purge)
+        for dir in /var/cache/vdradmin-am /var/log/vdradmin-am /var/lib/vdradmin-am /var/run/vdradmin-am; do
+            rm -rf $dir > /dev/null 2>&1 || true
+        done
+        rm -f /var/lib/vdradmin-am/vdradmind.conf > /dev/null 2>&1 || true
+        rm -f /var/lib/vdradmin-am/vdradmind.at > /dev/null 2>&1 || true
+        rm -f /var/lib/vdradmin-am/vdradmind.done > /dev/null 2>&1 || true
+        rm -f /etc/vdradmin-am/vdradmind.conf > /dev/null 2>&1 || true
+
+        if [ -L /etc/vdradmin/vdradmind.conf ]; then
+           rm -f /etc/vdradmin/vdradmind.conf > /dev/null 2>&1 || true
+        fi
+
+        chown root:root /var/log/vdradmind.log > /dev/null 2>&1 || true
+
+        deluser vdradmin-am > /dev/null || true
+    ;;
+    remove|upgrade|failed-upgrade|abort-install|abort-upgrade|disappear)
+    ;;
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+##DEBHELPER##

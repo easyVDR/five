@@ -1,0 +1,26 @@
+#!/bin/sh
+
+mode="$1"
+
+case "$mode" in
+	open)
+		eject /dev/dvd
+	;;
+	getopentime)
+		printf "10"
+	;;
+	getdvddev)
+		printf "/dev/dvd"
+	;;
+	startburn)
+		eject -t /dev/dvd
+	;;
+	stopburn)
+		eject /dev/dvd
+	;;
+	*)
+		printf "Usage: $(basename "$0") {open|startburn|stopburn|getdvddev|getopentime}\n" >&2
+	;;
+esac
+
+exit 0

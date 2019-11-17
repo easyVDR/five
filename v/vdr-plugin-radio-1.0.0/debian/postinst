@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+# remove old symlinks from previous versions
+
+if [ "$1" = "configure" ]; then
+    chmod a+x /usr/share/vdr-plugin-radio/scripts/*
+	chown -R vdr:vdr /var/lib/vdr/plugins/radio
+fi
+
+#DEBHELPER#

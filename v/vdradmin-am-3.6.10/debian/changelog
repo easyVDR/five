@@ -1,0 +1,706 @@
+vdradmin-am (3.6.10-6easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 23:30:48 +0100
+
+vdradmin-am (3.6.10-6easyVDR0~bionic) bionic; urgency=high
+
+  * new init script
+  * fix depends
+  * remove upstart script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 15 Mar 2019 16:00:09 +0100
+
+vdradmin-am (3.6.10-5easyVDR0~bionic) bionic; urgency=high
+
+  * increase build number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 16 Jan 2019 16:15:02 +0100
+
+vdradmin-am (3.6.10-3easyVDR10~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 23:07:08 +0100
+
+vdradmin-am (3.6.10-3easyVDR9~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:52:10 +0100
+
+vdradmin-am (3.6.10-3easyVDR8~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 26 Jun 2017 17:02:59 +0200
+
+vdradmin-am (3.6.10-3easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:22:34 +0200
+
+vdradmin-am (3.6.10-3easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Sep 2016 01:49:09 +0200
+
+vdradmin-am (3.6.10-3easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:13:18 +0200
+
+vdradmin-am (3.6.10-3easyVDR4~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 10 Mar 2016 20:33:35 +0100
+
+vdradmin-am (3.6.10-3easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Feb 2016 21:37:04 +0100
+
+vdradmin-am (3.6.10-3easyVDR2~trusty) trusty; urgency=high
+
+  * added new logo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Feb 2016 17:50:30 +0100
+ 
+vdradmin-am (3.6.10-3easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:58:56 +0100 
+
+vdradmin-am (3.6.10-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+  * added new logo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 00:27:43 +0100
+
+vdradmin-am (3.6.10-2easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:35:17 +0200
+
+vdradmin-am (3.6.10-2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:47:15 +0100
+
+vdradmin-am (3.6.10-2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:27:24 +0100
+
+vdradmin-am (3.6.10-2easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Feb 2015 00:15:20 +0100
+
+vdradmin-am (3.6.10-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 29 Aug 2014 22:19:10 +0200
+
+vdradmin-am (3.6.10-1easyVDR2~trusty) trusty; urgency=high
+
+  * correct dir
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Aug 2014 21:31:14 +0200
+
+vdradmin-am (3.6.10-1easyVDR1~trusty) trusty; urgency=high
+
+  * tv-image 16/9
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Aug 2014 01:38:59 +0200
+
+vdradmin-am (3.6.10-0easyVDR1~trusty) trusty; urgency=high
+
+  * add locale
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Aug 2014 01:20:41 +0200
+
+vdradmin-am (3.6.10-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream Version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Aug 2014 00:54:52 +0200
+
+vdradmin-am (3.6.9-4easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:35:53 +0200
+
+vdradmin-am (3.6.9-4easyVDR3~trusty) trusty; urgency=high
+
+  * add new logo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 02 Dec 2013 01:49:51 +0100
+
+vdradmin-am (3.6.9-4easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Oct 2013 04:26:41 +0100
+
+vdradmin-am (3.6.9-3easyVDR2~saucy) saucy; urgency=high
+
+  * rebuild saucy
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 03 Aug 2013 01:17:04 +0200
+
+vdradmin-am (3.6.9-3easyVDR2~raring) raring; urgency=high
+
+  * fix typo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 27 Jul 2013 03:22:14 +0200
+
+vdradmin-am (3.6.9-3easyVDR1~raring) raring; urgency=high
+
+  * fix control
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 27 Jul 2013 03:01:29 +0200
+
+vdradmin-am (3.6.9-3easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 21 Jun 2013 09:52:21 +0200
+ 
+vdradmin-am (3.6.9-3easyVDR1~raring) raring; urgency=high
+
+  * rebuild for easyVDR PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 21 Jun 2013 02:10:00 +0200
+
+vdradmin-am (3.6.9-2easyVDR0~raring) raring; urgency=high
+
+  [ mango ]
+  * build raring git-2013.06.18, default port 8001, add logo easyVDR  
+
+ -- mango <vdr@gmx.de>  Wed, 18 Jun 2013 18:24:00 +0200
+
+vdradmin-am (3.6.9-1easyVDR1.0) oneiric; urgency=high
+
+  * new upstream Version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Jan 2012 13:45:58 +0100
+
+vdradmin-am (3.6.8-1easyVDR1) oneiric; urgency=low
+
+  * new Upstream Version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 12 Aug 2011 13:10:00 +0200
+
+vdradmin-am (3.6.7-1easyVDR1.4) lucid; urgency=low
+
+  * debugged start of vdradmin
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 10 Aug 2011 17:45:22 +0200
+
+vdradmin-am (3.6.7-1easyVDR1.3) lucid; urgency=low
+
+  * no changes - rebuild because Packager left easyVDR-Team
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Nov 2010 14:31:21 +0100
+
+vdradmin-am (3.6.7-1easyVDR1.2) lucid; urgency=low
+
+  * rebuild for easyVDR PPA. 
+
+ -- Karl-Heinz Winzer <khwinzer@gmx.de>  Sun, 25 Jul 2010 04:39:00 +0200
+
+vdradmin-am (3.6.7-1easyVDR1) lucid; urgency=low
+
+  * Build for easyVDR
+
+ -- Uwe Kiehl <uwe@easy-vdr.de>  Sat, 24 Jul 2010 20:21:26 +0200
+
+vdradmin-am (3.6.7-1) unstable; urgency=low
+
+  * New upstream release
+  * Renamed NEWS.Debian -> NEWS
+  * Updated 03_cfgfiles-fhs.dpatch and dropped 06_template-cache.dpatch
+  * Dropped because fixed upstream:
+    - 07_fix-need-recoding-detection.dpatch
+    - 08_fallback-to-ipv4.dpatch
+    - 09_Use-UTF-8-to-determine-required-encoding.dpatch
+    - 10_If-required-recode-commands-sent-to-VDR.dpatch
+  * Added source/format 1.0
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 02 May 2010 01:49:48 +0200
+
+vdradmin-am (3.6.5-5) unstable; urgency=low
+
+  * Added 09_Use-UTF-8-to-determine-required-encoding.dpatch
+  * Added 10_If-required-recode-commands-sent-to-VDR.dpatch (Closes: #561834)
+  * Use libtemplate-plugin-javascript-perl (Closes: #571065)
+  * Standards-Version: 3.8.4
+  * Maded init script require $remote_fs (/usr/...)
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 23 Feb 2010 20:45:41 +0100
+
+vdradmin-am (3.6.5-4) unstable; urgency=low
+
+  * Added missing dependency to libwww-perl
+
+ -- Tobias Grimm <etobi@debian.org>  Thu, 21 Jan 2010 11:29:32 +0100
+
+vdradmin-am (3.6.5-3) unstable; urgency=low
+
+  * Fixed changelog
+  * Added misc:Depends
+
+ -- Tobias Grimm <etobi@debian.org>  Fri, 15 Jan 2010 00:54:31 +0100
+
+vdradmin-am (3.6.5-2) unstable; urgency=low
+
+  * Dropped 07_templates_utf8.dpatch and added 07_fix-need-recoding-detection
+    (Closes: #561834) - This should fix the encoding problem and allow
+    ISO8859 as well as UTF-8 for VDR, while beeing able to choose a different
+    encoding for VDRAdmin
+  * Added 08_fallback-to-ipv4.dpatch (Closes: #564527)
+  * Changed section to 'video'
+
+ -- Tobias Grimm <etobi@debian.org>  Thu, 14 Jan 2010 23:16:29 +0100
+
+vdradmin-am (3.6.5-1) unstable; urgency=low
+
+  [ Thomas Schmidt ]
+  * Added 07_templates_utf8.dpatch - changes default encoding to UTF8
+    (closes: #561834)
+  * Removed debugging output from the initscript
+
+  [ Tobias Grimm ]
+  * New upstream release
+  * Updated debian/copyright
+  * Added README.source
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 03 Jan 2010 18:37:07 +0100
+
+vdradmin-am (3.6.4-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated 02_search-path.dpatch
+  * Make sure UTF8 locales are installed (Closes: #508723)
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 21 Feb 2009 21:11:07 +0100
+
+vdradmin-am (3.6.2-2) unstable; urgency=low
+
+  * Now taking /etc/default/locale into account, when setting the locale for the
+    vdradmin-am daemon (still falling back to /etc/environment for backwards
+    compatibility) (Closes: #502116)
+  * Bumped Standards-Version to 3.8.0
+  * COMPAT=5, debhelper (>= 5)
+  * Added 04_manpage-fixes, which currently only fixes the name section of
+    the manpage
+
+ -- Tobias Grimm <etobi@debian.org>  Fri, 17 Oct 2008 13:44:46 +0200
+
+vdradmin-am (3.6.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Fixed hompage and debian/watch to match the new upstream location
+  * Removed 04_epg_filename.dpatch
+  * Removed 05_ipv6-support.dpatch - ipv6 support can now be enabled by
+    the --ipv6 switch, which is the default for the daemon installed
+    by this package
+  * Depend on lsb-base and use LSB init-functions for init script log
+    messages
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 01 Aug 2008 20:46:08 +0200
+
+vdradmin-am (3.6.1-2) unstable; urgency=low
+
+  * Removed reference of $DAEMON_OPTS in /etc/default/vdradmin-am,
+    variable is not used at all by the init-script (Closes: #458343)
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Sun, 30 Dec 2007 21:06:48 +0100
+
+vdradmin-am (3.6.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Added Homepage field to debian/control
+  * Renamed XS-Vcs-* fields to Vcs-* in debian/control
+  * Suggest vdr-plugin-epgsearch (>= 0.9.23)
+  * Added description to 02_search-path.dpatch to fix a lintian warning
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Sat, 29 Dec 2007 00:04:48 +0100
+
+vdradmin-am (3.6.0-1) unstable; urgency=low
+
+  * New upstream release (closes: #416377)
+  * Fixed clean target (closes: #442756)
+  * Updated debian/copyright
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed, 05 Dec 2007 02:10:40 +0100
+
+vdradmin-am (3.5.3-4) unstable; urgency=low
+
+  * Fixed buildproblem - locales were copied twice to locales.backup,
+    causing the the locales directory to contain a copy of itself when
+    restoring it in the clean target
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 22 Jun 2007 14:53:36 +0200
+
+vdradmin-am (3.5.3-3) unstable; urgency=low
+
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields to debian/control
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Tue, 29 May 2007 23:32:51 +0200
+
+vdradmin-am (3.5.3-2) experimental; urgency=low
+
+  [ Tobias Grimm ]
+  * Fixed bug in debian/rules reported by Thomas Viehweger - build target
+    was not in use by any other target, causing the binary target to not
+    apply the patches
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Sat, 10 Mar 2007 16:25:31 +0100
+
+vdradmin-am (3.5.3-1) experimental; urgency=low
+
+  [ Thomas Schmidt ]
+  * New upstream release
+  * Changed Build-Dependancy on dpatch to be unversioned because even
+    Sarge has the right version of dpatch
+
+  [ Tobias Grimm ]
+  * Suggest vdr-plugin-epgsearch (>= 0.9.20)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Thu,  1 Feb 2007 00:58:51 +0100
+
+vdradmin-am (3.5.1-1) unstable; urgency=low
+
+  * New upstream release (closes: #399154)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri,  1 Dec 2006 20:35:13 +0100
+
+vdradmin-am (3.5.0-1) unstable; urgency=low
+
+  * New upstream release
+  * Renamed /usr/bin/vdradmind.pl to vdradmind
+  * Using dh_installman to install man page
+  * Suggest vdr-plugin-epgsearch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 11 Nov 2006 23:15:20 +0100
+
+vdradmin-am (3.4.7-2) unstable; urgency=low
+
+  [ Tobias Grimm ]
+  * Made /var/cache/vdradmin-am the cache directory for compiled templates
+    (closes: #394737)
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Mon, 23 Oct 2006 00:03:27 +0200
+
+vdradmin-am (3.4.7-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated 05_ipv6-support.dpatch
+  * Use ${perl:Depends}
+  * Cleaned up perl module dependencies:
+    - Removed libparse-recdescent-perl
+    - Removed libhtml-template-perl
+    - Removed libhtml-parser-perl
+    - Removed libhtml-template-expr-perl
+    - Removed libnet-perl
+    - Depend on libsocket6-perl
+    - Depend on liblocale-gettext-perl | libintl-perl
+    - Depend on libauthen-sasl-perl
+  * Added log level 7 (64) to default log level settings, so that fatal error
+    messages are logged too
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 30 Sep 2006 14:24:16 +0200
+
+vdradmin-am (3.4.6-2) unstable; urgency=low
+
+  * Bumped Standards-Version to 3.7.2
+  * Added note about the Debian Maintainers to debian/copyright
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Mon, 28 Aug 2006 23:02:31 +0200
+
+vdradmin-am (3.4.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Corrected comment in vdradmin-am.default which referred to a
+    wrong path to vdradmind.conf (closes: #378352)
+  * Fixed debian/watch
+  * Added LSB-Headers and status action to debian/vdradmin-am.init
+  * Brought debian/copyright up to date and added copyright information
+    for debian packaging
+  * Added myself to the list of uploaders
+  * Moved debhelper and dpatch dependency from Build-Depends-Indep to
+    Build-Depends, because both are needed in the clean target
+    (Debian policy 7.6)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Aug 2006 21:50:26 +0200
+
+vdradmin-am (3.4.5a+3.4.6beta2-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 24 May 2006 21:37:12 +0200
+
+vdradmin-am (3.4.5a+3.4.6beta-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+      + Removed debian/vdradmind.pl.1 - now installed from upstream
+      + Install user.css.example
+      + Install README
+      + Install FAQ
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 21 May 2006 22:33:27 +0200
+
+vdradmin-am (3.4.5-1) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - New upstream release
+      + Updated 01_dist-var.dpatch
+      + Removed 02_sectmpfiles.dpatch - not needed anymore
+      + Updated 03_cfgfiles-fhs.dpatch
+      + Updated 04_epg_filename.dpatch
+      + Updated 05_ipv6-support.dpatch
+    - Make nice-value, which vdradmin-am uses to run, configurable in 
+      /etc/default/vdradmin-am (defaults to 10)
+    - Removed obsolete TEMPDIR-handling from /etc/init.d/vdradmin-am
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 14 May 2006 11:40:14 +0200
+
+vdradmin-am (3.4.4-1) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - New upstream release
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 19 Apr 2006 18:28:22 +0200
+
+vdradmin-am (3.4.3+3.4.4beta-1) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - New upstream release
+      + Added convert.pl to /usr/share/vdradmin/ to convert old timers.conf
+        files to the new format of vdr>=1.3.44
+    - Updated 02_sectmpfiles.dpatch to change the path of the temporary
+      template dir to a safe location too (closes: #356402)
+    - Moving configuration files from /var/lib/vdradmin/ to
+      /var/lib/vdradmin-am when upgrading the package
+    - Run as user vdradmin-am instead of just vdradmin
+    - Delete /var/lib/vdradmin-am/vdradmind.done too, when purging the package
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 12 Mar 2006 20:00:06 +0100
+
+vdradmin-am (3.4.3-1) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - New upstream release
+      + Removed dependancy to sendemail
+      + Depend on libnet-perl
+      + Removed 02_grab_over_svdrp.dpatch
+      + Updated 02_sectmpfiles.dpatch
+      + Removed 05_vdr-1.3.38-fix.dpatch
+    - Renamed package from vdradmin to vdradmin-am
+      (Added Provides/Replaces/Conflicts: vdradmin)
+    - Updated debian/watch
+    - Added 05_ipv6-support.dpatch from Jonathan McDowell 
+      (closes: #351764)
+    - Depend on libio-socket-inet6-perl for ipv6
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun,  5 Mar 2006 00:11:08 +0100
+
+vdradmin (0.97-am3.4.2-3) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Added 02_grab_over_svdrp.dpatch
+    - Updated 02_sectmpfiles.dpatch
+    - Added 05_vdr-1.3.38-fix.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 22 Jan 2006 12:57:03 +0100
+
+vdradmin (0.97-am3.4.2-2) unstable; urgency=medium
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Added missing dependency to liburi-perl (closes: #346125)
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Updated debian/watch again
+    - Urgency medium because it fixes a RC-Bug in testing
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu,  5 Jan 2006 22:21:18 +0100
+
+vdradmin (0.97-am3.4.2-1) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - New upstream release
+      + Updated 01_dist-var.dpatch
+      + Updated 02_sectmpfiles.dpatch
+      + Updated 03_cfgfiles-fhs.dpatch
+    - Depend on sendemail for sending email-notifications for new 
+      autotimers
+    - Fixed postal address of the FSF in debian/copyright
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sat, 10 Dec 2005 10:17:29 +0100
+
+vdradmin (0.97-am3.3-1) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - New upstream version, we now use the modified vdradmin version 
+      from Andreas Mair <mail@andreas.vdr-developer.org>, as the 
+      original upstream decided to stop distributing independant versions of
+      vdradmin - new versions will be distributed bundled with linvdr only.
+      Thanks to Tobias Grimm for creating the inofficial vdradmin-am package, 
+      where most of the debian specific changes in this updated come from.
+      + Updated 01_dist-var.dpatch
+      + Updated 02_sectmpfiles.dpatch
+      + Updated 03_cfgfiles-fhs.dpatch
+      + Added 04_epg_filename.dpatch
+      + Removed 21_andreas-datepatch.dpatch
+    - Updated debian/watch, debian/copyright
+    - Took over the init-script from vdradmin-am allmoast completely
+    - The new upstream version supports the new info.vdr file from vdr
+      versions >= 1.3.25 (closes: #325767)
+    - Depend on libhtml-parser-perl, libtemplate-perl,
+      and libhtml-template-expr-perl
+    - Bumped Standards-Version to 3.6.2.1
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sat, 17 Sep 2005 11:45:21 +0200
+
+vdradmin (0.96-5) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - The init-script now checks if /var/log/vdradmind.log allready
+      exists, if not it will create it and set owner and group to
+      vdradmin:vdradmin
+    - Removed Andreas Müller from uploaders - he does not intend 
+      to do uploads anymore
+    - Added 21_andreas-datepatch from the vdradmin package of Tobias,
+      to support the new timer date format of vdr >= 1.3.23 
+      (closes: #303035)
+  * Tobias Grimm <tg@e-tobi.net>
+    - Delete temporary grabbed images after use
+    - Make /var/lib/vdradmin owned by group vdr to allow vdr plugins like
+      Autotimeredit to make modifications
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 06 Apr 2005 17:58:25 +0200
+
+vdradmin (0.96-4) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - From now on vdradmin will run under the user vdradmin,
+      the owner of the cfg-file will be changed in postinst
+    - Also change the permission of the cfg-file to 0600 in 
+      postinst
+    - Rewrote the handling of the filename for the screenshot-
+      file again (the init-script now creates a temporary directory 
+      with mktemp and the screenshot-file(s) are placed inside 
+      this directory) (closes: #291731)
+    - Depend on adduser
+    - Now using start-stop-daemon in init-script
+    - Changed path of vdradmind.{conf,at} from /etc/vdradmin/ to
+      /var/lib/vdradmin to comply with the FHS (existing files
+      will be moved in postinst)
+    - Cleanup debian/rules a little bit
+    - Changed my email-address to my debian address
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 23 Feb 2005 23:52:37 +0100
+
+vdradmin (0.96-3) unstable; urgency=high
+
+  * Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>
+    - Urgency high, because it fixes a security issue
+    - Added 02_sectmpfiles.dpatch: use File::Temp to create temporary
+      files, to prevent possible symlink-attacks (Closes: #287601)
+    - Set permissions of /etc/vdradmin/vdradmind.conf to 0600 on new
+      installations (users with an existing installation should 
+      ensure that the cfg-file has a permission of 0600)
+    - Changed Maintainer to Debian VDR Team 
+      <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+    - Added myself as uploader
+    - Build-depend on dpatch (>= 2.0.9)
+    - Converted 01_dist-var.dpatch to the new short format
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 29 Dec 2004 12:32:10 +0100
+
+vdradmin (0.96-2) unstable; urgency=low
+
+  * Thomas Schmidt:
+    - Thanks to Marc 'HE' Brockschmidt, who suggest all changes in 
+      this release.
+    - Cleaned up debian/rules a lot
+    - Added copyright holder to debian/copyright and refer to 
+      /usr/share/common-licenses/GPL-2, instead of GPL
+    - Do not install Base64.pm, Template.pm and RescDescent.pm 
+      from upstream anymore, depend on libhtml-template-perl and 
+      libparse-rescdescent-perl (Base64.pm is allready provided by 
+      perl)
+    - Added a comment about the shipped config-file to README.Debian
+    - Added a manpage for vdradmind.pl
+    - Link /usr/share/vdradmin/template/{English,French}/bilder to
+      /usr/share/vdradmin/template/Deutsch/bilder, this reduces the 
+      size of the deb by about 50%
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Fri, 14 Aug 2004 16:18:50 +0200
+
+vdradmin (0.96-1) unstable; urgency=low
+
+  * Thomas Schmidt:
+    - New upstream version
+    - Added a correct watch-file
+    - Use dpatch
+    - Cleaned up debian/rules (use dh_install...)
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Thu, 27 May 2004 01:11:07 +0200
+
+vdradmin (0.95-4) unstable; urgency=low
+  
+  * Thomas Schmidt:
+    - Added Andreas Müller as Uploader
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sun, 23 May 2004 00:00:08 +0200
+
+vdradmin (0.95-3) unstable; urgency=low
+
+  * Depend on libcompress-zlib-perl (closes: Bug#245464)
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Fri, 23 Apr 2004 14:00:31 +0200
+
+vdradmin (0.95-2) unstable; urgency=low
+
+  * First upload to official Debian-archive (closes: Bug#229215)
+
+ -- Andreas Mueller <amu@debian.org>  Fri,  5 Mar 2004 23:11:12 +0100
+
+vdradmin (0.95-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Sat, 13 Dec 2003 15:59:47 +0100
+
+vdradmin (0.94-2) unstable; urgency=low
+
+  * change $idst to 0, to make vdradmin recognize the winter-time correctly
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Thu, 30 Oct 2003 22:24:13 +0100
+
+vdradmin (0.94-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>  Wed,  1 Oct 2003 20:36:52 +0200
+

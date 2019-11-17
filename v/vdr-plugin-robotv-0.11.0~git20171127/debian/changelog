@@ -1,0 +1,67 @@
+vdr-plugin-robotv (0.11.0~git20171127-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:09:29 +0100
+
+vdr-plugin-robotv (0.11.0~git20171127-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:37:47 +0100
+
+vdr-plugin-robotv (0.11.0~git20171127-0easyVDR1~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 00:53:21 +0100
+
+vdr-plugin-robotv (0.11.0~git20171127-0easyVDR0~zesty) zesty; urgency=high
+
+  * new upstream snapshot
+  * commit:4a6a31d - Version 0.11.0-vdr-2.2.x
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 00:43:34 +0100
+
+vdr-plugin-robotv (0.9.102~git20170110-0easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 00:37:22 +0100
+
+vdr-plugin-robotv (0.9.102~git20170110-0easyVDR3~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 22:37:32 +0200
+
+vdr-plugin-robotv (0.9.102~git20170110-0easyVDR2~trusty) trusty; urgency=high
+
+  * correct postinst auto network
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 11 Jan 2017 00:24:46 +0100
+
+vdr-plugin-robotv (0.9.102~git20170110-0easyVDR1~trusty) trusty; urgency=high
+
+  * added depens libz-dev
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 11 Jan 2017 00:00:04 +0100
+
+vdr-plugin-robotv (0.9.102~git20170110-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:c104f24 - removed log-spamming messages 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 10 Jan 2017 23:45:26 +0100
+
+vdr-plugin-robotv (0.9.100+git20160524-1yavdr0~trusty) trusty; urgency=medium
+
+  * fix vdrargs file
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 18 Jul 2016 08:21:46 +0200
+
+vdr-plugin-robotv (0.9.100+git20160524-0yavdr0~trusty) trusty; urgency=medium
+
+  * initial packaging
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 18 Jul 2016 07:52:47 +0200

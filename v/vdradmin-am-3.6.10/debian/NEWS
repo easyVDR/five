@@ -1,0 +1,23 @@
+vdradmin-am (3.5.0-1) unstable; urgency=low
+
+  The auto timer functionality in VDRAdmin-AM will probably be dropped in future
+  versions (See upstream changelog for details). Autotimers will then be done with
+  the EPGSearch plugin. See README.Debian for details on how to move your auto
+  timer settings to the EPGSearch plugin
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 10 Nov 2006 20:18:35 +0100
+
+vdradmin (0.96-4) unstable; urgency=low
+
+  The most important change in this release is that vdradmin from 
+  now on will run under the username vdradmin, not as root, the 
+  configfiles will be changed at installation, so they are owned by 
+  the user and group vdradmin.
+
+  We also changed the path of the files vdradmind.conf and vdradmind.at
+  from /etc/vdradmin/ to /var/lib/vdradmin both files will be moved to 
+  the new directory when they allready exist. The symlink 
+  /etc/vdradmin/vdradmind.conf will be created so will find the cfgfile
+  still under /etc/vdradmin.
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Sun, 23 Jan 2005 22:34:28 +0100

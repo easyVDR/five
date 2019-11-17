@@ -1,0 +1,122 @@
+vdr-plugin-remoteosd (1.0.0-6easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:08:07 +0100
+
+vdr-plugin-remoteosd (1.0.0-6easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:37:09 +0100
+
+vdr-plugin-remoteosd (1.0.0-6easyVDR1~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:36:33 +0100
+
+vdr-plugin-remoteosd (1.0.0-6easyVDR0~zesty) zesty; urgency=high
+
+  * bump build number
+  * Build-depend on vdr-dev (>= 2.2.0)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 23:04:33 +0200
+
+vdr-plugin-remoteosd (1.0.0-4easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 22:36:53 +0200
+
+vdr-plugin-remoteosd (1.0.0-4easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:54:35 +0200
+
+vdr-plugin-remoteosd (1.0.0-4easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:40:32 +0200
+
+vdr-plugin-remoteosd (1.0.0-4easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:42:43 +0200
+
+vdr-plugin-remoteosd (1.0.0-4easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:02:08 +0200
+
+vdr-plugin-remoteosd (1.0.0-4easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:45:20 +0100
+
+vdr-plugin-remoteosd (1.0.0-4easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:54:47 +0100
+
+vdr-plugin-remoteosd (1.0.0-3easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:20:12 +0200
+
+vdr-plugin-remoteosd (1.0.0-3easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 17:22:50 +0100
+
+vdr-plugin-remoteosd (1.0.0-3easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:23:21 +0100
+
+vdr-plugin-remoteosd (1.0.0-3easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:27:55 +0100
+
+vdr-plugin-remoteosd (1.0.0-3easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Feb 2015 01:35:19 +0100
+
+vdr-plugin-remoteosd (1.0.0-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:51:23 +0200
+
+vdr-plugin-remoteosd (1.0.0-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:18:21 +0200
+
+vdr-plugin-remoteosd (1.0.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 13:20:16 +0100
+
+vdr-plugin-remoteosd (1.0.0-1easyVDR0~raring) raring; urgency=high
+
+  * Initial Release
+  * switch to quilt
+  * add dbg package 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Jul 2013 21:13:18 +0200

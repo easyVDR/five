@@ -1,0 +1,2 @@
+config/allowed_hosts.conf    etc/vdr/plugins/robotv/
+debian/plugin.robotv.conf    etc/vdr/plugins

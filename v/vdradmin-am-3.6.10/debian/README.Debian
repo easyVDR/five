@@ -1,0 +1,51 @@
+vdradmin for Debian
+===================
+
+  Configuration file
+  ------------------
+
+  This package provides a working config-file under /var/lib/vdradmin/vdradmind.conf, 
+  this files uses a standard-username and standard-password (linvdr/linvdr), you 
+  should change this before you enable the vdradmin-service in 
+  /etc/default/vdradmin, alternatively you can generate a new config with:
+
+  vdradmin --config
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>, Fri,  6 Aug 2004 22:57:28 +0200
+ 
+
+  To hide vdradmin behind apache
+  ------------------------------
+
+  You will need apache with mod_proxy and these lines in httpd.conf:
+
+  <IfModule mod_proxy.c>
+    ProxyRequests Off
+    ProxyPass /vdradmin/ http://127.0.0.1:8001/
+  </IfModule>
+
+ -- Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>, Wed,  1 Oct 2003 21:07:47 +0200
+
+
+  Moving auto timers to EPGSearch:
+  --------------------------------
+
+  The auto timer functionality in VDRAdmin-AM will probably be dropped in
+  future versions (See upstream changelog for details). Autotimers will then be
+  done with the EPGSearch plugin. To move your auto timer settings from VDRAdmin
+  to EPGSerach, use the conversion script provided by the upstream autor:
+
+    /usr/share/vdradmin-am/autotimer2searchtimer.pl
+
+  (pass -h to see help on all available options)
+
+  If you have installed VDRAdmin-AM and VDR on the same machine, another script: 
+
+    /usr/share/vdradmin-am/at2epgsearch
+
+  ...makes this a little bit easier. Just run this script without any arguments
+  and the autotimers will be converted from /var/lib/vdradmin-am/vdradmin.at to
+  /var/lib/vdr/plugins/epgsearch/epgsearch.conf (default match mode is:
+  "every word of the search term must match").
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 10 Nov 2006 20:18:35 +0100

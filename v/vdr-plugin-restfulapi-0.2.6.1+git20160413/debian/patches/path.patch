@@ -1,0 +1,15 @@
+Index: vdr-plugin-restfulapi-0.2.6.0+git20160216/tools.cpp
+===================================================================
+--- vdr-plugin-restfulapi-0.2.6.0+git20160216.orig/tools.cpp	2016-01-17 15:33:51.000000000 +0100
++++ vdr-plugin-restfulapi-0.2.6.0+git20160216/tools.cpp	2016-03-29 17:25:04.157541200 +0200
+@@ -205,8 +205,8 @@
+   SetPort((string)"8002");
+   SetIp((string)"0.0.0.0");
+   SetEpgImageDirectory((string)"/var/cache/vdr/epgimages");
+-  SetChannelLogoDirectory((string)"/usr/share/vdr/channel-logos");
+-  SetWebappDirectory((string)"/var/lib/vdr/restfulapi/webapp");
++  SetChannelLogoDirectory((string)"/usr/share/vdr-skins/skinnopacity");
++  SetWebappDirectory((string)"/var/lib/vdr/plugins/restfulapi/webapp");
+   SetHeaders((string)"true");
+   webapp_filetypes_filename = "webapp_file_types.conf";
+ }

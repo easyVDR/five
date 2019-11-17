@@ -1,0 +1,7 @@
+etc/vdradmin-am
+etc/vdradmin-am/certs
+var/cache/vdradmin-am
+var/lib/vdradmin-am
+var/log/vdradmin-am
+var/run/vdradmin-am
+var/run/utmp

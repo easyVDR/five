@@ -1,0 +1,24 @@
+Source: vdradmin-am
+Section: video
+Priority: optional
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 4.1.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdradmin-am/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdradmin-am/trunk/
+Homepage: http://andreas.vdr-developer.org/vdradmin-am/index.html
+
+Package: vdradmin-am
+Architecture: any
+Depends: ${perl:Depends}, ${misc:Depends}, libio-compress-perl,
+ libtemplate-perl, liburi-perl, libio-socket-inet6-perl, libsocket6-perl,
+ liblocale-gettext-perl | libintl-perl, libwww-perl, adduser, lsb-base,
+ libtemplate-plugin-javascript-perl, libcgi-pm-perl
+Suggests: vdr (>= 1.7.15), libauthen-sasl-perl, vdr-plugin-epgsearch (>= 0.9.23)
+Provides: vdradmin
+Replaces: vdradmin
+Conflicts: vdradmin
+Description: Web-based administration tool for vdr
+ vdradmin-am provides a webinterface for managing
+ the Linux Video Disk Recorder (vdr)

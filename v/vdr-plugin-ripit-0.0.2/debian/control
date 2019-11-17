@@ -1,0 +1,13 @@
+Source: vdr-plugin-ripit
+Section: video
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: cdbs, debhelper (>= 8.0.0), vdr-dev (>= 1.7.21), gettext
+Standards-Version: 3.9.4
+Homepage: http://projects.vdr-developer.org/git/vdr-plugin-ripit.git
+
+Package: vdr-plugin-ripit
+Architecture: any
+Depends:${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, cdparanoia, vorbis-tools, lame, flac, ripit 
+Description: With this plugin you can rip AudioCDs.

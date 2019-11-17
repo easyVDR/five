@@ -1,0 +1,169 @@
+vdr-plugin-recsearch (0.3.2-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:07:47 +0100
+
+vdr-plugin-recsearch (0.3.2-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:36:58 +0100
+
+vdr-plugin-recsearch (0.3.2-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:36:23 +0100
+
+vdr-plugin-recsearch (0.3.2-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 21:46:10 +0200
+
+vdr-plugin-recsearch (0.3.2-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:54:26 +0200
+
+vdr-plugin-recsearch (0.3.2-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:40:23 +0200
+
+vdr-plugin-recsearch (0.3.2-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:42:35 +0200
+
+vdr-plugin-recsearch (0.3.2-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:01:59 +0200
+
+vdr-plugin-recsearch (0.3.2-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:45:11 +0100
+
+vdr-plugin-recsearch (0.3.2-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 20:49:54 +0100
+
+vdr-plugin-recsearch (0.3.2-0easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 19:09:09 +0200
+
+vdr-plugin-recsearch (0.3.2-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:19:58 +0200
+
+vdr-plugin-recsearch (0.3.2-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 17:22:42 +0100
+
+vdr-plugin-recsearch (0.3.2-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:23:13 +0100
+
+vdr-plugin-recsearch (0.3.2-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:27:42 +0100
+
+vdr-plugin-recsearch (0.3.2-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:47:51 +0100
+
+vdr-plugin-recsearch (0.3.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 02:49:51 +0100
+
+vdr-plugin-recsearch (0.3.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+  * add dependency to vdr-abi-version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 05 Nov 2014 01:48:14 +0100
+
+vdr-plugin-recsearch (0.0.7-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:51:07 +0200
+
+vdr-plugin-recsearch (0.0.7-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:18:06 +0200
+
+vdr-plugin-recsearch (0.0.7-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 04 Dec 2013 01:26:01 +0100
+
+vdr-plugin-recsearch (0.0.7-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 27 Nov 2013 20:11:18 +0100
+
+vdr-plugin-recsearch (0.0.6) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 23 Nov 2013 21:57:30 +0100
+
+vdr-plugin-recsearch (0.0.5) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 23 Nov 2013 20:37:44 +0100
+
+vdr-plugin-recsearch (0.0.4) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 22 Nov 2013 22:35:49 +0100
+
+vdr-plugin-recsearch (0.0.3) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 21 Nov 2013 00:03:57 +0100
+
+vdr-plugin-recsearch (0.0.2) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 20 Nov 2013 22:01:50 +0100
+
+vdr-plugin-recsearch (0.0.1) precise; urgency=medium
+
+  * initial upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 20 Nov 2013 21:08:09 +0100
+ 
