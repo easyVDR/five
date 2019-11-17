@@ -1,0 +1,12 @@
+Source: easyvdr-hdet
+Section: misc
+Priority: optional
+Maintainer: Martin Neubauer <martin@easy-vdr.de>
+Build-Depends: debhelper (>= 7), cdbs, dpatch
+Standards-Version: 3.8.3
+
+Depends: ${easyvdr-hdet}
+Package: easyvdr-hdet
+Architecture: any
+Description: DVB-Hardwaredetect Package for easyVDR
+  Installationspaket für easyVDR um Hardware zu erkennen

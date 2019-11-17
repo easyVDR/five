@@ -1,0 +1,11 @@
+Source: easyvdr-customize-iso
+Section: misc
+Priority: optional
+Maintainer: Andreas Schott <none@easy-vdr.de>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.5
+
+Package: easyvdr-customize-iso
+Architecture: all
+Depends: ${misc:Depends}
+Description: Package for customize Desktop-Iso for looking easyVDR-like

@@ -1,0 +1,12 @@
+#### Unstable #####
+
+d-i apt-setup/local6/repository string deb http://ppa.launchpad.net/easyvdr-team/3-vdr-unstable/ubuntu trusty main
+d-i apt-setup/local6/comment string vdr unstable
+d-i apt-setup/local6/source boolean false
+d-i apt-setup/local7/repository string deb http://ppa.launchpad.net/easyvdr-team/3-base-unstable/ubuntu trusty main
+d-i apt-setup/local7/comment string base-unstable
+d-i apt-setup/local7/source boolean false
+d-i apt-setup/local8/repository string deb http://ppa.launchpad.net/easyvdr-team/3-others-unstable/ubuntu trusty main
+d-i apt-setup/local8/comment string others-unstable
+d-i apt-setup/local8/source boolean false
+

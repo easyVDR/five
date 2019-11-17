@@ -1,0 +1,9 @@
+#! /bin/sh
+#set -e
+
+# Remove Directory
+if test -h /usr/share/easyvdr/images/easyvdr-logo.png; then
+rm -f /usr/share/easyvdr/images/easyvdr-logo.png
+fi
+
+#DEBHELPER#

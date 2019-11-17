@@ -1,0 +1,11 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "configure" ]; then
+
+    mkdir /usr/local/share/hdet/
+    ln -s /usr/share/hdet/database.bin /usr/local/share/hdet/database.bin
+
+fi
+#DEBHELPER#
+

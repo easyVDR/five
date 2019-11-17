@@ -1,0 +1,269 @@
+easyvdr-installer (3.95.0-0easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:34:35 +0100
+
+easyvdr-installer (3.95.0-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 18:02:02 +0100
+
+easyvdr-installer (3.95.0-0easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 26 Nov 2017 14:43:23 +0100
+
+easyvdr-installer (3.06.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * netwarn fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 10 Nov 2016 09:07:55 +0100
+
+easyvdr-installer (3.06.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * smaller dialogs
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Nov 2016 14:32:20 +0100
+
+easyvdr-installer (3.05.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * netwarn fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Nov 2016 07:42:10 +0100
+
+easyvdr-installer (3.05.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * Partwarn-Text
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Nov 2016 12:50:32 +0100
+
+easyvdr-installer (3.05.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new buildscripts / proxy 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Oct 2016 07:28:46 +0200
+
+easyvdr-installer (3.04.1-0easyVDR2~trusty) trusty; urgency=high
+
+  * new updatescript for iso-build
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 Mar 2016 11:04:03 +0100
+
+easyvdr-installer (3.04.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * preparation for alternative installations part1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Mar 2016 15:46:01 +0100
+
+easyvdr-installer (3.02.1-2easyVDR0~trusty) trusty; urgency=high
+
+  * installer can update himselve
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Jan 2016 07:48:44 +0100
+
+easyvdr-installer (3.02.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * generation of the images by ImageMagick
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 25 Jan 2016 17:50:45 +0100
+
+easyvdr-installer (3.01.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * prepared for proxy use
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Jan 2016 18:09:04 +0100
+
+easyvdr-installer (2.99.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * cleanup + boot-repair
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 26 Oct 2015 09:52:35 +0100
+
+easyvdr-installer (2.99.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * fix for Kernel Hold
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 Oct 2015 20:19:47 +0200
+
+easyvdr-installer (2.5.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * v3
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 04 Aug 2015 09:41:20 +0200
+
+easyvdr-installer (2.0.0-0easyVDR0~trustyubuntu1) trusty; urgency=high
+
+  * v2.3 ppas
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 26 Jun 2015 08:42:38 +0200
+
+easyvdr-installer (1.6.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * kernel-hold-fix, cleanup sources
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 25 Jun 2015 08:20:10 +0200
+
+easyvdr-installer (1.5.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * sources.list provisorium
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 21 Jun 2015 17:46:22 +0200
+
+easyvdr-installer (1.5.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * resolv test2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 19 Jun 2015 08:26:30 +0200
+
+easyvdr-installer (1.5.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * v2.3 resolv.conf fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Jun 2015 16:22:46 +0200
+
+easyvdr-installer (1.5.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * v2.3 part1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Jun 2015 11:23:52 +0200
+
+easyvdr-installer (1.4.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * log permissions
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 06 Jun 2015 23:15:27 +0200
+
+easyvdr-installer (1.3.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * provisorischer fix resolv.conf, tmp, sudo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 20 May 2015 16:31:14 +0200
+
+easyvdr-installer (1.3.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * intel meta
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 11 Apr 2015 09:37:11 +0200
+
+easyvdr-installer (1.3.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * reorg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 10 Apr 2015 08:42:08 +0200
+
+easyvdr-installer (1.2.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * no more de mirror
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 09 Apr 2015 19:26:51 +0200
+
+easyvdr-installer (1.1.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * extras immer aktivieren
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 31 Mar 2015 10:48:34 +0200
+
+easyvdr-installer (1.1.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * nur update der presetup, update-selection für live, bildschirmschoner deaktivieren - falls es tut ud keine probleme bringt
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Mar 2015 14:04:59 +0200
+
+easyvdr-installer (1.0.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * more downloads for local repo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 03 Dec 2014 17:16:44 +0100
+
+easyvdr-installer (1.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * switch 2 stable ppas
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Nov 2014 16:46:51 +0100
+
+easyvdr-installer (1.0.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * fix update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 22 Nov 2014 09:05:54 +0100
+
+easyvdr-installer (0.1.0-0easyVDR10~trusty) trusty; urgency=high
+
+  * timeout set to 60 seconds
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Jun 2014 10:15:13 +0200
+
+easyvdr-installer (0.1.0-0easyVDR9~trusty) trusty; urgency=high
+
+  * debugged upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 May 2014 17:43:17 +0200
+
+easyvdr-installer (0.1.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * changed to upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 May 2014 16:39:47 +0200
+
+easyvdr-installer (0.1.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * test-possibilty again...
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 May 2014 10:06:05 +0200
+
+easyvdr-installer (0.0.5-0easyVDR4~trusty) trusty; urgency=high
+
+  * debugged timout-script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 09 May 2014 01:39:48 +0200
+
+easyvdr-installer (0.0.5-0easyVDR3~trusty) trusty; urgency=high
+
+  * timout for warning-window
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 08 May 2014 16:26:32 +0200
+
+easyvdr-installer (0.0.5-0easyVDR2~trusty) trusty; urgency=high
+
+  * included preseed-file for expert installation
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 04 May 2014 14:08:39 +0200
+
+easyvdr-installer (0.0.5-0easyVDR1~trusty) trusty; urgency=high
+
+  * include build scripts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 May 2014 11:33:22 +0200
+
+easyvdr-installer (0.0.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * added dynamic preseeding
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 29 Apr 2014 09:48:09 +0200
+
+easyvdr-installer (0.0.3-0easyVDR4~trusty) trusty; urgency=high
+
+  * added Autopartitioning, Warnings
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 Apr 2014 15:18:46 +0200
+
+easyvdr-installer (0.0.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * chvt 7 / Keyserver
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 15 Apr 2014 14:48:51 +0200
+
+easyvdr-installer (0.0.1-6easyVDR0~trust) trusty; urgency=high
+
+  * changed boot scripts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Mar 2014 12:40:25 +0100
+
+easyvdr-installer (0.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * initial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 02 Mar 2014 12:22:48 +0100

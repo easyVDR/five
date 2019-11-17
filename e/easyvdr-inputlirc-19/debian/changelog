@@ -1,0 +1,99 @@
+easyvdr-inputlirc (19-2easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:09:15 +0100
+
+easyvdr-inputlirc (19-2easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 18:01:54 +0100
+
+easyvdr-inputlirc (19-2easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 04:58:37 +0100
+
+easyvdr-inputlirc (19-2easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 25 Nov 2013 02:02:43 +0100
+
+easyvdr-inputlirc (19-2easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * paths over easyvdr-config-loader
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 11:10:38 +0200
+
+easyvdr-inputlirc (19-1easyVDR0.1) oneiric; urgency=high
+
+  * upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 Mar 2012 15:33:46 +0100
+
+inputlirc (19-1) unstable; urgency=low
+
+  * New upstream release.
+    - Don't set repeat flag when two different keys are pressed in rapid
+      succession. Closes: #602083
+    - Change socket location to /var/run/lirc/lircd. Closes: #617523
+  * Bump Standards-Version.
+  * Add $remote_fs to the Required-Start and -Stop fields in the init script.
+
+ -- Guus Sliepen <guus@debian.org>  Thu, 19 May 2011 22:42:33 +0200
+
+inputlirc (16-1) unstable; urgency=low
+
+  * New upstream release.
+    - Allow selection of devices by name. Closes: #564959
+  * Convert source package to 3.0 (quilt) format.
+  * Bump Standards-Version.
+  * Depend on ${misc:Depends}.
+
+ -- Guus Sliepen <guus@debian.org>  Sun, 24 Jan 2010 15:59:30 +0100
+
+inputlirc (15-1) unstable; urgency=low
+
+  * New upstream release.
+  * Add lirc to Should-Start field in the init script. Closes: #514800
+
+ -- Guus Sliepen <guus@debian.org>  Wed, 29 Jul 2009 15:09:49 +0200
+
+inputlirc (13-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Guus Sliepen <guus@debian.org>  Thu, 25 Sep 2008 18:13:35 +0200
+
+inputlirc (11-2) unstable; urgency=low
+
+  * Add LSB section to the init script. Closes: #468162
+  * Don't ignore make clean errors in debian/rules.
+  * Update copyright file.
+
+ -- Guus Sliepen <guus@debian.org>  Sun, 02 Mar 2008 21:12:55 +0100
+
+inputlirc (11-1) unstable; urgency=low
+
+  * New upstream release.
+
+ -- Guus Sliepen <guus@debian.org>  Thu, 27 Apr 2006 21:17:06 +0200
+
+inputlirc (10-1) unstable; urgency=low
+
+  * New upstream release.
+  * Changed Provides: lirc into Suggests: lirc, since liblircclient0 does not
+    actually depend on lirc, and we do want to suggest the lirc package for
+    the irw binary.
+
+ -- Guus Sliepen <guus@debian.org>  Fri, 24 Feb 2006 21:05:27 +0100
+
+inputlirc (8-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Guus Sliepen <guus@debian.org>  Mon, 06 Feb 2006 20:15:11 +0100
+

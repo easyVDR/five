@@ -1,0 +1,6 @@
+/* AUTOMATICALLY GENERATED - DO NOT EDIT */
+#ifndef __DB_VERSION_H
+#define __DB_VERSION_H
+uint32_t magic=1306253832;
+#endif
+

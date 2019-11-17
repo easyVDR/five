@@ -1,0 +1,29 @@
+mkdir /home/isobuilder/ppas
+cd /home/isobuilder/ppas
+
+VER="3"
+STATUS="stable"
+#STATUS="testing"
+
+PART="vdr"
+mkdir $PART
+cd $PART
+wget -r -nd -A deb http://ppa.launchpad.net/easyvdr-team/$VER-$PART-$STATUS/ubuntu/pool/main/.
+mv *i386* ..
+cd ..
+
+PART="base"
+mkdir $PART
+cd $PART
+wget -r -nd -A deb http://ppa.launchpad.net/easyvdr-team/$VER-$PART-$STATUS/ubuntu/pool/main/.
+mv *i386* ..
+cd ..
+
+PART="others"
+mkdir $PART
+cd $PART
+wget -r -nd -A deb http://ppa.launchpad.net/easyvdr-team/$VER-$PART-$STATUS/ubuntu/pool/main/.
+mv *i386* ..
+cd ..
+
+

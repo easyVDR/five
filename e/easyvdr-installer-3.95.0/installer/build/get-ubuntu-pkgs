@@ -1,0 +1,43 @@
+REPO="/var/cache/apt-local-repo"
+#REPO="/home/isobuilder/schreibtisch/apt-local-repo"
+mkdir $REPO
+
+
+UBUNTU=$REPO/ubuntu
+mkdir $UBUNTU
+cd $UBUNTU
+
+aptitude clean
+aptitude --download-only install libgstreamer-vaapi1.0-0 gstreamer1.0-vaapi libvdpau-va-gl1
+
+aptitude --download-only install nvidia-settings
+aptitude --download-only install nvidia-340-updates
+aptitude --download-only install nvidia-331-updates
+aptitude --download-only install nvidia-304
+aptitude --download-only install nvidia-370
+
+aptitude --download-only installeasyvdr-nvidia-latest
+aptitude --download-only install easyvdr-video-out-ati
+aptitude --download-only install easyvdr-video-out-dvb
+aptitude --download-only install easyvdr-video-out-dvbsd
+aptitude --download-only install easyvdr-video-out-intel
+aptitude --download-only install easyvdr-video-out-headless
+aptitude --download-only install easyvdr-video-out-nvidia
+aptitude --download-only install easyvdr-video-out-pvr350
+aptitude --download-only install easyvdr-video-out-x
+
+
+aptitude --download-only install hunspell-de-de
+aptitude --download-only install language-pack-de
+aptitude --download-only install language-pack-de-base
+aptitude --download-only install language-pack-gnome-de
+aptitude --download-only install language-pack-gnome-de
+aptitude --download-only install wbritish
+aptitude --download-only install wngerman
+aptitude --download-only install wogerman
+aptitude --download-only install wswiss
+
+
+
+cp /var/cache/apt/archives/*.deb $UBUNTU
+

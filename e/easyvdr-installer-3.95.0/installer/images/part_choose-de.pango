@@ -1,0 +1,22 @@
+<markup><!--
+Partitionierungs-Warnung
+--><span fgcolor="red" size="30000">Auswahl der Partitionierung</span><!--
+--><big><span fgcolor="white">
+
+
+Möchten Sie <b>manuell</b> partitionieren?
+
+Dabei möchten Sie die zu installierende Festplatte selbst 
+auswählen und diese nach Ihren Wünschen partitionieren?
+
+Oder möchten sie <b>automatisch</b> partitionieren? Dabei wird
+
+- die erste gefundene Festplatte im System genutzt
+- diese Festplatte komplett gelöscht
+- eine 30GB große Systempartition erstellt
+- eine 4 GB große Swap-Partition erstellt
+- die komplette restliche Festplatte als Mediapartition erstellt
+
+Ihre Auswahl?
+</span></big><!--
+--> </markup>

@@ -1,0 +1,30 @@
+# Starts inputlirc daemon
+#
+# inputlirc is used to control special remote receivers
+# initial version 10.03.12
+
+description     "inputlirc Daemon"
+author          "C.B."
+
+start on starting easyvdr-vdr or simu-start-vdr
+stop on runlevel [016]
+
+respawn
+respawn limit 5 10
+normal exit 0 ABRT
+
+env LOGGER="logger -t inputlircd"
+
+script
+
+  . /usr/lib/vdr/easyvdr-config-loader
+
+  [ -f /usr/sbin/inputlircd          ]                             || { stop; exit 0; }
+  [ -r /etc/default/inputlirc        ] && . /etc/default/inputlirc || { stop; exit 0; }
+  [ -f $CFG_DIR/sysconfig            ] && . $CFG_DIR/sysconfig     || { stop; exit 0; }
+  [ x"$LIRC_HW_CONF" = x"input_lirc" ]                             || { stop; exit 0; }
+  [ ! -d /var/run/lirc               ] &&  mkdir -p /var/run/lirc
+  $LOGGER "Starting inputlircd"
+  exec /usr/sbin/inputlircd -f $OPTIONS $EVENTS
+end script
+

@@ -1,0 +1,11 @@
+#! /bin/bash
+
+set -e
+
+
+# Remove Directory
+    if [ "$1" = "purge" ]; then
+        /bin/rm -rf /var/lib/vdr/plugins/restfulapi/webapp
+    fi
+
+#DEBHELPER#

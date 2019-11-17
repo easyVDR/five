@@ -1,0 +1,18 @@
+<markup><!--
+Partitioning warning
+--><span fgcolor="red" size="50000">Warning!!!</span><!--
+--><big><span fgcolor="white">
+
+easyVDR 3.0 will erase your hard drive completely!
+There is no automatic detection of a Media partition.
+
+Would you like to use your existing Media partitions, 
+then we strongly recommend to partition manually,
+then you do not have to format the Media partition,
+this involve only place its proper location in the
+file system.
+
+Precise instructions can be found in our wiki at:</span></big>
+
+<span fgcolor="white">http://wiki.easy-vdr.de/index.php?title=2.0_manuelle_Partitionierung</span><!--
+--> </markup>

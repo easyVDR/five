@@ -1,0 +1,29 @@
+easyvdr-extra-depends2 (03.95-1easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:08:37 +0100
+
+easyvdr-extra-depends2 (03.95-1easyVDR1~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 06 Jan 2018 00:04:10 +0100
+
+easyvdr-extra-depends2 (03.95-1easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 26 Nov 2017 14:42:31 +0100
+
+easyvdr-extra-depends2 (01.00-1easyVDR0~trusty) trusty; urgency=high
+
+  * depends moved2easyvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 25 Jun 2015 09:01:13 +0200
+
+easyvdr-extra-depends2 (00.01-0easyVDR0~trusty) trusty; urgency=high
+
+  * initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 10:51:07 +0100

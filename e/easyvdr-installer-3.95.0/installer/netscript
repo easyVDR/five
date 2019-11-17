@@ -1,0 +1,3 @@
+#!/bin/bash
+DISPLAY=:0 /usr/bin/yad --title="Netzwerkwarnung" --button="Netzwerkmanager starten" --image=/usr/share/easyvdr/installer/images/net_warn-de.png
+DISPLAY=:0 /usr/bin/nm-connection-editor

@@ -1,0 +1,47 @@
+easyvdr-customize-iso (3.99.0-0easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:07:19 +0100
+
+easyvdr-customize-iso (3.99.0-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 17:52:54 +0100
+
+easyvdr-customize-iso (3.99.0-0easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 26 Nov 2017 14:25:37 +0100
+
+easyvdr-customize-iso (2.99.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * v3
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 08 Oct 2015 09:06:26 +0200
+
+easyvdr-customize-iso (0.0.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * script optimized
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Jun 2015 11:12:22 +0200
+
+easyvdr-customize-iso (0.0.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * plymouth themes only in easyvdr-artwork
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Jun 2015 10:55:26 +0200
+
+easyvdr-customize-iso (0.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Jun 2015 08:30:27 +0200
+
+easyvdr-customize-iso (0.0.1-0easyVDR4~trusty) trusty; urgency=high
+
+  * initial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 04 May 2014 16:02:48 +0100

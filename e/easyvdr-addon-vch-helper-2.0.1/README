@@ -1,0 +1,48 @@
+Vodcatcher Helper
+----------------------
+Thanks to "hampelratte" VDR-Portal
+http://www.hampelratte.org/blog/
+----------------------
+Der Vodcatcher Helper (VCH) ist ein Programm, das ursprünglich als Helferlein
+für das vodcatcher-Plugin geschrieben wurde.
+VCH durchforstet Webseiten (überwiegend Mediatheken) nach Videos und stellt
+die Ergebnisse dem VDR oder auch dem xbmc zur Verfügung.
+Dadurch hat man im VDR/xbmc Zugriff auf Seiten wie die ZDFmediathek
+oder die ARD Mediathek. Die Verbindung zum VDR wird über das osdserver-Plugin hergestellt.
+xbmc kann über UPnP auf VCH zugreifen. Möglicherweise klappt das auch mit weiteren UPnP-Playern.
+
+Voraussetzungen
+----------------------
+    2 Mbit-Leitung oder besser
+    Java 1.6 (aka Java 6, http://www.java.com)
+    moderner Browser wie Firefox, Opera, Chrome, Safari. Internet Explorer ist ungeeignet.
+    VDR oder xbmc
+    bei VDR zusätzlich
+        osdserver-Plugin
+        mplayer-Plugin oder xineliboutput-Plugin
+        bei mplayer zusätzlich
+            mplayer.sh oder mplay.sh mit Unterstützung für Wiedergabelisten 
+        curl
+        at 
+
+Starten
+----------------------
+Menu -> System & Einstellungen -> Befehle -> Mediatheken.. -> VCH Start		
+Mit einem Browser das Webinterface von VCH öffnen: http://<Ip oder Name von VDR>:8060/news
+und VCH konfigurieren.
+----------------------
+Downloads -> Konfiguration
+Downloadverzeichnis: /media/easyvdr01/vch-download
+----------------------
+Konfiguration -> Wiedergabeliste
+Port: 6419
+----------------------
+
+Hilfe & Info
+--------------------
+http://vdr-wiki.de/wiki/index.php/Vodcatcher_Helper
+
+Have Fun
+mango		
+	
+		

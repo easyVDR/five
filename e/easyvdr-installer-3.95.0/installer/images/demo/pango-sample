@@ -1,0 +1,3 @@
+#http://www.imagemagick.org/Usage/text/pango_test.txt
+me=`basename "$0"`
+convert background.jpg -background transparent -fill black -gravity center pango:@$me.txt -composite $me.png

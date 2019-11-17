@@ -1,0 +1,50 @@
+#!/bin/bash
+#Version for easyvdr 3
+
+
+#3-Stable
+add-apt-repository -y ppa:easyvdr-team/4-base-unstable
+add-apt-repository -y ppa:easyvdr-team/4-vdr-unstable
+add-apt-repository -y ppa:easyvdr-team/4-others-unstable
+
+
+#3-Testing
+#add-apt-repository -y ppa:easyvdr-team/3-base-testing
+#add-apt-repository -y ppa:easyvdr-team/3-vdr-testing
+#add-apt-repository -y ppa:easyvdr-team/3-others-testing
+
+#Unstable
+#add-apt-repository -y ppa:easyvdr-team/base-unstable
+#add-apt-repository -y ppa:easyvdr-team/vdr-unstable
+#add-apt-repository -y ppa:easyvdr-team/others-unstable
+
+#rm * /etc/apt/sources.list.d/
+
+apt-get install easyvdr-ppa-keys
+
+#Neu falls Extras Repo genutzt wird
+#apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 16126D3A3E5C1192
+
+apt-get update
+apt-get dist-upgrade
+apt-get install xfsprogs mdadm lvm2 fbi easyvdr easyvdr-depends easyvdr-extra-depends easyvdr-extra-depend2 easyvdr-setup ssh ubuntu-screenshot
+adduser easyvdr
+usermod -u 888 easyvdr
+usermod -a -G sudo easyvdr
+usermod -a -G adm easyvdr
+usermod -a -G vdr easyvdr
+usermod -a -G easyvdr vdr
+adduser easyvdr audio
+dpkg-reconfigure keyboard-configuration
+echo "blacklist nouveau" | sudo tee -a /etc/modprobe.d/blacklist.conf
+apt-get remove libreoffice-common libreoffice-style-* thunderbird firefox ubuntu-docs gnome-user-guide fonts-nanum language-pack-gnome-es-* language-pack-es-* poppler-data language-pack-gnome-zh-* language-pack-zh* hplib-data libsane libopencc1 libgutenprint* ure example-content fonts-takao-pgothic libpurple0 fonts-tibetan-machine liblouis-data gnome-mahjongg empathy-common unity-lens-shopping firefox-loc*
+#apt-get remove plymouth-theme-ubuntu-logo plymouth-theme-ubuntu-text
+apt-get dist-upgrade
+apt-get install easyvdr easyvdr-setup easyvdr-extra-depends easyvdr-extra-depends2 easyvdr-installer
+apt-get install easyvdr-depends
+#apt-get install --install-recommends linux-generic-lts-utopic xserver-xorg-lts-utopic libgl1-mesa-glx-lts-utopic libegl1-mesa-drivers-lts-utopic
+#apt-get remove linux-headers-3.16.0-30 linux-headers-3.16.0-30-generic linux-image-3.16.0-30-generic linux-image-extra-3.16.0-30-generic linux-signed-image-3.16.0-30-generic
+#apt-get remove linux-headers-3.19.0-25 linux-headers-3.19.0-25-generic linux-image-3.19.0-25-generic linux-image-extra-3.19.0-25-generic linux-signed-image-3.19.0-25-generic
+update-grub
+update-initramfs -u -k all
+update-grub

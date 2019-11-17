@@ -1,0 +1,133 @@
+easyvdr-depends (03.99-4easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:07:41 +0100
+
+easyvdr-depends (03.99-4easyVDR2~bionic) bionic; urgency=high
+
+  * added depends net-tools xinit
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 10 Jun 2019 14:59:00 +0200
+
+easyvdr-depends (03.99-4easyVDR1~bionic) bionic; urgency=high
+
+  * adding depends easyvdr-make-remote-mapping
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Mar 2019 21:03:25 +0100
+
+easyvdr-depends (03.99-4easyVDR0~bionic) bionic; urgency=high
+
+  * added depends libproc-processtable-perl for compile driver
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 28 Jan 2019 22:19:26 +0100
+
+easyvdr-depends (03.99-3easyVDR12~bionic) bionic; urgency=high
+
+  * adding depends easyvdr-addon-acpi-wakeup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Jan 2019 13:46:20 +0100
+
+easyvdr-depends (03.99-3easyVDR10~bionic) bionic; urgency=high
+
+  * change easyvdr-inputlirc to inputlirc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Dec 2018 11:38:22 +0100
+
+easyvdr-depends (03.99-3easyVDR9~bionic) bionic; urgency=high
+
+  * remove depends easyvdr-addon-acpi-wakeup
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 04 Aug 2018 23:38:35 +0200
+
+easyvdr-depends (03.99-3easyVDR8~bionic) bionic; urgency=high
+
+  * move setserial to easyvdr-setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Jul 2018 13:36:58 +0200
+
+easyvdr-depends (03.99-3easyVDR7~bionic) bionic; urgency=high
+
+  * added setserial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Jun 2018 23:52:59 +0200
+
+easyvdr-depends (03.99-3easyVDR6~bionic) bionic; urgency=high
+
+  * remove boot-repair
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Jun 2018 23:25:49 +0200
+
+easyvdr-depends (03.99-3easyVDR5~bionic) bionic; urgency=high
+
+  * added lightdm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Feb 2018 13:22:22 +0100
+
+easyvdr-depends (03.99-3easyVDR4~bionic) bionic; urgency=high
+
+  * added python-xdg for openbox autostart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 22 Feb 2018 13:10:02 +0100
+
+easyvdr-depends (03.99-3easyVDR3~bionic) bionic; urgency=high
+
+  * added depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Jan 2018 17:41:11 +0100
+
+easyvdr-depends (03.99-3easyVDR2~bionic) bionic; urgency=high
+
+  * remove easyvdr-usbmount
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Dec 2017 14:48:16 +0100
+
+easyvdr-depends (03.99-3easyVDR1~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 26 Nov 2017 14:37:55 +0100
+
+easyvdr-depends (03.01-0easyVDR0~trusty) trusty; urgency=medium
+
+  * ppa-keys
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Oct 2016 16:47:50 +0200
+
+easyvdr-depends (03.00-3easyVDR0~trusty) trusty; urgency=medium
+
+  * artwork
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 13 Feb 2016 19:46:16 +0100
+
+easyvdr-depends (03.00-2easyVDR0~trusty) trusty; urgency=medium
+
+  * proftp
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 Jan 2016 13:12:29 +0100
+
+easyvdr-depends (03.00-1easyVDR0~trusty) trusty; urgency=high
+
+  * plymouth theme
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Jan 2016 11:04:34 +0100
+
+easyvdr-depends (01.00-1easyVDR0~trusty) trusty; urgency=high
+
+  * added new depends ffmpeg-set-alternatives for ffmpeg-2.7.2
+  * remove old depends ffmpeg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 30 Nov 2015 00:25:33 +0100
+
+easyvdr-depends (01.00-0easyVDR1~trusty) trusty; urgency=high
+
+  * fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 08 Oct 2015 19:45:48 +0200
+
+easyvdr-depends (01.00-0easyVDR0~trusty) trusty; urgency=high
+
+  * split from easyvdr package
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 08 Oct 2015 09:35:55 +0200
+

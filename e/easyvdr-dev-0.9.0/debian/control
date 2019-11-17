@@ -1,0 +1,12 @@
+Source: easyvdr-dev
+Section: misc
+Priority: optional
+Maintainer: Andreas Schott <sinai@easy-vdr.de>
+Standards-Version: 4.1.2
+Build-Depends: debhelper (>= 9)
+
+Package: easyvdr-dev
+Architecture: any
+Depends: ${easyvdr-dev}, ${misc:Depends}
+Description: Developer packages for easyVDR
+  Metapackage easyvdr-dev for easyVDR

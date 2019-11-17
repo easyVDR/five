@@ -1,0 +1,11 @@
+Source: easyvdr-carddetectng
+Section: misc
+Priority: optional
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Build-Depends: debhelper (>= 7), cdbs, dpatch
+Standards-Version: 3.8.3
+
+Package: easyvdr-carddetectng
+Architecture: any
+Description: DVB-Carddetect Package for easyVDR
+  Installationspaket für easyVDR um Videokarten zu erkennen

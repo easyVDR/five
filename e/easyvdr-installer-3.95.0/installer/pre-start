@@ -1,0 +1,56 @@
+#!/bin/bash
+chvt 8
+echo "[000] prestart.sh v0.4"
+#20140415 Code cleanup
+#201506-test
+#201603-function-lib, generate image
+
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/lib/vdr/easyvdr-config-loader
+IMGDIR=$INSTALLERDIR/images
+
+rm /etc/resolv.conf
+cp /usr/share/easyvdr/installer/resolv.conf /etc
+
+
+update_basics(){
+cp /etc/apt/sources.list /etc/apt/sources.list.bkp
+sed -i 's/^\(.*\)ubuntu.com\(.*\)$/# \1ubuntu.com\2/g' /etc/apt/sources.list
+apt-get update
+echo "[124] upgrading pre-setup..."
+apt-get install --reinstall easyvdr-presetup easyvdr-installer easyvdr
+cp /etc/apt/sources.list.bkp /etc/apt/sources.list
+}
+
+
+
+
+HOST="www.google.de"
+echo "[010] Checking Internet-connection... - please wait"
+i=1
+  while ( ! ping -w 1 $HOST > /dev/null 2>&1 )
+    do
+       echo "Try $i of 25"
+       sleep 2
+      (($i == 24)) && break   # Abbruch nach max. 50 Sekunden
+       ((++i))
+   done
+
+
+
+if (! ping -w 1 $HOST > /dev/null 2>&1 ) ; then
+GenImage640 net_warn-de net_warn-de
+initctl start easyvdr-dialog-startx-net
+else 
+
+
+
+
+sleep 5
+chvt 8
+
+echo "[020] Internet-connection established"
+echo "[030] Checking for new startscript..."
+update_basics
+/usr/share/easyvdr/installer/start.sh
+fi

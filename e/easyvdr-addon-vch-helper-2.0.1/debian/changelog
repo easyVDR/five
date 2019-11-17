@@ -1,0 +1,84 @@
+easyvdr-addon-vch-helper (2.0.1-0easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 21:36:03 +0100
+
+easyvdr-addon-vch-helper (2.0.1-0easyVDR4~bionic) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:37:20 +0200
+
+easyvdr-addon-vch-helper (2.0.1-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 18:09:19 +0100
+
+easyvdr-addon-vch-helper (2.0.1-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 17:43:25 +0100
+
+easyvdr-addon-vch-helper (2.0.1-0easyVDR1~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix rules
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Jul 2017 19:29:44 +0200
+
+easyvdr-addon-vch-helper (1:2.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - build 20170501.123554-765
+  * switch to port 8060
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 01 May 2017 17:34:11 +0200
+
+easyvdr-addon-vch-helper (2.0.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - build 20151123
+  * switch to port 8060
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Nov 2015 20:59:14 +0100
+
+easyvdr-addon-vch-helper (2.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 27 Apr 2015 20:56:48 +0200
+
+easyvdr-addon-vch-helper (2.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * switch to port 8060
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 05 Mar 2015 00:26:10 +0100
+
+easyvdr-addon-vch-helper (2.0.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Feb 2015 23:27:31 +0100
+
+easyvdr-addon-vch-helper (1.1.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * switch to port 8060
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 Aug 2014 02:15:28 +0200
+
+easyvdr-addon-vch-helper (0.0.1-0easyVDR0.3) oneiric; urgency=high
+
+  * fixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 02 May 2012 21:08:52 +0200
+
+easyvdr-addon-vch-helper (0.0.1-0easyVDR0.1) oneiric; urgency=high
+
+  * 1st build
+
+ -- mango <vdr@gmx.de>  Mon, 23 Apr 2012 21:08:16 +0200
+ 
+

@@ -1,0 +1,10 @@
+#! /bin/bash
+# niemals im chroot fs ausfuehren weil dort der Private-Key zum Signieren erforderlich ist...
+BASE="/home/ubuntu-builder/FileSystem/var/cache/apt-local-repo"
+cd $BASE/
+rm Packages  Packages.gz  Release  Release.gpg
+dpkg-scanpackages . /dev/null > Packages && gzip -9c Packages > Packages.gz
+apt-ftparchive release . > Release
+gpg --local-user CC5B84A0 --output Release.gpg -ba Release 
+#CC5B84A0 easyVDR Key for local-repos ... 
+

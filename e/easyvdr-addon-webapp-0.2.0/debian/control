@@ -1,0 +1,14 @@
+Source: easyvdr-addon-webapp
+Section: misc
+Priority: optional
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: https://github.com/hannemann/vdr-webapp
+
+Package: easyvdr-addon-webapp
+Architecture: any
+Suggests: vdr-plugin-restfulapi
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Mobil Browser gestütztes Frontend für VDR

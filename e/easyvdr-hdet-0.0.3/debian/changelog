@@ -1,0 +1,65 @@
+easyvdr-hdet (0.0.3-0easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:08:57 +0100
+
+easyvdr-hdet (0.0.3-0easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 18:01:47 +0100
+
+easyvdr-hdet (0.0.3-0easyVDR4~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 02:47:55 +0100
+
+easyvdr-hdet (0.0.3-0easyVDR4~trusty) trusty; urgency=high
+
+  * rename pchanger upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Feb 2016 22:24:43 +0100
+
+easyvdr-hdet (0.0.3-0easyVDR3~trusty) trusty; urgency=high
+
+  * fixed preinst-Bug
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 04 Nov 2013 08:36:00 +0100
+
+easyvdr-hdet (0.0.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:14:59 +0100
+
+easyvdr-hdet (0.0.3-0easyVDR0~raring) raring; urgency=high
+
+  * Source-Build
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 May 2013 08:42:32 +0200
+
+easyvdr-hdet (0.0.1-1easyVDR1~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 18:21:30 +0200
+
+easyvdr-hdet (0.0.1-1easyVDR0.8) oneiric; urgency=high
+
+  * debugged installation
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 19 Apr 2012 17:04:42 +0200
+
+easyvdr-hdet (0.0.1-1easyVDR0.7) oneiric; urgency=high
+
+  * install database
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 19 Apr 2012 13:52:18 +0200
+
+easyvdr-hdet (0.0.1-1easyVDR0.1) oneiric; urgency=high
+
+  * new upstream Release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 Apr 2012 19:59:56 +0100

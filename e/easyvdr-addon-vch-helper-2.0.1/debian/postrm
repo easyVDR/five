@@ -1,0 +1,19 @@
+#! /bin/bash
+set -e
+
+# Remove Directory
+case "$1" in
+    remove | purge)
+         /bin/rm -rf /media/easyvdr01/vch-download > /dev/null 2>&1 || true
+         /bin/rm -rf /usr/share/vdr-vch-helper > /dev/null 2>&1 || true
+         /bin/rm -rf /var/lib/vdr/.java/.userPrefs/de/* > /dev/null 2>&1 || true
+    ;;
+    failed-upgrade|abort-install|abort-upgrade|disappear|upgrade)
+    ;;
+    *)
+        echo "postrm called with unknown argument \`$1'" >&2
+        exit 1
+    ;;
+esac
+
+#DEBHELPER#

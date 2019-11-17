@@ -1,0 +1,59 @@
+# This first command is run as early as possible, just after preseeding is read.
+#d-i preseed/early_command string touch /tmp/use-easypart; . /usr/share/debconf/confmodule; db_get debconf/priority; case $RET in low|medium) db_fset tasksel/first seen false; echo 'tasksel tasksel/first seen false' >>/var/lib/preseed/log ;; esac
+#d-i preseed/early_command string echo "early" > /early-cmd.ok
+
+# Set Hostname
+d-i netcfg/get_hostname string easyvdr
+
+# Time-Settings
+d-i clock-setup/utc boolean true
+d-i time/zone string Europe/Berlin
+
+# To create a normal user account.
+d-i passwd/user-fullname string easyVDR User
+d-i passwd/username string easyvdr
+d-i passwd/user-password password easyvdr
+d-i passwd/user-password-again password easyvdr
+d-i user-setup/allow-password-weak boolean true
+d-i passwd/user-default-groups string sudo adm audio cdrom video
+d-i user-setup/encrypt-home boolean false
+
+# Keyboard selection.
+d-i console-tools/archs select de
+d-i console-keymaps-at/keymap select de
+d-i keyboard-configuration/xkb-keymap select de
+d-i console-setup/modelcode string pc105
+d-i keyboard-configuration/layoutcode string de
+d-i console-setup/variantcode string nodeadkeys
+keyboard-configuration keyboard-configuration/modelcode string pc105
+keyboard-configuration keyboard-configuration/layout select Germany
+keyboard-configuration keyboard-configuration/variant select Germany - Eliminate dead keys
+keyboard-configuration keyboard-configuration/variantcode string nodeadkeys
+keyboard-configuration keyboard-configuration/layoutcode string de
+
+# This is fairly safe to set, it makes grub install automatically to the MBR if no other operating system is detected on the machine.
+d-i grub-installer/only_debian boolean true
+
+# This one makes grub-installer install to the MBR if it also finds some other OS, which is less safe as it might not be able to boot that other OS.
+d-i grub-installer/with_other_os boolean true
+
+# Avoid that last message about the install being complete.
+d-i finish-install/reboot_in_progress note
+
+# Ubiquity-Settings
+ubiquity        ubiquity/summary        note
+ubiquity	ubiquity/reboot	boolean	true
+ubiquity	languagechooser/language-name	select German
+ubiquity	countrychooser/shortlist	select DE
+ubiquity        countrychooser/countryname	select Germany
+ubiquity        countrychooser/country-name      string Germany
+debconf		debconf/language	string	de
+ubiquity	tzconfig/gmt	boolean	false
+ubiquity	time/zone	select	Europe/Berlin
+ubiquity	debian-installer/country	string DE
+ubiquity	debian-installer/language	string de
+ubiquity	debian-installer/locale	select de_DE.UTF-8
+
+# Upgrade packages
+d-i pkgsel/upgrade select full-upgrade
+

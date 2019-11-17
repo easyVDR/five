@@ -1,0 +1,20 @@
+<markup><!--
+Partitioning warning
+--><span fgcolor="red" size="40000">Selection of partition</span><!--
+--><big><span fgcolor="white">
+
+Do you want to <b> manual </b> partitioning?
+
+You want install by yourself the hard drive
+Select the partition you want to use?
+
+Or you want <b> automatically </b> partitioning?
+- use the first hard drive found in the system
+- delete completely the disk 
+- create a 30GB size system partition
+- create a 4 GB size swap partition
+- create the entire remaining hard drive as a media partition
+
+Your selection?
+</span></big><!--
+--> </markup>

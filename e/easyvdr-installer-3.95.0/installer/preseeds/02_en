@@ -1,0 +1,23 @@
+# Time-Settings
+d-i clock-setup/utc boolean true
+d-i time/zone string Europe/Berlin
+
+
+# Keyboard selection.
+d-i console-tools/archs select en
+d-i console-setup/modelcode string pc105
+d-i console-setup/variantcode string nodeadkeys
+keyboard-configuration keyboard-configuration/modelcode string pc105
+keyboard-configuration keyboard-configuration/variantcode string nodeadkeys
+
+ubiquity	languagechooser/language-name	select Englisch
+ubiquity	countrychooser/shortlist	select EN
+ubiquity        countrychooser/countryname	select Germany
+ubiquity        countrychooser/country-name      string Germany
+debconf		debconf/language	string	en
+ubiquity	tzconfig/gmt	boolean	false
+ubiquity	time/zone	select	Europe/Berlin
+ubiquity	debian-installer/country	string EN
+ubiquity	debian-installer/language	string en
+ubiquity	debian-installer/locale	select en_EN.UTF-8
+

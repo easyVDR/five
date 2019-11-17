@@ -1,0 +1,217 @@
+#!/bin/bash
+# written by Andreas Schott
+# (sinai - sinai@easy-vdr.de)
+# Configurationdialog for easyvdr-dev-Package
+# 07.12.2010
+# test version 14.08.13 c.b.    -- "user" parameterisiert
+###########################################
+
+#####
+Choose_User()
+{
+SYS_USERS=($(ls /home ))
+No_USERS=${#SYS_USERS[*]}
+
+j=0
+for ((i=0;i<$No_USERS;i++))
+  do
+    MENU_ARRAY[$j]=${SYS_USERS[$i]}; ((++j))
+    MENU_ARRAY[$j]="";               ((++j))
+    MENU_ARRAY[$j]="off";            ((++j))
+  done
+
+OK_CANCEL=1
+SEL_USER=$(dialog \
+   --backtitle " easyVDR_dev Konfiguration" \
+   --title " Benutzerauswahl " \
+   --radiolist "\n\
+   Auswahl des easyvdr_dev Benutzers\n\
+   Aktivieren mit <SPACE>\n\
+   Beenden mit  <  O.K. >  oder < Abbrechen >"  15 60 10\
+   "${MENU_ARRAY[@]}"  3>&1 1>&2 2>&3 3>&- )
+OK_CANCEL=$?
+clear
+}
+
+#####
+Konfigure_GIT()
+{
+dialog --backtitle " easyVDR_dev Konfiguration"\
+       --title " VDR-Setup-Git "\
+       --yesno "\n          Möchten Sie Git konfigurieren?" 10 60
+antwort=$?
+clear
+if [ $antwort = 0 ]; then
+  REPEAT="true"
+  while [[ $REPEAT == "true" ]]
+    do
+      if [ -e /home/$SEL_USER/.gitconfig ]
+        then
+          FORMER_NAME=$(grep "name = "  /home/$SEL_USER/.gitconfig | cut -d" " -f3)
+          FORMER_MAIL=$(grep "email = " /home/$SEL_USER/.gitconfig | cut -d" " -f3)
+        else
+          FORMER_NAME="Namen eingeben"
+          FORMER_MAIL="email eingeben"
+      fi 
+      gitname=$(dialog --title " GIT-Name "\
+                       --backtitle " easyVDR_dev Konfiguration"\
+                       --inputbox "\n\
+           Geben Sie Ihren Git-Namen ein,\n\
+          der beim Upload erscheinen soll!\n \n " 15 60 "$FORMER_NAME" 3>&1 1>&2 2>&3 3>&- )
+
+      gitmail=$(dialog --title " GIT-Mail "\
+                       --backtitle " easyVDR_dev Konfiguration"\
+                       --inputbox "\n\
+           Geben Sie Ihre Mailadresse ein,\n\
+     die für den Upload verwendet werden soll!\n \n " 15 60 "$FORMER_MAIL"  3>&1 1>&2 2>&3 3>&- )
+
+      dialog --backtitle " easyVDR_dev Konfiguration"\
+             --title " VDR-Setup-GIT Info "\
+             --yesno "\n\n\
+                  Es werden nun\n\
+         \"$gitname\" und \"$gitmail\"\n\
+        für den Gebrauch mit Git konfiguriert,\n\n\
+                   Alles O.K.?"  15 60
+      YESNO=$?
+      clear
+      (( $YESNO == 0 )) && REPEAT="false" || REPEAT="true"
+    done
+
+  git config --global user.name "$gitname"
+  git config --global user.email $gitmail
+  git config --global color.diff auto
+  git config --global color.status auto
+  git config --global color.branch auto
+  git config --global push.default simple
+  cp -af /root/.gitconfig /home/$SEL_USER/
+  chown $SEL_USER:$SEL_USER /home/$SEL_USER/.gitconfig
+fi
+}
+
+#####
+Konfigure_PPA_Upload()
+{
+dialog --backtitle " easyVDR_dev Konfiguration"\
+       --title " VDR-Setup-PPA "\
+       --yesno "\n        Möchten Sie Pakete ins PPA uploaden?" 10 60
+antwort=$?
+clear
+if [ $antwort = 0 ]; then
+  if ! grep -q "export DEBFULLNAME=easyVDR-Developer"    /home/$SEL_USER/.profile; then
+    echo "export DEBFULLNAME=easyVDR-Developer"       >> /home/$SEL_USER/.profile
+  fi
+  if ! grep -q "export DEBEMAIL=easyvdr-dev@easy-vdr.de" /home/$SEL_USER/.profile; then
+    echo "export DEBEMAIL=easyvdr-dev@easy-vdr.de"    >> /home/$SEL_USER/.profile
+  fi
+
+  cat << EOF > /home/$SEL_USER/.dput.cf
+[DEFAULT]
+allow_unsigned_uploads= 0
+
+[4-others-stable]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-others-stable/ubuntu/
+
+[4-base-stable]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-base-stable/ubuntu/
+
+[4-vdr-stable]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-vdr-stable/ubuntu/
+
+[4-others-testing]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-others-testing/ubuntu/
+
+[4-base-testing]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-base-testing/ubuntu/
+
+[4-vdr-testing]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-vdr-testing/ubuntu/
+
+[4-others-unstable]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-others-unstable/ubuntu/
+
+[4-base-unstable]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-base-unstable/ubuntu/
+
+[4-vdr-unstable]
+fqdn= ppa.launchpad.net
+method= ftp
+login= anonymous
+incoming= /~easyvdr-team/4-vdr-unstable/ubuntu/
+EOF
+  chown $SEL_USER:$SEL_USER /home/$SEL_USER/.dput.cf
+
+  dialog  --backtitle " easyVDR_dev Konfiguration"\
+          --title " VDR-Setup-PPA Info "\
+          --msgbox "\n\
+  Es wurden die Variablen\n\n\
+  DEBFULLNAME=easyVDR-Developer\n\
+  DEBEMAIL=easyvdr-dev@easy-vdr.de\n\n\
+  gesetzt, sowie eine\n\n\
+  .dput.cf\n\n\
+  für den User \"$SEL_USER\" zum Upload\n\
+  in eines der drei PPAs angelegt." 20 60
+fi
+}
+
+####
+Konfigure_PBUILDER()
+{
+dialog --backtitle " easyVDR_dev Konfiguration"\
+       --title " VDR-Setup-PBuilder "\
+       --yesno "\n\
+  Möchten Sie PBuilder einrichten?\n\n\n\
+  PBuilder wird nur benoetigt, wenn man lokal\n\
+  testen moechte, ob Pakete fuer ein PPA korrekt bauen.\n\n\
+  Mit PBuilder wird eine chroot-Umgebung eingerichtet,\n\
+  die der eines PPA identisch ist.\n\n\
+  Die Einrichtung von PBuilder dauert auf modernen\n\
+  Systemen bereits mehrere Minuten!!!\n\n" 20 60
+antwort=$?
+clear
+if [ $antwort = 0 ]; then 
+  echo OTHERMIRROR=\"deb http://ppa.launchpad.net/easyvdr-team/base-testing/ubuntu trusty main\" >> /etc/pbuilder/pbuilderrc
+  pbuilder create --debootstrapopts --variant=buildd
+  dialog --backtitle " easyVDR_dev Konfiguration"\
+         --title " VDR-Setup-PBuilder Info "\
+         --msgbox "\n\
+  \"chroot\" für PBuilder wurde erzeugt und\n\n\
+  BASE-TESTING in  \"/etc/pbuilder/pbuilderrc\"\n\
+  eingetragen.\n\n\
+  Für Tests mit stable oder unstable\n\
+  ist pbuilderrc zu ändern!!!" 20 60
+fi
+clear
+}
+
+#####  main ######
+Choose_User
+Konfigure_GIT
+Konfigure_PPA_Upload
+Konfigure_PBUILDER
+
+#DEBHELPER#
+

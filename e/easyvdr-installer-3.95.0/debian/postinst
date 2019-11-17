@@ -1,0 +1,11 @@
+#!/bin/sh
+#set -e
+
+if [ "$1" = "configure" ]; then
+echo "manual" | sudo tee /etc/init/lightdm.override
+initctl reload-configuration
+echo "easyvdr-installer finished"
+
+fi
+
+#DEBHELPER#

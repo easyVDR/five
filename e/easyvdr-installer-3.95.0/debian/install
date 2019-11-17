@@ -1,0 +1,8 @@
+installer                               usr/share/easyvdr/
+installer/build/update-iso		usr/bin/
+debian/easyvdr-dialog-startx.conf	etc/init/
+debian/easyvdr-part-dialog.conf		etc/init/
+debian/easyvdr-start-ubiquity.conf	etc/init/
+debian/easyvdr-dialog-startx-net.conf	etc/init/
+debian/easyvdr-net-dialog.conf		etc/init/
+debian/easyvdr-start-installer.conf	etc/init/

@@ -1,0 +1,53 @@
+#!/usr/bin/make -f
+# debian/rules for the easyvdr-dev package.
+
+# Uncomment this to turn on verbose mode. 
+
+
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+build:
+DEB_HOST_ARCH ?= $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+build: build-arch build-indep
+build-arch: build-stamp
+build-indep: build-stamp
+build-stamp:
+
+clean:
+	dh_testdir
+	dh_testroot
+
+	dh_clean
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k
+	dh_installdirs
+
+	printf > debian/easyvdr-dev.substvars "easyvdr-dev=%s\n" \
+         "`grep -v "^#" easyvdr-dev|tr '\n' ', '`"
+
+# Build architecture-independent files here.
+binary-indep: build install
+# Nothing to do
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+
+	dh_installdocs
+	dh_installchangelogs
+	dh_link
+	dh_compress
+	dh_fixperms
+	dh_installdeb
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install
+

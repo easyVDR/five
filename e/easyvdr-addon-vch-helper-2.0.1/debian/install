@@ -1,0 +1,3 @@
+vch-helper/*                   usr/share/vdr-vch-helper/
+commands.vch-helper.conf       usr/share/vdr/command-hooks/
+

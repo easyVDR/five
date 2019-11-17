@@ -1,0 +1,13 @@
+__VERSION=$(shell date +%s)
+
+version:
+	@echo "/* AUTOMATICALLY GENERATED - DO NOT EDIT */" > db_version.h
+	@echo "#ifndef __DB_VERSION_H" >> db_version.h
+	@echo "#define __DB_VERSION_H" >> db_version.h
+	@echo "uint32_t magic=$(__VERSION);" >> db_version.h
+	@echo "#endif" >> db_version.h
+	@echo "" >> db_version.h
+	@chmod a-x db_version.h
+
+builddb: version clean all
+	gcc -Wall -Wextra -Wno-comment -Wswitch-default -Wno-unused-parameter -o builddb database.c

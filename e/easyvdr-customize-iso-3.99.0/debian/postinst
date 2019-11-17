@@ -1,0 +1,21 @@
+#!/bin/sh
+#set -e
+
+if [ "$1" = "configure" ]; then
+
+mv /usr/share/themes/Ambiance /usr/share/themes/Ambianceorg
+cp -r /tmp/Ambiance /usr/share/themes/
+
+mv /usr/share/backgrounds/warty-final-ubuntu.png /usr/share/backgrounds/warty-final-ubuntu-org.png
+cp /tmp/backgrounds/warty-final-ubuntu.png /usr/share/backgrounds/
+
+#mv /lib/plymouth/themes/ubuntu-logo/ /lib/plymouth/themes/ubuntu-logo-org
+#mv /lib/plymouth/themes/ubuntu-text/ /lib/plymouth/themes/ubuntu-text-org
+
+#cp -r /tmp/themes/* /lib/plymouth/themes/
+
+update-initramfs -u -k all
+
+fi
+
+#DEBHELPER#

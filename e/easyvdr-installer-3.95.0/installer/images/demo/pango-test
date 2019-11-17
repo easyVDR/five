@@ -1,0 +1,69 @@
+convert -list font
+
+convert background.jpg -gravity North -font  Times-Bold -background wheat -fill red -pointsize 48 -draw "text 0,80 'Warnung!!!'" ausgabe.jpg
+
+
+
+#NOK:
+#convert original.png -size 460x caption:'This is a multiline caption, This is a multiline caption, This is a multiline caption.' result.jpg
+
+#OK:
+#convert original.png -size 460x -background transparent -fill black -pointsize 40 caption:'This is a multiline caption, This is a multiline caption, This is a multiline caption.'  -gravity center -composite resultx.jpg
+
+#convert ausgabe.jpg  -font  Times-Bold -pointsize 24  -gravity center    label:'ImageMagick\nExamples\nby Anthony' ausgabe2.jpg
+
+#http://www.imagemagick.org/Usage/text/pango_test.txt
+convert ausgabe.jpg -background transparent -fill black -gravity center pango:@pango_test.txt -composite pango_test.png
+#mogrify -gravity center pango:@pango_test.txt  ausgabe.jpg
+
+
+#text="'easyVDR 2.0 wird Ihre Festplatte komplett löschen!\nEs existiert noch keine automatische Erkennung einer Mediapartition.\n'test"
+#\
+#Möchten Sie Ihre bestehende Mediapartition erhalten, so raten wir dringend\
+#zu einer manuellen Partitionierung, bei der Sie die Mediapartition nicht\
+#formatieren lassen, sondern diese nur an die korrekte Stelle im\
+#Dateisystem einbinden,\
+#\
+#Eine exakte Anleitung finden Sie in unserem Wiki unter\
+#\
+#http://wiki.easy-vdr.de/index.php?title=2.0_manuelle_Partitionierung"
+
+#text="teeds"
+#echo $text
+#convert ausgabe.png -gravity North -font  Times-Bold -background wheat -fill black -pointsize 24 label:$text ausgabe1.png
+#mogrify ausgabe.png -gravity North -font  Times-Bold -background wheat -fill black -pointsize 24 -draw "text 0,130 'Warnung!!! sfddddddddddddddddddddddddddd2222222222222222222dddd'"
+
+
+
+#mogrify ausgabe.png -gravity North -font  Times-Bold  -pointsize 24 -draw "text 0,150 'tesdt efg heg jhvgjh ghjb vfsbvfh j vjhsvdjhv jhv fdshjWarnung!!!'"
+# ausgabe.jpeg
+
+#./3Dtext  -t "Analog" -f "DejaVu Sans" -a 2 -p 48 -d northwest ausgabe1.jpeg
+
+
+width=180
+gravity=west
+color=red
+pointsize=10
+x=10
+Y=10
+text="This is left aligned"
+#convert original.png -size ${width}x -gravity $gravity -fill $color -background wheat -pointsize $pointsize  -page +${x}+${y}  label:"${text}" out.jpg
+
+
+set width=120
+set gravity=eastt
+set color=green
+set pointsize=12
+set x=30
+set Y=40
+set text="Right aligned"
+#mogrify out.png -size ${width}x -gravity $gravity -fill $color -background wheat -pointsize $pointsize  -page +${x}+${y}  label:"${text}"
+
+
+
+
+#120  east    green  12  30 40   Right aligned
+#140  center  blue   16  50 70   Centered text
+
+#    convert -size 1280x1000 xc:   -   -flatten    text_layered.jpg

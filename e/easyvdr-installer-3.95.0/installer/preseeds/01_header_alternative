@@ -1,0 +1,33 @@
+d-i netcfg/get_hostname string easyvdr
+
+d-i passwd/user-fullname string easyVDR User
+d-i passwd/user-default-groups string sudo adm audio cdrom video
+
+d-i pkgsel/upgrade select full-upgrade
+
+# Avoid that last message about the install being complete.
+d-i finish-install/reboot_in_progress note
+
+# Ubiquity-Settings
+ubiquity        ubiquity/summary        note
+ubiquity        ubiquity/reboot boolean true
+
+
+
+
+
+# This command is run just before the install finishes, but when there is still a usable /target directory. You can chroot to /target and use it
+# directly, or use the apt-install and in-target commands to easily install packages and run commands in the target system.
+#d-i preseed/late_command string cd /target; \
+#    mkdir local-repo; \
+#    if grep -q "m-proxy" /var/log/syslog; then  cp /opt/01proxy /target/etc/apt/apt.conf.d; else echo "kein proxy"; fi; \
+#    touch /late-cmd.ok; \
+#    echo "GRUB_CMDLINE_LINUX_DEFAULT=\"quiet splash\""         > /tmp/delfile.tpa; \
+#    echo "GRUB_CMDLINE_LINUX_DEFAULT= \"quiet splash text\""   > /tmp/insfile.tpa; \
+#    tripatch -q /tmp/defile.tpa /tmp/insfile.tpa /target/etc/default/grub; \
+#    rm /tmp/*.tpa; \
+#    update-grub; \
+#    
+###
+    #cp -p -r /cdrom/dists /target/local-repo; \
+    #cp -p -r /cdrom/pool /target/local-repo 

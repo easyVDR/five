@@ -1,0 +1,16 @@
+#!/bin/sh
+
+if [ install = "$1" -o upgrade = "$1" ]; then 
+stop easyvdr-pchanger || true > /dev/null 2>&1
+rm /usr/local/share/hdet/database.bin 
+rmdir /usr/local/share/hdet/
+
+    if [ -e /usr/share/easyvdr/program-changer/program-changer.sh ]; then
+	mv /usr/share/easyvdr/program-changer/program-changer.sh  /usr/share/easyvdr/program-changer/program-changer.sh.old || true > /dev/null 2>&1
+        #rm /etc/vdr/program-changer/* > /dev/null 2>&1
+    fi
+
+fi  
+
+#DEBHELPER#
+

@@ -1,0 +1,12 @@
+<markup><!--
+Distrie Status
+--><span fgcolor="red" size="30000">Distrie Status wählen</span><!--
+--><big><span fgcolor="white">
+
+Stable = Standard
+Testing =
+Un...
+
+
+</span></big><!--
+--> </markup>

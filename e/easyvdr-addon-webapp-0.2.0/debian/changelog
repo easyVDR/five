@@ -1,0 +1,48 @@
+easyvdr-addon-webapp (0.2.0-0easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:04:46 +0100
+
+easyvdr-addon-webapp (0.2.0-0easyVDR4~bionic) bionic; urgency=medium
+
+  * rebuild 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:38:20 +0200
+
+easyvdr-addon-webapp (0.2.0-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 18:09:58 +0100
+
+easyvdr-addon-webapp (0.2.0-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 17:44:00 +0100
+
+easyvdr-addon-webapp (0.2.0-0easyVDR1~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix rules
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Jul 2017 19:30:44 +0200
+
+easyvdr-addon-webapp (0.2.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * update to 6affee8
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 10:40:22 +0200
+
+easyvdr-addon-webapp (0.1.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 30 Mar 2016 20:40:56 +0200
+
+easyvdr-addon-webapp (0.1.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial Release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 05 Oct 2015 20:30:51 +0200

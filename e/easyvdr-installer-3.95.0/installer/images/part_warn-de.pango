@@ -1,0 +1,17 @@
+<markup><!--
+Partitionierungs-Warnung
+--><span fgcolor="red" size="50000">Warnung!!!</span><!--
+--><big><span fgcolor="white">
+
+easyVDR 3.0 wird Ihre Festplatte komplett löschen!
+Es existiert keine automatische Erkennung einer Media-Partition.
+
+Möchten Sie Ihre bestehende Mediapartition erhalten, so raten
+wir dringend zu einer manuellen Partitionierung, bei der Sie die
+Mediapartition nicht formatieren lassen, sondern diese nur an
+die korrekte Stelle im Dateisystem einbinden,
+
+Eine exakte Anleitung finden Sie in unserem Wiki unter</span></big>
+
+<span fgcolor="white">http://wiki.easy-vdr.de/index.php?title=2.0_manuelle_Partitionierung</span><!--
+--> </markup>

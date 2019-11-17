@@ -1,0 +1,24 @@
+#!/bin/bash
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/lib/vdr/easyvdr-config-loader
+
+GenImage640 part_warn-de tmp
+DISPLAY=:0 /usr/bin/yad --title="Partitionierungswarnung" --button="Ja, ich habe verstanden:0" --timeout=60  --timeout-indicator=right --image=$IMGDIR/tmp.png
+ret=$?
+case $ret in
+      0) GenImage640 part_choose-de tmp
+         DISPLAY=:0 /usr/bin/yad --title="Partitionierungsart" --button="Manuell Partitionieren:0" --button="Automatisch Partitionieren:1" --image=$IMGDIR/tmp.png
+         ret2=$?
+         if [[ $ret2 -eq 0 ]]; then
+           cd /usr/share/easyvdr/installer/
+           #mv easyvdr_temp.seed easyvdr.seed
+         fi
+
+         if [[ $ret2 -eq 1 ]]; then
+           /usr/share/easyvdr/installer/preseeds/make_preseed autopart
+         fi
+        ;;
+      70) cd /usr/share/easyvdr/installer/
+          #mv easyvdr_temp.seed easyvdr.seed
+        ;;
+esac

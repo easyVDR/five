@@ -1,0 +1,12 @@
+Source: easyvdr-addon-view-picture
+Section: misc
+Priority: extra
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, libgtk-3-dev, libglib2.0-dev 
+Standards-Version: 3.9.5
+
+
+Package: easyvdr-addon-view-picture
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${easyvdr-addon-view-picture}
+Description: Picture Viewer with timer for X11

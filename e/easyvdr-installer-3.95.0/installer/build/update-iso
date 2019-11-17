@@ -1,0 +1,53 @@
+#! /bin/bash
+# nur im chroot fs ausfuehren !
+
+#Kernel hold
+#    echo "linux-generic" hold | dpkg --set-selections
+#    echo "linux-headers-generic" hold | dpkg --set-selections
+#    echo "linux-image-generic" hold | dpkg --set-selections
+#echo "linux-generic-lts-wily" hold | dpkg --set-selections
+#echo "linux-headers-generic-lts-wily" hold | dpkg --set-selections
+#echo "linux-image-generic-lts-wily" hold | dpkg --set-selections
+echo "linux-generic-lts-xenial" hold | dpkg --set-selections
+echo "linux-headers-generic-lts-xenial" hold | dpkg --set-selections
+echo "linux-image-generic-lts-xenial" hold | dpkg --set-selections
+
+
+
+
+# VDR User wieder auf UID 2000 setzen
+
+killall -u vdr
+sleep 4
+usermod -u 2000 vdr
+
+apt-get update
+apt-get dist-upgrade
+
+killall -u vdr
+sleep 1
+usermod -u 777 vdr
+
+
+#unhold
+echo "linux-generic-lts-xenial" install | dpkg --set-selections
+echo "linux-headers-generic-lts-xenial" install | dpkg --set-selections
+echo "linux-image-generic-lts-xenial" install | dpkg --set-selections
+
+
+echo checking owner
+find / -user 777
+echo
+
+
+
+
+echo Hier abbrechen mit Strg-C Ansonsten werden Kernels als automatisch installiert markiert:
+
+sudo apt-mark auto $(dpkg -l | grep -e "^ii" | awk '{print $2}' | grep -e linux-signed-image-.*-generic -e linux-image-.*-generic -e linux-headers-.*-generic)
+#Danach überprüfen Sie, welchen Kernel Sie gerade verwenden und welche Kernel Versionen nach einem apt-get autoremove erhalten bleiben würden:
+
+echo "Aktiver Kernel: " 
+uname -r
+echo "zu löschende Kernels : "
+cat /etc/apt/apt.conf.d/01autoremove-kernels

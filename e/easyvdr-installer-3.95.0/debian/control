@@ -1,0 +1,11 @@
+Source: easyvdr-installer
+Section: misc
+Priority: optional
+Maintainer: Martin Neubauer <none@easy-vdr.de>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.5
+
+Package: easyvdr-installer
+Architecture: all
+Depends: ${misc:Depends}
+Description: Pre-Installation Package for easyVDR

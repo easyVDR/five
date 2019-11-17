@@ -1,0 +1,16 @@
+<markup><!--
+Netzwerks-Warnung
+--><span fgcolor="red" size="30000">Warnung!!!</span><!--
+--><big><span fgcolor="white">
+
+Es wurde keine Internetverbindung erkannt!
+Um die korrekte Funktionsweise von easyVDR zu gewährleisten,
+empfehlen wir dringend im folgenden  Netzwerkdialog 
+eine funktionierende Internetverbindung 
+manuell einzurichten.
+
+Weitere Informationen finden Sie unter:
+
+http://wiki.ubuntuusers.de/NetworkManager
+</span></big><!--
+--> </markup>

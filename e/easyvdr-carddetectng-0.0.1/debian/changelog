@@ -1,0 +1,41 @@
+easyvdr-carddetectng (0.0.1-1easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:06:59 +0100
+
+easyvdr-carddetectng (0.0.1-1easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 17:52:45 +0100
+
+easyvdr-carddetectng (0.0.1-1easyVDR1~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 02:45:49 +0100
+
+easyvdr-carddetectng (0.0.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:13:17 +0100
+
+easyvdr-carddetectng (0.0.1-1easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 13:39:00 +0200
+
+easyvdr-carddetectng (0.0.1-1easyVDR0.2) oneiric; urgency=high
+
+  * changed binaryname
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 03 Mar 2012 09:38:33 +0100
+
+easyvdr-carddetectng (0.0.1-1easyVDR0.1) oneiric; urgency=high
+
+  * new upstream Release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 26 Jan 2012 15:55:56 +0100

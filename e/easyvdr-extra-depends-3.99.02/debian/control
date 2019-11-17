@@ -1,0 +1,11 @@
+Source: easyvdr-extra-depends
+Section: misc
+Priority: optional
+Maintainer: Martin Neubauer <none@easy-vdr.de>
+Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 7)
+
+Package: easyvdr-extra-depends
+Architecture: any
+Depends: ${misc:Depends}, ${easyvdr-extra-depends}
+Description: Extra-depends Packages for easyVDR

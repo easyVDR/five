@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "configure" ]; then
+
+    chmod -R 0755  /usr/share/vdr-vch-helper/script
+    chmod 0755  /usr/share/vdr-vch-helper/vch.sh	
+    chown -R vdr:vdr /usr/share/vdr-vch-helper
+    /bin/touch  /media/easyvdr01/vch-download/.do_not_delete
+	chown -R vdr:vdr  /media/easyvdr01/vch-download
+
+fi
+
+#DEBHELPER#
+

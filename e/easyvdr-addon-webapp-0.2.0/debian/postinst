@@ -1,0 +1,12 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "configure" ]; then
+    cd /tmp
+    tar xfv webapp.tar.gz -C /
+    chmod -R a+x /var/lib/vdr/plugins/restfulapi/webapp/streamdev/externremux.sh
+    chown -R vdr:vdr /var/lib/vdr/plugins/restfulapi/webapp
+
+fi
+#DEBHELPER#
+

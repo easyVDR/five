@@ -1,0 +1,16 @@
+<markup><!--
+Sprache / Language
+--><span fgcolor="red" size="30000">Sprache / Language</span><!--
+--><big><span fgcolor="white">
+
+
+Sprache für die Installation wählen.
+
+-Deutsch (Keyboard: deutsch) 
+
+Choose the Language for the Installer
+
+-Englisch: more questions
+
+</span></big><!--
+--> </markup>

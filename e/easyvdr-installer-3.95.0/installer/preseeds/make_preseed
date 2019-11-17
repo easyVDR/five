@@ -1,0 +1,40 @@
+#!/bin/bash
+########################################
+# make dynamic-preseed
+#
+# by Sinai
+# V 0.0.1 - 2014-04-29
+########################################
+
+
+
+# Main #
+########
+cd /usr/share/easyvdr/installer/preseeds/
+
+case $1 in
+
+	stable)
+		cat 01_header 05_stable > ../easyvdr.seed
+	;;
+	testing)
+		cat 05_stable 07_testing >> ../easyvdr.seed
+	;;
+	unstable)
+		cat 05_stable 07_testing 09_unstable >> ../easyvdr.seed
+	;;
+	alternative)
+		cat 01_header_alternative 05_stable > ../easyvdr.seed
+	;;
+	de)
+		cat 02_de  >> ../easyvdr.seed
+	;;
+
+	autopart)
+		cat 11_autopart >> ../easyvdr.seed
+	;;
+	*)
+		echo "Error!!!"
+	;;
+
+esac

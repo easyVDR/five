@@ -1,0 +1,198 @@
+easyvdr-dev (0.9.0-0easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:08:00 +0100
+
+easyvdr-dev (0.9.0-0easyVDR4~bionic) bionic; urgency=high
+
+  * remove depends libesd0-dev
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Jul 2018 13:28:14 +0200
+
+easyvdr-dev (0.9.0-0easyVDR3~bionic) bionic; urgency=high
+
+  * bionic version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 12 Feb 2018 22:41:01 +0100
+
+easyvdr-dev (0.9.0-0easyVDR0~zesty) zesty; urgency=medium
+
+  * zesty version, changed ffmpeg depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 13:13:32 +0100
+
+easyvdr-dev (0.3.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * remove some depends conflict new ffmpeg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Dec 2015 19:51:11 +0100
+
+easyvdr-dev (0.3.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * changed depends for new ffmpeg
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 Dec 2015 20:37:56 +0100
+
+easyvdr-dev (0.3.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * changed depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 May 2014 13:14:15 +0200
+
+easyvdr-dev (0.2.0-2easyVDR7~trusty) trusty; urgency=high
+
+  * debugged .gitconfig, userrights on files and pbuilder-debmirror
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 13 Nov 2013 19:25:32 +0100
+
+easyvdr-dev (0.2.0-2easyVDR6~trusty) trusty; urgency=high
+
+  * adopted Git-config to Git 2.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 Nov 2013 13:41:07 +0100
+
+easyvdr-dev (0.2.0-2easyVDR5~trusty) trusty; urgency=high
+
+  * debugged postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Nov 2013 11:59:34 +0100
+
+easyvdr-dev (0.2.0-2easyVDR4~trusty) trusty; urgency=high
+
+  * removed depends libglui-dev, libpostproc-dev
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Nov 2013 18:51:47 +0100
+
+easyvdr-dev (0.2.0-2easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:14:09 +0100
+
+easyvdr-dev (0.2.0-2easyVDR1~raring) raring; urgency=high
+
+  * new postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 Aug 2013 12:04:38 +0200
+
+easyvdr-dev (0.2.0-2easyVDR0~raring) raring; urgency=emergency
+
+  * rebuild for raring
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 21 Mar 2013 09:04:46 +0100
+
+easyvdr-dev (0.2.0-1easyVDR1.0) oneiric; urgency=high
+
+  * new .dput.cf for all PPAs added
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 Jun 2012 12:04:01 +0200
+
+easyvdr-dev (0.0.1-1easyVDR3.3) oneiric; urgency=low
+
+  * changed depends to new xinelib
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 17 Feb 2012 11:29:09 +0100
+
+easyvdr-dev (0.0.1-1easyVDR3.2) oneiric; urgency=low
+
+  * added libproc-processtable-perl
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 Feb 2012 21:54:11 +0100
+
+easyvdr-dev (0.0.1-1easyVDR3.1) oneiric; urgency=low
+
+  * debugged depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 18 Sep 2011 13:27:41 +0200
+
+easyvdr-dev (0.0.1-1easyVDR3.0) oneiric; urgency=low
+
+  * changed entry for oneiric-pbuilder
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 09 Sep 2011 21:16:49 +0200
+
+easyvdr-dev (0.0.1-1easyVDR2.9) oneiric; urgency=high
+
+  * debugged postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Aug 2011 15:21:04 +0200
+
+easyvdr-dev (0.0.1-1easyVDR2.8) oneiric; urgency=high
+
+  * added dialog
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Aug 2011 14:46:48 +0200
+
+easyvdr-dev (0.0.1-1easyVDR2.7) oneiric; urgency=high
+
+  * debugged depency
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Aug 2011 13:39:53 +0200
+
+easyvdr-dev (0.0.1-1easyVDR2.6) oneiric; urgency=high
+
+  * adopted for oneiric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Aug 2011 13:14:27 +0200
+
+easyvdr-dev (0.0.1-1easyVDR2.5) lucid; urgency=low
+
+  * removing old configs for new configuration
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Jan 2011 22:10:08 +0100
+
+easyvdr-dev (0.0.1-1easyVDR2.4) lucid; urgency=low
+
+  * syntax eror in postinstall
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 22 Dec 2010 09:46:31 +0100
+
+easyvdr-dev (0.0.1-1easyVDR2.3) lucid; urgency=low
+
+  * Adding our testing-PPA to pbuilder, adding stable and unstable to .dput.cf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 21 Dec 2010 08:52:31 +0100
+
+easyvdr-dev (0.0.1-1easyVDR2.2) lucid; urgency=low
+
+  * Script to configure pbuilder
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 11 Dec 2010 22:29:33 +0100
+
+easyvdr-dev (0.0.1-1easyVDR2.1) lucid; urgency=low
+
+  * pbuilder added
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 11 Dec 2010 21:45:19 +0100
+
+easyvdr-dev (0.0.1-1easyVDR2.0) lucid; urgency=low
+
+  * Configscript for Git and PPA
+
+ -- easyVDR User <easyvdr-dev@easy-vdr.de>  Tue, 07 Dec 2010 15:47:56 +0100
+
+easyvdr-dev (0.0.1-1easyVDR1.9) lucid; urgency=low
+
+  * quilt added
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 27 Nov 2010 08:39:27 +0100
+
+easyvdr-dev (0.0.1-1easyVDR1.8) lucid; urgency=low
+
+  * no changes - rebuild because Packager left easyVDR-Team
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Nov 2010 13:50:45 +0100
+
+easyvdr-dev (0.0.1-1easyVDR1.7) lucid; urgency=low
+
+  * build for easyVDR PPA.
+
+ -- Karl-Heinz Winzer <khwinzer@gmx.de>  Tue, 10 Aug 2010 19:35:33 +0200
+
+easyvdr-dev (0.0.1-1easyVDR1) lucid; urgency=low
+
+  * build
+
+ -- Uwe Kiehl <uwe@easy-vdr.de>  Sun, 08 Aug 2010 10:35:49 +0200
+

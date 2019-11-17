@@ -1,0 +1,14 @@
+<markup><!--
+Distro Status
+--><span fgcolor="red" size="30000">Choose Distro Status wählen</span><!--
+--><big><span fgcolor="white">
+
+What do you want ?
+
+Stable = Standard
+Testing =
+Un...
+
+
+</span></big><!--
+--> </markup>

@@ -1,0 +1,16 @@
+<markup><!--
+Network warning
+--><span fgcolor="red" size="50000">Warning!!!</span><!--
+--><big><span fgcolor="white">
+
+No Internet connection is detected in your system!
+To ensure the correct operation of easyvdr,
+we strongly recommend select in the following network
+dialog a manually set up Internet connection.
+
+
+For more information, see:
+
+http://wiki.ubuntuusers.de/NetworkManager
+</span></big><!--
+--> </markup>

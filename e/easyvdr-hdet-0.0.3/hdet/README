@@ -1,0 +1,440 @@
+This is hdet, a small hardware detection utility.
+This source code is GPL2 licensed, see file COPYING.
+
+a) building hdet
+  software requirements:
+      - kernel-2.6 with sysfs
+
+  for compling hdet use the three-lines-install.. ;-).
+  hdet is installed by default in prefix /usr.
+
+  ./configure --prefix=/usr
+  make
+  make install
+
+    NOTE: You may change the default install location by changing the prefix for configure,
+          hdet is installed in $PREFIX/bin, it's database in $PREFIX/share/hdet.
+          Uninstalling is done by 'make uninstall'.
+
+    NOTE: database and compiled binary _must_ fit together. hdets database is supplied as a binary blob,
+          which format may change from version to version without notice, just depending on how its to be
+          used easiest in hdet.
+
+  installing is done by 'make install'.
+
+
+b) using hdet
+
+  b.1) basic usage
+  ------------------------------------------------------------------------------------------------
+  Just type 'hdet'. It should output something like that, the hardware is numbered, starting by 1.
+  for each item several properties are stated. For some hardware, some of the properties may not
+  be listed.
+
+  -if used without options, hdet lists PCI, USB and INPUT devices. For those which are known to
+   hdet (identified by its database), it also outputs additional properties.
+   The return value of hdet is the number of known items:
+
+      -bash-3.00# ./hdet
+      PCI 0000:00:00.0 -> PCI Host Bridge device 8086:2E20 1043:82D3
+      (...)
+      PCI 0000:01:00.0 -> PCI VGA Display controller 10DE:0A20 0000:0000
+                      name                NVIDIA GeForce GT 220
+                      caps                VDPAU_LEVEL_C
+                      driverpackage       NVIDIA-Linux
+                      drivers             nvidia
+                      plugin              xineliboutput,xine
+      (...)
+      PCI 0000:05:00.0 -> PCI Other Multimedia controller 1131:7146 1894:0020
+                      name                KNC1 DVB-C
+                      caps                DVBC
+                      driverpackage       media_build.git
+                      drivers             budget-av
+                      plugin
+      (...)
+      USB 8-5          -> USB unknown Defined at Interface level 0CCD:0097
+                      name                Terratec Cinergy T Stick RC
+                      caps                DVBT
+                      driverpackage       media_build.git
+                      drivers             dvb-usb-af9015
+                      plugin
+      (...)
+      INP event5       -> NEWMI USB2.0 DVB-T TV Stick
+      INP event6       -> NEWMI USB2.0 DVB-T TV Stick
+      INP event7       -> IR-receiver inside an USB DVB receiver
+      INP event8       -> IR-receiver inside an USB DVB receiver
+
+    
+
+  b.2) now the real stuff..
+  ------------------------------------------------------------------------------------------------
+    hdet provides a bunch of command line switches, which can be helpful. Some examples:
+
+
+    i) -v --verbose
+
+    In verbose mode, hdet lists all hardware found, regardless wether the are in database or not.
+    For hardware, which is known to database, *additional* properties are listed.
+
+      -bash-3.00# ./hdet -v
+      PCI 0000:00:00.0 -> PCI Host Bridge device 8086:2E20 1043:82D3
+                      class_id            060000 Bridge device (Host)
+                      kernelname          0000:00:00.0
+                      subsystem           pci
+                      phys_path           (NULL)
+                      driver              (NULL)
+                      driver_module       (NULL)
+                      phys_path           (NULL)
+                      domain              0000
+                      busnum              00
+                      slot                00
+                      function            0
+                      vendor_id           8086
+                      device_id           2e20
+                      subdevice_id        82d3
+                      subvendor_id        1043
+      (...)
+      PCI 0000:01:00.0 -> PCI VGA Display controller 10DE:0A20 0000:0000
+                      class_id            030000 Display controller (VGA)
+                      kernelname          0000:01:00.0
+                      subsystem           pci
+                      phys_path           (NULL)
+                      driver              nvidia
+                      driver_module       nvidia
+                      phys_path           (NULL)
+                      domain              0000
+                      busnum              01
+                      slot                00
+                      function            0
+                      vendor_id           10de
+                      device_id           0a20
+                      subdevice_id        0000
+                      subvendor_id        0000
+                      irq                 16
+                      name                NVIDIA GeForce GT 220
+                      caps                VDPAU_LEVEL_C
+                      driverpackage       NVIDIA-Linux
+                      drivers             nvidia
+                      plugin              xineliboutput,xine
+      (...)
+      PCI 0000:05:00.0 -> PCI Other Multimedia controller 1131:7146 1894:0020
+                      class_id            048000 Multimedia controller (Other)
+                      kernelname          0000:05:00.0
+                      subsystem           pci
+                      phys_path           (NULL)
+                      driver              (NULL)
+                      driver_module       (NULL)
+                      phys_path           (NULL)
+                      domain              0000
+                      busnum              05
+                      slot                00
+                      function            0
+                      vendor_id           1131
+                      device_id           7146
+                      subdevice_id        0020
+                      subvendor_id        1894
+                      irq                 16
+                      name                KNC1 DVB-C
+                      caps                DVBC
+                      driverpackage       media_build.git
+                      drivers             budget-av
+                      plugin
+       (...)
+
+      
+        Some of the properties listed are special, they are related to hdet's internal database and only listed for devices
+        which hdet found in it's database. These are..
+        
+        - name : some human readable identifier for a hardware. Contains ASCII only, but no ';' and ','.
+        
+        - caps : the capabilities of the hardware. A comma separated list of these IDs
+          NOTE: this list might be void, in which case the hardware has 'no features'. If the hardware isn't known
+                          to database, caps is not printed to stdout.
+        
+        - driverpackage : the driver package, which currently supports the hardware. A comma separated list, see option -p
+        
+        - drivers : a comma separated list of driver names as to be loaded via 'modprobe driver'
+        
+        - plugin  : the VDR plugin, which supports this kind of hardware, see option -P.
+        
+        - comment : an optional comment which may be there or not.
+
+
+    ii) -q, --quite
+
+      In scripts, sometimes only the return value is of interest, and the tool shouldn't output anything.
+
+      -bash-3.00# ./hdet -q 
+      -bash-3.00# echo $?
+      7
+      
+    iii) -C --config
+       Pass path to config file.
+
+       hdet -C /usr/share/hdet/database.bin
+      
+    iv) -b --bus
+       Scan only bus <BUS>
+
+      'BUS' is one of PCI, USB, INPUT
+      
+
+              -bash-3.00# ./hdet -b usb
+              USB 2-1          -> USB unknown Defined at Interface level 187F:0010
+                              name                Siano Stellar Digital Receiver
+                              caps                DVBT
+                              driverpackage       media_build.git
+                              drivers             smsusb
+                              plugin
+              USB 8-5          -> USB unknown Defined at Interface level 0CCD:0097
+                              name                Terratec Cinergy T Stick RC
+                              caps                DVBT
+                              driverpackage       media_build.git
+                              drivers             dvb-usb-af9015
+                              plugin
+              USB 8-6          -> USB unknown Defined at Interface level 0CCD:0097
+                              name                Terratec Cinergy T Stick RC
+                              caps                DVBT
+                              driverpackage       media_build.git
+                              drivers             dvb-usb-af9015
+                              plugin
+
+
+
+         NOTE: the return code of hdet is the number of devices found.
+               -bash-3.00# echo "hdet found $? devices."
+               hdet found 3 devices.
+
+
+    v) -c <CAPABILITY> --capability <CAPABILITY>"
+       List only devices with given capability. So far defined are the following capabilies:
+
+               ANALOGCAPTURE     (hardware supports analog video inputs and/or analog tuner)
+               MPEGDEC           (hardware supports conversion MPEG -> video output)
+               MPEGENC           (hardware supports conversion analog video -> MPEG)
+               DVBT              (European digital terrestrial TV)
+               DVBC              (European digital cable TV, also known as QAM annex AC)
+               DVBS              (European digital satellite TV)
+               DVBS2             (European digital satellite TV with newer DVB standard, includes DVBS support)
+               ATSCVSB           (North-American digital terrestrial TV)
+               ATSCQAM           (North-American cable terrestrial TV, also known as 'Clear QAM' or QAM annex B)
+               DMBT
+               FFSD              (old style full-featured DVB card with hardware MPEG decoder and video output, Philips SAA7110 based)
+               FFHD              (newer full-featured DVB card with hardware MPEG decoder and video output, Philips SAA7160 based)
+               ISDBT
+               ISDBS
+               UVD               (ATI/AMD Unified Video Decoder / previously called Universal Video Decoder)
+               UVD2              (ATI/AMD Unified Video Decoder / previously called Universal Video Decoder, level 2)
+               UVD2.2            (ATI/AMD Unified Video Decoder / previously called Universal Video Decoder, level 2.2)
+               UVD3              (ATI/AMD Unified Video Decoder / previously called Universal Video Decoder, level 3)
+               VDPAU_LEVEL_A     (NVIDIA PureVideo based Video Decode and Presentation API for Unix, feature set A)
+               VDPAU_LEVEL_B     (NVIDIA PureVideo based Video Decode and Presentation API for Unix, feature set B)
+               VDPAU_LEVEL_B1    (NVIDIA PureVideo based Video Decode and Presentation API for Unix, feature set B1)
+               VDPAU_LEVEL_C     (NVIDIA PureVideo based Video Decode and Presentation API for Unix, feature set C)
+               VDPAU_LEVEL_D     (NVIDIA PureVideo based Video Decode and Presentation API for Unix, feature set D)
+               SOUND             (a sound card)
+
+
+       hdet -c VDPAU_LEVEL_A
+
+       lists only devices, which are 'VDPAU level A' capable. In this case nothing is returned, since my card is 'VDPAU_LEVEL_C'.
+
+    vi) -s --strlen
+       Compare only the first N characters for search pattern.
+
+       Example: 'hdet -c VDPAU -s 5' list all VDPAU capable devices.
+
+           -bash-3.00# ./hdet -c VDPAU -s 5
+           PCI 0000:01:00.0 -> PCI VGA Display controller 10DE:0A20 0000:0000
+                           name                NVIDIA GeForce GT 220
+                           caps                VDPAU_LEVEL_C
+                           driverpackage       NVIDIA-Linux
+                           drivers             nvidia
+                           plugin              xineliboutput,xine
+
+
+    vii) -d <DRIVER> --driver <DRIVER>
+       List devices supported by DRIVER.
+
+           -bash-3.00# ./hdet -d ivtvfb
+           PCI 0000:05:02.0 -> PCI Video Multimedia controller 4444:0803 0070:4000
+                           name                Hauppauge WinTV PVR-350
+                           caps                ANALOGCAPTURE,MPEGENC,MPEGDEC
+                           driverpackage       media_build.git
+                           drivers             ivtv,ivtvfb
+                           plugin              pvrinput,pvr350
+
+      
+    viii) -p <PACKAGE> --package <PACKAGE>
+       List devices supported by PACKAGE.
+       So far defined are:
+
+               ATI Catalyst
+               xorg
+               NVIDIA-legacy07x
+               NVIDIA-legacy09x
+               NVIDIA-legacy1xx
+               NVIDIA-Linux
+               http://dxr3.sourceforge.net/
+               http://escape-edv.de/endriss/dvb/fix_eeprom.c
+               http://linuxtv.org/hg/~endriss/ngene-octopus-test
+               http://mercurial.intuxication.org/hg/s2-liplianin
+               http://powarman.dyndns.org/hg
+               http://sourceforge.net/projects/em84xx/develop
+               media_build.git
+               sundtek.de
+               svn://reelbox.org
+
+           -bash-3.00# ./hdet -p media_build.git
+           PCI 0000:05:00.0 -> PCI Other Multimedia controller 1131:7146 1894:0020
+                           name                KNC1 DVB-C
+                           caps                DVBC
+                           driverpackage       media_build.git
+                           drivers             budget-av
+                           plugin
+           PCI 0000:05:01.0 -> PCI Other Multimedia controller 1131:7146 153B:1156
+                           name                Terratec Cinergy 1200 DVB-C
+                           caps                DVBC
+                           driverpackage       media_build.git
+                           drivers             budget-av
+                           plugin
+           PCI 0000:05:02.0 -> PCI Video Multimedia controller 4444:0803 0070:4000
+                name                Hauppauge WinTV PVR-350
+                caps                ANALOGCAPTURE,MPEGENC,MPEGDEC
+                driverpackage       media_build.git
+                drivers             ivtv,ivtvfb
+                plugin              pvrinput,pvr350
+           USB 2-1          -> USB unknown Defined at Interface level 187F:0010
+                           name                Siano Stellar Digital Receiver
+                           caps                DVBT
+                           driverpackage       media_build.git
+                           drivers             smsusb
+                           plugin
+           USB 8-5          -> USB unknown Defined at Interface level 0CCD:0097
+                name                Terratec Cinergy T Stick RC
+                caps                DVBT
+                driverpackage       media_build.git
+                drivers             dvb-usb-af9015
+                plugin
+           USB 8-6          -> USB unknown Defined at Interface level 0CCD:0097
+                           name                Terratec Cinergy T Stick RC
+                           caps                DVBT
+                           driverpackage       media_build.git
+                           drivers             dvb-usb-af9015
+                           plugin
+           
+
+    ix) -P <PLUGIN> --plugin <PLUGIN>
+       List devices supported by PLUGIN. One of these IDs:
+
+       dvbhddevice, dvbsddevice, pvrinput, pvr350, dxr3, em8400, reelbox, xineliboutput, xine
+
+
+      -bash-3.00# ./hdet -P dvbhddevice
+
+      (in this case no hardware was found, which is supported by 'dvbhddevice'.)
+
+    x) -t <TYPE>, --type <TYPE>
+
+       matches a type. One of the following:
+
+       AUDIO (sound cards)
+       MEDIA (Video and DVB adapters)
+       VGA   (VGA adapters)
+
+    xi) -l, --loaddriver, -u, --unloaddriver
+
+      Load or unload the drivers for hardware matching to pattern.
+
+           -bash-3.00# ./hdet -l -t MEDIA
+           loading budget-av
+           PCI 0000:05:00.0 -> PCI Other Multimedia controller 1131:7146 1894:0020
+                           name                KNC1 DVB-C
+                           caps                DVBC
+                           driverpackage       media_build.git
+                           drivers             budget-av
+                           plugin
+           loading budget-av
+           PCI 0000:05:01.0 -> PCI Other Multimedia controller 1131:7146 153B:1156
+                           name                Terratec Cinergy 1200 DVB-C
+                           caps                DVBC
+                           driverpackage       media_build.git
+                           drivers             budget-av
+                           plugin
+           loading ivtv
+           loading ivtvfb
+           PCI 0000:05:02.0 -> PCI Video Multimedia controller 4444:0803 0070:4000
+                           name                Hauppauge WinTV PVR-350
+                           caps                ANALOGCAPTURE,MPEGENC,MPEGDEC
+                           driverpackage       media_build.git
+                           drivers             ivtv
+                           plugin              pvrinput,pvr350
+           loading smsusb
+           USB 2-1          -> USB unknown Defined at Interface level 187F:0010
+                           name                Siano Stellar Digital Receiver
+                           caps                DVBT
+                           driverpackage       media_build.git
+                           drivers             smsusb
+                           plugin
+           loading dvb-usb-af9015
+           USB 8-5          -> USB unknown Defined at Interface level 0CCD:0097
+                           name                Terratec Cinergy T Stick RC
+                           caps                DVBT
+                           driverpackage       media_build.git
+                           drivers             dvb-usb-af9015
+                           plugin
+           loading dvb-usb-af9015
+           USB 8-6          -> USB unknown Defined at Interface level 0CCD:0097
+                           name                Terratec Cinergy T Stick RC
+                           caps                DVBT
+                           driverpackage       media_build.git
+                           drivers             dvb-usb-af9015
+                           plugin
+
+
+    xii) -T, --showtree
+
+      show hardware as device tree. Useful for debugging.
+
+           -bash-3.00# ./hdet -T
+           /devices
+              |
+              /platform
+                 |
+                 /pcspkr
+                 |
+                 /microcode
+                 |
+                 /serial8250
+                    |
+                    /tty
+                       |
+                       /ttyS1
+                       |
+                       /ttyS2
+                       |
+                       /ttyS3
+                 |
+                 /i8042
+                    |
+                    /serio0
+                       |
+                       /id
+                       |
+                       /input
+                          |
+                          /input3
+                             |
+                             /id
+                             |
+                             /event3
+           (...)
+
+
+    xiii) -h, --help
+      show help text.
+
+have phun,
+wirbel
+           
+           

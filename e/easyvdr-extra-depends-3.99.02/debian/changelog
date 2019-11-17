@@ -1,0 +1,77 @@
+easyvdr-extra-depends (3.99.02-0easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:08:18 +0100
+
+easyvdr-extra-depends (3.99.02-0easyVDR0~bionic) bionic; urgency=medium
+
+  * stm32-ir
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 27 Apr 2018 16:05:51 +0200
+
+easyvdr-extra-depends (3.99.01-2easyVDR1~bionic) bionic; urgency=high
+
+  * fix depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 06 Jan 2018 00:02:22 +0100
+
+easyvdr-extra-depends (3.99.01-2easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 26 Nov 2017 14:41:39 +0100
+
+easyvdr-extra-depends (3.00.02-1easyVDR0~trusty) trusty; urgency=high
+
+  * added depends gnome-icon-theme-full gnome-icon-theme-extras
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 01 Oct 2017 21:54:49 +0200
+
+easyvdr-extra-depends (3.00.02-0easyVDR0~trusty) trusty; urgency=medium
+
+  * more plugs
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Nov 2016 21:43:08 +0100
+
+easyvdr-extra-depends (3.00.01-0easyVDR0~trusty) trusty; urgency=medium
+
+  * extrecmenu removed
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 Sep 2016 10:52:32 +0200
+
+easyvdr-extra-depends (3.00.00-1easyVDR0~trusty) trusty; urgency=high
+
+  * libsdl2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Feb 2016 10:34:34 +0100
+
+easyvdr-extra-depends (00.05-0easyVDR0~trusty) trusty; urgency=medium
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Jul 2015 22:08:05 +0200
+
+easyvdr-extra-depends (00.04-0easyVDR1~trusty) trusty; urgency=medium
+
+  *  atric-usb-driver removed
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 May 2015 10:54:23 +0200
+
+easyvdr-extra-depends (00.03-0easyVDR1~trusty) trusty; urgency=medium
+
+  * atric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Dec 2014 21:30:15 +0100
+
+easyvdr-extra-depends (00.02-0easyVDR0~trusty) trusty; urgency=high
+
+  * vlc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 11 Dec 2014 08:28:03 +0100
+
+easyvdr-extra-depends (00.01-0easyVDR3~trusty) trusty; urgency=high
+
+  * initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 03 Dec 2014 08:42:04 +0100
