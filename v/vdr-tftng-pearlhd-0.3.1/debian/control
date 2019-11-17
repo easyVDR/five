@@ -1,0 +1,19 @@
+Source: vdr-tftng-pearlhd
+Section: misc
+Priority: extra
+Maintainer: Gerald Dachs <gda@dachsweb.de>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.2
+
+Package: vdr-tftng-pearlhd
+Architecture: all
+Depends: vdr-plugin-graphtftng (>= 0.4.0)
+Description: PearlHD theme for the GraphTFTng plugin
+ This is the PearlHD theme for the GraphTFTng plugin.
+ 
+Package: vdr-tft-pearlhd
+Depends: vdr-tftng-pearlhd, ${misc:Depends}
+Architecture: all
+Section: oldlibs
+Description: transitional dummy package
+  This is a transitional dummy package. It can safely be removed.

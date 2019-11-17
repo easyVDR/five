@@ -1,0 +1,30 @@
+Index: vdr-tft-pearlhd-0.3.1a/PearlHD.theme
+===================================================================
+--- vdr-tft-pearlhd-0.3.1a.orig/PearlHD.theme	2012-09-27 21:36:48.299560357 +0200
++++ vdr-tft-pearlhd-0.3.1a/PearlHD.theme	2012-09-27 21:39:33.732380692 +0200
+@@ -56,13 +56,12 @@
+ 	Image condition={actRecordingCount} > 0,x=690,y=100,path=symbols/recOn.png;
+ 	Image condition={actRecordingCount} < 1,x=690,y=100,path=symbols/recOff.png;
+ 
+-	
+-[Volume] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+-	Volumebar size=14,red=57, green=120, blue=159,x=75,y=150,width=650,height=150,bg_transparent=128,transparent=0,permanent=no,delay=4;
+-	Volumebar text=percent,red=57, green=120, blue=159,size=27,x=100,y=200,width=100,height=100,bg_transparent=0,transparent=0,permanent=no,delay=4;
+-	Volumebar x=100,y=170,width=600,height=40,switch=yes,red=57, green=120, blue=159,bg_red=160, bg_green=196, bg_blue=218,permanent=no,delay=4;
+-	VolumeMuteSymbol x=478,y=268,pathON=symbols/mute_on_avp.png,pathOFF=symbols/mute_off_avp.png,permanent=no,delay=4;
+ 
++[Volume] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
++	//Volumebar size=14,red=57, green=120, blue=159,x=50,y=562,width=700,height=48,bg_transparent=128,transparent=0,permanent=no,delay=4;
++	Volumebar text=percent,red=57, green=120, blue=159,size=27,x=100,y=450,width=100,height=100,bg_transparent=0,transparent=0,permanent=no,delay=3;
++	Volumebar x=50,y=550,width=700,height=40,switch=yes,red=57, green=120, blue=159,bg_red=160, bg_green=196, bg_blue=218,permanent=no,delay=3;
++	VolumeMuteSymbol x=0,y=550,pathON=symbols/mute_on_avp.png,pathOFF=symbols/mute_off_avp.png,permanent=no,delay=4;
+ 	
+ [OSD-Messages] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 	//Message x=135,y=173,width=530,height=280,size=44,lines=4,dots=yes,red=0,green=0,blue=255,bg_x=0,bg_y=0,path=backgrounds/bg-message.jpg,delay=5;
+@@ -1117,4 +1116,4 @@
+ 	
+ 	
+ 	MenuButtonBackgroundYellow x=403,y=555,width=192,height=43,pathON=menu/button-yellow.png,on_click=Yellow;
+-	MenuButtonYellow x=406,y=560,width=179,height=43,red=0,green=0,blue=0,transparent=255,align=center;
+\ No newline at end of file
++	MenuButtonYellow x=406,y=560,width=179,height=43,red=0,green=0,blue=0,transparent=255,align=center;

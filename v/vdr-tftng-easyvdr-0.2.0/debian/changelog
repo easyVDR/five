@@ -1,0 +1,83 @@
+vdr-tftng-easyvdr (0.2.0-0easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:34:52 +0100
+
+vdr-tftng-easyvdr (0.2.0-0easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 23:05:36 +0100
+
+vdr-tftng-easyvdr (0.2.0-0easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:50:40 +0100
+
+vdr-tftng-easyvdr (0.2.0-0easyVDR3~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 26 Jun 2017 17:01:34 +0200
+
+vdr-tftng-easyvdr (0.2.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:21:43 +0200
+
+vdr-tftng-easyvdr (0.2.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Sep 2016 01:47:57 +0200
+
+vdr-tftng-easyvdr (0.2.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new easyvdr-logo without version number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 04 Feb 2016 20:28:19 +0100
+
+vdr-tftng-easyvdr (0.1.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 23:00:57 +0100
+
+vdr-tftng-easyvdr (0.1.1-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 05:01:27 +0100
+
+vdr-tftng-easyvdr (0.1.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Apr 2014 01:54:02 +0200
+
+vdr-tftng-easyvdr (0.1.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new easyvdr-logo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 06 Jan 2014 09:10:56 +0100
+
+vdr-tftng-easyvdr (0.1.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * removed Channel-Logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 Nov 2013 09:54:02 +0100
+
+vdr-tftng-easyvdr (0.1.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * splitted , start/end logo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 29 Nov 2013 14:23:47 +0100
+
+vdr-tft-easy (0.0.1-0easyVDR0~raring) raring; urgency=high
+
+  * initial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 01 Jun 2013 13:35:09 +0200

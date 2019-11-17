@@ -1,0 +1,1877 @@
+//***************************************************************************
+// Theme - Informationen:
+// 
+// Alien vs. Predator Theme made by data
+// Based on DeepBlue Theme from horchi
+// and Buttons from poetter Theme
+// Used graphTFT Font and graphTFT >= 0.3.1
+//
+// Dieses Theme ist optimiert für Displays mit 800x600 Auflösung
+//
+//***************************************************************************
+
+//***************************************************************************
+//***************************************************************************
+// Wird die folgende #define Zeile einkommentiert, erhält man 
+// die Ausgabe von mouse Buttons (z.B. für Touch-Displays)
+// (Einkommentieren durch entfernen der // vor #define...)
+// Die benutzerbezogenen Maus-Icons sind wie folgt in der keymacros.conf vorkonfiguriert
+// User1     @osdteletext
+// User2     @mp3
+// User3     @mplayer
+// User4     @dvd
+// User5     @burn
+// User6     @osdpip
+// User8     @trayopen
+// User9     @mailbox
+//
+// Zur Fehlersuche kann ein Liniennetz bei der Kalibrierung hilfreich sein.
+// Falls dies notwendig wird, ist CHECKGRID einzukommentieren.
+//***************************************************************************
+#define MOUSE_BUTTONS
+//#define CHECKGRID
+
+
+//***************************************************************************
+// Auswahl der Lautstärke-Anzeige
+// Wird die folgende #define Zeile einkommentiert, erhält man eine einfacher
+// gestaltete Laustärkeanzeige
+// (Einkommentieren durch entfernen von // vor #define...)
+//***************************************************************************
+//#define VOL_STYLE_BLUE
+
+//***************************************************************************
+// Auswahl der Message Anzeige
+// Wird die folgende #define Zeile einkommentiert, erhält man eine einfacher
+// gestaltete einzeilige Anzeige der OSD Messages ohne Grafik
+// (Einkommentieren durch entfernen von // vor #define...)
+//***************************************************************************
+//#define MESSAGES_MIN
+
+
+//***************************************************************************
+// mp3/music Plugin Anzeigeauswahl
+//
+// Entferne die Doppelslashes bei der #define Zeile für die gewünschte Varinate 
+// zur Anzeige der mp3/music Plugin Informationen
+// (immer nur eine Ziele einkommentieren)
+// MP3_PLUGIN - Einfache Ausgabe für das mp3 und music Plugin
+// MUSIC_PLUGIN - Erweiterete Informationen für das music Plugin ab Version 0.4.0 in AvP Style
+// SMALL_MUSIC_PLUGIN - Erweiterete aber weniger Informationen für das music Plugin ab Version 0.4.0 in AvP Style
+// MUSIC_PLUGIN_MORONE_STYLE - Erweiterete Informationen für das music Plugin ab Version 0.4.0 in Morone Style
+//***************************************************************************
+//#define MP3_PLUGIN
+#define MUSIC_PLUGIN
+//#define SMALL_MUSIC_PLUGIN
+//#define MUSIC_PLUGIN_MORONE_STYLE
+
+
+//***************************************************************************
+// Beginn der Theme-Beschreibung
+//***************************************************************************
+//***************************************************************************
+//***************************************************************************
+
+//***************************************************************************
+// Themeweit nutzbare Variablen einrichten
+//***************************************************************************
+//***************************************************************************
+// Informationen zum Theme und der benötigten GraphTFT version
+//***************************************************************************
+var varThemeName     = "Alien vs. Predator"; // Name des Themes
+var varThemeVersion  = "0.3.2f";// Version des Themes
+var varSyntaxVersion = "0.3.4";//Benötigte graphTFT-Engine Version
+
+//***************************************************************************
+// Suchpfade für die EPG Images
+//***************************************************************************
+var varEPGimagesPath_1 = "/ramdisk/epgimages/";
+var varEPGimagesPath_2 = "/media/epgimages/";
+var varEPGimagesPath_3 = "/video0/epgimages/";
+var varImagesPath_1 = "/video0/images/";
+var EPGimageSuffix = "jpg";
+
+//***************************************************************************
+// Initialisierung und Default Vorbelegeung für Mouse Variablen
+//***************************************************************************
+var varSwitchMouseNumber = 0;//Normaler Zehnerblock
+var varHideColorButtons = 0; //Farbtasten anzeigen
+var varHidePrevChannel = 0;  //PrevChannel Taste anzeigen
+var varTouchMenu = 0;  //Vorbelegung für Mausmenüanzeige
+
+//***************************************************************************
+// Abstand von der Mitte des Kalibartionscursors zum oberen und linken Bildschirmrand
+//***************************************************************************
+var calibrationFrameOffset = 50;
+
+
+
+//***************************************************************************
+// Allgemeine Einstellungen
+//***************************************************************************
+[Theme]
+
+Theme name={varThemeName} {varThemeVersion},dir=avp,
+	fontPath=./fonts:../../fonts,width=800,height=600,
+	themeVersion={varThemeVersion},
+	syntaxVersion={varSyntaxVersion},
+	startImage=backgrounds/start_avp.png,
+	endImage=backgrounds/ende_avp.png;
+
+
+
+//***************************************************************************
+// Aufnahmesymbol & Anzeige des Aufnahmetitels
+// Dieser Abschnitt wird in anderen Sektionen eingebunden (include)
+//***************************************************************************
+[RecSymbol]
+
+// {actRecordingCount} = Anzahl der gerade laufenen Aufnahmen
+// Animationsversion
+// Image condition={actRecordingCount} > 0, x=440,y=555,path=symbols/animation/recOn_?.png,delay=300ms;
+// Statische Version
+Image condition={actRecordingCount} > 0, x=440,y=555,path=symbols/animation/recOn_1.png;
+
+// {actRecordingName} = Name der gerade laufenen Aufnahmen
+Text condition={actRecordingCount} > 0,
+   text={actRecordingName},
+   x=520,y=565,width=277,height=28,lines=1,size=18,red=0,green=0,blue=0,
+   scroll=marquee,scroll_count=5,bg_transparent=0;
+
+
+
+//***************************************************************************
+// Anzeige der Lautstärke, Lautstärkeregelung und Mute
+// Dieser Abschnitt wird in anderen Sektionen eingebunden (include)
+//***************************************************************************
+[Volume]
+
+Defaults font=graphTFT;
+
+#ifdef VOL_STYLE_BLUE
+	Volumebar x=142,y=262,width=520,height=40,switch=yes,bg_x=120,bg_y=238,bg_width=592,bg_height=100,path2=backgrounds/volume.png,permanent=no,delay=4;
+	VolumeMuteSymbol x=10,y=238,pathON=symbols/mute_on.png,pathOFF=symbols/mute_off.png,permanent=no,delay=4;
+#else
+	Volumebar x=265,y=315,width=265,height=40,switch=yes,red=250,green=155,blue=44,bg_red=30,bg_green=30,bg_blue=30,permanent=no,delay=4;
+	Volumebar x=258,y=262,width=0,bg_x=236,bg_y=238,bg_width=308,bg_height=100,path2=backgrounds/volume_avp.png,permanent=no,delay=4;
+	Volumebar text=percent,size=14,red=44,green=216,blue=106,x=326,y=240,width=0,height=40,transparent=0,permanent=no,delay=4;
+	VolumeMuteSymbol x=478,y=268,pathON=symbols/mute_on_avp.png,pathOFF=symbols/mute_off_avp.png,permanent=no,delay=4;
+#endif
+
+
+
+//***************************************************************************
+// Anzeige der OSD Meldungen
+// Dieser Abschnitt wird in anderen Sektionen eingebunden (include)
+//***************************************************************************
+[OSD-Messages]
+
+Defaults font=graphTFT;
+
+#ifdef MESSAGES_MIN
+	Message x=10,y=510,width=790,height=35,size=19,red=0,green=0,blue=0,bg_x=0,bg_y=510,bg_width=799,bg_height=35,bg_red=197,bg_green=129,bg_blue=24,delay=5;
+#else
+	Message x=135,y=173,width=530,height=280,size=44,lines=4,dots=yes,red=0,green=0,blue=255,bg_x=115,bg_y=97,path=backgrounds/message_avp.png,delay=5;
+#endif
+
+
+
+//***************************************************************************
+// Kalibrationsanzeige für Touch Displays
+//***************************************************************************
+[Calibration]
+
+Defaults font=graphTFT,size=20,red=180,green=180,blue=180,bg_red=0,bg_green=0,bg_blue=250,bg_transparent=0;
+Background path=backgrounds/calibrate-avp.png;
+//Kalibrierungsanweisungen
+Text text={calibrationInstruction},x=430,y=80,size=22,width=370,height=40,red=255,green=255,blue=255;
+Text text={calibrationInfo},x=430,y=120,size=22,width=370,height=40,red=255,green=255,blue=255;
+//Ausgabe der Kalibrationswerte
+Text text=touched: {calibrationTouchedX} / {calibrationTouchedY},x=470,y=250,size=22,width=330,height=40;
+Text text=Offset: {calibrationOffsetX} / {calibrationOffsetY},x=470,y=290,size=22,width=330,height=40;
+Text text=Scale: {calibrationScaleX} / {calibrationScaleY},x=470,y=330,size=22,width=330,height=40;
+//Anzeige Kalibrationscursor
+CalibrationCursor width=30,height=30,path=symbols/calibratecursor.png;
+
+#ifdef CHECKGRID
+	// Checkgrid unten rechts zeichnen
+	Rectangle x=600,y=450,width=800,height=3;    //Obere waagerechte Linie
+	Rectangle x=580,y=500,width=800,height=2;    //Mittlere waagerechte Linie
+	Rectangle x=560,y=550,width=800,height=1;    //Untere waagerechte Linie
+
+	Rectangle x=650,y=410,width=3,height=600;    //Linke senkrechte Linie
+	Rectangle x=700,y=390,width=2,height=600;    //Mittlere senkrechte Linie
+	Rectangle x=750,y=370,width=1,height=600;    //Rechte senkrechte Linie
+
+	// Checkgrid oben links zeichnen
+	Rectangle x=0,y=010,width=800,height=1;    //Obere waagerechte Linie
+	Rectangle x=0,y=050,width=600,height=2;    //Mittlere waagerechte Linie
+	Rectangle x=0,y=100,width=400,height=3;    //Untere waagerechte Linie
+
+	Rectangle x=010,y=0,width=1,height=600;    //Linke senkrechte Linie
+	Rectangle x=050,y=0,width=2,height=500;    //Mittlere senkrechte Linie
+	Rectangle x=100,y=0,width=3,height=400;    //Rechte senkrechte Linie
+#endif
+
+// Farbbuttons
+MenuButtonBackgroundYellow x=403,y=555,width=192,height=43,pathON=menu/button-yellow.png,on_click=Yellow;
+MenuButtonYellow x=406,y=560,width=179,height=43,red=0,green=0,blue=0,transparent=255,align=center;
+
+
+
+//***************************************************************************
+// Ausgabe eines Bildes oder, mittels Script, einer Bilderserie auf dem Display
+// Diese Funktion wird über das graphTFT OSD-Menu oder "svdrpsend.pl plug graphtft VIEW Dia" aufgerufen
+//***************************************************************************
+[NormalDia]
+
+Defaults font=graphTFT;
+
+//Ein Bild anzeigen. Pfad und Dateiname unten angeben (Beispiel: /tmp/test.png)
+//Das Item ImageFile ermöglicht, im Gegensatz zum Image Item, das Update der Anzeige über svdrpsend REFRESH
+//Damit lässt sich z.B. eine Diashow einrichten. Siehe dazu das Beispielscript dia.sh im graphtft Sourcepaket.
+ImageFile x=0,y=0,width=800,height=600,path=/tmp/dia.file,path2=backgrounds/alien.png,fit=yes,aspect_ratio=yes;
+
+Include=OSD-Messages;
+
+
+
+//***************************************************************************
+// Ausgabe von Systeminformationen
+// Diese Funktion wird über das graphTFT OSD-Menu oder "svdrpsend.pl plug graphtft VIEW Sysinfo" aufgerufen
+//***************************************************************************
+[NormalSysinfo]
+
+Defaults font=graphTFT,size=20,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+Background path=backgrounds/bg-sysinfo-avp.png;
+
+// Senderlogo Logo oben links
+// {...ChannelName/tologo} sorgt dafür, dass event. Sonderzeichen im Sendernamen entfernt werden
+// So wird z.B. beim Sender BR-alpha* das Logo BR-alpha.png gesich und nicht BR-alpha*.png
+Image width=60,height=35,fit=yes,aspect_ratio=yes,x=2,y=5,path=columnimages/{presentChannelName/tologo}.png,on_click=Menu;
+
+Text text={time/%d.%m. %H:%M},x=595,y=27,width=200,height=40;
+
+Text x=70,y=7,text={presentChannelName},align=center,width=420,height=30;
+
+Text text=Prozessor,size=24,x=65,y=67,height=30,red=52,green=162,blue=159,bg_transparent=255;
+Text text=load,x=65,y=115,height=30;
+Sysinfo type=cpuload,text=percent,align=center,size=16,x=200,y=110,width=500,height=40,bg_x=200,delay=3,switch=yes,bg_transparent=90;
+Text text=idle,x=65,y=175,height=30;
+Sysinfo type=cpuidle,text=percent,align=center,size=16,x=200,y=170,width=500,height=40,bg_x=200,delay=3,red=100,green=255,blue=100,bg_transparent=90;
+
+Text text=Speicher,size=24,x=65,y=240,height=30,red=52,green=162,blue=159;
+Text text=used,x=65,y=295,height=30;
+Sysinfo type=memused,factor=1048576,text=value,align=center,unit=MB,size=16,x=200,y=290,width=500,height=40,bg_x=200,delay=3,switch=yes,red=100,green=255,blue=100,bg_transparent=90;
+
+Text text=Festplatten,size=24,x=65,y=370,height=30,red=52,green=162,blue=159;
+Text text=video,x=65,y=430,height=30;
+Sysinfo type=disk,reference=/video?,factor=1073741824,align=center,text=value,unit=GB,size=16,x=200,y=425,width=500,height=40,bg_x=200,delay=3,switch=yes,red=100,green=255,blue=100,bg_transparent=90;
+Text text=system,x=65,y=490,height=30;
+Sysinfo type=disk,reference=/,factor=1073741824,align=center,text=value,unit=GB,size=16,x=200,y=485,width=500,height=40,bg_x=200,delay=3,switch=yes,red=100,green=255,blue=100,bg_transparent=90;
+
+#ifdef MOUSE_BUTTONS
+	Include=MouseButtons;
+#endif
+
+Include=Volume;
+Include=OSD-Messages;
+
+
+
+//***************************************************************************
+// Ausgabe der Programminformationen mit einer Uhr als zentraler Bestandteil der Anzeige 
+// Diese Funktion wird über das graphTFT OSD-Menu oder "svdrpsend.pl plug graphtft VIEW Clock" aufgerufen
+//***************************************************************************
+[NormalClock]
+
+Defaults font=graphTFT,red=50,green=130,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+Background path=backgrounds/bg-clock-avp.png;
+
+//Falls Bild nicht gewünscht, leeren Hintergrund setzen. Bei ungesetzten Hintergrund, würde eine OSD-Message nicht mehr gelöscht.
+//Background x=0,y=0,width=800,height=600,red=0,green=0,blue=0;
+
+//Rahmenlinien zeichnen
+Rectangle x=000,y=000,width=800,height=3;  // Oben
+Rectangle x=000,y=000,width=3,height=600;  // Linke Seite
+Rectangle x=797,y=000,width=3,height=600;  // Rechte Seite
+Rectangle x=000,y=597,width=800,height=3;  // Unten
+Rectangle x=000,y=280,width=800,height=3;  // unter der großen Uhr
+Rectangle x=647,y=000,width=3,height=280;  // links neben Kanallogo
+
+// Datumszeile
+Text text={time/%A\, %d. %b.%G},x=5,y=5,width=640,height=55,size=35,align=center;
+//Text text={time/%A %d. %b.%G},x=5,y=5,width=640,height=55,size=35,align=center;
+
+// Senderlogo Logo oben links
+Image x=654,y=7,width=139,height=120,fit=yes,aspect_ratio=yes,path=columnimages/{presentChannelName/tologo}.png,on_click=Menu;
+
+//Email-Symbol
+MailCount x=711,y=140,size=11,align=center,width=25,height=13;
+MailSymbol x=702,y=136,pathON=symbols/mail.png;
+
+//Kanalnummer oben rechts
+Text x=652,y=170,size=50,text={presentChannelNumber},align=center,width=143,height=66,lines=1,red=180,green=180,blue=180;
+
+//Aufnahmesymbol
+// {actRecordingCount} = Anzahl der gerade laufenen Aufnahmen
+Image condition={actRecordingCount} > 0,
+   x=685,y=235,path=symbols/animation/recOn_1.png;
+
+//große Uhr
+Text text={time/%H:%M},x=5,y=60,width=640,align=center,height=220,size=165;
+
+//Aktuelle Sendung
+Text text={presentStartTime/%H:%M},x=5,y=283,width=175,height=70,size=44;
+Text text={presentTitle},x=180,y=283,height=140,width=617,size=44,red=180,green=180,blue=180,lines=2,on_click=Schedule Ok;
+
+//Timebar
+Rectangle x=28,y=423,width=738,height=34; //Box um Timebar
+Timebar x=30,y=425,width=734,height=30,path=symbols/progress.png,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255;
+
+//Nächste Sendung
+Text text={followingStartTime/%H:%M},x=5,y=465,width=150,height=70,size=38;
+Text text={followingTitle},x=180,y=465,height=120,width=617,size=38,red=180,green=180,blue=180,lines=2,on_click=Schedule Down Ok;
+
+#ifdef MOUSE_BUTTONS
+	Include=MouseButtons;
+#endif
+
+Include=Volume;
+Include=OSD-Messages;
+
+
+//***************************************************************************
+// Detailierte Ausgabe der EPG-Programminformationen und EPG-Bild
+// Diese Funktion wird über das graphTFT OSD-Menu oder "svdrpsend.pl plug graphtft VIEW Detail" aufgerufen
+//***************************************************************************
+[NormalDetail]
+
+var varStartLine = 0;
+var varEventId = 0;
+
+Defaults font=graphTFT,size=24,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+//Hintergrundbild
+Background path=backgrounds/bg-tv-avp.png;
+
+// Senderlogo Logo oben links
+Image x=10,y=7,width=90,height=60,fit=yes,aspect_ratio=yes,path=columnimages/{presentChannelName/tologo}.png,on_click=Menu;
+
+//Datum/Uhr oben rechts
+Text text={time/%d.%m. %H:%M},x=580,y=65,width=210,align=right,height=40;
+//Textausgabe des Kanalnamens im Kopfbereich
+Text x=110,y=12,size=36,text={presentChannelName},align=center,width=400,height=60,lines=1,red=255,green=255,blue=255;
+
+//Kanalnummer unten links
+Text x=10,y=555,size=32,text={presentChannelNumber},align=center,width=90,height=50,lines=1,red=255,green=255,blue=255;
+
+// Timebar
+Timebar x=603,y=12,width=184,height=18,bg_x=600,bg_y=9,bg_width=190,bg_height=24,bg_red=0,bg_green=0,bg_blue=0,path=symbols/progress.png,bg_transparent=255;
+
+// Themeversion Ausgabe unter der Timebar
+Text text={varThemeName} {themeVersion}/{syntaxVersion},x=600,y=32,width=190,size=8,align=right,height=12,red=56,green=95,blue=137;
+
+//Aktuelle Sendung
+Text text={presentStartTime/%H:%M},x=5,y=105,width=130,height=45,size=34,red=255,green=255,blue=255;
+Text condition="{presentDuration/%M}" != "",text={presentDuration/%M}',x=5,y=150,width=130,height=35,size=24,align=center; //Dauer der Sendung - falls ermittelbar
+Text text={presentTitle},x=150,y=105,width=650,height=80,size=26,lines=2,red=255,green=255,blue=255,dots=yes;
+
+// Iconleiste
+Image x=153,y=545,width=45,height=25,path=symbols/tv.png;
+SymVTX x=205,y=545,width=45,height=25,pathON=symbols/vtxOn.png;
+SymCrypt x=257,y=545,width=45,height=25,pathON=symbols/cryptOn.png;
+SymDD x=309,y=545,width=45,height=25,pathON=symbols/ddOn.png;
+Sym2ch x=361,y=545,width=45,height=25,pathON=symbols/ch2On.png;
+
+// E-Mail Symbol
+MailSymbol x=513,y=0,width=65,height=70,pathON=symbols/alien-mail.png,on_click=User9;
+MailCount x=535,y=43,size=11,align=center,width=25,height=13,red=0,green=255,blue=0;
+
+// Subtitle ausgeben
+Text condition="{presentSubtitle}" != "",text={presentSubtitle},
+	x=10,y=185,width=347,height=65,size=20,lines=2,dots=yes;
+
+// EPG Images anzeigen
+Image x=10,y=250,width=347,height=260,bg_width=347,
+	path=
+	{varEPGimagesPath_1}{presentID}.{EPGimageSuffix}:
+	{varEPGimagesPath_2}{presentID}.{EPGimageSuffix}:
+	{varEPGimagesPath_3}{presentID}.{EPGimageSuffix}:
+	{varImagesPath_1}{presentTitle}.jpg:
+	backgrounds/filmspule_tr.png,
+	fit=yes,aspect_ratio=yes,delay=5,
+	on_dblclick=varEventId:0:1;
+
+// Event-Nummer ausgeben, wenn das EPG-Bild angeklickt wurde
+Text condition={varEventId} == 1,
+	text=Event ID: {presentID},
+	x=10,y=510,width=347,height=20,size=14,red=60,green=60,blue=60,align=center;
+
+
+// EPG Beschreibung abhängig vom Subtitle ausgeben.
+// Hier wird auch das Scrollen durch die EPG-Info ermöglicht.
+// start_line ist die erste Textzeile die angezeigt wird. Festgelegt in der Sektions-Variablen {varStartLine}
+// {varStartLine} wird bei jeder Bewegung hoch(on_up)(++) oder runter(on_down)(--) gezählt.
+// Damit verändert sich beim Neuzeichnen der Ausgabe die start_line und es wird eine spätere/frühere Zeile angezeigt.
+// 
+// on_down, on_up = Action wenn man etwas mit der linken Maustaste (später auch touch) rauf/runter-zieht.
+//
+// whipe_res = Die Auflösung bei einem Whipe mit der Maus (touch) in Pixeln, also wie viele Pixel muss ich ziehen 
+// damit es einem Schritt (++/--) entspricht. 
+
+Text text={presentDescription},start_line={varStartLine},
+	x=360,y=190,width=445,height=355,size=14,red=255,green=255,blue=255,dots=yes,
+	whipe_res=20,on_up=varStartLine--,on_down=varStartLine++;
+
+
+#ifdef MOUSE_BUTTONS
+	Include=MouseButtons;
+#endif
+
+Include=Volume;
+Include=RecSymbol;
+Include=OSD-Messages;
+
+
+
+//***************************************************************************
+// Definition der Mouse Button Fenster
+//***************************************************************************
+[MouseButtons]
+Defaults bg_transparent=0,foreground=yes,font=graphTFT;
+
+//Anzeige für Keyboardaufruf
+Image x=003,y=510,width=40,height=40,bg_width=40,delay=150,path=menu/mouse_btn/btn_keyb_white.png,on_click=varTouchMenu:0:1;
+
+//***************************************************************************
+//Basisblock
+//{varHideColorButtons} = 0 -> Farbtasten anzeigen
+//{varHideColorButtons} = 1 -> Farbtasten nicht anzeigen
+//{varHidePrevChannel} = 0 -> PrevChannel Taste anzeigen
+//{varHidePrevChannel} = 1 -> PrevChannel Taste nicht anzeigen
+
+if ({varTouchMenu})
+	//Hintergrund
+	Image x=198,y=376,width=404,height=159,path=menu/mouse_btn/btn_back_master.png;
+
+	//Schalterbuttons für Nummernblock (2) und Extended Block (3), beim zweiten Klick, Rückfall auf 1 (:2:1)
+	Image x=205,y=383,width=40,height=40,delay=150,path=menu/mouse_btn/btn_keyb_segment_trans_left.png,on_click=varTouchMenu:2:1,delay=15;
+	Image x=554,y=383,width=40,height=40,delay=150,path=menu/mouse_btn/btn_keyb_segment_trans_right.png,on_click=varTouchMenu:3:1,delay=15;
+
+	//Erste Zeile von oben
+	Image x=303,y=390,width=40,height=40,delay=150,path=menu/mouse_btn/btn_rec.png,on_click=Record;
+	Image x=457,y=390,width=40,height=40,delay=150,path=menu/mouse_btn/btn_power.png,on_click=Power;
+
+	//Zweite Zeile von oben
+	Image condition={varHidePrevChannel} <> 1,x=213,y=435,width=40,height=40,delay=150,path=menu/mouse_btn/btn_prevchannel.png,on_click=PrevChannel;
+	Image x=258,y=435,width=40,height=40,delay=150,path=menu/mouse_btn/btn_back.png,on_click=back;
+	Image x=303,y=435,width=40,height=40,delay=150,path=menu/mouse_btn/btn_up.png,on_click=Up;
+	Image x=348,y=435,width=40,height=40,delay=150,path=menu/mouse_btn/btn_ok.png,on_click=ok;
+
+	Image x=457,y=435,width=40,height=40,delay=150,path=menu/mouse_btn/btn_minus.png,on_click="Volume-";
+	Image x=502,y=435,width=40,height=40,delay=150,path=menu/mouse_btn/btn_mute.png,on_click=Mute;
+	Image x=547,y=435,width=40,height=40,delay=150,path=menu/mouse_btn/btn_plus.png,on_click="Volume+";
+
+	//Dritte Zeile von oben
+	Image x=213,y=480,width=40,height=40,delay=150,path=menu/mouse_btn/btn_menu.png,on_click=Menu;
+	Image x=258,y=480,width=40,height=40,delay=150,path=menu/mouse_btn/btn_left.png,on_click=Left;
+	Image x=303,y=480,width=40,height=40,delay=150,path=menu/mouse_btn/btn_down.png,on_click=Down;
+	Image x=348,y=480,width=40,height=40,delay=150,path=menu/mouse_btn/btn_right.png,on_click=Right;
+
+	Image condition={varHideColorButtons} <> 1,x=412,y=480,width=40,height=40,delay=150,path=menu/mouse_btn/btn_red.png,on_click=Red;
+	Image condition={varHideColorButtons} <> 1,x=457,y=480,width=40,height=40,delay=150,path=menu/mouse_btn/btn_green.png,on_click=Green;
+	Image condition={varHideColorButtons} <> 1,x=502,y=480,width=40,height=40,delay=150,path=menu/mouse_btn/btn_yellow.png,on_click=Yellow;
+	Image condition={varHideColorButtons} <> 1,x=547,y=480,width=40,height=40,delay=150,path=menu/mouse_btn/btn_blue.png,on_click=Blue;
+endif
+
+//***************************************************************************
+//Nummernblock
+//{varSwitchMouseNumber} = 0 -> Normaler Zehnerblock
+//{varSwitchMouseNumber} = 1 -> Ändert Zehnerblock-Zahlen zu Aufnahme Icons
+//{varSwitchMouseNumber} = 2 -> Ändert Zehnerblock-Zahlen zu DVD Wiedergabe Icons
+
+if ({varTouchMenu} == 2)
+	//Hintergrund
+	Image x=089,y=225,width=164,height=206,path=menu/mouse_btn/btn_back_numberblock.png;
+
+	//Erste Zeile von oben
+	Image x=106,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_1.png,on_click=1;
+	Image condition={varSwitchMouseNumber} = 0,x=151,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_2.png,on_click=2;
+	Image condition={varSwitchMouseNumber} = 1,x=151,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_cut.png,on_click=2;
+	Image condition={varSwitchMouseNumber} = 2,x=151,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_subtitle.png,on_click=2;
+	Image condition={varSwitchMouseNumber} <> 2,x=196,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_3.png,on_click=3;
+	Image condition={varSwitchMouseNumber} = 2,x=196,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_dvdangle.png,on_click=3;
+
+	//Zweite Zeile von oben
+	Image condition={varSwitchMouseNumber} <> 1,x=106,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_4.png,on_click=4;
+	Image condition={varSwitchMouseNumber} = 1,x=106,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_cropmarkleft.png,on_click=4;
+	Image condition={varSwitchMouseNumber} = 2,x=106,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_prev.png,on_click=4;;
+
+	Image condition={varSwitchMouseNumber} <> 2,x=151,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_5.png,on_click=5;
+	Image condition={varSwitchMouseNumber} = 2,x=151,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_dvdnavi.png,on_click=5;
+	Image condition={varSwitchMouseNumber} = 0,x=196,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_6.png,on_click=6;
+	Image condition={varSwitchMouseNumber} = 1,x=196,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_cropmarkright.png,on_click=6;
+	Image condition={varSwitchMouseNumber} = 2,x=196,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_next.png,on_click=6;
+
+	//Dritte Zeile von oben
+	Image condition={varSwitchMouseNumber} = 0,x=106,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_7.png,on_click=7;
+	Image condition={varSwitchMouseNumber} = 1,x=106,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_prevtitle.png,on_click=7;
+	Image condition={varSwitchMouseNumber} = 2,x=106,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_prevtitle.png,on_click=7;
+	Image condition={varSwitchMouseNumber} <> 2,x=151,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_8.png,on_click=8;
+	Image condition={varSwitchMouseNumber} = 2,x=151,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_dvdmenu.png,on_click=8;
+	Image condition={varSwitchMouseNumber} = 0,x=196,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_9.png,on_click=9;
+	Image condition={varSwitchMouseNumber} = 1,x=196,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_nexttitle.png,on_click=9;
+	Image condition={varSwitchMouseNumber} = 2,x=196,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_nexttitle.png,on_click=9;
+
+	//Vierte Zeile von oben
+	Image condition={varSwitchMouseNumber} = 0,x=151,y=375,width=40,height=40,delay=150,path=menu/mouse_btn/btn_0.png,on_click=0;
+	Image condition={varSwitchMouseNumber} = 1,x=151,y=375,width=40,height=40,delay=150,path=menu/mouse_btn/btn_cropmark.png,on_click=0;
+	Image condition={varSwitchMouseNumber} = 2,x=151,y=375,width=40,height=40,delay=150,path=menu/mouse_btn/btn_audiomenu.png,on_click=0;
+endif
+
+//***************************************************************************
+//Extended Icon Block
+if ({varTouchMenu} == 3)
+	//Hintergrund
+	Image x=547,y=225,width=248,height=206,path=menu/mouse_btn/btn_back_extended.png;
+
+	//Erste Zeile von oben
+	Image x=564,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_dvd.png,on_click=User4;
+	Image x=654,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_audio.png,on_click=Audio;
+	Image x=699,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_mp3.png,on_click=User2;
+	Image x=744,y=240,width=40,height=40,delay=150,path=menu/mouse_btn/btn_mplayer.png,on_click=User3;
+
+	//Zweite Zeile von oben
+	Image x=564,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_mail.png,on_click=User9;
+	Image x=609,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_videotext.png,on_click=User1;
+	Image x=654,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_pip.png,on_click=User6;
+	Image x=744,y=285,width=40,height=40,delay=150,path=menu/mouse_btn/btn_burn.png,on_click=User5;
+
+	//Dritte Zeile von oben
+	Image x=609,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_pause.png,on_click=Pause;
+	Image x=654,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_stop.png,on_click=Stop;
+	Image x=699,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_play.png,on_click=Play;
+	Image x=744,y=330,width=40,height=40,delay=150,path=menu/mouse_btn/btn_eject.png,on_click=User8;
+
+	//Vierte Zeile von oben
+	Image x=609,y=375,width=40,height=40,delay=150,path=menu/mouse_btn/btn_prev.png,on_click=Prev;
+	Image x=654,y=375,width=40,height=40,delay=150,path=menu/mouse_btn/btn_frwd.png,on_click=FastRew;
+	Image x=699,y=375,width=40,height=40,delay=150,path=menu/mouse_btn/btn_ffwd.png,on_click=FastFwd;
+	Image x=744,y=375,width=40,height=40,delay=150,path=menu/mouse_btn/btn_next.png,on_click=Next;
+endif
+
+
+
+//***************************************************************************
+// Allgemeine Einstellungen zur Ausgabe der TV und RADIO Informationen
+// Dieser Abschnitt wird in anderen Sektionen eingebunden (include)
+// Diese Funktion wird über das graphTFT OSD-Menu oder "svdrpsend.pl plug graphtft VIEW Standard" aufgerufen
+//***************************************************************************
+[TV_Radio_Common]
+Defaults font=graphTFT,size=24,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+//Hintergrundbild
+Background path=backgrounds/bg-tv-avp.png;
+
+// Senderlogo Logo oben links
+Image x=10,y=7,width=90,height=60,fit=yes,aspect_ratio=yes,
+   path=columnimages/{presentChannelName/tologo}.png,
+   on_click=Menu;
+
+//Datum/Uhr oben rechts
+Text text={time/%d.%m. %H:%M},x=580,y=65,width=210,align=right,height=40;
+//Textausgabe des Kanalnamens im Kopfbereich
+Text x=110,y=12,size=36,text={presentChannelName},align=center,width=400,height=60,lines=1,red=255,green=255,blue=255;
+
+//Kanalnummer unten links
+Text x=10,y=555,size=32,text={presentChannelNumber},align=center,width=90,height=50,lines=1,red=255,green=255,blue=255;
+
+// Die Timebar
+Timebar x=603,y=12,width=184,height=18,bg_x=600,bg_y=9,bg_width=190,bg_height=24,bg_red=0,bg_green=0,bg_blue=0,path=symbols/progress.png,bg_transparent=255;
+
+// Themeversion Ausgabe unter der Timebar
+Text text={varThemeName} {themeVersion}/{syntaxVersion},x=600,y=32,width=190,size=8,align=right,height=12,red=56,green=95,blue=137;
+
+//Aktuelle Sendung
+Text text={presentStartTime/%H:%M},x=5,y=105,width=130,height=45,size=34,red=255,green=255,blue=255;
+Text condition="{presentDuration/%M}" != "",text={presentDuration/%M}',
+   x=5,y=150,width=130,height=35,size=24,align=center; //Dauer der Sendung - falls ermittelbar
+Image x=5,y=185,width=130,height=100,path={varEPGimagesPath_1}{presentID}.{EPGimageSuffix}
+   :{varEPGimagesPath_2}{presentID}.{EPGimageSuffix}
+   :{varEPGimagesPath_3}{presentID}.{EPGimageSuffix}
+   :{varImagesPath_1}{presentTitle}.jpg,
+   fit=yes,aspect_ratio=yes; //EPG Bild
+Text text={presentTitle},x=150,y=105,width=650,height=107,size=34,lines=2,
+   red=255,green=255,blue=255,dots=yes,
+   on_click=Schedule Ok;
+Text text={presentSubtitle},x=150,y=212,width=650,height=100,size=30,lines=2,dots=yes;
+
+// Kommende Sendung
+Text text={followingStartTime/%H:%M},x=5,y=312,width=130,height=45,size=34,red=255,green=255,blue=255;
+Text condition="{followingDuration/%M}" != "",text={followingDuration/%M}',
+   x=5,y=357,width=130,height=35,size=24,align=center; //Dauer der Sendung - falls ermittelbar
+Image x=5,y=392,width=130,height=100,
+   path={varEPGimagesPath_1}{followingID}.{EPGimageSuffix}
+   :{varEPGimagesPath_2}{followingID}.{EPGimageSuffix}
+   :{varEPGimagesPath_3}{followingID}.{EPGimageSuffix}
+   :{varImagesPath_1}{followingTitle}.jpg,fit=yes,aspect_ratio=yes;
+Text text={followingTitle},x=150,y=312,width=650,height=107,size=34,lines=2,
+   red=255,green=255,blue=255,dots=yes,
+   Text text={presentTitle},x=150,y=105,width=650,height=107,size=34,lines=2,
+   red=255,green=255,blue=255,dots=yes,
+   on_click=Schedule Down Ok;
+Text text={followingSubtitle},x=150,y=419,width=650,height=100,size=30,lines=2,dots=yes;
+
+// Iconleiste
+SymCrypt x=257,y=545,width=45,height=25,pathON=symbols/cryptOn.png;
+SymDD x=309,y=545,width=45,height=25,pathON=symbols/ddOn.png;
+Sym2ch x=361,y=545,width=45,height=25,pathON=symbols/ch2On.png;
+
+// E-Mail Symbol
+MailSymbol x=513,y=0,width=65,height=70,pathON=symbols/alien-mail.png,on_click=User9;
+MailCount x=535,y=43,size=11,align=center,width=25,height=13,red=0,green=255,blue=0;
+
+#ifdef MOUSE_BUTTONS
+	Include=MouseButtons;
+#endif
+
+Include=Volume;
+Include=RecSymbol;
+Include=OSD-Messages;
+
+
+
+//***************************************************************************
+// Ergänzende Einstellungen zur Ausgabe der TV Informationen
+//***************************************************************************
+[NormalTV]
+Include=TV_Radio_Common;
+
+//Zusätzliche spezifische Icons in der Iconleiste
+Image x=153,y=545,width=45,height=25,path=symbols/tv.png;
+SymVTX x=205,y=545,width=45,height=25,pathON=symbols/vtxOn.png;
+
+
+
+//***************************************************************************
+// Ergänzende Einstellungen zur Ausgabe der RADIO Informationen
+//***************************************************************************
+[NormalRadio]
+Include=TV_Radio_Common;
+//Zusätzliche spezifische Icons in der Iconleiste
+Image x=153,y=545,width=45,height=25,path=symbols/radio.png;
+
+
+
+//***************************************************************************
+// Allgemeine Einstellungen für kommende Wiedergabe Abschnitte (Replay)
+// Dieser Abschnitt wird in anderen Sektionen eingebunden (include)
+//***************************************************************************
+[ReplayCommon]
+
+Defaults font=graphTFT,size=28,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+Background path=backgrounds/bg-replay-avp.png;
+
+//Buttons (aus Poetter entliehen)
+// pause
+Image condition={replayForward} = 1 & {replaySpeed} = -1 & {replayPlay} <  1,x=50,y=440,path=symbols/pause_on_b.png,delay=1;
+
+// play
+Image condition={replayForward} = 1 & {replaySpeed} = -1 & {replayPlay} = 1,x=50,y=440,path=symbols/play_on_b.png,delay=1;
+
+// Symbole für Vorspulen
+// Slow Forward
+Image condition={replayForward} = 1 & {replaySpeed} > 0 & {replayPlay} <  1,x=50,y=440,path=symbols/sf_on_b.png,delay=1;
+// Fast Forward
+Image condition={replayForward} = 1 & {replaySpeed} > 0 & {replayPlay} = 1,x=50,y=440,path=symbols/ff_on_b.png,delay=1;
+
+// Symbole für Zurückspulen
+// Slow Rewind
+Image condition={replayForward} = 0 & {replaySpeed} > 0 & {replayPlay} <  1,x=50,y=440,path=symbols/sb_on_b.png,delay=1;
+// Fast Rewind
+Image condition={replayForward} = 0 & {replaySpeed} > 0 & {replayPlay} = 1,x=50,y=440,path=symbols/fb_on_b.png,delay=1;
+
+//Multiplikatorausgabe für Geschwindigkeiten (2x - 9x)
+Image condition={replaySpeed} > 1,x=99,y=483,path=symbols/{replaySpeed}.png,delay=1;
+
+//Uhr oben rechts
+Text text={time/%d.%m. %H:%M},x=590,y=63,size=20,width=205,align=right,height=27;
+
+//Linie einfügen
+Rectangle x=5,y=195,width=790,height=3;
+
+//Laufzeiten links und rechts unten
+Text text={replayCurrent/%k:%M:%S},x=10,y=556,width=200,height=40,delay=1;
+Text text={replayTotal/%k:%M:%S},x=590,y=556,width=200,height=40,align=right,delay=1;
+
+//Fortschrittsanzeige
+Progressbar total={replayTotal/%s},value={replayCurrent/%s},x=237,y=553,width=326,height=22,bg_x=234,bg_y=550,bg_width=332,bg_height=28,path=symbols/progress.png,bg_transparent=255,delay=3;
+
+Include=Volume;
+Include=OSD-Messages;
+
+
+
+//***************************************************************************
+// Anzeige der Informationen bei der Wiedergabe von Aufnahmen und media Dateien
+//***************************************************************************
+[ReplayNormal]
+//Standardwerte laden
+Include=ReplayCommon;
+
+Defaults font=graphTFT,size=28,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+//Überschrift
+Image x=241,y=20,path=symbols/wiedergabe-header.png;
+
+//Filmspulenbild einfügen
+Image x=0,y=220,path=backgrounds/filmspule.png;
+
+//Aufnahme Titel/Subtitel ausgeben
+Text text={replayTitle},x=5,y=105,size=44,height=66,width=790,align=center,lines=1,red=255,green=255,blue=255;
+Text text={replaySubtitle},x=10,y=208,size=32,height=80,lines=1,align=center,red=255,green=0,blue=0;
+
+//Event. Bild ausgeben.
+Image x=235,y=260,width=330,height=247,path={replayPath}/thumbnail.png:{varEPGimagesPath_1}{replayEventID}.{EPGimageSuffix}:{varEPGimagesPath_2}{replayEventID}.{EPGimageSuffix}:{varEPGimagesPath_3}{replayEventID}.{EPGimageSuffix}:{varImagesPath_1}{replayTitle}.jpg:{replayPath}/Cover-Enigma.jpg:symbols/video.png,fit=yes,aspect_ratio=no;
+
+#ifdef MOUSE_BUTTONS
+	var varSwitchMouseNumber = 1;
+	Include=MouseButtons;
+#endif
+
+
+
+//***************************************************************************
+// Anzeige der Informationen bei der Wiedergabe von DVDs
+//***************************************************************************
+[ReplayDVD]
+//Standardwerte laden
+Include=ReplayCommon;
+
+Defaults font=graphTFT,size=28,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+//Ueberschrift
+Image x=297,y=5,path=symbols/dvd-header.png;
+
+//Filmspulenbild einfügen
+Image x=0,y=220,path=backgrounds/filmspule.png;
+
+//DVD Titel ausgeben
+Text text={replayTitle},x=5,y=105,size=44,height=66,width=790,align=center,lines=1,red=255,green=255,blue=255;
+
+//Event. Bild ausgeben.
+Image x=235,y=260,width=330,height=247,path={varImagesPath_1}{replayTitle}.jpg:symbols/dvd.png,fit=yes,aspect_ratio=yes;
+
+#ifdef MOUSE_BUTTONS
+	var varSwitchMouseNumber = 2;
+	Include=MouseButtons;
+#endif
+
+
+
+//***************************************************************************
+// Anzeige der Informationen bei der Wiedergabe des Image Plugins
+//***************************************************************************
+[ReplayImage]
+
+Defaults font=graphTFT,size=28,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+Background path=backgrounds/bg-replay-avp.png;
+
+//Uhr oben rechts
+Text text={time/%d.%m. %H:%M},x=590,y=63,size=20,width=205,align=right,height=27;
+
+//Linie einfügen
+Rectangle x=5,y=195,width=790,height=3;
+
+//Überschrift
+Image x=241,y=20,path=symbols/wiedergabe-header.png;
+
+//Filmspulenbild einfügen
+Image x=0,y=220,path=backgrounds/filmspule.png;
+
+//Bilfbezeichnung ausgeben
+Text text={replayTitle},x=5,y=105,size=44,height=66,width=790,align=center,lines=1,red=255,green=255,blue=255;
+
+//Bild ausgeben
+Image x=235,y=260,width=330,height=247,path={replayPath},fit=yes,aspect_ratio=no;
+
+//Bildanzahl links und rechts unten
+//replayRawCurrent = Zaehler des aktuell angezeigten Bildes
+//replayRawTotal = Gesamtzahl aller verfügbaren Bilder
+Text text={replayRawCurrent/%s},x=10,y=556,width=200,height=40,align=center,delay=1;
+Text text={replayRawTotal/%s},x=590,y=555,width=200,height=40,align=center,delay=1;
+
+//Fortschrittsanzeige
+Progressbar total={replayRawTotal},value={replayRawCurrent},x=237,y=553,width=326,height=22,bg_x=234,bg_y=550,bg_width=332,bg_height=28,path=symbols/progress.png,bg_transparent=255,delay=3;
+
+Include=Volume;
+Include=OSD-Messages;
+
+#ifdef MOUSE_BUTTONS
+	var varSwitchMouseNumber = 1;
+	Include=MouseButtons;
+#endif
+
+
+
+//***************************************************************************
+// Anzeige der Informationen bei der Wiedergabe von mp3 Dateien
+// über das mp3 oder music Plugin.
+// Hier werden drei Versionen angeboten, die am Anfang dieses Themes 
+// ausgewählt werden können.
+// MP3_PLUGIN - Einfache Ausgabe für das mp3 und music Plugin
+// MUSIC_PLUGIN - Erweiterete Informationen für das music Plugin ab Version 0.4.0 in AvP Style
+// MUSIC_PLUGIN_MORONE_STYLE - Erweiterete Informationen für das music Plugin ab Version 0.4.0 in Morone Style
+//***************************************************************************
+[ReplayMP3]
+
+// ----------------------------------------
+#ifdef MP3_PLUGIN
+// ----------------------------------------
+
+Include=ReplayCommon;
+
+Defaults font=graphTFT,size=28,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+//Ueberschrift
+Image x=343,y=20,path=symbols/mp3-header.png;
+
+//Notenbild einfügen
+Image x=0,y=220,width=170,height=160,path=backgrounds/note.png;
+
+//Ausgabe des mp3 Titels
+Text text={replayTitle},x=5,y=105,size=44,height=66,width=790,align=center,lines=1,red=255,green=255,blue=255;
+
+//Cover ausgeben
+ImageFile x=235,y=260,width=330,height=247,path=/tmp/graphTFT.cover,path2=symbols/nocover.png,fit=yes,aspect_ratio=yes;
+
+// Anzeige des SpectrumAnalyzers
+SpectrumAnalyzer x=600,y=445,width=200,height=100,delay=10ms,red=52,green=162,blue=159,path=backgrounds/spectrum_avp.png;
+
+#ifdef MOUSE_BUTTONS
+	Include=MouseButtons;
+#endif
+
+#endif
+
+// ----------------------------------------
+#ifdef MUSIC_PLUGIN
+// ----------------------------------------
+
+Defaults font=graphTFT,size=28,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+Background path=backgrounds/bg-replay-avp.png;
+
+// Notenbild einfügen
+Image x=0,y=220,width=170,height=160,path=backgrounds/note.png;
+
+//Ausgabe des mp3 Titels
+Text x=5,y=5,size=26,text={replayTitle},width=790,height=40,align=center,red=255,green=255,blue=255;
+
+// Time in Titlebar
+Text text={time/%d.%m. %H:%M},x=300,y=47,size=18,width=200,height=23,align=center,red=255,green=255,blue=255;
+
+// Status Info
+Text text={musicPlayStatus},x=5,y=60,height=28,width=200,size=20,align=center;
+
+// Anzeige des SpectrumAnalyzers
+//SpectrumAnalyzer x=330,y=92,width=230,height=50,delay=10ms,red=52,green=162,blue=159,path=backgrounds/spectrum_avp.png,fit=yes,aspect_ration=yes;
+SpectrumAnalyzer x=200,y=367,width=430,height=130,delay=10ms,red=52,green=162,blue=159,path=backgrounds/spectrum_avp.png,fit=yes,aspect_ration=yes;
+
+// Track Info
+Text text=Artist:,x=10,y=122,height=20,width=60,size=12,red=255,green=248,blue=166;
+Text text={musicArtist},x=70,y=122,height=20,width=250,size=12,red=255,green=248,blue=166;
+Text text=Album:,x=10,y=147,height=20,width=60,size=12,red=255,green=248,blue=166;
+Text text={musicAlbum},x=70,y=147,height=20,width=250,size=12,red=255,green=248,blue=166;
+Text text=Genre:,x=10,y=172,height=20,width=60,size=12,red=255,green=248,blue=166;
+Text text={musicGenre},x=70,y=172,height=20,width=250,size=12,red=255,green=248,blue=166;
+Text text=Year:,x=10,y=197,height=20,width=60,size=12,red=255,green=248,blue=166;
+Text text={musicYear},x=70,y=197,height=20,width=250,size=12,red=255,green=248,blue=166;
+
+// Frequence & Index
+Text text={musicFrequence} kHz\,{musicBitrate} kbps\, {musicStereoMode},x=330,y=147,height=20,width=300,size=12;
+Text text=Track {musicIndex} of {musicCount},x=330,y=172,height=20,width=300,size=12;
+// Rating
+Text text=Rating:,x=330,y=197,height=20,width=60,size=12;
+Progressbar condition={musicRating} <> 3,total=255,value={musicRating},x=390,y=202,width=170,height=10,path=symbols/music-rating.png,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255;
+Text condition={musicRating} = 3,text=zum löschen,x=390,y=202,height=20,width=170,size=12,red=255,green=248,blue=166;
+
+// Cover
+Rectangle x=0,y=250,width=180,height=180,red=0,green=0,blue=0;    //Linie zum verdecken der Hintergrundgrafik
+Image x=10,y=250,width=180,height=180,fit=yes,aspect_ratio=yes,path={musicCoverName}:symbols/nocover.png;
+
+// Playlist
+Text text={musicCurrentTrack},x=200,y=250,height=24,width=430,size=14,red=255,green=248,blue=166;
+//TextList text={musicTrack},x=200,y=275,height=200,width=430,size=12;
+TextList text={musicTrack},x=200,y=275,height=60,width=430,size=12;
+
+// Show some Details (commented out, totally missplaced ; ) only to show how it works)
+//Text text=File: {musicFilename},x=245,y=500,height=20,width=450,size=12,red=255,green=248,blue=166;
+//Text text=Comment: {musicComment},x=245,y=525,height=20,width=450,size=12,red=255,green=248,blue=166;
+
+// Status Icons
+Text condition={musicShuffle} = 1,text={\\001},x=10,y=435,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicShuffle} <> 1,text={\\001},x=10,y=435,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+Text condition={musicLoop} = 1,text={\\002},x=60,y=435,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicLoop} <> 1,text={\\002},x=60,y=435,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+Text condition={musicRecording} = 1,text={\\003},x=110,y=435,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicRecording} <> 1,text={\\003},x=110,y=435,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+// Variable musicLyrics wird noch nicht unterstützt
+Text condition={musicLyrics} = 1,text={\\004},x=160,y=435,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicLyrics} <> 1,text={\\004},x=160,y=435,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+// Variable musicCopy wird noch nicht unterstützt
+Text condition={musicCopy} = 1,text={\\005},x=10,y=470,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicCopy} <> 1,text={\\005},x=10,y=470,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+Text condition={musicShutdown} = 1,text={\\006},x=85,y=470,width=30,height=30,size=20,align=center,red=255,green=0,blue=0;
+Text condition={musicShutdown} <> 1,text={\\006},x=85,y=470,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+// Variable musicTimer wird noch nicht unterstützt
+Text condition={musicTimer} = 1,text={\\007},x=160,y=470,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicTimer} <> 1,text={\\007},x=160,y=470,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+// to be continued ...
+
+// Volume
+Text condition={volumeMute} = 0,text={\\008},x=300,y=500,width=20,height=18,size=12,align=left,red=187,green=129,blue=22;
+Text condition={volumeMute} <> 0,text={\\009},x=300,y=500,width=20,height=18,size=12,align=left,red=187,green=129,blue=22;
+Volumebar x=330,y=505,width=170,height=10,red=187,green=129,blue=22,permanent=yes,bg_red=50,bg_green=50,bg_blue=50,bg_transparent=255;
+
+// Progressbar & Times
+Text text={replayCurrent/%k:%M:%S},x=10,y=505,width=200,height=40,size=28;
+Text text={replayTotal/%k:%M:%S},x=590,y=505,width=200,height=40,align=right,size=28;
+Progressbar total={replayTotal/%s},value={replayCurrent/%s},x=240,y=535,width=320,height=16,bg_x=237,bg_y=532,bg_width=326,bg_height=22,bg_red=0,bg_green=0,bg_blue=0,path=symbols/progress.png,bg_transparent=255;
+
+// Buttons Help
+Image x=007,y=555,width=192,height=43,path=menu/button-red.png,on_click=Red;
+Text text={musicButtonRed},x=20,y=560,width=-1,height=43,size=22,red=255,green=255,blue=255;
+Image x=205,y=555,width=192,height=43,path=menu/button-green.png,on_click=Green;
+Text text={musicButtonGreen},x=218,y=560,width=-1,height=43,size=22,red=0,green=0,blue=0;
+Image x=403,y=555,width=192,height=43,path=menu/button-yellow.png,on_click=Yellow;
+Text text={musicButtonYellow},x=416,y=560,width=-1,height=43,size=22,red=0,green=0,blue=0;
+Image x=601,y=555,width=192,height=43,path=menu/button-blue.png,on_click=Blue;
+Text text={musicButtonBlue},x=614,y=560,width=-1,height=43,size=22,red=255,green=255,blue=255;
+
+Include=OSD-Messages;
+
+#endif
+
+// ----------------------------------------
+#ifdef SMALL_MUSIC_PLUGIN
+// ----------------------------------------
+
+Defaults font=graphTFT,size=28,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+Background path=backgrounds/bg-replay-avp.png;
+
+//Ueberschrift
+Image x=343,y=20,path=symbols/mp3-header.png;
+
+//Ausgabe des mp3 Titels
+Text text={musicCurrentTrack},x=5,y=080,height=70,width=790,align=center,lines=1,size=44,red=255,green=255,blue=255;
+
+Text text={musicAlbum},x=5,y=150,height=40,width=790,align=center,lines=1,size=24,red=255,green=248,blue=166;
+
+// Status Info
+Text text={musicPlayStatus},x=5,y=10,height=28,width=200,size=20,align=center;
+
+// Time in Titlebar
+Text text={time/%d.%m. %H:%M},x=600,y=10,size=20,width=195,height=28,align=center;
+
+// Track Info
+Text text={musicArtist},x=315,y=210,height=40,width=480,size=24,red=255,green=248,blue=166;
+Text text={musicYear},x=315,y=245,height=40,width=480,size=24,red=255,green=248,blue=166;
+
+// Frequence & Index
+Text text={musicFrequence} kHz,x=315,y=290,height=40,width=240,size=22;
+Text text=Track {musicIndex} of {musicCount},x=555,y=290,height=40,width=240,size=22,align=right;
+
+// Cover
+Rectangle x=0,y=250,width=180,height=180,red=0,green=0,blue=0;    //Linie zum verdecken der Hintergrundgrafik
+Image x=10,y=190,width=300,height=300,fit=yes,aspect_ratio=yes,path={musicCoverName}:symbols/nocover.png;
+
+// Playlist
+Text text=Next Tracks:,x=315,y=370,height=40,width=480,size=24,red=255,green=248,blue=166;
+TextList text={musicTrack},x=315,y=410,height=80,width=480,size=24;
+
+// Status Icons
+Text condition={musicShuffle} = 1,text={\\001},x=241,y=490,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicShuffle} <> 1,text={\\001},x=241,y=490,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+Text condition={musicLoop} = 1,text={\\002},x=289,y=490,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicLoop} <> 1,text={\\002},x=289,y=490,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+Text condition={musicRecording} = 1,text={\\003},x=337,y=490,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicRecording} <> 1,text={\\003},x=337,y=490,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+// Variable musicLyrics wird noch nicht unterstützt
+Text condition={musicLyrics} = 1,text={\\004},x=385,y=490,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicLyrics} <> 1,text={\\004},x=385,y=490,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+// Variable musicCopy wird noch nicht unterstützt
+Text condition={musicCopy} = 1,text={\\005},x=433,y=490,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicCopy} <> 1,text={\\005},x=433,y=490,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+Text condition={musicShutdown} = 1,text={\\006},x=481,y=490,width=30,height=30,size=20,align=center,red=255,green=0,blue=0;
+Text condition={musicShutdown} <> 1,text={\\006},x=481,y=490,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+// Variable musicTimer wird noch nicht unterstützt
+Text condition={musicTimer} = 1,text={\\007},x=529,y=490,width=30,height=30,size=20,align=center,red=187,green=129,blue=22;
+Text condition={musicTimer} <> 1,text={\\007},x=529,y=490,width=30,height=30,size=20,align=center,red=64,green=64,blue=64;
+
+// to be continued ...
+
+// Progressbar & Times
+Text text={replayCurrent/%k:%M:%S},x=10,y=505,width=200,height=40,size=28;
+Text text={replayTotal/%k:%M:%S},x=590,y=505,width=200,height=40,align=right,size=28;
+Progressbar total={replayTotal/%s},value={replayCurrent/%s},x=240,y=535,width=320,height=16,bg_x=237,bg_y=532,bg_width=326,bg_height=22,bg_red=0,bg_green=0,bg_blue=0,path=symbols/progress.png,bg_transparent=255;
+
+// Buttons Help
+Image x=007,y=555,width=192,height=43,path=menu/button-red.png,on_click=Red;
+Text text={musicButtonRed},x=20,y=560,width=-1,height=43,size=22,red=255,green=255,blue=255;
+Image x=205,y=555,width=192,height=43,path=menu/button-green.png,on_click=Green;
+Text text={musicButtonGreen},x=218,y=560,width=-1,height=43,size=22,red=0,green=0,blue=0;
+Image x=403,y=555,width=192,height=43,path=menu/button-yellow.png,on_click=Yellow;
+Text text={musicButtonYellow},x=416,y=560,width=-1,height=43,size=22,red=0,green=0,blue=0;
+Image x=601,y=555,width=192,height=43,path=menu/button-blue.png,on_click=Blue;
+Text text={musicButtonBlue},x=614,y=560,width=-1,height=43,size=22,red=255,green=255,blue=255;
+
+Include=Volume;
+Include=OSD-Messages;
+
+#endif
+
+
+// ----------------------------------------
+#ifdef MUSIC_PLUGIN_MORONE_STYLE
+// ----------------------------------------
+
+Defaults font=graphTFT,size=28,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+Background path=backgrounds/bg-music-morone_800x600.png;
+
+// Cover
+Image x=41,y=75,width=175,height=160,fit=yes,aspect_ratio=no,path={musicCoverName}:symbols/nocover.png;
+
+// Track Info
+Text text=Artist:,x=250,y=78,height=20,width=60,size=12,red=255,green=248,blue=166;
+Text text={musicArtist},x=315,y=78,height=20,width=430,size=12,red=255,green=248,blue=166;
+Text text=Album:,x=250,y=105,height=20,width=60,size=12,red=255,green=248,blue=166;
+Text text={musicAlbum},x=315,y=105,height=20,width=430,size=12,red=255,green=248,blue=166;
+Text text=Genre:,x=250,y=130,height=20,width=60,size=12,red=255,green=248,blue=166;
+Text text={musicGenre},x=315,y=130,height=20,width=430,size=12,red=255,green=248,blue=166;
+Text text=Year:,x=250,y=155,height=20,width=60,size=12,red=255,green=248,blue=166;
+Text text={musicYear},x=315,y=155,height=20,width=430,size=12,red=255,green=248,blue=166;
+
+// Show some Details (commented out, totally missplaced ; ) only to show how it works)
+//Text text=File: {musicFilename},x=245,y=500,height=20,width=450,size=12,red=255,green=248,blue=166;
+//Text text=Comment: {musicComment},x=245,y=525,height=20,width=450,size=12,red=255,green=248,blue=166;
+
+// Rating
+Text text=Rating:,x=250,y=200,height=20,width=65,size=12;
+Progressbar total=255,value={musicRating},x=315,y=205,width=110,height=10,path=symbols/music-rating.png,bg_transparent=255;
+
+// Status Info
+Text text={musicPlayStatus},x=53,y=280,height=20,width=148,size=12,align=center,red=255,green=248,blue=166;
+
+// Anzeige des SpectrumAnalyzers
+SpectrumAnalyzer x=48,y=297,width=175,height=40,delay=10ms,red=52,green=162,blue=159,path=backgrounds/spectrum.png,fit=yes,aspect_ration=yes;
+
+// Progressbar
+Text text={musicFrequence} kHz\,{musicBitrate} kbps\, {musicStereoMode},x=250,y=260,height=20,width=495,size=12;
+Text text=Track {musicIndex} of {musicCount},x=250,y=285,height=20,width=495,size=12;
+
+Text text={replayCurrent/%k:%M:%S},x=250,y=308,width=70,height=20,size=12;
+Text text={replayTotal/%k:%M:%S},x=690,y=308,width=70,height=20,size=12;
+
+Progressbar total={replayTotal/%s},value={replayCurrent/%s},x=330,y=312,width=340,height=10,red=187,green=230,blue=22,bg_red=20,bg_green=50,bg_blue=50,bg_transparent=255;
+
+// Playlist
+Text text={musicCurrentTrack},x=52,y=375,height=20,width=700,size=14,red=255,green=248,blue=166;
+TextList text={musicTrack},x=52,y=400,height=80,width=700,size=12,red=255,green=248,blue=166;
+
+// Status Icons
+Text condition={musicShuffle} = 1,text={\\001},x=52,y=503,width=40,height=40,size=26,align=center,red=187,green=129,blue=22;
+Text condition={musicShuffle} <> 1,text={\\001},x=52,y=503,width=40,height=40,size=26,align=center,red=64,green=64,blue=64;
+
+Text condition={musicLoop} = 1,text={\\002},x=97,y=503,width=40,height=40,size=26,align=center,red=187,green=129,blue=22;
+Text condition={musicLoop} <> 1,text={\\002},x=97,y=503,width=40,height=40,size=26,align=center,red=64,green=64,blue=64;
+
+Text condition={musicRecording} = 1,text={\\003},x=142,y=503,width=40,height=40,size=26,align=center,red=187,green=129,blue=22;
+Text condition={musicRecording} <> 1,text={\\003},x=142,y=503,width=40,height=40,size=26,align=center,red=64,green=64,blue=64;
+
+// Variable musicLyrics wird noch nicht unterstützt
+Text condition={musicLyrics} = 1,text={\\004},x=187,y=503,width=40,height=40,size=26,align=center,red=187,green=129,blue=22;
+Text condition={musicLyrics} <> 1,text={\\004},x=187,y=503,width=40,height=40,size=26,align=center,red=64,green=64,blue=64;
+
+// Variable musicCopy wird noch nicht unterstützt
+Text condition={musicCopy} = 1,text={\\005},x=232,y=503,width=40,height=40,size=26,align=center,red=187,green=129,blue=22;
+Text condition={musicCopy} <> 1,text={\\005},x=232,y=503,width=40,height=40,size=26,align=center,red=64,green=64,blue=64;
+
+Text condition={musicShutdown} = 1,text={\\006},x=277,y=503,width=40,height=40,size=26,align=center,red=255,green=0,blue=0;
+Text condition={musicShutdown} <> 1,text={\\006},x=277,y=503,width=40,height=40,size=26,align=center,red=64,green=64,blue=64;
+
+// Variable musicTimer wird noch nicht unterstützt
+Text condition={musicTimer} = 1,text={\\007},x=322,y=503,width=40,height=40,size=26,align=center,red=187,green=129,blue=22;
+Text condition={musicTimer} <> 1,text={\\007},x=322,y=503,width=40,height=40,size=26,align=center,red=64,green=64,blue=64;
+
+// Time (als Ersatz für die Status Icons)
+//Text text={time/%A\, der %d. %B - %H:%M},x=52,y=509,height=24,size=14,width=480,red=255,green=248,blue=166,height=12;
+
+// Volume
+Text condition={volumeMute} = 0,text={\\008},x=545,y=504,width=30,height=30,size=20,align=left,red=187,green=129,blue=22;
+Text condition={volumeMute} <> 0,text={\\009},x=545,y=504,width=30,height=30,size=20,align=left,red=187,green=129,blue=22;
+Volumebar x=580,y=513,width=170,height=11,red=187,green=129,blue=22,permanent=yes,bg_red=50,bg_green=50,bg_blue=50,bg_transparent=255;
+
+// Buttons Help
+Text text={musicButtonRed},x=40,y=571,height=20,width=145,size=12,red=255,green=248,blue=166;
+Text text={musicButtonGreen},x=237,y=570,height=20,width=145,size=12,red=255,green=248,blue=166;
+Text text={musicButtonYellow},x=440,y=570,height=20,width=145,size=12,red=255,green=248,blue=166;
+Text text={musicButtonBlue},x=637,y=570,height=20,width=145,size=12,red=255,green=248,blue=166;
+
+Include=OSD-Messages;
+
+#endif
+
+
+
+//***************************************************************************
+// Tracklist des Music Plugins
+//***************************************************************************
+[MenuMusicTrackList]
+
+Include=MenuCommon;
+
+Defaults menu_y=90,menu_height=425,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// Track Nr
+ColumnSelected number=1,width=150,size=44,focus=menu/focus_140_75tr.png;
+Column number=1,width=80;
+//ColumnSelected number=4,size=44,scroll=marquee,scroll_count=1,dots=yes,focus=menu/focus_140_75tr.png;
+
+// Title
+ColumnSelected number=2,size=44,scroll=marquee,scroll_count=5,dots=yes;
+Column number=2,dots=yes;
+
+
+
+//***************************************************************************
+// Standardwerte für alle Menüs
+// Dieser Abschnitt wird in anderen Sektionen eingebunden (include)
+//***************************************************************************
+[MenuCommon]
+
+Defaults font=graphTFT,size=22,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+Background path=backgrounds/bg-menu-avp.png;
+
+//Bilder für die Menüeinträge definieren
+MenuImageMap name=Schedule,file=menu/menuitems/schedule.png;
+MenuImageMap name=Channels,file=menu/menuitems/channels.png;
+MenuImageMap name=Timers,file=menu/menuitems/timers.png;
+MenuImageMap name=Timer...,file=menu/menuitems/timers.png;
+MenuImageMap name=Recordings,file=menu/menuitems/recordings.png;
+MenuImageMap name=ExtRecMenu,file=menu/menuitems/recordings.png;
+MenuImageMap name=Video,file=menu/menuitems/recordings.png;
+MenuImageMap name=Suche/Info...,file=menu/menuitems/info.png;
+MenuImageMap name=Infotools...,file=menu/menuitems/info.png;
+MenuImageMap name=System...,file=menu/menuitems/setup.png;
+MenuImageMap name=Setup,file=menu/menuitems/setup.png;
+MenuImageMap name=Minivdr-Setup,file=menu/menuitems/setup.png;
+MenuImageMap name=Commands,file=menu/menuitems/commands.png;
+MenuImageMap name=DVD,file=menu/menuitems/dvd.png;
+MenuImageMap name=VideoCD,file=menu/menuitems/vcd.png;
+MenuImageMap name=Disk abspielen,file=menu/menuitems/vdrcd.png;
+MenuImageMap name=DVDs erstellen,file=menu/menuitems/burn.png;
+MenuImageMap name=Create DVDs,file=menu/menuitems/burn.png;
+MenuImageMap name=DVD-Wechsler,file=menu/menuitems/dvd.png;
+MenuImageMap name=MP3,file=menu/menuitems/mp3.png;
+MenuImageMap name=MPlayer,file=menu/menuitems/mplayer.png;
+MenuImageMap name=Picture beside Picture,file=menu/menuitems/pbp.png;
+MenuImageMap name=Mldonkey,file=menu/menuitems/donkey.png;
+MenuImageMap name=Bilder,file=menu/menuitems/image.png;
+MenuImageMap name=Bilder...,file=menu/menuitems/image.png;
+MenuImageMap name=Postfach,file=menu/menuitems/Mail.png;
+MenuImageMap name=SysInfo,file=menu/menuitems/Sysinfo.png;
+MenuImageMap name=Signalinformationen,file=menu/menuitems/Signal.png;
+MenuImageMap name=Pilot,file=menu/menuitems/Pilot.png;
+MenuImageMap name=Graph-TFT,file=menu/menuitems/Pilot.png;
+MenuImageMap name=Konsolen,file=menu/menuitems/konsole.png;
+MenuImageMap name=Prefermenu,file=menu/menuitems/Prefermenu.png;
+MenuImageMap name=TV-OnScreen,file=menu/menuitems/tvonscreen.png;
+MenuImageMap name=Sleep-Timer,file=menu/menuitems/sleeptimer.png;
+MenuImageMap name=Wetter,file=menu/menuitems/Wetter.png;
+MenuImageMap name=Suche,file=menu/menuitems/suche.png;
+MenuImageMap name=Bild-in-Bild,file=menu/menuitems/osdpip.png;
+MenuImageMap name=Zeitleiste,file=menu/menuitems/timeline.png;
+MenuImageMap name=iPod,file=menu/menuitems/ipod.png;
+MenuImageMap name=Video/Audio...,file=menu/menuitems/recordings.png;
+MenuImageMap name=EPG...,file=menu/menuitems/yaepg.png;
+MenuImageMap name=Spiele...,file=menu/menuitems/gngb2vdr.png;
+MenuImageMap name=Sonstige Plugins...,file=menu/menuitems/content.png;
+MenuImageMap name=Videotext (OSD),file=menu/menuitems/osdteletext.png;
+MenuImageMap name=Fritz!Box Telefonbuch,file=menu/menuitems/vbox.png;
+MenuImageMap name=Aufnahmen wiederherstellen,file=menu/menuitems/stop.png;
+MenuImageMap name=VideoCD (/dev/dvd),file=menu/menuitems/vcd.png;
+MenuImageMap name=CD Player,file=menu/menuitems/vdrcd.png;
+
+Text text={menuTitle},x=90,y=15,width=420,height=40,size=22,lines=1,align=center,red=255,green=255,blue=255;
+
+// Uhr oben rechts
+Text text={time/%d.%m. %H:%M},x=600,y=10,width=195,height=30,align=right;
+
+// Die Farbbuttons...
+MenuButtonBackgroundRed x=7,y=555,width=192,height=43,pathON=menu/button-red.png,on_click=Red;
+MenuButtonRed x=10,y=560,width=179,height=43,red=255,green=255,blue=255,transparent=255,align=center;
+MenuButtonBackgroundGreen x=205,y=555,width=192,height=43,pathON=menu/button-green.png,on_click=Green;
+MenuButtonGreen x=208,y=560,width=179,height=43,red=0,green=0,blue=0,transparent=255,align=center;
+MenuButtonBackgroundYellow x=403,y=555,width=192,height=43,pathON=menu/button-yellow.png,on_click=Yellow;
+MenuButtonYellow x=406,y=560,width=179,height=43,red=0,green=0,blue=0,transparent=255,align=center;
+MenuButtonBackgroundBlue x=601,y=555,width=192,height=43,pathON=menu/button-blue.png,on_click=Blue;
+MenuButtonBlue x=604,y=560,width=179,height=43,red=255,green=255,blue=255,transparent=255,align=center;
+
+// Trennline z.B. in der Programmübersicht. Sieht dann etwa so aus: --------------- Fre 12.09.2008 ---------------
+PartingLine x=0,align=center,width=800,red=255,green=255,blue=255,path=menu/parting-line-avp.png,path2=menu/parting-line-empty-avp.png;
+
+// Aufnahmesymbol und Ausgabe des Aufnahmetextes
+// {actRecordingCount} = Anzahl der gerade laufenen Aufnahmen
+Image condition={actRecordingCount} > 0,
+   x=587,y=520,path=symbols/animation/recOn_1.png;
+// {actRecordingName} = Name der gerade laufenen Aufnahmen
+Text condition={actRecordingCount} > 0,
+   text={actRecordingName},
+   x=665,y=530,width=130,height=25,lines=1,size=18,red=0,green=0,blue=0,
+   scroll=marquee,scroll_count=5,bg_transparent=0;
+   
+#ifdef MOUSE_BUTTONS
+	var varHideColorButtons = 1;
+	var varHidePrevChannel = 1;
+	Include=MouseButtons;
+#endif
+
+// Spezial OSD Message für MenuCommon
+Message x=10,y=520,width=470,height=25,size=14,red=0,green=0,blue=0,bg_x=0,bg_y=520,path=backgrounds/bg-message.png,delay=5,bg_transparent=255;
+
+
+
+//***************************************************************************
+// Anzeige der Timer Daten
+//***************************************************************************
+[MenuTimers]
+
+Include=MenuCommon;
+
+Defaults menu_y=90,menu_height=425,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=90,x=1,width=800,height=425,on_dblclick=Ok;
+
+// flag as text (or symbol via font)
+ColumnSelected number=1,width=65,height=75,align_v=1,focus=menu/focus_140_75tr.png;
+Column number=1,width=65,height=75,align_v=1;
+
+// Channel Nr
+ColumnSelected number=2,width=50,height=75,align_v=1;
+Column number=2,width=50,height=75,align_v=1;
+
+// 
+ColumnSelected number=3,width=120,height=75,align_v=1;
+Column number=3,width=120,height=75,align_v=1;
+
+// Start Time
+ColumnSelected number=4,width=100,height=75,align_v=1;
+Column number=4,width=100,height=75,align_v=1;
+
+// End Time
+ColumnSelected number=5,width=100,height=75,align_v=1;
+Column number=5,width=100,height=75,align_v=1;
+
+// Event
+ColumnSelected number=6,scroll=marquee,scroll_count=5,dots=yes,lines=2,height=75,align_v=1;
+Column number=6,dots=yes,lines=2,height=75,align_v=1;
+
+
+
+//***************************************************************************
+// Anzeige der Auswahlliste aller Plugins
+//***************************************************************************
+[MenuSetupPlugins]
+
+Include=MenuCommon;
+
+Defaults menu_y=90,menu_height=430,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=90,x=1,width=800,height=430,on_dblclick=Ok;
+
+ColumnSelected number=0,focus=menu/focus-small.png,scroll=off;
+Column number=0;
+
+
+
+//***************************************************************************
+// Menü zur Einstellung von Konfigurationsparametern
+//***************************************************************************
+[MenuSetupPage]
+
+Include=MenuCommon;
+
+Defaults menu_y=90,menu_height=430,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=90,x=1,width=800,height=430,on_dblclick=Ok;
+
+ColumnSelected number=1,width=520,focus=menu/focus-small.png,scroll=off;
+Column number=1,width=520;
+
+ColumnSelected number=2,scroll=off;
+Column number=2;
+
+
+
+//***************************************************************************
+// Aufnahmemenü (VDR Standardversion)
+//***************************************************************************
+[MenuRecordings]
+
+Include=MenuCommon;
+
+Defaults menu_y=90,menu_height=430,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=90,x=1,width=800,height=430,on_dblclick=Ok;
+
+// Date
+// conditon example
+// ColumnSelected condition={colCount} < 3,number=1,width=150,focus=menu/focus-small.png;
+ColumnSelected size=44;
+Column number=1,width=150;
+
+// Time
+ColumnSelected size=44;
+Column number=2,width=120;
+
+// length only if more than 3 columns
+ColumnSelected condition={colCount} > 3,size=44;
+Column condition={colCount} > 3,number=3,width=120;
+
+// text
+ColumnSelected condition={colCount} > 3,number=4,size=44,dots=yes,focus=menu/focus_140_75tr.png;
+Column condition={colCount} > 3,number=4,dots=yes;
+
+ColumnSelected condition={colCount} = 3,number=3,size=44,dots=yes,focus=menu/focus_140_75tr.png;
+Column condition={colCount} = 3,number=3,dots=yes;
+
+
+
+//***************************************************************************
+// Aufnahmemenü (extRecMenu Plugin Version)
+//***************************************************************************
+[MenuExtRecordings]
+Include=MenuCommon;
+
+Defaults menu_y=90,menu_height=430,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=90,x=1,width=800,height=430,on_dblclick=Ok;
+
+// flag (New,...) as text (or symbol via font)
+ColumnSelected size=44;
+Column number=1,width=40;
+
+// Date
+ColumnSelected size=44;
+Column number=2,width=150;
+
+// Time
+ColumnSelected size=44;
+Column number=3,width=105;
+
+// length
+ColumnSelected size=44;
+Column number=4,width=85;
+
+// text
+ColumnSelected number=5,size=44,dots=yes,focus=menu/focus_140_75tr.png;
+Column number=5,dots=yes;
+
+
+
+//***************************************************************************
+// Kanalmenü (Menu->Kanäle)
+//***************************************************************************
+[MenuChannels]
+
+Include=MenuCommon;
+
+Defaults menu_y=90,menu_height=430,font=graphTFT,size=24,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=90,x=1,width=800,height=430,on_dblclick=Ok;
+
+// ChannelNumber
+ColumnSelected number=1,x=1,width=140,size=44,focus=menu/focus_140_75tr.png;
+Column number=1,x=1,width=80;
+
+// ChannelName
+ColumnSelected number=2,x=150,size=44;
+Column number=2,x=70;
+
+
+
+//***************************************************************************
+// Programmübersicht (Menu->Programme) (EPGSearch Plugin Version)
+//***************************************************************************
+[MenuEpgsSchedule]
+
+Include=MenuCommon;
+Defaults menu_y=170,menu_height=365,height=70,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=170,x=1,width=800,height=365,on_dblclick=Ok;
+
+// Senderlogo Logo oben links
+Image width=80,fit=yes,aspect_ratio=yes,x=10,y=5,path=columnimages/{selectedRowEventChannelName/tologo}.png;
+
+// Info zum Event der selektierten Zeile über dem Menü
+
+// Start und Endezeit des gewählten Titels oben links
+Text text={selectedRowEventStartTime/%a %d.%m.},x=10,y=90,size=20,width=170,height=30,red=52,green=162,blue=159;
+Text text={selectedRowEventStartTime/%H:%M}-{selectedRowEventEndTime/%H:%M},x=10,y=130,size=20,width=170,height=30,red=52,green=162,blue=159;
+
+// EPG Detailinformationen des gewählten Titels im Kopfbereich anzeigen
+text text={selectedRowEventDescription},x=195,y=90,size=12,width=450,height=73,red=255,green=255,blue=255;
+Image x=655,y=60,width=140,height=102,path={varEPGimagesPath_1}{selectedRowEventID}.{EPGimageSuffix}:{varEPGimagesPath_2}{selectedRowEventID}.{EPGimageSuffix}:{varEPGimagesPath_3}{selectedRowEventID}.{EPGimageSuffix}:{varImagesPath_1}{selectedRowEventTitle}.jpg:backgrounds/filmspule_tr.png,fit=yes,aspect_ratio=yes;
+
+//Alternativ: Gewählten Programmtitel und Subtitel im Kopfbereich anzeigen
+//text text={selectedRowEventTitle},x=195,y=90,width=450,height=40,red=255,green=255,blue=255;
+//text text={selectedRowEventSubtitle},x=195,y=130,size=18,width=450,height=30,lines=1,red=52,green=162,blue=159;
+
+Rectangle x=185,y=90,width=3,height=75,red=52,green=162,blue=159;
+Rectangle x=5,y=165,width=790,height=3,red=52,green=162,blue=159;
+
+//Das Menü...
+// Date
+//EventColumnSelected text={rowEventStartTime/%a %d.%m. %H:%M},width=150,focus=menu/focus_140_75tr.png;
+EventColumn text={rowEventStartTime/%a %d.%m. %H:%M},width=150;
+
+// EPG Image
+//EventColumnSelected type=image,bar_height=70%,fit=yes,aspect_ratio=yes,spaceing=10,width=80,spacing=10,path={varEPGimagesPath_1}{rowEventID}.{EPGimageSuffix}:{varEPGimagesPath_2}{rowEventID}.{EPGimageSuffix}:{varEPGimagesPath_3}{rowEventID}.{EPGimageSuffix}:{varImagesPath_1}{rowEventTitle}.jpg:symbols/video.png;
+EventColumn type=image,bar_height=70%,fit=yes,aspect_ratio=yes,spaceing=10,width=80,spacing=10,path={varEPGimagesPath_1}{rowEventID}.{EPGimageSuffix}:{varEPGimagesPath_2}{rowEventID}.{EPGimageSuffix}:{varEPGimagesPath_3}{rowEventID}.{EPGimageSuffix}:{varImagesPath_1}{rowEventTitle}.jpg:symbols/video.png;
+
+//////////////////
+// Symbol Column Beginn - flag (V,T,t,...) as text (or symbol via font)
+////
+// Partial Timer Before Record; Char 149 = Half Clock 1
+//EventColumnSelected x=230,condition={rowEventHasPartialTimerBefore} = 1,text={\\149},width=40,align_v=1;
+EventColumn x=230,condition={rowEventHasPartialTimerBefore} = 1,text={\\149},width=40,align_v=1;
+
+// Timer & not Recording; Char 253 = Clock-Symbol
+//EventColumnSelected x=230,condition={rowEventHasTimer} = 1 & {rowEventIsRecording} = 0,text={\\253},width=40,align_v=1;
+EventColumn x=230,condition={rowEventHasTimer} = 1 & {rowEventIsRecording} = 0,text={\\253},width=40,align_v=1;
+
+// Partial Timer After Record; Char 148 = Half Clock 2
+//EventColumnSelected x=230,condition={rowEventHasPartialTimerAfter} = 1,text={\\148},width=40,align_v=1;
+EventColumn x=230,condition={rowEventHasPartialTimerAfter} = 1,text={\\148},width=40,align_v=1;
+
+// Recording Timer; Char 249 = REC Symbol
+//EventColumnSelected x=230,condition={rowEventIsRecording} = 1,text={\\249},width=40,align_v=1;
+EventColumn x=230,condition={rowEventIsRecording} = 1,text={\\249},width=40,align_v=1;
+
+// Running Event; Char 251 = Runningman-Symbol
+//EventColumnSelected x=230,condition={rowEventIsRunning} = 1,text={\\251},width=40,align_v=1;
+EventColumn x=230,condition={rowEventIsRunning} = 1,text={\\251},width=40,align_v=1;
+////
+// Symbol Column End
+////////////////////
+
+// event
+EventColumnSelected text={rowEventTitle},size=44,scroll=marquee,dots=yes,focus=menu/focus_140_75tr.png;
+EventColumn text={rowEventTitle},line=1,dots=yes;
+EventColumn text={rowEventSubTitle},line=2,size=20,dots=yes,red=52,green=162,blue=159;
+
+
+
+//***************************************************************************
+// Programmübersicht (Menu->Programme) (VDR Standard Version)
+//***************************************************************************
+[MenuSchedule]
+
+Include=MenuEpgsSchedule;
+
+
+
+//***************************************************************************
+// Anzeige von Senderlogo und Startzeit
+// Dieser Abschnitt wird in anderen ...WhatsOn...-Sektionen eingebunden (include)
+//***************************************************************************
+[MenuEpgsWhatsOn_logo_time]
+
+Include=MenuCommon;
+
+Defaults menu_y=90,height=66,menu_height=430,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=90,x=1,width=800,height=430,on_dblclick=Ok;
+
+// Senderlogo Logo oben links
+Image width=80,height=70,fit=yes,aspect_ratio=yes,x=10,y=5,path=columnimages/{selectedRowEventChannelName/tologo}.png;
+
+// ch-logo
+EventColumnSelected type=image,width=60,fit=yes,aspect_ratio=yes,bar_height=90%,spacing=10,path=columnimages/{rowEventChannelName/tologo}.png,focus=menu/focus_140_75tr.png;
+EventColumn type=image,width=60,fit=yes,aspect_ratio=yes,bar_height=90%,spacing=10,path=columnimages/{rowEventChannelName/tologo}.png;
+
+// time
+EventColumnSelected text={rowEventStartTime/%H:%M},align_v=1,width=100;
+EventColumn text={rowEventStartTime/%H:%M},align_v=1,width=100;
+
+
+
+//***************************************************************************
+// Anzeige der Event Daten (aktuelles Programm)
+// Dieser Abschnitt wird in anderen ...WhatsOn...-Sektionen eingebunden (include)
+//***************************************************************************
+[MenuEpgsWhatsOn_Event]
+
+Defaults menu_y=90,height=66,menu_height=430,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+EventColumnSelected text={rowEventTitle},line=1,scroll=marquee,scroll_count=5,dots=yes;
+EventColumn text={rowEventTitle},line=1,dots=yes;
+
+EventColumnSelected text={rowEventSubTitle},line=2,size=20,scroll=marquee,scroll_count=5,dots=yes,red=52,green=162,blue=159;
+EventColumn text={rowEventSubTitle},line=2,size=20,dots=yes,red=52,green=162,blue=159;
+
+
+
+//***************************************************************************
+// Anzeige eingerichteter persönlicher Zeitabschnitte in EPGSearch
+//***************************************************************************
+[MenuEpgsWhatsOnElse]
+
+Include=MenuEpgsWhatsOn_logo_time;
+
+Defaults menu_y=90,height=66,menu_height=430,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+//////////////////
+// Symbol Column Beginn - flag (V,T,t,...) as text (or symbol via font)
+////
+// Partial Timer Before Record; Char 149 = Half Clock 1
+EventColumnSelected x=170,condition={rowEventHasPartialTimerBefore} = 1,text={\\149},width=40,align_v=1;
+EventColumn x=170,condition={rowEventHasPartialTimerBefore} = 1,text={\\149},width=40,align_v=1;
+
+// Timer & not Recording; Char 253 = Clock-Symbol
+EventColumnSelected x=170,condition={rowEventHasTimer} = 1 & {rowEventIsRecording} = 0,text={\\253},width=40,align_v=1;
+EventColumn x=170,condition={rowEventHasTimer} = 1 & {rowEventIsRecording} = 0,text={\\253},width=40,align_v=1;
+
+// Partial Timer After Record; Char 148 = Half Clock 2
+EventColumnSelected x=170,condition={rowEventHasPartialTimerAfter} = 1,text={\\148},width=40,align_v=1;
+EventColumn x=170,condition={rowEventHasPartialTimerAfter} = 1,text={\\148},width=40,align_v=1;
+
+// Recording Timer; Char 249 = REC Symbol
+EventColumnSelected x=170,condition={rowEventIsRecording} = 1,text={\\249},width=40,align_v=1;
+EventColumn x=170,condition={rowEventIsRecording} = 1,text={\\249},width=40,align_v=1;
+
+// Running Event; Char 251 = Runningman-Symbol
+EventColumnSelected x=170,condition={rowEventIsRunning} = 1,text={\\251},width=40,align_v=1;
+EventColumn x=170,condition={rowEventIsRunning} = 1,text={\\251},width=40,align_v=1;
+////
+// Symbol Column End
+////////////////////
+
+Include=MenuEpgsWhatsOn_Event;
+
+
+
+//***************************************************************************
+// Was läuft JETZT (Menu->Programme-Jetzt) (EPGSearch Plugin Version)
+//***************************************************************************
+[MenuEpgsWhatsOnNow]
+
+Include=MenuEpgsWhatsOn_logo_time;
+
+Defaults menu_y=90,height=66,menu_height=430,font=graphTFT,size=22,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// Fortschrittsanzeige (progress)
+EventColumnSelected type=progress,width=70,spacing=10,bar_height=40%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path2=symbols/progress.png;
+EventColumn type=progress,width=70,spacing=10,bar_height=40%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path2=symbols/progress.png;
+
+//////////////////
+// Symbol Column Beginn - flag (V,T,t,...) as text (or symbol via font)
+////
+// Partial Timer Before Record; Char 149 = Half Clock 1
+EventColumnSelected x=250,condition={rowEventHasPartialTimerBefore} = 1,text={\\149},width=40,align_v=1;
+EventColumn x=250,condition={rowEventHasPartialTimerBefore} = 1,text={\\149},width=40,align_v=1;
+
+// Timer & not Recording; Char 253 = Clock-Symbol
+EventColumnSelected x=250,condition={rowEventHasTimer} = 1 & {rowEventIsRecording} = 0,text={\\253},width=40,align_v=1;
+EventColumn x=250,condition={rowEventHasTimer} = 1 & {rowEventIsRecording} = 0,text={\\253},width=40,align_v=1;
+
+// Partial Timer After Record; Char 148 = Half Clock 2
+EventColumnSelected x=250,condition={rowEventHasPartialTimerAfter} = 1,text={\\148},width=40,align_v=1;
+EventColumn x=250,condition={rowEventHasPartialTimerAfter} = 1,text={\\148},width=40,align_v=1;
+
+// Recording Timer; Char 249 = REC Symbol
+EventColumnSelected x=250,condition={rowEventIsRecording} = 1,text={\\249},width=40,align_v=1;
+EventColumn x=250,condition={rowEventIsRecording} = 1,text={\\249},width=40,align_v=1;
+
+// Running Event; Char 251 = Runningman-Symbol
+EventColumnSelected x=250,condition={rowEventIsRunning} = 1,text={\\251},width=40,align_v=1;
+EventColumn x=250,condition={rowEventIsRunning} = 1,text={\\251},width=40,align_v=1;
+////
+// Symbol Column End
+////////////////////
+
+Include=MenuEpgsWhatsOn_Event;
+
+
+
+//***************************************************************************
+// Was läuft Jetzt (Menu->Programme-Jetzt) (VDR Standard Version)
+//***************************************************************************
+[MenuWhatsOnNow]
+Include=MenuEpgsWhatsOnNow;
+
+
+
+//***************************************************************************
+// Was läuft als NÄCHSTES (Menu->Programme-Nächste) (EPGSearch Plugin Version)
+//***************************************************************************
+[MenuEpgsWhatsOnNext]
+Include=MenuEpgsWhatsOnElse;
+
+
+
+//***************************************************************************
+// Was läuft als NÄCHSTES (Menu->Programme-Nächste) (VDR Standard Version)
+//***************************************************************************
+[MenuWhatsOnNext]
+Include=MenuEpgsWhatsOnElse;
+
+
+
+//***************************************************************************
+// Anzeige ArghDirector (benötigt ArghDirector Plugin)
+//***************************************************************************
+[MenuArghDirector]
+
+Include=MenuCommon;
+
+Defaults menu_y=90,menu_height=430,font=graphTFT,size=20,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=90,x=1,width=800,height=430,on_dblclick=Ok;
+
+// Overview - View
+// event
+ColumnSelected condition={colCount} = 1,number=1,focus=menu/focus-small.png;
+Column condition={colCount} = 1,number=1;
+
+// Detail - View (with times, ...)
+// event/ch-name
+ColumnSelected condition={colCount} > 1,number=1,width=350,focus=menu/focus-small.png;
+Column condition={colCount} > 1,number=1,width=350;
+
+// flag (V,T,t,...) as text (or symbol via font) ColumnSelected number=2,width=40;
+Column number=2,width=40;
+
+// progress graphical with image
+ColumnSelected number=3,type=progress,width=70,spacing=10,bar_height=50%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path2=symbols/progress.png;
+Column number=3,type=progress,width=70,spacing=10,bar_height=50%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path2=symbols/progress.png;
+
+// time
+ColumnSelected number=4;
+Column number=4;
+
+
+
+//***************************************************************************
+// Standardwerte für die Sektionen MenuEvent & MenuRecording
+// Dieser Abschnitt wird in anderen Sektionen eingebunden (include)
+//***************************************************************************
+[MenuDetailCommon]
+
+Defaults font=graphTFT,size=22,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+// Uhr oben rechts
+Text text={time/%d.%m. %H:%M},x=600,y=10,width=195,height=30,align=right;
+
+// Die Farbbuttons...
+MenuButtonBackgroundRed x=7,y=555,width=192,height=43,pathON=menu/button-red.png,on_click=Red;
+MenuButtonRed x=10,y=560,width=179,height=43,red=255,green=255,blue=255,transparent=255,align=center;
+MenuButtonBackgroundGreen x=205,y=555,width=192,height=43,pathON=menu/button-green.png,on_click=Green;
+MenuButtonGreen x=208,y=560,width=179,height=43,red=0,green=0,blue=0,transparent=255,align=center;
+MenuButtonBackgroundYellow x=403,y=555,width=192,height=43,pathON=menu/button-yellow.png,on_click=Yellow;
+MenuButtonYellow x=406,y=560,width=179,height=43,red=0,green=0,blue=0,transparent=255,align=center;
+MenuButtonBackgroundBlue x=601,y=555,width=192,height=43,pathON=menu/button-blue.png,on_click=Blue;
+MenuButtonBlue x=604,y=560,width=179,height=43,red=255,green=255,blue=255,transparent=255,align=center;
+
+// Aufnahmesymbol und Ausgabe des Aufnahmetextes
+// {actRecordingCount} = Anzahl der gerade laufenen Aufnahmen
+Image condition={actRecordingCount} > 0,
+   x=587,y=520,path=symbols/animation/recOn_1.png;
+// {actRecordingName} = Name der gerade laufenen Aufnahmen
+Text condition={actRecordingCount} > 0,
+   text={actRecordingName},
+   x=665,y=530,width=130,height=25,lines=1,size=18,red=0,green=0,blue=0,
+   scroll=marquee,scroll_count=5,bg_transparent=0;
+
+// Spezial OSD Message
+Message x=10,y=520,width=470,height=25,size=14,red=0,green=0,blue=0,bg_x=0,bg_y=520,path=backgrounds/bg-message.png,delay=5,bg_transparent=255;
+
+
+
+//***************************************************************************
+// Detailinfos des Programms in der Programmübersicht
+//***************************************************************************
+[MenuEvent]
+
+Include=MenuDetailCommon;
+
+Defaults font=graphTFT,size=22,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+Background path=backgrounds/bg-menu-avp.png;
+
+var varStartLine = 0;
+
+Text text={menuTitle},x=90,y=15,width=420,height=40,size=22,lines=1,align=center,red=255,green=255,blue=255;
+
+// Senderlogo Logo oben links
+Image x=10,y=5,width=80,height=70,fit=yes,aspect_ratio=yes,path=columnimages/{eventChannelName/tologo}.png,on_click=Menu;
+
+//Start und Endzeit des Programms ausgeben
+Text text={eventStartTime/%a %d.%m},x=10,y=90,size=20,width=170,height=30;
+Text text={eventStartTime/%H:%M},x=10,y=130,size=20,width=80,height=30;
+Text text=-{eventEndTime/%H:%M},x=90,y=130,size=20,width=90,height=30;
+
+Rectangle x=185,y=90,width=3,height=95;
+
+Text text={eventTitle},x=195,y=90,width=405,height=40,red=255,green=255,blue=255;
+Text text={eventSubtitle},x=195,y=130,size=18,width=350,height=65,lines=2;
+
+//EPG Bild ausgeben
+Image x=600,y=60,width=200,height=125,
+	path={varEPGimagesPath_1}{eventID}.{EPGimageSuffix}:
+	{varEPGimagesPath_2}{eventID}.{EPGimageSuffix}:
+	{varEPGimagesPath_3}{eventID}.{EPGimageSuffix}:
+	{varImagesPath_1}{eventTitle}.jpg:
+	backgrounds/filmspule_tr.png,
+	fit=yes,aspect_ratio=yes;
+
+Rectangle x=5,y=185,width=790,height=3;
+
+//Ausgabe Detailinformationen
+Text text={eventDescription},start_line={varStartLine},
+   x=10,y=188,width=780,height=332,size=20,red=255,green=255,blue=255,
+   whipe_res=28,on_up=varStartLine--,on_down=varStartLine++;
+
+#ifdef MOUSE_BUTTONS
+	var varHideColorButtons = 1;
+	var varHidePrevChannel = 1;
+	Include=MouseButtons;
+#endif
+
+
+
+//***************************************************************************
+// Detailinfos der Aufnahmen
+//***************************************************************************
+[MenuRecording]
+
+Include=MenuDetailCommon;
+
+Defaults font=graphTFT,size=22,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+Background path=backgrounds/bg-menu-avp.png;
+
+var varStartLine = 0;
+
+Text text={menuTitle},x=90,y=15,width=420,height=40,size=22,lines=1,align=center,red=255,green=255,blue=255;
+
+Text text={recordingTime/%a %d.%m},x=10,y=90,size=20,width=140,height=30;
+Text text={recordingTime/%H:%M},x=10,y=130,size=20,width=80,height=30;
+
+Rectangle x=185,y=90,width=3,height=95;
+
+Text text={recordingTitle},x=195,y=90,width=405,height=40,red=255,green=255,blue=255;
+Text text={recordingSubtitle},x=195,y=130,size=18,width=350,height=65,lines=2;
+
+//EPG Bild ausgeben
+Image x=600,y=60,width=200,height=125,
+	path={recordingPath}/thumbnail.png:
+	{varEPGimagesPath_1}{recordingEventID}.{EPGimageSuffix}:
+	{varEPGimagesPath_2}{recordingEventID}.{EPGimageSuffix}:
+	{varEPGimagesPath_3}{recordingEventID}.{EPGimageSuffix}:
+	{varImagesPath_1}{recordingTitle}.jpg:
+	backgrounds/filmspule_tr.png,
+	fit=yes,aspect_ratio=yes;
+
+Rectangle x=5,y=185,width=790,height=3;
+
+//Ausgabe Detailinformationen
+Text text={recordingDescription},start_line={varStartLine},
+   x=10,y=188,width=780,height=332,size=20,red=255,green=255,blue=255,
+   whipe_res=28,on_up=varStartLine--,on_down=varStartLine++;
+
+#ifdef MOUSE_BUTTONS
+	var varHideColorButtons = 1;
+	var varHidePrevChannel = 1;
+	Include=MouseButtons;
+#endif
+
+
+//***************************************************************************
+// Detailinfos der Aufnahmen (extRecMenu Plugin Version)
+//***************************************************************************
+[MenuExtRecording]
+
+Include=MenuRecording;
+Defaults font=graphTFT,size=22,red=52,green=162,blue=159,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+
+
+//***************************************************************************
+// Anzeige Standardmenü
+//***************************************************************************
+[Menu]
+Include=MenuCommon;
+
+Defaults font=graphTFT,size=23,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+
+//Ausgabe Menüinhalt
+Text text={menuText},x=0,y=85,width=800,height=430,transparent=255;
+
+// define the MenuNavigationArea
+MenuNavigationArea y=85,x=1,width=800,height=430,on_dblclick=Ok;
+
+// display menu icon in the upper left corner
+MenuSelected x=0,y=85,size=44,height=430,stat_pic=yes,stat_x=1,stat_y=1,stat_width=78,stat_height=78,transparent=255,focus=menu/focus_140_75tr.png;
+// OR display menu icon in the current menu line
+//MenuSelected stat_pic=yes,stat_x=600,stat_width=40,stat_height=40,transparent=255,focus=menu/focus-small.png;
+// OR Bild vorne in der Zeile
+//MenuSelected size=44,height=430,stat_pic=yes,stat_x=1,stat_width=67,stat_height=67,transparent=255,focus=menu/focus_140_75tr.png;
+
+Menu x=0,y=85,width=800,height=430,transparent=255;
+
+
+
+
+//***************************************************************************
+// Noch nicht weiter definierter Menüeintrag
+//***************************************************************************
+[MenuCommands]
+Include=Menu;
+[MenuMain]
+Include=Menu;
+
+
+
+//***************************************************************************
+// Anzeige bei nicht bekannten Menüstrukturen
+//***************************************************************************
+[MenuUnknown]
+Include=Menu;
+

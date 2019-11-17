@@ -1,0 +1,35 @@
+Index: vdr-tft-pearlhd-0.3.1a/PearlHD.theme
+===================================================================
+--- vdr-tft-pearlhd-0.3.1a.orig/PearlHD.theme	2012-09-27 20:27:47.139025442 +0200
++++ vdr-tft-pearlhd-0.3.1a/PearlHD.theme	2012-09-27 20:29:34.427557450 +0200
+@@ -248,6 +248,30 @@
+ 	Include=TV_Radio_Common;
+ 	Image x=153,y=545,width=45,height=25,path=symbols/radio.png;
+ 
++// Diese Funktion wird <FC>ber das VDRSymbolsSans OSD-Menu oder "svdrpsend.pl plug graphtft VIEW NonLiveTv" aufgerufen
++[NormalNonLiveTv] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
++        Defaults font=VDRSymbolsSans,size=20,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
++        Background path=backgrounds/bg-clock.jpg;
++        Defaults font=VDRSymbolsSans,size=27,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0; 
++        Text x=75,y=88,size=30,dots=yes,text=Timer,align=left,width=395,height=53,lines=1;
++        Sym2ch x=490,y=100,pathON=symbols/ch2On.png,pathOFF=symbols/ch2Off.png;
++        SymDD x=540,y=100,pathON=symbols/ddOn.png,pathOFF=symbols/ddOff.png;
++        SymCrypt x=640,y=100,pathON=symbols/cryptOn.png,pathOFF=symbols/cryptOff.png;
++        SymRecording x=675,y=100,pathON=symbols/recOn.png,pathOFF=symbols/recOff.png;
++        Include=RecSymbol;
++
++        //Timer Listen
++        TextList text={actRunningRecordings},x=70,y=180,height=200,width=680,size=18;red=200,green=200,blue=200,bg_transparent=2;
++        TextList text={actPendingRecordings},x=70,y=400,height=120,width=680,size=18,bg_transparent=2; 
++        #ifdef MOUSE_BUTTONS
++                Include=MouseButtons;
++        #endif
++
++        Include=Volume;
++        Include=OSD-Messages;
++        //Include=StandardHeader;
++
++
+ 
+ // Allgemeine Einstellungen für kommende Wiedergabe Abschnitte (Replay)
+ // Dieser Abschnitt wird in anderen Sektionen eingebunden (include)

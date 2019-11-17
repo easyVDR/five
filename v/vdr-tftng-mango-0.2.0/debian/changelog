@@ -1,0 +1,23 @@
+vdr-tftng-mango (0.2.0-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 00:42:52 +0100
+
+vdr-tftng-mango (0.2.0-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 16:32:09 +0100
+
+vdr-tftng-mango (0.2.0-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 15:38:54 +0100
+
+vdr-tftng-mango (0.2.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial Release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Sep 2017 17:12:25 +0200

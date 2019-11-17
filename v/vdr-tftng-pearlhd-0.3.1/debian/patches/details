@@ -1,0 +1,200 @@
+Index: vdr-tft-pearlhd-0.3.1/PearlHD.theme
+===================================================================
+--- vdr-tft-pearlhd-0.3.1.orig/PearlHD.theme	2013-06-24 16:04:33.000000000 +0200
++++ vdr-tft-pearlhd-0.3.1/PearlHD.theme	2013-06-24 16:06:00.854490263 +0200
+@@ -3,8 +3,6 @@
+ // Used VDRSymbolsSans Font and VDRSymbolsSans >= 0.3.0
+ // This theme works best on 800x600 displays
+ 
+-
+-
+ #define MOUSE_BUTTONS
+ 
+ 
+@@ -23,8 +21,8 @@
+ 
+ // Informationen zum Theme und der benötigten VDRSymbolsSans version
+ var varThemeName     = "PearlHD"; // Name des Themes
+-var varThemeVersion  = "0.3.1";// Version des Themes
+-var varSyntaxVersion = "0.3.1";//Benötigte VDRSymbolsSans-Engine Version
++var varThemeVersion  = "0.3.1";   // Version des Themes
++var varSyntaxVersion = "0.4.0";   //Benötigte VDRSymbolsSans-Engine Version
+ 
+ // Suchpfade für die EPG Images
+ var varEPGimagesPath_1 = "/ramdisk/epgimages/";
+@@ -69,12 +67,22 @@
+ 
+ 		
+ [StandardHeader] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
++
+ 	Defaults font=VDRSymbolsSans,size=27,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;	
+ 	Text x=75,y=88,size=30,dots=yes,text={presentChannelNumber}. {presentChannelName},align=left,width=395,height=53,lines=1;
+-	Sym2ch x=490,y=100,pathON=symbols/ch2On.png,pathOFF=symbols/ch2Off.png;
+-	SymDD x=540,y=100,pathON=symbols/ddOn.png,pathOFF=symbols/ddOff.png;
+-	SymCrypt x=640,y=100,pathON=symbols/cryptOn.png,pathOFF=symbols/cryptOff.png;
+-	SymRecording x=675,y=100,pathON=symbols/recOn.png,pathOFF=symbols/recOff.png;
++
++   Image condition={channelHasMultilang} = 0,x=490,y=100,path=symbols/ch2Off.png;
++   Image condition={channelHasMultilang} = 1,x=490,y=100,path=symbols/ch2On.png;
++
++   Image condition={channelHasDD} = 0,x=540,y=100,path=symbols/ddOff.png;
++   Image condition={channelHasDD} = 1,x=540,y=100,path=symbols/ddOn.png;
++
++   Image condition={channelIsEncrypted} = 0,x=640,y=100,path=symbols/cryptOff.png;
++   Image condition={channelIsEncrypted} = 1,x=640,y=100,path=symbols/cryptOn.png;
++
++//Image condition={actRecordingCount} = 0,x=675,y=100,path=symbols/recOff.png;
++// Image condition={actRecordingCount} > 0,x=675,y=100,path=symbols/recOn.png;
++
+ 	Include=RecSymbol;
+ 	
+ 	
+@@ -84,10 +92,6 @@
+ 	Text text={time/%H:%M} Uhr,x=75,y=470,width=300,height=100,red=255,green=255,blue=255,size=34;
+ 	Text text={time/%A. %d.%m.},x=335,y=487,width=300,height=100,size=22;
+ 
+-	// E-Mail Symbol
+-	//MailSymbol x=513,y=0,width=65,height=70,pathON=symbols/alien-mail.png,on_click=User9;
+-	//MailCount x=535,y=43,size=11,align=center,width=25,height=13,red=0,green=255,blue=0;
+-
+ 		
+ [StandardProgress] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 	Timebar x=50,y=150,width=700,height=20,red=57, green=120, blue=159,bg_red=160, bg_green=196, bg_blue=218,bg_transparent=255;
+@@ -148,8 +152,6 @@
+ 	Include=OSD-Messages;
+ 	Include=StandardHeader;
+ 	Include=StandardProgress;
+-
+-	
+ // Detailierte Ausgabe der EPG-Programminformationen und EPG-Bild
+ // Diese Funktion wird über das VDRSymbolsSans OSD-Menu oder "svdrpsend.pl plug graphtft VIEW Detail" aufgerufen
+ [NormalDetail] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+@@ -164,24 +166,26 @@
+ 	Text condition="{presentSubtitle}" = "",text={presentStartTime/%H:%M} - {followingStartTime/%H:%M},x=75,y=425,width=600,height=45,size=20;
+ 	Text condition="{presentSubtitle}",text={presentDuration/%M}',x=75,y=506,width=75,height=20,size=16; //Dauer der Sendung - falls ermittelbar
+ 	Text condition="{presentSubtitle}" = "",text={presentDuration/%M}',x=75,y=461,width=75,height=20,size=16; //Dauer der Sendung - falls ermittelbar
+-	Text condition="{presentSubtitle}" != "",text={presentDescription},start_line={varStartLine},	x=300,y=290,width=430,height=230,size=16,dots=yes,	whipe_res=20,on_up=varStartLine--,on_down=varStartLine++;
+-	Text condition="{presentSubtitle}" = "",text={presentDescription},start_line={varStartLine},	x=300,y=250,width=430,height=280,size=16,dots=yes,	whipe_res=20,on_up=varStartLine--,on_down=varStartLine++;
++	Text condition="{presentSubtitle}" != "",text={presentDescription},start_line={varStartLine},x=310,y=290,width=430,height=230,size=16,dots=yes,	whipe_res=20,on_up=varStartLine--,on_down=varStartLine++;
++Text condition="{presentSubtitle}" = "",text={presentDescription},start_line={varStartLine},x=300,y=250,width=430,height=280,size=16,dots=yes,	whipe_res=20,on_up=varStartLine--,on_down=varStartLine++;
+ 	Rectangle condition="{presentSubtitle}", x=75,y=295,width=200,height=160;
+ 	Rectangle condition="{presentSubtitle}" = "", x=75,y=255,width=200,height=160;
+ 	Image condition="{presentSubtitle}",x=75,y=295,width=200,height=160,bg_width=200,
+ 	path=
+-	{varEPGimagesPath_1}{presentID}_?.png:
+-	{varEPGimagesPath_2}{presentID}_?.png:
+-	{varEPGimagesPath_3}{presentID}_?.png:
++	{varEPGimagesPath_1}{presentID}_(0-9).png:
++	{varEPGimagesPath_2}{presentID}_(0-9).png:
++	{varEPGimagesPath_3}{presentID}_(0-9).png:
++	{varEPGimagesPath_4}{presentID]_(0-9).png:
+ 	{varImagesPath_1}{presentTitle}.jpg:
+ 	backgrounds/nopic.png,
+ 	fit=yes,aspect_ratio=yes,delay=5,
+ 	on_dblclick=varEventId:0:1;
+ 	Image condition="{presentSubtitle}" = "",x=75,y=255,width=200,height=160,bg_width=200,
+ 	path=
+-	{varEPGimagesPath_1}{presentID}_?.png:
+-	{varEPGimagesPath_2}{presentID}_?.png:
+-	{varEPGimagesPath_3}{presentID}_?.png:
++	{varEPGimagesPath_1}{presentID}_(0-9).png:
++	{varEPGimagesPath_2}{presentID}_(0-9).png:
++	{varEPGimagesPath_3}{presentID}_(0-9).png:
++	{varEPGimagesPath_4}{presentID}_(0-9).png:
+ 	{varImagesPath_1}{presentTitle}.jpg:
+ 	backgrounds/nopic.png,
+ 	fit=yes,aspect_ratio=yes,delay=5,
+@@ -194,13 +198,14 @@
+ 	Include=OSD-Messages;
+ 	Include=StandardHeader;
+ 	Include=StandardProgress;
+-
++	
+ 	
+ // Allgemeine Einstellungen zur Ausgabe der TV und RADIO Informationen
+ // Dieser Abschnitt wird in anderen Sektionen eingebunden (include)
+ // Diese Funktion wird über das VDRSymbolsSans OSD-Menu oder "svdrpsend.pl plug graphtft VIEW Standard" aufgerufen
+ 
+ [TV_Radio_Common] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
++
+ 	Defaults font=VDRSymbolsSans,size=27,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0;
+ 	Background path=backgrounds/bg-tv.png;
+ 	
+@@ -241,7 +246,8 @@
+ [NormalTV] //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+ 	Include=TV_Radio_Common;
+ 	//Image x=153,y=545,width=45,height=25,path=symbols/tv.png;
+-	SymVTX x=590,y=100,pathON=symbols/vtxOn.png,pathOFF=symbols/vtxOff.png;
++	Image condition={channelHasVtx} = 1,x=590,y=100,path=symbols/vtxOn.png;
++	Image condition={channelHasVtx} = 0,x=590,y=100,path=symbols/vtxOff.png;
+ 
+ 	
+ // Ergänzende Einstellungen zur Ausgabe der RADIO Informationen
+@@ -255,17 +261,29 @@
+         Background path=backgrounds/bg-clock.jpg;
+         Defaults font=VDRSymbolsSans,size=27,red=255,green=255,blue=255,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=0; 
+         Text x=75,y=88,size=30,dots=yes,text=Timer,align=left,width=395,height=53,lines=1;
+-        Sym2ch x=490,y=100,pathON=symbols/ch2On.png,pathOFF=symbols/ch2Off.png;
+-        SymDD x=540,y=100,pathON=symbols/ddOn.png,pathOFF=symbols/ddOff.png;
+-        SymCrypt x=640,y=100,pathON=symbols/cryptOn.png,pathOFF=symbols/cryptOff.png;
+-        SymRecording x=675,y=100,pathON=symbols/recOn.png,pathOFF=symbols/recOff.png;
++
++        Image condition={channelHasMultilang} = 0,x=490,y=100,path=symbols/ch2Off.png;
++        Image condition={channelHasMultilang} = 1,x=490,y=100,path=symbols/ch2On.png;
++
++        Image condition={channelHasDD} = 0,x=540,y=100,path=symbols/ddOff.png;
++        Image condition={channelHasDD} = 1,x=540,y=100,path=symbols/ddOn.png;
++
++        Image condition={channelIsEncrypted} = 0,x=640,y=100,path=symbols/cryptOff.png;
++        Image condition={channelIsEncrypted} = 1,x=640,y=100,path=symbols/cryptOn.png;
++
++        Image condition={actRecordingCount} = 0,x=675,y=100,path=symbols/recOff.png;
++        Image condition={actRecordingCount} > 0,x=675,y=100,path=symbols/recOn.png;
++
+         Include=RecSymbol;
+ 
+         //Timer Listen
+-        TextList text={actRunningRecordings},x=70,y=180,height=200,width=680,size=18;red=200,green=200,blue=200,bg_transparent=2;
+-        TextList text={actPendingRecordings},x=70,y=400,height=120,width=680,size=18,bg_transparent=2; 
++        TextList condition={actTimersRunning} = 1,text={actTimersStart/%a %H:%M}  - {actTimersStop/ %H:%M}   {actTimersTitle},
++                 x=70,y=180,height=200,width=680,size=18;red=200,green=200,blue=200,bg_transparent=2;
++        TextList condition={actTimersRunning} = 0,text={actTimersStart/%a %H:%M}  - {actTimersStop/ %H:%M}   {actTimersTitle},
++                 x=70,y=400,height=120,width=680,size=18,bg_transparent=2; 
++
+         #ifdef MOUSE_BUTTONS
+-                Include=MouseButtons;
++           Include=MouseButtons;
+         #endif
+ 
+         Include=Volume;
+@@ -788,8 +806,8 @@
+ 	EventColumn x=195,width=100,text={rowEventStartTime/%H:%M};
+ 	
+ 	//Progress
+-	EventColumnSelected type=progress,x=330,width=70,spacing=10,bar_height=40%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path2=symbols/progress.png;
+-	EventColumn type=progress,x=330,width=70,spacing=10,bar_height=40%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path2=symbols/progress.png;
++	EventColumnSelected type=progress,x=330,width=70,spacing=10,bar_height=40%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path=symbols/progress.png;
++	EventColumn type=progress,x=330,width=70,spacing=10,bar_height=40%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path=symbols/progress.png;
+ 
+ 	//Symbol
+ 	// Partial Timer Before Record; Char 149 = Half Clock 1
+@@ -849,8 +867,8 @@
+ 	ColumnSelected number=2,width=40;
+ 	Column number=2,width=40;
+ 	
+-	ColumnSelected number=3,type=progress,width=70,spacing=10,bar_height=50%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path2=symbols/progress.png;
+-	Column number=3,type=progress,width=70,spacing=10,bar_height=50%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path2=symbols/progress.png;
++	ColumnSelected number=3,type=progress,width=70,spacing=10,bar_height=50%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path=symbols/progress.png;
++	Column number=3,type=progress,width=70,spacing=10,bar_height=50%,bg_red=0,bg_green=0,bg_blue=0,bg_transparent=255,path=symbols/progress.png;
+ 	
+ 	// Zeit
+ 	ColumnSelected number=4;
+@@ -873,7 +891,7 @@
+ 	MenuButtonBlue x=604,y=560,width=179,height=43,red=255,green=255,blue=255,transparent=255,align=center;
+ 
+ 	// {actRecordingCount} = Anzahl der gerade laufenen Aufnahmen
+-	Image condition={actRecordingCount} > 0,x=587,y=520,path=symbols/animation/recOn_?.png,delay=300ms;
++	Image condition={actRecordingCount} > 0,x=587,y=520,path=symbols/animation/recOn_(0-9).png,delay=300ms;
+ 	// {actRecordingName} = Name der gerade laufenen Aufnahmen
+ 	Text condition={actRecordingCount} > 0, text={actRecordingName},x=665,y=530,width=130,height=25,lines=1,size=18,red=0,green=0,blue=0,scroll=marquee,scroll_count=5,bg_transparent=0;
+ 	// Spezial OSD Message

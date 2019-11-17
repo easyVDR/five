@@ -1,0 +1,133 @@
+vdr-tftng-pearlhd (0.3.1-2easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:36:27 +0100
+
+vdr-tftng-pearlhd (0.3.1-2easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 23:06:44 +0100
+
+vdr-tftng-pearlhd (0.3.1-2easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:51:45 +0100
+
+vdr-tftng-pearlhd (0.3.1-2easyVDR3~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 26 Jun 2017 17:02:33 +0200
+
+vdr-tftng-pearlhd (0.3.1-2easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:22:18 +0200
+
+vdr-tftng-pearlhd (0.3.1-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Sep 2016 01:48:50 +0200
+
+vdr-tftng-pearlhd (0.3.1-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 22:53:16 +0100
+
+vdr-tftng-pearlhd (0.3.1-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 05:02:54 +0100
+
+vdr-tftng-pearlhd (0.3.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Apr 2014 01:37:05 +0200
+
+vdr-tftng-pearlhd (0.3.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 29 Nov 2013 14:07:40 +0100
+
+vdr-tftng-pearlhd (0.3.1-1yavdr0~precise) precise; urgency=medium
+
+  * fix order in debian/control 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 18:15:32 +0200
+
+vdr-tftng-pearlhd (0.3.1-0yavdr0~precise) precise; urgency=medium
+
+  * migration to vdr-plugin-graphtftng 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 24 Jun 2013 16:06:43 +0200
+
+vdr-tft-pearlhd (0.3.1-6yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 07 Mar 2013 02:06:46 +0100
+
+vdr-tft-pearlhd (0.3.1-6yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 06 Mar 2013 15:32:25 +0100
+
+vdr-tft-pearlhd (0.3.1-6yavdr5~precise) precise; urgency=medium
+
+  * bugfixes, added volumebar at bottom 
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Thu, 27 Sep 2012 21:42:34 +0200
+
+vdr-tft-pearlhd (0.3.1-6yavdr4~precise) precise; urgency=medium
+
+  * use quilt instead of dpatch 
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Thu, 27 Sep 2012 20:29:59 +0200
+
+vdr-tft-pearlhd (0.3.1-6yavdr1~precise) precise; urgency=low
+
+  * precise migration
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 06 Mar 2011 12:53:35 +0100
+
+vdr-tft-pearlhd (0.3.1-5yavdr1) lucid; urgency=low
+
+  [Kristian Lorbetzki <lorbi@gmx.net>]
+  * repair bg-message graphic
+  * fixes some lines in theme file
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 01 Jul 2010 22:00:32 +0100
+
+vdr-tft-pearlhd (0.3.1-4yavdr1) karmic; urgency=low
+
+  * added mapovi changes http://vdrportal.de/board/thread.php?threadid=93838
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 04 Mar 2010 10:03:32 +0100
+
+vdr-tft-pearlhd (0.3.1-3tvt1) karmic; urgency=low
+
+  * moved skin folder from pearlhd to PearlHD
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 23 Jan 2010 16:49:27 +0100
+
+vdr-tft-pearlhd (0.3.1-2tvt1) karmic; urgency=low
+
+  * fixed some paths
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 08 Jan 2010 00:22:16 +0100
+
+vdr-tft-pearlhd (0.3.1-1tvt1) karmic; urgency=low
+
+  * first package 
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 07 Jan 2010 13:01:44 +0100

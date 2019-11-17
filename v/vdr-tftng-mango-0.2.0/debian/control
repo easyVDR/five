@@ -1,0 +1,13 @@
+Source: vdr-tftng-mango
+Section: misc
+Priority: optional
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), cdbs
+Standards-Version: 3.9.5
+
+Package: vdr-tftng-mango
+Architecture: all
+Depends: ${misc:Depends}, 
+Description: graphtft-themes Package for easyVDR
+  Ergaenzt das Graphtft Paket

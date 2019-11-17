@@ -1,0 +1,4 @@
+var/lib/vdr/plugins/graphtftng
+var/lib/vdr/plugins/graphtftng/fonts
+var/lib/vdr/plugins/graphtftng/themes
+usr/share/vdr-tft-nopacity

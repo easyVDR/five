@@ -1,0 +1,22 @@
+Source: vdr-tftng-standard
+Section: misc
+Priority: extra
+Maintainer: Thomas Günther <tom@toms-cafe.de>
+Origin: ctvdr
+Bugs: mailto:pkg-vdr-dvb-devel@lists.alioth.debian.org
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.9.2
+
+Package: vdr-tftng-standard
+Architecture: all
+Depends: vdr-plugin-graphtftng (>= 0.0.4), ${misc:Depends}
+Description: Standard theme for the GraphTFTng plugin
+ This is the standard theme for the GraphTFTng plugin that uses a Framebuffer or X-Display to show Status Informations.
+
+Package: vdr-tft-standard
+Depends: vdr-tftng-standard, ${misc:Depends}
+Architecture: all
+Section: oldlibs
+Description: transitional dummy package
+  This is a transitional dummy package. It can safely be removed.
+

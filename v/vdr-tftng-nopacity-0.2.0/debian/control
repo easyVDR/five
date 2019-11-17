@@ -1,0 +1,13 @@
+Source: vdr-tftng-nopacity
+Section: misc
+Priority: optional
+Maintainer: Martin Neubauer <martin@easy-vdr.de>, Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.9.2
+
+Package: vdr-tftng-nopacity
+Architecture: all
+Depends: ${misc:Depends}, 
+Description: graphtft-themes Package for easyVDR
+  Ergaenzt das Graphtft Paket

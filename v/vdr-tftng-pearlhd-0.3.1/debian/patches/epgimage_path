@@ -1,0 +1,11 @@
+Index: vdr-tft-pearlhd-0.3.1a/PearlHD.theme
+===================================================================
+--- vdr-tft-pearlhd-0.3.1a.orig/PearlHD.theme	2012-09-27 20:24:44.626120406 +0200
++++ vdr-tft-pearlhd-0.3.1a/PearlHD.theme	2012-09-27 20:27:47.139025442 +0200
+@@ -30,6 +30,7 @@
+ var varEPGimagesPath_1 = "/ramdisk/epgimages/";
+ var varEPGimagesPath_2 = "/media/epgimages/";
+ var varEPGimagesPath_3 = "/video0/epgimages/";
++var varEPGimagesPath_4 = "/var/cache/vdr/epgimages/";
+ var varImagesPath_1 = "/video0/images/";
+ 
