@@ -1,0 +1,71 @@
+vdr-skins-sd (2easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 23:38:10 +0100
+
+vdr-skins-sd (2easyVDR4~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:59:50 +0100
+
+vdr-skins-sd (2easyVDR3~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:50:40 +0100
+
+vdr-skins-sd (2easyVDR2~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 26 Jun 2017 17:15:44 +0200
+
+vdr-skins-sd (2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Oct 2016 23:48:58 +0200
+
+vdr-skins-sd (2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 23:03:06 +0100
+
+vdr-skins-sd (1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 05:07:01 +0100
+
+vdr-skins-sd (0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Apr 2014 02:06:37 +0200
+
+vdr-skins-sd (0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Jan 2014 00:41:47 +0100
+
+vdr-skins-sd (1easyVDR1.2) oneiric; urgency=high
+
+  * links
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Mar 2012 09:49:04 +0100
+
+vdr-skins-sd (1easyVDR1.1) oneiric; urgency=low
+
+  * separate logos in vdr-skins-logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 24 Oct 2011 17:52:06 +0200
+
+vdr-skins-sd (1easyVDR1.0) oneiric; urgency=high
+
+  * initial release and added Anthra-Skins
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 08 Oct 2011 21:43:58 +0200

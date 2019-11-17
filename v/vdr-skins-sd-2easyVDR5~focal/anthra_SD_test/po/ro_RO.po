@@ -1,0 +1,44 @@
+# VDR language source file.
+# Copyright (C) 2008 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Paul Lacatus <paul@campina.iiruc.ro>, 2002
+# Lucian Muresan <lucianm@users.sourceforge.net>, 2004, 2005, 2006, 2008, 2010
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.7.12\n"
+"Report-Msgid-Bugs-To: <>\n"
+"POT-Creation-Date: 2010-10-19 22:16+0200\n"
+"PO-Revision-Date: 2010-10-16 09:25+0100\n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: Romanian\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-2\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Poedit-Language: Romanian\n"
+"X-Poedit-Country: ROMANIA\n"
+
+msgid "Volume"
+msgstr "Volum "
+
+msgid "Mute"
+msgstr "Fãrã sunet"
+
+#~ msgid "Setup"
+#~ msgstr "Configuraþie"
+
+#~ msgid "Timers"
+#~ msgstr "Timer-e"
+
+#~ msgid "Commands"
+#~ msgstr "Comenzi"
+
+#~ msgid "Recordings"
+#~ msgstr "Înregistrãri"
+
+#~ msgid "Schedule"
+#~ msgstr "Program (EPG)"
+
+#~ msgid "Channels"
+#~ msgstr "Canale"

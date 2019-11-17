@@ -1,0 +1,13 @@
+Source: vdr-skins-sd
+Section: video
+Priority: extra
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Origin: easyVDR
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.9.4
+
+Package: vdr-skins-sd
+Architecture: any
+Depends: vdr-plugin-text2skin (>= 1.3), vdr-skins-logos
+Description: all Skins for VDR's text2skin with Resolution 695
+ all Skins for VDR's text2skin with Resolution 695

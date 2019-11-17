@@ -1,0 +1,17 @@
+<display id="message">
+	<window x1="25" x2="695" y1="521" y2="551" bpp="8"/>
+    
+		<block condition="or({MessageInfo},{MessageStatus},{MessageWarning},{MessageError})">
+			
+			<image x="25"  y="521" colors="64" path="images/messageBG.png"/>		
+			<ellipse x1="24" x2="29" y1="536" y2="551"   arc="-3" color="#0000000"/>
+			<ellipse x1="24" x2="29" y1="521" y2="536"   arc="-2" color="#0000000"/>
+			<ellipse x1="690" x2="695" y1="521" y2="536"   arc="-1" color="#0000000"/>
+			<ellipse x1="690" x2="695" y1="536" y2="551"   arc="-4" color="#0000000"/>
+	
+			<text x1="25" x2="695" y1="526" y2="546" align="center" color="TextHigh"  font="Osd">{MessageInfo}</text>
+			<text x1="25" x2="695" y1="526" y2="546" align="center" color="GreenHigh" font="Osd">{MessageStatus}</text>
+			<text x1="25" x2="695" y1="526" y2="546" align="center" color="YellowHigh" font="Osd">{MessageWarning}</text>
+			<text x1="25" x2="695" y1="526" y2="546" align="center" color="RedHigh"  font="Osd">{MessageError}</text> 
+		</block>
+</display>

@@ -1,0 +1,41 @@
+# VDR language source file.
+# Copyright (C) 2008 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Dimitrios Dimitrakos <mail@dimitrios.de>, 2002, 2006
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.6.0\n"
+"Report-Msgid-Bugs-To: <>\n"
+"POT-Creation-Date: 2010-10-19 22:16+0200\n"
+"PO-Revision-Date: 2010-10-16 08:23+0100\n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: Greek\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-7\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Volume"
+msgstr "Ένταση "
+
+msgid "Mute"
+msgstr "Σιωπηλό"
+
+#~ msgid "Setup"
+#~ msgstr "Ρυθμισεις"
+
+#~ msgid "Timers"
+#~ msgstr "Χρονοπρογραμματισμοί"
+
+#~ msgid "Commands"
+#~ msgstr "Εντολές"
+
+#~ msgid "Recordings"
+#~ msgstr "Εγγραφές"
+
+#~ msgid "Schedule"
+#~ msgstr "Πρόγραμμα"
+
+#~ msgid "Channels"
+#~ msgstr "Κανάλια"

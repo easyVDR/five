@@ -1,0 +1,44 @@
+# VDR language source file.
+# Copyright (C) 2008 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Marc Rovira Vall <tm05462@salleURL.edu>, 2003
+# Ramon Roca <ramon.roca@xcombo.com>, 2003
+# Jordi Vilà <jvila@tinet.org>, 2003
+# Luca Olivetti <luca@ventoso.org>, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.6.0\n"
+"Report-Msgid-Bugs-To: </var/mail/root>\n"
+"POT-Creation-Date: 2010-10-24 14:43+0200\n"
+"PO-Revision-Date: 2010-10-17 01:50+0100\n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: Catalanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+
+msgid "Volume"
+msgstr "Volum "
+
+msgid "Mute"
+msgstr "En silenci"
+
+#~ msgid "Setup"
+#~ msgstr "Configuració"
+
+#~ msgid "Timers"
+#~ msgstr "Temporitzadors"
+
+#~ msgid "Commands"
+#~ msgstr "Ordres"
+
+#~ msgid "Recordings"
+#~ msgstr "Veure programes gravats"
+
+#~ msgid "Schedule"
+#~ msgstr "Guia de Programació"
+
+#~ msgid "Channels"
+#~ msgstr "Canals"

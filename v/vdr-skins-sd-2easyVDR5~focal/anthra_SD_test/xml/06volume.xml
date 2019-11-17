@@ -1,0 +1,15 @@
+<display id="volume">
+	<window x1="25" x2="695" y1="480" y2="570" bpp="8"/>
+		<image x="25" y="487"  path="images/volume.png" />
+		<ellipse x1="23" x2="29" y1="487" y2="502" arc="-2" color="#0000000"/>
+		<ellipse x1="690" x2="696" y1="487" y2="502"  arc="-1" color="#0000000"/>
+		<ellipse x1="23" x2="29" y1="532" y2="547" arc="-3" color="#0000000"/>
+		<ellipse x1="690" x2="696" y1="532" y2="547"  arc="-4" color="#0000000"/>
+		<!-- trans('Volume') -->
+		<text x1="25" x2="365" y1="492" y2="508" align="right" color="TextHigh" condition="not({IsMute})" font="VDRSymbols Sans:Book@16">Volume</text>
+		<text x1="366" x2="695" y1="492" y2="508" align="left" color="TextHigh" condition="not({IsMute})" font="VDRSymbols Sans:Book@16">: {VolumeCurrent}</text>
+		<!--trans('Mute') -->
+		<text x1="25" x2="695" y1="492" y2="508" align="center" color="TextHigh" condition="{IsMute}" font="VDRSymbols Sans:Book@16">Mute</text>
+		<progress x1="27" x2="693" y1="514" y2="519" color="BarFill" current="{VolumeCurrent}" total="{VolumeTotal}"/>
+		<rectangle x1="27" x2="693" y1="514" y2="519" condition="{IsMute}" color="BarBlock" />
+</display>

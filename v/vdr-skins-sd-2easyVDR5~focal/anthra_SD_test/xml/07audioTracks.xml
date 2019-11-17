@@ -1,0 +1,14 @@
+<display id="audioTracks">
+	<window x1="25" x2="695" y1="25" y2="549" bpp="8"/>
+		<list x1="385" x2="695" y1="444" y2="549">
+			<item height="33"/>
+			<ellipse x1="10" x2="26" y1="3" y2="30"   arc="0" color="Background"/>
+			<rectangle x1="18" x2="310" y1="3" y2="30"  color="Background" />
+			<image x="10"  y="3" condition="{IsMenuCurrent}"  path="images/audio.png" />
+			<ellipse x1="10" x2="18" y1="3" y2="17"  condition="{IsMenuCurrent}" arc="-2" color="#0000000"/>
+			<ellipse x1="10" x2="18" y1="17" y2="31"  condition="{IsMenuCurrent}" arc="-3" color="#0000000"/>
+			<text x1="40" x2="100" y1="5" y2="25" condition="{MenuCurrent}" color="TextHigh" font="Osd" align="left"> {MenuTitle}:</text>
+			<text x1="120" x2="300" y1="5" y2="25" color="TextButton" font="Osd" align="right">{MenuItem}</text>
+			<text x1="120" x2="300" y1="5" y2="25" color="BarFill" font="Osd" align="left"> {MenuCurrent}</text>
+		</list>
+</display>

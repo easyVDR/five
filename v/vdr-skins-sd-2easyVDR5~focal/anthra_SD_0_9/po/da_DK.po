@@ -1,0 +1,41 @@
+# VDR language source file.
+# Copyright (C) 2008 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Mogens Elneff <mogens@elneff.dk>, 2004, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.6.0\n"
+"Report-Msgid-Bugs-To: </var/mail/root>\n"
+"POT-Creation-Date: 2010-10-24 14:43+0200\n"
+"PO-Revision-Date: 2010-10-16 08:22+0100\n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: Danish\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+
+msgid "Volume"
+msgstr "Lydstyrke "
+
+msgid "Mute"
+msgstr "Sluk  lyd"
+
+#~ msgid "Setup"
+#~ msgstr "Indstillinger"
+
+#~ msgid "Timers"
+#~ msgstr "Timere"
+
+#~ msgid "Commands"
+#~ msgstr "Kommandoer"
+
+#~ msgid "Recordings"
+#~ msgstr "Optagelser"
+
+#~ msgid "Schedule"
+#~ msgstr "Programoversigt"
+
+#~ msgid "Channels"
+#~ msgstr "Kanaler"

@@ -1,0 +1,7 @@
+usr/share/vdr-skins/anthra_SD_0_9				var/lib/vdr/plugins/text2skin/anthra_SD_0_9
+
+usr/share/vdr-skins/anthra_SD_0_8                               var/lib/vdr/plugins/text2skin/anthra_SD_0_8
+
+usr/share/vdr-skins/anthra_SD_test                               var/lib/vdr/plugins/text2skin/anthra_SD_test
+
+var/lib/vdr/plugins/text2skin                           etc/vdr/plugins/text2skin

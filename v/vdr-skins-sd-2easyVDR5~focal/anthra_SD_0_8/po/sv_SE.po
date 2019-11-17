@@ -1,0 +1,44 @@
+# VDR language source file.
+# Copyright (C) 2008 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Tomas Prybil <tomas@prybil.se>, 2002, 2003, 2005, 2006
+# Jan Ekholm <chakie@infa.abo.fi>, 2003
+# Tomas Berglund <tomber@telia.com>, 2008
+# Magnus Andersson <svankan@bahnhof.se>, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.6.0\n"
+"Report-Msgid-Bugs-To: <>\n"
+"POT-Creation-Date: 2010-10-19 22:16+0200\n"
+"PO-Revision-Date: 2010-10-16 09:29+0100\n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: Swedish\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-1\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Volume"
+msgstr "Volym "
+
+msgid "Mute"
+msgstr "Ljud Av"
+
+#~ msgid "Setup"
+#~ msgstr "Inställningar"
+
+#~ msgid "Timers"
+#~ msgstr "Timers"
+
+#~ msgid "Commands"
+#~ msgstr "Kommandon"
+
+#~ msgid "Recordings"
+#~ msgstr "Inspelningar"
+
+#~ msgid "Schedule"
+#~ msgstr "Program"
+
+#~ msgid "Channels"
+#~ msgstr "Kanaler"

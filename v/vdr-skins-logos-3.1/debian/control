@@ -1,0 +1,13 @@
+Source: vdr-skins-logos
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Origin: easyVDR
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.9.4
+
+Package: vdr-skins-logos
+Architecture: any
+Depends: ${misc:Depends}, vdr-plugin-text2skin (>= 1.3)
+Description: all logos for skin anthra, nOpacity, flat & tvguide, enigmang

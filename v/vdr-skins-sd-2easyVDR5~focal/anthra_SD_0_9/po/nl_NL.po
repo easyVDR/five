@@ -1,0 +1,45 @@
+# VDR language source file.
+# Copyright (C) 2008 Klaus Schmidinger <kls@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Arnold Niessen <niessen@iae.nl> <arnold.niessen@philips.com>, 2001
+# Hans Dingemans <hans.dingemans@tacticalops.nl>, 2003, 2005
+# Maarten Wisse <Maarten.Wisse@urz.uni-hd.de>, 2005
+# Carel Willemse <ca_willemse@planet.nl>, 2008
+# Johan Schuring <johan.schuring@vetteblei.nl>, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"Report-Msgid-Bugs-To: </var/mail/root>\n"
+"POT-Creation-Date: 2010-10-24 14:43+0200\n"
+"PO-Revision-Date: 2010-10-16 08:18+0100\n"
+"Last-Translator: Tomas Saxer <tsaxer@gmx.de>\n"
+"Language-Team: Dutch\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Language: \n"
+
+msgid "Volume"
+msgstr "Volume "
+
+msgid "Mute"
+msgstr "Geluid onderbreken"
+
+#~ msgid "Setup"
+#~ msgstr "Instellingen"
+
+#~ msgid "Timers"
+#~ msgstr "Timers"
+
+#~ msgid "Commands"
+#~ msgstr "Commando's"
+
+#~ msgid "Recordings"
+#~ msgstr "Opnames"
+
+#~ msgid "Schedule"
+#~ msgstr "Programmagids"
+
+#~ msgid "Channels"
+#~ msgstr "Kanalen"

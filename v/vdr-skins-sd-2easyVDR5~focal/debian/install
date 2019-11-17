@@ -1,0 +1,8 @@
+anthra_SD_0_9				usr/share/vdr-skins/
+anthra_SD_0_9/themes/*			var/lib/vdr/themes/
+
+anthra_SD_0_8                           usr/share/vdr-skins/
+anthra_SD_0_8/themes/*                  var/lib/vdr/themes/
+
+anthra_SD_test				usr/share/vdr-skins/
+anthra_SD_test/themes/*			var/lib/vdr/themes/

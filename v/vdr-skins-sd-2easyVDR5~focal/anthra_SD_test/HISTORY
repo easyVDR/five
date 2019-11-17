@@ -1,0 +1,25 @@
+text2skin-anthra-SD Revision History
+------------------------------------
+
+2010-12-11: Version 0.2.6
+
+- Makefile fixed
+
+2010-10-29: Version 0.2.5
+
+- Removed needless spaces after "align" (patch by Ville Skyttä)
+- Added EPGIMAGES (patch by Midas@vdrportal.de)
+- Splitted anthra_SD.template into separate files
+- Changed path for channellogos from relative to absolute
+- Outsourced user-defined Makefile-variables into Make.config
+
+2010-10-23: Version 0.2.4
+
+- Added NOMARQUEE-option in Makefile
+- Added HISTORY
+
+2010-10-21: Version 0.2.3
+
+- Added *.po-files
+- Added license
+- Added README

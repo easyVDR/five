@@ -1,0 +1,13 @@
+text2skin-anthra-SD Revision History
+----------------------------------
+
+2010-10-23: Version 0.2.4
+
+- Added NOMARQUEE-option in Makefile
+- Added HISTORY
+
+2010-10-21: Version 0.2.3
+
+- Added *.po-files
+- Added license
+- Added README
