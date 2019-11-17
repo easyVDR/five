@@ -1,0 +1,113 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <Klaus.Schmidinger@tvdr.de>
+# This file is distributed under the same license as the VDR package.
+# Rolf Ahrenberg <rahrenbe@cc.hut.fi>, 2003
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2018-01-31 22:27+0200\n"
+"PO-Revision-Date: 2008-05-04 15:33+0200\n"
+"Last-Translator: Rolf Ahrenberg <rahrenbe@cc.hut.fi>\n"
+"Language-Team: Finnish <vdr@linuxtv.org>\n"
+"Language: fi\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Channel (press OK): "
+msgstr "Kanava (paina OK):"
+
+msgid "Page"
+msgstr "Sivua"
+
+msgid "not found"
+msgstr "ei löydy"
+
+msgid "Displays teletext on the OSD"
+msgstr "Teksti-TV (OSD)"
+
+msgid "Teletext"
+msgstr "Teksti-TV"
+
+msgid "Zoom"
+msgstr "Suurenna"
+
+msgid "Half page"
+msgstr "Puolikas sivu"
+
+msgid "Change channel"
+msgstr "Vaihda kanavaa"
+
+msgid "Switch background"
+msgstr "Vaihda tausta"
+
+msgid "Jump to..."
+msgstr "Siirry sivulle..."
+
+msgid "Latin 1"
+msgstr "Latin 1"
+
+msgid "Latin 2"
+msgstr "Latin 2"
+
+msgid "Latin 3"
+msgstr "Latin 3"
+
+msgid "Latin 4"
+msgstr "Latin 4"
+
+msgid "Cyrillic"
+msgstr "kyrillinen"
+
+msgid "Reserved"
+msgstr "varattu"
+
+msgid "Greek"
+msgstr "kreikka"
+
+msgid "Arabic"
+msgstr "arabia"
+
+msgid "Hebrew"
+msgstr "hebrea"
+
+msgid "Background transparency"
+msgstr "Taustan läpinäkyvyys"
+
+msgid "Show clock"
+msgstr "Näytä kello"
+
+msgid "Auto-update pages"
+msgstr "Automaattinen sivupäivitys"
+
+msgid "OSD height"
+msgstr "Korkeus"
+
+msgid "OSD width"
+msgstr "Leveys"
+
+msgid "OSD horizontal align"
+msgstr "Pystykeskitys"
+
+msgid "OSD vertical align"
+msgstr "Vaakakeskitys"
+
+msgid "Hide mainmenu entry"
+msgstr "Piilota valinta päävalikosta"
+
+msgid "Text Font"
+msgstr "Käytä kirjasinta"
+
+msgid "G0 code block"
+msgstr "G0-koodilohko"
+
+msgid "G2 code block"
+msgstr "G2-koodilohko"
+
+msgid "Key bindings"
+msgstr "Näppäintoiminnot"
+
+msgid "  Page number"
+msgstr "  Sivunumero"

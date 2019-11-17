@@ -1,0 +1,186 @@
+vdr-plugin-permashift (1.0.3+git20170513-0easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 20:44:25 +0100
+
+vdr-plugin-permashift (1.0.3+git20170513-0easyVDR4~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:14:32 +0100
+
+vdr-plugin-permashift (1.0.3+git20170513-0easyVDR3~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:18:55 +0100
+
+vdr-plugin-permashift (1.0.3+git20170513-0easyVDR2~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 30 Jun 2017 23:51:13 +0200
+
+vdr-plugin-permashift (1.0.3+git20170513-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:39:27 +0200
+
+vdr-plugin-permashift (1.0.3+git20170513-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:8fc845c - better debug log messages
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 13 May 2017 16:03:43 +0200
+
+vdr-plugin-permashift (1.0.3-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:52:54 +0200
+
+vdr-plugin-permashift (1.0.3-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:38:50 +0200
+
+vdr-plugin-permashift (1.0.3-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:41:11 +0200
+
+vdr-plugin-permashift (1.0.3-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:00:32 +0200
+
+vdr-plugin-permashift (1.0.3-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:43:21 +0100
+
+vdr-plugin-permashift (1.0.3-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 20:39:11 +0100
+
+vdr-plugin-permashift (1.0.3-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 19:06:15 +0200
+
+vdr-plugin-permashift (1.0.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for easyVDR PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 May 2015 16:48:44 +0200
+
+vdr-plugin-permashift (1.0.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 29 Apr 2015 21:27:56 +0200
+
+vdr-plugin-permashift (1.0.2-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:18:05 +0200
+
+vdr-plugin-permashift (1.0.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 03:21:48 +0100
+
+vdr-plugin-permashift (1.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 20 Mar 2015 18:26:01 +0100
+
+vdr-plugin-permashift (1.0.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:26:56 +0100
+
+vdr-plugin-permashift (1.0.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:45:52 +0100
+
+vdr-plugin-permashift (1.0.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:49:08 +0200
+
+vdr-plugin-permashift (1.0.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 17:51:15 +0200
+
+vdr-plugin-permashift (0.5.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 14 Jan 2014 17:39:14 +0100
+
+vdr-plugin-permashift (0.5.4-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 27 Oct 2013 09:07:50 +0100
+
+vdr-plugin-permashift (0.5.4-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:40:47 +0200
+
+vdr-plugin-permashift (0.5.4-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:10:11 +0200
+
+vdr-plugin-permashift (0.5.4-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:04:27 +0200
+
+vdr-plugin-permashift (0.5.4-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:28:27 +0200
+
+vdr-plugin-permashift (0.5.4-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 09:16:00 +0200
+
+vdr-plugin-permashift (0.5.3-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 03 Apr 2013 23:51:53 +0200
+
+vdr-plugin-permashift (0.5.2-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 16:14:08 +0200

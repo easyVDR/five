@@ -1,0 +1,13 @@
+Index: b/rootdir.c
+===================================================================
+--- a/rootdir.c
++++ b/rootdir.c
+@@ -10,7 +10,7 @@
+ 
+ #include "rootdir.h"
+ 
+-const char *RootDir::root = "/var/cache/vdr/vtx";
++const char *RootDir::root = "/var/run/vdr/vtx";
+ 
+ void RootDir::setRootDir(const char *newRoot) {
+    root=newRoot;

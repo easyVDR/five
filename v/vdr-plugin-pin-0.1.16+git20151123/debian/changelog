@@ -1,0 +1,489 @@
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 20:44:48 +0100
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:14:41 +0100
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:19:04 +0100
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR6~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 01 Jul 2017 17:37:34 +0200
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:39:35 +0200
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:38:59 +0200
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:41:19 +0200
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:00:41 +0200
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:43:31 +0100
+
+vdr-plugin-pin (0.1.16+git20151123-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+  * commit:da4bb053 - fixed backward compatibility
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Nov 2015 23:46:43 +0100
+
+vdr-plugin-pin (0.1.14-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:18:20 +0200
+
+vdr-plugin-pin (0.1.14-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 03:22:02 +0100
+
+vdr-plugin-pin (0.1.14-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de.de>  Mon, 23 Mar 2015 03:02:08 +0100
+
+vdr-plugin-pin (0.1.14-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:49:26 +0200
+
+vdr-plugin-pin (0.1.14-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 23:45:24 +0200
+
+vdr-plugin-pin (0.1.14-1yavdr4~trusty) trusty; urgency=medium
+
+  * rebuild for testing-vdr
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Tue, 08 Apr 2014 18:43:21 +0200
+
+vdr-plugin-pin (0.1.14-1yavdr4~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:34:38 +0200
+
+vdr-plugin-pin (0.1.14-1yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:10:32 +0200
+
+vdr-plugin-pin (0.1.14-1yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 16:05:12 +0100
+
+vdr-plugin-pin (0.1.14-1yavdr0~precise) precise; urgency=medium
+
+  * compile with vdr 2.1.4
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Feb 2014 21:13:31 +0100
+
+vdr-plugin-pin (0.1.14-0yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Feb 2014 19:35:50 +0100
+
+vdr-plugin-pin (0.1.14-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Feb 2014 16:12:40 +0100
+
+vdr-plugin-pin (0.1.13-0yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:04:36 +0200
+
+vdr-plugin-pin (0.1.13-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:28:39 +0200
+
+vdr-plugin-pin (0.1.13-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:53:32 +0200
+
+vdr-plugin-pin (0.1.13-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:54:39 +0100
+
+vdr-plugin-pin (0.1.13-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 13:25:37 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr10~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:05:14 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:55:28 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr7~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:28:44 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:29:21 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:11:52 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:57:43 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:09:29 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:38:28 +0100
+
+vdr-plugin-pin (0.1.10-1-2yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:18:32 +0200
+
+vdr-plugin-pin (0.1.10-1-2yavdr0~precise) precise; urgency=medium
+
+  * Build-depend on vdr-dev >= 1.7.27
+  * Source format 3.0 (quilt)
+  * Bumped standards version to 3.9.2
+  * Switched to debhelper 7 and dropped cdbs
+  * Added i18n.patch
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:26:18 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr19~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:18:19 +0100
+
+vdr-plugin-pin (0.1.10-1-1yavdr18~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:17:11 +0100
+
+vdr-plugin-pin (0.1.10-1-1yavdr17~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 09:01:18 +0100
+
+vdr-plugin-pin (0.1.10-1-1yavdr16~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Feb 2012 20:08:17 +0100
+
+vdr-plugin-pin (0.1.10-1-1yavdr16~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 29 Dec 2011 11:12:06 +0100
+
+vdr-plugin-pin (0.1.10-1-1yavdr15~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:39:23 +0100
+
+vdr-plugin-pin (0.1.10-1-1yavdr14~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 24 Dec 2011 11:26:56 +0100
+
+vdr-plugin-pin (0.1.10-1-1yavdr13~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 17 Oct 2011 15:35:58 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr12~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 05 Sep 2011 18:16:17 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr11~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 25 Aug 2011 17:56:31 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr10~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 18 Aug 2011 20:06:04 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr9~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 15 Jun 2011 13:47:39 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr8~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 14 Jun 2011 20:45:01 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr7~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 25 May 2011 13:55:49 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr6~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 22 May 2011 22:57:01 +0200
+
+vdr-plugin-pin (0.1.10-1-1yavdr5~natty) natty; urgency=low
+
+  * reccmds.pin.conf sh -> bash
+  * typo in fskcheck-demo.sh
+  * Added i18n.dpatch
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sund, 24 Apr 2011 08:02:08 +0100
+
+vdr-plugin-pin (0.1.10-3) experimental; urgency=low
+
+  * Removed non-standard shebang line from debian/rules
+  * Added README.source
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 09 Nov 2009 20:52:18 +0100
+
+vdr-plugin-pin (0.1.10-2) experimental; urgency=low
+
+  * Release for vdrdevel 1.7.6
+  * Added ${misc:Depends}
+  * Bumped standards version to 3.8.1
+  * Changed section to "video"
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 29 Apr 2009 23:11:27 +0200
+
+vdr-plugin-pin (0.1.10-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 22 Feb 2009 09:22:27 +0100
+
+vdr-plugin-pin (0.1.9-9) experimental; urgency=low
+
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+  * Using COMPAT=5 now
+  * Added 02_gcc-4.2.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Jul 2008 15:53:53 +0200
+
+vdr-plugin-pin (0.1.9-8) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 00:56:40 +0200
+
+vdr-plugin-pin (0.1.9-7) experimental; urgency=low
+
+  * Build-Depend on vdr-dev (>= 1.6.0)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 24 Mar 2008 20:14:20 +0100
+
+vdr-plugin-pin (0.1.9-6) experimental; urgency=low
+
+  * Force rebuild for vdr 1.5.15
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:33:11 +0100
+
+vdr-plugin-pin (0.1.9-5) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:48 +0100
+
+vdr-plugin-pin (0.1.9-4) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:45 +0100
+
+vdr-plugin-pin (0.1.9-3) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:35 +0100
+
+vdr-plugin-pin (0.1.9-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:51:15 +0200
+
+vdr-plugin-pin (0.1.9-1) unstable; urgency=low
+
+  * New upstream release
+  * Added 02_new-vdr-patch.dpatch
+  * Added full license disclaimer and copyright years to debian/copyright
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 24 Aug 2007 21:42:53 +0200
+
+vdr-plugin-pin (0.1.7-5) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:28 +0200
+
+vdr-plugin-pin (0.1.7-4) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:37 +0200
+
+vdr-plugin-pin (0.1.7-3) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.5
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:03:02 +0200
+
+vdr-plugin-pin (0.1.7-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:01:13 +0200
+
+vdr-plugin-pin (0.1.7-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 10 Mar 2007 22:30:15 +0100
+
+vdr-plugin-pin (0.1.5b-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.1
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:35 +0100
+
+vdr-plugin-pin (0.1.5b-1) unstable; urgency=low
+
+  [ Thomas Günther ]
+  * New upstream release
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 19:11:08 +0100
+
+vdr-plugin-pin (0.1.1-2) unstable; urgency=low
+
+  * Added recording hook, to copy FSK protection after cutting a recording
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 24 Nov 2006 18:32:36 +0100
+
+vdr-plugin-pin (0.1.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+  * Added debian/watch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 11:31:29 +0100
+
+vdr-plugin-pin (0.0.20-4) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 23 Sep 2006 20:32:53 +0200
+
+vdr-plugin-pin (0.0.20-3) unstable; urgency=low
+
+  * Added script for protecting / unprotecting recordings
+
+ -- Tobias Grimm <tg@e-tobi.net>  Thu, 31 Aug 2006 20:46:22 +0200
+
+vdr-plugin-pin (0.0.20-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 27 Aug 2006 22:16:15 +0200
+

@@ -1,0 +1,1057 @@
+vdr-plugin-plex (0.4.0-1easyVDR7~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 20:45:11 +0100
+
+vdr-plugin-plex (0.4.0-1easyVDR6~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:14:50 +0100
+
+vdr-plugin-plex (0.4.0-1easyVDR5~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:19:13 +0100
+
+vdr-plugin-plex (0.4.0-1easyVDR4~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 01 Jul 2017 16:40:55 +0200
+
+vdr-plugin-plex (0.4.0-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:39:52 +0200
+
+vdr-plugin-plex (0.4.0-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:39:16 +0200
+
+vdr-plugin-plex (0.4.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * updated poco lib to version 44
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Sep 2016 00:32:28 +0200
+
+vdr-plugin-plex (0.4.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 11 Sep 2016 00:39:57 +0200
+
+vdr-plugin-plex (0.4.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Sep 2016 03:22:47 +0200
+
+vdr-plugin-plex (2:0.4.0-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d005101: Fixes mirror mode.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 26 Jun 2016 20:27:34 +0200
+
+vdr-plugin-plex (2:0.3.0-23-g479c7fe-1yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 479c7fe: Fixes segvault when displaying "streamselect" menu,
+    hopefully...
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 04 May 2016 22:50:30 +0200
+
+vdr-plugin-plex (2:0.3.0-23-g479c7fe-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 479c7fe: Fixes segvault when displaying "streamselect" menu,
+    hopefully...
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 26 Apr 2016 21:07:54 +0200
+
+vdr-plugin-plex (2:0.3.0-22-g8d0ed3d-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 8d0ed3d: Added protocol capability "mirror" Displays information
+    about the currently via app viewed video on the VDR. Also fixes "OSD
+    is already open bug"
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 12 Apr 2016 12:43:16 +0200
+
+vdr-plugin-plex (2:0.3.0-21-g82d13a0-1yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 82d13a0: Removed some duplicate code.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 03 Apr 2016 22:28:04 +0200
+
+vdr-plugin-plex (2:0.3.0-21-g82d13a0-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 82d13a0: Removed some duplicate code.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 03 Apr 2016 22:22:57 +0200
+
+vdr-plugin-plex (2:0.3.0-20-g6fc2962-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6fc2962: Code reformating
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 03 Apr 2016 13:31:40 +0200
+
+vdr-plugin-plex (2:0.3.0-18-g893c0af-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 893c0af: Fixes nullptr
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 01 Apr 2016 06:53:46 +0200
+
+vdr-plugin-plex (2:0.3.0-17-geef71c6-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * eef71c6: New viewelement "time" for detailview
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 31 Mar 2016 13:28:58 +0200
+
+vdr-plugin-plex (2:0.3.0-15-g5668510-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 5668510: Added missing token {extratype}
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 30 Mar 2016 22:05:48 +0200
+
+vdr-plugin-plex (2:0.3.0-13-gbd3d480-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * bd3d480: paralleling cPictureCache. Multiple server connections now
+    possible
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 28 Mar 2016 20:55:43 +0200
+
+vdr-plugin-plex (2:0.3.0-12-g495f828-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 495f828: Fixes some display glitches in detailView
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 25 Mar 2016 20:55:01 +0100
+
+vdr-plugin-plex (2:0.3.0-9-g2c6f8aa-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 2c6f8aa: New token {hasscrollbar} in rootview & detailview
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 25 Mar 2016 16:20:18 +0100
+
+vdr-plugin-plex (2:0.3.0-7-g4c8f707-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 4c8f707: Fixed navigation in DetailView
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 18 Mar 2016 15:32:34 +0100
+
+vdr-plugin-plex (2:0.3.0-4-gb04f9e1-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b04f9e1: some fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 15 Mar 2016 16:47:18 +0100
+
+vdr-plugin-plex (2:0.3.0-3-g0049f41-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 0049f41: Fixes for DetailView
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 14 Mar 2016 19:28:38 +0100
+
+vdr-plugin-plex (2:0.3.0-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 662171f: Fixed "time" added looptokens
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 25 Feb 2016 20:49:56 +0100
+
+vdr-plugin-plex (2:0.2.2-4-g6b8c8ae-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6b8c8ae: libskindesignerapi 0.1.0 support
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 21 Feb 2016 21:57:34 +0100
+
+vdr-plugin-plex (2:0.2.2-3-g96a27aa-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 96a27aa: define for compiling without libskindesiger. Use 'make
+    DISABLESKINDESIGNER=1'
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 14 Feb 2016 11:47:12 +0100
+
+vdr-plugin-plex (2:0.2.2-2-g63f30c8-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 63f30c8: new transcode settings
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 26 Jan 2016 14:56:53 +0100
+
+vdr-plugin-plex (2:0.2.2-1-g8b862dd-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 8b862dd: testing new transcode settings
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 17 Jan 2016 17:31:27 +0100
+
+vdr-plugin-plex (2:0.2.2-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 53641a1: version 0.2.2
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 Jan 2016 17:52:05 +0100
+
+vdr-plugin-plex (2:0.2.1-3-gf04d439-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * f04d439: Buffersize wasn't loaded correctly from setup.conf
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 Jan 2016 23:36:08 +0100
+
+vdr-plugin-plex (2:0.2.1-2-gafe4aff-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * afe4aff: Made ringbuffer size in cHlsPlayer configurable
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 14 Jan 2016 20:28:51 +0100
+
+vdr-plugin-plex (2:0.2.1-1-ge4ae929-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * e4ae929: Removes the need of resizing the ringbuffer. Ringbuffer is
+    now fixed at 1MB.
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 25 Dec 2015 23:39:03 +0100
+
+vdr-plugin-plex (2:0.2.1-1yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * df60d66: 0.2.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 25 Dec 2015 18:38:32 +0100
+
+vdr-plugin-plex (1:0.2.1-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * df60d66: 0.2.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 25 Dec 2015 18:22:02 +0100
+
+vdr-plugin-plex (1:0.1.5-12-gc7376a0-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * c7376a0: Fixes compile error
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 23 Dec 2015 18:48:47 +0100
+
+vdr-plugin-plex (1:0.1.5-11-g78eff7c-4frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 78eff7c: Some fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 23 Dec 2015 13:43:05 +0100
+
+vdr-plugin-plex (1:0.1.5-11-g78eff7c-3frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 78eff7c: Some fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 23 Dec 2015 13:42:03 +0100
+
+vdr-plugin-plex (1:0.1.5-11-g78eff7c-2frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 78eff7c: Some fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 23 Dec 2015 11:11:13 +0100
+
+vdr-plugin-plex (1:0.1.5-11-g78eff7c-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 78eff7c: Some fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 22 Dec 2015 22:10:27 +0100
+
+vdr-plugin-plex (1:0.1.5-11-g78eff7c-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 78eff7c: Some fixes
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 22 Dec 2015 22:05:58 +0100
+
+vdr-plugin-plex (1:0.1.5-10-g2a112bc-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 2a112bc: Merge pull request #2 from chriszero/remoteserver
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 22 Dec 2015 19:07:19 +0100
+
+vdr-plugin-plex (1:0.1.5-5-g135ed5d-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 135ed5d: Changed calculation of ResizeRingbuffer
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 07 Nov 2015 21:48:56 +0100
+
+vdr-plugin-plex (1:0.1.5-3-g75e178b-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 75e178b: Better support for vdr-plugin-mpv.
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 13 Oct 2015 15:11:20 +0200
+
+vdr-plugin-plex (1:0.1.5-2-g0be6c14-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 0be6c14: Option to use AC3 audio without installing the custom
+    profile to your pms
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 03 Oct 2015 11:47:08 +0200
+
+vdr-plugin-plex (1:0.1.5-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b27925c: Handle some network errors to prevent segfaults. Lost
+    network, crashed PMS
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 29 Sep 2015 15:57:10 +0200
+
+vdr-plugin-plex (1:0.1.5-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b27925c: Handle some network errors to prevent segfaults. Lost
+    network, crashed PMS
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 28 Sep 2015 19:42:50 +0200
+
+vdr-plugin-plex (1:0.1.4-40-gf22f21b-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * f22f21b: Fixes segfault on vdr exit
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 15 Sep 2015 20:01:12 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-6frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 25 Aug 2015 13:26:11 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-5frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 24 Aug 2015 22:09:53 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-4frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 08 Aug 2015 22:36:24 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-3frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Jul 2015 12:39:11 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-3frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 17 Jul 2015 12:39:05 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-1yavdr0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 13 Jul 2015 13:49:16 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-1yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 13 Jul 2015 13:49:06 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-0yavdr0~trusty) trusty; urgency=medium
+
+  * rebuild for precise
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 12 Jul 2015 19:24:20 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-1frodo0~trustyyavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 12 Jul 2015 19:24:14 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 12 Jul 2015 19:20:58 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 12 Jul 2015 19:20:10 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 12 Jul 2015 19:20:09 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 11 Jul 2015 10:13:54 +0200
+
+vdr-plugin-plex (1:0.1.4-39-g43d3acb-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 43d3acb: Viewelement <scrollbar/> for all grids.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 11 Jul 2015 10:13:47 +0200
+
+vdr-plugin-plex (1:0.1.4-38-gc1220af-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * c1220af: Fixes compile error on older gcc versions.
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 07 Jul 2015 22:07:37 +0200
+
+vdr-plugin-plex (1:0.1.4-38-gc1220af-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * c1220af: Fixes compile error on older gcc versions.
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 07 Jul 2015 22:07:28 +0200
+
+vdr-plugin-plex (1:0.1.4-37-gd62b88d-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d62b88d: Implements Feature #2202 Scroll all around Scroll pagewise
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Jul 2015 16:23:23 +0200
+
+vdr-plugin-plex (1:0.1.4-37-gd62b88d-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d62b88d: Implements Feature #2202 Scroll all around Scroll pagewise
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Jul 2015 16:22:48 +0200
+
+vdr-plugin-plex (1:0.1.4-36-gb6a8493-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * b6a8493: Support for mpv plugin 0.0.3
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 27 Jun 2015 20:15:41 +0200
+
+vdr-plugin-plex (1:0.1.4-36-gb6a8493-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b6a8493: Support for mpv plugin 0.0.3
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 27 Jun 2015 20:15:36 +0200
+
+vdr-plugin-plex (1:0.1.4-35-g94c4505-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 94c4505: Finally fixed loop tokens
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 27 Jun 2015 11:07:30 +0200
+
+vdr-plugin-plex (1:0.1.4-35-g94c4505-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 94c4505: Finally fixed loop tokens
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 27 Jun 2015 11:07:22 +0200
+
+vdr-plugin-plex (1:0.1.4-33-g4a54de4-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 4a54de4: Fixes segfault with recent skindesigner.
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 23 Jun 2015 22:03:23 +0200
+
+vdr-plugin-plex (1:0.1.4-33-g4a54de4-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 4a54de4: Fixes segfault with recent skindesigner.
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 23 Jun 2015 22:03:14 +0200
+
+vdr-plugin-plex (1:0.1.4-32-g7688256-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 7688256: Sorry, last commit was buggy.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 20 Jun 2015 19:25:25 +0200
+
+vdr-plugin-plex (1:0.1.4-32-g7688256-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 7688256: Sorry, last commit was buggy.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 20 Jun 2015 19:25:17 +0200
+
+vdr-plugin-plex (1:0.1.4-31-ge778dab-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * e778dab: Add token {viewoffsetpercent}
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 19 Jun 2015 17:31:43 +0200
+
+vdr-plugin-plex (1:0.1.4-31-ge778dab-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * e778dab: Add token {viewoffsetpercent}
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 19 Jun 2015 17:31:36 +0200
+
+vdr-plugin-plex (1:0.1.4-30-g6db4cc5-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6db4cc5: Corrected tokens from last commit.
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 18 Jun 2015 21:47:45 +0200
+
+vdr-plugin-plex (1:0.1.4-30-g6db4cc5-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6db4cc5: Corrected tokens from last commit.
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 18 Jun 2015 21:47:38 +0200
+
+vdr-plugin-plex (1:0.1.4-29-g2f8f188-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 2f8f188: More token
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 14 Jun 2015 15:40:01 +0200
+
+vdr-plugin-plex (1:0.1.4-29-g2f8f188-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 2f8f188: More token
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 14 Jun 2015 15:39:53 +0200
+
+vdr-plugin-plex (1:0.1.4-28-g5ac0830-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 5ac0830: Use Mpv for playing media. Configure via plugin setup.
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 12 Jun 2015 07:16:54 +0200
+
+vdr-plugin-plex (1:0.1.4-28-g5ac0830-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 5ac0830: Use Mpv for playing media. Configure via plugin setup.
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 12 Jun 2015 07:16:46 +0200
+
+vdr-plugin-plex (1:0.1.4-27-g8c6697c-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 8c6697c: New media type "clip"
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 07 Jun 2015 14:31:55 +0200
+
+vdr-plugin-plex (1:0.1.4-27-g8c6697c-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 8c6697c: New media type "clip"
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 07 Jun 2015 14:31:40 +0200
+
+vdr-plugin-plex (1:0.1.4-24-g3ec286b-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 3ec286b: Some tweaks
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 04 Jun 2015 17:24:05 +0200
+
+vdr-plugin-plex (1:0.1.4-24-g3ec286b-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 3ec286b: Some tweaks
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 04 Jun 2015 17:23:58 +0200
+
+vdr-plugin-plex (1:0.1.4-24-g3ec286b-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 3ec286b: Some tweaks
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 May 2015 09:46:33 +0200
+
+vdr-plugin-plex (1:0.1.4-24-g3ec286b-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 3ec286b: Some tweaks
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 May 2015 09:46:22 +0200
+
+vdr-plugin-plex (1:0.1.4-23-g3bb1c16-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 3bb1c16: More error handling if plexserver is gone or not
+    availiable.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 23:49:18 +0200
+
+vdr-plugin-plex (1:0.1.4-23-g3bb1c16-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 3bb1c16: More error handling if plexserver is gone or not
+    availiable.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 23 May 2015 23:49:12 +0200
+
+vdr-plugin-plex (1:0.1.4-20-gfc8dc95-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * fc8dc95: Fixes complie error
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 22 May 2015 22:42:23 +0200
+
+vdr-plugin-plex (1:0.1.4-20-gfc8dc95-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * fc8dc95: Fixes complie error
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 22 May 2015 22:42:17 +0200
+
+vdr-plugin-plex (1:0.1.4-18-g709ebb9-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 709ebb9: - Added handling for disapearing or not reachable
+    plexservers
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 20 May 2015 21:23:39 +0200
+
+vdr-plugin-plex (1:0.1.4-18-g709ebb9-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 709ebb9: - Added handling for disapearing or not reachable
+    plexservers
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 20 May 2015 21:23:24 +0200
+
+vdr-plugin-plex (1:0.1.4-17-g86cfa7f-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 86cfa7f: - Dedicicated grid for each viewmode
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 19 May 2015 21:31:19 +0200
+
+vdr-plugin-plex (1:0.1.4-17-g86cfa7f-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 86cfa7f: - Dedicicated grid for each viewmode
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 19 May 2015 21:31:13 +0200
+
+vdr-plugin-plex (1:0.1.4-16-gd15cd5a-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d15cd5a: ...
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 18 May 2015 20:02:05 +0200
+
+vdr-plugin-plex (1:0.1.4-16-gd15cd5a-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d15cd5a: ...
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 18 May 2015 20:01:58 +0200
+
+vdr-plugin-plex (1:0.1.4-15-g80d1c61-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 80d1c61: New token: {ratingstring}
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 10 May 2015 19:28:27 +0200
+
+vdr-plugin-plex (1:0.1.4-15-g80d1c61-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 80d1c61: New token: {ratingstring}
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 10 May 2015 19:28:21 +0200
+
+vdr-plugin-plex (1:0.1.4-14-g56c8a3f-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 56c8a3f: Add Token "rating"
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 04 May 2015 20:43:42 +0200
+
+vdr-plugin-plex (1:0.1.4-14-g56c8a3f-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 56c8a3f: Add Token "rating"
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 04 May 2015 20:43:29 +0200
+
+vdr-plugin-plex (1:0.1.4-13-gf7196f2-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * f7196f2: - Playmarks for skindesigner - More tokens (mediainfo,
+    codes, etc) - Updated translation
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 03 May 2015 17:29:56 +0200
+
+vdr-plugin-plex (1:0.1.4-13-gf7196f2-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * f7196f2: - Playmarks for skindesigner - More tokens (mediainfo,
+    codes, etc) - Updated translation
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 03 May 2015 17:29:49 +0200
+
+vdr-plugin-plex (1:0.1.4-12-g6708c32-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6708c32: Fixes scrolling in grid.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 02 May 2015 21:37:45 +0200
+
+vdr-plugin-plex (1:0.1.4-12-g6708c32-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6708c32: Fixes scrolling in grid.
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 02 May 2015 21:37:29 +0200
+
+vdr-plugin-plex (1:0.1.4-10-g70a2f36-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 70a2f36: Added watch tokens, updated description about availiable
+    tokens in template
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 21:34:22 +0200
+
+vdr-plugin-plex (1:0.1.4-10-g70a2f36-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 70a2f36: Added watch tokens, updated description about availiable
+    tokens in template
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 21:34:17 +0200
+
+vdr-plugin-plex (0.1.4.git20150429.0932-0frodo0~trusty) trusty; urgency=low
+
+  * 70a2f36: Added watch tokens, updated description about availiable
+    tokens in template
+  * 70a2f36: Added watch tokens, updated description about availiable
+    tokens in template
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 20:19:00 +0200
+
+vdr-plugin-plex (0.1.4.git20150413.0603-0frodo0~trusty) trusty; urgency=low
+
+  * 294f38d: More tokens
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 13 Apr 2015 08:03:02 +0200
+
+vdr-plugin-plex (0.1.4.git20150412.1202-0frodo0~trusty) trusty; urgency=low
+
+  * 18194b7: libskindesignerapi support
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 12 Apr 2015 14:02:16 +0200
+
+vdr-plugin-plex (0.1.4.git20150410.1211-0frodo0~trusty) trusty; urgency=low
+
+  * 4bf4542: more tokens
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 10 Apr 2015 14:11:09 +0200
+
+vdr-plugin-plex (0.1.4.git20150409.2000-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-70-g4bf4542
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 22:00:54 +0200
+
+vdr-plugin-plex (0.1.4.git20150409.2000-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-70-g4bf4542
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 22:00:09 +0200
+
+vdr-plugin-plex (0.1.4.git20150406.2010-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-69-g376c9f2
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 22:10:44 +0200
+
+vdr-plugin-plex (0.1.4.git20150406.2010-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-69-g376c9f2
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 22:10:21 +0200
+
+vdr-plugin-plex (0.1.4.git20150406.2006-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-69-g376c9f2
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 22:06:20 +0200
+
+vdr-plugin-plex (0.1.4.git20150406.2005-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-69-g376c9f2
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 22:05:54 +0200
+
+vdr-plugin-plex (0.1.4.git20150405.1553-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-66-gf7f62b7
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 05 Apr 2015 17:53:05 +0200
+
+vdr-plugin-plex (0.1.4.git20150405.1552-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-66-gf7f62b7
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 05 Apr 2015 17:52:48 +0200
+
+vdr-plugin-plex (0.1.4.git20150326.2003-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-63-g5ffd915
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 26 Mar 2015 21:03:54 +0100
+
+vdr-plugin-plex (0.1.4.git20150326.2003-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-63-g5ffd915
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 26 Mar 2015 21:03:39 +0100
+
+vdr-plugin-plex (0.1.4.git20150326.1938-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-63-g5ffd915
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 26 Mar 2015 20:38:09 +0100
+
+vdr-plugin-plex (0.1.4.git20150326.1937-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-63-g5ffd915
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 26 Mar 2015 20:37:47 +0100
+
+vdr-plugin-plex (0.1.4.git20150315.1523-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-63-g5ffd915
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 15 Mar 2015 16:23:52 +0100
+
+vdr-plugin-plex (0.1.4.git20150315.1523-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.4-63-g5ffd915
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 15 Mar 2015 16:23:31 +0100
+
+vdr-plugin-plex (0.1.0.git20150312.0826-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-61-g5989d80
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 12 Mar 2015 09:26:38 +0100
+
+vdr-plugin-plex (0.1.0.git20150312.0826-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-61-g5989d80
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 12 Mar 2015 09:26:23 +0100
+
+vdr-plugin-plex (0.1.0.git20150309.1904-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-60-geb49ddb
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 09 Mar 2015 20:04:38 +0100
+
+vdr-plugin-plex (0.1.0.git20150309.1904-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-60-geb49ddb
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 09 Mar 2015 20:04:23 +0100
+
+vdr-plugin-plex (0.1.0.git20150306.1943-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-58-g44a0918
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 06 Mar 2015 20:43:14 +0100
+
+vdr-plugin-plex (0.1.0.git20150306.1942-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-58-g44a0918
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 06 Mar 2015 20:42:58 +0100
+
+vdr-plugin-plex (0.1.0.git20150301.1707-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-56-gf32ddb7
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 01 Mar 2015 18:07:30 +0100
+
+vdr-plugin-plex (0.1.0.git20150301.1707-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-56-gf32ddb7
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 01 Mar 2015 18:07:14 +0100
+
+vdr-plugin-plex (0.1.0.git20150228.1444-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-54-g9450b27
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Feb 2015 15:44:48 +0100
+
+vdr-plugin-plex (0.1.0.git20150228.1444-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-54-g9450b27
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 28 Feb 2015 15:44:33 +0100
+
+vdr-plugin-plex (0.1.0.git20150227.1943-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-52-gd6339ad
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 27 Feb 2015 20:43:13 +0100
+
+vdr-plugin-plex (0.1.0.git20150227.1942-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-52-gd6339ad
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 27 Feb 2015 20:42:50 +0100
+
+vdr-plugin-plex (0.1.0.git20150226.1925-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-50-g6b46a11
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 26 Feb 2015 20:25:07 +0100
+
+vdr-plugin-plex (0.1.0.git20150226.1924-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-50-g6b46a11
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 26 Feb 2015 20:24:52 +0100
+
+vdr-plugin-plex (0.1.0.git20150222.1714-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-49-ge44cc78
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Feb 2015 18:14:18 +0100
+
+vdr-plugin-plex (0.1.0.git20150222.1714-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-49-ge44cc78
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Feb 2015 18:14:03 +0100
+
+vdr-plugin-plex (0.1.0.git20150221.1815-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-45-g7b4822f
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:15:56 +0100
+
+vdr-plugin-plex (0.1.0.git20150221.1815-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-45-g7b4822f
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 21 Feb 2015 19:15:42 +0100
+
+vdr-plugin-plex (0.1.0.git20150220.0727-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-41-g8f5d88e
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 20 Feb 2015 08:27:55 +0100
+
+vdr-plugin-plex (0.1.0.git20150220.0727-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-41-g8f5d88e
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 20 Feb 2015 08:27:37 +0100
+
+vdr-plugin-plex (0.1.0.git20150217.1833-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-37-g216db1e
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 17 Feb 2015 19:33:44 +0100
+
+vdr-plugin-plex (0.1.0.git20150217.1833-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-37-g216db1e
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 17 Feb 2015 19:33:30 +0100
+
+vdr-plugin-plex (0.1.0.git20150217.1154-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-36-g4a86011
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 17 Feb 2015 12:54:58 +0100
+
+vdr-plugin-plex (0.1.0.git20150217.1154-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-36-g4a86011
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 17 Feb 2015 12:54:43 +0100
+
+vdr-plugin-plex (0.1.0.git20150216.0547-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-35-g6255bbe
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 16 Feb 2015 06:47:38 +0100
+
+vdr-plugin-plex (0.1.0.git20150216.0547-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-35-g6255bbe
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 16 Feb 2015 06:47:24 +0100
+
+vdr-plugin-plex (0.1.0.git20150214.2032-0frodo0~trusty) trusty; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-34-ge412257
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 14 Feb 2015 21:32:17 +0100
+
+vdr-plugin-plex (0.1.0.git20150214.2032-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-34-ge412257
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 14 Feb 2015 21:32:03 +0100
+
+vdr-plugin-plex (0.1.0.git20150214.2030-0frodo0~precise) precise; urgency=low
+
+  * New upstream snapshot vdr-plugin-plex 0.1.0-34-ge412257
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 14 Feb 2015 21:30:45 +0100
+

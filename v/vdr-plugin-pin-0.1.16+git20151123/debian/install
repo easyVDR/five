@@ -1,0 +1,6 @@
+#libvdr-pin.so.*                   usr/lib/vdr/plugins/
+fskcheck                          usr/bin/
+scripts/fskprotect.sh             usr/share/vdr-plugin-pin/
+debian/reccmds.pin.conf           etc/vdr/command-hooks/
+debian/R10.vdr-plugin-pin.conf    usr/share/vdr/recording-hooks/
+#locale                            usr/share/

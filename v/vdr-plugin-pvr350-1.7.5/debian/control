@@ -1,0 +1,26 @@
+Source: vdr-plugin-pvr350
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8.0.0), vdr-dev (>= 2.0.0), pkg-config, gettext, linux-libc-dev (>= 2.6.21-4~bpo.1), liba52-0.7.4-dev, libtwolame-dev, libmpg123-dev
+Standards-Version: 3.9.4
+Homepage: http://drseltsam.device.name/vdr/pvr/src/pvr350/
+
+Package: vdr-plugin-pvr350
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR-Plugin that uses a PVR350 as output device
+ This plugin for vdr uses Hauppauge PVR350 as an output device.
+ .
+ NOTE: At least kernel 2.6.21 is required!
+ 
+Package: vdr-plugin-pvr350-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-pvr350 (= ${binary:Version}), ${misc:Depends}
+Description: VDR-Plugin that uses a PVR350 as output device
+ This plugin for vdr uses Hauppauge PVR350 as an output device.
+ .
+ This package contains the debugging symbols. 

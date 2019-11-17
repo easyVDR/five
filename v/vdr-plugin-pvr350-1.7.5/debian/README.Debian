@@ -1,0 +1,9 @@
+Kernel dependency
+-----------------
+
+This version of the vdr-plugin-pvr350 requires a newer version of the IVTV
+drivers, than currently available in the standard kernel of Etch. You
+will require at least a kernel 2.6.21. The kernel available through
+backports.org for Etch will be fine.
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 10 Feb 2008 21:35:45 +0100

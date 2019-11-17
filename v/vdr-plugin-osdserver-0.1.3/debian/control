@@ -1,0 +1,18 @@
+Source: vdr-plugin-osdserver
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config
+Standards-Version: 3.9.6
+Homepage: http://www.udo-richter.de/vdr/osdserver.en.html
+Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-osdserver.git
+Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr-plugin-osdserver.git
+
+Package: vdr-plugin-osdserver
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin to provide other programs access to the OSD
+ The OSDServer plugin allows external programs to access VDR's OSD.
+ OSDServer listens for commands on port 2010 and is mainly intended
+ to be used by shell and perl scripts.

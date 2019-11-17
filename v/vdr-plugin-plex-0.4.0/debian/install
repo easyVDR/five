@@ -1,0 +1,2 @@
+debian/plugin.plex.conf    etc/vdr/plugins
+skins/*                    usr/share/vdr/plugins/skindesigner/skins

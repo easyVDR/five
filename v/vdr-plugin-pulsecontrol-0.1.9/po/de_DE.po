@@ -1,0 +1,93 @@
+# The VDR plugin pulsecontrol
+# Copyright (C) 2015 by Lars Hanisch
+# This file is distributed under the same license as the vdr-pulsecontrol package.
+# Lars Hanisch <dvb@flensrocker.de>, 2015
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-pulsecontrol 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2015-12-26 11:53+0100\n"
+"PO-Revision-Date: 2015-12-26 11:53+0100\n"
+"Last-Translator: Lars Hanisch <dvb@flensrocker.de>\n"
+"Language-Team: German <vdr@linuxtv.org>\n"
+"Language: German\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "select formats"
+msgstr "wähle Format"
+
+msgid "move sink input"
+msgstr "verschiebe Wiedergabe"
+
+msgid "set card profile"
+msgstr "wechsel Kartenprofil"
+
+msgid "set passthrough formats"
+msgstr "setze Passthrough-Formate"
+
+msgid "set default sink"
+msgstr "setze Standardausgabegerät"
+
+msgid "execute script"
+msgstr "Script ausführen"
+
+#, c-format
+msgid "error %d on moving sink input"
+msgstr "Fehler %d beim Verschieben der Wiedergabe"
+
+#, c-format
+msgid "error %d on saving formats"
+msgstr "Fehler %d beim Speichern der Formate"
+
+#, c-format
+msgid "error %d on setting card profile"
+msgstr "Fehler %d beim Setzen des Kartenprofils"
+
+#, c-format
+msgid "error %d on setting default sink"
+msgstr "Fehler %d beim Setzen des Standardausgabegeräts"
+
+#, c-format
+msgid "can't read script %s"
+msgstr "Script %s kann nicht gelesen werden"
+
+#, c-format
+msgid "error %d on executing script %s"
+msgstr "Fehler %d beim Ausführen von Script %s"
+
+#, c-format
+msgid "error %d on querying cards"
+msgstr "Fehler %d beim Abfragen der Karten"
+
+msgid "select card"
+msgstr "wähle Karte"
+
+#, c-format
+msgid "error %d on querying sink formats"
+msgstr "Fehler %d beim Abfragen der Formate"
+
+msgid "select profile"
+msgstr "wähle Profil"
+
+msgid "select script"
+msgstr "wähle Script"
+
+#, c-format
+msgid "error %d on querying sinks"
+msgstr "Fehler %d beim Abfragen der Ausgabegeräte"
+
+msgid "select sink"
+msgstr "wähle Ausgabegerät"
+
+#, c-format
+msgid "error %d on querying sink inputs"
+msgstr "Fehler %d beim Abfragen der Wiedergaben"
+
+msgid "select input"
+msgstr "wähle Wiedergabe"
+
+msgid "control settings of pulseaudio"
+msgstr "Pulseaudio über das OSD steuern"

@@ -1,0 +1,63 @@
+--- a/Makefile
++++ b/Makefile
+@@ -48,7 +48,7 @@
+ 
+ INCLUDES += -I$(VDRDIR)/include
+ 
+-DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"' -DPLUGINVERSION='"$(VERSION)"'
++DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"' -DPLUGINVERSION='"$(VERSION)"' -D__STL_CONFIG_H
+ 
+ ### The object files (add further files here):
+ 
+--- a/interpreter.c
++++ b/interpreter.c
+@@ -5,6 +5,7 @@
+ 
+ #include "interpreter.h"
+ 
++#include <algorithm>
+ 
+ // ---------------
+ //   cConnection
+@@ -1347,7 +1348,7 @@
+         return true;
+     }
+ 
+-    timeout=min(ms,100);
++    timeout=std::min(ms,100);
+     return false;
+ }
+ 
+--- a/tools.h
++++ b/tools.h
+@@ -1,6 +1,7 @@
+ #ifndef __OSDSERVER_TOOLS_H
+ #define __OSDSERVER_TOOLS_H
+ 
++#include <algorithm>
+ #include <ctype.h>
+ 
+ #include <vdr/tools.h>
+@@ -40,19 +41,19 @@
+     void SetRead(int fd) {
+         if (fd >= 0 && fd < FD_SETSIZE) {
+             FD_SET(fd,&readfds);
+-            fdmax=max(fd,fdmax);
++            fdmax=std::max(fd,fdmax);
+         }
+     }
+     void SetWrite(int fd) {
+         if (fd >= 0 && fd < FD_SETSIZE) {
+             FD_SET(fd,&writefds);
+-            fdmax=max(fd,fdmax);
++            fdmax=std::max(fd,fdmax);
+         }
+     }
+     void SetExcept(int fd) {
+         if (fd >= 0 && fd < FD_SETSIZE) {
+             FD_SET(fd,&exceptfds);
+-            fdmax=max(fd,fdmax);
++            fdmax=std::max(fd,fdmax);
+         }
+     }
+     void ClearRead(int fd) {

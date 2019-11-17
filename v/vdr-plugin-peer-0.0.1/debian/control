@@ -1,0 +1,30 @@
+Source: vdr-plugin-peer
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.20), gettext, svdrpservice-dev, pkg-config
+Standards-Version: 3.9.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-peer/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-peer/trunk/
+Homepage: http://vdr.schmirler.de
+
+Package: vdr-plugin-peer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, vdr-plugin-svdrpservice
+Recommends: vdr-plugin-remotetimers, vdr-plugin-remoteosd, vdr-plugin-svdrposd
+Description: VDR plugin to edit timers on remote VDRs
+ With the peer plugin you can add/edit/remove timers on both, the
+ local (client) VDR and remote (peer) VDRs. You can even move timers
+ between VDRs. The plugin has its own implementations of the Schedule,
+ Timer and Recordings menus. All of them are feature extended copies of VDR's
+ original menus, adding e.g. multiuser support. Also you can access the osd and device status of a remote VDR and wake other devices using WOL.
+
+Package: vdr-plugin-peer-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-peer (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-peer
+ .
+ This package contains only the debugging symbols for vdr-plugin-peer

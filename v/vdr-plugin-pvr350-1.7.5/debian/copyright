@@ -1,0 +1,46 @@
+Upstream Homepages:
+    http://drseltsam.device.name/vdr/pvr/src/pvr350/
+    http://www.rst38.org.uk/vdr/pvr350/ (old, unmaintained versions)
+
+Upstream Authors:
+    Martin Dauskardt <directorskinner@arcor.de> ("Dr. Seltsam")
+    Andreas Schäfers <Andreas_Schaefers@gmx.de>,
+    Dominic Morris <dom@suborbital.org.uk> (Original Author),
+
+Debian Maintainers:
+    Peter Siering <ps@ctmagazin.de>
+    Tobias Grimm <etobi@debian.org>
+    Thomas Günther <tom@toms-cafe.de>
+    Thomas Schmidt <tschmidt@debian.org>
+
+Copyright:
+    (C) 2004 - 2005 Dominic Morris
+    (C) 2007 - 2008 Martin Dauskart, Andreas Schäfers
+    (C) 2005        Andreas Regel (vdr-pvrinput)
+    (C) 2003 - 2004 Kevin Thayer (ivtv API headers)
+    (C) 2004        Hans Verkuil (ivtv API headers)
+
+Copyright (Debian packaging):
+    (C) 2003 - 2010 Peter Siering, Tobias Grimm, Thomas Günther, Thomas Schmidt
+
+License:
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+    The complete text of the GNU General Public License can be found
+    in /usr/share/common-licenses/GPL-2 on most Debian systems.
+
+License (Debian packaging):
+    The Debian packaging is licensed under the GPL, version 2 or any
+    later version, see /usr/share/common-licenses/GPL-2.

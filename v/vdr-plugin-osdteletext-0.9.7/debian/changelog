@@ -1,0 +1,779 @@
+vdr-plugin-osdteletext (0.9.7-6easyVDR0~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 15:36:41 +0100
+
+vdr-plugin-osdteletext (0.9.7-3easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:32:55 +0100
+
+vdr-plugin-osdteletext (0.9.7-3easyVDR0~bionic) bionic; urgency=high
+
+  * inncrease build number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 18 Jan 2019 19:55:02 +0100
+
+vdr-plugin-osdteletext (0.9.7-0easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 18 Jan 2019 19:36:26 +0100
+
+vdr-plugin-osdteletext (2:0.9.7-2easyVDR0~trusty) trusty; urgency=high
+
+  * added osdteletext-0.9.7.patch - thx kanadakruemel
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 26 Mar 2018 16:20:27 +0200
+
+vdr-plugin-osdteletext (2:0.9.7-1easyVDR0~trusty) trusty; urgency=high
+
+  * inncrease build number
+  * install font
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 06 Mar 2018 00:02:16 +0100
+
+vdr-plugin-osdteletext (1:0.9.7-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:b8cba99 - New release 0.9.7
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Feb 2018 19:28:07 +0100
+
+vdr-plugin-osdteletext (1:0.9.5+git20160315-1easyVDR0~trusty) trusty; urgency=high
+
+  * inncrease build number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 06 Feb 2018 19:39:26 +0100
+ 
+vdr-plugin-osdteletext (0.9.6-2easyVDR0~bionic) bionic; urgency=high
+
+  * new upstream snapshot
+  * 5ea4208: New version 0.9.6
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 30 Jan 2018 22:00:17 +0100 
+
+vdr-plugin-osdteletext (0.9.5+git20160315-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 22 Sep 2017 21:17:23 +0200
+
+vdr-plugin-osdteletext (0.9.5+git20160315-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:52:19 +0200
+
+vdr-plugin-osdteletext (0.9.5+git20160315-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:38:14 +0200
+
+vdr-plugin-osdteletext (0.9.5+git20160315-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:40:43 +0200
+
+vdr-plugin-osdteletext (0.9.5+git20160315-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:00:03 +0200
+
+vdr-plugin-osdteletext (0.9.5+git20160315-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Mar 2016 21:35:38 +0100
+
+vdr-plugin-osdteletext (0.9.5+git20150213-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:42:59 +0100
+
+vdr-plugin-osdteletext (0.9.5+git20150213-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 20:37:11 +0100
+
+vdr-plugin-osdteletext (0.9.5+git20150213-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 19:08:58 +0200
+
+vdr-plugin-osdteletext (0.9.5+git20150213-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:17:37 +0200
+
+vdr-plugin-osdteletext (0.9.5+git20150213-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 03:21:21 +0100
+
+vdr-plugin-osdteletext (0.9.5+git20150213-0easyVDR0~trusty) trusty; urgency=high
+
+  * New upstream release (0.9.5)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 21 Mar 2015 04:19:08 +0100
+
+vdr-plugin-osdteletext (0.9.4-7easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:48:27 +0200
+
+vdr-plugin-osdteletext (0.9.4-7easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:15:55 +0200
+
+vdr-plugin-osdteletext (0.9.4-7easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 Nov 2013 03:15:05 +0100
+
+vdr-plugin-osdteletext (0.9.4-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild easyvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 13 Jul 2013 02:41:20 +0200
+
+vdr-plugin-osdteletext (0.9.4-2yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:04:17 +0200
+
+vdr-plugin-osdteletext (0.9.4-2yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:28:17 +0200
+
+vdr-plugin-osdteletext (0.9.4-2yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:53:17 +0200
+
+vdr-plugin-osdteletext (0.9.4-2yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:54:23 +0100
+
+vdr-plugin-osdteletext (0.9.4-2yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:04:48 +0100
+
+vdr-plugin-osdteletext (0.9.4-2yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:55:01 +0100
+
+vdr-plugin-osdteletext (0.9.4-2yavdr1~precise) precise; urgency=medium
+
+  * disable install of plugin and locales via debian/install 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 12 Mar 2013 16:01:23 +0100
+
+vdr-plugin-osdteletext (0.9.4-2yavdr0~precise) precise; urgency=medium
+
+  * new debian/control and debian/rules 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 12 Mar 2013 15:56:44 +0100
+
+vdr-plugin-osdteletext (0.9.4-1yavdr0~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+  * add pkg-config to dependencie
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 11 Mar 2013 12:53:55 +0100
+
+vdr-plugin-osdteletext (0.9.4-0yavdr0~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 11 Mar 2013 12:39:56 +0100
+
+vdr-plugin-osdteletext (0.9.3.git20120406-0yavdr7~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 22:11:32 +0100
+
+vdr-plugin-osdteletext (0.9.3.git20120406-0yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:29:05 +0100
+
+vdr-plugin-osdteletext (0.9.3.git20120406-0yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:11:29 +0100
+
+vdr-plugin-osdteletext (0.9.3.git20120406-0yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:57:23 +0100
+
+vdr-plugin-osdteletext (0.9.3.git20120406-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:09:07 +0100
+
+vdr-plugin-osdteletext (0.9.3.git20120406-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:38:00 +0100
+
+vdr-plugin-osdteletext (0.9.3.git20120406-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:18:07 +0200
+
+vdr-plugin-osdteletext (0.9.3.git20120406-0yavdr0~precise) precise; urgency=medium
+
+  * New upstream release (0.9.3)
+  * Change from upstream release to git release snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 06 Apr 2012 17:06:48 +0200
+
+vdr-plugin-osdteletext (0.9.2-1yavdr0~precise) precise; urgency=medium
+
+  * New upstream release
+  * Build-depend on vdr-dev >= 1.7.27
+  * Added receiver-fix-3.diff (vdr=>1.7.27)
+ 
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 31 Mar 2012 20:25:48 +0200
+
+vdr-plugin-osdteletext (0.9.1.git20120313-1yavdr1~precise) precise; urgency=medium
+
+  * New Upstream Snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:20:48 +0100
+
+vdr-plugin-osdteletext (0.9.1-1yavdr1~natty) natty; urgency=medium
+
+  * New upstream release
+  * Build-depend on vdr-dev >= 1.7.20
+  * Bumped standards version to 3.9.2
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 24 Aug 2011 20:05:38 +0200
+
+vdr-plugin-osdteletext (0.9.0-10yavdr2) lucid; urgency=low
+
+  * default dir var/run/vdr/vtx 
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 24 Feb 2011 15:24:55 +0100
+
+vdr-plugin-osdteletext (0.9.0-0yavdr3) lucid; urgency=low
+
+  * New upstream release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 07 Nov 2010 12:11:06 +0100
+
+
+vdr-plugin-osdteletext (0.8.3-3) unstable; urgency=low
+
+  * Build-depend on vdr-dev >= 1.6.0-16
+  * Bumped standards version to 3.8.4
+  * Minor debian/copyright update
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 04 Apr 2010 15:00:24 +0200
+
+vdr-plugin-osdteletext (0.8.3-2) unstable; urgency=low
+
+  * Removed non-standard shebang line from debian/rules (Closes: #552652)
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 09 Nov 2009 00:00:25 +0100
+
+vdr-plugin-osdteletext (0.8.3-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 02 Jun 2009 22:42:09 +0200
+
+vdr-plugin-osdteletext (0.8.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Changed upstream hompage
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 26 May 2009 09:16:25 +0200
+
+vdr-plugin-osdteletext (0.8.1-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.7.6
+  * Added ${misc:Depends}
+  * Bumped standards version to 3.8.1
+  * Changed section to "video"
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 29 Apr 2009 23:11:00 +0200
+
+vdr-plugin-osdteletext (0.8.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated debian/copyright and debian/watch to new upstream location
+  * Dropped 01_Makefile.dpatch, 02_tmp-path-fix.dpatch, 90_APIVERSION.dpatch,
+    91_osdteletext-1.5.0.dpatch, 92_channelswitch-fix.dpatch,
+    93_i18n-gettext.dpatch (all fixed upstream)
+  * Dropped -r option from plugin.osdteletext.conf
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 24 Jan 2009 21:35:24 +0100
+
+vdr-plugin-osdteletext (0.5.1-38) unstable; urgency=low
+
+  * Updated 91_osdteletext-1.5.0.dpatch to set a name for the osdteletext
+    receiver thread
+  * Adeed 92_channelswitch-fix.dpatch
+  * Added 93_i18n-gettext.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 26 Jul 2008 17:43:52 +0200
+
+vdr-plugin-osdteletext (0.5.1-37) unstable; urgency=low
+
+  [ Tobias Grimm ]
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Sat, 19 Jul 2008 18:06:10 +0200
+
+vdr-plugin-osdteletext (0.5.1-36) unstable; urgency=low
+
+  * Upload to unstable
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Sun, 08 Jun 2008 23:47:23 +0200
+
+vdr-plugin-osdteletext (0.5.1-35) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 13:04:53 +0200
+
+vdr-plugin-osdteletext (0.5.1-34) experimental; urgency=low
+
+  [ Thomas Schmidt ]
+  * Build-Depend on vdr-dev (>=1.6.0)
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+  * Added Homepage field to debian/control
+  * Renamed XS-Vcs-* fields to Vcs-* in debian/control
+  * Bumped Standards-Version to 3.7.3
+
+  [ Tobias Grimm ]
+  * Using COMPAT=5 now
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 04 Apr 2008 13:26:36 +0200
+
+vdr-plugin-osdteletext (0.5.1-33) experimental; urgency=low
+
+  * Force rebuild for vdr 1.5.15
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:08:31 +0100
+
+vdr-plugin-osdteletext (0.5.1-32) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:35 +0100
+
+vdr-plugin-osdteletext (0.5.1-31) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:24 +0100
+
+vdr-plugin-osdteletext (0.5.1-30) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:17 +0100
+
+vdr-plugin-osdteletext (0.5.1-29) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:50:57 +0200
+
+vdr-plugin-osdteletext (0.5.1-28) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 28 Aug 2007 01:01:08 +0200
+
+vdr-plugin-osdteletext (0.5.1-27) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:05 +0200
+
+vdr-plugin-osdteletext (0.5.1-26) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:17 +0200
+
+vdr-plugin-osdteletext (0.5.1-25) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.5
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:02:39 +0200
+
+vdr-plugin-osdteletext (0.5.1-24) unstable; urgency=low
+
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields to debian/control
+  * Removed version from Build-Dependancy to dpatch - even Sarge has the
+    required version
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Mon, 28 May 2007 19:50:38 +0200
+
+vdr-plugin-osdteletext (0.5.1-23) experimental; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:00:32 +0200
+
+vdr-plugin-osdteletext (0.5.1-22) experimental; urgency=low
+
+  * Release for vdrdevel 1.5.1
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:17 +0100
+
+vdr-plugin-osdteletext (0.5.1-21) experimental; urgency=low
+
+  * Added 91_osdteletext-1.5.0.dpatch
+  * Added myself to Uploaders
+  * Shortened debian/copyright
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 21 Jan 2007 16:16:42 +0100
+
+vdr-plugin-osdteletext (0.5.1-20) experimental; urgency=low
+
+  [ Thomas Günther ]
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 20:15:21 +0100
+
+vdr-plugin-osdteletext (0.5.1-19) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 13:49:07 +0100
+
+vdr-plugin-osdteletext (0.5.1-18) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Wed, 27 Sep 2006 08:28:05 +0200
+
+vdr-plugin-osdteletext (0.5.1-17) unstable; urgency=low
+
+  * Bumped Standards-Version to 3.7.2
+  * Added note about the Debian Maintainers to debian/copyright
+  * Build-Depend on vdr-dev (>=1.4.2-1)
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Mon, 28 Aug 2006 20:58:45 +0200
+
+vdr-plugin-osdteletext (0.5.1-16) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.1-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 18 Jun 2006 15:54:39 +0200
+
+vdr-plugin-osdteletext (0.5.1-15) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.0-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 30 Apr 2006 21:22:03 +0200
+
+vdr-plugin-osdteletext (0.5.1-14) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.48-1)
+  * Tobias Grimm <tg@e-tobi.net>
+    - Added 90_APIVERSION.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 24 Apr 2006 20:17:08 +0200
+
+vdr-plugin-osdteletext (0.5.1-13) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.46-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 13 Apr 2006 00:29:05 +0200
+
+vdr-plugin-osdteletext (0.5.1-12) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.45-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 27 Mar 2006 23:18:06 +0200
+
+vdr-plugin-osdteletext (0.5.1-11) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Depend/Build-Depend on vdr (>=1.3.41-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 Jan 2006 20:03:23 +0100
+
+vdr-plugin-osdteletext (0.5.1-10) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr-dev (>=1.3.40-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 26 Jan 2006 19:16:13 +0100
+
+vdr-plugin-osdteletext (0.5.1-9) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.39-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 22 Jan 2006 12:42:46 +0100
+
+vdr-plugin-osdteletext (0.5.1-8) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.38-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon,  9 Jan 2006 20:32:19 +0100
+
+vdr-plugin-osdteletext (0.5.1-7) unstable; urgency=low
+ 
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.37-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 28 Nov 2005 22:55:26 +0100
+
+vdr-plugin-osdteletext (0.5.1-6) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.35-1)
+    - Corrected FSF address in debian/copyright
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  2 Nov 2005 17:06:20 +0100
+
+vdr-plugin-osdteletext (0.5.1-5) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.33-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun,  2 Oct 2005 12:17:52 +0200
+
+vdr-plugin-osdteletext (0.5.1-4) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.32-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 11 Sep 2005 18:52:46 +0200
+
+vdr-plugin-osdteletext (0.5.1-3) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.31-1)
+    - Use dependencies.sh from vdr-dev to set vdr dependencies and
+      conflicts to the right vdr version when building the package
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Fri,  2 Sep 2005 18:11:05 +0200
+
+vdr-plugin-osdteletext (0.5.1-2) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Depend/Build-Depend on vdr (>=1.3.30-1)
+    - Conflict with vdr (>=1.3.30.99)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 23 Aug 2005 19:19:19 +0200
+
+vdr-plugin-osdteletext (0.5.1-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@etobi.net>
+    - New upstream release
+    - Removed 01_Makefile-fPIC-fix (fixed in upstream sources)
+    - Updated 02_tmp-path-fix
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 16 Aug 2005 18:26:45 +0200
+
+vdr-plugin-osdteletext (0.5-8) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.29-1)
+    - Conflict with vdr (>=1.3.29.99)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 15 Aug 2005 19:31:25 +0200
+
+vdr-plugin-osdteletext (0.5-7) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.28-1)
+    - Conflict with vdr (>=1.3.29)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 10 Aug 2005 20:42:48 +0200
+
+vdr-plugin-osdteletext (0.5-6) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Bumped Standards-Version to 3.6.2
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 29 Jun 2005 18:11:10 +0200
+
+vdr-plugin-osdteletext (0.5-5) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Using debian/compat now
+    - Using "unified" debian/rules now
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.27-1)
+    - Conflict with vdr (>=1.3.28)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 19 Jun 2005 17:54:59 +0200
+
+vdr-plugin-osdteletext (0.5-4) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.26-1)
+    - Conflict with vdr (>=1.3.27)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 12 Jun 2005 17:07:53 +0200
+
+vdr-plugin-osdteletext (0.5-3) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.25-1)
+    - Conflict with vdr (>=1.3.26)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 May 2005 14:54:41 +0200
+
+vdr-plugin-osdteletext (0.5-2) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.24-1)
+    - Conflict with vdr (>=1.3.25)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon,  9 May 2005 17:35:08 +0200
+
+vdr-plugin-osdteletext (0.5-1) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - New upstream release
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 24 Apr 2005 16:57:14 +0200
+
+vdr-plugin-osdteletext (0.4.2-1) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - New upstream release
+    - Updated 01_Makefile-fPIC-fix and 02_tmp-path-fix dpatches
+    - Depend/Build-Depend on vdr (>=1.3.23-1)
+    - Conflict with vdr (>=1.3.24)
+    - Do not use "debian uupdate" in debian/watch anymore
+  
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 11 Apr 2005 22:02:06 +0200
+
+vdr-plugin-osdteletext (0.3.2+1-1) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Built a new upstream-tar.gz because the one in the archive 
+      contained a debian-directory by accident
+    - Changed my email-address to the new debian one
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 23 Feb 2005 22:54:42 +0100
+
+vdr-plugin-osdteletext (0.3.2-7) unstable; urgency=low
+
+  * Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>
+    - Build-depend and Depend on vdr (>=1.2.6-6)
+    - Change owner/group of /var/cache/vdr/vtx/ to vdr:vdr in
+      debian/postinst
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun,  2 Jan 2005 15:36:05 +0100
+
+vdr-plugin-osdteletext (0.3.2-6) unstable; urgency=low
+
+  * Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>
+    - Build-depend on dpatch (>= 2.0.9)
+    - Converted existing dpatch-files to the new short format
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 26 Oct 2004 11:56:21 +0200
+
+vdr-plugin-osdteletext (0.3.2-5) unstable; urgency=low
+
+  * Thomas Schmidt <thomas.schmidt@in.stud.tu-ilmenau.de>
+    - First upload to the official archive (closes: #275404)
+    - Changed Maintainer to Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+    - Added myself and Tobias Grimm <tg@e-tobi.net> as Uploaders
+    - Cleaned up debian/rules a little bit
+    - Converted debian/changelog to UTF8
+    - Updated debian/watch
+    - Changed package-description a little bit
+    - Changed path of the tmp-files from /vtx to /var/cache/vdr/vtx
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  6 Oct 2004 22:18:23 +0200
+
+vdr-plugin-osdteletext (0.3.2-4) unstable; urgency=low
+
+  * taken over from vdrdevel by Thomas Günther <tom@toms-cafe.de>
+    - Adapted control file to alioth packages
+    - Using patchlevel.sh and custom control field "vdr-patchlevel"
+    - Added Makefile-fPIC-fix patch to fix potential FTBFS
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue,  28 Sep 2004 21:50:00 +0200
+
+vdr-plugin-osdteletext (0.3.2-3) unstable; urgency=low
+
+  * Using dh_install
+  * Using dpatch
+  * Convert upstream changes to dpatch
+  * Removed debian/vdr-plugin-dvdselect.substvars
+  * Fixed debhelper version in Build-Depends
+  * Added debian/watch file for uscan
+  * Removed debian/dirs
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 30 Jun 2004 01:31:10 +0200
+
+vdr-plugin-osdteletext (0.3.2-2) unstable; urgency=low
+
+  * integrated patchlevel info
+
+ -- Peter Siering <ps@ctmagazin.de>  Tue, 13 Jan 2004 23:45:00 +0200
+
+vdr-plugin-osdteletext (0.3.2-1) unstable; urgency=low
+
+  * New upstream release
+  * fixed some bugs in debian packaging
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue,  2 Dec 2003 22:21:54 +0100
+
+vdr-plugin-osdteletext (0.3.1-1) unstable; urgency=low
+
+  * debianized
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 31 Oct 2003 21:00:00 +0200

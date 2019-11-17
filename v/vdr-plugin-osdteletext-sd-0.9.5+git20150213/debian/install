@@ -1,0 +1,3 @@
+#libvdr-osdteletext.so.*         usr/lib/vdr/plugins/
+debian/plugin.osdteletext.conf  etc/vdr/plugins/
+#locale                          usr/share/

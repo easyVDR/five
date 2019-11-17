@@ -1,0 +1,22 @@
+Source: vdr-plugin-plex
+Section: video
+Priority: extra
+Maintainer: Frodo <frodo.vdr@gmx.net> 
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.0.0), pkg-config, gettext, libpoco-dev (>= 1.7.4), libxcb-image0-dev, libxcb-keysyms1-dev, libxcb-icccm4-dev, libxcb1-dev, libxcb-shm0-dev, libxcb-util0-dev, libssl-dev, libexpat1-dev, libpcre3-dev, libskindesignerapi-dev (>= 0.1.2), git
+Standards-Version: 3.9.3
+Homepage: https://github.com/chriszero/vdr-plugin-plex
+
+Package: vdr-plugin-plex
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, libpocoutil44, libpoconet44, libpoconetssl44, libpocoxml44, libpocofoundation44, libxcb-image0, libxcb-keysyms1, libxcb-icccm4, libxcb1, libpococrypto44, libxcb-shm0, libxcb-util0, libexpat1, libssl1.0.0, libpcrecpp0, vdr-plugin-skindesigner (>= 1.2.1), libskindesignerapi0 (>= 0.1.2)
+Description: plex plugin
+
+Package: vdr-plugin-plex-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-plex (= ${binary:Version}), ${misc:Depends}
+Description: plex plugin symbols
+ .
+ This package contains the debugging symbols.

@@ -1,0 +1,15 @@
+--- a/pin.c
++++ b/pin.c
+@@ -574,7 +574,11 @@
+ 
+    if (isDirectory)
+       res = asprintf(&path, "%s%s%s/%s/%s", 
+-                     VideoDirectory, 
++#if APIVERSNUM > 20103
++                     cVideoDirectory::Name(),
++#else
++                     VideoDirectory,
++#endif
+                      base ? "/" : "",
+                      base ? base : "",
+                      name ? name : "",

@@ -1,0 +1,26 @@
+Source: vdr-plugin-pulsecontrol
+Section: video
+Priority: extra
+Maintainer: Lars Hanisch <dvb@flensrocker.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.2.0), pkg-config, libpulse-dev
+Standards-Version: 3.9.4
+Homepage: https://github.com/flensrocker/vdr-plugin-pulsecontrol
+
+Package: vdr-plugin-pulsecontrol
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: A VDR plugin, control Pulseaudio via vdr's OSD
+ Move sink input, change card profiles or select the default sink
+ and do other fancy things.
+
+Package: vdr-plugin-pulsecontrol-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-pulsecontrol (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-pulsecontrol
+ .
+ This package contains only the debugging symbols for vdr-plugin-pulsecontrol
+ 
+

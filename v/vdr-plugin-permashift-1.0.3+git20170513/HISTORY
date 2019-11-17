@@ -1,0 +1,72 @@
+VDR Plugin 'permashift' Revision History
+---------------------------------------------------
+
+2015-04-25: Version 1.0.3
+
+- Fixed a resource leak (including possibly loads of memory). This has been 
+  reported, described in detail and fixed(!) by 'blau-sls' at vdr-portal.de.
+  Kudos!
+
+2015-02-28: Version 1.0.2
+
+- added patch for new stable VDR series 2.2
+
+2014-11-30: Version 1.0.1
+
+- Fixed bug sending way too many syslog messages when buffer is full. 
+  Thanks to 'z421' at vdr-portal.de for pointing out.
+- Reversed the logic of the save on-the-fly option, so hopefully it is 
+  easier to understand.
+- Changed VDR patch to avoid using default parameters for methods, 
+  so this version should be easier to patch and integrate (no rebuilding
+  of other plugins anymore)
+- Additional translations:
+  * Russian by Walter T.
+  * Finish by Marko Mäkelä
+  * Dutch by Cedric Dewijs
+
+2014-08-16: Version 1.0.0
+
+- Finally release version 1.0
+
+2014-05-24: Version 1.0.0b3
+
+- Fixed 64 bit issues for buffers >= 2 GB
+
+2014-05-24: Version 1.0.0b1
+
+- Quick rewinding into buffer implemented. Beta version.
+
+2014-02-24: Version 0.6.0b1
+
+- Rewrote Permashift to use memory buffer, beta version
+
+2013-05-28: Version 0.5.4
+
+- Plugin waited too long for user input when inactivity was due
+  (resulting in a watchdog panic), and it didn't reset activity state.
+- Power button didn't (easily) power down VDR, this was a regression in 
+  version 0.5.1.
+- Thanks to MegaX at vdr-portal for bugging me until I fixed these bugs.
+- Only accept timeshift length if it's a number (thanks to mini73).
+
+2013-04-03: Version 0.5.3
+
+- Length of permanent timeshift recording wasn't restored on restart; 
+  thanks to MegaX at vdr-portal for finding the bug
+
+2013-03-30: Version 0.5.2
+
+- Length of permanent timeshift recording changeable by user between 1 and 23 hours.
+- i18n implemented, translated user visible strings to German.
+
+2013-01-19: Version 0.5.1
+
+- Moved stuff to allow automatic shutdown from VDR patch to plugin.
+  Now the plugin asks the user if it should continue to record if he has been inactive too long.
+  If the user does not react, permanent timeshift is stopped (thus markad stops to work at its 
+  recording as well) and shutdown may take place. Thanks to mini73 at VDR Portal for his suggestions.
+
+2013-01-05: Version 0.5.0beta2
+
+- Initial public revision.

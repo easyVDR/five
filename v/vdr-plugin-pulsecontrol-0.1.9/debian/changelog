@@ -1,0 +1,91 @@
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR8~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 20:45:35 +0100
+
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR7~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:15:04 +0100
+
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR6~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:19:25 +0100
+
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR5~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 21:25:28 +0200
+
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:53:34 +0200
+
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:39:28 +0200
+
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:41:49 +0200
+
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:01:08 +0200
+
+vdr-plugin-pulsecontrol (0.1.9-0easyVDR0~trusty) trusty; urgency=medium
+
+  * new upstream version
+  * commit:2557c41 - hotkey 3 moves sink-input to next sink
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 06 Jan 2016 23:44:26 +0100
+
+vdr-plugin-pulsecontrol (0.1.8-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:80325c5 - add set-default-sink to script engine
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Jan 2016 17:55:54 +0100
+
+vdr-plugin-pulsecontrol (0.1.7-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Dec 2015 21:27:52 +0100
+
+vdr-plugin-pulsecontrol (0.1.7-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Dec 2015 21:20:28 +0100
+
+vdr-plugin-pulsecontrol (0.1.5-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 Dec 2015 19:47:26 +0100
+
+vdr-plugin-pulsecontrol (0.1.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:44:05 +0100
+
+vdr-plugin-pulsecontrol (0.1.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 20 Dec 2015 18:51:40 +0100

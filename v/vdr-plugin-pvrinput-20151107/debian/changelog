@@ -1,0 +1,121 @@
+vdr-plugin-pvrinput (1:20151107-0easyVDR7~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 20:46:18 +0100
+
+vdr-plugin-pvrinput (1:20151107-0easyVDR6~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 23:15:24 +0100
+
+vdr-plugin-pvrinput (1:20151107-0easyVDR5~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:19:46 +0100
+
+vdr-plugin-pvrinput (1:20151107-0easyVDR4~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 21:25:51 +0200
+
+vdr-plugin-pvrinput (1:20151107-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Oct 2016 23:44:56 +0200
+
+vdr-plugin-pvrinput (1:20151107-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:52:32 +0200
+
+vdr-plugin-pvrinput (1:20151107-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Mar 2016 02:03:23 +0100
+
+vdr-plugin-pvrinput (1:20151107-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 22:03:15 +0100
+
+vdr-plugin-pvrinput (20151107-1easyVDR0~trusty) trusty; urgency=high
+
+  * added build-depends libudev-dev
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Nov 2015 22:53:00 +0100
+
+vdr-plugin-pvrinput (20151107-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit: 48e557e8 - make compatible with vdr 2.3.1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Nov 2015 21:43:15 +0100
+
+vdr-plugin-pvrinput (20130712004607unstable-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:19:09 +0200
+
+vdr-plugin-pvrinput (20130712004607unstable-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 17:22:26 +0100
+
+vdr-plugin-pvrinput (20130712004607unstable-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 16:29:22 +0100
+
+vdr-plugin-pvrinput (20130712004607unstable-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:50:14 +0200
+
+vdr-plugin-pvrinput (20130712004607unstable-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Apr 2014 02:58:05 +0200
+
+vdr-plugin-pvrinput (20130712004607unstable-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 14 Jan 2014 20:56:59 +0100
+
+vdr-plugin-pvrinput (20130712004607unstable-0yavdr3~trusty) trusty; urgency=medium
+
+  * build for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Tue, 31 Dec 2013 16:48:19 +0100
+
+vdr-plugin-pvrinput (20130712004607unstable-0yavdr2~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:41:26 +0200
+
+vdr-plugin-pvrinput (20130712004607unstable-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:00:52 +0200
+
+vdr-plugin-pvrinput (20130712004607unstable-0yavdr0~precise) precise; urgency=medium
+
+  * Autobuild - 26e8be1a71058a156971fd3bb30eebd461a64a02
+    git://github.com/yavdr/vdr-plugin-pvrinput.git
+
+ -- yaVDR Release-Team <release@yavdr.org>  Fri, 12 Jul 2013 00:46:08 +0200

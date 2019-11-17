@@ -1,0 +1,26 @@
+Source: vdr-plugin-osdteletext
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>, Thomas Schmidt <tschmidt@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.20), gettext, pkg-config
+Standards-Version: 3.9.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-osdteletext/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-osdteletext/trunk/
+Homepage: http://projects.vdr-developer.org/projects/show/plg-osdteletext
+
+Package: vdr-plugin-osdteletext
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Teletext plugin for VDR
+ This plugin for VDR displays teletext directly on the OSD.
+
+Package: vdr-plugin-osdteletext-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-osdteletext (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-osdteletext
+ .
+ This package contains only the debugging symbols for vdr-plugin-osdteletext 
+

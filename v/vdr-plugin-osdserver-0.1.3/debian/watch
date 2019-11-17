@@ -1,0 +1,3 @@
+version=2
+http://www.udo-richter.de/vdr/osdserver.html files/vdr-osdserver-(.*)\.tgz
+

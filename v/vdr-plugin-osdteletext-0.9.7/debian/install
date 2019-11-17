@@ -1,0 +1,4 @@
+#libvdr-osdteletext.so.*         usr/lib/vdr/plugins/
+debian/plugin.osdteletext.conf  etc/vdr/plugins/
+teletext2.ttf            usr/share/fonts/truetype
+#locale                          usr/share/

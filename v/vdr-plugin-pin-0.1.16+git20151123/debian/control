@@ -1,0 +1,24 @@
+Source: vdr-plugin-pin
+Section: video
+Priority: extra
+Maintainer: Tobias Grimm <etobi@debian.org>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config
+Standards-Version: 3.9.5
+
+Package: vdr-plugin-pin
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: PIN protection plugin for VDR
+ With this plugin, selected recordings, channels, shows or shell scripts
+ can be protected by a single PIN to restrict access for children.
+
+Package: vdr-plugin-pin-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-pin (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-pin
+ .
+ This package contains only the debugging symbols for vdr-plugin-pin
+
