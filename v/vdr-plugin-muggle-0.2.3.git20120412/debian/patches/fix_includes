@@ -1,0 +1,12 @@
+Index: vdr-plugin-muggle-0.2.3.git20120412/mg_tools.h
+===================================================================
+--- vdr-plugin-muggle-0.2.3.git20120412.orig/mg_tools.h	2011-11-20 23:08:58.000000000 +0100
++++ vdr-plugin-muggle-0.2.3.git20120412/mg_tools.h	2014-01-01 16:41:42.220526998 +0100
+@@ -17,6 +17,7 @@
+ #include <iostream>
+ #include <sstream>
+ #include <string>
++#include <unistd.h>
+ #include <cstdarg>
+ 
+ using namespace std;

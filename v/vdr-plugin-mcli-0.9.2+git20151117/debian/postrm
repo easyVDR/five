@@ -1,0 +1,11 @@
+#! /bin/sh
+set -e
+
+# Remove cache files
+if [ "$1" = "purge" ]; then
+    /bin/rm -rf /usr/lib/vdr/plugins/libvdr-mcli.so.2.2.0
+	/bin/rm -rf /usr/share/locale/de_DE/LC_MESSAGES/vdr-mcli.mo
+    /bin/rm -rf /usr/share/locale/nl_NL/LC_MESSAGES/vdr-mcli.mo
+fi
+
+#DEBHELPER#

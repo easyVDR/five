@@ -1,0 +1,391 @@
+# translation of fr.po to deutsch
+# French translations for vdr package
+# Traductions françaises du paquet vdr.
+# Copyright (C) 2008 THE vdr'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the vdr package.
+#
+# Wolfgang Rohdewald <wolfgang@rohdewald.de>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: fr\n"
+"Report-Msgid-Bugs-To: http://projects.vdr-developer.org/projects/show/plg-muggle\n"
+"POT-Creation-Date: 2010-08-29 15:44+0300\n"
+"PO-Revision-Date: 2008-12-23 22:45+0100\n"
+"Last-Translator: Wolfgang Rohdewald <wolfgang@rohdewald.de>\n"
+"Language-Team: French <wolfgang@rohdewald.de>\n"
+"Language: fr\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n > 1);\n"
+"X-Generator: Lokalize 0.2\n"
+
+msgid "Loading lyrics from internet..."
+msgstr "Cherchant le texte dans le web"
+
+msgid "Save this version?"
+msgstr "Sauvegarder cette version?"
+
+msgid "empty database created"
+msgstr "créé base des données vide"
+
+#, c-format
+msgid "Cannot get exclusive lock on SQLite database %s:%d/%s"
+msgstr "Pas d'accès exclusif à la base des données SQLite %s:%d/%s"
+
+#, c-format
+msgid "File %s not found"
+msgstr "Fichier %s pas trouvé"
+
+msgid "Commands"
+msgstr "Commandes"
+
+msgid "Database is empty"
+msgstr "La base des données est vide"
+
+msgid "Genre"
+msgstr "Genre"
+
+msgid "Genre1"
+msgstr "Genre1"
+
+msgid "Genre2"
+msgstr "Genre2"
+
+msgid "Genre3"
+msgstr "Genre3"
+
+msgid "Folder1"
+msgstr "Dossier1"
+
+msgid "Folder2"
+msgstr "Dossier2"
+
+msgid "Folder3"
+msgstr "Dossier3"
+
+msgid "Folder4"
+msgstr "Dossier4"
+
+msgid "Artist"
+msgstr "Artiste"
+
+msgid "ArtistABC"
+msgstr "Artiste ABC"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "TitleABC"
+msgstr "Titre ABC"
+
+msgid "Track"
+msgstr "pièce"
+
+msgid "Decade"
+msgstr "Décade"
+
+msgid "Album"
+msgstr "Album"
+
+msgid "Created"
+msgstr "Nouveau"
+
+msgid "Modified"
+msgstr "Modifié"
+
+msgid "Collection"
+msgstr "Collection"
+
+msgid "Collection item"
+msgstr "Pièce de collection"
+
+msgid "Language"
+msgstr "Langue"
+
+msgid "Rating"
+msgstr "Estimation"
+
+msgid "Year"
+msgstr "Année"
+
+msgid "ID"
+msgstr "ID"
+
+msgid "not implemented"
+msgstr "pas programmé"
+
+msgid "Parent"
+msgstr "retour"
+
+msgid "Track-"
+msgstr "Pièce-"
+
+msgid "Track+"
+msgstr "Pièce+"
+
+msgid "Change shuffle mode"
+msgstr "changer mode alléatoire"
+
+msgid "Lyrics"
+msgstr "Texte"
+
+msgid "Load Lyrics"
+msgstr "Chercher Texte"
+
+msgid "Save Lyrics"
+msgstr "Sauvegarde Texte"
+
+msgid "Change loop mode"
+msgstr "changer mode répétition"
+
+msgid "Order"
+msgstr "Ordre"
+
+msgid "Select an order"
+msgstr "Choisir un ordre"
+
+msgid "Button$Edit"
+msgstr "Changer"
+
+msgid "Create"
+msgstr "Nouveau"
+
+msgid "Button$Delete"
+msgstr "Effacer"
+
+msgid "List"
+msgstr "Liste"
+
+msgid "Browse"
+msgstr "Naviguer"
+
+msgid "Collections"
+msgstr "Collections"
+
+msgid "Synchronize database"
+msgstr "Synchroniser les données"
+
+msgid "Default"
+msgstr "Destinataire"
+
+#, c-format
+msgid "Set default to collection '%s'"
+msgstr "Changer destination à la collection '%s'"
+
+#, c-format
+msgid "Default collection is now '%s'"
+msgstr "destination est maintenant '%s'"
+
+msgid "Set"
+msgstr "Définir"
+
+msgid "Instant play"
+msgstr "Jouer en direct"
+
+msgid "Add"
+msgstr "Ajouter"
+
+msgid "Add all to a collection"
+msgstr "Ajouter tout à une collection"
+
+#, c-format
+msgid "'%s' to collection"
+msgstr "Ajoute '%s'  à une collection"
+
+#, c-format
+msgid "Add all to '%s'"
+msgstr "Ajoute tout à '%s'"
+
+msgid "Add to a collection"
+msgstr "Ajouter à une collection"
+
+#, c-format
+msgid "Add to '%s'"
+msgstr "Ajouter à '%s'"
+
+#, c-format
+msgid "Remove '%s' from collection"
+msgstr "Effacer '%s' de la collection"
+
+msgid "Remove all from a collection"
+msgstr "Vider la collection"
+
+msgid "Clear"
+msgstr "Vider"
+
+msgid "Clear the collection"
+msgstr "Vider la collection"
+
+msgid "Clear the collection?"
+msgstr "Vider la collection?"
+
+msgid "Remove"
+msgstr "Effacer"
+
+msgid "Remove from a collection"
+msgstr "Effacer d'une collection"
+
+msgid "Create collection"
+msgstr "Créer une collection"
+
+msgid "Delete the collection"
+msgstr "Effacer la collection"
+
+msgid "Delete the collection?"
+msgstr "Effacer la collection?"
+
+msgid "Export"
+msgstr "Exporter"
+
+msgid "Export track list"
+msgstr "Exporter la liste"
+
+msgid "Order is undefined"
+msgstr "Ordre pas défini"
+
+msgid "play"
+msgstr "jouer"
+
+#, c-format
+msgid "Commands:%s"
+msgstr "Commandes:%s"
+
+#, c-format
+msgid "Key %d"
+msgstr "clef %d"
+
+msgid "Sort by count"
+msgstr "Ordre par quantité"
+
+#, c-format
+msgid "Create database %s?"
+msgstr "Générer la base des données %s?"
+
+msgid "Import items?"
+msgstr "Importer les titres?"
+
+#, fuzzy, c-format
+msgid "Cannot change to directory %s: %m"
+msgstr "Ne peux pas lire %s: %m"
+
+#, c-format
+msgid "%d tracks : %s"
+msgstr "%d pièces : %s"
+
+msgid "Lyrics: Yes"
+msgstr "Texte: Oui"
+
+msgid "Lyrics: No"
+msgstr "Texte: Non"
+
+msgid "Now playing :"
+msgstr "En jouant"
+
+msgid "Volume"
+msgstr "Volume"
+
+msgid "of"
+msgstr "de"
+
+msgid "More.."
+msgstr "plus..."
+
+msgid "Jump"
+msgstr "Saut"
+
+msgid "Delete"
+msgstr "Effacer"
+
+msgid "Copy"
+msgstr "Copier"
+
+msgid "Min/Sec"
+msgstr "Min/Sec"
+
+msgid "Time"
+msgstr "Heure"
+
+msgid "Jump: "
+msgstr "Saut:"
+
+msgid "Muggle"
+msgstr "Muggle"
+
+msgid "Initial loop mode"
+msgstr "mode répétition initial"
+
+msgid "off"
+msgstr "non"
+
+msgid "on"
+msgstr "actif"
+
+msgid "Initial shuffle mode"
+msgstr "mode alléatoire initial"
+
+msgid "Display mode"
+msgstr "mode de display"
+
+msgid "Audio mode"
+msgstr "Mode audio"
+
+msgid "Round"
+msgstr "Round"
+
+msgid "Dither"
+msgstr "Dither"
+
+msgid "Use 48kHz mode only"
+msgstr "Seulement 48kHz mode"
+
+msgid "no"
+msgstr "non"
+
+msgid "yes"
+msgstr "oui"
+
+msgid "Normalizer level"
+msgstr "Normalizer level"
+
+msgid "Limiter level"
+msgstr "Limiter level"
+
+msgid "Black"
+msgstr "Noir"
+
+msgid "Cover small"
+msgstr "Image petit"
+
+msgid "Cover big"
+msgstr "Image grand"
+
+msgid "Live"
+msgstr "Live"
+
+msgid "Bitmap"
+msgstr "Bitmap"
+
+msgid "Image mode"
+msgstr "Mode image"
+
+msgid "Image show duration (secs)"
+msgstr "Duration par image (sec)"
+
+msgid "Cache directory"
+msgstr "Répertoire temporaire"
+
+msgid "Use DVB still picture"
+msgstr "Utiliser DVB still picture"
+
+msgid "Show artist first"
+msgstr "montrer l'artiste en avant"
+
+msgid "Fastforward jump (secs)"
+msgstr "Avance rapide (secs)"
+
+msgid "Setup.muggle$Transparency for cover"
+msgstr "Setup.muggle$Transparancy de l'image"
+
+msgid "Delete stale references"
+msgstr "Effacer références éventées"

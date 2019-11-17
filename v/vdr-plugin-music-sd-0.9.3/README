@@ -1,0 +1,19 @@
+This is an audio plugin for VDR.
+
+Forked from MP3-Plugin. Read the README_ORIGINAL_MP3
+
+Copy the whole folder "music-sd" to VDR $PLUGINCONFIGDIR (maybe: /etc/vdr/plugins/music-sd).
+If you use another path with flag -C/--config , use the same for coverviewer
+or you dont see any covers anymore.
+
+
+
+- Edit every script or data in subfolder "data" and "scripts" to your env.
+
+- Check the pathes etc.
+
+- Integrate the symbolfont "fonts/VDRMusicSymbols.ttf" in your system (e.g gentoo: copy to /usr/share/font/corefonts)
+
+
+
+Nothing more to read here for now..

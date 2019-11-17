@@ -1,0 +1,141 @@
+Installation notes for the Mailbox-plugin and c-client-library
+==============================================================
+
+This file contains some information about installing the Mailbox-plugin
+for VDR and the c-client-library.
+
+Unfortunately there are significant differences on how the various Linux-
+distributors build their packages and the author is not able to test all
+these distributions himself.
+
+If you are using a distribution which isn't mentioned in this release, use
+a newer version of a mentioned distribution or if you find some errors or
+inaccuracies in the following description please send an e-mail to the author
+containing the following information:
+
+- Linux distribution and version number
+- c-client package name and version (or compiled from source)
+- used settings for IMAPINCDIR and IMAPLFLAGS
+
+Most of the following distribution dependent notes are outdated. Therefore
+the author needs your feedback to provide up-to-date information.
+
+Thank you for your support!
+
+Contents:
+=========
+
+1.  General notes
+
+2.  Distribution notes
+2.1   Gentoo
+2.2   Ubuntu/Debian
+
+3.  Installation of the plugin
+
+4.  Troubleshooting
+4.1   Compilation
+4.1.1   "linkage.c" not found
+4.2   Execution
+4.2.1   unresolved externals when starting VDR with the plugin
+
+1. General notes
+================
+
+The Mailbox-plugin relies on c-client-library to access the mail accounts
+on the server.
+
+The plugin was developed with version 2007e of the library. Other versions
+weren't tested by the author an may or may not work with the plugin.
+
+To install the necessary header- and library-files you could use (in most
+cases) the packages of your distribution. If this is not possible you will
+have to compile c-client yourself.
+
+Note: The plugin needs the c-client-library and headers; there is no need
+to install the UW IMAP server on your VDR PC.
+
+The Makefile of the Mailbox-plugin expects two variables pointing to the
+place where the c-client-files are located and the linker flags needed
+for the c-client library.
+
+These two variables are:
+
+  IMAPINCDIR
+  IMAPLFLAGS
+
+You could set these variables in the Makefile of the plugin or in the
+Make.config in the root directory of VDR. If you set the variables in
+Make.config you do not have to modify the plugin Makefile each time
+you install a new version of the plugin.
+
+2. Distribution notes
+=====================
+2.1 Gentoo
+----------
+
+Simply emerge "net-lib/c-client" and set the variables to the following 
+values:
+
+ IMAPINCDIR ?= /usr/include/imap
+ IMAPLFLAGS ?= -lc-client
+  
+These are the default values in the Makefile
+
+2.2 Ubuntu/Debian
+-----------------
+
+Install the package "libc-client2007e-dev" and set the variables to 
+the follwing values:
+
+ IMAPINCDIR ?= /usr/include/c-client
+ IMAPLFLAGS ?= -lc-client
+
+3. Installation of the plugin
+=============================
+
+If you set the two variables in the file Make.config in the VDR directory
+the plugin can be installed like any other plugin:
+
+$ cd $VDRDIR/PLUGINS/src
+$ tar xzf vdr-mailbox-<version>.tgz
+$ ln -s mailbox-<version> mailbox
+
+$ cd $VDRDIR
+$ make plugins
+
+
+4.  Troubleshooting
+===================
+4.1   Compilation
+-----------------
+4.1.1   "linkage.c" not found
+-----------------------------
+The compiler complains about a missing file "linkage.c" while compiling the
+plugin.
+
+The file "linkage.c" is generated during the build-process of the c-client
+library and therefore depends on the configuration during the build-process.
+
+If the binary/development package of your distribution doesn't contain
+"linkage.c" you will have to install c-client from sources.
+
+4.2 Execution
+-------------
+4.2.1 unresolved externals when starting VDR with the plugin
+------------------------------------------------------------
+If you get an unresolved external error when starting VDR with the plugin
+you will have to add some libraries to the IMAPLFLAGS variable.
+
+vdr[..]: loading plugin: /usr/../VDR/PLUGINS/lib/libvdr-mailbox.so.1.4.0
+vdr[..]: ERROR: /usr/../VDR/PLUGINS/lib/libvdr-mailbox.so.1.4.0: undefined symbol: <symbolname>
+
+If <symbolname> is
+- 'crypt' -> add '-lcrypt' to IMAPLDFLAGS
+
+4.2.2 if plugin isn't able to connect to the mail-account
+---------------------------------------------------------
+
+If you are using gentoo or ubuntu please install the package "uw-mailutils"
+and test the connection with "mailutil" until you found the correct settings
+and use them in the plugin.

@@ -1,0 +1,63 @@
+#!/bin/sh /usr/share/dpatch/dpatch-run
+
+## 03_debian-paths.dpatch by Thomas Günther <tom@toms-cafe.de>
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Set path of image_convert.sh script.
+
+@DPATCH@
+Index: vdr-plugin-muggle-0.2.3.git20120412/mg_setup.c
+===================================================================
+--- vdr-plugin-muggle-0.2.3.git20120412.orig/mg_setup.c	2011-11-20 23:08:58.000000000 +0100
++++ vdr-plugin-muggle-0.2.3.git20120412/mg_setup.c	2012-04-12 15:22:06.375926740 +0200
+@@ -64,7 +64,7 @@
+ 	Jumptime = 30;
+ 
+ 	// stuff related to cover image display
+-	msprintf(&CacheDir,"%s/.muggle/cache",getenv("HOME"));
++	msprintf(&CacheDir,"/var/cache/vdr-plugin-muggle");
+ 	UseDeviceStillPicture = 1;
+ 	ImageShowDuration = 10;
+ }
+Index: vdr-plugin-muggle-0.2.3.git20120412/muggle.c
+===================================================================
+--- vdr-plugin-muggle-0.2.3.git20120412.orig/muggle.c	2011-11-20 23:08:58.000000000 +0100
++++ vdr-plugin-muggle-0.2.3.git20120412/muggle.c	2012-04-12 15:22:06.375926740 +0200
+@@ -107,13 +107,7 @@
+ 		the_setup.DeleteStaleReferences = atoi (Value);
+ 	else if (!strcasecmp (Name, "ImageShowDuration"))
+ 		the_setup.ImageShowDuration = atoi (Value);
+-	else if (!strcasecmp (Name, "ImageCacheDir")) { // old version
+-		free(the_setup.CacheDir);
+-		the_setup.CacheDir=strdup(Value);
+-	} else if (!strcasecmp (Name, "CacheDir")) {
+-		free(the_setup.CacheDir);
+-		the_setup.CacheDir=strdup(Value);
+-	} else if (!strcasecmp (Name, "UseStillPicture"))
++	else if (!strcasecmp (Name, "UseStillPicture"))
+ 		the_setup.UseDeviceStillPicture = atoi (Value);
+ 	else if (!strcasecmp(Name, "Jumptime"))
+ 		the_setup.Jumptime = atoi(Value);
+Index: vdr-plugin-muggle-0.2.3.git20120412/vdr_setup.c
+===================================================================
+--- vdr-plugin-muggle-0.2.3.git20120412.orig/vdr_setup.c	2011-11-20 23:08:58.000000000 +0100
++++ vdr-plugin-muggle-0.2.3.git20120412/vdr_setup.c	2012-04-12 15:22:06.375926740 +0200
+@@ -72,10 +72,6 @@
+ 	Add (new
+ 		cMenuEditIntItem (tr ("Image show duration (secs)"),
+ 		&the_setup.ImageShowDuration, 1, 100));
+-	the_setup.CacheDir=(char*)realloc(the_setup.CacheDir,MAX_PATH+1);
+-	Add (new
+-		cMenuEditStrItem (tr ("Cache directory"),
+-		the_setup.CacheDir, MAX_PATH, chars_allowed ) );
+ 	Add (new
+ 		cMenuEditBoolItem (tr ("Use DVB still picture"), &the_setup.UseDeviceStillPicture,
+ 		tr("no"), tr("yes") ) );
+@@ -113,7 +109,6 @@
+ 	SetupStore ("DeleteStaleReferences", the_setup.DeleteStaleReferences);
+ 	SetupStore ("ImageShowDuration", the_setup.ImageShowDuration);
+ 	SetupStore ("ImgAlpha", the_setup.ImgAlpha);
+-	SetupStore ("CacheDir", the_setup.CacheDir);
+ 	SetupStore ("ArtistFirst", the_setup.ArtistFirst);
+ 	SetupStore ("Jumptime", the_setup.Jumptime);
+ 	SetupStore ("UseStillPicture", the_setup.UseDeviceStillPicture );

@@ -1,0 +1,30 @@
+diff -Nru a_vdr-plugin-music-sd-0.9.3/commands.c b_vdr-plugin-music-sd-0.9.3/commands.c
+--- a_vdr-plugin-music-sd-0.9.3/commands.c	2013-02-18 23:58:58.000000000 +0100
++++ b_vdr-plugin-music-sd-0.9.3/commands.c	2016-10-28 20:25:33.000000000 +0200
+@@ -182,7 +182,7 @@
+ 
+ 
+ cMP3Themes::cMP3Themes(void)
+-:cOsdMenu(tr("Music-SD: Appearance"),4)
++:cOsdMenu(tr("Music-SD: Appearance"),32)
+ {
+ 
+   LoadSkinFiles();
+@@ -340,7 +340,7 @@
+ 
+ 
+ cMP3Visual::cMP3Visual(void)
+-:cOsdMenu(tr("Music-SD: Visualizations"),4)
++:cOsdMenu(tr("Music-SD: Visualizations"),32)
+ {
+   Add(new cOsdItem(hk(tr("Disable visualization"))));
+   LoadVisFiles();
+@@ -486,7 +486,7 @@
+ 
+ 
+ cMP3User::cMP3User(void)
+-:cOsdMenu(tr("Music-SD: User"),4)
++:cOsdMenu(tr("Music-SD: User"),32)
+ {
+   LoadUsername();
+   SetHelp();

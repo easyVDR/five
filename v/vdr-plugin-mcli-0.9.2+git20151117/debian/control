@@ -1,0 +1,26 @@
+Source: vdr-plugin-mcli
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: cdbs, debhelper (>= 8.0.0), pkg-config, vdr-dev (>= 2.0.6), gettext, libxml2-dev, zlib1g-dev
+Standards-Version: 3.9.4
+http://projects.vdr-developer.org/projects/plg-mcli
+
+Package: vdr-plugin-mcli
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: this is a input plugin for a Netceiver from Reel-Multimedia
+ this is a input plugin for a Netceiver from Reel-Multimedia
+
+Package: vdr-addon-mcli-tool
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, tnftp
+Description: this are some tools for the Netceiver from Reel-Multimedia
+ this are some tools for the Netceiver ex. netcvdiag, netcvupdate and netcvlogview
+
+Package: mcli-dev
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}, ${vdr:Depends}
+Description: mcli-dev header files.
+ some header files for the mcli-plugin.

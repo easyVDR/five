@@ -1,0 +1,12 @@
+Index: vdr-plugin-muggle-0.2.3.git20120412/vdr_decoder_flac.h
+===================================================================
+--- vdr-plugin-muggle-0.2.3.git20120412.orig/vdr_decoder_flac.h	2012-04-12 21:01:08.595915862 +0200
++++ vdr-plugin-muggle-0.2.3.git20120412/vdr_decoder_flac.h	2012-04-12 21:01:26.265915852 +0200
+@@ -19,6 +19,7 @@
+ 
+ #include "vdr_decoder.h"
+ #include <FLAC++/decoder.h>
++#include <vdr/tools.h>
+ 
+ // ----------------------------------------------------------------
+ 

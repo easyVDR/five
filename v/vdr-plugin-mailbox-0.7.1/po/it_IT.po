@@ -1,0 +1,563 @@
+# VDR Mailbox-Plugin language source file.
+# Copyright (C) 2007 Alexander Rieger <Alexander.Rieger@inka.de>
+# This file is distributed under the same license as the Mailbox-Plugin package.
+# Alexander Rieger <Alexander.Rieger@inka.de>
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Mailbox-Plugin 0.5.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-11-01 15:00+0100\n"
+"PO-Revision-Date: 2008-08-15 18:33+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team: Alexander Rieger <alex@axrg.de>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#, c-format
+msgid "New mail in %s"
+msgstr "Nuovi messaggi di posta in %s"
+
+#, c-format
+msgid "%ld new mails in %s"
+msgstr "%ld nuovi messaggi di posta in %s"
+
+#, c-format
+msgid "New mail in %s, open?"
+msgstr "Nuovi messaggi di posta in %s, aprire?"
+
+#, c-format
+msgid "%ld new mails in %s, open?"
+msgstr "%ld nuovi messaggi di posta in %s, aprire?"
+
+msgid "Multipart mail"
+msgstr "Messaggio di posta frammentato"
+
+msgid "Part"
+msgstr "Parte"
+
+msgid "General settings"
+msgstr "Impostazioni generali"
+
+msgid "Check every (minutes)"
+msgstr "Controlla posta ogni (minuti)"
+
+msgid "Connection timeout (seconds)"
+msgstr "Durata connessione (secondi)"
+
+msgid "Display: List of Mails"
+msgstr "Mostra: Elenco messaggi di posta"
+
+msgid "Sort order"
+msgstr "Modalità ordinamento"
+
+msgid "Maximum number of mails"
+msgstr "Numero massimo di messaggi di posta"
+
+msgid "Display: Single mail"
+msgstr "Mostra: Singolo messaggio di posta"
+
+msgid "Word-wrap"
+msgstr "A capo automatico"
+
+msgid "Save the current settings and go back"
+msgstr "Salva le impostazioni attuali e torna indietro"
+
+msgid "hint: 2..4 is not supported with the current skin"
+msgstr "suggerimento: 2..4 non supportato dall'interfaccia attuale"
+
+msgid "Account settings"
+msgstr "Impostazioni account"
+
+msgid "Test"
+msgstr "Prova"
+
+msgid "Check if the mail account is accessible"
+msgstr "Verifica se l'account di posta è accessibile"
+
+msgid "Log"
+msgstr "Registro"
+
+msgid "Show the communication log"
+msgstr "Mostra il registro di comunicazione"
+
+msgid "Select"
+msgstr "Seleziona"
+
+msgid "Select a folder"
+msgstr "Seleziona una cartella"
+
+msgid "Unable to write to account definition file!"
+msgstr "Impossibile scrivere il file di definizione account!"
+
+msgid "VDR settings"
+msgstr "Impostazioni VDR"
+
+msgid "Account name"
+msgstr "Nome account"
+
+msgid "Restrict access"
+msgstr "Accesso limitato"
+
+msgid "- Access code"
+msgstr "- Codice accesso "
+
+msgid "Auto mark seen"
+msgstr "Segna letti in automatico"
+
+msgid "Cleanup on close"
+msgstr "Elimina alla chiusura"
+
+msgid "Background check"
+msgstr "Verifica in sottofondo"
+
+msgid "- Status message"
+msgstr "- Messaggio stato"
+
+msgid "- Main menu entry"
+msgstr "- Voce nel menu principale"
+
+msgid "- External command"
+msgstr "- Comando esterno"
+
+msgid "- Internal interface"
+msgstr "- Interfaccia interna"
+
+msgid "Account type"
+msgstr "Tipo account"
+
+msgid "Config$c-client mailbox string"
+msgstr "stringa casella di posta c-client"
+
+msgid "Host-name/IP"
+msgstr "Nome host/IP"
+
+msgid "User-name"
+msgstr "Nome utente"
+
+msgid "Password"
+msgstr "Password"
+
+msgid "Folder"
+msgstr "Cartella"
+
+msgid "Secure"
+msgstr "Identificazione sicura"
+
+msgid "Use RSH"
+msgstr "Utilizza RSH"
+
+msgid "Use SSL"
+msgstr "Utilizza SSL"
+
+msgid "Start TLS"
+msgstr "Avvia TLS"
+
+msgid "Validate certificates"
+msgstr "Convalida certificati"
+
+msgid "Debug"
+msgstr "Debug"
+
+msgid "Checking mailbox"
+msgstr "Verifica casella di posta"
+
+#, c-format
+msgid "Access successful, %lu mails, %lu new"
+msgstr "Accesso effettuato, %lu messaggi di posta, %lu nuovi"
+
+msgid "failed -> see log"
+msgstr "fallito -> vedi registro"
+
+msgid "Plugin settings"
+msgstr "Impostazioni plugin"
+
+msgid "ConfigPlugin.Common$Edit"
+msgstr "Modifica"
+
+msgid "Edit general settings"
+msgstr "Modifica impostazioni generali"
+
+msgid "ConfigPlugin.MailAccount$New"
+msgstr "Nuovo"
+
+msgid "Create a new mail account"
+msgstr "Crea un nuovo account di posta"
+
+msgid "ConfigPlugin.MailAccount$Duplicate"
+msgstr "Duplica"
+
+msgid "Duplicate selected mail account"
+msgstr "Duplica account di posta selezionato"
+
+msgid "ConfigPlugin.MailAccount$Edit"
+msgstr "Modifica"
+
+msgid "Edit selected mail account"
+msgstr "Modifica account di posta selezionato"
+
+msgid "ConfigPlugin.MailAccount$Delete"
+msgstr "Elimina"
+
+msgid "Delete selected mail account"
+msgstr "Elimina account di posta selezionato"
+
+msgid "ConfigPlugin.MailAccount$Mark"
+msgstr "Seleziona"
+
+msgid "Move the selected account to another position"
+msgstr "Sposta l'account di posta selezionato in una nuova posizione"
+
+msgid "ConfigPlugin$Mail accounts"
+msgstr "Account di posta"
+
+msgid "ConfigPlugin$New account"
+msgstr "Nuovo account"
+
+#, c-format
+msgid "Do you really want to delete account %s?"
+msgstr "Vuoi davvero eliminare l'account %s?"
+
+msgid "getting folder contents..."
+msgstr "verifica contenuto cartelle..."
+
+msgid "unable to get sub-folders"
+msgstr "impossibile verificare le sottocartelle"
+
+msgid "Folder selection"
+msgstr "Selezione cartella"
+
+msgid "Check if the folder is accessible"
+msgstr "Verifica se la cartella è accessibile"
+
+msgid "Accept"
+msgstr "Accetta"
+
+msgid "Select the current folder and close"
+msgstr "Seleziona la cartella attuale e chiudi"
+
+msgid "Abort"
+msgstr "Annulla"
+
+msgid "Abort selection and close"
+msgstr "Annulla selezione e chiudi"
+
+msgid "Open"
+msgstr "Apri"
+
+msgid "Open the current folder"
+msgstr "Apri la cartella selezionata"
+
+msgid "Close"
+msgstr "Chiudi"
+
+msgid "Close the current folder"
+msgstr "Chiudi la cartella selezionata"
+
+msgid "Getting folder hierarchy"
+msgstr "Verifica gerarchia cartella"
+
+msgid "Error"
+msgstr "Errore"
+
+msgid "unable to request delimiter, see log"
+msgstr "impossibile richiedere delimitatore, vedi registro"
+
+msgid "unable to request folders, see log"
+msgstr "impossibile richiedere cartelle, vedi registro"
+
+msgid "Checking folder"
+msgstr "Verifica cartella"
+
+msgid "not selectable"
+msgstr "non selezionabile"
+
+msgid "Log-view"
+msgstr "Mostra registro"
+
+msgid "Clear"
+msgstr "Pulisci"
+
+msgid "Clear log and close"
+msgstr "Pulisci registro e chiudi"
+
+msgid "No log available"
+msgstr "Nessun registro disponibile"
+
+msgid "Mailbox is empty"
+msgstr "Casella di posta vuota"
+
+msgid "Mailbox-View"
+msgstr "Vista casella di posta"
+
+msgid "Mail accounts"
+msgstr "Account di posta"
+
+msgid "Open the selected mailbox"
+msgstr "Apri la casella di posta selezionata"
+
+msgid "Refresh current"
+msgstr "Aggiorna selezionata"
+
+msgid "Check the selected mailbox again"
+msgstr "Verifica ancora la casella di posta selezionata"
+
+msgid "Refresh all"
+msgstr "Aggiorna tutte"
+
+msgid "Check all mailboxes again"
+msgstr "Verifica ancora tutte le caselle di posta"
+
+msgid "MailBoxView$New"
+msgstr "Nuova"
+
+msgid "MailBoxView$Total"
+msgstr "Totale"
+
+msgid "Mail account"
+msgstr "Account di posta"
+
+msgid "No mail accounts defined!"
+msgstr "Nessun account di posta definito!"
+
+msgid "MailList-View"
+msgstr "Vista elenco messaggi"
+
+msgid "Getting mails..."
+msgstr "Verifica messaggi di posta..."
+
+msgid "Unable to open mail account!"
+msgstr "Impossibile aprire l'account di posta!"
+
+msgid "Unable to request status!"
+msgstr "Impossibile richiedere lo stato!"
+
+msgid "Open the selected mail"
+msgstr "Apri il messaggio di posta selezionato"
+
+msgid "Back..."
+msgstr "Indietro..."
+
+msgid "Use color keys for movement"
+msgstr "Utilizza i tasti colorati per gli spostamenti"
+
+msgid "Flags..."
+msgstr "Evidenziati..."
+
+msgid "Use color keys to toggle flags"
+msgstr "Utilizza i tasti colorati per alternare evidenziati"
+
+msgid "MailListView$New"
+msgstr "Nuova"
+
+msgid "Mail-View"
+msgstr "Vista messaggi"
+
+msgid "Action$Wrap mode"
+msgstr "Modalità a capo"
+
+msgid "Switch word-wrapping mode"
+msgstr "Cambia modalità a capo"
+
+msgid "Action$Toggle parts"
+msgstr "Alterna parti"
+
+msgid "Show all parts"
+msgstr "Mostra tutte le parti"
+
+msgid "Info$Wrap mode"
+msgstr "Modalità a capo"
+
+msgid "Show text parts"
+msgstr "Mostra parti testuali"
+
+msgid "Subject"
+msgstr "Oggetto"
+
+msgid "From"
+msgstr "Da"
+
+msgid "Date"
+msgstr "Data"
+
+msgid "Jump to the previous mail"
+msgstr "Vai al messaggio precedente"
+
+msgid "Jump to the next mail"
+msgstr "Vai al messaggio successivo"
+
+msgid "<< New"
+msgstr "<< Nuovo"
+
+msgid "Jump to the previous unread mail"
+msgstr "Vai al messaggio precedente non letto"
+
+msgid "New >>"
+msgstr "Nuovo >>"
+
+msgid "Jump to the next unread mail"
+msgstr "Vai al messaggio successivo non letto"
+
+msgid "ButtonFlag$Not Flagged"
+msgstr "Non evidenziato"
+
+msgid "ButtonFlag$Flagged"
+msgstr "Evidenziato"
+
+msgid "Toggle flagged state"
+msgstr "Cambia stato evidenziato"
+
+msgid "ButtonFlag$New"
+msgstr "Nuovo"
+
+msgid "ButtonFlag$Seen"
+msgstr "Letto"
+
+msgid "Toggle seen state"
+msgstr "Cambia stato letto"
+
+msgid "ButtonFlag$Undelete"
+msgstr "Recupera"
+
+msgid "ButtonFlag$Delete"
+msgstr "Elimina"
+
+msgid "Toggle deleted state"
+msgstr "Cambia stato eliminato"
+
+msgid "MailFlag_Seen_On$_"
+msgstr "_"
+
+msgid "MailFlag_Seen_Off$N"
+msgstr "L"
+
+msgid "MailFlag_Flagged_On$F"
+msgstr "V"
+
+msgid "MailFlag_Flagged_Off$_"
+msgstr "_"
+
+msgid "MailFlag_Deleted_On$D"
+msgstr "E"
+
+msgid "MailFlag_Deleted_Off$_"
+msgstr "_"
+
+msgid "MailFlag_Answered_On$A"
+msgstr "R"
+
+msgid "MailFlag_Answered_Off$_"
+msgstr "_"
+
+msgid "Display emails of IMAP/POP3 accounts"
+msgstr "Mostra messaggi di account IMAP/POP3"
+
+msgid "Key mapping"
+msgstr "Mappatura tasti"
+
+msgid "Activate"
+msgstr "Attiva"
+
+msgid "Activate the selected action"
+msgstr "Attiva azione selezionata"
+
+msgid "Ignore this key"
+msgstr "Ignora questo tasto"
+
+msgid "Drop changes & go back"
+msgstr "Elimina modifiche e torna indietro"
+
+msgid "Show help for usable keys"
+msgstr "Mostra aiuto dei tasti disponibili"
+
+msgid "MenuCode$Restricted area"
+msgstr "Area limitata"
+
+msgid "MenuCode$Access code"
+msgstr "Codice accesso"
+
+msgid "MenuCode$Code invalid!"
+msgstr "Codice non valido!"
+
+msgid "Log c-client-callbacks"
+msgstr "Registra protocollo c-client"
+
+msgid "Stopping background processing..."
+msgstr "Ferma elaborazione in sottofondo..."
+
+msgid "Mailbox"
+msgstr "Casella di posta"
+
+msgid "MainMenuEntry$new"
+msgstr "nuova"
+
+msgid "User defined"
+msgstr "Definita dall'utente"
+
+msgid "IMAP"
+msgstr "IMAP"
+
+msgid "POP3"
+msgstr "POP3"
+
+msgid "NNTP"
+msgstr "NNTP"
+
+msgid "INBOX"
+msgstr "INBOX"
+
+msgid "Unrestricted"
+msgstr "Non limitata"
+
+msgid "Setup"
+msgstr "Opzioni"
+
+msgid "Setup & view"
+msgstr "Opzioni e vista"
+
+msgid "---"
+msgstr "---"
+
+msgid "yes (opt: /secure)"
+msgstr "sì (opz: /secure)"
+
+msgid "no  (opt: /norsh)"
+msgstr "no  (opz: /norsh)"
+
+msgid "yes (opt: /ssl)"
+msgstr "sì (opz: /ssl)"
+
+msgid "yes (opt: /tls)"
+msgstr "sì (opz: /tls)"
+
+msgid "no (opt: /notls)"
+msgstr "no (opz: /notls)"
+
+msgid "yes (opt: /validate-cert)"
+msgstr "sì (opz: /validate-cert)"
+
+msgid "no (opt: /novalidate-cert)"
+msgstr "no (opz: /novalidate-cert)"
+
+msgid "yes (opt: /debug)"
+msgstr "sì (opz: /debug)"
+
+msgid "ascending"
+msgstr "crescente"
+
+msgid "descending"
+msgstr "decrescente"
+
+msgid "1: wrap by VDR"
+msgstr "1: a capo da VDR"
+
+msgid "2: continue quotes"
+msgstr "2: continua la frase"
+
+msgid "3: honor format flowed"
+msgstr "3: rispetta la formattazione 'flowed'"
+
+msgid "4: combine lines"
+msgstr "4: combina righe"

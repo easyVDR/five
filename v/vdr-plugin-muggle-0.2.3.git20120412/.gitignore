@@ -1,0 +1,6 @@
+*.o
+.dependencies
+*.so
+mugglei
+mg_tables.h
+*.mo

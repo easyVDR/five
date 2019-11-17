@@ -1,0 +1,755 @@
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 16:03:32 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 21:22:53 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:56:13 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 01 Jul 2017 22:37:25 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:50:52 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:36:05 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:39:18 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:58:34 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:41:24 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Nov 2015 23:43:14 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:15:35 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 03:59:33 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 24 Mar 2015 01:59:29 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo7~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Mar 2015 20:43:39 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo6~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 22 Mar 2015 13:43:42 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo6~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 20 Mar 2015 20:57:16 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo5~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 19 Feb 2015 17:37:55 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo4~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 12 Feb 2015 17:55:19 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 11 Feb 2015 20:55:55 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo2~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 08 Feb 2015 18:21:00 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo1~precise) precise; urgency=low
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 01 Feb 2015 17:16:17 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-3frodo0~precise) precise; urgency=low
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 31 Jan 2015 22:37:01 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-2yavdr3) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:07:44 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-2yavdr1) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 16:01:57 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-2yavdr0~trusty) precise; urgency=medium
+
+  * fix: +#include <unistd.h> 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 01 Jan 2014 16:41:55 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr21~trusty) trusty; urgency=medium
+
+  * build for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Tue, 31 Dec 2013 16:46:07 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr20~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:38:49 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr19~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:08:36 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr18~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:02:52 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr17~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:26:51 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr16~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:52:04 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr15~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:53:04 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr14~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:03:41 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr12~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:53:46 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr11~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:26:04 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr10~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:27:41 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr9~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:09:46 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:55:58 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:07:31 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:37:15 +0100
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:17:26 +0200
+
+vdr-plugin-muggle (0.2.3.git20120412-1yavdr4~precise) precise; urgency=medium
+
+  * New Upstream Snapshot
+  * Standards-Version: 3.9.2
+  * Build-depend on vdr-dev >= 1.7.20
+  * Switched to debhelper 7 and dropped cdbs
+  * Remove 02_bashisms.dpatch, 05_gcc44.dpatch, 06_vdr-1-7-14.dpatch, 04_makefile.dpatch 
+  * Added makefile patch, fix.patch
+  * Added dpkg-trigger vdr-plugin-muggle-trigger -> postinst (yaVDR)
+  * sqlite default db
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 12 Apr 2012 15:05:00 +0200
+
+vdr-plugin-muggle (0.2.3-6yavdr1) lucid; urgency=low
+
+  * added 06_vdr-1-7-14.dpatch
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 22 Apr 2010 08:14:17 +0200
+
+vdr-plugin-muggle (0.2.3-1) experimental; urgency=low
+
+  [ Holger Schvestka ]
+  * New upstream release
+  * Added 04_makefile.dpatch
+  * Added 05_gcc44.dpatch
+  * Removed 01_compile-fixes.dpatch
+
+  [ Tobias Grimm ]
+  * Updated debian/watch and debian/copyright to new upstream location
+  * Bumped standards version to 3.8.1
+  * Added ${misc:Depends}
+  * Depend on python for the muggle_getlyrics script
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 02 Jun 2009 22:06:41 +0200
+
+vdr-plugin-muggle (0.2.1-1) experimental; urgency=low
+
+  * New upstream release
+  * Changed my maintainer/uploader email address
+  * Fixed debian/watch
+  * Updated upstream homepage
+  * Added 01_compile-fixes.dpatch
+  * Removed 01_flac++-6.dpatch (fixed upstream)
+  * Replaced 03_image_convert.sh-path.dpatch with 03_debian-paths.dpatch
+  * Removed 04_kernel-headers-workaround.dpatch (fixed upstream)
+  * Removed 90_muggle-0.1.11_include-getopt.dpatch (fixed upstream)
+  * Removed 91_gcc43.dpatch
+  * Install shell scripts to /usr/share/vdr-plugin-muggle instead of
+    /usr/lib...
+  * Added 02_bashisms.dpatch
+  * Installing mugglei to /usr/bin/
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 22 Nov 2008 18:29:31 +0100
+
+vdr-plugin-muggle (0.1.11-22) experimental; urgency=low
+
+  * Addec 91_gcc43.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 27 Jul 2008 11:49:55 +0200
+
+vdr-plugin-muggle (0.1.11-21) experimental; urgency=low
+
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Jul 2008 19:26:00 +0200
+
+vdr-plugin-muggle (0.1.11-20) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 13:02:57 +0200
+
+vdr-plugin-muggle (0.1.11-19) experimental; urgency=low
+
+  * Build-depend on vdr-dev (>= 1.6.0)
+  * Using COMPAT=5 now
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+  * Renamed XS-Vcs-* fields to Vcs-* in debian/control
+  * Bumped Standards-Version to 3.7.3
+  * Updated years and GPL references in debian/copyright
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 04 Apr 2008 00:52:06 +0200
+
+vdr-plugin-muggle (0.1.11-18) experimental; urgency=low
+
+  * Force rebuild for vdr 1.5.15
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:08:25 +0100
+
+vdr-plugin-muggle (0.1.11-17) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:34 +0100
+
+vdr-plugin-muggle (0.1.11-16) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:22 +0100
+
+vdr-plugin-muggle (0.1.11-15) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:16 +0100
+
+vdr-plugin-muggle (0.1.11-14) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:50:57 +0200
+
+vdr-plugin-muggle (0.1.11-13) unstable; urgency=low
+
+  * Added 04_kernel-headers-workaround.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 25 Aug 2007 12:36:53 +0200
+
+vdr-plugin-muggle (0.1.11-12) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+  * Added installation of README.mysql, README.postgresql and
+    README.sqlite (Thx to Wolfgang Rohdewald)
+  * Added full license disclaimer and copyright years to debian/copyright
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:03 +0200
+
+vdr-plugin-muggle (0.1.11-11) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:16 +0200
+
+vdr-plugin-muggle (0.1.11-10) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.5
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 27 Jun 2007 23:02:38 +0200
+
+vdr-plugin-muggle (0.1.11-9) unstable; urgency=low
+
+  [ Thomas Schmidt ]
+  * Added XS-Vcs-Svn and XS-Vcs-Browser fields to debian/control
+  * Removed version from Build-Dependancy to dpatch - even Sarge has the
+    required version
+
+  [ Tobias Grimm ]
+  * Added 01_flac++-6.dpatch to fix problems with new Flac++ versions in Sid
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 17 Jun 2007 20:06:32 +0200
+
+vdr-plugin-muggle (0.1.11-8) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:00:30 +0200
+
+vdr-plugin-muggle (0.1.11-7) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.1
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:16 +0100
+
+vdr-plugin-muggle (0.1.11-6) unstable; urgency=low
+
+  * Forcing new version because libmysqlclient12 is no longer available
+    in Sid (reported by Stefan Wagner)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 28 Jan 2007 10:48:01 +0100
+
+vdr-plugin-muggle (0.1.11-5) experimental; urgency=low
+
+  [ Thomas Günther ]
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 20:24:59 +0100
+
+vdr-plugin-muggle (0.1.11-4) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 00:00:42 +0100
+
+vdr-plugin-muggle (0.1.11-3) unstable; urgency=low
+
+  [ Thomas Schmidt ]
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 30 Sep 2006 16:30:54 +0200
+
+vdr-plugin-muggle (0.1.11-2) unstable; urgency=low
+
+  * Bumped Standards-Version to 3.7.2
+  * Added note about the Debian Maintainers to debian/copyright
+  * Build-Depend on vdr-dev (>=1.4.2-1)
+
+ -- Thomas Schmidt <tschmidt@debian.org>  Mon, 28 Aug 2006 20:58:57 +0200
+
+vdr-plugin-muggle (0.1.11-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - New upstream release
+    - Added 90_muggle-0.1.11_include-getopt.dpatch
+    - Updated debian/watch
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.1-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 18 Jun 2006 15:54:45 +0200
+
+vdr-plugin-muggle (0.1.10-2) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.0-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  3 May 2006 22:17:04 +0200
+
+vdr-plugin-muggle (0.1.10-1) unstable; urgency=low
+
+  * New upstream release
+  * Tobias Grimm <tg@e-tobi.net>
+    - Removed 90_APIVERSION.dpatch (fixed upstream)
+    - Removed 01_vdr-1.3.38-fix.dpatch (fixed upstream)
+    - Removed 02_mjpegtools-1.6.2.dpatch (fixed upstream)
+    - Updated 03_image_convert.sh-path.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sat, 29 Apr 2006 21:43:02 +0200
+
+vdr-plugin-muggle (0.1.9-9) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.48-1)
+  * Tobias Grimm <tg@e-tobi.net>
+    - Added 90_APIVERSION.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 24 Apr 2006 20:17:18 +0200
+
+vdr-plugin-muggle (0.1.9-8) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Depend on mjpegtools (>=1:1.8.0)
+    - Added patch to fix issue with mjpegtools > 1.6.2 (-S 420mpeg2)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 13 Apr 2006 21:45:44 +0200
+
+vdr-plugin-muggle (0.1.9-7) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.46-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 13 Apr 2006 00:29:15 +0200
+
+vdr-plugin-muggle (0.1.9-6) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.3.45-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 27 Mar 2006 23:18:15 +0200
+
+vdr-plugin-muggle (0.1.9-5) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Depend/Build-Depend on vdr (>=1.3.41-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 Jan 2006 20:03:23 +0100
+
+vdr-plugin-muggle (0.1.9-4) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr-dev (>=1.3.40-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 26 Jan 2006 19:13:48 +0100
+
+vdr-plugin-muggle (0.1.9-3) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.38-1)
+    - Added 01_vdr-1.3.38-fix.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 12 Jan 2006 16:54:24 +0100
+
+vdr-plugin-muggle (0.1.9-2) unstable; urgency=low
+ 
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.37-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 29 Nov 2005 15:14:55 +0100
+
+vdr-plugin-muggle (0.1.9-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - New upstream release
+    - Adapted 03_image_convert.sh-path.dpatch
+    - Install mugglei to /usr/lib/vdrdevel-plugin-muggle/
+    - Adapted make options in debian/rules to new standard values in Makefile
+    - Added libsndfile1-dev to Build-Depends
+    - Added dependency to mjpegtools and netpbm
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.35-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  2 Nov 2005 20:05:35 +0100
+
+vdr-plugin-muggle (0.1.8-6) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.33-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun,  2 Oct 2005 12:16:50 +0200
+
+vdr-plugin-muggle (0.1.8-5) unstable; urgency=low
+  
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.32-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 11 Sep 2005 18:50:18 +0200
+
+vdr-plugin-muggle (0.1.8-4) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.31-1)
+    - Use dependencies.sh from vdr-dev to set vdr dependencies and
+      conflicts to the right vdr version when building the package
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 28 Aug 2005 18:35:22 +0200
+
+vdr-plugin-muggle (0.1.8-3) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Depend/Build-Depend on vdr (>=1.3.30-1)
+    - Conflict with vdr (>=1.3.30.99)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 23 Aug 2005 19:19:29 +0200
+
+vdr-plugin-muggle (0.1.8-2) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.29-1)
+    - Conflict with vdr (>=1.3.29.99)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 15 Aug 2005 19:28:06 +0200
+
+vdr-plugin-muggle (0.1.8-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - New upstream release
+    - Removed graphTFT-cover patch
+    - Added image_convert.sh-patch patch
+    - Added image_convert.sh to debian/install
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 11 Aug 2005 19:02:10 +0200
+
+vdr-plugin-muggle (0.1.7-2) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.28-1)
+    - Conflict with vdr (>=1.3.29)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue,  9 Aug 2005 22:47:29 +0200
+
+vdr-plugin-muggle (0.1.7-1) unstable; urgency=low
+
+  * New upstream release
+  * Added graphTFT-cover patch
+  * Activated FLAC support
+  * Added libflac++-dev to Build-Depends in debian/control
+  * Bumped Standards-Version to 3.6.2
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon,  4 Jul 2005 19:01:36 +0200
+
+vdr-plugin-muggle (0.1.6-5) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.27-1)
+    - Conflict with vdr (>=1.3.28)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 19 Jun 2005 17:52:41 +0200
+
+vdr-plugin-muggle (0.1.6-4) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.26-1)
+    - Conflict with vdr (>=1.3.27)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 12 Jun 2005 17:06:42 +0200
+
+vdr-plugin-muggle (0.1.6-3) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.25-1)
+    - Conflict with vdr (>=1.3.26)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 May 2005 16:37:12 +0200
+
+vdr-plugin-muggle (0.1.6-2) experimental; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.24-1)
+    - Conflict with vdr (>=1.3.25)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon,  9 May 2005 17:27:17 +0200
+
+vdr-plugin-muggle (0.1.6-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - Adapted for official vdr
+    - Ignoring make clean error in debian/rules
+    - Changed Maintainer to Debian VDR Team
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Depend/Build-Depend on vdr (>=1.3.23-1)
+    - Conflict with vdr (>=1.3.24)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 17 Apr 2005 22:17:29 +0200
+
+vdrdevel-plugin-muggle (0.1.6-1) unstable; urgency=low
+
+  * New upstream release
+  * Embedded server deactivated
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon, 28 Mar 2005 21:19:57 +0200
+
+vdrdevel-plugin-muggle (0.1.5-3) unstable; urgency=low
+
+  * VDR-1.3.23
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 20 Mar 2005 23:27:24 +0100
+
+vdrdevel-plugin-muggle (0.1.5-2) unstable; urgency=low
+
+  * VDR-1.3.22
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 13 Mar 2005 23:29:09 +0100
+
+vdrdevel-plugin-muggle (0.1.5-1) unstable; urgency=low
+
+  * New upstream release
+  * Added libwrap0-dev to Build-Depends in debian/control
+  * Added graphTFT-cover patch
+  * Changed example in debian/plugin.muggle.conf for embedded mySQL
+  * Removed debian/examples
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 13 Mar 2005 20:18:43 +0100
+
+vdrdevel-plugin-muggle (0.1.3-3) unstable; urgency=low
+
+  * VDR-1.3.22-4
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 10 Mar 2005 01:49:25 +0100
+
+vdrdevel-plugin-muggle (0.1.3-2) unstable; urgency=low
+
+  * VDR-1.3.22
+
+ -- Thomas Günther <tom@toms-cafe.de>  Fri,  4 Mar 2005 01:35:22 +0100
+
+vdrdevel-plugin-muggle (0.1.3-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed disable-flac patch
+  * Set HAVE_VORBISFILE=1 in rules
+
+ -- Thomas Günther <tom@toms-cafe.de>  Fri,  4 Mar 2005 00:51:47 +0100
+
+vdrdevel-plugin-muggle (0.1.2-3) unstable; urgency=low
+
+  * VDR-1.3.22
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon, 28 Feb 2005 02:41:59 +0100
+
+vdrdevel-plugin-muggle (0.1.2-2) unstable; urgency=low
+
+  * VDR-1.3.21
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 15 Feb 2005 17:37:21 +0100
+
+vdrdevel-plugin-muggle (0.1.2-1) unstable; urgency=low
+
+  * New upstream release
+  * Removed muggle-1.3.19 patch
+  * Added disable-flac patch
+  * Remove muggle state file in debian/postinst and debian/postrm
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  8 Feb 2005 21:23:58 +0100
+
+vdrdevel-plugin-muggle (0.1.1-1) unstable; urgency=low
+
+  * New upstream release
+  * Added 92_muggle-1.3.19 patch
+  * Updated 95_vdrdevel.dpatch to version 0.0.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  1 Feb 2005 23:26:49 +0100
+
+vdrdevel-plugin-muggle (0.0.8-2) unstable; urgency=low
+
+  * vdrdevel-1.3.17-5: changed patchlevel
+
+ -- Thomas Günther <tom@toms-cafe.de>  Mon,  3 Jan 2005 16:28:16 +0100
+
+vdrdevel-plugin-muggle (0.0.8-1) unstable; urgency=low
+
+  * Initial Release.
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 30 Nov 2004 02:02:18 +0100

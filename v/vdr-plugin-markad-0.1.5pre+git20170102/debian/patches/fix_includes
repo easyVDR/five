@@ -1,0 +1,65 @@
+Index: vdr-plugin-markad-0.1.4.git20131115/command/decoder.cpp
+===================================================================
+--- vdr-plugin-markad-0.1.4.git20131115.orig/command/decoder.cpp        2013-11-15 16:40:15.000000000 +0100
++++ vdr-plugin-markad-0.1.4.git20131115/command/decoder.cpp     2014-01-01 16:24:33.932549410 +0100
+@@ -11,6 +11,7 @@
+ #include <sys/types.h>
+ #include <string.h>
+ #include <cstdlib>
++#include <stdio.h>
+
+ #include "decoder.h"
+
+@@ -152,7 +153,7 @@
+     }
+
+     video_codec=NULL;
+-#if LIBAVCODEC_VERSION_INT >= ((54<<16)+(51<<8)+100)
++#if LIBAVCODEC_VERSION_INT >= ((54<<16)+(35<<8)+0)
+     AVCodecID video_codecid;
+ #else
+     CodecID video_codecid;
+@@ -177,7 +178,7 @@
+
+     if (video_codec)
+     {
+-#if LIBAVCODEC_VERSION_INT >= ((54<<16)+(51<<8)+100)
++#if LIBAVCODEC_VERSION_INT >= ((54<<16)+(35<<8)+0)
+         video_context = avcodec_alloc_context3(NULL);
+ #else
+         video_context = avcodec_alloc_context();
+@@ -331,7 +332,7 @@
+     {
+         avcodec_flush_buffers(video_context);
+         AVCodecContext *dest;
+-#if LIBAVCODEC_VERSION_INT >= ((54<<16)+(51<<8)+100)
++#if LIBAVCODEC_VERSION_INT >= ((54<<16)+(35<<8)+0)
+         dest=avcodec_alloc_context3(NULL);
+ #else
+         dest=avcodec_alloc_context();
+Index: vdr-plugin-markad-0.1.4.git20131115/command/decoder.h
+===================================================================
+--- vdr-plugin-markad-0.1.4.git20131115.orig/command/decoder.h  2013-11-15 16:40:15.000000000 +0100
++++ vdr-plugin-markad-0.1.4.git20131115/command/decoder.h       2014-01-01 16:24:28.572549540 +0100
+@@ -17,7 +17,10 @@
+ #ifdef USE_OLD_FFMPEG_HEADERS
+ #include <avcodec.h>
+ #else
++extern "C" {
+ #include <libavcodec/avcodec.h>
++#include <libavutil/mem.h>
++}
+ #endif
+
+ #if LIBAVCODEC_VERSION_INT < ((52<<16)+(0<<8)+0)
+@@ -28,7 +31,9 @@
+ #ifdef USE_OLD_FFMPEG_HEADERS
+ #include <avformat.h>
+ #else
++extern "C" {
+ #include <libavformat/avformat.h>
++}
+ #endif
+ #endif
+ #include "debug.h"
+

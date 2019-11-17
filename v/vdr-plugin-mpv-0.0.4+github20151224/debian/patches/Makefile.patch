@@ -1,0 +1,23 @@
+Index: vdr-plugin-mpv-0.0.4+git20150710/Makefile
+===================================================================
+--- vdr-plugin-mpv-0.0.4+git20150710.orig/Makefile	2015-07-10 23:41:32.728079115 +0200
++++ vdr-plugin-mpv-0.0.4+git20150710/Makefile	2015-07-10 23:41:32.696078960 +0200
+@@ -19,7 +19,8 @@
+ LIBMOUNT ?= $(shell pkg-config --exists mount && echo 1)
+ 
+ ifneq ($(LIBMPV),1)
+-$(error libmpv missing)
++CONFIG += -DUSE_LIBMPV
++LIBS += $(shell pkg-config --libs mpv)
+ endif
+ 
+ ifeq ($(LIBCDIO),1)
+@@ -35,8 +36,6 @@
+ LIBS += $(shell pkg-config --libs xrandr)
+ endif
+ 
+-LIBS += $(shell pkg-config --libs mpv)
+-
+ ### The version number of this plugin (taken from the main source file):
+ 
+ VERSION = $(shell grep 'static const char \*VERSION *=' $(PLUGIN).c | awk '{ print $$6 }' | sed -e 's/[";]//g')

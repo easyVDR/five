@@ -1,0 +1,199 @@
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 17:31:10 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 21:54:31 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Nov 2017 01:01:12 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 06 Jul 2017 21:51:27 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Oct 2016 23:44:43 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:49:48 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Feb 2016 17:04:41 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild for V3
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 21 Jan 2016 23:59:58 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild for VDR-2.2.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 21 Jan 2016 23:54:50 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Jan 2016 23:38:24 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-3frodo2~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 22 Dec 2015 20:51:47 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-3frodo1~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 20 Dec 2015 00:52:32 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-3frodo0~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 19 Nov 2015 12:53:45 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-2yavdr1~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 05 Aug 2015 21:09:09 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-2yavdr1~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 25 May 2015 17:41:25 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-2yavdr0~trusty) trusty; urgency=medium
+
+  * reworked debian dir
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 23 May 2015 15:04:29 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr10~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Fri, 03 Apr 2015 15:18:47 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr9~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 20 Feb 2015 11:17:43 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr8~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Feb 2015 00:37:24 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr7~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 08 Feb 2015 16:22:07 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr6~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 01 Feb 2015 16:20:07 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr5~trusty) trusty; urgency=medium
+
+  * automatic rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 18 Jan 2015 16:37:56 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr4~trusty) trusty; urgency=medium
+
+  * rebuild for trusty thar
+
+ -- Alexander Grothe <seahawk1986@hotmail.com>  Sat, 05 Apr 2014 14:33:12 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:08:48 +0200
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 16:02:52 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-1yavdr0~precise) precise; urgency=medium
+
+  * add vdr-abi dependency
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 02 Feb 2014 12:39:42 +0100
+
+vdr-plugin-neutrinoepg (0.3.6-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 10 Dec 2013 19:33:09 +0100
+
+vdr-plugin-neutrinoepg (0.3.4.git20130611-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:39:39 +0200
+
+vdr-plugin-neutrinoepg (0.3.4.git20130611-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:09:24 +0200
+
+vdr-plugin-neutrinoepg (0.3.4.git20130611-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:03:43 +0200
+
+vdr-plugin-neutrinoepg (0.3.4.git20130611-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:27:43 +0200
+
+vdr-plugin-neutrinoepg (0.3.4.git20130611-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 11 Jun 2013 13:05:58 +0200
+
+vdr-plugin-neutrinoepg (0.3.4-0yavdr0~precise) precise; urgency=medium
+
+  * first package 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 04 Jun 2013 23:43:43 +0200
+
+

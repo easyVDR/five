@@ -1,0 +1,12 @@
+diff -urNad mailbox-0.3.0/mailcmd.sh /tmp/dpep.ryG5yV/mailbox-0.3.0/mailcmd.sh
+--- mailbox-0.3.0/mailcmd.sh	Sat Jan 24 16:11:39 2004
++++ /tmp/dpep.ryG5yV/mailbox-0.3.0/mailcmd.sh	Sun Nov 14 15:01:54 2004
+@@ -15,7 +15,7 @@
+ #     set some variables
+ #------------------------------------------------------------------
+ LOGCMD="logger -t $CMDNAME"
+-SVDRPSEND="svdrpsend.pl"
++SVDRPSEND="/usr/bin/svdrpsend"
+ 
+ #------------------------------------------------------------------
+ #     log the parameters

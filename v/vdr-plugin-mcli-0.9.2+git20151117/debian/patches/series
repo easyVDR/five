@@ -1,0 +1,3 @@
+#linker.patch
+fix_Makefile
+mcli_gcc-7_fix.patch

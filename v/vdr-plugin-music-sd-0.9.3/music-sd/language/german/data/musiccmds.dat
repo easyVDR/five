@@ -1,0 +1,61 @@
+	    #########################################################################################################
+	    ##   _  _  ___  _  _  ____     __  ___  _  _  ___  ___    __  ____  __  __  _  _    __  __  ___  ___   ##
+	    ##  ( \( )(  _)( \/ )(_  _)   / _)(  _)( \( )(  _)(  ,)  (  )(_  _)(  )/  \( \( )  (  \/  )(  ,\(__ )  ##
+	    ##   )  (  ) _) )  (   )(    ( (/\ ) _) )  (  ) _) )  \  /__\  )(   )(( () ))  (    )    (  ) _/ (_ \  ##
+	    ##  (_)\_)(___)(_/\_) (__)    \__/(___)(_)\_)(___)(_)\_)(_)(_)(__) (__)\__/(_)\_)  (_/\/\_)(_)  (___/  ##
+	    ##                                                                                                     ##
+	    #########################################################################################################
+
+
+# This is an example of musiccmds.dat for vdr-music-plugin with sample entries.
+#
+# This file should be placed in VDR-ConfigDir/plugins/music/data .
+#  
+#  /plugin_config_dir/music/language/your_language_here/data/musiccmds.dat
+#
+# Syntax is: <name>[?]: <command>
+#
+# <name>    = description/command displayed in VDR
+# [?]       = request confirmation before execute command (optionally)
+# <command> = command what to execute
+#
+# When a command is executed the following flags were passed :
+#
+# $1: Full filename of track    ( full filename with path of tracke  - e.g. '/data/mp3/trash metal/Meinz Ludolf Hunze.mp3' )
+# $2: Directory to copy tracks  ( path from plugin setup or quick settings)
+# $3: ARTIST from Id3 tag       ( artist of track if avaiable -  e.g. 'Iron Maiden' )
+# $4: ALBUM from Id3 tag        ( album of track if avaiable - e.g. 'White christmas' )
+# $5: DIR to ArtistCover Dir    ( path from plugin ArtistCover - no slash at end ) 
+# $6: DIR to music config Dir   ( path from plugin config dir - no slash at end ) 
+#
+# Also have a look in vdr man-pages vdr(5), its the same syntax as in vdrs commands.conf,etc..
+# IMPORTANT : IF YOU DON'T NEED PARAMETERS PLACE AN SEMICOLON (;) AT THE END OF YOUR COMMAND.
+# e.g.: Burn playlist? : echo "/usr/local/bin/cdburn.sh" | at now;
+# BUT most buildin scripts will need the parameter $6 to readin "musiccmds.conf" , which is placed in
+# "/plugin_config_dir/data" . ONLY THIS FILE YOU SHOULD AND (maybe) MUST EDIT
+#
+# If you have problems with lines in front, comment them (without patches (e.g. cmd-submenu) it should be ok,
+# its a bug/failure in the patch ...so dont blame me)
+# normally VDR will color the lines with an '-' at front . The patch should use ~ or = whatever
+#
+#########################################################################################################################################
+#  PUT YOUR COMMANDS BELOW
+#########################################################################################################################################
+#
+---- PLAYLISTEN SPEICHERN ------------------------------------------------------------------------------------------------------   : echo
+Speichere aktuelle Playliste permanent?	           : /var/lib/vdr/plugins/music/language/german/scripts/music_savepl.sh
+Speichere letztes Ergebnis der Suche permanent?	   : /var/lib/vdr/plugins/music/language/german/scripts/music_savesl.sh
+---- TRACKS KOPIEREN -----------------------------------------------------------------------------------------------------------   : echo
+Kopiere aktuellen Track auf Zielmedium?            : /var/lib/vdr/plugins/music/language/german/scripts/music_copytrack.sh
+Inhalt der Brennliste auf Zielmedium kopieren?     : screen -A -m -d -S copyall  /var/lib/vdr/plugins/music/language/german/scripts/music_copyall.sh
+---- TRACKS LÖSCHEN -----------------------------------------------------------------------------------------------------------   : echo
+Lösche Inhalt von Zielmedium komplett?            : screen -A -m -d -S deletecopydir //var/lib/vdr/plugins/music/language/german/scripts/music_deletecopydir.sh
+---- CD BRENNEN ----------------------------------------------------------------------------------------------------------------   : echo
+CD auswerfen?                                      : /usr/bin/eject /dev/dvd;
+CD einziehen?                                      : /usr/bin/eject -t /dev/dvd;
+CD Disk Info?                                      : /usr/bin/eject -t /dev/dvd; /var/lib/vdr/plugins/music/language/german/scripts/music_cddiskinfo.sh
+CD Disk löschen?                                   : screen -A -m -d -S cdblank  /var/lib/vdr/plugins/music/language/german/scripts/music_cdblank.sh
+Abgespeicherte Brennliste als Audio-CD brennen?	   : screen -A -m -d -S cdburn   /var/lib/vdr/plugins/music/language/german/scripts/music_burnaudiocd.sh
+Abgespeicherte Brennliste als MP3-Daten-CD brennen?: screen -A -m -d -S mp3burn  /var/lib/vdr/plugins/music/language/german/scripts/music_burnmp3cd.sh
+--------------------------------------------------------------------------------------------------------------------------------   : echo
+Hilfe                                              : cat /var/lib/vdr/plugins/music/language/german/data/help.dat;

@@ -1,0 +1,25 @@
+Source: vdr-plugin-mp3
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 5), cdbs, dpatch, vdr-dev (>= 1.6.0-5), libsndfile1-dev, libid3tag0-dev, libmad0-dev, libvorbis-dev, gettext
+Standards-Version: 3.9.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-mp3/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-mp3/trunk/
+Homepage: http://www.muempf.de/
+
+Package: vdr-plugin-mp3
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, eject
+Suggests: mjpegtools (>=1:1.8.0), netpbm
+Description: MP3 playback plugin for VDR
+ This plugin for VDR allows to play back mp3's, ogg-files and 
+ audio-cds.
+
+Package: vdr-plugin-mplayer
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, eject (>=2.0.3-1), mplayer
+Description: MPlayer playback plugin for VDR
+ This plugin for VDR allows to play back any video format supported
+ by MPLayer.

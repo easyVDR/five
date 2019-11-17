@@ -1,0 +1,47 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+#include /usr/share/cdbs/1/rules/dpatch.mk
+
+DEB_INSTALL_CHANGELOGS_ALL = HISTORY
+
+MAKE_OPTIONS = VDRDIR=/usr/include/vdr LIBDIR=. LOCALEDIR=locale \
+               WITH_OSS_OUTPUT=1
+
+common-build-arch::
+	$(MAKE) all $(MAKE_OPTIONS)
+
+clean::
+	$(MAKE) -o .dependencies clean $(MAKE_OPTIONS)
+	rm -f libvdr-*.so.*
+	rm -rf locale
+
+common-binary-predeb-arch::
+	sh /usr/share/vdr-dev/dependencies.sh
+
+install/vdr-plugin-mp3::
+	install -m 755 $(CURDIR)/debian/mount.sh \
+	  $(CURDIR)/debian/vdr-plugin-mp3/usr/share/vdr-plugin-mp3/mount
+
+	install -m 755 $(CURDIR)/examples/image_convert.sh.example \
+	  $(CURDIR)/debian/vdr-plugin-mp3/usr/share/vdr-plugin-mp3/image_convert
+
+	cp $(CURDIR)/examples/mp3sources.conf.example \
+	  $(CURDIR)/debian/vdr-plugin-mp3/etc/vdr/plugins/mp3sources.conf
+
+	tar -c -f - locale/*/*/vdr-mp3.mo | \
+	  tar -x -f - -C debian/vdr-plugin-mp3/usr/share
+
+install/vdr-plugin-mplayer::
+	install -m 755 $(CURDIR)/debian/mount.sh \
+	  $(CURDIR)/debian/vdr-plugin-mplayer/usr/share/vdr-plugin-mplayer/mount
+
+	install -m 755 $(CURDIR)/debian/mplayer.sh \
+	  $(CURDIR)/debian/vdr-plugin-mplayer/usr/share/vdr-plugin-mplayer/mplayer
+	  
+	install -m 755 $(CURDIR)/debian/ff_mplayer.sh \
+	  $(CURDIR)/debian/vdr-plugin-mplayer/usr/share/vdr-plugin-mplayer/ff_mplayer	  
+
+	tar -c -f - locale/*/*/vdr-mplayer.mo | \
+	  tar -x -f - -C debian/vdr-plugin-mplayer/usr/share
+

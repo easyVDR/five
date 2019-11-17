@@ -1,0 +1,25 @@
+Source: vdr-plugin-mlist
+Section: video
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8.0.0), cdbs, vdr-dev (>= 1.7.36), gettext, pkg-config
+Standards-Version: 3.9.4
+Homepage: http://www.joachim-wilke.de/vdr-mlist.htm
+
+
+Package: vdr-plugin-mlist
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin to display the message history
+ This plugin displays a list of all shown OSD messages since VDR start up.
+
+ 
+Package: vdr-plugin-mlist-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-mlist (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-mlist
+ .
+ This package contains only the debugging symbols for vdr-plugin-mlist

@@ -1,0 +1,15 @@
+Index: vdr-plugin-softhddevice-0.5.2.git.20130303.1729/Makefile
+===================================================================
+--- vdr-plugin-softhddevice-0.5.2.git.20130303.1729.orig/Makefile	2013-03-11 16:32:00.000000000 +0100
++++ vdr-plugin-softhddevice-0.5.2.git.20130303.1729/Makefile	2013-03-12 11:40:16.893647421 +0100
+@@ -32,8 +32,8 @@
+ #CONFIG += -DHAVE_PTHREAD_NAME		# supports new pthread_setname_np
+ #CONFIG += -DNO_TS_AUDIO		# disable ts audio parser
+ #CONFIG += -DUSE_TS_VIDEO		# build new ts video parser
+-#CONFIG += -DUSE_MPEG_COMPLETE		# support only complete mpeg packets
+-#CONFIG += -DUSE_VDR_SPU		# use VDR SPU decoder.
++CONFIG += -DUSE_MPEG_COMPLETE		# support only complete mpeg packets
++CONFIG += -DUSE_VDR_SPU		# use VDR SPU decoder.
+ 
+ ifeq ($(ALSA),1)
+ CONFIG += -DUSE_ALSA

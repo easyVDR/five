@@ -1,0 +1,20 @@
+#--------------------------------------------------------------------------------------------------------------------------------   : echo
+#   UPDATE WEBSTREAMS
+#--------------------------------------------------------------------------------------------------------------------------------   : echo
+---- Top Streams ---------------------------------------------------------------------------- : echo
+  * Genre Top 10 *?	  	: echo "/VDR/bin/shout2vdr.sh 'TopTen'" | at now;
+---- Electronic  ---------------------------------------------------------------------------- : echo
+  * Genre Dance *?	  	: echo "/VDR/bin/shout2vdr.sh 'Disco'" | at now;
+  * Genre Club *?	  	: echo "/VDR/bin/shout2vdr.sh 'Club'" | at now;
+  * Genre House *?	  	: echo "/VDR/bin/shout2vdr.sh 'House'" | at now;
+  * Genre Trance *?	  	: echo "/VDR/bin/shout2vdr.sh 'Trance'" | at now;
+  * Genre Techno *?	  	: echo "/VDR/bin/shout2vdr.sh 'Techno'" | at now;
+---- Pop/Rock    ---------------------------------------------------------------------------- : echo
+  * Genre Top 40 *?	  	: echo "/VDR/bin/shout2vdr.sh 'Top 40'" | at now;
+  * Genre Metal Rock *?	  	: echo "/VDR/bin/shout2vdr.sh 'Metal'" | at now;
+  * Genre Rock *?	  	: echo "/VDR/bin/shout2vdr.sh 'Rock'" | at now;
+  * Genre Pop *?	  	: echo "/VDR/bin/shout2vdr.sh 'Pop'" | at now;
+  * Genre 80s *?	  	: echo "/VDR/bin/shout2vdr.sh '80s'" | at now;
+  * Genre Oldies *?	  	: echo "/VDR/bin/shout2vdr.sh 'Oldies'" | at now;
+  * Genre Classic Rock/Pop *?   : echo "/VDR/bin/shout2vdr.sh 'Classic'" | at now;
+--------------------------------------------------------------------------------------------- : echo

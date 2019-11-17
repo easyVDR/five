@@ -1,0 +1,15 @@
+--- a/player-mp3.c
++++ b/player-mp3.c
+@@ -1727,10 +1727,10 @@
+       int channels=2;
+       CHECK(ioctl(fd,SNDCTL_DSP_CHANNELS,&channels));
+       if(channels==2) {
+-        int real=sr;
++        int real = (int) sr;
+         CHECK(ioctl(fd,SNDCTL_DSP_SPEED,&real));
+         d(printf("music: oss: DSP samplerate now %d\n",real))
+-        if(abs(real-sr)<sr/50) {
++        if((unsigned int)std::abs(real-(int)sr)<sr/50) {
+           outSr=sr;
+           d(printf("music: oss: DSP reset done\n"))
+           return true;

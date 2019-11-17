@@ -1,0 +1,35 @@
+Index: vdr-plugin-mcli-0.9.2+git20151117/device.c
+===================================================================
+--- vdr-plugin-mcli-0.9.2+git20151117.orig/device.c	2017-12-06 16:03:25.067836918 +0100
++++ vdr-plugin-mcli-0.9.2+git20151117/device.c	2017-12-06 16:03:25.055836858 +0100
+@@ -637,7 +637,7 @@
+ 	case FE_DVBS2:
+ 	case FE_QPSK:{		// DVB-S
+ 
+-			unsigned int frequency = Channel->Frequency ();
++			int frequency = Channel->Frequency ();
+ 
+ #if VDRVERSNUM < 10714
+ 			fe_sec_voltage_t volt = (Channel->Polarization () == 'v' || Channel->Polarization () == 'V' || Channel->Polarization () == 'r' || Channel->Polarization () == 'R') ? SEC_VOLTAGE_13 : SEC_VOLTAGE_18;
+@@ -645,7 +645,7 @@
+ 			fe_sec_voltage_t volt = (dtp.Polarization () == 'v' || dtp.Polarization () == 'V' || dtp.Polarization () == 'r' || dtp.Polarization () == 'R') ? SEC_VOLTAGE_13 : SEC_VOLTAGE_18;
+ #endif		
+ 			m_sec.voltage = volt;
+-			frequency =::abs (frequency);	// Allow for C-band, where the frequency is less than the LOF
++			frequency = std::abs (frequency);	// Allow for C-band, where the frequency is less than the LOF
+ 			m_fep.frequency = frequency * 1000UL;
+ #if VDRVERSNUM < 10714			
+ 			m_fep.inversion = fe_spectral_inversion_t (Channel->Inversion ());
+Index: vdr-plugin-mcli-0.9.2+git20151117/filter.c
+===================================================================
+--- vdr-plugin-mcli-0.9.2+git20151117.orig/filter.c	2017-12-06 16:03:25.067836918 +0100
++++ vdr-plugin-mcli-0.9.2+git20151117/filter.c	2017-12-06 16:03:25.063836898 +0100
+@@ -276,7 +276,7 @@
+ 	cMcliFilter *f = new cMcliFilter (Pid, Tid, Mask);
+ 	int fh = f->ReadPipe ();
+ 
+-	Lock ();
++	cThread::Lock ();
+ 	Add (f);
+ 	Unlock ();
+ 

@@ -1,0 +1,11 @@
+--- a/Makefile
++++ b/Makefile
+@@ -18,7 +18,7 @@
+ LIBCDIO ?= $(shell pkg-config --exists libcdio && echo 1)
+ LIBMOUNT ?= $(shell pkg-config --exists mount && echo 1)
+ 
+-ifneq ($(LIBMPV),1)
++ifeq ($(LIBMPV),1)
+ CONFIG += -DUSE_LIBMPV
+ LIBS += $(shell pkg-config --libs mpv)
+ endif

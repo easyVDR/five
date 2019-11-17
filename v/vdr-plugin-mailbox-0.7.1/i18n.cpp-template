@@ -1,0 +1,26 @@
+//-----------------------------------------------------------------------------
+/*
+ * Description: This file contains the internationalization for the plugin
+ *
+ * See the file README in the main directory for a description of
+ * this software copyright information and how to reach the author.
+ *
+ * Author: alex
+ * Date:   15.11.2003
+ *
+ * Last modfied:
+ *   $Author: alex $
+ *   $Date: 2007-10-26 16:33:44 +0200 (Fr, 26 Okt 2007) $
+ *   $Revision: 1.24 $
+ */
+//-----------------------------------------------------------------------------
+#include "i18n.h"
+#include <vdr/config.h>
+
+#if VDRVERSNUM < 10507
+const tI18nPhrase MailboxPhrases[] = {
+// START I18N
+// END I18N
+  { NULL }
+};
+#endif

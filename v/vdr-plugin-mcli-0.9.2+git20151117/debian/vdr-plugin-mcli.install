@@ -1,0 +1,6 @@
+libvdr-mcli.so   		usr/lib/vdr/plugins/
+mcast/client/libmcli.so 	usr/lib/
+mcast/client/libmcli.a      usr/lib/
+debian/plugin.mcli.conf		etc/vdr/plugins/
+po/de_DE.mo                   usr/share/locale/de_DE/LC_MESSAGES/
+po/nl_NL.mo                    usr/share/locale/nl_NL/LC_MESSAGES/

@@ -1,0 +1,335 @@
+<value> .Description.                   =MORONIMO_HD_GREY
+#
+
+## GENERAL
+<value> .OsdWidth.			=1920
+<value> .OsdHeight.			=1080
+<value> .OsdTop.			=0
+<value> .OsdLeft.			=0
+<value> .OsdAlpha.			=175
+<value> .OsdBgrd.			=MusicHD14.png
+<value> .LocalCover.			=music-default.png
+<value> .StreamCover.			=music-mixer.png
+<value> .TrackCount.			=14
+<value> .FontHeight.			=50
+<value> .SmallFontHeight.		=42
+
+
+
+
+## TRACKLIST_TAB
+<value> .Tracklist_tab1.		=6
+<value> .Tracklist_tab2.		=9
+<value> .Tracklist_tab3.		=1
+<value> .Tracklist_tab4.		=29
+#
+## SEARCHLIST_TAB
+<value> .Searchlist_tab1.		=3
+<value> .Searchlist_tab2.		=7
+<value> .Searchlist_tab3.		=8
+<value> .Searchlist_tab4.		=26
+
+
+
+## OBJECTS && PIXMAPS
+<value> .CoverOnly_Layer.		=7
+<value> .CoverOnly_Left.		=0
+<value> .CoverOnly_Top.			=0
+<value> .CoverOnly_Width.		=1920
+<value> .CoverOnly_Height.		=1080
+
+BgrdPixmap
+<value> .Bgrd_Layer.			=0
+<value> .Bgrd_Left.				=0
+<value> .Bgrd_Top.				=0
+<value> .Bgrd_Width.			=1920
+<value> .Bgrd_Height.			=1080
+
+PlaystatusPixmap
+<value> .Playstatus_Layer.		=1
+<value> .Playstatus_Left.		=35
+<value> .Playstatus_Top.		=80
+<value> .Playstatus_Width.		=520
+<value> .Playstatus_Height.		=32
+
+CoverPixmap
+<value> .Cover_Layer.			=2
+<value> .Cover_Left.			=93
+<value> .Cover_Top.			=132
+<value> .Cover_Width.			=400
+<value> .Cover_Height.			=400
+
+RatingPixmap
+<value> .Rating_Layer.			=3
+<value> .Rating_Left.			=200
+<value> .Rating_Top.			=550
+<value> .Rating_Width.			=210
+<value> .Rating_Height.			=42
+<value> .Rating_ImageWidth.		=197
+<value> .Rating_ImageHeight.	=37
+
+
+AlbumPixmap
+<value> .Album_Layer.			=3
+<value> .Album_Left.			=35
+<value> .Album_Top.			=630
+<value> .Album_Width.			=520
+<value> .Album_Height.			=32
+
+GenrePixmap
+<value> .Genre_Layer.			=3
+<value> .Genre_Left.			=35
+<value> .Genre_Top.			=670
+<value> .Genre_Width.			=520
+<value> .Genre_Height.			=32
+
+YearPixmap
+<value> .Year_Layer.			=3
+<value> .Year_Left.			=35
+<value> .Year_Top.			=710
+<value> .Year_Width.			=520
+<value> .Year_Height.			=32
+
+ModePixmap
+<value> .Mode_Layer.			=3
+<value> .Mode_Left.			=35
+<value> .Mode_Top.			=760
+<value> .Mode_Width.			=520
+<value> .Mode_Height.			=32
+<value> .Mode_Align.			=1
+
+NumberPixmap
+<value> .Number_Layer.			=3
+<value> .Number_Left.			=35
+<value> .Number_Top.			=790
+<value> .Number_Width.			=520
+<value> .Number_Height.			=32
+<value> .Number_Align.			=1
+
+ProgressPixmap/Time
+<value> .Progress_Layer.			=6
+<value> .Progress_Left.				=35
+<value> .Progress_Top.				=820
+<value> .Progress_Width.			=300
+<value> .Progress_Height.			=32
+<value> .Timex.					=0
+<value> .Timey.					=0
+<value> .Timew.					=300
+<value> .Totalx.				=0
+<value> .Totaly.				=0
+<value> .Totalw.				=0
+
+VolumeBGPixmap
+<value> .VolumeBG_Layer.		=1
+<value> .VolumeBG_Left.			=86
+<value> .VolumeBG_Top.			=1033
+<value> .VolumeBG_Width.		=300
+<value> .VolumeBG_Height.		=24
+
+## If Slider =1 then subtract half slider width from
+## ProgressFG_Left ,so the Slider start and end on
+## correctly positions.
+## Add the other half twice to ProgressFG_Width
+## Keep care that the images have exactly the same
+## height and width
+VolumeFGPixmap
+<value> .VolumeFG_Layer.		=3
+<value> .VolumeFG_Left.			=81
+<value> .VolumeFG_Top.			=1033
+<value> .VolumeFG_Width.		=310
+<value> .VolumeFG_Height.		=24
+<value> .VolumeFG_Slider.		=1
+<value> .VolumeFG_Scale.		=285
+
+VolumePixmap
+<value> .Volume_Layer.			=6
+<value> .Volume_Left.			=35
+<value> .Volume_Top.			=1030
+<value> .Volume_Width.			=29
+<value> .Volume_Height.			=29
+
+IconsPixmap
+<value> .Symbol_Layer.			=3
+<value> .Symbol_Left.			=35
+<value> .Symbol_Top.			=880
+<value> .Symbol_Width.			=378
+<value> .Symbol_Height.			=54
+<value> .symbol_width.			=54
+<value> .symbol_height.			=54
+<value> .shufflex.      	        =0
+<value> .shuffley.      	        =0
+<value> .loopx.         	        =54
+<value> .loopy.         	        =0
+<value> .recordx.       	        =108
+<value> .recordy.       	        =0
+<value> .lyricsx.       	        =162
+<value> .lyricsy.       	        =0
+<value> .copyx.         	        =216
+<value> .copyy.         	        =0
+<value> .shutdownx.     	        =270
+<value> .shutdowny.     	        =0
+<value> .timerx.        	        =324
+<value> .timery.        	        =0
+
+TracksPixmap
+<value> .Tracks_Layer.				=4
+<value> .Tracks_Left.				=642
+<value> .Tracks_Top.				=148
+<value> .Tracks_Height.				=715
+<value> .Tracks_Width.				=1070
+<value> .Tracks_TextWidth.			=1060
+<value> .Tracks_TextHeight.			=40
+<value> .Tracks_TextPuffer.			=2
+
+TracksRatingPixmap
+<value> .TracksRating_Layer.		=4
+<value> .TracksRating_Left.			=1756
+<value> .TracksRating_Top.			=156
+<value> .TracksRating_Height.		=715
+<value> .TracksRating_Width.		=120
+<value> .TracksRating_ImageWidth.	=115
+<value> .TracksRating_ImageHeight.	=22
+<value> .TracksRating_TextPuffer.	=20
+
+ArtistPixmap
+<value> .Artist_Layer.				=4
+<value> .Artist_Left.				=620
+<value> .Artist_Top.				=815
+<value> .Artist_Width.				=1260
+<value> .Artist_Height.				=54
+
+TitlePixmap
+<value> .Title_Layer.				=5
+<value> .Title_Left.				=620
+<value> .Title_Top.				=880
+<value> .Title_Width.				=1260
+<value> .Title_Height.				=54
+<value> .Title_Align.				=1
+
+ProgressBGPixmap
+<value> .ProgressBG_Layer.			=1
+<value> .ProgressBG_Left.			=482
+<value> .ProgressBG_Top.			=1033
+<value> .ProgressBG_Width.			=300
+<value> .ProgressBG_Height.			=24
+
+
+## If Slider =1 then subtract half slider width from
+## ProgressFG_Left ,so the Slider start and end on
+## correctly positions.
+## Add the other half twice to ProgressFG_Width
+## Keep care that the images have exactly the same
+## height and width
+ProgressFGPixmap
+<value> .ProgressFG_Layer.			=3
+<value> .ProgressFG_Left.			=477
+<value> .ProgressFG_Top.			=1033
+<value> .ProgressFG_Width.			=310
+<value> .ProgressFG_Height.			=24
+<value> .ProgressFG_Slider.			=1
+<value> .ProgressFG_Scale.			=285
+
+
+ButtonPixmap
+## taCenter = 0 , taLeft = 1 , taRight = 2
+<value> .Button_Layer.				=6
+<value> .Button_Left.				=936
+<value> .Button_Top.				=1004
+<value> .Button_Width.				=917
+<value> .Button_Height.				=40
+<value> .Button_Align.				=0
+<value> .ButtonText1posx.	       =0
+<value> .ButtonText2posx.	       =242
+<value> .ButtonText3posx.	       =480
+<value> .ButtonText4posx.	       =724
+<value> .ButtonText1posy.	       =2
+<value> .ButtonText2posy.	       =2
+<value> .ButtonText3posy.	       =2
+<value> .ButtonText4posy.	       =2
+<value> .Button1w.       	       =194
+<value> .Button2w.       	       =194
+<value> .Button3w.       	       =194
+<value> .Button4w.       	       =194
+
+
+
+## COLORS
+## LINE "MUST" END WITH THE COLORVALUE AND WITHOUT SPACES
+## 0xAARRGGBB
+#
+<#value> .clrTextBG.			=0xFFee4c4c
+<value> .clrTextBG.			=0x00000000
+#
+## ARTIST, RATING:
+<value> .clrArtist.                 =0xFFFFFFFF
+<value> .clrRating.                 =0xFFffab69
+<value> .clrRatingBG.               =0xFF505050
+#
+## PLAYSTATUS:
+<value> .clrPlayStatus.             =0xFF707070
+<value> .clrInfo.                   =0xFF0F0F0F
+<value> .clrProgressbarBG.          =0xFF16223B
+<value> .clrProgressbarFG.          =0xFF133F79
+#
+## TRACKLIST:
+<value> .clrListTitle.              =0xFF0F0F0F
+<value> .clrList.                   =0xFFCFCFCF
+<value> .clrListRating.             =0xFFF2A00C
+<value> .clrListRatingBG.           =0xFF505050
+#
+## SYMBOLS:
+<value> .clrSymbol.                 =0xFF707070
+<value> .clrSymbolActive.           =0xFFff4100
+<value> .clrRecordingActive.        =0xFFB90808
+<value> .clrVolumeActive.           =0xFF707070
+<value> .clrVolumeProgressbarBG.    =0xFF303030
+<value> .clrVolumeProgressbarFG.    =0xFF5a6163
+#
+## STATUSBAR:
+<value> .clrStatusRed.              =0xFFEACCCC
+<value> .clrStatusGreen.            =0xFF55FF33
+<value> .clrStatusYellow.           =0xFFFFD064
+<value> .clrStatusBlue.             =0xFF26DEFF
+
+
+
+## FONTS
+<value> .FONTSTATUS.		=0
+<value> .FONTSTATUSNAME.	=Tahoma Symbol Cap:Bold
+<value> .FONTSTATUSSIZE.	=32
+
+<value> .FONTRATING.		=0
+<value> .FONTRATINGNAME.	=VDRMusicSymbols:Regular
+<value> .FONTRATINGSIZE.	=44
+
+<value> .FONTGENRE.		=0
+<value> .FONTGENRENAME.		=Tahoma Symbol Cap:Bold
+<value> .FONTGENRESIZE.		=28
+
+<value> .FONTINFO.		=0
+<value> .FONTINFONAME.		=VDRSymbols Sans:Book
+<value> .FONTINFOSIZE.		=22
+
+<value> .FONTSYMBOL.		=0
+<value> .FONTSYMBOLNAME.	=VDRMusicSymbols:Regular
+<value> .FONTSYMBOLSIZE.	=44
+
+<value> .FONTLIST.              =0
+<value> .FONTLISTNAME.		=DejaVu Sans:Bold
+<value> .FONTLISTSIZE.		=22
+
+<value> .FONTLISTRATING.	=0
+<value> .FONTLISTRATINGNAME.	=VDRMusicSymbols:Regular
+<value> .FONTLISTRATINGSIZE.	=22
+
+<value> .FONTINTERPRET.		=0
+<value> .FONTINTERPRETNAME.	=Arial Black:Regular
+<value> .FONTINTERPRETSIZE.	=44
+
+<value> .FONTTITLE.		=0
+<value> .FONTTITLENAME.		=Arial Black:Regular
+<value> .FONTTITLESIZE.		=40
+
+<value> .FONTBUTTON.		=0
+<value> .FONTBUTTONNAME.	=VDRSymbols Sans:Book
+<value> .FONTBUTTONSIZE.	=22

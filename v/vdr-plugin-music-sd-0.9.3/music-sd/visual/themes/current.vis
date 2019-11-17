@@ -1,0 +1,27 @@
+Description: 16-Band-stereo
+# Example:
+# 4		Visualization : ID
+# 2		ChannelsSA    : 1=mono 2=stereo
+# 30		BandsSA       : How much bands per channel
+# FF000000	ClrBarColor   : color of bar
+# e2_SAHorz.png	Coverpicture  : background
+#
+#
+<value> .ID. 		  =3
+<value> .CHANNEL. 	  =2
+<value>	.BARS.		  =1
+<value>	.CHANNEL1LEFT.	  =38
+<value>	.CHANNEL2LEFT.	  =98
+<value>	.BARWIDTH.	  =4
+<value> .COLOR.		  =0xFF000000
+<value> .BACKGROUND.	  =e2_SAVol2.png
+#
+#
+<value> .HD_ID.		  =3
+<value> .HD_CHANNEL. 	  =2
+<value>	.HD_BARS.	  =1
+<value>	.HD_CHANNEL1LEFT. =96
+<value>	.HD_CHANNEL2LEFT. =248
+<value>	.HD_BARWIDTH.	  =70
+<value> .HD_COLOR.	  =0xFF000000
+<value> .HD_BACKGROUND.	  =e2_SAVol2.png

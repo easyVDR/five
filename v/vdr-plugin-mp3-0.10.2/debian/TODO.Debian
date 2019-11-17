@@ -1,0 +1,2 @@
+* Make a more Debian-like mp3sources.conf (maybe pointing to /media/cdrom and 
+  /media/usb - but what about cdfs?)

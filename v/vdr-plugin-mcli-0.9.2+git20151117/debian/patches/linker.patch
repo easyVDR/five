@@ -1,0 +1,86 @@
+Index: vdr-plugin-mcli-0.9.2+git20151117/mcast/client/Makefile
+===================================================================
+--- vdr-plugin-mcli-0.9.2+git20151117.orig/mcast/client/Makefile	2015-11-20 00:54:46.431441456 +0100
++++ vdr-plugin-mcli-0.9.2+git20151117/mcast/client/Makefile	2015-11-20 00:54:46.423441416 +0100
+@@ -51,7 +51,7 @@
+ endif
+ 
+ ifdef API_SHM
+-LDFLAGS:= $(LDFLAGS) -lrt
++LDLIBS:= $(LDLIBS) -lrt
+ CFLAGS:= $(CFLAGS) -DAPI_SHM
+ endif
+ ifdef API_SOCK
+Index: vdr-plugin-mcli-0.9.2+git20151117/mcast/tool/Makefile
+===================================================================
+--- vdr-plugin-mcli-0.9.2+git20151117.orig/mcast/tool/Makefile	2015-11-20 00:54:46.431441456 +0100
++++ vdr-plugin-mcli-0.9.2+git20151117/mcast/tool/Makefile	2015-11-20 00:54:46.423441416 +0100
+@@ -34,10 +34,10 @@
+ 
+ INCLUDES += $(XML_INC) -I../dvbloop -I../common/ -I../client
+ 
+-LDFLAGS:=$(XML_LIB) -pthread
++LDLIBS:=$(XML_LIB) -lpthread
+ 
+ ifdef API_SHM
+-LDFLAGS:= $(LDFLAGS) -lrt
++LDLIBS:= $(LDLIBS) -lrt
+ CFLAGS:= $(CFLAGS) -DAPI_SHM
+ endif
+ 
+Index: vdr-plugin-mcli-0.9.2+git20151117/Makefile
+===================================================================
+--- vdr-plugin-mcli-0.9.2+git20151117.orig/Makefile	2015-11-20 00:54:46.431441456 +0100
++++ vdr-plugin-mcli-0.9.2+git20151117/Makefile	2015-11-20 00:54:46.423441416 +0100
+@@ -58,6 +58,18 @@
+ 
+ INCLUDES += -I$(VDRDIR)/include -I. $(XML_INC)
+ 
++ifeq ($(APPLE_DARWIN), 1)
++INCLUDES += -I/sw/include -Imcast/common/darwin/include/
++DEFINES += -DAPPLE
++ifdef MCLI_SHARED
++DEFINES += -Imcast/common/darwin/include/
++endif
++endif
++
++ifdef REELVDR
++  DEFINES += -DREELVDR 
++endif
++
+ DEFINES += -D_GNU_SOURCE -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
+ # -DDEVICE_ATTRIBUTES
+ 
+@@ -86,14 +98,14 @@
+ ### Implicit rules:
+ 
+ %.o: %.c
+-	$(CXX) $(CXXFLAGS) -c $(DEFINES) $(INCLUDES) -o $@ $<
++	$(CXX) $(CXXFLAGS) -c $(DEFINES) $(INCLUDES) $<
+ 
+ ### Dependencies:
+ 
+ MAKEDEP = $(CXX) -MM -MG
+ DEPFILE = .dependencies
+ $(DEPFILE): Makefile
+-	@$(MAKEDEP) $(CXXFLAGS) $(DEFINES) $(INCLUDES) $(OBJS:%.o=%.c) > $@
++	@$(MAKEDEP) $(DEFINES) $(INCLUDES) $(OBJS:%.o=%.c) > $@
+ 
+ -include $(DEPFILE)
+ 
+@@ -133,10 +145,12 @@
+ 	@cp --remove-destination $@ $(LIBDIR)/$@.$(APIVERSION)
+ endif
+ 
+-install-lib: $(SOFILE)
+-	install -D $^ $(DESTDIR)$(LIBDIR)/$^.$(APIVERSION)
++install:
++ifdef MCLI_SHARED
++	install -m 755 -D mcast/client/libmcli.so /usr/lib
++endif
++	install -m 755 -D libvdr-$(PLUGIN).so $(PLUGINLIBDIR)/libvdr-$(PLUGIN).so.$(APIVERSION)
+ 
+-install: install-lib
+ 
+ dist: clean
+ 	@-rm -rf $(TMPDIR)/$(ARCHIVE)

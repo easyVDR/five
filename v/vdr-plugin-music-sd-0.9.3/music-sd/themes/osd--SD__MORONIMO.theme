@@ -1,0 +1,284 @@
+<description>OSD_MORONIMO-FF_SD
+<description> Good for unmodded FF-Card and PAL resolution
+##
+##
+##
+## LINE "MUST" END WITH THE COLORVALUE AND WITHOUT SPACES
+## 0xAARRGGBB
+#
+#
+## BACKGROUND
+<value> .clrBG.                 =0xFF26303A
+#
+## TOP: 2 colors 
+<value> .clrTopBG.              =0xFF1C2128
+<value> .clrTopFG.              =0xFFA2F828
+#
+## COVER: 2 colors
+<value> .clrCoverBG.            =0xFF0C0C0C
+<value> .clrCoverBar.           =0xFF0C0C0C
+#
+## ARTIST,RATING : 2 colors
+<value> .clrArtistBG.           =0xFF0C0C0C
+<value> .clrArtistFG.           =0xFFCE7B00
+<value> .clrRatingFG.           =0xFFCE7B00
+#
+## PLAYSTATUS : 2 colors
+<value> .clrPlayStatusBG.       =0xFF0C0C0C
+<value> .clrPlayStatusFG.       =0xFF9BBAD7
+<value> .clrInfoBG.             =0xFF0C0C0C
+<value> .clrInfoFG.             =0xFF9BBAD7
+<value> .clrProgressbarBG.      =0xFF26303A
+<value> .clrProgressbarFG.      =0xFFA2F828
+#
+## TRACKLIST : 2 colors
+<value> .clrListTitle.          =0xFFF2A00C
+<value> .clrListBG.             =0xFF0C0C0C
+<value> .clrListFG.             =0xFF9BBAD7
+<value> .clrListRating.         =0xFFF2A00C
+#
+## SYMBOLS : 2 colors
+<value> .clrSymbolBG.           =0xFF0C0C0C
+<value> .clrSymbolFG.           =0xFF26303A
+<value> .clrSymbolActive.       =0xFFF2A00C
+<value> .clrRecordingActive.    =0xFFFB2F2F
+<value> .clrVolumeActive.       =0xFFF2A00C
+<value> .clrVolumeProgressbarBG.=0xFF26303A
+<value> .clrVolumeProgressbarFG.=0xFFF2A00C
+#
+## STATUSBAR : 6 colors
+<value> .clrStatusBG.           =0xFF1C2128
+<value> .clrStatusFG1.          =0xFFCE7B00
+<value> .clrStatusFG2.          =0xFFCE7B00
+<value> .clrStatusFG3.          =0xFFCE7B00
+<value> .clrStatusFG4.          =0xFFCE7B00
+<value> .clrStatusRed.          =0xFFC00000
+<value> .clrStatusGreen.        =0xFF00FF00
+<value> .clrStatusYellow.       =0xFFE0E222
+<value> .clrStatusBlue.         =0xFF3B96FD
+#
+#
+## GENERAL
+<value> .isOSDTheme.            =1
+<value> .isHDTheme.             =0
+<value> .OSDAlpha.              =255
+<value> .roundedCorner.         =1
+<value> .drawBars.              =1
+<value> .drawButtons.           =1
+<value> .ff_compat.             =1
+<value> .isMpeg.                =0
+<value> .symrect.               =0
+<value> .localbackground.       =/themes/mpegs/music-AQUA-local.mpg
+<value> .streambackground.      =/themes/mpegs/music-AQUA-local.mpg
+<value> .localcover.            =/music-headphone.png
+<value> .streamcover.           =/music-mixer.png
+<value> .osdbackground.         =/themes/osd/moronimo-ff_low.xpm
+<value> .osdbackgroundcolor.    =2
+<value> .symbolxy.              =24
+<value> .trackcount.            =3
+<value> .osdheight.             =503
+<value> .osdwidth.              =616
+<value> .osdtop.                =48
+<value> .osdleft.               =54
+<value> .fontheight.            =26
+<value> .smallfontheight.       =22
+#
+#
+## AREAS
+<value> .OneAreaDepth.          =8
+<value> .topdepth.              =2
+<value> .coverdepth.            =4
+<value> .trackinfodepth.        =2
+<value> .statusdepth.           =2
+<value> .tracksdepth.           =2
+<value> .symboldepth.           =2
+<value> .buttondepth.           =4
+#
+#
+## AREAS size
+<value> .area_toph.             =52
+<value> .area_coverw.           =170
+<value> .area_coverh.           =196
+<value> .area_infoh.            =284
+<value> .area_listh.            =407
+<value> .area_symbolh.          =476
+#
+<value> .UseOneArea.            =1
+#
+## POSITIONS
+<value> .coverbgx.              =26
+<value> .coverbgy.              =53
+<value> .coverbgx2.             =167
+<value> .coverbgy2.             =196
+<value> .coverelipser.          =11
+#
+<value> .coverx.                =38
+<value> .covery.                =65
+<value> .coverw.                =120
+<value> .coverh.                =120
+<value> .covercolor.            =14
+#
+<value> .bigcoverx.             =38
+<value> .bigcovery.             =40
+<value> .bigcoverw.             =640
+<value> .bigcoverh.             =514
+<value> .bigcovercolor.         =252
+<value> .bigcoverdepth.         =8
+#
+##//artistfield
+<value> .artistx.               =193
+<value> .artisty.               =59
+<value> .artistw.               =371
+<value> .albumx.                =193
+<value> .albumy.                =85
+<value> .albumw.                =371
+<value> .genrex.                =193
+<value> .genrey.                =111
+<value> .genrew.                =371
+<value> .yearx.                 =193
+<value> .yeary.                 =137
+<value> .yearw.                 =371
+<value> .ratingx.               =193
+<value> .ratingy.               =167
+<value> .ratingw.               =371
+#
+##//statusfield
+<value> .statusx.               =31
+<value> .statusy.               =232
+<value> .statusw.               =136
+#
+##//infofield
+<value> .modex.                 =193
+<value> .modey.                 =212
+<value> .modew.                 =375
+<value> .numberx.               =193
+<value> .numbery.               =232
+<value> .numberw.               =375
+<value> .timex.                 =193
+<value> .timey.                 =254
+<value> .timew.                 =80
+<value> .progressx.             =273
+<value> .progressy.             =263
+<value> .progressh.             =6
+<value> .progressw.             =210
+<value> .totalx.                =482
+<value> .totaly.                =254
+<value> .totalw.                =80
+#
+##//tracklist
+<value> .titlex.                =36
+<value> .titley.                =308
+<value> .titlew.                =528
+<value> .tracksx.               =36
+<value> .tracksy.               =334
+<value> .tracksw.               =430
+
+<value> .ratesmx.               =465
+<value> .ratesmy.               =334
+<value> .ratesmw.               =0
+#
+##//symbols
+<value> .shufflex.              =36
+<value> .shuffley.              =427
+<value> .loopx.                 =72
+<value> .loopy.                 =427
+<value> .recordx.               =108
+<value> .recordy.               =427
+<value> .lyricsx.               =144
+<value> .lyricsy.               =427
+<value> .copyx.                 =180
+<value> .copyy.                 =427
+<value> .shutdownx.             =216
+<value> .shutdowny.             =427
+<value> .timerx.                =252
+<value> .timery.                =427
+<value> .mutex.                 =430
+<value> .mutey.                 =427
+<value> .volbarx.               =464
+<value> .volbary.               =437
+<value> .volbarw.               =100
+<value> .volbarh.               =6
+#
+##//buttons
+## taCenter = 0 , taLeft = 1 , taRight = 2
+<value> .buttontop.             =477
+<value> .buttonalign.           =1
+<value> .buttontext1posx.       =50
+<value> .buttontext2posx.       =200
+<value> .buttontext3posx.       =350
+<value> .buttontext4posx.       =500
+<value> .buttontext1posy.       =477
+<value> .buttontext2posy.       =477
+<value> .buttontext3posy.       =477
+<value> .buttontext4posy.       =477
+<value> .button1w.              =120
+<value> .button2w.              =100
+<value> .button3w.              =100
+<value> .button4w.              =70
+#
+##//elipse
+<value> .elipseredx.            =30
+<value> .elipseredy.            =485
+<value> .elipsegreenx.          =180
+<value> .elipsegreeny.          =485
+<value> .elipseyellowx.         =330
+<value> .elipseyellowy.         =485
+<value> .elipsebluex.           =480
+<value> .elipsebluey.           =485
+<value> .elipseh.               =12
+#
+##
+<value> .Tracklist_tab1.        =6
+<value> .Tracklist_tab2.        =10
+<value> .Tracklist_tab3.        =1
+<value> .Tracklist_tab4.        =29
+#
+##
+<value> .Searchlist_tab1.       =3
+<value> .Searchlist_tab2.       =7
+<value> .Searchlist_tab3.       =8
+<value> .Searchlist_tab4.       =26
+#
+##
+<value> .Browser_tab1.          =2
+<value> .Browser_tab2.          =3
+<value> .Browser_tab3.          =29
+<value> .Browser_tab4.          =0
+#
+## FONTS
+<value> .FONTBUTTON.            =0
+<value> .FONTBUTTONNAME.        =VDRSymbols Sans:Book
+<value> .FONTBUTTONSIZE.        =14
+
+<value> .FONTGENRE.             =0
+<value> .FONTGENRENAME.         =VDRSymbols Sans:Book
+<value> .FONTGENRESIZE.         =20
+
+<value> .FONTINFO.              =0
+<value> .FONTINFONAME.          =VDRSymbols Sans:Book
+<value> .FONTINFOSIZE.          =18
+
+<value> .FONTINTERPRET.         =0
+<value> .FONTINTERPRETNAME.     =VDRSymbols Sans:Book
+<value> .FONTINTERPRETSIZE.     =24
+
+<value> .FONTLIST.              =0
+<value> .FONTLISTNAME.          =VDRSymbols Sans:Book
+<value> .FONTLISTSIZE.          =18
+
+<value> .FONTSTATUS.            =0
+<value> .FONTSTATUSNAME.        =VDRSymbols Sans:Book
+<value> .FONTSTATUSSIZE.        =18
+
+<value> .FONTSYMBOL.            =0
+<value> .FONTSYMBOLNAME.        =VDRMusicSymbols:Regular
+<value> .FONTSYMBOLSIZE.        =20
+
+<value> .FONTTITLE.             =0
+<value> .FONTTITLENAME.         =VDRSymbols Sans:Book
+<value> .FONTTITLESIZE.         =22
+
+<value> .FONTTOP.               =0
+<value> .FONTTOPNAME.           =VDRSymbols Sans:Book
+<value> .FONTTOPSIZE.           =22
+

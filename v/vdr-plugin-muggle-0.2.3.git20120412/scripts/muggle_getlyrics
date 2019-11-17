@@ -1,0 +1,130 @@
+#!/usr/bin/env python
+# -*- coding: utf-8 -*-
+
+from __future__ import with_statement
+import os, sys, locale, re, codecs
+import filecmp
+from htmlentitydefs import name2codepoint as n2cp
+
+# adjust MAXLINELENGTH to your needs
+MAXLINELENGTH = 50
+
+def writeFile(name,s):
+	"""create directory if needed. Wrap lines without splitting words."""
+	if not os.path.isdir(outdir):
+		os.mkdir(outdir)
+	outname = outdir + '/' + name
+	outfile = open(outname,"w")
+	lines = s.splitlines()
+	for line in lines:
+# xa0 is unicode non breaking space
+		words = re.split(r' |\xa0',line)
+		widx1 = 0
+		while widx1 < len(words):
+			widx2 = len(words) 
+			while widx2 > widx1 + 1 and len(' '.join(words[widx1:widx2])) > MAXLINELENGTH:
+				widx2 -= 1
+			newline = ' '.join(words[widx1:widx2]).rstrip()+'\n'
+			newline = newline.encode(locale.getdefaultlocale()[1])
+			outfile.write(newline)
+			widx1 = widx2		
+	outfile.close
+	
+charset = locale.getdefaultlocale()[1]
+title = sys.argv[1].decode(charset).encode('UTF8')
+artist = sys.argv[2].decode(charset).encode('UTF8')
+outfile = sys.argv[3]
+
+lyricsfile = os.path.splitext(outfile)[0]
+outdir = outfile+'.new'
+
+# add other possible paths here:
+googlFound = False
+for scriptdir in ('/usr/share/apps/amarok/scripts/Googlyrics2', \
+               	'NULL'):
+       	if os.path.isdir(scriptdir+'/sites/'):
+               	sys.path.append(scriptdir + "/lib/")
+               	sys.path.append(scriptdir + "/sites/")
+               	os.chdir(scriptdir)
+               	googlFound = True
+               	break 
+
+if not googlFound:
+	writeFile("Googlyrics2 is not installed\nSee http://quicode.com/googlyircs2")
+	sys.exit(0)
+
+from Googlyrics import *
+
+def substitute_entity(match):
+    ent = match.group(2)
+    if match.group(1) == "#":
+        return unichr(int(ent))
+    else:
+        cp = n2cp.get(ent)
+
+        if cp:
+            return unichr(cp)
+        else:
+            return match.group()
+
+def decode_htmlentities(string):
+    entity_re = re.compile("&(#?)(\d{1,5}|\w{1,8});")
+    return entity_re.subn(substitute_entity, string)[0]
+
+def countFiles():
+	if not os.path.isdir(outdir):
+		return 0
+	return len(os.listdir(outdir))
+
+def load():
+	g = Googlyrics()
+
+	outlyric = g.find_lyrics(title, artist)
+	if len(outlyric) > 0:
+		for idx,item in enumerate(outlyric):
+			l = item.getLyric()
+			if l is None:
+				continue
+			if l.lyrics is None:
+				continue
+			if len(l.lyrics)<3:
+				continue
+			s = l.lyrics
+			s = decode_htmlentities(s)
+#			s = re.sub(r'&#([0-9]*);',lambda cc: unichr(int(cc.group(1))),s)
+# replace lots of apostrophe variants with want we want:
+			s = s.replace(r'\xc2\xb4',r'\x27')
+			s = s.replace(r'\xc3\x82\x27',r'\x27')
+			s = s.replace(r'\xc3\x82',r'\x27')
+			s = s.replace(r'\xc3\xb9',r'\x27')
+			s = s.replace(r'\xe2\x80',r'x99/\x27')
+			s = s.replace(r'\n.*NEW.*ringtones.*\n',r'\n')
+			s = s.replace(r'\n.*---------.*\n',r'\n')
+# in unicode, those two are reserved for
+# private use, but still some sites use them..
+			s = s.replace(r'\xc2\x91',r'\x27')
+			s = s.replace(r'\xc2\x92',r'\x27')
+			writeFile(str(idx)+'-'+l.sitename,s)
+
+# -----------------------------------------------
+# main :
+
+semaphore = outfile+'.loading'
+with open(semaphore,"w") as f:
+	f.write('')
+try:
+	if countFiles() == 0:
+		load()
+	if countFiles() > 0:
+		for item in os.listdir(outdir):
+			itemfile = outdir + '/' + item
+			if os.path.exists(lyricsfile):
+				if filecmp.cmp(lyricsfile,itemfile) == 1:
+					os.remove(itemfile)
+	if countFiles() > 0:
+		os.rename(outdir+'/'+os.listdir(outdir)[0],outfile)
+	if countFiles() == 0 and os.path.exists(outdir):
+		os.rmdir(outdir)
+finally:
+	os.remove(semaphore)
+

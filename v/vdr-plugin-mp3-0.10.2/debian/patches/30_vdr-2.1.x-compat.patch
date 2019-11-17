@@ -1,0 +1,28 @@
+--- a/decoder.c
++++ b/decoder.c
+@@ -632,7 +632,11 @@
+ 
+ char *cInfoCache::CacheFile(void)
+ {
++#if APIVERSNUM > 20101
++  return AddPath(cachedir?cachedir:cVideoDirectory::Name(),CACHEFILENAME);
++#else
+   return AddPath(cachedir?cachedir:VideoDirectory,CACHEFILENAME);
++#endif
+ }
+ 
+ void cInfoCache::Save(bool force)
+--- a/player-mplayer.c
++++ b/player-mplayer.c
+@@ -185,7 +185,11 @@
+     if(MPlayerSetup.ResumeMode==1 || 
+        (access(s,W_OK) && (errno==EACCES || errno==EROFS))) {
+       global=true;
++#if APIVERSNUM > 20101
++      resfile=AddPath(globalResumeDir?globalResumeDir:cVideoDirectory::Name(),GLOBAL_RESUME_FILE);
++#else
+       resfile=AddPath(globalResumeDir?globalResumeDir:VideoDirectory,GLOBAL_RESUME_FILE);
++#endif
+       d(printf("resume: using global file\n"))
+       }
+     else {

@@ -1,0 +1,2 @@
+command/markad                  usr/bin/
+command/logos/*                 var/lib/markad/

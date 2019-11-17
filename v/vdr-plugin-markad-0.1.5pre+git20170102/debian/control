@@ -1,0 +1,34 @@
+Source: vdr-plugin-markad
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.2.0), gettext, cdbs,
+ pkg-config, libavcodec-dev, libavformat-dev
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/list_files/plg-markad
+
+
+Package: vdr-plugin-markad
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, vdr-markad
+Description: Plugin for VDR to mark advertisements in recordings
+ This plugin for the Linux Video Disc Recorder VDR will search for
+ and mark advertisements in VDR recordings.
+
+Package: vdr-plugin-markad-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-avahi4vdr (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-markad
+ .
+ This package contains only the debugging symbols for vdr-plugin-markad 
+
+Package: vdr-markad
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Tool to mark advertisements in VDR recordings
+ This standalone tool provides the same functionality as
+ the Markad plugin for the Linux Video Disc Recorder VDR.
+ It will search for and mark advertisements in VDR recordings.

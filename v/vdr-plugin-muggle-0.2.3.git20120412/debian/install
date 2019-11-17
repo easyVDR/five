@@ -1,0 +1,6 @@
+libvdr-muggle.so.*             usr/lib/vdr/plugins/
+debian/plugin.muggle.conf      etc/vdr/plugins/
+scripts/muggle-image-convert   usr/share/vdr-plugin-muggle/scripts/
+scripts/muggle_getlyrics       usr/share/vdr-plugin-muggle/scripts/
+mugglei                        usr/bin/
+locale                         usr/share/

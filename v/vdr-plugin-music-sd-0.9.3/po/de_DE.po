@@ -1,0 +1,1135 @@
+# VDR music language source file.
+# Copyright (C) 2008 Stefan Franz <djoimania@web.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@cadsoft.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <djoimania@web.de>\n"
+"POT-Creation-Date: 2013-02-19 02:16+0100\n"
+"PO-Revision-Date: 2008-05-06 22:17+0200\n"
+"Last-Translator: Klaus Schmidinger <kls@cadsoft.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Music-SD: Update webstreams"
+msgstr "Musik-SD: Aktualisiere Webstreams"
+
+msgid "Parent"
+msgstr "Zurück"
+
+msgid "Music-SD: Appearance"
+msgstr "Musik-SD: Erscheinungsbild"
+
+msgid "ERROR: Havent found any themes !"
+msgstr "FEHLER: Themesdateien nicht vorhanden !"
+
+msgid "ERROR:"
+msgstr "FEHLER:"
+
+msgid "ERROR: Could not store/load new themefile !"
+msgstr "FEHLER: Konnte Themedatei nicht laden/speichern !"
+
+msgid "Music-SD: Visualizations"
+msgstr "Musik-SD: Visualisierungen"
+
+msgid "Disable visualization"
+msgstr "Visualisierung beenden"
+
+msgid "ERROR: Cant find any visualization!"
+msgstr "FEHLER: Keine Visualisierung vorhanden!"
+
+msgid "ERROR: Could not load new visualization !"
+msgstr "FEHLER: Konnte neue Visualisierung nicht laden !"
+
+msgid "Music-SD: User"
+msgstr "Musik-SD: Benutzer"
+
+#, fuzzy
+msgid "Change user (Music-SD will be stopped) ?"
+msgstr "Benutzer wechseln (Musik-SD wird beendet) ?"
+
+msgid "ERROR: Could not change user !"
+msgstr "FEHLER: Konnte Benutzer nicht wechseln"
+
+msgid "Remove track from playlist"
+msgstr "Entferne Track aus Abspielliste"
+
+msgid "Remove all from playlist"
+msgstr "Entferne alle Tracks aus Abspielliste"
+
+msgid "Save active playlist"
+msgstr "Aktuelle Abspielliste speichern"
+
+msgid "Delete selected track from medium"
+msgstr "Lösche Track vom Medium"
+
+msgid "Delete all tracks in playlist from medium"
+msgstr "Lösche alle Tracks in Abspielliste vom Medium"
+
+msgid "ERROR: Could not remove track !"
+msgstr "FEHLER: Track konnte nicht entfernt werden !"
+
+msgid "Remove track from playlist ?"
+msgstr "Track aus Abspielliste entfernen ?"
+
+msgid "Are you sure?"
+msgstr "Wirklich löschen?"
+
+msgid "Remove all tracks from playlist ?"
+msgstr "Entferne alle Tracks aus Abspielliste ?"
+
+msgid "Remove all tracks from playlist..."
+msgstr "Entferne alle Tracks aus Abspielliste..."
+
+msgid "Save playlist..."
+msgstr "Abspielliste speichern..."
+
+msgid "Save playlist"
+msgstr "Abspielliste speichern"
+
+msgid "Playlist saved as burnlist.m3u !"
+msgstr "Abspielliste wurde als burnlist.m3u gespeichert !"
+
+msgid "ERROR: Could not save playlist burnlist.m3u !"
+msgstr "FEHLER: Abspielliste konnte nicht gespeichert werden !"
+
+msgid "Overwrite last playlist ?"
+msgstr "Überschreibe letzte Abspielliste ?"
+
+msgid "Delete file from medium ?"
+msgstr "Lösche Datei vom Medium ?"
+
+msgid "ERROR: Could not remove tracks !"
+msgstr "FEHLER: Tracks konnten nicht entfernt werden !"
+
+msgid "Delete all in playlist from medium ?"
+msgstr "Lösche alle Dateien aus Abspielliste vom Medium ?"
+
+msgid "Delete all tracks from medium..."
+msgstr "Lösche alle Dateien vom Medium..."
+
+msgid "Delete"
+msgstr "Lösche"
+
+msgid "Tracks terminated !"
+msgstr "Dateien terminiert !"
+
+msgid "ERROR: Could not delete tracks !"
+msgstr "FEHLER: Konnte Tracks nicht löschen !"
+
+msgid "Music-SD: Commands"
+msgstr "Musik-SD: Befehle"
+
+msgid "Edit playlist..."
+msgstr "Abspielliste bearbeiten..."
+
+msgid "Search for songs..."
+msgstr "Suche nach Liedern..."
+
+msgid "Show ID3 information of song"
+msgstr "Zeige ID3 Information von Song"
+
+msgid "Edit ID3 information"
+msgstr "ID3 Informationen bearbeiten"
+
+msgid "Quick settings..."
+msgstr "Schnelleinstellungen..."
+
+msgid "Search for lyric..."
+msgstr "Suche nach Liedertext..."
+
+msgid "Download coverpicture..."
+msgstr "Coverbild herunterladen..."
+
+msgid "Update webstreams..."
+msgstr "Webstreams aktualisieren..."
+
+msgid "Start imageviewer"
+msgstr "Starte Bildbetrachter"
+
+msgid "Start Recording"
+msgstr "Starte Aufnahme"
+
+msgid "Stop Recording"
+msgstr "Aufnahme beenden"
+
+msgid "Change Appearance..."
+msgstr "Aussehen ändern..."
+
+msgid "Visualizations..."
+msgstr "Visualisierungen..."
+
+msgid "Change user..."
+msgstr "Benutzer wechseln..."
+
+msgid "ERROR: No track(s) loaded !"
+msgstr "FEHLER: Kein(e) Track(s) geladen !"
+
+msgid "ERROR: Could not get songinfo !"
+msgstr "FEHLER: Konnte Songinformation nicht ermitteln !"
+
+msgid "ERROR: no songinfo or not allowed !"
+msgstr "FEHLER: Keine Songinformation oder Operation nicht erlaubt !"
+
+msgid "Recording stopped !"
+msgstr "Aufnahme beendet !"
+
+msgid "Recording started !"
+msgstr "Aufnahme gestartet !"
+
+msgid "What you want to record ?!"
+msgstr "Was soll denn aufgenommen werden ?!"
+
+msgid "Stop recording ?"
+msgstr "Aufnahme beenden?"
+
+msgid "Start recording ?"
+msgstr "Starte Aufnahme ?"
+
+msgid "Music-SD: Coverpicture"
+msgstr "Musik-SD: Coverbilder"
+
+msgid "Reset query"
+msgstr "Abfrage zurücksetzen"
+
+msgid "Execute query"
+msgstr "Abfrage ausführen"
+
+msgid "Artist"
+msgstr "Interpret"
+
+msgid "Album"
+msgstr "Album"
+
+msgid "Search for cover"
+msgstr "Nach Cover suchen"
+
+msgid "Searching"
+msgstr "Suche"
+
+msgid "ERROR"
+msgstr "FEHLER"
+
+msgid "ERROR: Could not open Coverviewer or not installed.. !"
+msgstr "FEHLER: Konnte Coverviewer nicht starten oder nicht installiert !"
+
+msgid "ERROR: While getting cover. Watch logs.. !"
+msgstr "FEHLER: Während Herunterladen von Cover. Weiteres im Log.. !"
+
+msgid "ERROR: Field 'Artist' empty.. !"
+msgstr "FEHLER: Feld 'Interpret ist leer.. !"
+
+msgid "Unknown"
+msgstr "Unbekannt"
+
+msgid "No comment"
+msgstr "Kein Kommentar"
+
+msgid "Music-SD: Local lyrics"
+msgstr "Musik-SD: Lokale Liedtexte"
+
+msgid "Track-"
+msgstr "Track-"
+
+msgid "Track+"
+msgstr "Track+"
+
+msgid "No lyrics found !"
+msgstr "Kein Liedtext vorhanden !"
+
+msgid "Music-SD: Extern lyrics"
+msgstr "Musik-SD: Externer Liedtext"
+
+msgid "Save lyrics ?"
+msgstr "Liedtext speichern ?"
+
+msgid "Save"
+msgstr "Speichern"
+
+msgid "Try to get lyrics..."
+msgstr "Suche nach Liedtext..."
+
+msgid "Operation denied !"
+msgstr "Operation untersagt !"
+
+msgid "Music-SD: Lyrics"
+msgstr "Musik-SD: Liedtexte"
+
+msgid "Load lyrics from local source"
+msgstr "Lade Liedtext von lokaler Quelle"
+
+msgid "Load lyrics from external source"
+msgstr "Lade Liedtext von externer Quelle"
+
+msgid "Music-SD: ID3 Information"
+msgstr "Music-SD: ID3 Information"
+
+msgid "Filename"
+msgstr "Dateiname"
+
+msgid "Length"
+msgstr "Länge"
+
+msgid "Title"
+msgstr "Titel"
+
+msgid "Rating"
+msgstr "Bewertung"
+
+msgid "Year"
+msgstr "Jahr"
+
+msgid "Genre"
+msgstr "Musikstil"
+
+msgid "Samplerate"
+msgstr "Sample Rate"
+
+msgid "Bitrate"
+msgstr "Bit Rate"
+
+msgid "Channels"
+msgstr "Kanäle"
+
+msgid "Comment"
+msgstr "Kommentar"
+
+msgid "Directory browser"
+msgstr "Verzeichnisanzeige"
+
+msgid "Search"
+msgstr "Suche"
+
+msgid "Play now"
+msgstr "Abspielen"
+
+msgid "ID3 info"
+msgstr "ID3 Info"
+
+msgid "Error building playlist!"
+msgstr "Fehler beim Aufbau der Abspielliste!"
+
+msgid "Item is not a file"
+msgstr "Auswahl ist keine Datei"
+
+msgid "Playlist editor"
+msgstr "Abspielliste bearbeiten"
+
+msgid "Add"
+msgstr "Hinzufügen"
+
+msgid "Filenames"
+msgstr "Dateinamen"
+
+msgid "ID3 names"
+msgstr "ID3 Namen"
+
+msgid "Remove"
+msgstr "Entfernen"
+
+msgid "Scanning directory..."
+msgstr "Durchsuche Verzeichnis..."
+
+msgid "Add recursivly?"
+msgstr ""
+
+msgid "Empty directory!"
+msgstr "Leeres Verzeichnis!"
+
+msgid "Error scanning directory!"
+msgstr "Fehler beim Lesen des Verzeichnisses!"
+
+msgid "Remove entry?"
+msgstr "Eintrag entfernen?"
+
+msgid "Add all"
+msgstr "Alle hinzufügen"
+
+msgid "Rename playlist"
+msgstr "Abspielliste umbenennen"
+
+msgid "Old name:"
+msgstr "Alter Name:"
+
+msgid "New name"
+msgstr "Neuer Name"
+
+#, fuzzy
+msgid "Music-SD"
+msgstr "Musik-SD"
+
+msgid "Source"
+msgstr "Datenträger"
+
+msgid "Browse"
+msgstr "Blättern"
+
+msgid "Convert"
+msgstr "Konvertiere"
+
+msgid "Rename"
+msgstr "Umbenennen"
+
+msgid "Scanning playlists..."
+msgstr "Durchsuche Abspiellisten..."
+
+msgid "Error scanning playlists!"
+msgstr "Fehler beim Einlesen der Abspiellisten!"
+
+msgid "Delete playlist?"
+msgstr "Abspielliste löschen?"
+
+msgid "Error deleting playlist!"
+msgstr "Fehler beim Löschen der Abspielliste!"
+
+msgid "unnamed"
+msgstr "unbenannt"
+
+msgid "Error creating playlist!"
+msgstr "Fehler beim Erstellen der Abspielliste!"
+
+msgid "Convert playlist?"
+msgstr "Konvertiere Abspielliste?"
+
+msgid "Error renaming playlist!"
+msgstr "Fehler beim Umbenennen der Abspielliste!"
+
+msgid "Error loading playlist!"
+msgstr "Fehler beim Lesen der Abspielliste!"
+
+msgid "Can't edit a WinAmp playlist!"
+msgstr "Editieren von WinAmp Abspiellisten nicht möglich!"
+
+msgid "Loading playlist..."
+msgstr "Lade Abspielliste..."
+
+msgid "MP3 source"
+msgstr "Musik-Files Datenträger"
+
+msgid "Building playlist..."
+msgstr "Baue Abspielliste auf..."
+
+msgid "Select"
+msgstr "Auswählen"
+
+msgid "Mount"
+msgstr "Einbinden"
+
+msgid "Unmount"
+msgstr "Aushängen"
+
+msgid "Eject"
+msgstr "Auswurf"
+
+msgid "Selected source is not mounted!"
+msgstr "Ausgewählter Datenträger ist nicht eingebunden!"
+
+msgid "Mount failed!"
+msgstr "Einbinden fehlgeschlagen!"
+
+msgid "Mount succeeded"
+msgstr "Einbinden erfolgreich"
+
+msgid "Unmount succeeded"
+msgstr "Aushängen erfolgreich"
+
+msgid "Unmount failed!"
+msgstr "Aushängen fehlgeschlagen!"
+
+msgid "Eject failed!"
+msgstr "Auswerfen fehlgeschlagen!"
+
+msgid "Commands"
+msgstr "Befehle"
+
+msgid "More.."
+msgstr "Mehr.."
+
+msgid "Cover"
+msgstr "Cover"
+
+msgid "Jump"
+msgstr "Sprung"
+
+msgid "Clear"
+msgstr "Leeren"
+
+msgid "Copy"
+msgstr "Kopie"
+
+msgid "<<"
+msgstr "<<"
+
+msgid ">>"
+msgstr ">>"
+
+msgid "Min/Sec"
+msgstr "Min/Sek"
+
+msgid "of"
+msgstr "von"
+
+msgid "Connecting to stream server ..."
+msgstr "Verbinde mit Stream Server..."
+
+msgid "Remote CDDB lookup..."
+msgstr "Remote CDDB Abfrage..."
+
+msgid "Please add some tracks..."
+msgstr "Bitte Tracks hinzufügen..."
+
+msgid "End of playlist ============================"
+msgstr "Ende von Abspielliste erreicht ============================"
+
+msgid "SCANNING"
+msgstr "SCANNEN"
+
+msgid "STOPPED"
+msgstr "GESTOPPT"
+
+msgid "PLAYING"
+msgstr "ABSPIELEN"
+
+msgid "PAUSED"
+msgstr "PAUSIERT"
+
+msgid "Jump: "
+msgstr "Springen: "
+
+msgid "Be patient..."
+msgstr "Bitte Geduld..."
+
+msgid "TRACKS become straight scanned"
+msgstr "TRACKS werden gerade gescannt"
+
+msgid "Playlist time"
+msgstr "Gesamtzeit"
+
+msgid "Playlist tracks"
+msgstr "Anzahl Tracks"
+
+msgid "Not rated"
+msgstr "Unbewertet"
+
+msgid "Song can be deleted"
+msgstr "Lied kann gelöscht werden"
+
+msgid "Makes me nervous"
+msgstr "Macht mich nervös"
+
+msgid "Bad song"
+msgstr "Schlechtes Lied"
+
+msgid "Useful for certain cause"
+msgstr "Bei bestimmten Anlaß anhörbar"
+
+msgid "I hear it from time to time"
+msgstr "Höre ich gelegentlich"
+
+msgid "New song, don't know"
+msgstr "Neu hinzugekommen"
+
+msgid "Not bad...not good"
+msgstr "Durchschnitt"
+
+msgid "Good song"
+msgstr "Gutes Lied"
+
+msgid "Very good song"
+msgstr "Sehr gutes Lied"
+
+msgid "I love this song"
+msgstr "Ich liebe dieses Lied"
+
+msgid "One of my favourites"
+msgstr "Einer meiner Favoriten"
+
+msgid "Music-SD: ID3tag editor"
+msgstr "Musik-SD: ID3tag Bearbeitung"
+
+msgid "Clear tags"
+msgstr "Tags löschen"
+
+msgid "Save tags"
+msgstr "Tags speichern"
+
+msgid "Execute"
+msgstr "Ausführen"
+
+msgid "Update id3-tag"
+msgstr "ID3-Tag wird aktualisiert"
+
+msgid "MPlayer"
+msgstr "MPlayer"
+
+msgid "Setup.MPlayer$Control mode"
+msgstr "Kontroll Modus"
+
+msgid "Traditional"
+msgstr "Traditionell"
+
+msgid "Slave"
+msgstr "Slave"
+
+msgid "Setup.MPlayer$OSD position"
+msgstr "OSD Position"
+
+msgid "disabled"
+msgstr "aus"
+
+msgid "global only"
+msgstr "nur global"
+
+msgid "local first"
+msgstr "zuerst local"
+
+msgid "Setup.MPlayer$Resume mode"
+msgstr "Modus für Wiederaufnahme"
+
+msgid "Hide mainmenu entry"
+msgstr "Hauptmenüeintrag verbergen"
+
+msgid "Setup.MPlayer$Slave command key"
+msgstr "Slave Kommando Taste"
+
+msgid "MPlayer Audio ID"
+msgstr "MPlayer Audio ID"
+
+msgid "Audiostream ID"
+msgstr "Tonspur ID"
+
+msgid "MPlayer browser"
+msgstr "MPlayer Verzeichnisanzeige"
+
+msgid "Play"
+msgstr ""
+
+msgid "Rewind"
+msgstr ""
+
+msgid "MPlayer source"
+msgstr "MPlayer Datenträger"
+
+msgid "Summary"
+msgstr ""
+
+msgid "Media replay via MPlayer"
+msgstr "Medien Wiedergabe über MPlayer"
+
+#, fuzzy
+msgid "MP3-/Audioplayer"
+msgstr "Musikplayer"
+
+#, fuzzy
+msgid "Musicplayer SD-FF"
+msgstr "Musikplayer SD-FF"
+
+msgid "DVB"
+msgstr "DVB"
+
+msgid "OSS"
+msgstr "OSS"
+
+msgid "MP3"
+msgstr "MP3"
+
+msgid "Setup.MP3$Artist-Title in tracklist"
+msgstr "Artist-Titel in Abspielliste"
+
+msgid "User"
+msgstr "Benutzer"
+
+msgid "Admin"
+msgstr "Admin"
+
+msgid "Superadmin"
+msgstr "Superadmin"
+
+msgid "Setup.MP3$Userlevel"
+msgstr "Benutzerlevel"
+
+msgid "Setup.MP3$Show statusmessages"
+msgstr "Statusnachrichten anzeigen"
+
+msgid "Setup.MP3$Jump interval (FFW/FREW)"
+msgstr "Intervall Vor-/Zurückspulen"
+
+msgid "Setup.MP3$Where to copy tracks"
+msgstr "Zielverzeichnis für kopierte Tracks"
+
+msgid "Setup.MP3$Where to record streams"
+msgstr "Verzeichnis für Aufnahmen"
+
+msgid "Setup.MP3$Options for recording"
+msgstr "Einstellungen für Aufnahme"
+
+msgid "Setup.MP3$Directory for cover of artists"
+msgstr "Coververzeichnis der Interpreten"
+
+msgid "Setup.MP3$OSD Offset X"
+msgstr "OSD Offset X"
+
+msgid "Setup.MP3$OSD Offset Y"
+msgstr "OSD Offset Y"
+
+msgid "normal"
+msgstr "normal"
+
+msgid "double"
+msgstr "doppelt"
+
+msgid "4:3"
+msgstr "4:3"
+
+msgid "fullscreen"
+msgstr "Vollbild"
+
+msgid "Setup.MP3$Size of coverdisplay"
+msgstr "Größe von Coveranzeige"
+
+msgid "Setup.MP3$Max. cache in MB for cover"
+msgstr "Max. Cache für Cover in MB"
+
+msgid "Setup.MP3$Image quality >=slower"
+msgstr "Bildqualität >=langsamer"
+
+msgid "Setup.MP3$Use Dithering for cover"
+msgstr "Benutze Dithering für Cover"
+
+msgid "Setup.MP3$Max. download of cover"
+msgstr "Anzahl max. Downloads von Cover"
+
+msgid "Setup.MP3$Enable visualization"
+msgstr "Aktiviere Visualisierung"
+
+msgid "Setup.MP3$Visualization bar falloff"
+msgstr "Visualisierung Peak Falloff"
+
+msgid "Setup.MP3$Enable rating"
+msgstr "Aktiviere Bewertungen"
+
+msgid "Setup.MP3$Email for rating"
+msgstr "Email für Bewertung"
+
+msgid "Setup.MP3$Store rating in file"
+msgstr "Bewertung direkt in Datei speichern"
+
+msgid "Setup.MP3$Rating as first red key"
+msgstr "Bewertung ist erste rote Taste"
+
+msgid "Setup.MP3$Audio output mode"
+msgstr "Audio Ausgabe Modus"
+
+msgid "Setup.MP3$Audio mode"
+msgstr "Audio Modus"
+
+msgid "Round"
+msgstr "Runden"
+
+msgid "Dither"
+msgstr "Streuen"
+
+msgid "Setup.MP3$Use 48kHz mode only"
+msgstr "Nur 48kHz Modus benutzen"
+
+msgid "Setup.MP3$Live picture in background"
+msgstr "Livebild im Hintergrund"
+
+msgid "Setup.MP3$Use DeviceStillPicture"
+msgstr "Benutze DeviceStillPicture"
+
+msgid "Setup.MP3$Abort player at end of list"
+msgstr "Abspieler am Listenende beenden"
+
+msgid "ID3 only"
+msgstr "nur ID3"
+
+msgid "ID3 & Level"
+msgstr "ID3 & Pegel"
+
+msgid "Setup.MP3$Background scan"
+msgstr "Hintergrund Scan"
+
+msgid "Setup.MP3$Editor display mode"
+msgstr "Editor Anzeige Modus"
+
+msgid "Setup.MP3$Mainmenu mode"
+msgstr "Hauptmenü Modus"
+
+msgid "Playlists"
+msgstr "Abspiellisten"
+
+msgid "Browser"
+msgstr "Verz.anzeige"
+
+msgid "Setup.MP3$Replace string in winamp playlist"
+msgstr "Entferne Zeichen aus Winamp Abspielliste"
+
+msgid "Setup.MP3$Keep selection menu"
+msgstr "Auswahlmenü geöffnet lassen"
+
+msgid "Setup.MP3$Exit stop playback"
+msgstr "Exit beendet Wiedergabe"
+
+msgid "Replay instantly"
+msgstr ""
+
+msgid "Setup.MP3$Normalizer level"
+msgstr "Normalisierer Pegel"
+
+msgid "Setup.MP3$Limiter level"
+msgstr "Begrenzer Pegel"
+
+#, fuzzy
+msgid "Setup.MP3$Connection timeout (s)"
+msgstr "AuswahlmenÃ¼ geÃ¶ffnet lassen"
+
+msgid "Setup.MP3$Use HTTP proxy"
+msgstr "HTTP Proxy benutzen"
+
+msgid "Setup.MP3$HTTP proxy host"
+msgstr "HTTP Proxy Name"
+
+msgid "Setup.MP3$HTTP proxy port"
+msgstr "HTTP Proxy Port"
+
+msgid "local only"
+msgstr "nur lokal"
+
+msgid "local&remote"
+msgstr "lokal und entfernt"
+
+msgid "Setup.MP3$CDDB for CD-Audio"
+msgstr "CDDB für CD-Audio"
+
+msgid "Setup.MP3$CDDB server"
+msgstr "CDDB Server"
+
+msgid "Setup.MP3$CDDB port"
+msgstr "CDDB Port"
+
+msgid "Music-SD: Timer Shutdown"
+msgstr "Musik-SD: Zeitgesteuertes Abschalten"
+
+msgid "Minutes before shutdown"
+msgstr "Minuten bis zum Abschalten"
+
+msgid "Disable"
+msgstr "Ausschalten"
+
+msgid "Enable"
+msgstr "Einschalten"
+
+msgid "Music-SD: Change time to skip"
+msgstr "Musik-SD: Sprungweite ändern"
+
+msgid "Seconds to skip"
+msgstr "Skippe Sekunden"
+
+msgid "Music-SD: Add new target directory"
+msgstr "Musik-SD: Neues Zielverzeichnis"
+
+msgid "Directory to add"
+msgstr "Verzeichnis"
+
+msgid "Music-SD: Goal listing"
+msgstr "Musik-SD: Zielverzeichnis"
+
+msgid "Current goal listing: "
+msgstr "Aktuelles Zielverzeichnis: "
+
+msgid "Remove ?"
+msgstr "Eintrag entfernen ?"
+
+msgid "New goal listing ?"
+msgstr "Neues Zielverzeichnis setzen ?"
+
+msgid "Error:"
+msgstr "Fehler:"
+
+msgid "ERROR: Could not remove entry !"
+msgstr "FEHLER: Konnte Eintrag nicht entfernen !"
+
+msgid "Music-SD: Quick settings"
+msgstr "Musik-SD: Schnelleinstellungen"
+
+msgid "Disable system shutdown after player stopped"
+msgstr "System nicht herunterfahren wenn Player stoppt"
+
+msgid "Enable system shutdown after player stopped"
+msgstr "System herunterfahren wenn Player stoppt"
+
+msgid "Timer Shutdown"
+msgstr "Zeitgesteuertes Abschalten"
+
+msgid "Activate Shufflemode"
+msgstr "Zufallsmodus aktivieren"
+
+msgid "Deactivate Shufflemode"
+msgstr "Zufallsmodus deaktivieren"
+
+msgid "Activate Loopmode"
+msgstr "Loopmodus aktivieren"
+
+msgid "Deactivate Loopmode"
+msgstr "Loopmodus deaktivieren"
+
+msgid "Change directory where to copy tracks"
+msgstr "Zielverzeichnis zum Kopieren wechseln"
+
+msgid "Change time to skip"
+msgstr "Sprungweite ändern"
+
+msgid "Empty ID3 Cache"
+msgstr ""
+
+msgid "Disable automatic shutdown ?"
+msgstr "Automatische Abschaltung deaktivieren ?"
+
+msgid "Music-SD: Automatic shutdown"
+msgstr "Musik-SD: Automatisches Ausschalten"
+
+msgid "Automatic shutdown disabled !"
+msgstr "Automatische Abschaltung deaktiviert !"
+
+msgid "Enable automatic shutdown ?"
+msgstr "Automatische Abschaltung aktivieren ?"
+
+msgid "VDR will shutdown after player stopped !"
+msgstr "VDR wird abgeschaltet nachdem Player stoppt !"
+
+#, fuzzy
+msgid "Always start in shuffle mode ?"
+msgstr "Zufallsmodus aktivieren"
+
+msgid "Disable shuffle mode only for this session ?"
+msgstr ""
+
+msgid "Always start in loop mode ?"
+msgstr ""
+
+msgid "Disable loop mode only for this session ?"
+msgstr ""
+
+msgid "Empty ID3 cache ?"
+msgstr ""
+
+msgid "Music-SD: Rating"
+msgstr "Musik-SD: Bewertung"
+
+msgid "Clear rating"
+msgstr "Bewertung entfernen"
+
+msgid "Error while opening @Suchergebnis.m3u !"
+msgstr "Fehler beim Öffnen von @Suchergebnis.m3u !"
+
+msgid "Sort"
+msgstr "Sortieren"
+
+msgid "Add all tracks to playlist..."
+msgstr "Alle Tracks werden hinzugefügt..."
+
+msgid "Rating to"
+msgstr "Bewertung bis"
+
+msgid "No value"
+msgstr "Nicht berücksichtigen"
+
+msgid "Rating from"
+msgstr "Bewertung ab"
+
+msgid "Music-SD: Search"
+msgstr "Musik-SD: Suche"
+
+msgid "Load previous query"
+msgstr "Lade vorherige Abfrage"
+
+msgid "Year from"
+msgstr "Jahrgang ab"
+
+msgid "Year to"
+msgstr "Jahrgang bis"
+
+msgid "Only available songs"
+msgstr "Nur verfügbare Lieder"
+
+msgid "no"
+msgstr "nein"
+
+msgid "yes"
+msgstr "ja"
+
+msgid "Searching..."
+msgstr "Suche..."
+
+msgid "Found:"
+msgstr "Gefunden:"
+
+msgid "ERROR: Could not find anything !"
+msgstr "FEHLER: Keine Übereinstimmung gefunden"
+
+msgid "Save tracklist as"
+msgstr "Trackliste speichern unter"
+
+msgid "ERROR: Could not save playlist"
+msgstr "FEHLER: Konnte Abspielliste nicht speichern"
+
+msgid "No title"
+msgstr "Kein Titel"
+
+msgid "Music-SD: Playlist"
+msgstr "Musik-SD: Abspielliste"
+
+msgid "ID3info"
+msgstr "ID3info"
+
+msgid "Edit ID3"
+msgstr "ID3 bearbeiten"
+
+msgid "Mark"
+msgstr "Markieren"
+
+msgid "Empty"
+msgstr "Leeren"
+
+msgid "Save PL"
+msgstr "Speichern PL"
+
+msgid "Save BL"
+msgstr "Speichern BL"
+
+msgid "Number"
+msgstr "Nummer"
+
+msgid "Error while sorting"
+msgstr "Fehler bei Sortierung"
+
+msgid "Sortmode:"
+msgstr "Sortierung:"
+
+msgid "Total:"
+msgstr "Total:"
+
+msgid "Save playlist as burnlist ?"
+msgstr "Abspielliste als Brennliste speichern ?"
+
+msgid "Save tracklist as playlist ?"
+msgstr "Trackliste als Abspielliste speichern ?"
+
+msgid "Copy track to goal listing ?"
+msgstr "Kopiere Track zum Zielverzeichnis ?"
+
+msgid "Copy..."
+msgstr "Kopiere..."
+
+msgid "Empty playlist ?"
+msgstr "Abspielliste leeren ?"
+
+msgid "Delete this track from playlist ?"
+msgstr "Diesen Track von Abspielliste entfernen ?"
+
+msgid "Sorry... but first change to sortmode = number !"
+msgstr "Sorry... aber wechseln Sie zuerst zur Sortierung : Nummer"
+
+#~ msgid "LIBAO"
+#~ msgstr "LIBAO"
+
+#~ msgid "Enhanced audioplayer"
+#~ msgstr "Erweiterter Audio-Player"
+
+#~ msgid "Setup.MP3$Transparency for cover"
+#~ msgstr "Transparenz fÃ¼r Cover"
+
+#~ msgid "Setup.MP3$Use one 8bpp area"
+#~ msgstr "Benutze eine 256 Farben Area"
+
+#~ msgid "TrueType Font"
+#~ msgstr "TrueType Schriftart"
+
+#~ msgid "No TTF support!"
+#~ msgstr "Keine TTF UnterstÃ¼tzung!"
+
+#~ msgid "Default OSD Font"
+#~ msgstr "Standard OSD Schriftart"
+
+#~ msgid "Default Fixed Size Font"
+#~ msgstr "Standard feste Schriftbreite"
+
+#~ msgid "Default Small Font"
+#~ msgstr "Standard kleine Schrift"
+
+#~ msgid "Setup.MP3$Fonts..."
+#~ msgstr "Schriftarten..."
+
+#~ msgid "Name"
+#~ msgstr "Name"
+
+#~ msgid "Size"
+#~ msgstr "HÃ¶he"
+
+#~ msgid "Width"
+#~ msgstr "Abstand"
+
+#~ msgid "No TrueType fonts installed!"
+#~ msgstr "Keine TrueType Schriftarten installiert!"
+
+#~ msgid "Fonts"
+#~ msgstr "Schriftarten"
+
+#~ msgid "Fixed Font"
+#~ msgstr "Feste Schrift"
+
+#~ msgid "Top"
+#~ msgstr "Oben"
+
+#~ msgid "Status"
+#~ msgstr "Status"
+
+#~ msgid "Info"
+#~ msgstr "Info"
+
+#~ msgid "List"
+#~ msgstr "Liste"
+
+#~ msgid "Buttons"
+#~ msgstr "Tasten"
+
+#~ msgid "Symbols"
+#~ msgstr "Symbole"
+
+#, fuzzy
+#~ msgid "Setup.MP3$Enable fast responsetime"
+#~ msgstr "Aktiviere Bewertungen"
+
+#, fuzzy
+#~ msgid "Setup.MP3$Use HD theme"
+#~ msgstr "Benutzerlevel"
+
+#~ msgid "Setup.MP3$Show visualization in covermode"
+#~ msgstr "Zeige Visualisierung auch im Covermodus"
+
+#~ msgid "Setup.MP3$Show nextcoming tracks in playlist"
+#~ msgstr "Anzahl der folgenden Tracks in Abspielliste"
+
+#~ msgid "Setup.MP3$Initial loop mode"
+#~ msgstr "Starte im Loopmodus"
+
+#~ msgid "Setup.MP3$Initial shuffle mode"
+#~ msgstr "Starte im Shufflemodus"
+
+#~ msgid "Setup.MP3$Purge before save cache"
+#~ msgstr "Cache vorm speichern bereinigen"
+
+#~ msgid "Edit"
+#~ msgstr "Editieren"
+
+#~ msgid "New"
+#~ msgstr "Neu"
+
+#~ msgid "Setup.MP3$Display mode"
+#~ msgstr "Anzeige Modus"

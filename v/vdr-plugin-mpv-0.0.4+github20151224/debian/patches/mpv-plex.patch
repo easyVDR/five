@@ -1,0 +1,194 @@
+diff --git a/control.c b/control.c
+index 8c957c0..b997e54 100644
+--- a/control.c
++++ b/control.c
+@@ -41,10 +41,13 @@ cMpvControl::~cMpvControl()
+     key = kBack;
+     cRemote::Put(key);
+ }
++  cStatus::MsgReplaying(this, NULL, NULL, false); // This has to be done before delete the player
++
+   Player->Shutdown();
+   delete Player;
++  Player = NULL;
++  player = NULL;
+   cDevice::SetPrimaryDevice(cDevice::PrimaryDevice()->DeviceNumber() + 1);
+-  cStatus::MsgReplaying(this, NULL, NULL, false);
+ }
+ 
+ void cMpvControl::ShowProgress(void)
+@@ -378,3 +381,12 @@ void cMpvControl::TimeSearchProcess(eKeys Key)
+      }
+ }
+ 
++void cMpvControl::SeekTo(int seconds)
++{
++  Player->SetTimePos(seconds);
++}
++
++void cMpvControl::SeekRelative(int seconds)
++{
++  Player->Seek(seconds);
++}
+diff --git a/control.h b/control.h
+index cea4639..c938cd3 100644
+--- a/control.h
++++ b/control.h
+@@ -38,7 +38,8 @@ class cMpvControl:public cControl
+     virtual eOSState ProcessKey(eKeys); // handle keyboard input
+     cMarks *Marks() { return &ChapterMarks; }
+     void UpdateMarks();
++    void SeekTo(int seconds);
++    void SeekRelative(int seconds);
+ };
+ 
+ #endif
+-
+diff --git a/mpv.c b/mpv.c
+index 101d2ed..985e224 100644
+--- a/mpv.c
++++ b/mpv.c
+@@ -73,6 +73,23 @@ cOsdObject *cMpvPlugin::MainMenuAction(void)
+ 
+ bool cMpvPlugin::Service(const char *id, void *data)
+ {
++  if (strcmp(id, "Mpv_Seek") == 0)
++  {
++    Mpv_Seek *seekInfo = (Mpv_Seek *)data;
++
++    cMpvControl* control = dynamic_cast<cMpvControl*>(cControl::Control(true));
++		if(control) {
++      if(seekInfo->SeekRelative != 0)
++      {
++          control->SeekRelative(seekInfo->SeekRelative);
++      }
++      else if(seekInfo->SeekAbsolute >= 0)
++      {
++        control->SeekTo(seekInfo->SeekAbsolute);
++      }
++		}
++    return true;
++  }
+   if (strcmp(id, "Mpv_PlayFile") == 0)
+   {
+     Mpv_PlayFile *playFile = (Mpv_PlayFile *)data;
+diff --git a/mpv_service.h b/mpv_service.h
+index f4e5632..6d023b8 100644
+--- a/mpv_service.h
++++ b/mpv_service.h
+@@ -43,5 +43,10 @@ typedef struct
+   char *Title;
+ } Mpv_SetTitle;
+ 
+-#endif
++typedef struct
++{
++  int SeekAbsolute;
++  int SeekRelative;
++} Mpv_Seek;
+ 
++#endif
+diff --git a/player.c b/player.c
+index 0c064f5..fb9f76b 100644
+--- a/player.c
++++ b/player.c
+@@ -68,7 +68,7 @@ void *cMpvPlayer::ObserverThread(void *handle)
+       case MPV_EVENT_SHUTDOWN :
+         Player->running = 0;
+       break;
+-      
++
+       case MPV_EVENT_PROPERTY_CHANGE :
+         Player->HandlePropertyChange(event);
+       break;
+@@ -76,7 +76,7 @@ void *cMpvPlayer::ObserverThread(void *handle)
+       case MPV_EVENT_PLAYBACK_RESTART :
+         Player->ChangeFrameRate(Player->CurrentFps()); // switching directly after the fps event causes black screen
+       break;
+-      
++
+       case MPV_EVENT_LOG_MESSAGE :
+         msg = (struct mpv_event_log_message *)event->data;
+         // without DEBUG log to error since we only request error messages from mpv in this case
+@@ -169,6 +169,18 @@ bool cMpvPlayer::GetReplayMode(bool &Play, bool &Forward, int &Speed)
+   return true;
+ }
+ 
++bool cMpvPlayer::GetIndex(int& Current, int& Total, bool SnapToIFrame __attribute__((unused)))
++{
++	Total = TotalPlayTime() * FramesPerSecond();
++	Current = CurrentPlayTime() * FramesPerSecond();
++	return true;
++}
++
++double cMpvPlayer::FramesPerSecond()
++{
++  return CurrentFps();
++}
++
+ void cMpvPlayer::PlayerStart()
+ {
+   PlayerPaused = 0;
+@@ -192,7 +204,7 @@ void cMpvPlayer::PlayerStart()
+   }
+ 
+   int64_t osdlevel = 0;
+-  
++
+   check_error(mpv_set_option_string(hMpv, "vo", MpvPluginConfig->VideoOut.c_str()));
+   check_error(mpv_set_option_string(hMpv, "hwdec", MpvPluginConfig->HwDec.c_str()));
+   check_error(mpv_set_option_string(hMpv, "ao", MpvPluginConfig->AudioOut.c_str()));
+@@ -216,7 +228,7 @@ void cMpvPlayer::PlayerStart()
+   }
+   else
+   {
+-    int64_t StartVolume = cDevice::CurrentVolume() / 2.55; 
++    int64_t StartVolume = cDevice::CurrentVolume() / 2.55;
+     check_error(mpv_set_option(hMpv, "volume", MPV_FORMAT_INT64, &StartVolume));
+     if (MpvPluginConfig->StereoDownmix)
+     {
+@@ -236,7 +248,7 @@ void cMpvPlayer::PlayerStart()
+ #else
+   mpv_request_log_messages(hMpv, "error");
+ #endif
+-  
++
+   if (mpv_initialize(hMpv) < 0)
+   {
+     esyslog("[mpv] failed to initialize\n");
+@@ -276,7 +288,7 @@ void cMpvPlayer::HandlePropertyChange(mpv_event *event)
+   {
+     dsyslog("[mpv]: property %s \n", property->name);
+   }
+-  
++
+   switch (event->reply_userdata)
+   {
+     case MPV_OBSERVE_TIME_POS :
+@@ -318,7 +330,7 @@ void cMpvPlayer::HandlePropertyChange(mpv_event *event)
+     case MPV_OBSERVE_CHAPTER :
+       PlayerChapter = (int)*(int64_t*)property->data;
+     break;
+-    
++
+     case MPV_OBSERVE_PAUSE :
+       PlayerPaused = (int)*(int64_t*)property->data;
+     break;
+@@ -580,4 +592,3 @@ void cMpvPlayer::SetVolume(int Volume)
+ {
+   SendCommand("set volume %d\n", Volume);
+ }
+-
+diff --git a/player.h b/player.h
+index 400be06..a20c00a 100644
+--- a/player.h
++++ b/player.h
+@@ -57,6 +57,8 @@ class cMpvPlayer:public cPlayer
+     virtual void SetAudioTrack(eTrackType Type, const tTrackId *TrackId);
+     virtual void SetSubtitleTrack(eTrackType Type, const tTrackId *TrackId);
+     virtual bool GetReplayMode(bool &Play, bool &Forward, int &Speed);
++    virtual bool GetIndex(int &Current, int &Total, bool SnapToIFrame = false);
++    virtual double FramesPerSecond();
+     void OsdClose();                              // clear or close current OSD
+     void Shutdown();
+     static volatile int PlayerIsRunning() { return running; }

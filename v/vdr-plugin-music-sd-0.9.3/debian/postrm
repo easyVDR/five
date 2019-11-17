@@ -1,0 +1,10 @@
+#! /bin/sh
+set -e
+
+# Remove configuration and log files
+if [ "$1" = "purge" ]; then
+    /bin/rm -rf /var/lib/vdr/plugins/music-sd || true
+	/bin/rm -rf /usr/share/vdr-plugin-music-sd || true
+fi
+
+#DEBHELPER#

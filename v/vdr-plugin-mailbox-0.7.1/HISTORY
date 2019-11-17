@@ -1,0 +1,391 @@
+VDR Plugin 'Mailbox' Revision History
+--------------------------------------
+
+2014-10-26: Version 0.7.1
+
+- All OsdMenus now set the MenuCategory - hopefully the correct ones :)
+
+- Modified the OsdMenu/MenuHelpKeys header-/inline files to work with
+  newer gcc-compilers and makes plugin-compiler-flag "-O2" obsolete
+
+- Removed -O2 compiler option
+
+- Added mailbox-gtft.patch to improve cooperation with the Graphtft(Ng)
+  plugin by adding the method MenuKind() to all OSD menus
+  (patch provided by Jörg Wendel)
+
+2013-03-21: Version 0.7.0
+
+- Adapted Makefile for vdr >= 1.7.41.
+  For vdr <= 1.7.33 use vdr-mailbox-0.6.0.
+  The plugin may not work for versions between 1.7.33 and 1.7.41.
+
+- removed vdr-version dependent compilation: starting with
+  version 0.7.0 the plugin is only tested with vdr >= 1.7.41
+
+- Added compiler option -O2 to the Makefile to avoid "undefined 
+  symbol: Ax::VDR::OsdMenuBase<cOsdMenu>::clearStatusMsg()"
+  when starting vdr
+
+- code cleanup to remove some compiler warnings and to adapt 
+  coding conventions
+  
+- cache the texts of the color buttons and status messages
+
+- Disabled some debug output
+
+- Updated Italian language texts
+  (Thanks to Diego Pierotto, 2008-08-15)
+
+2008-08-15: Version 0.6.0
+
+- License: included GPL note "v2 or any later" to README.
+
+- Restricted the maximum interval for the background check to 35 minutes
+  due to a bug in GetAbsTime() in vdr-1.4.7, 1.6.0 and 1.7.0.
+
+  If the interval for the background check was set to an interval of
+  36 minutes or more, the plugin caused high cpu-load and hangup of vdr.
+
+  If the bug was corrected in vdr *OR* the patch vdr-1.6.0-GetAbsTime-fix.diff
+  in the patches subdirectory was applied to the sources of vdr, the
+  usable interval may be increased with the parameter "-i <maxtime>".
+
+- Pressing key 'Info' (or key '0' as before) displays online help for
+  key mappings.
+
+- Added Italian language texts
+  (Thanks to Diego Pierotto)
+
+- Added setup option for mail accounts of type INBOX which refers to
+  the primary incoming message mailbox on the local system.
+  Note: Selecting account type INBOX is equivalent to selecting type
+  "User defined" and using "INBOX" as mailbox-string.
+
+- Mail accounts of type "User defined" may be used without a user name.
+  (Reported by Torsten Weigelt)
+
+- Fixed saving the connection timeout to setup.conf.
+
+2007-11-17: Version 0.5.2-pre3
+
+- Added service call "MailBox-GetTotalUnseen-1.0"
+
+2007-10-28: Version 0.5.2-pre2
+
+- In mail-view the key '8' displays all parts of MULTIPART/ALTERNATIVE
+  mails.
+
+2007-10-25: Version 0.5.2-pre1
+
+- Pass the source of HTML-only mails to an external program to convert
+  HTML to plain text and display the result.
+  For mails with MULTIPART/ALTERNATIVE only plain text parts are displayed.
+
+  The plugin must be started with parameter '-c /path/to/mailconv.sh'; see
+  README for further information.
+
+2007-10-21: Version 0.5.0
+
+- Added support for the new i18n system of vdr >= 1.5.7
+
+- Check the used charset with cCharSetConv::SystemCharacterTable() when
+  using vdr >= 1.5.3
+
+- Added French language texts
+  (thanks to Patrice Staudt)
+
+- Added call to cStatus::MsgOsdTextItem to make the message body visible
+  with graphlcd/graphtft.
+
+- Added call cStatus::MsgOsdTextItem() whenn scolling up/down in mail-view.
+
+- Added workaround for imap-servers not reporting attribute "charset=.."
+  in "Content-Type:" lines. If charset is missing ISO-8859-1 is used.
+
+2006-06-11: Version 0.4.0
+
+- Version 0.4.0 released
+
+2006-06-10: Version 0.4.0-pre3
+
+- Added a remark about the required version of the c-client-library to the
+  INSTALL file:
+
+  Version 2004 of the c-client library is required. The plugin was developed
+  with version 2004a of the library (contained in imap-2004a.tar.Z). The
+  current version 2004g may work too, but was not tested by the author.
+
+- Added option to mail account settings to specify if new mails in the mail
+  account should influence the state delivered by the internal service call
+  which could be used e.g. to display a mail icon in replay and channel info.
+
+- Allow ':' in the hostname of mail accounts.
+
+- Added '-fPIC' to CXXFLAGS in Makefile
+  (Suggested by Thomas Günther)
+
+- Fixed a bug which was introduced in pre2 which caused the background
+  thread to display the message "New mail in XXX, open?" after every check.
+  (Reported by Thomas Günther)
+
+2006-06-05: Version 0.4.0-pre2
+
+- Developed and tested with vdr-1.4.0 with Gentoo-Linux/gcc-3.4.6
+
+- Update the color buttons when selecting another mail according
+  to the status flags.
+
+- Avoid some warnings about missing translations for the keys 0..9
+  in the help screen.
+
+- The setting of vdr 'OSDMessageTime' is now used as the time to display
+  the osd message "new mail in ..., open?".
+  (Suggested by Ronny Kornexl)
+
+- Fixed some issues with gcc 3.2
+  (Thanks to Stephan Sachse for providing the patch)
+
+2006-05-20: Version 0.4.0-pre1
+
+- Developed and tested with vdr-1.4.0 with Gentoo-Linux/gcc-3.4.5
+
+- Adopted changes to the Makefile as required since vdr-1.3.47
+
+- Added a service-call "MailBox-HasNewMail-1.0" to allow other plugins
+  to query if there is at least one new mail present.
+  This call doesn't query the mail accounts at the mail server, instead
+  it simply returns the currently known status for those accounts which
+  have enabled the periodic check.
+  There will be a patch for the Elchi-skin to use this call to
+  (optionally) display a mail icon in the replay and channel info.
+
+- Added a new configuration option to the common settings to setup the
+  connection timeout. A value of 0 uses the system default. A reasonable
+  value would be somewhat smaller than the watchdog timeout of vdr
+  (option -w when starting vdr). The default setting is 0.
+
+- Added new configuration option for every mail account to display an
+  OSD message when unread mail is present. Pressing OK while the message
+  is visible opens the mail account.
+  It isn't necessary any more to use the external mailcmd.sh to simply
+  display the "new mail in ..." message on the OSD. The feature of the
+  external mailcmd.sh is still available and may be used for other ways
+  to signal the arrival of new mail, e.g. switching on some LEDs.
+
+- Added new configuration option for every mail account to display the
+  number of unseen mails in the main-menu entry of the plugin.
+
+- If necessary the plugin converts the mail (subject & body) using
+  iconv from the charset used in the mail to the charset used by vdr.
+
+- Mail parts encoded in Base64 are decoded and displayed.
+
+- The Plugin now queries the width and font of the text area to make a
+  nice word-wrapping (especially when wrapping quoted text). To use this
+  feature, the skin has to implement the methods cSkin::GetTextAreaWidth()
+  and cSkin::GetTextAreaFont() as the standard-skins Classic & ST:TNG
+  and the Elchi-skin currently do.
+
+- The mail account passwords are now stored in an obscured way in the
+  file accounts.conf.
+
+  Note: There is is no real encryption; it is just to make the passwords
+  difficult to read for humans.
+
+  The warning from the README is still valid:
+
+  ATTENTION: The account settings are stored in a plain text file in a
+  directory 'plugins/mailbox' below the directory where vdr stores its
+  setup files. The file will be created with umask 0x600, therefore
+  only the user which executes vdr is able to read this file.
+
+  If you consider this insecure, don't use this plugin.
+
+- Added a key in the Mailbox-View to refresh a single mailbox.
+
+- Added a new OSD-menu to display the communication log for accounts
+  which have debugging enabled. The log is reachable in the following
+  views:
+  - Mailbox-View
+  - Configuration of a mail account
+  - IMAP folder selection view
+
+- Corrected a bug which caused that sometimes the last lines of mails
+  were missing.
+
+- The background check for new mail is now stopped in the cPlugin::Stop()
+  method of the plugin (according to the HISTORY of vdr-1.3.20)
+
+- Added a help-screen to all OSD-menus which displays a generated list
+  of valid keys/actions. The help-screen is (currently) reachable with
+  key 0 (if no element is active, which consumes the key 0).
+
+- Actions that aren't supported for the current account type aren't
+  visible (e.g. setting the flag "/FLAGGED" or "/SEEN" for POP3 accounts)
+
+- Key-handling in the configuration menus is now similar to editing
+  channels in vdr
+
+- Changed the configuration menus for mail accounts
+  - several separate options instead of the long mailbox-string
+  - accounts can now be duplicated
+  - accounts can be tested directly within the configuration dialog
+  - reordering of mail accounts is now possible
+
+- Completely restructured the OSD- and key-handling in all OSD menus.
+
+- Corrected a bug when fetching multipart mails.
+
+- More characters are usable for user name, password and account name.
+  (Thanks to Peter Herold for reporting this one.)
+
+- Use proportial font to display the mail text instead of monospaced
+  (DisplayMenu()->SetText(..., false))
+
+- When started the Mailbox-View calls Display() before all mail accounts
+  are checked - otherwise the status-message ("Checking mailbox xxx")
+  is displayed below the main menu of vdr.
+  (Thanks to Olaf Henkel for reporting this one.)
+
+2004-05-31: Version 0.3.0
+
+- Supports VDR-1.3.8 and 1.3.9, vdr-versions <= 1.3.6 are no longer
+  supported, 1.3.7 not checked (therefore the version bump to 0.3.x)
+
+- Removed the improved word wrapping and the font selection due to the
+  changes in OSD-handling (skins) of vdr.
+
+- Corrected an error in decoding encoded words ('=?..?..?=')
+
+- Access restrictions: it is now possible to assign a numerical code to
+  every mailbox and to configure if this code is necessary to enter the
+  settings or even the mail view.
+
+- Removed the conditional compilation for the ElchiAIO-patch.
+
+- Introduced a small performance improvement when selecting another mail.
+
+- Limited the maximum number of mails to download to a configurable number
+  to improve usability with big mail folders (until a 'fetch-mails-on-
+  demand' or a 'fetch-only-unread' feature is implemented).
+  The default maximum number is 100; 0 disables this feature.
+  (Suggested by Frank Herrmann.)
+
+2004-01-24: Version 0.1.6
+
+- Works with vdr-1.3.2, vdr-1.3.2-QuickAIO, vdr-1.2.6 and
+  vdr-1.2.6-ElchiAIO3c.
+
+- A separate thread checks for new mail in the background and starts an
+  external program if the number of mails has changed since the last check.
+  - The interval is configurable in the common settings OSD.
+    (0 disables background checking)
+  - The background checking must be enabled/disabled for every
+    mail account in the account settings
+  - The external command is set with the command line parameter
+    (e.g. '-m mailcmd.sh') for the plugin.
+  mailcmd.sh is a sample bash-script which calls svrdpsend.pl to
+  display a message on the OSD.
+
+- Mail-View: Improved word wrapping at OSD boundaries to improve
+  readability. There are 4 modes/levels to adjust the word wrapping:
+  (higher levels include the lower levels)
+  0: wrapping as before
+  1: when a quoted line (a line that starts with one or more '>') must
+     be wrapped at the OSD boundaries, the same number of quote-
+     characters are prepended to the second part of the wrapped line.
+  2: Lines that end with 'soft breaks' (SPACE + CRLF) in mail parts
+     that have the parameter "format=flowed" set, are treated as
+     'flowed lines' and therefore concatenated with the following line
+     (see RFC 2646).
+  3: Two lines are concatenated if the first line ends with a lower
+     character ('a'-'z') and the following line starts with a lower
+     character. This also works inside quoted paragraphs.
+
+  The mode for word-wrapping can be globally adjusted in the common
+  settings. The default-value is 2 as (the implementation of) this level
+  is more or less compliant to a standard.
+  The mode can be switched temporarily within Mail-View with the key 0.
+
+- MailList-View + Mail-View: added a second page of buttons to change
+  the status flags: Seen, Flagged and Deleted.
+  (The flags Seen and Flagged don't work with POP3 accounts)
+
+- MailList-View: display progress in the status line while reading
+  mail headers
+
+- Mail-view: the separator lines of multipart mails are displayed in a
+  different color and are not wrapped.
+
+- Mail-View: a simple scroll-bar is displayed on the right.
+
+- Mail-View: the number of lines which are scrolled with cursor-up and
+  cursor-down is configurable (1..5) in the common settings OSD.
+
+2003-12-25: Version 0.1.4
+
+- Fixed an illegal memory access that produced a segmentation fault when
+  pressing Menu in MailList-View or Mail-View.
+  (Reported by Peter Siering.)
+
+- Added installation notes for RedHat 7.3
+  (Thanks to Malcolm Caldwell.)
+
+2003-12-22: Version 0.1.2
+
+- Inverted the sort order in MailList-View that new mails are at the
+  top (configurable) (Suggested by several users)
+
+- Updated the number of new and the total number of mails when returning
+  from MailList-View to Mailbox-View.
+
+- Introduced new function "Refresh all" [Blue] in 'mailbox view' to
+  refresh the number of new and the total number of mails.
+
+- Use a small font for 'mailbox view', 'mail list view' and 'mail view'
+  if vdr is patched with ElchiAIO3c. (configurable)
+
+- Solved a display problem in 'mail list view' where the current mail
+  wasn't visible. The patch ./patches/vdr-1.2.6-osdmenufix.diff
+  needs to be applied to vdr.
+  (The patch also works for vdr-1.2.6 with ElchiAIO3c.)
+
+- Improved the diagnostic output, see the section 'Troubleshooting' in
+  the INSTALL file.
+
+- Added the ability to decode encoded-words ('=?ISO-8859-1?Q?...?=')
+  in 'Subject' and 'From'-lines.
+  (works for all characters of 'ISO-8859-1', almost complete for
+  'ISO-8859-15' (8 chars missing), 'Windows-1252' (16 chars missing)
+  and the other 'ISO-8559-*' (only first 126 characters supported. All
+  other encodings are not touched (~0.5% of all mails to vdr-ml since
+  03/2002).
+
+- Improved that parts of the subject are not displayed behind the sender,
+  if the subject-string is very long and the sender-string is very short.
+
+- Mail-list-view now displays four imap-state flags 'NFAD' (New, Flagged,
+  Answered, Deleted) in front of the subject.
+
+- Removed the '\recent' flag completely (from the OSD), as for POP3
+  accounts the \recent flag is always set and for IMAP accounts the flag
+  isn't very useful (for reading mails).
+
+- Renamed several classes for a consistent naming sheme (and to be
+  consistent with the names in the README).
+
+- Added sections 'Troubleshooting' and 'FAQ' to the INSTALL file.
+
+- Updated/modified the comments for Debian / Gentoo / SuSE
+  (Thanks for the feedback).
+
+- Added clarification regarding the compile error about the missing
+  linkage.c (Thanks to Mark Crispin).
+
+- Separated the installation instructions from the README into a
+  separate file INSTALL.
+
+2003-12-05: Version 0.1.0 - first public release
+
+2003-11-xx: Versions < 0.1.0 for internal use only

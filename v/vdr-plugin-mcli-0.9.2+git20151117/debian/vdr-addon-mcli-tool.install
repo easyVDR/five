@@ -1,0 +1,3 @@
+mcast/tool/netcvdiag		usr/sbin/
+mcast/tool/netcvupdate		usr/sbin/
+mcast/tool/netcvlogview		usr/sbin/

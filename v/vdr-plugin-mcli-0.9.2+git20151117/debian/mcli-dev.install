@@ -1,0 +1,4 @@
+*.h                             usr/include/mcli/
+mcast/common/*.h                usr/include/mcast/common/
+mcast/client/*.h                usr/include/mcast/client/
+libvdr-mcli.so                  usr/lib/

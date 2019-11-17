@@ -1,0 +1,282 @@
+<SKIN-ID>Mpeg-BLACK-BOLT
+##
+<description> MPEG theme for FF Cards
+##LINE"MUST"ENDWITHTHECOLORVALUEANDWITHOUTSPACES
+##0xAARRGGBB
+#
+#
+##BACKGROUND
+<value> .clrBG.                 =0x0A000000
+#
+##TOP:2colorsOK
+<value> .clrTopBG.              =0x0A000000
+<value> .clrTopFG.              =0x0A000000
+#
+##COVER:2colorsOK
+<value> .clrCoverBG.		=0xFF000000
+<value> .clrCoverBar.		=0xFF000000
+#
+##ARTIST,RATING:4colorsOK
+<value> .clrArtistBG.		=0x0A000000
+<value> .clrArtistFG.		=0xAA00FFFF
+<value> .clrRatingFG.		=0xFF4EB24E
+#
+##PLAYSTATUS:4colorsOK
+<value> .clrPlayStatusBG.	=0x0A000000
+<value> .clrPlayStatusFG.	=0xFF909090
+<value> .clrInfoBG.		=0x0A000000
+<value> .clrInfoFG.		=0xFF909090
+<value> .clrProgressbarBG.	=0xAF000000
+<value> .clrProgressbarFG.	=0x0A000000
+#
+##TRACKLIST:4colorsOK
+<value> .clrListTitle.		=0xFF00FFFF
+<value> .clrListBG.		=0x0A000000
+<value> .clrListFG.		=0xFF5D6162
+<value> .clrListRating.		=0xFFDC7153
+#
+##SYMBOLS:4colorsOK
+<value> .clrSymbolBG.		=0x0A000000
+<value> .clrSymbolFG.		=0xA0000000
+<value> .clrSymbolActive.	=0x0A000000
+<value> .clrRecordingActive.	=0x0A000000
+<value> .clrVolumeActive.	=0xFFFA661E
+<value> .clrVolumeProgressbarBG.=0xA0000000
+<value> .clrVolumeProgressbarFG.=0x0A000000
+#
+##STATUSBAR:8colorsOK
+<value> .clrStatusBG.		=0x0A000000
+<value> .clrStatusFG1.		=0xFF6B88A3
+<value> .clrStatusFG2.		=0xFF6B88A3
+<value> .clrStatusFG3.		=0xFF6B88A3
+<value> .clrStatusFG4.		=0xFF6B88A3
+<value> .clrStatusRed.		=0x0A000000
+<value> .clrStatusGreen.	=0x0A000000
+<value> .clrStatusYellow.	=0x0A000000
+<value> .clrStatusBlue.		=0x0A000000
+#
+#
+##GENERAL
+<value> .isOSDTheme.		=0
+<value> .isHDTheme.		=0
+<value> .OSDAlpha.		=255
+<value> .roundedCorner.		=0
+<value> .drawBars.		=0
+<value> .drawButtons.		=0
+<value> .isMpeg.		=1
+<value> .symrect.		=1
+<value> .localbackground.	=/themes/mpegs/black-bolt.mpg
+<value> .streambackground.	=/themes/mpegs/black-bolt.mpg
+<value> .localcover.		=/music-keynote-black.png
+<value> .streamcover.		=/music-world-black.png
+<value> .osdbackground.         =
+<value> .osdbackgroundcolor.    =
+<value> .symbolxy.              =
+<value> .trackcount.		=3
+<value> .osdheight.		=503
+<value> .osdwidth.		=616
+<value> .osdtop.		=49
+<value> .osdleft.		=46
+<value> .fontheight.            =26
+<value> .smallfontheight.       =22
+#
+#
+## AREAS
+<value> .OneAreaDepth.          =8
+<value> .topdepth.              =2
+<value> .coverdepth.            =4
+<value> .trackinfodepth.        =2
+<value> .statusdepth.           =2
+<value> .tracksdepth.           =2
+<value> .symboldepth.           =2
+<value> .buttondepth.           =4
+#
+#
+## AREAS size
+<value> .area_toph.             =52
+<value> .area_coverw.           =170
+<value> .area_coverh.           =196
+<value> .area_infoh.            =284
+<value> .area_listh.            =407
+<value> .area_symbolh.          =476
+#
+<value> .UseOneArea.            =0
+#
+##POSITIONS
+<value> .coverbgx.              =26
+<value> .coverbgy.              =53
+<value> .coverbgx2.             =167
+<value> .coverbgy2.             =196
+<value> .coverelipser.          =11
+#
+<value> .coverx.                =34
+<value> .covery.                =61
+<value> .coverw.                =128
+<value> .coverh.                =128
+<value> .covercolor.            =14
+#
+<value> .bigpicturex.		=29
+<value> .bigpicturey.		=30
+<value> .bigpicturew.		=653
+<value> .bigpictureh.		=531
+<value> .bigcovercolor.         =252
+<value> .bigcoverdepth.         =8
+#
+##//::artistfield
+<value> .artistx.		=193
+<value> .artisty.		=59
+<value> .artistw.		=387
+<value> .albumx.		=193
+<value> .albumy.		=85
+<value> .albumw.		=387
+<value> .genrex.		=193
+<value> .genrey.		=111
+<value> .genrew.		=387
+<value> .yearx.			=193
+<value> .yeary.			=137
+<value> .yearw.			=387
+<value> .ratingx.		=193
+<value> .ratingy.		=167
+<value> .ratingw.		=387
+#
+##//::status
+<value> .statusx.		=31
+<value> .statusy.		=232
+<value> .statusw.		=136
+#
+##//::infofield
+<value> .modex.			=193
+<value> .modey.			=212
+<value> .modew.			=391
+<value> .numberx.		=193
+<value> .numbery.		=232
+<value> .numberw.		=391
+<value> .timex.			=193
+<value> .timey.			=254
+<value> .timew.			=80
+<value> .progressx.		=271
+<value> .progressy.		=262
+<value> .progressh.		=8
+<value> .progressw.		=224
+<value> .totalx.		=500
+<value> .totaly.		=254
+<value> .totalw.		=80
+#
+##//::tracklist
+<value> .titlex.		=36
+<value> .titley.		=308
+<value> .titlew.		=544
+<value> .tracksx.		=36
+<value> .tracksy.		=334
+<value> .tracksw.		=446
+<value> .ratesmx.		=481
+<value> .ratesmy.		=334
+<value> .ratesmw.		=0
+#
+##//::symbols
+<value> .symbolxy.              =30
+<value> .shufflex.		=33
+<value> .shuffley.		=422
+<value> .loopx.			=65
+<value> .loopy.			=422
+<value> .recordx.		=98
+<value> .recordy.		=422
+<value> .lyricsx.		=131
+<value> .lyricsy.		=422
+<value> .copyx.			=163
+<value> .copyy.			=422
+<value> .shutdownx.		=195
+<value> .shutdowny.		=422
+<value> .timerx.		=227
+<value> .timery.		=422
+<value> .mutex.			=441
+<value> .mutey.			=425
+<value> .volbarx.		=478
+<value> .volbary.		=433
+<value> .volbarw.		=106
+<value> .volbarh.		=8
+#
+##//::buttons
+##taCenter:0 , taLeft:1 , taRight:2
+<value> .buttonalign.		=0
+<value> .buttontext1posx.	=32
+<value> .buttontext2posx.	=197
+<value> .buttontext3posx.	=347
+<value> .buttontext4posx.	=506
+<value> .buttontext1posy.	=474
+<value> .buttontext2posy.	=474
+<value> .buttontext3posy.	=474
+<value> .buttontext4posy.	=474
+<value> .button1w.		=120
+<value> .button2w.		=120
+<value> .button3w.		=120
+<value> .button4w.		=120
+#
+##//::elipse
+<value> .elipseredx.		=30
+<value> .elipseredy.		=485
+<value> .elipsegreenx.		=180
+<value> .elipsegreeny.		=485
+<value> .elipseyellowx.		=330
+<value> .elipseyellowy.		=485
+<value> .elipsebluex.		=480
+<value> .elipsebluey.		=485
+<value> .elipseh.		=12
+#
+#
+##
+<value> .Tracklist_tab1.        =6
+<value> .Tracklist_tab2.        =10
+<value> .Tracklist_tab3.        =1
+<value> .Tracklist_tab4.        =29
+#
+##
+<value> .Searchlist_tab1.       =3
+<value> .Searchlist_tab2.       =7
+<value> .Searchlist_tab3.       =8
+<value> .Searchlist_tab4.       =26
+#
+##
+<value> .Browser_tab1.          =2
+<value> .Browser_tab2.          =3
+<value> .Browser_tab3.          =29
+<value> .Browser_tab4.          =0
+#
+## FONTS
+<value> .FONTBUTTON.            =0
+<value> .FONTBUTTONNAME.        =VDRSymbols Sans:Book
+<value> .FONTBUTTONSIZE.        =14
+
+<value> .FONTGENRE.             =0
+<value> .FONTGENRENAME.         =VDRSymbols Sans:Book
+<value> .FONTGENRESIZE.         =20
+
+<value> .FONTINFO.              =0
+<value> .FONTINFONAME.          =VDRSymbols Sans:Book
+<value> .FONTINFOSIZE.          =18
+
+<value> .FONTINTERPRET.         =0
+<value> .FONTINTERPRETNAME.     =VDRSymbols Sans:Book
+<value> .FONTINTERPRETSIZE.     =24
+
+<value> .FONTLIST.              =0
+<value> .FONTLISTNAME.          =VDRSymbols Sans:Book
+<value> .FONTLISTSIZE.          =18
+
+<value> .FONTSTATUS.            =0
+<value> .FONTSTATUSNAME.        =VDRSymbols Sans:Book
+<value> .FONTSTATUSSIZE.        =18
+
+<value> .FONTSYMBOL.            =0
+<value> .FONTSYMBOLNAME.        =VDRMusicSymbols:Regular
+<value> .FONTSYMBOLSIZE.        =20
+
+<value> .FONTTITLE.             =0
+<value> .FONTTITLENAME.         =VDRSymbols Sans:Book
+<value> .FONTTITLESIZE.         =22
+
+<value> .FONTTOP.               =0
+<value> .FONTTOPNAME.           =VDRSymbols Sans:Book
+<value> .FONTTOPSIZE.           =22
+
+

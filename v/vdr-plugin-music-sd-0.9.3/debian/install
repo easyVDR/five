@@ -1,0 +1,4 @@
+libvdr-music-sd.so.*           usr/lib/vdr/plugins/
+debian/tmp/usr/share/locale
+fonts/VDRMusicSymbols.ttf   usr/share/fonts/truetype/
+music-sd/*	                    usr/share/vdr-plugin-music-sd/music-sd/

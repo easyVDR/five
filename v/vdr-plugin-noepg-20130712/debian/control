@@ -1,0 +1,24 @@
+Source: vdr-plugin-noepg
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8.0.0), vdr-dev (>= 1.7.26), pkg-config
+Standards-Version: 3.9.4
+Homepage: https://github.com/flensrocker/vdr-plugin-noepg
+
+Package: vdr-plugin-noepg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: This VDR plugin will replace the noepg-patch
+ This VDR plugin will replace the noepg-patch with the new cEpgHandler
+ of vdr >= 1.7.26
+
+Package: vdr-plugin-noepg-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-noepg (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-noepg
+ .
+ This package contains only the debugging symbols for vdr-plugin-noepg

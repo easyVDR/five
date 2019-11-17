@@ -1,0 +1,154 @@
+vdr-plugin-mpv (0.0.4+github20151224-2easyVDR7~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 16:03:11 +0100
+
+vdr-plugin-mpv (0.0.4+github20151224-2easyVDR6~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Jan 2019 01:25:51 +0100
+
+vdr-plugin-mpv (0.0.4+github20151224-2easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Dec 2017 21:22:44 +0100
+
+vdr-plugin-mpv (0.0.4+github20151224-2easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:52:00 +0100
+
+vdr-plugin-mpv (0.0.4+github20151224-2easyVDR3~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 02 Jul 2017 00:05:10 +0200
+
+vdr-plugin-mpv (0.0.4+github20151224-2easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:50:43 +0200
+
+vdr-plugin-mpv (0.0.4+github20151224-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:35:54 +0200
+
+vdr-plugin-mpv (0.0.4+github20151224-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 06 Sep 2016 22:00:06 +0200
+
+vdr-plugin-mpv (0.0.4+github20151224-1easyVDR4~trusty) trusty; urgency=high
+
+  * refresh mpv_Menuentry.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 17 Aug 2016 22:13:46 +0200
+
+vdr-plugin-mpv (0.0.4+github20151224-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:39:08 +0200
+
+vdr-plugin-mpv (0.0.4+github20151224-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:58:23 +0200
+
+vdr-plugin-mpv (0.0.4+github20151224-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 22 Mar 2016 23:13:50 +0100
+
+vdr-plugin-mpv (0.0.4+github20151224-1easyVDR0~trusty) trusty; urgency=high
+
+  * added mpv_Menuentry.patch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 30 Dec 2015 23:25:36 +0100
+
+vdr-plugin-mpv (0.0.4+github20151224-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:41:14 +0100
+
+vdr-plugin-mpv (0.0.4+github20151224-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot github
+  * commit:87543f7 - Added service call to seek in the played media 
+  * remove mpv-plex patch
+  
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Dec 2015 14:37:39 +0100
+
+vdr-plugin-mpv (0.0.4+git20150710-1easyVDR0~trusty) trusty; urgency=high
+
+  * added mpv-plex patch
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 11 Oct 2015 20:02:42 +0200
+
+vdr-plugin-mpv (0.0.4+git20150710-0mangoVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:28:00 +0200
+
+vdr-plugin-mpv (0.0.4+git20150710-0mangoVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for new ffmepg-2.7.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Aug 2015 23:57:50 +0200
+
+vdr-plugin-mpv (0.0.4+git20150710-0mangoVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Aug 2015 22:23:49 +0200
+
+vdr-plugin-mpv (0.0.4+git20150710-0mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 21:59:16 +0200
+
+vdr-plugin-mpv (0.0.4+git20150710-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 10 Jul 2015 23:42:30 +0200
+
+vdr-plugin-mpv (0.0.4-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 01 Jul 2015 00:33:11 +0200
+
+vdr-plugin-mpv (0.0.3-0mangoVDR1~trusty) trusty; urgency=high
+
+  * rebuild for new mpv-0.9.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 23 Jun 2015 23:52:49 +0200
+
+vdr-plugin-mpv (0.0.3-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 23 Jun 2015 21:30:57 +0200
+
+vdr-plugin-mpv (0.0.2-0mangoVDR0~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 12 Jun 2015 00:00:58 +0200
+ 
+

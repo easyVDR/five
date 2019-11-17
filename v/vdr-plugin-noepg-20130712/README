@@ -1,0 +1,46 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Lars Hanisch <dvb@flensrocker.de>
+
+Project's homepage:          https://github.com/flensrocker/vdr-plugin-noepg
+
+Latest version available at: git://github.com/flensrocker/vdr-plugin-noepg.git
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Description:
+This plugin will replace the noepg-patch with the new cEpgHandler
+of vdr >= 1.7.26.
+
+Configuration
+-------------
+All configuration is done with the settings.conf at the plugin's
+configuration directory.
+
+Mode
+----
+whitelist: block EPG of all channels except the ones from the list
+blacklist: block EPG of all channels from the list
+
+Format
+------
+mode=[whitelist|blacklist]
+channel-id
+channel-id // comment
+channel-id //= channel name
+channel-id
+...
+
+Notes
+-----
+Comments starting with "//=" will be ignored and replaced with
+the name of the channel.
+
+Helper
+------
+"nvertigo" from vdr-portal.de provided a script to convert the settings
+of the noepg-patch. You'll find it in the contrib-directory.

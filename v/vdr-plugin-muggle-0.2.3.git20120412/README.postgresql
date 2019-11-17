@@ -1,0 +1,76 @@
+/*! \mainpage Muggle: Usage with postgresql
+
+This is a plugin for the Video Disk Recorder (VDR).
+
+Written by:                  Andi Kellner,
+                             Lars von Wedel <vonwedel@web.de>,
+                             Ralf Klueber <r@lf-klueber.de>, 
+                             Wolfgang Rohdewald <wolfgang@rohdewald.de>
+
+Project's homepage:          http://sourceforge.net/projects/vdr-muggle
+
+Latest version available at: http://sourceforge.net/projects/vdr-muggle
+
+See the file COPYING for license information.
+
+\section prereq PREREQUISITES
+
+You will need:
+
+ - postgresql client libraries: Debian package postgresql-client
+ - postgresql server, possibly on another machine: Debian package postgresql
+ - postgresql-dev for the compilation
+
+Please execute these steps before starting muggle the first time:
+(tested on Debian unstable)
+
+1. log in as root
+2. su - postgres
+3. createuser XXX
+4. createdb GiantDisc
+
+under ubuntu:
+1. sudo -u postgres createuser XXX
+2. sudo -u postgres createdb GiantDisc
+
+
+where XXX is the user name vdr is running under, normally vdr.
+You may want to define the database encoding as UTF8, see 
+http://www.postgresql.org/docs/8.3/interactive/multibyte.html.
+This is not strictly necessary - postgresql will otherwise 
+convert data between server and client automatically.
+
+Everything else will be done by muggle.
+
+\section install INSTALLING 
+
+Adapt the Makefile or Make.config to your system. Define HAVE_PG
+
+HAVE_PG=1
+
+
+\section SET UP MUGGLE WITH POSTGRESQL
+
+Muggle and mugglei use a small set of parameters in order to control
+the interaction with the Postgresql server. Let's look at an example:
+
+\verbatim
+  -P'muggle -s /tmp -t/home/music'
+\endverbatim
+
+The -s parameter says to look for a socket in /tmp (this is what I
+had to to on Debian unstable). 
+
+On the other hand on my kubuntu 7.10 notebook I don't need any
+additional arguments at all:
+
+\verbatim
+  -P'muggle -t/home/music'
+\endverbatim
+
+
+Starting mugglei without arguments to see a list and explanation of
+all available options. They can vary slightly depending on the
+chosen data base software.
+
+*/

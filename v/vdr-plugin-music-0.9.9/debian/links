@@ -1,0 +1,2 @@
+usr/share/vdr-plugin-music/music    var/lib/vdr/plugins/moronsuite/music
+var/lib/vdr/plugins/moronsuite/music/musicsources.conf	   etc/vdr/plugins/musicsources.conf

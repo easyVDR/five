@@ -1,0 +1,24 @@
+--- a/Makefile
++++ b/Makefile
+@@ -53,8 +53,8 @@
+ #  ------
+ #  emerge c-client (tested with c-client-2007e-r2)
+ 
+-IMAPINCDIR ?= /usr/include/imap
+-IMAPLFLAGS ?= -lc-client
++#IMAPINCDIR ?= /usr/include/imap
++#IMAPLFLAGS ?= -lc-client
+ 
+ #
+ #  Debian/Ubuntu
+@@ -62,8 +62,8 @@
+ #  install the packages 'libc-client2007e-dev'
+ #  and set the following variables
+ #
+-# IMAPINCDIR ?= /usr/include/c-client
+-# IMAPLFLAGS ?= -lc-client
++IMAPINCDIR ?= /usr/include/c-client
++IMAPLFLAGS ?= -lc-client
+ #
+ #  c-client installation from source
+ #  ---------------------------------

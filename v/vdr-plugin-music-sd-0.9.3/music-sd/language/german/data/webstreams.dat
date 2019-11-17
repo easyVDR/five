@@ -1,0 +1,27 @@
+#--------------------------------------------------------------------------------------------------------------------------------   : echo
+#   UPDATE WEBSTREAMS
+#--------------------------------------------------------------------------------------------------------------------------------   : echo
+---- Top Streams ---------------------------------------------------------------------------- : echo
+  * Genre Top 40 *?	  	: screen -A -m -d -S updateTop40 /usr/share/vdr-plugin-music/shout2vdr Top40 40;
+---- Electronic  ---------------------------------------------------------------------------- : echo
+  * Genre Dance *?	  	: screen -A -m -d -S updateDance  /usr/share/vdr-plugin-music/shout2vdr Dance 40;
+  * Genre Electronic *?	  	: screen -A -m -d -S updateElectronic  /usr/share/vdr-plugin-music/shout2vdr Electronic 40;
+  * Genre Chillout *?	  	: screen -A -m -d -S updateChill  /usr/share/vdr-plugin-music/shout2vdr Chill 40;
+  * Genre Disco *?	  	: screen -A -m -d -S updateDisco  /usr/share/vdr-plugin-music/shout2vdr Disco 40;
+  * Genre Club *?	  	: screen -A -m -d -S updateClub  /usr/share/vdr-plugin-music/shout2vdr Club 40;
+  * Genre House *?	  	: screen -A -m -d -S updateHouse  /usr/share/vdr-plugin-music/shout2vdr House 40;
+  * Genre Trance *?	  	: screen -A -m -d -S updateTrance  /usr/share/vdr-plugin-music/shout2vdr Trance 40;
+  * Genre Techno *?	  	: screen -A -m -d -S updateTechno  /usr/share/vdr-plugin-music/shout2vdr Techno 40;
+---- Pop/Rock    ---------------------------------------------------------------------------- : echo
+  * Genre Metal Rock *?	  	: screen -A -m -d -S updateMetalRock  /usr/share/vdr-plugin-music/shout2vdr Metal 40;
+  * Genre Rock *?	  	: screen -A -m -d -S updateRock  /usr/share/vdr-plugin-music/shout2vdr Rock 40;
+  * Genre Pop *?	  	: screen -A -m -d -S updatePop  /usr/share/vdr-plugin-music/shout2vdr Pop 40;
+  * Genre 80s *?	  	: screen -A -m -d -S update80s  /usr/share/vdr-plugin-music/shout2vdr 80s 40;
+  * Genre Oldies *?	  	: screen -A -m -d -S updateOldies  /usr/share/vdr-plugin-music/shout2vdr Oldies 40;
+  * Genre Classic Rock/Pop *?   : screen -A -m -d -S updateClassicRock  /usr/share/vdr-plugin-music/shout2vdr Classic 40;
+--------------------------------------------------------------------------------------------------------------------------------   : echo
+---- Internetradio ---------------------------------------------------------------------------------------------------------------------------   : echo
+  * 7000 Internetradios holen *?    : python /usr/share/vdr-plugin-music/webradio.py | at now ;
+==============================================================================================================================================   : echo
+  * Aktualisiere Alles *?       : screen -A -m -d -S updateAll  /usr/share/vdr-plugin-music/shout2vdr-alles.sh;
+  

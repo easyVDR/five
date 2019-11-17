@@ -1,0 +1,23 @@
+Source: vdr-plugin-mpv
+Section: video
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config, libxcb1-dev (>= 1.8.1), libxcb-util0-dev (>= 0.3.8), libxcb-image0-dev (>= 0.3.9), libxcb-icccm4-dev (>= 0.3.9), libxcb-keysyms1-dev (>= 0.3.9), libswscale-dev, libjpeg-dev, libmpv-dev (>= 0.7.9)
+Standards-Version: 3.9.4
+Homepage: http://www.vdr-portal.de/board1-news/board2-vdr-news/126741-announce-mpv-plugin-0-0-2
+
+Package: vdr-plugin-mpv
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, libmpv1, mpv
+Description: A mpv player plugin for VDR
+ A mpv player plugin for VDR forked from vdr-play by Johns
+ 
+##Package: vdr-plugin-mpv-dbg
+##Architecture: any
+##Section: debug
+##Priority: extra
+##Depends: vdr-plugin-mpv (= ${binary:Version}), ${misc:Depends}
+##Description: debugging symbols for vdr-plugin-mpv
+## .
+## This package contains only the debugging symbols for vdr-plugin-mpv 

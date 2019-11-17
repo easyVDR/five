@@ -1,0 +1,631 @@
+This is a plugin for the Video Disk Recorder (VDR).
+
+Written by: Alexander Rieger <alex AT axrg DOT de>
+
+Project's homepage: http://alex.vdr-developer.org>
+
+Latest version available at the homepage.
+
+Contents:
+=========
+
+1.  Description
+2.  License / Disclaimer
+3.  Installation
+4.  Usage
+4.1   Overview
+4.2   Key-mapping help screen
+4.3   Mailbox-View
+4.4   MailList-View
+4.5   Mail-View
+5.  Configuration
+5.1   Starting VDR with the plugin
+5.1.1   Parameter -m mailcmd.sh
+5.1.2   Parameter -c mailconv.sh
+5.2   Configuration of the plugin
+5.3   General settings of the plugin
+5.4   Setting up mail accounts
+5.5   Folder selection
+6.  Known Problems / Todo
+7.  Thanks
+
+1. Description:
+===============
+
+Mailbox is a plugin for the Video Disk Recorder (VDR) by Klaus Schmidinger.
+
+The Mailbox-plugin provides access to multiple e-mail accounts to display the
+contained e-mails on the On-Screen-Display (OSD) of the Video Disk Recorder.
+
+This plugin uses the c-client-library of the IMAP server of University of
+Washington (UW IMAP) to access e-mail accounts.
+
+As the c-client library supports the IMAP and POP3 protocol the Mailbox-
+plugin is able to access both types of mail accounts. Due to the fact that
+IMAP provides more features than POP3, several plugin functions are only
+available when working with IMAP accounts.
+
+A POP3 server, as opposed to an IMAP server, doesn't keep track which mails
+have already been retrieved by a mail client. As the plugin doesn't store any
+information (besides the configuration data) either, all e-mails are reported
+as new by the Mailbox-plugin for every query of a POP3 account. This might be
+the most notable drawback when using POP3 with the Mailbox-plugin.
+
+The plugin supports the following features:
+
+- Access and display e-mails of multiple IMAP or POP3 accounts.
+
+- Multiple displays:
+  - Mailbox-View:  Shows a list of all mail accounts with the total amount as
+                   well as the number of new mails.
+                   (for POP3 accounts all e-mails are reported as new.)
+  - MailList-View: Shows the list of mails within one mail account with
+                   status-flags, subject and sender.
+  - Mail-View:     Shows subject, sender, date/time, status-flags and the body
+                   of a mail.
+
+- Mails encoded in quoted-printable or Base64 are decoded and - if
+  necessary - converted to the charset used by VDR.
+
+- The parameter 'format=flowed' is honoured when wrapping mails at the OSD
+  boundaries. Additionally some non-standard wrapping enhancements may
+  be activated to make wrapped text more readable.
+
+- IMAP/POP3: when displaying a multipart mail, only parts with content-type
+  text are displayed.
+
+- IMAP: when displaying a multipart mail, only parts with content-type text
+  are retrieved.
+
+- IMAP: when a mail is displayed in the Mail-View the \seen flag for this
+  mail is set automatically (configurable).
+
+- IMAP: set/clear the flags \seen, \flagged and \deleted for mails in the
+  MailList-View and in the Mail-View.
+
+- Expunge mails with the \deleted flag set when a mailbox is closed
+  (configurable).
+
+- Periodic check for new mails in the background and perform one of the
+  following actions if new mails have been received since the last check:
+
+  - Display a status message on the OSD; pressing Ok opens the Mail account.
+  - Show the number of new mails in the main menu entry of the plugin.
+  - Start an external application.
+
+  Additionally the presence of new mail can be queried by other plugins using
+  the internal service interface. As an example this could be used by skin-
+  plugins to show a suitable icon within the status displays on the OSD.
+
+- Access to e-mails or configuration data of an account can be protected with
+  a numerical code. To open the mail or the configuration view the code needs
+  to be entered with the remote control.
+
+- In every view of the plugin an information page can be opened by pressing the
+  key 0 which shows all key assignments of the remote control.
+
+NOTE: The account settings are stored in a plain text file in a directory
+'plugins/mailbox' below the directory where VDR stores its setup files. The
+file will be created with umask 0x600, therefore only the user which executes
+VDR is able to read this file.
+
+The mail account passwords are stored in an obscured way in this file.
+There's is no real encryption; it just makes the passwords difficult to
+read for humans.
+
+If you consider this insecure, don't use this plugin.
+
+2. License / Disclaimer:
+========================
+
+Free project statement
+
+This is a FREE and completely non-commercial project. The source code is
+protected by the GNU general public license.
+
+    The Mailbox-plugin is a plugin for Klaus Schmidinger's vdr.
+    Copyright (C) 2008 Alexander Rieger
+
+    This program is free software; you can redistribute it and/or modify
+    it under the terms of the GNU General Public License as published by
+    the Free Software Foundation; either version 2 of the License, or
+    (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License along
+    with this program; if not, write to the Free Software Foundation, Inc.,
+    51 Franklin Street, Fifth Floor, Boston, MA 02110-1301 USA.
+
+See the file COPYING for the complete license text.
+
+The Mailbox-plugin isn't distributed/packaged with the c-client library of
+University of Washington (UW). The plugin simply requires that the c-client
+library is already installed on the destination computer.
+
+Nevertheless it may be necessary to insert the following excerpt from the
+"Free-Fork License" of UW-IMAP/c-client here:
+
+    This software is made available "as is", and
+
+    THE UNIVERSITY OF WASHINGTON DISCLAIMS ALL WARRANTIES, EXPRESS OR
+    IMPLIED, WITH REGARD TO THIS SOFTWARE, INCLUDING WITHOUT LIMITATION
+    ALL IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+    PARTICULAR PURPOSE, AND IN NO EVENT SHALL THE UNIVERSITY OF
+    WASHINGTON BE LIABLE FOR ANY SPECIAL, INDIRECT OR CONSEQUENTIAL
+    DAMAGES OR ANY DAMAGES WHATSOEVER RESULTING FROM LOSS OF USE, DATA
+    OR PROFITS, WHETHER IN AN ACTION OF CONTRACT, TORT (INCLUDING
+    NEGLIGENCE) OR STRICT LIABILITY, ARISING OUT OF OR IN CONNECTION
+    WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+
+(see complete text at <http://www.washington.edu/imap/legal.html>)
+
+The same applies analogously for the author of the Mailbox-plugin.
+
+3. Installation
+===============
+
+The installation instructions are located in the separate file INSTALL.
+
+
+4. Usage
+========
+
+4.1 Overview
+------------
+
+There are three different views which are displayed most of the time when
+using the Mailbox-plugin:
+
+- Mailbox-View:  Shows a list of all mail accounts with the total amount as
+                 well as the number of new mails.
+- MailList-View: Shows the list of mails within one mail account with
+                 status-flags, subject and sender.
+- Mail-View:     Shows subject, sender, date/time, status-flags and the body
+                 of a mail.
+
+When the plugin is activated from the main menu of VDR the Mailbox-View is
+displayed. After selecting the desired mail account and pressing the
+appropriate key the MailList-View displays all e-mails within the selected
+account. Within the MailList-View the Mail-View can be activated to display
+the selected e-mail.
+
+
+4.2 Key-mapping help screen
+---------------------------
+
+In every view of the plugin a help screen can be displayed to show the
+current key mapping of the remote control and the functions they activate.
+
+Depending on the type of the current mail account (IMAP/POP3), the current
+situation and the selected OSD item different functions may be available.
+
+Enabled functions may be activated by pressing 'Ok' directly from the help
+screen. Pressing 'Back' closes the help screen and displays the previous OSD.
+
+As there is no help key on the remote control, the key '0' is used to activate
+the key-mapping help screen.
+
+If the current OSD item consumes the key '0' itself (e.g. an item to enter
+characters or numbers), it's not possible to display the key-mapping help
+screen.
+
+Note: As the key-mapping help screen can be opened from every view of the
+plugin, almost no key assignments are described in this README.
+
+
+4.3 Mailbox-View
+----------------
+
+After the Mailbox-plugin is activated from the main menu of VDR the Mailbox-
+View is opened and all accounts are checked for the number of new e-mails as
+well as the total amount of of e-mails.
+
+After selecting the desired mail account with the cursor keys the MailList-
+View can be opened for the current account.
+
+
+4.4 MailList-View
+-----------------
+
+The plugin reads the headers (status flags/subject/from) of the mails
+within the selected mailbox and displays them in a list.
+
+The flags are displayed with the following characters:
+
+  'N' - \seen     is not set ('N' for *N*ew)
+  'F' - \flagged  is set
+  'D' - \deleted  is set
+  'A' - \answered is set
+
+Several keys can be used to jump to the next/previous or the next/previous
+new mail. Additionally the status flags seen, deleted and flagged may be
+toggled with the remote control.
+
+Selecting a mail with the cursor keys and pressing Ok opens the Mail-View
+showing the current mail.
+
+Pressing 'Back' closes the MailList-View and returns to the Mailbox-View.
+If the option "Cleanup on close" is enabled for this account, all mails
+with the \deleted flag set will get expunged from the mailbox.
+
+5.4 Mail-View
+-------------
+
+The plugin reads the e-mail from the mail server and displays subject,
+sender, date/time and the mail text.
+
+If the mail is a single-part-mail the whole message text gets fetched.
+IMAP only: If the mail is a multipart mail only parts with content-type
+text are fetched. Only parts with content-type text are displayed.
+
+As far as possible, the same keys can be used as in the MailList-View to
+toggle status flags and to jump to previous / next mails.
+
+If the option "Auto mark seen" is enabled for the current account the \seen
+flag will be set for every mail which is displayed in the 'mail-view'.
+
+Initially the message text is wrapped according to the option selected in
+the general settings (see below). The word-wrapping mode may be temporarily
+changed with a key of the remote control.
+
+5. Configuration
+================
+
+5.1 Starting VDR with the plugin
+--------------------------------
+
+5.1.1   Parameter -m mailcmd.sh
+-------------------------------
+
+The plugin is able to do a periodic check for new mails in the background
+and perform several actions whenever the number of new mails changes.
+
+If you want the plugin to start an external command you have to pass the path/
+name of the program to the plugin with the command line parameter -m. See the
+documentation of VDR on how to pass a command line parameter to a plugin.
+
+The command will be called the following parameters:
+
+  Param 1: <name of the account>
+  Param 2: <user name>
+  Param 3: 'dummy', reserved for later use
+  Param 4: 'dummy', reserved for later use
+  Param 5: <number of new mails in the account>
+  Param 6: <total number of mails in the account>
+
+A sample script 'mailcmd.sh' is located in the source directory of the plugin.
+'mailcmd.sh' logs the given parameters to the syslog using the command logger.
+
+Before starting the mailbox-plugin with the external command, please check
+that your script works as expected by calling it from a shell with
+
+  $ mailcmd.sh AccountName UserName dummy dummy 1 1
+
+The background checking feature of the plugin must be enabled in the general
+settings of the plugin. Additionally you have to enable the background
+checking for every mail account and activate the option to start the external
+application.
+
+If you enable the background checking feature, the plugin starts a separate
+thread to check for new mail in given intervals. This thread is stopped when
+you enter the Mailbox-plugin or the configuration of the plugin. Whenever
+you leave the plugin or the configuration of the plugin the thread is started
+again.
+
+A few seconds after the background thread is started, it checks the mail
+accounts for mails for the first time and starts the external command for all
+mail accounts. Afterwards the external command is only started if the number
+of new mails of an account has changed. Additionally the external command is
+also started for all configured mail accounts after you leave the settings of
+the plugin.
+
+5.1.2   Parameter -c mailconv.sh
+--------------------------------
+
+The plugin is able to display mail(-parts) which are formatted in html.
+
+To convert the html-source to plain text the plugin calls an external
+command / shell script, which has to be passed with the parameter
+"-c <name of conversion program>" (e.g. "-c mailconv.sh") to the plugin.
+
+For mail-parts in html format the plugin...
+
+1) writes the html-source to a temporary file
+
+2) calls the mailconv.sh-command with the following parameters:
+   -i <name of the html-source file>
+   -s <charset in the html-source file>
+   -o <name of the destination file>
+   -d <charset expected in the destination file>
+   -w <number of characters per line>
+
+3) displays the contents of the destination file if mailcmd.sh returns
+   with exit-code 0
+
+4) deletes source- and destination-file
+
+The name of the html source-file is '/tmp/vdr-mail-<pid-of-the-vdr-process>.html
+and the name of the text destination-file is '/tmp/vdr-mail-<pid-of-the-vdr-process>.txt'.
+Therefore, vdr needs the appropriate rights in the file system.
+
+A sample script 'mailconv.sh' is located in the source directory of the plugin
+which shows the usage of either w3m, html2text or lynx for the conversion.
+Needless to say, (one of) these external applications has to be installed
+separately.
+
+Some remarks about html mails in general:
+
+- Simple mails consist of only one plain text part, which is displayed as
+  before.
+ 
+- A mail may consist of multiple parts (MULTIPART/ALTERNATIVE) where both
+  parts contain the same text. One of these parts is formatted as plain text
+  and the other part contains the same text formatted as html.
+  Since the plugin can only display plain text anyway, it displays the
+  plain text part and ignores the html part.
+  (see RFC 2046, section 5.1.4)
+
+  By pressing the key 8 the plugin displays all parts of the mail performing
+  a conversion for html-parts.
+
+- A mail may have one html part only: The plugin converts the html-text as
+  described above and displays the converted text.
+
+5.2 Configuration of the plugin
+-------------------------------
+
+In the setup menu of the plugin you can configure global settings of the
+plugin and add, modify, delete or change the order of multiple mail accounts.
+
+
+5.3 General settings of the plugin
+----------------------------------
+
+Following options are available in the general settings of the plugin:
+
+- Check every (minutes): 0..35, 0 disables this feature, default is 0.
+
+Sets the interval for the periodic background check for new mail in minutes.
+
+- Connection timeout (seconds): 0..
+
+Sets the time the network functions wait for a response from the mail server.
+
+A value of 0 uses the system default. A reasonable value would be somewhat
+smaller than the watchdog timeout of VDR (option -w when starting VDR).
+The default setting is 0 to use the system default.
+
+- Sort order: <ascending/descending>
+
+Selects whether the mails are listed in ascending or descending order in the
+MailList-View and the Mail-View.
+
+- Maximum number of Mails:
+
+Specifies the maximum number of mails fetched from the mail server. Depending
+on the number of mails in a mail account and the speed of the connection to
+the mail server, fetching many mails may take quite some time and cause VDR
+to exit when the watchdog timeout is reached. Therefore the number of mails to
+retrieve should be set to a reasonable value.
+
+- Word-wrap mode:
+
+There are four modes how the word-wrapping is done in Mail-View.
+
+Note: Modes 2-4 may not be supported with the current skin as the skin must
+implement the methods cSkin::GetTextAreaWidth() and cSkin::GetTextAreaFont().
+At least the standard-skins Classic and ST:TNG and the Elchi-skin currently
+support this methods.
+
+The modes are:
+
+Wrap mode: "1: wrap by vdr"
+
+The mail text is wrapped by VDR at the boundaries of the OSD. This is the
+only mode which is supported with all skins.
+
+Wrap mode: "2: continue quotes"
+
+When a quoted line (a line that starts with one or more '>') must be wrapped
+at the OSD boundaries, the same number of quote-characters are prepended to
+the second part of the wrapped line to improve readability of the quoted text.
+
+Wrap mode: "3: honour format flowed"
+
+Lines that end with 'soft breaks' (SPACE + CRLF) in mail parts that have set
+the parameter 'format=flowed', are treated as 'flowed lines' and therefore
+concatenated with the following line (see RFC 2646).
+
+Wrap mode: "4: combine lines"
+
+Whereas mode 3 uses a well defined feature of mail format, this mode tries to
+guess whether two consecutive lines may be combined for mail parts which do
+not have set 'format-flowed'.
+
+Two consecutive lines are concatenated if the first line ends with a lower
+character ('a'-'z') and the following line starts with a lower character and
+additionally both lines start with the same number of quote characters.
+
+Of course the last wrap mode doesn't follow any standard behaviour.
+Nevertheless it may help to improve readability in many cases.
+
+If wrap-mode 4 is enabled and an e-mail looks weird in Mail-View, it is
+always possible to toggle through the different wrap modes using key 5 on
+the remote control.
+
+
+5.4 Setting up mail accounts
+----------------------------
+
+The configuration dialog of a mail account contains many options. The
+availability of some options depends on the type of the mail account.
+
+- Account name:
+
+A readable string as name for the account.
+
+This is used to display information on the OSD at several places (Mailbox-
+View, OSD-Messages,...) and has no further meaning.
+
+- Restrict access: <Unrestricted | Setup | Setup & view>
+
+The access to e-mails or configuration data of an account can be protected
+with a numerical code. To open the mail or the configuration view the code
+needs to be entered with the remote control.
+
+The values have the following meaning:
+
+  - Unrestricted: no code is necessary to enter the configuration or to
+                  read e-mails.
+  - Setup:        a code is necessary to enter the configuration, no code
+                  is necessary to read e-mails.
+  - Setup & view: a code is necessary to enter the configuration and to
+                  read e-mails.
+
+- Access code:
+
+This code must be entered with the remote control to enter the setup view
+or to read e-mails depending on the previous setup option.
+
+- Auto mark seen: <yes|no>
+
+If set to yes the plugin marks every e-mail automatically as seen when
+displayed.
+.
+Note: The \seen flag only works with IMAP accounts as the server stores the
+status of this flag.
+
+- Cleanup on close: <yes | no>
+
+If set to yes the plugin expunges all e-mails which have the \deleted flag
+set when a mailbox is closed.
+
+- Background check: <yes | no>
+
+Enables / disables if this account is checked periodically in the background.
+
+This option is only available if the background check is enabled in the
+general plugin settings.
+
+The following three options decide which action should be performed if new
+mail arrives:
+
+- Status message: <yes | no>
+
+Displays a status message on the on screen:
+
+   "New mail in <account name>, open?"
+
+or
+
+  "2 new mails in <account name>, open?"
+
+If the Ok-button is pressed while this message is visible, the plugin directly
+opens the MailList-View for the respective account.
+
+- Main menu entry: <yes | no>
+
+If enabled the presence of new mail is displayed as an appendix to the main
+menu entry of the plugin:
+
+The normal main menu entry is: "Mailbox". If two new e-mails are in a mail
+account the main menu entry is "Mailbox (2 new)".
+
+If this option is enabled for multiple mail accounts the number of new mails
+is appended for every mail account which has this option enabled.
+
+Example: If this option is enabled for two accounts and the first account
+doesn't contain new e-mails but the second account contains three mails,
+the main menu entry is: "Mailbox (0/3 new)". So if the number of new e-mails
+is displayed in the main menu entry, it's always obvious, which mail account
+contains how many new e-mails.
+
+Note: The main menu entry is only updated if the main menu is opened with
+the Menu-button on the remote control. It is not possible to update the
+main menu entry while any other OSD-menu is open.
+
+- External command: <yes|no>
+
+If this option is enabled for a mail account, an external command is
+executed whenever the number of new mails changes.
+
+The name/path of the external command is given with the parameter "-m"
+to the plugin when starting VDR.
+
+- Service interface: <yes|no>
+
+The internal service call to query if new e-mails are present returns true
+if at least one mail account with this option enabled has new mail. The
+service call can be used e.g. by skins to highlight an a-mail icon in
+status views.
+
+--- Account settings ---
+
+- Account type: <User defined | IMAP | POP3 | NNTP>
+
+The Mailbox plugin uses the c-client library for accessing the mail accounts
+on the mail server.
+
+C-client expects to get the settings of an account in a string in a somewhat
+difficult and longish string. To make it a little easier to enter this string,
+the Mailbox plugin presents some of the options in separate OSD items. The
+resulting mailbox access string as passed to the c-client library is displayed
+in the OSD status line.
+
+A description of this mailbox access string can be found in the documentation
+of the c-client-library; the online-version is available as follows:
+
+<http://www.washington.edu/imap/documentation/naming.txt.html>
+
+If the item 'Account type' is set to 'User defined' the complete mailbox
+access string has to be entered with the remote control on the OSD.
+
+If the item 'Account type' is set to IMAP, POP3 or NNTP, the mailbox access
+string can be entered by switching several individual options.
+
+While configuring a mail account it is always possible to check whether the
+current settings are valid and the mail account is accessible with the
+current setting by pressing the appropriate key on the remote control.
+
+After checking whether the mail account is accessible, the number of e-mails
+or an error message is displayed in the status line on the OSD. Additionally
+a communication log can be displayed if the 'Debug' option was enabled before
+checking.
+
+When configuring an IMAP account, it is possible to select a folder by
+pressing the appropriate key on the remote (see below).
+
+After the mail account was configured and tested successfully the configuration
+can be closed with the Ok key.
+
+Note: It is more or less possible to access a news-server (nntp) and retrieve
+news messages. Due to the fact that the plugin doesn't keep track of already
+seen messages, this option isn't really usable. The option is simply present
+for completeness as c-client supports the nntp-protocol.
+
+5.5 Folder selection
+--------------------
+
+The folder selection view is used to select a single folder of an IMAP (or
+NNTP) account and to check if the folder is accessible.
+
+Note: If this view is called for a server which isn't reachable over a very
+fast connection and if there are a lot of folders in the mail account the
+plugin will most likely cause VDR to exit when the watchdog is triggered.
+This especially happens of you try to get the list of newsgroups from a news-
+server over a slow connection.
+
+6.  Thanks
+==========
+Last but not least, I want to thank Klaus Schmidinger for his incredible
+work on VDR, the developers of plugins, patches and other extensions, the
+developers of the DVB-drivers, Mark Crispin for developing the c-client-
+library and all users for their valuable feedback and everyone else I
+may have forgotten...
+
+Have fun,
+  Alex

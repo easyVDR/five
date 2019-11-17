@@ -1,0 +1,24 @@
+Source: vdr-plugin-neutrinoepg
+Section: video
+Priority: extra
+Maintainer: yaVDR Team <team@yavdr.org>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 2.0.6), gettext, pkg-config, 
+Standards-Version: 3.9.3
+Homepage: http://projects.vdr-developer.org/projects/plg-neutrinoepg
+
+Package: vdr-plugin-neutrinoepg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Plugin for VDR. A software and GPU emulated HD device
+ This plugin for the Linux Video Disc Recorder VDR. 
+ A neutrino like epg plugin
+
+Package: vdr-plugin-neutrinoepg-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-neutrinoepg (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-neutrinoepg
+ .
+ This package contains only the debugging symbols for vdr-plugin-neutrinoepg
+

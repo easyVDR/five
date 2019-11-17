@@ -1,0 +1,98 @@
+#!/bin/sh
+#
+# requires: *topnm, pnmpad, pnmscale, ppmntsc, ppmtoy4m, mpeg2enc,
+#           mktemp, awk, file
+#
+
+
+# video format. pal or ntsc
+FORMAT=pal
+
+# target image width/height (taking into account visible screen area)
+if [ "$FORMAT" = "ntsc" ]; then
+  TW=704
+  TH=480
+else
+  TW=704
+  TH=576
+fi
+
+TMP=$(mktemp ${TMPDIR:-/tmp}/image_convert.pnm.XXXXXX) || exit 2
+IMG=$1
+MPG=$2
+
+left=$3
+top=$4
+width=$5
+height=$6
+right=`expr $TW - $left - $width`
+bottom=`expr $TH - $top - $height`
+
+
+DIR=$(dirname "$MPG")
+if [ ! -d "$DIR" ]; then
+  mkdir -p "$DIR" || exit 2
+fi
+
+trap cleanup EXIT
+cleanup()
+{
+  [ -z "$TMP" ] || rm -f "$TMP"
+}
+
+#
+# get the file type and set the according converter to PNM
+#
+FILE_TYPE=$(file -i -L -b "$IMG" 2>/dev/null | cut -f2 -d/)
+case "$FILE_TYPE" in
+  jpg | jpeg)
+  TO_PNM=jpegtopnm
+  ;;
+  tiff)
+  TO_PNM=tifftopnm
+  ;;
+  bmp | x-bmp)
+  TO_PNM=bmptoppm
+  ;;
+  png | x-png)
+  TO_PNM=pngtopnm
+  ;;
+  Netpbm | pnm | x-portable-pixmap)
+  TO_PNM=cat
+  ;;
+  gif)
+  TO_PNM=giftopnm
+  ;;
+  *)
+  echo "filetype '$FILE_TYPE' is not supported"
+  exit 1
+  ;;
+esac
+
+for requires in $TO_PNM pnmpad ppmntsc pnmscale ppmtoy4m mpeg2enc
+do
+	which $requires >/dev/null 2>&1
+	if test $? -ne 0
+	then
+		echo $requires not installed
+		exit 1
+	fi
+done
+
+$TO_PNM "$IMG" >"$TMP" 2>/dev/null
+
+if [ "$FORMAT" = "ntsc" ]; then
+# untested
+    pnmscale -width $width -height $height "$TMP" |
+    pnmpad -black -left $left -top $top -right $right -bottom $bottom |
+    ppmntsc |
+    ppmtoy4m -v 0 -n 1 -r -S 420mpeg2 -F 30000:1001 |
+    mpeg2enc -f 7 -T 90 -F 4 -nn -a 2 -v 0 -o "$MPG"
+else
+    pnmscale -width $width -height $height "$TMP" |
+    pnmpad -black -left $left -top $top -right $right -bottom $bottom |
+    ppmntsc --pal |
+    ppmtoy4m -v 0 -n 1 -r -S 420mpeg2 -F 25:1 |
+    mpeg2enc -f 7 -T 90 -F 3 -np -a 2 -v 0 -o "$MPG"
+# variant:     mpeg2enc -f 3 -b 12500 -a 2 -q 1 -n p -I 0 -v 0 -o "$MPG"
+fi

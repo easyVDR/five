@@ -1,0 +1,22 @@
+Source: vdr-plugin-nordlichtsepg
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Günther <tom@toms-cafe.de>, Tobias Grimm <tg@e-tobi.net>, Thomas Schmidt <tschmidt@debian.org>
+Build-Depends: debhelper (>= 7), cdbs, vdr-dev (>= 1.7.16), gettext
+Standards-Version: 3.9.1
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-nordlichtsepg/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-nordlichtsepg/trunk/
+
+Package: vdr-plugin-nordlichtsepg
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Nordlicht's EPG for VDR
+ This plugin provides an EPG (Electronic Program Guide) similar to VDR's
+ "What's on now?"-menu. Unlike this it also shows channels without epg-infos.
+ You can browse the epg with an adjustable step width. It is also possible to
+ set a time at the setup to which you can jump by keypress, with the keys 1-7
+ you can jump 1-7 days forward. A bargraph at the "What's on now?"-view shows
+ the progress of the running program. Timers are marked with a clock-icon,
+ recording timers with a 'REC'-icon. It is possible, also for channels without
+ epg-infos, to set timers.

@@ -1,0 +1,62 @@
+Index: vdr-plugin-music-0.9.9/commands.c
+===================================================================
+--- vdr-plugin-music-0.9.9.orig/commands.c	2016-12-27 00:22:53.111213787 +0100
++++ vdr-plugin-music-0.9.9/commands.c	2016-12-27 00:22:53.051213490 +0100
+@@ -296,7 +296,7 @@
+ 
+ 
+ cMP3Themes::cMP3Themes(void)
+-:cOsdMenu(tr("Music: Appearance"),4)
++:cOsdMenu(tr("Music: Appearance"),32)
+ {
+ 
+   LoadSkinFiles();
+@@ -462,7 +462,7 @@
+ 
+ 
+ cMP3Visual::cMP3Visual(void)
+-:cOsdMenu(tr("Music: Visualizations"),4)
++:cOsdMenu(tr("Music: Visualizations"),32)
+ {
+   Add(new cOsdItem(hk(tr("Disable visualization"))));
+   LoadVisFiles();
+@@ -614,7 +614,7 @@
+ 
+ 
+ cMP3User::cMP3User(void)
+-:cOsdMenu(tr("Music: User"),4)
++:cOsdMenu(tr("Music: User"),32)
+ {
+   LoadUsername();
+   SetHelp();
+Index: vdr-plugin-music-0.9.9/music-0.9.9/commands.c
+===================================================================
+--- vdr-plugin-music-0.9.9.orig/music-0.9.9/commands.c	2016-12-27 00:22:53.111213787 +0100
++++ vdr-plugin-music-0.9.9/music-0.9.9/commands.c	2016-12-27 00:22:53.067213569 +0100
+@@ -296,7 +296,7 @@
+ 
+ 
+ cMP3Themes::cMP3Themes(void)
+-:cOsdMenu(tr("Music: Appearance"),4)
++:cOsdMenu(tr("Music: Appearance"),32)
+ {
+ 
+   LoadSkinFiles();
+@@ -462,7 +462,7 @@
+ 
+ 
+ cMP3Visual::cMP3Visual(void)
+-:cOsdMenu(tr("Music: Visualizations"),4)
++:cOsdMenu(tr("Music: Visualizations"),32)
+ {
+   Add(new cOsdItem(hk(tr("Disable visualization"))));
+   LoadVisFiles();
+@@ -614,7 +614,7 @@
+ 
+ 
+ cMP3User::cMP3User(void)
+-:cOsdMenu(tr("Music: User"),4)
++:cOsdMenu(tr("Music: User"),32)
+ {
+   LoadUsername();
+   SetHelp();

@@ -1,0 +1,22 @@
+--- a/Makefile
++++ b/Makefile
+@@ -9,7 +9,7 @@
+ 
+ # (Default) DO NOT UNCOMMENT IT IN DEVELOPER-VERSIONS
+ HAVE_IMAGEMAGICK=1
+-IMAGEMAGICKDIR=/usr/include/ImageMagick
++#IMAGEMAGICKDIR=/usr/include/ImageMagick
+ 
+ # Uncomment the following line, if you don't have libsndfile installed
+ #WITHOUT_LIBSNDFILE=1
+@@ -138,8 +138,8 @@
+ #endif
+ 
+ ifdef HAVE_IMAGEMAGICK
+-	INCLUDES += -I$(IMAGEMAGICKDIR)
+-	LIBS += $(shell Magick++-config --libs)
++	INCLUDES += $(shell pkg-config --cflags GraphicsMagick++)
++	LIBS += $(shell pkg-config --libs GraphicsMagick++)
+ 	DEFINES += -DHAVE_IMAGEMAGICK
+ else
+ 	INCLUDES += -I$(IMLIB)/src

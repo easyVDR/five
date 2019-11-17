@@ -1,0 +1,18 @@
+Debian specific default settings
+--------------------------------
+
+The following default settings have been changed for the Debian package:
+
+- Image Cache (command line argument -c / --icache):
+    /var/cache/vdr-plugin-mp3/images
+
+- Image Convert Script (command line argument -i / --iconv):
+    /usr/share/vdr-plugin-mp3/image_convert
+
+- Mount Script (command line argument -m / --mount):
+    /usr/share/vdr-plugin-mp3/mount
+
+- Mplayer Script (command line argument -M / --mplayer):
+    /usr/share/vdr-plugin-mplayer/mplayer
+
+ -- Tobias Grimm <tg@e-tobi.net>,  Sat, 30 Sep 2006 15:06:00 +0200

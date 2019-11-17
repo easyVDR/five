@@ -1,0 +1,19 @@
+Source: vdr-plugin-muggle
+Section: misc
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders:  Thomas Günther <tom@toms-cafe.de>, Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.20), libtag1-dev,
+  libsqlite3-dev, libmad0-dev, libvorbis-dev, libflac++-dev, libsndfile1-dev,
+  libimlib2-dev
+Standards-Version: 3.9.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-muggle/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-muggle/trunk/
+
+Package: vdr-plugin-muggle
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, mjpegtools (>=1:1.8.0), netpbm, python
+Suggests: mysql-server, mysql-client
+Description: Media juggle plugin for VDR
+ This plugin allows the management of arbitrary media files via a database
+ using VDR and its OSD.

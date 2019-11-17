@@ -1,0 +1,397 @@
+VDR Plugin 'muggle' Revision History
+------------------------------------
+
+2004-08-31: Version 0.0.1-ALPHA
+- An initial revision given to a few people.
+
+2004-09-05: Version 0.0.2-ALPHA
+- Added an Ogg Vorbis decoder
+
+XXXXXXXXXX: Version 0.0.5-ALPHA
+- Support für g++ 2.95.4
+- Support für Sockets (statt TCP)
+- Kleinere Fehlerchen beseitigt
+
+XXXXXXXXXX: Version 0.0.7-ALPHA
+- Doppelter Import von Files bei erneutem Aufruf von mugglei
+  beseitigt, bei erneutem Aufruf wird stattdessen die DB
+  aus den Tags upgedated.
+- Compilerwarnings beseitigt
+- Anzeige auf dem gLCD
+- Menüanzeige bei aktiviertem Progressdisplay funktioniert
+- Verbessertes Progress Display beim Abspielen (Track/Playlist,
+  Progress/Detail), nur für 1.3.12
+- Import von genre-Tags
+- Instant play funktioniert
+- Starten einer Playlist von irgendwo mittels Ok
+
+XXXXXXXXXX: Version 0.0.8-ALPHA
+- Beim import werden bei bereits vorhandene Files nur die DB-Einträge erneuert,
+  keine Duplikate mehr.
+- mugglei mit der Option -z löscht Datenbankeinträge, bei denen die verwiesene
+  Datei nicht existiert.
+- Bug in mugglei entfernt, der verhinderte, dass neue Dateien korrekt
+  eingetragen werden.
+- Ein Bug beim Skippen der Tracks am Ende der Playliste entfernt, der letzte
+  Track wurde außerdem für immer wiederholt.
+- Französische Ubersetzung. Merci a Patrice!
+
+2005-01-07: Version 0.1.0-BETA
+- der Begriff Playlist ist weggefallen. Neu gibt es Sammlungen.
+  Wichtig ist vor allem die Sammlung "spielen". Was man an diese
+  Sammlung anhängt, wird eines nach dem anderen gespielt.
+- Wenn man etwas an eine Sammlung anhängt, muss man vorher sagen,
+  welche das sein soll. Beim ersten Start von muggle ist das "spielen".
+  Man kann die "Zielsammlung" ändern, indem man in der Sammlungsliste
+  die richtige auswahlt, dann den blauen Knopf "Befehle" nimmt und
+  dann "Ziel auf Sammlung .... setzen" macht.
+- man kann direkt in der Sammlungsliste auch neue anlegen.
+- die gelbe Taste schaltet zwischen Sammlungen und Suche um. Die
+  Befehle sind an beiden Stellen etwa dieselben, man muss also
+  z.B. nicht extra eine Sammlung anlegen, um eine Playlist (*.mru) zu
+  exportieren.
+- Taste OK auf einem Track spielt ihn sofort. Wenn er zu Ende ist oder
+  man mit Stop abbricht, und wenn vorher etwasaus "spielen" lief,
+  wird dort weitergemacht. Ein zweiter Druck auf Taste Stop beendet
+  auch das Abspielen von "spielen".
+- Der Befehl "sofort spielen" macht dasselbe wie OK auf einem Track,
+  aber für alle Tracks, die hinter dem gewähltenListeneintrag stecken,
+  z.B. alles von Abba.
+- nachdem man Musik gestartet hat, bleibt das muggle - Menu stehen.
+  Damit und mit dem OK - Anspielen kann man sehr schnell alle Tracks
+  kurz anspielen.
+- auch während das muggle - Menu sichtbar ist, funktionieren nun die
+  Tasten Stop, Play, Pause.
+- wenn man muggle verlässt (am besten mit der Menu - Taste), wird der
+  Status gespeichert. Wenn man muggle wieder aufruft, ist man am gleichen Ort.
+- beim Start von muggle kommt man direkt in das aktuelle Suchschema.
+  Dieses kann man neu ändern, indem man Taste "Befehle" nimmt, dann
+  Menu "Suchschema".
+- Wenn man irgendwo mitten im Suchbaum ist und das Suchschema wechselt,
+  verwendet muggle die schon bekannten Schlüsselfelder, um wieder
+  möglichst weit in den Suchbaum hineinzugehen.
+- Filter gibt es erstmal nicht mehr, da wird aber sicher wieder etwas kommen.
+- Man kann die Tasten rot, grün, gelb frei belegen, indem man unter
+  "Befehle" auf einen Befehl geht und dann die gewünschte Farbtaste drückt.
+  Das funktioniert auch für extern definierte Befehle.
+- Datenbankabfragen sind z.T. deutlich schneller
+	      
+2005-01-23: Version 0.1.1-BETA
+- FLAC decoder added
+- Compiles with VDR 1.3.18 (mileage may vary)
+- Works with VDR 1.2.6
+- Selections can now be chosen when executing add/remove
+- GD compatibility added
+- Many bugfixes and usability improvements
+
+- Die Organisation der Dateien kann nun vom Benutzer verändert werden.
+  Zudem können neue Bäume erstellt werden (zB mag ich
+  Decade > Genre > Track sehr gern).
+- m3u - Dateien werden nun immer in /tmp mit relativen Dateinamen erstellt.
+  Externe Befehle werden im top level directory der tracks aufgerufen
+  (vorangehendes chdir).
+- m3u - Dateien enthalten zusätzlich eine Kennung #MUGGLE:XXX
+  wobei XXX die tracks.id des Stücks ist. Somit können Kommandos auch
+  Befehle auf der Datenbank durchführen (zB Löschen eines Tracks).
+  Muggle stellt die OSD-Ansicht danach neu dar, um Änderungen anzuzeigen.
+- Blättern in Genre-Hierarchien ist neu. Das Feld Genre nutzt wie
+  bisher eine flache Genre-Liste. Die neuen Felder Genre1, Genre2, Genre3
+  definieren Ebenen im Suchbaum aus der Genre-Hierarchie.
+- Die Sprache wird aus id3v2-Tags importiert (für mp3 und flac)
+- Musikstücke können nach Sprache gebrowsed werden.
+- Hat ein Track 2 Genres (in den Feldern genre1 und genre2), so
+  erscheint es in Kategorien für beide Genres. Allerdings wird das zweite
+  Genre derzeit beim Import nicht berücksichtigt.
+- Wichtige Meldungen erscheinen nun auch im OSD (nicht mehr nur im Syslog)
+- Läuft mit allen Versionen inkl. 1.3.20
+- Player schaltet nach Ende der Playlist stumm (kein TV-Gedröhne mehr)
+- Decoder für Ogg und FLAC können nach Defines in make.config gebaut werden
+- Bugfixes und sonstige Verbesserungen
+
+2005-02-20: Version 0.1.3-BETA
+- das deutsche VDR - Wiki enthält zu muggle einen Abschnitt "Bedienung".
+  Vielleicht findet sich ja jemand, der da etwas zu schreibt?
+  Ich stehe gerne bei Fragen zur Verfügung.
+- Man kann nun nach Ordnern/Verzeichnissen sortieren. Bis zu 4 Stufen
+  sind möglich. Man muss alle Tracks mit mugglei neu importieren, damit
+  das geht. Wenn mugglei nicht die Berechtigung hat, neue Felder in der 
+  Tabelle tracks anzulegen, bleibt alles wie bisher. In diesem Fall
+  müsste man entweder für die nötigen Rechte sorgen oder mit den Scripts
+  die ganze Datenbank neu anlegen.
+- Hinter den Listeneinträgen steht nun, wieviele Tracks das jeweilen sind.
+  Dank geht an jarny für seine Hilfe zu SQL.
+- Die Sprachcodes werden nun vom Standard ISO 639-2/B (bibliographic)
+  genommen, wie in den id3v2 Tags. Das betrifft nur den Import, die 
+  Kompatibilität zu GiantDisc bleibt.
+- Die Setup - Einstellungen loop mode und shuffle mode werden nun 
+  berücksichtigt.
+- mugglei erklärt jetzt besser, warum er etwas nicht importieren kann.
+- wenn die Datei muggle.state nicht schreibbar ist, warnt muggle einmal.
+  (Die Datei muggle.state speichert den Status (z.B. Sortierungen,
+  Position, Farbknopfbelegung)
+- Einige Fehler korrigiert, vor allem Memory leaks (die meisten mit
+  valgrind gefunden). Sollte nun auch (wieder) mit g++ 2.95 compilieren.
+- Wer eine ältere Version von mysql benutzt, z.B. 3.23, wird mugglei nicht
+  kompilieren können. Die Fixes sollten einfach sein, evtl reicht es,
+  die Aufrufe mysql_server_init/end zu entfernen. Das README hat schon
+  immer mindestens 4.0.18 empfohlen.
+
+2005-03-06: Version 0.1.4-BETA
+- embedded mysql server as default. If you want to use an external server
+  as before, read the README file
+- If the plugin finds the database missing, it offers to create
+  it. It will then also import all from the top level music directory
+  (as indicated with option -t)
+- new option -v for the plugin and mugglei sets the output debug level.
+- rewrote mugglei. Mainly it now recursively imports directories making
+  it much faster. This example will create a new database and import all
+  files from /Musik : mugglei -t /Musik -v 4 -c .
+- removed the mugglei -f option. All arguments after the options will be
+  imported.
+- removed the mugglei -a option. It should now automatically do the right
+  thing
+- orders can now be displayed in the default order or descending by their
+  counts
+- orders can now be a combination of order by collection and other key
+  fields. Known bug: If the collection is not the first key field like 
+  in Genre:Collection:Album:Track, the counts are wrong in the top list
+- make additions to playlists multi user safe
+- rename Search to Browse/Navigieren
+- when creating the data base, all ISO 639-2/B codes will be imported,
+  updated the list.
+- the language names can appear in the local language if the translations
+  exist (debian: Package iso-codes)
+- add all genres listed by id3 -L. Fix spellings.
+- lots of bug fixes, as usual
+
+2005-03-11: Version 0.1.5-BETA
+- add include files like stdio.h, needed in some environments
+- fix genre import
+- if you have mysql embedded 4.1.11 or better, you can access embedded
+  and external data bases with the same binary. If you omit the -h
+  parameter, embedded is used. Without embedded support compiled in,
+  the default for -h is still localhost
+- renamed the Makefile conditional HAVE_SERVER to HAVE_ONLY_SERVER. This
+  better reflects the new functionality.
+- if you want to connect to the local server using sockets, you now
+  do that with -h localhost. Up to now you had to specify -s. This is
+  no longer needed. This better reflects the mysql C API. As a con-
+  sequence, up to now not giving any argument to muggle called the
+  server on localhost using TCP, now it uses the faster sockets. You
+  can still request TCP by using -h 127.0.0.1
+
+2005-03-21: Version 0.1.6-BETA
+- killing vdr could still result in an empty muggle.state. Fixed.
+- new sorting fields: Only by the first character of artist or title
+- import now runs as a separate thread and no longer blocks user
+  input and VDR is no longer killed by the watchdog during import
+
+2005-04-19: Version 0.1.7-BETA
+- Removed option -g. muggle now automatically does the right thing:
+  GD compatibility mode is used when importing files [0-9][0-9]/filename
+  relative to the toplevel directory where filename contains no /
+- External command find is no longer needed
+- Better error handling for unreadable files when playing
+- Changed several includes from <vdr/X.h> to <X.h>
+- Elected a new pope
+- Makefile respects preset values for directories
+- Debug messages now go into /var/log/debug. Up to now it was stderr.
+- Playlist view: after pressing arrow up, playing looped backwards.
+  Now it always goes forward.
+- Play mode: in endless mode (all tracks), trying to go back on the
+  first track restarted the first track. Now it goes to the last track.
+- Added incremental search
+
+2005-07-30: Version 0.1.8-BETA
+- WARNING: muggle currently only works correctly with LD_ASSUME_KERNEL=2.4.1.
+  Since 1.3.27 vdr does not enforce this anymore
+- reimplemented mugglei option -z (DeleteStaleReferences), also in the
+  muggle setup menu
+- rewrote most of the SQL interface to allow easier implementation
+  of alternative data bases backends or alternative data source like EPG
+- major edits to README - split off README.mysql
+- implemented support for SQLite. Tested with version 3.2.1. The
+  field genre2 is not supported because it would be too slow.
+  Define HAVE_SQLITE in Make.config, details see README.mysql
+  Parameters h,u,s,p,w are not needed and not supported with SQLite.
+- implemented support for Postgresql. Tested with version 8.0. 
+  Define HAVE_PG in Make.config, details see README.postgresql
+- if instant play is used while playing from the 'play' collection,
+  the latter will be resumed after instant play finishes.
+- display covers on the TV and with graphTFT. Details see README
+- Support .wav files using libsndfile (Define HAVE_SNDFILE=1 in Makefile).
+  Note that taglib cannot import any ID3 tags for wav files so that
+  currently all tracks are stored under Artist 'Unknown', Album 'Unassigned'
+  and track title being identical to the filename. Also, the progress
+  display currently does not work with .wav files.
+- Using the left and right keys during replay one can jump within the current
+  track.
+- Bug which rendered incremental search unusable implemented (thanks 
+  to sundin from vdrportal)
+- progress display: if the progress of the whole selection is shown,
+  the current title will be displayed and not the name of the selection
+- if you use an order like Interpret/Album/Tracks and all songs
+  have the same track number, instantly playing any of them played
+  them all. Fixed
+- muggle can now import genre1 from id3v2 tags (the TCON tag). Only the
+  first genre is imported, and refinements will be ignored. But
+  this allows you to define your own genres. If you use the genre
+  hierarchies, they will show up under 'Extra'
+- import items from the setup menu: This is done by a background thread.
+  Those threads are not allowed to access the OSD, so we removed the
+  status messages of the import progress.
+- mugglei: import counter counts only successes.
+- mugglei: do not change directory to TLD before starting the import.
+  mugglei has to be started in TLD or below. This way wildcards will
+  always be expanded as expected.
+- when tracks are added to the playing list, the playlist progress
+  did not get updated.
+
+2005-10-xx: Version 0.1.9-BETA
+- adapt SQL tables for use with mySQL 5.0. The structures are compatible with
+  GiantDisc (same changes introduced there after brief discussion with GD 
+  author Rolf)
+- Code that selects images factored out into an image provider class
+  (mg_image_provider.h,c) to permit simpler development in the future
+- Current image provider simply displays all images in the id3 tags of the
+  current song or in the same directory in case there are no images in the
+  tags
+- Images are now converted in the background so that music replay starts
+  immediately, regardless of the number of images available
+- Implement new Service interface: service ReplayDirectoryImages displays all
+  images in directory passed via service request (char* as Data parameter to
+  service request)
+- Added a patch for the image plugin (against 0.2.3) that uses muggle for
+  displaying selected images while listening to music
+- Fix for incremental search added again
+  (thanks to user sundin in vdrportal.de)
+- Setup is now more verbose. NOTE: the enumeration for background mode may
+  have changed!
+- Several minor fixes (thanks to Ville Skyttä)
+- Improved and more thorough translations (thanks to Ville Skyttä)
+
+2006-04-28: Version 0.1.10-BETA
+- SQLite: If the database directory (default $HOME/.muggle) does not exist,
+  automatically create it.
+- Orders with Track as last key field: Now work correctly even if the track
+  numbers are not known
+- adapt to vdr 1.3.48
+- Import: If a file is known to exist but cannot be read, do not import but
+  issue warning
+- mugglei: better handling of wrong arguments
+- Fixed labeling of setup options
+- Restored link to send cover images to graphtft 
+- Resolved a problem that prevented starting muggle when a channel with dolby
+  digital is active
+- Improve compatibility with GD regarding cover image handling
+- Adapt image_convert.sh to newer versions of mjpegtools
+- Rework broken integration with graphTFT plugin for image display
+
+2006-05-10: Version 0.1.11-BETA
+- Fix Makefile for < VDR 1.3.48.
+- do not print any messages with -v0
+- Patch from Hulk: Fix endless recursion in Message1()
+- Patch from Morone: enable graphTFT display of cover images again
+
+2008-01-04: Version 0.1.12-BETA
+- Fix compilation and some compiler warnings.
+- Fix build with FLAC++ >= 1.1.3.
+
+  "make install", make it a bit more robust.
+
+2008-4-11: Version 0.2.0-BETA
+- supports UTF-8, see README.i18n
+- rewrote the player OSD, using code from the music plugin.
+- can automatically and asynchronously get lyrics using the
+  amarok script googlyrics, see README 
+- MP3Decoder: Suppress out of sync error message for first frame
+- Player: If called for just one file which does not exist,
+  it no more starts.
+- Import with mugglei: Absolute paths have always been forbidden, now
+  mugglei actually ignores them
+- remove some debugging output which came even if no debugging wanted
+- mugglei: fix postgresql help text
+- postgresql: Default for user now is the login name
+- mugglei -c now also deletes and rebuilds existing data bases
+- mugglei: after importing, always delete albums without corresponding tracks
+- mugglei: New german and french translations using the new mechanisms
+- while playing, some text was not yet translatable
+- switch to new internationalisation system. Currently, no finnish translation.
+  Maybe somebody will do that?
+- more complete german and french translations. 
+- gcc 4.3 build fixes
+- rename image cache directory to cache directory and use it for lyrics too.
+  Cached files are permanently cached. If the last modification of the
+  original image
+  indicates a change, the cached file is regenerated.
+- import: for flac files, prefer vorbis comments over id3 tags as recommended
+  by the flac people
+
+2008-04-18 Version 0.2.1-BETA
+- if lyrics are loaded from internet and no local lyrics exist yet, they are
+  now saved automatically
+- display small cover: Appeared at left border instead at the right side
+- sqlite3: muggle segfaulted in special situations
+- fix segfault if the cache directory has a long path
+- if at muggle start we land in an empty list because the saved state does not
+  match the database, it could happen that we never get anything displayed
+  until we delete muggle.state and restart muggle. Now muggle goes up to the
+  parent level
+- reintroduced Finnish translation
+- if we got lyrics from the net but did not save it, the temporary file
+  .lyrics.tmp will be deleted when the next track starts playing (only while
+  in lyrics mode, if you leave it, the tmp file remains)
+- vdr versions before 1.5.4 supported again: With them, lyrics cannot be
+  fetched in the background. So muggle will not answer to commands until the
+  fetching script has finished. And the message "loading lyrics" will only
+  appear after they have been loaded. If you don't like it, update vdr or send
+  me a patch.
+- make the compile option USE_BITMAP work again on unmodified FF cards
+- make sure a displayed list is never empty by moving up in the tree if needed.
+  If the list is then still empty, display an item "Synchronize data base".
+- change the compile option USE_BITMAP into a setup variant: New background
+  mode "Bitmap". This is for those whose computers have problems with showing
+  mpeg covers like "timeout waiting for LoadBitmap" in the FF card driver
+- rename background mode to image mode which is more appropriate since the
+  last changes. Since this also changes the name under which the value is
+  stored in the setup file, you will lose your old value after updating.
+
+2008-12-27 Version 0.2.2-BETA
+- when showing covers as bitmaps, honour the image show duration from setup
+- after changing into lyrics mode, the lyrics for the first song were not
+  automatically loaded from the internet
+- fix image modes TV and Black: They also showed the cover image
+- add italian translation, contributed by Diego Pierotto
+- fix off by one error when selecting tracks in play mode by using number keys,
+found by Thomas Balke
+- DisplayMode is now configurable, found by Thomas Balke. This defines between
+how many different types of information the first line toggles in the player.
+- README.mysql was incomplete
+- Mysql only: Fix order of insertion into empty playlist. Found by Thomas
+Balke.
+- update README.* about MySQL with utf8
+- importing subdirectories with mugglei: sorting by folder did not work for
+  those tracks. Found by Thomas Balke.
+- fix bug #32 reported by Anonymous: mugglei will not run from a linked subfolder
+- when checking if we are in or under the top level dictory, no longer translate
+  current path to realpath - always go through all symlinks. Fixes bug fix for
+  bug #32, reported by Thomas. Hoping this does not break other configurations.
+- when destroying the OSD object, save muggle state. Fixes bug #37 reported by
+  Thomas
+- updated translations by Ville Skyttä and Diego Pierotto
+
+2009-01-15 Version 0.2.3
+- last version broke importing from setup menu
+- Lyrics now work with Googlyrics2. Please use Googlyrics2 post beta3, the
+  beta3 version only handles ascii text
+- if several versions of lyrics for a song are found, it is now possible
+  to choose among them. 
+- Lyrics: rewrite the shell script muggle_getlyrics in python and talk 
+  directly to the Googlyrics2 python code
+- load images: fix buggy error handling (reported in vdr-portal.de by stevie101)
+- Lyrics: Fix bug #52: line split could split within 2byte unicode char. Now
+  removed this code from C++ and put it into the python script muggle_getlyrics.
+- Lyrics: when calling "mv" to rename a file make sure mv never gets interactive
+- muggle-image-convert produces less output if needed programs are not installed
+- When loading lyrics, do not show just empty text but the line "loading lyrics
+  from the internet"

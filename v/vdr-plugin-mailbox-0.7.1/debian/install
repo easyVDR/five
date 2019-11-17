@@ -1,0 +1,3 @@
+debian/plugin.mailbox.conf      etc/vdr/plugins/
+mailcmd.sh                      etc/vdr/plugins/mailbox/
+mailconv.sh			etc/vdr/plugins/mailbox/

@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+# Remove old state file
+if [ "$1" = "configure" ]; then
+    rm -f /var/lib/vdr/plugins/muggle/muggle.state
+    chown -R vdr:vdr /var/cache/vdr-plugin-muggle
+    chown -R vdr:vdr /var/lib/vdr/plugins/muggle
+    dpkg-trigger vdr-plugin-muggle-trigger || true
+fi
+
+#DEBHELPER#

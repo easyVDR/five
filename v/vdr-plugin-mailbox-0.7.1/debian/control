@@ -1,0 +1,26 @@
+Source: vdr-plugin-mailbox
+Section: video
+Priority: extra
+Maintainer: Peter Siering <ps@ctmagazin.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Origin: ctvdr
+Bugs: mailto:pkg-vdr-dvb-devel@lists.alioth.debian.org
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.5), pkg-config, libc-client-dev | libc-client2001-dev, libssl-dev, gettext
+Standards-Version: 3.8.3
+
+Package: vdr-plugin-mailbox
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Plugin to vdr to access pop3 and imap mailboxes
+ This plugin for vdr implements access to pop3 and imap
+ mailboxes.
+
+Package: vdr-plugin-mailbox-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-mailbox (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-mailbox
+ .
+ This package contains only the debugging symbols for vdr-plugin-mailbox
+

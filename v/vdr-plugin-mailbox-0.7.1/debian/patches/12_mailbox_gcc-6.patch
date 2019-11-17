@@ -1,0 +1,91 @@
+--- a/AxLib/include/Ax/Tools/Trace.h
++++ b/AxLib/include/Ax/Tools/Trace.h
+@@ -40,9 +40,9 @@
+ //-----------------------------------------------------------------------------
+ //     define macros for users
+ //-----------------------------------------------------------------------------
+-#define wsdebugsyslog(Y...) dsyslog("mailbox: "Y)
+-#define wswarnsyslog(Y...)  isyslog("mailbox: "Y)
+-#define wserrorsyslog(Y...) esyslog("mailbox: "Y)
++#define wsdebugsyslog(Y...) dsyslog("mailbox: " Y)
++#define wswarnsyslog(Y...)  isyslog("mailbox: " Y)
++#define wserrorsyslog(Y...) esyslog("mailbox: " Y)
+ 
+ #define wsdebug(X) do { } while(0);
+ #define wsinfo(X)  do { wsdebugsyslog X ;} while(0);
+--- a/AxLib/include/Ax/Vdr/Tools.h
++++ b/AxLib/include/Ax/Vdr/Tools.h
+@@ -63,6 +63,7 @@
+     //-------------------------------------------------------------------------
+     static std::string getKeyStr(eKeys);
+ 
++#if defined (APIVERSNUM) && (APIVERSNUM < 20300)
+     //-------------------------------------------------------------------------
+     //     dumpDevices()
+     //-------------------------------------------------------------------------
+@@ -82,6 +83,7 @@
+     //     dumpChannel()
+     //-------------------------------------------------------------------------
+     static void dumpChannel(const cChannel *theChannel);
++#endif
+ 
+ }; // class Tools
+ 
+--- a/AxLib/src/Vdr/Tools.cpp
++++ b/AxLib/src/Vdr/Tools.cpp
+@@ -109,6 +109,7 @@
+   return aStr;
+ } // Tools::getKeyStr()
+ 
++#if defined (APIVERSNUM) && (APIVERSNUM < 20300)
+ //-------------------------------------------------------------------------
+ //     Tools::dumpDevices()
+ //-------------------------------------------------------------------------
+@@ -229,6 +230,7 @@
+ #endif
+   } // if
+ } // Tools::dumpChannel()
++#endif
+ 
+ //=============================================================================
+ //     namespaces
+--- a/AxMenuMailBoxView.cpp
++++ b/AxMenuMailBoxView.cpp
+@@ -179,7 +179,7 @@
+     //-------------------------------------------------------------------------
+     //     getMailBox()
+     //-------------------------------------------------------------------------
+-    Mail::MailBox *getMailBox();
++    Mail::MailBox *getMailBox() const;
+ 
+   private:
+     //-------------------------------------------------------------------------
+@@ -208,7 +208,7 @@
+ //-----------------------------------------------------------------------------
+ //     AxMailBoxItem::getMailBox()
+ //-----------------------------------------------------------------------------
+-Mail::MailBox *AxMailBoxItem::getMailBox()
++Mail::MailBox *AxMailBoxItem::getMailBox() const
+ {
+   return myMailBox;
+ } // AxMailBoxItem::getMailBox()
+@@ -397,7 +397,7 @@
+ 
+   if (const_cast<AxMenuMailBoxView *>(this)->Current() > 0)
+   {
+-    AxMailBoxItem *aMailBoxItem = dynamic_cast<AxMailBoxItem *>(Get(const_cast<AxMenuMailBoxView *>(this)->Current()));
++    const AxMailBoxItem *aMailBoxItem = dynamic_cast<const AxMailBoxItem *>(Get(const_cast<AxMenuMailBoxView *>(this)->Current()));
+ 
+     if (aMailBoxItem)
+     {
+--- a/Makefile
++++ b/Makefile
+@@ -149,7 +149,7 @@
+ 
+ INCLUDES +=
+ 
+-DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
++DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"' -D__STL_CONFIG_H
+ 
+ ### The object files (add further files here):
+ 

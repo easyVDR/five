@@ -1,0 +1,221 @@
+vdr-plugin-music (0.9.9-7easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 16:03:51 +0100
+
+vdr-plugin-music (0.9.9-7easyVDR2~bionic) bionic; urgency=high
+
+  * fix makefile etc.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 30 Jan 2019 16:43:38 +0100
+
+vdr-plugin-music (0.9.9-7easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 21:58:08 +0100
+
+vdr-plugin-music (0.9.9-7easyVDR0~artful) artful; urgency=high
+
+  * added gcc-7 fix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 17:57:47 +0100
+
+vdr-plugin-music (0.9.9-6easyVDR9~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 01:52:10 +0100
+
+vdr-plugin-music (0.9.9-6easyVDR6~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix depends
+  * fix path to Magick++.h
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Jul 2017 00:02:34 +0200
+
+vdr-plugin-music (0.9.9-6easyVDR3~zesty) zesty; urgency=high
+
+  * rebuild for zesty zapus
+  * fix depends
+  * fix path to Magick++.h
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 01 Jul 2017 16:19:42 +0200
+
+vdr-plugin-music (0.9.9-6easyVDR2~trusty) trusty; urgency=high
+
+  * added default audio out dvb
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Dec 2016 19:09:01 +0100
+
+vdr-plugin-music (0.9.9-6easyVDR0~trusty) trusty; urgency=high
+
+  * added menu patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 28 Oct 2016 23:34:50 +0200
+
+vdr-plugin-music (0.9.9-5easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:51:03 +0200
+
+vdr-plugin-music (0.9.9-5easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:36:27 +0200
+
+vdr-plugin-music (0.9.9-5easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:39:29 +0200
+
+vdr-plugin-music (0.9.9-5easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:58:45 +0200
+
+vdr-plugin-music (0.9.9-5easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:41:36 +0100
+
+vdr-plugin-music (0.9.9-5easyVDR1~trusty) trusty; urgency=high
+
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 00:12:29 +0100
+
+vdr-plugin-music (0.9.9-5easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 01:13:28 +0100
+
+vdr-plugin-music (0.9.9-4easyVDR9~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 19:05:51 +0200
+
+vdr-plugin-music (0.9.9-4easyVDR8~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:15:56 +0200
+
+vdr-plugin-music (0.9.9-4easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 01:02:04 +0100
+
+vdr-plugin-music (0.9.9-4easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 02:13:41 +0100
+
+vdr-plugin-music (0.9.9-4easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:26:22 +0100
+
+vdr-plugin-music (0.9.9-4easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:44:05 +0100
+
+vdr-plugin-music (0.9.9-4easyVDR3~trusty) trusty; urgency=high
+
+  * add new easyvdr-logo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 20 Dec 2014 01:55:28 +0100
+
+vdr-plugin-music (0.9.9-4easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:46:46 +0200
+
+vdr-plugin-music (0.9.9-4easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:12:10 +0200
+
+vdr-plugin-music (0.9.9-4easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Oct 2013 07:26:55 +0100
+
+vdr-plugin-music (0.9.9-4easyVDR0~saucy) saucy; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Sep 2013 23:47:58 +0200
+
+vdr-plugin-music (0.9.9-4easyVDR0~raring) raring; urgency=high
+
+  * rebuild vdr-2.0.2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 06 Jul 2013 02:51:14 +0200
+
+vdr-plugin-music (0.9.9-3easyVDR0~raring) raring; urgency=high
+
+  * fix easyvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 30 Jun 2013 22:30:51 +0200
+
+vdr-plugin-music (0.9.9-3easyVDR~raring) raring; urgency=high
+
+  * rebuild raring
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Jun 2013 01:05:08 +0200
+ 
+vdr-plugin-music (0.9.9-2easyVDR0.7~oneiric) oneiric; urgency=high
+
+  * fix stream.c & dirs
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 15 May 2013 01:05:08 +0200
+ 
+vdr-plugin-music (0.9.9-2easyVDR0.6~oneiric) oneiric; urgency=high
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Mar 2013 10:45:33 +0100
+
+vdr-plugin-music (0.9.9-2easyVDR0.3~oneiric) oneiric; urgency=high
+
+  * fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Mar 2013 08:59:43 +0100
+
+vdr-plugin-music (0.9.9-2easyVDR0.2~oneiric) oneiric; urgency=high
+
+  * rebuild
+  * remove helper id3v2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 08 Feb 2013 21:12:23 +0100
+
+vdr-plugin-music (0.9.9-2) unstable; urgency=low
+
+  * Initial release
+  
+  Important:
+  
+  If you intend to make this plugin available to others, please create an
+  ITP-bug (see http://www.debian.org/devel/wnpp ) and contact the
+  Debian VDR packaging team: pkg-vdr-dvb-devel@lists.alioth.debian.org
+
+ -- root <vdr@gmx.de>  Sat, 11 Feb 2012 02:25:56 +0100
+

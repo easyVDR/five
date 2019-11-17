@@ -1,0 +1,28 @@
+#!/usr/bin/make -f
+
+include /usr/share/cdbs/1/rules/debhelper.mk
+#include /usr/share/cdbs/1/rules/dpatch.mk
+
+DEB_INSTALL_CHANGELOGS_ALL = HISTORY
+
+MAKE_OPTIONS = DVBDIR=/usr VDRDIR=/usr/include/vdr LIBDIR=. \
+               LOCALEDIR=debian/tmp/usr/share/locale 
+			   #MCLI_SHARED=1
+
+common-build-arch::
+	$(MAKE) all $(MAKE_OPTIONS)
+	cd mcast/tool && $(MAKE) all $(MAKE_OPTIONS)
+cleanbuilddir::
+	$(MAKE) -o .dependencies clean $(MAKE_OPTIONS)
+	rm -f libvdr-*.so
+	cd mcast/tool && $(MAKE) -o .dependencies clean $(MAKE_OPTIONS)
+common-binary-predeb-arch::
+	sh /usr/share/vdr-dev/dependencies.sh
+
+VERSION_ID = $(shell echo $(DEB_UPSTREAM_VERSION) | sed 's/\+svn.*//')+svn$(shell date --utc +%0Y%0m%0d.%0k%0M)
+get-orig-source::
+	echo Downloading $(DEB_SOURCE_PACKAGE) $(VERSION_ID) from svn...
+	svn export -q https://svn.baycom.de/repos/vdr-mcli-plugin $(DEB_SOURCE_PACKAGE)-$(VERSION_ID)
+	tar czf ../$(DEB_SOURCE_PACKAGE)_$(VERSION_ID).orig.tar.gz $(DEB_SOURCE_PACKAGE)-$(VERSION_ID)
+	rm -rf $(DEB_SOURCE_PACKAGE)-$(VERSION_ID)
+	dch -v "$(VERSION_ID)-1" "New Upstream Snapshot" 

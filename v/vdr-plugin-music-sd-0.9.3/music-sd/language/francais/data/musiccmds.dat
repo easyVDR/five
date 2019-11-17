@@ -1,0 +1,57 @@
+#########################################################################################################
+##   _  _  ___  _  _  ____     __  ___  _  _  ___  ___    __  ____  __  __  _  _    __  __  ___  ___   ##
+##  ( \( )(  _)( \/ )(_  _)   / _)(  _)( \( )(  _)(  ,)  (  )(_  _)(  )/  \( \( )  (  \/  )(  ,\(__ )  ##
+##   )  (  ) _) )  (   )(    ( (/\ ) _) )  (  ) _) )  \  /__\  )(   )(( () ))  (    )    (  ) _/ (_ \  ##
+##  (_)\_)(___)(_/\_) (__)    \__/(___)(_)\_)(___)(_)\_)(_)(_)(__) (__)\__/(_)\_)  (_/\/\_)(_)  (___/  ##
+##                                                                                                     ##
+#########################################################################################################
+
+
+# This is an example of musiccmds.conf with sample entries.
+#
+# This file should be placed in VDR-ConfigDir/plugins/music/data .
+#  
+#  ../VDRConfigDir/plugins/music/data/musiccmds.conf
+#
+# Syntax is: <name>[?]: <command>
+#
+# <name>    = description/command displayed in VDR
+# [?]       = request confirmation before execute command (optionally)
+# <command> = command what to execute
+#
+# When a command is executed the following parameters are passed to it:
+#
+# $1: Full filename of track    ( full filename with path of tracke  - e.g. '/data/mp3/trash metal/Meinz Ludolf Hunze.mp3' )
+# $2: Directory to copy tracks  ( path from plugin setup or quick settings)
+# $3: ARTIST from Id3 tag       ( artist of track if avaiable -  e.g. 'Iron Maiden' )
+# $4: ALBUM from Id3 tag        ( album of track if avaiable - e.g. 'White christmas' )
+# $5: DIR to ArtistCover Dir    ( path from plugin ArtistCover - no slash at end ) 
+# $6: DIR to music config Dir   ( path from plugin config dir - no slash at end ) 
+#
+# Also have a look in vdr man-pages vdr(5), its the same syntax as in reccmds.conf,etc..
+# IMPORTANT : IF YOU DON'T NEED PARAMETERS PLACE AN SEMICOLON (;) AT THE END OF YOUR COMMAND.
+# e.g.: Burn playlist? : echo "/usr/local/bin/cdburn.sh" | at now;
+#
+# If you have problems with lines , comment them (without patches it should be ok)
+#
+#####################################################################################################
+#  PUT YOUR COMMANDS BELOW , ATTENTION: THIS FILE IS AN EXAMPLE
+#####################################################################################################
+# En Francais
+# 
+---- Mes commandes Personnel  --------------------: echo
+Sauvegarder la liste de lecture actuelle?	  : /etc/plugins/music/scripts/music_savepl.sh;
+Speichere aktuelles Suchergebnis permanent?	  : /etc/plugins/music/scripts/music_savesl.sh;
+Kopiere Track zu CopyDir?	                  : /etc/plugins/music/scripts/music_copytrack.sh
+Lösche ausgewähltes Verzeichnis komplett?         : screen -A -m -d -S deletecopydir /etc/plugins/music/scripts/music_deletecopydir.sh
+--------------------------------------------------: echo
+Ã©jecte le CD?					  : /usr/bin/eject /dev/dvd;
+Fermer le tiroir du CD?				  : /usr/bin/eject -t /dev/dvd;
+Infos sur le CD?				  : /usr/bin/eject -t /dev/dvd; /etc/plugins/music/scripts/music_cddiskinfo.sh;
+Effacer le CD?				          : screen -A -m -d -S cdblank /etc/plugins/music/scripts/music_cdblank.sh;
+Graver la liste de lecture comme CD-Audio?	  : screen -A -m -d -S cdburn  /etc/plugins/music/scripts/music_burnaudiocd.sh
+Graver la liste de lecture comme donnÃe MP3-CD?   : screen -A -m -d -S mp3burn /etc/plugins/music/scripts/music_burnmp3cd.sh
+Copier les piste de la liste de lecture?	  : screen -A -m -d -S copyall /etc/plugins/music/scripts/music_copyall.sh
+--------------------------------------------------: echo
+Aide 						  : cat /etc/plugins/music/data/help.dat;
+Check Path                                        : echo $PATH;

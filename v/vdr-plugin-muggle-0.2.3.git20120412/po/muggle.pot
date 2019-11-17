@@ -1,0 +1,388 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-muggle 0.2.2\n"
+"Report-Msgid-Bugs-To: http://projects.vdr-developer.org/projects/show/plg-muggle\n"
+"POT-Creation-Date: 2010-08-29 15:48+0300\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Loading lyrics from internet..."
+msgstr ""
+
+msgid "Save this version?"
+msgstr ""
+
+msgid "empty database created"
+msgstr ""
+
+#, c-format
+msgid "Cannot get exclusive lock on SQLite database %s:%d/%s"
+msgstr ""
+
+#, c-format
+msgid "File %s not found"
+msgstr ""
+
+msgid "Commands"
+msgstr ""
+
+msgid "Database is empty"
+msgstr ""
+
+msgid "Genre"
+msgstr ""
+
+msgid "Genre1"
+msgstr ""
+
+msgid "Genre2"
+msgstr ""
+
+msgid "Genre3"
+msgstr ""
+
+msgid "Folder1"
+msgstr ""
+
+msgid "Folder2"
+msgstr ""
+
+msgid "Folder3"
+msgstr ""
+
+msgid "Folder4"
+msgstr ""
+
+msgid "Artist"
+msgstr ""
+
+msgid "ArtistABC"
+msgstr ""
+
+msgid "Title"
+msgstr ""
+
+msgid "TitleABC"
+msgstr ""
+
+msgid "Track"
+msgstr ""
+
+msgid "Decade"
+msgstr ""
+
+msgid "Album"
+msgstr ""
+
+msgid "Created"
+msgstr ""
+
+msgid "Modified"
+msgstr ""
+
+msgid "Collection"
+msgstr ""
+
+msgid "Collection item"
+msgstr ""
+
+msgid "Language"
+msgstr ""
+
+msgid "Rating"
+msgstr ""
+
+msgid "Year"
+msgstr ""
+
+msgid "ID"
+msgstr ""
+
+msgid "not implemented"
+msgstr ""
+
+msgid "Parent"
+msgstr ""
+
+msgid "Track-"
+msgstr ""
+
+msgid "Track+"
+msgstr ""
+
+msgid "Change shuffle mode"
+msgstr ""
+
+msgid "Lyrics"
+msgstr ""
+
+msgid "Load Lyrics"
+msgstr ""
+
+msgid "Save Lyrics"
+msgstr ""
+
+msgid "Change loop mode"
+msgstr ""
+
+msgid "Order"
+msgstr ""
+
+msgid "Select an order"
+msgstr ""
+
+msgid "Button$Edit"
+msgstr ""
+
+msgid "Create"
+msgstr ""
+
+msgid "Button$Delete"
+msgstr ""
+
+msgid "List"
+msgstr ""
+
+msgid "Browse"
+msgstr ""
+
+msgid "Collections"
+msgstr ""
+
+msgid "Synchronize database"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+#, c-format
+msgid "Set default to collection '%s'"
+msgstr ""
+
+#, c-format
+msgid "Default collection is now '%s'"
+msgstr ""
+
+msgid "Set"
+msgstr ""
+
+msgid "Instant play"
+msgstr ""
+
+msgid "Add"
+msgstr ""
+
+msgid "Add all to a collection"
+msgstr ""
+
+#, c-format
+msgid "'%s' to collection"
+msgstr ""
+
+#, c-format
+msgid "Add all to '%s'"
+msgstr ""
+
+msgid "Add to a collection"
+msgstr ""
+
+#, c-format
+msgid "Add to '%s'"
+msgstr ""
+
+#, c-format
+msgid "Remove '%s' from collection"
+msgstr ""
+
+msgid "Remove all from a collection"
+msgstr ""
+
+msgid "Clear"
+msgstr ""
+
+msgid "Clear the collection"
+msgstr ""
+
+msgid "Clear the collection?"
+msgstr ""
+
+msgid "Remove"
+msgstr ""
+
+msgid "Remove from a collection"
+msgstr ""
+
+msgid "Create collection"
+msgstr ""
+
+msgid "Delete the collection"
+msgstr ""
+
+msgid "Delete the collection?"
+msgstr ""
+
+msgid "Export"
+msgstr ""
+
+msgid "Export track list"
+msgstr ""
+
+msgid "Order is undefined"
+msgstr ""
+
+msgid "play"
+msgstr ""
+
+#, c-format
+msgid "Commands:%s"
+msgstr ""
+
+#, c-format
+msgid "Key %d"
+msgstr ""
+
+msgid "Sort by count"
+msgstr ""
+
+#, c-format
+msgid "Create database %s?"
+msgstr ""
+
+msgid "Import items?"
+msgstr ""
+
+#, c-format
+msgid "Cannot change to directory %s: %m"
+msgstr ""
+
+#, c-format
+msgid "%d tracks : %s"
+msgstr ""
+
+msgid "Lyrics: Yes"
+msgstr ""
+
+msgid "Lyrics: No"
+msgstr ""
+
+msgid "Now playing :"
+msgstr ""
+
+msgid "Volume"
+msgstr ""
+
+msgid "of"
+msgstr ""
+
+msgid "More.."
+msgstr ""
+
+msgid "Jump"
+msgstr ""
+
+msgid "Delete"
+msgstr ""
+
+msgid "Copy"
+msgstr ""
+
+msgid "Min/Sec"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Jump: "
+msgstr ""
+
+msgid "Muggle"
+msgstr ""
+
+msgid "Initial loop mode"
+msgstr ""
+
+msgid "off"
+msgstr ""
+
+msgid "on"
+msgstr ""
+
+msgid "Initial shuffle mode"
+msgstr ""
+
+msgid "Display mode"
+msgstr ""
+
+msgid "Audio mode"
+msgstr ""
+
+msgid "Round"
+msgstr ""
+
+msgid "Dither"
+msgstr ""
+
+msgid "Use 48kHz mode only"
+msgstr ""
+
+msgid "no"
+msgstr ""
+
+msgid "yes"
+msgstr ""
+
+msgid "Normalizer level"
+msgstr ""
+
+msgid "Limiter level"
+msgstr ""
+
+msgid "Black"
+msgstr ""
+
+msgid "Cover small"
+msgstr ""
+
+msgid "Cover big"
+msgstr ""
+
+msgid "Live"
+msgstr ""
+
+msgid "Bitmap"
+msgstr ""
+
+msgid "Image mode"
+msgstr ""
+
+msgid "Image show duration (secs)"
+msgstr ""
+
+msgid "Cache directory"
+msgstr ""
+
+msgid "Use DVB still picture"
+msgstr ""
+
+msgid "Show artist first"
+msgstr ""
+
+msgid "Fastforward jump (secs)"
+msgstr ""
+
+msgid "Setup.muggle$Transparency for cover"
+msgstr ""
+
+msgid "Delete stale references"
+msgstr ""

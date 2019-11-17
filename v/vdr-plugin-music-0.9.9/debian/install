@@ -1,0 +1,7 @@
+libvdr-music.so.*    usr/lib/vdr/plugins/
+locale/*  /usr/share/locale
+fonts/VDRMusicSymbols.ttf  usr/share/fonts/truetype/
+debian/plugin.music.conf   etc/vdr/plugins/
+moronsuite/music	  usr/share/vdr-plugin-music/
+moronsuite/music/*.theme    var/lib/vdr/themes
+debian/scripts/mount     etc/vdr/plugins/

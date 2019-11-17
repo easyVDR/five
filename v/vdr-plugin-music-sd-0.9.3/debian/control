@@ -1,0 +1,15 @@
+Source: vdr-plugin-music-sd
+Section: video
+Priority: extra
+Origin: easyVDR
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: cdbs, debhelper (>= 8.0.0), vdr-dev (>= 1.7.27), dpatch, gettext, libid3-3.8.3-dev, libid3tag0-dev, libmad0-dev, libmagick++-dev, libsndfile1-dev, libvorbis-dev, libimlib2-dev
+Standards-Version: 3.9.4
+
+Package: vdr-plugin-music-sd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, eject, mp3cd, screen, wodim, id3v2
+Description: This is an audio plugin for VDR
+ This is an audio plugin for VDR FF-SD. Forked from MP3-Plugin,
+ with Coverviewer

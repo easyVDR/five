@@ -1,0 +1,524 @@
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/nordlichtsepg.c nordlichtsepg-0.9/nordlichtsepg.c
+--- vdr-plugin-nordlichtsepg-0.9~test2/nordlichtsepg.c	2008-06-01 17:24:40.000000000 +0200
++++ nordlichtsepg-0.9/nordlichtsepg.c	2010-11-20 19:18:15.000000000 +0100
+@@ -13,6 +13,7 @@
+ 
+ // setup values
+ int hidemainmenu=false;
++int replaceorgschedule=false;
+ int bookmark=2015;
+ int Step=30;
+ int keeposd=0;
+@@ -31,6 +32,7 @@
+   virtual void Store()
+   {
+    SetupStore("hidemainmenu",hidemainmenu);
++   SetupStore("replaceorgschedule",replaceorgschedule);
+    SetupStore("bookmark",bookmark);
+    SetupStore("step",Step);
+    SetupStore("keeposd",keeposd);
+@@ -48,6 +50,7 @@
+    Add(new cMenuEditBoolItem(tr("Switch with Ok"),&switchwithok));
+    Add(new cOsdItem(tr("Appearance"),osUnknown,false));
+    Add(new cMenuEditBoolItem(tr("Hide main menu entry"),&hidemainmenu));
++   Add(new cMenuEditBoolItem(tr("Replace original schedule"), &replaceorgschedule));
+    Add(new cMenuEditBoolItem(tr("Keep display after switching"),&keeposd));
+    Add(new cMenuEditBoolItem(tr("Show channel numbers"),&showchannelnumbers));
+    Add(new cMenuEditBoolItem(tr("Show channel groups"),&showchannelgroups));
+@@ -365,7 +368,7 @@
+  virtual cOsdObject *MainMenuAction(void);
+  virtual cMenuSetupPage *SetupMenu(void);
+  virtual bool SetupParse(const char *Name, const char *Value);
+- virtual bool Service(const char *Id, void *Data = NULL){return false;};
++ virtual bool Service(const char *Id, void *Data);
+  virtual const char **SVDRPHelpPages(void){return NULL;};
+  virtual cString SVDRPCommand(const char *Command, const char *Option, int &ReplyCode){return NULL;};
+ };
+@@ -421,6 +424,8 @@
+ {
+   if(!strcmp("hidemainmenu",Name))
+     hidemainmenu=atoi(Value);
++  else if(!strcmp("replaceorgschedule",Name))
++    replaceorgschedule=atoi(Value);    
+   else if(!strcmp("bookmark",Name))
+     bookmark=atoi(Value);
+   else if(!strcmp("step",Name))
+@@ -442,4 +447,16 @@
+  return true;
+ }
+ 
++bool cPluginNordlichtsepg::Service(const char *Id, void *Data = NULL)
++{
++  cOsdMenu **menu = (cOsdMenu**) Data;
++  if (replaceorgschedule &&
++            strcmp(Id, "MainMenuHooksPatch-v1.0::osSchedule") == 0) {
++    if (menu)
++      *menu = (cOsdMenu*) MainMenuAction();
++    return true;
++  }
++  return false;
++}
++
+ VDRPLUGINCREATOR(cPluginNordlichtsepg); // Don't touch this!
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/ca_ES.po nordlichtsepg-0.9/po/ca_ES.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/ca_ES.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/ca_ES.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/cs_CZ.po nordlichtsepg-0.9/po/cs_CZ.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/cs_CZ.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/cs_CZ.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/da_DK.po nordlichtsepg-0.9/po/da_DK.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/da_DK.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/da_DK.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/de_DE.po nordlichtsepg-0.9/po/de_DE.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/de_DE.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/de_DE.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr "Eintrag im Hauptmenü verstecken"
+ 
++msgid "Replace original schedule"
++msgstr "Originale Programmübersicht ersetzen"
++
+ msgid "Keep display after switching"
+ msgstr "Anzeige nicht beenden nach Umschalten"
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/el_GR.po nordlichtsepg-0.9/po/el_GR.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/el_GR.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/el_GR.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/es_ES.po nordlichtsepg-0.9/po/es_ES.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/es_ES.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/es_ES.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/et_EE.po nordlichtsepg-0.9/po/et_EE.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/et_EE.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/et_EE.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/fi_FI.po nordlichtsepg-0.9/po/fi_FI.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/fi_FI.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/fi_FI.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr "Piilota valinta päävalikosta"
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr "Säilytä valikko kanavaa valittaessa"
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/fr_FR.po nordlichtsepg-0.9/po/fr_FR.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/fr_FR.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/fr_FR.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/hr_HR.po nordlichtsepg-0.9/po/hr_HR.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/hr_HR.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/hr_HR.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/hu_HU.po nordlichtsepg-0.9/po/hu_HU.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/hu_HU.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/hu_HU.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/it_IT.po nordlichtsepg-0.9/po/it_IT.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/it_IT.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/it_IT.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/nl_NL.po nordlichtsepg-0.9/po/nl_NL.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/nl_NL.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/nl_NL.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/nn_NO.po nordlichtsepg-0.9/po/nn_NO.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/nn_NO.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/nn_NO.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/pl_PL.po nordlichtsepg-0.9/po/pl_PL.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/pl_PL.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/pl_PL.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/pt_PT.po nordlichtsepg-0.9/po/pt_PT.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/pt_PT.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/pt_PT.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/ro_RO.po nordlichtsepg-0.9/po/ro_RO.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/ro_RO.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/ro_RO.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/ru_RU.po nordlichtsepg-0.9/po/ru_RU.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/ru_RU.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/ru_RU.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/sl_SI.po nordlichtsepg-0.9/po/sl_SI.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/sl_SI.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/sl_SI.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/sv_SE.po nordlichtsepg-0.9/po/sv_SE.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/sv_SE.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/sv_SE.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 
+diff -urNad vdr-plugin-nordlichtsepg-0.9~test2/po/tr_TR.po nordlichtsepg-0.9/po/tr_TR.po
+--- vdr-plugin-nordlichtsepg-0.9~test2/po/tr_TR.po	2008-06-01 17:31:33.000000000 +0200
++++ nordlichtsepg-0.9/po/tr_TR.po	2010-11-20 19:21:06.000000000 +0100
+@@ -7,7 +7,7 @@
+ msgstr ""
+ "Project-Id-Version: Nordlicht's EPG-Plugin 0.9\n"
+ "Report-Msgid-Bugs-To: <see README>\n"
+-"POT-Creation-Date: 2008-05-18 12:55+0200\n"
++"POT-Creation-Date: 2010-11-20 19:18+0100\n"
+ "PO-Revision-Date: 2008-03-30 19:58+0200\n"
+ "Last-Translator: \n"
+ "Language-Team: <nordlicht@martins-kabuff.de>\n"
+@@ -48,6 +48,9 @@
+ msgid "Hide main menu entry"
+ msgstr ""
+ 
++msgid "Replace original schedule"
++msgstr ""
++
+ msgid "Keep display after switching"
+ msgstr ""
+ 

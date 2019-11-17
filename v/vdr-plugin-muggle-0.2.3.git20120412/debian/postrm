@@ -1,0 +1,10 @@
+#! /bin/sh
+set -e
+
+# Remove state file 
+if [ "$1" = "purge" ]; then
+    rm -f /var/lib/vdr/plugins/muggle/muggle.state*
+    rm -rf /var/cache/vdr-plugin-muggle/*
+fi
+
+#DEBHELPER#
