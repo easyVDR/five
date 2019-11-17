@@ -1,0 +1,66 @@
+project-x (0.91.0-1easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 17:08:48 +0100
+
+project-x (0.91.0-1easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Mar 2019 23:53:53 +0100
+
+project-x (0.91.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 15 Nov 2013 22:52:57 +0100
+
+project-x (0.91.0-1easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Oct 2013 22:40:48 +0200
+
+project-x (0.91.0-0easyVDR1.0) oneiric; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 09 Dec 2011 11:19:31 +0100
+
+project-x (0.91.0-0yavdr0~lucid) lucid; urgency=low
+
+  * New Upstream Release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 27 Mar 2011 20:22:46 +0200
+
+project-x (0.90.4dfsg-0ubuntu5) intrepid; urgency=low
+
+  * remove java specific dependencies and icedtea-java7-jre NBS (LP: #203636)
+
+ -- Didier Roche <didrocks@ubuntu-fr.org>  Wed, 20 Aug 2008 22:46:41 +0200
+
+project-x (0.90.4dfsg-0ubuntu4) hardy; urgency=low
+
+  * Build depend on openjdk-6-jdk instead of icedtea-java7-jdk.
+  * Make other VMs possible to solve depends.
+
+ -- Mario Limonciello <superm1@ubuntu.com>  Tue, 18 Mar 2008 20:34:55 -0500
+
+project-x (0.90.4dfsg-0ubuntu3) hardy; urgency=low
+
+  * Let project-x start script accept arguments (LP: #195152)
+
+ -- Mario Limonciello <superm1@ubuntu.com>  Sun, 02 Mar 2008 12:49:14 -0600
+
+project-x (0.90.4dfsg-0ubuntu2) hardy; urgency=low
+
+  * Add libcommons-net-java to depends.  (LP: #195053)
+
+ -- Mario Limonciello <superm1@ubuntu.com>  Sun, 24 Feb 2008 10:48:58 -0600
+
+project-x (0.90.4dfsg-0ubuntu1) hardy; urgency=low
+
+  * Initial Release. (LP: #105896)
+
+ -- Mario Limonciello <superm1@ubuntu.com>  Thu, 03 Jan 2008 15:22:42 -0600

@@ -1,0 +1,23 @@
+plymouth-theme-easyvdr-text (0.1-0easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 20:48:15 +0100
+
+plymouth-theme-easyvdr-text (0.1-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 12:42:38 +0100
+
+plymouth-theme-easyvdr-text (0.1-0easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 05:15:24 +0100
+
+plymouth-theme-easyvdr-text (0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * initial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Feb 2016 13:35:19 +0100

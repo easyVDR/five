@@ -1,0 +1,19 @@
+Source: plymouth-theme-easyvdr-text
+Section: x11
+Priority: optional
+Maintainer: Martin <none@easy-vdr.de>
+Build-Depends: debhelper (>= 7.0.50~)
+Standards-Version: 3.9.1
+
+Package: plymouth-theme-easyvdr-text
+Architecture: all
+Depends: ${misc:Depends}, plymouth
+Provides: plymouth-theme
+Description: graphical boot animation and logger - easyvdr-text theme
+ Plymouth is an application that runs very early in the boot process
+ (even before the root filesystem is mounted!) that provides a graphical
+ boot animation while the boot process happens in the background.
+ .
+ This package contains the default xubuntu-text theme used when no support for
+ a graphical theme is found on your system.
+
