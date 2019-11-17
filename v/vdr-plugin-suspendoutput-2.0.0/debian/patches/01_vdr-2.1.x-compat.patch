@@ -1,0 +1,16 @@
+Index: vdr-plugin-suspendoutput-2.0.0/suspendoutput.c
+===================================================================
+--- vdr-plugin-suspendoutput-2.0.0.orig/suspendoutput.c	2017-07-05 22:32:19.767466448 +0200
++++ vdr-plugin-suspendoutput-2.0.0/suspendoutput.c	2017-07-05 22:32:19.763466429 +0200
+@@ -312,7 +312,11 @@
+   if(cDummyPlayerControl::IsOpen()) {
+ 
+     if ( !cRecordControls::Active() && 
++#if APIVERSNUM > 20101
++	 !RecordingsHandler.Active() && 
++#else
+ 	 !cCutter::Active() && 
++#endif
+ 	 !Interface->HasSVDRPConnection()) {
+ 
+ #define ACTIVITYTIMEOUT 600   // 10 min

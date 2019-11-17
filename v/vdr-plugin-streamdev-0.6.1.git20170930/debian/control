@@ -1,0 +1,28 @@
+Source: vdr-plugin-streamdev
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), gettext, pkg-config
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/plg-streamdev
+Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-streamdev.git
+Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr-plugin-streamdev.git
+
+Package: vdr-plugin-streamdev-client
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR Plugin to stream Live-TV to other VDR's - client part 
+ This plugin for vdr lets the software stream videos into
+ the network. You can interconnect several vdrs that way
+ or watch those streams with special client apps like video
+ lan client or mplayer. This is the client part.
+ 
+Package: vdr-plugin-streamdev-server
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR Plugin to stream Live-TV to other VDR's - server part 
+ This plugin for vdr lets the software stream videos into
+ the network. You can interconnect several vdrs that way
+ or watch those streams with special client apps like video
+ lan client or mplayer. This is the server part.

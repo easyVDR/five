@@ -1,0 +1,2 @@
+ACTION=="add", SUBSYSTEM=="usb", ATTRS{idVendor}=="19c2", ATTR{idProduct}=="6a11", GROUP="vdr" 
+

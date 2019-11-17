@@ -1,0 +1,24 @@
+Source: vdr-plugin-sundtek
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 1.7.17), pkg-config, dvb-driver-sundtek-dev
+Standards-Version: 3.9.1
+Homepage: https://github.com/flensrocker/vdr-plugin-sundtek
+
+Package: vdr-plugin-sundtek
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: A VDR plugin handles some Sundtek features
+ This VDR-plugin handles some features provided by the libmedia from Sundtek
+
+Package: vdr-plugin-sundtek-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-sundtek (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-sundtek
+ .
+ This package contains only the debugging symbols for vdr-plugin-sundtek
+ 
+

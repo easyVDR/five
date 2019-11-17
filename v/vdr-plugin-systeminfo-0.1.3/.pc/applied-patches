@@ -1,0 +1,5 @@
+01_scriptpath.patch
+02_nvidia.patch
+03_sysinfo-sh-orig.patch
+04_fix-script.patch
+sysinfo.patch

@@ -1,0 +1,69 @@
+Index: vdr-plugin-suspendoutput-2.0.0/suspendoutput.c
+===================================================================
+--- vdr-plugin-suspendoutput-2.0.0.orig/suspendoutput.c	2017-07-05 22:32:54.543638894 +0200
++++ vdr-plugin-suspendoutput-2.0.0/suspendoutput.c	2017-07-05 22:32:54.535638855 +0200
+@@ -184,6 +184,7 @@
+     "  -p        --paused       Allow suspend when replay is paused\n"
+     "  -l        --logo         Show VDR logo when suspended\n"
+     "  -b        --blank        Blank screen when suspended\n"
++    "  -n        --nooutput     No output when blank screen\n"
+     ;
+ 
+   return CmdLineHelp;
+@@ -199,11 +200,12 @@
+     { "paused",   no_argument,       NULL, 'p' },
+     { "logo",     no_argument,       NULL, 'l' },
+     { "blank",    no_argument,       NULL, 'b' },
++    { "nooutput", no_argument,       NULL, 'n' },
+     { NULL }
+   };
+ 
+   int c;
+-  while ((c = getopt_long(argc, argv, "mMt:T", long_options, NULL)) != -1) {
++  while ((c = getopt_long(argc, argv, "mMt:Tplbn", long_options, NULL)) != -1) {
+     switch (c) {
+     case 'm': m_bMenu = true;
+               isyslog("suspendoutput: main menu entry enabled");
+@@ -231,6 +233,9 @@
+     case 'b': cDummyPlayerControl::UseBlankImage = true;
+ 	      SetupStore("ShowLogo", 0);
+               break;
++    case 'n': cDummyPlayerControl::NoOutputImage = true;
++	      SetupStore("ShowLogo", 0);
++              break;
+     default:  return false;
+     }
+   }
+Index: vdr-plugin-suspendoutput-2.0.0/dummy_player.c
+===================================================================
+--- vdr-plugin-suspendoutput-2.0.0.orig/dummy_player.c	2017-07-05 22:32:54.543638894 +0200
++++ vdr-plugin-suspendoutput-2.0.0/dummy_player.c	2017-07-05 22:32:54.535638855 +0200
+@@ -41,7 +41,7 @@
+     {
+       if(! cDummyPlayerControl::UseBlankImage)
+ 	DeviceStillPicture(v_mpg_vdrlogo, v_mpg_vdrlogo_length);
+-      else
++      else if (! cDummyPlayerControl::NoOutputImage)
+ 	DeviceStillPicture(v_mpg_black, v_mpg_black_length);
+       //DeviceStillPicture(v_mpg_nosignal, v_mpg_nosignal_length);
+       return true;
+@@ -61,6 +61,7 @@
+ cDummyPlayer *cDummyPlayerControl::m_Player = NULL;
+ cMutex cDummyPlayerControl::m_Lock;
+ bool cDummyPlayerControl::UseBlankImage = false;
++bool cDummyPlayerControl::NoOutputImage = false;
+ 
+ cDummyPlayerControl::cDummyPlayerControl(void) :
+   cControl(OpenPlayer())
+Index: vdr-plugin-suspendoutput-2.0.0/dummy_player.h
+===================================================================
+--- vdr-plugin-suspendoutput-2.0.0.orig/dummy_player.h	2017-07-05 22:32:54.543638894 +0200
++++ vdr-plugin-suspendoutput-2.0.0/dummy_player.h	2017-07-05 22:32:54.535638855 +0200
+@@ -32,6 +32,7 @@
+   static bool IsOpen(void) { return m_Player != NULL; }
+ 
+   static bool UseBlankImage;
++  static bool NoOutputImage;
+ };
+ 
+ #endif //__DUMMY_PLAYER_H

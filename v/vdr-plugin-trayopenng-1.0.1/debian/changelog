@@ -1,0 +1,246 @@
+vdr-plugin-trayopenng (1.0.1-2easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 00:30:49 +0100
+
+vdr-plugin-trayopenng (1.0.1-2easyVDR0~bionic) bionic; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 16 Jan 2019 21:19:43 +0100
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR9~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:08:53 +0100
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR8~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:14:02 +0100
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR7~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 11 Jul 2017 22:38:30 +0200
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 06 Jul 2017 19:35:26 +0200
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:02:04 +0200
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:47:58 +0200
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:48:45 +0200
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:08:19 +0200
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:52:47 +0100
+
+vdr-plugin-trayopenng (1.0.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 22:59:57 +0100
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR9~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 18:59:11 +0200
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR8~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:28:35 +0200
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:35:08 +0100
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:25:46 +0100
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:32:59 +0100
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:57:54 +0100
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:02:51 +0200
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Nov 2013 03:40:09 +0100
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * add locale
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Nov 2013 03:19:14 +0100
+
+vdr-plugin-trayopenng (1.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Nov 2013 02:46:22 +0100
+
+vdr-plugin-trayopenng (0.5.2-6easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 13:26:37 +0100
+
+vdr-plugin-trayopenng (0.5.2-6yavdr20~precise) precise; urgency=medium
+
+  * fixed dependency to libcdio-paranoia1 
+
+ -- Alexander Grothe <alexandergrothe@gmx.net>  Sat, 31 Mar 2012 17:57:50 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr19~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:30:42 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr18~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:22:44 +0100
+
+vdr-plugin-trayopenng (0.5.2-6yavdr17~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:21:40 +0100
+
+vdr-plugin-trayopenng (0.5.2-6yavdr16~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 09:05:48 +0100
+
+vdr-plugin-trayopenng (0.5.2-6yavdr15~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Feb 2012 20:13:03 +0100
+
+vdr-plugin-trayopenng (0.5.2-6yavdr15~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 29 Dec 2011 11:16:45 +0100
+
+vdr-plugin-trayopenng (0.5.2-6yavdr14~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:41:43 +0100
+
+vdr-plugin-trayopenng (0.5.2-6yavdr13~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 24 Dec 2011 11:30:22 +0100
+
+vdr-plugin-trayopenng (0.5.2-6yavdr12~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 17 Oct 2011 15:45:52 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr11~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 05 Sep 2011 18:26:26 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr10~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 25 Aug 2011 18:00:52 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr9~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 18 Aug 2011 20:08:50 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr8~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 15 Jun 2011 13:51:00 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr7~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 14 Jun 2011 20:47:49 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr6~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 25 May 2011 13:58:37 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr5~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 22 May 2011 22:59:49 +0200
+
+vdr-plugin-trayopenng (0.5.2-6yavdr4~natty) natty; urgency=low
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 28 Jan 2011 15:44:33 +0100
+

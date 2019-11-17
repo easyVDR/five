@@ -1,0 +1,28 @@
+Source: vdr-plugin-suspendoutput
+Section: video
+Priority: extra
+Maintainer: Lars Hanisch <dvb@flensrocker.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), gettext, pkg-config
+Standards-Version: 3.9.5
+
+Package: vdr-plugin-suspendoutput
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: vdr plugin for suspending output
+ Suspend vdr output (display still image instead of live video).
+ Suspending live TV releases current channel (DVB card) for
+ recording(s) and saves some CPU time with software decoders.
+ Blanking display while replay is paused can avoid burning the
+ image on tube.
+
+
+Package: vdr-plugin-suspendoutput-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-suspendoutput (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-suspendoutput
+ .
+ This package contains only the debugging symbols for vdr-plugin-suspendoutput
+

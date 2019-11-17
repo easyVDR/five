@@ -1,0 +1,36 @@
+VDR Plugin 'sundtek' Revision History
+-------------------------------------
+
+2011-03-16: Version 0.0.1
+
+- Initial revision.
+
+2011-03-18: Version 0.0.1c
+
+- use "ForceDetachDevice" of dynamite if the stick is unplugged
+
+2011-03-20: Version 0.0.1d
+
+- while enumerating the devices on startup, attach the found devices
+  via dynamite - so they don't have to start at /dev/dvb/adapter0/...
+
+2011-04-20: Version 0.0.1e
+
+- use libmediaclient instead of libmedia
+
+2011-08-31: Version 0.0.2
+
+- use new net_register_notification function
+
+2012-05-09: Version 0.0.2a
+
+- net_connect has a parameter now
+
+2012-09-12: Version 0.0.3
+
+- add new Service call: sundtek-Monitor-v0.1 [start|stop]
+
+2012-09-16: Version 0.0.3a
+
+- add new Service call: sundtek-Enumerate-v0.1
+- re-enumerate devices on monitor start via Service call

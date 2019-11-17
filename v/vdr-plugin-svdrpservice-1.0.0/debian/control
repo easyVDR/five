@@ -1,0 +1,29 @@
+Source: vdr-plugin-svdrpservice
+Section: video
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), pkg-config
+Standards-Version: 3.9.4
+Homepage: http://vdr.schmirler.de/
+
+Package: vdr-plugin-svdrpservice
+Architecture: any
+Depends: ${shlibs:Depends}, ${vdr:Depends}, ${misc:Depends}
+Description: VDR plugin that provides a SVDRP service for other plugins
+ This VDR plugin offers SVDRP connections as a service to other plugins.
+ Connecting to streamdev's VTP server port is possible too.
+
+Package: svdrpservice-dev
+Architecture: all
+Depends: ${misc:Depends}
+Description: VDR svdrpservice plugin development files
+ Header files for VDR plugins that use the svdrpservice plugin.
+
+Package: vdr-plugin-svdrpservice-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-svdrpservice (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-svdrpservice
+ .
+ This package contains only the debugging symbols for vdr-plugin-svdrpservice

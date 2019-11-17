@@ -1,0 +1,23 @@
+Source: vdr-plugin-statusleds
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.36), gettext, pkg-config
+Standards-Version: 3.9.2
+Homepage: http://sourceforge.net/projects/vdr-statusleds/files/statusleds/statusleds-0.3/
+
+Package: vdr-plugin-statusleds
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, blinkd
+Description: This plugin shows VDR status informations using the keyboard leds.
+ This plugin shows VDR status informations using the keyboard leds.
+ 
+Package: vdr-plugin-statusleds-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-statusleds (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-statusleds
+ .
+ This package contains only the debugging symbols for vdr-plugin-statusleds 

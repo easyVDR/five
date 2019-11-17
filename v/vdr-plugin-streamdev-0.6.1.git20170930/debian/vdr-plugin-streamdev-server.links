@@ -1,0 +1,2 @@
+etc/vdr/plugins/streamdevhosts.conf var/lib/vdr/plugins/streamdev-server/streamdevhosts.conf
+usr/share/vdr-plugin-streamdev-server/externremux.sh  var/lib/vdr/plugins/streamdev-server/externremux.sh

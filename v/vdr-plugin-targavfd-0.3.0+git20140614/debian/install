@@ -1,0 +1,2 @@
+debian/*.rules        etc/udev/rules.d/
+contrib/*.ttf         usr/share/fonts/truetype/targavfd/

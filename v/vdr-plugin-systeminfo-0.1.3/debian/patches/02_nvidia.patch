@@ -1,0 +1,31 @@
+--- a/scripts/systeminfo.sh
++++ b/scripts/systeminfo.sh
+@@ -19,6 +19,8 @@
+ #
+ # test with: for i in $(seq 1 16); do systeminfo.sh $i;echo;done
+ #
++# mango 15.08.2013
++# add gpu card name & temp for nvidia cards 
+ 
+ PATH=/usr/bin:/bin:/sbin
+ 
+@@ -125,6 +127,19 @@
+ 		echo -ne "Swap:\t"$VAR
+ 		exit
+         	;;
++
++	14)	# graphics card
++        lspci | grep -i vga > /tmp/gpuT.txt
++        VGA=$(cut -d: -f3  /tmp/gpuT.txt)
++		echo -ne "Graphics Card:\t"$VGA
++		exit
++        	;;
++			
++	15)	# graphics card temp
++        GPU=$(nvidia-settings -c :0.0 -tq GPUCoreTemp)
++		echo -ne "Temperatures:\tnVidia-GPU: "$GPU Grad
++		exit
++        	;;			
+ 	test)
+ 		echo ""
+ 		echo "Usage: systeminfo.sh {1|2|3|4|...}"

@@ -1,0 +1,4 @@
+makefile_fix.patch
+zz_easyvdr-externremux.patch
+streamdev-channelchange.diff
+

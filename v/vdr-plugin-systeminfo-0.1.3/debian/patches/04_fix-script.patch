@@ -1,0 +1,47 @@
+--- a/scripts/systeminfo.sh
++++ b/scripts/systeminfo.sh
+@@ -20,7 +20,7 @@
+ # test with: for i in $(seq 1 16); do systeminfo.sh $i;echo;done
+ #
+ # mango 15.08.2013
+-# add gpu card name & temp for nvidia cards 
++# add card name & temp for nvidia cards 
+ 
+ PATH=/usr/bin:/bin:/sbin
+ 
+@@ -80,7 +80,7 @@
+         	;;
+ 
+ 	6)	# fan speeds
+-		CPU=$( sensors | grep -i 'CPU FAN' | tr -s ' ' | cut -d' ' -f 3)
++		CPU=$( sensors | grep -i 'CPU FAN' | tr -s ' ' | cut -d' ' -f 4)
+ 		CASE=$(sensors | grep -i 'SYS Fan' | tr -s ' ' | cut -d' ' -f 3)
+ 		echo -ne "Fans:\tCPU: "$CPU" rpm\tCase: "$CASE" rpm"
+ 		exit
+@@ -88,7 +88,7 @@
+ 
+ 	7)	# temperature of CPU and mainboard
+ 		CPU=$(sensors | grep -i 'CPU TEMP' | tr -s ' ' | cut -d' ' -f 3)
+-		MB=$( sensors | grep -i 'Sys temp' | tr -s ' ' | cut -d' ' -f 3)
++		MB=$( sensors | grep -i 'MB temp' | tr -s ' ' | cut -d' ' -f 3)
+ 		echo -ne "Temperatures:\tCPU: "$CPU"\tMB: "$MB
+ 		exit
+         	;;
+@@ -129,15 +129,14 @@
+         	;;
+ 
+ 	14)	# graphics card
+-        lspci | grep -i vga > /tmp/gpuT.txt
+-        VGA=$(cut -d: -f3  /tmp/gpuT.txt)
++        VGA=$(lspci | grep -i vga | cut -d: -f3)
+ 		echo -ne "Graphics Card:\t"$VGA
+ 		exit
+         	;;
+ 			
+ 	15)	# graphics card temp
+         GPU=$(nvidia-settings -c :0.0 -tq GPUCoreTemp)
+-		echo -ne "Temperatures:\tnVidia-GPU: "$GPU Grad
++        echo -ne "Temperatures:\tnVidia-GPU: "$GPU°C
+ 		exit
+         	;;			
+ 	test)

@@ -1,0 +1,15 @@
+--- a/streamdev-server/externremux.sh
++++ b/streamdev-server/externremux.sh
+@@ -28,7 +28,11 @@
+ ### GENERAL CONFIG START
+ ###
+ # Pick one of DSL1000/DSL2000/DSL3000/DSL6000/DSL16000/LAN10/WLAN11/WLAN54
+-QUALITY='DSL1000'
++
++#easyvdr
++. /var/lib/vdr/sysconfig
++QUALITY=$STREAMQUALITY
++
+ # Program used for logging (logging disabled if empty)
+ LOGGER=logger
+ # Path and name of FIFO

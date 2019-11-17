@@ -1,0 +1,3 @@
+version=3
+
+http://firefly.vdr-developer.org/systeminfo/vdr-systeminfo-(.*)\.tar\.bz2

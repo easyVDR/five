@@ -1,0 +1,27 @@
+Source: vdr-plugin-targavfd
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), gettext, pkg-config, libusb-1.0-0-dev, libfreetype6-dev, libfontconfig1-dev
+Standards-Version: 3.9.4
+Homepage: http://projects.vdr-developer.org/wiki/plg-targavfd
+
+Package: vdr-plugin-targavfd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Suggests: vdr-plugin-span
+Description: VDR plugin to show information on Targa VFD Futaba MDM166A
+ targavfd is a plugin for the Video Disc Recorder and shows information about 
+ the current state of VDR on Targa USB Graphic Vacuum Fluorescent Display 
+ (Futaba MDM166A).
+
+Package: vdr-plugin-targavfd-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-targavfd (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-targavfd
+ .
+ This package contains only the debugging symbols for vdr-plugin-targavfd 
+

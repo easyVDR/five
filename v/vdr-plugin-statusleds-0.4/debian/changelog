@@ -1,0 +1,113 @@
+vdr-plugin-statusleds (0.4-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 01:02:30 +0100
+
+vdr-plugin-statusleds (0.4-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 01:13:29 +0100
+
+vdr-plugin-statusleds (0.4-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Nov 2017 01:27:04 +0100
+
+vdr-plugin-statusleds (0.4-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Jul 2017 19:44:05 +0200
+
+vdr-plugin-statusleds (0.4-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:00:47 +0200
+
+vdr-plugin-statusleds (0.4-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:46:38 +0200
+
+vdr-plugin-statusleds (0.4-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:47:25 +0200
+
+vdr-plugin-statusleds (0.4-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:07:04 +0200
+
+vdr-plugin-statusleds (0.4-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:50:51 +0100
+
+vdr-plugin-statusleds (0.4-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 00:53:10 +0100
+
+vdr-plugin-statusleds (0.4-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:26:36 +0200
+
+vdr-plugin-statusleds (0.4-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:28:22 +0100
+
+vdr-plugin-statusleds (0.4-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 21:02:42 +0100
+
+vdr-plugin-statusleds (0.4-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:00:57 +0200
+
+vdr-plugin-statusleds (0.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * bump version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 Aug 2014 21:55:11 +0200
+
+vdr-plugin-statusleds (0.3-2easyVDR2~trusty) trusty; urgency=high
+
+  * add depends blinkd
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 Aug 2014 21:00:37 +0200
+
+vdr-plugin-statusleds (0.3-1easyVDR0~trusty) trusty; urgency=high
+
+  * add new makefile vdr-1.7.36 >
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 16 Aug 2014 20:20:01 +0200
+
+vdr-plugin-statusleds (0.3-easyVDR1.2) oneiric; urgency=high
+
+  * rebuild for stable PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 May 2012 13:45:33 +0200
+
+vdr-plugin-statusleds (0.3-easyVDR1.1) oneiric; urgency=high
+
+  * Initial Release for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 06 Jan 2012 08:59:10 +0100

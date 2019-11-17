@@ -1,0 +1,5 @@
+01_vdr-2.1.x-compat.patch
+02_suspendoutput_svdrp.patch
+03_suspendoutput_nooutput.patch
+04_svdrp_stat_command.patch
+05_compile.patch

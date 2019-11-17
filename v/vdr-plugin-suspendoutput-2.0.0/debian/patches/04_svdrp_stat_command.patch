@@ -1,0 +1,25 @@
+Index: vdr-plugin-suspendoutput-2.0.0/suspendoutput.c
+===================================================================
+--- vdr-plugin-suspendoutput-2.0.0.orig/suspendoutput.c	2017-07-05 22:33:02.823679953 +0200
++++ vdr-plugin-suspendoutput-2.0.0/suspendoutput.c	2017-07-05 22:33:02.815679913 +0200
+@@ -249,6 +249,8 @@
+ 		"    Suspend video output.\n",
+ 		"RESU\n"
+ 		"    Resume video output.\n",
++		"STAT\n"
++		"    Show video output state.\n",
+ 		NULL
+ 	};
+ 	return HelpPages;
+@@ -280,6 +282,11 @@
+ 	  ReplyCode = 250;
+ 	  return cString::sprintf("Resume output");
+ 	}
++	if (strcasecmp(Command, "STAT") == 0) {
++	  ReplyCode = 250;
++	  return cString::sprintf("%s", cDummyPlayerControl::IsOpen() ?
++			  "suspended" : "resumed");
++	}
+ 	return NULL;
+ }
+ 

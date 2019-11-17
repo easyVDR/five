@@ -1,0 +1,26 @@
+Source: vdr-plugin-svdrposd
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), svdrpservice-dev, gettext, pkg-config
+Standards-Version: 3.9.4
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-svdrposd/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-svdrposd/trunk/
+Homepage: http://vdr.schmirler.de/
+
+Package: vdr-plugin-svdrposd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, vdr-plugin-svdrpservice
+Description: VDR plugin to control the OSD of a remote VDR
+ This VDR plugin displays the menu of a remote VDR as a submenu item in
+ your local VDR OSD menu.
+
+Package: vdr-plugin-svdrposd-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-svdrposd (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-svdrposd
+ .
+ This package contains only the debugging symbols for vdr-plugin-svdrposd

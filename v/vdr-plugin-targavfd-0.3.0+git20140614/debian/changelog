@@ -1,0 +1,314 @@
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR9~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 00:37:45 +0100
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:08:31 +0100
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:13:30 +0100
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Jul 2017 22:54:24 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:01:44 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:47:36 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:48:25 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:08:00 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:52:17 +0100
+
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 00:54:44 +0100
+
+vdr-plugin-targavfd (0.3.0+git20140614-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:28:04 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:34:40 +0100
+
+vdr-plugin-targavfd (0.3.0+git20140614-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 Mar 2015 18:43:57 +0100
+
+vdr-plugin-targavfd (0.3.0+git20140614-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 02:51:59 +0100
+
+vdr-plugin-targavfd (0.3.0+git20140614-1easyVDR1~trusty) trusty; urgency=high
+
+  * add rules to /etc/udev/rules.d
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 17 Oct 2014 02:41:40 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-0easyVDR1~trusty) trusty; urgency=high
+
+  * add vdr to group uupc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 17 Oct 2014 02:11:37 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 16 Oct 2014 01:08:40 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-0yavdr0~trusty) trusty; urgency=medium
+
+  * rebuild for trusty 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 15 Jun 2014 13:03:53 +0200
+
+vdr-plugin-targavfd (0.3.0+git20140614-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release: 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 15 Jun 2014 11:40:43 +0200
+
+vdr-plugin-targavfd (0.2.1+git20140504-1yavdr0~precise) precise; urgency=medium
+
+  * install fonts 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 14 May 2014 17:13:36 +0200
+
+vdr-plugin-targavfd (0.2.1+git20140504-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot, includes some new fonts for the display
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 14 May 2014 17:01:53 +0200
+
+vdr-plugin-targavfd (0.2.1+git20140302-1yavdr3~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:21:11 +0200
+
+vdr-plugin-targavfd (0.2.1+git20140302-1yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 16:16:42 +0100
+
+vdr-plugin-targavfd (0.2.1+git20140302-1yavdr0~precise) precise; urgency=medium
+
+  * add patch to always show clock in 2-line mode (thanks to C. Reimer)
+  * add some 7-Pixel fonts by A. Grothe (thanks to fnu for testing the fonts)
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 08 Mar 2014 13:08:20 +0100
+
+vdr-plugin-targavfd (0.2.1+git20140302-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot: Make unique scope of cVFDWatch::mutex - cThread::mutex
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 03 Mar 2014 10:12:23 +0100
+
+vdr-plugin-targavfd (0.2.1+git20131105-2yavdr0~precise) precise; urgency=medium
+
+  * add vdr-abi dependency
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 02 Feb 2014 12:42:14 +0100
+
+vdr-plugin-targavfd (0.2.1+git20131105-1yavdr0~precise) precise; urgency=medium
+
+  * fix udev rule, install to /lib/udev/rules.d/ instead of /etc/udev/rules.d 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 27 Nov 2013 14:26:55 +0100
+
+vdr-plugin-targavfd (0.2.1+git20131105-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 27 Nov 2013 13:40:03 +0100
+
+vdr-plugin-targavfd (0.2.0+git20130412-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 27 Oct 2013 09:15:11 +0100
+
+vdr-plugin-targavfd (0.2.0+git20130412-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:47:35 +0200
+
+vdr-plugin-targavfd (0.2.0+git20130412-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:15:03 +0200
+
+vdr-plugin-targavfd (0.2.0+git20130412-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:09:05 +0200
+
+vdr-plugin-targavfd (0.2.0+git20130412-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:33:40 +0200
+
+vdr-plugin-targavfd (0.2.0+git20130412-0yavdr0~precise) precise; urgency=high
+
+  * New upstream snpashot 
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 15 Apr 2013 11:57:27 +0200
+
+vdr-plugin-targavfd (0.2.0-2yavdr0~lucid) lucid; urgency=high
+
+  * New upstream release 
+  * add debug symbols
+  * corrected order of depending libs
+
+ -- Frank Neumann <fnu@yavdr.org>  Tue, 09 Apr 2013 19:59:23 +0200
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr16~lucid) lucid; urgency=high
+
+  * rebuild for yavdr 0.3.4 
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 21 Mar 2013 17:07:47 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr16~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:59:09 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr15~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:09:36 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr13~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 22:00:10 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr12~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:36:44 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr11~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:33:10 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr10~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:17:00 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr9~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 16:02:05 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr8~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:12:39 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr7~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:42:18 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr6~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:22:01 +0200
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr5~precise) precise; urgency=medium
+
+  * second fix of udev rule
+
+ -- Alexander Grothe <alexandergrothe@gmx.net>  Wed, 20 Jun 2012 22:34:57 +0200
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr4~precise) precise; urgency=medium
+
+  * fixed udev rule
+
+ -- Alexander Grothe <alexandergrothe@gmx.net>  Mon, 18 Jun 2012 17:44:45 +0200
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:30:18 +0200
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:22:20 +0100
+
+vdr-plugin-targavfd (0.1.1.git20120313-1yavdr1~precise) precise; urgency=medium
+
+  * New Upstream Snapshot
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:05:24 +0100
+
+vdr-plugin-targavfd (0.1.1-1yavdr1~natty) natty; urgency=low
+
+  * Initial release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 24 May 2011 22:30:20 +0200

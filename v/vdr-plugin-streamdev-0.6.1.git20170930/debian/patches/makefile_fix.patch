@@ -1,0 +1,13 @@
+--- a/Makefile
++++ b/Makefile
+@@ -37,8 +37,8 @@
+ -include $(PLGCFG)
+ 
+ ### export all vars for sub-makes, using absolute paths
+-LIBDIR := $(shell cd $(LIBDIR) >/dev/null 2>&1 && pwd)
+-LOCDIR := $(shell cd $(LOCDIR) >/dev/null 2>&1 && pwd)
++# LIBDIR := $(shell cd $(LIBDIR) >/dev/null 2>&1 && pwd)
++# LOCDIR := $(shell cd $(LOCDIR) >/dev/null 2>&1 && pwd)
+ export
+ unexport PLUGIN
+ 
