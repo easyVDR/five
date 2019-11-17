@@ -1,0 +1,15 @@
+  /* initialising, a.s.o.: see example above */
+  ...
+
+  /* draw something */
+  ...
+
+
+  /* commit changes -> update the display using the internal display buffer */
+  serdisp_update(dd);
+
+  /* release display without switching it off / clearing it */
+  serdisp_close(dd);
+
+  return(0);
+

@@ -1,0 +1,314 @@
+/** \mainpage
+  *
+  * \section GENERAL General information
+  * \par
+  * \b serdisplib is a library to drive displays.\n\n
+  * This documentation is valid for \b serdisplib >= \b V. \b 2.01.\n
+  * Version 2.x supersedes and combines V. 1.97.x and experimental branch V. 1.98 (which has been available via SVN only but has never been released as an official version). \n All extra features of V. 1.98 are now integrated into V. 2.01+, but client/server extensions are still experimental and are not compiled by default as these are subject to change.
+  * 
+  * \section SD_SUPPDISP Supported displays
+  * \li http://serdisplib.sourceforge.net/#displays
+  * 
+  * \section SD_FEATURES Features
+  * \li Coding language: c
+  * \li Header files compliant with c++-code
+  * \li Accessing the output device (parallel, serial port, ...) using ioctl-calls or direct-IO
+  * \li Each pixel can be set or cleared separately
+  * \li Optimised data-flow between library and display
+  * \li abstract software layer for certain display functions (eg: setting contrast)
+  * \li Support for colour displays (since version 1.96)
+  * \li Support for usb-based displays (since version 1.97)
+  * \li Support for OLED displays (since version 1.97.6)
+  * \li Support for output via libSDL (since version 1.97.9)
+  * \li Support for output via framebuffer (since version 2.00)
+  * \li Support for general purpose input/output (GPIs/GPOs) (since version 2.00)
+  *
+  * \section APIREF API reference
+  * \subsection APICOREREF Core API
+  * \li \ref SERDISP_CONNECT  "serdisp_connect.h"  ... accessing an output device
+  * \li \ref SERDISP_CONTROL  "serdisp_control.h"  ... accessing and controlling a display
+  * \li \ref SERDISP_COLOUR   "serdisp_colour.h"   ... drawing on a display
+  * \subsection APIEXTREF Extended API (useful functions and helpers, but may be subject to changes)
+  * \li \ref SERDISP_GPEVENTS "serdisp_gpevents.h" ... general purpose input/output, event-handling
+  * \li \ref SERDISP_MESSAGES "serdisp_messages.h" ... messages, error handling, useful defines
+  * \li \ref SERDISP_TOOLS    "serdisp_tools.h"    ... common routines and little helpers
+  * \subsection APIADDREF Additional reference
+  * \li <a href="options.html#options" class="el">Passing Options</a>
+  * \li <a href="options.html#wiring" class="el">Customisable Wiring</a>\n\n
+  * \li \subpage EXAMPLES\n\n
+  * \li \subpage APICHANGES
+  * \li <a href="deprecated.html" class="el">Deprecated functions</a>\n\n
+  *
+  * \section PROJINFO Project information
+  * \li \subpage AUTHORS (\p AUTHORS)
+  * \li \subpage COPYING (\p COPYING)
+  * \li \subpage README (\p README)
+  * \li \subpage PINOUTS (\p PINOUTS)
+  * \li \subpage HISTORY (\p HISTORY)
+  *
+  * \section ARCHIVEDDOC Archived documentation
+  * \li <a href="../archived/index_v1.97.html">serdisplib version &lt;= v 1.97</a>
+  * \li <a href="../archived/index_v1.95.html">serdisplib version &lt;= v 1.95</a>
+  * \li <a href="../archived/index_v1.94.html">serdisplib version &lt;= v 1.94</a>
+  * \li <a href="../archived/index_v1.92.html">serdisplib version &lt;= v 1.92</a>
+  *
+  */
+
+/**
+\page APICHANGES API changes
+
+\par serdisplib v.1.92:
+The additional support of direct I/O starting with version 1.92 requested a change in the API:\n
+instead of int filehandles a \b structure \p ppd (parallel port descriptor) is now used.\n
+serdisp_init() now has an extra parameter that will be used in the future.
+
+\par serdisplib v.1.93:
+Starting with version 1.93, more output devices are supported (besides <em>parallel port</em> now 
+also <em>serial port</em> for <b>i2c</b>-displays).\n
+This requested another API-change:
+\li serdisp_parport.h, PP_open(), PP_close() and PP_write() where replaced through serdisp_connect.h, SDCONN_open(), SDCONN_close() and SDCONN_write()
+\li also the descriptor serdisp_PP_t was renamed to serdisp_CONN_t
+\li for limited backward compatibility serdisp_parport.h is still existing and contains defines that resemble the old names (but it is highly recommended to only use serdisp_connect.h)
+\li no display descriptor fields should be accessed directly. so ONLY serdisp_quit() should be used for shutting down the output device (\em not SDCONN_close(dd->sdcd) any longer)
+\li if the output device is needed at runtime or needs to be accessed, serdisp_getSDCONN() should be used (but please \em not <tt>dd->sdcd</tt> any more)
+
+\par serdisplib v.1.95:
+Version 1.95 introduces future support for colour displays.\n
+This requested a small change in two major functions and a re-define of their tasks:
+\li Parameter colour in serdisp_setpixel()/serdisp_getpixel() was changed from int to long. This should have no drawbacks in 32+ bit architectures, a recompile should do.
+\li Type long will be the type for a colour in serdisplib. Format: <tt>#</tt><tt>AARRGGBB</tt> -> one byte for alpha, red, green, and blue channel each.
+\li serdisp_setpixel()/serdisp_getpixel() should no longer be used in applications because they process colour information in a hardware-<b>dependend</b> representation.
+\li Instead of these serdisp_setcolour()/serdisp_getcolour() should be used in applications as they process colour information in a hardware-<b>independend</b> representation.
+\li <tt>#</tt><tt>include</tt> <serdisplib/serdisp.h>; includes all relevant serdisplib header files
+
+\par serdisplib v.1.96:
+no API-changes in version 1.96.\n
+\n
+The only change to an existing function: serdisp_reset() now only re-initialises the display 
+whereas the newly added function serdisp_fullreset() closes and re-opens the device and fully 
+re-initialises the display (the splitting into two functions was necessary to avoid an API-change).\n
+the former serdisp_reset() was rather buggy anyways ...)\n
+\n
+<em>deprecated function:</em> serdisp_feature() has been superseded by serdisp_setoption().
+
+further infos on changes: \ref HISTORY "HISTORY" and \ref README "README".
+ */
+
+
+/** \page AUTHORS Authors involved and contributing
+  * \verbinclude "AUTHORS"
+  */
+
+/** \page COPYING GNU General Public License, Version 2
+  * \verbinclude "COPYING"
+  */
+
+/** \page README How to compile, package, and use the library
+  * \verbinclude "README"
+  */
+
+/** \page HISTORY History of changes
+  * \verbinclude "HISTORY"
+  */
+
+/** \page PINOUTS Collected pinouts for certain displays / display-modules
+  * \verbinclude "PINOUTS"
+  */
+
+/** \page EXAMPLES Some examples
+  * <b>A short, but complete example to give a first impression:</b>
+  *
+  * \include "example1.txt"
+  *
+  * \n<b>Open display, draw something, and exit <i>without</i> clearing the display:</b>
+  *
+  * \include "example2.txt"
+  *
+  * \n<b>Open display as in example 1, but use default identifier function:</b>
+  *
+  * \include "example3.txt"
+  */
+
+/** \page options Passing Options / Customisable Wiring
+\anchor preface
+\section disclaimer disclaimer / info
+\par
+<b>DISCLAIMER:</b>\n
+THIS IS EXPERIMENTAL SOFTWARE AND HARDWARE. USE AT YOUR OWN RISK.
+THE MAINTAINER(S) OF THESE PAGES AND THE DEVELOPER(S) OF SOFTWARE AND HARDWARE PRESENTED ON THESE PAGES CAN NOT BE HELD LIABLE UNDER ANY CIRCUMSTANCES FOR DAMAGE TO HARDWARE OR SOFTWARE, 
+LOST DATA, OR OTHER DIRECT OR INDIRECT DAMAGE RESULTING FROM THE USE OF THIS SOFTWARE OR HARDWARE. 
+IF YOU DO NOT AGREE TO THESE CONDITIONS, YOU ARE NOT PERMITTED TO USE OR FURTHER DISTRIBUTE THIS SOFTWARE OR TO USE ANY TEMPLATES FOR BUILDING HARDWARE PRESENTED HERE.
+
+\li this page deals with <b>customisable wiring</b> of displays and <b>user options</b> for drivers included in <code>serdisplib</code>
+\li i'm not responsible for the content of external web pages
+\li external web pages will generally open in separate browser windows or tabs
+\li english is not my native language. please keep that in mind
+        (corrections of english grammar and formulations are very welcome!)
+\li email: <a href="http://sourceforge.net/users/mrwastl/" class="nodeco"><b>mrwastl at users.sourceforge.net</b></a>
+
+\anchor options
+\section passing_options passing options when initialising a driver in serdisplib
+\subsection intro
+\par
+starting with version <b>1.95</b> options may be set in serdisplib.\n
+an option is a <b>key-value pair</b>, more options can be combined using <b>semi-colons</b> as separators.\n
+the resulting <b>option string</b> is passed to serdisplib using the third parameter of the init-function <code>serdisp_init()</code>.\n
+eg.: <code>serdisp_init(sdcd, "PCD8544", "WIRING=1;INVERT=YES");</code>
+\subsection definition
+  \par
+  an option string is defined using the following notation:\n
+  <pre class="fragment">
+  OPTIONSTRING := OPTION { ';' OPTION }
+  OPTION       := WIRINGOPT | KEYVALUE
+  KEYVALUE     := OPTIDENT '=' OPTVALUE
+  OPTIDENT     := /<span class="dummy"></span>* driver specific option identifiers *<span class="dummy"></span>/ 
+  OPTVALUE     := /<span class="dummy"></span>* driver specific values or defines *<span class="dummy"></span>/
+  WIRINGOPT    := ( 'WIRING' | 'WIRE' ) '=' WIRINGDEF
+  WIRINGDEF    := /<span class="dummy"></span>* one of: <i>identifier</i>, <i>numeric id</i> or a <i>customisable wiring</i> 
+                  (section '<a href="#wiring" class="nodeco">-&gt; customisable wiring in serdisplib</a>') *<span class="dummy"></span>/</pre>
+
+  \subsubsection annotations annotations:
+  \li identifiers and values are <b>case insensitive</b> (eg.: <code>"wiring=powerlcd" == "WIRING=PowerLCD"</code>)
+  \li <b>whitespaces</b> are <b>ignored</b> (valid: <code>" wiring = powerlcd ; INVERT =yes "</code>)
+  \li some identifiers may have short forms, some values textual aliases
+      (eg.: <code>"width=128"</code> == <code>"w=128"</code>, <code>"invert=1"</code> == <code>"inv=yes"</code>)
+  \li identifiers and corresponding values and aliases are <b>driver specific</b> and can be found in the driver <b>hardware pages</b> (menu item <i>'passing options'</i>)
+
+
+\anchor wiring
+\section customisable_wiring customisable wiring in serdisplib
+\subsection wiringintro intro
+  \par
+  starting with version <b>1.95</b> serdisplib supports customisable wiring.\n
+  a wiring definition may be either an <b>identifier</b>, a <b>numeric id</b>, or a string containing <b>key-value pairs</b> for maximum flexibility.\n\n
+  <i>examples:</i>
+  <pre class="fragment">
+  "WIRING=PowerLCD"
+  "WIRING=1"
+  "WIRING=DATA8,CS:nAUTO,A0:INIT,WR:nSTRB,RD:nSELIN"</pre>\n
+  the first two ways to define a wiring (identifier and number) are listed in the section above, this section deals with the third way to do so: a string containing key-value pairs. using this, a user defined wiring can be 'composed'.
+
+\subsection wiringdef definition
+  \par
+  a customisable wiring is defined using the following notation:\n
+  <pre class="fragment">
+  CUSTWIRING := [ DATABUS ',' ] DISPSIG ':' IODEVSIGID { ',' DISPSIG ':' IODEVSIGID }
+  DATABUS    := 'DATA8'
+  DISPSIG    := '1' | DISPSIGID
+  IODEVSIGID := /<span class="dummy"></span>* signal names defined for a certain IO-device *<span class="dummy"></span>/
+  DISPSIGID  := /<span class="dummy"></span>* individual - depends on display used *<span class="dummy"></span>/</pre>
+
+\subsubsection annotations annotations:
+   \li <code>DATABUS</code> defines a data bus using 4, 8, 16, ... wires. thus, <code>DATA8</code> means, that <code>D0</code> - <code>D7</code> is used for an 8 wire bus.<br>for now, only <code>DATA8</code> is defined.\n
+       a DATABUS-definition has to be at the beginning of the definition string!
+   \li <code>DISPSIG</code> either defines an identifier of a display signal - <code>DISPSIGID</code> (eg: <code>CS</code>) or <code>1</code> which means that the corresponding I/O device signal is permanently <i>high</i> (== 1).
+   \li <code>IODEVSIGID</code> defines an identifier of an I/O device (eg: <code>nAUTO</code>).\n
+       I/O device signal identifuers are dependend on the I/O device used!
+   \li <code>DISPSIGID</code> defines an identifier of a display signal (eg: <code>CS</code>).
+       display signal identifiers are dependend on the display used!
+   \li <b>active-low</b> vs. <b>hardware-invertion</b> <b>clashes</b> are <b>solved self-acting</b> by serdisplib!\n
+       <i>eg:</i> display signal <CODE>CS</CODE> is active-high but wired to parallel port signal <code>D0</code> which is not hardware-inverted: serdisplib solves the invertion needed automatically.
+
+\subsubsection example1 example 1:
+   \par
+   <i>custom wiring for a parallel driven display:</i>
+   \li pinout:<pre>
+    D0 - D7 .. data bus
+         CS .. chip select (active low)
+         A0 .. command or data
+         WR .. write strobe (active low)
+         RD .. read signal (active low)
+      RESET .. reset signal (active low)</pre>
+   \li reset signal <code>RESET</code> is hard wired to a R/C reset circuit and thus needs not to be in the wiring string
+   \li display will be connected to a parallel port, it's signal identifiers are listed in a section below
+   \li <code>D0</code> - <code>D7</code> define a data bus, so <code>DATA8</code> is used. <code>D0</code> needs to be wired to pin 2 (<code>D0</code>), <code>D1</code> to pin 3 (<code>D1</code>), a.s.o.
+   \li <code>CS</code> is wired to pin 14, thus one of <code>nAUTO, nAUTOFD, nLINEFD</code>, or <code>C1</code> may be used as identifier
+   \li <code>A0</code> is wired to pin 16 --&gt; <code>INIT</code>
+   \li <code>WR</code> is wired to pin 1 --&gt; <code>nSTRB</code>
+   \li <code>RD</code> is wired to pin 17 --&gt; <code>nSELIN</code>
+   \li active low vs. hardware inverted parallel port signals are solved by serdisplib
+   \li putting all this together:
+   <pre>
+<code>DATA8,CS:nAUTO,A0:INIT,WR:nSTRB,RD:nSELIN</code>
+   </pre>
+
+
+\subsubsection example2 example 2:
+   \par
+   <i>custom wiring for a serial driven display:</i>
+   \li pinout:<pre>
+         SI .. serial data input
+        SCL .. clock
+         DC .. command or data
+         CS .. chip select (active low)
+      RESET .. reset signal (active low)</pre>
+   \li <code>CS</code> is hard wired to GND (chip always selected)
+   \li <code>SI</code> is wired to pin 1 --&gt; <code>nSTRB</code>
+   \li <code>SCL</code> is wired to pin 14 --&gt; <code>nLINEFD</code> (or <code>nAUTO</code>, ...)
+   \li <code>DC</code> is wired to pin 2 --&gt; <code>D0</code>
+   \li <code>RESET</code> is wired to pin 3 --&gt; <code>D1</code>
+   \li pins 4 and 5 are used to supply the display with power --&gt; they need to be permanently high (==1), so <code>1:D2</code> and <code>1:D3</code> is used
+   \li clashes 'active low vs. hardware inverted parallel port signals' (e.g.: <code>RESET</code> is active low, but <code>D1</code> is not hardware inverted)  are solved by serdisplib, thus a user doesn't need to care about this
+   \li putting all this together:
+   <pre>
+<code>1:D2,1:D3,SI:nSTRB,SCL:nLINEFD,DC:D0,RESET:D1</code>
+   </pre>
+
+\subsection wiringpar parallel port
+\image html dsub25.png "dsub 25 connector (pc view)"
+<table class="stdsheet">
+       <tr><th style="text-align:right">pin #</th><th>defined identifiers in serdisplib</th><th style="text-align:center">hardware inverted</th><th style="text-align:center">direction</th><th>description</th></tr>
+       <tr><td class="name"> 1</td><td>C0, nSTROBE, nSTRB</td>    <td class="mc">*</td><td class="mc">---&gt;</td><td>strobe</td></tr>
+       <tr><td class="name"> 2</td><td>D0</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;--&gt;</td><td>data bit 0 (bi-directional)</td></tr>
+       <tr><td class="name"> 3</td><td>D1</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;--&gt;</td><td>data bit 1</td></tr>
+       <tr><td class="name"> 4</td><td>D2</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;--&gt;</td><td>data bit 2</td></tr>
+       <tr><td class="name"> 5</td><td>D3</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;--&gt;</td><td>data bit 3</td></tr>
+       <tr><td class="name"> 6</td><td>D4</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;--&gt;</td><td>data bit 4</td></tr>
+       <tr><td class="name"> 7</td><td>D5</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;--&gt;</td><td>data bit 5</td></tr>
+       <tr><td class="name"> 8</td><td>D6</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;--&gt;</td><td>data bit 6</td></tr>
+       <tr><td class="name"> 9</td><td>D7</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;--&gt;</td><td>data bit 7</td></tr>
+       <tr><td class="name">10</td><td>S6, ACK, ACKNOWLEDGE</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;---</td><td>acknowledge</td></tr>
+       <tr><td class="name">11</td><td>S7, nBUSY</td>    <td class="mc">*</td><td class="mc">&lt;---</td><td>busy</td></tr>
+       <tr><td class="name">12</td><td>S5, PE, PERROR</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;---</td><td>paper end</td></tr>
+       <tr><td class="name">13</td><td>S4, SELECT, SLCT</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;---</td><td>select</td></tr>
+       <tr><td class="name">14</td><td>C1, nLINEFD, nAUTO, nAUTOFD</td>    <td class="mc">*</td><td class="mc">---&gt;</td><td>autofeed</td></tr>
+       <tr><td class="name">15</td><td>S3, ERROR</td>    <td class="mc">&nbsp;</td><td class="mc">&lt;---</td><td>error</td></tr>
+       <tr><td class="name">16</td><td>C2, INIT</td>    <td class="mc">&nbsp;</td><td class="mc">---&gt;</td><td>initialise</td></tr>
+       <tr><td class="name">17</td><td>C3, nSELECT, nSELIN, nSEL</td>    <td class="mc">*</td><td class="mc">---&gt;</td><td>select in</td></tr>
+       <tr><td class="name">18-25</td><td>---</td>    <td class="mc">&nbsp;</td><td class="mc">----</td><td>GND (ground)</td></tr>
+      </table>
+
+\section links
+
+   <table class="stdsheet">
+    <tr>
+     <th colspan="4">hardware</th>
+    </tr>
+    <tr>
+     <td class="name">The Hardware Book</td>
+     <td class="desc">internet's largest free collection of connector pinouts and cable descriptions</td>
+     <td class="lang">(english)</td>
+     <td class="url" ><a href="http://www.hardwarebook.net" class="nodeco" target="_blank">http://www.hardwarebook.net</a></td>
+    </tr>
+    <tr>
+     <td class="name">Beyond Logic</td>
+     <td class="desc">interfacing the PC</td>
+     <td class="lang">(english)</td>
+     <td class="url" ><a href="http://www.beyondlogic.org" class="nodeco" target="_blank">http://www.beyondlogic.org</a></td>
+    </tr>
+   </table>
+
+\section history
+
+   <table class="stdsheet">
+    <tr>
+     <td class="date">2012-01-28</td>
+     <td>transferred to doxygen-based part of documentation</td>
+    </tr>
+    <tr>
+     <td class="date">2005-05-09</td>
+     <td>first release</td>
+    </tr>
+   </table>
+  */
+

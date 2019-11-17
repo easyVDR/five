@@ -1,0 +1,955 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html>
+<head>
+   <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+   <meta name="Generator" content="vi / NEdit">
+   <meta name="description" content="serdisplib">
+   <meta name="keywords" content="linux, serdisplib, optrex, display, lcd, vdr, graphlcd, i2c, pcd8544, nokia 7110, nokia, sed1530, sed1531, sed1565, lc-display">
+   <meta name="Author" content="Wolfgang Astleitner, (C) 2003-2005">
+   <LINK REL="SHORTCUT ICON" href="/favicon.ico">
+
+ <title>documentation for serdisplib</title>
+ <link rel="stylesheet" type="text/css" href="sd2.css">
+ <link rel="stylesheet" type="text/css" media="screen" title="standard fonts" href="fontstd.css" >
+ <link rel="stylesheet" type="text/css" media="print" href="fontprint.css" >
+ <link rel="alternate stylesheet" type="text/css" media="screen" title="small fonts" href="fontsmall.css" >
+ <link rel="alternate stylesheet" type="text/css" media="screen" title="big fonts" href="fontbig.css" >
+</head>
+<body id="documentation">
+<h1>documentation for serdisplib &gt;= V 1.95</h1>
+
+<div class="box">
+<h2>DISCLAIMER</h2>
+ <blockquote><b>
+       THIS IS EXPERIMENTAL SOFTWARE AND HARDWARE. USE AT YOUR OWN RISK.
+       THE MAINTAINER(S) OF THESE PAGES AND THE DEVELOPER(S) OF SOFTWARE AND HARDWARE PRESENTED
+       ON THESE PAGES CAN NOT BE HELD LIABLE UNDER ANY CIRCUMSTANCES FOR DAMAGE TO HARDWARE OR SOFTWARE, 
+       LOST DATA, OR OTHER DIRECT OR INDIRECT DAMAGE RESULTING FROM THE USE OF THIS SOFTWARE OR HARDWARE. 
+       IF YOU DO NOT AGREE TO THESE CONDITIONS, YOU ARE NOT PERMITTED TO USE OR FURTHER DISTRIBUTE THIS 
+       SOFTWARE OR TO USE ANY TEMPLATES FOR BUILDING HARDWARE PRESENTED HERE.
+ </b></blockquote>
+</div>
+
+<div class="box">
+<h2>overview</h2>
+<ul class="overview">
+ <li><a href="#license">license</a> (this software is protected under the terms of the GPL license)</li>
+ <li><a href="#api_changes">API changes</a> ... API changes since first released version of serdisplib</li>
+ <li><a href="#displays">supported displays</a></li>
+ <li><a href="#serdisp_connect">serdisp_connect.h</a> ... accessing an output device
+  <ul>
+    <li><a href="#serdisp_connect__SDCONN_open"      >SDCONN_open()</a></li>
+    <li><a href="#serdisp_connect__SDCONN_close"     >SDCONN_close()</a></li>
+    <li><a href="#serdisp_connect__SDCONN_import_PP" >SDCONN_import_PP()</a></li>
+  </ul>
+ </li>
+ <li><a href="#serdisp_control">serdisp_control.h</a> ... accessing and controlling a display
+  <ul>
+    <li><a href="#serdisp_control__serdisp_init"        >serdisp_init()</a></li>
+    <li><a href="#serdisp_control__serdisp_getversioncode">serdisp_getversioncode()</a></li>
+    <li><a href="#serdisp_control__serdisp_close"       >serdisp_close()</a></li>
+    <li><a href="#serdisp_control__serdisp_quit"        >serdisp_quit()</a></li>
+    <li><a href="#serdisp_control__serdisp_reset"       >serdisp_reset()</a></li>
+    <li><a href="#serdisp_control__serdisp_getwidth"    >serdisp_getwidth()</a></li>
+    <li><a href="#serdisp_control__serdisp_getheight"   >serdisp_getheight()</a></li>
+    <li><a href="#serdisp_control__serdisp_getcolours"  >serdisp_getcolours()</a></li>
+    <li><a href="#serdisp_control__serdisp_getdepth"    >serdisp_getdepth()</a></li>
+    <li><a href="#serdisp_control__serdisp_getpixelaspect">serdisp_getpixelaspect()</a></li>
+    <li><a href="#serdisp_control__serdisp_feature"     >serdisp_feature()</a></li>
+    <li><a href="#serdisp_control__serdisp_clearbuffer" >serdisp_clearbuffer()</a></li>
+    <li><a href="#serdisp_control__serdisp_clear"       >serdisp_clear()</a></li>
+    <li><a href="#serdisp_control__serdisp_update"      >serdisp_update()</a></li>
+    <li><a href="#serdisp_control__serdisp_rewrite"     >serdisp_rewrite()</a></li>
+    <li><a href="#serdisp_control__serdisp_blink"       >serdisp_blink()</a></li>
+    <li><a href="#serdisp_control__serdisp_setpixel"    >serdisp_setpixel()</a></li>
+    <li><a href="#serdisp_control__serdisp_setpixels"   >serdisp_setpixels()</a></li>
+    <li><a href="#serdisp_control__serdisp_getpixel"    >serdisp_getpixel()</a></li>
+    <li><a href="#serdisp_control__serdisp_getSDCONN"   >serdisp_getSDCONN()</a></li>
+  </ul>
+ </li>
+ <li><a href="#serdisp_colour">serdisp_colour.h</a> ... drawing on a display
+  <ul>
+    <li><a href="#serdisp_colour__serdisp_pack2ARGB"    >serdisp_pack2ARGB()</a></li>
+    <li><a href="#serdisp_colour__serdisp_ARGB2GREY"    >serdisp_ARGB2GREY()</a></li>
+    <li><a href="#serdisp_colour__serdisp_GREY2ARGB"    >serdisp_GREY2ARGB()</a></li>
+    <li><a href="#serdisp_colour__serdisp_setcolour"    >serdisp_setcolour()</a></li>
+    <li><a href="#serdisp_colour__serdisp_setgrey"      >serdisp_setgrey()</a></li>
+    <li><a href="#serdisp_colour__serdisp_getcolour"    >serdisp_getcolour()</a></li>
+    <li><a href="#serdisp_colour__serdisp_getgrey"      >serdisp_getgrey()</a></li>
+  </ul>
+ </li>
+ <li><a href="#serdisp_messages">messages, error handling, useful defines</a>
+  <ul>
+    <li><a href="#serdisp_messages__sd_runtime_error"   >sd_runtime_error()</a></li>
+    <li><a href="#serdisp_messages__sd_geterrormsg"     >sd_geterrormsg()</a></li>
+    <li><a href="#serdisp_messages__SERDISP_VERSION_MM" >SERDISP_VERSION_MAJOR, SERDISP_VERSION_MINOR</a></li>
+    <li><a href="#serdisp_messages__SERDISP_VERSION"    >SERDISP_VERSION_CODE, SERDISP_VERSION(a,b)</a></li>
+  </ul>
+ </li>
+ <li><a href="#examples">examples</a></li>
+ <li><a href="#former">documentation for former versions</a></li>
+</ul>
+</div> <!-- box overview -->
+
+
+<div class="box">
+<a name="license"> </a>
+<h2>license</h2>
+<div class="license">
+<pre>
+This program is free software; you can redistribute it and/or modify   
+it under the terms of the GNU General Public License as published by   
+the Free Software Foundation; either version 2 of the License, or (at  
+your option) any later version.                                        
+
+This program is distributed in the hope that it will be useful, but    
+WITHOUT ANY WARRANTY; without even the implied warranty of             
+MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU      
+General Public License for more details.                               
+</pre>
+</div>
+
+A copy of the GPL is located inside the source code tree (file 'COPYING').
+</div>
+
+<div class="box">
+<a name="api_changes"> </a>
+<h2>API changes:</h2>
+<h4>serdisplib v.1.92</h4>
+The additional support of direct I/O starting with version 1.92 requested a change in the API:<br>
+instead of <code>int</code> filehandles a <b>structure</b> <code>ppd</code> (parallel port descriptor) is now used.<br>
+<code>serdisp_init()</code> now has an extra parameter that will be used in the future.
+
+<h4>serdisplib v.1.93</h4>
+Starting with version 1.93, more output devices are supported (besides parallel port now also serial port for i2c-displays).
+This requested another API-change:
+<ul>
+ <li><code>serdisp_parport.h</code>, <code>PP_open()</code>, <code>PP_close()</code> and <code>PP_write()</code> where replaced through
+    <code>serdisp_connect.h</code>, <code>SDCONN_open()</code>, <code>SDCONN_close()</code> and <code>SDCONN_write()</code></li>
+ <li>also the descriptor <code>serdisp_PP_t</code> was renamed to <code>serdisp_CONN_t</code></li>
+ <li>for limited backward compatibility <code>serdisp_parport.h</code> is still existing and contains <b>defines</b>
+    that resemble the old names (but it is highly recommended to only use serdisp_connect.h)</li>
+ <li><i>no</i> display descriptor fields should be accessed directly. so ONLY <code>serdisp_quit()</code> should be used 
+     for shutting down the output device (no more <code>SDCONN_close(dd-&gt;sdcd);</code>)</li>
+ <li>if the output device is needed at runtime or needs to be accessed, <code>serdisp_getSDCONN()</code> should be used (but please NOT <code>dd-&gt;sdcd</code> any more)</li>
+</ul>
+
+<h4>serdisplib v.1.95</h4>
+Version 1.95 introduces future support for colour displays. This requested a small change in two major functions and 
+a re-define of their tasks:
+<ul>
+ <li>Parameter <code>colour</code> in <code>serdisp_setpixel()/serdisp_getpixel()</code> was changed 
+     from <code>int</code> to <code>long</code>. This should have no drawbacks in 32+ bit architectures, a recompile
+		 should do.</li>
+ <li>Type <code>long</code> will be the type for a colour in serdisplib. Format: #AARRGGBB -&gt; one byte for alpha, red, green, and blue channel each.</li>
+ <li><code>serdisp_setpixel()/serdisp_getpixel()</code> should no longer be used in applications because they process colour information in a hardware-<b>dependend</b> representation.</li>
+ <li>Instead of these <code>serdisp_setcolour()/serdisp_getcolour()</code> should be used in applications as they process colour information in a hardware-<b>independend</b> representation.</li>
+ <li><code>#include &lt;serdisplib/serdisp.h&gt;;</code> includes all relevant serdisplib header files</li>
+</ul>
+<p>
+
+further infos on changes: <a href="HISTORY" target="_blank">HISTORY</a> and <a href="README" target="_blank">README</a>
+</div>  <!-- box api changes -->
+
+
+<div class="box">
+<a NAME="displays"></a>
+<h2>supported displays</h2>
+see <a href="http://serdisplib.sourceforge.net/index.html#displays" target="_blank">http://serdisplib.sourceforge.net/index.html#displays</a> for a detailed overview.
+</div>  <!-- box displays -->
+
+<div class="box">
+<a name="serdisp_connect"> </a>
+<h2>serdisp_connect.h: accessing an output device</h2>
+
+<h4>introduction</h4>
+
+<code>serdisp_connect.h</code> offers some functions for opening and closing output devices using a descriptor (<code>'sdcd'</code>).<br>
+
+supported access methods:
+<ul>
+ <li><b>ioctl-calls</b>: output devices are accessed using devices</li>
+ <li><b>direct I/O</b>: output devices are accessed using port addresses (direct I/O is only supported with linux and i386/x86_64 architectures)</li>
+</ul>
+
+The default output-method uses <i>'ioctl'-calls</i> using device names (eg: <code>/dev/parport0</code>).<br>
+serdisplib also supports using <i>direct-IO</i> (using port-addresses and inline-assembler).
+<p>
+pros and cons:
+<ul>
+<li><b>ioctl</b>:
+ <blockquote>
+  <b>+</b> &nbsp; not restricted to root-only (users qualified for eg. /dev/parport0 may control a display connected to it)<br>
+  <b>+</b> &nbsp; universal (usable with more unix-derivats)<br>
+  <b>-</b> &nbsp; slower than direct I/O
+ </blockquote><br></li>
+<li><b>direct I/O</b>:
+ <blockquote>
+  <b>+</b> &nbsp; faster (<i>at least in theory</i>)<br>
+  <b>-</b> &nbsp; root-only<br>
+  <b>-</b> &nbsp; i386-compliant architectures only (*bsd-support planned)
+ </blockquote></li>
+</ul>
+
+output devices:
+<ul>
+ <li><b>parallel port</b></li>
+ <li><b>serial port</b> (i2c-devices only)</li>
+ <li><b>USB-to-serial adaptors</b> (i2c-devices only)</li>
+</ul>
+
+tested compilers:
+<ul>
+ <li>gcc 2.96</li>
+ <li>gcc 3.x</li>
+ <li>gcc 4.0 (tested using fedora core 4 post test 2 development tree)</li>
+</ul>
+operating systems (tested):
+<ul>
+ <li><b>linux</b> (direct I/O only with x86 architectures)</li>
+ <li><b>solaris 10</b> (only x86 tested. devices: ecpp and cua)</li>
+ <li><b>freebsd</b> (only x86 and parport tested)</li>
+</ul>
+
+operating systems (untested):
+<ul>
+ <li><b>linux / non-x86</b></li>
+ <li><b>freebsd/ non-86</b></li>
+ <li><b>openbsd</b> (compiles on sourceforge's compile farm)</li>
+</ul>
+
+either the functions provided by <code>serdisp_connect.h</code> may be used or any other (non-serdisplib) function / code / ... that is returning either
+a file handle which may be controlled using <code>ioctl</code>-calls or direct I/O using <code>outp</code>-calls.
+to be able to use such a file handle together with serdisplib it has to to be imported using <code>SDCONN_import_PP()</code> (only parallel port supported for now).
+
+<h4>functions</h4>
+
+<a name="serdisp_connect__SDCONN_open"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">serdisp_CONN_t*<br><b>SDCONN_open</b> (const char sdcdev[])</td></tr>
+ <tr><td class="desc">
+   opens a device for serdisplib
+ </td></tr>
+ <tr><td class="parm"><pre>
+ <b>sdcdev</b>  ...device name or port-number of device to open. 
+
+                <b>format:</b>  protocol:device    (protocol is case insensitive)
+ 
+                no protocol is needed for known devices (list below):
+
+                /dev/parport<i>X</i>    PARPORT
+                /dev/ppi<i>X</i>        PARPORT  (bsd)
+                /dev/ecpp<i>X</i>       PARPORT  (solaris)
+                0x378            PARPORT  (first parallel port, linux, direct IO)
+                0x278            PARPORT  (second parallel port, linux, direct IO)
+                /dev/ttyS<i>X</i>       SERRAW
+                /dev/ttyUSB<i>X</i>     SERRAW
+                /dev/cua<i>X</i>        SERRAW
+                0x3f8            SERRAW   (first serial port, linux, direct IO)
+                0x2f8            SERRAW   (second serial port, linux, direct IO)
+
+              examples:
+                "/dev/parport0"           (parallel port, ioctl, linux)
+                "0x378"                   (parallel port, direct IO, linux 86 only)
+                "/dev/ecpp0"              (parallel port, ioctl, solaris)
+                "/dev/ttyS0"              (serial port, ioctl, should be os-indepentend (POSIX))
+                "0x3f8"                   (serial port, direct IO, linux x86 only)
+ 
+                "serraw:/dev/ttyS0"       (serial device, ioctl)
+                "SERRAW:/dev/ttyS0"       (the same as above because protocol is case-insensitive)
+                "SERPORT:/dev/ttyS0"      (the same because SERPORT and SERRAW are synonyms)
+                "serraw:0x3f8"            (serial device, direct IO)
+                "parport:/dev/parport0"   (linux, ioctl)
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns a <b>serdisp connect descriptor</b> or (serdisp_CONN_t*)0 if operation was unsuccessful
+ </td></tr>
+</table>
+<a name="serdisp_connect__SDCONN_close"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br><b>SDCONN_close</b> (serdisp_CONN_t* sdcd)</td></tr>
+ <tr><td class="desc">  
+   close the device occupied by serdisp
+ </td></tr>
+ <tr><td class="parm"><pre>
+ <b>sdcd</b>     ... serdisp connect descriptor
+ </pre></td></tr>
+</table>
+<a name="serdisp_connect__SDCONN_import_PP"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">serdisp_CONN_t*<br><b>SDCONN_import_PP</b> (int directIO, int hport)</td></tr>
+ <tr><td class="desc">
+   import an existing, already opened parport device / port and create
+   a sdcd struct out of it.<p>
+   USE WITH CARE!!! all permissions and stuff like that must be ok before!!<br>
+   no checking for validity in here
+ </td></tr>
+ <tr><td class="parm"><pre>
+ <b>directIO</b>   ... 1: yes -&gt; outp-calls, 0: no -&gt; ioctl-calls
+ <b>hport</b>      ... if directIO: port (eg: 0x378), else: descriptor for parport dev
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns a <b>serdisp connect descriptor</b> or (serdisp_CONN_t*)0 if operation was unsuccessful
+ </td></tr>
+</table>
+ <tt>&nbsp; &nbsp;<b>SDCONN_write()</b></tt> and <tt><b>SDCONN_read()</b></tt> are for internal use only and should not be used outside the library
+
+</div>  <!-- box serdisp_connect.h -->
+
+<div class="box">
+<a name="serdisp_control"> </a>
+<h2>serdisp_control.h: accessing and controlling a display</h2>
+<h4>introduction</h4>
+all elementary functions for controlling a display are defined here
+<p>
+NOTA BENE: only these functions should be used. no descriptor fields or internal functions should be accessed directly as these are subject to change.
+
+<h4>functions</h4>
+<a name="serdisp_control__serdisp_init"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">serdisp_t*<br><b>serdisp_init</b> (serdisp_CONN_t* sdcd, const char dispname[], const char optionstring[])</td></tr>
+ <tr><td class="desc">
+   initialises a display. all capabilities and basic values are set
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>sdcd</b>         ... output device handle
+  <b>dispname</b>     ... display name (supported displays: look at section <a href="#displays">supported displays</a>)
+  <b>optionstring</b> ... option string (key-value pairs separated by semi-colons)
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns a display descriptor
+ </td></tr>
+ <tr><td class="exam">
+ <b>example:</b>
+ <pre>
+   serdisp_t* dd;
+   dd = serdisp_init(sdcd, "PCD8544", "WIRING=1;INVERT=YES");
+ </pre></td></tr>
+</table>
+ 
+ 
+<a name="serdisp_control__serdisp_getversioncode"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">long<br><b>serdisp_getversioncode</b> (void)</td></tr>
+ <tr><td class="desc">
+   get version code of serdisplib
+ </td></tr>
+ <tr><td class="retv">
+   returns the version code
+ </td></tr>
+ <tr><td class="exam">
+ <b>example:</b>
+ <pre>
+   if (serdisp_getversioncode() &gt;= SERDISP_VERSION(1,95)) {
+     /* do something */
+   }
+ </pre></td></tr>
+</table>
+ 
+<a name="serdisp_control__serdisp_close"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br><b>serdisp_close</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   close display but do NOT clear / switch off display. output device remains opened
+   <p>
+   this function may for example be used for programs that want to output something and
+   than exit, but without clearing the display (for this, SDCONN_close() shouldn't either
+   be called)
+   <p>
+   <b>ATTENTION:</b>
+       <blockquote>
+              this will NOT work as expected with serial port and ioctl
+              (TxD will be set to low in any case -&gt; so display will be w/o power)
+              so the only solution would be a separate power supply when using ioctl
+              <p>
+              but: directIO works as expected (TxD will NOT be reset after program exit)
+              <p>
+              this is an operating system specific behaviour and canNOT be influenced (as it seems)
+       </blockquote>
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+</table>
+ 
+<a name="serdisp_control__serdisp_quit"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br><b>serdisp_quit</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   clear / switch off display and release output device
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_reset"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">int<br><b>serdisp_reset</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   resets the display (clears runtime_error flag , closes and reopens device)
+   <p> 
+   <b>ATTENTION:</b>
+     <blockquote> will not work if device was imported using <code>SDCONN_import_PP()</code></blockquote>
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns 1 if reset was successful or 0 if not
+ </td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_getwidth"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">int<br><b>serdisp_getwidth</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   get width of display
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns width of display in pixels
+ </td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_getheight"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">int<br><b>serdisp_getheight</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   get height of display
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns height of display in pixels
+ </td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_getcolours"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">int<br><b>serdisp_getcolours</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   get amount of colours supported by the configuration currently used
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns the amount of supported colours
+ </td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_getdepth"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">int<br><b>serdisp_getdepth</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   get colour depth supported by the configuration currently used
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns the amount of supported colours
+ </td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_getpixelaspect"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">int<br><b>serdisp_getaspect</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   get pixel aspect ratio in percent (to avoid floating-point values). using this value, distortions may be avoided when displaying pictures, ... <p>
+   <i>explanation:</i><br>
+   most displays in cellphones have non-quadratic pixels. this function returns the ratio width:height (height = 100%).<p>
+   <i>examples:</i><br>
+   pixels are quadratic: 100 will be returned<br>
+   pixel width is twice pixel height: 200 will be returned<br>
+   pixel width is half of pixel height: 50 will be returned<br>
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns pixel aspect ratio in percent
+ </td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_feature"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br> <b>serdisp_feature</b> (serdisp_t* dd, int feature, int value)</td></tr>
+ <tr><td class="desc">
+   change a display feature
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>      ... display descriptor
+  <b>feature</b> ... feature to change:
+              <b>FEATURE_CONTRAST</b>   .. change display contrast (value: 0-MAX_CONTRASTSTEP)
+              <b>FEATURE_BACKLIGHT</b>  .. 0: off, 1: on, 2: toggle
+              <b>FEATURE_REVERSE</b>    .. 0: normal display, 1: reversed display, 2: toggle
+              <b>FEATURE_ROTATE</b>     .. 0: normal, 1 or 180: bottom-up, 90: 90 degrees, 270: 270 degrees
+  <b>value</b>   ... value for option (see above)
+ </pre></td></tr>
+ <tr><td class="exam">
+ <b>examples:</b>
+ <pre>
+   serdisp_feature(dd, FEATURE_BACKLIGHT, FEATURE_TOGGLE);
+
+   serdisp_feature(dd, CONTRAST, 5);
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_clearbuffer"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br> <b>serdisp_clearbuffer</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   resets the internal display-buffer that is used by serdisplib<br>
+   display will NOT be redrawn!
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_clear"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br> <b>serdisp_clear</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   clear whole display
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_update"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br> <b>serdisp_update</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   update whole display
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_rewrite"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br> <b>serdisp_rewrite</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   rewrite whole display
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_blink"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br> <b>serdisp_blink</b> (serdisp_t* dd, int what, int cnt, int delta)</td></tr>
+ <tr><td class="desc">
+   blink the display
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+  <b>what</b>   ... 0: blinking using backlight, 1: blinking using display reversing
+  <b>cnt</b>    ... how often should there be blinking
+  <b>delta</b>  ... delay between two blinking intervals
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_setpixel"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br> <b>serdisp_setpixel</b> (serdisp_t* dd, int x, int y, int colour)</td></tr>
+ <tr><td class="desc">
+   changes a pixel in the display buffer
+   <p>
+   <i>NOTA BENE:</i><br>
+   this function is hardware dependend! for hardware independend programming use <a href="#serdisp_colour__serdisp_setcolour"    ><code>serdisp_setcolour()</code></a>!
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+  <b>x</b>      ... x-position
+  <b>y</b>      ... y-position
+  <b>colour</b> ... monochrome: 0: clear (white), &lt;&gt;0: set (black); else: up to 16m colours (hardware dependend)
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_setpixels"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br> <b>serdisp_setpixels</b> (serdisp_t* dd, int x, int y, int w, int h, byte* data)</td></tr>
+ <tr><td class="desc">
+   changes an area in the display buffer<p>
+   <i>DEPRECATED!</i><br>
+   this functions only works for depths &lt;= 8 and will be replaced through better functions
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+  <b>x</b>      ... x-position top/left
+  <b>y</b>      ... y-position top/left
+  <b>w</b>      ... width of content
+  <b>h</b>      ... height of content
+  <b>data</b>   ... pixel/colour data (one byte == one pixel)
+ </pre></td></tr>
+ <tr><td class="exam">
+ <b>examples:</b>
+ <pre>
+   byte* data = .....;
+   /* fill pixel/colour-data into 'data'
+   ....
+   ....
+
+   /* draw a 5x5 area starting at position 5/10 */
+   serdisp_setpixels(dd, 5, 10, 5, 5, data);
+ </pre></td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_getpixel"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">long<br> <b>serdisp_getpixel</b> (serdisp_t* dd, int x, int y)</td></tr>
+ <tr><td class="desc">
+   get colour of pixel at (x/y)
+   <p>
+   <i>NOTA BENE:</i><br>
+   this function is hardware dependend! for hardware independend programming use <a href="#serdisp_colour__serdisp_getcolour"    ><code>serdisp_getcolour()</code></a>!
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+  <b>x</b>      ... x-position
+  <b>y</b>      ... y-position
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns the hardware dependend colour information at (x/y)
+ </td></tr>
+</table>
+
+<a name="serdisp_control__serdisp_getSDCONN"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">serdisp_CONN_t*<br> <b>serdisp_getSDCONN</b> (serdisp_t* dd)</td></tr>
+ <tr><td class="desc">
+   get serdisp connect descriptor used by the display
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+ </pre></td></tr>
+ <tr><td class="retv">
+   returns serdisp connect descriptor
+ </td></tr>
+</table>
+
+</div> <!-- box serdisp_control.h -->
+
+<div class="box">
+<a name="serdisp_colour"> </a>
+<h2>serdisp_colour.h: drawing on a display</h2>
+<h4>introduction</h4>
+all hardware-independend pixel manipulating functions are defined here
+<p>
+<i>NOTA BENE:</i><br>
+<code>serdisp_getpixel()</code>/<code>serdisp_setpixel()</code> are hardware dependend functions. <br>
+to obtain hardware independend programs, <code>serdisp_getcolour()</code>/<code>serdisp_setcolour()</code>, which are defined in here,  should be used!
+
+<h4>defines</h4>
+  <b>pre-defined colours:</b>
+  <pre>
+   SD_COL_BLACK    .. 0xFF000000 (black)
+   SD_COL_WHITE    .. 0xFFFFFFFF (white)
+   SD_COL_RED      .. 0xFFFF0000 (red)
+   SD_COL_GREEN    .. 0xFF00FF00 (green)
+   SD_COL_BLUE     .. 0xFF0000FF (blue)
+   </pre>
+<h4>macros</h4>
+<a name="serdisp_colour__serdisp_pack2ARGB"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">long<br><b>serdisp_pack2ARGB</b> (byte _a, byte _r, byte _g, byte _b)</td></tr>
+ <tr><td class="desc">
+   pack an alpha/red/green/blue-representation to a colour representation understood by serdisplib
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>_a</b>   ... alpha-channel
+  <b>_r</b>   ... red-channel
+  <b>_g</b>   ... green-channel
+  <b>_b</b>   ... blue-channel
+ </pre></td></tr>
+ <tr><td class="retval">
+  returns colour value (hardware-independend, format: <code>0xAARRGGBB</code>, AA .. alpha, RR .. red, GG .. green, BB .. blue)
+ </td></tr>
+ <tr><td class="exam">
+ <b>example:</b>
+ <pre>
+   int r = 0xFF;
+   int g = 0x00;
+   int b = 0x00;
+   serdisp_setcolour(dd, 10, 20, serdisp_pack2ARGB("0xFF", r, g, b)); /* set pixel to red */
+ </pre></td></tr>
+</table>
+ 
+<a name="serdisp_colour__serdisp_ARGB2GREY"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">byte<br><b>serdisp_ARGB2GREY</b> (long _col)</td></tr>
+ <tr><td class="desc">
+   convert a colour value to a greylevel value
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>_col</b>   ... colour, format 0xAARRGGBB, AA .. alpha, RR .. red, GG .. green, BB .. blue
+ </pre></td></tr>
+ <tr><td class="retval">
+  returns grey value
+ </td></tr>
+</table>
+ 
+<a name="serdisp_colour__serdisp_GREY2ARGB"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">long<br><b>serdisp_GREY2ARGB</b> (byte _grey)</td></tr>
+ <tr><td class="desc">
+   convert a greylevel value to a colour value
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>_grey</b>   ... grey value
+ </pre></td></tr>
+ <tr><td class="retval">
+  returns colour value, format <code>0xAARRGGBB</code>, AA .. alpha, RR .. red, GG .. green, BB .. blue
+ </td></tr>
+</table>
+ 
+
+<h4>functions</h4>
+<a name="serdisp_colour__serdisp_setcolour"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br><b>serdisp_setcolour</b> (serdisp_t* dd, int x, int y, long colour)</td></tr>
+ <tr><td class="desc">
+   set a colour at position x/y
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+  <b>x</b>      ... x-position
+  <b>y</b>      ... y-position
+  <b>colour</b> ... colour  (hardware-independend, format: <code>0xAARRGGBB</code>, AA .. alpha, RR .. red, GG .. green, BB .. blue)
+ </pre></td></tr>
+ <tr><td class="exam">
+ <b>examples:</b>
+ <pre>
+   serdisp_setcolour(dd, 10, 20, 0xFFFF0000); /* set pixel to red */
+   serdisp_setcolour(dd, 10, 20, SD_COL_RED); /* the same */
+ </pre></td></tr>
+</table>
+ 
+<a name="serdisp_colour__serdisp_getcolour"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">long<br><b>serdisp_getcolour</b> (serdisp_t* dd, int x, int y)</td></tr>
+ <tr><td class="desc">
+   get colour value at position x / y
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+  <b>x</b>      ... x-position
+  <b>y</b>      ... y-position
+ </pre></td></tr>
+ <tr><td class="retval">
+  returns colour value (hardware-independend, format: <code>0xAARRGGBB</code>, AA .. alpha, RR .. red, GG .. green, BB .. blue)
+ </td></tr>
+</table>
+ 
+<a name="serdisp_colour__serdisp_setgrey"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">void<br><b>serdisp_setgrey</b> (serdisp_t* dd, int x, int y, byte grey)</td></tr>
+ <tr><td class="desc">
+   set a grey value at position x/y
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+  <b>x</b>      ... x-position
+  <b>y</b>      ... y-position
+  <b>grey</b>   ... grey value (format: [0, 255])
+ </pre></td></tr>
+ <tr><td class="exam">
+ <b>examples:</b>
+ <pre>
+   serdisp_setgrey(dd, 10, 20, 0xCC); /* set pixel to light grey */
+ </pre></td></tr>
+</table>
+ 
+<a name="serdisp_colour__serdisp_getgrey"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">byte<br><b>serdisp_getgrey</b> (serdisp_t* dd, int x, int y)</td></tr>
+ <tr><td class="desc">
+   get grey value at position x / y
+ </td></tr>
+ <tr><td class="parm"><pre>
+  <b>dd</b>     ... display descriptor
+  <b>x</b>      ... x-position
+  <b>y</b>      ... y-position
+ </pre></td></tr>
+ <tr><td class="retval">
+  returns grey value
+ </td></tr>
+</table>
+ 
+</div> <!-- box serdisp_colour.h -->
+
+<div class="box">
+<a name="serdisp_messages"> </a>
+<h2>messages, error handling, useful defines</h2>
+<h4>introduction</h4>
+serdisplib uses <b>syslog</b> for reporting debugging information, errors and warnings.<br>
+thus, <code>/var/log/messages</code> (or <code>/var/adm/messages</code> depending on operating system used) may contain useful informations.
+
+
+<h4>message and error handling</h4>
+(defined in <code>serdisp_messages.h</code>)
+<p>
+<a name="serdisp_messages__sd_runtime_error"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">int<br> <b>sd_runtime_error</b> ()</td></tr>
+ <tr><td class="desc">
+   returns 1 if a runtime error has occured
+   (display drawing is stopped after a runtime error and may be reset using <code>serdisp_reset()</code>)
+ </td></tr>
+</table>   
+
+<a name="serdisp_messages__sd_geterrormsg"> </a>
+<table border="1" width="95%">
+ <tr><td class="prot">char*<br> <b>sd_geterrormsg</b> ()</td></tr>
+ <tr><td class="desc">
+   if an action was unsuccessful this function will return error information
+ </td></tr>
+</table>   
+   
+<h4>version information and useful defines:</h4>
+(defined in <code>serdisp_control.h</code>)
+<p>
+<ul>
+ <li>
+<a name="serdisp_messages__SERDISP_VERSION_MM"> </a>
+<pre>
+   <code>SERDISP_VERSION_MAJOR</code> and <code>SERDISP_VERSION_MINOR</code> contain major and minor version information for serdisplib
+
+   <code>SERDISP_VERSION_EXTRA</code> may be used for patched versions but will NOT be evaluated
+   
+</pre>
+ </li>
+ <li>
+<a name="serdisp_messages__SERDISP_VERSION"> </a>
+<pre>
+   serdisplib version code <code>SERDISP_VERSION_CODE</code> is calculated using SERDISP_VERSION_MAJOR and SERDISP_VERSION_MINOR.
+   <code>SERDISP_VERSION_CODE(a,b)</code> calculates a valid serdisplib version code.
+   together with <code>SERDISP_VERSION(a,b)</code> <code>SERDISP_VERSION_CODE</code> may be used for asserts
+   
+</pre>
+  example:
+<pre>
+   /* only include code if serdisplib is at least version 1.93 */
+   #if (SERDISP_VERSION_CODE &gt;= SERDISP_VERSION(1,93))
+     ...
+   #endif
+</pre>
+ </li>
+</ul>
+</div> <!-- box messages -->
+
+<div class="box">
+<a name="examples"> </a>
+<h2>examples</h2>
+
+<h4>complete example:</h4>
+
+<pre>
+
+#include &lt;stdio.h&gt;
+#include &lt;stdlib.h&gt;
+
+#include "serdisplib/serdisp.h"   /* include all important header files */
+
+int main(int argc, char **argv) {
+
+  char sdcdev[] = "/dev/parport0";  /* use parallel port */
+  /*char sdcdev[] = "/dev/ttyS0";*/  /* use serial port */
+
+  char dispname[] = "PCD8544";  /* display name */
+
+  serdisp_CONN_t* sdcd;
+  serdisp_t* dd = 0;
+  int i;
+
+  /* opening the output device */             
+  sdcd = SDCONN_open(sdcdev);
+                
+  if (sdcd == (serdisp_CONN_t*)0) {        
+    fprintf(stderr, "Error opening %s, additional info: %s\n", sdcdev, sd_geterrormsg());
+    exit (1);
+  }
+
+  /* opening and initialising the display */
+  dd = serdisp_init(sdcd, dispname, "");
+  if (!dd) {
+    SDCONN_close(sdcd);
+    fprintf(stderr, "Error opening display %s, additional info: %s\n", dispname, sd_geterrormsg());
+    exit(1);
+  }
+
+
+  /* turning on backlight */
+  serdisp_feature(dd, FEATURE_BACKLIGHT, FEATURE_YES);
+
+  /* clearing the display */
+  serdisp_clear(dd);
+
+  /* draw a border (only internal display buffer is affected!!) */
+  for (i = 0; i &lt; serdisp_getwidth(dd); i++) {
+    serdisp_setcolour(dd, i, 0, SD_COL_BLACK);
+    serdisp_setcolour(dd, i, serdisp_getheight(dd)-1, SD_COL_BLACK);
+  }  
+  for (i = 1; i &lt; serdisp_getheight(dd)-1; i++) {
+    serdisp_setcolour(dd, 0, i, SD_COL_BLACK);
+    serdisp_setcolour(dd, serdisp_getwidth(dd)-1, i, SD_COL_BLACK);
+  }
+
+  /* commit changes -&gt; update the display using the internal display buffer */
+  serdisp_update(dd);
+
+  /* wait 30 seconds */
+  sleep(30);
+
+  /* shutdown display and release device*/
+  serdisp_quit(dd);
+  
+  return(0);
+}
+
+</pre>
+
+<h4>open display, draw something, and exit without clearing display:</h4>
+
+<pre>
+
+  /* initialising, a.s.o.: see example above */
+  ...
+
+  /* draw something */
+  ...
+
+
+  /* commit changes -&gt; update the display using the internal display buffer */
+  serdisp_update(dd);
+
+  /* release display without switching it off / clearing it */
+  serdisp_close(dd);
+
+  exit(0);
+
+</pre>
+</div>  <!-- box examples -->
+
+<div class="box">
+<a name="former"> </a>
+<h2>documentation for former versions</h2>
+<ul>
+ <li><a href="index_v1.92.html">serdisplib version &lt;= v 1.92</a></li>
+ <li><a href="index_v1.94.html">serdisplib version &lt;= v 1.94</a></li>
+</ul>
+</div>
+
+<div align="right">(c) 2003-2005 by wolfgang astleitner // version: 1.95 // 2005-04-24</div>
+</body>
+</html>

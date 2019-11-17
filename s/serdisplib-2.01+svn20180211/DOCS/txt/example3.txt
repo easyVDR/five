@@ -1,0 +1,48 @@
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+
+#include "serdisplib/serdisp.h"   /* include all important header files */
+
+int main(int argc, char** argv) {
+
+  char*  sdcdev = 0;
+
+  char dispname[] = "PCD8544";  /* display name */
+
+  serdisp_CONN_t* sdcd;
+  serdisp_t* dd = 0;
+
+  /* some initialisation code */
+  ...
+
+  /* opening the output device */
+ 
+  if ( ! (sdcdev && strlen(sdcdev) > 0 ) ) {
+    /* if sdcdev is empty: use default device identifier for this display */
+    sdcdev = (char*) serdisp_defaultdevice(dispname);
+  }
+  sdcd = SDCONN_open( sdcdev );
+
+  if (sdcd == (serdisp_CONN_t*)0) {
+    fprintf(stderr, "Error opening %s, additional info: %s\n", sdcdev, sd_geterrormsg());
+    exit (1);
+  }
+
+  /* opening and initialising the display */
+  dd = serdisp_init(sdcd, dispname, "");
+  if (!dd) {
+    SDCONN_close(sdcd);
+    fprintf(stderr, "Error opening display %s, additional info: %s\n", dispname, sd_geterrormsg());
+    exit(1);
+  }
+
+  /* do some stuff */
+  ...
+
+  /* shutdown display and release device*/
+  serdisp_quit(dd);
+
+  return(0);
+}
+

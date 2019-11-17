@@ -1,0 +1,25 @@
+#
+# displays / modules supported by libserdisp
+#
+
+# c't includ / maeusekino
+ATTRS{idVendor}=="07c0", ATTRS{idProduct}=="1501", GROUP="users", MODE="0660"
+# FTDI FT2232 Dual USB UART/FIFO IC (USB -> SPI interface)
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6010", GROUP="users", MODE="0660"
+# FTDI FT245
+ATTRS{idVendor}=="0403", ATTRS{idProduct}=="6001", GROUP="users", MODE="0660"
+# Linux4Media L4ME5I and L4M132C
+ATTRS{idVendor}=="4243", ATTRS{idProduct}=="ee08", GROUP="users", MODE="0660"
+# Linux4Media L4M320T old firmware
+ATTRS{idVendor}=="4243", ATTRS{idProduct}=="ee20", GROUP="users", MODE="0660"
+# Linux4Media L4M320T new firmware (old and new controller)
+ATTRS{idVendor}=="4243", ATTRS{idProduct}=="ee21", GROUP="users", MODE="0660"
+ATTRS{idVendor}=="23ae", ATTRS{idProduct}=="ee21", GROUP="users", MODE="0660"
+# Alphacool display modules
+ATTRS{idVendor}=="060c", ATTRS{idProduct}=="04eb", GROUP="users", MODE="0660"
+# USB 13700 usb module (www.lcdinfo.com/)
+ATTRS{idVendor}=="16c0", ATTRS{idProduct}=="08a2", GROUP="users", MODE="0660"
+# SDCMegtron display module
+ATTRS{idVendor}=="152a", ATTRS{idProduct}=="8380", GROUP="users", MODE="0660"
+# GLCD2USB usb module
+ATTRS{idVendor}=="1c40", ATTRS{idProduct}=="0525", GROUP="users", MODE="0660"

@@ -1,0 +1,61 @@
+#include <stdio.h>
+#include <stdlib.h>
+
+#include "serdisplib/serdisp.h"   /* include all important header files */
+
+int main(int argc, char** argv) {
+
+  char sdcdev[] = "/dev/parport0";  /* use parallel port */
+  /*char sdcdev[] = "/dev/ttyS0";*/  /* use serial port */
+
+  char dispname[] = "PCD8544";  /* display name */
+
+  serdisp_CONN_t* sdcd;
+  serdisp_t* dd = 0;
+  int i;
+
+  /* opening the output device */
+  sdcd = SDCONN_open(sdcdev);
+
+  if (sdcd == (serdisp_CONN_t*)0) {
+    fprintf(stderr, "Error opening %s, additional info: %s\n", sdcdev, sd_geterrormsg());
+    exit (1);
+  }
+
+  /* opening and initialising the display */
+  dd = serdisp_init(sdcd, dispname, "");
+  if (!dd) {
+    SDCONN_close(sdcd);
+    fprintf(stderr, "Error opening display %s, additional info: %s\n", dispname, sd_geterrormsg());
+    exit(1);
+  }
+
+
+  /* turning on backlight */
+  serdisp_setoption(dd, "BACKLIGHT", SD_OPTION_YES);
+
+  /* clearing the display */
+  serdisp_clear(dd);
+
+  /* draw a border (only internal display buffer is affected!!) */
+  for (i = 0; i < serdisp_getwidth(dd); i++) {
+    serdisp_setsdcol(dd, i, 0, SD_COL_BLACK);
+    serdisp_setsdcol(dd, i, serdisp_getheight(dd)-1, SD_COL_BLACK);
+  }
+  for (i = 1; i < serdisp_getheight(dd)-1; i++) {
+    serdisp_setsdcol(dd, 0, i, SD_COL_BLACK);
+    serdisp_setsdcol(dd, serdisp_getwidth(dd)-1, i, SD_COL_BLACK);
+  }
+
+  /* commit changes -> update the display using the internal display buffer */
+  serdisp_update(dd);
+
+  /* wait 30 seconds */
+  sleep(30);
+
+  /* shutdown display and release device*/
+  serdisp_quit(dd);
+
+  return(0);
+}
+

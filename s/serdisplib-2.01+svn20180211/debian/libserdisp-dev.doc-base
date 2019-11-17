@@ -1,0 +1,11 @@
+Document: serdisplib-reference
+Title: Documentation for the Serdisplib library
+Author: Jaroslav Kysela, Takashi Iwai and others
+Abstract: Serdisplib is a library that supports certain LC-displays connected
+ to the serial port, parallel port or via USB. This document describes
+ the library API.
+Section: Programming
+
+Format: HTML
+Index: /usr/share/doc/libserdisp-dev/doc/docs/index.html
+Files: /usr/share/doc/libserdisp-dev/doc/docs/* /usr/share/doc/libserdisplib-dev/doc/css/*

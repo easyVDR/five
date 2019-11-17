@@ -1,0 +1,27 @@
+Source: serdisplib
+Section: video
+Priority: optional
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), cdbs, autotools-dev, libusb-dev, libgd2-xpm-dev | libgd-dev
+Standards-Version: 3.9.5
+
+Package: libserdisp-dev
+Section: libdevel
+Architecture: any
+Depends: libserdisp1 (= ${binary:Version})
+Conflicts: libserdisp0-dev
+Replaces: libserdisp0-dev
+Description: Development files for the serdisp library
+ This library supports certain serial and parallel LC-displays
+ connected to the parallel port (and also serial port with i2c-displays).
+
+Package: libserdisp1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libusb-1.0-0, libusb-dev
+Conflicts: libserdisp0
+Replaces: libserdisp0
+Description: Library that supports serial and parallel LC-displays
+ This library supports certain serial and parallel LC-displays
+ connected to the parallel port (and also serial port with i2c-displays).

@@ -1,0 +1,352 @@
+<html>
+<head>
+<title>documentation for serdisplib</title>
+</head>
+<body bgcolor="#dddddd">
+<h1>Documentation for serdisplib &gt;= V 1.92</h1>
+
+<blockquote>
+       <b>DISCLAIMER:</b><br>
+       THIS IS EXPERIMENTAL SOFTWARE AND HARDWARE. USE AT YOUR OWN RISK.
+       THE MAINTAINER(S) OF THESE PAGES AND THE DEVELOPER(S) OF SOFTWARE AND HARDWARE PRESENTED
+       ON THESE PAGES CAN NOT BE HELD LIABLE UNDER ANY CIRCUMSTANCES FOR DAMAGE TO HARDWARE OR SOFTWARE, 
+       LOST DATA, OR OTHER DIRECT OR INDIRECT DAMAGE RESULTING FROM THE USE OF THIS SOFTWARE OR HARDWARE. 
+       IF YOU DO NOT AGREE TO THESE CONDITIONS, YOU ARE NOT PERMITTED TO USE OR FURTHER DISTRIBUTE THIS 
+       SOFTWARE OR TO USE ANY TEMPLATES FOR BUILDING HARDWARE PRESENTED HERE.
+</blockquote>
+
+<h2>Overview</h2>
+<ul>
+ <li><a href="#serdisp_parport">serdisp_parport.h</a> Accessing the parallel port</li>
+ <li><a href="#serdisp_control">serdisp_control.h</a> Accessing and controlling a display</li>
+ <li><a href="#examples">Examples</a></li>
+</ul>
+
+<p>
+
+<font color="#aa0000"><b>attention:</b></font><br>
+the additional support of direct I/O starting with version 1.92 requested a change in the API:<br>
+instead of <code>int</code> filehandles a <b>structure</b> <code>ppd</code> (parallel port descriptor) is now used.<br>
+<code>serdisp_init()</code> now has an extra parameter that will be used in the future.<br><br>
+further infos on api-changes: <a href="HISTORY">HISTORY</a>
+
+<a name="serdisp_parport"> </a>
+<h2>serdisp_parport.h: Accessing the parallel port</h2>
+
+
+<code>serdisp_parport.h</code> offers some functions for opening and closing a parallel port using a parallel port descriptor (<code>'ppd'</code>).<br>
+either you may use these functions or any other function / code / ... that is returning either 
+a file handle which can be controlled using <code>ioctl</code>-calls or direct I/O using <code>outp</code>-calls.<br>
+in this case such a handle has to be converted to a parallel port descriptor using <code>PP_import()</code>.
+
+<p>
+
+<ul>
+ <li>
+<pre>
+   serdisp_PP_t* <b>PP_open</b> (const char ppdev[])
+
+   opens a parport device
+
+   <b>ppdev</b>  ...device name or port-number of device to open
+              eg: linux:   "/dev/parport0" or "0x378" (for direct IO)
+                  freebsd: "/dev/ppi0"
+   
+   returns a <b>parallel port descriptor</b> or (serdisp_PP_t*)0 if operation was not successful
+
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>PP_close</b> (serdisp_PP_t* ppd)
+   
+   close the parport device
+   
+   <b>ppd</b>     ... parallel port descriptor
+   
+
+</pre>
+ </li>
+ <li>
+<pre>
+   serdisp_PP_t* <b>PP_import</b> (int directIO, int hport)
+
+   import an existing already opened parport device / port and create
+   a ppd struct out of it
+
+   <b>directIO</b>   ... 1: yes -> outp-calls, 0: no -&gt; ioctl-calls
+   <b>hport</b>      ... if directIO: port (eg: 0x378), else: descriptor for parport dev
+   
+   returns a <b>parallel port descriptor</b> or (serdisp_PP_t*)0 if operation was not successful
+
+   USE WITH CARE!!! all permissions and stuff like that must be ok before!!
+   no checking for validity in here
+</pre>
+ </li>
+ <li><tt>&nbsp;&nbsp;<b>PP_write</b></tt> is for internal use only and should not be used outside the library</li>
+</ul
+
+<a name="serdisp_control"> </a>
+<h2>serdisp_control.h: Accessing and controlling a display</h2>
+all elementary functions for controlling a display are defined here
+
+<ul>
+ <li>
+<pre>
+   serdisp_t* <b>serdisp_init</b> (serdisp_PP_t* ppd, const char dispname[], const char extra[])
+   
+   initialises a display. all capabilities and basic values are set
+   
+   <b>ppd</b>      ... parallel port descriptor
+   <b>dispname</b> ... display name (for now: "OPTREX323", "PCD8544", "SED1565", "NOKIA7110")
+   <b>extra</b>    ... extra settings (will be used in the future. eg. for wiring or other non-standard settings)
+   
+   returns a display descriptor
+
+</pre>
+ Example:
+<pre>
+   serdisp_t* dd;
+   dd = serdisp_init(ppd, "PCD8544", "");
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_close</b> (serdisp_t* dd)
+   
+   close (switch off) display
+   
+   <b>dd</b>     ... display descriptor
+
+</pre>
+ </li>
+ <li>
+<pre>
+   int <b>serdisp_getwidth</b> (serdisp_t* dd)
+   
+   get width of the display
+   
+   <b>dd</b>     ... display descriptor
+   
+   returns the width of the display
+
+</pre>
+ </li>
+ <li>
+<pre>
+   int <b>serdisp_getheight</b> (serdisp_t* dd)
+   
+   get height of the display
+   
+   <b>dd</b>     ... display descriptor
+   
+   returns the height of the display
+
+</pre>
+ </li>
+ <li>
+<pre>
+   int <b>serdisp_getcolours</b> (serdisp_t* dd)
+   
+   get amount of colours supported by the display
+   
+   <b>dd</b>     ... display descriptor
+   
+   returns the amount of supported colours
+
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_feature</b> (serdisp_t* dd, int feature, int value)
+   
+   change a display feature
+   
+   <b>dd</b>      ... display descriptor
+   <b>feature</b> ... feature to change:
+               <b>FEATURE_CONTRAST</b>   .. change display contrast (value: 0-MAX_CONTRASTSTEP)
+               <b>FEATURE_BACKLIGHT</b>  .. 0: off, 1: on, 2: toggle
+               <b>FEATURE_REVERSE</b>    .. 0: normal display, 1: reversed display, 2: toggle
+               <b>FEATURE_ROTATE</b>     .. 0: normal, 1: bottom-up
+   <b>value</b>   ... value for option (see above)
+
+</pre>
+ Examples:
+<pre>
+   serdisp_feature(dd, FEATURE_BACKLIGHT, FEATURE_TOGGLE);
+
+   serdisp_feature(dd, CONTRAST, 5);
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_clearbuffer</b> (serdisp_t* dd)
+   
+   resets the internal display-buffer that is used by serdisplib
+   display is NOT redrawn here!
+  
+   <b>dd</b>     ... display descriptor
+
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_clear</b> (serdisp_t* dd)
+   
+   clear whole display
+   
+   <b>dd</b>     ... display descriptor
+
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_update</b> (serdisp_t* dd)
+   
+   update whole display
+   
+   <b>dd</b>     ... display descriptor
+
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_rewrite</b> (serdisp_t* dd)
+   
+   rewrite the whole display
+   
+   <b>dd</b>     ... display descriptor
+
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_blink</b> (serdisp_t* dd, int what, int cnt, int delta)
+   
+   blink the display
+   
+   <b>dd</b>     ... display descriptor
+   <b>what</b>   ... 0: blinking using backlight, 1: blinking using display reversing
+   <b>cnt</b>    ... how often should there be blinking
+   <b>delta</b>  ... delay between two blinking intervals
+
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_setpixel</b> (serdisp_t* dd, int x, int y, int colour)
+   
+   changes a pixel in the display buffer
+   
+   <b>dd</b>     ... display descriptor
+   <b>x</b>      ... x-position
+   <b>y</b>      ... y-position
+   <b>colour</b> ... monochrome: 0: clear (white), <>0: set (black); else: up to 16m colours (dependend on display)
+
+</pre>
+ </li>
+ <li>
+<pre>
+   void <b>serdisp_setpixels</b> (serdisp_t* dd, int x, int y, int w, int h, byte* data)
+   
+   changes an area in the display buffer
+   
+   <b>dd</b>     ... display descriptor
+   <b>x</b>      ... x-position top/left
+   <b>y</b>      ... y-position top/left
+   <b>w</b>      ... width of content
+   <b>h</b>      ... height of content
+   <b>data</b>   ... pixel/colour data 
+              (if display supports <= 256 colours:
+                one byte == one pixel
+               else:
+                four byte == one pixel (this may change in the future)
+              )
+
+</pre>
+ Example:
+<pre>
+   byte* data = .....;
+   /* fill pixel/colour-data into 'data'
+   ....
+   ....
+
+   /* draw a 5x5 area starting at position 5/10 */
+   serdisp_setpixels(dd, 5, 10, 5, 5, data);
+</pre>
+ </li>
+ <li>
+<pre>
+   int <b>serdisp_getpixel</b> (serdisp_t* dd, int x, int y)
+   
+   get colour of pixel at (x/y)
+   
+   <b>dd</b>     ... display descriptor
+   <b>x</b>      ... x-position
+   <b>y</b>      ... y-position
+
+</pre>
+ </li>
+</ul>
+
+<a name="examples"> </a>
+<h2>Examples</h2>
+Complete example:
+
+<pre>
+  char ppdev[] = "/dev/parport0";
+
+  serdisp_PP_t* ppd;    
+  serdisp_t* dd = 0;
+  int i;
+
+  /* opening the parallel port device */             
+  ppd = PP_open(ppdev);
+                
+  if (ppd == (serdisp_PP_t*)0) {        
+    fprintf(stderr, "Error opening %s\n", ppdev);
+    exit (1);
+  }
+
+  /* opening and initialising the display */
+  dd = serdisp_init(ppd, "PCD8544", "");
+  if (!dd) {
+    fprintf(stderr, "Error opening display.\nExiting ...\n\n".);
+    exit(1);
+  }
+
+
+  /* turning on backlight */
+  serdisp_feature(dd, FEATURE_BACKLIGHT, FEATURE_YES);
+
+  /* clearing the display */
+  serdisp_clear(dd);
+
+  /* draw a border (only internal display buffer is affected!!) */
+  for (i = 0; i < serdisp_getwidth(dd); i++) {
+    serdisp_setpixel(dd, i, 0, 1);
+    serdisp_setpixel(dd, i, serdisp_getheight(dd)-1, 1);
+  }  
+  for (i = 1; i < serdisp_getheight(dd)-1; i++) {
+    serdisp_setpixel(dd, 0, i, 1);
+    serdisp_setpixel(dd, serdisp_getwidth(dd)-1, 1);
+  }
+
+  /* commit changes -> update the display using the internal display buffer */
+  serdisp_update(dd);
+
+  /* some delay */
+  usleep(100000);
+
+  /* close the display */
+  serdisp_close(dd);
+
+  /* release parallel port */
+  PP_close(ppd);
+
+</pre>
+
+<p>
+<div align="right">(c) 2003-2004 by wolfgang astleitner // version: 1.92 // 2004-03-22</div>
+</body>
+</html>

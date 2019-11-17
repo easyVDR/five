@@ -1,0 +1,125 @@
+# Makefile for serdisplib server
+# (C) 2006-2012 by Wolfgang Astleitner
+
+VERSION=@PACKAGE_VERSION@
+
+VERSION_MAJOR=@PACKAGE_VERSION_MAJOR@
+VERSION_MINOR=@PACKAGE_VERSION_MINOR@
+
+SHELL = /bin/sh
+VPATH = @srcdir@
+
+top_srcdir = @top_srcdir@
+srcdir = @srcdir@
+prefix = @prefix@
+exec_prefix = @exec_prefix@
+bindir = @bindir@
+sbindir = @sbindir@
+libdir = @libdir@
+mandir = @mandir@
+includedir = @includedir@
+sysconfdir = @sysconfdir@
+datarootdir = @datarootdir@
+
+CC=@CC@
+AR=@AR@ -r
+LN_S=@LN_S@
+INSTALL=@INSTALL@
+INSTALL_PROGRAM = @INSTALL_PROGRAM@
+INSTALL_SCRIPT = @INSTALL_SCRIPT@
+INSTALL_DATA = @INSTALL_DATA@
+
+#CFLAGS=@CFLAGS@ -Wall -Wimplicit -Wmissing-prototypes -Wstrict-prototypes -fPIC -I../include -I..
+CFLAGS=-I../include -I.. @CFLAGS@ -Wall -fPIC
+LDFLAGS=@LDFLAGS@
+#LIBS=@LIBS@
+# start w/ empty libs-list
+LIBS=
+#CFLAGS=@CFLAGS@ -ansi -Wall -Wno-implicit -fPIC -I../include -I..
+#CFLAGS=-ansi -Wall -Wno-implicit -O2
+#CFLAGS=-g -ansi -Wall -Wno-implicit -fPIC -O2 -I../serdisplib -I..
+
+SDISPDOBJECTS= serdispd.o args.o conf.o lcds.o connections.o commands.o lirc.o rc5trans.o
+SLEARNOBJECTS= serdisplearn.o args.o rc5trans.o
+SPROXYOBJECTS= serdispproxy.o lcds.o args.o connections.o commands.o lirc.o rc5trans.o
+OBJECTS= $(SDISPDOBJECTS) $(SLEARNOBJECTS) $(SPROXYOBJECTS)
+
+PROGRAMS_BIN= serdisplearn
+#PROGRAMS_SBIN= serdispd
+PROGRAMS_SBIN= serdispd serdispproxy
+PROGRAMS= $(PROGRAMS_BIN) $(PROGRAMS_SBIN)
+
+LIB_NAME=serdisp
+
+LIB_STATIC=lib$(LIB_NAME).a
+LIB_SHARED=lib$(LIB_NAME).so.$(VERSION)
+
+LIB_DIR=../lib
+
+# link programs to libdl if required by OS and libserdisp is linked statically
+ifeq "@needs_libdl@" "true"
+  ifeq "@use_sharedlib@" "false"
+    EXTRA_LIBS_STATIC=@EXTRA_LIBS_STATIC@
+  endif
+endif
+
+
+# link shared or static lib to executables
+ifeq "@use_sharedlib@" "true"
+  LIB_SERDISP=-L$(LIB_DIR) -l$(LIB_NAME)
+else
+  LIB_SERDISP=$(LIB_DIR)/$(LIB_STATIC)
+  # static execs also need to link to libraries in LDFLAGS
+  EXTRA_LIBS_STATIC+=$(LDFLAGS)
+endif
+
+
+.SUFFIXES : .c .o
+
+all: programs
+
+programs: $(PROGRAMS)
+
+.c.o:
+	$(CC) $(CFLAGS) $(DEFINES)  -c $(INCLUDES) $<
+
+serdispd: $(LIB_DIR)/$(LIB_STATIC) $(SDISPDOBJECTS)
+	$(CC) -o $@ $(SDISPDOBJECTS) $(LIB_SERDISP) $(EXTRA_LIBS_STATIC)
+
+serdisplearn: $(LIB_DIR)/$(LIB_STATIC) $(SLEARNOBJECTS)
+	$(CC) -o $@ $(SLEARNOBJECTS) $(LIB_SERDISP) $(EXTRA_LIBS_STATIC)
+
+serdispproxy: $(LIB_DIR)/$(LIB_STATIC) $(SPROXYOBJECTS)
+	$(CC) -o $@ $(SPROXYOBJECTS) $(LIB_SERDISP) $(EXTRA_LIBS_STATIC)
+
+
+
+clean:
+	/bin/rm -f $(OBJECTS)
+	/bin/rm -f *core* $(PROGRAMS) *~
+
+
+distclean: clean
+	/bin/rm -f Makefile
+
+
+install: $(PROGRAMS)
+	$(top_srcdir)/mkinstalldirs $(bindir)
+	$(top_srcdir)/mkinstalldirs $(sbindir)
+	$(top_srcdir)/mkinstalldirs $(sysconfdir)
+	list='$(PROGRAMS_SBIN)'; \
+	for prog in $$list; do \
+	  $(INSTALL_PROGRAM) $$prog $(sbindir)/ ; \
+	done
+	list='$(PROGRAMS_BIN)'; \
+	for prog in $$list; do \
+	  $(INSTALL_PROGRAM) $$prog $(bindir)/ ; \
+	done
+	$(INSTALL_DATA) examples/serdispd.cfg $(sysconfdir)/
+
+
+uninstall:
+	list='$(PROGRAMS)'; \
+	for prog in $$list; do \
+	  /bin/rm -f $(sbindir)/$$prog ; \
+	done
