@@ -1,0 +1,405 @@
+VDR Plugin 'skinelchi' Revision History
+----------------------------------------
+
+2005-02-15: Version 0.0.1
+
+- Initial revision.
+  based on source-code of vdr
+
+2005-02-??
+- two patches 1. for epg-progress-bar on MTV - reported from Brougs78
+	      2. for hiding menu-entry in menu, when not the default screen
+
+2005-02-26: Version 0.0.1b
+
+- fixed something when use font "FontSml" - reported from Brougs78
+- clear palette and fill with colors of theme before drawing channellogo
+  (because of this max. possible colors in logos will less then possible on
+   hardware)
+- fix a crash on my system in combination with sleeptimer-0.0.6, when
+  slepptimer will show message "Going to sleep in about one minute"
+  in ChannelDisplay -> no message like this will display in ChannelDisplay.
+- Added "One area (if possible)" in setup for my testings
+- Added one area (scrollarea) to MenuDisplay (to make colors of theme working)
+- Added changing of colors (not really useful and very experimental) -> will
+  be changed in future. theme where saved under "Elchi-Plugin-change.theme
+  on pressed "ok" for leave setup, but plugin uses the changed colors until
+  restart of vdr, if you want use the new theme after restart, you must
+  select it under setup->osd->theme  (but you must select blind, the
+  description is not changed, maybe a way to change it without patch
+  of vdr is use of "themes", but not at the moment for me
+  (on changing the colors will be there entrys "too many colors" in log)
+
+2005-02-26: Version 0.0.1c
+
+- only a test with videowindow, inspired by plugin "yaepg" and
+  http://www.vdrportal.de
+- removed one unneeded line (260 in DisplayMenu.c), that overwrite a corner
+- show Audio-Track also in DisplayChannel::SetChannel to view it also, when no
+  epg is available
+- mainmenu-mode selectable ("as setup" or "as plugin")
+
+2005-03-01: Version 0.0.1d
+
+- add a small video-window to menu (selectable - only experimental),
+  but does not correkt work in all modes, best is one area, other modes
+  doesn't show colors on the scrollbar-area, but the area is defined
+  (changing of colordepth has no effekt). video freezes sometimes on switching
+  video-mode, but only on screen, switching on same or other channel bring
+  video on screen back (like yaepg)
+  (on multiarea-mode, maybe the osd lose colors, on my system only a
+  driver-reload helps at this moment)
+- change mainmenu-mode "plugin" to change menu-mode (videoarea or not)
+- change the color-setup, but now is a big area show the new color, will be change
+  in future
+
+2005-03-02: Version 0.0.1e (no release)
+
+- define HAVE_YAEPG_PATCH for video-window in MAKEFILE
+- bring back color changing, was break in 0.0.1d
+
+2005-03-06: Version 0.0.1f
+
+- add setup-option for display screenshots on left side, when using videowindow
+  on singlearea menu (maybe to use this later to show videowindow like osdpip)
+  (osd-problems with multiarea menu only when uses screenshots before using
+   multiarea-menu or if video freezes after leave the menu) - please report,
+   if someone found or know something to make this work)
+- some minor changes in setup and DisplayMenu
+- add symbols for dvd-replay in DisplayReplay (...4 - ...8) - hope, they are not ugly
+
+2005-03-09: Version 0.0.1g
+
+- add setup-option for show epg4vdr-pictures in egp-window
+- define HAVE_IMAGEMAGICK for epg4vdr-picture and video-window in MAKEFILE
+  (must uncomment the options you want in makefile)
+
+2005-03-10: only a diff for 0.0.1g
+
+- some fixes for 0.0.1g
+
+2005-03-22: Version 0.0.1h
+
+- included changes published on www.vdrportal.de
+- added option HAVE_C295 in MAKEFILE, uncomment this, if you have problem with
+  c++2.95 and error "redefinition of 'template <class T> void swap(_Tp &, _Tp &)'"
+- VolumeBar now reaches the right side of osd, when volume=100%
+- unused text-area in DiplayReplay is redrawned transparent, when SetText is
+  called (because i.e. plugin mp3 changes text)
+- changed calculation of DisplayTracks, DisplayTracks now also uses
+  Setup.ChannelInfoPos
+- add colors of MenuItems to 2bit-area of menuitems before draw first pixel to
+  avoid flushing-effects -> but color of clrMenuItemNonSelectable now is only
+  shown, if this color is the same as clrMenuItemCurrentBg or clrMenuItemCurrentFg
+  (doesn't work with videowindow)
+- changed handling for show VPS-symbol in DisplayChannel, something was wrong
+- changed handling of audiostring in DisplayChannel (thanks to HelAu from
+  www.vdrportal.de for reporting problem with vdr on "Dummy Modus")
+  (i hope, my changes works - please report, if not)
+- i think, is not needed, to show time/audiostring/vps-symbol only with
+  "WithInfo", i have uncomment this in ...DisplayChannel::Flush()
+
+2005-03-27: Version 0.0.1i
+
+- vps-symbol in small DisplayChannel now really show
+- include bitmap.c in skinelchi.c only when needed
+- fixed a bug in setup.c if use format "png"
+- changed something in DisplayReplay::SetTitle and add scrolling of title
+- add option in setup to show epg4vdr-picture in original size
+- add option in setup to select resize algorithm when show epg4vdr-picture
+  not in original size (120x90 -> 180x144 pixels)
+- changes in MAKEFILE (i.e. remove a forgotten line)
+
+2005-03-28: only a diff for 0.0.1i
+
+- a small fix for DisplayTracks, when DisplayTracks is called with first track
+  that must displayed on next "page"
+
+something maybe only changed if i get feedback
+
+2005-04-02: another diff for 0.0.1i
+
+- add option to set up directory of epg-pictures, because there another program
+  provides picture of epg
+
+2005-04-03: Version 0.0.1j
+
+- add command-line-option to setup directory of epg-pictures, when use, in
+  setup the directory is not to be set up, only show (inspired by a user of
+  www.vdr-wiki.de)
+- add option VIDEOSTATUS in MAKEFILE and "Video status" in setup to show video
+  status in DisplayReplay and DisplayChannel, and switch VideoDisplayFormat in 
+  DisplayReplay when the setting VideoDisplayFormat not same as set up in setup
+  (i.e. on my system dvd-plugin does not set this korrekt)
+- add option to set up the use of FixedFont in DisplayMenu (inspired by a user
+  of vdrportal.de)
+- add option "120x120" for pictures of epg
+- rename some variables epg4vdr... in epgimages...
+- add slideshow for images of epg if there more then one image pro eventID
+  and add option to set up showtime for images (thanks for cooperation to
+  sn123py from vdrportal.de, who is renamed the images in tvmovie2vdr)
+
+2005-04-04: only a diff for 0.0.1j
+
+- add command-line-option to setup directory of logos, when use, in
+  setup the directory is not to be set up, only show (inspired by a user of
+  www.vdr-wiki.de)
+
+2005-04-06: another diff for 0.0.1j
+
+- changed drawing background color for epg-window, because some users report
+  transparent background
+
+2005-04-07: another diff for 0.0.1j
+
+- changed timing for showing pictures in epg-window, because some users reports
+  that only the first of some available pictures for a event will be show
+
+2005-04-14: Version 0.0.2
+
+- removed option HAVE_YAEPG_PATCH with video-window in menu
+- including a patch for compiling with gcc 2.95 without changing the definitions
+  - Thanks to TomG from vdrpotal.de for a diff
+- little fix in DisplayChannel, when restore display after a message is show
+- added option DVB_OLDER_20050331 in MAKEFILE for VIDEOSTATUS because
+  on 2005-03-31 something in dvb-drivers was wrong where changed
+- rewrite code for VideoStatus, add symbols for VideoStatus
+- on unmodified dvb-cards epg-window should be show smaller, if the defined osd-
+  area are to big for unresized menu-area (i hope this work, i can't test it)
+- change handling for epgimages for better support epgsearch because it
+  enables switching between windows with different EventIDs
+  (not every time osd is close and reopen)
+- added 8bit-osd-menu-option to show epgimages without close and reopen osd
+  (available only for memorymodded-dvb-cards)
+- show changing of volume in other displays
+
+2005-10-14
+
+- used another osdsize (height = 480) if shown ntsc and osd is to height
+
+2005-10-15
+
+- make some changes based on patches from vdrportal
+
+2005-10-16: Version 0.0.2a
+
+- sorry, 0.0.2 does't compile with all combinations of options in MAKEFILE
+- bugfix for mplayer in DisplayReplay
+
+2005-10-27: Version 0.1.0 (no official release)
+
+- including finish translations and untranslated texts (thanks to rofafor from
+  vdrportal)
+- big changing in versionsnumber for services
+- including "cPluginSkinElchi::Service" for other plugins, now only to get
+  version or for temporary change color of background in mainmenuarea
+- including finish translations and untranslated texts (thanks to rofafor from
+  vdrportal)
+- show timerconficts from timeline (with patched timeline) in menu on
+  vdr >= 1.3.30 or if customservices-patch from epgsearch is installed, based
+  on patches for text2skin and timeline from brougs78
+- selecting scrolling of text in setup is now available
+- fixes (not all) for display volume in DisplayChannel
+- bugfix for mplayer in DisplayReplay for showing NTSC with vs.v == 240
+  (in other Displays this need more changes, because i get vsPAL from
+   vdr - why ?)
+    
+2005-11-23: Version 0.1.1pre1
+- move VideoStatus from DisplayChannel.c and DisplayReplay.c in
+  videostatus.[hc] but it is now only refresh every second
+- finished changes for playing NTSC in all displays (is now available to set up
+  size of OSD in setup of plugin for the video system is selected, the other
+  will set up by vdr)
+- added option to load (and convert) logos with ImageMagick, ImageMagick will
+  also used, if the size and or colordepth of xpm is to high for osd or if vdr
+  failed to load a rich xpm
+  (ImageMagick can load other bitmaps, but be aware, vdr will crash if it load
+   logo and it isn't a xpm.
+   For 8-bit-logo-area with use of ImageMagick the first look is in
+   "../hqlogos" from logodir without an fileextention, so make symlinks with
+   channelnames to use this)
+- now is selectable to show next timer (and/or timer conflict with patches)
+  in menu (but is refresh and show only after a Clear(), will remove later from
+  DisplayMenu::Clear()
+  
+2005-11-24: only a diff
+- added a patch for finnish translations and for missing include-line in
+  setup.c from rofafor@vdrportal
+- one fix in setup.c for store VideoSystem-setting
+- change drawing of menu for timer-line, now drawing in "right" order
+
+2006-01-08: only a diff
+- fix for compiling with vdr 1.3.38
+
+2006-02-25: Version 0.1.1pre2
+- fix in DisplayChannel if setting logos loading with vdr, if logo was xpm
+  different from 64x48, use ImageMagick for loading and show in wrong logo
+  size
+- fix for too big OSD setting in DisplayMenu, menu will then now show with
+  MINOSDWIDTH and MINOSDHEIGHT, make it possible to change wrong settings
+- fix for ignoring changed path to logos stored in setup (reported from
+  nachtgeier@irc.vdr-portal.de), was broken since commandline-option where
+  available
+- added a Patch from FireFly@vdrportal.de to fix inactive rec-symbol
+  in DisplayReplay
+- path to logos and epgimages now only store in setup, if the commandline
+  option is not used
+
+
+2008-04-01 Version 0.2.0-alpha1 by Christoph Haubrich
+- beautyfied syslog messages
+- included mailicon patch
+- no longer trying to load a logo when channel is a GroupSep() which produces an error
+  msg in syslog
+- rewrite of size and aspect ratio display in Channel display and replay display:
+  no longer a compile time define neccessary, can be en-/disabled in settings dialog
+  (none -> aspect ratio -> size and aspect ratio)
+  works only with FF cards??
+- corrected pixel failure in DisplayMenu scrollbars
+- extended Recording info of Recordings (channel, cutted/uncutted length, cutted/uncutted size, ...)
+- added additional (optional) Infoline for current recordings in DisplayChannel
+- scrolling text had a leading and trailing space which makes scrolling look ugly (untidy)
+- threading problem with vdr --version: threads were started too early;
+  threads are now started in cPluginElchi::Start() (side effect: changed setup values
+  were never saved as VDR crashed at shutdown before saving)
+- cPluginSkinElchi::Stop added to stop background threads in a controlled manner
+- replaced asprintf ("%s") by strdup
+- adapted DisplayChannel to cCharScroll (side effect: no longer delaying displaying of events)
+- encapsulated all scrolling related actions in class cCharScroll
+- vdrstatus::recording: make Name a dyn. array, so multiple recordings with one
+  card cannot overwrite RecordingName[] of previous entry (ever used currently?)
+- integrated functions from GetEvent thread in normal functions (faster display)
+- re-sorted setup values (functional grouping)
+- eliminated fd_video, it's now encapsulated in class cVideoStatusUpdate
+- eliminated cVideoStatus as it was only a wrapper class for cVideoStatusUpdate
+- implemented controlled shutdown of cVideoStatusUpdate thread and class
+- display additonal REC symbol in yellow for next epg event if it has a timer
+- implemented deferred Clear() and recreate areas for different types in DisplayMenu
+- dropped service interface because of lack of usage
+- dropped support for VDR versions before 1.4.0
+- dropped support for DVB_OLDER_20050331
+- REQUIREMENT: if epgsearch is used it must be at least version 0.9.22 because of the direct switching bug
+- dropped support for editable dirs in setup, must be a commandline parameter now
+- WARNING: several config parm renamed, epgimagedir & logodir must be commandline parameters now
+- separated setup and config to two classes
+- dropped support for NTSC OSD selection as this should not be handled by a skin but by an
+  dedicated plugin (if not handled by VDR itself). E.g. use the Avards plugin instead
+- added po-files for VDR 1.5.7+ and made creation of them API version dependant
+- added setting for optionally display detailed recording info
+- added support for adapted OSD sizes with Avards
+- refactoring of the setup menus, separated color selection to a separate menu
+- refactoring of the EPG image thread and handling
+- added support for graphical progress bars in SetItem (analyzing [|||   ] sequence)
+- added epgsearch timer conflict check display in DisplayMenu (droppping timeline support)
+- integrated most of the "WarEagle"-icons
+- added support for scrollbar in items menus (for VDR 1.5.15+)
+- replaced asprintf with cString::sprintf
+- added support for logos identified by ChannelID
+- refactored hqlogo support
+- refactored setup menu structure, support for parameter migration
+- refactored theme support
+
+2008-04-02 Version 0.2.0-alpha2 by Christoph Haubrich
+- fixed wrong evaluation of Makefile defines
+- inverted REC symbol for next event to make it more readable (inspired by DigitalDevil @vdr-portal.de)
+- implmented narrower scrollbar (suggested by MegaV0lt @vdr-portal.de)
+- fixed dynamic update in general settings dialog
+- fixed off-by-one error in menu current item scrolling
+
+2008-04-12 Version 0.2.0-alpha3 by Christoph Haubrich
+- fixed wrong search display of channel logos
+- added french translation (thanks to Patrice Staudt)
+- fixed segfault in DisplayMenu::SetMessage by assuming and initiating item display (reported by PaulPanther @vdr-portal.de)
+- added theme MVBLack (provided by MegaV0lt @vdr-portal.de)
+
+2008-11-09 Version 0.2.0-beta1 by Christoph Haubrich
+- changed '/' in logo names to '~' to avoid subdirs. Logo files must be adapted
+- added ability to display logos for channel separators (suggested by Lary_Loose @vdr-portal.de)
+- added italian translation (thanks to Diego Pierotto)
+- fixed writing EpgImageSize to setup.conf (reported by RoteSocke @vdr-portal.de)
+- updated theme MVBlack and added MVWhite (provided by MegaV0lt @vdr-portal.de)
+- added support for compiling with gcc 4.3 due to header cleanup
+
+2008-12-07 Version 0.2.0 by Christoph Haubrich
+- fixed too tall symbols (thanks to Soeren Moch)
+- centered symbol "new" in recordings menu
+- fixed cut-off time display in channel display in rare circumstances (thanks to Soeren Moch)
+- fixed too large bar for current item in timer menu
+
+2009-05-24 Version 0.2.1-beta1  by Christoph Haubrich
+- fixes for compilation with VDR 1.7.4 (thanks to zulu @vdr-portal.de)
+- added auto detect of plugins to the make options (thanks to ronnykornexl @vdr-portal.de)
+- fixed display of empty lists (reported by dad401 @vdr-potal.de)
+- added support for TS-format of recordings (VDR 1.7.3+) and OSD changes (VDR 1.7.7+)
+- added format (TS/PES) in recording info menu
+
+2009-06-27 Version 0.2.1-beta2  by Christoph Haubrich
+- fixed displayed length of radio recordings (and probably HD recordings) (thanks to Thomas Günther)
+- changed required minimum VDR version to 1.6.0
+- added include files of other plugins and removed compile time switches. They can now be switched
+  on and off at runtime via the plugin settings (suggested by Thomas Günther)
+- Fixed font handling to be thread-safe
+- checked compatiblity with gcc 4.4 (glibc 2.10)
+- converted remaining po-files to utf8
+- minor code cleanups
+
+2009-07-26 Version 0.2.1 by Christoph Haubrich
+- updated italian translation
+
+2010-12-12 Version 0.2.2 by Christoph Haubrich
+- include Make.global in Makefile if available
+- added display of Genre and Parental Rating (available with VDR 1.7.11+ if broadcasted)
+- removed compactspace() from cSkinElchiDisplayMenu::SetEvent (thanks to MegaV0lt @vdr-portal.de)
+- fixed progress bar length and current item display in DisplayMenu.c
+
+2011-04-03 Version 0.2.3 by Christoph Haubrich
+- fixed update of channel display (thanks to jowi24 @vdr-portal.de)
+- fixed false replacements of rec symbol in menus (thanks to jowi24 @vdr-portal.de)
+- added display of stream componnents in EPG info, selectable by setup menu (suggested by wtor@vdr-portal.de)
+  ==> requires vdr-1.6.0-eit_new_streamtypes.diff in VDR to display AC3 in german ARD/ZDF
+- fixed recording length calculation for heavily splitted ts recordings
+- removed unmaintained finnish translation
+- refactored display of video, audio & subtitle in EPG and recording info
+
+2011-09-25 Version 0.2.4 by Christoph Haubrich
+- added three different symbol sizes for 576i, 720p and 1080i (automatically selected by OSD size)
+- added logo support for the higher OSD resolutions. The logos need to be in subdirectories unter logos,
+  that is logos/576, logos/720 and logos/1080 (thanks to Copperhead@vdr-portal.de for the logo support)
+- removed special logo handling for Premiere direkt channels
+- forcing OSD area to one 8bpp area on HD OSDs (reported by MegaV0lt@vdr-portal.de)
+- removed deprecated direct member access if compiled with VDR 1.7.21+
+- made display of genre in EPG and recordings optional, it can be enabled in the options
+- added support for GetVideoSize of VDR 1.7.7+ to display size and aspect ratio (inspired by report of MegaV0lt@vdr-portal.de)
+- display HD symbol instead of aspect ratio on HD channels
+- added support for the "new" indicator in the recording menu in VDR 1.7.21
+
+2011-12-23 Version 0.2.5 by Christoph Haubrich
+- added a note about using kernel header files instead userspace header files in videostatus.h
+- fixed overwritten replay symbols during trickspeed mode
+- added graphical symbols for program schedule menus
+- updated theme MVBlack and added MVBlue (thanks to MegaV0lt@vdr-portal.de)
+- fixed additional pixels in aspect ratio symbol of channel display (reported by MegaV0lt@vdr-portal.de)
+- fixed slightly jumping recording time in replay display
+
+2012-01-21 Version 0.2.6 by Christoph Haubrich
+- fixed again update of channel display when no Channel is supplied (reported by Stalker@@vdr-portal.de)
+
+2012-06-07 Version 0.2.7 by Christoph Haubrich
+- corrected max. number of colors (reported by MegaV0lt@vdr-portal.de)
+- added support for changed cStatus::ChannelSwitch() in VDR 1.7.26+
+- removed erroneously included I18N phrases for compatibility with VDR 1.7.27+
+- added disc statistics for recording menu of VDR 1.7.28+ which are no longer delivered by VDR itself
+- added serveral new themes (thanks to MegaV0lt@vdr-portal.de)
+
+2013-02-15 Version 0.2.8 by Christoph Haubrich
+- added disc statistics also to main and timer menu in VDR 1.7.27+ as it was in previous VDR versions
+- made delete's thread-safe (thanks to Mase@vdr-portal.de for reporting and backtrace)
+- added support to use OSD hights different from 576, 720 and 1080
+- fixed creation of PO files
+- beautified recording info and added Aux info (suggested by MegaV0lt@vdr-portal.de)
+- beautified disk statistics for VDR 1.7.28+ (suggested by MegaV0lt@vdr-portal.de)
+- added two new themes (thanks to MegaV0lt@vdr-portal.de)
+- removed some old code no longer required by VDR 1.6.0+
+- added support for VDR 1.7.33+
+- added Makefile support for VDR 1.7.36+
+- get ImageMagick libs and headers from pkg-config (suggested by Copperhead@vdr-portal.de)

@@ -1,0 +1,3 @@
+debian/plugin.serial.conf etc/vdr/plugins/
+debian/vdr-plugin-serial.groups  usr/share/vdr/groups.d/
+

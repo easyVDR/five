@@ -1,0 +1,910 @@
+# VDR plugin language source file.
+# Copyright (C) 2008 Martin Schirrmacher <vdr.skinflat@schirrmacher.eu>
+# This file is distributed under the same license as the skinflat package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skinflat 0.5.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2017-05-06 16:13+0200\n"
+"PO-Revision-Date: 2015-02-09 20:09+0100\n"
+"Last-Translator: Martin Schirrmacher\n"
+"Language-Team: Martin Schirrmacher\n"
+"Language: de_DE\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Disk"
+msgstr "Platte"
+
+msgid "free"
+msgstr "frei"
+
+msgid "occupied"
+msgstr "belegt"
+
+msgid "clock"
+msgstr "Uhr"
+
+msgid "Genre"
+msgstr "Kategorie"
+
+msgid "FSK"
+msgstr ""
+
+msgid "Video"
+msgstr "Video"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Subtitle"
+msgstr "Untertitel"
+
+msgid "timer not enabled"
+msgstr "Timer nicht aktiv"
+
+msgid "no recording info"
+msgstr "keine Aufnahme Informationen"
+
+msgid "name: "
+msgstr "Name: "
+
+msgid "first aired: "
+msgstr "Erstausstrahlung: "
+
+msgid "network: "
+msgstr "Sender: "
+
+msgid "genre: "
+msgstr "Genre: "
+
+msgid "rating: "
+msgstr "Wertung: "
+
+msgid "status: "
+msgstr "Status: "
+
+msgid "season number: "
+msgstr "Staffel: "
+
+msgid "episode number: "
+msgstr "Folge: "
+
+msgid "title: "
+msgstr "Titel: "
+
+msgid "original title: "
+msgstr "Originaltitel: "
+
+msgid "collection name: "
+msgstr "Sammlung Name:"
+
+msgid "release date: "
+msgstr "Erscheinungsdatum: "
+
+msgid "popularity: "
+msgstr "Beliebtheit: "
+
+msgid "vote average: "
+msgstr "durchsch. Wertung: "
+
+msgid "Description"
+msgstr "Beschreibung"
+
+msgid "Movie information"
+msgstr "Film Informationen"
+
+msgid "Series information"
+msgstr "Serien Informationen"
+
+msgid "Actors"
+msgstr "Schauspieler"
+
+msgid "Reruns"
+msgstr "Wiederholungen"
+
+msgid "Video information"
+msgstr "Video Informationen"
+
+msgid "Length"
+msgstr "Länge"
+
+msgid "cutted"
+msgstr "geschnitten"
+
+msgid "Size"
+msgstr "Größe"
+
+msgid "format"
+msgstr "Format"
+
+msgid "bit rate"
+msgstr "Bitrate"
+
+msgid "additional information"
+msgstr "Zusatzinformationen"
+
+msgid "channel"
+msgstr "Kanal"
+
+msgid "search pattern"
+msgstr "Suchmuster"
+
+msgid "Recording information"
+msgstr "Aufnahme Informationen"
+
+msgid "DVB Devices"
+msgstr "DVB Geräte"
+
+msgid "LiveTV"
+msgstr ""
+
+msgid "Unknown"
+msgstr "Unbekannt"
+
+msgid "recording"
+msgstr "Nimmt auf"
+
+msgid "not used"
+msgstr "Nicht verwendet"
+
+msgid "Timer"
+msgstr "Timer"
+
+msgid "no active/recording timer"
+msgstr "keine aktiven/aufnehmenden Timer"
+
+msgid "Last Recordings"
+msgstr "Letzte Aufnahmen"
+
+msgid "Timer Conflicts"
+msgstr "Timerkonflikte"
+
+msgid "no timer conflicts"
+msgstr "Keine Timerkonflikte"
+
+msgid "timer conflicts"
+msgstr "timerkonflikte"
+
+msgid "System Information"
+msgstr "Systeminformation"
+
+msgid "no information available please check the script"
+msgstr "Keine Informationen verfügbar; Bitte Skript prüfen"
+
+msgid "System Version"
+msgstr ""
+
+msgid "Kernel Version"
+msgstr ""
+
+msgid "Uptime"
+msgstr "Läuft"
+
+msgid "Load"
+msgstr "Last"
+
+msgid "Processes"
+msgstr "Prozesse"
+
+msgid "Memory Usage"
+msgstr "RAM-Nutzung"
+
+msgid "Swap Usage"
+msgstr "Swap-Nutzung"
+
+msgid "Root Usage"
+msgstr "Root-Nutzung"
+
+msgid "Video Usage"
+msgstr "Video-Nutzung"
+
+msgid "VDR CPU Usage"
+msgstr "VDR CPU"
+
+msgid "VDR MEM Usage"
+msgstr "VDR RAM-Nutzung"
+
+msgid "Temp CPU"
+msgstr "CPU-Temperatur"
+
+msgid "Temp GPU"
+msgstr "GPU-Temperatur"
+
+msgid "Temp PC-Case"
+msgstr "Gehäuse-Temperatur"
+
+msgid "Temp MB"
+msgstr "MB-Temperatur"
+
+msgid "Updates"
+msgstr "Aktualisierungen"
+
+msgid "Security Updates"
+msgstr "Sicherheitsupdates"
+
+msgid "System Updates"
+msgstr "Systemupdates"
+
+msgid "Updatestatus not available please check the widget"
+msgstr "Updatestatus nicht vorhanden; Bitte Widget prüfen"
+
+msgid "Temperatures"
+msgstr "Temperaturen"
+
+msgid "Temperatures not available please check the widget"
+msgstr "Temperaturen nicht vorhanden; Bitte Widget prüfen"
+
+msgid "CPU"
+msgstr ""
+
+msgid "PC-Case"
+msgstr "Gehäuse"
+
+msgid "MB"
+msgstr ""
+
+msgid "GPU"
+msgstr ""
+
+msgid "no title available"
+msgstr "Kein Titel vorhanden"
+
+msgid "no output available"
+msgstr "Keine Ausgabe vorhanden"
+
+msgid "Weather"
+msgstr "Wetter"
+
+msgid "Volume"
+msgstr "Lautstärke"
+
+msgid "none"
+msgstr "keine"
+
+msgid "rect"
+msgstr "Eckig"
+
+msgid "round"
+msgstr "Rund"
+
+msgid "invert round"
+msgstr "Rund invertiert"
+
+msgid "rect + alpha blend"
+msgstr "Eckig + Transparent"
+
+msgid "round + alpha blend"
+msgstr "Rund + Transparent"
+
+msgid "invert round + alpha blend"
+msgstr "Rund invertiert + Transparent"
+
+msgid "small line + big line"
+msgstr "Dünne Linie + Dicke Linie"
+
+msgid "big line"
+msgstr "Dicke Linie"
+
+msgid "big line + outline"
+msgstr "Dicke Linie + Outline"
+
+msgid "small line + big line + dot"
+msgstr "Dünne Linie + Dicke Linie + Punkt"
+
+msgid "big line + dot"
+msgstr "Dicke Linie + Punkt"
+
+msgid "big line + outline + dot"
+msgstr "Dicke Linie + Outline + Punkt"
+
+msgid "small line + dot"
+msgstr "Dünne Linie + Punkt"
+
+msgid "outline + dot"
+msgstr "Outline + Punkt"
+
+msgid "small line + big line + alpha blend"
+msgstr "Dünne Linie + Dicke Linie + Transparenz"
+
+msgid "big line + alpha blend"
+msgstr "Dicke Linie + Transparenz"
+
+msgid "do not show"
+msgstr "nicht anzeigen"
+
+msgid "timer & recording menu"
+msgstr "Timer & Aufnahme Menü"
+
+msgid "always on the menu"
+msgstr "immer im Menü"
+
+msgid "always show"
+msgstr "immer anzeigen"
+
+msgid "VDR default"
+msgstr "VDR Standard"
+
+msgid "flatPlus long"
+msgstr "flatPlus Lang"
+
+msgid "flatPlus long + EPG"
+msgstr "flatPlus Lang + EPG"
+
+msgid "flatPlus short"
+msgstr "flatPlus Kurz"
+
+msgid "flatPlus short + EPG"
+msgstr "flatPlus Kurz + EPG"
+
+msgid "flatPlus short + Info"
+msgstr "flatPlus Kurz + Info"
+
+msgid "vertical"
+msgstr "vertikal"
+
+msgid "hoizontal"
+msgstr "horizontal"
+
+msgid "carriage return"
+msgstr "carriage return"
+
+msgid "left-right-left"
+msgstr "links-rechts-links"
+
+msgid "left line + rect bar"
+msgstr "Linie Links + Eckige Leiste"
+
+msgid "left line + round bar"
+msgstr "Linie Links + Runde Leiste"
+
+msgid "middle line + rect bar"
+msgstr "Mittellinie + Eckige Leiste"
+
+msgid "middle line + round bar"
+msgstr "Mittellinie + Runde Leiste"
+
+msgid "outline + rect bar"
+msgstr "Outline + Eckige Leiste"
+
+msgid "outline + round bar"
+msgstr "Outline + Runde Leiste"
+
+msgid "rect bar"
+msgstr "Eckige Leiste"
+
+msgid "round bar"
+msgstr "Runde Leiste"
+
+msgid "past / remaining"
+msgstr "vergangen / verbleibend"
+
+msgid "past"
+msgstr "vergangen"
+
+msgid "remaining"
+msgstr "verbleibend"
+
+msgid "short"
+msgstr "Kurz"
+
+msgid "long"
+msgstr "Lang"
+
+msgid "General settings"
+msgstr "Allgemeine Einstellungen"
+
+msgid "Channelinfo settings"
+msgstr "Kanalinfo Einstellungen"
+
+msgid "Menu settings"
+msgstr "Menü Einstellungen"
+
+msgid "Replay settings"
+msgstr "Wiedergabe Einstellungen"
+
+msgid "Volume settings"
+msgstr "Lautstärke Einstellungen"
+
+msgid "Tracks settings"
+msgstr "Tonspur Einstellungen"
+
+msgid "TVScraper / scraper2vdr settings"
+msgstr "TVScraper / scraper2vdr Einstellungen"
+
+msgid "TVScraper / scraper2vdr not installed"
+msgstr "TVScraper / scraper2vdr nicht installiert"
+
+msgid "Main menu widgets settings"
+msgstr "Hauptmenü: Widget Einstellungen"
+
+msgid "configfile"
+msgstr "Konfigdatei"
+
+msgid "loaded"
+msgstr "geladen"
+
+msgid "saved settings in file:"
+msgstr "Einstellungen gespeichert in Datei:"
+
+msgid "no decorfiles found, check install"
+msgstr "keine Dekordateien gefunden, prüfe Installation"
+
+msgid "Decorfile"
+msgstr "Dekordatei"
+
+msgid "no config-files found, check install"
+msgstr "keine Konfigdateien gefunden, prüfe Installation"
+
+msgid "Press ok to load config file"
+msgstr "OK drücken um die Konfigdatei zu laden"
+
+msgid "Save current settings"
+msgstr "aktuelle Einstellungen abspeichern"
+
+msgid "press ok to save current settings"
+msgstr "OK drücken um die Einstellungen zu speichern"
+
+msgid "Show empty color-buttons"
+msgstr "Zeige leere Farbtasten"
+
+msgid "Show TopBar menu icons"
+msgstr "Zeige Menüsymbole in Titelleiste"
+
+msgid "Diskusage show"
+msgstr "Plattenverbrauch anzeigen"
+
+msgid "Diskusage short display"
+msgstr "Plattenverbrauch: Kurze Anzeige"
+
+msgid "Diskusage free/occupied"
+msgstr "Plattenverbrauch: frei/belegt"
+
+msgid "OSD vertical margin"
+msgstr "OSD vertikaler Rand"
+
+msgid "OSD horizontal margin"
+msgstr "OSD horizontaler Rand"
+
+msgid "TopBar font size"
+msgstr "Titelleiste: Font Größe"
+
+msgid "TopBar show recording"
+msgstr "Titelleiste: Zeige Aufnahme"
+
+msgid "TopBar show conflicts"
+msgstr "Titelleiste: Zeige Konflikte"
+
+msgid "TopBar hide clock text"
+msgstr "Titelleiste: Verstecke Uhr Text"
+
+msgid "TopBar clock font scale"
+msgstr "Titelleiste: Uhr Skalierung"
+
+msgid "Conflicts min value for red"
+msgstr "Konflikte min. Wert für Rot"
+
+msgid "Message bottom offset"
+msgstr "Meldung unterer Abstand"
+
+msgid "Message color position"
+msgstr "Meldungsfarbe Position"
+
+msgid "Use Textscroller?"
+msgstr "Nutze Laufschrift?"
+
+msgid "Scroller step (in pixel)"
+msgstr "Laufschrift: Schrittweite (Pixel)"
+
+msgid "Scroller delay (in ms)"
+msgstr "Laufschrift: Verzögerung (ms)"
+
+msgid "Scroller type"
+msgstr "Laufschrift: Typ"
+
+msgid "TopBar border by decor-file?"
+msgstr "Titelleiste: Rand aus Dekordatei?"
+
+msgid "TopBar border type"
+msgstr "Titelleiste: Rand Typ"
+
+msgid "TopBar border size"
+msgstr "Titelleiste: Rand Größe"
+
+msgid "Message border by decor-file?"
+msgstr "Meldung: Rand aus Dekordatei?"
+
+msgid "Message border type"
+msgstr "Meldung: Rand Typ"
+
+msgid "Message border size"
+msgstr "Meldung: Rand Größe"
+
+msgid "Button border by decor-file?"
+msgstr "Tasten: Rand aus Dekordatei?"
+
+msgid "Button border type"
+msgstr "Tasten: Rand Typ"
+
+msgid "Button border size"
+msgstr "Tasten: Rand Größe"
+
+msgid "Imagecache entries"
+msgstr "Bildercache Einträge"
+
+msgid "Show Channelinfo icons"
+msgstr "Zeige Kanalinfo Logos"
+
+msgid "Show event start time left"
+msgstr "Zeige Event Startzeit links"
+
+msgid "Show signal quality"
+msgstr "Zeige Signalqualität"
+
+msgid "Show weather widget"
+msgstr "Zeige Wetter Widget"
+
+msgid "Weather widget font size"
+msgstr "Wetter Widget Schriftgröße"
+
+msgid "Colors for signal quality"
+msgstr "Farben für Signalqualität"
+
+msgid "Show resolution & aspect"
+msgstr "Zeige Auflösung & Bildformat"
+
+msgid "Show format (hd/sd)"
+msgstr "Zeige Format (HD/SD)"
+
+msgid "Simple aspect & format"
+msgstr "Auflösung & Bildformat Einfache Anzeige"
+
+msgid "dvbapi plugin not installed"
+msgstr "Plugin dvbapi ist nicht installiert"
+
+msgid "Show dvbapi informations"
+msgstr "Zeige dvbapi Informationen"
+
+msgid "program past/remaining time format"
+msgstr "Programm vergangen/verbleibend Format"
+
+msgid "Channelinfo border by decor-file?"
+msgstr "Kanalinfo: Rand aus Dekordatei?"
+
+msgid "Channelinfo border type"
+msgstr "Kanalinfo: Rand Typ"
+
+msgid "Channelinfo border size"
+msgstr "Kanalinfo: Rand Größe"
+
+msgid "Channelinfo EPG border by decor-file?"
+msgstr "Kanalinfo: EPG Rand aus Dekordatei?"
+
+msgid "Channelinfo EPG border type"
+msgstr "Kanalinfo: EPG Rand Typ"
+
+msgid "Channelinfo EPG border size"
+msgstr "Kanalinfo: EPG Rand Größe"
+
+msgid "Channelinfo progress by decor-file?"
+msgstr "Kanalinfo: Fortschritt aus Dekordatei?"
+
+msgid "Channelinfo progress type"
+msgstr "Kanalinfo: Fortschritt Typ"
+
+msgid "Channelinfo progress size"
+msgstr "Kanalinfo: Fortschritt Größe"
+
+msgid "Signalquality progress by decor-file?"
+msgstr "Signalpegelanzeige aus Dekordatei?"
+
+msgid "Signalquality progress type"
+msgstr "Signalpegelanzeige: Typ"
+
+msgid "Signalquality progress size"
+msgstr "Signalpegelanzeige: Größe"
+
+msgid "Menuitem padding"
+msgstr "Menüpunkt Abstand"
+
+msgid "Show mainmenu item icons"
+msgstr "Zeige Symbole für Hauptmenüeinträge"
+
+msgid "Menu content fullsize background"
+msgstr "Menü: Inhalt voller Hintergrund"
+
+msgid "Show additional recording info"
+msgstr "Zeige Zusatzinfo bei Aufnahmen"
+
+msgid "Show additional EPG info"
+msgstr "Zeige Zusatzinfo bei EPG"
+
+msgid "Show reruns in EPG info"
+msgstr "Zeige Wiederholungen bei EPG"
+
+msgid "Menu draw background over the entire height"
+msgstr "Menü: Zeichne Hintergrund über gesamte Höhe"
+
+msgid "Recording menu show recording count in title"
+msgstr "Aufnahmen: Anzahl der Aufnahmen in Titelleiste"
+
+msgid "Recording menu recording seen treshold"
+msgstr "Aufnahmen: Aufnahme gesehen Schwellwert"
+
+msgid "Recording menu default value - old folder in days"
+msgstr "Aufnahmen: default-Wert alter Ordner in Tagen"
+
+msgid "Timer menu show timer count in title"
+msgstr "Timer: Anzahl der Timer in Titelleiste"
+
+msgid "Channel menu show channel count in title"
+msgstr "Kanäle: Anzahl der Kanäle in Titelleiste"
+
+msgid "Menu channel view"
+msgstr "Menü: Kanal Ansicht"
+
+msgid "Menu timer view"
+msgstr "Menü: Timer Ansicht"
+
+msgid "Menu event view"
+msgstr "Menü: Programm Ansicht"
+
+msgid "Menu event view allways with date"
+msgstr "Menü: Programm immer mit Datum"
+
+msgid "Menu recording view"
+msgstr "Menü: Aufzeichnungen Ansicht"
+
+msgid "Scrollbar by decor-file?"
+msgstr "Scrollbar aus Dekordatei?"
+
+msgid "Scrollbar type"
+msgstr "Scrollbar: Typ"
+
+msgid "Scrollbar size"
+msgstr "Scrollbar: Größe"
+
+msgid "Menuitem border by decor-file?"
+msgstr "Menüpunkt: Rand aus Dekordatei?"
+
+msgid "Menuitem border type"
+msgstr "Menüpunkt: Rand Typ"
+
+msgid "Menuitem border size"
+msgstr "Menüpunkt: Rand Größe"
+
+msgid "Menucont. border by decor-file?"
+msgstr "Menüinhalt: Rand aus Dekordatei?"
+
+msgid "Menucont. border type"
+msgstr "Menüinhalt: Rand Typ"
+
+msgid "Menucont. border size"
+msgstr "Menüinhalt: Rand Größe"
+
+msgid "Menucont. head border by decor-file?"
+msgstr "Menükopf: Rand aus Dekordatei?"
+
+msgid "Menucont. head border type"
+msgstr "Menükopf: Rand Typ"
+
+msgid "Menucont. head border size"
+msgstr "Menükopf: Rand Größe"
+
+msgid "Menuitem progress by decor-file?"
+msgstr "Menüpunkt: Fortschritt aus Dekordatei?"
+
+msgid "Menuitem progress type"
+msgstr "Menüpunkt: Fortschritt Typ"
+
+msgid "Menuitem progress size"
+msgstr "Menüitem: Fortschritt Größe"
+
+msgid "Time seconds font scale"
+msgstr "Uhrzeit: Sekunden Skalierung"
+
+msgid "Dimm on pause?"
+msgstr "Dimmen bei Pause?"
+
+msgid "Dimm on pause delay"
+msgstr "Dimmen bei Pause Verzögerung"
+
+msgid "Dimm on pause opaque"
+msgstr "Dimmen bei Pause Undurchsichtigkeit"
+
+msgid "Replay border by decor-file?"
+msgstr "Wiedergabe: Rand aus Dekordatei?"
+
+msgid "Replay border type"
+msgstr "Wiedergabe: Rand Typ"
+
+msgid "Replay border size"
+msgstr "Wiedergabe: Rand Größe"
+
+msgid "Replay progress by decor-file?"
+msgstr "Wiedergabe: Fortschritt aus Dekordatei?"
+
+msgid "Replay progress size"
+msgstr "Wiedergabe: Fortschritt Größe"
+
+msgid "Volume border by decor-file?"
+msgstr "Lautstärke: Rand aus Dekordatei?"
+
+msgid "Volume border type"
+msgstr "Lautstärke: Rand Typ"
+
+msgid "Volume border size"
+msgstr "Lautstärke: Rand Größe"
+
+msgid "Volume progress by decor-file?"
+msgstr "Lautstärke: Fortschritt aus Dekordatei?"
+
+msgid "Volume progress type"
+msgstr "Lautstärke: Fortschritt Typ"
+
+msgid "Volume progress size"
+msgstr "Lautstärke: Fortschritt Größe"
+
+msgid "Tracks border by decor-file?"
+msgstr "Tonspur: Rand aus Dekordatei?"
+
+msgid "Tracks border type"
+msgstr "Tonspur: Rand Typ"
+
+msgid "Tracks border size"
+msgstr "Tonspur: Rand Größe"
+
+msgid "TVScraper settings"
+msgstr "TVScraper: Einstellungen"
+
+msgid "Channelinfo show poster?"
+msgstr "Kanalinfo zeige Poster?"
+
+msgid "Channelinfo poster size"
+msgstr "Kanalinfo Poster Größe"
+
+msgid "Replayinfo show poster?"
+msgstr "Wiedergabeinfo: zeige Poster?"
+
+msgid "Replayinfo poster size"
+msgstr "Wiedergabeinfo: Poster Größe"
+
+msgid "EPG info show poster?"
+msgstr "EPG-Info: zeige Poster?"
+
+msgid "recording info show poster?"
+msgstr "Aufnahmeinfo: zeige Poster?"
+
+msgid "EPG info show actors?"
+msgstr "EPG-Info: Zeige Schauspieler?"
+
+msgid "recording info show actors?"
+msgstr "Aufnahmeinfo: Zeige Schauspieler?"
+
+msgid "Enable main menu widgets"
+msgstr "Hauptmenü-Widgets anzeigen"
+
+msgid "Main menu item scale"
+msgstr "Hauptmenü Widgets: Breite (%)"
+
+msgid "Widget weather"
+msgstr "Wetter-Widget"
+
+msgid "Widget weather: enable"
+msgstr "Wetter-Widget anzeigen"
+
+msgid "Widget weather: position"
+msgstr "Wetter-Widget: Position"
+
+msgid "Widget weather: show days"
+msgstr "Wetter-Widget: Zeige Tage"
+
+msgid "Widget weather: type"
+msgstr "Wetter-Widget: Typ"
+
+msgid "Widget DVB devices"
+msgstr "DVB Geräte-Widget"
+
+msgid "Widget DVB devices: enable"
+msgstr "DVB Geräte-Widget: Anzeigen"
+
+msgid "Widget DVB devices: position"
+msgstr "DVB Geräte-Widget: Position"
+
+msgid "Widget DVB devices: don't show unknown"
+msgstr "DVB Geräte-Widget: Unbekannte ausblenden"
+
+msgid "Widget DVB devices: don't show not used"
+msgstr "DVB Geräte-Widget: Nicht verw. ausblenden"
+
+msgid "Widget timer"
+msgstr "Timer-Widget"
+
+msgid "Widget timer: enable"
+msgstr "Timer-Widget: Anzeigen"
+
+msgid "Widget timer: position"
+msgstr "Timer-Widget: Position"
+
+msgid "Widget timer: show recording timer"
+msgstr "Timer-Widget: Zeige aufnehmende Timer"
+
+msgid "Widget timer: show active timer"
+msgstr "Timer-Widget: Zeige aktive Timer"
+
+msgid "Widget timer: show remote recording timer"
+msgstr "Timer-Widget: Zeige Remote aufnehmende Timer"
+
+msgid "Widget timer: show remote active timer"
+msgstr "Timer-Widget: Zeige Remote aktive Timer"
+
+msgid "Widget timer: max show"
+msgstr "Timer-Widget: Zeige max."
+
+msgid "Widget timer: hide if empty"
+msgstr "Timer-Widget: Verstecken wenn Leer"
+
+msgid "Widget last recordings"
+msgstr "Letzte Aufnahmen-Widget"
+
+msgid "Widget last recordings: enable"
+msgstr "Letzte Aufnahmen-Widget: Anzeigen"
+
+msgid "Widget last recordings: position"
+msgstr "Letzte Aufnahmen-Widget: Position"
+
+msgid "Widget last recordings: max show"
+msgstr "Letzte Aufnahmen-Widget: Zeige max."
+
+msgid "Widget timer conflicts"
+msgstr "Timerkonflikte-Widget"
+
+msgid "Widget timer conflicts: enable"
+msgstr "Timerkonflikte-Widget: Anzeigen"
+
+msgid "Widget timer conflicts: position"
+msgstr "Timerkonflikte-Widget: Position"
+
+msgid "Widget timer conflicts: hide if empty"
+msgstr "Timerkonflikte-Widget: Verstecken wenn Leer"
+
+msgid "Widget system information"
+msgstr "Systeminformation-Widget"
+
+msgid "Widget system information: enable"
+msgstr "Systeminformation-Widget: Anzeigen"
+
+msgid "Widget system information: position"
+msgstr "Systeminformation-Widget: Position"
+
+msgid "Widget system updates"
+msgstr "Systemupdates-Widget"
+
+msgid "Widget system updates: enable"
+msgstr "Systemupdates-Widget: Anzeigen"
+
+msgid "Widget system updates: position"
+msgstr "Systemupdates-Widget: Position"
+
+msgid "Widget system updates: hide if empty"
+msgstr "Systemupdates-Widget: Verstecken wenn Leer"
+
+msgid "Widget temperatures"
+msgstr "Temperaturen-Widget"
+
+msgid "Widget temperatures: enable"
+msgstr "Temperaturen-Widget: Anzeigen"
+
+msgid "Widget temperatures: position"
+msgstr "Temperaturen-Widget: Position"
+
+msgid "Widget custom commands"
+msgstr "Eigene Befehle-Widget"
+
+msgid "Widget custom commands: enable"
+msgstr "Eigene Befehle-Widget: Anzeigen"
+
+msgid "Widget custom commands: position"
+msgstr "Eigene Befehle-Widget: Position"

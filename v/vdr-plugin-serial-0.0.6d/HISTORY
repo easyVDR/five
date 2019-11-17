@@ -1,0 +1,28 @@
+VDR Plugin 'serial' Revision History
+--------------------------------------
+
+2003-04-01: Version 0.0.3
+
+- Initial revision.
+
+2003-05-01: Version 0.0.4
+
+- Flashrate for Recording on primary Card is introduced
+  (1 from short flashing to 10 from lighting with no flashing)
+
+2003-06-11: Version 0.0.5
+
+- PrimaryDevice is now correctly identified
+
+2004-02-23: Version 0.0.6
+
+- added OSD Setup support to choose com port (TNX to cooper)
+- added plugin parameter support to choose com port (TNX to cooper)
+
+2012-11-30: Version 0.0.6d
+Bugfix by j-ronny
+- added OSD Setup Configuration for max installed Devices (--> Bugfix for nonrecording-Blinking) + Bugfix
+
+
+
+

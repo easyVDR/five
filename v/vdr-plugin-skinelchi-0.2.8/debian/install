@@ -1,0 +1,3 @@
+themes/*.theme                 var/lib/vdr/themes/
+logos/*                        usr/share/vdr-skinelchi-logos/
+

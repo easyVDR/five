@@ -1,0 +1,411 @@
+vdr-plugin-satip (1:2.2.5~git20180317-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:12:11 +0100
+
+vdr-plugin-satip (1:2.2.5~git20180317-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 20 Feb 2018 22:33:39 +0100
+
+vdr-plugin-satip (2.2.5~git20180317-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:c07d921 - Silence "misleading-indentation" warning.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 17 Mar 2018 22:10:14 +0100
+
+vdr-plugin-satip (1:2.2.5~git20180220-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 20 Feb 2018 21:33:39 +0100 
+
+vdr-plugin-satip (2.2.5~git20180220-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d333bce - Remove speed limit.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 20 Feb 2018 21:07:39 +0100
+
+vdr-plugin-satip (2.2.5~git20171119-1easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:28cc3ca - Strip off the constructor delegation after all to broaden compiler compability.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 19 Nov 2017 17:21:32 +0100
+
+vdr-plugin-satip (2.2.5~git20171003-1easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:364b4fb - Ignore handlers without any data.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 09 Oct 2017 21:28:52 +0200
+
+vdr-plugin-satip (2.2.5~git20171003-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:b004793 - Cleanup section filter code.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 04 Oct 2017 17:47:29 +0200
+
+vdr-plugin-satip (2.2.5~git20171001-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:dfb050c - Fixed memory leak in cSatipSectionFilter.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 01 Oct 2017 17:58:17 +0200
+
+vdr-plugin-satip (2.2.5~git20170823-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ee88aad - Updated version number.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 24 Aug 2017 16:59:03 +0200
+
+vdr-plugin-satip (2.2.4~git20170522-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:974c26b - added name of "KATHREIN SatIP Server"
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 22 May 2017 23:59:35 +0200
+
+vdr-plugin-satip (2.2.4~git20170228-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ed99cfb - Remove non-compatible RTP-over-TCP devices.
+                   - GSSBOX DIGIBIT Triax SatIP Converter
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 28 Feb 2017 22:09:02 +0100
+
+vdr-plugin-satip (2.2.4~git20170214-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5b01fa3 - Update Catalan and Espanol translations.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 14 Feb 2017 22:03:03 +0100
+
+vdr-plugin-satip (2.2.4~git20170106-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:0bad1c1 - Add musl-libc compatibility.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 06 Jan 2017 21:01:26 +0100
+
+vdr-plugin-satip (2.2.4~git20161222-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Updated German translation (Thanks to Frank Neumann).
+  * Fixed Panasonic CXW804 support (Thanks to Tobias Grimm).
+  * Fixed C++11 support (Thanks to Tobias Grimm).
+  * Fixed server assigment with source validation (Thanks to Patrick Boettcher).
+  * Added configurable RTP/RTCP ports (Thanks to chriszero).
+  * Added support for X-SATIP-RTSP-Port header.
+  * Added multicast and RTP-over-TCP support.
+  * Added support for activating/deactivating server on-the-fly.
+  * Extended command-line parameters for setting server quirks.  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 23 Dec 2016 00:02:57 +0100
+
+vdr-plugin-satip (2.2.3+git20161216-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:581ac49 - Prefer section pid
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 17 Dec 2016 17:56:56 +0100
+
+vdr-plugin-satip (2.2.3+git20161115-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:61b56db - Add command-line support for setting server quirks.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Nov 2016 22:17:57 +0100
+
+vdr-plugin-satip (2.2.3+git20161010-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:55:03 +0200
+
+vdr-plugin-satip (2.2.3+git20161010-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:61b56db - Add command-line support for setting server quirks.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 10 Oct 2016 21:21:39 +0200
+
+vdr-plugin-satip (2.2.3+git20160731-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:41:00 +0200 
+
+vdr-plugin-satip (2.2.3+git20160731-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:db0c18b - Check source validity also in server assign (Thanks to
+    Patrick Boettcher).
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 31 Jul 2016 19:06:38 +0200
+
+vdr-plugin-satip (2.2.3+git20160730-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:0f9e001 - Add support for source filtering.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 30 Jul 2016 17:25:25 +0200
+
+vdr-plugin-satip (2.2.3+git20160724-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:6bb7fb5 - Fix command-line examples to match defined quirks.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Jul 2016 18:39:01 +0200
+
+vdr-plugin-satip (2.2.3+git20160622-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:7289da9 - Add support for RTP-over-TCP.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 22 Jun 2016 23:12:44 +0200
+
+vdr-plugin-satip (2.2.3+git20160605-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d5e0106 - Change EINTR handling in poller
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 05 Jun 2016 16:45:33 +0200
+
+vdr-plugin-satip (2.2.3+git20160514-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:fe532e2 - Use 2MB ringbuffer per device.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 14 May 2016 22:35:28 +0200
+
+vdr-plugin-satip (2.2.3+git20160507-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:b5483b9 - Set SO_REUSEPORT only if it's defined.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 08 May 2016 16:47:28 +0200
+
+vdr-plugin-satip (2.2.3+git20160413-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:fd23b04 - Re-enable to reuse address for msearch protocol
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 15 Apr 2016 22:01:52 +0200
+
+vdr-plugin-satip (2.2.3+git20160320-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:54:01 +0200
+
+vdr-plugin-satip (2.2.3+git20160320-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:18c9b79 - Reset device name when the device is idling.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Mar 2016 19:21:10 +0100
+
+vdr-plugin-satip (2.2.3+git20160229-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:e4f560c - Fix statistics output a bit more.
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 29 Feb 2016 20:11:47 +0100
+
+vdr-plugin-satip (2.2.3+git20160201-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:b755dbf - C++11 requires a mandatory space when concatenating string literals 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 01 Feb 2016 00:20:01 +0100
+
+vdr-plugin-satip (2.2.3+git20150921-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:45:52 +0100
+
+vdr-plugin-satip (2.2.3+git20150921-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * 37a0572: Updated HISTORY.
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 21 Sep 2015 23:02:09 +0200
+
+vdr-plugin-satip (2.2.3+git20150821-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:30:54 +0200
+
+vdr-plugin-satip (2.2.3+git20150821-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * Added a timeout for releasing idling devices.
+  * Reset the RTSP connection after any failed connect.
+  * Updated for vdr-2.3.1 (Thanks to Klaus Schmidinger)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 24 Aug 2015 21:58:51 +0200
+
+vdr-plugin-satip (2.2.2+git20150527-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * ba0b808: Enabled the X_PMT extension for minisatip servers.
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 04 Jun 2015 20:21:54 +0200
+
+vdr-plugin-satip (2.2.2+git20150426-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for easyVDR PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 01 May 2015 16:48:58 +0200
+
+vdr-plugin-satip (2.2.2+git20150426-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 29 Apr 2015 21:36:10 +0200
+
+vdr-plugin-satip (2.2.1+git20150318-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:21:17 +0200
+
+vdr-plugin-satip (2.2.1+git20150318-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Mar 2015 17:23:15 +0100
+
+vdr-plugin-satip (2.2.1+git20150318-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Mar 2015 05:41:23 +0100
+
+vdr-plugin-satip (1.0.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 04 Jan 2015 22:39:00 +0100
+
+vdr-plugin-satip (0.3.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:52:25 +0200
+
+vdr-plugin-satip (0.3.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 Aug 2014 00:46:49 +0200
+
+vdr-plugin-satip (0.3.3-0fnu0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Added a validity check for the session member
+  * Added a session id quirk for Triax TSS 400 
+
+ -- Frank Neumann <fnu@yavdr.org>  Tue, 20 May 2014 22:33:46 +0200
+
+vdr-plugin-satip (0.3.2-0fnu0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Fixed model detection and OctopusNet DVB-C model quirks
+  * Added a session id quirk for GSSBOX 
+
+ -- Frank Neumann <fnu@yavdr.org>  Sat, 10 May 2014 15:46:42 +0200
+
+vdr-plugin-satip (0.3.1-0fnu0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Fixed the device discovery 
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 28 Apr 2014 17:23:34 +0200
+
+vdr-plugin-satip (0.3.0-0fnu1~trusty) trusty; urgency=high
+
+  * rebuild due to libcurl version change 7.36.0
+
+ -- Frank Neumann <fnu@yavdr.org>  Tue, 22 Apr 2014 14:34:28 +0200
+
+vdr-plugin-satip (0.3.0-0fnu0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Tweaked the pid update mechanism 
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 20 Apr 2014 22:49:17 +0200
+
+vdr-plugin-satip (0.2.3-0fnu0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Added Spanish translation (Thanks to Gabriel Bonich)
+  * Fixed parameters of the OPTIONS command
+  * Added a device identication into the user agent string
+  * Removed unnecessary PLAY commands and header callbacks 
+
+ -- Frank Neumann <fnu@yavdr.org>  Sat, 19 Apr 2014 16:47:20 +0200
+
+vdr-plugin-satip (0.2.2-0fnu0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Fixed the default keepalive interval
+  * Refactored the section filtering
+  * Added Catalan translation (Thanks to Gabriel Bonich)
+
+ -- Frank Neumann <fnu@yavdr.org>  Sat, 05 Apr 2014 13:05:47 +0200
+
+vdr-plugin-satip (0.2.1-0fnu1~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Changed implementation to report about RTP packet errors on 5 minutes interval only.
+  * Added a check to write new sections only if there is no data in the read socket.
+  * Fixed keepalive heartbeat again.
+  * another try to get debug symbols stripped seperately
+  * add decrease_keepalive.patch for test purpose by fnu
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 30 Mar 2014 18:18:25 +0200
+
+vdr-plugin-satip (0.2.0-0fnu0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Added support for cDevice::Ready().
+  * Fixed pid leaking while disabling section filters.
+  * Fixed keepalive heartbeat.
+
+ -- Frank Neumann <fnu@yavdr.org>  Sat, 29 Mar 2014 12:04:57 +0100
+
+vdr-plugin-satip (0.1.1-0fnu1~trusty) trusty; urgency=high
+
+  * new upstream version
+  * Changed code to utilize a proper XML library.
+  * Refactored the session code.
+  * Fixed EIT scan functionality.
+  * Updated for vdr-2.1.6.
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 16 Mar 2014 17:16:51 +0100
+
+vdr-plugin-satip (0.1.0-0fnu0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * changed behaviour,
+    does now re-use existing DVB channel entries. 
+  * does support DVB-S/S2, DVB-T/T2 and DVB-C/C2
+    with DigitalDevices Octopus Net.
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 10 Mar 2014 22:34:00 +0100
+
+vdr-plugin-satip (0.0.1-0fnu0~trusty) trusty; urgency=high
+
+  * initial release
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 02 Mar 2014 18:00:00 +0100

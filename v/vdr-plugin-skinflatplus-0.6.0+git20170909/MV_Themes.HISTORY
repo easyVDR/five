@@ -1,0 +1,140 @@
+MV-Themen fuer Skin flatPlus
+
+Download: https://www.dropbox.com/s/c5mh4g2qonjs25r/MV_Themes.tar.xz
+
+HISTORY
+ [...] Erste Version
+ [18.11.2013] - Themen ueberarbeitet. Farben angepasst und .decor erstellt
+ [24.11.2013] - Widergabestatus: Symbole passend zu den Themen eingefaerbt
+              - Formatsymbole: von 100% Weiss nach 95%
+ [25.11.2013] - Wiedergabe-Info: Eigenes Symbol (extraIcons/playing.png)
+ [26.11.2013] - Wiedergabe-Info: Symbolname korrigiert (extraIcons/Playing.png)
+              - Themen "Blood" und "Rauchglas" nur noch mit geaendertem Hintergrund
+                => Bitte alte Themen und Icon-Ordner loeschen <=
+              - Neu: Thema "Fog"
+ [27.11.2013] - Farben angepasst (Tasten und Nachrichten)
+              - Thema "Fog" Schriftfarbe geaendert
+ [29.11.2013] - Thema "Fog", "Mint", "Pumpkin" Schriftfarbe bei ausgewaehlt Invertiert
+              - Formatsymbole in Farbe #D5D5D5
+ [06.12.2013] - Neu: Thema "XMAS"
+ [07.12.2013] - Thema "Fog" Schriftfarbe geaendert
+ [08.12.2013] - Thema "XMAS" Farben getauscht
+              - Wiedergabe Balken in Hintergrund-Farbe #959595 und #505050
+              - Lautstaerke: Rand 15, Leiste 25
+              - Inaktive Widergabesymbole #909090
+ [09.12.2013] - Hintergrundtransparenz C0 -> C5
+              - Thema "XMAS" Farben angepasst
+ [27.01.2014] - Formatsymbole geaendert: 1920x1080.png, ...
+ [29.01.2014] - Symbol 'Chart7.png' in rot (Platte fast voll)
+ [02.02.2014] - Sparaufloesungen mit Warn-Symbol
+ [10.02.2014] - Symbol changroup (Marker in Kanalliste) in Skinfarbe
+ [11.02.2014] - Symbol changroup (Marker in Kanalliste) geaendert
+              - Wiedergabe Balken in Hintergrund-Farbe #757575 und #303030
+ [12.02.2014] - Aktive Timer in Rot
+              - Symbole für Timer-Ansicht eingefaerbt
+              - Dritte Farbe Balken von #303030 -> #555555
+              - Festbreitenschrift in #CCBB22
+ [15.02.2014] - Neue Sysmbole fuer timer_full.png, timer_partial.png und vps.png
+              - Symbol tv.png und radio.png verkleinert
+              - Neues Thema "DeepBlue"
+ [19.02.2014] - Neues Symbol fuer "Neu"
+ [20.02.2014] - Symbole 'timerActive.png', 'timerInactive.png' und 'timerRecording.png'
+                mit Schatten
+              - 'timer_full.png' verkleinert, 'timer_partial.png' geaendert
+ [10.03.2014] - ExtraTextFont in Themenfarbe
+              - ExtraTextCurrentFont in Hintergrundfarbe
+ [11.03.2014] - 'logo_background.png' fuer Kanallogos mit 30% Deckkraft und in #FFFFFF
+ [12.03.2014] - 'logo_background.png' mit runden Ecken und leichtem Verlauf
+              - 'vps.png' Schrift vergroessert
+ [14.03.2014] - Verlinkung von Themenuebergreifenden Symbolen mit symbolischen Links
+ [15.03.2014] - 'recording_cutted_extra.png' kleiner und in Themenfarbe
+              - Fehler in 'vps.png' korrigiert
+ [16.03.2014] - Schriftfarbe bei Nachrichten #AAAAAA
+ [21.03.2014] - Schriftfarbe bei Nachrichten #BBBBBB
+              - Farbe Statusmeldung und Knopf 'Blau' in #2222CC
+ [22.03.2014] - Timerkonflikt: Neu 'clrTopBarConflictLowFg', 'clrTopBarConflictLowBg',
+                'clrTopBarConflictHighFg' und 'clrTopBarConflictHighBg'
+              - Audio: Neu 'clrTrackItemSelableBg', 'clrTrackItemSelableFont',
+                'clrTrackItemBorderFg', 'clrTrackItemBorderBg',
+                'clrTrackItemSelableBorderFg' und 'clrTrackItemSelableBorderBg'
+              - Farbe der Symbole 'topbar_timer.png', 'topbar_timerconflict_low.png'
+                und 'topbar_timerconflict_high.png' angepasst
+              - Hinweis auf 'make install' im Skript 'flatPlus_MV_Update.sh'
+              - Option für 'Silent Update' (-u) im Skript 'flatPlus_MV_Update.sh'
+ [03.04.2014] - 'logo_background.png' entfernt. Nutzt nun das default Logo
+ [10.04.2014] - Logos 'radio.png' und 'tv.png' angepasst
+ [30.05.2014] - '70_MV_rect_sml.decor' angepast
+              - Neue Farben 'clrMenuEventTitleLine', 'clrMenuRecTitleLine'
+                'clrChannelEPGBorderFg' und 'clrChannelEPGBorderBg' eingefuegt
+ [31.05.2014] - Hellere Farbe (+35) bei den Bereichstrennern
+              - Update der empfohlenen Einstellungen in der MV_Themes.INFO
+              - Alle Themen, Decor und *.png ohne Execute-Flag (chmod -x)
+ [01.06.2014] - Textfarbe bei Bereichstrennern heller
+              - Skript 'flatPlus_MV_Update.sh' mit Installation der Themen
+              - Timer- und VPS-Symbol (EPG) in Themenfarbe und mit Schlagschatten
+              - Stern-Symbol (Aufnahmeliste) in Themenfarbe und mit Schlagschatten
+ [02.06.2014] - Farbe fuer Laufende Timer auf #FF5050 (Helles Rot) geaendert
+ [15.06.2014] - Symbole fuer Nachrichten in Farbe (Info, Status, Warnung und Fehler)
+ [16.06.2014] - Symbole 'mesasge_info.png', 'mesasge_status.png' und
+                'mesasge_warning.png' durch "volle" Versionen ersetzt
+ [28.06.2014] - Neue Symbole fuer 'text_arrow_turn*.png' und 'text_timer_full*.png'
+              - Symbole 'text_new*.png', 'text_rec*.png', 'text_timer_partial*.png'
+                und 'text_vps*.png' mit vorhandenen Symbolen verlinkt
+ [11.07.2014] - Symbol fuer geschnittene Aufnahmen ('recording_cutted.png') in Farbe
+ [12.07.2014] - Symbole 'recording_cutted.png', 'recording_new.png', 'timer_full.png',
+                'timer_partial.png' und 'vps.png' Schatten entfernt und ein dazu
+                passendes '_cur.png' erstellt
+              - '70_MV_rect_sml.decor' angepasst
+              - Empfohlene Einstellungen aktualisiert
+ [14.07.2014] - Symbol 'chart1b.png' mit 'chart7.png' verlinkt; Symbole 'chart2b.png'
+                bis 'chart7b.png' mit den default Symbolen 'chart6.png' bis 
+                'chart1.png' verlinkt
+ [02.08.2014] - Vorschaubilder fuer alle Themen im Ordner 'preview'
+              - Icons auch fuer MVGreen erstellt
+ [04.08.2014] - Symbol fuer Seitenverhaeltnis bei SD-Sender mit H.264 Codec (20:11)
+                erstellt (16:9 mit Warnsymbol)
+ [09.08.2014] - Konfiguration 'MV_default' hinzugefuegt
+ [28.10.2014] - Konfiguration 'MV_default' aktualisiert fuer Version 0.4.3
+ [31.10.2014] - Neues Thema "Zitrone"
+ [02.11.2014] - Neues 'uncrypted.png' Symbol
+              - Hintergrundtransparenz bei den Themen "Fog" und "Zirtone"
+                auf 'A0' geaendert
+ [03.11.2014] - Farben 'FontTitle' und 'FontTitleLine' getauscht (Linie ist heller)
+ [11.11.2014] - Symbol 'changroup.png' aus dem default-Theme uebernommen; in Skinfarbe
+ [14.11.2014] - Neues Thema "Indigo" vom Default_Indigo abgeleitet
+              - Schriftfarbe beim Thema "Fog" angepasst
+ [17.11.2014] - Konfiguration 'MV_default' wegen der neuen Widgets aktualisiert
+              - Vier neue Themen: "Beige", "Orange", "Terra" und "White"
+ [01.12.2014] - Transparenz der Rahmen bei Ausgewaehlt von "C5" auf "E1" gesetzt
+ [02.12.2014] - Konfiguration 'MV_default' aktualisiert fuer Version 0.5.0
+              - Neu: Installationshinweis für 'configs'
+              - Empfohlene Einstellungen aktualisiert
+              - Hinweis auf Schriften geaendert
+ [09.12.2014] - Diskanzeige - Symbole neu verlinkt (16 statt 8 Abschnitte)
+ [08.02.2015] - Symbole fuer "Aufnahme gesehen" ab VDR 2.1.8 in Skinfarbe
+ [10.02.2015] - Symbol fuer "Aufnahme komplett (100%) gesehen" hinzugefuegt
+ [25.04.2015] - Diskanzeige - Symbole neu verlinkt (32 statt 16 Abschnitte)
+ [26.04.2015] - Symbol 'timerInactive_cur.png' in Skinfarbe (HG)
+ [01.05.2015] - Symbole 'radio_cur.png', 'tv_cur.png' und 'recording_cur.png'
+                ergaenzt
+ [02.05.2015] - Normale Themen (Nicht Invertiert) mit hellen Symbolen (MenuIcons und PluginIcons)
+ [03.05.2015] - Invertierte Symbole 'text_arrowturn_cur.png', 'text_new_cur.png', 'text_vps_cur.png'
+                und 'text_timer_full_cur.png' in angepasster Hintergrundfarbe
+              - Bei invertierten Themen Farbe fuer 'ExtraTextCurrentFont' heller
+ [05.05.2015] - Fortschrittsbalken im EPG bei invertierten Themen in Hintergrundfarbe
+ [20.08.2015] - FIX: 'LNB.png' war immer invertiert
+ [13.10.2015] - Alle '*.png'-Dateien mit 'optipng' optimiert
+ [16.10.2015] - Konfiguration 'MV_default' aktualisiert
+              - Empfohlene Einstellungen VDR OSD aktualisiert
+ [09.04.2016] - PluginIcon 'mpv.png' hinzugefuegt
+ [22.04.2016] - PluginIcon 'plex.png' hinzugefuegt
+ [27.04.2016] - Einstellungen 'MV_default' aktualisiert
+              - Fehlende '70_MV_rect_sml.decor' wieder hinzugefuegt
+ [24.08.2016] - Symbol 'recording_old.png' und 'recording_old_cur.png' in
+                Skinfarbe hinzugefuegt
+ [25.08.2016] - Symbol 'recording_old.png' und 'recording_old_cur.png' verkleinert
+                auf 90 x 90 Pixel
+ [11.09.2016] - Skript zum automatischen Kanallogowechsel hinzugefuegt. Fuer Sender,
+                die sich den Sendeplatz teilen (Bsp.: Comedy Central/VIVA)
+ [03.10.2016] - Konfiguration 'MV_default' aktualisiert
+ [17.03.2017] - Neuer Download-Link, da Dropbox das Public-Feature deaktiviert hat

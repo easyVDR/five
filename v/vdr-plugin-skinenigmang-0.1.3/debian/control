@@ -1,0 +1,16 @@
+Source: vdr-plugin-skinenigmang
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config, cdbs, libmagick++-dev
+Standards-Version: 3.9.5
+Homepage: http://andreas.vdr-developer.org/enigmang
+Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-skinenigmang.git
+Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr-plugin-skinenigmang.git
+
+Package: vdr-plugin-skinenigmang
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Skin plugin for VDR
+ "EnigmaNG" is a standalone skin based on the "Enigma" text2skin addon.

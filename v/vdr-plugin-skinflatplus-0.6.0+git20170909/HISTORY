@@ -1,0 +1,324 @@
+VDR Plugin 'skinflatplus' Revision History
+---------------------------------------
+
+201X-XX-XX: Version XXX
+- [fix] '%' sign not shown in menu weather widget at certian font
+- [update] use std::min & std::max
+- [update] support for vdr 2.3.8 (thanks to nanohcv)
+- [add] support for change color key mapping
+- [add] displaychannel show event start time on the left before event title
+
+2016-09-05: Version 0.6.0
+- [fix] eMenuSortMode in displaymenu.h for compile with VDR < 2.2.0
+- [fix] position of widgets in main menu (add menu item border size)
+- [fix] wrong epg logo in epgsearch eventsview
+- [fix] remove show bitrate of audio and video in displaychannel
+- [fix] rename plugin-icon yaepghg to yaepghd
+- [fix] uninitialized pointer in displayrecoding (crash in plex-plugin and others) (thanks chriszero)
+- [fix] recordings name in recording menu (thanks to Delekhan @ vdr-portal.de)
+- [fix] dvb widget - discard not used and discard unknown
+- [fix] display replay - progressbar if there are no marks
+- [update] default themes
+    inverted style, selected item fore color is now back color
+- [update] disk usage icons with 32 sections instead of 16, thanks to MegaV0lt
+- [update] ac3 logo -> dolby digital logo (thanks to MegaV0lt)
+- [update] README, fix logo folder, add 3PO logo pack
+- [update] translation (thanks to MegaV0lt)
+- [update] MV-Themes
+- [update] timers widget - sort timers by time
+- [update] system information widget - update system_information.g2v
+- [update] temperature widget - update temperatures.g2v
+- [add] support for vdr-2.3.1
+- [add] displaychannel - dvbapi info
+    you need oscam min rev 10653 and dvbapi min commit 85da7b2
+- [add] add italian translation (thanks to fiveten_59)
+- [add] option MenuItemRecordingSeenTreshold to set the treshold when a recording will be marked as seen
+- [add] plex-plugin icon (thanks MegaV0lt)
+- [add] mpv-plugin icon (thanks MegaV0lt)
+- [add] menu recordings - add exclamation mark icon for folders if last recording is older than XX days.
+    Create a "recordings_old.cfg" file under PLUGINCONFIGPATH (for example: /etc/vdr/plugins/skinflatplus/recordings_old.cfg)
+    Each line has the format:
+        FOLDERNAME=DAYS
+    The FOLDERNAME have to be the same name like in the vdr recordings menu.
+    If last recording in the folder is older than DAYS than the exclamation mark icon will be shown.
+    There is also a new menu option: MenuItemRecordingDefaultOldDays
+    This is the default value if You don't want to use recordings_old.cfg.
+    If MenuItemRecordingDefaultOldDays is -1, the default value is disabled.
+- [add] svdrp command to remove logo from cache
+    Use svdrp command "RLFC" to remove a logo from cache. Specify logo filename with extension, but without path.
+    For example: svdrpsend PLUG skinflatplus RLFC "rtl ii.png"
+
+2015-02-14: Version 0.5.1
+- [fix] topbar number recordings
+- [fix] recording menu, total count size
+- [fix] timer widget
+- [fix] only draw widgets if enabled
+- [fix] stop dimm on pause when jump between marks
+- [fix] weather widget update_weather.php - config file path
+- [fix] subtitles does not use title
+- [update] timer widget
+    new options to select which timer to show (recording, active)
+- [update] timer widget
+    remote timer support. If you have remote timers installed and activate it in setup you'll get local timer with 'L' and remote timer with 'R'.
+    Remote timers will be refreshed every 30 minutes. Every refresh cost several seconds when opening main menu.
+    You can adjust the time with the hidden setting 'MainMenuWidgetActiveTimerShowRemoteRefreshTime' in setup.conf
+- [update] add 15:11 aspect in displaychannel and replay
+- [update] disk usage icons with 16 sections instead of 8
+- [update] widgets: system_information.g2v, temperatures.g2v, temperatures.default
+- [update] widgets: weather text size of temperature in long view
+- [add] support for message text with parse tilde and extra text color
+- [add] provide support for new SetMenuSortMode function, to show sort in menus
+- [add] recording menu, progressbar icon to show how much seen from the recording
+- [add] option to allways show date in schedule menu. 'Plugin settings' -> 'Menu settings' -> 'Menu event view allways with date'
+
+2014-12-04: Version 0.5.0
+- [fix] femon receiver - do not get data from previous channel
+- [fix] display replay jump text position
+- [add] main menu widgets
+    - there are several widgets that can be displayed in the main menu
+        - Widget weather
+        - Widget dvb devices
+        - Widget active timer
+        - Widget timer conflicts
+        - Widget last recordings
+        - Widget system information
+        - Widget system updates
+        - Widget temperatures
+        - Widget custom command
+    - please see the example scripts and README-files
+- [add] weather widget in channelinfo and replayinfo
+- [add] option Weather widget font size
+- [add] poster/banner image in replay info
+- [add] dimm on pause feature
+    you can set a timeout and the opaque value. If You press pause while replaying the display will be dimmed after the timeout
+- [update] default themes
+    - background transparency slightly reduced
+    - use color palette of android material design
+    - default accent color is "Light Blue"
+    - add more default themes: DeepOrange, DeepPurple, Indigo, Red, Teal
+- [update] icons
+    - update many icons with android material design icons
+- [update] MV-Themes
+    - see MV_Themes.HISTORY
+- [update] display replay, in mode only only show small version
+- [update] remove fonts from contrib folder
+    they waste to much space, if you need them, grab it from previous version
+- [update] Makefile
+    rename VDRLOGO to SKINFLATPLUS_VDRLOGO
+    new variable SKINFLATPLUS_WIDGETDIR for specify the path to the widgets
+
+2014-10-29: Version 0.4.3
+- [add] option to draw the menu background over the entire height
+- [add] sort icon in recordings menu
+- [add] options to show the number of recordings in title in recording menu
+- [add] hidden options "ShortRecordingCount" to show number of recordings in short format
+- [add] options to show the number of timers in title in timer menu
+- [add] options to show the number of channels in title in channel menu
+- [add] inactive timer icon in short view with epg
+- [add] fsk, genre text in epg/recording info (show additional epg info must be set) (thanks to MegaV0lt)
+- [add] fsk, genre icon in epg/recording info head (show additional epg info must be set) (thanks to MegaV0lt)
+- [update] german translation (thanks to MegaV0lt)
+
+2014-08-10: Version 0.4.2
+- [update] change direcotry of config-files
+
+2014-08-10: Version 0.4.1
+- [add] option to hide "clock" text
+- [add] option to set program past/remaining time format (past/remaining, past, remaining)
+- [update] plugin settings column width from 30 to 35
+- [update] fnu anthra themes (thanks to Frank [fnu@vdr-portal])
+
+2014-08-09: Version 0.4.0
+- [update] topbar position of text
+- [update] MVThemes
+        new preview images in "preview" folder
+- [add] Textscroller support
+        - text in displaychannel for epg-text and epgshort-text
+        - messages
+        - menu item channel
+        - menu item timer
+        - menu item recording
+        - menu item event
+- [add] new plugin icons
+- [add] new icon 169w screen resolution icon
+- [add] options to save and load settings
+        You can save the current settings in a config file, the config file will be named with current date & time.
+        You can then rename the file manually.
+        Also You can load a specific config file.
+        So You can save your preferred config and test others.
+- [add] new options in general settings for textscroller
+- [add] new option "Diskusage free/occupied" to show free or occupied percantage and hours
+- [add] new option "Diskusage short display" for only show percantage and free/occupied hours
+- [add] new option "TopBar clock font scale" to scale the clock font
+- [add] new option "Time seconds font scale" to scale the seconds in recording view (thanks MegaV0lt + Lars for help)
+- [add] new option "Show video/audio bitrate" to show the bitrate of audio/video in display channel (lent code from femon, thanks!)
+        new hidden config "ChannelBitrateShowCalcInterval" to set the interval of the video/audio bitrate calculation
+- [add] image _cur version for recording_cutted, recording_new, timer_full, timer_partial, vps
+        if it is the current/selected menu item the cur version of the image will be loaded
+- [add] Support for scrollbar type and size like border and progressbar
+        You can specify the scrollbar type and size in the decor file (ScrollBarType & ScrollBarSize)
+        You can also override the type and size in the setup
+        8 Types:
+            * 0 = left line + rect bar
+            * 1 = left line + round bar
+            * 2 = middle line + rect bar
+            * 3 = middle line + round bar
+            * 4 = outline + rect bar
+            * 5 = outline + round bar
+            * 6 = rect bar
+            * 7 = round bar
+- [update] decor-files for new scrollbar options
+- [fix] position in menu item event
+- [fix] wrong margin of folder icon in recordings menu
+
+2014-06-19: Version 0.3.1
+- [fix] epg image position on channel info
+- [fix] Bug #1847 - SetRecording border with deleteresume.patch
+- [fix] test if decor-files are installed in setup
+- [fix] correct cut text on tab size
+- [update] tvscraper service api. ! Use only with new TVScraper Version 0.2.0 or greater !
+- [update] crypted.png
+- [update] use 10_rect_sml.decor as default
+- [update] MV-Themes
+- [update] left align number recordings of folders in recording view
+- [update] Makefile, add --remove-destination to install icons, to override symlinks
+- [update] use icons instead of xpm-symbols (new icons are text_???)
+- [add] theme colors clrMenuEventTitleLine and clrMenuRecTitleLine for the line under title in event and recording
+- [add] theme color clrChannelEPGBorderFg and clrChannelEPGBorderBg for border color of epg image in chanel info
+- [add] decor option ChannelEPGBorderType and ChannelEPGBorderSize for border of epg image in chanel info
+- [add] patch - load epg image cover_vdr.jpg in recordings folder (thanks to Saman@vdr-portal.de)
+- [add] new option message color position (vertical, horizontal)
+- [add] message icons
+
+2014-05-11: Version 0.3.0
+- [fix] use only current Event in extraevent display in displaychannel
+- [fix] SetRecording border with deleteresume.patch
+- [fix] recording menu with cutted recordings an %
+- [fix] all around some small fixes
+- [update] channel logo in wide format (like 3PO or Copperhead logos)
+- [update] complete rewrite multiline content
+- [update] draw timer menu with a straight table
+- [update] README, teile vom Wiki in README-Datei übernommen
+- [add] show reruns in epg info (lent code from nopacity, thanks!)
+- [add] TVScraper support
+        - show poster images of movies and series
+        - show actor images
+- [add] scraper2vdr support
+        - show poster images of movies and series
+        - show actor images
+        - show movies and series information
+- [add] plugin settings for TVScraper/scraper2vdr
+- [add] more options to show disk usage (not show; timer & recording menu; always on the menu; always show)
+- [add] horizontal line and group icon in SetItemEvent for group channels
+- [add] new fnu_anthra_themes (thank You fnu/Frank)
+- [add] eventsview-flatplus.sql for epgd to prevent double information in epg-text, please see wiki for more information
+- [add] parse tilde in timer menu and draw text after tilde with clrMenuItemExtraTextFont
+
+2014-03-25: Version 0.2.1
+- [fix] epgsearch progessbar in SetItemEvent, if epg start time is after now (2 minutes tolerance)
+- [fix] channel logo in topbar in program menu
+- [fix] reply info background color
+- [fix] display channel progressbar while zapping
+- [update] imagecache, pre load images after skin is loaded
+           new menu item under general to show the amount of cached images
+           debug syslog message if cache is overflow
+- [update] display signal quality in displaychannel one above the other (before side by side)
+- [update] you can configure to use colors for signal quality (works only with ProgresType big line + outline)
+- [update] only update signal quality if the values for STR or SNR changed
+- [add] theme color clrMenuItemExtraTextCurrentFont
+- [add] logo background for channel logos (filename: logo_background.png)
+- [add] show cutted length of recording in replay info
+- [add] update script to update MV-Themes (contrib/flatPlus_MV_Update.sh)
+- [add] timer conflicts in TopBar, active epgsearch is needed, configurable via menu settings
+        you can configure a min value at which it will shown in red (otherwise yellow)
+- [add] display audio channel icons in audio tracks menu
+
+2014-02-22: Version 0.2.0
+- [fix] load user decor settings
+- [fix] menu scrollbar size and margin
+- [fix] no scrollbar in some situations
+- [fix] remove button border if button is not shown
+- [fix] menuitem progressbar overlay itemtext
+- [fix] fixes in TopBar while icon set
+- [fix] setup, wrong init stringlist
+- [fix] more small fixes
+- [update] add Patch from MegaV0lt, support for simple aspect & format, new icons
+- [update] only log not loaded images
+- [update] MV-Themes, thanks MegaV0lt!
+- [add] theme colors clrMenuTextFixedFont, clrMenuTimerItemDisabledFont, clrMenuTimerItemRecordingFont,
+    clrMenuItemExtraTextFont
+- [add] add support for menu SetItemChannel
+- [add] add support for menu SetItemTimer
+- [add] add support for menu SetItemEvent (program menu)
+- [add] add support for menu SetItemRecording
+- [add] imagescaler from skin nopacity (thank you!)
+- [add] imagecache for faster image loading
+- [add] option MenuItemRecordingClearPercent set to 1 to clear the '%' in recording names (you have an cut icon to detect cutted recordings)
+- [add] option MenuItemRecordingShowFolderDate to show the date in the folder item from the newest/oldest recording in that folder (0 = disable, 1 = newest recording date, 2 = oldest recording date)
+- [add] option MenuItemParseTilde for parse the tilde (of epgsearch) and draw the text after the tilde in clrMenuItemExtraTextFont color
+- [add] define DEBUGIMAGELOADTIME for debug output of imageloader time (search in cache, load from disk, scale)
+
+
+2013-11-24: Version 0.1.0 - MegaV0lt Version
+Special thanks to MegaV0lt@VDR-Portal for
+detailed bug reports, feature requests, testing and themes + icons
+
+!!!
+Please delete previous themes and icons!
+!!!
+
+- [fix] many small fixes
+- [fix] marker position
+- [fix] borders displaced
+- [fix] icon size in channel display
+- [update] menu has full width if no scrollbar is needed
+- [update] TopBar date align right
+- [update] channel display icons
+- [update] show recording in display channel for present and following
+- [update] do not DisplayChannel for the first time
+- [update] remove decor settings from themes and add separately decor files.
+           You can select decor file from plugin settings.
+           WARNING: Please delete all old themes!
+- [add] free minutes in disk usage TopBar
+- [add] TopBar font size option (select individual font size for TopBar)
+- [add] message bottom offset option (select the offset of bottom screen for messages)
+- [add] menu items symbols for rec, timer, etc. Lent code from skin elchi (thank you!)
+- [add] option menu content full size background (draw menu background for full menu size
+        or only for content size)
+- [add] option to display resolution & aspect in display channel
+- [add] option do display format (hd/sd) in display channel
+- [add] option to display resolution & aspect in replay
+- [add] option do display format (hd/sd) in replay
+- [add] default logo for channels without channel logo (logo for tv and radio)
+- [add] use icon from default theme if current theme does not have the icon
+- [add] option to show additional info in epg menu. Lent code from skin elchi (thank you!)
+- [add] option to show additional info in recording menu. Lent code from skin elchi (thank you!)
+- [add] option to show active recording in TopBar
+- [add] menu icons (lent some code from skin nopacity, thanks!)
+- [add] TopBar menu icons
+- [add] many themes, icons, etc. - many thanks for MegaV0lt!
+
+
+2013-09-23: Version 0.0.1
+difference to skinflat
+- [add] configurable borders
+        - any window have its own border with separate size and type
+        - 6 border types:
+            rect, round, invert round,
+            rect + alpha blend, round + alpha blend, invert round + alpha blend
+        - configurable by theme or user
+- [add] configurable progressbar
+        - any progressbar have its own size and type
+        - 10 progressbar types:
+            small line + big line, big line, big line + outline,
+            small line + big line + dot, big line + dot, big line + outline + dot,
+            small line + dot, outline + dot, small line + big line + alpha blend,
+            big line + alpha blend
+        - configurable by theme or user
+- [add] channel icons for resolution, recording, encrypted (configurable)
+- [add] show disk usage in topbar @ menu recordings & timer
+- [add] show disk usage pie graph
+- [add] show signal strength and quality (configurable)
+- [add] hide empty color buttons (configurable)
+- [add] configure menu item padding
+- [add] configure osd margin

@@ -1,0 +1,16 @@
+Source: vdr-plugin-scheduler
+Section: video
+Priority: extra
+Maintainer: Holger Schvestka <hotzenplotz5@gmx.de>
+Build-Depends: debhelper (>> 7), cdbs, vdr-dev (>= 1.7.14)
+Standards-Version: 3.9.1
+Homepage: http://winni.vdr-developer.org/scheduler
+
+Package: vdr-plugin-scheduler
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin that allows to control external jobs from within VDR
+ This plugin for the Linux Video Disc Recorder (VDR) allows to control 
+ external jobs from within VDR. This is especially useful if your 
+ VDR is not running continiously. Sample 
+ applications could be an EPG update or backups.

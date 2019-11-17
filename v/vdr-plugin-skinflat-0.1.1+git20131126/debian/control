@@ -1,0 +1,26 @@
+Source: vdr-plugin-skinflat
+Section: video
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config, gettext, libmagick++-dev, libpng-dev, libcurl4-openssl-dev
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/skin-nopacity
+
+Package: vdr-plugin-skinflat
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: skinflat Based on skin-nOpacity from Louis Braun
+ skinflat is a highly customizable true color skin for the
+ on-screen-display (OSD) of the Linux Video Disc Recorder VDR.
+
+Package: vdr-plugin-skinflat-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-skinflat (= ${binary:Version}), ${misc:Depends}
+Description: skinflat for VDR - debugging symbols
+ skinflat is a highly customizable true color skin for the
+ on-screen-display (OSD) of the Linux Video Disc Recorder VDR.
+ .
+ This package contains the debugging symbols.

@@ -1,0 +1,8 @@
+#!/bin/sh
+
+
+chmod 755 /var/lib/vdr/plugins/seduatmo/seduconf.pl
+chown vdr:vdr /var/lib/vdr/plugins/seduatmo/seduconf.pl
+
+#DEBHELPER#
+

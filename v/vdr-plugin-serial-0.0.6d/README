@@ -1,0 +1,17 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Ralf Klueber <r@lf-klueber.de>
+
+Project's homepage:          http:/www.lf-klueber.de/vdr.htm
+
+See the file COPYING for license information.
+
+Description:
+This plugin allows using a homebrew frontpanel as a remote control for 
+VDR. For details see circuit.jpg.
+To use the plugin your homebrew frontpanel has to be connected to your 
+serial Port.
+
+When the plugin is loaded for the first time, vdr will prompt you to
+learn the keys of the hombrew frontpanel.
+

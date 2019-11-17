@@ -1,0 +1,28 @@
+# VDR plugin language source file.
+# Copyright (C) 2008 Martin Schirrmacher <vdr.skinflat@schirrmacher.eu>
+# This file is distributed under the same license as the skinflat package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skinflat 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-08-18 22:35+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "clock"
+msgstr "Uhr"
+
+msgid "disk usage"
+msgstr ""
+
+msgid "free space"
+msgstr ""
+
+msgid "Volume"
+msgstr "Lautstärke"

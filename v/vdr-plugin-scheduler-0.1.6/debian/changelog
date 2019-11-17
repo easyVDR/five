@@ -1,0 +1,353 @@
+vdr-plugin-scheduler (0.1.6-5easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:12:31 +0100
+
+vdr-plugin-scheduler (0.1.6-5easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 00:58:34 +0100
+
+vdr-plugin-scheduler (0.1.6-5easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Nov 2017 01:08:31 +0100
+
+vdr-plugin-scheduler (0.1.6-5easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 04 Jul 2017 17:52:19 +0200
+
+vdr-plugin-scheduler (0.1.6-5easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:55:14 +0200
+
+vdr-plugin-scheduler (0.1.6-5easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:41:10 +0200
+
+vdr-plugin-scheduler (0.1.6-5easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:43:22 +0200
+
+vdr-plugin-scheduler (0.1.6-5easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:02:46 +0200
+
+vdr-plugin-scheduler (0.1.6-5easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:46:06 +0100
+
+vdr-plugin-scheduler (0.1.6-5easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 00:18:47 +0100
+
+vdr-plugin-scheduler (0.1.6-4easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:21:33 +0200
+
+vdr-plugin-scheduler (0.1.6-4easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 03:59:47 +0100
+
+vdr-plugin-scheduler (0.1.6-4easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de.de>  Tue, 24 Mar 2015 03:19:18 +0100
+
+vdr-plugin-scheduler (0.1.6-0yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Wed, 02 Apr 2014 22:12:22 +0200
+
+vdr-plugin-scheduler (0.1.6-0yavdr2~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 23 Mar 2014 16:07:02 +0100
+
+vdr-plugin-scheduler (0.1.6-0yavdr1~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:42:23 +0200
+
+vdr-plugin-scheduler (0.1.6-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 15 Sep 2013 11:43:29 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr34~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:11:14 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr33~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:05:28 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr32~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:29:36 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr31~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Tue, 02 Apr 2013 19:54:42 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr30~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:55:40 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr29~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:06:35 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr27~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:56:54 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr26~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:32:13 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr25~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:30:17 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr24~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:13:22 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr23~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:59:01 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr22~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:10:48 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr21~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:40:05 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr20~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:20:00 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr19~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:28:04 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr18~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:20:04 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr17~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:19:03 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr16~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 09:03:10 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr15~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Feb 2012 20:10:16 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr15~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 29 Dec 2011 11:14:02 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr14~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:40:37 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr13~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 24 Dec 2011 11:29:01 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr12~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 17 Oct 2011 15:39:28 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr11~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 05 Sep 2011 18:25:10 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr10~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 25 Aug 2011 17:59:12 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr9~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 18 Aug 2011 20:07:39 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr8~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 15 Jun 2011 13:49:32 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr7~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 14 Jun 2011 20:46:36 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr6~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 25 May 2011 13:57:24 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr5~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 22 May 2011 22:58:37 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr4~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Tue, 19 Apr 2011 19:56:33 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr3~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Sun, 03 Apr 2011 22:16:05 +0200
+
+vdr-plugin-scheduler (0.1.5-8yavdr2~natty) natty; urgency=low
+
+  * rebuild
+
+ -- Marco Scholl <develop@marco-scholl.de>  Tue, 22 Mar 2011 23:13:33 +0100
+
+vdr-plugin-scheduler (0.1.5-8yavdr1~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Mon, 14 Mar 2011 22:19:06 +0100
+
+vdr-plugin-scheduler (0.1.5-7yavdr1~natty) natty; urgency=low
+
+  * natty migration
+
+ -- Marco Scholl <develop@marco-scholl.de>  Thu, 03 Mar 2011 09:07:30 +0100
+
+vdr-plugin-scheduler (0.1.5-6yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Fri, 18 Feb 2011 23:26:08 +0100
+
+vdr-plugin-scheduler (0.1.5-5yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 15 Feb 2011 14:50:46 +0100
+
+vdr-plugin-scheduler (0.1.5-4yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 10 Feb 2011 08:38:03 +0100
+
+vdr-plugin-scheduler (0.1.5-3yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 09 Feb 2011 01:05:33 +0100
+
+vdr-plugin-scheduler (0.1.5-2yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 08 Feb 2011 23:16:39 +0100
+
+vdr-plugin-scheduler (0.1.5-1yavdr1) lucid; urgency=low
+
+  * reb. vdr-1.7.16 unstable repo
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 16 Jan 2011 21:49:19 +0100
+
+vdr-plugin-scheduler (0.1.5-0yavdr0) lucid; urgency=low
+
+  * Initial Release.
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 09 Jan 2011 21:00:59 +0200

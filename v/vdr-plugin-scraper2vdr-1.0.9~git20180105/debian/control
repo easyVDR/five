@@ -1,0 +1,25 @@
+Source: vdr-plugin-scraper2vdr
+Section: video
+Priority: extra
+Maintainer: Reiner Paulus <flex0r@gmx.net>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: cdbs, debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config, libmysqlclient-dev,
+               uuid-dev, libssl-dev, libmagick++-dev, imagemagick, libcurl4-gnutls-dev, libjpeg-turbo8-dev, libimlib2-dev              
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/plg-scraper2vdr
+
+Package: vdr-plugin-scraper2vdr
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR SCRAPER2VDR Plugin
+ VDR SCRAPER2VDR Plugin of client/server EPG/SCRAPER solution based on a MySQL database for VDR
+
+Package: vdr-plugin-scraper2vdr-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-scraper2vdr (= ${binary:Version}), ${misc:Depends}, ${vdr:Depends}
+Description: debugging symbols for vdr-plugin-scraper2vdr
+ .
+ This package contains only the debugging symbols for vdr-plugin-scraper2vdr
+

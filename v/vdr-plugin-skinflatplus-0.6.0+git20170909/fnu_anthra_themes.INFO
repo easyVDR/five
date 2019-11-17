@@ -1,0 +1,42 @@
+flatPlus-fnuanthra*.themes created on 12.04.2014
+
+base theme: flatPlus-fnuanthrared.theme, base icons: fnuanthrared
+
+theme: red, highlights: #BC0000, background: #000000, foreground: #404040
+theme: amber, highlights: #FFBF00, background: #000000, foreground: #404040
+theme: ivory, highlights: #DED09F, background: #000000, foreground: #404040
+theme: cutis, highlights: #F89168, background: #000000, foreground: #404040
+theme: green, highlights: #00CD00, background: #000000, foreground: #404040
+theme: lilac, highlights: #CA90CB, background: #000000, foreground: #404040
+theme: yablue, highlights: #4E78B1, background: #000000, foreground: #404040
+
+These are flat anthra style themes following good old anthra packages from Tomas Saxer
+for vdr-plugin-text2skin. As with the originals, base theme is red highlighted. Authors
+favorit is amber highlighted, one for yaVDR family is yablue highlighted and some more.
+
+Themes are black, anthrazit, grey style with some accents in given colors and like the
+original themes with a white logo base. All kept flat to fit into strenght of skinflatplus.
+
+Author does recommend to use "round big" decor and nopacity-default logos from Copperhead,
+because of the white logo base:
+
+- http://creimer.net/channellogos/
+
+vdr-plugin-femon does fit with this settings to these anthra style themes:
+
+femon.AnalStream = 1
+femon.CalcInterval = 20
+femon.DisplayMode = 0
+femon.Downscale = 1
+femon.GreenLimit = 66
+femon.HideMenu = 0
+femon.Position = 1
+femon.RedLimit = 33
+femon.ServerIp = 0.0.0.0
+femon.ServerPort = 6419
+femon.Skin = 1
+femon.Theme = 9
+femon.UpdateInterval = 5
+femon.UseSvdrp = 0
+
+(C) 2014 Frank Neumann <fnu@yavdr.org>

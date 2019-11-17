@@ -1,0 +1,11 @@
+9 PIN-connector 25 PIN-connector Name Dir Description 
+1               8  CD  input Carrier Detect 
+2               3  RXD input Receive Data 
+3               2  TXD output Transmit Data 
+4              20  DTR output Data Terminal Ready 
+5               7  GND -- System Ground 
+6               6  DSR input Data Set Ready 
+7               4  RTS output Request to Send 
+8               5  CTS input Clear to Send 
+9              22  RI  input Ring Indicator 
+

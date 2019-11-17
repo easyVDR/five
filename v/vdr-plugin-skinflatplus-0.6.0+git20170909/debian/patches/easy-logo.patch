@@ -1,0 +1,13 @@
+Index: vdr-plugin-skinflatplus-0.6.0+git20170909/Makefile
+===================================================================
+--- vdr-plugin-skinflatplus-0.6.0+git20170909.orig/Makefile	2017-09-10 00:01:18.925516499 +0200
++++ vdr-plugin-skinflatplus-0.6.0+git20170909/Makefile	2017-09-10 00:15:19.825686297 +0200
+@@ -23,7 +23,7 @@
+ #   vdrlogo_xubuntu
+ #   vdrlogo_xubuntu2
+ #   vdrlogo_yavdr
+-SKINFLATPLUS_VDRLOGO = vdrlogo_default
++SKINFLATPLUS_VDRLOGO = vdrlogo_easyvdr
+ 
+ #DEFINES += -DDEBUGIMAGELOADTIME
+ #DEFINES += -DDEBUGEPGTIME

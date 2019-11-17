@@ -1,0 +1,24 @@
+Source: vdr-plugin-serial
+Section: video
+Priority: extra
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8.0.0), vdr-dev (>= 1.7.27), pkg-config
+Standards-Version: 3.9.4
+
+
+Package: vdr-plugin-serial
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR plugin for a frontpanel connected to the serial port
+ This plugin allows using a homebrew frontpanel connected to the serial port as
+ a remote control for VDR.
+ 
+Package: vdr-plugin-serial-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-serial (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-serial
+ .
+ This package contains only the debugging symbols for vdr-plugin-serial 

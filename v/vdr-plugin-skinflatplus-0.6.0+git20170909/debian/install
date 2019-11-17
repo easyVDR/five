@@ -1,0 +1,3 @@
+debian/plugin.skinflatplus.conf    etc/vdr/plugins/
+debian/40_skinflatplus_refresh_weather  usr/share/vdr/after-vdr-hooks/
+widgets  usr/lib/vdr/skinflatplus/

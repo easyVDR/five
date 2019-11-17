@@ -1,0 +1,212 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Klaus Schmidinger <kls@cadsoft.de>, 2000
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.6.0\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-01-28 19:43+0100\n"
+"PO-Revision-Date: 2007-11-04 15:38+0100\n"
+"Last-Translator: Patrice Staudt <see README>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Error"
+msgstr "Erreur"
+
+msgid "left channel"
+msgstr "Canal gauche"
+
+msgid "right channel"
+msgstr "Canal droit"
+
+msgid " timer conflicts! "
+msgstr " conflits de programmation! "
+
+msgid "Next recording"
+msgstr "Prochain enregistrement"
+
+msgid "Picture"
+msgstr "Image"
+
+msgid "loading"
+msgstr "chargement"
+
+msgid "No picture"
+msgstr "pas d'image"
+
+msgid "available"
+msgstr "disponible"
+
+msgid "Video"
+msgstr "Vidéo"
+
+msgid "Audio"
+msgstr "Audio"
+
+msgid "Subtitle"
+msgstr "Sous-titres"
+
+msgid "Length"
+msgstr "Longueur"
+
+msgid "cutted"
+msgstr "coupé"
+
+msgid "Size"
+msgstr "Taille"
+
+msgid "format"
+msgstr ""
+
+msgid "bit rate"
+msgstr "bit-rate"
+
+msgid "additional information"
+msgstr ""
+
+msgid "channel"
+msgstr "Canal"
+
+msgid "search pattern"
+msgstr ""
+
+msgid "skinelchi"
+msgstr "skinelchi"
+
+msgid "Colors"
+msgstr "Couleur"
+
+msgid "theme name"
+msgstr "nom du theme"
+
+msgid "General"
+msgstr "Général"
+
+msgid "don't show"
+msgstr "ne rien afficher"
+
+msgid "pixel algo"
+msgstr "algorithme pixel"
+
+msgid "ratio algo"
+msgstr "Algotithme de proportion"
+
+msgid "zoom image"
+msgstr "zoom image"
+
+msgid "aspect ratio"
+msgstr "proportionalité"
+
+msgid "size and aspect ratio"
+msgstr "taille et proportion"
+
+msgid "Timer-Conflict"
+msgstr "Conflit de programmation"
+
+msgid "all"
+msgstr "tous"
+
+msgid "never"
+msgstr "jamais"
+
+msgid "only if new mail present"
+msgstr "uniquement si nouveau courriel"
+
+msgid "always"
+msgstr "toujours"
+
+msgid "EPG+Details"
+msgstr "Détails EPG"
+
+#, fuzzy
+msgid "EPG+Details+Genre"
+msgstr "Détails EPG"
+
+msgid "use one 8bpp area (if possible)"
+msgstr "Utiliser un domaine de 8Bpp (si possible)"
+
+msgid "scroll text"
+msgstr "Texte défillant"
+
+msgid "show timer and conflict in menu"
+msgstr ""
+
+msgid "show recording details"
+msgstr ""
+
+msgid "show EPG details"
+msgstr "Afficher Détails EPG"
+
+msgid "show video format info (if available)"
+msgstr ""
+
+msgid "show mail icon"
+msgstr "Afficher l'icone courriel"
+
+msgid "use graphic progressbar"
+msgstr "Utiliser la barre d'avancement graphique"
+
+msgid "show symbols"
+msgstr "Afficher symboles"
+
+msgid "EPG picture size"
+msgstr "EPG taille image"
+
+#. TRANSLATORS: note the two leading spaces
+msgid "  duration of each EPG image [s]"
+msgstr "  durée par image [s]"
+
+#. TRANSLATORS: note the two leading spaces
+msgid "  resize algorithm"
+msgstr "  algorithme de recalcul de taille"
+
+msgid "Channel Display"
+msgstr "Chaîne affichée"
+
+msgid "only if recording"
+msgstr "seulement pendant l'enregistrement"
+
+msgid "show recording Info"
+msgstr "afficher info d'enregistrement"
+
+msgid "show channel logos"
+msgstr "Logos chaîne visible"
+
+msgid "use HQ-logos"
+msgstr "utiliser logos Haute Définition"
+
+msgid "try to load logo first by"
+msgstr "charger les logo suivant"
+
+msgid "Channel ID"
+msgstr "ID de la chaîne"
+
+msgid "Channel Name"
+msgstr "Nom de la chaîne"
+
+msgid "display logo messages in syslog"
+msgstr "écrire les messages logo dans syslog"
+
+msgid "Elchi skin"
+msgstr "Interface Elchi"
+
+msgid "Elchi"
+msgstr "Elchi"
+
+msgid "Digital"
+msgstr "Numérique"
+
+msgid "Stereo"
+msgstr "Stéréo"
+
+msgid "Left channel"
+msgstr "Canal gauche"
+
+msgid "Right channel"
+msgstr "Canal droit"

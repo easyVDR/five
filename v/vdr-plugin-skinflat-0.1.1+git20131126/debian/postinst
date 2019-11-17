@@ -1,0 +1,12 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+
+
+    # Change owner of directory, symlink and chmod
+      chown -R vdr:vdr /var/lib/vdr/themes
+
+fi
+
+#DEBHELPER#

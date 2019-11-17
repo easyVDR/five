@@ -1,0 +1,17 @@
+Fix compilation error for imagemagick by using pkg-config
+
+Index: vdr-plugin-skinenigmang-0.1.2+git20130305/Makefile
+===================================================================
+--- vdr-plugin-skinenigmang-0.1.2+git20130305.orig/Makefile
++++ vdr-plugin-skinenigmang-0.1.2+git20130305/Makefile
+@@ -130,8 +130,8 @@ OBJS = $(PLUGIN).o enigma.o config.o log
+ ifdef HAVE_IMAGEMAGICK
+ OBJS += bitmap.o
+ ifneq ($(HAVE_IMAGEMAGICK), GRAPHICS)
+-LIBS += -lMagick++
+-INCLUDES += -I/usr/include/ImageMagick -I/usr/local/include/ImageMagick
++LIBS += $(shell pkg-config --libs Magick++)
++INCLUDES += $(shell pkg-config --cflags Magick++)
+ else
+ LIBS += $(shell pkg-config --libs GraphicsMagick++)
+ INCLUDES += $(shell pkg-config --cflags GraphicsMagick++)

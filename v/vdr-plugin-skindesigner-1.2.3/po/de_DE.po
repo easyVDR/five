@@ -1,0 +1,184 @@
+# Copyright (C) 2014
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <louis.braun@gmx.de>, 2014.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-skindesigner 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2016-07-03 07:31+0200\n"
+"PO-Revision-Date: 2014-09-27 11:02+0200\n"
+"Last-Translator: Louis Braun <louis.braun@gmx.de>\n"
+"Language-Team: \n"
+"Language: de_DE \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Skin successfully installed"
+msgstr "Skin installiert"
+
+msgid "Skin NOT successfully installed"
+msgstr "Skin NICHT installiert"
+
+msgid "Timeout"
+msgstr ""
+
+msgid "Installing Skin"
+msgstr "Installiere Skin"
+
+msgid "sec"
+msgstr "sek"
+
+msgid "Skin successfully updated"
+msgstr "Skin erfolgreich aktualisiert"
+
+msgid "Skin already up to date"
+msgstr "Skin ist auf aktuellem Stand"
+
+msgid "Updating Skin from Git"
+msgstr "Aktualisiere Skin aus dem Git"
+
+msgid "after one another"
+msgstr "eines nach dem anderen"
+
+msgid "at one go"
+msgstr "alle auf einmal"
+
+msgid "Updating Skinrepositories"
+msgstr "Aktualisiere Skinrepositories"
+
+msgid "Downloading Skin Screenshots..."
+msgstr "Lade Skin Screenshots..."
+
+msgid "Install Skin"
+msgstr "Installiere Skin"
+
+msgid "Update"
+msgstr "Aktualisieren"
+
+msgid "Delete Skin"
+msgstr "Skin löschen"
+
+msgid "Skin Designer"
+msgstr "Skin Designer"
+
+msgid "version"
+msgstr "Version"
+
+msgid "or higher"
+msgstr "oder höher"
+
+msgid "needed"
+msgstr "benötigt"
+
+msgid "No Git Repository available"
+msgstr "Kein Git Repository verfügbar"
+
+msgid "Skin is running and can't be deleted"
+msgstr "Skin ist aktiv und kann nicht gelöscht werden"
+
+msgid "Really delete skin"
+msgstr "Skin wirklich löschen"
+
+msgid "Skin deleted"
+msgstr "Skin gelöscht"
+
+msgid "Plugin Setup"
+msgstr ""
+
+msgid "Frames per Second to display animations"
+msgstr "Frames pro Sekunde für Animationen"
+
+msgid "Maximum number of custom tokens"
+msgstr "Maximale Anzahl Custom Tokens"
+
+msgid "Reruns"
+msgstr "Wiederholungen"
+
+msgid "Maximum number of reruns to display"
+msgstr "Anzahl anzuzeigender Wiederholungen"
+
+msgid "Minimum timely distance of rerun (in hours)"
+msgstr "Zeitl. Abstand der Wiederholung (in h)"
+
+msgid "Limit Channel Numbers"
+msgstr "Kanalnummern begrenzen"
+
+msgid "no limit"
+msgstr "unbegrenzt"
+
+msgid "Image Loading"
+msgstr "Bilder"
+
+msgid "Debug Image Loading"
+msgstr "Debugausgabe für das Laden der Bilder"
+
+msgid "Cache icons, skinparts and logos at start"
+msgstr "Icons, Skinparts und Logos beim Start cachen"
+
+msgid "Limit Channel Logo Cache"
+msgstr "Größe des Kanallogo Caches bechränken"
+
+msgid "Number to cache initially (per size)"
+msgstr "Anzahl der initial zu cachenden Logos"
+
+msgid "Number to cache in maximum"
+msgstr "Maximale Anzahl zu cachender Logos"
+
+msgid "Cache Statistics"
+msgstr "Cache Statistik"
+
+msgid "cached"
+msgstr "cached"
+
+msgid "icons"
+msgstr "Icons"
+
+msgid "size"
+msgstr "Größe"
+
+msgid "MB"
+msgstr ""
+
+msgid "int. memory"
+msgstr "int. Speicher"
+
+msgid "high level memory"
+msgstr "High Level Speicher"
+
+msgid "logos"
+msgstr "Logos"
+
+msgid "skinparts"
+msgstr "Skinparts"
+
+msgid "Skin Setup"
+msgstr ""
+
+msgid "Skin"
+msgstr ""
+
+msgid "has no setup"
+msgstr "hat kein Setup"
+
+msgid "Install new skins"
+msgstr "Weitere verfügbare Skins"
+
+msgid "Preview Skin"
+msgstr "Skin Vorschau"
+
+msgid "Help"
+msgstr "Hilfe"
+
+msgid "Preview"
+msgstr ""
+
+msgid "Author"
+msgstr "Autor"
+
+msgid "Used Fonts"
+msgstr "Benutze Schriftarten"
+
+msgid "Supported Plugins"
+msgstr "Unterstützte Plugins"

@@ -1,0 +1,4 @@
+/etc/vdr/plugins/plugin.skindesigner.conf  /var/lib/vdr/plugins/skindesigner.conf
+/usr/lib/vdr/skindesigner/scripts/temperatures.mango /usr/lib/vdr/skindesigner/scripts/temperatures
+/usr/lib/vdr/skindesigner/scripts/vdrstats.mango /usr/lib/vdr/skindesigner/scripts/vdrstats
+/usr/share/vdr-skins/skinnopacity /usr/share/vdr/plugins/skindesigner/logos

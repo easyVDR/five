@@ -1,0 +1,73 @@
+Description = rect alpha sml
+# BORDER TYPES
+#   0 = none
+#   1 = rect
+#   2 = round
+#   3 = invert round
+#   4 = rect + alpha blend
+#   5 = round + alpha blend
+#   6 = invert round + alpha blend
+
+# PROGRESS TYPES
+#   0 = small line + big line
+#   1 = big line
+#   2 = big line + outline
+#   3 = small line + big line + dot
+#   4 = big line + dot
+#   5 = big line + outline + dot
+#   6 = small line + dot
+#   7 = outline + dot
+#   8 = small line + big line + alpha blend
+#   9 = big line + alpha blend
+
+# TopBar
+TopBarBorderType = 4
+TopBarBorderSize = 5
+
+# Buttons
+ButtonBorderType = 4
+ButtonBorderSize = 5
+
+# Messages
+MessageBorderType = 4
+MessageBorderSize = 5
+
+# Display Channel
+ChannelBorderType = 4
+ChannelBorderSize = 5
+ChannelEPGBorderType = 4
+ChannelEPGBorderSize = 5
+ChannelProgressType = 0
+ChannelProgressSize = 10
+ChannelSignalProgressType = 2
+ChannelSignalProgressSize = 10
+
+# Display Menu
+MenuContentHeadBorderType = 4
+MenuContentHeadBorderSize = 5
+MenuContentBorderType = 4
+MenuContentBorderSize = 5
+MenuItemBorderType = 4
+MenuItemBorderSize = 5
+MenuItemProgressType = 2
+MenuItemProgressSize = 20
+
+# Display Replay
+ReplayBorderType = 4
+ReplayBorderSize = 5
+ReplayProgressType = 0
+ReplayProgressSize = 32
+
+# Display Tracks
+TrackItemBorderType = 4
+TrackItemBorderSize = 5
+
+# Display Volume
+VolumeBorderType = 4
+VolumeBorderSize = 5
+VolumeProgressType = 3
+VolumeProgressSize = 10
+
+# Scrollbar
+ScrollBarType = 0
+ScrollBarSize = 10

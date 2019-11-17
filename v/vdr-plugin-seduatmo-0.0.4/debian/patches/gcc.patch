@@ -1,0 +1,11 @@
+--- a/Makefile.since-1.7.35
++++ b/Makefile.since-1.7.35
+@@ -49,7 +49,7 @@
+ 
+ INCLUDES +=
+ 
+-DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"'
++DEFINES += -DPLUGIN_NAME_I18N='"$(PLUGIN)"' -D__STL_CONFIG_H
+ 
+ ### The object files (add further files here):
+ 

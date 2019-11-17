@@ -1,0 +1,3 @@
+# SEDU Board USB
+# /lib/udev/rules.d/99-sedu-board.rules
+KERNEL=="ttyUSB?", OWNER="vdr", ATTRS{product}=="SEDU Board USB", SYMLINK+="ttySEDU"

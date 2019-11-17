@@ -1,0 +1,30 @@
+Source: vdr-plugin-satip
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Wolfgang Mangold <vdr@ygmx.de>
+Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), gettext, pkg-config, libcurl4-openssl-dev (>= 7.36.0), libpugixml-dev
+Standards-Version: 3.9.5
+Homepage: http://www.saunalahti.fi/~rahrenbe/vdr/satip/
+
+Package: vdr-plugin-satip
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: SAT>IP plugin for VDR
+ This plugin integrates SAT>IP network devices seamlessly into VDR.
+ You can use any SAT>IP channel like any other normal DVB channel for
+ live viewing, recording, etc. The plugin also features full section
+ filtering capabilities which allow for example EIT information to be
+ extracted from the incoming stream.
+ .
+ This release does actually not contain any channelscan, pls.
+ follow the README to setup entries manually for the channels.conf.
+
+Package: vdr-plugin-satip-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-satip (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-satip
+ .
+ This package contains only the debugging symbols for vdr-plugin-satip

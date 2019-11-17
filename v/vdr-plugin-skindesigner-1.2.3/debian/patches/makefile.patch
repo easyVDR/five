@@ -1,0 +1,13 @@
+Index: vdr-plugin-skindesigner-1.0.2~git20160501/Makefile
+===================================================================
+--- vdr-plugin-skindesigner-1.0.2~git20160501.orig/Makefile	2016-05-01 13:34:13.132654470 +0200
++++ vdr-plugin-skindesigner-1.0.2~git20160501/Makefile	2016-05-01 21:11:49.692804200 +0200
+@@ -5,7 +5,7 @@
+ 
+ # Config
+ CONFIG := #-DDOPROFILE			        # enable profiling code
+-CONFIG += #-DDO_NOT_USE_SKININSTALLER	# disable installer in skindesigner setup
++CONFIG += -DDO_NOT_USE_SKININSTALLER	# disable installer in skindesigner setup
+ 
+ # The official name of this plugin.
+ PLUGIN = skindesigner

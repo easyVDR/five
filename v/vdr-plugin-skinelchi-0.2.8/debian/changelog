@@ -1,0 +1,655 @@
+vdr-plugin-skinelchi (0.2.8-2easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:13:58 +0100
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 00:59:49 +0100
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Nov 2017 01:09:53 +0100
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 04 Jul 2017 20:27:51 +0200
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:56:19 +0200
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:42:22 +0200
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:43:56 +0200
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:03:33 +0200
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:46:46 +0100
+
+vdr-plugin-skinelchi (0.2.8-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 22:09:57 +0100
+
+vdr-plugin-skinelchi (0.2.8-1easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 18:52:42 +0200
+
+vdr-plugin-skinelchi (0.2.8-1easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:23:03 +0200
+
+vdr-plugin-skinelchi (0.2.8-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:01:29 +0100
+
+vdr-plugin-skinelchi (0.2.8-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:23:36 +0100
+
+vdr-plugin-skinelchi (0.2.8-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:29:01 +0100
+
+vdr-plugin-skinelchi (0.2.8-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:50:04 +0100
+
+vdr-plugin-skinelchi (0.2.8-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:53:56 +0200
+
+vdr-plugin-skinelchi (0.2.8-1easyVDR0~trusty) trusty; urgency=high
+
+  * add fix imagemagick
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 Jan 2014 21:25:36 +0100
+
+vdr-plugin-skinelchi (0.2.8-0easyVDR0~trusty) trusty; urgency=high
+
+  * add logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 31 Dec 2013 00:45:04 +0100
+
+vdr-plugin-skinelchi (0.2.8-1yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sun, 27 Oct 2013 09:09:58 +0100
+
+vdr-plugin-skinelchi (0.2.8-1yavdr4~precise) precise; urgency=medium
+
+  * automatic rebuild
+
+ -- yavdr package builder <release@yavdr.org>  Sat, 26 Oct 2013 10:42:48 +0200
+
+vdr-plugin-skinelchi (0.2.8-1yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 12 Sep 2013 13:11:33 +0200
+
+vdr-plugin-skinelchi (0.2.8-1yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Fri, 12 Jul 2013 01:05:47 +0200
+
+vdr-plugin-skinelchi (0.2.8-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:29:56 +0200
+
+vdr-plugin-skinelchi (0.2.8-1yavdr0~precise) precise; urgency=high
+
+  * New upstream version 
+
+ -- Frank Neumann <fnu@yavdr.org>  Wed, 17 Apr 2013 23:45:58 +0200
+
+vdr-plugin-skinelchi (0.2.7-3yavdr0~lucid) lucid; urgency=high
+
+  * rebuild for yavdr 0.3.4 
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 21 Mar 2013 01:29:27 +0100
+
+vdr-plugin-skinelchi (0.2.7-3yavdr0~precise) precise; urgency=medium
+
+  * debian/rules: read variables from vdr.pc
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 20 Mar 2013 20:43:31 +0100
+
+vdr-plugin-skinelchi (0.2.7-2yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 15:56:01 +0100
+
+vdr-plugin-skinelchi (0.2.7-2yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:06:55 +0100
+
+vdr-plugin-skinelchi (0.2.7-2yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 21:57:14 +0100
+
+vdr-plugin-skinelchi (0.2.7-2yavdr1~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Sun, 10 Mar 2013 21:33:05 +0100
+
+vdr-plugin-skinelchi (0.2.7-2yavdr0~precise) precise; urgency=medium
+
+  * refactored patch for vdr 1.7.33
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 06 Mar 2013 20:43:06 +0100
+
+vdr-plugin-skinelchi (0.2.7-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:30:34 +0100
+
+vdr-plugin-skinelchi (0.2.7-1yavdr0~precise) precise; urgency=medium
+
+  * add patch for vdr 1.7.33
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 18:52:33 +0100
+
+vdr-plugin-skinelchi (0.2.7-0yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:13:48 +0100
+
+vdr-plugin-skinelchi (0.2.7-0yavdr3~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 15:59:22 +0100
+
+vdr-plugin-skinelchi (0.2.7-0yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 21:50:22 +0100
+
+vdr-plugin-skinelchi (0.2.7-0yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:40:27 +0100
+
+vdr-plugin-skinelchi (0.2.7-0yavdr0~precise) precise; urgency=medium
+
+  * New Upstream Release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 15 Oct 2012 17:20:20 +0200
+
+vdr-plugin-skinelchi (0.2.6-0yavdr0~precise) precise; urgency=medium
+
+  * New Upstream Release
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:28:28 +0200
+
+vdr-plugin-skinelchi (0.2.5-0yavdr0~oneiric) oneiric; urgency=medium
+
+  * New upstream release
+  * Use bz2 tarballs
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:40:49 +0100
+
+vdr-plugin-skinelchi (0.2.4-1) experimental; urgency=low
+
+  * New upstream release
+  * Dropped dpatch, use source format 3.0(quilt)
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 12 Dec 2011 22:05:17 +0100
+
+vdr-plugin-skinelchi (0.2.3-1) experimental; urgency=low
+
+  * New upstream release
+  * Build-depend on vdr-dev (>= 1.7.21)
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 18 Sep 2011 21:08:14 +0200
+
+vdr-plugin-skinelchi (0.2.1-2) experimental; urgency=low
+
+  * Removed non-standard shebang line from debian/rules
+  * Added README.source
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 09 Nov 2009 20:53:37 +0100
+
+vdr-plugin-skinelchi (0.2.1-1) experimental; urgency=low
+
+  * New upstream release
+  * Standards-Version: 3.8.3
+  * Don't use absolute bin paths in maintainer scripts
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 03 Oct 2009 21:28:02 +0200
+
+vdr-plugin-skinelchi (0.2.1~beta2-1) experimental; urgency=low
+
+  * New upstream release
+  * Removed 01_disbale-default-options.dpatch
+  * Removed SKINELCHI_HAVE_IMAGEMAGICK from debian/rules (ImageMagick now
+    automatically activated)
+  * Removed DVBDIR from debian/rules
+  * Updated debian/copyright
+  * Changed Maintainer to Debian VDR Team
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 07 Jul 2009 22:36:36 +0200
+
+vdr-plugin-skinelchi (0.2.0-1) experimental; urgency=low
+
+  * New upstream release
+  * New upstream location (Updated debian/copyright and added debian/watch)
+  * Added homepage field
+  * Build-depend on libmagick++-dev instead of libmagick++9-dev
+  * Added 01_disbale-default-options.dpatch
+  * Removed 01_Makefile-fPIC-fix.dpatch
+  * Removed 92_vdr-skinelchi-0.1.1_pre2-vdr-1.5.5-getfont.dpatch
+  * Removed 02_kernel-headers-workaround.dpatch
+  * Removed 91_skinelchi-0.1.1pre2-1.5.0.dpatch
+  * Removed 03_const-warning-fixes.dpatch
+  * Removed 90_vdr-skinelchi-0.1.1pre2.PatchCollection.dpatch
+  * Updated 20_epgimage-path.dpatch
+  * Removed 93_vdr-1.5.15.dpatch
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 03 May 2009 21:19:09 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-14) experimental; urgency=low
+
+  * Release for vdrdevel 1.7.6
+  * Added ${misc:Depends}
+  * Bumped standards version to 3.8.1
+  * Changed section to "video"
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 29 Apr 2009 23:11:30 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-13) experimental; urgency=low
+
+  * Dropped patchlevel control field
+  * Build-Depend on vdr-dev (>=1.6.0-5)
+  * Bumped Standards-Version to 3.8.0
+  * Switched Build-System to cdbs, Build-Depend on cdbs
+  * Using COMPAT=5 now
+
+ -- Tobias Grimm <tg@e-tobi.net>  Fri, 25 Jul 2008 15:54:25 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-12) experimental; urgency=low
+
+  * Just build-depend on libmagick++9-dev - this will work for
+    Etch, Sid and Ubuntu Hardy
+
+ -- Tobias Grimm <tg@e-tobi.net>  Thu, 22 May 2008 21:41:50 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-11) experimental; urgency=low
+
+  * Increased package version to force rebuild for vdr 1.6.0-1ctvdr7
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 12 May 2008 00:56:56 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-10) experimental; urgency=low
+
+  * Build-Depend on vdr-dev (>= 1.6.0)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 24 Mar 2008 20:14:26 +0100
+
+vdr-plugin-skinelchi (0.1.1~pre2-9) experimental; urgency=low
+
+  * Added 03_const-warning-fixes.dpatch
+  * Added 93_vdr-1.5.15.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 18 Feb 2008 21:33:27 +0100
+
+vdr-plugin-skinelchi (0.1.1~pre2-8) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.13
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed, 16 Jan 2008 10:31:50 +0100
+
+vdr-plugin-skinelchi (0.1.1~pre2-7) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.12
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 20 Nov 2007 23:46:48 +0100
+
+vdr-plugin-skinelchi (0.1.1~pre2-6) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.11
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  6 Nov 2007 23:34:37 +0100
+
+vdr-plugin-skinelchi (0.1.1~pre2-5) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.10
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 16 Oct 2007 23:51:17 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-4) unstable; urgency=low
+
+  * 01_kernel-headers-workaround.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 25 Aug 2007 13:09:59 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-3) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.8
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 23 Aug 2007 01:09:31 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-2) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.6
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 14 Aug 2007 01:46:40 +0200
+
+vdr-plugin-skinelchi (0.1.1~pre2-1) unstable; urgency=low
+
+  * New upstream prerelease
+  * Removed 90_APIVERSION.dpatch
+  * Removed 90_timerline.dpatch
+  * Removed 91_sizeable-logo.dpatch
+  * Removed 92_vdr-1.3.38.dpatch
+  * Removed 93_skinelchi-0.1.1pre1-1.5.0.dpatch
+  * Added 90_vdr-skinelchi-0.1.1pre2.PatchCollection.dpatch
+  * Added 91_skinelchi-0.1.1pre2-1.5.0.dpatch
+  * Added 92_vdr-skinelchi-0.1.1_pre2-vdr-1.5.5-getfont.dpatch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun,  8 Jul 2007 18:00:08 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-15) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.5
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue,  3 Jul 2007 00:36:19 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-14) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.2
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sat, 28 Apr 2007 00:01:18 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-13) unstable; urgency=low
+
+  * Release for vdrdevel 1.5.1
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 27 Feb 2007 19:59:38 +0100
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-12) unstable; urgency=low
+
+  * Added 93_skinelchi-0.1.1pre1-1.5.0.dpatch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 21 Jan 2007 14:43:49 +0100
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-11) unstable; urgency=low
+
+  [ Thomas Günther ]
+  * Replaced VDRdevel adaptions in debian/rules with make-special-vdr
+  * Adapted call of dependencies.sh and patchlevel.sh to the new location
+    in /usr/share/vdr-dev/
+
+  [ Tobias Grimm ]
+  * Build-Depend on vdr-dev (>=1.4.5-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Jan 2007 19:25:07 +0100
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-10) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.4-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  5 Nov 2006 11:45:43 +0100
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-9) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.3-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat, 23 Sep 2006 20:33:00 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-8) unstable; urgency=low
+
+  * Build-Depend on vdr-dev (>=1.4.2-1)
+  * Bumped Standards-Version to 3.7.2
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 27 Aug 2006 14:39:35 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-7) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.1-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Fri, 16 Jun 2006 22:07:48 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-6) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr-dev (>=1.4.0-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed,  3 May 2006 23:08:20 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-5) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.48-1)
+    - Added 90_APIVERSION.dpatch
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 24 Apr 2006 22:08:34 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-4) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.46-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Wed, 12 Apr 2006 22:14:07 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-3) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.45-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Mon, 27 Mar 2006 21:28:50 +0200
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-2) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.41-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Tue, 31 Jan 2006 01:40:52 +0100
+
+vdr-plugin-skinelchi (0.1.0+0.1.1pre1-1) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - New upstream release
+    - Updated link in copyright
+    - Updated 20_epgimage-path.dpatch
+    - Added 90_timerline.dpatch
+    - Added 91_sizeable-logo.dpatch
+    - Added 92_vdr-1.3.38.dpatch
+    - Build-Depend on vdr-dev (>=1.3.40-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Thu, 26 Jan 2006 14:18:45 +0100
+
+vdr-plugin-skinelchi (0.0.2a-4) unstable; urgency=low
+
+  * Thomas Schmidt <tschmidt@debian.org>
+    - Build-Depend on vdr (>=1.3.38-1)
+
+ -- Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>  Sun, 15 Jan 2006 11:44:38 +0100
+
+vdr-plugin-skinelchi (0.0.2a-3) unstable; urgency=low
+
+  * Added libmagick++9-dev to dependencies
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon,  5 Dec 2005 23:02:52 +0100
+
+vdr-plugin-skinelchi (0.0.2a-2) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.37-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sat,  3 Dec 2005 20:56:28 +0100
+
+vdr-plugin-skinelchi (0.0.2a-1) unstable; urgency=low
+
+  * Thomas Günther <tom@toms-cafe.de>
+    - New upstream release downloaded from
+      http://vdrportal.de/board/thread.php?postid=371161#post371161
+    - Removed 02_skinelchi-1.3.32.dpatch
+    - Removed 11_woody.dpatch
+    - Removed 12_fix-transparent.dpatch
+    - Removed 13_epgpicture-fix-test.dpatch
+    - Removed 14_skinelchi-1.3.25.dpatch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Sun, 13 Nov 2005 22:38:04 +0100
+
+vdr-plugin-skinelchi (0.0.1j-10) unstable; urgency=low
+
+  * Build-Depend on vdr (>=1.3.33-1)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  2 Oct 2005 10:38:37 +0200
+
+vdr-plugin-skinelchi (0.0.1j-9) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Build-Depend on vdr (>=1.3.32-1)
+  * Thomas Günther <tom@toms-cafe.de>
+    - Added 02_skinelchi-1.3.32.dpatch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Wed, 14 Sep 2005 19:17:59 +0200
+
+vdr-plugin-skinelchi (0.0.1j-8) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.31-1)
+  * Conflict with vdr (>=1.3.31.99)
+  * Use dependencies.sh from vdr-dev to set vdr dependencies and
+    conflicts
+
+ -- Tobias Grimm <tg@e-tobi.net>  Tue, 30 Aug 2005 23:07:31 +0200
+
+vdr-plugin-skinelchi (0.0.1j-7) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.30-1)
+  * Conflict with vdr (>=1.3.30.99)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 22 Aug 2005 17:31:13 +0200
+
+vdr-plugin-skinelchi (0.0.1j-6) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.29-1)
+  * Conflict with vdr (>=1.3.30)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 15 Aug 2005 21:16:01 +0200
+
+vdr-plugin-skinelchi (0.0.1j-5) unstable; urgency=low
+
+  * Depend/Build-Depend on vdr (>=1.3.28-1)
+  * Conflict with vdr (>=1.3.29)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon,  8 Aug 2005 20:25:51 +0200
+
+vdr-plugin-skinelchi (0.0.1j-4) unstable; urgency=low
+
+  * vdrdevel -> vdr
+  * Depend/Build-Depend on vdr (>=1.3.27-1)
+  * Conflict with vdr (>=1.3.28)
+  * Bumped Standards-Version to 3.6.2
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon,  4 Jul 2005 21:30:34 +0200
+
+vdrdevel-plugin-skinelchi (0.0.1j-3) unstable; urgency=low
+
+  * VDR-1.3.27
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 21 Jun 2005 00:21:19 +0200
+
+vdrdevel-plugin-skinelchi (0.0.1j-2) unstable; urgency=low
+
+  * VDR-1.3.26
+  * Upgraded 95_vdrdevel.dpatch to version 0.1.0
+
+ -- Thomas Günther <tom@toms-cafe.de>  Fri, 17 Jun 2005 12:49:52 +0200
+
+vdrdevel-plugin-skinelchi (0.0.1j-1) unstable; urgency=low
+
+  * New upstream release downloaded from
+    http://vdrportal.de/board/thread.php?postid=290971#post290971
+  * Removed fix-for-DisplayTracks patch (integrated in upstream)
+  * Adapted epgimage-path patch to new upstream release
+  * Added fix-transparent patch
+  * Added epgpicture-fix-test patch
+  * Added skinelchi-1.3.25.dpatch
+  * Remove default theme in debian/postinst and debian/postrm
+  * Upgraded 95_vdrdevel.dpatch to version 0.0.9
+
+ -- Thomas Günther <tom@toms-cafe.de>  Wed,  1 Jun 2005 23:29:01 +0200
+
+vdrdevel-plugin-skinelchi (0.0.1i-3) unstable; urgency=low
+
+  * VDR-1.3.24
+
+ -- Thomas Günther <tom@toms-cafe.de>  Tue, 10 May 2005 02:41:37 +0200
+
+vdrdevel-plugin-skinelchi (0.0.1i-2) unstable; urgency=low
+
+  * Tobias Grimm <tg@e-tobi.net>
+    - Enabled imagemagick usage to display epg images
+    - Set link to allow usage of vdrdevel-xpmlogs and add this package to Suggests
+  * Thomas Günther <tom@toms-cafe.de>
+    - Added libmagick++-dev to Build-Depends (for woody)
+    - Added woody patch to make it compile with woody
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun,  3 Apr 2005 18:28:09 +0200
+
+vdrdevel-plugin-skinelchi (0.0.1i-1) unstable; urgency=low
+
+  * Initial Release.
+  * Added fix-for-DisplayTracks patch
+
+ -- Thomas Günther <tom@toms-cafe.de>  Thu, 31 Mar 2005 00:49:29 +0200
+

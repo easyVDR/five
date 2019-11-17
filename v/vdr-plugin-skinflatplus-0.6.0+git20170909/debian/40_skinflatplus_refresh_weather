@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# skinflatplus weather update
+sleep 0.5
+cd /usr/lib/vdr/skinflatplus/widgets/weather
+php update_weather.php
+
+sleep 0.5
+/usr/lib/vdr/skinflatplus/widgets/temperatures/temperatures

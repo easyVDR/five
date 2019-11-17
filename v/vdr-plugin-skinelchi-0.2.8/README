@@ -1,0 +1,201 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Christoph Haubrich <christoph.haubrich (AT) web.de>
+Project's homepage:          http://firefly.vdr-developer.org/skinelchi/
+Latest version available at: http://firefly.vdr-developer.org/skinelchi/
+
+See the file COPYING for license information.
+
+This plugin is based on the skinelchi plugin written by _Frank_ @vdr-portal.de
+
+
+Description:
+------------
+This plugin for Klaus Schmidinger's Video Disc Recorder VDR adds the "Elchi" skin
+to the VDR standard skins.
+
+
+Requirements:
+-------------
+VDR >= 1.6.0, for displaying the HD OSD: VDR >= 1.7.18
+It should work with 1.4.7 and most of the 1.5.x versions but this was not tested. If you
+want to try it, you need to change the query at the beginning of skinelchi.c accordingly.
+
+If EPGSearch is used version 0.9.22 or higher is required because of the 'direct switiching
+bug'.
+
+If Avards is used version 0.1.3 or higher is required because earlier version don't have
+the required definitions in the header file.
+
+The plugin was developed and tested with full-featured DVB cards. I have no experince with
+software decoding (e.g. libxineouput, softdevice) but reports (and of course patches if 
+neccessary) are welcome.
+
+Beginning with skinElchi 0.2.4 there is support for OSD resolutions higher than SD (720x576),
+that is for example 1280x720 and 1920x1080. The symbols and channel logos are loaded from
+different sets according to the resolution to avoid too small smybols and logos.
+
+If you would like to show logos of the channels in the channel display, you have to provide them
+below the <logodir>/logos and/or <logodir>/hqlogos or set the --logos option accordingly.
+skinElchi does not include channel logos but there are floating several sets around the net.
+
+If you have an SD-FF card please notice that HQ-logos can only be displayed if one 
+8-Bit-per-pixel area is used. For SD-FF DVB cards this requires the 4MB extension or a 
+smaller size of the channel display.
+
+For OSD resolutions higher than SD (720x576) a HD-FF cards or a software device capable 
+of displaying the OSD is required.
+
+Installation
+------------
+The skinElchi plugin is compiled and installed the same way as any other plugin:
+- cd <VDR>/PLUGINS/src
+- tar xjf vdr-skinelchi-<version>.tar.bz2
+- ln -s skinelchi-<version> skinelchi
+- cd ../..
+- make plugins
+
+Copy the two themes in the themes directory to the VDR theme directory:
+  <configdir>/themes (e.g. /etc/vdr/themes)
+where <configdir> is the actual VDR configdir
+
+If you have some channel logos copy them to the directory below logos corresponding
+to the resolution, e.g. /etc/vdr/plugins/skinelchi/logos/576, 
+/etc/vdr/plugins/skinelchi/logos/720 and  /etc/vdr/plugins/skinelchi/logo/1080
+
+Usage:
+------
+Edit your runvdr (or whatever startup script you use) to load the skinElchi plugin, e.g.
+  vdr -Pskinelchi
+to use skinElchi with the default settings and start VDR.
+
+The path to the logo directories is supplied via command line parameter:
+  -l <logodir>, --logos=<logodir>  directory with logo directory (and optional hqlogo)
+                                   (default is <configdir>/plugins/skinelchi)
+
+If skinElchi was compiled with ImageMagick support an additional option is available 
+for the EPG images:
+  -c <dir>,  --icache=>DIR>         path to EPG images
+                                    (default is /video0/epgimages)
+
+Both parameters can only be set on the command line.
+
+
+Important changes compared to previous versions:
+------------------------------------------------
+- If epgsearch is used it must be version 0.9.22 or higher because of the direct
+  switching bug
+
+- The path to EPG images and logos must be commandline parameters now; they can no longer
+  be edited in the settings
+
+- The path to the logos must be supplied without the <logos>-subdirectory. This is added by
+  skineElchi (as it is done for hqlogos, too)
+  So logos will be searched for in the following directories depending on the vertical resolution:
+      576 (SD):  64 x  48 pixels, max 240 colors: <logodir>/hqlogos
+      576 (SD):  64 x  48 pixels, max  16 colors: <logodir>/logos/576
+      720 (HD): 104 x  78 pixels, max 240 colors: <logodir>/logos/720
+     1080 (HD): 160 x 120 pixels, max 240 colors: <logodir>/logos/1080
+     
+All logo files need to be in the XPM format in the expected resolution and directory.
+skinElchi will first search logo files with underline instead of blanks and search for logo files with
+blanks afterwards. So the logo files can have blanks replaced by underlines for better file handling.
+If no logo file for a channel is found then a logo file with the channel ID is searched, e.g.
+S19.2E-133-1-342.xpm
+
+Upgrade Procedure:
+------------------
+- install as usual
+- after the first start it is recommended to go to the settings dialog and
+  check/change settings to your needs. Leave the dialog with <enter> to save the settings
+- the unused entries should be deleted by this procedure
+
+
+Setup Options:
+--------------
+The following settings are available in the setup->plugins->skinElchi setup menu:
+
+General:
+- use one 8bpp area (if possible): yes / no
+
+- scroll text:                yes / no
+
+- timer and conflicts in menu: no: next recording / Timer-Conflict / all
+
+- Show recording details:     EPG / EPG+details
+
+- Show EPG details:           EPG / EPG+details
+
+- video format info:          no / aspect ratio / size and aspect ratio
+
+- show mail icon              never / only when new mail is avail. / always
+
+- use graphicical progressbar yes/no
+
+- show symbols                yes / no
+
+- EPG picture size            don't show / 120x90 (epg4vdr) / max. 180x144 / 120x120 (tvmovie2vdr)
+
+  - duration of each EPG image [s]: 5
+
+  - resize algorithm:         pixel algo, ratio alog, zoom image
+
+
+Channel Display
+- show recording info:        this displays an additional line with the DVB device number 
+                              and name and infos about ongoing recurdings
+                              you can choose betweeen:
+                              never: the additional line is never displayed
+                              only if recording: the additional line is displayed only 
+                                                 during recordings
+                              always: the additional line is always shown
+
+
+- show channel logos:         choose if channel logos will be displayed or not
+
+- use one 8bpp are (if possible): choose if internally one 8Bit area should be used (requires more OSD memory)
+
+- use HQ-logos:               if set to yes HQ logos will be searched first
+
+- try to load logo first by: "Channel Name" or "Channel ID"
+
+- display logo messages in syslog: choose yes to write messages about loaded or not found
+                              logos in the syslog. This is useful if for finding out which
+                              logo is being loaded or to find the channel ID if no logo is found
+
+
+Tips & Hints:
+-------------
+For the SD-FF cards not all colors are available at the same time: some have to be identical to avoid
+a color table overflow.
+
+
+
+Credits
+-------
+!! IMPORTANT !!
+This history might not be complete as it was not possible to find out all persons who
+contributed to the skin. If you feel someone is missing here please contact the author!
+
+- Andy Grobb, Rolf Ahrenberg, Andreas Kool for the original "Elchi" patches for VDR 1.1.x
+  http://www.vdr-portal.de/board/thread.php?threadid=5456
+
+- sezz @vdr-portal.de for the text2skin version of the Elchi skin
+  http://www.vdr-portal.de/board/thread.php?postid=250468#post250468
+  http://www.vdr-portal.de/board/thread.php?postid=246932#post246932
+
+- _Frank_ @vdr-portal.de for the first versions of the skinElchi plugin
+  http://www.vdr-portal.de/board/thread.php?postid=270185#post270185
+  http://www.vdr-portal.de/board/thread.php?postid=429966#post429966
+
+- Andreas Burger for the osdimage plugin where I've lent some code
+  http://brougs78.vdr-developer.org/
+
+- Andreas Mair for skinenigmang where I've lent some ideas
+  http://andreas.vdr-developer.org/enigmang
+
+- Christian Wieninger for the epsearch plugin where I've lent some ideas
+  http://winni.vdr-developer.org/epgsearch/index.html
+
+- Udo Richter (udo_richter @gmx.de) for po2i18n.pl
+  http://www.udo-richter.de/vdr/scripts.en.html#po2i18n

@@ -1,0 +1,106 @@
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-scraper2vdr 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2015-11-16 20:05+0100\n"
+"PO-Revision-Date: 2014-03-30 18:30+0100\n"
+"Last-Translator: 3PO\n"
+"Language-Team: German <vdr@linuxtv.org>\n"
+"Language: de\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Update Scraper Information from Database"
+msgstr "Filme und Serien aus Datenbank aktualisieren"
+
+msgid "Update Scraper Recordings Information from Database"
+msgstr "Aufnahmen aus Datenbank aktualisieren"
+
+msgid "Scan for new recordings in video directory"
+msgstr "Videoverzeichnis nach neuen Aufnahmen scannen"
+
+msgid "Scan for new or updated scrapinfo files"
+msgstr "Nach neuen oder geänderten scrapinfo Dateien suchen"
+
+msgid "Reload all values (Series, Movies and Images)"
+msgstr "Alle Daten (Serien, Filme und Bilder) neu laden"
+
+msgid "Updating Scraper EPG Information from Database"
+msgstr "Filme und Serien werden aus Datenbank aktualisiert"
+
+msgid "Updating Scraper Recordings Information from Database"
+msgstr "Aufnahmen werden aus Datenbank aktualisiert"
+
+msgid "Scanning for new recordings in video directory"
+msgstr "Scanne Videoverzeichnis nach neuen Aufnahmen"
+
+msgid "Scanning for new or updated scrapinfo files"
+msgstr "Suche nach neuen oder geänderten scrapinfo Dateien"
+
+msgid "Loading Series, Movies and Images from Database"
+msgstr "Filme, Serien und Bilder werden aus Datenbank neu geladen"
+
+msgid "General"
+msgstr "Allgemein"
+
+msgid "Show Main Menu Entry"
+msgstr "Hauptmenüeintrag anzeigen"
+
+msgid "Thumbnail Height"
+msgstr "Höhe der Miniaturbilder"
+
+msgid "Fixed Poster Size (resize,stretch,crop)"
+msgstr "Feste Postergröße (skalieren,strecken,zuschneiden)"
+
+msgid "Poster Width (default 500)"
+msgstr "Breite der Poster (Standard 500)"
+
+msgid "Poster Height (default 735)"
+msgstr "Höhe der Poster (Standard 735)"
+
+msgid "Season Poster Width (default 400)"
+msgstr "Breite der Staffelposter (Standard 400)"
+
+msgid "Season Poster Height (default 578)"
+msgstr "Höhe der Staffelposter (Standard 578)"
+
+msgid "Max. Poster Distortion (in %)"
+msgstr "Max. Posterverzerrung (in %)"
+
+msgid "MySQL"
+msgstr ""
+
+msgid "Host"
+msgstr ""
+
+msgid "Port"
+msgstr ""
+
+msgid "Database Name"
+msgstr "Name der Datenbank"
+
+msgid "User"
+msgstr "Benutzer"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Technical Stuff"
+msgstr "Technisches"
+
+msgid "Log level"
+msgstr "Protokollierungs Stufe"
+
+msgid "Actions"
+msgstr "Aktionen"
+
+#~ msgid "Cleanup Recordings in Database"
+#~ msgstr "Aufnahmen in Datenbank bereinigen"
+
+#~ msgid "Cleaning up Recordings in Database"
+#~ msgstr "Bereinige Aufnahmen in Datenbank"

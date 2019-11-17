@@ -1,0 +1,6 @@
+Schriften für flatPlus-MV_Themen
+
+Installationshinweise (Pfade evtl. Anpassen!):
+ - Schrift(en) VDR* nach /usr/share/fonts kopieren.
+   Die Schriften enthalten auch die VDR-Symbole.
+

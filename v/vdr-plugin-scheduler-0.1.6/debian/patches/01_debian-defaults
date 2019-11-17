@@ -1,0 +1,45 @@
+--- vdr-plugin-scheduler-0.1.5.orig/README.DE
++++ vdr-plugin-scheduler-0.1.5/README.DE
+@@ -72,16 +72,16 @@ sprechend den Einstellungen.
+ Man kann ebenfalls das SVDRP-Interface zum Start vorhandener oder temporärer Jobs
+ verwenden:
+ 
+-svdrpsend.pl plug scheduler RUNT <taskname>
++svdrpsend plug scheduler RUNT <taskname>
+   Damit wird ein existierender Job gestartet, auf den die Beschreibung <taskname>
+   passt. Rückgabe ist eine Task-ID.
+ 
+-svdrpsend.pl plug scheduler RUNC <command>
++svdrpsend plug scheduler RUNC <command>
+   Damit wird der angegebene Befehl gestartet. VDR wird nicht herunterfahren bevor 
+   dieser beendet ist. Als Rückgabe erhält man eine Task-ID, die im folgenden verwendet
+   werden kann:
+ 
+-svdrpsend.pl plug scheduler STAT <taskId>
++svdrpsend plug scheduler STAT <taskId>
+   Liefert zurück, ob der Job noch läuft.
+ 
+ Es gibt noch weitere svdrp-Befehle (LSTT, NEWT, DELT, EDIT) zum Auflisten aller Tasks,
+--- vdr-plugin-scheduler-0.1.5.orig/README
++++ vdr-plugin-scheduler-0.1.5/README
+@@ -62,17 +62,17 @@ according to your settings.
+ 
+ You can also use the SVDRP interface to start existing or temporary tasks:
+ 
+-svdrpsend.pl plug scheduler RUNT <taskname>
++svdrpsend plug scheduler RUNT <taskname>
+   This will execute an existing task that matches the description <taskname>
+   The return value is the task ID.
+   
+ 
+-svdrpsend.pl plug scheduler RUNC <command>
++svdrpsend plug scheduler RUNC <command>
+   This will execute the specified command. VDR will not shutdown before that
+   task has finished. The return value is a task ID that can be used
+   in following:
+ 
+-svdrpsend.pl plug scheduler STAT <taskId>
++svdrpsend plug scheduler STAT <taskId>
+   This returns if the task is still running or not.
+ 
+ further svdrp commands (LSTT, NEWT, DELT, EDIT) exist to list all tasks, 

@@ -1,0 +1,433 @@
+VDR Plugin 'skindesigner' Revision History
+---------------------------------------
+
+2014-09-27: Version 0.0.1
+
+- Initial revision.
+
+Version 0.0.2
+
+- added some more tokens with more detailed audio information in
+  displaychannel -> statusinfo
+- added hasVPS for current scheduling in displaychannel -> epginfo
+- added common channel logo path for all skins
+- changed skin handling so that every skin is directly shown in VDR OSD Menu
+- added Theme support, each skin can now have various themes
+- fixed a crash if no skindesigner skins are found and plugin setup menu is
+  called from another skin
+- added {durationhours} and {durationminutes} tokens in several view elements
+- added discusage icons to menu header view element so that it discusage can be
+  displayed in every menu view
+- added numeric day, month and year tokens in different view elements
+- support for global variables type "double"
+- added setup options to configure rerun display behaviour
+- changed display of menu lists, do flush first after complete rendering
+- added support for custom tokens in dislaychannel
+- added vps token in menudetailepg
+- implemented cSDDisplayMenu::GetTextAreaFont()
+- introduced new viewelement audioinfo in displaychannel
+- added setup option to choose Menu Item display method between "at one go" and
+  "after one another"
+- fixed bug that new skin was not properly loaded sometimes when skin was
+  changed in OSD Setup menu
+- fixed bug that new font was displayed first after VDR restart when font was
+  changed in OSD Setup menu
+- display always newest recording of folders in recordings list,
+  thanks@ Lars Hanisch for providing the patch
+- added extented recording information
+- added token {nummenuitem} as number of item for every list, value starts
+  with 1
+- fixed bug that x and y of subviews was not respected
+- if a subview is completely not set in a skin, the default menu is used
+- fixed a bug if displaydetailedtext is called without correct menucat (mailbox
+  plugin)
+- implemented function drawslope, see Wiki for documentation
+- using default menu list in case an invalid MenuCategory is set
+- added device info in displaychannel, example in metrixHD
+- improved menu icon display, additionally using menu cat
+- changed devices list, device numbers start with 0
+- fixed bug that hasposter is only true if poster really exists
+- no absolute pathes allowed for image type "image", path has to start with
+  {ressourcedir}
+
+Version 0.0.3
+
+- added tokens for current video and audio bitrate in displaychannel.
+  Thx @rofafor for the original code
+  in the femon plugin and _Martin_ for extracting the code in skinflatplus
+- changed skin metrixHD to display bitrate infos
+- added "active" Token for cutting marks so that a mark can be displayed in a
+  dedicated way if current position in replay exactly hits the mark
+- added {channelname}, {channelid}, {channellogoexists} for all schedules list
+  and current views
+- added printf function for <drawtext>, see Wiki for documentation
+- removed code for displaying bitrates in displaychannel again because of
+  incompatibility with dvbapi Plugin
+- optimized performance when creating a menu list
+- fixed Bug that displaychannel was not shown after closing displaymenu with
+  "backspace" (with active menuorg plugin)
+- fixed Bug with menuselection Patch
+- added tokens {month}, {monthname} and {year} in displaymenutimers listitem and 
+  currentitem
+- added dedicated tokens for posters and banners in <srapercontent> in 
+  displaychannel and displayreplay
+- added Plugin Interface
+- fixed crash when clearing a message in displaychannel and displayreplay
+- fixed positioning of scaled video window if borders are configured
+
+Version 0.0.4
+
+- added SVG Support - thanks to Manuel Reimer!
+
+Version 0.0.5
+
+- added {channelnumber} and {channelname} Tokens in displaymenudetailepg 
+  detailheader
+- fixed {hasicon} Token in displaymenu header
+- added {newmails} Token in displaychannel statusinfo, mailbox plugin
+  has to be installed
+- clearing displaymessage if it is called without text
+- changed handling of channel logos, width and height are now mandatory
+
+Version 0.0.6
+
+- fixed Bug that channel info was not shown when displaying reruns with
+  epgsearch
+- using VDRs OSD Language instead of system language
+- added compatibility to librsvg >= 2.36.1
+- added onpause and onpausemodeonly in displayreplay
+- added {channellogoexists} Token everywhere where {channelid} is available
+
+Version 0.0.7
+
+- fixed bug that global double vars are not working
+
+Version 0.0.8
+
+- added {channelnumber} Token in displaymenuschedules
+- displaying default menu list if menu category is set to another category
+  but SetItem() is called
+
+Version 0.1.0
+
+- fixed display of color buttons in detailed views
+- fixed possible Nullpointer access in displaymenurootview 
+- added currentschedule viewelement in displaymenumain
+- fixed bug that wrong channel was shown in header of whatson
+  if entering from whatsonnow
+- added customtokens view element in displaymenumain
+- added automatic determination of custom int tokens
+
+Version 0.1.1
+
+- added "temperatures" view element in displaymenumainview to display
+  cpu and gpu temperature in main menu (scripts to get temperatures
+  borrowed from skinflatplus). scripts to get temperatures have to be
+  adapted according the system setup.
+- added "time" view element in displaychannelview, displayreplay view
+  and displaymenuviews to display current time with seconds precision
+- added {currenttab}, {prevtab}, {nexttab} Tokens in <tablabels> view
+  elements
+- fixed bug that in displaytracks the audio tracks are not positioned
+  correctly
+- fixed some minor bugs
+- added skin "blackhole"
+- added customtokens view element in displayreplay
+- optimised some settings in skin blackhole
+
+
+Version 0.1.2
+
+- display only active remote timers in main menu
+- fixed two possible null pointer accesses in displaymenurootview
+- fixed bug that EPGSearch Favorites Menu was not displayed correctly,
+  introduced "whatsonfavorites" Token in displaymenuschedules
+- fixed again display of channel in schedules header
+- added now and next in blackhole channels menu
+- fixed bug that epg quicksearch menu was not displayed properly
+- added weatherforecast templates
+- some fixes for plugins which use skindesigner template interface
+
+Version 0.1.3
+
+- added {epgname} token for recordings in currentview and detailedview.
+- fixed crash when start recording with extrecmenu or remotetimers
+
+Version 0.1.4
+
+- fixed token volpercent in nopacity and metrixhd
+- added "empty" operator additionally to "isset" to check in a condition
+  if a string token is set
+- added token {nummenuitem} for plugin menu lists
+- fixed bug that custom int tokens were not considered in conditions
+- added possibility for skinners to define a skin setup, skin setup can
+  be done in plugin setup menu
+- made skin blackhole configurable, adapted xml files
+
+Version 0.1.5
+
+- removed suppression of first DisplayChannel call after VDR start
+- fixed "flickering" bug with vdr2.1.7
+- fixed bug that osd language was not set correctly which caused one
+  additional skin caching at startup
+
+Version 0.1.6
+
+- fixed bug that onpause view potentially starts during setting cutting
+  marks
+- made all globals variables private
+- introduced globals.xml in skinpath, theme.xml in theme path. theme.xml
+  adds its vakues and potentially overrides valués from globals.xml
+- check icons, menuicons and skinparts additionally directly in skin folder
+  to allow default images which can be used for all skins
+- fixed bug that setup variables are sometimes not identified in case two 
+  or more skin names start identically
+
+Version 0.2.0
+
+- fixed Bug that double vars were not handled correctly
+- fixed Bug that calling mplayer plugin via keymacros.conf causes segfault
+
+Version 0.2.1
+
+- fixed bug that global tokens were not parsed correctly
+- added finnish translation
+- some more nopacity optimizations - thanx@utility
+- added possibiliy to use submenus in the skin setup menus
+- reloading active skin directly after closing setup menu so that
+  changes of setup parameters are immediately in use 
+
+Version 0.2.2
+
+- added replay onpause view in blackhole skin
+- implemented SetTitle() in displayreplay
+- fixed header icon for plugin menus
+- added function "drawtextvertical"
+- implemented advanced plugin interface
+- added tvguideng templates for all skins
+
+Version 0.3.0
+
+- checking setup conditions for viewelements
+- fixed FadeOut bug
+- fixed crash when opening and closing main menu consecutively
+- fixed bug detecting menu item numbers in main menu
+- fixed recording progress bar in nopacity
+- added <systemmemory> viewelement in main menu
+- added possibility to hide root menu from a subview template
+- moved access to cControl to main thread to avoid crash
+  in onpauseview
+- added recording icons to metrixHD
+- fixed colors in tvguideng timeline in nopacity darkred
+
+Version 0.3.1
+
+- Fixed hide root menu from a subview template
+- Fixed translation of grids
+- adapted tvguideng templates
+
+Version 0.3.2
+
+- fixed crash in drawing devices
+- fixed crash if number of dvb devices changes
+- added possibility to detach dedicated viewelements in displaychannel
+  and displaymenumain that they start in an own thread
+- introduced background="true" attribute in viewelements. These areas
+  will only be drawn once.
+- fixed bug in creating osd
+- fixed bug when creating pixmaps
+
+Version 0.3.3
+
+- added viewelement <lastrecordings> with information about 5 newest
+  recordings in main menu
+- fixed bug that parameters with both dynamic tokens and relative width,
+  height, posx or posy values are not parsed correctly
+- fixed bug also for loops
+- added possibility to draw vertical text bottomum and topdown
+- translate drawtextvertical
+- added viewelement <endtime> in displayreplay to display the time
+  the currently replayed recording ends
+- added viewelement <sortmode> in displaymenu to display the sort
+  mode of the currently displayed menu. <sortmode> can be used in
+  any list menu, implementation in displaymenu.xml is default
+- use recording info for <currentschedule> viewelement in main menu
+  if recording is replayed. New token {islivetv} indicates this.
+- added Token {percentseen} to listelements in menurecordings. For
+  VDR Version < 2.1.8 {percentseen} is set to -1.
+- added Token {timers[isremotetimer]} to <timers> in main menu
+- added parameter mode to viewelement <devices>. if mode="light"
+  no signal information will be fetched to improve performance.
+
+Version 0.3.4
+  
+- fixed backward compatibility to VDR version < 2.1.1 where
+  cRecording::IsInUse() was introduced
+- automatically detect type of image if no file extension is available
+- introduced libskindesignerapi
+
+Version 0.4.0
+
+- fixed bug that time was not correctly drawn if a submenu implements
+  its own time display
+- fixed bug that date was drawn every flush in displayreplay 
+- fixed bug in metrixhd timers menu
+- fixed bug that datetime was not correctly drawn if a submenu implements
+  its own datetime display
+- adapted Makefiles to work also in a LCLBLD environment
+- reverted Makefile changes in parts
+- added category indicator token to default menus
+
+Version 0.4.1
+
+- added locks around cTextWrappers to avoid crashed when concurrently
+  accessing fonts
+- changed build and install process
+
+Version 0.4.2
+
+- fixed bug that datetime was not drawn correctly in menus
+- fixed bug that string tokens are not evaluated in area conditions
+- added possibility to draw a debug grid in views
+- added more info if debugImage is activted in config
+- added possibility for blinking images, texts, rectangles, ellipses 
+  and slopes
+- adapted libskindesignerapi makefile for LCLBLD
+
+Version 0.4.3
+
+- added strequal, strnotequal, strcontains, strnotcontains functions
+  to compare strings in conditions
+- fixed sort order in lastrecordings viewelement
+- added tokens for progressbars in displamenudefault
+- implemented dvbapi service interface, added viewelement ecminfo
+  in displaychannel
+- added cardsystem name to ecm info
+- added correct menucategory for skin setups
+- fixed bug that tokens in image pathes are not replaced correctly
+
+Version 0.4.4
+
+- feature: possibility to move viewelements when starting view
+- expanded shifting features
+
+Version 0.4.5
+
+- added {numtimers} Token to lastrecordings viewelement
+- fixed time display bug in displaymenurecordings
+- added token {watched} to displaymenurecordings
+- fixed bug that scrapercontent in displaychannel was not
+  updated if detached
+- fixed bug that detached viewelements were not cleared
+  correctly
+- implemented shiftout for views
+- fixed blinking for animated views
+- chachged displaymessage in menus to detachable
+- fixed dayseparators in schedules menu
+- small fixes in metrixhd main menu
+
+Version 0.4.6
+
+- added token {startsin} in displaymenuschedules
+- added viewelement <vdrstatistics> in main menu
+- added permashift support in displaychannel
+- added timeshift support in displayreplay
+
+Version 0.4.7
+
+- fixed crash when deleting menuitem
+- fixed ecm time display
+- provide 10 last recordings in <lastrecordings> viewelement
+- fixed translation in currentelement loops
+- fixed timeshifttotal in displayreplay timeshift mode
+
+Version 0.4.8
+
+- implemented Skin Repositories
+
+Version 0.5.0
+
+- fixed display of channel separators
+- added some debug output when installing skins
+- added timeout for preview screenshot downloading
+- added some skins
+- adapted README
+
+Version 0.5.1
+
+- changed skin installation that VDR main loop is not blocked
+- use shallow clone when cloning git
+- implemented possibility to delete skins
+
+Version 0.5.2
+
+- only close OSD when a skin is successfully updated from Git
+- refresh custom token display with each custom token change
+- added recording shorttext, description and scraper poster tokens
+  to displaymenurecordings listelement
+- allow currentelements to use conditions
+- fixed bug searching channel logos with channelid
+- fixed bug in parsing printf text tokens
+- changed "Update from Git" to "Update"
+- made viewelement scrapercontent in displayreplay detachable
+
+Version 0.5.3
+
+- added SVG Template parsing
+- fixed memory leak when creating fonts
+- fixed crash using animated images in plugins
+- added banner to displaymenuschedulescurrentview and 
+  displaymenureplaycurrentview
+- immplemented areacontainers to group areas
+- fixed bug displaying pixmaps with transparency
+- fixed bug displaying wrong headers in skin setup submenus
+
+Version 0.6.0
+
+- fixed bug that menulists are not read if no currentelement
+  is defined
+
+Version 0.6.1
+
+- changed skinrepository from static file to github repository
+- fixed flickering when main menu is fading
+- some changes in metrixHD
+- changed font in metrixhd from "VDROpen Sans" to "Open Sans"
+- fixed crashes if main menu is opened consecutively
+- added version check for skinrepositiries
+
+Version 0.6.2
+
+- added progressmodeonly viewelement in displayreplay
+- fixed bug in checking skin version
+- added {watched} and {percentseen} to displaymenurecordings
+  current view
+
+Version 0.6.3
+
+- implemented horizontal menus
+  For displaying horizontal menus with VDR <= 2.2.x a VDR 
+  patch is required (see /patches/vdr-2.2.0_horizontal_menu.patch 
+  in the plugin source directory). Without this patch the keys 
+  left/right and up/down are not toggled in horizontal menus. 
+  With VDR >= 2.3.1 this patch is not needed anymore.
+- added possibility to add conditions to <menuitems> elements
+- added possibility to define a viewelement several times with
+  different conditions
+- added "string" skin setup parameter with multiple options
+- added "valign" option in <drawtextbox>. If the box height is set
+  and the text does not need the complete height, with valign="center"
+  the text can be placed horizontally centered inside the box borders.
+- implemented optional horizontal main-, recordings- and 
+  weatherforecast menu in metrixhd
+
+Version 0.7.0
+
+- fixed compiling fur unpatched VDR
+
+Version 0.7.1
+
+- fixed bug that setup int parameters do not respect the max value
+- added possibility to define help texts for skin setup parameters
+
+Version 0.7.2

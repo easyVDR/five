@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# skindesigner refresh temperatures
+sleep 1
+/usr/lib/vdr/skindesigner/scripts/temperatures
+/usr/lib/vdr/skindesigner/scripts/vdrstats

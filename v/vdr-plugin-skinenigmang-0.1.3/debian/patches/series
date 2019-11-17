@@ -1,0 +1,2 @@
+fix-imagemagick-path.patch
+use-pkg-config-for-freetype.patch

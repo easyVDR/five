@@ -1,0 +1,20 @@
+#! /bin/sh /usr/share/dpatch/dpatch-run
+## epgimage-path patch
+##
+## All lines beginning with `## DP:' are a description of the patch.
+## DP: Change path for epg images.
+
+@DPATCH@
+Index: b/config.c
+===================================================================
+--- a/config.c
++++ b/config.c
+@@ -31,7 +31,7 @@
+ #ifdef SKINELCHI_HAVE_IMAGEMAGICK
+    EpgImageDisplayTime = 5;
+    ImgResizeAlgo = 0;
+-   SetEpgImageDir("/video/epgimages");
++   SetEpgImageDir("/var/cache/vdr/epgimages");
+    logox = 64; //TODO
+    logoy = 48;
+ #endif

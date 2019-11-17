@@ -1,0 +1,43 @@
+vdr-plugin-satip for Debian
+---------------------------
+
+This plugin integrates SAT>IP network devices seamlessly into VDR.
+You can use any SAT>IP channel like any other normal DVB channel for
+live viewing, recording, etc. The plugin also features full section
+filtering capabilities which allow for example EIT information to be
+extracted from the incoming stream.
+
+Configuration:
+
+The plugin accepts a "devices" (-d) command-line parameter defaulting
+to one. This parameter defines how many simultaneous transponders can
+be received if there are available SAT>IP tuners.
+
+Satellite positions shall be defined via sources.conf. If the source
+description begins with a number, it's used as SAT>IP signal source
+selection parameter. Otherwise, the default parameter is one:
+
+S19.2E  Astra 1KR/1L/1M/2C
+=> Signal source = 1
+
+S19.2E  2
+=> Signal source = 2
+
+S19.2E  3 Astra 1KR/1L/1M/2C
+=> Signal source = 3
+
+Notes:
+
+- The stream id "-1" states about unsuccessful tuning. This might be a
+  result of invalid channel parameters or lack of free SAT>IP tuners.
+
+- SAT>IP specification 1.2 doesn't support DVB-C/DVB-C2 receivers yet.
+
+- If the plugin doesn't detect your SAT>IP network device, make sure
+  your setup doesn't have firewalled the UDP port 1900.
+
+- Stream decryption requires a separate CAM plugin that works without
+  direct access to any DVB card devices.
+
+- The 100% compliance against SAT>IP specification 1.2 requires a
+  patched VDR.

@@ -1,0 +1,168 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Louis Braun <louis.braun@gmx.de>
+
+Project's homepage:          http://projects.vdr-developer.org/projects/plg-scraper2vdr
+
+Latest version available at: http://projects.vdr-developer.org/git/vdr-plugin-scraper2vdr.git/
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Description 
+-----------
+
+scraper2vdr acts as client and provides scraped metadata for tvshows and
+movies from epgd to other plugins via its service interface. The plugin 
+cares about caching the images locally and also cleans up the images if
+not longer needed. 
+
+epgd itself uses the thetvdb.com API for collecting series metadata and
+themoviedb.org API for movies. Check the websites of both services for
+the terms of use.
+
+Requirements
+------------
+
+To run the plugin the following libaries have to be installed:
+ 
+ - VDR 1.7.x     
+ - libmysql >= 5.07
+ - uuid-dev
+ - imagemagick or graphicksmagick
+
+Installation, configuration
+---------------------------
+
+To download the plugin from the GIT repository, do a
+
+git clone http://projects.vdr-developer.org/git/vdr-plugin-scraper2vdr.git/
+
+Install the plugin depending on your used distribution. During VDR
+startup the following options can be set:
+
+-i <IMAGEDIR>, --imagedir=<IMAGEDIR>  Set directory where images are stored
+-m <MODE>, --mode=<MODE>   mode can be client or headless (see below for 
+                           explanation). 
+
+Usage
+-----
+
+The plugin starts an own thread during startup. This thread runs in the
+background and performs the following tasks:
+
+- Update of events from Database: at startup and then every 2 minutes
+  the successfully scraped events from the database are read. New series 
+  and movies are added to the plugin in memory storage structure, images
+  are stored to the local filesystem if not available yet.
+- Update of recordings from Database: at startup and every 5 minutes
+  the recordings stored in the database are read and analogous to events
+  the series and movies are stored.
+- Scan for new recordings: at startup and every 5 minutes the VDR Recordings
+  List is checked for new recordings. These can be a recently started 
+  recording or recordings newly mounted from a remote share. If new
+  recordings are found, they will be stored in the database (including a check
+  for a srapinfo file) and will be marked to be newly scraped. This is then done
+  by epgd.
+- Cleanup: Each 10 minutes the local images directory will be cleaned up. If
+  images for a series or movie are not needed anymore, because they don't 
+  appear each in the stored events or recordings, these images get deleted.  
+
+The described actions and some more can also be triggered by OSD or by svdrp:
+
+- OSD: Update Scraper Information from Database / svdrp UPDT:
+  Force update from database
+
+- OSD: Update Scraper Recordings Information from Database / svdrp UPDR
+  Force scanning of recordings in database
+
+- OSD: Scan for new recordings in video directory / svdrp SCVD
+  Force scan for new recordings in video directory
+
+- OSD: Scan for new or updated scrapinfo files / svdrp SCSI
+  Scan for new or updated scrapinfo files. This job is not triggered 
+  automatically by the plugin main loop. So if you create or modify
+  scrapinfo files, this scan has to be triggered manually afterwards.
+  During regular scans of recordings, only for new recordings a scan for
+  a scrapinfo file is done.
+
+- OSD: Cleanup Recordings in Database / svdrp CRDB
+  Trigger cleanup of recordings in database. This job is also not performed
+  automatically in the plugin main loop and has to be triggered manually.
+  Be careful that all necessary recordings are "known" by VDR when running
+  this job. All remote shares with recordings which are relevant should be 
+  mounted. Otherwise not existing recordings get deleted in the database. 
+
+Recording Handling
+------------------
+
+As described each running scraper2vdr Plugin reports his recordings to the epgd 
+database, the epgd then checks these entries and tries to find
+appropriate scraping information. epgd performs first a lookup for a
+event in the database which belongs to the recording. If this fails, epgd
+checks if another client has already reported this recording to the database.
+After that, the scrapinfo file in the recording directory (if existing)
+is checked. If nothing is successfull, a new scrap process for the name
+of the recording is done. If in this case the length of the recording
+is less than 70 minutes, a series recording is assumed, otherwise
+the scraper searches for a movie.  
+
+In client mode both live epg and recordings metadata is loaded from the 
+database. In headless mode only recording metadata is loaded. This mode
+is useful for headless VDRs so that recordings which are done from this
+VDR during no other VDR client with running scraper2vdr Plugin is active
+are not missed. The recording information is then written to the database 
+in time before the related and already reliably scraped event entry is 
+deleted from the database.
+
+Format of scrapinfo file
+------------------------
+
+If a recorded show is not correctly scraped because of whatever, it is 
+possible to place a file called scrapinfo into the recordings folder to
+set the IDs manually. To get the IDs, you have to check
+
+http://www.themoviedb.org/
+
+for movies and 
+
+http://www.thetvdb.com/
+
+for Series. The format of the scrapinfo file for series is:
+
+series
+id = <series id from tvdb.com>
+episode = <episode id from tvdb.com>
+
+The episode line can also be empty, then only the series without 
+information for the episode is scraped.
+
+For series it is possible to place one common scrapinfo file
+for the whole series. For that the scrapinfo file has to be placed
+two folder levels higher relatively to the recording directory. 
+If a recording is placed in /video/series/episode/<date>.rec/
+then the scrapinfo file has to be placed in /video/series/  
+
+For movies the format is
+
+movie
+id = <movie id from moviedb.org>
+
+Service Interface
+-----------------
+
+Other Plugins can and should request information about meta data from 
+scraper2vdr via a call to the provided service interface. 
+
+First the service "GetEventType" which expects a pointer to a cEvent or 
+a cRecording object as input variable has to be called. This call provides
+the type of the event or recording (tSeries, tMovie, tNone) and the seriesId,
+episodeId and movieId. If type is tSeries, movieId is 0 and vice versa.
+With that then a second call to GetSeries or GetMovie with the appropriate IDs
+provides all stored information for the series or movie in form of a cSeries
+or cMovie object. 
+
+For further information just check the self explanatory services.h file. 

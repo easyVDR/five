@@ -1,0 +1,59 @@
+
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Jörg Wendel <vdr@jwendel.de>
+
+Project's homepage:          URL
+
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+Description:
+
+Make shure that vdr user has sufficiant priveleges to Access the USB serial port.
+e.g. to ensure use an udev.rule like this:
+KERNEL=="ttyUSB?", OWNER="vdr", ATTRS{product}=="SEDU Board USB", SYMLINK+="ttySEDU"
+
+Adjust the seduconf.pl cofig script to generate a suiteable seduatmo.conf according to your configuration and place it in plugin cond dir.
+
+Blacklevel = 5         -> brightness for blacklevel
+DetectCineBars = 2     -> 0- horizontal; 1 - vertical; 2 - both
+FixedColorBlue = 0     -> B level of fixek color (0-255)
+FixedColorGreen = 101  -> G level of fixek color (0-255)
+FixedColorRed = 111    -> R level of fixek color (0-255)
+Frequence = 25         -> frequency
+Gamma = 14             -> Gamma correction (divided by 10)
+HorizontalDepht = 2    -> Number of PIX extend into screen on left/right, 0 for the most outer one only
+VerticalDepht = 1      -> Number of PIX extend into screen at top/bot, 0 for the most outer one only
+LevelBlue = 70         -> white calibration level blue(0-255)
+LevelGreen = 100       -> white calibration level green(0-255)
+LevelRed = 57          -> white calibration level red(0-255)
+LogLevel = 0           -> log Level (0-2)
+SeduMode = 0           -> Protocol: 0 – miniDMX (only A2/512Byte), 1 - tpm2
+SeduRgbOrder = BGR     -> ;)
+ShowMainmenu = 1       -> ;)
+Threshold = 17         -> level for black level detection, dark led until all LED below this threshold
+ViewMode = 0           -> 0 - atmo; 1 - fixed color; 2 - off
+
+Blacklevel = 5         -> Helligkeitslevel bei Schwarzem Bild
+DetectCineBars = 2     -> 0- horizontal; 1 - vertical; 2 - both
+FixedColorBlue = 0     -> B Wert für Fixed Color (0-255)
+FixedColorGreen = 101  -> G Wert für Fixed Color (0-255)
+FixedColorRed = 111    -> R Wert für Fixed Color (0-255)
+Frequence = 25         -> refresh Frequenz 
+Gamma = 14             -> Gamma Korrektur (wird durch 10 geteilt)
+HorizontalDepht = 2    -> Anzahl der Pixel die seitlich in das Bild hinein herangezogen werden, 0 für nur das äußere
+VerticalDepth = 1      -> Anzahl der Pixel die oben und unten in das Bild hineinragen , 0 für nur das äußere
+LevelBlue = 70         -> Weißabgleich B (0-255)
+LevelGreen = 100       -> Weißabgleich G (0-255)
+LevelRed = 57          -> Weißabgleich R (0-255)
+LogLevel = 0           -> log Level (0-2)
+SeduMode = 0           -> Protokoll: 0 – miniDMX (nur A2/512Byte), 1 - tpm2
+SeduRgbOrder = BGR     -> ;)
+ShowMainmenu = 1       -> ;)
+Threshold = 17         -> Schwellwert für Schwarzerkennung, liegen alle drei Farben eines Pixel darunter bleibt die LED aus
+ViewMode = 0           -> 0 - atmo; 1 - fixed color; 2 - off

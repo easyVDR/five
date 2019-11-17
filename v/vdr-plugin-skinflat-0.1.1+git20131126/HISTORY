@@ -1,0 +1,33 @@
+VDR Plugin 'skinflat' Revision History
+---------------------------------------
+
+2013-22-09: Version 0.1.1
+- [add] show disk usage in topbar @ menu recordings & timer
+- [add] support text progressbar in menu
+- [update] bigger replay progress bar & marks
+- [update] diplay message - position at bottom of screen
+- [update] Makefile, imageloader - use ResourceDirectory instead of ConfigDirectory
+- [update] themes less transparency
+- [update] item padding = 5 pixel (before: 2 pixel)
+
+2013-09-08: Version 0.1.0
+- [add] parameter to set channel logos path (-l --logo)
+- [add] 3 new themes - green, gold, red (include icons)
+- [update] themes - color values
+- [update] top bar - 2 rows date, separate color for date, background color
+- [update] display tracks - text margin, background color
+- [update] display volume - text margin, new mute logo, progressbar color
+- [update] display message - position (middle of screen), text margin
+- [update] display replay - marks, progressbar, colors, position, speed color
+- [update] epg/rec info - title color, text margin, position
+- [update] dipslay menu - scrollbar width, colors
+- [update] display channel - separate color for following epg, progressbar color, background color logo
+- [fix] many, many  fixes
+
+2013-30-07: Version 0.0.2
+- [add] replay marks
+- [change] colors
+- [change] progressbar
+
+2013-29-07: Version 0.0.1
+- Erste Version

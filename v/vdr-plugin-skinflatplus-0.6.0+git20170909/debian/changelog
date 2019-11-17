@@ -1,0 +1,317 @@
+vdr-plugin-skinflatplus (0.6.0+git20170909-0easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 14:37:31 +0100
+
+vdr-plugin-skinflatplus (0.6.0+git20170909-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 15 Jan 2019 19:18:25 +0100
+
+vdr-plugin-skinflatplus (0.6.0+git20170909-0easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 23 Sep 2018 17:13:35 +0200
+
+vdr-plugin-skinflatplus (0.6.0+git20170909-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5a8c1819 - fix weather widget php7
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Sep 2017 00:16:55 +0200
+
+vdr-plugin-skinflatplus (0.6.0+git20170830-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:06bec42a - fix typos
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Sep 2017 18:37:42 +0200
+
+vdr-plugin-skinflatplus (0.6.0+git20170812-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:48eee93 - fix text of color buttons
+  * added logos for easyVDR
+  * added patches
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 12 Aug 2017 00:20:08 +0200
+
+vdr-plugin-skinflatplus (0.6.0-0easyVDR5~trusty) trusty; urgency=high
+
+  * added script temperatures
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Dec 2016 20:44:51 +0100
+
+vdr-plugin-skinflatplus (0.6.0-0easyVDR4~trusty) trusty; urgency=high
+
+  * added depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 01 Nov 2016 23:13:27 +0100
+
+vdr-plugin-skinflatplus (0.6.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:57:19 +0200
+
+vdr-plugin-skinflatplus (0.6.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:43:13 +0200
+
+vdr-plugin-skinflatplus (0.6.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Sep 2016 22:25:23 +0200
+
+vdr-plugin-skinflatplus (0.6.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * release version 0.6.0
+  * added logos for easyVDR  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Sep 2016 18:02:24 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20160428-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:617e28ad - update MV-Themes
+  * added logos for easyVDR
+  * added recordingname.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 09 Aug 2016 22:46:27 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20151126-2easyVDR1~trusty) trusty; urgency=high
+
+  * added logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Jan 2016 16:56:35 +0100
+
+vdr-plugin-skinflatplus (0.5.1+git20151126-2easyVDR0~trusty) trusty; urgency=high
+
+  * added logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 30 Dec 2015 13:03:44 +0100
+
+vdr-plugin-skinflatplus (0.5.1+git20151126-1easyVDR0~trusty) trusty; urgency=high
+
+  * fix refresh script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 Dec 2015 19:30:18 +0100
+
+vdr-plugin-skinflatplus (0.5.1+git20151126-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:a9ee2ac0 - rename crypt_nagra.png
+  * added logos for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 18:15:10 +0100
+
+vdr-plugin-skinflatplus (0.5.1+git20150611-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 22:14:21 +0100
+
+vdr-plugin-skinflatplus (0.5.1+git20150611-0mangoVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:28:58 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150611-0mangoVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Aug 2015 22:24:27 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150611-0mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Jul 2015 21:59:51 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150611-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added logos for easyVDR
+  * remove depends fonts
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Jul 2015 22:02:41 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150610-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added logos for easyVDR 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 30 Jun 2015 23:35:23 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150609-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added logos for easyVDR  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 26 Jun 2015 20:55:01 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150608-0mangoVDR0~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 14 Jun 2015 18:05:16 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150608-0easyVDR1~trusty) trusty; urgency=high
+
+  * remove depens
+  * added logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 13 Jun 2015 22:59:37 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150608-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added all logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 13 Jun 2015 15:07:46 +0200
+
+vdr-plugin-skinflatplus (0.5.1+git20150219-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:23:02 +0100
+
+vdr-plugin-skinflatplus (0.5.1+git20150219-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:24:21 +0100
+
+vdr-plugin-skinflatplus (0.5.1+git20150219-1easyVDR0~trusty) trusty; urgency=high
+
+  * add fonts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:02:11 +0100
+
+vdr-plugin-skinflatplus (0.5.1+git20150219-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * fix build with vdr < 2.1.9
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 00:46:57 +0100
+
+vdr-plugin-skinflatplus (0.5.0+git20141226-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 22:51:52 +0100
+
+vdr-plugin-skinflatplus (0.5.0+git20141226-1easyVDR2~trusty) trusty; urgency=high
+
+  * add plg logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 04 Jan 2015 03:59:51 +0100
+
+vdr-plugin-skinflatplus (0.5.0+git20141226-0easyVDR2~trusty) trusty; urgency=high
+
+  * add widgets
+  * add logos for easyVDR  
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 04 Jan 2015 02:18:08 +0100
+
+vdr-plugin-skinflatplus (0.5.0+git20141226-0easyVDR1~trusty) trusty; urgency=high
+
+  * add fonts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Dec 2014 01:39:39 +0100
+
+vdr-plugin-skinflatplus (0.5.0+git20141226-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * add logos for easyVDR
+  * [fix] stop dimm on pause when jump between marks
+  * [fix] only draw widgets if enabled
+  * fix recording menu total count size
+  * fix weather widget 100%
+  * fix,update timer widget
+  * fix topbar number recordings  
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Dec 2014 01:22:55 +0100
+
+vdr-plugin-skinflatplus (0.4.3+git20141030-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 06 Nov 2014 01:03:01 +0100
+
+vdr-plugin-skinflatplus (0.4.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * remove logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Aug 2014 01:20:22 +0200
+
+vdr-plugin-skinflatplus (0.4.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * release version 0.4.2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Aug 2014 21:14:04 +0200
+
+vdr-plugin-skinflatplus (0.4.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * release version 0.4.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 10 Aug 2014 01:26:17 +0200
+
+vdr-plugin-skinflatplus (0.3.1+git20140715-1easyVDR1~trusty) trusty; urgency=high
+
+  * add menu logos
+  * fix typo logoname
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 20 Jul 2014 00:39:11 +0200
+
+vdr-plugin-skinflatplus (0.3.1+git20140715-1easyVDR0~trusty) trusty; urgency=high
+
+  * add logos for easyVDR
+  * switch to native build
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 Jul 2014 21:11:06 +0200
+
+vdr-plugin-skinflatplus (0.3.1+git20140715-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 16 Jul 2014 01:38:47 +0200
+
+vdr-plugin-skinflatplus (0.3.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * release version 0.3.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 12 May 2014 16:04:55 +0200
+
+vdr-plugin-skinflatplus (0.1.0+git20131126-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 14 Jan 2014 22:52:36 +0100
+
+vdr-plugin-skinflatplus (0.1.0+git20131126-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Nov 2013 23:07:42 +0100
+
+vdr-plugin-skinflatplus (0.0.1.git20130923-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Oct 2013 05:23:26 +0100
+
+vdr-plugin-skinflatplus (0.0.1.git20130923-0easyVDR0~saucy) saucy; urgency=high
+
+  * initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Sep 2013 22:12:25 +0200

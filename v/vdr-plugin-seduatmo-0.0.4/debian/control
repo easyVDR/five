@@ -1,0 +1,24 @@
+Source: vdr-plugin-seduatmo
+Section: video
+Priority: extra
+Maintainer: Lars Hanisch <dvb@flensrocker.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: cdbs, debhelper (>= 9), vdr-dev (>= 2.2.0), pkg-config, gettext
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/plg-seduatmo
+
+Package: vdr-plugin-seduatmo
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: A VDR plugin, sedu ambi light control with data from softhddevice
+ This VDR-plugin will do some fancy light effects. :)
+
+Package: vdr-plugin-seduatmo-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-seduatmo (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-seduatmo
+ .
+ This package contains only the debugging symbols for vdr-plugin-seduatmo 
+

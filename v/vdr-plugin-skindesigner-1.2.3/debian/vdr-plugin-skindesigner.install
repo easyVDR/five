@@ -1,0 +1,10 @@
+debian/plugin.skindesigner.conf      etc/vdr/plugins
+scripts/*                            usr/lib/vdr/skindesigner/scripts
+debian/46_skindesigner_refresh_temp  usr/share/vdr/after-vdr-hooks
+debian/temperatures.mango            usr/lib/vdr/skindesigner/scripts
+debian/vdrstats.mango                usr/lib/vdr/skindesigner/scripts
+debian/*.theme                       var/lib/vdr/themes
+
+usr/lib/vdr/plugins/*
+usr/share/*
+var/*

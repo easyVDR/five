@@ -1,0 +1,20 @@
+Index: vdr-plugin-skinenigmang-0.1.3/Makefile
+===================================================================
+--- vdr-plugin-skinenigmang-0.1.3.orig/Makefile
++++ vdr-plugin-skinenigmang-0.1.3/Makefile
+@@ -138,13 +138,8 @@ INCLUDES += $(shell pkg-config --cflags
+ endif
+ endif
+ 
+-ifneq ($(shell which freetype-config),)
+-	INCLUDES += $(shell freetype-config --cflags)
+-	LIBS += $(shell freetype-config --libs)
+-else
+-	INCLUDES += -I/usr/include/freetype -I/usr/local/include/freetype
+-	LIBS += -lfreetype
+-endif
++INCLUDES += $(shell pkg-config --cflags freetype2)
++LIBS += $(shell pkg-config --libs freetype2)
+ 
+ ### The main target:
+ 

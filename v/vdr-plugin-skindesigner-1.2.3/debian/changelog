@@ -1,0 +1,753 @@
+vdr-plugin-skindesigner (1.2.3-0easyVDR8~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 18:44:45 +0100
+
+vdr-plugin-skindesigner (1.2.3-0easyVDR7~bionic) bionic; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Mar 2018 02:13:23 +0100
+
+vdr-plugin-skindesigner (1.2.3-0easyVDR6~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 00:59:14 +0100
+
+vdr-plugin-skindesigner (1.2.3-0easyVDR5~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Nov 2017 01:09:13 +0100
+
+vdr-plugin-skindesigner (1.2.3-0easyVDR4~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 04 Jul 2017 20:27:12 +0200
+
+vdr-plugin-skindesigner (1.2.3-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:55:36 +0200
+
+vdr-plugin-skindesigner (1.2.3-0easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 07 Oct 2016 21:06:02 +0200
+
+vdr-plugin-skindesigner (1.2.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * test exclude libtinyxml
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 07 Oct 2016 17:14:42 +0200
+
+vdr-plugin-skindesigner (1.2.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * added logos for easyVDR 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 06 Oct 2016 22:51:30 +0200
+
+vdr-plugin-skindesigner (1.2.2+git20160925-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Sep 2016 16:57:43 +0200
+
+vdr-plugin-skindesigner (1.2.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * added logos for easyVDR  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Sep 2016 00:26:33 +0200
+
+vdr-plugin-skindesigner (1.2.1-1easyVDR4~trusty) trusty; urgency=high
+
+  * added new icons in skin orange
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 20 Sep 2016 23:28:24 +0200
+
+vdr-plugin-skindesigner (1.2.1-1easyVDR3~trusty) trusty; urgency=high
+
+  * added new icons
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Sep 2016 17:16:16 +0200
+
+vdr-plugin-skindesigner (1.2.1-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Sep 2016 01:34:21 +0200
+
+vdr-plugin-skindesigner (1.2.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * added new logos
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 16 Sep 2016 23:30:33 +0200
+
+vdr-plugin-skindesigner (1.2.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Sep 2016 22:36:04 +0200
+
+vdr-plugin-skindesigner (1.2.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 03 Aug 2016 22:17:32 +0200
+
+vdr-plugin-skindesigner (1.1.2~git20160531-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:754e462 - added channel background color for different estuary4vdr themes
+  * added logos for easyVDR 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 18:13:59 +0200
+
+vdr-plugin-skindesigner (1.1.1~git20160529-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:7b26d65 - updated italian translation
+  * added logos for easyVDR  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 29 May 2016 20:24:20 +0200
+
+vdr-plugin-skindesigner (1.0.3~git20160514-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ffb414cd - Version 1.0.3
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 14 May 2016 16:50:28 +0200
+
+vdr-plugin-skindesigner (1.0.2~git20160506-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:32b78b2f - fixed timer recording detection in main menu
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 06 May 2016 23:14:40 +0200
+
+vdr-plugin-skindesigner (1.0.2~git20160501-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:24cf03d3 - Version 1.0.2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 01 May 2016 21:13:23 +0200
+
+vdr-plugin-skindesigner (1.0.1~git20160501-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:8d4a1b12 - improved vdrstats.default script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 01 May 2016 00:11:03 +0200
+
+vdr-plugin-skindesigner (1.0.0+git20160419-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:4076377e - fixed check if menuicon exists
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Apr 2016 23:57:05 +0200
+
+vdr-plugin-skindesigner (1.0.0+git20160417-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:dd253591 - Version 1.0.0
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 17 Apr 2016 23:40:25 +0200
+
+vdr-plugin-skindesigner (0.9.6+git20160417-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 17 Apr 2016 01:23:15 +0200
+
+vdr-plugin-skindesigner (0.9.6+git20160417-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:6004cf72 - fixed reading of skins for xfs filesystems again
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 17 Apr 2016 01:12:39 +0200
+
+vdr-plugin-skindesigner (0.7.2+git20150820-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:54:40 +0200
+
+vdr-plugin-skindesigner (0.7.2+git20150820-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Feb 2016 17:04:54 +0100
+
+vdr-plugin-skindesigner (0.7.2+git20150820-1easyVDR2~trusty) trusty; urgency=high
+
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Dec 2015 15:23:15 +0100
+
+vdr-plugin-skindesigner (0.7.2+git20150820-1easyVDR0~trusty) trusty; urgency=high
+
+  * remove depends git
+  * added new logos
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 00:00:56 +0100
+
+vdr-plugin-skindesigner (0.7.2+git20150820-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 20:54:55 +0100
+
+vdr-plugin-skindesigner (0.7.2+git20150820-0mangoVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Aug 2015 21:28:39 +0200
+
+vdr-plugin-skindesigner (0.7.2+git20150820-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * added logos for easyVDR  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Aug 2015 22:48:47 +0200
+
+vdr-plugin-skindesigner (0.5.3+git20150621-0mangoVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * 50fe393: added banner to displaymenuschedulescurrentview and
+    displaymenureplaycurrentview
+  * added logos for easyVDR    
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Jul 2015 22:53:56 +0200
+
+vdr-plugin-skindesigner (0.5.3-1easyVDR3~trusty) trusty; urgency=high
+
+  * rebuild for VDR-2.2.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 06 Jul 2015 20:29:06 +0200
+
+vdr-plugin-skindesigner (0.5.3-1easyVDR2~trusty) trusty; urgency=high
+
+  * remove depends fonts added recommends fonts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 06 Jul 2015 20:29:06 +0200
+
+vdr-plugin-skindesigner (0.5.3-1mangoVDR0~trusty) trusty; urgency=high
+
+  * added depends fonts
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 02 Jul 2015 21:15:08 +0200
+
+vdr-plugin-skindesigner (0.5.3-0mangoVDR4~trusty) trusty; urgency=high
+
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 Jun 2015 16:31:53 +0200
+
+vdr-plugin-skindesigner (0.5.3-0mangoVDR3~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 26 Jun 2015 22:44:53 +0200
+
+vdr-plugin-skindesigner (0.5.3-0mangoVDR2~trusty) trusty; urgency=high
+
+  * added logos for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 26 Jun 2015 22:13:53 +0200
+
+vdr-plugin-skindesigner (0.5.3-0mangoVDR1~trusty) trusty; urgency=high
+
+  * switch to native
+  * added script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 17 Jun 2015 01:01:46 +0200
+
+vdr-plugin-skindesigner (0.5.3-0mangoVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jun 2015 22:44:55 +0200
+
+vdr-plugin-skindesigner (0.5.3-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 1f09f99: Version 0.5.3
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 14 Jun 2015 15:40:23 +0200
+
+vdr-plugin-skindesigner (0.5.2-4-g64b131e-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 64b131e: allow currentelements to use conditions
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 05 Jun 2015 17:51:16 +0200
+
+vdr-plugin-skindesigner (0.5.2-4-g64b131e-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 64b131e: allow currentelements to use conditions
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 05 Jun 2015 17:50:59 +0200
+
+vdr-plugin-skindesigner (0.5.2-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * f7263ac: Version 0.5.2
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 04 Jun 2015 17:03:26 +0200
+
+vdr-plugin-skindesigner (0.5.2-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * f7263ac: Version 0.5.2
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 04 Jun 2015 17:03:12 +0200
+
+vdr-plugin-skindesigner (0.5.1-2-gecf8c75-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * ecf8c75: updated german translation
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 04 Jun 2015 11:51:17 +0200
+
+vdr-plugin-skindesigner (0.5.1-2-gecf8c75-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * ecf8c75: updated german translation
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 04 Jun 2015 11:50:54 +0200
+
+vdr-plugin-skindesigner (0.5.1-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d2947bf: Version 0.5.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 17:59:47 +0200
+
+vdr-plugin-skindesigner (0.5.1-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d2947bf: Version 0.5.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 17:59:33 +0200
+
+vdr-plugin-skindesigner (0.5.0-4-g12e65e7-3frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 12e65e7: added timeout for preview screenshot downloading
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 16:27:49 +0200
+
+vdr-plugin-skindesigner (0.5.0-4-g12e65e7-3frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 12e65e7: added timeout for preview screenshot downloading
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 16:27:36 +0200
+
+vdr-plugin-skindesigner (0.5.0-4-g12e65e7-2frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 12e65e7: added timeout for preview screenshot downloading
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 16:20:48 +0200
+
+vdr-plugin-skindesigner (0.5.0-4-g12e65e7-2frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 12e65e7: added timeout for preview screenshot downloading
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 16:20:34 +0200
+
+vdr-plugin-skindesigner (0.5.0-4-g12e65e7-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 12e65e7: added timeout for preview screenshot downloading
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 15:05:49 +0200
+
+vdr-plugin-skindesigner (0.5.0-4-g12e65e7-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 12e65e7: added timeout for preview screenshot downloading
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 15:05:35 +0200
+
+vdr-plugin-skindesigner (0.5.0-4-g12e65e7-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 12e65e7: added timeout for preview screenshot downloading
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 14:23:15 +0200
+
+vdr-plugin-skindesigner (0.5.0-4-g12e65e7-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 12e65e7: added timeout for preview screenshot downloading
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 31 May 2015 14:22:52 +0200
+
+vdr-plugin-skindesigner (0.5.0-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * dac7b9e: Version 0.5.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 May 2015 23:38:57 +0200
+
+vdr-plugin-skindesigner (0.5.0-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * dac7b9e: Version 0.5.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 May 2015 23:38:44 +0200
+
+vdr-plugin-skindesigner (0.5.0-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * dac7b9e: Version 0.5.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 May 2015 23:01:51 +0200
+
+vdr-plugin-skindesigner (0.5.0-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * dac7b9e: Version 0.5.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 30 May 2015 23:01:36 +0200
+
+vdr-plugin-skindesigner (0.4.8-1-gd405f84-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * d405f84: tried to fix sporadic lag when closing menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 22 May 2015 15:45:51 +0200
+
+vdr-plugin-skindesigner (0.4.8-1-gd405f84-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * d405f84: tried to fix sporadic lag when closing menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 22 May 2015 15:45:28 +0200
+
+vdr-plugin-skindesigner (0.4.7-1-gf9278c8-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * f9278c8: try to fix concurrency issue
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 21:12:31 +0200
+
+vdr-plugin-skindesigner (0.4.7-1-gf9278c8-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * f9278c8: try to fix concurrency issue
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 21:12:11 +0200
+
+vdr-plugin-skindesigner (0.4.7-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * dc6b5f4: Version 0.4.7
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 15:35:54 +0200
+
+vdr-plugin-skindesigner (0.4.7-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * dc6b5f4: Version 0.4.7
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 15:35:33 +0200
+
+vdr-plugin-skindesigner (0.4.6-5-g5aa23d2-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 5aa23d2: timeshift support
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 11:12:26 +0200
+
+vdr-plugin-skindesigner (0.4.6-5-g5aa23d2-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 5aa23d2: timeshift support
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 May 2015 11:11:57 +0200
+
+vdr-plugin-skindesigner (0.4.6-3-g727f206-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 727f206: added permashift support in displaychannel
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 May 2015 12:49:34 +0200
+
+vdr-plugin-skindesigner (0.4.6-3-g727f206-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 727f206: added permashift support in displaychannel
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 May 2015 12:49:03 +0200
+
+vdr-plugin-skindesigner (0.4.6-2-g5a0155d-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 5a0155d: added viewelement <vdrstatistics> in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 14 May 2015 22:47:45 +0200
+
+vdr-plugin-skindesigner (0.4.6-2-g5a0155d-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 5a0155d: added viewelement <vdrstatistics> in main menu
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 14 May 2015 22:47:10 +0200
+
+vdr-plugin-skindesigner (0.4.5-3-g57999a4-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 57999a4: added token {watched} to displaymenurecordings
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 10 May 2015 15:49:20 +0200
+
+vdr-plugin-skindesigner (0.4.5-3-g57999a4-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 57999a4: added token {watched} to displaymenurecordings
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 10 May 2015 15:48:52 +0200
+
+vdr-plugin-skindesigner (0.4.4-2-gc5edc10-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * c5edc10: possibility to move viewelements when starting view
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 03 May 2015 16:55:54 +0200
+
+vdr-plugin-skindesigner (0.4.4-2-gc5edc10-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * c5edc10: possibility to move viewelements when starting view
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 03 May 2015 16:54:54 +0200
+
+vdr-plugin-skindesigner (0.4.4-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 5cacee0: Version 0.4.4
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 01 May 2015 15:28:54 +0200
+
+vdr-plugin-skindesigner (0.4.4-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 5cacee0: Version 0.4.4
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 01 May 2015 15:28:16 +0200
+
+vdr-plugin-skindesigner (0.4.3-6-g4fe74f8-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 4fe74f8: added correct menucategory for skin setups
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 20:07:37 +0200
+
+vdr-plugin-skindesigner (0.4.3-6-g4fe74f8-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 4fe74f8: added correct menucategory for skin setups
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 29 Apr 2015 20:07:08 +0200
+
+vdr-plugin-skindesigner (0.4.3-4-ge7d8a19-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * e7d8a19: implemented dvbapi service interface, added viewelement
+    ecminfo in displaychannel
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 26 Apr 2015 19:26:04 +0200
+
+vdr-plugin-skindesigner (0.4.3-4-ge7d8a19-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * e7d8a19: implemented dvbapi service interface, added viewelement
+    ecminfo in displaychannel
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 26 Apr 2015 19:25:37 +0200
+
+vdr-plugin-skindesigner (0.4.3-3-g4fb0b9d-0frodo0~trusty) trusty; urgency=low
+
+  * 4fb0b9d: added tokens for progressbars in displamenudefault
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 20 Apr 2015 18:13:55 +0200
+
+vdr-plugin-skindesigner (0.4.3-2-geb3f8f0-0frodo0~trusty) trusty; urgency=low
+
+  * eb3f8f0: fixed sort order in lastrecordings viewelement
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 18 Apr 2015 23:25:30 +0200
+
+vdr-plugin-skindesigner (0.4.3-1-gabbdea4-0frodo0~trusty) trusty; urgency=low
+
+  * abbdea4: added strequal, strnotequal, strcontains, strnotcontains
+    functions to compare strings in conditions
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 18 Apr 2015 17:27:41 +0200
+
+vdr-plugin-skindesigner (0.4.3-0-g5bbd592-1frodo0~trusty) trusty; urgency=low
+
+  * 5bbd592: Version 0.4.3
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 13 Apr 2015 16:08:47 +0200
+
+vdr-plugin-skindesigner (0.4.3-0-g5bbd592-0frodo0~trusty) trusty; urgency=low
+
+  * 5bbd592: Version 0.4.3
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 13 Apr 2015 08:05:12 +0200
+
+vdr-plugin-skindesigner (0.4.2-4-g22da0fc-1frodo0~trusty) trusty; urgency=low
+
+  * 22da0fc: added more info if debugImage is activted in config
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 11 Apr 2015 20:48:49 +0200
+
+vdr-plugin-skindesigner (0.4.2-4-g22da0fc-0frodo0~trusty) trusty; urgency=low
+
+  * 22da0fc: added more info if debugImage is activted in config
+  * 22da0fc: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 11 Apr 2015 18:14:09 +0200
+
+vdr-plugin-skindesigner (0.4.2-3-g6872e29-0frodo0~trusty) trusty; urgency=low
+
+  * 6872e29: added possibility to draw a debug grid in views
+  * 6872e29: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 11 Apr 2015 16:39:35 +0200
+
+vdr-plugin-skindesigner (0.4.2-2-g5146f15.20150411.1322-4frodo0~trusty) trusty; urgency=low
+
+  * 5146f15: fixed bug that string tokens are not evaluated in area
+    conditions
+  * 5146f15: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 11 Apr 2015 15:22:42 +0200
+
+vdr-plugin-skindesigner (0.4.2-2-g5146f15.20150411.1315-3frodo0~trusty) trusty; urgency=low
+
+  * 5146f15: fixed bug that string tokens are not evaluated in area
+    conditions
+  * 5146f15: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 11 Apr 2015 15:15:24 +0200
+
+vdr-plugin-skindesigner (0.4.2-2-g5146f15.20150410.2136-2frodo0~trusty) trusty; urgency=low
+
+  * 5146f15: fixed bug that string tokens are not evaluated in area
+    conditions
+  * 5146f15: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 10 Apr 2015 23:37:09 +0200
+
+vdr-plugin-skindesigner (0.4.2-2-g5146f15.20150410.2015-1frodo0~trusty) trusty; urgency=low
+
+  * 5146f15: fixed bug that string tokens are not evaluated in area
+    conditions
+  * 5146f15: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 10 Apr 2015 22:16:07 +0200
+
+vdr-plugin-skindesigner (0.4.2-2-g5146f15.20150410.2009-0frodo0~trusty) trusty; urgency=low
+
+  * 5146f15: fixed bug that string tokens are not evaluated in area
+    conditions
+  * 5146f15: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 10 Apr 2015 22:09:39 +0200
+
+vdr-plugin-skindesigner (0.4.2-1-g97f3d37.20150409.2107-10frodo0~trusty) trusty; urgency=low
+
+  * 97f3d37: fixed bug that datetime was not drawn correctly in menus
+  * 97f3d37: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 23:07:30 +0200
+
+vdr-plugin-skindesigner (0.4.2-1-g97f3d37.20150409.2054-8frodo0~trusty) trusty; urgency=low
+
+  * 97f3d37: fixed bug that datetime was not drawn correctly in menus
+  * 97f3d37: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 22:54:14 +0200
+
+vdr-plugin-skindesigner (0.4.2-1-g97f3d37.20150409.2036-5frodo0~trusty) trusty; urgency=low
+
+  * 97f3d37: fixed bug that datetime was not drawn correctly in menus
+  * 97f3d37: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 22:36:43 +0200
+
+vdr-plugin-skindesigner (0.4.2-1-g97f3d37.20150409.2009-4frodo0~trusty) trusty; urgency=low
+
+  * 97f3d37: fixed bug that datetime was not drawn correctly in menus
+  * 97f3d37: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 22:09:59 +0200
+
+vdr-plugin-skindesigner (0.4.2-1-g97f3d37.20150409.2007-3frodo0~trusty) trusty; urgency=low
+
+  * 97f3d37: fixed bug that datetime was not drawn correctly in menus
+  * 97f3d37: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 22:08:02 +0200
+
+vdr-plugin-skindesigner (0.4.2-1-g97f3d37-2frodo0~trusty) trusty; urgency=low
+
+  * 97f3d37: fixed bug that datetime was not drawn correctly in menus
+  * 97f3d37: libskindesignerapi: v0.0.1
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 22:06:53 +0200
+
+vdr-plugin-skindesigner (0.4.2-1-g97f3d37.20150409.1208-1frodo0~trusty) trusty; urgency=low
+
+  * 97f3d37: fixed bug that datetime was not drawn correctly in menus
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 09 Apr 2015 14:08:20 +0200
+
+vdr-plugin-skindesigner (0.4.2-1-g97f3d37.20150407.1925-0frodo0~trusty) trusty; urgency=low
+
+  * 97f3d37: fixed bug that datetime was not drawn correctly in menus
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 07 Apr 2015 21:25:33 +0200
+
+vdr-plugin-skindesigner (0.4.2-0-g5f1ae51.20150406.1830-3frodo0~trusty) trusty; urgency=low
+
+  * 5f1ae51: Version 0.4.2
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 20:30:28 +0200
+
+vdr-plugin-skindesigner (0.4.2-0-g5f1ae51.20150406.1723-1frodo0~trusty) trusty; urgency=low
+
+  * 5f1ae51: Version 0.4.2
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 19:23:32 +0200
+
+vdr-plugin-skindesigner (0.4.2-0-g5f1ae51.20150406.1533-0frodo0~trusty) trusty; urgency=low
+
+  * 5f1ae51: Version 0.4.2
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 06 Apr 2015 17:33:37 +0200
+
+vdr-plugin-skindesigner (0.4.1-1-gf316b26.20150405.1555-0frodo0~trusty) trusty; urgency=low
+
+  * f316b26: removed old stuff
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 05 Apr 2015 17:56:08 +0200
+

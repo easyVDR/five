@@ -1,0 +1,10 @@
+#! /bin/sh
+set -e
+
+# Remove default theme
+if [ "$1" = "purge" ]; then
+    rm -f /var/lib/vdr/themes/Elchi-*.theme
+	rm -rf /usr/share/vdr-skinelchi-logos
+fi
+
+#DEBHELPER#

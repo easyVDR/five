@@ -1,0 +1,11 @@
+Scripts for:
+- system temperatures - "temperatures" is called
+- vdr statistics (vdr cpu load and memory usage) "vdrstats" is called
+
+You must manually create a link for each script to the script you want to use, for example:
+ln -s temperatures.default temperatures
+ln -s vdrstats.default vdrstats
+
+The scripts will be executed every time the according viewelement is displayed, so please keep it short and fast.
+
+Please install lm-sensors and configure it for your system. 

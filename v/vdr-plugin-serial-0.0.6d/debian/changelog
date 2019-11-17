@@ -1,0 +1,102 @@
+vdr-plugin-serial (0.0.6d-3easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:13:35 +0100
+
+vdr-plugin-serial (0.0.6d-3easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 05 Dec 2017 00:59:03 +0100
+
+vdr-plugin-serial (0.0.6d-3easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 30 Nov 2017 01:09:03 +0100
+
+vdr-plugin-serial (0.0.6d-3easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 04 Jul 2017 17:52:44 +0200
+
+vdr-plugin-serial (0.0.6d-3easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:55:25 +0200
+
+vdr-plugin-serial (0.0.6d-3easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:41:30 +0200
+
+vdr-plugin-serial (0.0.6d-3easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:43:40 +0200
+
+vdr-plugin-serial (0.0.6d-3easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:02:55 +0200
+
+vdr-plugin-serial (0.0.6d-3easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:46:30 +0100
+
+vdr-plugin-serial (0.0.6d-3easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 00:20:07 +0100
+
+vdr-plugin-serial (0.0.6d-2easyVDR0~trusty) trusty; urgency=high
+
+  * add serial to group dialout
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 19 Apr 2015 01:54:45 +0200
+
+vdr-plugin-serial (0.0.6d-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:22:03 +0200
+
+vdr-plugin-serial (0.0.6d-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:00:20 +0100
+
+vdr-plugin-serial (0.0.6d-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang <vdr@gmx.de>  Mon, 23 Mar 2015 19:31:05 +0100
+
+vdr-plugin-serial (0.0.6d-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:53:02 +0200
+
+vdr-plugin-serial (0.0.6d-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:19:29 +0200
+
+vdr-plugin-serial (0.0.6d-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 Nov 2013 21:30:58 +0100
+

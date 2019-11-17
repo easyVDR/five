@@ -1,0 +1,26 @@
+Source: vdr-plugin-skinelchi
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>, Thomas Schmidt <tschmidt@debian.org>
+Origin: ctvdr
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), pkg-config, gettext, libmagick++-dev
+Standards-Version: 3.9.4
+Homepage: http://firefly.vdr-developer.org/skinelchi
+
+Package: vdr-plugin-skinelchi
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Suggests: vdr-xpmlogos
+Description: Skin plugin for vdr
+ Skinelchi is a skin recreating the look of ElchiAIO + ImprovedOSD.
+
+Package: vdr-plugin-skinelchi-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-skinelchi (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-skinelchi
+ .
+ This package contains only the debugging symbols for vdr-plugin-skinelchi
+

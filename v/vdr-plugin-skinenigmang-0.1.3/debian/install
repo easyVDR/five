@@ -1,0 +1,5 @@
+libvdr-skinenigmang.so.*        usr/lib/vdr/plugins/
+themes/*.theme                  var/lib/vdr/themes/
+debian/plugin.skinenigmang.conf etc/vdr/plugins/
+debian/tmp/usr/share/locale
+debian/EnigmaNG-Glass.theme	var/lib/vdr/themes/	

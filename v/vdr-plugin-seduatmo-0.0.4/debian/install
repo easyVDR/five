@@ -1,0 +1,5 @@
+scripts/seduconf.pl     var/lib/vdr/plugins/seduatmo/
+debian/99-sedu-board.rules  lib/udev/rules.d/
+
+#debian/plugin.seduatmo.conf    etc/vdr/plugins/
+

@@ -1,0 +1,80 @@
+<menurecordings x="0" y="0" width="100%" height="100%" fadetime="0">
+    <menuitems x="0" y="0" orientation="vertical" width="100%" height="100%" align="center" numlistelements="16">
+        <!-- Available Variables recordings menu listelement:
+        {nummenuitem}           number of item in list, starts with 1
+        {name}                  Real Name of recording (Name of Recording Folder)
+        {epgname}               Name of recording (Name from EPG)
+        {shorttext}             Short Text of recording
+        {description}           Descrption of recording
+        {date}                  Date of recording
+        {time}                  Time of recording
+        {daynumeric}            day as number
+        {month}                 month as number
+        {year}                  year as number
+        {duration}              real duration of recording in minutes
+        {durationhours}         real duration, full hours
+        {durationminutes}       real duration, rest of minutes
+        {durationevent}         duration of corresponding event in minutes
+        {durationeventhours}    event duration, full hours
+        {durationeventminutes}  event duration, rest of minutes
+        {current}               true if item is currently selected
+        {new}                   true if recording is new
+        {percentseen}           percent already watched, -1 for VDR < 2.1.8
+        {watched}               true if percentseen > 85% including MarginStop of not cutted recording 
+        {cutted}                true if recording is cutted
+        {folder}                true if item is a folder
+        {numrecordingsfolder}   if item is a folder, number of recordings in this folder
+        {newrecordingsfolder}   if item is a folder, number of new recordings in this folder
+        {hasposterthumbnail}    true if a scraped poster thumbnail is available for recording
+        {thumbnailbwidth}       width of scraped poster thumbnail
+        {thumbnailheight}       height of scraped poster thumbnail
+        {thumbnailpath}         absolute path of scraped poster thumbnail
+        {hasposter}             true if a scraped poster is available for recording
+        {posterwidth}           width of scraped poster
+        {posterheight}          height of scraped poster
+        {posterpath}            absolute path of scraped poster
+        -->
+        <listelement>
+        </listelement>
+        <!-- additional element which is drawn for current element -->
+        <!-- Available Variables channels menu currentelement:
+        {menuitemx}             x position of according menu item
+        {menuitemy}             y position of according menu item
+        {menuitemwidth}         width of according menu item
+        {menuitemheight}        height of according menu item
+        {name}                  Real Name of recording (Name of Recording Folder)
+        {epgname}               Name of recording (Name from EPG)
+        {shorttext}             Short Text of recording
+        {description}           Descrption of recording        
+        {date}                  Date of recording
+        {time}                  Time of recording
+        {daynumeric}            day as number
+        {month}                 month as number
+        {year}                  year as number
+        {duration}              real duration of recording in minutes
+        {durationhours}         real duration, full hours
+        {durationminutes}       real duration, rest of minutes
+        {durationevent}         duration of corresponding event in minutes
+        {durationeventhours}    event duration, full hours
+        {durationeventminutes}  event duration, rest of minutes        
+        {new}                   true if recording is new
+        {percentseen}           percent already watched, -1 for VDR < 2.1.8
+        {watched}               true if percentseen > 85% including MarginStop of not cutted recording 
+        {cutted}                true if recording is cutted
+        {folder}                true if item is a folder
+        {numrecordingsfolder}   if item is a folder, number of recordings in this folder
+        {newrecordingsfolder}   if item is a folder, number of new recordings in this folder
+        {hasposter}             true if a scraped poster is available for recording
+        {posterwidth}           width of scraped poster
+        {posterheight}          height of scraped poster
+        {posterpath}            absolute path of scraped poster
+        {hasbanner}             true if a scraped banner is available for this element
+        {bannerwidth}           width of scraped banner
+        {bannerheight}          height of scraped banner
+        {bannerpath}            absolute path of scraped banner        
+        -->
+        <currentelement delay="500" fadetime="0">
+        </currentelement>
+    </menuitems>
+
+</menurecordings>

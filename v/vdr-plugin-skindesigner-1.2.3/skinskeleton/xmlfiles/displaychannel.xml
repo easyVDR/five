@@ -1,0 +1,414 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displaychannel SYSTEM "../../../dtd/displaychannel.dtd">
+
+<displaychannel x="0" y="0" width="100%" height="100%" fadetime="0">
+
+    <background>
+    </background>
+
+    <!-- Available Variables channelinfo:
+    {channelnumber}                 Number of Channel, with "-" in case of channel switching
+    {channelname}                   Name of current Channel
+    {channellogoexists}             true if a channel logo exists 
+    {channelid}                     ChannelID as path to display channel logo
+    {switching}                     true if a number is pressed on the remote to switch to a dedicated channel
+    -->
+    <channelinfo>
+    </channelinfo>
+
+    <!-- Available Variables epginfo:
+    {currenttitle}                     Title of the current Schedule
+    {currentsubtitle}                  Subtitle of the current Schedule
+    {currentstart}                     Start of current Schedule in hh:mm
+    {currentstop}                      End of current Schedule in hh:mm 
+    {currentduration}                  Duration of current Schedule in min
+    {currentdurationhours}             Duration, full hours
+    {currentdurationminutes}           Duration, rest of minutes
+    {currentelapsed}                   Elapsed time of current Schedule in min
+    {currentremaining}                 Remaining time of current Schedule in min
+    {currentrecording}                 true if current Schedule is recorded
+    {hasVPS}                           true if current Schedule has VPS
+    {nexttitle}                        Title of next Schedule
+    {nextsubtitle}                     Subtitle of next Schedule
+    {nextstart}                        Start of next Schedule in hh:mm
+    {nextstop}                         Stop of next Schedule in hh:mm
+    {nextduration}                     Duration of next Schedule in min
+    {nextdurationhours}                Duration, full hours
+    {nextdurationminutes}              Duration, rest of minutes
+    {nextrecording}                    true if next Schedule will be recorded
+    -->
+    <epginfo>
+    </epginfo>
+
+    <!-- Available Variables progressbar:
+    {start}                            Start of current Schedule in hh:mm
+    {stop}                             End of current Schedule in hh:mm 
+    {duration}                         Total Duration of current Schedule in seconds
+    {elapsed}                          Elapsed time of current Schedule in seconds
+    {remaining}                        Remaining time of current Schedule in seconds
+    {permashift}                       true if permashift plugin is in use
+    {livebuffer}                       current buffered data in seconds
+    -->
+    <progressbar>
+    </progressbar>
+
+    <!-- Available Variables statusinfo:
+    {isRadio}                          true if channel is a radio channel
+    {hasVT}                            true if channel has video text   
+    {isStereo}                         true if a stereo audio trac is available
+    {isDolby}                          true if a dolby audio track is available
+    {isEncrypted}                      true if channel is encrypted
+    {isRecording}                      true if currently a recording is running on this channel
+    {newmails}                         true if mailbox plugin is installed and new mails are available
+    -->
+    <statusinfo>
+    </statusinfo>
+
+    <!-- Available Variables audioinfo:
+    {numaudiotracks}                   number of available audio tracks for current channel
+    {audiochannel}                     0 if current channel is stereo, 1 for left chanel only, 2 for right channel only
+    {trackdesc}                        description of the current audio track
+    {tracklang}                        language of the current audio track
+    -->
+    <audioinfo>
+    </audioinfo>
+
+    <!-- Available Variables ecminfo:
+    {caid}                              id of currently used CA
+    {cardsystem}                        name of currently used CA
+    {pid}                               pID
+    {prid}                              provider ID
+    {ecmtime}                           ecm time in ms
+    {hops}                              number of hops
+    {reader}                            name of used reader
+    {from}                              name of originating host
+    {protocol}                          used protocol of reader
+    -->
+    <ecminfo>
+    </ecminfo>
+
+    <!-- Available Variables screenresolution:
+    {screenwidth}                      width of currently displayed channel in px
+    {screenheight}                     height of currently displayed channel in px
+    {resolution}                       resolution: hd1080i, hd720p, sd576i, sd480i
+    {aspect}                           screen aspect, each 4:3, 16:9 or 21:9
+    {isHD}                             true for hd1080i and hd720p
+    {isWideScreen}                     true if aspect is 16:9 or 21:9
+    -->
+    <screenresolution>
+    </screenresolution>
+
+    <!-- Available Variables channelgroup:
+    {prevAvailable}                     true if previous Channel Group is avaialble
+    {nextAvailable}                     true if next Channel Group is avaialble
+    {group}                             Name of current Channel Group
+    {nextgroup}                         Name of next Channel Group
+    {prevgroup}                         Name of prev Channel Group
+    {sepexists}                         true if a channel separator logo exists
+    {seppath}                           path for separator logo to use in imagetype "seplogo"
+    -->
+    <channelgroup>
+    </channelgroup>
+
+    <!-- Available Variables signalquality:
+    {signalstrength}                    STR value of currently displayed channel
+    {signalquality}                     SNR value of currently displayed channel
+    -->
+    <signalquality>
+    </signalquality>
+
+    <!-- Available Variables devices:
+    signalstrength and -quality are only set if not mode="light" is used in <devices>
+    {numdevices}                number of available devices
+    {devices[]}                 array with available devices
+    {devices[num]}              number of current device
+    {devices[type]}             type of device (DVB-S, DVB-C, ...)
+    {devices[istuned]}          true if device is currently tuned to a transponder
+    {devices[livetv]}           true if device is currently playing livetv
+    {devices[recording]}        true if device is currently recording
+    {devices[hascam]}           true if device has a CAM
+    {devices[cam]}              number of CAM
+    {devices[signalstrength]}   signalstrength of devcie
+    {devices[signalquality]}    signalstrength of devcie
+    {devices[channelnumber]}    number of the currently tuned channel
+    {devices[channelname]}      name of the currently tuned channel
+    {devices[channellogoexists]} true if a channel logo exists 
+    {devices[channelid]}        ID of the currently tuned channel
+    {devices[source]}           source of the currently tuned channel
+    -->
+    <devices mode="full|light">
+    </devices>
+
+    <!-- Available Variables currentweather:
+    {timestamp}                 timestamp of forecast in dd.mm hh:mm
+    {temperature}               current temperature in °C
+    {apparenttemperature}       apparent (feeled) temperature
+    {mintemperature}            minimum daily temperature in °C
+    {maxtemperature}            maximum daily temperature in °C
+    {summary}                   short weather summary
+    {icon}                      weather icon 
+    {precipitationintensity}    precipitation intensity in l/m2
+    {precipitationprobability}  precipitation probability in %
+    {precipitationtype}         precipitation type
+    {humidity}                  humidity in %
+    {windspeed}                 windspeed in km/h
+    {windbearing}               wind bearing in °
+    {windbearingstring}         wind bearing (N, NE, ...)
+    {visibility}                visibility in km
+    {cloudcover}                cloud cover in %
+    {pressure}                  pressure in HPo
+    {ozone}                     ozone value in DU
+    -->
+    <currentweather>
+    </currentweather>
+
+    <!-- Available Variables scrapercontent:
+    {posterpath}                        Full Path of Poster to use in image path attribute
+    {posterwidth}                       width of poster in pixel
+    {posterheight}                      height of poster in pixel
+    {hasposter}                         true if poster is available
+    {bannerpath}                        Full Path of banner to use in image path attribute
+    {bannerwidth}                       width of banner in pixel
+    {bannerheight}                      height of banner in pixel
+    {hasbanner}                         true if banner is available
+
+    Use this tokens if you want to display a banner for series and a poster for movies:
+    {mediapath}                         Full Path of Poster or Banner to use in image path attribute
+    {mediawidth}                        width of image in pixel
+    {mediaheight}                       height of image in pixel
+    {isbanner}                          true if image is a banner, false if it is a poster
+    -->
+    <scrapercontent>
+    </scrapercontent>
+
+    <!-- Available Variables channelhints:
+    {numhints}                          number of hints to display
+    {hints[]}                           array with available channel hints
+    {hints[channelnumber]}              number of current channel
+    {hints[channelname]}                name of current channel
+    {hints[channelid]}                  id of current channel
+    {hints[channellogoexists]}          true if channel logo exists
+    -->
+    <channelhints>
+    </channelhints>
+
+    <!-- Available Variables channeldetail:
+    {channelname}                       name of current channel
+    {channelnumber}                     number of current channel
+    {currenttitle}                      title of current event
+    {currentshorttext}                  short text of current event
+    {currentdescription}                description of current event
+    {currentstart}                      start time of current event in hh:mm
+    {currentstop}                       end time of current event in hh:mm
+    {currentduration}                   duration of current Schedule in min
+    {currentdurationhours}              duration, full hours
+    {currentdurationminutes}            duration, rest of minutes
+    {currentelapsed}                    elapsed time of current Schedule in min
+    {currentremaining}                  remaining time of current Schedule in min
+    {nexttitle}                         title of next event
+    {nextshorttext}                     short text of next event
+    {nextdescription}                   description of next event
+    {nextstart}                         start time of next event in hh:mm
+    {nextstop}                          end time of next event in hh:mm
+    {nextduration}                      duration of next Schedule in min
+    {nextdurationhours}                 duration, full hours
+    {nextdurationminutes}               duration, rest of minutes
+
+    {ismovie}                 true if current event is scraped as a movie
+    Available variables for movies:
+    {movietitle}              movie title from themoviedb
+    {movieoriginalTitle}      movie original title from themoviedb
+    {movietagline}            movie tagline from themoviedb
+    {movieoverview}           movie overview from themoviedb
+    {movieadult}              true if movie is rated as adult
+    {moviebudget}             movie budget from themoviedb in $
+    {movierevenue}            movie revenue from themoviedb in $
+    {moviegenres}             movie genres from themoviedb
+    {moviehomepage}           movie homepage from themoviedb
+    {moviereleasedate}        movie release date from themoviedb
+    {movieruntime}            movie runtime from themoviedb
+    {moviepopularity}         movie popularity from themoviedb
+    {movievoteaverage}        movie vote average from themoviedb
+    {posterwidth}             width of scraped poster
+    {posterheight}            height of scraped poster
+    {posterpath}              absolute path of scraped poster
+    {fanartwidth}             width of scraped fanart
+    {fanartheight}            height of scraped fanart
+    {fanartpath}              absolute path of scraped fanart
+    {movieiscollection}       true if movie is part of a collection
+    {moviecollectionName}     name of movie collection
+    {collectionposterwidth}   width of scraped collection poster
+    {collectionposterheight}  height of scraped collection poster
+    {collectionposterpath}    absolute path of scraped collection poster
+    {collectionfanartwidth}   width of scraped collection fanart
+    {collectionfanartheight}  height of scraped collection fanart
+    {collectionfanartpath}    absolute path of scraped collection fanart
+    {actors[]}                array with movie actors
+    {actors[name]}            real name of actor
+    {actors[role]}            actor role
+    {actors[thumb]}           absolute path of scraped actor thumb
+    {actors[thumbwidth]}      width of scraped actor thumb
+    {actors[thumbheight]}     height of scraped actor thumb
+
+    {isseries}                true if current event is scraped as a series
+    Available variables for series:
+    {seriesname}              name of series
+    {seriesoverview}          series overview
+    {seriesfirstaired}        first aired date 
+    {seriesnetwork}           network which produces series
+    {seriesgenre}             series genre
+    {seriesrating}            series thetvdb rating
+    {seriesstatus}            status of series (running / finished)
+    {episodetitle}            title of episode
+    {episodenumber}           number of episode
+    {episodeseason}           season of episode
+    {episodefirstaired}       first aired date of episode
+    {episodegueststars}       guest stars of episode
+    {episodeoverview}         episode overview
+    {episoderating}           user rating for episode
+    {episodeimagewidth}       episode image width
+    {episodeimageheight}      episode image height
+    {episodeimagepath}        episode image path
+    {seasonposterwidth}       episode season poster width
+    {seasonposterheight}      episode season poster height
+    {seasonposterpath}        episode season poster path
+    {seriesposter1width}      width of 1st poster
+    {seriesposter1height}     height of 1st poster
+    {seriesposter1path}       path of 1st poster
+    {seriesposter2width}      width of 2nd poster
+    {seriesposter2height}     height of 2nd poster
+    {seriesposter2path}       path of 2nd poster
+    {seriesposter3width}      width of 3rd poster
+    {seriesposter3height}     height of 3rd poster
+    {seriesposter3path}       path of 3rd poster
+    {seriesfanart1width}      width of 1st fanart
+    {seriesfanart1height}     height of 1st fanart
+    {seriesfanart1path}       path of 1st fanart
+    {seriesfanart2width}      width of 2nd fanart
+    {seriesfanart2height}     height of 2nd fanart
+    {seriesfanart2path}       path of 2nd fanart
+    {seriesfanart3width}      width of 3rd fanart
+    {seriesfanart3height}     height of 3rd fanart
+    {seriesfanart3path}       path of 3rd fanart
+    {seriesbanner1width}      width of 1st banner
+    {seriesbanner1height}     height of 1st banner
+    {seriesbanner1path}       path of 1st banner
+    {seriesbanner2width}      width of 2nd banner
+    {seriesbanner2height}     height of 2nd banner
+    {seriesbanner2path}       path of 2nd banner
+    {seriesbanner3width}      width of 3rd banner
+    {seriesbanner3height}     height of 3rd banner
+    {seriesbanner3path}       path of 3rd fanart
+    {actors[]}                array with movie actors
+    {actors[name]}            real name of actor
+    {actors[role]}            actor role
+    {actors[thumb]}           absolute path of scraped actor thumb
+    {actors[thumbwidth]}      width of scraped actor thumb
+    {actors[thumbheight]}     height of scraped actor thumb
+    -->
+    <channeldetail>
+    </channeldetail>
+
+    <!-- Available Variables channellistback:
+    -->
+    <channellistback>
+    </channellistback>
+
+    <!-- Available Variables channellist:
+    {nummenuitem}               number in list of currently displayed channellist item
+    {current}                   true if currently displayed item is active
+    {name}                      name of channel
+    {number}                    number of channel
+    {channelid}                 if of channel
+    {channellogoexists}         true if channel logo exists
+    {presenteventtitle}         title of present event
+    {presenteventstart}         start of present event in hh:mm
+    {presenteventstop}          end of present event in hh:mm
+    {presenteventelapsed}       elapsed minutes of present event
+    {presenteventremaining}     remaining minutes of present event
+    {nexteventtitle}            title of next event
+    {nexteventstart}            start time of next event in hh:mm
+    {nexteventstop}             end time of next event in hh:mm
+    -->
+    <channellist button="right">
+    </channellist>
+
+    <!-- Available Variables channellistdetail:
+    see <channeldetail> tokens
+    -->
+    <channellistdetail>
+    </channellistdetail>
+
+    <!-- Available Variables grouplistback:
+    -->
+    <grouplistback>
+    </grouplistback>
+
+    <!-- Available Variables grouplist:
+    {nummenuitem}               number in list of currently displayed channelgrouplist item
+    {current}                   true if currently displayed item is active
+    {groupname}                 name of displayed channel group
+    {numchannels}               number of channels in channel group
+    -->
+    <grouplist button="left">
+    </grouplist>
+
+    <!-- Available Variables groupchannellistback:
+    -->
+    <groupchannellistback>
+    </groupchannellistback>
+
+    <!-- Available Variables groupchannellist:
+    see <channellist> tokens
+    -->
+    <groupchannellist>
+    </groupchannellist>
+
+    <!-- Available Variables groupchannellistdetail:
+    see <channeldetail> tokens
+    -->
+    <groupchannellistdetail>
+    </groupchannellistdetail>
+
+    <!-- Available Variables datetime:
+    {time}                              time in hh:mm
+    {day}                               day in digits
+    {dayleadingzero}                    day in digits with leading 0
+    {dayname}                           Full name of the day
+    {daynameshort}                      Short 3 char name of the day
+    {month}                             month in digits with leading 0
+    {monthname}                         Full name of the month
+    {monthnameshort}                    3 letter abbrivation of month name
+    {year}                              year in yyyy
+    -->
+    <datetime>
+    </datetime>
+
+    <!-- Available Variables time:
+    {sec}                    current seconds
+    {min}                    current minutes
+    {hour}                   current hours
+    {hmins}                  current "hourminutes" to display an hour hand
+    -->
+    <time>
+    </time>
+
+    <!-- Available Variables message:
+    {text}                     message text
+    {status}                   true if message is a status message
+    {info}                     true if message is a info message
+    {warning}                  true if message is a warn message
+    {error}                    true if message is a error message
+    -->
+    <message>
+    </message>
+
+    <!-- Available Variables customtokens:
+    all custom tokens set by the svdrp command SCTK are available in this viewelement
+    For instance, use an appropriate script which runs periodically as cronjob and
+    sets these custom tokens with svdrpsend or dbus2vdr
+    --> 
+    <customtokens>
+    </customtokens>
+    
+</displaychannel>

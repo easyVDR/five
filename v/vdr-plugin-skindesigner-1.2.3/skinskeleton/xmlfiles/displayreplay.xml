@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE displayreplay SYSTEM "../../../dtd/displayreplay.dtd">
+
+<displayreplay x="0" y="0" width="100%" height="100%" fadetime="0">
+
+    <background>
+    </background>
+
+    <backgroundmodeonly>
+    </backgroundmodeonly>
+
+    <!-- Available Variables datetime:
+    {time}                              time in hh:mm
+    {day}                               day in digits
+    {dayleadingzero}                    day in digits with leading 0
+    {dayname}                           Full name of the day
+    {daynameshort}                      Short 3 char name of the day
+    {month}                             month in digits with leading 0
+    {monthname}                         Full name of the month
+    {monthnameshort}                    3 letter abbrivation of month name
+    {year}                              year in yyyy
+    -->
+    <datetime>
+    </datetime>
+
+    <!-- Available Variables time:
+    {sec}                    current seconds
+    {min}                    current minutes
+    {hour}                   current hours
+    {hmins}                  current "hourminutes" to display an hour hand
+    -->
+    <time>
+    </time>
+
+    <!-- Available Variables scrapercontent:
+    {posterpath}                        Full Path of Poster to use in image path attribute
+    {posterwidth}                       width of poster in pixel
+    {posterheight}                      height of poster in pixel
+    {hasposter}                         true if poster is available
+    {bannerpath}                        Full Path of banner to use in image path attribute
+    {bannerwidth}                       width of banner in pixel
+    {bannerheight}                      height of banner in pixel
+    {hasbanner}                         true if banner is available
+
+    Use this tokens if you want to display a banner for series and a poster for movies:
+    {mediapath}                         Full Path of Poster or Banner to use in image path attribute
+    {mediawidth}                        width of image in pixel
+    {mediaheight}                       height of image in pixel
+    {isbanner}                          true if image is a banner, false if it is a poster
+    -->
+    <scrapercontent>
+    </scrapercontent>
+
+    <!-- Available Variables rectitle:
+    {rectitle}                     Title of Recording
+    {recsubtitle}                  Subtitle of the Recording
+    {recdate}                      Date Recording in dd.mm.yy
+    {rectime}                      Time of Recording in hh:mm
+    -->
+    <rectitle>
+    </rectitle>
+
+    <!-- Available Variables recinfo:
+    {screenwidth}                      width of currently displayed recording in px
+    {screenheight}                     height of currently displayed recording in px
+    {resolution}                       resolution: hd1080i, hd720p, sd576i, sd480i
+    {aspect}                           screen aspect, each 4:3, 16:9 or 21:9
+    {isHD}                             true for hd1080i and hd720p
+    {isWideScreen}                     true if aspect is 16:9 or 21:9
+    -->
+    <recinfo>
+    </recinfo>
+
+    <!-- Available Variables currenttime:
+    {reccurrent}                   Current Time in hh:mm:ss
+    -->
+    <currenttime>
+    </currenttime>
+
+    <!-- Available Variables totaltime:
+    {rectotal}                   Total Time in hh:mm:ss
+    {timeshift}                  true if a timeshifted recording is displayed
+    {timeshifttotal}             Total Time of timeshift event in hh:mm
+    -->
+    <totaltime>
+    </totaltime>
+
+    <!-- Available Variables endtime:
+    {recend}                     End Time in hh:mm
+    -->
+    <endtime>
+    </endtime>
+
+    <!-- Available Variables progressbar:
+    {current}                   current frame of recording
+    {total}                     total frames of recording
+    {timeshift}                 true if a timeshifted recording is displayed
+    {timeshifttotal}            total number of frames of timeshift event
+    -->
+    <progressbar>
+    </progressbar>
+
+    <!-- Available Variables cutmarks:
+    {timeshift}                 true if a timeshifted recording is displayed
+    {marks[]}                   array of available marks
+    {marks[position]}           frame of current mark
+    {marks[endposition]}        frame where startmark ends
+    {marks[total]}              total number of frames
+    {marks[timeshifttotal]}     total number of frames of timeshift event
+    {marks[active]}             true if current replay position hits exactly the mark
+    {marks[startmark]}          true if mark is start mark
+    -->
+    <cutmarks>
+    </cutmarks>
+
+    <!-- Available Variables controlicons and controliconsmodeonly:
+    {play}              true if recording is played currently
+    {pause}             true if recording is paused
+    {forward}           true if fast forwarding
+    {slowforward}       true if slow forwarding
+    {forward1x}         true if fast forwarding 1x (with 3 trickspeeds)
+    {forward2x}         true if fast forwarding 2x (with 3 trickspeeds)
+    {forward3x}         true if fast forwarding 3x (with 3 trickspeeds)
+    {slowforward1x}     true if slow forwarding 1x (with 3 trickspeeds)
+    {slowforward2x}     true if slow forwarding 2x (with 3 trickspeeds)
+    {slowforward3x}     true if slow forwarding 3x (with 3 trickspeeds)
+    {rewind}            true if fast rewinding 
+    {slowrewind}        true if slow rewinding
+    {rewind1x}          true if fast rewinding 1x (with 3 trickspeeds)
+    {rewind2x}          true if fast rewinding 2x (with 3 trickspeeds)
+    {rewind3x}          true if fast rewinding 3x (with 3 trickspeeds)
+    {slowrewind1x}      true if slow rewinding 1x (with 3 trickspeeds)
+    {slowrewind2x}      true if slow rewinding 2x (with 3 trickspeeds)
+    {slowrewind3x}      true if slow rewinding 3x (with 3 trickspeeds)
+    -->
+    <controlicons>
+    </controlicons>
+
+    <controliconsmodeonly>
+    </controliconsmodeonly>
+
+    <!-- Available Variables progressmodeonly:
+    {current}                   current frame of recording
+    {total}                     total frames of recording
+    {timecurrent}               current time in hh:mm:ss or mm:ss if shorter that one hour
+    {timetotal}                 total time in hh:mm:ss or mm:ss if shorter that one hour
+    -->
+    <progressmodeonly>
+    </progressmodeonly>
+
+    <!-- Available Variables jump:
+    {jump}                      time to jump to in hh:mm
+    -->
+    <jump>
+    </jump>
+    
+    <!-- Available Variables message:
+    {text}                     message text
+    {status}                   true if message is a status message
+    {info}                     true if message is a info message
+    {warning}                  true if message is a warn message
+    {error}                    true if message is a error message
+    -->
+    <message>
+    </message>
+
+    <!-- Available Variables onpause and onpausemodeonly:
+    {name}                    title of recording
+    {shorttext}               shorttext of recording
+    {description}             description of recording
+    {date}                    date of recording in dd.mm.yy
+    {time}                    time of recording in hh:mm
+    {daynumeric}              day as number
+    {month}                   month as number
+    {year}                    year as number
+    {duration}                real duration of recording in minutes
+    {durationhours}           real duration, full hours
+    {durationminutes}         real duration, rest of minutes
+    {durationevent}           duration of corresponding event in minutes
+    {durationeventhours}      event duration, full hours
+    {durationeventminutes}    event duration, rest of minutes
+
+    {ismovie}                 true if event is scraped as a movie
+    Available variables for movies:
+    {movietitle}              movie title from themoviedb
+    {movieoriginalTitle}      movie original title from themoviedb
+    {movietagline}            movie tagline from themoviedb
+    {movieoverview}           movie overview from themoviedb
+    {movieadult}              true if movie is rated as adult
+    {moviebudget}             movie budget from themoviedb in $
+    {movierevenue}            movie revenue from themoviedb in $
+    {moviegenres}             movie genres from themoviedb
+    {moviehomepage}           movie homepage from themoviedb
+    {moviereleasedate}        movie release date from themoviedb
+    {movieruntime}            movie runtime from themoviedb
+    {moviepopularity}         movie popularity from themoviedb
+    {movievoteaverage}        movie vote average from themoviedb
+    {posterwidth}             width of scraped poster
+    {posterheight}            height of scraped poster
+    {posterpath}              absolute path of scraped poster
+    {fanartwidth}             width of scraped fanart
+    {fanartheight}            height of scraped fanart
+    {fanartpath}              absolute path of scraped fanart
+    {movieiscollection}       true if movie is part of a collection
+    {moviecollectionName}     name of movie collection
+    {collectionposterwidth}   width of scraped collection poster
+    {collectionposterheight}  height of scraped collection poster
+    {collectionposterpath}    absolute path of scraped collection poster
+    {collectionfanartwidth}   width of scraped collection fanart
+    {collectionfanartheight}  height of scraped collection fanart
+    {collectionfanartpath}    absolute path of scraped collection fanart
+    {actors[]}                array with movie actors
+    {actors[name]}            real name of actor
+    {actors[role]}            actor role
+    {actors[thumb]}           absolute path of scraped actor thumb
+    {actors[thumbwidth]}      width of scraped actor thumb
+    {actors[thumbheight]}     height of scraped actor thumb
+
+    {isseries}                true if event is scraped as a series
+    Available variables for series:
+    {seriesname}              name of series
+    {seriesoverview}          series overview
+    {seriesfirstaired}        first aired date 
+    {seriesnetwork}           network which produces series
+    {seriesgenre}             series genre
+    {seriesrating}            series thetvdb rating
+    {seriesstatus}            status of series (running / finished)
+    {episodetitle}            title of episode
+    {episodenumber}           number of episode
+    {episodeseason}           season of episode
+    {episodefirstaired}       first aired date of episode
+    {episodegueststars}       guest stars of episode
+    {episodeoverview}         episode overview
+    {episoderating}           user rating for episode
+    {episodeimagewidth}       episode image width
+    {episodeimageheight}      episode image height
+    {episodeimagepath}        episode image path
+    {seasonposterwidth}       episode season poster width
+    {seasonposterheight}      episode season poster height
+    {seasonposterpath}        episode season poster path
+    {seriesposter1width}      width of 1st poster
+    {seriesposter1height}     height of 1st poster
+    {seriesposter1path}       path of 1st poster
+    {seriesposter2width}      width of 2nd poster
+    {seriesposter2height}     height of 2nd poster
+    {seriesposter2path}       path of 2nd poster
+    {seriesposter3width}      width of 3rd poster
+    {seriesposter3height}     height of 3rd poster
+    {seriesposter3path}       path of 3rd poster
+    {seriesfanart1width}      width of 1st fanart
+    {seriesfanart1height}     height of 1st fanart
+    {seriesfanart1path}       path of 1st fanart
+    {seriesfanart2width}      width of 2nd fanart
+    {seriesfanart2height}     height of 2nd fanart
+    {seriesfanart2path}       path of 2nd fanart
+    {seriesfanart3width}      width of 3rd fanart
+    {seriesfanart3height}     height of 3rd fanart
+    {seriesfanart3path}       path of 3rd fanart
+    {seriesbanner1width}      width of 1st banner
+    {seriesbanner1height}     height of 1st banner
+    {seriesbanner1path}       path of 1st banner
+    {seriesbanner2width}      width of 2nd banner
+    {seriesbanner2height}     height of 2nd banner
+    {seriesbanner2path}       path of 2nd banner
+    {seriesbanner3width}      width of 3rd banner
+    {seriesbanner3height}     height of 3rd banner
+    {seriesbanner3path}       path of 3rd fanart
+    {actors[]}                array with movie actors
+    {actors[name]}            real name of actor
+    {actors[role]}            actor role
+    {actors[thumb]}           absolute path of scraped actor thumb
+    {actors[thumbwidth]}      width of scraped actor thumb
+    {actors[thumbheight]}     height of scraped actor thumb    
+    -->
+    <!-- delay (in seconds) defines the time to wait till viewelement is displayed
+    fadetime in ms -->
+    <onpause delay="60" fadetime="0">
+    </onpause>
+
+    <onpausemodeonly delay="30" fadetime="0">
+    </onpausemodeonly>
+
+    <!-- Available Variables customtokens:
+    all custom tokens set by the svdrp command SCTK are available in this viewelement
+    For instance, use an appropriate script which runs periodically as cronjob and
+    sets these custom tokens with svdrpsend or dbus2vdr
+    --> 
+    <customtokens>
+    </customtokens>
+    
+</displayreplay>

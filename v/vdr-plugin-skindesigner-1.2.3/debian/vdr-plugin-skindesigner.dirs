@@ -1,0 +1,6 @@
+var/cache/vdr/plugins
+var/cache/vdr/plugins/skindesigner
+usr/lib/vdr/skindesigner
+usr/lib/vdr/skindesigner/scripts
+
+

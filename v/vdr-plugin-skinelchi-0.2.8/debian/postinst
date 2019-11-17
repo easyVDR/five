@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+# chown
+if [ "$1" = "configure" ]; then
+	chown -R vdr:vdr /var/lib/vdr/plugins/skinelchi
+fi
+
+
+#DEBHELPER#

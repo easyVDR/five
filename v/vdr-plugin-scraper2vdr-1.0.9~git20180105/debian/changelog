@@ -1,0 +1,282 @@
+vdr-plugin-scraper2vdr (2:1.0.9~git20180105-0easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 21:12:52 +0100
+
+vdr-plugin-scraper2vdr (2:1.0.9~git20180105-0easyVDR0~bionic) bionic; urgency=high
+
+  * new upstream snapshot
+  * commit:ef448e1 - - added: service to query plugins environment (the resource path config)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jan 2018 16:12:45 +0100
+
+vdr-plugin-scraper2vdr (2:1.0.7~git20171223-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Dec 2017 17:45:11 +0100
+
+vdr-plugin-scraper2vdr (2:1.0.7~git20171223-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Dec 2017 17:28:44 +0100
+
+vdr-plugin-scraper2vdr (2:1.0.7~git20171223-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:f06286f - change: Fixed handlicng of servicve calls
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Dec 2017 00:14:51 +0100
+
+vdr-plugin-scraper2vdr (2:1.0.5~git20170611-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:254122b - change: Porting to VDR 2.3.7
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 11 Jun 2017 19:57:23 +0200
+
+vdr-plugin-scraper2vdr (2:1.0.4~git20170604-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:662176d - change: vdr 2.3.4 porting
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Jun 2017 00:14:47 +0200
+
+vdr-plugin-scraper2vdr (2:1.0.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+  * commit:c01f745 - change: changed Makefile for make -jN (by 3po)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 05 Dec 2016 22:41:23 +0100
+
+vdr-plugin-scraper2vdr (2:1.0.2-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 22:59:35 +0200
+
+vdr-plugin-scraper2vdr (2:1.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream release
+  * commit:23bf9a9 - bugfix: fixed timing of retry loop
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 22:40:06 +0200
+
+vdr-plugin-scraper2vdr (2:1.0.1~git20160828-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:e441ec8d - added: support of long eventids for tvsp (merged dev into master)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 28 Aug 2016 21:16:28 +0200
+
+vdr-plugin-scraper2vdr (2:1.0.0~git20160721-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Jul 2016 23:58:45 +0200
+
+vdr-plugin-scraper2vdr (2:1.0.0~git20160706-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:57e3668 - change: merged http branch into master
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Jul 2016 00:04:13 +0200
+
+vdr-plugin-scraper2vdr (1:1.0.25~git20160520+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:ff95c71 - change: minor logging change
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 21 May 2016 00:03:05 +0200
+
+vdr-plugin-scraper2vdr (1:1.0.23~git20160514+http-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 14 May 2016 18:28:07 +0200
+
+vdr-plugin-scraper2vdr (1:1.0.23~git20160514+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:2899b3f - version 0.1.23 (horchi)
+                     change: Fixed group by statem… 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 14 May 2016 18:08:29 +0200
+
+vdr-plugin-scraper2vdr (1:1.0.21~git20160419+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:47400f0 - changed log level for field filter to 2 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Apr 2016 22:59:12 +0200
+
+vdr-plugin-scraper2vdr (1:0.1.6+git20151123-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Apr 2016 00:54:22 +0200
+
+vdr-plugin-scraper2vdr (1:0.1.6+git20151123-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Mar 2016 01:59:55 +0100
+
+vdr-plugin-scraper2vdr (1:0.1.6+git20151123-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 21:05:49 +0100
+
+vdr-plugin-scraper2vdr (0.1.6+git20151123-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:02013acc - Version 0.1.6 removed outdated db field
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Nov 2015 23:55:14 +0100
+
+vdr-plugin-scraper2vdr (0.1.12+git20150310-0easyVDR2) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:21:47 +0200
+
+vdr-plugin-scraper2vdr (0.1.12+git20150310-0easyVDR1) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:00:03 +0100
+
+vdr-plugin-scraper2vdr (0.1.12+git20150310-0easyVDR0~trusty0) trusty; urgency=high
+
+  * new upstream snapshot 
+
+ -- Wolfgang <vdr@gmx.de>  Mon, 23 Mar 2015 21:20:27 +0100
+
+vdr-plugin-scraper2vdr (0.1.4-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Nov 2014 02:50:23 +0100
+
+vdr-plugin-scraper2vdr (0.1.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Sep 2014 00:55:52 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140515.1315-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 09 Jun 2014 22:55:41 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140515.1315-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 15 May 2014 17:09:45 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140514.2133-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 15 May 2014 00:01:41 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140512.0512-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 14 May 2014 08:15:07 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140511.0855-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot, reduce system load on startup 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sun, 11 May 2014 11:36:38 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140510.1057-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot, fixes setup menu 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 10 May 2014 13:18:02 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140510.0856-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 10 May 2014 11:13:30 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140510.0724-2yavdr0~precise) precise; urgency=medium
+
+  * add libjpeg-turbo8-dev, libimlib2-dev dependencies 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 10 May 2014 10:56:53 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140510.0724-1yavdr0~precise) precise; urgency=medium
+
+  * add libcurl4-nss-dev dependency 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 10 May 2014 10:51:03 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140510.0724-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 10 May 2014 10:42:30 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140508.0521-1yavdr0~precise) precise; urgency=medium
+
+  * fix setup menu
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 12:45:05 +0200
+
+vdr-plugin-scraper2vdr (0.1.2.git20140508.0521-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 10:42:58 +0200
+
+vdr-plugin-scraper2vdr (0.1.1.git20140428.1741-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 28 Apr 2014 19:41:44 +0200
+
+vdr-plugin-scraper2vdr (0.1.0.git20140428.0536-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 28 Apr 2014 07:37:23 +0200
+
+vdr-plugin-scraper2vdr (0.1.0.git20140418.1541-0yavdr0~precise) precise; urgency=medium
+
+  * yet another upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 18 Apr 2014 17:56:21 +0200
+
+vdr-plugin-scraper2vdr (0.1.0.git20140418.1508-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 18 Apr 2014 17:48:17 +0200
+
+vdr-plugin-scraper2vdr (0.1.0.git20140415.1655-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Tue, 15 Apr 2014 18:57:02 +0200
+
+vdr-plugin-scraper2vdr (0.1.0.git20140414.1613-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 14 Apr 2014 18:13:52 +0200
+
+vdr-plugin-scraper2vdr (0.0.1.git20140413.1233-0yavdr0~precise) precise; urgency=medium
+
+  * initial release
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 13 Apr 2014 14:39:59 +0200

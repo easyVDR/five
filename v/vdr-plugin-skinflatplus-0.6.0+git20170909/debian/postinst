@@ -1,0 +1,17 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "configure" ]; then
+
+
+    # Change owner of directory, symlink and chmod
+        chown -R vdr:vdr /var/lib/vdr/themes
+        chmod 0755 /var/lib/vdr/plugins/skinflatplus
+        chmod 0755 /var/lib/vdr/plugins/skinflatplus/configs
+        chmod 0644 /var/lib/vdr/plugins/skinflatplus/configs/*
+        chown -R vdr:vdr /var/lib/vdr/plugins/skinflatplus
+        rm -rf /usr/lib/vdr/plugins/skinflatplus
+
+fi
+
+#DEBHELPER#

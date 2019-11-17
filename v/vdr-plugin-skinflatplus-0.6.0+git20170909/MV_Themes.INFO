@@ -1,0 +1,76 @@
+flatPlus-MV_Themen erstellt am 20.03.2017 13:43
+Basisthema: flatPlus-MVGreen.theme, Basisicons: MVdefault
+
+=> Installationshimnweise am Ende der Datei! <=
+
+Thema: Beige, Farbe: CCA550 
+Thema: Berry, Farbe: A61D4D 
+Thema: Blue, Farbe: 0050EF 
+Thema: Cappuchino, Farbe: 87794E 
+Thema: Chocolate, Farbe: 825A2C 
+Thema: Cyan, Farbe: 149BAF 
+Thema: Grapefruit, Farbe: C3461B 
+Thema: Grey, Farbe: 647687 
+Thema: Indigo, Farbe: 3F51B5 
+Thema: LightBlue, Farbe: 1BA1E2 
+Thema: LightGreen, Farbe: 70AD11 
+Thema: Mint, Farbe: A4C400 
+Thema: Nuts, Farbe: BF9217 
+Thema: Olive, Farbe: 6D8764 
+Thema: Orange, Farbe: F0A30A 
+Thema: Pflaume, Farbe: 6A00FF 
+Thema: Pumpkin, Farbe: F0A30A 
+Thema: Purple, Farbe: 6C0AAB 
+Thema: PurpleGrey, Farbe: 76608A 
+Thema: Red, Farbe: E51400 
+Thema: Terra, Farbe: 7A3B3F 
+Thema: Blood, Farbe: 911D10, Hintergrund: 221111 
+Thema: DeepBlue, Farbe: 0545DF, Hintergrund: 101030 Schriftfarbe: DDDDEE
+Thema: Fog, Farbe: 111111, Hintergrund: DEDEDE Schriftfarbe: 445867
+Thema: Green 2, Farbe: 008A00, Hintergrund: 112211 
+Thema: HelloKitty 2, Farbe: F472D0, Hintergrund: FF80F0 
+Thema: HelloKitty, Farbe: F472D0 
+Thema: Rauchglas, Farbe: 825A2C, Hintergrund: 200F02 
+Thema: White, Farbe: FFFFFF Schriftfarbe: A5A5A5
+Thema: XMAS, Farbe: CC1111, Hintergrund: 114511 
+Thema: Zitrone, Farbe: EEEE0F, Hintergrund: 88881A Schriftfarbe: FFFFAA
+31 Themen erstellt. Davon 8 mit Hintergrund und 3 mit invertierter Auswahl
+Insgesamt 32 Icon-Ordner erstellt
+
+Installationshinweise:
+ - Alle *.theme aus dem Ordner themes nach <vdrconfigdir>/themes kopieren.
+ - Alle *.decor aus dem Ordner decors nach <vdrconfigdir>/plugins/skinflatplus/decors kopieren.
+ - Alle MV* aus dem Ordner configs nach <vdrconfigdir>/plugins/skinflatplus/configs kopieren.
+ - Alle MV* Ordner aus dem Ordner icons nach <vdrconfigdir>/plugins/skinflatplus/icons kopieren.
+
+Optional (Pfade evtl. Anpassen!):
+ - Schrift(en) aus dem Archiv https://db.tt/QCyK0I8s entpacken und nach
+   /usr/share/fonts kopieren. Die Schriften enthalten auch die VDR-Symbole.
+
+Empfohlene Einstellungen (setup.conf) im skin-flatplus-Plugin:
+Laden mit "Menue - Einstellungen - Plugins - SkinFlatPlus - Allgemeine Einstellungen:"
+"OK druecken um die Konfigdatei zu laden: MV_default - OK"
+
+Empfohlene Einstellungen (setup.conf) im VDR (Menue - Einstellungen - OSD):
+FontFix = Nimbus Mono L:Bold
+FontFixSize = 33
+FontFixSizeP = 0.031000
+FontOsd = Droid Sans:Regular
+FontOsdSize = 44
+FontOsdSizeP = 0.041000
+FontSml = Droid Sans:Regular
+FontSmlSize = 35
+FontSmlSizeP = 0.032000
+OSDAspect = 1.000000
+OSDHeight = 1080
+OSDHeightP = 1.000000
+OSDLanguage = de_DE
+OSDLeft = 0
+OSDLeftP = 0.000000
+OSDMessageTime = 6
+OSDSkin = flatPlus
+OSDTheme = MVGrapefruit
+OSDTop = 0
+OSDTopP = 0.000000
+OSDWidth = 1920
+OSDWidthP = 1.000000
