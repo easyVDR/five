@@ -1,0 +1,70 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: PACKAGE VERSION\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2005-01-06 13:07+0000\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=CHARSET\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: blink.c:184
+#, c-format
+msgid "Error.  Use value from 0 to %d for --rate.\n"
+msgstr ""
+
+#: blink.c:244
+#, c-format
+msgid ""
+"Usage: %s [options]\n"
+"Options are\n"
+"  -c,   --capslockled   use Caps-Lock LED\n"
+"  -h,   --help          display this help and exit\n"
+"  -m s, --machine=s     let keyboard of machine s blink\n"
+"  -n,   --numlockled    use Num-Lock LED\n"
+"  -r n, --rate=n        set blink rate to n\n"
+"  -s,   --scrolllockled use Scroll-Lock LED\n"
+"  -t n, --tcp-port=n    use tcp port n\n"
+"  -v,   --version       output version information and exit\n"
+msgstr ""
+
+#: blink.c:261
+#, c-format
+msgid "%s: Error in arguments.  Try %s --help.\n"
+msgstr ""
+
+#: blink.c:278
+#, c-format
+msgid "Unknown host %s.\n"
+msgstr ""
+
+#: blinkd.c:596
+#, c-format
+msgid ""
+"Usage: %s [options]\n"
+"Options are\n"
+"  -c,   --capslockled   use Caps-Lock LED\n"
+"  -f t, --off-time=t    set off blink time to t\n"
+"  -h,   --help          display this help and exit\n"
+"  -n,   --numlockled    use Num-Lock LED\n"
+"  -o t, --on-time=t     set on blink time to t\n"
+"  -p t, --pause=t       set pause time to t\n"
+"  -r,   --no-reopen     don't reopen /dev/console\n"
+"  -s,   --scrolllockled use Scroll-Lock LED\n"
+"  -t n, --tcp-port=n    use tcp port n\n"
+"  -v,   --version       output version information and exit\n"
+"Unit for all time values t is tenth of a second.\n"
+msgstr ""
+
+#: blinkd.c:616
+#, c-format
+msgid "%s: Error in arguments.  Try %s --help\n"
+msgstr ""

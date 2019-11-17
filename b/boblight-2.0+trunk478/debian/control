@@ -1,0 +1,27 @@
+Source: boblight
+Section: video
+Priority: extra
+Maintainer: Lars Hanisch <dvb@flensrocker.de>
+Build-Depends: debhelper (>= 8), libx11-dev, libgl1-mesa-dev, libxrender-dev, libxext-dev, portaudio19-dev, libavcodec-dev, libavformat-dev, libswscale-dev, libavdevice-dev, libusb-1.0-0-dev
+Standards-Version: 3.9.1
+Homepage: https://code.google.com/p/boblight/
+
+Package: boblight
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Boblight is a collection of tools for driving lights connected to an external controller.
+ Its main purpose is to create light effects from an external input,
+ such as a video stream (desktop capture, video player, tv card),
+ an audio stream (jack, alsa), or user input (lirc, http). Currently it only handles
+ video input by desktop capture with xlib, video capture from v4l/v4l2 devices
+ and user input from the commandline with boblight-constant.
+
+Package: libboblight
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: just libboblight
+
+Package: libboblight-dev
+Architecture: all
+Depends: libboblight (= ${binary:Version}), ${misc:Depends}
+Description: Development files for libboblight
