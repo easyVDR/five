@@ -1,0 +1,29 @@
+lcdproc (0.5.9-2) unstable; urgency=medium
+
+    The drivers IOWarrior i2500vfd lis ula200 and shuttleVFD depend on
+    libusb which is deprecated. These drivers are no longer delivered with
+    Debian package. Please get back to me if this cause problems with your
+    hardware.
+
+ -- Dominique Dumont <dod@debian.org>  Tue, 19 Sep 2017 12:18:35 +0200
+
+lcdproc (0.5.6-1) unstable; urgency=low
+
+    cme is now used during package to merge the updates of upstream
+    LCDd.conf with the modifications done on the local
+    LCDd.conf. Package upgrade is no longer interrupted to ask
+    question to user.
+
+    People wanting to manage LCDd.conf themselves will be offered the
+    choice to allow or deny automatic configuration merge during
+    preconfiguration.
+
+    For more details, see: https://tinyurl.com/lcdproc-config-upgrade
+
+ -- Dominique Dumont <dod@debian.org>  Fri, 28 Mar 2014 13:12:36 +0100
+
+lcdproc (0.5.5-3) unstable; urgency=low
+
+  svga support is now removed from Debian version of lcdproc.
+
+ -- Dominique Dumont <dod@debian.org>  Sat, 17 Aug 2013 15:16:12 +0200

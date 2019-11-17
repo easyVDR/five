@@ -1,0 +1,57 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+# see FEATURE AREAS in dpkg-buildflags(1)
+DEB_BUILD_MAINT_OPTIONS=hardening=+all
+
+DPKG_EXPORT_BUILDFLAGS = 1
+include /usr/share/dpkg/buildflags.mk
+
+# Note: Read /usr/share/doc/autotools-dev/README.Debian.gz
+
+ifneq (,$(findstring debug,$(DEB_BUILD_OPTIONS)))
+CONFOPTS += --enable-debug
+endif
+
+EXTRADRIVERS := $(shell cut -d/ -f5 $(CURDIR)/debian/lcdproc-extra-drivers.install)
+
+DRIVERS = all,!irman,!svga
+
+# --with autotools_dev will update/restore config.sub and config.guess
+%:
+	dh $@ --verbose --with autotools_dev,autoreconf,systemd
+
+override_dh_auto_configure:
+	perl -pi -e 's!DriverPath.*!DriverPath=/usr/lib/$(DEB_BUILD_MULTIARCH)/lcdproc/!;' LCDd.conf
+# live patch to use date of last changelog entry as build date
+	DEBBUILDDATE=$$(perl -ne 'if (/ --.*?>\s+(.*)/) {print "$$1\n"; exit}' debian/changelog )  && \
+	export DEBBUILDDATE && \
+	perl -pi -e 's!__DATE__!"$$ENV{DEBBUILDDATE}"!;' clients/lcdproc/main.c server/main.c
+# Add here commands to configure the package.
+	dh_auto_configure -- \
+		--enable-stat-nfs \
+		--enable-stat-smbfs \
+		--enable-drivers="$(DRIVERS)" \
+		--enable-libusb \
+		--enable-libusb-1-0 \
+		--enable-seamless-hbars \
+		--enable-testmenus \
+		--enable-permissive-menu-goto \
+		--enable-lcdproc-menus \
+		$(CONFOPTS)
+
+override_dh_installman:
+	dh_installman --language=C
+
+override_dh_strip:
+	dh_strip --dbg-package=lcdproc-dbg
+
+override_dh_installinit:
+	dh_installinit --name=LCDd
+
+override_dh_install:
+	dh_install $(foreach lib,$(EXTRADRIVERS),--exclude=$(lib)) -plcdproc
+	dh_install --autodest  -plcdproc-extra-drivers
+	dh_install --remaining-packages --list-missing

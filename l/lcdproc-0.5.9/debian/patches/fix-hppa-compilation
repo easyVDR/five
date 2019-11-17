@@ -1,0 +1,19 @@
+Description: Fix hppa compilation
+ lcdproc fails to build, because it assumes that all hp* platforms
+ use the ".sl" shared library extension. On the hppa*linux port 
+ we use the standard Linux .so extension though.
+ This is fixed with attached trivial patch (without breaking HP-UX).
+Bug-Debian: https://bugs.debian.org/809456
+Forwarded: by mail
+Author: Helge Deller <deller@gmx.de>
+--- a/acinclude.m4
++++ b/acinclude.m4
+@@ -903,6 +903,8 @@
+ dnl It is available in the program code as MODULE_EXTENSION
+ AC_MSG_CHECKING(module extension)
+ case $host in
++  hp*linux*)
++	SO=.so;;
+   hp*|HP*)
+ 	SO=.sl;;
+   *cygwin*)

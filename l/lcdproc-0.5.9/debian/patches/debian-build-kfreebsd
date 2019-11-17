@@ -1,0 +1,17 @@
+Description: Build for Debian GNU/kFreeBSD
+ Patch rejected by upstream: "The 'linux' macro set in machine_Linux.c 
+ is set by configure. If you want to detect some system like this 
+ you should fix configure.in instead."
+Bug: http://bugs.debian.org/416261
+From: Cyril Brulebois <cyril.brulebois@enst-bretagne.fr>
+--- a/clients/lcdproc/machine_Linux.c
++++ b/clients/lcdproc/machine_Linux.c
+@@ -9,7 +9,7 @@
+  * Refer to the COPYING file distributed with this package.
+  */
+ 
+-#ifdef linux
++#if defined(linux) || defined(__GLIBC__)
+ 
+ #include <sys/types.h>
+ #include <stdlib.h>

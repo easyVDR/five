@@ -1,0 +1,33 @@
+Description: tweak lcdproc config for debian
+ patch LCDd.conf to:
+ * use syslog instead of stderr to show message
+ * run LCDd as root (to read /dev/lcd* file)
+ .
+ The latter could be done better by tweaking udev rule
+Author: dod
+Applied-Upstream: NA
+--- a/LCDd.conf
++++ b/LCDd.conf
+@@ -64,11 +64,11 @@
+ #ReportLevel=3
+ 
+ # Should we report to syslog instead of stderr? [default: no; legal: yes, no]
+-#ReportToSyslog=yes
++ReportToSyslog=yes
+ 
+ # User to run as.  LCDd will drop its root privileges and run as this user
+ # instead. [default: nobody]
+-User=nobody
++# User=nobody
+ 
+ # The server will stay in the foreground if set to yes.
+ # [default: no, legal: yes, no]
+@@ -681,7 +681,7 @@
+ [imon]
+ 
+ # select the device to use
+-Device=/dev/lcd0
++#Device=/dev/lcd-imon
+ 
+ # display dimensions
+ Size=16x2

@@ -1,0 +1,690 @@
+Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: lcdproc
+Upstream-Contact: William W. Ferrell <willfe@yahoo.com>
+Source: https://github.com/lcdproc/lcdproc
+Files-Excluded: */Makefile.in aclocal.m4 config.* configure
+
+Files: *
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL-2
+
+Files: clients/examples/*
+Copyright: 1999, William Ferrell, Selene Scriven
+License: GPL-2+
+
+Files: clients/examples/Makefile.am
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL-2
+
+Files: clients/examples/lcdident.pl
+Copyright: 2008, Ethan Dicks <ethan.dicks@gmail.com>
+License: GPL-2+
+
+Files: clients/lcdexec/*
+Copyright: 2006, 2007, Peter Marschall
+  2001, 2002, Joris Robijn
+License: GPL
+
+Files: clients/lcdexec/Makefile.am
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL-2
+
+Files: clients/lcdexec/lcdexec.c
+Copyright: 2001, 2002, Joris Robijn
+License: GPL
+
+Files: clients/lcdproc/batt.c
+  clients/lcdproc/chrono.c
+  clients/lcdproc/cpu.c
+  clients/lcdproc/disk.c
+  clients/lcdproc/load.c
+  clients/lcdproc/machine_Linux.c
+  clients/lcdproc/machine_SunOS.c
+  clients/lcdproc/main.c
+  clients/lcdproc/main.h
+  clients/lcdproc/mem.c
+  clients/lcdproc/mode.c
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL
+
+Files: clients/lcdproc/cpu_smp.c
+Copyright: 2006, 2007, Peter Marschall
+  2000, J Robert Ray
+License: GPL
+
+Files: clients/lcdproc/eyebox.c
+Copyright: 2006, Cedric TESSIER (aka NeZetiC) http:www.nezetic.info
+License: GPL
+
+Files: clients/lcdproc/iface.c
+Copyright: 2002, Luis Llorente Campo <luisllorente@luisllorente.com>
+License: GPL
+
+Files: clients/lcdproc/iface.h
+Copyright: 2002, Luis Llorente Campo
+License: GPL-2+
+
+Files: clients/lcdproc/machine_Darwin.c
+Copyright: 2006, Eric Pooch (epooch@tenon.com)
+  2003, Thomas Runge (coto@core.de)
+License: BSD-3-clause
+
+Files: clients/lcdproc/machine_FreeBSD.c
+  clients/lcdproc/machine_NetBSD.c
+  clients/lcdproc/machine_OpenBSD.c
+Copyright: 2003, Thomas Runge (coto@core.de)
+License: BSD-3-clause
+
+Files: clients/lcdproc/util.c
+Copyright: 2005, 2008, Peter Marschall
+License: GPL-2+
+
+Files: clients/lcdproc/util.h
+Copyright: 2005, Peter Marschall
+License: GPL
+
+Files: clients/lcdvc/lcd_link.c
+  clients/lcdvc/lcdvc.c
+  clients/lcdvc/vc_link.c
+Copyright: 2001, 2002, Joris Robijn
+License: GPL
+
+Files: compile
+  depcomp
+  missing
+Copyright: 90-94, 96-98, 1989, 1996-2013, Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: contrib/interface-demo2/af.c
+  contrib/interface-demo2/arcnet.c
+  contrib/interface-demo2/ether.c
+  contrib/interface-demo2/hw.c
+  contrib/interface-demo2/inet.c
+  contrib/interface-demo2/loopback.c
+  contrib/interface-demo2/net-support.h
+  contrib/interface-demo2/ppp.c
+  contrib/interface-demo2/unix.c
+Copyright: 1993, MicroWalt Corporation
+License: GPL-2+
+
+Files: contrib/interface-demo2/frame.c
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL-2+
+
+Files: contrib/interface-demo2/if_demo.c
+  contrib/interface-demo2/lib-myconnect.c
+  contrib/interface-demo2/lib-myconnect.h
+  contrib/interface-demo2/lib-mylcd.c
+  contrib/interface-demo2/lib-mylcd.h
+Copyright: 2005, Silvan Marco Fin <silvan@kernelconcepts.de>
+License: GPL-2+
+
+Files: contrib/interface-demo2/nstrcmp.c
+  contrib/interface-demo2/util.c
+Copyright: 1998, Andi Kleen. Subject to the GPL.
+License: GPL-2
+
+Files: contrib/interface-demo2/scripts/*
+Copyright: 2005, Silvan Marco Fin <silvan@kernelconcepts.de>
+License: GPL-2+
+
+Files: debian/*
+Copyright: 2011-2014, Dominique Dumont <dod@debian.org>
+  2010, Nick Leverton <nick@leverton.org>
+  2006-2010, Jose Luis Tallon <jltallon@adv-solutions.net>
+  2003-2010, Jonathan Oxer <jon@debian.org>
+  2002, Noel Koethe <noel@debian.org>
+  1998, Brian Bassett <brian@butterfly.ml.org>
+License: GPL-2
+
+Files: docs/lcdvc.1.in
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL
+
+Files: scripts/init-LCDd.rpm.in
+  scripts/init-lcdproc.rpm.in
+Copyright: 2001, Rene Wagner <reenoo@gmx.de>
+License: GPL-2+
+
+Files: server/*
+Copyright: 1999, William Ferrell, Selene Scriven
+License: GPL
+
+Files: server/Makefile.am
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL-2
+
+Files: server/commands/Makefile.am
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL-2
+
+Files: server/driver.c
+  server/driver.h
+  server/drivers.c
+  server/drivers.h
+Copyright: 2001, 2002, Joris Robijn
+License: GPL
+
+Files: server/drivers/*
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL-2
+
+Files: server/drivers/CFontz-charmap.h
+  server/drivers/hd44780-lcd2usb.c
+  server/drivers/hd44780-usbtiny.c
+Copyright: 2005, 2007, Peter Marschall <peter@adpm.de>
+License: GPL
+
+Files: server/drivers/CFontz.c
+  server/drivers/curses_drv.c
+Copyright: 2001
+License: GPL-2+
+
+Files: server/drivers/CFontz633io.c
+Copyright: 2002, David GLAUDE
+  2001, Crystalfontz America, Inc.
+License: GPL-2+
+
+Files: server/drivers/CFontz633io.h
+Copyright: 2001, Crystalfontz America, Inc. WrittenBrent A. Crosby
+License: GPL-2
+
+Files: server/drivers/CFontzPacket.c
+Copyright: 2002, David GLAUDE
+License: GPL-2+
+
+Files: server/drivers/CwLnx.c
+  server/drivers/CwLnx.h
+Copyright: 2002, Andrew Ip
+License: GPL-2+
+
+Files: server/drivers/EyeboxOne.c
+Copyright: 2006, Cedric TESSIER (aka NeZetiC) http:www.nezetic.info
+License: GPL-2+
+
+Files: server/drivers/IOWarrior.c
+Copyright: 2004, Christian Vogelgsang <chris@lallafa.de> / (C) 2004-2008, Peter Marschall <peter@adpm.de>
+License: GPL-2+
+
+Files: server/drivers/IOWarrior.h
+Copyright: 2004, Peter Marschall <peter@adpm.de>
+  2004, Christian Vogelgsang <chris@lallafa.de>
+License: GPL-2+
+
+Files: server/drivers/MD8800.c
+  server/drivers/MD8800.h
+Copyright: 2006, Stefan Herdler in collaboration with Martin Møller.
+License: GPL-2+
+
+Files: server/drivers/MtxOrb.c
+Copyright: 1999, William Ferrell and Selene Scriven
+License: GPL-2+
+
+Files: server/drivers/NoritakeVFD.c
+Copyright: 2007, Richard Muratti ricacho@gmail.com
+  2007, Peter Marschall
+  2005, Simon Funke
+License: GPL-2+
+
+Files: server/drivers/NoritakeVFD.h
+Copyright: 2005, Simon Funke
+License: GPL-2+
+
+Files: server/drivers/Olimex_MOD_LCD1x9.c
+Copyright: 2015, Harald Geyer <harald@ccbib.org>
+License: GPL-2+
+
+Files: server/drivers/SureElec.c
+Copyright: 2009, Laurent Latil
+License: GPL-2+
+
+Files: server/drivers/adv_bignum.c
+  server/drivers/adv_bignum.h
+  server/drivers/serialVFD.c
+  server/drivers/serialVFD.h
+  server/drivers/serialVFD_displays.h
+  server/drivers/serialVFD_io.c
+  server/drivers/serialVFD_io.h
+Copyright: 2006, Stefan Herdler
+License: GPL-2+
+
+Files: server/drivers/debug.c
+Copyright: 2005, 2008, Peter Marschall
+License: GPL-2+
+
+Files: server/drivers/ea65.c
+Copyright: 2004
+License: GPL-2+
+
+Files: server/drivers/futaba.c
+Copyright: - 2014, Blackeagle email: gm(dot)blackeagle(at)gmail(dot)com
+License: GPL-2
+
+Files: server/drivers/futaba.h
+Copyright: Blackeagle gm(dot)blackeagle(at)gmail(dot)com
+License: GPL-2
+
+Files: server/drivers/g15.c
+  server/drivers/g15.h
+Copyright: 2006, Anthony J. Mirabella.
+License: GPL-2+
+
+Files: server/drivers/glcd-glcd2usb.c
+Copyright: 2007, Till Harbaum
+License: GPL
+
+Files: server/drivers/glcd-picolcdgfx.c
+Copyright: 2012, Scott Meahrg <ssmeharg@gmail.com>
+  2009, Nicu Pavel <napvel@mini-box.com>
+License: GPL
+
+Files: server/drivers/glcd-png.c
+  server/drivers/glcd_drv.c
+Copyright: 2009, 2011, Markus Dolze
+License: GPL
+
+Files: server/drivers/glcd-render.c
+  server/drivers/glcd-serdisp.c
+Copyright: 2010, Bernhard Walle <bernhard@bwalle.de>
+License: GPL
+
+Files: server/drivers/glcd-t6963.c
+Copyright: 2011, Markus Dolze, based on the t6963 driver by
+License: GPL
+
+Files: server/drivers/glcd-x11.c
+Copyright: 2012, Scott Meharg <ssmeharg@gmail.com>
+License: GPL
+
+Files: server/drivers/glcd_font5x8.h
+Copyright: 2011, Markus Dolze <bsdfan@nurfuerspam.de>
+License: GPL
+
+Files: server/drivers/glcdlib.c
+  server/drivers/glcdlib.h
+Copyright: 2005, Lucian Muresan <lucianm AT users.sourceforge.net>
+License: GPL
+
+Files: server/drivers/hd44780-4bit.c
+Copyright: 1995, 1999, 2000, Benjamin Tse <blt@Comports.com>
+License: GPL-2
+
+Files: server/drivers/hd44780-bwct-usb.c
+Copyright: 2004-2007, Peter Marschall <peter@adpm.de>
+  2004, Bernd Walter <bernd@bwct.de>
+License: GPL
+
+Files: server/drivers/hd44780-charmap.h
+Copyright: 2001, Mark Haemmerling <mail@markh.de>
+License: GPL
+
+Files: server/drivers/hd44780-ethlcd.c
+Copyright: 2008, Mariusz Bialonczyk <manio@skyboo.net>
+License: GPL
+
+Files: server/drivers/hd44780-ext8bit.c
+  server/drivers/hd44780-lcm162.c
+  server/drivers/hd44780.c
+  server/drivers/hd44780.h
+  server/drivers/lpt-port.h
+Copyright: 1995, 1999, 2000, Benjamin Tse <blt@Comports.com>
+License: GPL
+
+Files: server/drivers/hd44780-ftdi.c
+Copyright: 2007, Intra2net AG <opensource@intra2net.com>
+License: GPL
+
+Files: server/drivers/hd44780-gpio.c
+Copyright: 2015, Fatih Aşıcı <fatih.asici@gmail.com>
+License: GPL
+
+Files: server/drivers/hd44780-i2c.c
+Copyright: 2005, Matthias Goebl <matthias.goebl@goebl.net>
+License: GPL-2
+
+Files: server/drivers/hd44780-lis2.c
+Copyright: 1997, Matthias Prinke <m.prinke@trashcan.mcnet.de>
+License: GPL
+
+Files: server/drivers/hd44780-pifacecad.c
+Copyright: 2013, Thomas Preston <thomas.preston@openlx.org.uk>
+License: GPL
+
+Files: server/drivers/hd44780-piplate.c
+Copyright: 2013, Jonathan Brogdon <jlbrogdon@gmail.com>
+License: GPL
+
+Files: server/drivers/hd44780-rpi.c
+Copyright: 2012, 2013, Paul Corner <paul_c@users.sourceforge.net>
+License: GPL
+
+Files: server/drivers/hd44780-serial.c
+Copyright: 2006, 2007, Matteo Pillon <matteo.pillon@gmail.com>
+  1997, Matthias Prinke <m.prinke@trashcan.mcnet.de>
+License: GPL-2+
+
+Files: server/drivers/hd44780-serialLpt.c
+  server/drivers/hd44780-winamp.c
+Copyright: 1999, Andrew McMeikan <andrewm@engineer.com>
+License: GPL
+
+Files: server/drivers/hd44780-spi.c
+Copyright: 2013, Simon Dawson <spdawson@gmail.com>
+License: GPL
+
+Files: server/drivers/hd44780-usb4all.c
+  server/drivers/hd44780-usb4all.h
+Copyright: 2012, Thomas Mohaupt <thomas.mohaupt@gmail.com>
+License: GPL-2
+
+Files: server/drivers/hd44780-usblcd.c
+Copyright: s. / 2002, Adams IT Services <info@usblcd.de>
+License: GPL
+
+Files: server/drivers/hd44780-uss720.c
+Copyright: 2008, Eric Pooch <epooch@cox.net>
+License: GPL
+
+Files: server/drivers/i2500vfd.c
+Copyright: 2003, 2007, Intra2net AG
+  2001, 2002, Robin Adams ( robin@adams-online.de )
+  2000, him.
+License: GPL
+
+Files: server/drivers/icp_a106.c
+  server/drivers/icp_a106.h
+  server/drivers/lcterm.c
+  server/drivers/lcterm.h
+Copyright: 2002, Michael Schwingen <michael@schwingen.org>
+License: GPL-2+
+
+Files: server/drivers/imon.c
+  server/drivers/imon.h
+Copyright: 2004, Venky Raju <dev@venky.ws>, original author of
+License: GPL
+
+Files: server/drivers/imonlcd.c
+  server/drivers/imonlcd.h
+Copyright: 2004, Venky Raju <dev (at) venky (dot) ws>
+License: GPL
+
+Files: server/drivers/imonlcd_font.h
+Copyright: 2009, Jonathan Kyler <jkyler (at) users (dot) sourceforge (dot) net>
+License: GPL
+
+Files: server/drivers/irmanin.c
+Copyright: 1999, David Glaude loosely based on workmanir.c
+  1998, Tom Wheeley, see file COPYING for details
+License: GPL-2
+
+Files: server/drivers/irtrans.c
+  server/drivers/irtrans.h
+  server/drivers/irtrans_errcode.h
+  server/drivers/irtrans_network.h
+  server/drivers/irtrans_remote.h
+Copyright: 2007, Phant0m <phantom@netkeke.com>
+  1998-2007, <info@irtrans.de>
+License: GPL-2+
+
+Files: server/drivers/lcd.h
+Copyright: 1999, William Ferrell, Selene Scriven
+License: GPL
+
+Files: server/drivers/lcdm001.c
+Copyright: details. The function calls needed for reporting and getting / 2001, Rene Wagner <reenoo@gmx.de>
+License: GPL-2+
+
+Files: server/drivers/lcdm001.h
+Copyright: 2001, Rene Wagner <reenoo@gmx.de>
+License: GPL-2+
+
+Files: server/drivers/lircin.c
+  server/drivers/lircin.h
+Copyright: 2000, Harald Klein
+License: GPL-2+
+
+Files: server/drivers/lis.c
+  server/drivers/lis.h
+Copyright: 2007, Daryl Fonseca-Holt <wyatt@prairieturtle.ca> / 2006, Bernhard Walle / (C) 2004-2006, Peter Marschall <peter@adpm.de>
+License: GPL
+
+Files: server/drivers/mdm166a.c
+Copyright: 2003, 2007, Intra2net AG
+License: GPL
+
+Files: server/drivers/ms6931.c
+  server/drivers/ms6931.h
+Copyright: 2003, Marcel Pommer <marsellus at users dot sourceforge dot net>
+License: GPL-2+
+
+Files: server/drivers/mtc_s16209x.c
+  server/drivers/mtc_s16209x.h
+Copyright: 2002, SecureCiRT, A SBU of Z-Vance Pte Ltd (Singapore)
+License: GPL-2+
+
+Files: server/drivers/mx5000.c
+  server/drivers/mx5000.h
+Copyright: 2008, Christian Jodar
+License: GPL-2+
+
+Files: server/drivers/picolcd.c
+  server/drivers/picolcd.h
+Copyright: 2007, NitroSecurity, Inc.
+License: GPL
+
+Files: server/drivers/port.h
+Copyright: damianf@wpi.edu
+License: GPL-2
+
+Files: server/drivers/pylcd.c
+  server/drivers/pylcd.h
+Copyright: 2005, Silvan Marco Fin <silvan@kernelconcepts.de>
+License: GPL-2+
+
+Files: server/drivers/rawserial.c
+Copyright: 2014, Connor Wolf <lcdproc@imaginaryindustries.com>
+License: GPL-2+
+
+Files: server/drivers/sdeclcd.c
+  server/drivers/sdeclcd.h
+Copyright: (C) 2011, Francois Mertz <fireboxled AT gmail.com>
+License: GPL-2+
+
+Files: server/drivers/sed1330.c
+Copyright: 2001-2003, Joris Robijn <joris@robijn.net>
+License: GPL
+
+Files: server/drivers/sed1520.c
+  server/drivers/sed1520fm.h
+Copyright: 2001, Robin Adams <robin@adams-online.de>
+License: GPL
+
+Files: server/drivers/serialPOS.c
+Copyright: s. / 2006-2007, Eric Pooch
+License: GPL-2+
+
+Files: server/drivers/shuttleVFD.c
+  server/drivers/shuttleVFD.h
+Copyright: 2007, Thien Vu
+License: GPL-2+
+
+Files: server/drivers/stv5730.c
+Copyright: 2001, Robin Adams ( robin@adams-online.de )
+License: GPL
+
+Files: server/drivers/t6963.c
+  server/drivers/t6963.h
+  server/drivers/t6963_low.c
+  server/drivers/t6963_low.h
+Copyright: 2001, Manuel Stahl <mythos@xmythos.de>
+License: GPL
+
+Files: server/drivers/text.c
+Copyright: 1998-2004, The LCDproc Team
+License: GPL-2+
+
+Files: server/drivers/timing.h
+Copyright: 2001, Guillaume Filion <gfk@logidac.com>
+License: GPL
+
+Files: server/drivers/tyan_lcdm.c
+  server/drivers/tyan_lcdm.h
+Copyright: 2004, Tyan Corp
+License: GPL-2+
+
+Files: server/drivers/ula200.c
+  server/drivers/ula200.h
+Copyright: 2006, Bernhard Walle <bernhard.walle@gmx.de>
+License: GPL-2+
+
+Files: server/drivers/vlsys_m428.c
+  server/drivers/vlsys_m428.h
+Copyright: 2011, Wolfgang Hauck <wolfgang.hauck@gmx.de>.
+License: GPL
+
+Files: server/drivers/wirz-sli.c
+  server/drivers/wirz-sli.h
+Copyright: 1999, Horizon Technologies-http:horizon.pair.com
+License: GPL-2
+
+Files: server/drivers/xosdlib_drv.c
+Copyright: (C) 2005, Peter Marschall <peter@adpm.de>
+License: GPL-2+
+
+Files: server/drivers/yard2LCD.c
+Copyright: 2013, R. Geigenberger (Update for YARD2)
+  2009, M. Feser
+License: GPL-2+
+
+Files: server/drivers/yard2LCD.h
+Copyright: 2013, R. Geigenberger
+License: GPL-2+
+
+Files: shared/LL.c
+Copyright: 2008, Peter Marschall
+  2001, Joris Robijn
+  2000, Guillaume Filion
+  1999, William Ferrell
+  1994, Selene Scriven
+License: GPL
+
+Files: shared/LL.h
+Copyright: 1999, William Ferrell
+  1994, Selene Scriven
+License: GPL
+
+Files: shared/configfile.c
+Copyright: 2006, 2007, Peter Marschall
+  2003, Rene Wagner
+  2001, Joris Robijn
+License: GPL
+
+Files: shared/configfile.h
+Copyright: 2006, 2007, Peter Marschall
+  2001, 2002, Joris Robijn
+License: GPL
+
+Files: shared/defines.h
+  shared/str.c
+Copyright: 2009-2013, Markus Dolze
+  1999-2011, William Ferrell
+  1999-2011, Scott Scriven, Joris Robijn, F5 Networks, Inc., Peter Marschall and others, as specified in the corresponding source modules.
+License: GPL
+
+Files: shared/getopt.c
+Copyright: 88-99, 1987
+License: GPL-2+
+
+Files: shared/getopt.h
+Copyright: 90-94, 96-98, 1989, 1996-2013, Free Software Foundation, Inc.
+License: GPL-2+
+
+Files: shared/getopt1.c
+Copyright: 88-94, 96-98, 1987
+License: GPL-2+
+
+Files: shared/report.c
+  shared/report.h
+Copyright: 1999, William Ferrell, Selene Scriven
+License: GPL
+
+Files: shared/snprintf.c
+Copyright: 1999-2002, Mark Martinec.
+License: Artistic
+
+Files: shared/sring.c
+Copyright: 2009, 2011, Markus Dolze
+License: GPL
+
+License: Artistic
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the Artistic License, which comes with Perl.
+ .
+ On Debian systems, the complete text of the Artistic License can be
+ found in '/usr/share/common-licenses/Artistic'.
+
+License: BSD-3-clause
+ The BSD License
+ .
+ Redistribution and use in source and binary forms, with or without
+ modification, are permitted provided that the following conditions are
+ met:
+ .
+   * Redistributions of source code must retain the above copyright
+     notice, this list of conditions and the following disclaimer.
+ .
+   * Redistributions in binary form must reproduce the above copyright
+     notice, this list of conditions and the following disclaimer in the
+     documentation and/or other materials provided with the distribution. 
+ .
+   * Neither the name of foo nor the names of its
+     contributors may be used to endorse or promote products derived from
+     this software without specific prior written permission. 
+ .
+ THIS SOFTWARE IS PROVIDED BY THE COPYRIGHT HOLDERS AND CONTRIBUTORS "AS
+ IS" AND ANY EXPRESS OR IMPLIED WARRANTIES, INCLUDING, BUT NOT LIMITED
+ TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A
+ PARTICULAR PURPOSE ARE DISCLAIMED. IN NO EVENT SHALL THE COPYRIGHT HOLDER OR
+ CONTRIBUTORS BE LIABLE FOR ANY DIRECT, INDIRECT, INCIDENTAL, SPECIAL,
+ EXEMPLARY, OR CONSEQUENTIAL DAMAGES (INCLUDING, BUT NOT LIMITED TO,
+ PROCUREMENT OF SUBSTITUTE GOODS OR SERVICES; LOSS OF USE, DATA, OR
+ PROFITS; OR BUSINESS INTERRUPTION) HOWEVER CAUSED AND ON ANY THEORY OF
+ LIABILITY, WHETHER IN CONTRACT, STRICT LIABILITY, OR TORT (INCLUDING
+ NEGLIGENCE OR OTHERWISE) ARISING IN ANY WAY OUT OF THE USE OF THIS
+ SOFTWARE, EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.
+
+License: GPL
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in /usr/share/common-licenses/GPL-2.
+Comment: The files mentioning GPL license refer to COPYING file which contains GPL-2 license
+
+License: GPL-2
+ On Debian systems, the complete text of the GNU General Public
+ License can be found in /usr/share/common-licenses/GPL-2.
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; version 2 dated June, 1991, or (at
+ your option) any later version.
+ .
+ On Debian systems, the complete text of version 2 of the GNU General
+ Public License can be found in '/usr/share/common-licenses/GPL-2'.

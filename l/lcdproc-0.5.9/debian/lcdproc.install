@@ -1,0 +1,9 @@
+LCDd.conf	etc
+etc/
+usr/bin/lcdexec
+usr/bin/lcdproc
+usr/bin/lcdvc
+usr/sbin/
+usr/lib/*/lcdproc/*.so
+usr/share/man
+debian/pm-sleep.d/50LCDd usr/lib/pm-utils/sleep.d/

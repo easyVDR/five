@@ -1,0 +1,91 @@
+libg15render (1.3.0~svn316-3~focal) focal; urgency=high
+
+  * fix FreeType2
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 20:34:33 +0100
+
+libg15render (1.3.0~svn316-2.3) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 22:21:49 +0100
+
+libg15render (1.3.0~svn316-2.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * Switch to automake1.11. (Closes: #724400)
+
+ -- Eric Dorland <eric@debian.org>  Sat, 08 Mar 2014 16:44:24 -0500
+
+libg15render (1.3.0~svn316-2.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Remove references to other libraries from dependency_libs field
+    (Closes: #620567).
+
+ -- Luk Claes <luk@debian.org>  Mon, 30 May 2011 19:19:54 +0200
+
+libg15render (1.3.0~svn316-2.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Fix "fails to install, trying to overwrite other packages files"
+    by adding a Replaces (closes: #543360).
+  * debian/rules: s/rf/rm/.
+
+ -- gregor herrmann <gregoa@debian.org>  Sat, 28 Nov 2009 20:34:18 +0100
+
+libg15render (1.3.0~svn316-2) unstable; urgency=low
+
+  * install also the fonts (Closes: #541048)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 11 Aug 2009 19:56:12 +0200
+
+libg15render (1.3.0~svn316-1) unstable; urgency=low
+
+  * updated upstream (still from development repository)
+  * debian/control: new policy, add ${misc:Depends}, add Homepage
+
+ -- Giacomo Catenazzi <cate@debian.org>  Fri, 07 Aug 2009 07:59:49 +0200
+
+libg15render (1.2.0.svn250-3) unstable; urgency=low
+
+  * move manpage to the -dev package
+
+ -- Giacomo Catenazzi <cate@debian.org>  Mon, 04 Aug 2008 11:03:40 +0200
+
+libg15render (1.2.0.svn250-2) unstable; urgency=low
+  
+  * And correct the libg15render.h, not requiring -I includes
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 18 Sep 2007 21:25:32 +0200
+
+libg15render (1.2.0.svn250-1) unstable; urgency=low
+
+  * New upstream (from svn) 
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 18 Sep 2007 20:51:36 +0200
+
+libg15render (1.2-4) unstable; urgency=low
+
+  * Don't use ' include "config" ' in usr/include header
+
+ -- Giacomo Catenazzi <cate@debian.org>  Sun, 16 Sep 2007 14:37:33 +0200
+
+libg15render (1.2-3) unstable; urgency=low
+
+  * Add FreeType2 support
+
+ -- Giacomo Catenazzi <cate@debian.org>  Sun, 16 Sep 2007 12:19:52 +0200
+
+libg15render (1.2-2) unstable; urgency=low
+
+  * Correct building dependencies (closes: #441923)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Thu, 13 Sep 2007 22:32:40 +0200
+
+libg15render (1.2-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 28 Aug 2007 19:09:53 +0200
+

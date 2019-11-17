@@ -1,0 +1,6 @@
+fix-hppa-compilation
+tweak-imon-default-value
+tweak-conf
+debian-build-kfreebsd
+fix-menuitem-gcc47
+easy-LCDd-conf.patch

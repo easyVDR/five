@@ -1,0 +1,20 @@
+Description: Tweak imon default value
+ 79-lcd-imon.rules is a udev rule to provide a permanent 
+ symlink to the actual device file of  imon device
+ (which proved to be a moving target).
+ .
+ This patch tweaks the default device file on imon to
+ use this symlink
+Bug-Ubuntu: https://bugs.launchpad.net/ubuntu/+source/lcdproc/+bug/1186569
+Author: dod
+--- a/server/drivers/imon.c
++++ b/server/drivers/imon.c
+@@ -81,7 +81,7 @@
+ #define IMON_CHAR_BLOCK_FILLED	IMON_CHAR_8_BARS
+ #define IMON_CHAR_BLOCK_EMPTY	' '
+ 
+-#define DEFAULT_DEVICE	"/dev/usb/lcd"
++#define DEFAULT_DEVICE	"/dev/lcd-imon"
+ #define DEFAULT_SIZE	"16x2"
+ 
+ #define VFD_DEFAULT_CELL_WIDTH	5

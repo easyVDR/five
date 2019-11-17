@@ -1,0 +1,6 @@
+#!/bin/sh -e
+
+# activate udev rule before cme tries to upgrade the configuration
+udevadm trigger --action=change
+
+#DEBHELPER#

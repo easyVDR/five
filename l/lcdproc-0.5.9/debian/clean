@@ -1,0 +1,9 @@
+build.log
+Makefile.in
+*/Makefile.in
+*/*/Makefile.in
+*/*/*/Makefile.in
+aclocal.m4
+config.*
+configure
+debian/deletable.files

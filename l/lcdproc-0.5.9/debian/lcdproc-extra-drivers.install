@@ -1,0 +1,5 @@
+usr/lib/*/lcdproc/g15.so
+usr/lib/*/lcdproc/hd44780.so
+usr/lib/*/lcdproc/lirc.so
+usr/lib/*/lcdproc/picolcd.so
+usr/lib/*/lcdproc/xosd.so

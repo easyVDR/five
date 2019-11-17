@@ -1,0 +1,20 @@
+Description: Fix menuitem compile failure with gcc 4.7
+ Fix compilation failure with gcc 4.7
+ .
+ See http://sourceforge.net/p/lcdproc/patches/16/
+ .
+ http://lcdproc.cvs.sourceforge.net/viewvc/lcdproc/lcdproc/server/menuitem.c?r1=1.37&r2=1.38
+Forwarded: NA
+Author: Markus Dolze
+Origin: upstream
+--- a/server/menuitem.c
++++ b/server/menuitem.c
+@@ -37,6 +37,8 @@
+ 
+ bool menu_permissive_goto;	/* Flag from configuration file */
+ 
++extern Menu *main_menu;		/* Access to the main menu */
++
+ char *error_strs[] = {"", "Out of range", "Too long", "Too short", "Invalid Address"};
+ char *menuitemtypenames[] = {"menu", "action", "checkbox", "ring", "slider", "numeric", "alpha", "ip"};
+ char *menueventtypenames[] = {"select", "update", "plus", "minus", "enter", "leave"};

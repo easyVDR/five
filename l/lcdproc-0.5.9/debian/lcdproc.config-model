@@ -1,0 +1,7 @@
+cme-app-name: lcdproc
+cme-model-package: libconfig-model-lcdproc-perl
+cme-model-version: 2.040
+cme-command: fix
+# required to upgrade LCDd.conf from upstream
+cme-options: -force
+cme-purge: /etc/LCDd.conf*

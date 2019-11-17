@@ -1,0 +1,34 @@
+#!/bin/sh
+# If we are running LCDd stop and restart
+# Otherwise lirc_* modules won't get unloaded and 
+# they do not work properly with suspend/resume
+
+# File contributed by Joel Ebel
+# see https://bugs.launchpad.net/ubuntu/+source/lcdproc/+bug/365474
+
+. "${PM_FUNCTIONS}"
+
+suspend_lcd()
+{
+	if [ -x /etc/init.d/LCDd ]; then
+		/etc/init.d/LCDd stop 2>&1 > /dev/null
+	fi
+}
+
+resume_lcd()
+{
+	if [ -x /etc/init.d/LCDd ]; then
+		/etc/init.d/LCDd start 2>&1 > /dev/null
+	fi
+}
+
+case "$1" in
+	hibernate|suspend)
+		suspend_lcd
+		;;
+	thaw|resume)
+		resume_lcd
+		;;
+	*) exit $NA
+		;;
+esac

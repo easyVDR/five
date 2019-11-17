@@ -1,0 +1,80 @@
+Source: lcdproc
+Maintainer: Dominique Dumont <dod@debian.org>
+Section: utils
+Priority: extra
+Build-Depends: autoconf,
+               automake,
+               autotools-dev,
+               cme,
+               debhelper (>= 9),
+               dh-autoreconf,
+               dh-systemd,
+               libg15-dev,
+               libg15daemon-client-dev,
+               libg15render-dev,
+               liblircclient-dev,
+               libncurses5-dev,
+               libusb-1.0-0-dev,
+               libxosd-dev,
+               pkg-config,
+               texinfo
+Standards-Version: 4.1.0
+Vcs-Browser: https://anonscm.debian.org/cgit/collab-maint/lcdproc.git
+Vcs-Git: https://anonscm.debian.org/git/collab-maint/lcdproc.git
+Homepage: http://www.lcdproc.org/
+
+Package: lcdproc
+Architecture: linux-any kfreebsd-any knetbsd-any kopensolaris-any darwin-any freebsd-any netbsd-any openbsd-any solaris-any
+Depends: ${misc:Depends},
+         ${shlibs:Depends},
+         cme,
+         libconfig-model-lcdproc-perl,
+         lsb-base,
+         udev [linux-any]
+Recommends: lcdproc-extra-drivers
+Description: LCD display driver daemon and clients
+ Lcdproc is a client/server suite including drivers for all kinds of
+ nifty LCD displays. The server supports several serial devices: Matrix
+ Orbital, Crystal Fontz, Bayrad, LB216, LCDM001 (kernelconcepts.de),
+ Wirz-SLI and PIC-an-LCD; and some devices connected to the LPT port:
+ HD44780, STV5730, T6963, SED1520 and SED1330.
+ .
+ Various clients are available that display things like CPU load, system
+ load, memory usage, uptime, and a lot more. Custom clients can be
+ written using the simple client-server protocol and provided example
+ code.
+ .
+ This package contains the LCD drivers which need no extra libraries to
+ run. In the lcdproc-extra-drivers package some USB and VGA on-screen
+ displays are also supported.
+
+Package: lcdproc-extra-drivers
+Architecture: linux-any kfreebsd-any knetbsd-any kopensolaris-any darwin-any freebsd-any netbsd-any openbsd-any solaris-any
+Depends: lcdproc (= ${binary:Version}),
+         ${misc:Depends},
+         ${shlibs:Depends}
+Description: extra drivers for the LCD display driver daemon
+ Lcdproc is a client/server suite including drivers for all kinds of
+ nifty LCD displays. The server supports several serial devices: Matrix
+ Orbital, Crystal Fontz, Bayrad, LB216, LCDM001 (kernelconcepts.de),
+ Wirz-SLI and PIC-an-LCD; and some devices connected to the LPT port:
+ HD44780, STV5730, T6963, SED1520 and SED1330. As of 0.4.4 some USB
+ displays are also supported by the drivers CFonz633, CwLnx, and USBLCD.
+ .
+ This package contains the LCD drivers which need extra libraries to
+ run such as USB, LIRC, SVGA, and the X Window System.
+
+Package: lcdproc-dbg
+Architecture: linux-any kfreebsd-any knetbsd-any kopensolaris-any darwin-any freebsd-any netbsd-any openbsd-any solaris-any
+Section: debug
+Depends: lcdproc (= ${binary:Version}),
+         ${misc:Depends}
+Description: debugging symbols for lcdproc
+ This is a client/server suite including drivers for all kinds of
+ nifty LCD displays.
+ .
+ This package contains the debugging symbols associated with lcdproc.
+ They will automatically be used by gdb for debugging libupnp-related
+ issues.
+ .
+ Most people will not need this package.
