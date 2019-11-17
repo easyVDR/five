@@ -1,0 +1,30 @@
+easyvdr-softhdd-vaapi (0.4.1-0easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:03:12 +0100
+
+easyvdr-softhdd-vaapi (0.4.1-0easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Jun 2018 12:58:04 +0200
+
+easyvdr-softhdd-vaapi (0.4.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * moved setup script to setup package
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 17 Oct 2016 10:07:59 +0200
+
+easyvdr-softhdd-vaapi (0.3.2-0easyVDR0~trusty) trusty; urgency=medium
+
+  *  softhddevice.AudioPassthrough 12
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 12 Apr 2015 18:18:07 +0200
+
+easyvdr-softhdd-vaapi (0.3.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 06 Feb 2015 00:38:25 +0100
+

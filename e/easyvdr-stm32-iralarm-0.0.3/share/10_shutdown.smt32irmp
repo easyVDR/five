@@ -1,0 +1,69 @@
+#!/bin/bash
+
+#
+# Script Version 2.3
+# VDR shutdown hook for STM32IRMP based on 10_shutdown.acpi
+# Make by Obelix 20.02.2018
+# --------------------------
+# Modified to easyVDR complaint 16.03.2018
+# Bugfix ENABLED variable 27.03.2018
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /etc/vdr/easyvdr-addon-stm32irmp-wakeup.conf
+
+###############
+
+
+LOG="logger -t easyvdr-shutdown-stm32irmp"
+
+
+##########
+
+
+TIMER=$1
+
+
+if [ $ENABLED = "yes" ]; then
+
+  if [ $WAKEUP_REGULAR_DAYS -gt 0 ]; then
+      #Check if the WAKEUP_REGULAR_TIME of boot should be today or tomorrow
+             if [ $((`date +%s`))  -lt  $((`date -d "$WAKEUP_REGULAR_TIME" +%s`)) ]; then
+                     DAYS_AFTER_TODAY="0" #VDR should start today.
+             else
+                     DAYS_AFTER_TODAY=$WAKEUP_REGULAR_DAYS #VDR should start next day according with WAKEUP_REGULAR_DAYS, not today
+             fi
+
+      REGULAR_TIMER=$((`date -d "$WAKEUP_REGULAR_TIME" +%s` + $DAYS_AFTER_TODAY * 24 * 60 * 60))
+
+      # when no vdr timer is set or vdr timer starts later than regular timer:
+      if [ $TIMER -eq 0 ] || [ $TIMER -gt 0 -a $REGULAR_TIMER -lt $TIMER ] ; then
+          TIMER=$REGULAR_TIMER
+      fi
+  fi
+
+  if [ $TIMER -gt 0 ]; then
+      MIN_WAKEUP_START_AHEAD=$((`date +%s` + 60 * $WAKEUP_START_AHEAD))
+      if [ $MIN_WAKEUP_START_AHEAD -gt $TIMER ]; then
+          $LOG "Can not set wakeup time less than $WAKEUP_START_AHEAD minutes ahead."
+          echo "ABORT_MESSAGE=\"Wakeup in less than $WAKEUP_START_AHEAD minutes, aborting!\""
+          exit 1
+      fi
+
+      # adjust wakeup time by WAKEUP_START_AHEAD
+      TIMER=$(($TIMER - 60 * $WAKEUP_START_AHEAD))
+  fi
+
+  if [ $TIMER -eq 0 ]; then
+          $LOG "Resetting STM32IRMP alarm time"
+             sudo stm32IRalarm -d /dev/input/ir-auto_dtc -s 0xFFFFFFFF && sleep 1
+             $LOG `sudo /usr/bin/stm32IRalarm -d /dev/input/ir-auto_dtc -a`; exit
+  else
+          NOW=$((`date +%s`))
+          STM32WAKE=$(($TIMER - $NOW))
+         $LOG "Setting STM32IRMP alarm time to: $STM32WAKE"
+             sudo /usr/bin/stm32IRalarm -d /dev/input/ir-auto_dtc -s $STM32WAKE && sleep 1
+             $LOG `sudo /usr/bin/stm32IRalarm -d /dev/input/ir-auto_dtc -a`; exit
+  fi
+else
+  $LOG "STM32IRMP Wakeup function is disabled"
+fi

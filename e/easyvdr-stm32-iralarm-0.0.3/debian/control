@@ -1,0 +1,12 @@
+Source: easyvdr-stm32-iralarm
+Section: video
+Priority: extra
+Maintainer: Martin Neubauer <easyvdr-dev@easy-vdr.de>
+Build-Depends: debhelper (>= 8.0.0)
+Standards-Version: 3.9.4
+
+Package: stm32-iralarm
+Architecture: any
+Depends: usb-irmp
+Description: STM32 USB stm32IRalarm
+

@@ -1,0 +1,60 @@
+easyvdr-tripatch (1.0.0-0easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:04:35 +0100
+
+easyvdr-tripatch (1.0.0-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 22:19:40 +0100
+
+easyvdr-tripatch (1.0.0-0easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 05:00:43 +0100
+
+easyvdr-tripatch (0.0.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:18:35 +0100
+
+easyvdr-tripatch (0.0.1-1easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 13:40:40 +0200
+
+easyvdr-tripatch (0.0.1-1easyVDR1.2~oneiricubuntu1) oneiric; urgency=low
+
+  * ..
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 13:40:35 +0200
+
+easyvdr-tripatch (0.0.1-1easyVDR1.2~oneiric) oneiric; urgency=low
+
+  * fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 29 Dec 2012 10:09:06 +0100
+
+easyvdr-tripatch (0.0.1-1easyVDR1.1) oneiric; urgency=high
+
+  * bugfixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 13 Sep 2011 09:25:07 +0200
+
+easyvdr-tripatch (0.0.1-1easyVDR1) oneiric; urgency=low
+
+  * build for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 Jul 2011 10:18:28 +0200
+
+easyvdr-tripatch (0.0.1-1easyVDR1) lucid; urgency=low
+
+  * Initial Release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Jan 2011 21:19:15 +0100
+

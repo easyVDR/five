@@ -1,0 +1,12 @@
+Source: easyvdr-stm32-config-gui
+Section: video
+Priority: extra
+Maintainer: Obelix <Obelix@localhost>
+Build-Depends: debhelper (>= 8.0.0), libudev-dev, libfox-1.6-dev
+Standards-Version: 3.9.4
+
+Package: stm32-config-gui
+Architecture: any
+Depends: stm32-irmp, libfox-1.6-0
+Description: STM32 USB Config
+

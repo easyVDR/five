@@ -1,0 +1,839 @@
+#!/bin/bash
+#
+#
+# 13.09.11
+# by Captain_Beefheart for easyvdr
+# vers.2.2   bugfix  4"cat"emulation
+# vers.2.3   bugfix  "already patched & delimit" / cleanup 28.12.12 
+##################################
+
+### global ###
+D_Edding1="###-3,1415926-###-marker1_4_tripatch-###-2,718281-###"
+D_Edding2="###-3,1415926-###-marker2_4_tripatch-###-2,718281-###"
+
+VERSION="tripatch - Version 2.3 vom 28.12.2012"
+
+############################################################
+####   Funktionen - Anfang                              ####
+############################################################
+
+################# Alle Dateien vorhanden und schreib/lesbar?
+Check_Source_Files()
+{
+if [[ (! -e $DEL_FILE) || (! -e $INS_FILE) || (! -e $TGT_FILE) ]]       ## fehlt File?
+  then
+    FILE_STATUS=3
+  else
+    Check_Access                                                        ## Benutzerrechte checken
+    FILE_STATUS=$?
+fi
+return $FILE_STATUS
+}
+
+############### testet auf ausreichende Benutzer-Rechte, speichert Verzeichniss- und Dateinamen
+Check_Access()
+{
+## fuer directory
+PATH_2_FILE=$(dirname $TGT_FILE)
+[[ (-w $PATH_2_FILE) && ( -r $PATH_2_FILE) ]] && DIR_ACCESS=0 || DIR_ACCESS=9
+## fuer file
+FILE_NAME=$(basename $TGT_FILE )
+if (($DIR_ACCESS == 0))
+  then
+    [[ (-w $TGT_FILE) && (-r $TGT_FILE) ]] && ACCESS=0 || ACCESS=10
+  else
+    ACCESS=$DIR_ACCESS
+fi
+## fuer Patchfiles  - hier is das Checken der Rechte wohl nicht nötig ;-)
+DEL_FILE_NAME=$(basename $DEL_FILE )
+INS_FILE_NAME=$(basename $INS_FILE )
+return $ACCESS
+}
+
+#### Sichern urspruenglicher Dateirechte
+Store_Rights()
+{
+ORG_FILE_RIGHTS=$(stat -c %a "$TGT_FILE")                             # sichert Dateirechte
+ORG_FILE_OWNER=$(stat -c %U "$TGT_FILE")                              # sichert "owner"
+ORG_FILE_GROUP=$(stat -c %G "$TGT_FILE")                              # sichert "group"
+}
+
+#### Wiederherstellung urspruenglicher Dateirechte
+Restore_Rights()
+{
+chmod $ORG_FILE_RIGHTS $TGT_FILE
+chown $ORG_FILE_OWNER:$ORG_FILE_GROUP $TGT_FILE
+}
+
+############### Dateien sichern/normieren/vorbereiten
+Clean_Source_Files()
+{
+Make_Scopy
+# fehlende linefeeds ergaenzen
+[ -n "$(tail -c 1 <"$DEL_FILE")" ] && echo >> "$DEL_FILE"
+[ -n "$(tail -c 1 <"$INS_FILE")" ] && echo >> "$INS_FILE"
+[ -n "$(tail -c 1 <"$TGT_FILE")" ] && echo >> "$TGT_FILE"
+### Loeschen unsichtbarer Zeichen (Leerzeichen, Tabulatoren) vom Ende aller Zeilen
+sed 's/[ 	]*$//' $DEL_FILE >> $DEL_FILE".tmp"
+mv -f $DEL_FILE".tmp" $DEL_FILE
+sed 's/[ 	]*$//' $INS_FILE >> $INS_FILE".tmp"
+mv -f $INS_FILE".tmp" $INS_FILE
+sed 's/[ 	]*$//' $TGT_FILE >> $TGT_FILE".tmp"
+mv -f $TGT_FILE".tmp" $TGT_FILE
+### Orginaldatei vorne und hinten erweitern
+echo  $D_Edding2 >> $TGT_FILE".tmp"
+cat   $TGT_FILE  >> $TGT_FILE".tmp"
+echo  $D_Edding2 >> $TGT_FILE".tmp"
+mv -f $TGT_FILE."tmp" $TGT_FILE
+}
+
+################## Sicherheitskopie erstellen
+Make_Scopy()
+{
+if (($SAVE_FLAG == 0)); then
+  SAVE_DIR=$PATH_2_FILE"/"$FILE_NAME".trisave"
+  if [[ ! -d $SAVE_DIR ]]; then
+    mkdir $SAVE_DIR
+  fi
+  cp $TGT_FILE $SAVE_DIR"/"$FILE_NAME".save."$DATUM
+fi
+}
+
+############## Daten der Patchdateien einlesen
+Read_Patch_Data()
+{
+old_IFS=$IFS                                 # sichere Internal Field Separator
+IFS=$'\n'                                    # setze IFS auf newline
+INS_DATA_AR=($(cat -E $INS_FILE))            # einzufuegende in array
+DEL_DATA_AR=($(cat -E $DEL_FILE))            # zu loeschende in array
+ORG_DATA_AR=($(cat -E $TGT_FILE))            # zu patchende in array
+IFS=$old_IFS                                 # restauriere IFS
+SIZE_OF_DEL_FILE=${#DEL_DATA_AR[@]}
+SIZE_OF_INS_FILE=${#INS_DATA_AR[@]}
+SIZE_OF_ORG_FILE=${#ORG_DATA_AR[@]}
+DEL_DATA_HEAD=${DEL_DATA_AR[0]}              # sichere 1ste Zeile
+INS_DATA_HEAD=${INS_DATA_AR[0]}              # sichere 1ste Zeile
+}
+
+##################### Sucht nach zu loeschenden Bloecken innerhalb des Insfiles, speichert Position und Anzahl
+Check_Insfile()
+{
+if (($SIZE_OF_INS_FILE > $SIZE_OF_DEL_FILE))
+  then
+    #### 1ste Zeile finden
+    FOUND_INS_DEL_LNo_LIST=""
+    for (( SL=0;SL<$SIZE_OF_INS_FILE;++SL))                               # Liste mit Zeilennummern der gefunden 1sten Zeilen
+      do
+        [[ ${INS_DATA_AR[$SL]} == $DEL_DATA_HEAD ]] && FOUND_INS_DEL_LNo_LIST="$FOUND_INS_DEL_LNo_LIST $SL"
+      done
+    ##### und dann den Rest checken
+    INSDELNO_LIST=""
+    INS_DEL_MATCH_COUNT=0
+    if [[ -n $FOUND_INS_DEL_LNo_LIST ]]                                   # wenn Liste nicht leer d.h. 1ste Zeilen gefunden
+      then
+        for i in $FOUND_INS_DEL_LNo_LIST                                  # dann uebergebe jeweils eine Zeilennummer
+          do
+            FOUND_INS_DEL_LNo=$i
+            Compare_Ins_Del_Data                                          # an Funktion Compare_Ins_Del_Data
+            if (($? != 0)); then                                          # wenn bereits gepatchter Block vorhanden
+              INSDELNO_LIST="$INSDELNO_LIST""$FOUND_INS_DEL_LNo "         # fuege Z.Nr. in Liste ein
+              ((++INS_DEL_MATCH_COUNT))                                   # und erhoehe Zaehler
+            fi
+          done
+        [[ -n $INSDELNO_LIST ]] && DEL_INSIDE_INS=11 || DEL_INSIDE_INS=0
+      else
+        DEL_INSIDE_INS=0                                                  # wenn 1ste Zeile gar nicht gefunden - auch null
+    fi
+  else
+    DEL_INSIDE_INS=0
+fi
+return $DEL_INSIDE_INS
+}
+
+##################### Sucht nach bereits gepatchten Bloecken, speichert Position und Anzahl
+Check_Already_Done()
+{
+#### 1ste Zeile finden
+FOUND_INS_LNo_LIST=""
+for (( SL=0;SL<$SIZE_OF_ORG_FILE;++SL))                                 # Liste mit Zeilennummern der gefunden 1sten Zeilen
+  do
+    [[ ${ORG_DATA_AR[$SL]} == $INS_DATA_HEAD ]] && FOUND_INS_LNo_LIST="$FOUND_INS_LNo_LIST $SL"
+  done
+##### und dann den Rest checken
+INSNO_LIST=""
+INS_MATCH_COUNT=0
+if [[ -n $FOUND_INS_LNo_LIST ]]                                         # wenn Liste nicht leer d.h. 1ste Zeilen gefunden
+  then
+    for j in $FOUND_INS_LNo_LIST                                        # dann uebergebe jeweils eine Zeilennummer
+      do
+        FOUND_INS_LNo=$j
+        Compare_Ins_Data                                                # an Funktion Compare_Ins_Data
+        if (($? != 0)); then                                            # wenn bereits gepatchter Block vorhanden
+          INSNO_LIST="$INSNO_LIST""$FOUND_INS_LNo "                     # fuege Z.Nr. in Liste ein
+          ((++INS_MATCH_COUNT))                                         # und erhoehe Zaehler
+        fi
+      done
+    [[ -n $INSNO_LIST ]] && FILE_YET_PATCHED=2 || FILE_YET_PATCHED=0
+  else
+    FILE_YET_PATCHED=0                                                  # wenn 1ste Zeile gar nicht gefunden - auch null
+fi
+return $FILE_YET_PATCHED
+}
+
+##################### Sucht nach loeschbaren Bloecken und speichert Position
+Check_Matching_Data()                                                   # analog zu "Check_Already_Done"
+{
+####  1ste Zeile finden
+FOUND_DEL_LNo_LIST=""
+for (( SL=0;SL<$SIZE_OF_ORG_FILE;++SL))                                         # nur fuer den zu loeschenden Block 
+  do
+    AKT_ORG_LINE="${ORG_DATA_AR[$SL]}"                                          # relevante Zeilen extrahieren
+    if (($DELIMIT_FLAG == 0))
+      then
+        Delimit_Line_ORG                                                        # delimit extrahierte Zeile
+        NEW_ORG_HEAD_AR[$SL]="$CUTTED_ORG_LINE"
+      else
+        NEW_ORG_HEAD_AR[$SL]="$AKT_ORG_LINE"
+    fi
+    [[ ${NEW_ORG_HEAD_AR[$SL]} == $DEL_DATA_HEAD ]] && FOUND_DEL_LNo_LIST="$FOUND_DEL_LNo_LIST $SL"
+  done
+##### und dann den Rest checken
+DELNO_LIST=""
+if [[ -n $FOUND_DEL_LNo_LIST ]]
+  then
+    for k in $FOUND_DEL_LNo_LIST
+      do
+        FOUND_DEL_LNo=$k
+        Compare_Del_Data
+        (($? == 0)) && DELNO_LIST="$DELNO_LIST""$FOUND_DEL_LNo "
+      done
+    [[ -n $DELNO_LIST ]] && FILE_PATCHABLE=0 || FILE_PATCHABLE=1
+  else
+    FILE_PATCHABLE=1
+fi
+
+return $FILE_PATCHABLE
+}
+
+############### relevante Daten der zu patchenden Datei einlesen und vergleichen
+### zum check ob delfile innerhalb von insfile - wird von " Check_Insfile" aufgerufen
+Compare_Ins_Del_Data()
+{
+if (( ($FOUND_INS_DEL_LNo + $SIZE_OF_DEL_FILE ) <= $SIZE_OF_INS_FILE))  # Alle Daten im erlaubten Bereich?
+  then
+    for ((ii=0;ii<$SIZE_OF_DEL_FILE;ii++))
+      do
+        AKT_LINE_NR=$(($ii + $FOUND_INS_DEL_LNo ))
+        INS_DEL_AR[$ii]="${INS_DATA_AR[$AKT_LINE_NR]}"              # relevanten Block extrahieren
+      done
+    produ=1
+    for ((ij=0;ij<$SIZE_OF_DEL_FILE;ij++))
+      do
+        [[ "${DEL_DATA_AR[$ij]}" == "${INS_DEL_AR[$ij]}" ]] && multi=1 || multi=0
+        produ=$(($multi * $produ))
+      done
+    (($produ == 0)) && DEL_BLOCK_INSIDE=0 || DEL_BLOCK_INSIDE=1
+  else
+    DEL_BLOCK_INSIDE=0                                                   # Daten ausserhalb erlaubten Bereich-> nich drin
+fi
+return $DEL_BLOCK_INSIDE
+}
+
+### fuer die einzufuegenden - wird von "Check_Already_Done" aufgerufen
+Compare_Ins_Data()
+{
+if (( ($FOUND_INS_LNo + $SIZE_OF_INS_FILE ) <= $SIZE_OF_ORG_FILE))    # Alle Daten im erlaubten Bereich?
+  then
+    for ((ji=0;ji<$SIZE_OF_INS_FILE;ji++))
+      do
+        AKT_LINE_NR=$(($ji + $FOUND_INS_LNo ))
+        ORG_INS_AR[$ji]="${ORG_DATA_AR[$AKT_LINE_NR]}"              # relevanten Block extrahieren
+      done
+    produ=1
+    for ((jj=0;jj<$SIZE_OF_INS_FILE;jj++))
+      do
+        [[ "${INS_DATA_AR[$jj]}" == "${ORG_INS_AR[$jj]}" ]] && multi=1 || multi=0
+        produ=$(($multi * $produ))
+      done
+    (($produ == 0)) && INS_BLOCK_FOUND=0 || INS_BLOCK_FOUND=1
+    if (($SIZE_OF_INS_FILE == 0));then                                   # Sonderfall: wenn einzufuegende Datei leer ist
+      INS_BLOCK_FOUND=0                                                  # dann gilt Block immer als ungepatched
+    fi
+  else
+    INS_BLOCK_FOUND=0                                                   # Daten ausserhalb erlaubten Bereich -> ungepatched
+fi
+return $INS_BLOCK_FOUND
+}
+
+#### fuer die zu loeschenden - wird von "Check_Matching_Data" aufgerufen
+Compare_Del_Data()
+{
+if (( ($FOUND_DEL_LNo + $SIZE_OF_DEL_FILE) <=  $SIZE_OF_ORG_FILE))          # Alle Daten im erlaubten Bereich?
+  then
+    for ((ki=0;ki<$SIZE_OF_DEL_FILE;ki++))
+      do
+        AKT_LINE_NR=$(($ki + $FOUND_DEL_LNo))
+        AKT_ORG_LINE="${ORG_DATA_AR[$AKT_LINE_NR]}"                          # relevante Zeilen extrahieren
+        AKT_DEL_LINE="${DEL_DATA_AR[$ki]}"
+        if (($DELIMIT_FLAG == 0))
+          then
+            Delimit_Line_DEL                                                     # delimit extrahierte Zeile
+            Delimit_Line_ORG
+            NEW_ORG_AR[$ki]="$CUTTED_ORG_LINE"
+            NEW_DEL_AR[$ki]="$CUTTED_DEL_LINE"
+          else
+            NEW_ORG_AR[$ki]="$AKT_ORG_LINE"
+            NEW_DEL_AR[$ki]="$AKT_DEL_LINE"
+        fi
+      done
+    produ=1
+    for ((kj=0;kj<$SIZE_OF_DEL_FILE;kj++))
+      do
+        [[ "${NEW_DEL_AR[$kj]}" == "${NEW_ORG_AR[$kj]}" ]] && multi=1 || multi=0
+        produ=$(($multi * $produ))
+      done
+    (($produ == 0)) && DEL_BLOCK_FOUND=1 || DEL_BLOCK_FOUND=0
+  else
+    DEL_BLOCK_FOUND=1                                                    # Daten ausserhalb erlaubten Bereich -> nicht patchbar
+fi
+return $DEL_BLOCK_FOUND
+}
+
+#################### begrenzt Auswertung auf Gleichheit im Header vor "delimiter"
+Delimit_Head_Line()
+{
+if (($DELIMIT_FLAG == 0)); then
+  for li in $(seq 0 $((${#DEL_DATA_HEAD} - 1)))    ###  Zeile zu array
+    do
+      dummy1array[$li]=${DEL_DATA_HEAD:$li:1}
+    done
+  lj=0
+  ELEMENT_COUNT1=${#dummy1array[*]}      # Anzahl der Elemente:
+  while [[ ${dummy1array[$lj]} != $DELIM_PUT ]] && (($lj<$ELEMENT_COUNT1))
+    do
+      CUTTED_DEL_HEAD="$CUTTED_DEL_HEAD""${dummy1array[$lj]}"
+      ((++lj))
+    done
+  unset dummy1array
+  DEL_DATA_HEAD=$CUTTED_DEL_HEAD
+fi
+}
+
+#################### begrenzt Auswertung auf Gleichheit Im Block vor "delimiter"
+Delimit_Line_ORG()
+{
+unset CUTTED_ORG_LINE
+for kii in $(seq 0 $((${#AKT_ORG_LINE} - 1)))    ###  Zeile zu array
+  do
+    dummy1array[$kii]=${AKT_ORG_LINE:$kii:1}
+  done
+kij=0
+ELEMENT_COUNT1=${#dummy1array[*]}      # Anzahl der Elemente:
+while  (($kij<$ELEMENT_COUNT1)) && [[ ${dummy1array[$kij]} != $DELIM_PUT ]]
+  do
+    CUTTED_ORG_LINE="$CUTTED_ORG_LINE""${dummy1array[$kij]}"
+    ((++kij))
+  done
+unset dummy1array
+}
+
+#################### begrenzt Auswertung auf Gleichheit Im Block vor "delimiter"
+Delimit_Line_DEL()
+{
+unset CUTTED_DEL_LINE
+for kik in $(seq 0 $((${#AKT_DEL_LINE} - 1)))    ###  Zeile zu array
+  do
+    dummy2array[$kik]=${AKT_DEL_LINE:$kik:1}
+  done
+kil=0
+ELEMENT_COUNT2=${#dummy2array[*]}      # Anzahl der Elemente:
+  while  (($kil<$ELEMENT_COUNT2)) && [[ ${dummy2array[$kil]} != $DELIM_PUT ]]
+    do
+      CUTTED_DEL_LINE="$CUTTED_DEL_LINE""${dummy2array[$kil]}"; ((++kil))
+    done
+unset dummy2array
+}
+
+################### entfernt Zeilenummern gepatchter Bloecke aus delete Liste, speichert Anzahl der uebriggeblieben
+Reduce_List_2_Del()
+{
+DEL_MATCH_COUNT=0
+CLEAN_DELNO_LIST=""
+for mi in $DELNO_LIST                                    ## Liste der Zeilen mit loeschbaren Bloecken
+  do
+    prod=1
+    for mj in $INSNO_LIST                                ## Liste der Zeilen die bereits gepachted sind
+      do
+        (($mi != $mj)) && multi=1 || multi=0
+        prod=$(($prod * $multi))
+      done
+    if (($prod == 1)); then
+      CLEAN_DELNO_LIST="$CLEAN_DELNO_LIST""$mi "         ## bereinigte Liste
+      ((++DEL_MATCH_COUNT))                              ## Anzahl der zu loeschenden Bloecke
+    fi
+  done
+}
+
+################### Loescht anhand der Infos von "Reduce_List_2_Del und Count_Source_Lines" die Bloecke und fuegt statt dessen Textmarker ein
+Delete_Old_Data()
+{
+### Reihenfolge umdrehen
+for ni in $CLEAN_DELNO_LIST                              ## beim loeschen muessen wir von hinten anfangen
+  do
+    TSIL_ONLED_NAELC=$ni" "$TSIL_ONLED_NAELC             ## daher jetzt alles rueckwaerts!
+  done
+### löschen und einfügen
+DEL_BACKUP_COUNT=0
+for nj in $TSIL_ONLED_NAELC
+  do
+    block_start=$(($nj + 1 ))
+    block_end=$(($SIZE_OF_DEL_FILE + $block_start - 1))
+    if [[ (($UP_INSERT_FLAG == 1)) && (($DOWN_INSERT_FLAG == 1)) ]]
+      then         ## Block loeschen?/kein "insert" ?
+        if (($DEL_BACKUP_FLAG == 0)); then                                    ## zu loeschenden Block sichern?
+          Make_Del_Backup
+        fi
+        sed  "${block_start},${block_end}d"  $TGT_FILE >> $TGT_FILE".tmp"     ## Block loeschen!
+        mv -f $TGT_FILE".tmp" $TGT_FILE
+        sed -e "$block_start i"\ $D_Edding1 $TGT_FILE >> $TGT_FILE".tmp"      ## Marker einfuegen
+        mv -f $TGT_FILE".tmp" $TGT_FILE
+      else
+        if (($DOWN_INSERT_FLAG == 0))
+          then
+            ((++block_end))
+            if (($block_end > $SIZE_OF_ORG_FILE ))
+              then
+                echo "$D_Edding1" >> $TGT_FILE                                 ## Marker anhaengen
+                mv $TGT_FILE $TGT_FILE".tmp"
+              else
+                sed -e "$block_end i"\ $D_Edding1 $TGT_FILE >> $TGT_FILE".tmp"     ## Marker einfuegen
+            fi
+            mv -f $TGT_FILE".tmp" $TGT_FILE
+          else
+            sed -e "$block_start i"\ $D_Edding1 $TGT_FILE >> $TGT_FILE".tmp"   ## Marker einfuegen
+            mv -f $TGT_FILE".tmp" $TGT_FILE
+        fi
+    fi
+  done
+}
+
+############## speichern geloeschter Bloecke
+Make_Del_Backup()
+{
+((++DEL_BACKUP_COUNT))
+BACKUP_DIR=$PATH_2_FILE"/"$FILE_NAME".triback"                                    ## Verzeichniss fuer Backups setzen
+if [[ ! -d $BACKUP_DIR ]]; then
+  mkdir $BACKUP_DIR
+fi
+BACKUP_FILE=$BACKUP_DIR"/"$DEL_FILE_NAME"_back"$DEL_BACKUP_COUNT                  ## Filenamen generieren
+cp $TGT_FILE $BACKUP_FILE
+
+file_end=$(wc -l $BACKUP_FILE | cut -d" " -f1)                                    ## bei jedem Durchlauf Laenge des zu patchenden Files feststellen
+file_start=1
+del_block_end=$(($block_end + 1))
+del_block_start=$(($block_start - 1))
+
+sed  "${del_block_end},${file_end}d"  $BACKUP_FILE >> $BACKUP_FILE".tmp"          ## den Teil dahinter loeschen
+mv -f $BACKUP_FILE".tmp" $BACKUP_FILE
+sed  "${file_start},${del_block_start}d"  $BACKUP_FILE >> $BACKUP_FILE".tmp"      ## den Teil davor loeschen
+mv -f $BACKUP_FILE".tmp" $BACKUP_FILE
+
+}
+
+################# Zerteilt File in "vor Marker"/"nach Marker" und fuegt dann den neuen Block dazwischen ein
+Insert_New_Data()
+{
+EDDING_LINES=$(grep -n -e "$D_Edding1" $TGT_FILE | cut -d: -f1)          ## Zeilenummern mit Textmarker
+### Reihenfolge umdrehen
+for oi in $EDDING_LINES                                                  ## auch hier muessen wir von hinten anfangen
+  do
+    SENIL_GNIDDE=$oi" "$SENIL_GNIDDE                                     ## daher jetzt auch rueckwaerts!
+  done
+### trennen und zusammenfuegen
+for oj in $SENIL_GNIDDE
+  do
+    block_start=1
+    block_end=$(($oj))
+    sed  "${block_start},${block_end}d"  $TGT_FILE >> $TGT_FILE".end"   ## Teil vor und inkl. Textmarker loeschen / Rest speichern
+
+    block_start=$(($oj))
+    block_end=$(wc -l $TGT_FILE | cut -d" " -f1)                            ## bei jedem Durchlauf Laenge des zu patchenden Files feststellen
+    sed  "${block_start},${block_end}d"  $TGT_FILE >> $TGT_FILE".beg"   ## Teil nach und inkl. Textmarker loeschen / Rest speichern
+
+    cat   $INS_FILE       >> $TGT_FILE".beg"                                      ## und alles zusammenbauen
+    cat   $TGT_FILE".end" >> $TGT_FILE".beg"
+    rm    $TGT_FILE".end"
+    mv -f $TGT_FILE".beg"    $TGT_FILE
+
+  done
+}
+
+##################### Parameter auswerten
+CHK_PARA()
+{
+      case $IN_PUT in
+    --help)  HANDOVER=--help;;
+     --ver)  HANDOVER=--ver;;
+        -f)  FORCE_FLAG=0;;
+        -q)  QUIET_FLAG=0;;
+        +i)  UP_INSERT_FLAG=0;;
+        -i)  DOWN_INSERT_FLAG=0;;
+        -s)  SAVE_FLAG=0;;
+        -b)  DEL_BACKUP_FLAG=0;;
+       -d?)  DELIMIT_FLAG=0; DELIM_PUT=`( echo $IN_PUT | cut -d"d" -f2 )`;;
+        -*)  HANDOVER=99;;
+         *)  HANDOVER=w_num;;
+      esac
+}
+
+################### tripatch Version ausgeben
+Print_Version()
+{
+echo ""
+echo " ****   "$VERSION
+echo ""
+}
+
+################# Fehlermeldungen augeben
+Print_Message()
+{
+case "$STATUS_SIGNAL" in
+   0)  echo " File patched"
+       ;;
+   1)  echo " Abbruch - zu loeschende Daten/Zeilen passen nicht zur Ziel-Datei"
+       echo " Hilfe mit --help"
+       ;;
+   2)  echo " Abbruch - File ist bereits gepatched bzw."
+       echo "   enthaelt bereits gepatchte/eingefuegte Bloecke"
+       echo "   Infos hierzu unter ~/tripatch.info"
+       echo " Hilfe mit --help"
+       ;;
+   3)  echo " Abbruch - mind. eine der Quelldateien existiert nicht"
+       echo "   oder ein Verzeichniss laesst sich nicht oeffnen"
+       echo "   Infos hierzu unter ~/tripatch.info"
+       echo " Hilfe mit --help"
+       ;;
+   4)  echo " Abbruch - keine Parameter angegeben"
+       echo " Hilfe mit --help"
+       ;;
+   5)  echo " Abbruch - falsche Anzahl von Parametern"
+       echo " Hilfe mit --help"
+       ;;
+   6)  echo " Abbruch - unbekannter Parameter"
+       echo " Hilfe mit --help"
+       ;;
+   7)  echo " Abbruch - mehrere patchbare Bloecke gefunden"
+       echo "   Infos hierzu unter ~/tripatch.info"
+       echo " Hilfe mit --help"
+       ;;
+   8)  echo " Abbruch - eine Datei ist mind. doppelt angegeben"
+       echo " Hilfe mit --help"
+       ;;
+   9)  echo " Abbruch - keine Zugriffsrechte auf Zielverzeichniss"
+       ;;
+   10) echo " Abbruch - keine Zugriffsrechte auf Zieldatei"
+       ;;
+   11) echo " Abbruch - zu loeschender Block innerhalb des einzufuegendem"
+       echo "   Infos hierzu unter ~/tripatch.info"
+       echo " Hilfe mit --help"
+       ;;
+   12) Print_Help
+       ;;
+   13) Print_Version
+       ;;
+esac
+}
+
+###################### Hilfstext ausegeben
+Print_Help()
+{
+echo ""
+echo "   ----------------------------------------------------------------------"
+echo ""
+echo "   **** Script zum Austauschen/Einfuegen/Loeschen von Textbloecken ****"
+echo ""
+echo "   Syntax: tripatch <opt1> <opt2>...... <file1 file2 file3>"
+echo ""
+echo "   <file3> ist das zu patchende File."
+echo "   <file1> muss die zu entfernenden/zu findenden Daten enthalten."
+echo "   <file2> muss die einzufuegenden Daten enthalten."
+echo ""
+echo "   Das Tauschen/Einfuegen der Textbloecke ist auf ganze Zeilen ausgerichtet"
+echo "   die Auswahl von z.B. halben Zeilen wird mit Fehler quittiert."
+echo ""
+echo "   Wenn <file2> leer ist wird nur der Block geloescht"
+echo ""
+echo "   Alle benutzten Dateien und Verzeichnisse muessen"
+echo "   geoeffnet, gelesen und beschrieben werden koennen."
+echo "   -evtl. sind root-Rechte noetig"
+echo ""
+echo ""
+echo "   Infos zum Patchstatus sind in ~/tripatch.info nachzulesen"
+echo ""
+echo "   optional:"
+echo "   --help - Dies hier :-)"
+echo "   --ver  - gibt Version aus"
+echo "   -f     - Patch wird auf alle gefundenen Bloecke angewendet (force)"
+echo "   -q     - Meldungausgabe unterdruecken (quiet)"
+echo "   -i     - Block wird nicht geloescht -neuer Block wird dahinter eingefuegt (insert)"
+echo "   +i     - Block wird nicht geloescht -neuer Block wird davor eingefuegt (insert)"
+echo "   -b     - zu loeschenden Block speichern"
+echo "   -s     - Sicherungskopie erstellen"
+echo "   -dx    - zu loeschende/findende Zeilen werden von links beginnend nur bis x ausgewertet"
+echo "            statt x kann ein beliebiges Zeichen eingesetzt werden. (delimit)"
+echo ""
+echo "    **** verbrochen von:           Captain_Beefheart"
+echo "    ****                                       fuer easyvdr"
+echo ""
+echo "   ----------------------------------------------------------------------"
+echo ""
+}
+
+################## Patchstatus des Sourcefiles speichern
+Write_Infofile()
+{
+ER_MESS=""
+if [[ ($STATUS_SIGNAL == 3) || ($STATUS_SIGNAL == 9) || ($STATUS_SIGNAL == 10) ]]; then
+    ERR_MESS="file not found"
+fi
+rm -f ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "  --------------------------------------------------------------------" >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "            ########   tripatch fileinfo    ########"                   >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "                        "$ERR_MESS                                      >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "  Name of insertfile:                        "$INS_FILE_NAME            >> ~/tripatch.info
+echo "  Size of insertfile:                        "$SIZE_OF_INS_FILE" lines" >> ~/tripatch.info
+echo "  Name of file with block to find/delete:    "$DEL_FILE_NAME            >> ~/tripatch.info
+echo "  Blocksize to find/delete:                  "$SIZE_OF_DEL_FILE" lines" >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "  Name of targetfile:                        "$FILE_NAME                >> ~/tripatch.info
+echo "  Status of targetfile before trying to patch:"                         >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "  No. of blocks 2del inside insertfile:      "$INS_DEL_MATCH_COUNT      >> ~/tripatch.info
+echo "  Found blocks in insertfile at lineno:      "$INSDELNO_LIST            >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "  No. of already patched/inserted blocks:    "$INS_MATCH_COUNT          >> ~/tripatch.info
+echo "  Already patched/inserted blocks in lineno: "$INSNO_LIST               >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "  No. of patchable blocks:                   "$DEL_MATCH_COUNT          >> ~/tripatch.info
+echo "  Patchable blocks in lineno:                "$CLEAN_DELNO_LIST         >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "  No. of backup blocks:                      "$DEL_BACKUP_COUNT         >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "                                       Date: "$DATUM                    >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+echo "  --------------------------------------------------------------------" >> ~/tripatch.info
+echo ""                                                                       >> ~/tripatch.info
+}
+
+#########################   action  #############################
+Patchrun_0()
+{
+(($STAT_INSIDE_FLAG == 0)) && STAT_FLAG=$STAT_DONE_FLAG || STAT_FLAG=$STAT_INSIDE_FLAG
+}
+##
+Patchrun_1()
+{
+if [[ (($STAT_DONE_FLAG == 0)) || (($FORCE_FLAG == 0)) ]]
+  then
+    if (($STAT_INSIDE_FLAG == 0))
+      then
+        Delete_Old_Data; Insert_New_Data; STAT_FLAG=0
+      else
+        STAT_FLAG=$STAT_INSIDE_FLAG
+    fi
+  else
+    (($STAT_INSIDE_FLAG == 0)) && STAT_FLAG=$STAT_DONE_FLAG || STAT_FLAG=$STAT_INSIDE_FLAG
+fi
+}
+##
+Patchrun_2()
+{
+if (($FORCE_FLAG == 0))
+  then
+    if (($STAT_INSIDE_FLAG == 0))
+      then
+        Delete_Old_Data; Insert_New_Data; STAT_FLAG=0
+      else
+        STAT_FLAG=$STAT_INSIDE_FLAG
+    fi
+  else
+    (($STAT_INSIDE_FLAG == 0)) && STAT_FLAG=7 || STAT_FLAG=$STAT_INSIDE_FLAG
+fi
+}
+
+##########################   main  ##############################
+#### der Kern des Ganzen
+Make_Tripatch()
+{
+Check_Source_Files
+STAT_FLAG=$?
+if (($STAT_FLAG == 0)); then
+  Store_Rights
+  Clean_Source_Files
+  Read_Patch_Data
+  Check_Insfile; STAT_INSIDE_FLAG=$?
+  Delimit_Head_Line
+  Check_Already_Done; STAT_DONE_FLAG=$?
+  Check_Matching_Data; STAT_MATCH_FLAG=$?
+  Reduce_List_2_Del
+
+  if (($STAT_INSIDE_FLAG == 0))
+    then
+      if (($STAT_DONE_FLAG == 0))
+        then
+          STAT_FLAG=$STAT_MATCH_FLAG
+        else
+          STAT_FLAG=$STAT_DONE_FLAG
+      fi
+    else
+      STAT_FLAG=$STAT_INSIDE_FLAG
+  fi
+
+  if (($STAT_MATCH_FLAG == 0)); then         ### patchbare oder passende bereits gepatchte Bloecke gefunden?
+    case "$DEL_MATCH_COUNT" in
+      0)  Patchrun_0;;                       ### kein patchbarer Block gefunden
+      1)  Patchrun_1;;                       ### genau ein patchbarer Block gefunden
+      *)  Patchrun_2;;                       ### mehrere patchbare Bloecke gefunden
+    esac
+  fi
+
+  ### Erweiterungen der Originaldatei loeschen
+  grep -v  "$D_Edding2"  $TGT_FILE > $TGT_FILE".tmp"
+  mv $TGT_FILE".tmp" $TGT_FILE
+
+  Restore_Rights                             #### Wiederherstellung urspruenglicher Dateirechte
+fi
+return $STAT_FLAG
+}
+
+############################################################
+####   Funktionen - Ende                                ####
+############################################################
+
+############################################################
+####   run                                              ####
+############################################################
+
+#### erstmal alle Optionen deaktivieren/initialisieren
+SAVE_FLAG=1; UP_INSERT_FLAG=1; DOWN_INSERT_FLAG=1; FORCE_FLAG=1; DEL_BACKUP_FLAG=1; DELIMIT_FLAG=1; QUIET_FLAG=1
+
+#### Verzweigung nach Anzahl der uebergebenen Parameter
+case "$#" in
+  0)  HANDOVER=empty;;
+  1)  case $1 in
+    --ver) HANDOVER=--ver;;
+   --help) HANDOVER=--help;;
+        *) HANDOVER=w_num;;
+      esac;;
+  3)  DEL_FILE=$1; INS_FILE=$2; TGT_FILE=$3; HANDOVER=run
+      case $1 in
+  -f|-q|+i|-i|-s|-b|-d?) HANDOVER=w_num;;
+                 --help) HANDOVER=--help;;
+                  --ver) HANDOVER=--ver;;
+                     -*) HANDOVER=99;;
+      esac;;
+  4)  DEL_FILE=$2; INS_FILE=$3; TGT_FILE=$4; HANDOVER=run
+      IN_PUT=$1; CHK_PARA;;
+  5)  DEL_FILE=$3; INS_FILE=$4; TGT_FILE=$5; HANDOVER=run
+      IN_PUT=$1; CHK_PARA
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$2; CHK_PARA
+      fi;;
+  6)  DEL_FILE=$4; INS_FILE=$5; TGT_FILE=$6; HANDOVER=run
+      IN_PUT=$1; CHK_PARA
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$2; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$3; CHK_PARA
+      fi;;
+  7)  DEL_FILE=$5; INS_FILE=$6; TGT_FILE=$7; HANDOVER=run
+      IN_PUT=$1; CHK_PARA
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$2; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$3; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$4; CHK_PARA
+      fi;;
+  8)  DEL_FILE=$6; INS_FILE=$7; TGT_FILE=$8; HANDOVER=run
+      IN_PUT=$1; CHK_PARA
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$2; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$3; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$4; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$5; CHK_PARA
+      fi;;
+  9)  DEL_FILE=$7; INS_FILE=$8; TGT_FILE=$9; HANDOVER=run
+      IN_PUT=$1; CHK_PARA
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$2; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$3; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$4; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$5; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$6; CHK_PARA
+      fi;;
+ 10)  DEL_FILE=$8; INS_FILE=$9; TGT_FILE=$10; HANDOVER=run
+      IN_PUT=$1; CHK_PARA
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$2; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$3; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$4; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$5; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$6; CHK_PARA
+      fi
+      if [[ $HANDOVER == "run" ]]; then
+        IN_PUT=$7; CHK_PARA
+      fi;;
+  *)  HANDOVER=w_num;;
+esac
+
+#### Datum und Uhrzeit merken
+DATUM=`date +%Y.%m.%d-%H:%M`
+
+#### Auwertung der uebergebenen oder der von Make_Tripatch zurueckgegeben Parameter
+case "$HANDOVER" in
+ --help)  STATUS_SIGNAL=12;;
+  --ver)  STATUS_SIGNAL=13;;
+  empty)  STATUS_SIGNAL=4;;
+    run)  Make_Tripatch; STATUS_SIGNAL=$?; Write_Infofile;;
+  w_num)  STATUS_SIGNAL=5;;
+      *)  STATUS_SIGNAL=6;;
+esac
+
+#### Infos ausgeben
+if (($QUIET_FLAG == 1)); then
+Print_Message
+fi
+
+#### Rueckgabe der Statusinfos an aufrufendes Script - siehe Print_Message
+exit $STATUS_SIGNAL
+

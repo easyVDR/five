@@ -1,0 +1,12 @@
+Source: easyvdr-stm32-config
+Section: video
+Priority: extra
+Maintainer: Obelix <Obelix@localhost>
+Build-Depends: debhelper (>= 8.0.0), libudev-dev
+Standards-Version: 3.9.4
+
+Package: stm32-config
+Architecture: any
+Depends: stm32-irmp
+Description: STM32 USB Config
+

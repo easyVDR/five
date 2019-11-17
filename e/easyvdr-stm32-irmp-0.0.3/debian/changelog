@@ -1,0 +1,41 @@
+easyvdr-stm32-irmp (0.0.3-20150615easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:04:17 +0100
+
+easyvdr-stm32-irmp (0.0.3-20150615easyVDR3~bionic) bionic; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Feb 2019 23:04:23 +0100
+
+easyvdr-stm32-irmp (0.0.3-20150615easyVDR2~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 20 Dec 2017 16:34:39 +0100
+
+easyvdr-stm32-irmp (0.0.3-20150615easyVDR1~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 13:25:57 +0100
+
+easyvdr-stm32-irmp (0.0.3-20150615easyVDR1~trusty) trusty; urgency=high
+
+  * new upstream
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Jun 2015 18:55:45 +0200
+
+easyvdr-stm32-irmp (0.0.2-20150302easyVDR0~trusty) trusty; urgency=medium
+
+  * new upstream
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 03 Mar 2015 16:04:44 +0100
+
+easyvdr-stm32-irmp (0.0.1-0easyVDR0~trust) trusty; urgency=high
+
+  * initial version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 24 Dec 2014 10:15:13 +0100

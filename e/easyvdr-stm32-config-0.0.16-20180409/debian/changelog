@@ -1,0 +1,30 @@
+easyvdr-stm32-config (0.0.16-20180409-0easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:03:29 +0100
+
+easyvdr-stm32-config (0.0.16-20180409-0easyVDR0~bionic) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 27 Apr 2018 15:45:13 +0200
+
+easyvdr-stm32-config (0.0.16-20180409-0easyVDR0~trusty) trusty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Apr 2018 09:40:52 +0200
+
+easyvdr-stm32-config (0.0.16-20180409-0easyVDR1~trusty) trusty; urgency=medium
+
+  * change to libudev and many new features
+
+ -- easyVDR-Developer <Obelix@localhost>  Mon, 09 Apr 2018 18:33:17 +0100
+
+easyvdr-stm32-config (0.0.1-20151030-0easyVDR1~trusty) trusty; urgency=medium
+
+  * intial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 30 Oct 2015 07:05:17 +0100
+

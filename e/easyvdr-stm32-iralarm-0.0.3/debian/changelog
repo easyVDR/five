@@ -1,0 +1,53 @@
+easyvdr-stm32-iralarm (0.0.3-20170120easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:04:01 +0100
+
+easyvdr-stm32-iralarm (0.0.3-20170120easyVDR4~bionic) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 27 Apr 2018 15:41:19 +0200
+
+easyvdr-stm32-iralarm (0.0.3-20170120easyVDR4~trusty) trusty; urgency=medium
+
+  * edit 10_shutdown.stm32irmp & easyvdr-stm32irmp-wakeup.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 Mar 2018 20:59:41 +0100
+
+easyvdr-stm32-iralarm (0.0.3-20170120easyVDR3~trusty) trusty; urgency=medium
+
+  * edit 10_shutdown.stm32irmp
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 20 Mar 2018 23:30:30 +0100
+
+easyvdr-stm32-iralarm (0.0.3-20170120easyVDR2~trusty) trusty; urgency=medium
+
+  * added chmod vdr:vdr easyvdr-addon-stm32irmp-wakeup.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 15 Mar 2018 18:56:45 +0100
+
+easyvdr-stm32-iralarm (0.0.3-20170120easyVDR1~trusty) trusty; urgency=medium
+
+  * added wakeup stm32-irmp by obelix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 11 Mar 2018 19:53:50 +0100
+
+easyvdr-stm32-iralarm (0.0.3-20170120easyVDR0~trusty) trusty; urgency=medium
+
+  * new upstream
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Jan 2017 13:17:34 +0100
+
+easyvdr-stm32-iralarm (0.0.2-20150615easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Jun 2015 18:57:32 +0200
+
+easyvdr-stm32-iralarm (0.0.1-20150207easyVDR0~trusty) trusty; urgency=medium
+
+  * initial version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 03 Mar 2015 16:04:44 +0100

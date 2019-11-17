@@ -1,0 +1,12 @@
+Source: easyvdr-unload-dvb
+Section: misc
+Priority: optional
+Maintainer: Andreas Schott <sinai@easy-vdr.de>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.4
+
+Depends: ${easyvdr-unload-dvb}, ${misc:Depends}
+Package: easyvdr-unload-dvb
+Architecture: any
+Description: DVB-Driver unloader for easyVDR
+  Paket um alle DVB-Treiber zu entladen

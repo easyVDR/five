@@ -1,0 +1,3 @@
+stm32IRalarm				  		usr/bin/
+etc/vdr/*						etc/vdr/
+share/*							usr/share/vdr/shutdown-hooks/

@@ -1,0 +1,12 @@
+Source: easyvdr-stm32-ir
+Section: video
+Priority: extra
+Maintainer: Martin Neubauer <easyvdr-dev@easy-vdr.de>
+Build-Depends: debhelper (>= 8.0.0), liblircclient-dev
+Standards-Version: 3.9.4
+
+Package: stm32-ir
+Architecture: any
+Depends: usb-irmp, stm32-config-gui, stm32-iralarm, stm32-config
+Description: STM32 udev rule plus depends
+

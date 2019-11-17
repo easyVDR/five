@@ -1,0 +1,19 @@
+Ablauf von easyvdr-unload-dvb
+0. Öffne Kernel Datei /proc/modules
+1. lese nächstes geladenes Kernelmodul aus /proc/modules (funzt wie lsmod)
+2. lese aus /lib/modules/<KERNEL>/modules.dep, ob dieses Kernelmodul nach 
+    kernel/drivers/media, 
+    kernel/drivers/staging/media oder 
+    updates/media gehört (also zu den dvb treibern und v4l)
+3. falls nein, gehe zu 1
+4. entlade modul falls von niemandem benutzt (use counter = 0)
+5. falls weiteres modul, gehe zu 1.
+6. Falls Dateiende, schließe /proc/modules
+7. Falls noch weitere Module, gehe zu 0
+
+Das setzt voraus:
+a) Rechte zum Lesen von /proc/modules
+b) Rechte zum Lesen von /lib/modules/<KERNEL>/modules.dep
+c) Rechte zum Entladen von Modulen
+d) Nach jedem Neuinstall von Kernelmodulen ein Ausführen von 'depmod -a' zum Aktualisieren von modules.dep (das sollte ohnehin sein)
+e) die DVB Treiber dürfen nicht geöffnet sein -> runvdr/vdr/w_scan,...

@@ -1,0 +1,35 @@
+easyvdr-unload-dvb (1.0.0-0easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 23:04:53 +0100
+
+easyvdr-unload-dvb (1.0.0-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 22:19:47 +0100
+
+easyvdr-unload-dvb (1.0.0-0easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 05:01:52 +0100
+
+easyvdr-unload-dvb (0.0.2-1easyVDR0~trusty) trusty; urgency=medium
+
+  * dos2unix for Makefile
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Nov 2015 23:26:19 +0100
+
+easyvdr-unload-dvb (0.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * add new main.c and README
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 11 Feb 2015 00:05:17 +0100
+
+easyvdr-unload-dvb (0.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 06 Jan 2014 08:36:00 +0100

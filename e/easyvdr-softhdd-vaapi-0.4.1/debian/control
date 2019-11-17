@@ -1,0 +1,14 @@
+Source: easyvdr-softhdd-vaapi
+Section: misc
+Priority: optional
+Maintainer: Martin Neubauer <martin@easy-vdr.de>, Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.5
+
+Package: easyvdr-softhdd-vaapi
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-softhddevice-vaapi
+Conflicts: easyvdr-softhddevice, easyvdr-softhdd
+Description: SoftHDDevice Vaapi Config package for easyVDR
+  Installationspaket for SoftHDDevice Vaapi

@@ -1,0 +1,13 @@
+Source: easyvdr-tripatch
+Section: misc
+Priority: optional
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.8.3
+Author: Captain Beefheart
+
+Package: easyvdr-tripatch
+Architecture: any
+Depends: ${easyvdr-tripatch} 
+Description: Tripatch-Package for easyVDR
+  Tripatch ist ein spezielles Patchttool für easyVDR

@@ -1,0 +1,2 @@
+KERNEL=="hidraw*", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="4444", RUN+="/bin/mkdir /var/run/lirc", RUN+="/usr/bin/irmplircd /dev/%k", RUN+="/bin/ln -s /var/run/lirc/lircd /dev/input/ir-auto_dtc"
+#KERNEL=="hidraw*", ATTRS{idVendor}=="1209", ATTRS{idProduct}=="4444", SYMLINK+="irmp_stm32", RUN+="/bin/mkdir /var/run/lirc", TAG+="systemd"

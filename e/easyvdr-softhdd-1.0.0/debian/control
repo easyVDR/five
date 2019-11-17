@@ -1,0 +1,13 @@
+Source: easyvdr-softhdd
+Section: misc
+Priority: optional
+Maintainer: Martin Neubauer <martin@easy-vdr.de>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.4
+
+Package: easyvdr-softhdd
+Architecture: all
+Depends: ${misc:Depends}, vdr-plugin-softhddevice
+Conflicts: easyvdr-softhddevice
+Description: SoftHDDevice Config package for easyVDR
+  Installationspaket for SoftHDDevice
