@@ -1,0 +1,277 @@
+w-scan (20170107-2easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 17:09:59 +0100
+
+w-scan (20170107-2easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 22:03:44 +0100
+
+w-scan (20170107-2easyVDR0~artful) artful; urgency=high
+
+  * inncrease build number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 21:41:10 +0100
+
+w-scan (20170107-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 21:04:08 +0100
+
+w-scan (20170107-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Jun 2017 17:40:41 +0200
+
+w-scan (20170107-0easyVDR0~trusty) trusty; urgency=high
+
+  * New upstream release
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 21 Mar 2017 22:47:13 +0100
+
+w-scan (20160610-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 08 Oct 2016 17:29:50 +0200
+
+w-scan (20160610-2yavdr0~xenial) xenial; urgency=medium
+
+  * update patch by mighty-p, remove own patch to fix up version information
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 11 Jun 2016 14:24:22 +0200
+
+w-scan (20160610-1yavdr0~xenial) xenial; urgency=medium
+
+  * add additional copyright information
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Sat, 11 Jun 2016 13:53:37 +0200
+
+w-scan (20160610-0yavdr0~xenial) xenial; urgency=medium
+
+  * update version information
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 10 Jun 2016 18:22:59 +0200
+
+w-scan (20141122-1yavdr0~xenial) xenial; urgency=medium
+
+  * added experimental patch from mighty-p to workaround strange frequency
+    data:
+    http://www.vdr-portal.de/board16-video-disk-recorder/board5-vdr-konfiguration/p1274179-w-scan-findet-dvb-t2-sender-nicht/#post1274179
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 10 Jun 2016 16:36:21 +0200
+
+w-scan (20141122-1) unstable; urgency=medium
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 27 Dec 2014 11:24:38 +0100
+
+w-scan (20140727-1) unstable; urgency=medium
+
+  * New upstream release
+  * Standards-Version: 3.9.5
+
+  [Arthur Marble]
+  * Fix FTBFS with clang: Nested function definition not allowed
+    (Closes: #744323)
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 27 Oct 2014 23:28:06 +0100
+
+w-scan (20130331-1) unstable; urgency=low
+
+  * New upstream release (Closes: #707435)
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 12 May 2013 08:46:38 +0200
+
+w-scan (20121111-1) unstable; urgency=low
+
+  * New upstream release
+  * Standards-Version: 3.9.4
+  * Used debhelper 9
+
+ -- Tobias Grimm <etobi@debian.org>  Wed, 27 Mar 2013 22:30:38 +0100
+
+w-scan (20120605-1) unstable; urgency=low
+
+  * New upstream release
+  * Build-depend on linux-libc-dev (>= 3.0)
+  * Standards-Version: 3.9.3
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 09 Jun 2012 21:32:27 +0200
+
+w-scan (20111203-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 11 Dec 2011 16:08:56 +0100
+
+w-scan (20111011-1) unstable; urgency=low
+
+  * New upstream release
+  * Switched to GIT using pristine tar
+  * Switched to bzip2 compression
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 29 Oct 2011 13:31:05 +0200
+
+w-scan (20110702-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 20 Aug 2011 15:48:09 +0200
+
+w-scan (20110616-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 19 Jun 2011 20:57:14 +0200
+
+w-scan (20110502-2) unstable; urgency=low
+
+  * Fixed short description (Closes: #627543)
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 23 May 2011 23:12:03 +0200
+
+w-scan (20110502-1) unstable; urgency=low
+
+  * New upstream release
+  * Standards-Version: 3.9.2
+
+ -- Tobias Grimm <etobi@debian.org>  Fri, 13 May 2011 23:37:15 +0200
+
+w-scan (20110410-1) unstable; urgency=low
+
+  * New upstream release (Closes: #621959, #603010)
+  * Dropped dvb-s2api-liplianin-headers build dependency
+  * Updated debian/copyright
+  * Updated package description to refer to "w_scan" which is the spelling
+    preferred by the upstream author
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 12 Apr 2011 20:03:13 +0200
+
+w-scan (20101001-1) unstable; urgency=low
+
+  * New upstream release
+  * Standards-Version: 3.9.1
+  * Dropped 0001_Fixes-country-code-in-help-text.patch - fixed upstream
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 09 Nov 2010 00:41:18 +0100
+
+w-scan (20100316-3) unstable; urgency=low
+
+  * Fixed sample country code in help text (Closes: #583098)
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 25 May 2010 18:51:56 +0200
+
+w-scan (20100316-2) unstable; urgency=low
+
+  * Uploading to unstable
+  * Replaced cdbs with debhelper (>= 7.0.50~)
+  * Added Vcs-* fields
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 24 May 2010 18:24:51 +0200
+
+w-scan (20100316-1) experimental; urgency=low
+
+  * New upstream release
+  * Added source/format 3.0 (quilt)
+  * Standards-Version: 3.8.4
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 01 May 2010 11:28:56 +0200
+
+w-scan (20091230-1) experimental; urgency=low
+
+  * New upstream release
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 23 Jan 2010 21:15:35 +0100
+
+w-scan (20091118-1) experimental; urgency=low
+
+  * New upstream release (Closes: #559326)
+
+ -- Tobias Grimm <etobi@debian.org>  Fri, 04 Dec 2009 21:34:26 +0100
+
+w-scan (20090918-1) experimental; urgency=low
+
+  * New upstream release
+  * Standards-Version: 3.8.3
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 03 Oct 2009 15:28:38 +0200
+
+w-scan (20090808-1) experimental; urgency=low
+
+  * New upstream release (Closes: #541304)
+  * Updated standards version to 3.8.2
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 23 Aug 2009 11:39:15 +0200
+
+w-scan (20090528-1) experimental; urgency=low
+
+  * New upstream release (Closes: #532626)
+  * Using cdbs' autotools.mk now, because upstream uses autotools now
+  * Build-depend on linux-libc-dev (>= 2.6.29) (new DVB API required,
+    no more support for older kernel versions)
+
+ -- Tobias Grimm <etobi@debian.org>  Tue, 16 Jun 2009 23:05:25 +0200
+
+w-scan (20090516-2) experimental; urgency=low
+
+  * Updated package description (Closes: #529591)
+  * Added repack-upstream.sh script, which will strip the precompiled binary
+    from the tarball and will be called from uscan
+
+ -- Tobias Grimm <etobi@debian.org>  Sun, 24 May 2009 19:08:22 +0200
+
+w-scan (20090516-1) experimental; urgency=low
+
+  * New upstream release (Closes: #528583)
+  * Changed section to 'video'
+  * Updated standards version to 3.8.1
+  * Added Homepage field
+  * Updated debian/copyright
+  * Install upstream manpage
+
+ -- Tobias Grimm <etobi@debian.org>  Wed, 20 May 2009 02:14:12 +0200
+
+w-scan (20081106-3) experimental; urgency=low
+
+  * Made Debian VDR Team become the maintainer
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 02 Feb 2009 23:15:22 +0100
+
+w-scan (20081106-2) experimental; urgency=low
+
+  * Initial upload to Debian experimental
+  * Updated package description
+  * Use cdbs
+
+ -- Tobias Grimm <etobi@debian.org>  Mon, 02 Feb 2009 20:27:27 +0100
+
+w-scan (20081106-1) unstable; urgency=low
+
+  * New upstream release
+  * Changed my maintainer/uploader email address
+  * Fixed debian/rules to not ignore clean errors
+
+ -- Tobias Grimm <etobi@debian.org>  Sat, 15 Nov 2008 20:04:31 +0100
+
+w-scan (20080815-1) unstable; urgency=low
+
+  * New upstream release
+  * Updated manpage
+  * Bumped Standards-Version to 3.8.0
+  * Updated debian/copyright and debian/watch
+
+ -- Tobias Grimm <tg@e-tobi.net>  Sun, 14 Sep 2008 14:17:59 +0200
+
+w-scan (20060903-1) unstable; urgency=low
+
+  * Initial release (Closes: #426390)
+
+ -- Tobias Grimm <tg@e-tobi.net>  Mon, 28 May 2007 12:36:03 +0200
+

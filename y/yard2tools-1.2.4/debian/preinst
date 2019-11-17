@@ -1,0 +1,6 @@
+#!/bin/sh
+
+# We need to stop any possibly running server.
+killall yard2srvd 2> /dev/null
+rm -f /tmp/yard2srvd.pid
+true

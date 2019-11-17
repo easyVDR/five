@@ -1,0 +1,21 @@
+Source: t2scan
+Section: video
+Priority: extra
+Maintainer: yaVDR Team <team@yavdr.org>
+Uploaders: Alexander Grothe <seahawk1986@gmx.de>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), linux-libc-dev (>= 3.0)
+Standards-Version: 3.9.5
+Vcs-Git: git://github.com/mighty-p/t2scan.git
+Vcs-Browser: http://github.com/mighty-p/t2scan
+Homepage: http://github.com/mighty-p/t2scan
+
+Package: t2scan
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Channel scanning tool for DVB-T1/2 and ATSC channels
+ t2scan scans for DVB-T1/T2 and ATSC channels and creates a
+ channels.conf, that can be used directly by the Linux Video Disc Recorder VDR.
+ .
+ Unlike the scan utility in linuxtv-dvb-apps, there is no need to specify
+ an initial transponder and w_scan automatically detects the DVB or ATSC
+ card to be used.

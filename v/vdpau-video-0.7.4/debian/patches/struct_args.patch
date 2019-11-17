@@ -1,0 +1,34 @@
+Index: vdpau-video-0.7.4/src/vdpau_video.c
+===================================================================
+--- vdpau-video-0.7.4.orig/src/vdpau_video.c
++++ vdpau-video-0.7.4/src/vdpau_video.c
+@@ -927,8 +927,10 @@ VAStatus
+ vdpau_CreateSurfaceFromV4L2Buf(
+     VADriverContextP    ctx,
+     int                 v4l2_fd,
+-    struct v4l2_format *v4l2_fmt,
+-    struct v4l2_buffer *v4l2_buf,
++/*
++     struct v4l2_format *v4l2_fmt,
++     struct v4l2_buffer *v4l2_buf,
++*/
+     VASurfaceID        *surface
+ )
+ {
+Index: vdpau-video-0.7.4/src/vdpau_video.h
+===================================================================
+--- vdpau-video-0.7.4.orig/src/vdpau_video.h
++++ vdpau-video-0.7.4/src/vdpau_video.h
+@@ -274,8 +274,10 @@ VAStatus
+ vdpau_CreateSurfaceFromV4L2Buf(
+     VADriverContextP    ctx,
+     int                 v4l2_fd,
+-    struct v4l2_format *v4l2_fmt,
+-    struct v4l2_buffer *v4l2_buf,
++/*
++     struct v4l2_format *v4l2_fmt,
++     struct v4l2_buffer *v4l2_buf,
++*/
+     VASurfaceID        *surface
+ ) attribute_hidden;
+ 

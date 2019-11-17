@@ -1,0 +1,12 @@
+bin/*
+obj/*
+*~
+*/*~
+cli
+yard2srvd
+*.o
+yard2config
+yard2wakeup
+.cproject
+.project
+.settings/*

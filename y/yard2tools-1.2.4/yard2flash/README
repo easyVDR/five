@@ -1,0 +1,150 @@
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++
++ original readme shipped with fsusb-0.1.11-2 see at the end of this file
++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+
+fsusb: Software for "PICDEM Full Speed USB" demo board
+       modified by R.Geigenberger [2012] to version yardflash (flash program for Y.A.R.D.2 only
+       modified by <sig@sigvdr.de> [2011] to version fsusb-0.2
+       written by <rickluddy@gmail.com> version fsusb-0.1.11
+
+fsusb command [<file>] [options]
+
+commands:
+fsusb --program <file> [options]  program board with <file> and verify
+fsusb --verify <file> [options]   verify board against <file>
+fsusb --read <file> [options]     read board, saving result in <file>
+fsusb --reset [options]           reset board
+fsusb --pic-list                  list of mcu's (for option <pic>)
+fsusb --create <configFile>       create a default configFile for 18F4550, modify this
+
+options:
+      --usb-id <[VENDOR:]PRODUCT> define usb hardware id -(check id with <lsusb>)
+                                      default: 04d8:000b
+      --pic <type of mcu>             default: 18Fx550
+      --device <configFile>       other mcu's than <--pic-list> need to be defined
+
+usage examples:
+-------------------------------------------------------------------------
+fsusb --read test.hex                            	       read from a 18F4550 with bootloader default ID's 04d8:000b 
+fsusb --read test.hex --usb-id 0faa              	       read from a 18F4550 with bootloader ID's 04d8:0faa 
+fsusb --read test.hex --usb-id f7fa:0faa         	       read from a 18F4550 with bootloader ID's f7fa:0faa 
+fsusb --read test.hex --usb-id f7fa:0faa --pic 18F2455     read from a 18F2455 with bootloader ID's f7fa:0faa 
+fsusb --read test.hex --usb-id 0faa --device 18F8888.conf  read from a PIC with bootloader ID's 04d8:0faa, 
+                                                                adress ranges are defined in 18F8888.conf 
+fsusb --reset usb-id ff0c                                  reset the device with ID's 04d8:ff0c and run probably 
+                                                                your new firmware
+fsusb --pic-list                                           list all mcu names that you can use with option "--pic"
+                                                                other mcu's have to be defined with configFile
+fsusb --create test.conf                                   create a default configFile for a 18F4550 mcu, modify this
+                                                                configFile with the correct adress ranges for your mcu 
+
+                                                                
+
+example for a configFile: do not use lowercase letters in a configFile
+-------------------------------------------------------------------------
+[18F4550]
+EEPROM_BASE  = 0x00
+EEPROM_TOP   = 0xff
+PROGRAM_BASE = 0x0800
+PROGRAM_TOP  = 0x7fff
+ID_BASE      = 0x200000
+ID_TOP       = 0x200007
+CONFIG_BASE  = 0x300000
+CONFIG_TOP   = 0x30000d
+DEVID_BASE   = 0x3ffffe
+DEVID_TOP    = 0x3fffff
+-------------------------------------------------------------------------
+
+changelog:
+01.07.2012
+	works only with Y.A.R.D 2 USB 
+	- program
+	- verify
+	- reset
+
+-------------------------------------------------------------------------
+11.05.2011
+	deleted fsusb <file>
+		Programming MCU without command --program is not longer possible
+	added --reset 
+		Reset MCU and run new program
+	added --usb-id
+		use fsusb with different vendorID's and od productID's, the default 
+		ID's are the original Microchip ID <04d8:000b>
+	added --pic / --pic-list
+		select and list build in defined pic mcu's
+	added --device / --create
+		define config files for pic mcu's that are not defined in fsusb
+
+
+		
+		
+		
+Building:
+Linux:
+   Just "make" ought to build it, assuming you have libusb and the
+   associated headers installed.
+	Debian users for example: apt-get install libusb libusb-dev
+Windows:
+   I used mingw32 on a Windows7 PC to build fsusb 	
+   Just "mingw32-make -f Makefile.Win32" ought to build it, assuming you have libusb.a 
+   installed to ..\mingw\lib and the associated headers usb.h installed to ..\mingw\include
+
+		
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
++
++ original readme shipped with fsusb-0.1.11-2
++
++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+fsusb: Software to control the bootloader that comes factory-loaded on
+the "PICDEM Full Speed USB" demo board.
+
+Rick Luddy (GPG 1024D/98AA0510) <rickluddy@gmail.com>
+
+
+
+Usage:
+
+fsusb <file>             program board with <file> and verify
+fsusb --program <file>   program board with <file> and verify
+fsusb --verify <file>    verify board against <file>
+fsusb --read <file>      read board, saving result in <file>
+
+
+
+Building:
+
+Just "make" ought to build it, assuming you have libusb and the
+associated headers installed.
+
+
+
+Caveats:
+
+I have been a bit sloppy with endianness.  It works on my x86 system,
+but may run into some problems on an opposite system.
+
+I haven't tested the ability to write config memory.  I don't have a
+programmer to turn off the factory-set write protection (as if I did,
+I probably wouldn't need this program in the first place!).  It is
+implemented (just uncomment a few lines in program_file() in main.c)
+and should /probably/ work or at least come close, but no promises.
+
+I haven't implemented a way to read or write the EEPROM.  I'm not sure
+how it would be represented in the hex file.
+
+It must be either run as root or set suid root to function because of
+the way it uses the USB.  This means if I made a mistake and have a
+buffer overflow somewhere, the software is a local root vulnerability.
+I think I haven't made any such mistakes.
+
+
+
+Special thanks:
+
+Parts of the USB code and the Makefile were cribbed from usb_pickit by
+Orion Sky Lawlor <olawlor@acm.org>.  Most of the figuring out the
+protocol was done by working backwards from the firmware bootloader
+code by Rawin Rojvanit at Microchip.

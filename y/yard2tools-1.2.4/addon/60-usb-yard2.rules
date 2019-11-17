@@ -1,0 +1,17 @@
+# Add a sysmlink for the device
+ACTION=="add", SUBSYSTEM=="tty", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f57f",  SYMLINK+="ttyYARD2", RUN+="/usr/bin/yard2srvd -d -c /etc/yard2/yard2tools.cfg"
+
+# Need to check here the udev environment, becuase the device is already gone, when this rule is executed
+ACTION=="remove", SUBSYSTEM=="tty", ENV{ID_VENDOR_ID}=="04d8", ENV{ID_MODEL_ID}=="f57f", RUN+="/usr/bin/killall yard2srvd"
+
+# the following pattern is copied from /lib/udev/rules.d/98-eventlircd-names.rules
+ACTION!="add|remove", GOTO="end"
+SUBSYSTEM!="input", GOTO="end"
+KERNEL!="event[0-9]*", GOTO="end"
+ATTRS{name}=="eventlircd", GOTO="end"
+
+# yard2srvd will create an input device with name=YARD2USB, this shall be used by eventlird
+ATTRS{name}=="YARD2USB", ENV{eventlircd_enable}="true"
+
+LABEL="end"
+

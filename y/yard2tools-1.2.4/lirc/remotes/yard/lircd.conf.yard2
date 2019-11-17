@@ -1,0 +1,47 @@
+#
+#
+# brand:	     YARD2IR
+# model:	     Y.A.R.D 2 USB mini / LCD
+#                This is just an example; create your own config file !
+#
+
+begin remote
+
+  name		YARD2IR
+  bits           48
+  eps            30
+  aeps          100
+
+  one             0     0
+  zero            0     0
+  gap          106909
+  toggle_bit_mask 0x0
+
+	begin codes
+	  KEY_0			0x0715000C0000
+	  KEY_1			0x071500030000
+	  KEY_2			0x071500040000
+	  KEY_3			0x071500050000
+	  KEY_4			0x071500060000
+	  KEY_5			0x071500070000
+	  KEY_6			0x071500080000
+	  KEY_7			0x071500090000
+	  KEY_8			0x0715000A0000
+	  KEY_9			0x0715000B0000
+	  KEY_ENTER		0x0715000F0000
+	  KEY_CHANNELUP		0x071500230000
+	  KEY_CHANNELDOWN	0x071500230000
+	  KEY_VOLUMEUP		0x071500250000
+	  KEY_VOLUMEDOWN	0x071500260000
+	  KEY_MUTE		0x071500180000	
+	  KEY_POWER		0x071500010000	
+	  KEY_UP		0x0715000D0000	
+	  KEY_DOWN		0x071500110000
+	  KEY_LEFT		0x0715000E0000
+	  KEY_RIGHT		0x071500100000
+	  KEY_RED		0x071500140000
+	  KEY_GREEN		0x071500150000
+	  KEY_YELLOW		0x071500160000
+	  KEY_BLUE		0x071500140000
+        end codes
+end remote

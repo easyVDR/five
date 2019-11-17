@@ -1,0 +1,62 @@
+# /usr/share/vdr/shutdown-hooks/S90.yard2-wakeup
+#
+# VDR shutdown hook for Y.A.R.D.2 - Jasmin Jessich <jasmin@anw.at>
+# ----------------------------------
+#
+# This shutdown hook sets the wakeup time for the next timer using
+# the Y.A.R.D.2 hardware.
+#
+
+YARD2CMD=/usr/bin/yard2wakeup
+SEDCMD=/bin/sed
+
+# read arguments for yard2-wakeup from conf-file
+. /etc/vdr/vdr-addon-yard2wakeup.conf
+
+# Defaults:
+[ -z "$YARD2_ENABLED" ]            && export YARD2_ENABLED="no"
+[ -z "$YARD2_YARD2_REGULAR_DAYS" ] && export YARD2_REGULAR_DAYS="0"
+[ -z "$YARD2_REGULAR_TIMER" ]      && export YARD2_REGULAR_TIMER="00:00"
+[ -z "$YARD2_START_AHEAD" ]        && export YARD2_START_AHEAD="5"
+
+LOG="logger -t vdr-addon-yard2wakeup"
+
+if [ $YARD2_ENABLED = "no" ] ; then
+    $LOG "yard2-wakeup functionality is disabled"
+    exit 0
+fi
+
+# calculate, at what time the machine should be powered on:
+
+TIMER=$1
+
+if [ $YARD2_REGULAR_DAYS -gt 0 ]; then
+    YARD2_REGULAR_TIMER=$((`date -d "$YARD2_REGULAR_TIMER" +%s` + $YARD2_REGULAR_DAYS * 24 * 60 * 60))
+
+    # when no vdr timer is set or vdr timer starts later than regular timer:
+    if [ $TIMER -eq 0 ] || [ $TIMER -gt 0 -a $YARD2_REGULAR_TIMER -lt $TIMER ] ; then
+	TIMER=$YARD2_REGULAR_TIMER
+    fi
+fi
+
+# set wakeup time and check result:
+
+$LOG "$YARD2CMD -I $TIMER $YARD2_START_AHEAD"
+txt=$($YARD2CMD -I $TIMER $YARD2_START_AHEAD)
+case $? in
+    0)	# all went ok - new date and time set
+	yardtime=$($YARD2CMD -C | $SEDCMD -e "s/Y.A.R.D.2 Next Wakeup Time\/Date: //")
+        $LOG "yard2-wakeup: everything ok"
+        $LOG "yard2-wakeup: YARD2 HW Time: $yardtime"
+
+	exit 0
+	;;
+    *)	# something went wrong
+	# don't do anything - just exit with status 1
+ 
+	$LOG "yard2-wakeup: could not set time, shutdown will be aborted"
+	$LOG "yard2-wakeup: Result: $txt"
+	echo "ABORT_MESSAGE=\"yard2-wakeup could not set time\""
+	exit 1
+	;;
+esac

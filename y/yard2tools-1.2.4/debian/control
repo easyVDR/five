@@ -1,0 +1,16 @@
+Source: yard2tools
+Section: utils
+Priority: extra
+Maintainer: Rainer Geigenberger <yard@rg-software.de>
+Build-Depends: debhelper (>= 9.0.0), autotools-dev, libusb-dev, libbsd-dev
+Standards-Version: 3.9.6
+Homepage: http://techkram.de/forum/Thread-Y-A-R-D-2-USB-Status
+Vcs-Git: git://git.assembla.com/yard2srvd.git
+Vcs-Browser: https://www.assembla.com/code/yard2srvd/git/nodes
+
+Package: yard2tools
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Infra-red remote control support for Y.A.R.D.2 hardware.
+ This package provides the daemon and some utilities to support infra-red
+ remote controls with the Y.A.R.D.2 type of hardware under Linux.

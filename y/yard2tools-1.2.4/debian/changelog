@@ -1,0 +1,107 @@
+yard2tools (1.2.4-1easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 15:59:29 +0100
+
+yard2tools (1.2.4-1easyVDR1~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+  * switch to debhelper 9 - Standards-Version: 3.9.6
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 14 Dec 2017 18:05:19 +0100
+
+yard2tools (1.2.4-1easyVDR0~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 13:19:07 +0100
+
+yard2tools (1.2.4-1easyVDR0~trusty) trusty; urgency=medium
+
+  * rebuild 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 20 Dec 2014 13:13:51 +0100
+
+yard2tools (1.2.4-1~trusty) trusty; urgency=medium
+
+  * Using upstream version 1.2.4.
+    Update yard2config, correct entries on Mainsetings
+    Update yard2config for new feature - FORCE OFF IR Code
+    Change yard2config for new item WakeUp IR as shutdoenButton
+    Change yard2srvd tries 10 times to connect to yard if first connect is failing (1.2.3.5)
+    Changed source to suport Openelec distribution (use #define openelec before compile)
+    Fix non critical error in yard2record 
+    Update yard2record VDR/XBMC table
+    Update lirc readme.txt
+    Added Patch for lircd 0.9.1b (/lirc/yard2_lircd_091b_patch.txt)
+    Added Patch for LCDproc 0.5.7
+
+ -- Rainer Geigenberger <yard@rg-software.de>  Sat, 25 Oct 2014 18:09:00 +0100
+
+yard2tools (1.2.3-1~trusty) trusty; urgency=medium
+
+  * Using upstream version 1.2.3.
+    Update yard2record for VDR
+    Fix yard2srvd LCD usage
+    Update yard2record for easyVDR Keyboard map.
+    Update yard2config for new YARD2 MICRO Version
+
+ -- Jasmin Jessich <jasmin@anw.at>  Fri, 20 Jun 2014 02:35:40 +0200
+
+yard2tools (1.2.0-1~trusty) trusty; urgency=low
+
+  * Using upstream version 1.2.0.
+    There can be only one instance of yard2srvd now.
+    Changed UDEV rule options and default config.
+    Added INI file parsing with inih library and default INI file. Updated
+    UDEV rule to use the new INI file. Introduce new yard2 config file path
+    in /etc/yard2.
+    Added options to set repeatdelay 1st and 2nd and print current driver
+    version.
+
+ -- Jasmin Jessich <jasmin@anw.at>  Mon, 24 Mar 2014 20:25:35 +0100
+
+yard2tools (1.1.2-1~trusty) trusty; urgency=low
+
+  * Using upstream version 1.1.2.
+    Update yard2record for easyVDR
+
+ -- Rainer Geigenberger <yard@rg-software.de>  Sun, 16 Mar 2014 18:45:00 +0100
+
+yard2tools (1.1.0-1~trusty) trusty; urgency=low
+
+  * Using upstream version 1.1.0.
+    Autotool scripts improved
+    Package version detection fixed.
+  * Changed package maintainer.
+
+ -- Jasmin Jessich <jasmin@anw.at>  Wed, 12 Mar 2014 17:18:23 +0100
+
+yard2tools (0.1.0.43-1~trusty) trusty; urgency=low
+
+  * Using upstream version 0.1.0.43.
+    Update in autoconf files.
+
+ -- Jasmin Jessich <jasmin@anw.at>  Wed, 12 Mar 2014 02:46:42 +0100
+
+yard2tools (0.1.0.42-1) trusty; urgency=low
+
+  * Using upstream version 0.1.0.42.
+    Update yard2wakeup scripts; yard2flash
+
+ -- Rainer Geigenberger <yard@rg-software.de>  Tue, 11 Mar 2014 21:03:00 +0100
+
+yard2tools (0.1.0.40-1) trusty; urgency=low
+
+  * Using upstream version 0.1.0.40.
+    Put YARD2 VDR shutdown scripts to the the right location.
+    Readme.txt update.
+
+ -- Jasmin Jessich <jasmin@anw.at>  Sun, 09 Mar 2014 15:21:21 +0100
+
+yard2tools (0.1.0.36-1) trusty; urgency=low
+
+  * Update Wakeup and scripts, using upstream version 0.1.0.36.
+
+ -- Rainer Geigenberger <yard@rg-software.de>  Sat, 08 Mar 2014 11:18:00 +0100

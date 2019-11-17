@@ -1,0 +1,16 @@
+/* CFG(section, name, default) */
+
+CFG(yard2srvd, daemon, CFG_UNDEF)
+CFG(yard2srvd, device, CFG_UNDEF)
+CFG(yard2srvd, irmapfile, CFG_UNDEF)
+CFG(yard2srvd, rdelay1, CFG_UNDEF)
+CFG(yard2srvd, rdelay2, CFG_UNDEF)
+
+CFG(yard2srvd, input, CFG_UNDEF)
+CFG(yard2srvd, lirc, CFG_UNDEF)
+CFG(yard2srvd, ownlirc, CFG_UNDEF)
+
+CFG(yard2srvd, loglevel, CFG_UNDEF)
+CFG(yard2srvd, syslog, CFG_UNDEF)
+
+#undef CFG

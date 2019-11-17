@@ -1,0 +1,12 @@
+#!/bin/sh
+
+# if the YARD2 device is already existing, we did an upgrade. So we need to restart
+# the new yard2srvd to avoid a reboot
+if [ -e /dev/ttyYARD2 ]; then
+   /usr/bin/yard2srvd -d -c /etc/yard2/yard2tools.cfg
+else
+   echo "It seems to be a fresh installation."
+   echo "To execute the just installed Y.A.R.D.2 UDEV rule, you need to reboot!"
+   echo "Be sure the Y.A.R.D.2 hardware is connected to your system."
+fi
+true

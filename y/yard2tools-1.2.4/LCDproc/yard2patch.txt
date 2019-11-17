@@ -1,0 +1,128 @@
+? yard2patch.txt
+? docs/LCDd.8
+? docs/lcdproc-config.5
+? docs/lcdproc.1
+? docs/lcdvc.1
+? scripts/init-LCDd.LSB
+? scripts/init-lcdexec.LSB
+? scripts/init-lcdexec.debian
+? scripts/init-lcdproc.LSB
+? scripts/init-lcdvc.LSB
+? scripts/init-lcdvc.debian
+? server/drivers/yard2LCD.c
+? server/drivers/yard2LCD.h
+Index: LCDd.conf
+===================================================================
+RCS file: /cvsroot/lcdproc/lcdproc/LCDd.conf,v
+retrieving revision 1.63.2.18
+diff -u -r1.63.2.18 LCDd.conf
+--- LCDd.conf	19 Aug 2012 14:29:07 -0000	1.63.2.18
++++ LCDd.conf	3 Nov 2013 17:18:44 -0000
+@@ -50,7 +50,7 @@
+ #   mdm166a, ms6931, mtc_s16209x, MtxOrb, mx5000, NoritakeVFD, picolcd,
+ #   pyramid, sdeclcd, sed1330, sed1520, serialPOS, serialVFD, shuttleVFD, sli,
+ #   stv5730, svga, t6963, text, tyan, ula200, vlsys_m428, xosd
+-Driver=curses
++Driver=yard2LCD
+ 
+ # Tells the driver to bind to the given interface
+ Bind=127.0.0.1
+@@ -1289,5 +1289,6 @@
+ 
+ # X font to use, in XLFD format, as given by "xfontsel"
+ Font=-*-terminus-*-r-*-*-*-320-*-*-*-*-*
++[yard2LCD]
+ 
+ # EOF
+Index: acinclude.m4
+===================================================================
+RCS file: /cvsroot/lcdproc/lcdproc/acinclude.m4,v
+retrieving revision 1.68.2.14
+diff -u -r1.68.2.14 acinclude.m4
+--- acinclude.m4	1 Sep 2012 21:35:13 -0000	1.68.2.14
++++ acinclude.m4	3 Nov 2013 17:18:44 -0000
+@@ -15,14 +15,14 @@
+ 	[                    ms6931,mtc_s16209x,MtxOrb,mx5000,NoritakeVFD,]
+ 	[                    picolcd,pyramid,sdeclcd,sed1330,sed1520,serialPOS,]
+ 	[                    serialVFD,shuttleVFD,sli,stv5730,SureElec,svga,]
+-	[                    t6963,text,tyan,ula200,vlsys_m428,xosd]
++	[                    t6963,text,tyan,ula200,vlsys_m428,xosd,yard2LCD]
+ 	[                    ]
+ 	[                  'all' compiles all drivers;]
+ 	[                  'all,!xxx,!yyy' de-selects previously selected drivers],
+ 	drivers="$enableval",
+ 	drivers=[bayrad,CFontz,CFontzPacket,curses,CwLnx,glk,lb216,lcdm001,MtxOrb,pyramid,text])
+ 
+-allDrivers=[bayrad,CFontz,CFontzPacket,curses,CwLnx,ea65,EyeboxOne,g15,glcd,glcdlib,glk,hd44780,i2500vfd,icp_a106,imon,imonlcd,IOWarrior,irman,irtrans,joy,lb216,lcdm001,lcterm,lirc,lis,MD8800,mdm166a,ms6931,mtc_s16209x,MtxOrb,mx5000,NoritakeVFD,picolcd,pyramid,sdeclcd,sed1330,sed1520,serialPOS,serialVFD,shuttleVFD,sli,stv5730,SureElec,svga,t6963,text,tyan,ula200,vlsys_m428,xosd]
++allDrivers=[bayrad,CFontz,CFontzPacket,curses,CwLnx,ea65,EyeboxOne,g15,glcd,glcdlib,glk,hd44780,i2500vfd,icp_a106,imon,imonlcd,IOWarrior,irman,irtrans,joy,lb216,lcdm001,lcterm,lirc,lis,MD8800,mdm166a,ms6931,mtc_s16209x,MtxOrb,mx5000,NoritakeVFD,picolcd,pyramid,sdeclcd,sed1330,sed1520,serialPOS,serialVFD,shuttleVFD,sli,stv5730,SureElec,svga,t6963,text,tyan,ula200,vlsys_m428,xosd,yard2LCD]
+ if test "$debug" = yes; then
+ 	allDrivers=["${allDrivers},debug"]
+ fi
+@@ -516,6 +516,10 @@
+ 				actdrivers=["$actdrivers xosd"]
+ 			fi
+ 			;;
++		yard2LCD)
++			DRIVERS="$DRIVERS yard2LCD${SO}"
++			actdrivers=["$actdrivers yard2LCD"]
++			;;	
+ 		*)
+ 			AC_MSG_ERROR([Unknown driver $driver])
+ 			;;
+Index: clients/lcdproc/main.c
+===================================================================
+RCS file: /cvsroot/lcdproc/lcdproc/clients/lcdproc/main.c,v
+retrieving revision 1.21.2.13
+diff -u -r1.21.2.13 main.c
+--- clients/lcdproc/main.c	19 Aug 2012 14:29:07 -0000	1.21.2.13
++++ clients/lcdproc/main.c	3 Nov 2013 17:18:44 -0000
+@@ -74,7 +74,7 @@
+ static int process_configfile(char *cfgfile);
+ 
+ 
+-#define TIME_UNIT	125000	/**< 1/8th second is a single time unit. */
++#define TIME_UNIT	125000	/**< 1/8th second is a single time unit. 125000*/
+ 
+ #if !defined(SYSCONFDIR)
+ # define SYSCONFDIR	"/etc"
+Index: server/main.h
+===================================================================
+RCS file: /cvsroot/lcdproc/lcdproc/server/main.h,v
+retrieving revision 1.17.2.2
+diff -u -r1.17.2.2 main.h
+--- server/main.h	14 Aug 2011 12:29:16 -0000	1.17.2.2
++++ server/main.h	3 Nov 2013 17:18:45 -0000
+@@ -27,7 +27,7 @@
+ extern char *build_date;
+ 
+ /* You should be able to modify the following freqencies... */
+-#define RENDER_FREQ 8
++#define RENDER_FREQ 1
+ /* We want 8 frames per second */
+ #define PROCESS_FREQ 32
+ /* And 32 times per second processing of messages and keypresses. */
+Index: server/drivers/Makefile.am
+===================================================================
+RCS file: /cvsroot/lcdproc/lcdproc/server/drivers/Makefile.am,v
+retrieving revision 1.48.2.12
+diff -u -r1.48.2.12 Makefile.am
+--- server/drivers/Makefile.am	19 Aug 2012 14:29:08 -0000	1.48.2.12
++++ server/drivers/Makefile.am	3 Nov 2013 17:18:45 -0000
+@@ -23,7 +23,7 @@
+ 
+ lcdexecbindir = $(pkglibdir)
+ lcdexecbin_PROGRAMS = @DRIVERS@
+-EXTRA_PROGRAMS = bayrad CFontz CFontzPacket curses debug CwLnx ea65 EyeboxOne g15 glcd glcdlib glk hd44780 icp_a106 imon imonlcd IOWarrior irman joy lb216 lcdm001 lcterm lirc lis MD8800 mdm166a ms6931 mtc_s16209x MtxOrb mx5000 NoritakeVFD picolcd pyramid sdeclcd sed1330 sed1520 serialPOS serialVFD shuttleVFD stv5730 SureElec svga t6963 text tyan sli ula200 vlsys_m428 xosd i2500vfd irtrans
++EXTRA_PROGRAMS = bayrad CFontz CFontzPacket curses debug CwLnx ea65 EyeboxOne g15 glcd glcdlib glk hd44780 icp_a106 imon imonlcd IOWarrior irman joy lb216 lcdm001 lcterm lirc lis MD8800 mdm166a ms6931 mtc_s16209x MtxOrb mx5000 NoritakeVFD picolcd pyramid sdeclcd sed1330 sed1520 serialPOS serialVFD shuttleVFD stv5730 SureElec svga t6963 text tyan sli ula200 vlsys_m428 xosd i2500vfd irtrans yard2LCD
+ noinst_LIBRARIES = libLCD.a libbignum.a
+ 
+ g15_CFLAGS =         @LIBUSB_CFLAGS@ $(AM_CFLAGS)
+@@ -134,7 +134,7 @@
+ ula200_SOURCES =     lcd.h adv_bignum.h ula200.h ula200.c report.h
+ vlsys_m428_SOURCES = lcd.h report.h vlsys_m428.c vlsys_m428.h
+ xosd_SOURCES =       lcd.h xosdlib_drv.c xosdlib_drv.h report.h adv_bignum.h
+-
++yard2LCD =           lcd.h yard2LCD.c yard2LCD.h report.h
+ AM_CPPFLAGS = -I$(top_srcdir)
+ 
+ ## EOF

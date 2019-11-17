@@ -1,0 +1,175 @@
+vdpau-video (0.7.4-8easyVDR1~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 01:25:22 +0100
+
+vdpau-video (0.7.4-8~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 01:09:49 +0100
+
+vdpau-video (0.7.4-7) unstable; urgency=medium
+
+  * debian/: Bump debhelper compat to 10.
+  * debian/control:
+    - Bump Standards-Version.
+    - Fix Enhances. (Closes: #881321)
+    - Bump libva-dev B-D to match Enhances.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 10 Nov 2017 13:28:58 +0100
+
+vdpau-video (0.7.4-6) unstable; urgency=medium
+
+  * Uploads to unstable.
+  * debian/control:
+    - Bump Standards-Version.
+    - Update Vcs-*.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 11 May 2016 17:17:41 +0200
+
+vdpau-video (0.7.4-5) experimental; urgency=medium
+
+  * Bump Standards-Version
+  * debian/patches/mesa-drivers.patch: Removed. No longer ship drivers for
+    r600, nouveau and radeonsi. mesa now has native drivers.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 06 Apr 2016 19:40:14 +0200
+
+vdpau-video (0.7.4-4) unstable; urgency=medium
+
+  * debian/control:
+    - Bump Standards-Version.
+    - Bump libva-dev B-D for dh_libva.
+  * debian/rules:
+    - Build with -Wl,--as-needed.
+    - Build with dh_libva.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sun, 26 Apr 2015 19:28:23 +0200
+
+vdpau-video (0.7.4-3) unstable; urgency=medium
+
+  * debian/patches/mesa-drivers.patch: Enable drivers for nouveau, radionsi
+    and r600. (Closes: #757370) (LP: #964040)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Thu, 07 Aug 2014 20:40:19 +0200
+
+vdpau-video (0.7.4-2) unstable; urgency=medium
+
+  * debian/control:
+    - Remove obsolete Provides, Replaces, Conflicts
+    - Add Enhances: libva1.
+    - Improve long description.
+    - Switch Section to video. All other libva drivers are in Section: video.
+  * debian/patches/sigfpe-crash.patch: Fix a possible SIGFPE if a object heap
+    is destroyed before being initialized. (Closes: #748294)
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Mon, 02 Jun 2014 21:06:32 +0200
+
+vdpau-video (0.7.4-1) unstable; urgency=medium
+
+  * New upstream release.
+  * debian/control:
+    - Add myself to Uploaders.
+    - Remove Andres Mejia from Uploaders since he is MIA. Thank you for
+      maintaing vdpau-video. (Closes: #743561)
+    - Point Homepage to the new home at freedesktop.org.
+    - Bump Standards-Version to 3.9.5.
+    - Add dh-autoreconf to Build-Depends.
+    - Update Vcs-* to use canonical URLs.
+  * debian/watch: Update watch file to fetch tarball from from the new home at
+    freedesktop.org. Thanks to Ross Gammon.
+  * debian/patches:
+    - autoreconf.patch: Removed, no longer needed.
+    - cast.patch: Fix build with libvdpau-dev >= 0.7-2. Bump Build-Depends on
+      libvdpau-dev accordingly.
+    - GL-version-1_3.patch: Apply workaround from Ubuntu to fix build
+      failure. (Closes: #713612)
+    - libva-constants.patch: Apply patch from upstream to fix build with
+      recent libva versions.
+  * debian/copyright: Convert to Copyright Format 1.0.
+  * debian/rules:
+    - Install upstream changelog.
+    - Build with autoreconf.
+    - Remove obsolete bits.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Fri, 09 May 2014 17:17:38 +0200
+
+vdpau-video (0.7.3-2) unstable; urgency=low
+
+  * Install VDPAU VAAPI driver in multiarch location.
+    (Closes: #664712)
+  * Ensure driver no longer causes a segfault.
+    (Closes: #599329)
+    (Closes: #626861)
+  * Remove build dependency on quilt.
+  * Bump debhelper compat to 9.
+    This gives us automatic hardened compiler flags and multiarch.
+  * Bump to Standards-Version 3.9.3.
+  * Remove README.source as this package no longer uses quilt.
+  * Add basic dpkg-source options to packaging.
+  * Make binary package multiarch.
+  * Remove redundant calls to dh_testdir.
+  * Set pristine-tar to true for git-buildpackage configuration.
+  * Don't use dh_autoreconf as it produces changes incompatible with default
+    dpkg-source options.
+  * Add patch to make changes done by autoreconf -vif.
+  * Fix issue with debian.upstream/changelog being modified.
+
+ -- Andres Mejia <amejia@debian.org>  Tue, 20 Mar 2012 01:58:24 -0400
+
+vdpau-video (0.7.3-1) unstable; urgency=low
+
+  * Team upload
+
+  [ Andres Mejia ]
+  * Update to my @debian.org email.
+
+  [ Reinhard Tartler ]
+  * New Upstream Release:
+    - Add compatibility glue with libva >= 1.0.8
+    - Fix possible crash when rendering multiple surfaces at once
+    - Fix build if no OpenGL header is available (libva >= 0.31.1)
+    - Fix VA/GLX build with upstream libva and newer OpenGL headers,
+      Closes: #614485
+  * Drop debian/patch/glx-check.patch, no longer required
+  * Bump Standards version, no changes required
+
+ -- Reinhard Tartler <siretart@tauware.de>  Fri, 30 Sep 2011 13:25:24 +0200
+
+vdpau-video (0.7.2-1) experimental; urgency=low
+
+  * New upstream release.
+  * Redo patching. Only proper check for enabling GLX extensions needed to be
+    changed.
+  * Use dh-autoreconv to perform autoreconf during build.
+  * Use 3.0 (quilt) source format for packaging.
+
+ -- Andres Mejia <mcitadel@gmail.com>  Sun, 30 Jan 2011 18:00:08 -0500
+
+vdpau-video (0.6.10-1) experimental; urgency=low
+
+  * New upstream release. (Closes: #598926)
+  * Update Standards-Version to 3.9.1. No changes needed.
+  * Add patch to fix checks for SDS version of libva.
+  * Add patch too allow GLX extensions to be enabled.
+  * Add patch that reverts change when building package.
+  * Build depend on 'libgl1-mesa-dev | libgl-dev' to build vdpau-video
+    with GLX support.
+  * Ensure vdpau-video builds with GLX enabled libva packages.
+  * Use Debian Multimedia team as maintainer and set myself as Uploader.
+  * Add 'DM-Upload-Allowed: yes' entry to control file.
+
+ -- Andres Mejia <mcitadel@gmail.com>  Tue, 05 Oct 2010 09:09:46 -0400
+
+vdpau-video (0.6.3-1) unstable; urgency=low
+
+  [ Gwenole Beauchesne ]
+  * Autogenerated package, see NEWS file for ChangeLog.
+
+  [ Andres Mejia ]
+  * Redebianize package.
+  * Prepare package to enter Debian archive. (Closes: #569641)
+
+ -- Andres Mejia <mcitadel@gmail.com>  Fri, 12 Feb 2010 14:58:28 -0500
