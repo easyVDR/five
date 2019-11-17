@@ -1,0 +1,43 @@
+Description: Fix JavaScript source paths in the documentation
+Author: Hugh McMaster
+Forwarded: not-needed
+Last-Update: 2019-10-07
+
+--- a/ft2docs/docs/documentation.html
++++ b/ft2docs/docs/documentation.html
+@@ -22,13 +22,13 @@
+         href="css/freetype2_-60.css">
+ 
+   <script type="text/javascript"
+-          src="../../js/jquery-1.11.0.min.js">
++          src="js/jquery-1.11.0.min.js">
+   </script>
+   <script type="text/javascript"
+-          src="../../js/jquery.ba-resize.min.js">
++          src="js/jquery.ba-resize.min.js">
+   </script>
+   <script type="text/javascript"
+-          src="../../js/freetype2.js">
++          src="js/freetype2.js">
+   </script>
+ 
+   <title>FreeType Documentation</title>
+--- a/ft2docs/docs/index.html
++++ b/ft2docs/docs/index.html
+@@ -22,13 +22,13 @@
+         href="css/freetype2_-60.css">
+ 
+   <script type="text/javascript"
+-          src="../../js/jquery-1.11.0.min.js">
++          src="js/jquery-1.11.0.min.js">
+   </script>
+   <script type="text/javascript"
+-          src="../../js/jquery.ba-resize.min.js">
++          src="js/jquery.ba-resize.min.js">
+   </script>
+   <script type="text/javascript"
+-          src="../../js/freetype2.js">
++          src="js/freetype2.js">
+   </script>
+ 
+   <title>FreeType Overview</title>

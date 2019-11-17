@@ -1,0 +1,18 @@
+Description: Do not let libtool suppress compiler output
+ We always want to see compiler output when building, so that in the
+ event of a build failure, we have debuggable logs.
+Author: Steve Langasek <vorlon@debian.org>
+Forwarded: not-needed
+Last-Update: 2019-08-04
+
+--- a/builds/unix/unix-cc.in
++++ b/builds/unix/unix-cc.in
+@@ -88,7 +88,7 @@
+ # C compiler to use -- we use libtool!
+ #
+ CCraw := $(CC)
+-CC    := $(LIBTOOL) --mode=compile $(CCraw)
++CC    := $(LIBTOOL) --mode=compile $(CCraw) -no-suppress
+ 
+ # Resource compiler to use on Cygwin/MinGW, usually windres.
+ #
