@@ -1,0 +1,4 @@
+*.h usr/include/libmcli
+common/*.h usr/include/libmcli/common
+dvbloop/*.h usr/include/libmcli/dvbloop
+mcast/* usr/include/libmcli/mcast

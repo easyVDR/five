@@ -1,0 +1,265 @@
+linux-firmware-easyvdr (0.2.6-3easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 20:46:59 +0100
+
+linux-firmware-easyvdr (0.2.6-3easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 01 Jan 2018 17:17:31 +0100
+
+linux-firmware-easyvdr (0.2.6-3easyVDR1~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 05:11:07 +0100
+
+linux-firmware-easyvdr (0.2.6-3easyVDR1~trusty) trusty; urgency=high
+
+  * added new firmware for TBS 5981
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 03 Oct 2017 16:40:23 +0200
+
+linux-firmware-easyvdr (0.2.6-3easyVDR0~trusty) trusty; urgency=high
+
+  * added new firmware for tt-6400
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 19 Aug 2017 17:34:49 +0200
+
+linux-firmware-easyvdr (0.2.6-2easyVDR0~trusty) trusty; urgency=high
+
+  * added new firmware
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 07 Mar 2017 22:57:37 +0100
+
+linux-firmware-easyvdr (0.2.6-1easyVDR0~trusty) trusty; urgency=high
+
+  * added new firmware dvb-demod-si2168-02.fw &
+  * dvb-demod-si2168-b40-01.fw for hauppauge wintv solo hd usb
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 22 Sep 2016 21:49:20 +0200
+
+linux-firmware-easyvdr (0.2.6-0easyVDR2~trusty) trusty; urgency=high
+
+  * remove as102_data1_st.hex as102_data2_st.hex
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 21 Apr 2016 19:19:21 +0200
+
+linux-firmware-easyvdr (0.2.6-0easyVDR1~trusty) trusty; urgency=high
+
+  * added new firmware dvb-usb-af9035-02.fw
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Mar 2016 20:31:27 +0100
+
+linux-firmware-easyvdr (0.2.6-0easyVDR0~trusty) trusty; urgency=medium
+
+  * changed firmware 0.5.1 against old 0.4.0 for 6400HD
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 May 2015 21:59:40 +0200
+
+linux-firmware-easyvdr (0.2.5-0easyVDR1~trusty) trusty; urgency=high
+
+  * remove xc5000: Add firmware for xc5000c variant, xc4000: add firmware for Xceive xc4000 tuner driver 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 21 May 2015 09:19:13 +0200
+
+linux-firmware-easyvdr (0.2.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * added firmware 0.5.1 for 6400HD
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 16 May 2015 14:23:43 +0200
+
+linux-firmware-easyvdr (0.2.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * m88ds3103
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 May 2015 19:03:27 +0200
+
+linux-firmware-easyvdr (0.2.2-0easyVDR2~trusty) trusty; urgency=high
+
+  * delete duplicates
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 10 Feb 2015 10:16:57 +0100
+
+linux-firmware-easyvdr (0.2.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild typo
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 29 Jan 2015 09:50:53 +0100
+
+linux-firmware-easyvdr (0.2.1-0easyVDR0~trustyubuntu1) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 29 Jan 2015 09:06:06 +0100
+
+linux-firmware-easyvdr (0.2.0-0easyVDR6~trusty) trusty; urgency=high
+
+  * added new Firmware
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 28 Jan 2015 02:46:19 +0100
+
+linux-firmware-easyvdr (0.2.0-0easyVDR5~trusty) trusty; urgency=high
+
+  * added Firmware for dvbsky-cards
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 25 Jan 2014 22:33:42 +0100
+
+linux-firmware-easyvdr (0.2.0-0easyVDR4~trusty) trusty; urgency=high
+
+  * added several new firmwares
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Dec 2013 10:44:51 +0100
+
+linux-firmware-easyvdr (0.2.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:47:55 +0100
+
+linux-firmware-easyvdr (0.2.0-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 18:16:51 +0200
+
+linux-firmware-easyvdr (0.2.0-0easyVDR0.5~oneiric) oneiric; urgency=high
+
+  * added new firmware for S2-6400 V0.4.0
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 Mar 2013 21:05:14 +0100
+
+linux-firmware-easyvdr (0.2.0-0easyVDR0.3) oneiric; urgency=low
+
+  * added firmware dvb-usb-af9035-01.fw
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 25 Jun 2012 08:37:42 +0200
+
+linux-firmware-easyvdr (0.2.0-0easyVDR0.2) oneiric; urgency=high
+
+  * pctv dvb-s2 usb stick (460e)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 14 May 2012 11:27:02 +0200
+
+linux-firmware-easyvdr (0.2.0-0easyVDR0.1) oneiric; urgency=high
+
+  * new FWs
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 12 May 2012 17:00:18 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.8) oneiric; urgency=low
+
+  * added Firmware 0.3.8 for S2-6400
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 16 Apr 2012 15:09:45 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.7) oneiric; urgency=low
+
+  * added Firmware 0.3.7 for S2-6400
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 16 Feb 2012 14:30:22 +0100
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.6) oneiric; urgency=low
+
+  * added Firmware 0.3.6 for S2-6400
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 Feb 2012 22:44:04 +0100
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.5) oneiric; urgency=high
+
+  * added Firmware 0.3.5 for S2-6400
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 23 Jan 2012 13:28:52 +0100
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.4) oneiric; urgency=high
+
+  * added Firmware 0.3.4 for S2-6400
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 03 Oct 2011 21:19:27 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.3) oneiric; urgency=high
+
+  * rebuild for easyVDR-Oneiric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Aug 2011 16:13:59 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.3) lucid; urgency=high
+
+  * New 6400-Firmware and FPGA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 26 Aug 2011 12:24:41 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.2) lucid; urgency=low
+
+  * added Digivox-Firmware
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 10 Aug 2011 22:36:22 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.1) lucid; urgency=low
+
+  * added 6400-FW Version 0.2.11
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 13 Jun 2011 18:58:21 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR2.0) lucid; urgency=high
+
+  * FPGA Firmware 1.08, renamed dvb-usb-teviis660 to dvb-usbs660.fw
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 30 May 2011 09:38:19 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.9) lucid; urgency=low
+
+  * FPGA Firmware 1.07
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 27 May 2011 08:50:07 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.8) lucid; urgency=high
+
+  * added ngene18.fw and 6400-FW Version 0.2.10
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 16 May 2011 09:27:31 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.7) lucid; urgency=low
+
+  * added Digivox USB-Firmware
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 11 May 2011 16:41:52 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.6) lucid; urgency=high
+
+  * debugged postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 07 May 2011 11:37:14 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.5) lucid; urgency=high
+
+  * added Firmware for FF 6400
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 Apr 2011 21:11:24 +0200
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.4) lucid; urgency=low
+
+  * Link for FF with postinst
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 29 Jan 2011 08:55:24 +0100
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.3) lucid; urgency=low
+
+  * added non-free Firmware and Link for FF
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 27 Jan 2011 23:53:50 +0100
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.2) lucid; urgency=low
+
+  * no changes - rebuild because Packager left easyVDR-Team
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Nov 2010 14:24:39 +0100
+
+linux-firmware-easyvdr (0.1.0-1easyVDR1.1) lucid; urgency=low
+
+  * initial release
+
+ -- Karl-Heinz Winzer <khwinzer@gmx.de>  Tue, 26 Oct 2010 03:42:36 +0200
+

@@ -1,0 +1,28 @@
+#!/bin/sh
+
+set -e
+
+if [ -x /dev/MAKEDEV ]; then
+  echo "creating dvb devices..."
+  cd /dev
+  ./MAKEDEV dvb
+fi
+
+if [ `getconf LONG_BIT` = "64" ]
+then
+     cd /tmp
+     mv /usr/bin/av7110_loadkeys /usr/bin/av7110_loadkeys.dead
+     tar xvf av7110_loadkeys_64.tar.xz
+     mv av7110_loadkeys /usr/bin
+     chown root:root /usr/bin/av7110_loadkeys
+else
+     cd /tmp
+     mv /usr/bin/av7110_loadkeys /usr/bin/av7110_loadkeys.dead
+     tar xvf av7110_loadkeys_32.tar.xz
+     mv av7110_loadkeys /usr/bin
+     chown root:root /usr/bin/av7110_loadkeys
+fi
+
+#DEBHELPER#
+
+exit 0

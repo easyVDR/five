@@ -1,0 +1,34 @@
+
+Contains all Firmware from easyvdr Media-Driver-Packages
+- linux-media
+- linux-media-tbs
+- linux-media-dvbsky
+by end of 2014 by michel8@easy-vdr.de
+
+
+Script for comparison:
+###############################################################################################################
+#! /bin/bash
+
+PFAD_1="/media/easyvdr01/_devel/_firmware/pak_media-exp_firmware"		# firmware-path new driver-set
+PFAD_2="/media/easyvdr01/_devel/_firmware/lib_linux-firmware-easyvdr/firmware"  # or /lib/firmware
+PFAD_3="/media/easyvdr01/_devel/_firmware/in_lib_linux-firmware-easyvdr_missing"
+PFAD_4="/media/easyvdr01/_devel/_firmware/in_lib_linux-firmware-easyvdr_different"
+
+mkdir -p $PFAD_3
+mkdir -p $PFAD_4
+
+files_1="$(ls $PFAD_1)"
+for vergl_firmware in $files_1
+    do
+        cmp $PFAD_1/$vergl_firmware $PFAD_2/$vergl_firmware  > /dev/null 2>&1
+        res=$?
+        if [ $res -eq 2 ]; then
+            echo "  $vergl_firmware     not in $PFAD_2"
+            cp -p $PFAD_1/$vergl_firmware $PFAD_3
+        elif [ $res -eq 1 ]; then
+            echo "  $vergl_firmware     not equal"
+            cp -p $PFAD_1/$vergl_firmware $PFAD_4
+        fi
+    done
+###############################################################################################################

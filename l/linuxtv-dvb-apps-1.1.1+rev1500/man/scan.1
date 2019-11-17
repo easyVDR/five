@@ -1,0 +1,85 @@
+.TH scan 1 "February 14, 2010"
+.SH NAME
+scan \- a program to produce channel.conf files.
+.SH SYNOPSIS
+.B scan
+.RI [ options ]
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B scan
+commands.
+.PP
+\fBscan\fP is a program to produce channels.conf files.
+.SH OPTIONS
+.TP
+.B \-c	[initial-tuning-data-file]
+scan on currently tuned transponder only
+.TP
+.B \-v
+verbose (repeat for more)
+.TP
+.B \-q
+quiet (repeat for less)
+.TP
+.B \-a N
+use DVB /dev/dvb/adapterN/
+.TP
+.B \-f N
+use DVB /dev/dvb/adapter?/frontendN
+.TP
+.B \-d N
+use DVB /dev/dvb/adapter?/demuxN
+.TP
+.B \-s N
+use DiSEqC switch position N (DVB-S only)
+.TP
+.B \-i N
+spectral inversion setting (0: off, 1: on, 2: auto [default])
+.TP
+.B \-n
+evaluate NIT-other for full network scan (slow!)
+.TP
+.B \-5
+multiply all filter timeouts by factor 5 for non-DVB-compliant section repitition rates
+.TP
+.B \-o fmt
+output format: 'zap' (default), 'vdr' or 'pids' (default with -c)
+.TP
+.B \-x N
+Conditional Access, (default -1)
+	N=0 gets only FTA channels
+	N=-1 gets all channels
+	N=xxx sets ca field in vdr output to :xxx:
+.TP
+.B \-t N
+Service select, Combined bitfield parameter.
+1 = TV, 2 = Radio, 4 = Other, (default 7)
+.TP
+.B \-p
+for vdr output format: dump provider name
+.TP
+.B \-e N
+	VDR version, default 3 for VDR-1.3.x and newer value 2 sets NIT and TID to zero
+	Vdr version 1.3.x and up implies -p.
+.TP
+.B \-l
+lnb-type (DVB-S Only) (use -l help to print types) or
+.TP
+.B \-l
+low[,high[,switch]] in Mhz
+.TP
+.B \-u
+UK DVB-T Freeview channel numbering for VDR
+.TP
+.B \-P
+do not use ATSC PSIP tables for scanning (but only PAT and PMT) (applies for ATSC only)
+.TP
+.B \-A N
+check for ATSC 1=Terrestrial [default], 2=Cable or 3=both
+.TP
+.B \-U
+Uniquely name unknown services
+.br
+.PP
+This manual page was written by Uwe Bugla <uwe.bugla@gmx.de>.

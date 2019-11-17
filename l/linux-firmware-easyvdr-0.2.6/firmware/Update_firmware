@@ -1,0 +1,46 @@
+#!/bin/sh
+
+if [ $# -gt 1 ] || [ $# -eq 1 -a "$1" != "-u" ]; then
+	echo "Usage: $0 [-u]"
+	echo "  -u: Update existing firmware files"
+	exit 1
+fi
+
+UPDATE=0
+EXCLUDE_FREE="(cx18|cx231xx|cx23885|pvrusb2)"
+
+if [ $# -eq 1 ]; then
+	UPDATE=1
+fi
+
+wget --quiet "http://git.kernel.org/?p=linux/kernel/git/torvalds/linux-2.6.git;a=blob_plain;f=Documentation/dvb/get_dvb_firmware;hb=HEAD" -O get_dvb_firmware
+chmod a+x get_dvb_firmware
+
+# Export FWS=<firmware> to test retrieving specific firmware
+if [ "x${FWS}" = "x" ]; then
+	FWS=`./get_dvb_firmware 2>&1 | grep "^	" | egrep -v "${EXCLUDE_FREE}"`
+fi
+
+for FW in ${FWS}; do
+	mkdir tmp-${FW}
+	cd tmp-${FW}
+
+	echo -n "Retrieving firmware for ${FW}..."
+	if ../get_dvb_firmware ${FW} >/dev/null 2>&1; then
+		if [ $UPDATE -eq 1 ]; then
+			cp *.fw ../
+		else
+			cp -n *.fw ../
+		fi
+
+		echo "success"
+	else
+		echo "failure"
+	fi
+
+	cd ..
+	rm -rf tmp-${FW}
+
+done
+
+rm get_dvb_firmware

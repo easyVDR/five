@@ -1,0 +1,36 @@
+libmcli (189-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 20:45:47 +0100
+
+libmcli (189-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 23:50:33 +0100
+
+libmcli (189-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Nov 2017 23:13:37 +0100
+
+libmcli (189-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 01 Jul 2017 19:45:42 +0200
+
+libmcli (189-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 May 2016 22:12:03 +0200
+
+libmcli (189-0yavdr0~trusty) trusty; urgency=medium
+
+  * first try
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 14 May 2016 22:32:02 +0200
+

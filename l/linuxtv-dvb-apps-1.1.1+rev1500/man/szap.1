@@ -1,0 +1,57 @@
+.TH szap 1 "February 14, 2010"
+.SH NAME
+szap \- a program to process channels.conf files.
+.SH SYNOPSIS
+.B szap
+.RI [ options ]
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B szap
+commands.
+.PP
+\fBszap\fP is a program to process a channels.conf file.
+.SH OPTIONS
+.TP
+.B \-n channel-number | channel_name
+zap to channel via number or full name (case insensitive)
+.TP
+.B \-q
+list known channels
+.TP
+.B \-a number
+use given adapter (default 0)
+.TP
+.B \-f number
+use given frontend (default 0)
+.TP
+.B \-d number
+use given demux (default 0)
+.TP
+.B \-c file
+read channels list from 'file'
+.TP
+.B \-b
+enable Audio Bypass (default no)
+.TP
+.B \-x
+exit after tuning
+.TP
+.B \-H
+human readable output
+.TP
+.B \-r
+set up /dev/dvb/adapterX/dvr0 for TS recording
+.TP
+.B \-l lnb-type (DVB-S Only) (use -l help to print types) or
+.TP
+.B \-l low[,high[,switch]] in Mhz
+.TP
+.B \-i
+run interactively, allowing you to type in channel names
+.TP
+.B \-p
+add pat and pmt to TS recording (implies -r) or -n numbers for zapping
+.br
+.PP
+This manual page was written by Uwe Bugla <uwe.bugla@gmx.de>.

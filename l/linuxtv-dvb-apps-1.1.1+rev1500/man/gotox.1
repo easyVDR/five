@@ -1,0 +1,33 @@
+.TH gotox 1 "February 14, 2010"
+.SH NAME
+gotox \- a program to operate a rotor of a satellite dish.
+.SH SYNOPSIS
+.B gotox
+.RI [ options ]
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B gotox
+commands.
+.PP
+\fBgotox \fP is a program to operate a rotor set to tune a satellite dish.
+.SH OPTIONS
+.TP
+.B \-h
+print this help text
+.TP
+.B \-d degrees
+Goto the specified angle. Positive value for East rotation,
+negative value for West rotation on Northern Hemisphere (default 0)
+.TP
+.B \-a number
+use given adapter (default 0)
+.TP
+.B \-f number
+use given frontend (default 0)
+.TP
+.B \-t seconds
+leave power on to rotor for at least specified seconds of time (default 30)
+.br
+.PP
+This manual page was written by Uwe Bugla <uwe.bugla@gmx.de>.

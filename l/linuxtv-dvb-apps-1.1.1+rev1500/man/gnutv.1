@@ -1,0 +1,79 @@
+.TH gnutv 1 "February 14, 2010"
+.SH NAME
+gnutv \- a digital tv utility.
+.SH SYNOPSIS
+.B gnutv
+.RI [ options ] <channel name>
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B gnutv
+commands.
+.PP
+\fBgnutv\fP is a digital tv utility.
+.SH OPTIONS
+.TP
+.B \-adapter <id>
+adapter to use (default 0)
+.TP
+.B \-frontend <id>
+frontend to use (default 0)
+.TP
+.B \-demux <id>
+demux to use (default 0)
+.TP
+.B \-caslotnum <id>
+ca slot number to use (default 0)
+.TP
+.B \-channels <filename>
+channels.conf file
+.TP
+.B \-secfile <filename>
+Optional sec.conf file
+.TP
+.B \-secid <secid>
+ID of the SEC configuration to use, one of:
+	* UNIVERSAL (default) - Europe, 10800 to 11800 MHz and 11600 to 12700 Mhz,\
+	  Dual LO, loband 9750, hiband 10600 MHz
+	* DBS - Expressvu, North America, 12200 to 12700 MHz, Single LO, 11250 MHz
+	* STANDARD - 10945 to 11450 Mhz, Single LO, 10000 Mhz
+	* ENHANCED - Astra, 10700 to 11700 MHz, Single LO, 9750 MHz
+	* C-BAND - Big Dish, 3700 to 4200 MHz, Single LO, 5150 Mhz
+	* C-MULTI - Big Dish - Multipoint LNBf, 3700 to 4200 MHz, Dual LO, H:5150MHz, V:5750MHz
+	* One of the sec definitions from the secfile if supplied
+.TP
+.B \-out decoder
+Output to hardware decoder (default)
+.TP
+.B -out decoderabypass
+Output to hardware decoder using audio bypass
+.B -out dvr
+Output stream to dvr device
+.B -out null
+Do not output anything
+.B -out stdout
+Output to stdout
+.B -out file <filename>
+Output stream to file
+.B -out udp <address> <port>
+Output stream to address:port using udp
+.B -out udpif <address> <port> <interface>
+Output stream to address:port using udp forcing the specified interface
+.B -out rtp <address> <port>
+Output stream to address:port using udp-rtp
+.B -out rtpif <address> <port> <interface>
+Output stream to address:port using udp-rtp forcing the specified interface
+.TP
+.B \-timeout <secs>
+Number of seconds to output channel for (0=>exit immediately after successful tuning, default is to output forever)
+.TP
+.B \-cammenu
+Show the CAM menu
+.TP
+.B \-nomoveca
+Do not attempt to move CA descriptors from stream to programme level
+.B \-h
+print this help text
+.br
+.PP
+This manual page was written by Uwe Bugla <uwe.bugla@gmx.de>.

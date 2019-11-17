@@ -1,0 +1,12 @@
+#! /bin/sh
+
+set -e
+ 
+case "$1" in
+	purge)
+    rm /lib/firmware/dvb-ttpci-01.fw
+	;;
+esac
+
+:
+#DEBHELPER#

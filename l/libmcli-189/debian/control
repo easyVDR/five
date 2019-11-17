@@ -1,0 +1,36 @@
+Source: libmcli
+Section: video
+Priority: optional
+Maintainer: Frodo <frodo.vdr@gmx.net>
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends:
+ debhelper (>= 9),
+ dh-autoreconf,
+ libxml2-dev,
+ zlib1g-dev
+Standards-Version: 3.9.5
+Homepage: https://svn.baycom.de/repos/vdr-mcli-plugin
+
+Package: libmcli
+Architecture: any
+Multi-Arch: same
+Pre-Depends: ${misc:Pre-Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: implementation of the libmcli
+ libmcli is a implementation for Reel Netceiver.
+ .
+ This package provides the shared library.
+
+Package: libmcli-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libmcli (= ${binary:Version}),
+ ${misc:Depends}
+Description: implementation of the libmcli
+ libmcli is a implementation for Reel Netceiver.
+ .
+ This package provides the development files for libdvbcsa.

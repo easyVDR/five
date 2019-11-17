@@ -1,0 +1,46 @@
+.TH czap 1 "February 14, 2010"
+.SH NAME
+czap \- a program to process channels.conf files.
+.SH SYNOPSIS
+.B czap
+.RI [ options ] <channel name>
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B czap
+commands.
+.PP
+\fBczap\fP is a program to process a channels.conf file.
+.SH OPTIONS <channel name>
+.TP
+.B \-a adapter_num
+use given adapter (default 0)
+.TP
+.B \-f frontend_id
+use given frontend (default 0)
+.TP
+.B \-d demux_id
+use given demux (default 0)
+.TP
+.B \-c conf_file
+read channels list from 'file'
+.TP
+.B \-H
+produce human readable output
+.TP
+.B \-n channel_num
+use given channel number
+.TP
+.B \-x
+exit after tuning
+.TP
+.B \-c conf_file -l
+list channel names in channels.conf file
+.B \-r
+set up /dev/dvb/adapterX/dvr0 for TS recording
+.TP
+.B \-h
+print this help text
+.br
+.PP
+This manual page was written by Uwe Bugla <uwe.bugla@gmx.de>.

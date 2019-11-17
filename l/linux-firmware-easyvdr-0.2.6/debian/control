@@ -1,0 +1,12 @@
+Source: linux-firmware-easyvdr
+Section: misc
+Priority: optional
+Maintainer: Andreas Schott <sinai@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.4
+
+Package: linux-firmware-easyvdr
+Architecture: any
+Depends: ${misc:Depends}, ${shlibs:Depends}
+Description: Additional firmwares

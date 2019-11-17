@@ -1,0 +1,34 @@
+.TH dib3000-watch 1 "February 14, 2010"
+.SH NAME
+dib3000-watch \- a program to check DVB cards.
+.SH SYNOPSIS
+.B dib3000-watch
+.RI [ options ] <channel name>
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B dib3000-watch
+commands.
+.PP
+\fBdib3000-watch\fP is a program to check DVB cards.
+.SH OPTIONS
+.TP
+.B \-d <i2c-device>
+-d: normally one of /dev/i2c-[0-255]
+.TP
+.B \-a <i2c-address>
+-a: is 8 for DiB3000M-B and 9, 10, 11 or 12 for DiB3000M-C or DiB3000-P
+.TP
+.B \-o <type>
+-o: output type (print|csv) (default: print)
+.TP
+.B \-i <seconds>
+-i: query interval in seconds (default: 0.1)
+.TP
+.B \-h
+print this help text
+.br
+.SH AUTHOR
+Copyright (C) 2005 by Patrick Boettcher <patrick.boettcher@desy.de>
+.PP
+This manual page was written by Uwe Bugla <uwe.bugla@gmx.de>.

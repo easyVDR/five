@@ -1,0 +1,14 @@
+#!/bin/bash
+
+set -e
+
+if [ "$1" = "configure" ]; then
+
+    ln -sf /lib/firmware/dvb-ttpci-01.fw-fb2624    /lib/firmware/dvb-ttpci-01.fw
+
+fi
+
+
+#DEBHELPER#
+
+

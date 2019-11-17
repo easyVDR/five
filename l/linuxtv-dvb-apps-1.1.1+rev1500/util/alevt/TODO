@@ -1,0 +1,18 @@
+These are issues that I unfortunately cannot resolve myself:
+
+1. Most important: for usage without script and outfile option:
+    DVB monitoring demon helping the program to rewrite the PAT
+    (Program Allocation Table) when the external player software
+    has chosen a channel which is part of a new transponder.
+    At the moment alevt hangs when the transponder is changed by an
+    external player software.
+    It then can only be stopped via "killall -9 alevt".
+    Or you switch it off before every channel change.
+
+2. Graphical menu written in GKT2, to be used in general connection with
+    the outfile (-o) option.
+
+3. New BDF fonts for slightly bigger windows.
+    Those BDF fonts need to be edited so that they can be transformed by bdf2xbm.
+
+Uwe Bugla, February 14th, 2010.

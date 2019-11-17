@@ -1,0 +1,35 @@
+.TH azap 1 "February 14, 2010"
+.SH NAME
+azap \- a program to process channels.conf files.
+.SH SYNOPSIS
+.B azap
+.RI [ options ] <channel name>
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B azap
+commands.
+.PP
+\fBazap\fP is a program to process a channels.conf file.
+.SH OPTIONS
+.TP
+.B \-a adapter_num
+use given adapter (default 0)
+.TP
+.B \-f frontend_id
+use given frontend (default 0)
+.TP
+.B \-d demux_id
+use given demux (default 0)
+.TP
+.B \-c conf_file
+read channels list from 'file'
+.TP
+.B \-r
+set up /dev/dvb/adapterX/dvr0 for TS recording
+.TP
+.B \-h
+print this help text
+.br
+.PP
+This manual page was written by Uwe Bugla <uwe.bugla@gmx.de>.

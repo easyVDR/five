@@ -1,0 +1,44 @@
+.TH zap 1 "February 14, 2010"
+.SH NAME
+zap \- a program to process channels.conf files.
+.SH SYNOPSIS
+.B zap
+.RI [ options ] <channel name>
+.br
+.SH DESCRIPTION
+This manual page documents briefly the
+.B zap
+commands.
+.PP
+\fBzap\fP is a program to process a channels.conf file.
+.SH OPTIONS
+.TP
+.B \-adapter <id>
+adapter to use (default 0)
+.TP
+.B \-frontend <id>
+frontend to use (default 0)
+.TP
+.B \-demux <id>
+demux to use (default 0)
+.TP
+.B \-caslotnum <id>
+ca slot number to use (default 0)
+.TP
+.B \-channels <filename>
+channels.conf file
+.TP
+.B \-secfile <filename>
+Optional sec.conf file
+.TP
+.B \-secid <secid>
+ID of the SEC configuration to use
+.TP
+.B \-nomoveca
+Do not attempt to move CA descriptors from stream to program level
+.TP
+.B \-h
+print this help text
+.br
+.PP
+This manual page was written by Uwe Bugla <uwe.bugla@gmx.de>.
