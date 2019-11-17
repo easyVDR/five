@@ -1,0 +1,80 @@
+vdrnfofs
+========
+
+Copyright 2010 Tobias Grimm <vdr@e-tobi.net>
+
+vdrnfos is released under the terms of the BSD License - see COPYRIGHT
+
+http://projects.vdr-developer.org/projects/vdrnfofs
+
+
+What's this about?
+------------------
+
+vdrnfofs creates a virtual Fuse-based file system that maps recordings
+from the Linux Video Disc Recorder (VDR) to *.nfo and *.mpg files.
+
+Those files can then e.g. be used by media center applications like.
+XBMC or Enna.
+
+Such a thing has been tried previously here:
+
+  http://code.google.com/p/vdrfs/
+
+But this project seems to be abandoned, so I've started with vdrnfofs from
+scratch.
+
+VDR recordings (PS or TS) are simply mapped 1:1 to *.mpg files. If the VDR
+recording is split to multiple files, they are virtually concatenated to a
+single *.mpg file.
+
+The *.nfo is a XML file with the follwing structure:
+
+  <movie>
+    <title>...</title>
+    <plot>...</plot>
+  </movie>
+
+Title and plot are mapped from VDR's info file ('T' and 'D').
+
+
+How to install?
+---------------
+
+In order to be able to use vdrnofs, python-setuptools and python-fuse are
+required.
+
+If not installing from a package of your preferred Linux distribution run:
+
+  ./setup.py install
+
+The user which should be able to mount vdrnfofs should be a member of the 
+group "fuse".
+
+
+How to use?
+-----------
+
+To mount a vdrnfofs file system, run:
+
+  vdrnfofs <mount-point> -o video=<vdr-vide-dir>
+
+e.g.:
+
+   vdrnfofs /mnt/vdrnfofs -o video=/var/lib/video
+
+You can also do this in /etc/fstab with:
+
+   vdrnfofs    /mnt/vdrnfofs   fuse    video=/var/lib/video 0 0
+
+By default only the user that mounted the vdrnfos can also access it.
+If you want system-wide access to the file system, you should mount it as root
+and pass the option "allow_other" e.g.:
+
+   vdrnfofs /mnt/vdrnfofs -o video=/var/lib/video - o allow_other
+
+If vdrnfofs is not in your path for root (Debian and Ubuntu most likely do not
+include /usr/local/bin in the path), you might need to provide the full path
+in fstab, like e.g.:
+
+   /usr/local/bin/vdrnfofs    /mnt/vdrnfofs   fuse    video=/var/lib/video 0 0

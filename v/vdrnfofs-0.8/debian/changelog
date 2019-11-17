@@ -1,0 +1,53 @@
+vdrnfofs (0.8-2easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 23:38:19 +0100
+
+vdrnfofs (0.8-2easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 16:32:19 +0100
+
+vdrnfofs (0.8-2easyVDR2~zesty) zesty; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 15:45:14 +0100
+
+vdrnfofs (0.8-2easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 15:39:04 +0100
+
+vdrnfofs (0.8-2easyVDR0~trusty) trusty; urgency=high
+
+  * increase build number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 05 May 2017 16:04:07 +0200
+
+vdrnfofs (0.8-1easyVDR0~trusty) trusty; urgency=high
+
+  *   * rebuild for trusty
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 05 May 2017 15:50:21 +0200
+
+vdrnfofs (0.8-1easyVDR1~raring) raring; urgency=low
+
+  * add patch old vdr rec-dir struct
+
+ -- root <root@easyvdr.easyvdr.local>  Tue, 12 Nov 2013 23:20:18 +0100
+
+vdrnfofs (0.8-0easyVDR1~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 30 Oct 2013 18:38:12 +0100
+
+vdrnfofs (0.8-0easyVDR0~raring) raring; urgency=medium
+
+  * New Upstream Snapshot
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 12 Oct 2011 09:44:07 +0200

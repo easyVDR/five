@@ -1,0 +1,83 @@
+vdrsymbols-ttf (20080905-2easyVDR6~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 23:31:13 +0100
+
+vdrsymbols-ttf (20080905-2easyVDR5~bionic) bionic; urgency=high
+
+  * bionic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Dec 2017 15:22:14 +0100
+
+vdrsymbols-ttf (20080905-2easyVDR2~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 26 Jun 2017 17:03:09 +0200
+
+vdrsymbols-ttf (20080905-2easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 15 Oct 2016 23:47:05 +0200
+
+vdrsymbols-ttf (20080905-2easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Nov 2015 22:48:09 +0100
+
+vdrsymbols-ttf (20080905-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 05:03:45 +0100
+
+vdrsymbols-ttf (20080905-1easyVDR2~trusty) trusty; urgency=high
+
+  * push correct version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 25 Apr 2014 01:59:03 +0200
+
+vdrsymbols-ttf (20080905-1easyVDR1.3~trusty) trusty; urgency=high
+
+  * rebuild trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Oct 2013 07:00:59 +0100
+
+vdrsymbols-ttf (20080905-1easyVDR1.3~saucy) saucy; urgency=high
+
+  * rebuild saucy
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 07 Aug 2013 00:09:49 +0200
+
+vdrsymbols-ttf (20080905-1easyVDR1.2~oneiric) oneiric; urgency=low
+
+  * platforms
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 14 Jan 2013 17:53:21 +0100
+
+vdrsymbols-ttf (20080905-1easyVDR1.1) oneiric; urgency=low
+
+  * rebuild for easyVDR-Oneiric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 29 Aug 2011 16:38:34 +0200
+
+vdrsymbols-ttf (20080905-1easyVDR1.1) lucid; urgency=low
+
+  * no changes - rebuild because Packager left easyVDR-Team
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Nov 2010 14:57:07 +0100
+
+vdrsymbols-ttf (20080905-1easyVDR1) lucid; urgency=low
+
+  * build for easyVDR PPA
+
+ -- Karl-Heinz Winzer <khwinzer@gmx.de>  Wed, 23 Jun 2010 00:25:36 +0200
+
+vdrsymbols-ttf (20080905-1gda1) karmic; urgency=low
+
+  * initial release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sat, 10 Oct 2009 22:06:48 +0200

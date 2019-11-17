@@ -1,0 +1,62 @@
+Description: Upstream changes introduced in version 0.7-1yavdr1~natty
+ This patch has been created by dpkg-source during the package build.
+ Here's the last changelog entry, hopefully it gives details on why
+ those changes were made:
+ .
+ vdrnfofs (0.7-1yavdr1~natty) natty; urgency=medium
+ .
+   * New upstream snapshot
+ .
+ The person named in the Author field signed this changelog entry.
+Author: Gerald Dachs <gda@dachsweb.de>
+
+---
+The information above should follow the Patch Tagging Guidelines, please
+checkout http://dep.debian.net/deps/dep3/ to learn about the format. Here
+are templates for supplementary fields that you might want to add:
+
+Origin: <vendor|upstream|other>, <url of original patch>
+Bug: <url in upstream bugtracker>
+Bug-Debian: http://bugs.debian.org/<bugnumber>
+Bug-Ubuntu: https://launchpad.net/bugs/<bugnumber>
+Forwarded: <no|not-needed|url proving that it has been forwarded>
+Reviewed-By: <name and email of someone who approved the patch>
+Last-Update: <YYYY-MM-DD>
+
+--- /dev/null
++++ vdrnfofs-0.7/vdrnfofs.egg-info/SOURCES.txt
+@@ -0,0 +1,12 @@
++README
++setup.py
++bin/vdrnfofs
++vdrnfofs/__init__.py
++vdrnfofs/concatenated_file_reader.py
++vdrnfofs/filesystemnodes.py
++vdrnfofs/vdr.py
++vdrnfofs/vdrnfofs.py
++vdrnfofs.egg-info/PKG-INFO
++vdrnfofs.egg-info/SOURCES.txt
++vdrnfofs.egg-info/dependency_links.txt
++vdrnfofs.egg-info/top_level.txt
+\ No newline at end of file
+--- /dev/null
++++ vdrnfofs-0.7/vdrnfofs.egg-info/PKG-INFO
+@@ -0,0 +1,10 @@
++Metadata-Version: 1.0
++Name: vdrnfofs
++Version: 1.0
++Summary: Access VDR recordings as mpg and nfo files
++Home-page: UNKNOWN
++Author: Tobias Grimm
++Author-email: vdr@e.tobi.net
++License: BSD
++Description: UNKNOWN
++Platform: UNKNOWN
+--- /dev/null
++++ vdrnfofs-0.7/vdrnfofs.egg-info/dependency_links.txt
+@@ -0,0 +1 @@
++
+--- /dev/null
++++ vdrnfofs-0.7/vdrnfofs.egg-info/top_level.txt
+@@ -0,0 +1 @@
++vdrnfofs

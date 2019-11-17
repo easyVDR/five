@@ -1,0 +1,14 @@
+Source: vdrnfofs
+Section: misc
+Priority: extra
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9)
+Build-Depends-Indep: python-support | dh-python, python-setuptools
+Standards-Version: 3.9.5
+
+Package: vdrnfofs
+Architecture: all
+Depends: ${misc:Depends}, python (>= 2.5), python-fuse
+Description: vdrnfofs erstellt ein FUSE-basiertes virtuelles Dateisystem
+ vdrnfofs erstellt ein FUSE-basiertes virtuelles Dateisystem

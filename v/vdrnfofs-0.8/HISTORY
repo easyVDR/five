@@ -1,0 +1,27 @@
+version 0.9
+  - Fixed typo in README (Closes #806)
+  - Added note to README, that it might be required to specify
+    the absolute path to vdrnfofs in /etc/fstab (Closes #807)
+
+version 0.8
+  - Use cStringIO instead of string concatenation - about 3 times faster
+    (Patch provided by Ed Hein)
+  - Fixed license header in source files - it's the BSD licence now!
+  - Set mtime of file nodes to recording time (parsed from *.rec)
+  - Set mtime of dir nodes to original directories mtime
+  - Added homepage http://projects.vdr-developer.org/projects/vdrnfofs
+  - Some micro optimizations
+  - Cache the file system nodes user for get_stat() (nodes used for
+    reading are not cached)
+  - For FUSE file nodes' uid/gid is taken from the *.rec dir, for dir nodes
+    from the original dir
+
+version 0.7
+  - Fixed file/dir node permissions
+  - Added README
+  - BSD Licence
+  - Added TODO and HISTORY
+  - Enable "./setup.py test" for running the tests
+
+version 0.6
+  - inital release
