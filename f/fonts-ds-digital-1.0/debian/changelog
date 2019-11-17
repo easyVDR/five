@@ -1,0 +1,36 @@
+fonts-ds-digital (1.0-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 20:43:14 +0100
+
+fonts-ds-digital (1.0-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 01:35:40 +0100
+
+fonts-ds-digital (1.0-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 01:24:10 +0100
+
+fonts-ds-digital (1.0-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Jun 2017 18:10:18 +0200
+
+fonts-ds-digital (1.0-0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 15 Jan 2015 00:23:07 +0100
+
+fonts-ds-digital (1.0-0~trusty) trusty; urgency=low
+
+  * DS-Digital (Normal, Bold, Italic, Bold Italic), Version 1.0
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 13 Jan 2015 22:52:37 +0100
+

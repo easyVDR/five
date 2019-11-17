@@ -1,0 +1,16 @@
+Source: fonts-opensans
+Section: fonts
+Priority: optional
+Maintainer: Frodo <frodo.vdr@gmx.net> 
+Uploaders: Frodo <frodo.vdr@gmx.net>, Wolfgang Mangold <vdr@gmx.de> 
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/plg-skindesigner
+
+Package: fonts-opensans
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, fontconfig
+Pre-Depends: dpkg (>= 1.15.6~)
+Description: Open Sans font
+

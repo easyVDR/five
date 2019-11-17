@@ -1,0 +1,42 @@
+fonts-opensans (1.0-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 20:43:42 +0100
+
+fonts-opensans (1.0-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 01:35:50 +0100
+
+fonts-opensans (1.0-0easyVDR2~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 01:24:19 +0100
+
+fonts-opensans (1.0-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Jun 2017 18:04:37 +0200
+
+fonts-opensans (1.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 20 Aug 2015 23:36:24 +0200
+
+fonts-opensans (1.0-0frodo0~trusty) trusty; urgency=medium
+
+  * rebuild for trusty
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 26 Jul 2015 11:30:50 +0200
+
+fonts-opensans (1.0-0frodo0~precise) precise; urgency=medium
+
+  * new version
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 12 Feb 2015 19:57:58 +0100
+

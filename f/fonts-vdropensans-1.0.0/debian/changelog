@@ -1,0 +1,59 @@
+fonts-vdropensans (1.0.0-1easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 20:44:31 +0100
+
+fonts-vdropensans (1.0.0-1easyVDR4~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 01:36:11 +0100
+
+fonts-vdropensans (1.0.0-1easyVDR3~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 01:24:39 +0100
+
+fonts-vdropensans (1.0.0-1easyVDR2~zesty) zesty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 25 Jun 2017 18:05:02 +0200
+
+fonts-vdropensans (1.0.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild for 2.3 PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 13 Jul 2015 21:34:24 +0200
+
+fonts-vdropensans (1.0.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 13 Jul 2015 20:20:14 +0200
+
+fonts-vdropensans (1.0.0-0easyVDR5~trusty) trusty; urgency=high
+
+  * added postrm
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 12 Jul 2015 23:08:44 +0200
+ 
+fonts-vdropensans (1.0.0-0easyVDR4~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 12 Jul 2015 22:57:06 +0200
+
+fonts-vdropensans (1.0.0-0easyVDR3~trusty) trusty; urgency=high
+
+  * changed path
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 21 Jun 2015 14:05:17 +0200
+
+fonts-vdropensans (1.0.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * Initial release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 08 Jun 2015 20:55:22 +0200

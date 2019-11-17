@@ -1,0 +1,16 @@
+Source: fonts-ds-digital
+Section: fonts
+Priority: optional
+Maintainer: Gandalf <no@email.no>
+Uploaders: Gandalf <no@email.no>
+Build-Depends: debhelper (>= 9.0.0)
+Standards-Version: 3.9.5
+Homepage: http://www.dafont.com/de/ds-digital.font
+
+Package: fonts-ds-digital
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}
+Pre-Depends: dpkg (>= 1.15.6~)
+Description: DS-Digital (Normal, Bold, Italic, Bold Italic), Version 1.0 
+

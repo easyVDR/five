@@ -1,0 +1,16 @@
+Source: fonts-vdropensans
+Section: fonts
+Priority: optional
+Maintainer: Wolfgang Mangold <vdr@gmx.de> 
+Uploaders: Wolfgang Mangold <vdr@gmx.de> 
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/plg-skindesigner
+
+Package: fonts-vdropensans
+Architecture: all
+Multi-Arch: foreign
+Depends: ${misc:Depends}, fontconfig
+Pre-Depends: dpkg (>= 1.15.6~)
+Description: VDROpen Sans skindesigner version
+
