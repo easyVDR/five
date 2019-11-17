@@ -1,0 +1,211 @@
+g15daemon (1.9.5.3-10~focal) focal; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 19:28:17 +0100
+
+g15daemon (1.9.5.3-9) unstable; urgency=medium
+
+  [ Alexander Ponyatykh ]
+  * Reintroduce package. (Closes: bug#928158)
+  * Convert source to 3.0 (quilt) format.
+  * Migrate from cdbs to debhelper.
+  * Merge from Ubuntu:
+    - libg15daemon_client/g15daemon_net.c: Fix a potential buffer overflow.
+  * debian/patches/07-reinit-on-any-error.diff: reinitialize on any error
+    returned by libusb to correctly recover after suspend/resume. (LP: #1357556)
+  * /etc/init.d/g15daemon: overhaul.
+    - Replace /dev/input/uinput with /dev/uinput. (Closes: bug#687663).
+    - Use "udevadm settle" instead of polling /dev/uinput.
+    - Use log_*_msg functions instead of echo.
+    - Add dependency on $remote_fs.
+    - Remove bashism. (Closes: bug#772244)
+    - Return 0 exit code if the daemon fails to start.
+      (LP: #617101, LP: #1103275)
+    - Don't stop or restart on udev events, because g15daemon now properly
+      handles replugging.
+  * Remove build dependency on libusb.
+  * Remove dependency on libg15daemon-client1 for g15daemon.
+  * Add dependency on udev for g15daemon.
+  * Change priority of packages to optional.
+  * Add native systemd service. (LP: #1441365)
+  * /etc/default/g15daemon: remove SWITCH_KEY option to keep systemd service
+    file simple.
+  * Add subsystem check to udev matching rules.
+  * Multiarchify the library packages. (Closes: bug#812952)
+  * Do not install *.la files.
+  * Change package description. (Closes: bug#802652)
+
+  [ Andrej Shadura ]
+  * Wrap and sort.
+  * Use debhelper-compat instead of debian/compat.
+  * d/changelog: Remove trailing whitespaces.
+  * d/control: Add Vcs-* field.
+  * d/watch: Use https protocol.
+
+ -- Andrej Shadura <andrewsh@debian.org>  Sat, 19 Oct 2019 21:15:39 +0200
+
+g15daemon (1.9.5.3-8.3) unstable; urgency=medium
+
+  * Non-maintainer upload.
+  * debian/control: Drop unnecessary automake1.9 build deps. (Closes:
+    #724371)
+
+ -- Eric Dorland <eric@debian.org>  Tue, 04 Mar 2014 23:50:12 -0500
+
+g15daemon (1.9.5.3-8.2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Use ATTR instead of SYSFS in udev rules (closes: #573434).
+  * Remove references to other libraries from dependency_libs field
+    (closes: #629592).
+
+ -- Luk Claes <luk@debian.org>  Tue, 31 May 2011 07:33:52 +0200
+
+g15daemon (1.9.5.3-8.1) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Send a sync event after key up/down (closes: #567213).
+
+ -- Julien Cristau <jcristau@debian.org>  Sun, 25 Jul 2010 11:39:22 +0200
+
+g15daemon (1.9.5.3-8) unstable; urgency=low
+
+  * Put the third argument (modes) on open with O_CREAT (Closes: #559649)
+  * remove rpath
+
+ -- Giacomo Catenazzi <cate@debian.org>  Fri, 18 Dec 2009 07:52:26 +0100
+
+g15daemon (1.9.5.3-7) unstable; urgency=low
+
+  * Change priority of libg15daemon-client1 from extra to optional
+    (mumble package needs it)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 01 Sep 2009 19:50:38 +0200
+
+g15daemon (1.9.5.3-6) unstable; urgency=low
+
+  * Shared devices (lcd dispaly + audio) are not good handled
+    by udev script. Adding workaround until improving
+    programs to handle disconnections (Closes: #541780)
+  * Add debugging flag (and code) for init.d and udev scripts
+  * Change syslog facility: from user to daemon
+  * better (and more secure) screenshort creation in /tmp
+
+ -- Giacomo Catenazzi <cate@debian.org>  Wed, 19 Aug 2009 07:33:22 +0200
+
+g15daemon (1.9.5.3-5) unstable; urgency=low
+
+  * Handle keyboard device with udev, so detecting detachement
+    and attachment of keyboarda (Closes: #489978).
+  * init.d LSB header: try to start before xorg, to be able
+    to have full access to all extra keys.
+  * Recent libg15 corrected strange behaviour in new G15 keyboard
+    (Closes: #494180)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Thu, 13 Aug 2009 08:20:02 +0200
+
+g15daemon (1.9.5.3-4) unstable; urgency=low
+
+  * Try to load uinput module, in order to have Gx key working
+    (Closes: #475000).
+  * Usual updates
+
+ -- Giacomo Catenazzi <cate@debian.org>  Thu, 06 Aug 2009 08:32:33 +0200
+
+g15daemon (1.9.5.3-3) unstable; urgency=low
+
+  * Changing default in /etc/default/g15daemon: Use L1 key instead of MR
+    as actual upstream default and allowing to use g15macro
+    (Closes: #478069)
+  * Removed the X11 setup on man page, because it is not relevant
+    to recent distributions and could confuse our users (Closes: #463078)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Mon, 28 Apr 2008 08:47:07 +0200
+
+g15daemon (1.9.5.3-2) unstable; urgency=low
+
+  * Recommend xkb-data instead of keyboard-config. Adapted patch from
+    Amaya, thanks! (Closes: #474451).
+
+ -- Giacomo Catenazzi <cate@debian.org>  Mon, 07 Apr 2008 19:56:34 +0200
+
+g15daemon (1.9.5.3-1) unstable; urgency=low
+
+  * New upstream version
+
+ -- Giacomo Catenazzi <cate@debian.org>  Thu, 14 Feb 2008 08:08:03 +0100
+
+g15daemon (1.9.5.2-2) unstable; urgency=low
+
+  * Handle better errors in the init.d script (Closes: #463073)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 29 Jan 2008 20:15:35 +0100
+
+g15daemon (1.9.5.2-1) unstable; urgency=low
+
+  * New upstream version
+  * Change default behaviour: to switch client use MR (as already documented
+    in /etc/default/g15daemon, but wrongly implemented)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Mon, 28 Jan 2008 09:12:16 +0100
+
+g15daemon (1.9.1.0.svn346-1) unstable; urgency=low
+
+  * New upstream version (from svn)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 18 Dec 2007 09:15:42 +0100
+
+g15daemon (1.9.0-wip.20070910-5) unstable; urgency=low
+
+  * change priority to "extra"
+  * force libg15render-dev versioned dependencies
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 09 Oct 2007 13:28:56 +0200
+
+g15daemon (1.9.0-wip.20070910-4) unstable; urgency=low
+
+  * Correct building errors (closes: #441919, #442995)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 18 Sep 2007 20:29:54 +0200
+
+g15daemon (1.9.0-wip.20070910-3) unstable; urgency=low
+
+  * first try to make a debian/rules full working for
+    svn and released version
+  * fix directory fixes (closes: #442296)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Fri, 14 Sep 2007 20:59:27 +0200
+
+g15daemon (1.9.0-wip.20070910-2) unstable; urgency=low
+
+  * pause() instead of busy loop.
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 11 Sep 2007 06:12:01 +0200
+
+g15daemon (1.9.0-wip.20070910-1) unstable; urgency=low
+
+  * New upstream release (from svn)
+  * Don't install plugin in /usr/share (Closes: #441619)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Mon, 10 Sep 2007 23:02:14 +0200
+
+g15daemon (1.9.0-2) unstable; urgency=low
+
+  * Updates: better init.d scripts (with support for L1 key)
+  * install also the sample plugin (clock, net, uinput)
+
+ -- Giacomo Catenazzi <cate@debian.org>  Thu, 30 Aug 2007 23:31:18 +0200
+
+g15daemon (1.9.0-1) unstable; urgency=low
+
+  * New upstream release
+
+ -- Giacomo Catenazzi <cate@debian.org>  Tue, 28 Aug 2007 20:09:54 +0200
+
+g15daemon (1.2.7-1) unstable; urgency=low
+
+  * Initial release
+
+ -- Giacomo Catenazzi <cate@debian.org>  Mon, 27 Aug 2007 20:00:20 +0200
+

@@ -1,0 +1,8 @@
+g15daemon (1.9.5.3-3) unstable; urgency=low
+
+  * The default key to switch application is changes:
+    now we use L1 (round small key near the display, instead of MR key.
+    This will allow other application to use MR (i.e. g15macro).
+
+ -- Giacomo Catenazzi <cate@debian.org>  Mon, 28 Apr 2008 08:36:27 +0200
+

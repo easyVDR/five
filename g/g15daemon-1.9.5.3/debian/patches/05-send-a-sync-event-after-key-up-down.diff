@@ -1,0 +1,30 @@
+--- a/plugins/g15_plugin_uinput.c
++++ b/plugins/g15_plugin_uinput.c
+@@ -125,6 +125,13 @@
+     event.value = G15KEY_DOWN;
+     
+     write (uinp_fd, &event, sizeof(event));
++
++    memset(&event, 0, sizeof(event));
++
++    event.type = EV_SYN;
++    event.code = SYN_REPORT;
++
++    write (uinp_fd, &event, sizeof(event));
+ }
+ 
+ static void g15_uinput_keyup(unsigned char code)
+@@ -137,6 +144,13 @@
+     event.value = G15KEY_UP;
+     
+     write (uinp_fd, &event, sizeof(event));
++
++    memset(&event, 0, sizeof(event));
++
++    event.type = EV_SYN;
++    event.code = SYN_REPORT;
++
++    write (uinp_fd, &event, sizeof(event));
+ }
+ 
+     void (*keyup)(unsigned char code) = &g15_uinput_keyup;

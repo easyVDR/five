@@ -1,0 +1,11 @@
+--- a/g15daemon/main.c
++++ b/g15daemon/main.c
+@@ -456,7 +456,7 @@
+         struct passwd *nobody;
+         unsigned char location[1024];
+ 
+-        openlog("g15daemon", LOG_PID, LOG_USER);
++        openlog("g15daemon", LOG_PID, LOG_DAEMON);
+         if(strlen((char*)user)==0){
+             nobody = getpwnam("nobody");
+         }else {

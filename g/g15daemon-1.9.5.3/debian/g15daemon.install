@@ -1,0 +1,3 @@
+debian/tmp/usr/lib/*/g15daemon/*/plugins/*.so
+debian/tmp/usr/sbin/g15daemon
+debian/tmp/usr/share/g15daemon/splash/g15logo2.wbmp

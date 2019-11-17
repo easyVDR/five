@@ -1,0 +1,39 @@
+--- a/g15daemon/utility_funcs.c
++++ b/g15daemon/utility_funcs.c
+@@ -666,12 +666,24 @@
+ }
+ 
+ int uf_screendump_pbm(unsigned char *buffer,char *filename) {
++    int fd;
+     FILE *f;
+     int x,y;
+     #define WIDTH 40
+     g15canvas *canvas=g15daemon_xmalloc(sizeof(g15canvas));
+     memcpy(canvas->buffer,buffer,LCD_BUFSIZE);
+-    f = fopen(filename,"w+");
++    fd = open(filename, O_CREAT|O_EXCL|O_WRONLY, S_IRUSR|S_IWUSR|S_IRGRP|S_IROTH);
++    if(fd == -1) {
++       g15daemon_log(LOG_WARNING, "uf_screendump_pbm failed: open, %s.\n", strerror(errno));
++       return -1;
++    }
++    f = fdopen(fd,"w");
++    if(f==NULL) {
++       close(fd);
++        g15daemon_log(LOG_WARNING, "uf_screendump_pbm failed: fdopen, %s.\n", strerror(errno));
++        return -1;
++    }
++
+     fprintf(f,"P1\n160 43\n");
+     fprintf(f,"# G15 screendump - %s\n\n",filename);
+     for(y=0;y<43;y++)
+@@ -681,7 +693,9 @@
+               fprintf(f,"\n");
+         }
+ 
+-        fclose(f);
++    fclose(f);
++    fsync(fd);
++    close(fd);
+     free(canvas);
+     return 0;
+ }

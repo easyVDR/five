@@ -1,0 +1,3 @@
+- glcddrivers probably doesn't need freetype
+- libserdisp is linked dynamically at runtime, only when needed.
+  Maybe only suggest libserdisp or patch graphlcd to link it at compile time.

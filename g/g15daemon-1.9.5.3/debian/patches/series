@@ -1,0 +1,7 @@
+01-remove-x11-setup-from-man.diff
+02-better-screenshort-creation.diff
+03-change-syslog-facility.diff
+04-open-needs-mode.diff
+05-send-a-sync-event-after-key-up-down.diff
+06-fix-buffer-overflow.diff
+07-reinit-on-any-error.diff

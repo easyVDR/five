@@ -1,0 +1,9 @@
+# Defaults for g15daemon initscript
+
+# SWITCH_KEY option was removed. Use DAEMON_OPTS="-s" instead.
+
+# Turn on debugging of g15 init.d and udev scripts
+#G15DEBUG="on"
+
+# Additional options that are passed to the Daemon.
+DAEMON_OPTS=""

@@ -1,0 +1,19 @@
+# udev rule to start g15daemon when logitech g15 keyboards are attached
+#
+# Recognized devices from libg15-1.2.7/libg15.c
+#
+
+# Logitech g11 -- extra keys, no LCD
+SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c225", RUN+="/etc/init.d/g15daemon udev", TAG+="systemd",ENV{SYSTEMD_WANTS}+="g15daemon.service"
+
+# Logitech G15 (blue) -- extra keys and LCD
+SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c222", RUN+="/etc/init.d/g15daemon udev", TAG+="systemd", ENV{SYSTEMD_WANTS}+="g15daemon.service"
+
+# Logitech G15 v2 (orange) -- extra keys and LCD
+SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c227", RUN+="/etc/init.d/g15daemon udev", TAG+="systemd", ENV{SYSTEMD_WANTS}+="g15daemon.service"
+
+# Logitech Z10 -- extra keys and LCD
+SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="0a07", RUN+="/etc/init.d/g15daemon udev", TAG+="systemd", ENV{SYSTEMD_WANTS}+="g15daemon.service"
+
+# Logitech G15 Gamepanel -- extra keys and LCD
+SUBSYSTEM=="usb", ATTR{idVendor}=="046d", ATTR{idProduct}=="c251", RUN+="/etc/init.d/g15daemon udev", TAG+="systemd", ENV{SYSTEMD_WANTS}+="g15daemon.service"

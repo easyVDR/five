@@ -1,0 +1,62 @@
+Source: g15daemon
+Section: utils
+Priority: optional
+Maintainer: Alexander Ponyatykh <lazyranma@gmail.com>
+Uploaders:
+ Andrej Shadura <andrewsh@debian.org>
+Build-Depends:
+ debhelper-compat (= 12),
+ libfreetype-dev | libfreetype6-dev,
+ libg15-dev (>= 1.2.7-3),
+ libg15render-dev (>= 1.2.0.svn250-2),
+ libtool
+Standards-Version: 4.1.4
+Homepage: https://sourceforge.net/projects/g15daemon/
+Vcs-Browser: https://salsa.debian.org/debian/g15daemon
+Vcs-Git: https://salsa.debian.org/debian/g15daemon.git
+
+Package: g15daemon
+Section: utils
+Architecture: any
+Pre-Depends:
+ ${misc:Pre-Depends}
+Depends:
+ libg15-1 (>= 1.2.7-3),
+ lsb-base (>= 4.1+Debian3),
+ udev,
+ ${misc:Depends},
+ ${shlibs:Depends}
+Recommends:
+ xkb-data (>=0.9+cvs.20070428-1)
+Description: LCD multiplexer for Logitech G15 Keyboard
+ G15daemon provides multiple virtual screens for the LCD on the Logitech
+ G15 keyboard and Z10 speakers. It also allows the use of all additional
+ keys of G11 and G15 keyboards, even if the kernel does not support them.
+
+Package: libg15daemon-client-dev
+Section: libdevel
+Architecture: any
+Multi-Arch: same
+Depends:
+ libg15daemon-client1 (= ${binary:Version}),
+ ${misc:Depends}
+Description: Development files for libg15daemon-client
+ The g15daemon client library allows applications to use LCD of the Logitech G15
+ keyboard or Z10 speakers under control of g15daemon.
+ .
+ This package provides the development files and static libraries.
+
+Package: libg15daemon-client1
+Section: libs
+Architecture: any
+Multi-Arch: same
+Pre-Depends:
+ ${misc:Pre-Depends}
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends}
+Description: Client library for communicating with g15daemon
+ The g15daemon client library allows applications to use LCD of the Logitech G15
+ keyboard or Z10 speakers under control of g15daemon.
+ .
+ This package provides the runtime files.

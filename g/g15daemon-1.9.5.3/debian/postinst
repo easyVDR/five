@@ -1,0 +1,14 @@
+#!/bin/sh
+set -e
+
+#DEBHELPER#
+
+#g15daemon.service is normally pulled by udev events at boot time or after
+#plugging in a device, and deb-systemd-invoke refuses to start a static service,
+#so force it to start using invoke-rc.d
+
+if [ -d /run/systemd/system ] && [ -z "$2" ] && ( [ "$1" = "configure" ] \
+		|| [ "$1" = "abort-remove" ] ) ; then
+	invoke-rc.d g15daemon start >/dev/null || true
+fi
+
