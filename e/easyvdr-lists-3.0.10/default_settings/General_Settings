@@ -1,0 +1,22 @@
+#
+# Definition von Default-Plugins und Parametern, die bei allen Metapaketen zutreffend sind
+#
+#
+
+General_Default_Plugins="femon burn devstatus live text2skin streamdev-server systeminfo extrecmenu"
+#General_Default_Plugins=""
+
+unset General_Sysconfig_Params
+# Achtung, ohne = und ohne Anfuehrungszeichen um den Wert ...
+General_Sysconfig_Params[0]="VIDMODE 2"
+General_Sysconfig_Params[1]=""
+
+
+unset General_SetupConf_Params
+#General_SetupConf_Params[0]=""
+General_SetupConf_Params[0]="FontFix Courier:Bold"
+General_SetupConf_Params[1]="FontOsd VDRSymbols Sans:Book"
+General_SetupConf_Params[2]="FontSml VDRSymbols Sans:Bold"
+General_SetupConf_Params[3]="OSDLanguage de_DE"
+General_SetupConf_Params[4]="OSDMessageTime 5"
+General_SetupConf_Params[5]=""

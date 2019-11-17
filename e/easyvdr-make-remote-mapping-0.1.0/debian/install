@@ -1,0 +1,5 @@
+src/make_remote_mapping					usr/bin/
+scripts/easyvdr-make-remote-mapping			usr/share/easyvdr/setup/
+scripts/disable-poweroff-remote-conf			usr/share/easyvdr/setup/remote-mapping/
+scripts/enable-poweroff-program-changer			usr/share/easyvdr/setup/remote-mapping/
+scripts/restore-poweroff				usr/share/easyvdr/setup/remote-mapping/

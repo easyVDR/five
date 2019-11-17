@@ -1,0 +1,301 @@
+#!/bin/bash
+# 
+# Konfiguration der Fernbedienung  fuer easyVDR
+#
+#  michel8
+#  v.0.1
+#
+#  v1.5  04.01.13 Captain_Beefheart
+#  v2.0  29.01.13 testversion fuers FBI   C.B.
+#  v2.1  11.02.13  C.B.
+#  v2.2  14.05.15  michel8: keine FB als Auswahl
+#  v2.3  22.03.16  michel8: typo
+# ###########################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Fernbedienung "
+BACKTITLE=" Auswahl der Fernbedienung "
+
+LIRCD_CF_FLD_DIR="$CFG_DIR/remotes"
+LIRCCD_CONF="/etc/lirc/lircd.conf"
+REMOTE_CONF="$CFG_DIR/remote.conf"
+PATCH_FILE="/tmp/.s_xml_trip"
+SETUP_XML="$PLUGIN_CFG_DIR/setup/vdr-setup.xml"
+HELP1="$SETUP_HELP_DIR/fb_not_selected_help"
+
+
+
+############################### functions ##########################################
+
+
+#####
+Get_FB_Names()
+{
+ALL_DRIVERS=$(more $SETUP_STATUS | grep "all_remote_driver_configs" | cut -d: -f2)
+SEL_DRIVER=$LIRC_HW_CONF
+
+IFS_OLD=$IFS
+IFS=$'\n'                                   # internal field separator auf newline
+LIRCD_CF_FLD_ARRAY_ALL=( $(ls $LIRCD_CF_FLD_DIR ))  # Dir-List in Array
+
+i=0; j=0
+for LIRCD_CF_FLD in ${LIRCD_CF_FLD_ARRAY_ALL[@]}      ## Reduzierung der FB-Anzeige
+  do
+    FOUND_CONTROL=1
+    for LIRCD_CONF in $LIRCD_CF_FLD_DIR/$LIRCD_CF_FLD/*
+      do
+        IFS=$IFS_OLD
+        if (( $FOUND_CONTROL == 1 )); then
+          for R_DRIVER in $ALL_DRIVERS      ## fuer Anzeige im OSD
+            do
+              if [[ $LIRCD_CONF == "$LIRCD_CF_FLD_DIR/$LIRCD_CF_FLD/lircd.conf.$R_DRIVER" ]]; then
+                FOUND_LIRCD_CF_FLD_ARRAY[$i]=$LIRCD_CF_FLD
+                FOUND_CONTROL=0
+                ((++i))
+                break
+              fi
+            done
+        fi
+        if [[ $LIRCD_CONF == "$LIRCD_CF_FLD_DIR/$LIRCD_CF_FLD/lircd.conf.$SEL_DRIVER" ]]; then  ## für Anzeige in dialog
+          LIRCD_CF_FLD_ARRAY[$j]=$LIRCD_CF_FLD
+          ((++j))
+        fi
+        IFS=$'\n'
+      done
+  done
+IFS=$IFS_OLD
+}
+
+#####
+Ask_4_All()
+{
+[[ "$FORCE_FLAG" == "-f" ]] && TIME_OUT=1000 || TIME_OUT=$TIMEOUT2
+
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE" \
+       --cancel-label " alle anzeigen "\
+       --pause "\n\n\n\n\
+              Anzeige auf die, fuer ausgewaehlten Empfaenger \n\
+            vorkonfigurierten, Fernbedienungen einschraenken?" $DIA_BOX2_SIZE $TIME_OUT
+REDUCED=$?
+clear
+(($REDUCED == 1 )) && LIRCD_CF_FLD_ARRAY=(${LIRCD_CF_FLD_ARRAY_ALL[@]})
+}
+
+#####
+Build_Menu()
+{
+n=1
+FB_MENUITEMS="$n keine_neue_FB_auswaehlen/alte_FB_behalten"
+n=2
+for LIRCD_CF_FLD in ${LIRCD_CF_FLD_ARRAY[@]}
+  do
+    FB_MENUITEMS="$FB_MENUITEMS $n ${LIRCD_CF_FLD// /_}"   # Blanks durch underscore ersetzen
+    ((++n))
+  done
+}
+
+#####
+Make_OSD_Entry()
+{
+OSD_ENTRY1_REMOT="                    <entry name=\"Auswahl Fb-Sender: \" sysconfig=\"FB_CONTROLLER\" type=\"selection\" value=\"AAA-default_on-board\">"
+OSD_ENTRY3_REMOT="                        <value>kein FB Sender auswaehlbar</value>"
+OSD_ENTRY4_REMOT="                    </entry>"
+
+FBC_START_No=$(grep -n "<entry name=\"Auswahl Fb-Sender:" $SETUP_XML | cut -d: -f1)
+more +$FBC_START_No $SETUP_XML                                       > $PATCH_FILE.del
+if head -n1 $PATCH_FILE.del | grep -q "/>"
+  then
+    FBC_STOP_No=1
+  else
+    FBC_STOP_No=$(grep -n -m1 "</entry>" $PATCH_FILE.del | cut -d: -f1)
+fi
+echo "$(head -n$FBC_STOP_No $PATCH_FILE.del)"                        > $PATCH_FILE.del
+
+echo "$OSD_ENTRY1_REMOT"                                             > $PATCH_FILE.ins
+for FB_CONTROLLER in ${FOUND_LIRCD_CF_FLD_ARRAY[@]}
+  do
+    OSD_ENTRY2_REMOT="                        <value>$FB_CONTROLLER</value>"
+    echo "$OSD_ENTRY2_REMOT"                                        >> $PATCH_FILE.ins
+  done
+[ -z $OSD_ENTRY2_REMOT ] &&   echo "$OSD_ENTRY3_REMOT"              >> $PATCH_FILE.ins
+echo "$OSD_ENTRY4_REMOT"                                            >> $PATCH_FILE.ins
+
+tripatch -q  $PATCH_FILE.del $PATCH_FILE.ins $SETUP_XML
+rm -f $PATCH_FILE.*
+}
+
+##### Auswahl der Fernbedienung per menu
+#####
+FB_Menu()
+{
+NEW_LIRC_FLAG=0
+HELP_PRESSED="true"
+while [[ $HELP_PRESSED == "true" ]]
+  do
+    CHOOSEN_No=$(dialog \
+             --backtitle "$BACKTITLE" \
+             --title "$TITLE" \
+	     --cancel-label " Abbrechen " \
+             --extra-button\
+             --extra-label " Hilfe/Photo "\
+             --menu "\n\
+          Bitte eine Fernbedienung auswaehlen \n\
+          Steuerung mit       [  UP  ]  [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+          $FB_MENUITEMS 3>&1 1>&2 2>&3 3>&- )
+    OK_CANCEL=$?
+    clear
+
+    CH_INDEX=$(( $CHOOSEN_No - 2 ))
+    CHOICE=${LIRCD_CF_FLD_ARRAY[$CH_INDEX]}
+
+    HELP_PRESSED="false"
+    case $OK_CANCEL in
+      0) (( $CHOOSEN_No == 1 )) && No_New_Lirc || Install_Info ;;
+      1) CHOICE="canceled"  ;;
+      3) HELP_PRESSED="true"
+        (( $CHOOSEN_No == 1 )) && Show_Help "$HELP1" || Show_Extented_Help ;;
+    esac
+  done
+}
+
+#####
+Show_Extented_Help()
+{
+HELPMSG="$LIRCD_CF_FLD_DIR/$CHOICE/remote_controller.help"
+
+PICTURES=$( ls $LIRCD_CF_FLD_DIR/$CHOICE/*.jpg )
+
+REPEAT=0
+while (( $REPEAT == 0 ))
+  do
+    dialog --backtitle "$BACKTITLE"\
+        --title "$TITLE"\
+        --ok-label " Info "\
+        --cancel-label " Ende "\
+        --extra-button\
+        --extra-label " Photo "\
+        --yesno "\n\n\
+        Photo oder Info zur FB anzeigen." $DIA_BOX2_SIZE
+    OK_CANCEL=$?
+    clear
+
+    case $OK_CANCEL in
+      0) Show_Help  "$HELPMSG";   REPEAT=0  ;;
+      3) Show_Photo "$PICTURES";  REPEAT=0  ;;
+      *)                          REPEAT=1  ;;
+    esac
+done
+}
+
+#####
+No_New_Lirc()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --timeout $TIMEOUT\
+       --msgbox "\n\n\
+        Es wird keine neue Fernbedienung installiert:" $DIA_BOX2_SIZE
+clear
+NEW_LIRC_FLAG=1
+}
+
+#####
+Install_Info()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --timeout $TIMEOUT\
+       --msgbox "\n\n\
+          Installiert wird:\n\n\
+          No. $CHOOSEN_No --> $CHOICE" $DIA_BOX2_SIZE
+}
+
+### lircd.conf Installation
+Inst_Lircd_Conf()
+{
+SetSysconfig FB_CONTROLLER $CHOICE
+SetVDRSetupXML FB_CONTROLLER $CHOICE
+$VDR_LIBS/easyvdr-set-settings "fbcontrol"
+}
+
+#####
+Show_Help()
+{
+HELP=$1
+HELPFILE="$HELP" 
+dialog --textbox $HELPFILE   $DIA_BOX2_SIZE ; clear
+}
+
+#####
+Show_Photo()
+{
+CH_PICTURES=$1
+
+VT_KONSOLE=$(fgconsole)
+if [ ! -z "$CH_PICTURES" ]
+  then
+    Photo="$LIRCD_CF_FLD_DIR/$CHOICE/*.jpg"
+    fbi --noverbose -a -t 6 $Photo >/dev/null 2>&1 || Remo_Display
+    clear
+  else
+    INFO_TEXT=" kein Bild vorhanden "
+    MiniInfo " working " "$BACKTITLE" "\n\n\n $INFO_TEXT"; sleep 5
+fi
+}
+
+#####
+Remo_Display()
+{
+fbi --noverbose -T 5 -a -t 6 $Photo
+
+dialog --backtitle "$BACKTITLE"\
+       --title " $TITLE "\
+       --ok-label " Bildausgabe beenden "\
+       --msgbox "\n\n\
+                      Ausgabe eines FB-Photos\n\n\
+               Am dem am VDR angeschlossenen TV/Monitor\n\
+     erfolgt nun die Anzeige der ausgewaehlten Fernbedienung(en).\n\
+   Da Sie anscheinend nicht am VDR selber die Fernbedienungsauswahl.\n\
+       aufgerufen haben, muessen Sie diese auch hier beenden.\n\n\
+                     Beenden mit Return/Enter!" $DIA_BOX2_SIZE
+
+kill $(pidof fbi)
+}
+
+######################################### main ####################################################
+FORCE_FLAG=$1
+OK_CANCEL=0
+
+if [[ X"$FORCE_FLAG" != X"-f" ]]; then 
+    cp -af $CFG_DIR/remotes/.default.remote.conf $CFG_DIR/remote.conf >/dev/null 2>&1
+    ln -s  $CFG_DIR/remote.conf                  /etc/vdr/remote.conf >/dev/null 2>&1
+fi
+
+. $CFG_DIR/sysconfig
+Get_FB_Names
+if [ $FB_RECEIVER == "keinen_FB-Receiver_aktivieren" ]; then
+    Make_OSD_Entry
+    CHOOSEN_No="1"; CHOICE="__keine_Fernbedienung da kein FB-Receiver"
+    Install_Info
+    CHOICE="__keine_Fernbedienung"
+    Inst_Lircd_Conf
+    WriteStatus "easyvdr-config-remote-controller" "RemoteControl_configured"
+else
+    Ask_4_All
+    Build_Menu
+    Make_OSD_Entry
+    FB_Menu
+    if [[ $CHOICE != "canceled" ]]; then
+      (( $NEW_LIRC_FLAG == 0 )) && Inst_Lircd_Conf
+      WriteStatus "easyvdr-config-remote-controller" "RemoteControl_configured"
+    fi
+fi

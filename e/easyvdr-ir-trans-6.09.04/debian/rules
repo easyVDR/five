@@ -1,0 +1,24 @@
+#!/usr/bin/make -f
+# -*- makefile -*-
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+%:
+	dh $@
+
+override_dh_auto_build:
+ifeq ($(DEB_HOST_ARCH),amd64)
+	  $(MAKE) irserver64_noccf
+	  mv irserver64 irserver
+else
+	  $(MAKE) irserver_noccf
+endif
+
+clean: 
+	# Add here commands to clean up after the build process.
+	$(MAKE) clean
+	rm -f irserver
+	dh_clean 
+

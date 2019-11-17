@@ -1,0 +1,110 @@
+#!/bin/bash
+#
+set -e
+#############################################################################
+######################### Systemd ###########################################
+
+SERVICE[0]="/etc/systemd/easyvdr/easyvdr-systemstart.service"
+SERVICE[1]="/etc/systemd/easyvdr/easyvdr-alsa-restore.service"
+SERVICE[2]="/etc/systemd/easyvdr/easyvdr-cleanscreen.service"
+SERVICE[3]="/etc/systemd/easyvdr/easyvdr-create-ramdisk.service"
+SERVICE[4]="/etc/systemd/easyvdr/easyvdr-save-ramdisk.service"
+SERVICE[5]="/etc/systemd/easyvdr/easyvdr-program-changer.service"
+####### plymouth
+SERVICE[6]="/lib/systemd/system/plymouth-halt.service"
+SERVICE[7]="/lib/systemd/system/plymouth-read-write.service"
+SERVICE[8]="/lib/systemd/system/plymouth-kexec.service"
+SERVICE[9]="/lib/systemd/system/plymouth-reboot.service"
+SERVICE[10]="/lib/systemd/system/plymouth-log.service"
+SERVICE[11]="/lib/systemd/system/plymouth.service"
+SERVICE[12]="/lib/systemd/system/plymouth-poweroff.service"
+SERVICE[13]="/lib/systemd/system/plymouth-start.service"
+SERVICE[14]="/lib/systemd/system/plymouth-quit.service"
+SERVICE[15]="/lib/systemd/system/plymouth-switch-root.service"
+SERVICE[16]="/lib/systemd/system/plymouth-quit-wait.service"
+
+
+grep -q "ENABLED=\"yes\"" /etc/default/vdr && VDR_START_STAT=0 || VDR_START_STAT=1
+#Ist VDR Start aktiv?
+if [  $VDR_START_STAT -eq "1" ] ; then
+ ### lirc abschalten
+  STAT=$(systemctl is-active "lircd.socket") || true > /dev/null 2>&1
+  if [ $STAT != "inactive" ]; then
+    systemctl stop "lircd.socket" || true > /dev/null 2>&1
+  fi
+
+  STAT=$(systemctl is-active "lircd.service") || true > /dev/null 2>&1
+  if [ $STAT != "inactive" ]; then
+    systemctl stop "lircd.service" || true > /dev/null 2>&1
+  fi
+
+  STAT=$(systemctl is-active "lircd-setup.service") || true > /dev/null 2>&1
+  if [ $STAT != "inactive" ]; then
+    systemctl stop "lircd-setup.service" || true > /dev/null 2>&1
+  fi
+
+  for CHK_SERVICE in ${SERVICE[*]}
+  do
+   #Pfad vom Service Namen abschneiden
+   SERVICE_NAME=${CHK_SERVICE##*/}
+
+   if [ -f $CHK_SERVICE ]; then
+    STAT=$(systemctl is-active "$SERVICE_NAME") || true > /dev/null 2>&1
+    if [ $STAT != "inactive" ]; then
+     systemctl stop "$SERVICE_NAME" || true > /dev/null 2>&1
+    fi
+
+    if [ -f "$CHK_SERVICE" ] ;then
+     STAT=$(systemctl is-enabled "$SERVICE_NAME") > /dev/null 2>&1 || true 
+     if [ X$STAT == "Xenabled" ]; then
+      systemctl disable "$SERVICE_NAME" || true > /dev/null 2>&1
+     fi
+    fi
+   fi
+  done
+fi
+unset SERVICE
+#############################################################################
+
+if [ "$1" = "configure" ]
+  then
+    if test -d /target/etc
+      then
+        if [ ! -d /target/var/log/easyvdr ]; then
+            mkdir -p /target/var/log/easyvdr
+        fi
+      else
+        if [ ! -d /var/log/easyvdr ]; then
+            mkdir -p /var/log/easyvdr
+        fi
+    fi
+   if [ ! -e /etc/vdr/easyvdr/easyvdr-video-settings.conf  ]; then
+     cp /usr/share/easyvdr/setup/default_settings/easyvdr-video-settings.default /etc/vdr/easyvdr/easyvdr-video-settings.conf
+   fi
+
+   if [ ! -e /etc/ImageMagick/policy.xml.easy  ]; then
+     cp /etc/ImageMagick/policy.xml.easy /etc/ImageMagick/policy.xml
+   fi
+
+
+#Fix Permissions once 
+   if [  -d /var/www ]; then
+          chown -R vdr:vdr /var/www
+   fi
+   if [  -d /var/lib/vdr ]; then
+          chown -R vdr:vdr /var/lib/vdr
+   fi
+   if [  -d /etc/vdr ]; then
+          chown -R vdr:vdr /etc/vdr
+   fi
+   if [  -d /var/log/lighttpd/ ]; then
+          chown -R vdr:vdr /var/log/lighttpd/
+   fi
+   if [  -d /var/cache/vdr ]; then
+          chown -R vdr:vdr /var/cache/vdr
+   fi
+
+fi
+
+#DEBHELPER#
+

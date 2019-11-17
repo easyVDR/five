@@ -1,0 +1,912 @@
+#!/bin/bash
+#
+# easyVDR-toolmenu
+#
+#
+#  v1.0   21.10.11  Captain_Beefheart
+#  added 1st-start
+#  added setup-progress
+#  v1.1 added experimental/no shutdown  23.01.12 C.B.
+#  v1.2 added sleep 5 after vdr start   10.02.12 C.B.
+#  v1.3 adaption for lxde               31.03.12 C.B.
+#  v1.4 bugfixes & other stuff          14.04.12 C.B.
+#  v1.5 selectable size for textbox     02.12.12 C.B.
+#  v1.5.1 small fix                     24.12.12 C.B.
+#  v1.5.2 cleanup wg config-loader      13.01.13 C.B.
+#  v1.5.3 plugin resetter               30.01.13 michel8 & C.B.
+#  v1.5.4 recordfile parameter          02.02.13 C.B.
+#  v1.5.5                               11.02.13 C.B.
+#  v1.5.6 added restore lirc            19.08.13 C.B.
+#  v1.5.8 sleep on stop vdr             04.01.14 C.B.
+#  v1.5.9 pidof now quiet               23.06.15 michel8
+###########################################
+
+################################# defines/init######################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+
+
+TOOL_CONF="$HOME/.easyvdr-tools.conf"    # muss fuer "nicht root" beschreibbar sein
+TITLE=" Quickstart-Tools fuer easyVDR $EASYVDR_VERSION "
+BACKTITLE=" Toolmenu fuer easyVDR"
+TOOL_TERM_RC="/tmp/tool-term.rc"
+TOOL_TERM_MSG="$SETUP/toolmenu/tool-term.message"
+SU_TOOL_TERM_MSG="$SETUP/toolmenu/su-tool-term.message"
+PSW_STAT_1="false"
+PSW_STAT_2="true"
+PASSMENU_TXT_1=" Sie sind nicht als Administrator angemeldet. "
+PASSMENU_TXT_2=" !!Achtung Sie haben nun Administrator Rechte!! "
+PASSMENU_COLOR_1="\Z6"
+PASSMENU_COLOR_2=""
+EXTRA_TXT_1=" Admin werden "
+EXTRA_TXT_2=" nix Root "
+LOC_STAT="false"
+LOCATEMENU_COLOR="\Z6"
+LOCATE_DIR="/var/cache/locate"
+AUTO_MESS_DISPLAYED="false"
+FILE_2_SHOW="/tmp/toolm.tmp"
+
+
+############################### functions ##########################################
+
+#####
+Build_Conf()
+{
+[ -f $TOOL_CONF ]          || echo "#  Parameter file for easyvdr-tool  #" > $TOOL_CONF
+ . $TOOL_CONF
+[ -z "$DEF_VIEW" ]         && echo "DEF_VIEW=\"Diabox\""                  >> $TOOL_CONF
+[ -z "$DEF_EDIT" ]         && echo "DEF_EDIT=\"Nano\""                    >> $TOOL_CONF
+[ -z "$DEF_DIA_BOX_SIZE" ] && echo "DEF_DIA_BOX_SIZE=\"20 75\""           >> $TOOL_CONF
+[ -z "$DEF_TIMEOUT" ]      && echo "DEF_TIMEOUT=5"                        >> $TOOL_CONF
+ . $TOOL_CONF
+
+case $DEF_TIMEOUT in
+    1)  TIMEOUT=2   ;;
+    3)  TIMEOUT=3   ;;
+    5)  TIMEOUT=6   ;;
+   10)  TIMEOUT=11  ;;
+   15)  TIMEOUT=16  ;;
+   20)  TIMEOUT=21  ;;
+  999)  TIMEOUT=999 ;;
+    *)  TIMEOUT=6   ;;
+esac
+}
+
+#####
+Check_VDR-Stat()
+{
+(pidof vdr > /dev/null 2>&1) && VDR_RUNNING="true" || VDR_RUNNING="false"
+}
+
+#####
+Master_of_Desaster()
+{
+USER_ID=`id -u`
+if (( $USER_ID == 0 ))
+  then
+    ROOT_STAT=1
+    dialog --backtitle "$BACKTITLE"\
+           --no-cancel\
+           --pause " \n\n\n\
+                Bitte starten Sie easyVDR-Tool nicht \n\
+                   mit Administratorrechten! \n\n\
+              Spaeter koennen sie, falls benoetigt,\n\
+                    diese Rechte anfordern." $DIA_BOX2_SIZE $TIMEOUT
+    clear
+  else
+   ROOT_STAT=0
+fi
+return $ROOT_STAT
+}
+
+#####
+Menu()
+{
+PSW_STAT=$PSW_STAT_1
+PASSMENU_TXT=$PASSMENU_TXT_1
+PASSMENU_COLOR=$PASSMENU_COLOR_1
+EXTRA_TXT=$EXTRA_TXT_1
+OK_CANCEL=0
+while (( ! $OK_CANCEL ))
+do
+  Check_VDR-Stat
+  if [[ $VDR_RUNNING == "true" ]]
+    then
+      CH_RUN_VDR="Stop-VDR"; CH_RUN_VDR_TEXT="Den VDR anhalten"
+    else
+      CH_RUN_VDR="Start-VDR"; CH_RUN_VDR_TEXT="Den VDR starten"
+ fi
+  TOOL_MENUITEM=$(dialog \
+        --colors \
+        --backtitle "$BACKTITLE"\
+        --title "$PASSMENU_TXT"\
+        --cancel-label " Menue beenden "\
+        --extra-button\
+        --extra-label " $EXTRA_TXT "\
+        --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+           Help       " Standardpassworte etc."                          \
+         Showsys      " Konfigurationsdateien anzeigen"                  \
+      Filesearch      " Dateien suchen"                                  \
+        Terminal      " Terminal"                                        \
+   Einstellungen      " Tool-Parameter "                                 \
+      VDR-Setup       "$PASSMENU_COLOR Das easyVDR Setup "               \
+  Admin-Terminal      "$PASSMENU_COLOR Administrator Terminal"           \
+         Editsys      "$PASSMENU_COLOR Konfigurationsdateien editieren"  \
+     $CH_RUN_VDR      "$PASSMENU_COLOR $CH_RUN_VDR_TEXT"                 \
+          Reboot      "$PASSMENU_COLOR Das System neu starten"           \
+        Shutdown      "$PASSMENU_COLOR Das System runterfahren"          \
+   Reset-Plugins      "$PASSMENU_COLOR Nur default Plugins aktiv"        \
+ Ch-Record-Defs.      "$PASSMENU_COLOR Rechte & Groesse von Aufnahmen"   \
+ Ch-Media-Rights      "$PASSMENU_COLOR Rechte aendern"                   \
+    Restore-Lirc      "$PASSMENU_COLOR Ursprüngliche Lirc-Module nutzen" \
+   VDR-1st-Start      "$PASSMENU_COLOR Inst. neu starten"                \
+No_auto_shutdown      "$PASSMENU_COLOR Kein Shutdown trotz Inaktivitaet" \
+       Infotools      "$PASSMENU_COLOR Spezielle Sysinfos"               \
+    Experimental      "$PASSMENU_COLOR Kein Support - eigenes Risiko"    \
+            Moon      " Moon"                                            3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+
+  case $OK_CANCEL in
+    0) Run_Selected;;
+    1) Good_Bye;;
+    3) Run_Extra_But; OK_CANCEL=0;;
+  esac
+done
+}
+
+#####
+Run_Selected()
+{
+case $TOOL_MENUITEM in
+       VDR-Setup)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Setup           ;;
+            Help)  Run_Help            ;;
+         Showsys)  Run_Showsys         ;;
+      Filesearch)  Run_Filesearch      ;;
+        Terminal)  Run_Terminal        ;;
+  Admin-Terminal)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Su_Terminal     ;;
+         Editsys)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Editsys         ;;
+        Stop-VDR)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Stop_VDR        ;;
+       Start-VDR)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Start_VDR       ;;
+          Reboot)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Reboot          ;;
+        Shutdown)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Shutdown        ;;
+   Reset-Plugins)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Plugin_Resetter ;;
+ Ch-Record-Defs.)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Record_Para     ;;
+ Ch-Media-Rights)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Ch_Media_Rights ;;
+    Restore-Lirc)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Restore_Lirc    ;;
+   VDR-1st-Start)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_VDR-1st-Start   ;;
+No_auto_shutdown)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_No_Shutdown     ;;
+       Infotools)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Infotools       ;;
+    Experimental)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Run_Experimental    ;;
+            Moon)  moon-buggy      ;;
+   Einstellungen)  Run_Settings    ;;
+esac
+}
+
+#####
+Good_Bye()
+{
+dialog --backtitle "$BACKTITLE"\
+       --timeout $TIMEOUT \
+       --defaultno\
+       --yesno "\n\n\
+                           beenden? \n\n\n\
+                    ----    duck---- \n\n\
+                    ----  und wech ----." $DIA_BOX2_SIZE
+         YES_NO=$?
+clear
+if (( $YES_NO == 0 ))
+  then
+    if [[ $AUTO_START != "false" ]]; then
+      Set_Autostart
+    fi
+    OK_CANCEL=1
+  else
+    OK_CANCEL=0
+fi
+}
+
+#####
+Run_Extra_But()
+{
+OK_CANCEL2=0;
+if [[ $PSW_STAT != "true" ]]
+  then
+    while  (( $OK_CANCEL2 == 0 )) && [[ $PSW_STAT != "true" ]]
+      do
+        PASS_WORD=$(dialog --backtitle "$BACKTITLE"\
+                           --title "$TITLE" \
+                           --insecure \
+                           --passwordbox "\n\n\n\
+                       Bitte geben Sie nun \n\
+                     das \"Root\"-Passwort ein.\n\n\
+                     (ueblicherweise \"easyvdr\")"\
+                      $DIA_BOX2_SIZE  3>&1 1>&2 2>&3 3>&- )
+        OK_CANCEL2=$?
+        clear
+        if (( $OK_CANCEL2 == 0 )); then
+          MiniInfo " " "$BACKTITLE" "\n\n\n\Zb\Z1    checking password"
+          Su_Run_q touch /root/.toolmenu-test
+          if (( $? == 0 ))
+            then
+              Su_Run_q rm /root/.toolmenu-test
+              PSW_STAT=$PSW_STAT_2
+              PASSMENU_TXT=$PASSMENU_TXT_2
+              PASSMENU_COLOR=$PASSMENU_COLOR_2
+              EXTRA_TXT=$EXTRA_TXT_2
+            else
+              Wrong_Password
+          fi
+        fi  
+    done
+  else
+    PSW_STAT=$PSW_STAT_1
+    PASSMENU_TXT=$PASSMENU_TXT_1
+    PASSMENU_COLOR=$PASSMENU_COLOR_1
+    EXTRA_TXT=$EXTRA_TXT_1
+    PASS_WORD=" "
+fi
+}
+
+#####
+No_Root_Message()
+{
+dialog --backtitle "$BACKTITLE"\
+       --no-cancel\
+       --pause "\
+     Sie haben keine Adminrechte.\n\
+   Bitte erst das Passwort eingeben\n\
+          und dann nochmal." $DIA_BOX3_SIZE $TIMEOUT
+clear
+}
+
+#####
+No_DB_Message()
+{
+dialog --backtitle "$BACKTITLE"\
+       --no-cancel\
+       --pause "\
+      Keine Datenbank gefunden.\n\
+   --bitte mit Update_DB erzeugen--\n\
+           und nochmal." $DIA_BOX3_SIZE $TIMEOUT
+clear
+}
+
+#####
+Wrong_Password()
+{
+dialog --backtitle "$BACKTITLE"\
+       --no-cancel\
+       --pause "\
+           Falsches Passwort!\n\
+       --ersmal richtig tippen--- \n\
+         ...und nochmal." $DIA_BOX3_SIZE $TIMEOUT
+clear
+}
+
+#####
+Input_Box()
+{
+MISSING_INPUT=0
+while (( $MISSING_INPUT == 0 ))
+  do
+  REC_INPUT=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$TITLE"\
+          --inputbox "\n\n "Text" \
+        Zum Auswaehlen    [   tab   ] \n\
+        Zum Bestaetigen   <   OK   > \n\
+        Zum Verlassen     <  Cancel >\n\n "  $DIA_BOX2_SIZE 3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+
+  if [[ (! "$REC_INPUT") && ($OK_CANCEL != 1) ]]
+    then
+      $DIALOG --title " Error:  fehlende Eingabe "\
+              --backtitle "$BACKTITLE"\
+              --no-cancel\
+              --pause "\n\n\
+           !! ERROR !! - fehlende Eingabe!" $DIA_BOX2_SIZE $TIMEOUT
+      MISSING_INPUT=0
+  else 
+      MISSING_INPUT=1
+  fi
+done
+}
+
+
+################################## main runs #######################################
+################################## +++++++++ #######################################
+#####
+Run_Help()
+{
+cp /etc/motd  $FILE_2_SHOW
+Show_File; rm $FILE_2_SHOW
+OK_CANCEL=0
+}
+
+#####
+Run_Setup()
+{
+Su_Run_l clear
+sudo $SETUP/easyvdr-setup -f
+OK_CANCEL=0
+}
+
+#####
+Run_Setup_P()
+{
+Su_Run_l clear
+sudo $SETUP/easyvdr-setup -progress
+OK_CANCEL=0
+}
+
+#####
+Run_Terminal()
+{
+cd 
+cp -af .bashrc $TOOL_TERM_RC
+sed -i '/easyvdr-toolmenu/d' $TOOL_TERM_RC
+sed -i 's/#force_color_prompt/force_color_prompt/' $TOOL_TERM_RC
+cat $TOOL_TERM_MSG >> $TOOL_TERM_RC
+bash --rcfile $TOOL_TERM_RC
+OK_CANCEL=0
+}
+
+#####
+Run_Su_Terminal()
+{
+cd
+cp -af .bashrc $TOOL_TERM_RC
+sed -i '/easyvdr-toolmenu/d' $TOOL_TERM_RC
+sed -i 's/#force_color_prompt/force_color_prompt/' $TOOL_TERM_RC
+cat $SU_TOOL_TERM_MSG >> $TOOL_TERM_RC
+Su_Run_l clear
+sudo bash --rcfile $TOOL_TERM_RC
+OK_CANCEL=0
+}
+
+#####
+Run_Showsys()
+{
+SEL_SYSFILE=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title "$TITLE"\
+        --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+          sysconfig          " Die easyVDR sysconfig"       \
+          setup.conf         " Die VDR setup.conf"          \
+          dmesg              " Ausgabe von dmesg"           \
+          easyvdr-version    " Anzeige der easyVDR Version" \
+          hwinfo             " Hardwareinfos"               \
+          syslog             " System logs"                 \
+          setup.state        " Status des Setups"           \
+          Tool-Menue         " Einstellungen dieses Menues" \
+          3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+if (( ! $OK_CANCEL )); then
+    case $SEL_SYSFILE in
+          sysconfig) cp $CFG_DIR/sysconfig                 $FILE_2_SHOW;;
+         setup.conf) cp $CFG_DIR/setup.conf                $FILE_2_SHOW;;
+    easyvdr-version) cp /usr/share/easyvdr/easyvdr-version $FILE_2_SHOW;;
+        setup.state) cp $SETUP_STATUS                      $FILE_2_SHOW;;
+             syslog) cp /var/log/syslog                    $FILE_2_SHOW;;
+         Tool-Menue) cp $TOOL_CONF                         $FILE_2_SHOW;;
+              dmesg) dmesg          >                      $FILE_2_SHOW;;
+             hwinfo) hwinfo --short >                      $FILE_2_SHOW;;
+  esac
+  Show_File; rm $FILE_2_SHOW
+fi
+OK_CANCEL=0
+}
+
+#####
+Run_Editsys()
+{
+if [[ $VDR_RUNNING == "true" ]]
+  then
+    VDR_Running_Error
+  else
+    SEL_SYSFILE=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title "$TITLE"\
+        --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+          sysconfig          " sysconf text"            \
+          setup.conf         " setup text "             \
+          3>&1 1>&2 2>&3 3>&- )
+      OK_CANCEL=$?
+      clear
+    if (( ! $OK_CANCEL )); then
+      case $SEL_SYSFILE in
+          sysconfig) FILE_2_EDIT="$CFG_DIR/sysconfig"  ;;
+         setup.conf) FILE_2_EDIT="$CFG_DIR/setup.conf" ;;
+      esac
+      Edit_File
+  fi
+fi
+OK_CANCEL=0
+}
+
+#####
+Run_Filesearch()
+{
+OK_CANCEL=0
+while (( $OK_CANCEL == 0 ))
+  do
+    if [[ -d $LOCATE_DIR ]]; then
+      LOCATEMENU_COLOR=""
+      LOC_STAT="true"
+    fi
+
+    SEL_FINDER=$(dialog \
+          --colors \
+          --backtitle "$BACKTITLE"\
+          --title " Dateisuche "\
+          --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+      Update_DB      "$PASSMENU_COLOR Datenbank fuer \"locate\" anlegen/aktualisieren." \
+         Locate      "$LOCATEMENU_COLOR Dateisuche mit \"locate\""                      \
+           Find      "$PASSMENU_COLOR Dateisuche mit \"find\""                  3>&1 1>&2 2>&3 3>&- )
+    OK_CANCEL=$?
+    clear
+
+    DO_SEARCH="false"
+    if (( $OK_CANCEL == 0  )); then
+      case $SEL_FINDER in
+         Update_DB)  [[ $PSW_STAT != "true" ]] && No_Root_Message || Su_Run_q updatedb ;;
+            Locate)  [[ $LOC_STAT != "true" ]] && No_DB_Message   || DO_SEARCH="true"  ;;
+              Find)  [[ $PSW_STAT != "true" ]] && No_Root_Message || DO_SEARCH="true"  ;;
+      esac
+    fi
+
+    if [[ $DO_SEARCH == "true" ]]; then
+      Input_Box
+      if (( $OK_CANCEL == 0 )); then
+        case $SEL_FINDER in
+          Locate)  locate $REC_INPUT              > $FILE_2_SHOW ;;
+            Find)  Su_Run find / -name $REC_INPUT > $FILE_2_SHOW ;;
+        esac
+        Show_File; rm $FILE_2_SHOW
+      fi
+    fi
+  done
+OK_CANCEL=0
+}
+
+#####
+Run_Stop_VDR()
+{
+COUNTD_MESS1="Der VDR"
+COUNTD_MESS2="gestoppt"
+Show_Countdown
+MiniInfo " " "$BACKTITLE" "\n\n\n\Zb\Z1   VDR wird gestoppt"
+Su_Run_q easyvdr-frontend stop
+sleep 1
+Su_Run_q easyvdr-vdr stop
+
+count=0
+while (pidof vdr > /dev/null 2>&1)
+ do
+  sleep 0.2
+  ((count++))
+  (( $count > 25 )) && break 
+ done 
+sleep 2
+OK_CANCEL=0
+}
+
+#####
+Run_Start_VDR()
+{
+Su_Run_l clear
+sudo $SETUP/toolmenu/tool-vdr-start
+OK_CANCEL=0
+}
+
+#####
+Run_Reboot()
+{
+COUNTD_MESS1="Das System"
+COUNTD_MESS2="neu gestartet" 
+Show_Countdown
+Su_Run_q reboot
+}
+
+#####
+Run_Shutdown()
+{
+COUNTD_MESS1="Das Sytem"
+COUNTD_MESS2="heruntergefahren"
+Show_Countdown
+Su_Run_q shutdown -h now 
+}
+
+#####
+Run_Ch_Media_Rights()
+{
+Su_Run $SETUP/toolmenu/easyvdr-change-rights
+}
+
+#####
+Run_VDR-1st-Start()
+{
+Su_Run $SETUP/easyvdr-1st-start
+}
+
+#####
+Run_Settings()
+{
+Set_Autostart2
+Set_Editor
+Set_Viewer
+Set_Timeout
+ . $TOOL_CONF              # neu einlesen
+TIMEOUT=$DEF_TIMEOUT       # und uebernehmen
+OK_CANCEL=0
+}
+
+#####
+Run_No_Shutdown()
+{
+[[ $VDR_RUNNING == "true" ]] && VDR_Running_Error || Su_Run $SETUP/toolmenu/no_auto_shutdown
+}
+
+#####
+Run_Infotools()
+{
+Su_Run $SETUP/toolmenu/easyvdr-infotools
+}
+
+#####
+Run_Experimental()
+{
+Su_Run $SETUP/toolmenu/easyvdr-experimental
+}
+
+#####
+Run_Plugin_Resetter()
+{
+[[ $VDR_RUNNING == "true" ]] && VDR_Running_Error || Su_Run $SETUP/toolmenu/plugin_resetter
+}
+
+#####
+Run_Record_Para()
+{
+[[ $VDR_RUNNING == "true" ]] && VDR_Running_Error || Su_Run $SETUP/toolmenu/set_record_parameter
+}
+
+#####
+Run_Restore_Lirc()
+{
+[[ $VDR_RUNNING == "true" ]] && VDR_Running_Error || Su_Run $SETUP/toolmenu/restore_lirc
+}
+
+
+################################## --------- ######################################
+################################## main runs #######################################
+
+#####
+Su_Run()
+{
+echo $PASS_WORD | sudo -k -S "$@"
+}
+
+#####
+Su_Run_q()
+{
+echo $PASS_WORD | sudo -k -S "$@" > /dev/null 2>&1
+}
+
+#####
+Su_Run_l()
+{
+echo $PASS_WORD | sudo -S "$@" 
+}
+
+#####
+Set_Autostart()
+{
+if [[ $AUTO_MESS_DISPLAYED != "true" ]]; then
+  dialog --backtitle "$BACKTITLE"\
+         --title "$TITLE"\
+         --colors \
+         --no-label " Noauto "\
+         --yes-label " Auto "\
+         --yesno "\n\n\
+                       Autostart Toolmenue? \n\n\
+        Wenn Sie dieses Menue beim naechsten Einloggen\n\
+     auf der Konsole nicht mehr angezeigt bekommen wollen\n\
+                 so waehlen Sie bitte \Zb\Z1< Noauto >\Zn.\n\
+   Um die automatische Anzeige beizubehalten waehlen Sie \Zb\Z1< Auto >\Zn.\n\n\
+        Sie koennen spaeter ueber den Menuepunkt \"Einstellungen\"\n\
+                 dieses Verhalten jederzeit aendern\
+                          " $DIA_BOX2_SIZE
+  YES_NO=$?
+  clear
+
+  case $YES_NO in
+    0) if (! grep -q "easyvdr-toolmenu" /home/easyvdr/.bash_profile); then
+         echo "$SETUP/toolmenu/easyvdr-toolmenu" >> /home/easyvdr/.bash_profile
+       fi;;
+    1) sed -i '/easyvdr-toolmenu/d' /home/easyvdr/..bash_profile;;
+  esac
+  echo "AUTO_MESS_DISPLAYED=\"true\"" >> $TOOL_CONF
+fi
+}
+
+#####
+Set_Autostart2()
+{
+  dialog --backtitle "$BACKTITLE"\
+         --title "$TITLE"\
+         --colors \
+         --no-label " Noauto "\
+         --yes-label " Auto "\
+         --yesno "\n\n\
+                       Autostart Toolmenue? \n\n\
+        Wenn Sie dieses Menue beim naechsten Einloggen\n\
+     auf der Konsole nicht mehr angezeigt bekommen wollen\n\
+                 so waehlen Sie bitte \Zb\Z1< Noauto >\Zn.\n\
+           Fuer die automatische Anzeige waehlen Sie \Zb\Z1< Auto >\Zn.\n\n\
+                          " $DIA_BOX2_SIZE
+  YES_NO=$?
+  clear
+
+  case $YES_NO in
+    0) if (! grep -q "easyvdr-toolmenu" /home/easyvdr/.bash_profile); then
+         echo "$SETUP/toolmenu/easyvdr-toolmenu" >> /home/easyvdr/.bash_profile
+       fi;;
+    1) sed -i '/easyvdr-toolmenu/d' /home/easyvdr/.bash_profile;;
+  esac
+}
+
+#####
+Set_Editor()
+{
+SEL_EDITOR=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title "$TITLE"\
+        --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+          Mcedit     " Editor des Midnight Commander"      \
+          Nano       " nano - Editor"                      \
+          Vi         " vim - Editor "                      3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+if (( ! $OK_CANCEL )); then
+  sed -i '/DEF_EDIT"*/d' $TOOL_CONF
+  echo "DEF_EDIT=\"$SEL_EDITOR\"" >> $TOOL_CONF
+fi
+}
+
+#####
+Set_Viewer()
+{
+SEL_VIEWER=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title "$TITLE"\
+        --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > " $DIA_BOX_SIZE\
+          Diabox     "Anzeige in Dialogbox"              \
+          Less       "Anzeige per \"less\" "             \
+          Nano       "Anzeige mit \"nano \" -read only " 3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+if (( ! $OK_CANCEL )); then
+  [[ "$SEL_VIEWER"=="Diabox" ]] && Select_Show_Size
+  sed -i '/DEF_VIEW"*/d' $TOOL_CONF
+  echo "DEF_VIEW=\"$SEL_VIEWER\"" >> $TOOL_CONF
+fi
+}
+
+#####
+Select_Show_Size()
+{
+REPEAT=0
+while (( ! $REPEAT ))
+do
+   . $TOOL_CONF
+  SWITCH1="off"; SWITCH2="off"; SWITCH3="off"; SWITCH4="off"; SWITCH5="off"
+  case $DEF_DIA_BOX_SIZE in
+       "20 75") SWITCH1="on" ;;
+       "25 95") SWITCH2="on" ;;
+      "30 110") SWITCH3="on" ;;
+      "35 130") SWITCH4="on" ;;
+      "40 150") SWITCH5="on" ;;
+  esac
+
+  SEL_SIZE=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title "Groesse des der Dateianzeigebox"\
+        --extra-button\
+        --extra-label "Test"\
+        --radiolist "\n\
+          Die bisherige Groesse\n\
+          ist bereits ausgewaehlt.\n\
+          Auswaehlen mit      [ space ] \n\
+          Voransicht mit      < Test > " $DIA_BOX_SIZE\
+          klein        .     "$SWITCH1"  \
+          mittelklein  .     "$SWITCH2"  \
+          mittel       .     "$SWITCH3"  \
+          mittelgroß   .     "$SWITCH4"  \
+          groß         .     "$SWITCH5"  3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+
+  case $SEL_SIZE in
+           klein) SEL_SIZE_DATA="20 75"  ;;
+     mittelklein) SEL_SIZE_DATA="25 95"  ;;
+          mittel) SEL_SIZE_DATA="30 110" ;;
+      mittelgroß) SEL_SIZE_DATA="35 130" ;;
+            groß) SEL_SIZE_DATA="40 150" ;;
+  esac
+
+  case $OK_CANCEL in
+   0) sed -i '/DEF_DIA_BOX_SIZE"*/d' $TOOL_CONF
+      echo "DEF_DIA_BOX_SIZE=\"$SEL_SIZE_DATA\"" >> $TOOL_CONF
+      REPEAT=1 ;;
+   1) REPEAT=1 ;;
+   3) REPEAT=0
+      dialog --backtitle "$BACKTITLE"\
+             --nocancel\
+             --colors\
+             --pause " \n\n\n\
+                                       Test mit\n\
+                                     \Zb\Z1 $SEL_SIZE \Zn\n\
+                       dh. [ Hoehe Breite ] - [ $SEL_SIZE_DATA ] Zeichen " $SEL_SIZE_DATA $TIMEOUT
+      clear ;;
+  esac
+
+done
+}
+
+#####
+Show_File()
+{
+case $DEF_VIEW in
+   Diabox) dialog --textbox $FILE_2_SHOW $DEF_DIA_BOX_SIZE ; clear ;;
+     Less) less             $FILE_2_SHOW ;;
+     Nano) nano -v          $FILE_2_SHOW ;;
+        *) Not_Configured                ;;
+esac
+}
+
+#####
+Edit_File()
+{
+case $DEF_EDIT in
+   Mcedit) Su_Run  mcedit            $FILE_2_EDIT ;;
+     Nano) Su_Run_l clear; sudo nano $FILE_2_EDIT ;;
+       Vi) Su_Run  vi                $FILE_2_EDIT ;;
+        *) Not_Configured                         ;;
+esac
+}
+
+#####
+Set_Timeout()
+{
+SEL_TIME=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title " Anzeigedauer bei Timeout "\
+        --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+          5          "5 Sekunden (default)"  \
+          1          "sofort"                \
+          3          "3 Sekunden"            \
+          10         "10 Sekunden"           \
+          15         "15 Sekunden"           \
+          20         "20 Sekunden"           \
+          999        "fast endlos ;-)"    3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+if (( ! $OK_CANCEL )); then
+  SEL_TIME=$(($SEL_TIME ))
+  sed -i '/DEF_TIMEOUT"*/d' $TOOL_CONF
+  echo "DEF_TIMEOUT=$SEL_TIME"  >> $TOOL_CONF
+fi
+}
+
+#####
+VDR_Running_Error()
+{
+dialog --backtitle "$BACKTITLE"\
+       --no-cancel\
+       --pause " \n\n\
+                        Bitte stoppen Sie den VDR \n\
+                 bevor Sie Konfigurationsdateien editieren.\n\n\
+                    Ihre Einstellugen wuerden sonst nicht\n\
+                            uebernommen werden."   $DIA_BOX2_SIZE $TIMEOUT
+clear
+}
+
+#####
+Not_Configured()
+{
+dialog --backtitle "$BACKTITLE"\
+       --no-cancel\
+       --pause " \n\n\
+                            Die Textausgabe\n\
+                       ist noch nicht konfiguriert. \n\n\
+                    Waehlen Sie die Darstellung ueber \n\
+                      den Menupunkt \"Einstellungen\"."   $DIA_BOX2_SIZE $TIMEOUT
+clear
+}
+
+#####
+Show_Countdown()
+{
+  {
+  i=100
+  while (( $i>0 ))
+    do
+      echo $i; sleep 0.05; i=$(( $i -1 ))
+    done
+  echo 0;
+  } | dialog --backtitle " $BACKTITLE" \
+             --gauge "    $COUNTD_MESS1 wird in 5 Sekunden\n    $COUNTD_MESS2" $DIA_BOX_SIZE
+clear
+OK_CANCEL=1
+}
+
+####
+Run_Progress_Setup()
+{
+PSW_STAT="false"
+while  [[ $PSW_STAT != "true" ]]
+  do
+    PASS_WORD=$(dialog --backtitle "$BACKTITLE"\
+                       --title "$TITLE" \
+                       --insecure \
+                       --nocancel \
+                       --passwordbox "\n\n\n\
+                 Zum Forfuehren des Setup geben Sie nun \n\
+                     das \"Root\"-Passwort ein.\n\n\
+                     (ueblicherweise \"easyvdr\")"\
+                      $DIA_BOX2_SIZE  3>&1 1>&2 2>&3 3>&- )
+    clear
+      MiniInfo " " "$BACKTITLE" "\n\n\n\Zb\Z1    checking password"
+      Su_Run_q touch /root/.toolmenu-test
+      if (( $? == 0 ))
+        then
+          Su_Run_q rm /root/.toolmenu-test
+          PSW_STAT="true"
+        else
+          Wrong_Password
+      fi
+done
+
+[[ $PSW_STAT == "true" ]] && Run_Setup_P
+}
+
+######################################### main ####################################################
+
+if [[ $Setup_main_finished == "true"  ]]
+  then
+    Build_Conf
+    Master_of_Desaster                    # Check auf Admin-Rechte
+    (( $? == 0 )) && Menu
+  else
+    Run_Progress_Setup
+fi
+

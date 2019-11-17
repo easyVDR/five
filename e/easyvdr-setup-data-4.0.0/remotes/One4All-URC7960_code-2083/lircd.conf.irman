@@ -1,0 +1,122 @@
+# lircd.conf - Configuration for Atric IR-Wakeup-USB
+#
+# brand:          unknown
+# model:          O4A-URC7960-2083
+# receiver:	  IR-WakeupUSB
+#
+#----------------------------------------------------------------------------
+# ATTENTION! Do NOT use "irrecord" to automaticly learn key-codes
+# This will generate wrong remote settings with the IR-WakeupUSB!
+#
+# Manually fill in key-names and key-codes in the "codes section" or
+# use the "lircd.conf"-tool of the IR-WakeupUSB configuration software
+#
+#----------------------------------------------------------------------------
+# Do NOT change the following remote settings
+# These settings depends on the IR-WakeupUSB and are independent from
+# the used remote control.
+#
+# You can change the name of the remote control to assign the file to the
+# remote control.
+# You can also add your own remarks (use the remark tag "#").
+#
+# Settings for Atric-USB Autoconfiguration in easyvdr:
+#
+#	Atric_FB_Name_Str="O4A-URC7960-2083"
+#	Atric_FB_Conf_Str="0306263E13000F0502030A0A14140000000000000000000000007F00000000000006240000740F800000"
+#	Atric_FB_Pwr_On_0="87E80C740F80"
+#	                   | ||||||||||
+#	                   | ||FB-Commmando (max 6 Bytes)
+#	                   | ||
+#	                   | Schalt-Funktion(2. Byte) hier Ein & Aus je mit LED-grün
+#                          |
+#                          Wert/2=Anzahl der FB-Codebytes für Power (hier 4 Byte: 0x0C740F80)
+#----------------------------------------------------------------------------
+
+begin remote
+
+  name            O4A-URC7960-2083
+  bits            48
+  flags           SPACE_ENC
+  eps             30
+  aeps            100
+  one             0  0
+  zero            0  0
+  pre_data_bits   16
+  pre_data        0xFFFF
+  post_data_bits  0
+  post_data       0x0
+  gap             65536
+  repeat_bit      0
+  toggle_bit_mask 0x0
+
+
+#----------------------------------------------------------------------------
+# Here (after the "begin codes" tag) fill in the keycodes (one key per row)
+# Use the following syntax:
+#
+# KEY_1    0x03B800000000	# remark (optional)
+#
+# Description:	KEY_1:  the name of the remote button
+#			for a full list of available key names use the
+#			following command: "irrecord --list-namespace"
+#
+#       0x3B800000000:  IR-code of the remote button (48-bit hexcode)
+#
+#	     # remark:  optional remark for teh named key
+#			this remark will be showed in the "lircd.conf"-tool
+#			of the configuration software
+#
+#----------------------------------------------------------------------------
+
+
+  begin codes
+
+    KEY_SCREEN               0x28740F800000
+    KEY_POWER                0x0C740F800000
+    KEY_PREV                 0x1B740F800000
+    KEY_STOP                 0x19740F800000
+    KEY_NEXT                 0x1A740F800000
+    KEY_REWIND               0x15740F800000
+    KEY_PLAY                 0x16740F800000
+    KEY_FORWARD              0x14740F800000
+    KEY_LIST                 0x51740F800000
+    KEY_PAUSE                0x18740F800000
+    KEY_RECORD               0x17740F800000
+    KEY_VOLUMEUP             0x10740F800000
+    KEY_MUTE                 0x0E740F800000
+    KEY_VOLUMEDOWN           0x11740F800000
+    KEY_CHANNELUP            0x6C740F800000
+    KEY_CHANNEL              0x1C740F800000
+    KEY_CHANNELDOWN          0x6D740F800000
+    KEY_UP                   0x1E740F800000
+    KEY_DOWN                 0x1F740F800000
+    KEY_LEFT                 0x20740F800000
+    KEY_RIGHT                0x21740F800000
+    KEY_OK                   0x22740F800000
+    KEY_RED                  0x25740F800000
+    KEY_GREEN                0x66740F800000
+    KEY_YELLOW               0x26740F800000
+    KEY_BLUE                 0x68740F800000
+    KEY_INFO                 0x0F740F800000
+    KEY_MENU                 0x24740F800000
+    KEY_EPG                  0xD6740F800000
+    KEY_MEDIA                0x0D740F800000
+    KEY_X                    0x64740F800000
+    KEY_BACK                 0x23740F800000
+    KEY_1                    0x01740F800000
+    KEY_2                    0x02740F800000
+    KEY_3                    0x03740F800000
+    KEY_4                    0x04740F800000
+    KEY_5                    0x05740F800000
+    KEY_6                    0x06740F800000
+    KEY_7                    0x07740F800000
+    KEY_8                    0x08740F800000
+    KEY_9                    0x09740F800000
+    KEY_TV                   0x1D740F800000
+    KEY_0                    0x00740F800000
+    KEY_CLEAR                0x37740F800000
+  end codes
+
+end remote
+

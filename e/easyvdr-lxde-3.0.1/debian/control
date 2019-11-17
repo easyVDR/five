@@ -1,0 +1,14 @@
+Source: easyvdr-lxde
+Section: misc
+Priority: optional
+Maintainer: Martin <dev@easy-vdr.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+
+
+Package: easyvdr-lxde
+Architecture: any
+Depends: ${misc:Depends}, gnome-commander, vlc, lxterminal, lxappearance, scrot
+Pre-Depends: lxde-core
+Description: LXDE packages for easyVDR
+  Metapackage easyvdr-lxde for easyVDR

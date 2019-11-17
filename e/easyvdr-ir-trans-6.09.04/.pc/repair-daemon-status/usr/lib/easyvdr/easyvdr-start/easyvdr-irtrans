@@ -1,0 +1,65 @@
+#!/bin/bash
+#V 0.1  Bleifuss & gb
+
+. /usr/lib/vdr/easyvdr-config-loader
+
+LOGGER="logger -t easyvdr-irtrans"
+LIRCD_PATH=/var/run/lirc
+TTYUSB_DEV="/dev/ttyUSB99"
+
+[ -f /usr/bin/irserver  ]                                      || { exit 0; }
+[ -f $CFG_DIR/sysconfig             ] && . $CFG_DIR/sysconfig     || { exit 0; }
+[ x"$LIRC_HW_CONF" = x"irtrans_server"   ]                             || { exit 0; }
+[ ! -d $LIRCD_PATH                ] &&  mkdir -p $LIRCD_PATH
+$LOGGER "Starting  irtrans"
+
+EXEC_CMD="/usr/bin/irserver $TTYUSB_DEV"
+
+kill_daemon ()
+{
+ PID=$(pidof -x $1)
+
+ if [ $? -eq 0 ] ;then
+   kill $PID
+ fi
+}
+
+
+case "$1" in
+        start)
+		$EXEC_CMD & 
+            ;;
+         
+        stop)
+		kill_daemon $EXEC_CMD
+            ;;
+         
+        status)
+		PID=$(pidof -x $EXEC_CMD)
+		if [ $? -eq 0 ] ;then
+		   echo "$EXEC_CMD is running"
+		fi
+            ;;
+        restart)
+		kill_daemon $EXEC_CMD
+		sleep 1
+		$EXEC_CMD &
+            ;;
+       
+        *)
+            echo $"Usage: $0 {start|stop|restart|status}"
+            exit 1
+ 
+esac
+
+sleep 0.5
+i=1
+while [ $i -le 25 ]
+ do
+  if [ -e /dev/lircd ]; then
+   ln -s /dev/lircd $LIRCD_PATH/lircd
+   break
+  fi
+ sleep 0.2
+ i=$(( $i + 1 ))
+done

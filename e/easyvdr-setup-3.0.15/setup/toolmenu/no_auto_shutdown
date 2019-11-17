@@ -1,0 +1,10 @@
+#!/bin/bash
+#
+#  
+#################################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+
+SetSetupConf "MinUserInactivity" "0"
+

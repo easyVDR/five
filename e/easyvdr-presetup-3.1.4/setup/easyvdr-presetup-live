@@ -1,0 +1,182 @@
+#!/bin/bash
+#
+# frueher Einstellungen aus NM-Manager nach /etc/network/interfaces und /etc/resolv.conf schreiben
+#
+# 20150410 V 0.0.5 michel8: live-Variante des presetup fuer das setup
+# 20150412 V 0.0.6 michel8: monitored apt-get update
+# 20150630 V 0.0.9 michel8: KernelHold und Upgrade passend auch für 3.16er Kernel im ISO
+# 20151025 V 0.3.0 michel8: Anpassung fuer V3.0 Test-ISO
+# 20151204 V 0.3.1 martin: VDR UID auf 2000 setzen
+# 20160212 V 0.3.2 michel8: hold fuer lts-wily hinzugefuegt
+# http://www.easy-vdr.de
+#
+exit 0
+PackagelistUpdate()
+{
+UpdateOK="no"
+while [ "$UpdateOK" != "yes" ]; do
+    apt-get update 2>&1 | tee /tmp/apt_update
+    returning=$?
+    failures=$(grep -c "failed\|Fehlschlag" /tmp/apt_update)
+    echo ""
+    if (( $returning || $failures )); then
+      echo "****************************************************************"
+      echo "** Paketlisteneinlesen Fehlgeschlagen, erneut Einlesen, oder **"
+      echo "** auf anderer Konsole die /etc/apt/sources.list korrigieren **"
+      echo "** Fehler siehe /var/log/easyvdr/SetupAfterInstall.Done      **"
+      echo ""
+      echo "Fehler bei apt-get update:" >> /var/log/easyvdr/SetupAfterInstall.Done
+      cat /tmp/apt_update | grep  "^W: " >> /var/log/easyvdr/SetupAfterInstall.Done
+      Selection="notOK"
+      while [ "$Selection" != "OK" ] ; do
+        ReadSel="y"
+        read -e -p "Paketlisten erneut einlesen [Y|n]? " -i $ReadSel ReadSel
+        case $ReadSel in
+          y|Y|n|N) Selection="OK";;
+                *) Selection="notOK";;
+        esac
+      done
+      if [ $ReadSel == "n" -o $ReadSel == "N" ]; then
+        UpdateOK="yes"
+        # echo "passt nicht, aber ende"
+      fi
+    else
+      UpdateOK="yes"
+      # echo "OK, passt"
+    fi
+done
+}
+
+PackagelistUpgade()
+{
+UpdateOK="no"
+while [ "$UpdateOK" != "yes" ]; do
+    apt-get -y -o Dpkg::Options::=--force-confnew dist-upgrade 2>&1 | tee /tmp/apt_upgrade
+    returning=$?
+    failures=$(grep -c "dpkg: error\|dpkg: Fehler\|^E:" /tmp/apt_upgrade)
+    echo ""
+    if (( $returning || $failures )); then
+      echo "****************************************************************"
+      echo "** Paketupgrade (teilweise) fehlgeschlagen, erneuter Versuch, **"
+      echo "** oder auf anderer Konsole die Ursache korrigieren.          **"
+      echo "** Fehler siehe auch /var/log/easyvdr/SetupAfterInstall.Done  **"
+      echo ""
+      echo "Fehler bei apt-get dist-upgrade:" >> /var/log/easyvdr/SetupAfterInstall.Done
+      cat /tmp/apt_upgrade | grep -A 1 "^dpkg:" >> /var/log/easyvdr/SetupAfterInstall.Done
+      Selection="notOK"
+      while [ "$Selection" != "OK" ] ; do
+        ReadSel="y"
+        read -e -p "Dist-Upgrade erneut durchfuehren [Y|n]? " -i $ReadSel ReadSel
+        case $ReadSel in
+          y|Y|n|N) Selection="OK";;
+                *) Selection="notOK";;
+        esac
+      done
+      if [ $ReadSel == "n" -o $ReadSel == "N" ]; then
+        UpdateOK="yes"
+        # echo "passt nicht, aber ende"
+      fi
+    else
+      UpdateOK="yes"
+      # echo "OK, passt"
+    fi
+done
+}
+
+KernelHold()
+{
+  echo "[P-H] activate Kernel-Hold..."
+  echo "(Re-)Aktiviere Kernel-Hold" >> /var/log/easyvdr/SetupAfterInstall.Done
+  AKT_KERNEL=$(uname -r | cut -d. -f-2)
+  if [[ $AKT_KERNEL == "3.12" ]]; then
+    echo "linux-generic" hold | dpkg --set-selections
+    echo "linux-headers-generic" hold | dpkg --set-selections
+    echo "linux-image-generic" hold | dpkg --set-selections
+  elif [[ $AKT_KERNEL == "3.16" ]]; then
+    echo "linux-generic-lts-vivid" hold | dpkg --set-selections
+    echo "linux-headers-generic-lts-vivid" hold | dpkg --set-selections
+    echo "linux-image-generic-lts-vivid" hold | dpkg --set-selections
+  elif [[ $AKT_KERNEL == "3.19" ]]; then
+    echo "linux-generic-lts-vivid" hold | dpkg --set-selections
+    echo "linux-headers-generic-lts-vivid" hold | dpkg --set-selections
+    echo "linux-image-generic-lts-vivid" hold | dpkg --set-selections
+  elif [[ $AKT_KERNEL == "4.2" ]]; then
+    echo "linux-generic-lts-wily" hold | dpkg --set-selections
+    echo "linux-headers-generic-lts-wily" hold | dpkg --set-selections
+    echo "linux-image-generic-lts-wily" hold | dpkg --set-selections
+  elif [[ $AKT_KERNEL == "4.4" ]]; then
+    echo "linux-generic-lts-xenial" hold | dpkg --set-selections
+    echo "linux-headers-generic-lts-xenial" hold | dpkg --set-selections
+    echo "linux-image-generic-lts-xenial" hold | dpkg --set-selections
+  fi
+}
+
+########################################################
+###      main
+
+clear
+mkdir -p /var/log/easyvdr
+echo "easyVDR Presetup4live V3.0 started..." > /var/log/easyvdr/SetupAfterInstall.Done
+echo "[P-0] Presetup4live V3.0 started"
+
+#VDR User wieder auf UID 2000 setzen
+  killall -u vdr
+  sleep 5
+  usermod -u 2000 vdr
+  chown -R 2000:vdr /var/www
+  chown -R 2000:vdr /var/cache/vdr*
+  chown -R 2000:vdr /var/lib/vdr
+  chown -R 2000:vdr /etc/vdr
+  chown -R 2000:vdr /var/log/lighttpd/
+
+
+KernelHold
+
+echo "**********************************************"
+echo "**********************************************"
+echo ""
+echo "**     Waehle Upgrade-Variante ...          **"
+echo "**       1  kein Upgrade                    **"
+echo "**       2  nur easyvdr-Pakete upgraden     **"
+echo "**       3  full Ubuntu Dist-Upgrade        **"
+echo "**       (default = 2)                      **"
+echo ""
+
+ReadUpdate="2"	# Default-Update
+while [ "$Selection" != "OK" ] ; do
+  read -e -p "Updateauswahl: " -i $ReadUpdate ReadUpdate
+
+  if [ "x$ReadUpdate" == "x" ]; then
+    ReadUpdate="default"
+  fi
+  case $ReadUpdate in
+     default) Selection="OK";;
+       1|2|3) Selection="OK";;
+           *) Selection="notOK";;
+  esac
+done
+
+echo "[P-1] Update selection done, aktivate Ubuntu-extras and set Ubuntu archive..."
+if [ $(grep -c "# deb http://extras.ubuntu.com/ubuntu trusty main" /etc/apt/sources.list) == 1 ]; then
+    sed -i 's/# deb http:\/\/extras.ubuntu.com\/ubuntu trusty main/deb http:\/\/extras.ubuntu.com\/ubuntu trusty main/' /etc/apt/sources.list
+    sed -i 's/# deb-src http:\/\/extras.ubuntu.com\/ubuntu trusty main/deb-src http:\/\/extras.ubuntu.com\/ubuntu trusty main/' /etc/apt/sources.list
+fi
+sed -i 's/de.archive/archive/g' /etc/apt/sources.list
+
+case $ReadUpdate in
+    1) echo "[P-2] Just PacketList-Update ..."
+       PackagelistUpdate;; # ueberwachtes apt-get update mit kompletter Paketliste
+    3) echo "[P-3] Full Ubuntu Dist-Upgrade ..."
+       PackagelistUpdate # ueberwachtes apt-get update
+       PackagelistUpgade # ueberwachtes apt-get dist-upgrade
+       echo "[P-4] Dist-Upgrade finished...";;
+    *) echo "[P-5] Upgrading easyvdr-pakets ..."
+       cp /etc/apt/sources.list /etc/apt/sources.list.bkp
+       sed -i 's/^\(.*\)ubuntu.com\(.*\)$/# \1ubuntu.com\2/g' /etc/apt/sources.list
+       PackagelistUpdate # ueberwachtes apt-get update
+       PackagelistUpgade # ueberwachtes apt-get dist-upgrade
+       cp /etc/apt/sources.list.bkp /etc/apt/sources.list
+       PackagelistUpdate # ueberwachtes apt-get update mit kompletter Paketliste
+       echo "[P-6] easyvdr-upgrade finished...";;
+esac
+echo "[P-9] Presetup4live finished"

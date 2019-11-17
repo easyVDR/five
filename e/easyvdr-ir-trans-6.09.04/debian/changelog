@@ -1,0 +1,113 @@
+easyvdr-ir-trans (6.09.04-2easyVDR12~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:34:54 +0100
+
+easyvdr-ir-trans (6.09.04-2easyVDR11~bionic) bionic; urgency=high
+
+  * repair daemon status
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Sat, 16 Mar 2019 15:48:20 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR10~bionic) bionic; urgency=high
+
+  * chmod & rebuild
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Feb 2019 01:12:57 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR9~bionic) bionic; urgency=high
+
+  * rebuild
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Tue, 12 Feb 2019 00:49:57 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR8~bionic) bionic; urgency=high
+
+  * build easyvdr-irtrans daemon
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Mon, 11 Feb 2019 23:48:13 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR7~bionic) bionic; urgency=high
+
+  * refixed easyvdr-irtrans script
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Jan 2019 22:09:49 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR6~bionic) bionic; urgency=high
+
+  * refixed systemd
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Dec 2018 19:52:00 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR5~bionic) bionic; urgency=high
+
+  * refixed systemd
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Sat, 21 Jul 2018 08:00:00 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR4~bionic) bionic; urgency=high
+
+  * refixed systemd
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Jul 2018 02:33:00 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR3~bionic) bionic; urgency=high
+
+  * refixed systemd
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Jul 2018 00:43:00 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR2~bionic) bionic; urgency=high
+
+  * refixed systemd
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Jul 2018 00:19:00 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR1~bionic) bionic; urgency=high
+
+  * fixed systemd
+
+ -- easyvdr-Developer <easyvdr-dev@easy-vdr.de>  Sun, 14 Jul 2018 22:56:00 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild for bionic - fix-rules
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 08 Jul 2018 19:46:05 +0200
+
+easyvdr-ir-trans (6.09.04-1easyVDR4~trusty) trusty; urgency=high
+
+  * renamed package
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Dec 2013 17:33:11 +0100
+
+ir-trans (6.09.04-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:46:35 +0100
+
+ir-trans (6.09.04-1easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 18:33:03 +0200
+
+ir-trans (6.09.04-1easyVDR1.8) oneiric; urgency=high
+
+  * fixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 09 Oct 2012 19:20:52 +0200
+
+ir-trans (6.09.04-1easyVDR1.7) oneiric; urgency=high
+
+  * new upstart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Sep 2012 19:35:17 +0200
+
+ir-trans (6.09.04-1easyVDR1.6) oneiric; urgency=high
+
+  * initial Release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Sep 2012 09:44:36 +0200

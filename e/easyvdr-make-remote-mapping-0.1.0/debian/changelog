@@ -1,0 +1,215 @@
+easyvdr-make-remote-mapping (0.1.0-29easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:35:51 +0100
+
+easyvdr-make-remote-mapping (0.1.0-29easyVDR2~bionic) bionic; urgency=high
+
+  * bugfix irmp & irtrans start
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Feb 2019 14:56:32 +0200
+
+easyvdr-make-remote-mapping (0.1.0-28easyVDR1~bionic) bionic; urgency=high
+
+  * change conf path and systemd updates
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 07 Feb 2019 21:08:40 +0100
+
+easyvdr-make-remote-mapping (0.1.0-28easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild for bionic
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Dec 2018 02:11:32 +0100
+
+easyvdr-make-remote-mapping (0.1.0-28easyVDR~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Feb 2016 22:00:08 +0100
+
+easyvdr-make-remote-mapping (0.1.0-24easyVDR~trusty) trusty; urgency=high
+
+  * bugfix poweroff
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 12 Dec 2015 11:09:21 +0100
+
+easyvdr-make-remote-mapping (0.1.0-1easyVDR13~trusty) trusty; urgency=high
+
+  * adding poweroff function
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Dec 2015 22:03:10 +0100
+
+easyvdr-make-remote-mapping (0.1.0-1easyVDR2~trusty) trusty; urgency=high
+
+  * rename xbmc to kodi
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 23 Jul 2015 09:04:55 +0200
+
+easyvdr-make-remote-mapping (0.1.0-1easyVDR1~trusty) trusty; urgency=high
+
+  * added new easyvdr-make-remote-mapping scirpt
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 23 May 2015 22:41:36 +0200
+
+easyvdr-make-remote-mapping (0.1.0-1easyVDR0~trusty) trusty; urgency=high
+
+  * bugfix grep lirc.conf name
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 30 Nov 2014 22:01:22 +0100
+
+easyvdr-make-remote-mapping (0.1.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * fix connect lirc socket: No such file or directory
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Nov 2014 07:19:00 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR33~trusty) trusty; urgency=high
+
+  * repeate changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 02 Sep 2014 17:03:09 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR32~trusty) trusty; urgency=high
+
+  * remote-mapping bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 04 May 2014 01:32:24 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR31~trusty) trusty; urgency=high
+
+  * changes for pchanger 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 03 May 2014 12:37:17 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR30~trusty) trusty; urgency=high
+
+  * bugfix irmp
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 02 May 2014 14:49:00 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR20~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 May 2014 22:46:43 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR19~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 May 2014 17:59:42 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR18~trusty) trusty; urgency=high
+
+  * added quiet
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 May 2014 08:01:16 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR17~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 15 Apr 2014 15:47:20 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR16~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 15 Apr 2014 15:27:38 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR15~trusty) trusty; urgency=high
+
+  * added remote name option
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 14 Apr 2014 15:23:44 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR14~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 Apr 2014 12:29:54 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR13~trusty) trusty; urgency=high
+
+  * pchanger update 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 02 Apr 2014 20:13:29 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR12~trusty) trusty; urgency=high
+
+  * keymap changes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 30 Mar 2014 11:01:40 +0200
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR11~trusty) trusty; urgency=high
+
+  * buxfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 27 Mar 2014 17:40:53 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR10~trusty) trusty; urgency=high
+
+  * buxfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Mar 2014 12:15:45 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR9~trusty) trusty; urgency=high
+
+  * buxfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Mar 2014 12:11:37 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR8~trusty) trusty; urgency=high
+
+  * update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 26 Mar 2014 11:49:43 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR7~trusty) trusty; urgency=high
+
+  * update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Mar 2014 15:36:52 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR6~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 22 Mar 2014 22:53:46 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR5~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 20 Mar 2014 23:11:03 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR4~trusty) trusty; urgency=high
+
+  * bugfix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 20 Mar 2014 22:57:18 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR3~trusty) trusty; urgency=high
+
+  * lirmap.xml part 3
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 19 Mar 2014 20:51:54 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR2~trusty) trusty; urgency=high
+
+  * lirmap.xml part 2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Mar 2014 23:13:57 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR1~trusty) trusty; urgency=high
+
+  * lirmap.xml part 1
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Mar 2014 22:39:50 +0100
+
+easyvdr-make-remote-mapping (0.0.1-2easyVDR1~trusty) trusty; urgency=high
+
+  * first release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 06 Mar 2014 16:59:47 +0100

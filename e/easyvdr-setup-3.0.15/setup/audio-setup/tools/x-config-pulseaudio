@@ -1,0 +1,291 @@
+#!/bin/bash
+#--------------------------------------------
+# Dieses Skript konfiguriert Pulseaudio
+#---------------------------------------------
+# Version:      0.0.2 vom 29.08.2016 fuer easyVDR 3.0
+#---------------------------------------------
+# Autor:        Bleifuss2
+#---------------------------------------------
+#
+#
+#############################################################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+SNDLOG="$EASYVDR_LOGDIR/x-config-pulseaudio.log"
+
+#############################################################################
+FILE_PATH="/etc/xdg/autostart"
+PICTURE_PATH=/usr/share/easyvdr/setup/images
+
+PULSEAUDIO_USER=vdr
+ANALOG_DIGITAL=A
+FIRST_RUN=yes
+FIRST_RUN_CHOOSE_PROFILE=yes
+FIRST_RUN_SET_FLAG=yes
+
+# Auf X warten
+sleep 2
+#Auflösung ermitteln
+
+
+if ( xrandr | grep primary );then
+ SCREEN_WH=$(xrandr | grep primary | cut -d" " -f4)
+else
+ SCREEN_WH=$(xrandr | grep " connected" | cut -d" " -f3)
+fi
+
+SCREEN_WIDTH=$(echo $SCREEN_WH | cut -d"x" -f1)
+
+SCREEN_HEIGHT=$(echo $SCREEN_WH | cut -d"x" -f2)
+SCREEN_HEIGHT=$(echo $SCREEN_HEIGHT | cut -d"+" -f1)
+
+#echo $SCREEN_HEIGHT $SCREEN_WIDTH
+
+
+##############################################################################
+function help_profile_off {
+
+ if [  $FIRST_RUN == yes ];then
+  DISPLAY=$FRONTEND_DISPLAY yad --title="Pulseaudio Setup" --buttons-layout=center --geometry="$DIALOG_WIDTH"x"$DIALOG_HEIGHT"+0+0 \
+--text="Als erstes bei allen\n\Profilen \"Aus\" wählen\n\
+"  --button="Weiter" --image=$PICTURE_PATH/pavucontrol_1.png
+ fi
+ FIRST_RUN=no
+}
+
+##############################################################################
+function pavucontrol_profil {
+ echo "---> pavucontrol als user $USER starten" >> $SNDLOG
+ pavucontrol -t 5 --display $FRONTEND_DISPLAY  >/dev/null 2>&1&
+ sleep 2
+ DIALOG_WIDTH=$SCREEN_WIDTH
+ PAVU_HEIGHT=$(($SCREEN_HEIGHT/3))
+ wmctrl -r "Lautstärkeregler" -e 0,0,$PAVU_HEIGHT,$DIALOG_WIDTH,$(($SCREEN_HEIGHT-$(($PAVU_HEIGHT+10))))
+}
+
+##############################################################################
+
+function choose_analog_digitial {
+
+DISPLAY=$FRONTEND_DISPLAY yad --title="Pulseaudio Setup" --buttons-layout=center --geometry="$DIALOG_WIDTH"x"$DIALOG_HEIGHT"+0+0 \
+--text="Über welchen Anschluss soll der Ton ausgegeben werden?\n" \
+--button="Digital:HDMI/DVI/SPDIF:1" --button="Analog:2" --button="Beides:3"
+
+ ret=$?
+
+ case $ret in
+  1) ANALOG_DIGITAL=D
+    ;;
+  2) ANALOG_DIGITAL=A
+    ;;
+  3) 
+ DISPLAY=$FRONTEND_DISPLAY yad --title="Pulseaudio Setup" --buttons-layout=center --geometry="$DIALOG_WIDTH"x"$DIALOG_HEIGHT"+0+0 \
+--text="Ton Wiedergabe mit mehreren Geräten ist momentan nur mit Hand Konfiguration möglich?\n" \
+ --button="Schade"
+ choose_analog_digitial
+    ;;
+ esac
+}
+
+##############################################################################
+
+function test_sounds {
+DISPLAY=$FRONTEND_DISPLAY yad --title="Pulseaudio Setup" --buttons-layout=center --geometry="$DIALOG_WIDTH"x"$DIALOG_HEIGHT"+0+0 \
+--text="Hier besteht die Möglichkeit mehrkanalige Testsounds zu starten\n\
+" \
+--button="Stereo Test:1" --button="Analog 4 Test:2" --button="Analog 5.1 Test:3" --button="Analog 7.1 Test:4" --button="AC3 Test:5"\
+ --button="Zurück:8"
+ ret=$?
+
+ if [ $ret -ne 8 ];then 
+  pkill speaker-test >/dev/null 2>&1&
+  pkill cvlc >/dev/null 2>&1&
+  sleep 1
+ fi
+ 
+ case $ret in
+  1)   speaker-test -l2 -c2 &
+       echo "     speaker-test Stereo" >> $SNDLOG
+    ;;
+  2)   speaker-test -l2 -c4 &
+       echo "     speaker-test 40" >> $SNDLOG
+    ;;
+  3)   speaker-test -l2 -c6 & 
+       echo "     speaker-test 5.1" >> $SNDLOG
+    ;;
+  4)  speaker-test -l2 -c8 &
+       echo "     speaker-test 7.1" >> $SNDLOG
+    ;;
+  5)   pkill puldeaudio
+       DISPLAY=$FRONTEND_DISPLAY cvlc --force-dolby-surround 1  $SETUP/audio-setup/tools/www_lynnemusic_com_surround_test.ac3 &
+       echo "     cvlc --force-dolby-surround" >> $SNDLOG
+    ;;
+ esac
+}
+##############################################################################
+
+function menu_analog {
+
+ help_profile_off
+
+ DISPLAY=$FRONTEND_DISPLAY yad --title="Pulseaudio Setup" --buttons-layout=center --geometry="$DIALOG_WIDTH"x"$DIALOG_HEIGHT"+0+0 \
+--text="Bei Analogem Anschluss ein Profil mit passender Kanalanzahl wählen\n\
+Analog-Stereo oder Analog-Surround XX\n\
+Wenn bei Konfiguration das richtige Profil gewählt wurde ist ein Rauschen zu hören.\n\
+Sollte ein Programm keinen Ton ausgeben, \n\
+Dann muss in diesem Programm Pulseaudio bei Tonausgabe gewählt werden.\n\
+" \
+ --button="Mehrkanal Test Geräusche:2" --button="Fertig:8"
+
+ ret=$?
+# --button="Profil wählen:1"
+
+ if [ $ret -ne 1 ];then 
+  pkill speaker-test >/dev/null 2>&1&
+  pkill cvlc >/dev/null 2>&1&
+  sleep 1
+ fi
+ 
+ case $ret in
+  1)    pkill pavucontrol
+        sleep 0.5   
+        pavucontrol -t 5 --display $FRONTEND_DISPLAY  >/dev/null 2>&1& 
+        sleep 1
+        wmctrl -r "Lautstärkeregler" -e 0,0,$PAVU_HEIGHT,$DIALOG_WIDTH,$(($SCREEN_HEIGHT-$(($PAVU_HEIGHT+1))))
+     ;;
+  2)   test_sounds
+    ;;
+  8)
+   pkill pavucontrol >/dev/null 2>&1&
+   pkill speaker-test >/dev/null 2>&1&
+   pkill cvlc >/dev/null 2>&1&
+   sleep 3
+   ### Setup ist fertig
+   echo "---> zurueck zum Setup" >> $SNDLOG
+   touch /tmp/pulse-config-ready    
+   exit 0
+    ;;
+ esac
+}
+
+##############################################################################
+
+function digital_choose_profile {
+ if [ $FIRST_RUN_CHOOSE_PROFILE == yes ];then
+  DISPLAY=$FRONTEND_DISPLAY yad --title="Pulseaudio Setup" --buttons-layout=center --geometry="$DIALOG_WIDTH"x"$DIALOG_HEIGHT"+0+0 \
+--text="Wenn das Endgerät\n\
+AC3/DTS/MPG dekodieren kann.\n\
+muss für DTS/AC3 usw. als Profil Stereo gewählt werden.\n\
+Digital Surround nur für Endgeräte\n\
+die kein DTS/AC3 abspielen können,\n\
+oder Programme (Spiele) die mehrere Kanäle\n\
+ohne DTS/AC3 ausgeben\n\
+" \
+--button="Weiter"  --image=$PICTURE_PATH/pavucontrol_2.png
+ 
+  pkill pavucontrol
+  sleep 1
+  pavucontrol -t 3 --display $FRONTEND_DISPLAY  >/dev/null 2>&1& 
+  sleep 1
+  wmctrl -r "Lautstärkeregler" -e 0,0,$PAVU_HEIGHT,$DIALOG_WIDTH,$(($SCREEN_HEIGHT-$(($PAVU_HEIGHT+1))))
+ fi
+ FIRST_RUN_CHOOSE_PROFILE=no
+}
+
+
+function digital_set_flag {
+ if [ $FIRST_RUN_SET_FLAG == yes ];then
+  DISPLAY=$FRONTEND_DISPLAY yad --title="Pulseaudio Setup" --buttons-layout=center --geometry="$DIALOG_WIDTH"x"$DIALOG_HEIGHT"+0+0 \
+--text="Wenn das Endgerät\n\
+AC3/DTS/MPG dekodieren kann.\n\
+Muß bei Ausgabegeräte Advanced\n\
+AC3/DTS/MPEG usw angehakt werden.\n\
+In diesem Fall muss die Lautstärke\n\
+Exact 100.0% betragen.\n\
+Die Lautstäreke darf dann nur\n\
+am Endgerät verändert werden\n\
+" \
+--button="Weiter"  --image=$PICTURE_PATH/pavucontrol_3.png
+
+  pkill pavucontrol
+  sleep 1
+  pavucontrol -t 3 --display $FRONTEND_DISPLAY  >/dev/null 2>&1& 
+  sleep 1
+  wmctrl -r "Lautstärkeregler" -e 0,0,$PAVU_HEIGHT,$DIALOG_WIDTH,$(($SCREEN_HEIGHT-$(($PAVU_HEIGHT+1))))
+ fi
+ FIRST_RUN_SET_FLAG=no
+}
+##############################################################################
+
+function menu_digital {
+
+ help_profile_off
+
+ digital_choose_profile
+
+ digital_set_flag
+
+  DISPLAY=$FRONTEND_DISPLAY yad --title="Pulseaudio Setup" --buttons-layout=center --geometry="$DIALOG_WIDTH"x"$DIALOG_HEIGHT"+0+0 \
+--text="Wenn alles passend eingestellt ist fertig wählen
+" \
+ --button="Mehrkanal Test Geräusche:1" --button="Softhdd. Infos:2" --button="Kodi Infos:3"\
+  --button="Fertig:8"
+ ret=$?
+
+
+ case $ret in
+  1)   test_sounds
+    ;;
+  3)
+   DISPLAY=$FRONTEND_DISPLAY /usr/bin/yad --center --title="Passthru Setup" --text="Für Passthru müssen die unterstützten Formate des AVR eingestellt werden\n " --button="Weiter" --image=$PICTURE_PATH/kodi_audio_conf.png
+   ;;
+  2)   DISPLAY=$FRONTEND_DISPLAY /usr/bin/yad --center --title="Passthru Setup" --text="Für Passthru müssen die unterstützten Formate des AVR eingestellt werden\n " --button="Weiter" --image=$PICTURE_PATH/softhddevice_passthru_conf.png
+   ;;
+
+  8)
+   pkill pavucontrol >/dev/null 2>&1&
+   pkill speaker-test >/dev/null 2>&1&
+   pkill cvlc >/dev/null 2>&1&
+   sleep 2
+   ### Setup ist fertig
+   echo "---> zurueck zum Setup" >> $SNDLOG
+   touch /tmp/pulse-config-ready    
+   exit 0
+    ;;
+ esac
+
+}
+
+##############################################################################
+
+# Setup Autostart abschalten
+if [ -e $FILE_PATH/pulseaudio.desktop ]; then
+ mv $FILE_PATH/pulseaudio.desktop $FILE_PATH/pulseaudio.desktop-inactive
+fi
+
+
+DIALOG_HEIGHT=$(($SCREEN_HEIGHT/5))
+
+echo "---> Analog oder Digital?" >> $SNDLOG
+ choose_analog_digitial
+
+ DIALOG_HEIGHT=$(($SCREEN_HEIGHT/5))
+
+ pavucontrol_profil
+
+ #Test Ton starten
+ speaker-test -l2 -c4 &
+
+
+while true
+do 
+ if [ $ANALOG_DIGITAL == A ] ;then
+  menu_analog
+ else
+  menu_digital
+ fi
+done

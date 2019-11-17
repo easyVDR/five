@@ -1,0 +1,44 @@
+#!/bin/bash
+#28.10.13  V 0.2 Bleifuss
+#03.11.13  added mode parameter Bleifuss
+#13.02.14  added xrandr file path 
+#26.02.14  added Version
+
+#ACHTUNG bei Änderungen hier die Version anpasssen:
+#/usr/lib/vdr/easyvdr-set-monitor-layout
+#/usr/share/easyvdr/setup/easyvdr-config-monitor-layout
+VIDEO_SETTINGS_CONF_VERSION="0.2"
+
+XRANDR_EDID_FILE=/var/log/easyvdr/easyvdr-monitor-edid.log
+
+MESSAGE_TIME=7
+VDR_SCREEN_CONNECTOR="none"
+#Auflösung und Frequenz die eingestellt werden soll
+VDR_SCREEN_MODE="--auto"
+
+
+VDR_CLONE_CONNECTOR="none"
+#Auflösung und Frequenz die eingestellt werden soll
+VDR_CLONE_SCREEN_MODE="--auto"
+
+
+VDR_GRAPHTFT_CONNECTOR="none"
+VDR_GRAPHTFT_SCREEN_MODE="none"
+
+
+SECONDARY_DESKTOP_CONNECTOR="none"
+#Auflösung und Frequenz die eingestellt werden soll
+SECONDARY_DESKTOP_SCREEN_MODE="--auto"
+
+
+PRIMARY_DISPLAY=:0.0
+SECONDARY_DISPLAY=:0.1
+MONITOR_LAYOUT=
+
+
+
+#single nur ein Monitor
+#clone alle Bildschirme zeigen das gleiche Bild
+#dual 2 unabhängige X server mit Desktop
+#gaphtft 2 unabhängige X server Desktop auf Display 0.0
+

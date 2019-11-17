@@ -1,0 +1,3 @@
+
+echo -e "      \033[44;1;37m        easyVDR-Tool Console / zurück zum Menu mit \"exit\"         \033[0m"
+

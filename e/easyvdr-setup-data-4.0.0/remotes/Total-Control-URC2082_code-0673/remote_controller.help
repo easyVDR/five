@@ -1,0 +1,26 @@
+Infos zu dieser Fernbedienung:
+
+Konfiguriert für folgende Empfaenger:
+ - serial - Homebrew/atrik/alsa/Igor-USB
+
+ - Code auf FB: (0673/TV), Anam National ( vtl. NEC-Code?  c.b. )  
+
+Sonderbelegung:
+"-/--"  Aufzeichnungen ( KEY_VIDEO )
+"A/V"   Stummschalten  ( KEY_MUTE )
+
+Die Fernbedienung kann auch so konfiguriert werden,
+dass z.B. die Taste "SAT" ebenfalls Herstellercodes
+für TV akzeptiert. Normalerweise akzeptierte die Taste "SAT"
+nur Herstellercodes für SAT-Receiver (siehe Handbuch).
+Beispiel:
+<SETUP> <992> <TV> <SAT>   --> Die Sat-Taste ist jetzt eine TV-Taste 
+
+Codes reidentifizieren:
+Dies kann im Setup-Prozess durch Verwendung des Steuercodes <990>
+und anschließendes Drücken der Tasten 1 bis 4 nacheinander
+erfragt werden.
+Der beleuchtete on/off-Knopf der Fernbedienung blinkt dann
+entsprechend der Ziffer des Codes.
+(kein Blinken für Ziffer "0", 9x Blinken für Ziffer "9" usw).
+ 

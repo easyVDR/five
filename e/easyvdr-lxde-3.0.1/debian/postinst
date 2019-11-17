@@ -1,0 +1,28 @@
+#!/bin/bash
+
+#set -e
+
+if [ "$1" = "configure" ]; then
+
+  REPLACE="/tmp/.wallpdefine.replace"
+  INSERT="/tmp/.wallpdefine.insert"
+  ORIGINAL="/usr/share/lxde/pcmanfm/LXDE.conf"
+  NEW_WP="/usr/share/lxde/wallpapers/easyvdr.jpg"
+
+  if [ -e $ORIGINAL ]; then
+    OLD_WALLP_STRING=$(grep "wallpaper=" $ORIGINAL || true ) 
+    NEW_WALLP_STRING="wallpaper=$NEW_WP"
+
+    echo $OLD_WALLP_STRING   > $REPLACE
+    echo $NEW_WALLP_STRING   > $INSERT
+
+    /usr/bin/tripatch -q -d= $REPLACE $INSERT $ORIGINAL
+
+    rm -f $REPLACE
+    rm -f $INSERT  
+  fi
+
+fi
+
+#DEBHELPER#
+

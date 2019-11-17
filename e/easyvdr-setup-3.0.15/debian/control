@@ -1,0 +1,17 @@
+Source: easyvdr-setup
+Section: misc
+Priority: optional
+Maintainer: Martin <none@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 4.1.2
+
+Package: easyvdr-setup
+Architecture: any
+#Depends: ${misc:Depends}, ${easyvdr-setup}, easyvdr-setup-data, easyvdr-presetup, easyvdr-addon-view-picture, easyvdr-make-remote-mapping, pavucontrol, yad, dialog
+#Confilcts: lightdm
+Depends: ${misc:Depends}, ${easyvdr-setup}, easyvdr-setup-data, easyvdr-presetup, easyvdr-addon-view-picture, pavucontrol, yad, dialog, setserial, edid-decode, read-edid
+Pre-Depends: imagemagick
+Description: Setup Package for easyVDR
+  Installationspaket für easyVDR
+  Ersetzt das veraltete Paket easyvdr-config

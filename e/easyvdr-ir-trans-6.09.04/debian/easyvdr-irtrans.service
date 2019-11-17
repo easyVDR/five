@@ -1,0 +1,16 @@
+[Unit]
+Description=IR Trans Server
+#After=display-manager.service
+#Wants=display-manager.service
+#Beim booten ist die Datei nicht vorhanden, deshalb startet nichts
+#ConditionPathExists=/dev/ttyUSB99
+
+[Service]
+User=root
+Type=simple
+ExecStart=/usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-irtrans
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

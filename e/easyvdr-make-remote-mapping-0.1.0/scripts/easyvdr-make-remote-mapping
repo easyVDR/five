@@ -1,0 +1,112 @@
+#!/bin/bash
+#
+#  initial              Bleifuss2
+#  V 0.1	01.04.14
+#  V 0.2	14.04.14 added remote name parameter
+#  V 0.3	18.11.14 starting the right lircd-service by Michel8
+#  V 0.4	14.05.15 all in functions and bypass when no remote-controller by Michel8
+#  V 0.5	10.12.15 adding poweroff functions by Bleifuss
+##### includes #####
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+HOME_PATH=$(cat /etc/passwd | grep ^$STANDARD_DESKTOP_USER: | awk -F: '{print $6}')
+
+
+RMT_CONF="$CFG_DIR/remote.conf"                                           #Funktionierende VDR remote.conf
+LIRC_CONF="/etc/lirc/lircd.conf"
+LIRC_MAP="$HOME_PATH/.kodi/userdata/Lircmap.xml"                          #Lircmap.xml
+KEY_MAP="$HOME_PATH/.kodi/userdata/keymaps/keyboard.xml"                  #Keymap
+PCH_LIRC_CONF="/etc/vdr/easyvdr/program-changer/program-changer-lirc.conf" #Program-changer Lirc.conf
+
+IRTRANS_REM_CONF="/usr/share/irtrans/remotes/irtrans.rem"                 #Pfad für irtrans.rem Datei
+
+KODI_HOME="$HOME_PATH/.kodi"                                              #Pfad fuer KODI Home Verzeichnis
+KODI_HOME_USERDATA="$HOME_PATH/.kodi/userdata"                            #Pfad fuer KODI Home/userdaten Verzeichnis
+
+DISABLE_POWER_RMT_CONF="$SETUP/remote-mapping/disable-poweroff-remote-conf"	  #Pfad fuer deaktivierungsskript der Poweroff Taste
+ENABLE_POWER_RMT_CONF="$SETUP/remote-mapping/enable-poweroff-program-changer"	  #Pfad fuer deaktivierungsskript der Poweroff Taste
+RESTORE_POWEROFF="$SETUP/remote-mapping/restore-poweroff"			  #Pfad fuer deaktivierungsskript der Poweroff Taste
+
+
+MakeKODIdirs()
+{
+if [ ! -d $KODI_HOME ]; then
+ mkdir $KODI_HOME
+fi
+if [ ! -d $KODI_HOME_USERDATA ]; then
+ mkdir $KODI_HOME_USERDATA
+fi
+if [ ! -d $KODI_HOME_USERDATA/keymaps ]; then  
+ mkdir $KODI_HOME_USERDATA/keymaps
+fi
+
+chmod -R 777 $KODI_HOME
+chown -R $STANDARD_DESKTOP_USER:$STANDARD_DESKTOP_USER $KODI_HOME_USERDATA
+}
+
+
+StartLirc()
+{
+REMOTE_NAME=" "
+REMOTE_NAME2=" "
+ case $LIRC_HW_CONF in
+    input_lirc)
+	      # Lirc starten
+	      start easyvdr-inputlirc  >/dev/null 2>&1
+              REMOTE_NAME="-n /dev/input/ir-auto_dtc0" 
+              REMOTE_NAME2="-e /dev/input/ir-auto_dtc1" ;;
+    irtrans_server)
+	      # Lirc starten
+	      easyvdr-remote start    >/dev/null 2>&1
+              REMOTE_NAME="-n  $(grep  NAME $IRTRANS_REM_CONF |tr A-ZÄÖÜ a-zäöü| cut -f2 -d"]")" ;;
+    irmp_lirc)
+	      # Lirc starten
+	      easyvdr-remote start >/dev/null 2>&1
+              REMOTE_NAME="-n IRMP" ;;
+    *)
+	      # Lirc starten
+	      start lircd              >/dev/null 2>&1
+              REMOTE_NAME="$(cut -d '#' $LIRC_CONF -f1 | grep name)" #Leerstellen am Anfang der Zeile entfernen
+              REMOTE_NAME="-n $(echo $REMOTE_NAME | cut -d" " -f2)" ;;
+ esac
+}
+
+Info()
+{
+dialog --backtitle "FB-Setup"\
+       --title "Erweiterte FB-Einstellungen"\
+       --timeout $TIMEOUT\
+       --msgbox "\n\n\
+             Es ist keine Fernbedienung Ausgewaehlt!" $DIA_BOX2_SIZE
+}
+
+
+##################################
+###### main
+
+MENU=0
+QUIET=" "
+
+case $1 in
+        kodi) MENU=2              ;;
+    pchanger) MENU=1              ;;
+           *) MENU=0              ;;
+esac
+
+if [ x$2 == "xquiet" ]; then
+  QUIET="-q"
+fi
+
+if [ "$FB_CONTROLLER" != "__keine_Fernbedienung" ]; then
+    MakeKODIdirs
+    StartLirc
+    sleep 5      # because of slow start of lircd
+
+    make_remote_mapping -r $RMT_CONF -l $LIRC_MAP -k $KEY_MAP -p $PCH_LIRC_CONF -m $MENU $REMOTE_NAME $REMOTE_NAME2 \
+-s $ENABLE_POWER_RMT_CONF -d $DISABLE_POWER_RMT_CONF -w $RESTORE_POWEROFF $QUIET
+else
+    Info
+fi

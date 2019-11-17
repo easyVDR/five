@@ -1,0 +1,11 @@
+Source: easyvdr-make-remote-mapping
+Section: misc
+Priority: optional
+Maintainer: Uwe Kiehl <uwe@easy-vdr.de>
+Build-Depends: debhelper (>= 8.0.0), autotools-dev, liblircclient-dev
+Standards-Version: 3.9.2
+
+Package: easyvdr-make-remote-mapping
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: create kodi remote config and remote test program

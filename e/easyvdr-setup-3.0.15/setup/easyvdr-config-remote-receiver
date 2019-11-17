@@ -1,0 +1,104 @@
+#!/bin/bash
+# 
+# Konfiguration der Fernbedienungs Empfaenger
+# fuer easyVDR
+#
+# michel8 
+# v.0.1
+#
+# Captain_Beefheart
+# v.0.9 komplette Umstellung auf hw-detect  29.09.11
+# v 1.0 inputlirc-kram entfernt 17.03.12 C.B.
+# v 1.1 bugfix 18.04.12 C.B.
+# v 1.2 prepare wedding 04.01.13 c.b
+# v 1.3 11.02.13 c.b.
+#
+#################################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Fb-Receiver "
+TITLE2=" Neuen FB-Receiver installieren "
+BACKTITLE=" Konfiguration der Fernbedienung " 
+
+##################################
+# hier fehlt noch die Auswertung, ob Infodisplay=imon oder l4m
+# dann abfrage ob die entsprechenden Empfänger auch aktiviert werden sollen
+# wenn graphtft, dann Abfrage ob touch-device gewünscht ist
+# 
+# ggf passen hier Teile aus easyvdr-config-imonvfd oder linux4media
+#
+# michel8
+#
+####################################
+
+############################### functions ##########################################
+
+#####
+New_Remote()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE2"\
+       --defaultno\
+       --yes-label " neu installieren "\
+       --no-label " abbrechen "\
+       --yesno "\n\n\
+                           !!ACHTUNG!! \n\n\
+         Wenn Sie  \"neuen Fernbedienungsempfaenger installieren\"\n\
+              auswaehlen, wird Ihre vorherige Konfiguration\n\
+                  unwiederbringlich ueberschrieben!" $DIA_BOX2_SIZE
+YES_NO=$?
+clear
+return $YES_NO
+}
+
+#####
+Reset_Sysconfig()
+{
+SetSysconfig LIRC_HW_CONF ""
+}
+
+#####
+Run_Auto()
+{
+$DETECT/easyvdr-detect -Remot
+}
+
+#####
+Get_Setup_Stat()
+{
+USE_CNF_FILE=$( grep Remot_config $SETUP_STATUS | cut -d" " -f3 )
+}
+
+#####
+Configure_Remote()
+{
+for CNF_FILE in $USE_CNF_FILE  
+  do
+    [ -f $HW_SETUP_SP/$LIB_NMK_$CNF_FILE ] &&  $HW_SETUP_SP/$LIB_NMK_$CNF_FILE
+  done
+}
+
+######################################### main ####################################################
+
+FORCE_FLAG=$1
+
+case $FORCE_FLAG in
+      -f) New_Remote
+          if (( $? == 0 )); then
+            Reset_Sysconfig
+            Run_Auto
+          fi
+          Get_Setup_Stat
+          Configure_Remote;;
+       *) Get_Setup_Stat
+          Configure_Remote;;
+esac
+WriteStatus "easyvdr-config-remote-receiver" "RemoteReceiver_configured"
+

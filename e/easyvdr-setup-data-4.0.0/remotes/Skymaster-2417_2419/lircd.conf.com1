@@ -1,0 +1,65 @@
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.9.0(default) on Fri Dec 30 03:00:05 2011
+#
+# contributed by 
+#
+# brand:    Skymaster-2417⁄2419-_code-343
+# model no. of remote control: 
+# devices being controlled by this remote:
+#  lirc_serial
+
+begin remote
+
+  name  Skymaster-2417
+  bits           12
+  flags SPACE_ENC
+  eps            30
+  aeps          100
+
+  header       2500   562
+  one          1284   554
+  zero          658   554
+  gap          25100
+  toggle_bit_mask 0x0
+
+      begin codes
+          KEY_POWER                0xA9A
+          KEY_TV                   0x55A
+          KEY_MUTE                 0x5BA
+          KEY_TEXT                 0x99A
+          KEY_RECORD               0xB9A
+          KEY_1                    0x01A
+          KEY_2                    0x81A
+          KEY_3                    0x41A
+          KEY_4                    0xC1A
+          KEY_5                    0x21A
+          KEY_6                    0xA1A
+          KEY_7                    0x61A
+          KEY_8                    0xE1A
+          KEY_9                    0x11A
+          KEY_0                    0x91A
+#          KEY_A                    0x51A
+#          KEY_B                    0xCBA
+          KEY_PLAY                 0x59A
+          KEY_STOP                 0x19A
+          KEY_UP                   0x09A
+          KEY_DOWN                 0x89A
+          KEY_LEFT                 0xC90
+          KEY_RIGHT                0x490
+          KEY_OK                   0x51A
+          KEY_PAUSE                0x99A
+          KEY_TIME                 0xCBA
+          KEY_BLUE                 0x95A
+          KEY_YELLOW               0x15A
+          KEY_GREEN                0x93A
+          KEY_RED                  0x13A
+          KEY_REWIND               0xD9A
+          KEY_FASTFORWARD          0x39A
+      end codes
+
+end remote
+
+

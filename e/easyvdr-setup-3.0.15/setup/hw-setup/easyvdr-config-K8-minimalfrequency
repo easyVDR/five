@@ -1,0 +1,156 @@
+#!/bin/bash
+
+#--------------------------------------------
+# Dieses Skript ermoeglicht bei AMD-K8-Systemen
+# das einstellen der Minimalfrequenz um auch
+# bei HD ausreichend Speicherbandbreite zu haben
+#---------------------------------------------
+# Version:      0.0.1 für easyVDR 0.8
+# Version:      0.0.2 für easyVDR 0.9
+#               0.0.3 einheitliches Logging
+#               0.0.4 bugfix C.B. 
+#               0.0.5 Minimalfrequeny wird jetzt ueber /usr/share/vdr/before-vdr-hooks eingestellt
+#               0.0.6 Konsolemeldungen untedrueckt (--silent)
+#               0.0.7 11.02.13 C.B.
+#               0.0.8 08.06.15 also fitting for VM
+#---------------------------------------------
+# Autor:        michel8
+#---------------------------------------------
+#
+#
+# 19.07.2011
+########################################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - powernowd "
+BACKTITLE=" Konfiguration fuer easyVDR"
+FILENAME="$SETUP/hw-setup/easyvdr-config-K8-minimalfrequency"
+FILEVERSION="V 0.0.5 vom 13.11.2011"
+
+LOGFILE="$EASYVDR_LOGDIR/easyvdr-config-HW_Extras.log"
+
+CPU_FR_DIR="/sys/devices/system/cpu/cpu0/cpufreq"
+minimalfrequency_hlp="$PLUGIN_CFG_DIR/setup/help/setup_minimalfrequency.hlp"
+
+echo "<-----><------><------><------><------><------><------><------>"  >> $LOGFILE
+echo "File-Info: $FILENAME $FILEVERSION "                               >> $LOGFILE
+log --silent "$FILENAME wird gestartet..."
+
+######################### functions ####################################################
+
+#Helpfile erstellen
+WriteHelpfile()
+{
+    log --silent "---> Schreibe Datei $minimalfrequency_hlp..."
+
+    mkdir -p $PLUGIN_CFG_DIR/setup/help
+    echo "Bei der Erst-Inbetriebnahme sollten die einstellbaren  "         > $minimalfrequency_hlp
+    echo "  Prozessorfrequenzen unten eingetragen worden sein.   "        >> $minimalfrequency_hlp
+    echo "Die Frequenz ist in kHz angegeben, 1GHz = 1 000 000    "        >> $minimalfrequency_hlp
+    echo " "                                                              >> $minimalfrequency_hlp
+    echo "Prozessor-Frequenzen dieses Systems:"                           >> $minimalfrequency_hlp
+    echo "    -.--.-- "                                                   >> $minimalfrequency_hlp
+    for i in $FREQUENCIES
+      do
+        echo "    $i "                                                    >> $minimalfrequency_hlp
+      done
+    echo "Diese Datei kann neu erstellt werden mit:  "                    >> $minimalfrequency_hlp
+    echo "$SETUP/hw-setup/easyvdr-config-K8-minimalfrequency "            >> $minimalfrequency_hlp
+    echo "Dazu muss bei einem AMD-K8 Powersave aktiviert sein ! "         >> $minimalfrequency_hlp
+    echo " "                                                              >> $minimalfrequency_hlp
+    echo "Shell-Kommando: cat /sys/devices/system/cpu/cpu0/.     "        >> $minimalfrequency_hlp
+    echo "               ./cpufreq/scaling_available_frequencies "        >> $minimalfrequency_hlp
+    echo ". "                                                             >> $minimalfrequency_hlp
+}
+
+#Minimalfrequenz auswaehlen
+SelectFrequency()
+{
+    unset Proz_Frequ
+    k=1; 
+    for i in $FREQUENCIES
+      do
+	Proz_Frequ[$k]=$i; ((k++))
+	Proz_Frequ[$k]="$((i/1000)) MHz als Minimalfrequenz"; ((k++))
+      done
+    Proz_Frequ[$k]="0"; ((k++))
+    Proz_Frequ[$k]="keine Minimalfrequenz"; ((k++))
+    SELECT_FREQ=$(dialog --title " $TITLE" \
+                        --backtitle " $BACKTITLE" \
+        		--ok-label " ausgewaehlte Minimal-Frequenz einstellen " \
+                	--nocancel \
+            		--menu  "\n \
+    Bei AMD-K8-Systemen mit OnBoard-Grafik fehlt bei zu kleiner  \n \
+    Minimalfrequenz die Performance, um HD wiedergeben zu koennen. \n \
+    Folgende Prozessorfrequenzen unterstuetzt das System.\n \
+    Waehlen sie eine als Minimalfrequenz bei aktivem Powernow! " $DIA_BOX_SIZE \
+            "${Proz_Frequ[@]}" 3>&1 1>&2 2>&3 3>&- )      # Index und Name im Menu
+    OK_CANCEL=$?
+    clear
+    log --silent "---> $SELECT_FREQ kHz als Minimalfrequenz ausgewaehlt, schreibe Parameter in sysconfig..."
+    SetSysconfig MINIMUM_FREQUENCY $SELECT_FREQ
+}
+
+#####
+Generate_startcommand()
+{
+powernowd_startfile="/usr/share/vdr/after-vdr-hooks/20_powernowd4amdK8"
+
+echo "#! /bin/bash"                                                                              > $powernowd_startfile
+echo "#"                                                                                        >> $powernowd_startfile
+echo "# For AMD-K8 and OnBoard-Grafik set Minimalfrequency"                                     >> $powernowd_startfile
+echo "#"                                                                                        >> $powernowd_startfile
+echo "# ... generated from easyvdr-config-K8-minimalfrequency"                                  >> $powernowd_startfile
+echo "#"                                                                                        >> $powernowd_startfile
+echo ". $CFG_DIR/sysconfig"                                                                     >> $powernowd_startfile
+echo "if [ \$MINIMUM_FREQUENCY ]; then"                                                         >> $powernowd_startfile
+echo "  if [ \$MINIMUM_FREQUENCY != \"0\" ]; then"                                              >> $powernowd_startfile
+echo "    logger \"\$MINIMUM_FREQUENCY als Minimalfrequenz eingestellt\" "                      >> $powernowd_startfile
+echo "    echo \"\$MINIMUM_FREQUENCY\" > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq" >> $powernowd_startfile
+echo "    #e.g. echo 2000000 > /sys/devices/system/cpu/cpu0/cpufreq/scaling_min_freq"           >> $powernowd_startfile
+echo "  fi"                                                                                     >> $powernowd_startfile
+echo "fi"                                                                                       >> $powernowd_startfile
+echo "# END Minimalfrequenz for AMD-K8 and OnBoard-Grafik"                                      >> $powernowd_startfile
+
+chmod 755 $powernowd_startfile
+
+}
+
+#############################################################################
+# Hauptprogramm
+#############################################################################
+
+if [ -e $CPU_FR_DIR/scaling_driver ]; then
+  if (( $(grep -c powernow-k8 $CPU_FR_DIR/scaling_driver) != 0 )); then
+    #Auslesen der moeglichen Frequenzen
+    if [ -f $CPU_FR_DIR/scaling_available_frequencies ]; then
+        FREQUENCIES=$(< $CPU_FR_DIR/scaling_available_frequencies)
+        log --silent "---> powernow-k8 als Treiber erkannt..."
+        log --silent "---> Moegliche Prozessorfrequenzen: $FREQUENCIES [kHz]"
+        SelectFrequency
+        Generate_startcommand
+    else
+        FREQUENCIES="==>Prozessorfrequenzen waren_nicht_auszulesen! -.--.--"
+        log --silent "---> Prozessorfrequenzen waren nicht auszulesen, Cool-n-Quiet evtl. im BIOS nicht aktiviert"
+        echo ""
+    fi
+  else
+    FREQUENCIES="==>Prozessorfrequenzen waren_nicht_auszulesen! -.--.--"
+    log --silent "---> Das System hat keinen aktiven powernow-k8 Treiber."
+  fi
+else
+    FREQUENCIES="==>Prozessorfrequenzen waren_nicht_auszulesen! -.--.--"
+    log --silent "---> Das System hat keinen aktiven powernow-k8 Treiber."
+fi
+
+
+#Abschliessend Helpfile erstellen
+WriteHelpfile
+
+log --silent "---> $FILENAME wurde beendet."
+
+

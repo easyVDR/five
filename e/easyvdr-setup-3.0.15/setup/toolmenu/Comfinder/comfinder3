@@ -1,0 +1,112 @@
+#!/bin/bash
+#
+# auto detection of homebrew (serial )
+# ir-receivers  ( should also work for attric etc. )
+#  Captain_Beefheart 4 easyvdr
+#  24.12.10
+#
+# checkt ttS0 bis ttS7 ( com1 bis com8 ) / START_COM=0 bis END_COM=7
+# auf angeschlossenen IR-Receiver
+# V 0.2 11.02.13  C.B.
+# V 0.2 21.07.2018 lirc_serial nach serial_ir geändert
+######################################### 
+
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+#####
+Set_Parameter()
+{
+LOG_MESS="/var/log/syslog"
+SHORTLOG="/tmp/Tail_Mess.tmp"
+LIRC_MESS="serial_ir: auto-detected active low receiver"
+START_COM=0
+END_COM=7
+}
+
+##### 
+Get_IO-IRQ()
+{
+IO=`dmesg | grep ttyS$comX | tail -1 | cut -d"O" -f2 | cut -d"(" -f1`
+IO="${IO// /}"
+IRQ=`dmesg | grep ttyS$comX | tail -1  | cut -d"(" -f2 | cut -d")" -f1`
+IRQ="${IRQ// /}"
+
+[[ ! -z $IO ]] && FOUND_FLAG=0 || FOUND_FLAG=1
+return $FOUND_FLAG
+}
+
+#####
+Get_Data_from_Ports()
+{
+setserial /dev/ttyS$comX uart none
+[ -f $SHORTLOG ] && rm $SHORTLOG
+tail -f  -n 1 $LOG_MESS >> $SHORTLOG &
+PID_OF_TAIL=$!
+disown $PID_OF_TAIL
+modprobe serial_ir io="$IO" "$IRQ"
+sleep 0.1
+kill $PID_OF_TAIL
+rmmod serial_ir
+}
+
+#####
+Check_Homebrew()
+{
+COUNT=0
+COUNT=`cat $SHORTLOG | grep -c "$LIRC_MESS"`
+if (( $COUNT==1 )); then
+  Test_COM_OUT=$(($comX + 1))    ##for  testing
+  Test_FOUND_PORTS=$Test_FOUND_PORTS"com"$Test_COM_OUT" "    ##for testing
+  TTS_No[$i]=$comX
+  IO_No[$i]=$IO
+  IRQ_No[$i]="${IRQ//irq=/}"; ((++i))
+fi
+}
+
+#####
+Build_Data_Array()
+{
+j=0; k=0
+for dummy in ${TTS_No[@]}
+  do
+    FOUND_PORTS[$j]=${TTS_No[$k]}; ((++j))
+    FOUND_PORTS[$j]=${IO_No[$k]} ; ((++j))
+    FOUND_PORTS[$j]=${IRQ_No[$k]}; ((++j)); ((++k))
+  done
+}
+
+#####  main-run ##########
+Find_Serial_Receiver()
+{
+Set_Parameter
+i=0
+for ((comX=$START_COM;comX<=$END_COM;comX++))
+  do
+    Get_IO-IRQ
+    if (($? == 0)); then
+      Get_Data_from_Ports
+      Check_Homebrew
+    fi
+  done
+Build_Data_Array
+}
+
+#####
+Show_File()
+{
+dialog --textbox $FILE_2_SHOW $DIA_BOX2_SIZE ; clear
+}
+
+##################  main for test  #############
+Find_Serial_Receiver
+rm -f /tmp/serial-info
+echo " "                                                          > /tmp/serial-info
+echo "Found IR-Receiver on:  "$Test_FOUND_PORTS                  >> /tmp/serial-info
+echo " "                                                         >> /tmp/serial-info
+echo "Inhalt des Datenarrays:"                                   >> /tmp/serial-info
+echo "Format: Nr.des ttSX, Nr.der IO-Port, Nr.der IRQ, usw. "    >> /tmp/serial-info
+echo ${FOUND_PORTS[@]}                                           >> /tmp/serial-info
+
+FILE_2_SHOW="/tmp/serial-info"
+Show_File
+

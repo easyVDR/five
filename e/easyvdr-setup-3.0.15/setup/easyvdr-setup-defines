@@ -1,0 +1,33 @@
+# definitionen fuers setup
+# initial      Captain_Beefheart
+# v 0.1 13.01.13  cleanup because "config-loader" etc.  C.B.
+# v 0.2 11.02.13  C.B.
+
+stat_easyvdr_setup_defines="already_loaded"
+
+[[ X"$stat_easyvdr_config_loader" != X"already_loaded" ]] && . /usr/lib/vdr/easyvdr-config-loader
+. /usr/share/easyvdr/easyvdr-version
+
+EASYVDR_VERSION="$EASYVDRBASEVERS"."$EASYVDRSUBVERS"
+
+SETUP="/usr/share/easyvdr/setup"    ###  bleibt
+VDR_LIBS="/usr/lib/vdr"             ### bleibt 
+SETUP_STATUS="$EASYVDR_LOGDIR/setup.state"  ### bleibt
+DETECT="$SETUP/hw-detect"           ### bleibt
+HW_SETUP_SP="$SETUP/hw-setup"       ### bleibt
+SETUP_HELP_DIR="$SETUP/setup-help"  ### bleibt
+SETUP_T_PATCH_DIR="$SETUP/t-patches"
+DIA_BOX_SIZE="20 75 17"
+DIA_BOX2_SIZE="20 75"
+DIA_BOX3_SIZE="10 40"
+DIA_BOX4_SIZE="12 75"
+TIMEOUT=5
+TIMEOUT2=10
+TIMEOUT3=20
+DVB_S_DEFAULT="1_Astra.conf"
+DVB_S2_DEFAULT="1_Astra-DVB-S2-DE-AT.conf"
+
+[ -f $SETUP_STATUS ] && . $SETUP_STATUS
+
+. $VDR_LIBS/easyvdr-module-loader   # evtl spaeter raus
+

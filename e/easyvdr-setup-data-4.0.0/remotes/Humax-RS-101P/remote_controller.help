@@ -1,0 +1,16 @@
+Infos zu dieser Fernbedienung:
+
+
+Konfiguriert für folgende Empfaenger:
+ - serial - Homebrew/atrik/alsa
+
+Sonderbelegung:
+KEY_SETUP              @ "tv/sat"
+KEY_GOTO               @ "ton"
+KEY_TIME               @ "white"
+KEY_RECORDINGS         @ "gray"
+KEY_TV                 @ "?"
+KEY_PROGRAM            @ "epg"
+
+
+ 

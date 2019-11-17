@@ -1,0 +1,375 @@
+#!/bin/bash
+#
+# frueher Einstellungen aus NM-Manager nach /etc/network/interfaces und /etc/resolv.conf schreiben
+#
+# Version 0.0.1 Sinai
+# Version 0.0.2 michel8: resolv.conf indirekt schreiben
+# 20140405 martin kein start vom Setup aus diesem skript mehr...
+# 20150316 V 0.0.3 michel8: Upgrade and Kernel-Selection
+# 20150329 V 0.0.4 michel8: Ready 4 next ISO..
+# 20150410 V 0.0.5 michel8: changed ubuntu archive
+# 20150412 V 0.0.6 michel8: monitored apt-get update
+# 20150527 V 0.0.7 michel8: passend auch fuer Kernel-3.16-iso
+# 20150620 V 0.0.8 michel8: Fix beim Fehlerlogging und dist-upgrad mit Kernel 3.16
+# 20150629 V 0.0.9 michel8: Fix beim Kernel-Hold
+# 20151025 V 0.3.0 michel8: Anpassung fuer V3.0 Test-ISO
+# 20151204 V 0.3.1 martin: vdr UID auf 2000 setzen
+# 20160212 V 0.3.2 michel8: Auswahl lts-wily hinzugefuegt
+# 20160303 V 0.3.2 martin: kill vdr before UID change
+# 20161105 V 0.3.3 martin: no more question for updates, inst. counter for stable-iso
+# http://www.easy-vdr.de
+#
+exit 0
+PackagelistUpdate()
+{
+UpdateOK="no"
+while [ "$UpdateOK" != "yes" ]; do
+    apt-get update 2>&1 | tee /tmp/apt_update
+    returning=$?
+    failures=$(grep -c "failed\|Fehlschlag" /tmp/apt_update)
+    echo ""
+    if (( $returning || $failures )); then
+      echo "****************************************************************"
+      echo "** Paketlisteneinlesen Fehlgeschlagen, erneut Einlesen, oder **"
+      echo "** auf anderer Konsole die /etc/apt/sources.list korrigieren **"
+      echo "** Fehler siehe /var/log/easyvdr/SetupAfterInstall.Done      **"
+      echo ""
+      echo "Fehler bei apt-get update:" >> /var/log/easyvdr/SetupAfterInstall.Done
+      cat /tmp/apt_update | grep  "^W: " >> /var/log/easyvdr/SetupAfterInstall.Done
+      Selection="notOK"
+      while [ "$Selection" != "OK" ] ; do
+        ReadSel="y"
+        read -e -p "Paketlisten erneut einlesen [Y|n]? " -i $ReadSel ReadSel
+        case $ReadSel in
+          y|Y|n|N) Selection="OK";;
+                *) Selection="notOK";;
+        esac
+      done
+      if [ $ReadSel == "n" -o $ReadSel == "N" ]; then
+        UpdateOK="yes"
+        # echo "passt nicht, aber ende"
+      fi
+    else
+      UpdateOK="yes"
+      # echo "OK, passt"
+    fi
+done
+}
+
+PackagelistUpgade()
+{
+UpdateOK="no"
+while [ "$UpdateOK" != "yes" ]; do
+    apt-get -y -o Dpkg::Options::=--force-confnew dist-upgrade 2>&1 | tee /tmp/apt_upgrade
+    returning=$?
+    failures=$(grep -c "dpkg: error\|dpkg: Fehler\|^E:" /tmp/apt_upgrade)
+    echo ""
+    if (( $returning || $failures )); then
+      echo "****************************************************************"
+      echo "** Paketupgrade (teilweise) fehlgeschlagen, erneuter Versuch, **"
+      echo "** oder auf anderer Konsole die Ursache korrigieren.          **"
+      echo "** Fehler siehe auch /var/log/easyvdr/SetupAfterInstall.Done  **"
+      echo ""
+      echo "Fehler bei apt-get dist-upgrade:" >> /var/log/easyvdr/SetupAfterInstall.Done
+      cat /tmp/apt_upgrade | grep -A 1 "^dpkg:" >> /var/log/easyvdr/SetupAfterInstall.Done
+      Selection="notOK"
+      while [ "$Selection" != "OK" ] ; do
+        ReadSel="y"
+	read -e -p "Dist-Upgrade erneut durchfuehren [Y|n]? " -i $ReadSel ReadSel
+	case $ReadSel in
+	  y|Y|n|N) Selection="OK";;
+                *) Selection="notOK";;
+	esac
+      done
+      if [ $ReadSel == "n" -o $ReadSel == "N" ]; then
+        UpdateOK="yes"
+	# echo "passt nicht, aber ende"
+      fi
+    else
+      UpdateOK="yes"
+      # echo "OK, passt"
+    fi
+done
+}
+
+KernelHold()
+{
+  echo "[P-H] activate Kernel-Hold..."
+  AKT_KERNEL=$(uname -r | cut -d. -f-2)
+  echo "(Re-)Aktiviere Kernel-Hold fuer Kernel $AKT_KERNEL ..." >> /var/log/easyvdr/SetupAfterInstall.Done
+  if [[ $AKT_KERNEL == "3.12" ]] || [[ $AKT_KERNEL == "3.13" ]]; then
+    echo "linux-generic" hold | dpkg --set-selections
+    echo "linux-headers-generic" hold | dpkg --set-selections
+    echo "linux-image-generic" hold | dpkg --set-selections
+  elif [[ $AKT_KERNEL == "3.16" ]]; then
+    echo "linux-generic-lts-utopic" hold | dpkg --set-selections
+    echo "linux-headers-generic-lts-utopic" hold | dpkg --set-selections
+    echo "linux-image-generic-lts-utopic" hold | dpkg --set-selections
+  elif [[ $AKT_KERNEL == "3.19" ]]; then
+    echo "linux-generic-lts-vivid" hold | dpkg --set-selections
+    echo "linux-headers-generic-lts-vivid" hold | dpkg --set-selections
+    echo "linux-image-generic-lts-vivid" hold | dpkg --set-selections
+  elif [[ $AKT_KERNEL == "4.2" ]]; then
+    AKT_KERNEL=$(uname -r | cut -d- -f1)
+    if [[ $AKT_KERNEL == "4.2.0" ]]; then
+      echo "(Re-)Aktiviere Kernel-Hold fuer Kernel $AKT_KERNEL (lts-wily)..." >> /var/log/easyvdr/SetupAfterInstall.Done
+      echo "linux-generic-lts-wily" hold | dpkg --set-selections
+      echo "linux-headers-generic-lts-wily" hold | dpkg --set-selections
+      echo "linux-image-generic-lts-wily" hold | dpkg --set-selections
+    else
+      echo "(Re-)Aktiviere Kernel-Hold fuer Kernel $AKT_KERNEL ..." >> /var/log/easyvdr/SetupAfterInstall.Done
+      echo "linux-headers-4.2.3-040203" hold | dpkg --set-selections
+      echo "linux-headers-4.2.3-040203-generic" hold | dpkg --set-selections
+      echo "linux-image-4.2.3-040203-generic" hold | dpkg --set-selections
+    fi
+  elif [[ $AKT_KERNEL == "4.4" ]]; then
+    echo "linux-generic-lts-xenial" hold | dpkg --set-selections
+    echo "linux-headers-generic-lts-xenial" hold | dpkg --set-selections
+    echo "linux-image-generic-lts-xenial" hold | dpkg --set-selections
+  fi
+
+  ## Achtung, je nach Kernel im ISO und je nach Kernel in der Auswahl unten muss hier auch das passende Hold gesetzt werden !
+}
+
+Kernelwahl()
+{
+  AKT_KERNEL=$(uname -r | cut -d- -f-1)
+  if [ "$AKT_KERNEL" == "3.19.0" ]; then
+    echo ""
+    echo "*****************************************************"
+    echo "**     Waehle Ubuntu-Kernel ...                    **"
+    echo "**       default (3.19-lts-vivid aus ISO)          **"
+    echo "**       3.19    (auf neusten 3.19 upgraden)       **"
+    echo "**       4.2     (4.2.0-lts-wily)                  **"
+    echo "**       4.2.x   (Testweise 4.2.X nur 64-Bit)      **"
+    echo "**                                                 **"
+    echo "**     Alle ausser default dauert lange...         **"
+    echo ""
+
+    ReadKernel="default"	# Default-Kernel
+    Selection="notOK"
+    while [ "$Selection" != "OK" ] ; do
+      read -e -p "Kernelauswahl: " -i $ReadKernel ReadKernel
+
+      if [ "x$ReadKernel" == "x" ]; then
+        ReadKernel="default"
+      fi
+      case $ReadKernel in
+	 default) Selection="OK";;
+	    3.19) Selection="OK";;
+             4.2) Selection="OK";;
+     4.2.x|4.2.X) Selection="OK";;
+               *) Selection="notOK";;
+      esac
+    done
+    echo "Kernel $ReadKernel im PreSetup ausgewaehlt" >> /var/log/easyvdr/SetupAfterInstall.Done
+  elif [ "$AKT_KERNEL" == "4.2.0" ]; then
+    echo ""
+    echo "*****************************************************"
+    echo "**     Waehle Ubuntu-Kernel ...                    **"
+    echo "**       default (4.2.0-lts-wily aus ISO)          **"
+    echo "**       4.2     (auf neusten 4.2.0 upgraden)      **"
+    echo "**       4.2.x   (Testweise 4.2.X nur 64-Bit)      **"
+    echo "**                                                 **"
+    echo "**     Alle ausser default dauert lange...         **"
+    echo ""
+
+    ReadKernel="default"        # Default-Kernel
+    Selection="notOK"
+    while [ "$Selection" != "OK" ] ; do
+      read -e -p "Kernelauswahl: " -i $ReadKernel ReadKernel
+
+      if [ "x$ReadKernel" == "x" ]; then
+        ReadKernel="default"
+      fi
+      case $ReadKernel in
+         default) Selection="OK";;
+             4.2) Selection="OK";;
+     4.2.x|4.2.X) Selection="OK";;
+               *) Selection="notOK";;
+      esac
+    done
+    echo "Kernel $ReadKernel im PreSetup ausgewaehlt" >> /var/log/easyvdr/SetupAfterInstall.Done
+    #  elif [ "$AKT_KERNEL" == "4.2.0" ]; then
+    #    echo "Bereits Kernel 4.2.0-lts-wily aktiv, dist-upgrade ggf. mit Kernelupdate"
+    #    echo "Kernel 4.2.0 erkannt, dist-upgrade ggf. mit Kernelupdate" >> /var/log/easyvdr/SetupAfterInstall.Done
+    #    ReadKernel="4.2I"
+  else
+    echo "Kernel $AKT_KERNEL aktiv, nur dist-upgrade - kein Kernelupdate verfuegbar" 
+    echo "Kernel $AKT_KERNEL erkannt, nur upgrade - kein Kernelupdate im Presetup" >> /var/log/easyvdr/SetupAfterInstall.Done
+    ReadKernel="default"
+  fi
+
+  case $ReadKernel in
+        3.19) echo "[P-6] Unhold and Update to latest Kernel 3.19 ..."
+              echo "linux-generic-lts-vivid" install | dpkg --set-selections
+              echo "linux-headers-generic-lts-vivid" install | dpkg --set-selections
+              echo "linux-image-generic-lts-vivid" install | dpkg --set-selections
+              echo "Kernel and full Dist-Upgrade..." >> /var/log/easyvdr/SetupAfterInstall.Done
+              PackagelistUpgade
+              echo "[P-6] Kernel and full-dist-upgrade finished"
+              RebootRequired="yes"
+              ;;
+         4.2) echo "[P-7] Full-Dist-Upgrade and install of latest Kernel 4.2.0-lts-wily..."
+              echo "Install latest lts-Kernel 4.2.0-wily, mit folgendem Dist-Upgrade..." >> /var/log/easyvdr/SetupAfterInstall.Done
+              if [ "$AKT_KERNEL" == "4.2.0" ]; then
+                echo "linux-generic-lts-wily" install | dpkg --set-selections
+                echo "linux-headers-generic-lts-wily" install | dpkg --set-selections
+                echo "linux-image-generic-lts-wily" install | dpkg --set-selections
+                echo "Kernel and full Dist-Upgrade..." >> /var/log/easyvdr/SetupAfterInstall.Done
+              else
+                #solange x-server von wili nicht online sind, bleiben die von vivid
+                apt-get install -y --install-recommends linux-generic-lts-wily fdutils linux-lts-wily-tools-4.2.0-27
+                # später dann so wie hier:
+                # apt-get install -y --install-recommends linux-generic-lts-wily xserver-xorg-core-lts-wily xserver-xorg-lts-wily xserver-xorg-video-all-lts-wily xserver-xorg-input-all-lts-wily libwayland-egl1-mesa-lts-wily fdutils linux-lts-wily-tools
+              fi
+              PackagelistUpgade
+              echo "Full Dist- und Kernel-Upgrade im PreSetup finished" >> /var/log/easyvdr/SetupAfterInstall.Done
+              RebootRequired="yes"
+              ;;
+  4.2.x|4.2.X) echo "[P-8] Full-Dist-Upgrade and install of Kernel 4.2.x.."
+              ## Uebergangsweise feste Install-Quelle fuer den Test-Kernel
+              echo "Install Kernel 4.2.3-Unstable, mit folgendem Dist-Upgrade..." >> /var/log/easyvdr/SetupAfterInstall.Done
+              cd /tmp
+              wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.2.3-unstable/linux-headers-4.2.3-040203_4.2.3-040203.201510030832_all.deb
+              wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.2.3-unstable/linux-headers-4.2.3-040203-generic_4.2.3-040203.201510030832_amd64.deb
+              wget http://kernel.ubuntu.com/~kernel-ppa/mainline/v4.2.3-unstable/linux-image-4.2.3-040203-generic_4.2.3-040203.201510030832_amd64.deb
+              dpkg -i linux-headers-4.2*.deb linux-image-4.2*.deb
+              ## Ende feste Install-Quelle fuer den Test-Kernel
+              ## Achtung, Aenderungen an diesem Kernel-Install muss auch beim Kernel-Hold nachgetragen werden!
+              PackagelistUpgade
+              RebootRequired="yes"
+              ;;
+           *) PackagelistUpgade
+              echo "[P-5] full-dist-upgrade finished..."
+              echo "Full Dist-Upgrade im PreSetup" >> /var/log/easyvdr/SetupAfterInstall.Done
+              echo "Nun weiter mit dem Setup..." >> /var/log/easyvdr/SetupAfterInstall.Done
+              RebootRequired="no"
+              ;;
+  esac
+}
+
+ FixesForISO()
+{
+  #VDR User wieder auf UID 2000 setzen
+  killall -u vdr
+  sleep 5
+  usermod -u 2000 vdr
+  chown -R 2000:vdr /var/www
+  chown -R 2000:vdr /var/lib/vdr
+  chown -R 2000:vdr /var/cache/vdr*
+  chown -R 2000:vdr /etc/vdr
+  chown -R 2000:vdr /var/log/lighttpd/
+
+  echo "Problematische Inhalte aus dem 3.x-ISO wieder entfernen" >> /var/log/easyvdr/SetupAfterInstall.Done
+  #apt-get remove --yes --purge vdr-plugin-upnp libtntdb4 tntdb-mysql4 tntdb-sqlite4
+  #apt-get remove --yes --purge vdr-plugin-play
+  AKT_KERNEL=$(uname -r | cut -d- -f-1)
+  if [ ! -f /etc/isoinfo ]; then
+     apt-get install easyvdr-instcnt30a -qq
+     echo "easyVDR 3.0-Alpha - Desktop-ISO_1" > /etc/isoinfo
+  elif [ $(cat /etc/isoinfo | grep -c "easyVDR 3.0-Alpha - Desktop-ISO") == 1 ]; then
+     apt-get install easyvdr-instcnt30a -qq
+  elif [ $(cat /etc/isoinfo | grep -c "easyVDR 3.0-Beta - Desktop-ISO") == 1 ]; then
+     apt-get install easyvdr-instcnt30b -qq
+  elif [ $(cat /etc/isoinfo | grep -c "easyVDR 3.0-Stable - Desktop-ISO") == 1 ]; then
+     apt-get install easyvdr-instcnt30s -qq
+  else
+     apt-get install easyvdr-instcnt30 -qq
+  fi
+}
+
+cat /etc/isoinfo 2>&1 | grep -c "Datei oder Verzeichnis nicht gefunden"
+########################################################
+###      main
+
+mkdir -p /var/log/easyvdr
+if [ ! -f /var/log/easyvdr/SetupAfterInstall.Done ]; then
+  # nach dem Installer ist der Paketpool noch fuer die easyvdr-pakete aktualisiert
+  echo "easyVDR Presetup V3.2 started, updating easyvdr-packets..." > /var/log/easyvdr/SetupAfterInstall.Done
+  clear
+  FixesForISO
+  KernelHold
+  echo "[P-0] Presetup V3.2 started, updating easyvdr-packets..."
+  cp /etc/apt/sources.list /etc/apt/sources.list.bkp
+  sed -i 's/^\(.*\)ubuntu.com\(.*\)$/# \1ubuntu.com\2/g' /etc/apt/sources.list
+
+  # PackagelistUpdate # ueberwachtes apt-get update
+
+  PackagelistUpgade
+  cp /etc/apt/sources.list.bkp /etc/apt/sources.list
+  echo "Zuerst Update der Easyvdr-Pakete im PreSetup" >> /var/log/easyvdr/SetupAfterInstall.Done
+  echo "[P-1] easyvdr-packet-upgrade finished..."
+  echo "[P-2] Aktivate Ubuntu-extras and set ubuntu archive ..."
+  if [ $(grep -c "# deb http://extras.ubuntu.com/ubuntu trusty main" /etc/apt/sources.list) == 1 ]; then
+        sed -i 's/# deb http:\/\/extras.ubuntu.com\/ubuntu trusty main/deb http:\/\/extras.ubuntu.com\/ubuntu trusty main/' /etc/apt/sources.list
+        sed -i 's/# deb-src http:\/\/extras.ubuntu.com\/ubuntu trusty main/deb-src http:\/\/extras.ubuntu.com\/ubuntu trusty main/' /etc/apt/sources.list
+  fi
+
+  # Archivquelle ohne .de
+  sed -i 's/de.archive/archive/g' /etc/apt/sources.list
+  echo "Dann sources.list vervollstaendigen und Paketquellen aktualisieren" >> /var/log/easyvdr/SetupAfterInstall.Done
+  PackagelistUpdate # ueberwachtes apt-get update mit kompletter Paketliste
+
+
+
+#  echo "*****************************************************"
+#  echo "*****************************************************"
+#  echo ""
+#  echo "**     Waehle Upgrade-Variante ...                 **"
+#  echo "**       1  kein weiteres Upgrade                  **"
+#  echo "**       2  Ubuntu Dist-Upgrade                    **"
+#  echo "**       3  Kernel- und Dist-Upgrade               **"
+#  echo "**       (default = 1)                             **"
+#  echo "**     (2 und 3 kann lange dauern...)              **"
+#  echo ""
+#
+#  ReadUpdate="1"         # Default-Update
+#  Selection="notOK"
+#  while [ "$Selection" != "OK" ] ; do
+#    read -e -p "Updateauswahl: " -i $ReadUpdate ReadUpdate
+#
+#    if [ "x$ReadUpdate" == "x" ]; then
+#      ReadUpdate="default"
+#    fi
+#    case $ReadUpdate in
+#     default) Selection="OK";;
+#       1|2|3) Selection="OK";;
+#           *) Selection="notOK";;
+#    esac
+#  done
+#  case $ReadUpdate in
+#    3) Kernelwahl;;
+#    2) PackagelistUpgade
+#       echo "[P-3] full-dist-upgrade finished..."
+#       echo "Full Dist-Upgrade im PreSetup" >> /var/log/easyvdr/SetupAfterInstall.Done
+#       echo "Nun weiter mit dem Setup..." >> /var/log/easyvdr/SetupAfterInstall.Done
+#       RebootRequired="no";;
+#    *) echo "Sonst aber kein weiteres Upgrade im PreSetup" >> /var/log/easyvdr/SetupAfterInstall.Done
+#       echo "[P-4] No further Upgrade, starting setup..."
+#       echo "Nun weiter mit dem Setup..." >> /var/log/easyvdr/SetupAfterInstall.Done
+#       RebootRequired="no";;
+#  esac
+#
+#  echo ""
+#
+#  if [[ $RebootRequired == "yes" ]]; then
+#    if [[ -e /etc/init/easyvdr-setup-call.override ]]; then
+#      rm /etc/init/easyvdr-setup-call.override
+#    fi
+#    echo "[P-X] Reboot after Kernelchange..."
+#    echo ""
+#    echo "Durch den Kernelwechsel ist ein erneuter Reboot erforderlich..." 
+#    echo "Erneuter Restart durch PreSetup" >> /var/log/easyvdr/SetupAfterInstall.Done
+#    sleep 5
+#    reboot
+#    sleep 20   # da sonst nach absetzen von reboot das script beendet und das folgende gestartet wird...
+#  fi
+#else
+#    echo "Erneutes apt-get update und dist-upgrade nach dem Reboot..." >> /var/log/easyvdr/SetupAfterInstall.Done
+#    PackagelistUpdate # ueberwachtes apt-get update
+#    PackagelistUpgade
+#    KernelHold
+#    echo "Nun endlich weiter mit dem Setup..." >> /var/log/easyvdr/SetupAfterInstall.Done
+fi
+

@@ -1,0 +1,22 @@
+#!/bin/bash
+#enable-poweroff-program-changer
+# Ver 1.0	gb 05.01.16
+#
+REMOTE_CONF=/var/lib/vdr/remote.conf
+PCH_LIRC_CONF="/etc/vdr/easyvdr/program-changer/program-changer-lirc.conf"
+KEY=$(grep "LIRC.Power" $REMOTE_CONF|tr -s ' '|cut -d" " -f2)
+LIRC_POWER_COUNT=$(grep -c "LIRC.Power" $REMOTE_CONF)
+
+if [ $(grep -c "LIRC.Power" $REMOTE_CONF) -le 0 ]; then
+  exit 
+ else
+ x=1
+ while [ $x -le $LIRC_POWER_COUNT ];do
+  KEY_AND=$(echo $KEY|cut -d" " -f$x) 
+  LIRC_POWER_OLD="LIRC.Power.*"$KEY_AND
+  LIRC_POWER_NEW="#LIRC.Power     	"$KEY_AND
+  sed -i "s!.*$LIRC_POWER_OLD.*!$LIRC_POWER_NEW!" $REMOTE_CONF 
+  let x=$x+1 
+ done
+ sed -i "s!program-changer.sh NO_SHUTDOWN!program-changer.sh SHUTDOWN!g" $PCH_LIRC_CONF
+fi

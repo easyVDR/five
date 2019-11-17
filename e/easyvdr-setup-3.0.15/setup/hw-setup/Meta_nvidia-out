@@ -1,0 +1,24 @@
+#!/bin/bash
+#
+# Dieses Skript konfiguriert die Ausgabe über Nvidia-Graka
+#
+#  Captain_Beefheart fuer easyvdr 0.9
+#
+#
+# Version 0.0.3
+# V 0.0.4 11.02.13  C.B. 
+# 
+#
+################################################
+#defines
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+###################### main ########################## 
+/usr/share/easyvdr/setup/easyvdr-select-video-driver
+sleep 3
+WriteStatus "Meta_nvidia-out" "Nvidia_configured"
+

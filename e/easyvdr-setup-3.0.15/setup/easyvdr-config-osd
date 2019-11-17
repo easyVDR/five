@@ -1,0 +1,135 @@
+#!/bin/bash
+#
+# Dieses Skript stellt die OSD Quali ein 
+#
+#  Captain_Beefheart fuer easyvdr
+#
+# Version 0.0.2  26.06.12
+# Version 0.0.3 new defines 25.01.13
+# Version 0.0.4 logging und Reduktion auf Qualitaet 02.01.15 by michel8
+#
+################################################
+#defines
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+. $SETUP/osd-lib/osd_skin_lib
+
+
+
+FILENAME="easyvdr-config-osd"
+VERSION="0.0.4"
+SETUPLOG="$EASYVDR_LOGDIR/easyvdr-setup.log"
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - OSD "
+BACK_TITLE=" OSD Konfiguration fuer easyVDR - Version $VERSION "
+
+
+################## Funktionen ################################################
+
+#####
+Get_Frontend_Class()
+{
+case $VDR_FRONTEND in
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+}
+
+#####
+Output_Menu()
+{
+OK_CANCEL=1
+SEL_OSD_SIZE=`dialog\
+            --backtitle "$BACK_TITLE"\
+            --ok-label "auswaehlen"\
+            --nocancel\
+            --title "$TITLE"\
+            --menu "\n\
+        In welcher Qualitaet soll das OSD dargestellt werden?\n\n\
+           Viele Details erfordern aber hohe CPU-Leistung!\n "   $DIA_BOX_SIZE\
+               Full-HD      "Sehr viele Details (1920)"\
+               HD-Ready     "Etwas weniger Details (1280) "\
+               SD           "Wenig Details fuer aeltere TV (720)"\
+               3>&1 1>&2 2>&3`
+OK_CANCEL=$?
+clear
+return $OK_CANCEL
+}
+
+#####
+No_Skin_Mess()
+{
+echo "`date` ...kein X11-System => keine Anthra Auswahl im Setup! "     >> $SETUPLOG
+
+#dialog --backtitle "$BACKTITLE"\
+#       --title "$TITLE"\
+#       --pause "\n\n\
+#        Kein Skin installierbar:" $DIA_BOX2_SIZE $TIMEOUT
+#clear
+}
+
+#####
+Run_Config()
+{
+echo "`date` ...$SEL_OSD_SIZE als OSD-Qualitaet eingestellt.  "        >> $SETUPLOG
+
+case $SEL_OSD_SIZE in
+          Full-HD) Set_F_HD_FS ;;
+         HD-Ready) Set_R_HD_FS ;;
+               SD) Set_SD      ;;
+esac
+}
+
+##########################
+
+#####
+Write_Status()
+{
+sed -i '/"*easyvdr-config-osd"*/d' $SETUP_STATUS
+echo "# `date` easyvdr-config-osd zuletzt ausgefuehrt" >> $SETUP_STATUS
+sed -i '/OSD_configured"*/d' $SETUP_STATUS
+echo "OSD_configured=\"true\"" >> $SETUP_STATUS
+}
+
+
+###################### main ########################## 
+
+
+echo " "                                                     >> $SETUPLOG
+echo "`date` Setup-Script $FILENAME $VERSION gestartet...  " >> $SETUPLOG
+
+
+FORCE_FLAG=$1
+
+Get_Frontend_Class
+
+case $FORCE_FLAG in
+      -f) if [[ $FRONTEND_CLASS == "USE_X11" ]]
+            then
+              Output_Menu
+              (( $? == 0 )) && Run_Config
+            else
+              No_Skin_Mess
+          fi ;;
+       *) if [[ $FRONTEND_CLASS == "USE_X11" ]]
+            then
+              Output_Menu
+              if (( $? == 0 )); then
+                Run_Config
+              fi
+          fi ;;
+esac
+Write_Status
+echo "`date` Setup-Script $FILENAME bis zum Ende durchgelaufen. "     >> $SETUPLOG
+

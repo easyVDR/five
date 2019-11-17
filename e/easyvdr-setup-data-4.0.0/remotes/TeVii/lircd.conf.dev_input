@@ -1,0 +1,69 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.9.0(devinput) on Wed Dec  2 16:48:39 2015
+#
+# contributed by 
+#
+# brand:                       /tmp/lircd.conf.dev_input
+# model no. of remote control: 
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name  devinput
+  bits           56
+  eps            30
+  aeps          100
+  min_repeat 0
+  suppress_repeat 4
+  one             0     0
+  zero            0     0
+  pre_data_bits   8
+  pre_data       0x0
+  gap          107895
+  toggle_bit_mask 0x0
+
+      begin codes
+          KEY_0                    0x04000400000010 0x01000B00000001
+          KEY_1                    0x04000400000011 0x01000200000001
+          KEY_2                    0x04000400000012 0x01000300000001
+          KEY_3                    0x04000400000013 0x01000400000001
+          KEY_4                    0x04000400000014 0x01000500000001
+          KEY_5                    0x04000400000015 0x01000600000001
+          KEY_6                    0x04000400000016 0x01000700000001
+          KEY_7                    0x04000400000017 0x01000800000001
+          KEY_8                    0x04000400000018 0x01000900000001
+          KEY_9                    0x04000400000019 0x01000A00000001
+          KEY_POWER                0x0400040000000A 0x01016400000001
+          KEY_MUTE                 0x0400040000000C 0x01007100000001
+          KEY_VOLUMEDOWN           0x0400040000000F 0x01007200000001
+          KEY_VOLUMEUP             0x04000400000009 0x01007300000001
+          KEY_CHANNELUP            0x04000400000008 0x01019200000001
+          KEY_CHANNELDOWN          0x04000400000006 0x01019300000001
+          KEY_UP                   0x04000400000000 0x01006700000001
+          KEY_DOWN                 0x04000400000001 0x01006C00000001
+          KEY_LEFT                 0x04000400000003 0x01006900000001
+          KEY_RIGHT                0x04000400000002 0x01006A00000001
+          KEY_OK                   0x0400040000001F 0x01016000000001
+          KEY_MENU                 0x0400040000001C 0x01008B00000001
+          KEY_BACK                 0x0400040000001D 0x01000100000001
+          KEY_PLAY                 0x04000400000040 0x0100CF00000001
+          KEY_PAUSE                0x04000400000040 0x0100CF00000001
+          KEY_FASTFORWARD          0x0400040000004D 0x0100D000000001
+          KEY_REWIND               0x0400040000001E 0x0100A800000001
+          KEY_EPG                  0x04000400000044 0x01016D00000001
+          KEY_RED                  0x04000400000046 0x01018E00000001
+          KEY_GREEN                0x04000400000047 0x01018F00000001
+          KEY_YELLOW               0x0400040000005E 0x01019000000001
+          KEY_BLUE                 0x0400040000005C 0x01019100000001
+          KEY_RECORD               0x04000400000004 0x0100A700000001
+          KEY_OPEN                 0x0400040000000E 0x01008000000001
+      end codes
+
+end remote
+
+

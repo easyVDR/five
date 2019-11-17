@@ -1,0 +1,52 @@
+#!/bin/bash
+# # # set -e
+#
+#  sh => bash; set -e raus  c.b.
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+    CONFPATH="$SETUP/default_settings"
+    # Default Frontend.conf integrieren
+    for CONF in $CONFPATH/easyvdr-frontend-*.conf; do 
+      if [ ! -f /var/lib/vdr/`basename $CONF` ]; then
+        cp $CONF /var/lib/vdr/`basename $CONF`
+      fi
+    done
+
+    # Sicherheitshalber die Default vdr-*.xml integrieren
+    mkdir -p $PLUGIN_CFG_DIR/setup/ > /dev/null 2>&1
+    if [ ! -f $PLUGIN_CFG_DIR/setup/vdr-menu.xml ]; then
+        cp $CONFPATH/vdr-menu.xml $PLUGIN_CFG_DIR/setup/vdr-menu.xml
+    fi
+    if [ ! -f $PLUGIN_CFG_DIR/setup/vdr-setup.xml ]; then
+        cp $CONFPATH/vdr-setup.xml $PLUGIN_CFG_DIR/setup/vdr-setup.xml
+    fi
+
+    # Pruefe ob eine neue vdr-menu.xml bzw. vdr-setup.xml ausgeliefert wurde und integriere wenn automatisch moeglich
+    # bleibt eine vdr-*.xml.LastVer nach der postinst bestehen, muss von Hand integriert werden...
+    if [ -f $CONFPATH/vdr-menu.xml.LastVer ]; then
+        if [ "$(cmp $CONFPATH/vdr-menu.xml $CONFPATH/vdr-menu.xml.LastVer)" == "" ];then
+                rm $CONFPATH/vdr-menu.xml.LastVer
+        else
+            # Wenn neue vdr-menu.xml ausgeliefert wurde und alte unverändert aktiv ist
+            # dann neue vdr-menu.xml aktivieren und alte Version ersatzlos streichen
+            if [ "$(cmp $PLUGIN_CFG_DIR/setup/vdr-menu.xml $CONFPATH/vdr-menu.xml.LastVer)" == "" ];then
+                cp -f $CONFPATH/vdr-menu.xml $PLUGIN_CFG_DIR/setup/vdr-menu.xml
+                rm $CONFPATH/vdr-menu.xml.LastVer
+            fi
+        fi
+    fi
+    if [ -f $CONFPATH/vdr-setup.xml.LastVer ]; then
+        if [ "$(cmp $CONFPATH/vdr-setup.xml $CONFPATH/vdr-setup.xml.LastVer)" == "" ];then
+                rm $CONFPATH/vdr-setup.xml.LastVer
+        #else
+            # Wenn neue vdr-setup.xml ausgeliefert wurde muss sie integriert werden
+            # ToDo...
+        fi
+    fi
+
+    chown -R vdr:vdr $PLUGIN_CFG_DIR/setup/
+

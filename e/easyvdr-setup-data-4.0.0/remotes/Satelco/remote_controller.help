@@ -1,0 +1,6 @@
+Receiver:
+ - Samsung irDA/Satelco-USB (laut/leise Problem )
+ - lirc serial
+ - rc-core
+ - av7110 (untestet)
+

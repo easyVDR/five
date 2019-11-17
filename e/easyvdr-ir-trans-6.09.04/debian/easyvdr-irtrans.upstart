@@ -1,0 +1,46 @@
+# Starts irserver daemon
+#
+# irserver is used to control the IR-Trans hardware
+# initial version 19.09.12
+# v0.1  30.09.12     link in post start  C.C.
+
+description     "irserver Daemon"
+author          "C.B."
+
+start on starting easyvdr-vdr or simu-start-vdr
+stop on runlevel [016]
+
+respawn
+respawn limit 5 10
+normal exit 0 ABRT
+
+env LOGGER="logger -t irserver"
+
+script
+  TTYUSB_DEV="/dev/ttyUSB99"
+  [ -f /usr/bin/irserver                  ]                              || { stop; exit 0; }
+  [ -f /var/lib/vdr/sysconfig             ] && . /var/lib/vdr/sysconfig  || { stop; exit 0; }
+  [ x"$LIRC_HW_CONF" = x"irtrans_server"  ]                              || { stop; exit 0; }
+  [ ! -d /var/run/lirc                    ] &&  mkdir -p /var/run/lirc
+
+  $LOGGER "Starting irserver"
+#  echo "sleep 3; ln -s /dev/lircd /var/run/lirc/lircd " | at now    # make link after server has started
+  exec /usr/bin/irserver $TTYUSB_DEV
+end script
+
+#################
+
+post-start script
+  sleep 0.5
+  i=1
+  while [ $i -le 25 ]
+    do
+      if [ -e /dev/lircd ]; then
+        ln -s /dev/lircd /var/run/lirc/lircd
+        break
+      fi
+    sleep 0.2
+    i=$(( $i + 1 ))
+  done
+end script
+

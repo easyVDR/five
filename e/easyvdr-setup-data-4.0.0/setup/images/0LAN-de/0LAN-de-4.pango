@@ -1,0 +1,14 @@
+<markup><!--
+Netzwerk-Manager
+--><span fgcolor="red" size="22000">                       Netzwerk-Manager LAN</span><!--
+--><big><big><big><span fgcolor="red" size="9000">
+ Nur für Experten:</span></big></big></big><!--
+--><big><big><big><span fgcolor="white" size="7500">
+ Wollen wir beim Läufer 'IP-v4-Einstellungen' eine feste IP 'Manuell'zuweisen, sollten
+ Adresse, Netzmaske und für Internetzugriff auch Geteway und DNS-Server eingetragen
+ werden.
+ Bei Gateway und DNS-Server, handelt es sich in den meisten Fällen um die IP-Adresse
+ des Routers. Bei 'Adresse' bitte im Router kontrollieren ob die zukünftig gewünschte
+ IP nicht schon im Netwerk vergeben wurde.
+ </span></big></big></big><!--
+--> </markup>

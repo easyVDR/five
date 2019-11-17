@@ -1,0 +1,144 @@
+#!/bin/bash
+#
+#
+#  Korrekturen fuer Ubuntu Bugs
+#  v0.4.6
+#
+#  Captain_Beefheart
+#
+#  24.10.11
+#
+#  15.2.12 Schreibfixes SurfaceCleanerZ
+#  31.03.12  Umbau für LXDE + desktop for anybody C.B.
+#  30.12.12  added noatime 4 standard partitions  C.B.
+#  02.02.13  added custom override settime & new defines  C.B.
+#  19.08.13  added backup for lirc modules  C.B.
+#  14.05.14  added switchback to ubuntu 1310-networking michel8
+#  18.11.14  Umlaute in den Konsolen 1..6  michel8 - wieder deaktiviert
+#  29.03.15  Stoerende files in /usr/share/irtrans/remotes loeschen  michel8
+#  15.04.15  Powerbutton-Event für neuere Kernel korrigiert michel8
+#  24.05.15  hddtemp ausfuehrbar fuer jeden user michel8
+#  03.06.15  Permissions (martin)
+#  24.06.15  Buggy Plugin upnp aus Grundinstallation entfernen - passiert jetzt im presetup 26.07.15
+#  09.03.16  Comment in /etc/vdr/svdrphosts.conf
+#  10.09.17  remove network.conf fix, disable cd rule
+#############################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+### Bis zu einer besseren Loesung die Power-SW Rule umbennen
+mv /lib/udev/rules.d/70-power-switch.rules /lib/udev/rules.d/70-power-switch.rules.dead
+
+### Bis wir sehen, ob Ubuntu Links fuer DVD anlegt loesen wir selbst
+
+#if [ ! -e /lib/udev/write_cd_rules ]; then
+#    /usr/share/easyvdr/setup/easyvdr-fixes-ubuntu_cd-rules by-id
+#fi
+
+####  ati_remote umbenennen, da blacklist allein nicht reicht
+AKT_KERNEL=$(uname -r)
+REMOTE_MOD_PATH="/lib/modules/$AKT_KERNEL/kernel/drivers/input/misc"
+
+modprobe -r -q ati_remote 
+
+if [ -f $REMOTE_MOD_PATH/ati_remote.ko ]; then
+  mv $REMOTE_MOD_PATH/ati_remote.ko $REMOTE_MOD_PATH/ati_remote.ko.dead
+fi
+if [ -f $REMOTE_MOD_PATH/ati_remote2.ko ]; then
+  mv $REMOTE_MOD_PATH/ati_remote2.ko $REMOTE_MOD_PATH/ati_remote2.ko.dead
+fi
+####
+
+#### Workaround wegen fehlender non-X Runlevel fuer 1st-start
+if [[ -e /etc/init/easyvdr-desktop.deakt ]]; then
+  mv -f /etc/init/easyvdr-desktop.deakt /etc/init/easyvdr-desktop.conf
+fi
+####
+
+#### Workaround damit jeder User den Desktop starten kann
+</etc/X11/Xwrapper.config grep -v "allowed_users=" >> /tmp/Xwrapper.config.tmp
+mv -f /tmp/Xwrapper.config.tmp /etc/X11/Xwrapper.config
+echo "allowed_users=anybody" >> /etc/X11/Xwrapper.config
+
+#### blue whiptail   ########
+if [[ ! -f /etc/newt/palette.ubu ]]; then
+  mv -f /etc/newt/palette /etc/newt/palette.ubu
+  ln -s /etc/newt/palette.original  /etc/newt/palette
+fi
+#####
+
+####  set noatime ####
+$SETUP/easyvdr-fixes-ubuntu_sub1
+########
+
+####  set custom override settime  ####
+CU_OVERRIDE="/etc/grub.d/42_custom_override_settime"
+if [ ! -f $CU_OVERRIDE ]; then
+  FILE_CONTENT=\
+'#!/bin/sh
+exec tail -n +3 $0
+# This file provides an easy way to add custom menu entries.  Simply type the
+# menu entries you want to add after this comment.  Be careful not to change
+# the "exec tail" line above.
+if [ ${recordfail} = 1 ]; then
+ set timeout=1
+else
+ set timeout=6
+fi'
+  echo "$FILE_CONTENT" > $CU_OVERRIDE
+  chmod 755              $CU_OVERRIDE
+fi
+#####
+
+##### sichert "alte" lirc Module
+$SETUP/easyvdr-fixes-ubuntu_sub2
+#####
+
+
+###### Deutsche Umlaute in Konsole 1..6 inzwischen anderweitig gefixt
+## Mitteleurop. Zeichensatz einstellen
+#sed -i "s/^CODESET=.*/CODESET=\"Lat2\"/g" /etc/default/console-setup
+## und aktivieren
+#sudo dpkg-reconfigure -u console-setup
+######
+
+
+###### Stoerende files in /usr/share/irtrans/remotes loeschen
+#if [ -d /usr/share/irtrans/remotes ]; then
+#    rm -f /usr/share/irtrans/remotes/*
+#fi
+###### Jetzt in easyvdr-Set-Settings der FB-Einrichtung
+
+
+###### Powerbutton event auf Druecken der Taste eingrenzen, das neue Loslassen-Event ignorieren
+sed -i "s/^event=button.*/event=button[ \/]power PBTN/g" /etc/acpi/events/powerbtn # oder noch genauer
+#sed -i "s/^event=button.*/event=button[ \/]power PBTN 00000080 00000000/g" /etc/acpi/events/powerbtn
+######
+
+
+
+
+###### hddtemp fuer jeden User ausfuehrbar damit systeminfo geht
+sudo chmod u+s /usr/sbin/hddtemp
+######
+
+
+###### Rechte201505 provisorisch
+#rm /etc/resolv.conf
+#cp /usr/share/easyvdr/installer/resolv.conf /etc
+chmod 1777 /tmp
+chown syslog:adm /var/log/auth*
+chown syslog:adm /var/log/kern*
+chown syslog:adm /var/log/syslog*
+######
+
+###### problematisches Plugin upnp aus Grundinstall entfernen
+#apt-get remove --yes --purge vdr-plugin-upnp
+######
+
+
+echo "#  #inserted by easyvdr" >> /etc/vdr/svdrphosts.conf
+

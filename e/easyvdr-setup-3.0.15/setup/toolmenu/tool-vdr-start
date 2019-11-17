@@ -1,0 +1,109 @@
+#!/bin/bash
+#
+#
+# aus demToolmenue ausgelagertes VDR-Start
+#   -- wegen sudo Problemen
+#  V 0.1   14.04.12  Captain_Beefheart
+#  V 0.2   13.05.12  fix for  FF & X11 paralell  C.B.
+#  V 0.3   14.05.12  fix2 for  FF & X11 paralell  C.B.
+#  V 0.4   26.06.12  added Softhddevice & keines  sinai & C.B.
+#  V 0.4.1 24.12.12  small cleanup C.B.
+#  V 0.5   29.01.13  bugfix C.B.
+#  V 0.5.1 11.02.13  C.B.
+#  V 0.5.2 08.10.17 systemd update
+#################################################
+
+############################## defines ######################################
+
+TITLE=" VDR Start "
+BACKTITLE=" Toolmenue fuer easyVDR"
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+#############################################################################
+
+#####
+VDR_Start()
+{
+Stop_X_Windows     # um neue X-Konfiguration zu uebernehmen
+
+COUNTD_MESS1="Der VDR"
+COUNTD_MESS2="gestartet"
+Show_Countdown
+MiniInfo " working " "$BACKTITLE" "\n\n\n\Zb\Z1   VDR wird gestartet"
+
+Get_Frontend_Class
+case $FRONTEND_CLASS in
+     "USE_X11") chvt $XKEYB_TTY
+                easyvdr-desktop start >/dev/null 2>&1 ;;
+     "NON_X11") chvt $DKEYB_TTY;;
+     "NON_FRE") chvt 1;;
+esac
+
+sleep 1
+easyvdr-vdr start                               >/dev/null 2>&1
+sleep 1
+easyvdr-frontend start  START_STATE="sysstart"  >/dev/null 2>&1
+
+while true
+  do
+    (pidof vdr) && break
+    sleep 0.2
+  done
+clear
+
+if [[ x"$NON_X11_and_X11" = x"true" ]]; then
+  chvt $XKEYB_TTY
+  easyvdr-desktop start >/dev/null 2>&1
+fi
+}
+
+#####
+Get_Frontend_Class()
+{
+case $VDR_FRONTEND in
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+}
+
+#####
+Show_Countdown()
+{
+  {
+  i=100
+  while (( $i>0 ))
+    do
+      echo $i; sleep 0.05; i=$(( $i -1 ))
+    done
+  echo 0;
+  } | dialog --backtitle " $BACKTITLE" \
+             --gauge "    $COUNTD_MESS1 wird im 5 Sekunden\n    $COUNTD_MESS2" $DIA_BOX_SIZE
+clear
+}
+
+#####
+Stop_X_Windows()
+{
+if ( check_x_running ) >/dev/null 2>&1; then
+  VT_KONSOLE=$(fgconsole)         ## aktuell aktives Terminal
+  easyvdr-desktop stop >/dev/null 2>&1
+  chvt $VT_KONSOLE
+fi
+}
+
+####################
+
+VDR_Start

@@ -1,0 +1,12 @@
+#!/bin/bash
+
+set -e
+
+if [ "$1" = "configure" ]; then
+
+	if [ -e /usr/lib/easyvdr/easyvdr-start/easyvdr-irtrans ] ; then
+		chmod 775 /usr/lib/easyvdr/easyvdr-start/easyvdr-irtrans
+	fi
+fi
+#DEBHELPER#
+

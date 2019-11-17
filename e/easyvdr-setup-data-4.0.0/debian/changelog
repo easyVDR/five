@@ -1,0 +1,278 @@
+easyvdr-setup-data (4.0.0-0easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:37:19 +0100
+
+easyvdr-setup-data (4.0.0-0easyVDR1~bionic) bionic; urgency=high
+
+  * input_lirc repeats change
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 27 Apr 2019 19:02:39 +0200
+
+easyvdr-setup-data (4.0.0-0easyVDR0~bionic) bionic; urgency=high
+
+  * depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 03 Jan 2018 15:06:10 +0100
+
+easyvdr-setup-data (3.1.0-0easyVDR1~zesty) zesty; urgency=high
+
+  * zesty update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Sep 2017 23:24:42 +0200
+
+easyvdr-setup-data (3.1.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * channels update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 11 Feb 2017 17:41:03 +0100
+
+easyvdr-setup-data (3.0.4-0easyVDR0~trusty) trusty; urgency=medium
+
+  * antec lcdproc2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 14 Dec 2016 08:21:21 +0100
+
+easyvdr-setup-data (3.0.3-2easyVDR0~trusty) trusty; urgency=high
+
+  * rename antec lcdproc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 11 Dec 2016 12:20:48 +0100
+
+easyvdr-setup-data (3.0.3-1easyVDR1~trusty) trusty; urgency=high
+
+  * added new channels.conf dvb-c_de_Saarbruecken_KDG.conf
+                            dvb-c_de_Weil-Lörrach_Unitymedia.conf
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 09 Dec 2016 20:35:16 +0100
+
+easyvdr-setup-data (3.0.3-1easyVDR0~trusty) trusty; urgency=medium
+
+  * channels
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 07 Nov 2016 09:46:15 +0100
+
+easyvdr-setup-data (3.0.3-0easyVDR1~trusty) trusty; urgency=medium
+
+  * channels
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 Sep 2016 14:01:41 +0200
+
+easyvdr-setup-data (3.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * images+soundcheck
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 20 Sep 2016 17:52:46 +0200
+
+easyvdr-setup-data (3.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * remotes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 28 Apr 2016 15:58:11 +0200
+
+easyvdr-setup-data (3.0.0-1easyVDR0~trusty) trusty; urgency=medium
+
+  * channels from Oberlooser
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Feb 2016 09:11:24 +0100
+
+easyvdr-setup-data (3.0.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * channels
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Jan 2016 10:00:16 +0100
+
+easyvdr-setup-data (2.0.1-0easyVDR0~trusty) trusty; urgency=medium
+
+  * remotes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 18 Dec 2015 08:53:20 +0100
+
+easyvdr-setup-data (2.0.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * remotes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Jul 2015 17:21:42 +0200
+
+easyvdr-setup-data (0.2.16-0easyVDR1~trusty) trusty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 09 Jul 2015 08:51:01 +0200
+
+easyvdr-setup-data (0.2.16-0easyVDR0~trusty) trusty; urgency=medium
+
+  * origen remote
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 13 Jun 2015 16:45:47 +0200
+
+easyvdr-setup-data (0.2.15-0easyVDR0~trusty) trusty; urgency=medium
+
+  * hd+
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 29 May 2015 08:38:41 +0200
+
+easyvdr-setup-data (0.2.14-0easyVDR0~trusty) trusty; urgency=medium
+
+  * remotes an more
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 May 2015 10:52:21 +0200
+
+easyvdr-setup-data (0.2.12-0easyVDR0~trusty) trusty; urgency=high
+
+  * hd+
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 14 May 2015 15:25:13 +0200
+
+easyvdr-setup-data (0.2.11-0easyVDR0~trusty) trusty; urgency=medium
+
+  * dvb-BRD
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Dec 2014 20:18:48 +0100
+
+easyvdr-setup-data (0.2.10-0easyVDR0~trustyubuntu1) trusty; urgency=medium
+
+  * harmony vdr2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 09 Sep 2014 12:26:24 +0200
+
+easyvdr-setup-data (0.2.10-0easyVDR0~trusty) trusty; urgency=high
+
+  * update Channels
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 13 Apr 2014 14:20:08 +0200
+
+easyvdr-setup-data (0.2.09-0easyVDR1~trusty) trusty; urgency=high
+
+  * debugged channellist for dvb-s
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Feb 2014 15:34:26 +0100
+
+easyvdr-setup-data (0.2.09-0easyVDR0~trusty) trusty; urgency=high
+
+  * graphtftentry in remotes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 28 Jan 2014 08:06:27 +0100
+
+easyvdr-setup-data (0.2.08-0easyVDR1~trusty) trusty; urgency=high
+
+  * fix on remotes and toolmenu
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 05 Jan 2014 03:50:54 +0100
+
+easyvdr-setup-data (0.2.08-0easyVDR0~trusty) trusty; urgency=high
+
+  * irmp remotes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Jan 2014 10:00:59 +0100
+
+easyvdr-setup-data (0.2.07-0easyVDR0~trusty) trusty; urgency=high
+
+  * channels
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 26 Dec 2013 09:03:00 +0100
+
+easyvdr-setup-data (0.2.06-0easyVDR1~trusty) trusty; urgency=high
+
+  * added new dvb-c channellist
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Dec 2013 13:53:13 +0100
+
+easyvdr-setup-data (0.2.06-0easyVDR0~trusty) trusty; urgency=high
+
+  * fix default channels
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 03 Dec 2013 15:11:48 +0100
+
+easyvdr-setup-data (0.2.05-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:16:51 +0100
+
+easyvdr-setup-data (0.2.05-0easyVDR0~raring) raring; urgency=high
+
+  * Remote DVBSky S952
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 09 Aug 2013 16:22:55 +0200
+
+easyvdr-setup-data (0.2.04-0easyVDR0~raring) raring; urgency=high
+
+  * new remotes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 22 Jul 2013 08:05:43 +0200
+
+easyvdr-setup-data (0.2.02-0easyVDR0~raring) raring; urgency=high
+
+  * all channels
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 08 Jun 2013 08:31:57 +0200
+
+easyvdr-setup-data (0.2.01-0easyVDR0~raring) raring; urgency=high
+
+  * remote 6400
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 30 May 2013 11:21:52 +0200
+
+easyvdr-setup-data (0.2.0-0easyVDR0~raring) raring; urgency=high
+
+  * default.conf / astra
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 18 May 2013 11:28:28 +0200
+
+easyvdr-setup-data (0.1.1-0easyVDR0~raring) raring; urgency=high
+
+  * some remotes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 06 May 2013 18:48:53 +0200
+
+easyvdr-setup-data (0.1.0-1easyVDR0~raring) raring; urgency=high
+
+  * links
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 18 Apr 2013 16:19:11 +0200
+
+easyvdr-setup-data (0.1.0-0easyVDR0~raring) raring; urgency=high
+
+  * tt3200
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 16 Apr 2013 09:11:16 +0200
+
+easyvdr-setup-data (0.0.2-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 12:59:26 +0200
+
+easyvdr-setup-data (0.0.2-0easyVDR0.1~oneiric) oneiric; urgency=low
+
+  * remotes from steevee
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 Feb 2013 15:49:30 +0100
+
+easyvdr-setup-data (0.0.1-0easyVDR0.4~oneiric) oneiric; urgency=high
+
+  * shrink images
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 Jan 2013 14:27:43 +0100
+
+easyvdr-setup-data (0.0.1-0easyVDR0.3~oneiric) oneiric; urgency=high
+
+  * depends, remotes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 Jan 2013 09:39:18 +0100
+
+easyvdr-setup-data (0.0.1-0easyVDR0.2~oneiric) oneiric; urgency=low
+
+  * MC380
+  * i
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 26 Jan 2013 09:24:44 +0100
+
+easyvdr-setup-data (0.0.1-0easyVDR0.1~oneiric) oneiric; urgency=high
+
+  * initial version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 17 Jan 2013 10:52:11 +0100
+

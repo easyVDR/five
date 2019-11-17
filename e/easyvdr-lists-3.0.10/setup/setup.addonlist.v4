@@ -1,0 +1,138 @@
+vers.5		12.03.13
+XXX		XXX
+XXX		XXX
+XXX		XXX
+XXX		XXX
+XXX		XXX
+Menupunkt:	"Kommentar"					+/-	debname				addi1		addi2		Confl_Matrix
+VDR-Skins-1024	Skins mit 1024 Pixel Aufloesung			+	vdr-skins-1024			Text2skin	empty		XXXXXXXX
+VDR-Skins-1280	Skins mit 1280 Pixel Aufloesung			+	vdr-skins-1280			Text2skin	empty		XXXXXXXX
+VDR-Skins-1920	Skins mit 1920 Pixel Aufloesung			+	vdr-skins-1920			Text2Skin	empty		XXXXXXXX
+VDR-Skins-SD	Skins mit 695 Pixel Aufloesung			+	vdr-skins-sd			Text2skin	empty		XXXXXXXX
+Anthra-sd	SD-Skin Anthra fuer VGA2Scart			-	vdr-skin-anthra-sd		Text2skin	empty		XOOOXOOO
+Audiorecorder	Ueberflutet deine Festplatte mit Musik		-	vdr-plugin-audiorecorder	empty		empty		XXXXXXXX
+Block		Sendungen anhand des EPG-Titels sperren		-	vdr-plugin-block		empty		empty		XXXXXXXX
+Boblight	Aehnlich Ambilight zum Selbstbau		+	vdr-plugin-boblight		empty		empty		XXXXXXXX
+Boot-Repair	Reapriert den Grub Bootloader			+	boot-repair			empty		empty		XXXXXXXX
+Burn		Brennt SD-Filme auf DVD				+	vdr-plugin-burn			Burnbackgrd.	empty		XXXXXXXX
+Burnbackgrd.	Hintergrundbilder fuer Burn-Plugin		-	vdr-burnbackgrounds		empty		empty		XXXXXXXX
+CEC-Remote	Fernbedienung per CEC				+	vdr-plugin-cecremote		empty		empty		XXXXXXXX
+CDplayer	CD-Spieler					+	vdr-plugin-cdplayer		empty		empty		XXXXXXXX
+Control		Stellt das OSD in einer Telnet-Session dar	+	vdr-plugin-control		empty		empty		XXXXXXXX
+Convert		Umwandeln von Aufnahmen mit HandbrakeCLI	+	easyvdr-addon-convert		empty		empty		XXXXXXXX
+DevStatus	Zeigt den Status aller vorhandenen DVB-Geraete	+	vdr-plugin-devstatus		empty		empty		XXXXXXXX
+DFU-Util	Programmierung Mikrocontrollern			+	dfu-util			empty		empty		XXXXXXXX
+DM140		Unterstuetzt Display Futaba DM 140		+	vdr-plugin-dm140vfd		empty		empty		XXXXXXXX
+Dynamite	Hinzufuegen von DVB-Devices bei laufendem VDR	+	vdr-plugin-dynamite		Sundtek		empty		XXXXXXXX
+Dummydevice	Dummy-Ausgabegeraet				+	vdr-plugin-dummydevice		empty		empty		OOOOOXXX
+Duplicates	Shows duplicate recordings			+	vdr-plugin-duplicates		empty		empty		OOOOOXXX
+DVD		DVD Spieler					+	vdr-plugin-dvd			empty		empty		XXXXXXXX
+DVDSwitch	DVD-Wechsler					+	vdr-plugin-dvdswitch		empty		empty		XXXXXXXX
+ExtendedEPG	Extended EPG fuer BBC, etc			+	vdr-plugin-eepg			empty		empty		XXXXXXXX
+EPG2VDR		EPG-Client-Server Loesung			+	vdr-plugin-epg2vdr		empty		empty		XXOXXXXX
+EPGSearch	EPG-Suchtimer					+	vdr-plugin-epgsearch		empty		empty		XXOXXXXX
+EPGSync		Importiert EPG eines anderen VDR via SVDRP	+	vdr-plugin-epgsync		empty		empty		XXXXXXXX
+Externalplayer	Externe Programme als Player starten		+	vdr-plugin-externalplayer	empty		empty		XOOOOOOO
+Extrecmenu	Erweitertes Aufzeichnungs-Menu			+	vdr-plugin-extrecmenu		empty		empty		XXXXXXXX
+Femon		Anzeige der Signalstaerke			+	vdr-plugin-femon		empty		empty		XXXXXXXX
+Filebrowser	Dateimanager					+	vdr-plugin-filebrowser		empty		empty		XXXXXXXX
+Fritzbox	Das Fritz!Box Plugin informiert ueber Anrufe	+	vdr-plugin-fritzbox		empty		empty		XXXXXXXX
+Games		Spiele fuer den VDR				+	vdr-plugin-games		empty		empty		XXXXXXXX
+GraphLCD	Infos ueber LCD					+	vdr-plugin-graphlcd		empty		empty		XXXXXXXX
+GraphTFT	Infos ueber TFT					+	vdr-plugin-graphtft		empty		empty		XXXXXXXX
+Handbrake	Transcodiert Medienfiles			+	handbrake-gtk			empty		empty		XXXXXXXX
+Image		Bilder/Photos ausgeben				+	vdr-plugin-image		empty		empty		XOOOOOOO
+Imonlcd		Ausgabe von Informationen auf imonLCD		+	vdr-plugin-imonlcd		empty		empty		XXXXXXXX
+Infosatepg	Laedt EPG-Daten via Satellit			-	vdr-plugin-infosatepg		empty		empty		XXXXXXXX
+IPTV		Integriert IPTV-Angebote in den VDR		+	vdr-plugin-iptv			empty		empty		XXXXXXXX
+Lastfm		Spielt Musik des kostenlosen Dienstes Last.fm	-	vdr-plugin-lastfm		empty		empty		XXXXXXXX
+Lcdproc		Ausgabe von Informationen auf LCDs		+	vdr-plugin-lcdproc		empty		empty		XXXXXXXX
+Lircrc		Native LIRC-Unterstuetzung			-	vdr-plugin-lircrc		empty		empty		XXXXXXXX
+Lifeguard	Shutdown überwachen				+	vdr-addon-lifeguard		empty		empty		XXXXXXXX
+Live		Live-Web-Tool ala VDRadmin			+	vdr-plugin-live			empty		empty		XXXXXXXX
+Markad		Setzt Schnittmarken				+	vdr-plugin-markad		empty		empty		XXXXXXXX
+Mcli		ReelBox NetCeiver Plugin			+	vdr-plugin-mcli			empty		empty		XXXXXXXX
+MList		Liste letzter OSD-Nachrichten			+	vdr-plugin-mlist		empty		empty		XXXXXXXX
+MP3		MP3-Player					+	vdr-plugin-mp3			empty		empty		XXXXXXXX
+Mplayer		Spielt diverse Videoformate			+	vdr-plugin-mplayer		empty		empty		XOXXXXXX
+MPV		Aktueller Medienplayer				+	vdr-plugin-mplayer		empty		empty		XOXXXXXX
+Music		Music-Player-Plugin				+	vdr-plugin-music		empty		empty		X000X000
+Music-SD-FF	Music-Player-Plugin fuer SD-FF Karte		+	vdr-plugin-music-sd		empty		empty		XXXXXXXX
+Netradio	Python Skript um NetRadio Staion einzubinden	+	easyvdr-addon-netradio		empty		empty		XXXXXXXX
+NeutrinoEPG	EPG im klassischen Neutrino Stil		+	vdr-plugin-neutrinoepg		empty		empty		XXXXXXXX
+Newsticker	Neue Nachrichten ueber eine Tickerzeile		-	vdr-plugin-newsticker		empty		empty		XXXXXXXX
+NoEPG		EPG-Anbieter sperren Newsticker			+	vdr-plugin-noepg		empty		empty		XXXXXXXX
+NordlichtsEPG	Erweiterte EPG-Anzeige 				+	vdr-plugin-nordlichtsepg	empty		empty		XXXXXXXX
+OSDPip		OSD-Picture in Picture				+	vdr-plugin-osdpip		empty		empty		XXXXXXXX
+OSDServer	OSD-Zugriff durch TCP/IP-Verbindungen		+	vdr-plugin-osdserver		empty		empty		XXXXXXXX
+OSDTeletext	Teletext Dekoder fuer OSD			+	vdr-plugin-osdteletext		empty		empty		XXXXXXXX
+OSDTeletext-SD	Teletext Dekoder fuer OSD (SD)			+	vdr-plugin-osdteletext-sd	empty		empty		XXXXXXXX
+Permashift	Dauerhaftes Timeshift				+	vdr-plugin-permashift		empty		empty		XXXXXXXX
+PIN		PIN Kindersicherung fuer Aufnamen Kanaele	+	vdr-plugin-pin			empty		empty		XXXXXXXX
+Play		Medienplayer fuer SoftHDDevice			+	vdr-plugin-play			empty		empty		XXXXXXXX
+Prefermenu	Bevorzugte Kanaele				-	vdr-plugin-prefermenu		empty		empty		XXXXXXXX
+Pulsecontrol	Pulseaudio-Einstellungen für SoftHDDevice-	+	vdr-plugin-pulsecontrol		empty		empty		XXXXXXXX
+PVR_input	Analogempfang mit den PVR-Karten		+	vdr-plugin-pvrinput		empty		empty		XXXXXXXX
+PVR_output	PVR350 als Ausgabe Device 			+	vdr-plugin-pvr350		empty		empty		OOOOXOOO
+Radio		RDS und Hintergrundbild fuer Radiosender	+	vdr-plugin-radio		empty		empty		XXXXXXXX
+Radiolist	Liste der Radiosender				+	vdr-plugin-radiolist		empty		empty		XXXXXXXX
+Remote		Remote-Plugin fuer IR-Empfaenger		-	vdr-plugin-remote		empty		empty		XXXXXXXX
+RemoteOSD	Zugriff auf Hauptmenu eines anderen VDR		+	vdr-plugin-remoteosd		empty		empty		XXXXXXXX
+Remotetimer	Timerverwaltung in Client-/Server-Struktur	+	vdr-plugin-remotetimers		empty		empty		XXXXXXXX
+RotorNG		Ansteuerung eines DiSEqC-Motors			+	vdr-plugin-rotorng		empty		empty		XXXXXXXX
+Rssreader	RSS-Informationen				-	vdr-plugin-rssreader		empty		empty		XXXXXXXX
+SatIP		Integration von SatIP in den VDR		+	vdr-plugin-satip		empty		empty		XXXXXXXX
+Scraper2VDR	EPGD informationen bereitstellen fuer Plugins	+	vdr-plugin-scraper2vdr		empty		empty		XXXXXXXX
+Screenshot	Erstellt Screenshots				-	vdr-plugin-screenshot		empty		empty		XXXXXXXX
+Serial		Taster und LEDs am seriellen-Port		-	vdr-plugin-serial		empty		empty		XXXXXXXX
+Seriestimer	Umbenennen von Serienaufzeichnungen		+	vdr-addon-seriestimer		empty		empty		XXXXXXXX
+SoftHDDevice	Software-HD-Ausgabedevice			+	vdr-plugin-softhddevice		empty		empty		OOOXOXXX
+SkinDesigner	VDR Skins erstellen				+	vdr-plugin-skindesigner		empty		empty		XXXXXXXX
+SkinD-3popacity	SkinDesigner Skin-3popacity			+	skindesigner-skin-3popacity	empty		empty		XXXXXXXX
+SkinD-Blackfrdo	SkinDesigner Skin-blackholefrodo		+	skindesigner-skin-blackholefrodo	empty		empty		XXXXXXXX
+SkinD-Blackhole	SkinDesigner Skin-blackhole			+	skindesigner-skin-blackholefrodo	empty		empty		XXXXXXXX
+SkinD-Glasslike	SkinDesigner Skin-Glasslike			+	skindesigner-skin-glasslike	empty		empty		XXXXXXXX
+SkinD-nOpcaity	SkinDesigner Skin-nOpacity			+	skindesigner-skin-nopacity	empty		empty		XXXXXXXX
+SkinD-Shady	SkinDesigner Skin-Shady				+	skindesigner-skin-shady		empty		empty		XXXXXXXX
+SkinD-ShadyKiss	SkinDesigner Skin-Shady-Kiss			+	skindesigner-skin-shady-kiss	empty		empty		XXXXXXXX
+SkinD-SimpMango	SkinDesigner Skin-Simplex-Mango			+	skindesigner-skin-simplex-mango	empty		empty		XXXXXXXX
+SkinEnigmaNG	Umsetzung des D-Box Skins Enigma		+	vdr-plugin-skinenigmang		empty		empty		XXXXXXXX
+SkinFlatplus	Skin Flatplus					+	vdr-plugin-skiflatplus		empty		empty		XXXXXXXX
+SkinOnpacity	Skin skinnopacity				+	vdr-plugin-skinnopacity		Text2skin	empty		XXXXXXXX
+Soppalusikka	Skin ähnlich Elchi				+	vdr-plugin-skinsoppalusikka	Text2skin	empty		XXXXXXXX
+SkinPearlHD	Skin PearlHD					-	vdr-skin-pearlhd		Text2skin	empty		XXXXXXXX
+Skyselectfeeds	Multifeed-Kanaele von SKY nutzen		+	vdr-plugin-skyselectfeeds	empty		empty		XXXXXXXX
+Sleeptimer	VDR nach einer einstellb. Zeit herunterfahren	-	vdr-plugin-sleeptimer		empty		empty		XXXXXXXX
+Span		Frequenzdaten u. darst. e. Spectrum Analyzer	-	vdr-plugin-span			empty		empty		XXXXXXXX
+Squeezebox	Client fuer Logitech-Mediaserver		+	vdr-plugin-squeezebox		empty		empty		XXXXXXXX
+StatusLEDs	VDR-Status ueber die Tastatur-LEDs		-	vdr-plugin-statusleds		empty		empty		XXXXXXXX
+Streamdev	Streaming Server				+	vdr-plugin-streamdev-server	empty		empty		XXXXXXXX
+Streamdev_Cl.	Streaming Client				+	vdr-plugin-streamdev-client	empty		empty		XXXXXXXX
+Sundtek		Plugin fuer dynamite-support			-	vdr-plugin-sundtek		Dynamite	empty		XXXXXXXX
+SVDRpservice	Schnittstelle fuer Zugriff auf SVDRP-Server	+	vdr-plugin-svdrpservice		empty		empty		XXXXXXXX
+SVDRPOSD	OSD via SVDRP					-	vdr-plugin-svdrposd		empty		empty		XXXXXXXX
+Systeminfo	Infos ueber den VDR				+	vdr-plugin-systeminfo		empty		empty		XXXXXXXX
+Targavfd	Futaba MDM166A-VFD-Display mit Dot-Matrix	-	vdr-plugin-targavfd		empty		empty		XXXXXXXX
+Text2skin	Ein Lader fuer OSD-Skins			+	vdr-plugin-text2skin		empty		empty		XXXXXXXX
+Timeline	Zeigt Timer in einer Zeitleiste			-	vdr-plugin-timeline		empty		empty		XXXXXXXX
+Trayopen	DVD/CD Lauferk oeffnen/schliessen		+	vdr-plugin-trayopenng		empty		empty		XXXXXXXX
+TV-Guide	2D EPG Anzeige					+	vdr-plugin-tvguide		empty		empty		XXXXXXXX
+TV-Guide-NG	2D EPG Anzeige fuer Skindesigner		+	vdr-plugin-tvguideng		empty		empty		XXXXXXXX
+TV-OnScreen	Programminfos im OSD				-	vdr-plugin-tvonscreen		empty		empty		XXXXXXXX
+TV-OnScreenSD	Programminfos im OSD				-	vdr-plugin-tvonscreensd		empty		empty		XOOOOOOO
+Undelete	Stellt geloeschte Aufnahmen wieder her		-	vdr-plugin-undelete		empty		empty		XXXXXXXX
+VCH-Helper	VodCatcher-Helper fuer VDR und XBMC		+	easyvdr-addon-vch-helper	empty		empty		XXXXXXXX
+VDRAdmin	Web-Tool fuer VDR				+	vdradmin-am			empty		empty		XXXXXXXX
+VDRManager	Wird von Android VDR Manager benoetigt		+	vdr-plugin-vdrmanager		empty		empty		XXXXXXXX
+VNSI-Server	XBMC Anbindung					+	vdr-plugin-vnsiserver		empty		empty		XXXXXXXX
+Vompserver	Plugin zur Ansteuerung Hauppauge MediaMVP	+	vdr-plugin-vompserver		empty		empty		XXXXXXXX
+Vompclient	Client fuer das vompserver-plugin		+	vdr-plugin-vompclient-mvp	empty		empty		XXXXXXXX
+Weatherforecast	Wetterinfo via www				-	vdr-plugin-weatherforecast	empty		empty		XXXXXXXX
+Weatherng	Wetterinfo via www				-	vdr-plugin-weatherng		empty		empty		XXXXXXXX
+WeatherngSD	Wetterinfo via www				-	vdr-plugin-weatherng-sd		empty		empty		XOOOOOOO
+Wirbelscan	Sendersuchlauf					+	vdr-plugin-wirbelscan		empty		empty		XXXXXXXX
+XBMC		XBox-Media-Center				+	xbmc				empty		empty		OOOXOOOO
+XVDR		VNSI wurde zu XVDR				+	vdr-plugin-xvdr			empty		empty		XXXXXXXX
+Yaepghd		Elektronischer Programmfuehrer			-	vdr-plugin-yaepghd		empty		empty		OXXXOXXX
+YARD2-Tools	Tools für den IR Receiver Y.A.R.D. 2		+	yard2tools			empty		empty		XXXXXXXX
+Zappilot	Blaettern im EPG ohne Kanalumschalten		-	vdr-plugin-zappilot		empty		empty		XXXXXXXX

@@ -1,0 +1,12 @@
+ -- lirc-serial
+
+One-for-All URC7555
+
+Um diese Fernbedienung mit den beiliegenden
+Konfigurationsdateien nutzen zu können,
+muss der Fernbedienungs Code 240 eingestellt
+werden.
+
+Die Konfigurationsdateien wurden
+freundlicherweise unter www.vdr-portal.de
+bereitgestellt von @torsten.

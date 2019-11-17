@@ -1,0 +1,426 @@
+# Button 1
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_1
+  delay = 4
+  repeat = 0
+  config = 1
+end
+
+# Button 2
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_2
+  delay = 4
+  repeat = 0
+  config = 2
+end
+
+# Button 3
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_3
+  delay = 4
+  repeat = 0
+  config = 3
+end
+
+# Button 4
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_4
+  delay = 4
+  repeat = 0
+  config = 4
+end
+
+# Button 5
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_5
+  delay = 4
+  repeat = 0
+  config = 5
+end
+
+# Button 6
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_6
+  delay = 4
+  repeat = 0
+  config = 6
+end
+
+# Button 7
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_7
+  delay = 4
+  repeat = 0
+  config = 7
+end
+
+# Button 8
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_8
+  delay = 4
+  repeat = 0
+  config = 8
+end
+
+# Button 9
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_9
+  delay = 4
+  repeat = 0
+  config = 9
+end
+
+# Button 0
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_0
+  delay = 4
+  repeat = 0
+  config = 0
+end
+
+# Button Help
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_F1
+  delay = 4
+  repeat = 0
+  config = Info
+end
+
+
+# Button Mute
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_MUTE
+  delay = 4
+  repeat = 0
+  config = Mute
+end
+
+# Button Mute (Wird oft auch als KEY_MIN_INTERESTING reportet)
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_MIN_INTERESTING
+  delay = 4
+  repeat = 0
+  config = Mute
+end
+
+# Button Record
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_RECORD
+  delay = 4
+  repeat = 0
+  config = Record
+end
+
+# Button Volume+ 
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_VOLUMEUP
+  delay = 4
+  repeat = 4
+  config = Volume+
+end
+
+# Button Volume-
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_VOLUMEDOWN
+  delay = 4
+  repeat = 4
+  config = Volume-
+end
+
+# Button Cursor Up
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_UP
+  delay = 4
+  repeat = 4
+  config = Up
+end
+
+# Button Cursor Down
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_DOWN
+  delay = 4
+  repeat = 4
+  config = Down
+end
+
+# Button OK
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_ENTER
+  delay = 4
+  repeat = 0
+  config = Ok
+end
+
+# Button Cursor Left
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_LEFT
+  delay = 4
+  repeat = 4
+  config = Left
+end
+
+# Button Cursor Right
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_RIGHT
+  delay = 4
+  repeat = 4
+  config = Right
+end
+
+# Button Channel+
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_PAGEUP
+  delay = 4
+  repeat = 0
+  config = Channel+
+end
+
+# Button Channel-
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_PAGEDOWN
+  delay = 4
+  repeat = 0
+  config = Channel-
+end
+
+# Button Red
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F1
+  delay = 0
+  repeat = 0
+  config = Red
+end
+
+# Button Green
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F2
+  delay = 0
+  repeat = 0
+  config = Green
+end
+
+# Button Yellow
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F3
+  delay = 0
+  repeat = 0
+  config = Yellow
+end
+
+# Button Blue
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F4
+  delay = 0
+  repeat = 0
+  config = Blue
+end
+
+# Button P
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F8
+  delay = 4
+  repeat = 0
+  config = Schedule Green
+end
+
+# Button M
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F10
+  delay = 4
+  repeat = 0
+  config = Menu
+end
+
+# Button Exit
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_ESC
+  delay = 4
+  repeat = 0
+  config = Back
+end
+
+# Button AV - KEYB
+begin  
+  prog = VDR
+  remote = *
+  button = BTN_LEFT
+  delay = 4
+  repeat = 0
+  config = OK
+end
+
+# Button Speaker - KEYB
+begin  
+  prog = VDR
+  remote = *
+  button = BTN_Right
+  delay = 4
+  repeat = 0
+  config = back
+end
+
+
+# Button FM
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F7
+  delay = 4
+  repeat = 0
+  config = Recordings
+end
+
+# Button S 
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F9
+  delay = 4
+  repeat = 0
+  config = Setup
+end
+
+# Button Open Tray
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_EJECTCD
+  delay = 4
+  repeat = 0
+  config = User8
+end
+
+# Button List
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F6
+  delay = 4
+  repeat = 0
+  config = Info
+end
+
+# Button VT
+begin  
+  prog = VDR
+  remote = *
+  button = CTRL_SHIFT_KEY_F5
+  delay = 4
+  repeat = 0
+  config = Channels
+end
+
+# Button Refresh
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_REFRESH
+  delay = 4
+  repeat = 0
+  config = 0
+end
+
+# Button Skip Back (<<)
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_REWIND
+  delay = 4
+  repeat = 0
+  config = FastRew
+end
+
+# Button Play / Pause
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_PLAYPAUSE
+  delay = 4
+  repeat = 0
+  config = Play
+  config = Pause
+  flags = toggle_reset
+end
+
+# Button Skip Forward (>>)
+begin  
+  prog = VDR
+  remote = *
+  button = KEY_FASTFORWARD
+  delay = 4
+  repeat = 0
+  config = FastFwd
+end
+
+# Button Stop
+begin
+  prog = VDR
+  remote = *
+  button = KEY_STOPCD
+  delay = 4
+  repeat = 0
+  config = Stop
+end
+
+
+

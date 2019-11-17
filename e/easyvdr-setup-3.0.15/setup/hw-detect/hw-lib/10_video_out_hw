@@ -1,0 +1,257 @@
+#
+lib_name="Video-Ausgabe-Devices"
+lib_nmk="Vid_Out"
+lib_version="V 0.5.0 vom 11.07.2012"
+force_install="no"
+ins_method_lib="inst_all_vidout"
+#
+
+
+#
+hw_name[5]="\Z5#---------------- Erkannte Hardware: -----------------#"
+hw_ident[5]="yes"
+det_method[5]="chk_dummyhw"
+ins_method[5]="do_nothing"
+paraset_a[5]="<empty_value>"
+paraset_b[5]="<empty_value>"
+paraset_c[5]="<empty_value>"
+paraset_d[5]="<empty_value>"
+paraset_e[5]="<empty_value>"
+
+# eHD-Karte
+hw_name[6]="Reel eHD"
+hw_ident[6]="1905:8100"
+det_method[6]="chk_lspci"
+ins_method[6]="inst_package"
+paraset_a[6]="easyvdr-video-out-ehd"
+paraset_b[6]="<empty_value>"
+paraset_c[6]="<empty_value>"
+paraset_d[6]="<empty_value>"
+paraset_e[6]="eHD"
+
+# FF-HD-Karte
+hw_name[7]="FF-HD TT6400"
+hw_ident[7]="1131:7160 13c2:3009 13c2:300a"
+det_method[7]="chk_lspci3"
+ins_method[7]="inst_package"
+paraset_a[7]="easyvdr-video-out-dvbhd"
+paraset_b[7]="<empty_value>"
+paraset_c[7]="<empty_value>"
+paraset_d[7]="<empty_value>"
+paraset_e[7]="FF-Card"
+
+# nvidia
+hw_name[10]="Nvidia"
+hw_ident[10]="0300: 10de:"
+det_method[10]="chk_lspci2"
+ins_method[10]="inst_package"
+paraset_a[10]="easyvdr-video-out-nvidia"
+paraset_b[10]="<empty_value>"
+paraset_c[10]="<empty_value>"
+paraset_d[10]="<empty_value>"
+paraset_e[10]="X-Graka FB-Graka"
+
+# PVR-350
+hw_name[15]="PVR-350"
+hw_ident[15]="4444:0803 0070:4000 0070:4800"
+det_method[15]="chk_lspci3"
+ins_method[15]="inst_package"
+paraset_a[15]="easyvdr-video-out-pvr350"
+paraset_b[15]="<empty_value>"
+paraset_c[15]="<empty_value>"
+paraset_d[15]="<empty_value>"
+paraset_e[15]="FF-Card"
+
+# FF-Karte
+hw_name[20]="FF-DVB-SD-Karte (av711)"
+hw_ident[20]="\
+1131:7146 13c2:0002 13c2:0003 13c2:000E 13c2:000A 13c2:0008 13c2:0006 \
+13c2:0004 13c2:0003 13c2:0002 13c2:0001 13c2:0000 110A:0000"
+det_method[20]="chk_lspci3"
+ins_method[20]="inst_package"
+paraset_a[20]="easyvdr-video-out-dvbsd"
+paraset_b[20]="<empty_value>"
+paraset_c[20]="<empty_value>"
+paraset_d[20]="<empty_value>"
+paraset_e[20]="FF-Card"
+
+# dxr3-Karte: em8300 MPEG-Decoder
+hw_name[21]="em8300 - z.B. Hollywood+ / DXR3"
+hw_ident[21]="1105:8300"
+det_method[21]="chk_lspci"
+ins_method[21]="inst_package"
+paraset_a[21]="easyvdr-video-out-dxr3"
+paraset_b[21]="<empty_value>"
+paraset_c[21]="<empty_value>"
+paraset_d[21]="<empty_value>"
+paraset_e[21]="FF-Card"
+
+# ati
+#hw_name[25]="ATI"
+#hw_ident[25]="0300: 1002:"
+#det_method[25]="chk_lspci2"
+#ins_method[25]="inst_package"
+#paraset_a[25]="easyvdr-video-out-ati"
+#paraset_b[25]="<empty_value>"
+#paraset_c[25]="<empty_value>"
+#paraset_d[25]="<empty_value>"
+#paraset_e[25]="X-Graka FB-Graka"
+
+# intel
+hw_name[26]="intel"
+hw_ident[26]="0300: 8086:"
+det_method[26]="chk_lspci2"
+ins_method[26]="inst_package"
+paraset_a[26]="easyvdr-video-out-intel"
+paraset_b[26]="<empty_value>"
+paraset_c[26]="<empty_value>"
+paraset_d[26]="<empty_value>"
+paraset_e[26]="X-Graka FB-Graka"
+
+# mga - hab ich nur zu Testzwecken drinn, aber wer weiss
+hw_name[27]="mga"
+hw_ident[27]=" 0300: 102b:"
+det_method[27]="chk_lspci2"
+ins_method[27]="inst_package"
+paraset_a[27]="easyvdr-video-out-mga"
+paraset_b[27]="<empty_value>"
+paraset_c[27]="<empty_value>"
+paraset_d[27]="<empty_value>"
+paraset_e[27]="X-Graka FB-Graka"
+
+# VirtualBox #80ee:beef
+hw_name[30]="Virtualbox Grafik"
+hw_ident[30]=" 0300: 80ee:"
+det_method[30]="chk_lspci2"
+ins_method[30]="inst_package"
+paraset_a[30]="easyvdr-video-out-x"
+paraset_b[30]="<empty_value>"
+paraset_c[30]="<empty_value>"
+paraset_d[30]="<empty_value>"
+paraset_e[30]="X-Graka FB-Graka"
+
+# VMWare
+hw_name[31]="VMware Grafik"
+hw_ident[31]=" 0300: 15ad:"
+det_method[31]="chk_lspci2"
+ins_method[31]="inst_package"
+paraset_a[31]="easyvdr-video-out-x"
+paraset_b[31]="<empty_value>"
+paraset_c[31]="<empty_value>"
+paraset_d[31]="<empty_value>"
+paraset_e[31]="X-Graka FB-Graka"
+
+hw_name[35]="\Z5#------------- keine Ausgabe Hardware: ---------------#"
+hw_ident[35]="yes"
+det_method[35]="chk_dummyhw"
+ins_method[35]="do_nothing"
+paraset_a[35]="<empty_value>"
+paraset_b[35]="<empty_value>"
+paraset_c[35]="<empty_value>"
+paraset_d[35]="<empty_value>"
+paraset_e[35]="<empty_value>"
+
+# headless
+hw_name[36]="Headless als Server ohne Ausgabedevice"
+hw_ident[36]="yes"
+det_method[36]="chk_dummyhw"
+ins_method[36]="inst_package"
+paraset_a[36]="easyvdr-video-out-headless"
+paraset_b[36]="<empty_value>"
+paraset_c[36]="<empty_value>"
+paraset_d[36]="<empty_value>"
+paraset_e[36]="<empty_value>"
+
+
+###############################################################################
+#
+hw_name[50]="\Z5#-------- Verwendung folgender HW erzwingen: ---------#"
+hw_ident[50]="yes"
+det_method[50]="chk_dummyhw"
+ins_method[50]="do_nothing"
+paraset_a[50]="<empty_value>"
+paraset_b[50]="<empty_value>"
+paraset_c[50]="<empty_value>"
+paraset_d[50]="<empty_value>"
+paraset_e[50]="<empty_value>"
+
+# Xineliboutput-Nvidia
+hw_name[51]="Xineliboutput-Nvidia"
+hw_ident[51]="yes"
+det_method[51]="chk_dummyhw"
+ins_method[51]="inst_package"
+paraset_a[51]="easyvdr-video-out-nvidia"
+paraset_b[51]="<empty_value>"
+paraset_c[51]="<empty_value>"
+paraset_d[51]="<empty_value>"
+paraset_e[51]="<empty_value>"
+
+# Xineliboutput-Non-Nvidia
+hw_name[52]="X-Standard"
+hw_ident[52]="yes"
+det_method[52]="chk_dummyhw"
+ins_method[52]="inst_package"
+paraset_a[52]="easyvdr-video-out-x"
+paraset_b[52]="<empty_value>"
+paraset_c[52]="<empty_value>"
+paraset_d[52]="<empty_value>"
+paraset_e[52]="<empty_value>"
+
+# Xineliboutput-ATI
+#hw_name[53]="Softhddevice-ATI"
+#hw_ident[53]="yes"
+#det_method[53]="chk_dummyhw"
+#ins_method[53]="inst_package"
+#paraset_a[53]="easyvdr-video-out-ati"
+#paraset_b[53]="<empty_value>"
+#paraset_c[53]="<empty_value>"
+#paraset_d[53]="<empty_value>"
+#paraset_e[53]="<empty_value>"
+
+# FF-DVB-Karte
+hw_name[54]="FF-DVB-SD-Karte"
+hw_ident[54]="yes"
+det_method[54]="chk_dummyhw"
+ins_method[54]="inst_package"
+paraset_a[54]="easyvdr-video-out-dvbsd"
+paraset_b[54]="<empty_value>"
+paraset_c[54]="<empty_value>"
+paraset_d[54]="<empty_value>"
+paraset_e[54]="<empty_value>"
+
+# FF-DVB-HD-Karte
+hw_name[55]="FF-DVB-HD-Karte"
+hw_ident[55]="yes"
+det_method[55]="chk_dummyhw"
+ins_method[55]="inst_package"
+paraset_a[55]="easyvdr-video-out-dvbhd"
+paraset_b[55]="<empty_value>"
+paraset_c[55]="<empty_value>"
+paraset_d[55]="<empty_value>"
+paraset_e[55]="<empty_value>"
+
+# PVR-350
+hw_name[56]="PVR-350"
+hw_ident[56]="yes"
+det_method[56]="chk_dummyhw"
+ins_method[56]="inst_package"
+paraset_a[56]="easyvdr-video-out-pvr350"
+paraset_b[56]="<empty_value>"
+paraset_c[56]="<empty_value>"
+paraset_d[56]="<empty_value>"
+paraset_e[56]="<empty_value>"
+
+# eHD-Karte
+hw_name[57]="Reel eHD"
+hw_ident[57]="yes"
+det_method[57]="chk_dummyhw"
+ins_method[57]="inst_package"
+paraset_a[57]="easyvdr-video-out-ehd"
+paraset_b[57]="<empty_value>"
+paraset_c[57]="<empty_value>"
+paraset_d[57]="<empty_value>"
+paraset_e[57]="<empty_value>"
+
+
+# ---------Ende---------
+hw_ident[100]="FINITO"

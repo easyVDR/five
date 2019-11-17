@@ -1,0 +1,2 @@
+wallpapers                           usr/share/lxde/
+etc/udev/rules.d/60-cdrom_id.rules   etc/udev/rules.d/

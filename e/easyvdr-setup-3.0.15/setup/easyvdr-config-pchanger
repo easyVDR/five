@@ -1,0 +1,139 @@
+#!/bin/bash
+# 
+# config-pchanger  fuer easyVDR
+#
+#
+# Captain_Beefheart
+# v.0.5    21.08.12
+# v.0.6    15.11.12 Anpassung fuer andere configured/unconfigured Logic c.b.
+# v.0.6.1  15.12.12 very small fix c.b.
+# v.0.7    02.02.13 new defines c.b.
+# v.07.1   11.02.13 c.b.
+# v.08.    07.07.13 PChanger default aktive / timeout 
+# v.09     17.02.16 Setup überarbeitet
+################################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - PChanger "
+BACKTITLE=" Programm Changer (de)aktivieren "
+HELP1="pchanger_help"
+
+DEAKT_COLOR="\Z6"
+AKT_COLOR=""
+
+##################### functions #####################################################
+
+Menu()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --colors \
+       --ok-label " Setup starten "\
+       --cancel-label " mach ich spaeter "\
+       --extra-button\
+       --extra-label " HILFE "\
+       --pause "\n\
+                  \Zb\Z4 Setup des Programm Changers Starten?\Zn \n\n\
+         Der PChanger ist ein Programm zum schnellen Wechsel \n\
+                vom VDR zu anderen Applikationen.\n\
+     Sie koennen den PChanger auch nachtraeglich konfigurieren.\n\n\
+     Default Belegung:\n\
+     Tastatur:          Windows Taste\n\
+     Fernbedienung:     Menu >2s drücken\n\n\
+     < Hilfe > für weiter Infos.\n\n" $DIA_BOX2_SIZE 50
+OK_CANCEL=$?
+clear
+
+    case $OK_CANCEL in
+      0) Start_Setup                    ;;
+      3) Show_Help $HELP1; REPEAT=0  ;;
+    esac
+
+return $OK_CANCEL
+}
+
+#####
+Show_Help()
+{
+HELP=$1
+HELPFILE="$SETUP_HELP_DIR/$HELP" 
+dialog --textbox $HELPFILE $DIA_BOX2_SIZE ; clear
+}
+
+#####
+No_X11_Message()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --colors \
+       --pause "\n\n\
+       Dieses Feature steht leider nur unter X-Win zur Verfuegung.\n\n\
+                      \Z1\Zb \"sorry\"\Zn ;-)" $DIA_BOX2_SIZE $TIMEOUT2
+clear
+}
+
+#####
+Get_Frontend_Class()
+{
+case $VDR_FRONTEND in
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+}
+
+##### main runs ###
+
+#####
+Run_All()
+{
+if [[ $FRONTEND_CLASS == "USE_X11" ]]
+  then
+    (pidof program_changer) && easyvdr-program-changer stop
+    Menu
+    WriteStatus "easyvdr-config-pchanger" "PChanger_configured"
+  else
+    No_X11_Message
+    WriteStatus "easyvdr-config-pchanger" "PChanger_configured"
+fi
+}
+
+#####
+Start_Setup()
+{
+#XSTART=0
+#CONSOLE=$(fgconsole)
+# if (! check_x_running ) >/dev/null 2>&1 ; then
+#  su $STANDARD_DESKTOP_USER -c "/usr/bin/xinit /usr/bin/metacity   -- $FRONTEND_DISPLAY vt7 >/dev/null 2>&1" &
+#  XSTART=1
+# else
+# chvt 7
+# fi
+
+ DISPLAY=$FRONTEND_DISPLAY /usr/share/easyvdr/program-changer/program-changer-setup.sh
+# if ( $XSTART -eq "1" );then
+#  pkill X
+# fi
+# chvt $CONSOLE
+}
+####################################################
+
+FORCE_FLAG=$1
+
+Get_Frontend_Class
+Run_All 
+

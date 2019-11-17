@@ -1,0 +1,92 @@
+#!/bin/bash
+#
+# v 1.0 michel8
+# v 1.1 11.02.13 Captain_Beefheart
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+. $SETUP_STATUS                                     # Statusfile auslesen
+
+. $SETUP/default_settings/General_Settings          # Plugins und Settings fur alle MetaPakete
+. $SETUP/default_settings/MetaPack_Settings         # Plugins und Settings fur das aktive MetaPaket
+
+#####################
+
+######
+Set_Meta_Params()
+{
+ActivatePlugin $MetaPack_Default_Plugins
+i=0
+while [ "${MetaPack_Sysconfig_Params[i]}" != "" ]
+  do
+    SetSysconfig ${MetaPack_Sysconfig_Params[i]}
+    ((i++))
+  done
+i=0
+while [ "${MetaPack_SetupConf_Params[i]}" != "" ]
+  do
+    SetSetupConf ${MetaPack_SetupConf_Params[i]}
+    ((i++))
+  done
+}
+
+######
+Set_General_Params()
+{
+ActivatePlugin $General_Default_Plugins
+i=0
+while [ "${General_Sysconfig_Params[i]}" != "" ]
+  do
+    SetSysconfig ${General_Sysconfig_Params[i]}
+    ((i++))
+  done
+i=0
+while [ "${General_SetupConf_Params[i]}" != "" ]
+  do
+    SetSetupConf ${General_SetupConf_Params[i]}
+    ((i++))
+  done
+}
+
+#######  main  #########
+
+if [ "x$easyvdr_video_out" == "x$MetaPack" ]; then
+        # Wenn MetaPack-Update nur MetaPack-Plugins aktivieren und entsprechende Parameter einstellen
+        ActivatePlugin $MetaPack_Default_Plugins
+elif [ $(grep -c "easyvdr_video_out=" $SETUP_STATUS)  == 1 ]; then
+        # Wenn Meta-Paket-Wechsel xorg.conf wegsichern und ggf. neu erstellen
+        if [ -f /etc/X11/xorg.conf ]; then
+            mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.SIK
+        fi
+        if [ "$XorgConfIncluded" == "yes" ]; then
+            mkdir -p /etc/X11 > /dev/null 2>&1
+#            mv -f /etc/X11/xorg.conf /etc/X11/xorg.conf.SIK
+            cp $SETUP/default_settings/xorg.conf /etc/X11/xorg.conf
+
+        fi
+        # alle Plugins deaktivieren und nur Default-Plugins aktivieren und passende Parameter einstellen
+        DeactivateAllPlugins
+        Set_General_Params
+        Set_Meta_Params
+else
+        # Wenn ErstKonfiguration, dann Default-Config-Files reinkopieren
+        cp -f $SETUP/default_settings/sysconfig     $CFG_DIR/sysconfig
+        cp -f $SETUP/default_settings/setup.conf    $CFG_DIR/setup.conf
+        cp -f $SETUP/default_settings/vdr-menu.xml  $PLUGIN_CFG_DIR/setup/vdr-menu.xml
+        cp -f $SETUP/default_settings/vdr-setup.xml $PLUGIN_CFG_DIR/setup/vdr-setup.xml
+        if [ "$XorgConfIncluded" == "yes" ]; then
+          mkdir -p /etc/X11 > /dev/null 2>&1
+          cp -f $SETUP/default_settings/xorg.conf /etc/X11/xorg.conf
+        fi
+        # und Default-Plugins aktivieren und passende Parameter einstellen
+        DeactivateAllPlugins
+        Set_General_Params
+        Set_Meta_Params
+fi
+SortActivatedPlugins
+
+chown -R vdr:vdr $CFG_DIR
+

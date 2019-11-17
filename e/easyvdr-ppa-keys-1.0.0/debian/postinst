@@ -1,0 +1,19 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "configure" ]; then
+
+	if [ -e /etc/apt/ppa-keys ] ; then
+		/bin/sh /etc/apt/ppa-keys || true
+		rm -f /etc/apt/ppa-keys || true
+	fi
+	if [ -e /etc/apt/local-repo-keys ] ; then
+		/bin/sh /etc/apt/local-repo-keys || true
+		rm -f /etc/apt/local-repo-keys || true
+	fi
+
+fi
+
+#DEBHELPER#
+
+

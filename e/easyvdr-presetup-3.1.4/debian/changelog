@@ -1,0 +1,179 @@
+easyvdr-presetup (3.1.4-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:36:42 +0100
+
+easyvdr-presetup (3.1.4-0easyVDR2~bionic) bionic; urgency=high
+
+  * bionic build
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 27 Dec 2017 12:49:03 +0100
+
+easyvdr-presetup (3.1.4-0easyVDR1~zesty) zesty; urgency=high
+
+  * zesty update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 09 Sep 2017 23:41:18 +0200
+
+easyvdr-presetup (3.1.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * perms part 2
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 21 Nov 2016 11:52:12 +0100
+
+easyvdr-presetup (3.1.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * permissions
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 16 Nov 2016 09:02:19 +0100
+
+easyvdr-presetup (3.1.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * install-counter for stable
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Nov 2016 12:18:16 +0100
+
+easyvdr-presetup (3.1.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * no question for updates (only in live mode)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Nov 2016 08:39:33 +0100
+
+easyvdr-presetup (3.0.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * permissions fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 01 May 2016 10:42:30 +0200
+
+easyvdr-presetup (3.0.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * killall -u vdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 01 Mar 2016 18:01:23 +0100
+
+easyvdr-presetup (3.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * wily support
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 13 Feb 2016 16:52:29 +0100
+
+easyvdr-presetup (3.0.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * Kernel 4.2.0-23, and more
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 25 Jan 2016 07:35:03 +0100
+
+easyvdr-presetup (3.0.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * set vdr UID to 2000 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 Dec 2015 18:20:53 +0100
+
+easyvdr-presetup (2.99.1-0easyVDR0~trusty) trusty; urgency=medium
+
+  * Kernel 3.19
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 26 Oct 2015 08:58:08 +0100
+
+easyvdr-presetup (2.99.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * fix for kernel hold, noct for update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 16 Oct 2015 20:17:12 +0200
+
+easyvdr-presetup (1.0.0-0easyVDR0~trusty) trusty; urgency=medium
+
+  * fixes for new kernel
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 01 Jul 2015 12:40:52 +0200
+
+easyvdr-presetup (0.7.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * sources fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 28 Jun 2015 14:02:08 +0200
+
+easyvdr-presetup (0.7.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * monitoring updates / krnl316
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 21 Jun 2015 14:13:34 +0200
+
+easyvdr-presetup (0.6.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * texts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 06 Jun 2015 18:05:31 +0200
+
+easyvdr-presetup (0.5.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * fix for kernel 3.16
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 28 May 2015 01:27:49 +0200
+
+easyvdr-presetup (0.5.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * missing apt-get update
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 12 Apr 2015 18:06:53 +0200
+
+easyvdr-presetup (0.5.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * new structure
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 10 Apr 2015 08:45:59 +0200
+
+easyvdr-presetup (0.4.0-0easyVDR0~trusty) trusty; urgency=high
+
+  *  kernel und header-update, lts mit in die Auswahl, kernel-hold für utopic-lts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Mar 2015 14:09:21 +0200
+
+easyvdr-presetup (0.3.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * reboot fix, more fixes
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Mar 2015 08:25:34 +0100
+
+easyvdr-presetup (0.1.0-6easyVDR0~trusty) trusty; urgency=high
+
+  * Kernel / xxx
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Mar 2015 08:48:23 +0100
+
+easyvdr-presetup (0.0.5-0easyVDR0~trusty) trusty; urgency=high
+
+  * no action in Script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 29 Apr 2014 13:21:13 +0200
+
+easyvdr-presetup (0.0.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * changed network-management
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 11 Apr 2014 08:58:47 +0200
+
+easyvdr-presetup (0.0.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * no steup start from this script!
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 05 Apr 2014 15:53:18 +0200
+
+easyvdr-presetup (0.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * dns
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 06 Feb 2014 18:01:42 +0100
+
+easyvdr-presetup (0.0.1-0easyVDR3~trusty) trusty; urgency=high
+
+  * debugged Networkscript
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Dec 2013 10:47:25 +0100
+
+easyvdr-presetup (0.0.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * initial build
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 15 Dec 2013 14:05:43 +0100

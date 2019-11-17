@@ -1,0 +1,66 @@
+easyvdr-ppa-keys (1.0.0-0easyVDR4~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 22:36:25 +0100
+
+easyvdr-ppa-keys (1.0.0-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 18 Dec 2017 18:02:16 +0100
+
+easyvdr-ppa-keys (1.0.0-0easyVDR2~zesty) zesty; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 29 Nov 2017 04:59:46 +0100
+
+easyvdr-ppa-keys (0.2.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * +local-repo key
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 04 Apr 2014 10:04:44 +0200
+
+easyvdr-ppa-keys (0.1.00-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 Nov 2013 10:16:01 +0100
+
+easyvdr-ppa-keys (0.1.00-1easyVDR0~raring) raring; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 01 Apr 2013 12:56:49 +0200
+
+easyvdr-ppa-keys (0.1.00-1easyVDR1) oneiric; urgency=high
+
+  * Fix
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 Sep 2011 20:21:21 +0200
+
+easyvdr-ppa-keys (0.1.00-1easyVDR) oneiric; urgency=low
+
+  * Oneric
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 01 Sep 2011 19:52:40 +0200
+
+easyvdr-ppa-keys (0.0.1-1easyVDR1.4) oneiric; urgency=low
+
+  * build for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 31 Jul 2011 10:17:55 +0200
+
+easyvdr-ppa-keys (0.0.1-1easyVDR1.4) lucid; urgency=low
+
+  * PPA-Keys removed
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 17 Nov 2010 13:52:41 +0100
+
+easyvdr-ppa-keys (0.0.1-1easyVDR1.3) lucid; urgency=low
+
+  * Initial release
+
+ -- Karl-Heinz Winzer <khwinzer@gmx.de>  Sun, 08 Aug 2010 10:35:49 +0200
+

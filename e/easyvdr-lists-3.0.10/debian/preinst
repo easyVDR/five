@@ -1,0 +1,20 @@
+#!/bin/sh
+set -e
+
+# If vdr-menu.xml and vdr-setup.xml exist, save before package-Install starts
+
+rm -f /usr/share/easyvdr/setup/setup.addonlist.*
+CONFPATH="/usr/share/easyvdr/setup/default_settings"
+if [ -d $CONFPATH ]; then
+    if [ -f $CONFPATH/vdr-menu.xml -a ! -f $CONFPATH/vdr-menu.xml.LastVer ]; then
+	cp $CONFPATH/vdr-menu.xml $CONFPATH/vdr-menu.xml.LastVer
+    fi
+    if [ -f $CONFPATH/vdr-setup.xml -a ! -f $CONFPATH/vdr-setup.xml.LastVer ]; then
+	cp $CONFPATH/vdr-setup.xml $CONFPATH/vdr-setup.xml.LastVer
+    fi
+fi
+
+
+#DEBHELPER#
+
+exit 0

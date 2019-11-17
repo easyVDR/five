@@ -1,0 +1,13 @@
+Source: easyvdr-ir-trans
+Section: utils
+Priority: extra
+Maintainer: Uwe Kiel <uwe@easy-vdr.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9),
+Standards-Version: 3.9.5
+Homepage: http://www.irtrans.de
+
+Package: ir-trans
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: infra-red remote control support for ir-trans-receivers

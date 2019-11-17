@@ -1,0 +1,11 @@
+Source: easyvdr-presetup
+Section: misc
+Priority: optional
+Maintainer: Andreas Schott <sinai@easy-vdr.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 4.1.2
+
+Package: easyvdr-presetup
+Architecture: all
+Depends: ${misc:Depends}
+Description: Pre-Setup-Fix-Package for easyVDR

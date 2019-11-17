@@ -1,0 +1,150 @@
+<menus suffix=" ...">
+    <system name="Schedule" />
+    <system name="Channels" />
+    <system name="Recordings" />
+    <menu name="Timer &amp; Info">
+        <system name="Timers" />
+        <plugin name="yaepghd" />
+        <plugin name="epgsearchonly" />
+        <plugin name="conflictcheckonly" />
+        <plugin name="sleeptimer" />
+        <plugin name="epgsearch" title="Suchtimer" />
+        <plugin name="quickepgsearch" />
+        <plugin name="noepg" />
+        <plugin name="epgsearchehd" title="Suchtimer" />
+        <plugin name="remotetimers" />
+        <plugin name="tvtv" />
+        <plugin name="scraper2vdr" />
+        <plugin name="graphtft" />
+        <plugin name="graphtftng" />
+        <plugin name="tvonscreen" />
+        <plugin name="tvonscreensd" />
+        <plugin name="yaepg" />
+        <plugin name="tvguide" />
+        <plugin name="tvguideng" />
+        <plugin name="epg2vdr" />
+        <plugin name="tvm2vdr" />
+        <plugin name="nordlichtsepg" />
+        <plugin name="weather" />
+        <plugin name="weatherforecast" />
+        <plugin name="weatherhd" />
+        <plugin name="weatherng" />
+        <plugin name="weatherng-sd" />
+    </menu>
+    <menu name="Medien">
+        <plugin name="xineliboutput" />
+        <plugin name="radio" />
+        <plugin name="radiolist" />
+        <plugin name="mpv" />
+        <plugin name="plex" />
+        <plugin name="filebrowser" />
+        <plugin name="filebrowserehd" />
+        <plugin name="play" />
+        <plugin name="mediad" />
+        <plugin name="vdrcd" />
+        <plugin name="vcd" />
+        <plugin name="image" />
+        <plugin name="mplayer" />
+        <plugin name="cdplayer" />
+        <plugin name="dvd" />
+        <plugin name="dvdswitch" />
+        <plugin name="dvdswitchehd" />
+        <plugin name="recsearch" />
+        <plugin name="music" /> 
+        <plugin name="music-sd" /> 
+        <plugin name="mp3" />
+        <plugin name="squeezebox" />
+        <plugin name="satip" />
+        <plugin name="mediaplayer" />
+        <plugin name="mediaplayerdvd" />
+        <plugin name="xinemediaplayer" />
+        <plugin name="videoplayer" />
+        <plugin name="imageplayer" />
+        <plugin name="audioplayer" />
+        <plugin name="startdvdhde" />
+        <command name="Mediathek" execute="echo curl http://localhost:8060/osdserver | at now" />
+        <plugin name="yacoto" />
+        <plugin name="burn" />
+        <plugin name="vdrrip" />
+        <plugin name="ripit" />
+        <plugin name="extrecmenu" />
+    </menu>
+    <menu name="Extras">
+        <command name="KODI" execute="echo KODI > /tmp/.pch-exec | at now &" />
+        <plugin name="externalplayer" />
+        <plugin name="osdteletext" />
+        <plugin name="osdpip" />
+        <plugin name="muggle" />
+        <plugin name="ipod" />
+        <plugin name="mcli" />
+        <plugin name="vlcclient" />
+        <plugin name="webbrowser" />
+        <plugin name="weatherhd" />
+        <plugin name="weatherng" />
+        <plugin name="osdserver" />
+        <plugin name="peer" />
+        <plugin name="remoteosd" />
+        <plugin name="weatherng-sd" />
+        <plugin name="skinelchi" />
+        <plugin name="skinenigma" />
+        <plugin name="skinflat" />
+        <plugin name="skinflatplus" />
+        <plugin name="skinnopacity" />
+        <plugin name="skinsoppalusikka" />
+        <plugin name="skyselectfeeds" />
+        <plugin name="span" />
+        <plugin name="svdrposd" />
+        <plugin name="svdrpservice" />
+        <plugin name="tvscraper" />
+        <menu name="Net-Radio DE">
+            <command name="Meine Top Radio Hits" execute="echo  svdrpsend PLUG music play /media/easyvdr01/mp3/my_radio/@current.m3u  | at now" />
+            <command name="Blues" execute="echo /usr/share/vdr-netradio/de/genre-blues *Blues* | at now" />
+            <command name="Oldies but Goldies" execute="echo /usr/share/vdr-netradio/de/genre-oldies *Oldies* | at now" />			
+            <command name="DE-SCHLAGER" execute="echo /usr/share/vdr-netradio/de/genre World*Europe | at now" />
+            <command name="DE-ALTRENATIVE" execute="echo /usr/share/vdr-netradio/de/genre Alternative | at now" />
+            <command name="DE-CLASSIC ROCK" execute="echo /usr/share/vdr-netradio/de/genre Classic*Rock | at now" />
+            <command name="DE-DANCE" execute="echo /usr/share/vdr-netradio/de/genre Dance | at now" />
+            <command name="DE-ELECTRONICA" execute="echo /usr/share/vdr-netradio/de/genre Electronica | at now" />
+            <command name="DE-HIP HOP" execute="echo /usr/share/vdr-netradio/de/genre Hip*Hop | at now" />
+            <command name="DE-JAZZ" execute="echo /usr/share/vdr-netradio/de/genre Jazz | at now" />
+            <command name="DE-OLDIES" execute="echo /usr/share/vdr-netradio/de/genre Oldies | at now" />
+            <command name="DE-POP" execute="echo /usr/share/vdr-netradio/de/genre Pop | at now" />
+            <command name="DE-PUBLIC" execute="echo /usr/share/vdr-netradio/de/genre Public* | at now" />
+            <command name="DE-R&amp;B" execute="echo /usr/share/vdr-netradio/de/genre R*B | at now" />
+            <command name="DE-ROCK" execute="echo /usr/share/vdr-netradio/de/genre Rock | at now" />
+            <command name="DE-SPORT" execute="echo /usr/share/vdr-netradio/de/genre Sports | at now" />
+            <command name="DE-TOP 40" execute="echo /usr/share/vdr-netradio/de/genre Top*40 | at now" />
+        </menu> 
+        <plugin name="scheduler" />
+        <plugin name="undelete" />
+        <plugin name="duplicates" />
+        <plugin name="games" />
+        <plugin name="trayopenng" />
+        <plugin name="fritzbox" />
+    </menu>
+    <menu name="System &amp; Einstellungen">
+        <plugin name="setup" />
+        <system name="Commands" />
+        <plugin name="femon" />
+        <plugin name="pulsecontrol" />
+        <plugin name="markad" />
+        <plugin name="sysinfo" />
+        <plugin name="systeminfo" />
+        <plugin name="devstatus" />
+        <plugin name="reelbox" />
+        <plugin name="dynamite" />
+        <plugin name="sundtek" />
+        <plugin name="wirbelscan" />
+        <plugin name="pin" />
+        <plugin name="streamdev-server" />
+        <plugin name="streamdev-client" />
+        <plugin name="vnsi" />
+        <plugin name="vnsi-server" />
+        <plugin name="xvdr" />
+        <plugin name="permashift" />
+        <plugin name="mlist" />
+        <plugin name="avards" />
+        <plugin name="ab" />
+    </menu>
+        <plugin name="bgprocess" />
+</menus>

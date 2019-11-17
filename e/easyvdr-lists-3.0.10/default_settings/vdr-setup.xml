@@ -1,0 +1,553 @@
+<setup sysconfigFile="/var/lib/vdr/sysconfig" bootLinux="/usr/bin/rebootvdr" VDRlibDir="/usr/lib/vdr/plugins/" ReturnValue="yes/no">
+    <plugins sysconfig="PLUGINLIST">
+        <plugin name="ab" info="ab Plugin" active="no" />
+        <plugin name="ac3mode" info="Anzahl Audio-Kanäle" active="no" />
+        <plugin name="actuator" info="Ansteuerung drehb. Satantenne" active="no" />
+        <plugin name="admin" info="Administrative Aufgaben" active="no" />
+        <plugin name="advchctrl" info="Audiopegel pro Kanal einst." active="no" />
+        <plugin name="adzap" info="Werbezapper" active="no" />
+        <plugin name="alcd" info="Activy LCD + FB nutzen" active="no" />
+        <plugin name="amarok" info="amaroK Frontend für Musik" active="no" />
+        <plugin name="ambilight" info="Ansteuerung von Ambilight-Hw" active="no" />
+        <plugin name="analogradio" info="Empfang mit Analog-Radio-Karte" active="no" />
+        <plugin name="archive" info="Multimedia-Archiv" active="no" />
+        <plugin name="arghdirector" info="SKY-Multifeed-Kanäle besser empf." active="no" />
+        <plugin name="atmo" param="-i FFDVB -o SERIAL=/dev/ttyS0" info="Ansteuerung von Atmolight-Hw" active="no" />
+        <plugin name="atscepg" info="Event-Informationen von ATSC-Broadcasts" active="no" />
+        <plugin name="audiocd" info="Audio-CD-Spieler" active="no" />
+        <plugin name="audioplayer" info="Audioplayer" active="no" />
+        <plugin name="audiorecorder" param="-r /media/easyvdr01/mp3/audiorecorder" info="Aufnahme vom Musik" active="no" />
+        <plugin name="autosort" info="Autom. Sortieren der Kanäle" active="no" />
+        <plugin name="autotimer" info="Autotimer" active="no" />
+        <plugin name="autotimeredit" param="-f /etc/vdr/vdradmin/vdradmind.at -p" info="OSD-Autotimer ändern" active="no" />
+        <plugin name="avards" info="Automatic Video Aspect Ratio Detection and Signaling" active="no" />
+        <plugin name="avolctl" info="Volumeregler für Soundkarte" active="no" />
+        <plugin name="beep" info="Akust. Meldung über PC-Speaker" active="no" />
+        <plugin name="bgprocess" info="bgprocess-Statusbalken-Darstellung" active="no" />
+        <plugin name="bitstreamout" info="DD-Ausgabe über Soundkarte" active="no" />
+        <plugin name="block" info="Blockt Sendg. nach d. EPG-Titel" active="no" />
+        <plugin name="burn" param="-t /media/easyvdr01/convert/tmp -d /media/easyvdr01/convert/tmp -i /media/easyvdr01/convert/iso" info="Brennt Filme auf DVD" active="no" />
+        <plugin name="cdplayer" param="-C /var/lib/vdr/.cache/" info="CD-Player" active="no" />
+        <plugin name="clock" info="Einblendung der Uhrzeit" active="no" />
+        <plugin name="conflictcheckonly" info="Timer-Konflikte von epgsearch" active="no" />
+        <plugin name="control" info="OSD in telnet-Session" active="no" />
+        <plugin name="coverviewer" info="Vorschau von CD-Covers" active="no" />
+        <plugin name="cpumon" info="CPU-Monitor" active="no" />
+        <plugin name="csf" info="Sortiert Kanäle" active="no" />
+        <plugin name="cutalot" info="Schneidet Aufnahmen" active="no" />
+        <plugin name="dbus2vdr" info="dBus im VDR nutzen" active="no" />
+        <plugin name="devstatus" info="Zeigt Status aller vorh. DVB-Geräte" active="no" />
+        <plugin name="director" info="SKY-Multifeed-Kanäle empfangen" active="no" />
+        <plugin name="dm140vfd" info="Infos auf VFD-Displ. Futaba DM140" active="no" />
+        <plugin name="dummydevice" info="Dummy-Ausgabegerät" active="no" />
+        <plugin name="duplicates" info="Zeigt doppelte Aufnahmen" active="no" />
+        <plugin name="dvbhddevice" info="Frontend für FF-HD" active="no" protected="yes" />
+        <plugin name="dvbsddevice" info="Frontend für FF-SD" active="no" protected="yes" />
+        <plugin name="dvd" info="DVD-Spieler" active="no" />
+        <plugin name="dvdswitch" param="-i /media/easyvdr01/convert/iso/" info="DVDs und Images" active="no" />
+        <plugin name="dvdswitchehd" info="DVDs und Images für die eHD" active="no" />
+        <plugin name="dynamite" info="Tuner bei laufenden VDR Laden/Entl." active="no" />
+        <plugin name="eepg" info="Erweiterte EPG-Ansicht" active="no" />
+        <plugin name="eggtimer" info="Eieruhr für TV-Süchtigen" active="no" />
+        <plugin name="epg2vdr" info="EPG wird aus mysql Datenbank geladen" active="no" />
+        <plugin name="epgsearch" info="EPG-Suchtimerverwaltung" active="no" />
+        <plugin name="epgsearchclient" info="EPG-Search-Client" active="no" />
+        <plugin name="epgsearchhde" info="EPG-Suchtimerverwaltung für eHD" active="no" />
+        <plugin name="epgsearchonly" info="Hauptmenü-Eintrag für EPGSearch" active="no" />
+        <plugin name="epgsync" info="Import des EPG von 2. VDR" active="no" />
+        <plugin name="exec" info="Integriert Timer für Aktionen/Shellbefehle " active="no" />
+        <plugin name="extb" info="Steuerung d. Extension-Boards" active="no" />
+        <plugin name="externalplayer" info="externe Programme als Player" active="no" />
+        <plugin name="extrecmenu" info="Erweit. Aufzeichnungs-Menü" active="no" />
+        <plugin name="femon" info="DVB-Signalinformationen" active="no" />
+        <plugin name="femonclient" info="DVB-Signalinfoanzeige Client" active="no" />
+        <plugin name="fepg" info="Zeigt EPG grafisch + Navigation" active="no" />
+        <plugin name="filebrowser" info="OSD-Dateimanager" active="no" />
+        <plugin name="filebrowser-ehd" info="OSD-Dateimanager für eHD" active="no" />
+        <plugin name="freecell" info="Kartenspiel Freecell" active="no" />
+        <plugin name="fritzbox" info="Informiert über eingehende Anrufe an der Fritzbox" active="no" />
+        <plugin name="games" info="Spiele für den VDR" active="no" />
+        <plugin name="graphlcd" info="Informationen auf Grafik-LCDs" active="no" protected="yes" />
+        <plugin name="graphtft" param="-d /dev/fb0" info="Informationen auf TFT-Displays" active="no" protected="yes" />
+        <plugin name="graphtftng" param="-d /dev/fb0" info="Informationen auf TFT-Displays NG" active="no" protected="yes" />
+        <plugin name="hdmonitor" info="Festplatten-Monitor" active="no" />
+        <plugin name="iaxphone" info="Einfaches VOIP-Softphone" active="no" />
+        <plugin name="icetft" info="ICE-TFT über seriellen Anschluss" active="no" />
+        <plugin name="iepg" param="-d /media/easyvdr01/iepg -i /media/easyvdr01/iepg/images" info="EPG aus dem WWW für eHD" active="no" />
+        <plugin name="image" param="-C /usr/share/vdr-plugin-image/imageplugin.sh" info="Bildbetrachter" active="no" />
+        <plugin name="imageplayer" info="Bildbetrachter für eHD" active="no" />
+        <plugin name="imdbsearch" info="Zeigt IMDb-Eintrag des laufenden Programms" active="no" />
+        <plugin name="imonlcd" info="Informationen auf imonLCD" active="no" />
+        <plugin name="infosatepg" info="Lädt Infosat-EPG-Daten via Sat." active="no" />
+        <plugin name="instantimer" info="Timer für kommendes Event" active="no" />
+        <plugin name="ipod" info="Zeigt ITunesDB des iPod an" active="no" />
+        <plugin name="iptv" info="Integriert IPTV-Angebote" active="no" />
+        <plugin name="lastfm" info="Spielt Musik des Dienstes Last.fm" active="no" />
+        <plugin name="launcher" info="Startet andere Plugins" active="no" />
+        <plugin name="lcdcontrol" info="LCDControl-Plugin" active="no" />
+        <plugin name="lcdproc" info="Informationen auf alphanum. Displays" active="no" protected="yes" />
+        <plugin name="lcr" info="Least-Cost-Routing" active="no" />
+        <plugin name="led" info="Tastatur-Led zur Anzeige nutzen" active="no" />
+        <plugin name="lircrc" param="/etc/lircrc" info="Native LIRC-Unterstützung" active="no" />
+        <plugin name="live" param="-p 8008 -i 0.0.0.0 --epgimages=/var/cache/vdr/epgimages" info="Live-Web-Tool a'la VDRadmin" active="no" />
+        <plugin name="loadepg" info="EPG-Import (Canal+ Gruppe)" active="no" />
+        <plugin name="mailbox" info="E-Mail-Anzeige von IMAP oder POP3 Postfächern" active="no" />
+        <plugin name="markad" info="Werbung automatisch markieren" active="no" />
+        <plugin name="mcli" info="Reel Netceiver in VDR integrieren" active="no" />
+        <plugin name="mediad" info="Erweiterte Version des vdrcd Plugins" active="no" />
+        <plugin name="mediamanager" info="Erkennt automatisch CDs/DVDs im Laufwerk" active="no" />
+        <plugin name="mediaplayer" info="Medienplayer für eHD" active="no" />
+        <plugin name="mediaplayerdvd" info="DVD-Player für die eHD" active="no" />
+        <plugin name="mlist" info="Liste letzter OSD-Nachrichten" active="no" />
+        <plugin name="mp3" param="-i /usr/share/vdr-plugin-mp3/image_convert" info="MP3-Player" active="no" />
+        <plugin name="mplayer" info="Spielt diverse Videoformate" active="no" />
+        <plugin name="mpv" param="-v vdpau -h vdpau -b /media/easyvdr01" info="MPV-Player" active="yes" />
+        <plugin name="muggle" param="-t /media/easyvdr01/mp3" info="MP3-Player mit DB" active="no" />
+        <plugin name="music" info="Musik-Player für HD" active="no" />
+        <plugin name="music-sd" param="--config=/usr/share/vdr-plugin-music-sd/music-sd" info="Musik-Player für SD" active="no" />
+        <plugin name="netconfig" info="Netzwerk + Freigaben (smb)" active="no" />
+        <plugin name="network" info="Netzwerkeinstellungen" active="no" />
+        <plugin name="newsticker" info="Nachrichten über Tickerzeile" active="no" />
+        <plugin name="noepg" info="EPG ausgewählter Sender sperren" active="no" />
+        <plugin name="noepgmenu" info="EPG ausgewählter Sender sperren" active="no" />
+        <plugin name="nordlichtsepg" info="Erweiterte EPG Anzeige" active="no" />
+        <plugin name="osdpip" info="Bild in Bild Funktion" active="no" />
+        <plugin name="osdserver" info="OSD-Zugriff durch TCP/IP-Verbindungen" active="no" />
+        <plugin name="osdteletext" param="-d /var/cache/vdr/vtx" info="Teletext Dekoder fürs OSD" active="no" />
+        <plugin name="peer" info="Zugriff auf andere Peers" active="no" />
+        <plugin name="permashift" info="Kontinuierliches Timeshifting" active="no" />
+        <plugin name="picselshow" info="Fotos und Bilder anzeigen" active="no" />
+        <plugin name="pictures" info="Fotos und Bilder anzeigen" active="no" />
+        <plugin name="pim" info="PIM-Kalender" active="no" />
+        <plugin name="pin" info="Kindersicherung für Aufnahmen Kanäle" active="no" />
+        <plugin name="play" param="-fs -o -/media/easyvdr01" info="Medienplayer für SoftHDDevice-Frontend" active="no" />
+        <plugin name="podcatcher" info="Lädt Podcasts und spielt sie ab" active="no" />
+        <plugin name="prefermenu" info="Bevorzugte Kanäle" active="no" />
+        <plugin name="premiereepg" info="EPG für SKY-Optionskanäle" active="no" />
+        <plugin name="pvr350" info="Ausgabe-Frontend für PVR350" active="no" protected="yes" />
+        <plugin name="pvrinput" info="Empfang über PVR x50-Karten" active="no" />
+        <plugin name="quickepgsearch" info="EPGSearch Schnellsuche" active="no" />
+        <plugin name="quicktimer" info="Quicktimer (Kanal,Tag,Zeit)" active="no" />
+        <plugin name="radio" info="RDS+Hintergrundbild für Radiosender" active="no" />
+        <plugin name="radioinfo" info="Radioinfo" active="no" />
+        <plugin name="radiolist" info="Kanalliste der Radiosender" active="no" />
+        <plugin name="recsearch" info="Suche in Aufnahmen" active="no" />
+        <plugin name="recstatus" info="Aufnahmestatus der DVB-Karten" active="no" />
+        <plugin name="reelbox" info="Ausgabe-Frontend für eHD" active="no" protected="yes" />
+        <plugin name="reelchannelscan" info="Satelliten-Kanal-Suchlauf" active="no" />
+        <plugin name="reelepg" param="" info="EPG für eHD" active="no" />
+        <plugin name="remote" info="FB-Empfänger an DVB Karten" active="no" protected="yes" />
+        <plugin name="remoteosd" info="Zugriff auf OSD eines 2. VDR" active="no" />
+        <plugin name="remotetimers" info="Timer Verw. in Client/Server-Struktur" active="no" />
+        <plugin name="restfulapi" info="Ermöglicht Nutzung der RestfulAPI" active="no" />
+        <plugin name="ripit" info="Ein Audio-CD-Ripper" active="no" />
+        <plugin name="rockantenne" info="Zeigt aktuellen Titel auf Radio Rock-Antenne" active="no" />
+        <plugin name="rotor" info="Ansteuerung drehbare DISEqC-SAT-Antenne" active="no" />
+        <plugin name="rotorng" info="Ansteuerung drehbare DISEqC-SAT-Antenne" active="no" />
+        <plugin name="rssreader" info="RSS-Informationen" active="no" />
+        <plugin name="rtextdemo" info="Radio mit Radiotext(plus)" active="no" />
+        <plugin name="satip" param="-d 4" info="satip" active="no" />	
+        <plugin name="scheduler" info="Steuerung von externen Jobs innerhalb des VDRs" active="no" />
+        <plugin name="screenshot" info="Erstellt Screenshots" active="no" />
+        <plugin name="serial" info="Taster + LEDs am COM-Port" active="no" />
+        <plugin name="setup" info="VDR-Setup-Funktionen übers OSD" active="no" protected="yes" />
+        <plugin name="shoutcast" info="Shoutcast-Streams aus dem WWW empfangen" active="no" />
+        <plugin name="showrecinfo" info="Details über Aufnahmen" active="no" />
+        <plugin name="skinenigmang" param="-i /var/cache/vdr/epgimages" info="Umsetzung des D-Box Skins Enigma" active="no" />
+        <plugin name="skinelchi" param="-c /var/cache/vdr/epgimages/" info="skinelchi" active="no" />
+        <plugin name="skinflat" info="Skinflat einfacher und schlanker Truecolor-Skin" active="no" />
+        <plugin name="skinflatplus" info="Skinflat-Plus ist ein stark anpassbarer Truecolor-Skin" active="no" />
+        <plugin name="skinnopacity" param="-e /var/cache/vdr/epgimages/" info="Anpassbarer nativer Truecolor-Skin" active="no" />
+        <plugin name="skinreel3" param="-f /usr/share/fonts/truetype -l /usr/share/vdr-skins/skinreel3/channellogos -i /media/easyvdr01/iepg/images" info="Standard-Skin für eHD" active="no" />
+        <plugin name="sleeptimer" info="Runterfahren nach einstellbarer Zeit" active="no" />
+        <plugin name="snapshot" info="Erstellt Screenshots" active="no" />
+        <plugin name="softhddevice" info="Software-Emulation eines HD-Ausgabegerätes" active="no" protected="yes" />
+        <plugin name="solitaire" info="Kartenspiel Solitaire" active="no" />
+        <plugin name="span" info="Frequenzdaten + Audio-Spektrum Analyzer" active="no" />
+        <plugin name="spider" info="Kleines OSD Kartenspiel " active="no" />
+        <plugin name="sportng" info="SportNG" active="no" />
+        <plugin name="startdvdhde" info="DVDs abspielen mit eHD" active="no" />
+        <plugin name="statinfo" info="Statinfo" active="no" />
+        <plugin name="statusleds" info="VDR-Status über LEDs anz." active="no" />
+        <plugin name="streamdev-client" info="Streaming Client" active="no" />
+        <plugin name="streamdev-server" info="Streaming Server" active="no" />
+        <plugin name="streamplayer" info="Spielt Videostreams " active="no" />
+        <plugin name="sudoku" info="Sudoku" active="no" />
+        <plugin name="sundtek" info="Plugin für Sundtek-Sticks" active="no" />
+        <plugin name="suspendoutput" info="Hintergrundbild für Radiosender" active="no" />
+        <plugin name="svdrposd" info="OSD menu via SVDRP" active="no" />
+        <plugin name="svdrpservice" info="Schnittst. für Zugr. auf svdrp-Server" active="no" />
+        <plugin name="systeminfo" info="Zeigt Systeminfos an" active="no" />
+        <plugin name="targavfd" info="Informationen auf Futaba MDM166A VFD-Displ." active="no" />
+        <plugin name="text2skin" info="Lader für weitere OSD-Skins" active="no" />
+        <plugin name="timeline" info="Zeigt Timer in Zeitleiste" active="no" />
+        <plugin name="timersync" info="Synchronisiert Timer zw. VDRs" active="no" />
+        <plugin name="trayopenng" param="--command eject --device /dev/cdrom" info="Öffnet CD/DVD-Laufwerk" active="no" />
+        <plugin name="ttxtsubs" info="Zeigt Untertitel an" active="no" />
+        <plugin name="tvguide" param="-e /var/cache/vdr/epgimages/" info="TvGuide gut anpassbarer 2D EPG viewer" active="no" />
+        <plugin name="tvm2vdr" info="TVMovie EPG-Daten laden" active="no" />
+        <plugin name="tvonscreen" param="--logos /usr/share/vdr-plugin-tvonscreensd/tv-logos -v /etc/vdr/vdradmin/vdradmind.at" info="EPG-Programmzeitschrift für HD" active="no" />
+        <plugin name="tvonscreensd" param="--logos /usr/share/vdr-plugin-tvonscreensd/tv-logos -v /etc/vdr/vdradmin/vdradmind.at" info="EPG-Programmzeitschrift für SD" active="no" />
+        <plugin name="tvscraper" info="läd im Hintergrund Bilder von EPG-Events" active="no" />
+        <plugin name="undelete" info="Wiederherst. geloeschter Aufn. (vor Restart)" active="no" />
+        <plugin name="usbremote" info="Remote-Plugin für USB-Geräte" active="no" />
+        <plugin name="vcd" param="-v /dev/dvd" info="VideoCD Player für FF-SD" active="no" />
+        <plugin name="vdrc" info="Linux Commander OSD" active="no" />
+        <plugin name="vdrcd" param="-c /dev/dvd -c /media/easyvdr01/dvd -c /media/easyvdr01/cdfs" info="AutoPlay Funktion" active="no" />
+        <plugin name="vdrconvert" info="DVD-Brenner" active="no" />
+        <plugin name="vdrmanager" info="Android VDR-Manager" active="no" />
+        <plugin name="vdrrec" info="Auf DVD archivierte VDR-Aufnahmen abspielen" active="no" />
+        <plugin name="vdrrip" param="-d /dev/dvd" info="Movie-Encoder VDRRip" active="no" />
+        <plugin name="videoplayer" info="Videoplayer für eHD" active="no" />
+        <plugin name="vnsiserver" info="VNSI Netzw. Stream. IF" active="no" />
+        <plugin name="vod" info="Video on Demand" active="no" />
+        <plugin name="vodcatcher" info="Vodcatcher für VDR" active="no" />
+        <plugin name="vompclient-mvp" info="Client f. Hauppauge MediaMVP-Server" active="no" />
+        <plugin name="vompserver" info="Hauppauge MediaMVP-Server" active="no" />
+        <plugin name="wapd" info="Fernsteuerung durch WAP" active="no" />
+        <plugin name="weatherhd" info="New  Wetterinfos via WWW für HD" active="no" />
+        <plugin name="weatherng" info="Wetterinfos via WWW für HD" active="no" />
+        <plugin name="weatherng-sd" info="Wetterinfos via WWW für SD" active="no" />
+        <plugin name="webepg" info="EPG-Daten aus dem WWW" active="no" />
+        <plugin name="webvideo" info="Download von Youtube etc." active="no" />
+        <plugin name="wirbelscan" info="Kanalsuche für DVB-T/C/S(2), ivtv u. PVRx50 Karten" active="no" />
+        <plugin name="X10" info="Steuerung von X10-Devices" active="no" />
+        <plugin name="xine" info="Software-Emulation eines VDR-Ausgabegerätes" active="no" protected="yes" />
+        <plugin name="xineliboutput" info="X11-Frontend für VDR" active="no" protected="yes" />
+        <plugin name="xinemediaplayer" info="xine-Mediaplayer für eHD" active="no" />
+        <plugin name="xvdr" info="XBMC-Anbindung an VDR" active="no" />
+        <plugin name="yacoto" info="YACoTo-Medienkonverter" active="no" />
+        <plugin name="yaepghd" info="yaEPG-Ansicht in HD" active="no" />
+        <plugin name="zaphistory" info="Zapping-Historie" active="no" />
+        <plugin name="zappilot" info="EPG-Blättern ohne Kanalumschaltung" active="no" />
+    </plugins>
+    <menus>
+        <menu name="VDR-Einstellungen">
+            <menu name="OSD" help1="Einstellungen zum On Screen Display" help2="setup_osd.hlp" system="OSD" />
+            <menu name="EPG" help1="Einstellungen zum Electronic Programming Guide" help2="setup_epg.hlp" system="EPG" />
+            <menu name="DVB" help1="Einstellungen zur DVB-Karte" help2="setup_dvb.hlp" system="DVB" />
+            <menu name="LNB" help2="setup_lnb.hlp" system="LNB" />
+            <menu name="CAM" help2="setup_cicam.hlp" system="CAM" />
+            <menu name="Aufnahme" help2="setup_record.hlp" system="Record" />
+            <menu name="Wiedergabe" help2="setup_replay.hlp" system="Replay" />
+            <menu name="Sonstiges" help2="setup_misc.hlp" system="Misc" />
+            <menu name="Edit VDR-Menü" help1="VDR Menü bearbeiten" help2="setup_editmenu.hlp" system="VDRMenu" />
+            <menu name="Noad-Einstellungen">
+                <entry name="Noad" sysconfig="NOAD" type="selection" value="Deaktiviert" help1="Werbefilter für Aufnahmen">
+                    <value>Deaktiviert</value>
+                    <value>Offline</value>
+                    <value>Online nur Live Aufnahmen</value>
+                    <value>Online alle Aufnahmen</value>
+                </entry>
+                <entry name="Mehrere parallele Instanzen" sysconfig="NOAD_PARALLEL" type="bool" value="yes" help1="Mehrere parallele Instanzen erlauben (höhere CPU-Belastung)" />
+                <entry name="OSD-Meldungen anzeigen" sysconfig="NOAD_OSD" type="bool" value="no" />
+                <entry name="Noad nur für definierte Sender" sysconfig="NOAD_ON_CHANNELS" type="bool" value="no" help1="Sender können in /etc/vdr/noad/noadlist.conf gesetzt werden" />
+            </menu>
+            <menu name="Sonstige VDR-Einstellungen">
+                <entry name="Kanalliste" sysconfig="CHANNELLIST" type="selection" setup="channellist" value="hinweis" />
+                <menu name="AC3-Einstellungen">
+                    <entry name="AC3 über Soundkarte" sysconfig="AC3DECODER" type="selection" value="Deaktiviert">
+                        <value>Deaktiviert</value>
+                        <value>ac3dec</value>
+                        <value>a52dec</value>
+                    </entry>
+                    <entry name="AC3 Parameter" sysconfig="AC3_SETS" type="text" value="" />
+                </menu>
+            </menu>
+        </menu>
+        <menu name="Plugins-Einstellungen">
+            <menu name="Aktiviere Plugins" help1="Aktiviere und Deaktiviere Plugins" help2="setup_actplugins.hlp" system="ActPlugins" />
+            <menu name="Plugins-Setup" help1="Plugins konfigurieren" system="Plugins" />
+        </menu>
+        <menu name="System-Einstellungen">
+            <menu name="Netzwerk" help1="Grundeinstellungen siehe Hilfe!" help2="net_basic.hlp">
+                <menu name="Dienste, und Fernzugriff auf diesen VDR" help1="Freigaben siehe Hilfe!" help2="svdrp_access.hlp">
+                    <entry name="SSH-Server starten" sysconfig="START_SSHD" type="bool" value="yes" />
+                    <entry name="XXV starten" sysconfig="START_XXV" type="bool" value="no" />
+                    <entry name="Interner easyVDR-Webserver starten" sysconfig="START_LIGHTTPD" type="bool" value="yes" />
+                    <entry name="VDR-admin starten" sysconfig="START_VDRADMIN" type="bool" value="yes" />
+                    <entry name="NFS-Server starten" sysconfig="START_NFSD" type="bool" value="no" help1="NFS-Freigaben siehe Hilfe!" help2="nfs_access.hlp" />
+                    <menu name="Samba Einstellungen" command="sudo /usr/lib/vdr/easyvdr-set-settings samba">
+                        <entry name="Samba starten" sysconfig="START_SAMBA" type="bool" value="no" />
+                        <entry name="Arbeitsgruppe" sysconfig="SAMBA_WORKGROUP" type="text" value="WORKGROUP" />
+                        <entry name="Anzeigename/Serverstring" sysconfig="SAMBA_SERVER_STRING" type="text" value="Samba-easyVDR" />
+                        <entry name="Video0 freigeben" sysconfig="SAMBA_SHARE_VIDEO0" type="bool" value="yes" />
+                        <entry name="MP3 freigeben" sysconfig="SAMBA_SHARE_MP3" type="bool" value="yes" />
+                        <entry name="Photos freigeben" sysconfig="SAMBA_SHARE_PHOTOS" type="bool" value="yes" />
+                        <entry name="Filme1 freigeben" sysconfig="SAMBA_SHARE_FILME1" type="bool" value="yes" />
+                        <entry name="Filme2 freigeben" sysconfig="SAMBA_SHARE_FILME2" type="bool" value="yes" />
+                        <entry name="Filme3 freigeben" sysconfig="SAMBA_SHARE_FILME3" type="bool" value="yes" />
+                        <entry name="Media freigeben" sysconfig="SAMBA_SHARE_MEDIA" type="bool" value="yes" />
+                        <entry name="Root freigeben" sysconfig="SAMBA_SHARE_ROOT" type="bool" value="no" />
+                        <entry name="Samba-Log einschalten" sysconfig="SAMBA_LOG" type="bool" value="yes" />
+                    </menu>
+                    <menu name="FTP-Setup" command="sudo /usr/lib/vdr/easyvdr-set-settings proftpd">
+                        <entry name="FTP-Server starten" sysconfig="START_PROFTPD" type="bool" value="no" />
+                        <entry name="FTP-Benutzername" sysconfig="FTPD_USER" type="text" value="ftp" />
+                        <entry name="FTP-Passwort" sysconfig="FTPD_PASSWD" type="text" value="" />
+                        <entry name="Standard-Verzeichnis" sysconfig="FTPD_DEFAULT_DIR" type="text" value="/media/easyvdr01/" />
+                        <entry name="FTP-Port" sysconfig="FTPD_PORT" type="number" value="21" />
+                        <entry name="Aktivitäten loggen" sysconfig="FTPD_LOG" type="bool" value="no" />
+                    </menu>
+                    <menu name="Streamdev" >
+                        <entry name="Streamdev-Streamqualität" sysconfig="STREAMQUALITY" type="selection" value="LAN10">
+                            <value>DSL1000</value>
+                            <value>DSL2000</value>
+                            <value>DSL3000</value>
+                            <value>DSL6000</value>
+                            <value>DSL16000</value>
+                            <value>WLAN11</value>
+                            <value>WLAN54</value>
+                            <value>LAN10</value>
+                        </entry>
+                    </menu>
+                    <menu name="Parameter und Einstellungen">
+                        <entry name="Wake on LAN" sysconfig="WAKE_ON_LAN" type="bool" value="no" />
+                        <entry name="Netzwerk beim Reboot/Shutdown entladen(WOL)" sysconfig="SHUTDOWN_ETHERNET" type="bool" value="no" />
+                        <entry name="Windowsfreundl. Dateinamen" sysconfig="FRIENDLY_FILENAMES" type="bool" value="yes" />
+                    </menu>
+                </menu>
+                <menu name="Services anderer Geraete">
+                    <menu name="Server-WOL">
+                        <entry name="Server aufwecken" sysconfig="WAKE_SERVER" type="bool" value="no" />
+                        <entry name="Server-MAC" sysconfig="SERVER_MAC" type="hex" value="" />
+                    </menu>
+                </menu>
+            </menu>
+            <menu name="Fernbedienung: Wechsel benoetigt ~5 Sek. / Bildschirm kann flackern" command="sudo /usr/lib/vdr/easyvdr-set-settings lirc">
+                <entry name="Auswahl Fb-Empfaenger: " sysconfig="FB_RECEIVER" type="selection" value="IR_an_COM1">
+                </entry>
+                <entry name="Auswahl Fb-Sender: " sysconfig="FB_CONTROLLER" type="selection" value="Hauppauge-A415-HPG-WE">
+                </entry>
+            </menu>
+            <menu name="Laufwerkseinstellungen">
+                <menu name="Festplatten-Einstellungen">
+                    <entry name="Media-Partition" sysconfig="MEDIADEVICE" type="text" value="" command="sudo /usr/lib/vdr/easyvdr-set-settings fstab" />
+                    <entry name="Festplatten abschalten nach" sysconfig="HDDSPINDOWNTIME" type="selection" value="nicht abschalten" help1="Versetzen der Festplatten in Schlafmodus nach X Minuten">
+                        <value>nicht abschalten</value>
+                        <value>5 Minuten</value>
+                        <value>10 Minuten</value>
+                        <value>15 Minuten</value>
+                        <value>20 Minuten</value>
+                    </entry>
+                    <entry name="abzuschaltende Festplatten" sysconfig="HDDSPINDOWNDISKS" type="text" value="/dev/sd?" help1="mit Leerzeichen: /dev/sda /dev/sdb" />
+                    <menu name="Smartmontools" command="sudo /usr/lib/vdr/easyvdr-set-settings smartmon">
+                        <entry name="Smartmontools starten" sysconfig="START_SMARTMON" type="bool" value="no" />
+                        <entry name="Laufwerke" sysconfig="SMARTMON_DRIVES" type="text" value="" />
+                        <entry name="Smartmontools optionen" sysconfig="SMARTMON_OPTS" type="text" value="" />
+                    </menu>
+                    <menu name="Hdd-Temp" command="sudo /usr/lib/vdr/easyvdr-set-settings hddtemp">
+                        <entry name="HDDtemp starten" sysconfig="START_HDDTEMP" type="bool" value="no" />
+                        <entry name="Laufwerke" sysconfig="HDDTEMP_DRIVES" type="text" value="" />
+                        <entry name="Laufwerke ohne Sensor" sysconfig="HDDTEMP_DRIVES_WO_SENSORS" type="text" value="" />
+                        <entry name="Interface IP" sysconfig="HDDTEMP_INTERFACE" type="ip" value="" />
+                        <entry name="Interface Port" sysconfig="HDDTEMP_PORT" type="number" value="7634" />
+                        <entry name="Log Intervall" sysconfig="HDDTEMP_INTERVALL" type="number" value="0" />
+                        <entry name="Sonst. Optionen" sysconfig="HDDTEMP_OPTS" type="text" value="" />
+                    </menu>
+                </menu>
+                <menu name="Ramdisk-Einstellungen">
+                    <entry name="Ramdisk erstellen" sysconfig="CREATE_RAMDISK" type="bool" value="yes" />
+                    <entry name="Ramdisk-Größe in MB" sysconfig="RAMDISK_SIZE" type="number" value="256" />
+                    <entry name="VTX-Daten in Ramdisk legen" sysconfig="VTX_RAMDISK" type="bool" value="yes" />
+                    <entry name="EPG in Ramdisk legen" sysconfig="EPG_RAMDISK" type="bool" value="yes" />
+                    <entry name="EPG-Images in Ramdisk legen" sysconfig="EPGIMAGES_RAMDISK" type="bool" value="no" />
+                </menu>
+            </menu>
+            <menu name="Wakeup/Poweroff-Einstellungen">
+                <entry name="Wake-Up-Methode" sysconfig="SHUTDOWNMETHOD" type="selection" value="ACPI" command="sudo /usr/lib/vdr/easyvdr-set-settings shutdownmethod" help1="Auswahl des Shutdown-Skriptes">
+                    <value>kein</value>
+                    <value>ACPI</value>
+                    <value>Nvram-Wakeup</value>
+                    <value>Extb</value>
+                    <value>Jepsen-HW-Wakeup</value>
+                </entry>
+                <entry name="Wake-Up-Intervall" sysconfig="WAKEUP_REGULAR_DAYS" type="number" value="0" help1="Aufwachintervall 0=aus,1=jeden Tag,2=jeden 2. Tag..." />
+                <entry name="Wake-Up-Zeit" sysconfig="WAKEUP_REGULAR_TIME" type="text" value="" help1="Aufwachstunde: Eingabeformat:SS:MM" />
+                <entry name="Aufwachen X Min befor Timer beginn" sysconfig="WAKEUP_START_AHEAD" type="number" value="5" />
+                <menu name="NVRAM-Einstellungen">
+                    <entry name="NVRAM Commandline" sysconfig="NVRAM_COMMANDLINE" type="text" value="" />
+                    <entry name="Neustart erzwingen" sysconfig="NVRAM_FORCE_REBOOT" type="bool" value="yes" help1="Erzwingt den Reboot" />
+                </menu>
+            </menu>
+            <menu name="Info Display Einstellungen">
+                <entry name="LCD Einstellung" sysconfig="LCD" type="selection" value="keins">
+                    <value>keins</value>
+                    <value>lcdproc</value>
+                    <value>graphlcd</value>
+                </entry>
+                <entry name="Graphlcd-Treiber" sysconfig="LCD_DRIVER" type="selection" value="ks0108">
+                    <value>ks0108</value>
+                    <value>t6963c</value>
+                    <value>gu140x32f</value>
+                    <value>gu256x64-372</value>
+                    <value>gu256x64-3900</value>
+                    <value>image</value>
+                    <value>sed1330</value>
+                    <value>sed1520</value>
+                    <value>simlcd</value>
+                    <value>serdisp</value>
+                    <value>noritake800</value>
+                    <value>hd61830</value>
+                    <value>picolcd256x64</value>		    
+                </entry>
+                <entry name="LCD-Auflösung für Bootlogo" sysconfig="LCD_RESOLUTION" type="selection" value="128x64" command="sudo /usr/lib/vdr/easyvdr-set-settings setglcd">
+                    <value>240x128</value>
+                    <value>128x64</value>
+                </entry>
+                <entry name="graphTFT starten" sysconfig="START_GRAPHTFT" type="selection" value="no" help1="Display fuer Graphtft auswaehlen" help2="setup_graphtft.hlp">
+                    <value>no</value>
+                    <value>auf Display 0.0 (Ausgabe ueber x)</value>
+                    <value>auf Display 0.1 (Ausgabe ueber x)</value>
+                    <value>auf Display 1.0 (Ausgabe ueber x)</value>
+                    <value>auf Display 1.1 (Ausgabe ueber x)</value>
+                    <value>auf vdr/1</value>
+                    <value>auf directFB</value>
+                    <value>ueber FrameBuffer /dev/fb0</value>
+                    <value>ueber FrameBuffer /dev/fb1</value>
+                    <value>auto detect</value>
+                </entry>
+            </menu>
+            <menu name="Log-Optionen">
+                <entry name="VDR-Loglevel" sysconfig="VDRLOGLEVEL" type="selection" value="3" help1="0=no logging 1=errors only 2=errors and info 3=all">
+                    <value>0</value>
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                </entry>
+            </menu>
+            <menu name="ripDVDtoVDR Einstellungen">
+                <entry name="Kopiere Titel (MAIN)" sysconfig="TITLESELECT" type="selection" value="MAIN">
+                    <value>MAIN</value>
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                    <value>4</value>
+                    <value>5</value>
+                    <value>6</value>
+                    <value>7</value>
+                    <value>8</value>
+                    <value>9</value>
+                    <value>10</value>
+                    <value>11</value>
+                    <value>12</value>
+                    <value>13</value>
+                    <value>14</value>
+                    <value>15</value>
+                    <value>16</value>
+                    <value>17</value>
+                    <value>18</value>
+                    <value>19</value>
+                    <value>20</value>
+                    <value>21</value>
+                    <value>22</value>
+                    <value>23</value>
+                    <value>24</value>
+                    <value>25</value>
+                    <value>26</value>
+                    <value>27</value>
+                    <value>28</value>
+                    <value>29</value>
+                    <value>30</value>
+                    <value>31</value>
+                    <value>32</value>
+                    <value>33</value>
+                    <value>34</value>
+                    <value>35</value>
+                    <value>36</value>
+                    <value>37</value>
+                    <value>38</value>
+                    <value>39</value>
+                    <value>40</value>
+                    <value>41</value>
+                    <value>42</value>
+                    <value>43</value>
+                    <value>44</value>
+                    <value>45</value>
+                    <value>46</value>
+                    <value>47</value>
+                    <value>48</value>
+                    <value>49</value>
+                    <value>50</value>
+                    <value>51</value>
+                    <value>52</value>
+                    <value>53</value>
+                    <value>54</value>
+                    <value>55</value>
+                    <value>56</value>
+                    <value>57</value>
+                    <value>58</value>
+                    <value>59</value>
+                    <value>60</value>
+                    <value>61</value>
+                    <value>62</value>
+                    <value>63</value>
+                    <value>64</value>
+                    <value>65</value>
+                    <value>66</value>
+                    <value>67</value>
+                    <value>68</value>
+                    <value>69</value>
+                    <value>70</value>
+                    <value>71</value>
+                    <value>72</value>
+                    <value>73</value>
+                    <value>74</value>
+                    <value>75</value>
+                    <value>76</value>
+                    <value>77</value>
+                    <value>78</value>
+                    <value>79</value>
+                    <value>80</value>
+                    <value>81</value>
+                    <value>82</value>
+                    <value>83</value>
+                    <value>84</value>
+                    <value>85</value>
+                    <value>86</value>
+                    <value>87</value>
+                    <value>88</value>
+                    <value>89</value>
+                    <value>90</value>
+                    <value>91</value>
+                    <value>92</value>
+                    <value>93</value>
+                    <value>94</value>
+                    <value>95</value>
+                    <value>96</value>
+                    <value>97</value>
+                    <value>98</value>
+                    <value>99</value>
+                </entry>
+                <entry name="Mindestlänge der Titel" sysconfig="MINLENGTH" type="number" value="1800" />
+                <entry name="Sprache der Audiospur" sysconfig="LANGUAGE" type="selection" value="de">
+                    <value>de</value>
+                    <value>en</value>
+                </entry>
+                <entry name="Titel gleicher Länge" sysconfig="SAMELENGTH" type="selection" value="NO">
+                    <value>NO</value>
+                    <value>YES</value>
+                </entry>
+            </menu>
+            <menu name="Frontend-Einstellungen">
+                <entry name="Ausgabe-Frontend" sysconfig="VDR_FRONTEND" type="selection" value="vdr-sxfe" command="sudo /usr/lib/vdr/easyvdr-set-settings frontend">
+                    <value>DVB-FF</value>
+                    <value>DVBS2-FF</value>
+                    <value>reelbox</value>
+                    <value>PVR350</value>
+                    <value>vdr-sxfe</value>
+                    <value>xine</value>
+                    <value>XBMC</value>
+                    <value>Softhddevice</value>
+                    <value>keines</value>
+                </entry>
+                <entry name="Video-Modus der DVB-FF" sysconfig="VIDMODE" type="selection" value="2">
+                    <value>0</value>
+                    <value>1</value>
+                    <value>2</value>
+                    <value>3</value>
+                </entry>
+            </menu>
+        </menu>
+    </menus>
+</setup>

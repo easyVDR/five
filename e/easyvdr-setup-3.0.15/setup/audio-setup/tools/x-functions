@@ -1,0 +1,79 @@
+#!/bin/bash
+#
+### Einmalig X durchstarten, damit alle Einstellungen fuer das folgende Setup voreingestellt sind ###
+### dann funktioniert z.B. auch der Soundcheck ueber HDMI von NVidia-Grafikkarten                 ###
+### und die Erkennung von Kanalzahl und AC-3-Eigenschaften von modernen NVidia-Grafikkarten       ###
+###   v 0.2 29.01.13  michel8 & c.b.
+###   v 0.3 02.02.13  start X11 with zeni/upstart 
+###   v 0.4 03.01.14  neuer HW-Detect-Meldebildschirm statt zeni
+
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+MESSAGE_TIME=60
+
+#########################################################################
+CopyELD(){
+
+# Meldebildschirm an
+/usr/bin/view_picture $SETUP/images/hardware-detection.jpg $MESSAGE_TIME &
+
+sleep 5
+for CARDDIR in /proc/asound/card*
+  do 
+    if [ -d $CARDDIR ] &&  ls $CARDDIR/eld#* >/dev/null 2>&1 ; then
+      for (( Count=0;Count<25;Count++ ))
+        do
+          grep "eld_valid" $CARDDIR/eld#* | cut -d":" -f2 | grep -q 1 &&  break
+          sleep 0.2
+        done
+    fi
+  done
+# Fuer alle Karten mit eld# wurde eine Zeit von min 5s / max 10s gewartet,
+# bis angeschlossene Monitore ihre Audio-Parameter uebertragen haben...
+cp -r /proc/asound /tmp/asound
+rm -f /tmp/EDID_sounddata.tar.bz2
+tar cjf /tmp/EDID_sounddata.tar.bz2 /tmp/asound/*
+}
+
+#########################################################################
+Soundtest(){
+
+# Meldebildschirm an
+/usr/bin/view_picture $SETUP/images/audio_test.jpg $MESSAGE_TIME &
+
+# Soundtest durchfuehren
+ speaker-test -c 2 -D plug$TestDev -t sine -f 200 -l 1 > /dev/null
+ speaker-test -c 2 -D plug$TestDev -t sine -f 600 -l 1 > /dev/null
+}
+
+#########################################################################
+Channeltest(){
+
+# Meldebildschirm an
+/usr/bin/view_picture $SETUP/images/hardware-detection.jpg $MESSAGE_TIME &
+
+# Kanaltest durchfuehren
+if [ "$TestDev" == "default" ]; then
+    speaker-test -D default -c 6 -t wav -l 4
+else
+    # wandle TestDev hw:1,7 in hw=1.7
+    TestDev="hw=1.7"
+    Testfile="$SETUP/audio-setup/tools/www_lynnemusic_com_surround_test.ac3"
+    mplayer -ao alsa:device=$TestDev -ac hwac3 $Testfile -loop 4
+fi
+}
+
+#########################################################################
+
+# main
+
+case $xFunktion in
+    get-ELD)          CopyELD;;
+    sound-check)      Soundtest;;
+    channel-check)    Channeltest;;
+    *)      echo "$xFunktion $TestDev - Unbekannte xFunktion aus Audioconfig Aufgerufen... " >> $SNDLOG;;
+esac
+
+# Meldebildschirm aus
+killall view_picture
+clear   # Bildschirm aufraeumen

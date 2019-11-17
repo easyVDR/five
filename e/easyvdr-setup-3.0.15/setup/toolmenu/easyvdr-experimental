@@ -1,0 +1,77 @@
+#!/bin/bash
+#
+# easyVDR-experimental
+#
+#
+#  v1.1    03.02.12   Captain_Beefheart
+#  v1.2    11.02.13  C.B.
+#  v1.3    07.01.14 added irmp C.B
+#  v1.3.1  09.01.14 fix on  irmp C.B.
+###########################################
+
+################################# defines/init######################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+TITLE=" Experimental-Tools fuer easyVDR $EASYVDR_VERSION "
+BACKTITLE=" Exp. Toolmenu fuer easyVDR"
+
+############################### functions ##########################################
+
+#####
+Menu()
+{
+OK_CANCEL=0
+while (( ! $OK_CANCEL ))
+do
+  TOOL_MENUITEM=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title "$TITLE"\
+        --ok-label " los gehts "\
+        --cancel-label " Exp. Menue beenden "\
+        --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+  Irmp_Keymap_Builder      " Erzeugt Irmp Keymap"                 3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+
+  case $OK_CANCEL in
+    0) Run_Selected;;
+    1) Good_Bye;;
+  esac
+done
+}
+
+#####
+Run_Selected()
+{
+case $TOOL_MENUITEM in
+  Irmp_Keymap_Builder)  Run_Irmp_Inst  ;;
+esac
+}
+
+#####
+Good_Bye()
+{
+MiniInfo " Good Bye " "$BACKTITLE" "\n\n\n und tschuess"
+sleep 3; clear
+}
+
+################################## main runs #######################################
+
+#####
+Run_Irmp_Inst()
+{
+$SETUP/toolmenu/Irmprecord/irmprecord
+OK_CANCEL=0
+}
+
+######################################### main ####################################################
+
+Menu
+

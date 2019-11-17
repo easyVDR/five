@@ -1,0 +1,190 @@
+#!/bin/bash
+# 
+# Samba Konfiguration fuer easyVDR
+#
+#
+# 
+# v.0.3  31.01.13 Captain_Beefheart
+# v.0.4  30.04.16 michel8
+#
+#
+#################################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Samba "
+BACKTITLE=" Samba Konfiguration "
+
+##################### functions #####################################################
+
+#####
+Workgroup_Menu()
+{
+MISSING_INPUT=0
+while (( $MISSING_INPUT == 0 ))
+  do
+    W_GROUP_NAME=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$TITLE"\
+          --inputbox "\n\n\
+            Bitte geben Sie Ihre neue Arbeitsgruppe ein \n\
+              die bisherige ist als default vorgegeben \n \n " \
+        $DIA_BOX2_SIZE $SAMBA_WORKGROUP 3>&1 1>&2 2>&3 3>&- )
+    OK_CANCEL=$?
+    clear
+    GOT_NAME=$W_GROUP_NAME
+    Check_Missing
+  done
+if (( ! $OK_CANCEL )); then
+  SetSysconfig   SAMBA_WORKGROUP $W_GROUP_NAME
+  SetVDRSetupXML SAMBA_WORKGROUP $W_GROUP_NAME
+fi
+}
+
+#####
+Servername_Menu()
+{
+MISSING_INPUT=0
+while (( $MISSING_INPUT == 0 ))
+  do
+    SERVERNAME=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$TITLE"\
+          --inputbox "\n\n\
+            Bitte geben Sie einen neuen Namen fuer Ihren \n\
+                        Samba Server ein \n\
+              der bisherige ist als default vorgegeben \n \n " \
+        $DIA_BOX2_SIZE $SAMBA_SERVER_STRING 3>&1 1>&2 2>&3 3>&- )
+    OK_CANCEL=$?
+    clear
+    GOT_NAME=$SERVERNAME
+    Check_Missing
+  done
+if (( ! $OK_CANCEL )); then
+  SetSysconfig   SAMBA_SERVER_STRING $SERVERNAME
+  SetVDRSetupXML SAMBA_SERVER_STRING $SERVERNAME
+fi
+}
+
+#####
+Init_Checkbox()
+{
+[[ x"$START_SAMBA"        == x"yes" ]] &&  SWITCH1="on"  || SWITCH1="off"
+[[ x"$SAMBA_SHARE_VIDEO0" == x"yes" ]] &&  SWITCH2="on"  || SWITCH2="off"
+[[ x"$SAMBA_SHARE_MP3"    == x"yes" ]] &&  SWITCH3="on"  || SWITCH3="off"
+[[ x"$SAMBA_SHARE_PHOTOS" == x"yes" ]] &&  SWITCH4="on"  || SWITCH4="off"
+[[ x"$SAMBA_SHARE_FILME1" == x"yes" ]] &&  SWITCH5="on"  || SWITCH5="off"
+[[ x"$SAMBA_SHARE_FILME2" == x"yes" ]] &&  SWITCH6="on"  || SWITCH6="off"
+[[ x"$SAMBA_SHARE_FILME3" == x"yes" ]] &&  SWITCH7="on"  || SWITCH7="off"
+[[ x"$SAMBA_SHARE_MEDIA"  == x"yes" ]] &&  SWITCH8="on"  || SWITCH8="off"
+[[ x"$SAMBA_SHARE_ROOT"   == x"yes" ]] &&  SWITCH9="on"  || SWITCH9="off"
+[[ x"$SAMBA_LOG"          == x"yes" ]] &&  SWITCH10="on" || SWITCH10="off"
+}
+
+#####
+Samba_Checkbox()
+{
+OK_CANCEL=1
+SEL_OPTION=$(dialog \
+     --backtitle "$BACKTITLE" \
+     --title "$TITLE" \
+     --ok-label "weiter"\
+     --checklist "\n\
+          Auswaehlen mit    [ Space ] \n\
+          Steuerung mit     [  UP   ] [ DOWN ] \n\
+          Uebernehmen mit   < weiter > \n\
+          Abbruch mit       < Cancel > "  $DIA_BOX_SIZE\
+      Starte_Samba   "Samba starten                      "     "$SWITCH1" \
+      Video          "Freigabe: Aufnahmeverzeichniss     "     "$SWITCH2" \
+      Musik          "Freigabe: MP3 Verzeichniss         "     "$SWITCH3" \
+      Photos         "Freigabe: Bilder Verzeichniss      "     "$SWITCH4" \
+      Filme1         "Freigabe: Filme 1                  "     "$SWITCH5" \
+      Filme2         "Freigabe: Filme 2                  "     "$SWITCH6" \
+      Filme3         "Freigabe: Filme 3                  "     "$SWITCH7" \
+      Media          "Freigabe: ganzes Media Verzeichniss"     "$SWITCH8" \
+      Root           "Freigabe: ganzes Filesystem        "     "$SWITCH9" \
+      Logging        "Sambaaktionen loggen               "     "$SWITCH10"  3>&1 1>&2 2>&3 3>&- )
+OK_CANCEL=$?
+clear
+}
+
+#####
+Set_Shares()
+{
+SEL_1="no"; SEL_2="no"; SEL_3="no"; SEL_4="no"; SEL_5="no"
+SEL_6="no"; SEL_7="no"; SEL_8="no"; SEL_9="no"; SEL_10="no"
+
+for dummy in $SEL_OPTION
+  do
+    case  $dummy in
+    Starte_Samba) SEL_1="yes"  ;;
+           Video) SEL_2="yes"  ;;
+           Musik) SEL_3="yes"  ;;
+          Photos) SEL_4="yes"  ;;
+          Filme1) SEL_5="yes"  ;;
+          Filme2) SEL_6="yes"  ;;
+          Filme3) SEL_7="yes"  ;;
+           Media) SEL_8="yes"  ;;
+            Root) SEL_9="yes"  ;;
+         Logging) SEL_10="yes" ;;
+    esac
+  done
+
+SetSysconfig    START_SAMBA         $SEL_1
+SetVDRSetupXML  START_SAMBA         $SEL_1
+SetSysconfig    SAMBA_SHARE_VIDEO0  $SEL_2
+SetVDRSetupXML  SAMBA_SHARE_VIDEO0  $SEL_2
+SetSysconfig    SAMBA_SHARE_MP3     $SEL_3
+SetVDRSetupXML  SAMBA_SHARE_MP3     $SEL_3
+SetSysconfig    SAMBA_SHARE_PHOTOS  $SEL_4
+SetVDRSetupXML  SAMBA_SHARE_PHOTOS  $SEL_4
+SetSysconfig    SAMBA_SHARE_FILME1  $SEL_5
+SetVDRSetupXML  SAMBA_SHARE_FILME1  $SEL_5
+SetSysconfig    SAMBA_SHARE_FILME2  $SEL_6
+SetVDRSetupXML  SAMBA_SHARE_FILME2  $SEL_6
+SetSysconfig    SAMBA_SHARE_FILME3  $SEL_7
+SetVDRSetupXML  SAMBA_SHARE_FILME3  $SEL_7
+SetSysconfig    SAMBA_SHARE_MEDIA   $SEL_8
+SetVDRSetupXML  SAMBA_SHARE_MEDIA   $SEL_8
+SetSysconfig    SAMBA_SHARE_ROOT    $SEL_9
+SetVDRSetupXML  SAMBA_SHARE_ROOT    $SEL_9
+SetSysconfig    SAMBA_LOG           $SEL_10
+SetVDRSetupXML  SAMBA_LOG           $SEL_10
+}
+
+######### Tools ############
+
+#####
+Check_Missing()
+{
+if [[ (! "$GOT_NAME") && ($OK_CANCEL != 1) ]]
+  then
+    dialog --title " Error:  fehlende Eingabe "\
+           --backtitle "$BACKTITLE"\
+           --colors\
+           --pause "\n\
+           \Z1\Zb !! ERROR !!\n\
+         fehlende Eingabe!" $DIA_BOX3_SIZE $TIMEOUT
+    MISSING_INPUT=0
+  else 
+    MISSING_INPUT=1
+fi
+}
+
+######################################### main ####################################################
+
+OK_CANCEL=0
+Workgroup_Menu
+Servername_Menu
+Init_Checkbox
+Samba_Checkbox
+(( ! $OK_CANCEL )) && Set_Shares
+
+$VDR_LIBS/easyvdr-set-settings "samba" 
+

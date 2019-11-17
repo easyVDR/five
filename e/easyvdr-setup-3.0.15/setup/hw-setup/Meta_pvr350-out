@@ -1,0 +1,20 @@
+#!/bin/bash
+#
+#
+# Version 0.0.2 - sinai,sirnova,C.B.: added set frontend & OSD selection
+#  V 0.0.3  11.02.13  C.B.
+# 
+#################################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+####################################
+
+SetSysconfig "VDR_FRONTEND" "PVR350"
+WriteStatus "Meta_pvr350-out" "PVR350_configured"
+

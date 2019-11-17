@@ -1,0 +1,20 @@
+#!/bin/bash
+#1.01 Angepasst: Martin
+#apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 094D330A
+#http://ppa.launchpad.net/easyvdr-team/
+
+cat <<EOF | apt-key add -
+-----BEGIN PGP PUBLIC KEY BLOCK-----
+Version: SKS 1.0.10
+
+mI0ES/lyaAEEAO64zHygzgysVu5FPopU27Gf97J8G84cYBrsfqRfoBtIaPEDFPE2HxJH9cWq
+gtz9vemqgR1Xqq/ea3mx7u3wMsFsrqA0LU/dux3Qoor9JcNC4ip5Nplv8dY2TTEOOBc9YK9G
+R2AKHEBhYHC+1ZrOnHS2iQv3ljHZR2KDjwN1Q6WlABEBAAG0EUxhdW5jaHBhZCBlYXN5VkRS
+iLYEEwECACAFAkv5cmgCGwMGCwkIBwMCBBUCCAMEFgIDAQIeAQIXgAAKCRCBQ4pACU0zCsVg
+A/oCpRUh+WoA0QdlppHN76UNaGsps4XYYmhy+qXPPw3WAGIunwIwtU2OumCcbtEAl1YfwAmj
+yWyko4l1dZP/7pdqrx8oapAwIZ0H3wCBLsrMSBEeTkwoLYbU6dJKKwmBJjnpDJK+5caaGTOT
+XbjWy2yfkm7eNVTY6Z69O6uKizFaHA==
+=x6E1
+-----END PGP PUBLIC KEY BLOCK-----
+EOF
+

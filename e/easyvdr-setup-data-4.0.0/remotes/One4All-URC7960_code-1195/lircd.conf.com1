@@ -1,0 +1,116 @@
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.8.6(default) on Sat Feb 27 20:24:41 2010
+#
+# contributed by M. Hippert
+# Optimised for Gen2VDR by OliverH
+#
+# Lirc Receiver: Atric
+# model no. of remote control: ONE for ALL URC 7960 SmartControl
+# devices being controlled by this remote: Code for stb: Technisat: 1195
+# 
+# press and hold the magic-Key for 3 sec -> blue ring will light up 2x
+# select "stb"
+# enter code "1195" -> blue ring will light up 2x
+# 
+# The keys PREVIEW, NEXT and "pop up X" failed
+# The keys with same code
+# Red & Rewind; Green & Stop; Yellow & Pause & Play; Blue & FastForward & 16:9; -/-- & list; back & Key-between-ChannelUp-and-ChannelDown
+#
+# Chance Code this keys:
+#  * Press and hold the magic key for 3 sec. --> The Blue ring will light up 2x
+#  * Press 9 9 4. --> The Blue ring will light up 2x
+#  * Press and release the magic key.
+#  * Enter the 5-digit magic-code
+#  * dann die zu lernende Taste drücken
+#  * Repeat all for the next key
+# 
+#
+#  *** Magic-Code ***
+#  Die Tasten richtig fest drcken, ansonsten kann es vorkommen, dass Tasten 
+#  nicht angelernt werden obwohl der blaue Ring als Quittung blinkt
+#  
+#  Next		00240
+#  Preview	00627
+#  pop up X	00723
+#  Rewind	00560
+#  Stop		00243
+#  Pause	00720
+#  Play		00339
+#  FastForward	00563
+#  16:9		00274
+#  list		00264
+#  back & Key-between-ChannelUp-and-ChannelDown ------> not changed
+# 
+#
+
+
+#begin remote
+
+#  name URC_7960
+# name Gen2VDR
+# zum Umschalten zu xbmc => lircmap
+
+begin remote
+
+  name  URC_7960
+  bits           13
+  flags RC5|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  one           909   857
+  zero          909   857
+  plead         917
+  gap          113580
+  toggle_bit_mask 0x800
+
+      begin codes
+     KEY_POWER            0x120C
+     KEY_VIDEO            0x123F
+     KEY_PREVIOUS         0x1232
+     KEY_STOP             0x1236
+     KEY_NEXT             0x122E
+     KEY_REWIND           0x122C
+     KEY_PLAY             0x1235
+     KEY_FASTFORWARD      0x1234
+     KEY_PROGRAM          0x022F
+     KEY_PAUSE            0x1229
+     KEY_RECORD           0x1237
+     KEY_VOLUMEUP         0x1210
+     KEY_MUTE             0x120D
+     KEY_VOLUMEDOWN       0x1211
+     KEY_UP               0x0210
+     KEY_DOWN             0x0211
+     KEY_LEFT             0x0215
+     KEY_RIGHT            0x0216
+     KEY_OK               0x0217
+     KEY_CHANNELUP        0x1220
+     KEY_CHANNELDOWN      0x1221
+     KEY_RED              0x022B
+     KEY_GREEN            0x022C
+     KEY_YELLOW           0x022D
+     KEY_BLUE             0x022E
+     KEY_INFO             0x020F
+     KEY_MENU             0x0212
+     KEY_TIME             0x122F
+     KEY_SUBTITLE         0x123C
+     KEY_TV               0x1231
+     KEY_BACK             0x1222
+     KEY_1                0x1201
+     KEY_2                0x1202
+     KEY_3                0x1203
+     KEY_4                0x1204
+     KEY_5                0x1205
+     KEY_6                0x1206
+     KEY_7                0x1207
+     KEY_8                0x1208
+     KEY_9                0x1209
+     KEY_EPG              0x120A
+     KEY_0                0x1200
+     KEY_AUDIO            0x0200
+      end codes
+end remote
+

@@ -1,0 +1,12 @@
+Source: easyvdr-ppa-keys
+Section: misc
+Priority: optional
+Maintainer: Martin Neubauer <none@easy-vdr.de>
+Standards-Version: 3.8.4
+Build-Depends: debhelper (>= 7)
+
+Package: easyvdr-ppa-keys
+Architecture: all
+Depends: ${easyvdr-ppa-kesy}
+Description: ppa-keys packages for easyVDR
+  Metapackage easyvdr-ppa-keys for easyVDR

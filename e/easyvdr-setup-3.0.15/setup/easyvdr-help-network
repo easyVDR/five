@@ -1,0 +1,108 @@
+#!/bin/bash
+#13.09.2016 V0.1 gb
+#NM Descriptions
+#. /usr/lib/vdr/easyvdr-config-loader
+#. /usr/lib/vdr/functions/easyvdr-functions-lib
+MYPICTURES="/usr/share/easyvdr/setup/images"
+
+#################Das hier könnte man z.B. in eine lib bauen, da recht global angelehnt################################
+Convert_Pictures()
+{
+i=1
+sed -i~ -r '/pattern="@/ s/^/<!--/' /etc/ImageMagick-6/policy.xml
+for PIC_CONVERT in $MYPICTURES/$1/$1*.jpg
+ do
+########################Bild-Dimension ermitteln################################
+ PICTURE_GEOMETRY=$(identify -verbose $PIC_CONVERT | grep Geometry: | awk {'print $2'})
+ PANGO="$1-$i.pango"
+########################Zweites Bild auf Größe von dem ersten Bild setzen und dazu gehörigen Text einfügen##############################
+ convert $MYPICTURES/$1/background.png -resize $(echo $PICTURE_GEOMETRY|cut -d"x" -f1)x -page $PICTURE_GEOMETRY -background transparent -font droid-sans-bold.ttf -fill black pango:@$MYPICTURES/$1/$PANGO -composite /tmp/$1-$i-background.png
+#######################Beide Bilder zu einem Wandeln##########################
+ convert -append $PIC_CONVERT /tmp/$1-$i-background.png /tmp/$i-$1-thumbnail.png
+rm /tmp/$1-$i-background.png
+ let i=$(($i+1))
+done
+sed -i~ -r '/pattern="@/ s/^<!--+//' /etc/ImageMagick-6/policy.xml
+}
+#######################################################################################################################
+
+########################################Eigentliches Anzeigefenster für die Bilder######################################
+Description()
+{
+SELECT_DESCRIPTION=$(echo $1"-thumbnail")
+NM_PICTURES=`ls -l /tmp |grep $SELECT_DESCRIPTION|awk '{print $9}'`
+for SELECT_PICTURES in $NM_PICTURES
+do
+DISPLAY=:0 /usr/bin/yad --center \
+--buttons-layout=center \
+--button="Hilfe Menü:0" \
+--button="Weiter:1" \
+--undecorated \
+--fixed \
+--skip-taskbar \
+--geometry=0x0+0+0 \
+--borders=0 \
+--image-on-top \
+--image=/tmp/$SELECT_PICTURES
+SELECT=$?
+if [ $SELECT -eq "0" ] ;then
+ Menu
+ exit 0
+fi
+done
+##############Läuft der Netzwerk Manager noch, starte Anzeigefenster von vorn################
+if [ $(ps -ax|grep -c nm-connection-editor) -eq 2 ];then 
+ Description $LOOP
+fi
+}
+#############################################################
+
+###################Vorauswahl LAN/WLAN/VLAN####################
+Menu()
+{
+DISPLAY=:0 /usr/bin/yad --center \
+--text="   Wobei benötigst du Hilfe?" \
+--buttons-layout=center \
+--button="LAN:0" \
+--button="WLAN:1" \
+--button="VLAN:2" \
+--undecorated \
+--fixed \
+--skip-taskbar \
+--geometry=0x0+0+0 \
+--borders=0
+SELECT=$?
+if [ $SELECT -eq "0" ] ;then
+ LOOP="0LAN-de"
+ Description $LOOP
+fi
+if [ $SELECT -eq "1" ] ;then
+ LOOP="WLAN-de"
+ Description $LOOP
+fi
+if [ $SELECT -eq "2" ] ;then
+ LOOP="VLAN-de"
+ Description $LOOP
+fi
+}
+############################################################
+
+############Scriptstart#################
+if [ -e /tmp/*thumbnail.png ]; then
+ rm /tmp/*thumbnail.png
+fi
+DISPLAY=$FRONTEND_DISPLAY /usr/bin/yad --center \
+--text="   Hilfe wird erstellt, einen Moment bitte...!" \
+--no-buttons \
+--undecorated \
+--fixed \
+--skip-taskbar \
+--geometry=0x0+0+0 \
+--borders=0 &
+Convert_Pictures WLAN-de &
+Convert_Pictures VLAN-de &
+Convert_Pictures 0LAN-de 
+killall yad
+#sleep 1 
+Menu
+########################################

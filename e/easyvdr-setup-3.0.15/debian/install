@@ -1,0 +1,7 @@
+setup                           usr/share/easyvdr/
+etc/*                           etc/
+sbin/alsaconf                   usr/sbin/
+sbin/asoundconf                 usr/sbin/
+bin/setup                       usr/bin/
+lib/easyvdr-x-lib-pulseaudio    usr/lib/vdr/
+lib/easyvdr-set-monitor-layout  usr/lib/vdr/

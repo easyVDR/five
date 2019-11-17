@@ -1,0 +1,11 @@
+#!/bin/sh
+#set -e
+
+
+if [ "$1" = "configure" ]; then
+    /usr/share/easyvdr/setup/easyvdr-postinst-lists
+fi
+
+
+#DEBHELPER#
+

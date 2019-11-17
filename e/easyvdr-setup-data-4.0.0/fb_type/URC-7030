@@ -1,0 +1,86 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.7.0pre3(serial) on Mon Dec 20 10:40:05 2004
+#
+# contributed by 
+#
+# devices being controlled by this remote:
+# model: OneForALL (VCR 0000)
+# "0" has to be reprogrammed to EFC-Code 239
+# "mute" has to be reprogrammed to EFC-Code 229
+# "vol+" has to be reprogrammed to EFC-Code 228
+# "vol-" has to be reprogrammed to EFC-Code 227
+# (** = wait for double blinking of VCR button)
+#     MAGIC** / 994 / MAGIC / 239 / 0
+#     MAGIC** / 994 / MAGIC / 229 / 'mute'
+#     MAGIC** / 994 / MAGIC / 228 / 'vol+'
+#     MAGIC** / 994 / MAGIC / 227 / 'vol-'
+#
+
+begin remote
+
+  name  ./lircd.conf
+  bits           24
+  flags SPACE_ENC|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  header       3561  3385
+  one           947  2525
+  zero          947   788
+  ptrail        948
+  gap          104746
+  toggle_bit      0
+
+
+      begin codes
+          power                    0x0000000000141EBE
+
+          1                        0x000000000017EE81
+          2                        0x0000000000161E9E
+          3                        0x0000000000151EAE
+          4                        0x0000000000171E8E
+          5                        0x0000000000149EB6
+          6                        0x0000000000169E96
+          7                        0x0000000000159EA6
+          8                        0x0000000000179E86
+          9                        0x0000000000145EBA
+          0                        0x0000000000156EA9
+          av                       0x0000000000358CA7
+          --                       0x000000000036FC90
+	  
+          menu                     0x000000000016AE95
+          exit                     0x000000000014FEB0
+
+          up                       0x0000000000175E8A
+          down                     0x0000000000163E9C
+          left                     0x0000000000173E8C
+          right                    0x0000000000968697
+          ok                       0x000000000015AEA5
+
+          ch+                      0x0000000000142EBD
+          ch-                      0x0000000000144EBB
+          recall                   0x000000000014FEB0
+
+          mute                     0x0000000000346CB9
+          vol+                     0x000000000034ECB1
+          vol-                     0x000000000097168E
+
+          rew                      0x000000000014CEB3
+          play                     0x0000000000154EAB
+          ff                       0x0000000000148EB7
+          pause                    0x0000000000174E8B
+          stop                     0x000000000014EEB1
+          record                   0x000000000015EEA1
+
+          red                      0x0000000000367C98
+          green                    0x0000000000347CB8
+          yellow                   0x000000000037BC84
+          blue                     0x0000000000357CA8
+
+      end codes
+
+end remote
