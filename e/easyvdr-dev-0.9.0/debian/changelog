@@ -1,3 +1,9 @@
+easyvdr-dev (0.9.0-0easyVDR6~focal) focal; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Nov 2019 15:37:30 +0100
+
 easyvdr-dev (0.9.0-0easyVDR5~focal) focal; urgency=high
 
   * automatic rebuild
