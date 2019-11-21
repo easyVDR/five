@@ -3,9 +3,10 @@ Section: misc
 Priority: optional
 Maintainer: Martin Neubauer <none@easy-vdr.de>
 Standards-Version: 4.1.2
-Build-Depends: debhelper (>= 9)
 
+Build-Depends: debhelper (>= 9)
 Package: easyvdr-5
 Architecture: any
-Depends: ${misc:Depends}, ${easyvdr-5}
+Pre-Depends: inputlirc usb-irmp
+Depends: easyvdr, easyvdr-addon-program-changer, easyvdr-depends
 Description: easyVDR 5 Base

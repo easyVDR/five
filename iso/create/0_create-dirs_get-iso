@@ -1,0 +1,13 @@
+#!/bin/sh
+# normal use as root...
+
+DIR=/home/easyvdr-iso/ISO/
+#fixed tree for root (not ~/source/ISO)
+#DIR=~/source/ISO/
+
+sudo mkdir -p $DIR/cd-image
+sudo mkdir -p $DIR/loop
+sudo mkdir -p $DIR/org
+
+cd $DIR/org
+wget http://cdimage.ubuntu.com/ubuntu-server/daily/current/focal-server-amd64.iso

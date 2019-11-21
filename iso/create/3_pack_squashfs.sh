@@ -1,6 +1,10 @@
 #!/bin/bash
 
-DIR=/home/martin/source/ISO
+DIR=/home/easyvdr-iso/ISO/
+IMAGE=$DIR/easy-server006.iso
+BUILD=$DIR/cd-image/
+
+
 #sudo mount -o loop $DIR/org/*.iso $DIR/loop
 #sudo rsync -av $DIR/loop/ $DIR/cd-image
 
@@ -19,8 +23,6 @@ sudo du -sx --block-size=1 ./ | cut -f1 > $DIR/cd-image/install/filesystem.size
 #done
 
 
-IMAGE=$DIR/easy-server001.iso
-BUILD=$DIR/cd-image/
 
 sudo mkisofs -r -V "easyVDR Server-ISO 001" \
             -cache-inodes \
