@@ -1,3 +1,9 @@
+easyportal (0.5.37-4easyVDR1~focal) focal; urgency=high
+
+  * remove depends ajaxterm
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Nov 2019 21:58:26 +0100
+
 easyportal (0.5.37-4easyVDR0~focal) focal; urgency=medium
 
   * rebuild for focal
