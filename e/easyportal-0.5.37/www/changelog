@@ -1,3 +1,14 @@
+0.5.37-4easyVDR3 (mango)
+fix includes in lighttpd.conf
+added vdr to group www-data
+
+0.5.37-4easyVDR2 (mango)
+added depends ajaxterm
+fix path in lighttpd.conf
+
+0.5.37-4easyVDR1 (mango)
+remove depends alajaxterm
+
 0.5.37-4easyVDR0 (mango)
 build for focal
 added 5-*-unstable ppa's

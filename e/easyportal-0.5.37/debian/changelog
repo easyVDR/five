@@ -1,3 +1,23 @@
+easyportal (0.5.37-4easyVDR3~focal) focal; urgency=high
+
+  * fix includes in lighttpd.conf
+  * added vdr to group www-data
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 22 Nov 2019 17:55:26 +0100
+
+easyportal (0.5.37-4easyVDR2~focal) focal; urgency=high
+
+  * added depends ajaxterm 
+  * fix path in lighttpd.conf
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 22 Nov 2019 13:50:12 +0100
+
+easyportal (0.5.37-4easyVDR1~focal) focal; urgency=high
+
+  * remove depends ajaxterm
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Nov 2019 21:58:26 +0100 
+
 easyportal (0.5.37-4easyVDR1~focal) focal; urgency=high
 
   * remove depends ajaxterm
