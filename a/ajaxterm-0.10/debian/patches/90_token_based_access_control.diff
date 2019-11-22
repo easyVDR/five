@@ -1,0 +1,63 @@
+Description: Add a simple token-based access control system to ajaxterm
+Author: Soren Hansen <soren@linux2go.dk>
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=620789
+
+--- a/ajaxterm.py
++++ b/ajaxterm.py
+@@ -503,8 +503,9 @@
+ 				pass
+ 
+ class AjaxTerm:
+-	def __init__(self,cmd=None,index_file='ajaxterm.html',serverport=None):
++	def __init__(self,cmd=None,index_file='ajaxterm.html',serverport=None,token=None):
+ 		self.files={}
++		self.token=token
+ 		for i in ['css','html','js']:
+ 			for j in glob.glob('*.%s'%i):
+ 				self.files[j]=file(j).read()
+@@ -576,11 +577,13 @@
+ 			if n in self.files:
+ 				req.response_headers['Content-Type'] = self.mime.get(os.path.splitext(n)[1].lower(), 'application/octet-stream')
+ 				req.write(self.files[n])
+-			else:
++			elif (not self.token) or (req.REQUEST['token'] == self.token):
+ 				if self.cookie_name not in req.request_cookies:
+ 				    self.genSidCookie(req)
+ 				req.response_headers['Content-Type'] = 'text/html; charset=UTF-8'
+ 				req.write(self.files['index'])
++			else:
++				raise Exception('Not Authorized')
+ 		return req
+ 	def genSidCookie(self, req):
+ 		m = sha1()
+@@ -605,6 +608,7 @@
+ 	parser.add_option("-i", "--index", dest="index_file", default="ajaxterm.html",help="default index file (default: ajaxterm.html)")
+ 	parser.add_option("-u", "--uid", dest="uid", help="Set the daemon's user id")
+ 	parser.add_option("-s", "--serverport", dest="serverport", help="Use a different port than 22 to connect to the ssh server")
++	parser.add_option("-t", "--token", dest="token", help="Set authorization token")
+ 	(o, a) = parser.parse_args()
+ 	if o.daemon:
+ 		pid=os.fork()
+@@ -630,7 +634,7 @@
+ 			sys.exit(0)
+ 	else:
+ 		print 'AjaxTerm at http://localhost:%s/' % o.port
+-	at=AjaxTerm(o.cmd,o.index_file,o.serverport)
++	at=AjaxTerm(o.cmd,o.index_file,o.serverport,o.token)
+ #	f=lambda:os.system('firefox http://localhost:%s/&'%o.port)
+ #	qweb.qweb_wsgi_autorun(at,ip='localhost',port=int(o.port),threaded=0,log=o.log,callback_ready=None)
+ 	try:
+--- a/ajaxterm.1
++++ b/ajaxterm.1
+@@ -40,6 +40,11 @@
+ \fB\-s\fR SERVERPORT, \fB\-\-serverport\fR=\fISERVERPORT\fR
+ Use a different port than 22 to connect to the ssh
+ server
++.TP
++\fB\-t\fR TOKEN, \fB\-\-token\fR=\fITOKEN\fR
++Set authorization token. If this option is passed on the command line, the
++given token must be used when accessing ajaxterm (by adding a ?token=something
++request argument).
+ 
+ .SH AUTHOR
+ Antony Lesuisse <al@udev.org>

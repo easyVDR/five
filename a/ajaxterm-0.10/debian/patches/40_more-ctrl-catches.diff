@@ -1,0 +1,24 @@
+Description: support for Ctrl-space,@,[,\,^,],_ for Firefox 3.x
+  (and for IE7, except that IE7 catches Ctrl-_ as "reduce font size")
+Author: Daniel Risacher <magnus@alum.mit.edu>
+
+--- a/ajaxterm.js
++++ b/ajaxterm.js
+@@ -208,15 +208,14 @@
+ 				k=String.fromCharCode(27)+String.fromCharCode(kc);
+ 			}
+ 		} else if (ev.ctrlKey) {
+-			if (kc>=65 && kc<=90) k=String.fromCharCode(kc-64); // Ctrl-A..Z
++			if (kc>=64 && kc<=95) k=String.fromCharCode(kc-64); // Ctrl-@,A..Z,[,\,^,],_
+ 			else if (kc>=97 && kc<=122) k=String.fromCharCode(kc-96); // Ctrl-A..Z
+ 			else if (kc==54)  k=String.fromCharCode(30); // Ctrl-^
+ 			else if (kc==109) k=String.fromCharCode(31); // Ctrl-_
+ 			else if (kc==219) k=String.fromCharCode(27); // Ctrl-[
+ 			else if (kc==220) k=String.fromCharCode(28); // Ctrl-\
+ 			else if (kc==221) k=String.fromCharCode(29); // Ctrl-]
+-			else if (kc==219) k=String.fromCharCode(29); // Ctrl-]
+-			else if (kc==219) k=String.fromCharCode(0);  // Ctrl-@
++			else if (kc==32)  k=String.fromCharCode(0);  // Ctrl-space
+ 		} else if (ev.which==0) {
+ 			if (kc==9) k=String.fromCharCode(9);  // Tab
+ 			else if (kc==8) k=String.fromCharCode(127);  // Backspace

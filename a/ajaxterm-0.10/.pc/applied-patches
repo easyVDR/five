@@ -1,0 +1,17 @@
+01_bin_dir.diff
+02_initd.diff
+03_fix_man.diff
+04_use-default-python.diff
+05_ssh-port.diff
+06_fix-IOError.diff
+07_use_psyco.diff
+10_hostname-login.diff
+15_add-configure-file.diff
+20_bugfixes-tweaks-by-blt.diff
+25_CVE-2009-1629.diff
+30_utf8-support.diff
+35_fix-sarissa.diff
+40_more-ctrl-catches.diff
+90_token_based_access_control.diff
+91_terminate_on_idle.diff
+93_useless-sys.path-call_LP795159.diff

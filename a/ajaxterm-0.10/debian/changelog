@@ -1,0 +1,246 @@
+ajaxterm (0.10-13) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Nov 2019 14:59:14 +0100
+
+ajaxterm (0.10-13) unstable; urgency=medium
+
+  * QA upload.
+  * Set QA Team as maintainer.
+  * Updated DH level to 9.
+  * debian/control: Bumped Standars-Version to 3.9.6.
+
+ -- Arthur de Moura Del Esposte <arthurmde@gmail.com>  Sun, 31 May 2015 14:43:09 -0300
+
+ajaxterm (0.10-12) unstable; urgency=low
+
+  * Update VCS fields 
+  * Apply patch from Ubuntu to remove unneeded sys.path call - thanks to 
+    C de-Avillez <hggdh2@ubuntu.com> (Closes: #638332) 
+  * Ensures system user is unlocked in case the package is reinstalled 
+  * Update copyright information:
+    + New upstream git repository location
+    + Fix DEP-5 url 
+  * Add retry=0 to ProxyPass lines in Apache configuration example: this
+    prevents 503 errors to be sent by Apache after Ajaxterm was restarted 
+
+ -- Julien Valroff <julien@debian.org>  Fri, 19 Aug 2011 16:31:06 +0200
+
+ajaxterm (0.10-11) unstable; urgency=low
+
+  * Switch from pysupport to dh_python2 
+  * Add patches from Soren Hansen <soren@linux2go.dk>:
+    + add a simple token-based access control system to ajaxterm 
+      (Closes: #620789)
+    + fix improper escaping of command arguments in /usr/bin wrapper
+      (Closes: #620790)
+    + add a -T option to terminate ajaxterm itself after n secs idle
+      (Closes: #620701)
+  * Update to new policy 3.9.2 (no changes needed)
+  * Lock system user on purge rather than deleting it 
+  * Make use of dh_install and dh_links rather than using a patch to
+    set up the configuration file 
+
+ -- Julien Valroff <julien@debian.org>  Sun, 17 Apr 2011 09:32:01 +0200
+
+ajaxterm (0.10-10) unstable; urgency=low
+
+  * Update my email address
+  * Remove DMUA field, now useless 
+  * Update copyright file for current revision of DEP-5 
+  * Restrict recommends on python-psyco to i386 architectures
+  * Improve manpage to state all options
+  * Bump debhelper compat to 8
+
+ -- Julien Valroff <julien@debian.org>  Sat, 12 Feb 2011 15:07:52 +0100
+
+ajaxterm (0.10-9) unstable; urgency=low
+
+  * Fix typo in README.Debian (thanks to Julien Cristau for spotting this)
+  * Upload to unstable now that 0.10-7 has entered testing
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 17 Oct 2010 09:22:13 +0200
+
+ajaxterm (0.10-8) experimental; urgency=low
+
+  * Apply fix for bold attribute (Closes: #580977)
+  * Add patch to add support for Ctrl-@ and Ctrl-space (thanks to
+    Daniel Risacher <magnus@alum.mit.edu>) 
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 26 Sep 2010 10:28:11 +0200
+
+ajaxterm (0.10-7) unstable; urgency=low
+
+  * Update to new policy 3.9.1 (no changes needed)
+  * Rephrase README.Debian - thanks to Jari Aalto <jari.aalto@cante.net>
+   (Closes: #580164, #580166, #580167)
+  * Ship apache configuration as a separate example file (Closes: #580165)
+  * Suggest openssl 
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 26 Sep 2010 08:54:33 +0200
+
+ajaxterm (0.10-6) unstable; urgency=low
+
+  * Fix exception (remove spurious "del self.session[s]")
+    Thanks to Raphael Geissert <geissert@debian.org> (Closes: #569270)
+  * Add dependency on $remote_fs in init script to ensure /usr is mounted
+    when starting/stopping the daemon
+
+ -- Julien Valroff <julien@kirya.net>  Thu, 11 Feb 2010 20:33:25 +0100
+
+ajaxterm (0.10-5) unstable; urgency=low
+
+  * Make use of python-support >= 0.6
+  * Updated to new policy 3.8.4 (no changes needed)
+  * Bumped debhelper compat to 7
+  * Removed useless lintian override
+  * Updated Debian packaging copyright
+  * Added $AJAXTERM_UID in default file, allowing to change the user running
+    ajaxterm (Closes: #531165)
+  * Make use of start-stop-daemon --group option to also allow to change the
+    GID (Closes: #528208)
+  * Updated README.Debian
+  * Added patch from Berki Lukács T. <blt@shin.hu>:
+    + Make it work with Chrome and possibly other Webkit-based browsers
+    + Returns Connection: keep-alive and Content-Length HTTP headers to 
+      avoid doing a complete SSL handshake on every keystroke and screen update
+    + Added a reaper thread to kill off disconnected sessions
+    + Sends SIGHUP rather than SIGTERM on end of session
+    + Threaded mode is default
+  * CVE-2009-1629: ajaxterm generated session IDs with predictable random
+    numbers - thanks to Raphael Geissert <geissert@debian.org> (Closes: #528938)
+  * Added configuration file allowing to set terminal size (Closes: #515987)
+  * Fixed typo in copyright file - license for sarissa* files is now correct
+  * Added patch from Sergej Pupykin <ps@lx-ltd.ru> to switch ajaxterm from
+    Latin-1 to UTF-8 encoding (Closes: #541850)
+  * Use start-stop-daemon return code in the init script
+  * Removed sleep call when restarting ajaxterm daemon
+  * Added patch to display hostname in login prompt
+  * Fixed manpage to make lintian happy
+  * Switched to GIT - updated VCS-* fields accordingly
+  * Converted package to dh minimal rules files
+  * Switched to 3.0 (quilt) source format
+  * Removed pyversions file and use XS-Python-Version field instead
+  * Build-depend on python rather than on python-dev
+  * Fixed issue in sarissa with Firefox/Iceweasel 3.6 (Closes: #568372)
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 06 Feb 2010 09:57:33 +0100
+
+ajaxterm (0.10-4) unstable; urgency=low
+
+  * Fixed debian/watch to match new files location
+  * Added ${misc:Depends} dependency
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 04 Jan 2009 12:00:07 +0100
+
+ajaxterm (0.10-3) unstable; urgency=low
+
+  * Fixed "IOError: [Errno 22] Invalid argument" error - patch from
+    Marco d'Itri (md@linux.it) (Closes: #496470)
+  * Fixed initscript to prevent ajaxterm to be started twice
+    (Closes: #501386)
+  * Made copyright information machine-interpretable
+  * Updated to new policy 3.8.0 (no changes needed)
+  * Added patch from Brian Minton <brian@minton.name> to
+    allow use of psyco when available (Closes: #504020)
+  * Added python-psyco to Recommends: (currently only available
+    for i386)
+
+ -- Julien Valroff <julien@kirya.net>  Fri, 31 Oct 2008 20:04:40 +0100
+
+ajaxterm (0.10-2) unstable; urgency=low
+
+  * Added patch to allow use a different port than 22 to connect to the
+    ssh server.
+    Thanks to Wolf Wiegand <wolf@kondancemilch.de> (Closes: #455245)
+  * Updated README.Debian to state proxy_http is required (and not only
+    proxy). Thanks to sp <analogue@yahoo.com> (Closes: #468582)
+  * Added watch file
+  * Moved Homepage to own field (from pseudo-field in long description)
+  * Added Vcs-* fields
+  * Added XS-DM-Upload-Allowed field
+  * Bumped to new standards version 3.7.3 (no changes needed)
+  * Fixed Python capitalisation in description
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 02 Mar 2008 09:24:28 +0100
+
+ajaxterm (0.10-1) unstable; urgency=low
+
+  * New upstream release (Closes: #400501):
+    - allow space in login
+    - cgi launch fix
+  * debian/patches/:
+    - Updated 02_initd.patch for new release
+  * debian/rules:
+    - Removed dh_python call
+  * debian/postrm:
+    - Don't remove the ajaxterm group (done automatically by deluser)
+  * debian/README.Debian:
+    - Documented the fact that SSH password authentication should
+      be allowed (Close: #407429)
+    - Added note describing apache ssl configuration (thanks
+      to Brendan M. Sleight <me.spam@barwap.com>)
+
+ -- Julien Valroff <julien@kirya.net>  Sun,  4 Mar 2007 00:09:02 +0100
+
+ajaxterm (0.9-2) unstable; urgency=low
+
+  * Changed dependency on openssh-server to recommend (Closes: #384931)
+  * Moved python-support to Build-depends as used in the clean target
+  * Added LSB keyword section to init script
+
+ -- Julien Valroff <julien@kirya.net>  Fri,  6 Oct 2006 23:07:49 +0200
+
+ajaxterm (0.9-1) unstable; urgency=low
+
+  * New upstream release (Closes: #377597)
+    + changed uid
+    + daemon fix
+  * Now daemon runs as ajaxterm system user
+  * Added patch to use default python version
+
+ -- Julien Valroff <julien@kirya.net>  Sat, 15 Jul 2006 11:17:39 +0200
+
+ajaxterm (0.8-1) unstable; urgency=low
+
+  * New upstream release:
+    + added login support to ssh
+    + changed max width to 256
+
+ -- Julien Valroff <julien@kirya.net>  Mon, 10 Jul 2006 18:27:07 +0200
+
+ajaxterm (0.7-3) unstable; urgency=low
+
+  * Removed bashisms from init script (Closes: #376088)
+  * Added patch to update man page
+
+ -- Julien Valroff <julien@kirya.net>  Sat,  1 Jul 2006 00:25:54 +0200
+
+ajaxterm (0.7-2) unstable; urgency=low
+
+  * Fixed init script so that only root can start Ajaxterm as daemon
+  * Updated to comply with new Debian python policy
+  * Fixed Homepage: pseudo-header in debian/control
+
+ -- Julien Valroff <julien@kirya.net>  Sun,  4 Jun 2006 10:23:16 +0200
+
+ajaxterm (0.7-1) unstable; urgency=low
+
+  * New upstream release:
+    + minor fixes
+    + daemon option
+  * Removed patch to add a correct DTD to ajaxterm.html (fixed upstream)
+  * Removed patch to fix man directory (fixed upstream)
+  * Removed patch to fix permissions (fixed upstream)
+  * Changed init script to use the new --daemon option
+  * Overrided Lintian warning about non-executable python helper script
+  * Added dependency on lsb-base to ease backporting
+
+ -- Julien Valroff <julien@kirya.net>  Thu,  1 Jun 2006 19:23:41 +0200
+
+ajaxterm (0.6-1) unstable; urgency=low
+
+  * Initial release (Closes: #366285)
+
+ -- Julien Valroff <julien@kirya.net>  Tue, 23 May 2006 20:48:06 +0200

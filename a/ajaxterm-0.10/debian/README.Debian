@@ -1,0 +1,48 @@
+ajaxterm for Debian
+-------------------
+
+  * Ajaxterm only supports utf8.
+
+  * With the default settings, you have to install openssh-server and
+    allow password authentication. Open file /etc/ssh/sshd_config and
+    set:
+
+        PasswordAuthentication yes
+
+    As an alternative, you might choose to run ajaxterm as root. Change
+    the default daemon setting in file /etc/default/ajaxterm to:
+
+        AJAXTERM_UID="root"
+
+    Ajaxterm will then fall back to use /bin/login.
+
+  * Apache setup
+
+    By default Ajaxterm only listen at 127.0.0.1:8022. For remote
+    access, it is strongly recommended to use https SSL/TLS, and that is
+    simple to configure if you use the apache web server using
+    mod_proxy.
+
+    If apache2 is not already set up for for https SSL/TLS, ensure
+    openssl is installed to issue a self signed certificate (apache.pem):
+
+        export RANDFILE=/dev/random \
+        openssl req -new -x509 -days 365 -nodes \
+            -out /etc/apache2/ssl/apache.pem \
+            -keyout /etc/apache2/ssl/apache.pem
+
+    With apache2, copy the site file:
+
+        cp /usr/share/doc/ajaxterm/examples/apache.conf \
+           /etc/apache2/sites-available/ajaxterm.conf
+
+    Edit it to suit your needs, enable site, enable apache features, and restart:
+
+        a2ensite ajaxterm
+
+        a2enmod ssl
+        a2enmod proxy_http
+
+        /etc/init.d/apache reload
+
+ -- Julien Valroff <julien@kirya.net>  Sun, 29 Aug 2010 21:12:33 +0200

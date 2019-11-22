@@ -1,0 +1,107 @@
+Description: Add a -T option to terminate ajaxterm itself (different from the
+ existing timeout code which reaps dead connections). This ensures we
+ don't leave stale ajaxterm servers around.
+Author: Soren Hansen <soren@linux2go.dk>
+Bug-Debian: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=620791
+
+--- a/ajaxterm.py
++++ b/ajaxterm.py
+@@ -27,6 +27,8 @@
+ from socket import gethostname
+ 
+ 
++global g_server
++
+ def debug(str):
+ 	now = datetime.datetime.now()
+ 	print "%s - %s" % (now.isoformat(), str)
+@@ -393,7 +395,7 @@
+ class Multiplex:
+ 	INACTIVE_PROCESS_TIMEOUT=120    # I guess this is the IP max packet lifetime
+ 
+-	def __init__(self,cmd=None,serverport=None):
++	def __init__(self,cmd=None,serverport=None,term_on_idle=0):
+ 		signal.signal(signal.SIGCHLD, signal.SIG_IGN)
+ 		self.cmd=cmd
+ 		self.serverport=serverport
+@@ -401,6 +403,8 @@
+ 		self.lock=threading.RLock()
+ 		self.thread=threading.Thread(target=self.loop)
+ 		self.alive=1
++ 		self.term_on_idle = term_on_idle
++		self.lastActivity=time.time()
+ 		# synchronize methods
+ 		for name in ['create','fds','proc_read','proc_write','dump','die','run']:
+ 			orig=getattr(self,name)
+@@ -491,6 +495,9 @@
+ 		while self.run():
+ 			fds=self.fds()
+ 			i,o,e=select.select(fds, [], [], 1.0)
++			if self.term_on_idle and time.time() - self.lastActivity > self.term_on_idle:
++				global g_server
++				g_server.shutdown()
+ 			for fd in i:
+ 				self.proc_read(fd)
+ 			if len(i):
+@@ -503,7 +510,7 @@
+ 				pass
+ 
+ class AjaxTerm:
+-	def __init__(self,cmd=None,index_file='ajaxterm.html',serverport=None,token=None):
++	def __init__(self,cmd=None,index_file='ajaxterm.html',serverport=None,token=None,term_on_idle=0):
+ 		self.files={}
+ 		self.token=token
+ 		for i in ['css','html','js']:
+@@ -512,7 +519,7 @@
+ 		self.files['index']=file(index_file).read()
+ 		self.mime = mimetypes.types_map.copy()
+ 		self.mime['.html']= 'text/html; charset=UTF-8'
+-		self.multi = Multiplex(cmd,serverport)
++		self.multi = Multiplex(cmd,serverport,term_on_idle)
+ 		self.reaper = Reaper(self.multi)
+ 		self.session = {}
+ 		self.session_ip = {}
+@@ -563,6 +570,7 @@
+ 			if k:
+ 				self.multi.proc_write(term,k)
+ 			time.sleep(0.002)
++			self.multi.lastActivity = time.time()
+ 			dump=self.multi.dump(term,c)
+ 			if isinstance(dump,str):
+ 				req.write(dump)
+@@ -609,6 +617,7 @@
+ 	parser.add_option("-u", "--uid", dest="uid", help="Set the daemon's user id")
+ 	parser.add_option("-s", "--serverport", dest="serverport", help="Use a different port than 22 to connect to the ssh server")
+ 	parser.add_option("-t", "--token", dest="token", help="Set authorization token")
++	parser.add_option("-T", "--terminate-on-idle", metavar="SEC", action="store", type="int", dest="term_on_idle", help="Terminate if idle for more than SEC seconds (0 means never)")
+ 	(o, a) = parser.parse_args()
+ 	if o.daemon:
+ 		pid=os.fork()
+@@ -634,11 +643,13 @@
+ 			sys.exit(0)
+ 	else:
+ 		print 'AjaxTerm at http://localhost:%s/' % o.port
+-	at=AjaxTerm(o.cmd,o.index_file,o.serverport,o.token)
++	at=AjaxTerm(o.cmd,o.index_file,o.serverport,o.token,o.term_on_idle)
+ #	f=lambda:os.system('firefox http://localhost:%s/&'%o.port)
+ #	qweb.qweb_wsgi_autorun(at,ip='localhost',port=int(o.port),threaded=0,log=o.log,callback_ready=None)
+ 	try:
+-		qweb.QWebWSGIServer(at,ip='localhost',port=int(o.port),threaded=1,log=o.log).serve_forever()
++		global g_server
++		g_server = qweb.QWebWSGIServer(at,ip='localhost',port=int(o.port),threaded=1,log=o.log)
++		g_server.serve_forever()
+ 	except KeyboardInterrupt,e:
+ 		sys.excepthook(*sys.exc_info())
+ 	at.multi.die()
+--- a/ajaxterm.1
++++ b/ajaxterm.1
+@@ -45,6 +45,9 @@
+ Set authorization token. If this option is passed on the command line, the
+ given token must be used when accessing ajaxterm (by adding a ?token=something
+ request argument).
++.TP
++\fB\-T\fR SECONDS, \fB\-\-terminate-on-idle\fR=\fISECONDS\fR
++Terminate if idle for more than SEC seconds (0 means never)
+ 
+ .SH AUTHOR
+ Antony Lesuisse <al@udev.org>

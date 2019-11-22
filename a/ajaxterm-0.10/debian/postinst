@@ -1,0 +1,25 @@
+#! /bin/sh
+set -e
+
+case "$1" in
+  configure)
+    if ! getent passwd ajaxterm >/dev/null; then
+        adduser --disabled-password  --quiet --system \
+            --no-create-home \
+            --gecos "Ajaxterm system user" --group ajaxterm
+    else
+        # Unlock account in case it was locked from previous purge.
+        usermod -U -e '' ajaxterm > /dev/null || true
+    fi
+  ;;
+  abort-upgrade|abort-remove|abort-deconfigure)
+  ;;
+  *)
+    echo "postinst called with unknown argument \`$1'" >&2
+    exit 1
+  ;;
+esac
+
+#DEBHELPER#
+
+exit 0

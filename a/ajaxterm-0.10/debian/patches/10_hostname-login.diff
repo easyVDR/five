@@ -1,0 +1,23 @@
+Description: Add the hostname to the login prompt
+Author: Julien Valroff <julien@debian.org>
+
+diff -Nur -x '*.orig' -x '*~' ajaxterm/ajaxterm.py ajaxterm.new/ajaxterm.py
+--- ajaxterm/ajaxterm.py	2009-10-14 09:04:39.964957030 +0200
++++ ajaxterm.new/ajaxterm.py	2009-10-14 09:04:52.776956219 +0200
+@@ -15,6 +15,7 @@
+ sys.path[0:0]=glob.glob('../../python')
+ 
+ import qweb
++from socket import gethostname
+ 
+ class Terminal:
+ 	def __init__(self,width=80,height=24):
+@@ -403,7 +404,7 @@
+ 			elif os.getuid()==0:
+ 				cmd=['/bin/login']
+ 			else:
+-				sys.stdout.write("Login: ")
++				sys.stdout.write(gethostname() + " login: ")
+ 				login=sys.stdin.readline().strip()
+ 				if re.match('^[0-9A-Za-z-_. ]+$',login):
+ 					cmd=['ssh']

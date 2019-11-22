@@ -1,0 +1,178 @@
+Description:
+    + Make it work with Chrome and possibly other Webkit-based browsers
+    + Returns Connection: keep-alive and Content-Length HTTP headers to
+      avoid doing a complete SSL handshake on every keystroke and screen update
+    + Added a reaper thread to kill off disconnected sessions
+    + Sends SIGHUP rather than SIGTERM on end of session
+    + Threaded mode is default
+Author: Berki Lukács T. <blt@shin.hu>
+
+--- a/ajaxterm.js
++++ b/ajaxterm.js
+@@ -1,8 +1,11 @@
+ ajaxterm={};
+ ajaxterm.Terminal_ctor=function(id,width,height) {
+ 	var ie=0;
++	var webkit=0;
+ 	if(window.ActiveXObject)
+ 		ie=1;
++	if (navigator.userAgent.indexOf("WebKit") >= 0)
++		webkit=1;
+ 	var sid=""+Math.round(Math.random()*1000000000);
+ 
+         if (width==0) {
+@@ -242,7 +245,7 @@
+ 	}
+ 	function keydown(ev) {
+ 		if (!ev) var ev=window.event;
+-		if (ie) {
++		if (ie || webkit) {
+ //			s="kd keyCode="+ev.keyCode+" which="+ev.which+" shiftKey="+ev.shiftKey+" ctrlKey="+ev.ctrlKey+" altKey="+ev.altKey;
+ //			debug(s);
+ 			o={9:1,8:1,27:1,33:1,34:1,35:1,36:1,37:1,38:1,39:1,40:1,45:1,46:1,112:1,
+--- a/ajaxterm.py
++++ b/ajaxterm.py
+@@ -9,6 +9,7 @@
+ 	pass
+ 
+ import array,cgi,fcntl,glob,mimetypes,optparse,os,pty,random,re,signal,select,sys,threading,time,termios,struct,pwd
++from datetime import datetime
+ 
+ os.chdir(os.path.normpath(os.path.dirname(__file__)))
+ # Optional: Add QWeb in sys path
+@@ -17,6 +18,11 @@
+ import qweb
+ from socket import gethostname
+ 
++
++def debug(str):
++	now = datetime.datetime.now()
++	print "%s - %s" % (now.isoformat(), str)
++
+ class Terminal:
+ 	def __init__(self,width=80,height=24):
+ 		self.width=width
+@@ -373,7 +379,23 @@
+ 		self.lock.release()
+ 		return r
+ 
++class Reaper:
++	WAKEUP_FREQUENCY=5
++
++	def __init__(self,multi):
++		self.multi = multi
++		self.thread = threading.Thread(target = self.reaper_thread)
++		self.thread.setDaemon(True)
++		self.thread.start()
++
++	def reaper_thread(self):
++		while True:
++			time.sleep(Reaper.WAKEUP_FREQUENCY)
++			self.multi.proc_kill_inactive()
++
+ class Multiplex:
++	INACTIVE_PROCESS_TIMEOUT=120    # I guess this is the IP max packet lifetime
++
+ 	def __init__(self,cmd=None,serverport=None):
+ 		signal.signal(signal.SIGCHLD, signal.SIG_IGN)
+ 		self.cmd=cmd
+@@ -435,19 +457,19 @@
+ 		return self.alive
+ 	def fds(self):
+ 		return self.proc.keys()
+-	def proc_kill(self,fd):
+-		if fd in self.proc:
+-			self.proc[fd]['time']=0
++	def proc_kill(self, fd):
++		try:
++			os.close(fd)
++			os.kill(self.proc[fd]['pid'],signal.SIGHUP)
++		except (IOError,OSError):
++			pass
++		del self.proc[fd]
++	def proc_kill_inactive(self):
+ 		t=time.time()
+ 		for i in self.proc.keys():
+ 			t0=self.proc[i]['time']
+-			if (t-t0)>120:
+-				try:
+-					os.close(i)
+-					os.kill(self.proc[i]['pid'],signal.SIGTERM)
+-				except (IOError,OSError):
+-					pass
+-				del self.proc[i]
++			if (t-t0)>Multiplex.INACTIVE_PROCESS_TIMEOUT:
++				self.proc_kill(i)
+ 	def proc_read(self,fd):
+ 		try:
+ 			t=self.proc[fd]['term']
+@@ -493,6 +515,7 @@
+ 		self.mime = mimetypes.types_map.copy()
+ 		self.mime['.html']= 'text/html; charset=UTF-8'
+ 		self.multi = Multiplex(cmd,serverport)
++		self.reaper = Reaper(self.multi)
+ 		self.session = {}
+ 	def __call__(self, environ, start_response):
+ 		req = qweb.QWebRequest(environ, start_response,session=None)
+@@ -569,7 +592,7 @@
+ #	f=lambda:os.system('firefox http://localhost:%s/&'%o.port)
+ #	qweb.qweb_wsgi_autorun(at,ip='localhost',port=int(o.port),threaded=0,log=o.log,callback_ready=None)
+ 	try:
+-		qweb.QWebWSGIServer(at,ip='localhost',port=int(o.port),threaded=0,log=o.log).serve_forever()
++		qweb.QWebWSGIServer(at,ip='localhost',port=int(o.port),threaded=1,log=o.log).serve_forever()
+ 	except KeyboardInterrupt,e:
+ 		sys.excepthook(*sys.exc_info())
+ 	at.multi.die()
+--- a/qweb.py
++++ b/qweb.py
+@@ -1182,6 +1182,10 @@
+                     self.buffer=[zbuf]
+                     self.response_headers['Content-Encoding']="gzip"
+                     self.response_headers['Content-Length']=str(len(zbuf))
++                else:
++                    datalen = sum(map(len, self.buffer))
++                    self.response_headers['Content-Length']=str(datalen)
++
+                 headers = self.response_headers.get()
+                 if isinstance(self.SESSION, QWebSession):
+                     headers.extend(self.SESSION.session_get_headers())
+@@ -1257,6 +1261,7 @@
+             self.write(buf.getvalue())
+             self.wfile_buf=0
+     def serve(self,type):
++        self.handleKeepalive()
+         path_info, parameters, query = urlparse.urlparse(self.path)[2:5]
+         environ = {
+             'wsgi.version':         (1,0),
+@@ -1287,10 +1292,31 @@
+         # Hack to avoid may TCP packets
+         self.bufferon()
+         appiter=self.server.wsgiapp(environ, self.start_response)
++        if self.close_connection == 0:
++                appiter.response_headers['Connection']='keep-alive'
++                appiter.response_headers['Keep-Alive']='timeout=10, max=100'
++
+         for data in appiter:
+             self.write(data)
+             self.bufferoff()
+         self.bufferoff()
++    def handleKeepalive(self):
++        base_version_number=self.request_version.split("/",1)[1]
++        version_number = base_version_number.split(".")
++        version_number = int(version_number[0]), int(version_number[1])
++        connection_header = self.headers.get("Connection", "").lower()
++        if version_number == (1,0):
++           if connection_header == "keepalive":
++                self.close_connection = 0
++           else:
++                self.close_connection = 1
++        elif version_number == (1,1):
++            if connection_header == "close":
++                self.close_connection=1
++            else:
++               self.close_connection=0
++        else:
++           self.close_connection=1
+     def do_GET(self):
+         self.serve('GET')
+     def do_POST(self):

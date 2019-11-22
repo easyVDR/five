@@ -1,0 +1,17 @@
+# Default start options for Ajaxterm
+# Sourced by /etc/init.d/ajaxterm
+
+#
+# This is a POSIX shell fragment
+#
+
+# Set the daemon's user id (ajaxterm by default)
+# If run as root ajaxterm will run `/bin/login',
+# otherwise it will run `ssh localhost'.
+#AJAXTERM_UID="ajaxterm"
+
+# Allow to change the default port used by Ajaxterm
+#PORT="8022"
+
+# Allow to use a different port than 22 to connect to the ssh server
+#SERVERPORT="22"

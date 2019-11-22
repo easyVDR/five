@@ -1,0 +1,11 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "purge" ] ; then
+    # locks ajaxterm system user account on purge
+    usermod -L -e 1 ajaxterm > /dev/null || true
+fi
+
+#DEBHELPER#
+
+exit 0

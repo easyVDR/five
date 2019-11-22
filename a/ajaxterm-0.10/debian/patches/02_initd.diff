@@ -1,0 +1,38 @@
+Description: Do not install the upstream initd script - we use our own init script
+Author: Julien Valroff <julien@debian.org>
+
+diff -Nur ajaxterm-0.10/configure ajaxterm-0.10.new/configure
+--- ajaxterm-0.10/configure	2006-10-29 03:52:39.000000000 +0100
++++ ajaxterm-0.10.new/configure	2006-12-02 09:04:09.000000000 +0100
+@@ -21,12 +21,4 @@
+ file("ajaxterm.bin","w").write(file("configure.ajaxterm.bin").read()%locals())
+ file("Makefile","w").write(file("configure.makefile").read()%locals())
+ 
+-if os.path.isfile("/etc/gentoo-release"):
+-	file("ajaxterm.initd","w").write(file("configure.initd.gentoo").read()%locals())
+-elif os.path.isfile("/etc/fedora-release") or os.path.isfile("/etc/redhat-release"):
+-	file("ajaxterm.initd","w").write(file("configure.initd.redhat").read()%locals())
+-else:
+-	file("ajaxterm.initd","w").write(file("configure.initd.debian").read()%locals())
+-
+ os.system("chmod a+x ajaxterm.bin")
+-os.system("chmod a+x ajaxterm.initd")
+diff -Nur ajaxterm-0.10/configure.makefile ajaxterm-0.10.new/configure.makefile
+--- ajaxterm-0.10/configure.makefile	2006-10-29 03:52:39.000000000 +0100
++++ ajaxterm-0.10.new/configure.makefile	2006-12-02 09:04:16.000000000 +0100
+@@ -5,7 +5,6 @@
+ 	install -d "%(bin)s"
+ 	install -d "%(lib)s"
+ 	install ajaxterm.bin "%(bin)s/ajaxterm"
+-	install ajaxterm.initd "%(etc)s/init.d/ajaxterm"
+ 	install -m 644 ajaxterm.css ajaxterm.html ajaxterm.js qweb.py sarissa.js sarissa_dhtml.js "%(lib)s"
+ 	install -m 755 ajaxterm.py "%(lib)s"
+ 	gzip --best -c ajaxterm.1 > ajaxterm.1.gz
+@@ -14,7 +13,6 @@
+ 
+ clean:
+ 	rm ajaxterm.bin
+-	rm ajaxterm.initd
+ 	rm ajaxterm.1.gz
+ 	rm Makefile
+ 

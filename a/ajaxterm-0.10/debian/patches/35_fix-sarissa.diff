@@ -1,0 +1,22 @@
+Description: fix for sarissa.js
+Author: Wim Boucquaert <wim.boucquaert@gmail.com>
+Origin: http://launchpadlibrarian.net/38446227/sarissa.js.patch
+Debian-Bug: http://bugs.debian.org/cgi-bin/bugreport.cgi?bug=568372
+
+--- a/sarissa.js
++++ b/sarissa.js
+@@ -265,7 +265,13 @@
+             * <li>3 == INTERACTIVE,</li>
+             * <li>4 == COMPLETED</li></ul>
+             */
+-            XMLDocument.prototype.readyState = 0;
++            try {
++                XMLDocument.prototype.readyState = 0;
++            } catch(e) {
++                // XXX on some browsers (Firefox 3.6 at least) this fails,
++                // however I think this is rarely a problem so we just
++                // ignore it here...
++            };
+             /**
+             * <p>Emulate IE's parseError attribute</p>
+             */

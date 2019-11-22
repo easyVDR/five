@@ -1,0 +1,16 @@
+Description: Fix for "IOError: [Errno 22] Invalid argument" error
+Author: Marco d'Itri <md@linux.it>
+Bug-Debian: http://bugs.debian.org/496470
+
+diff -Nur -x '*.orig' -x '*~' ajaxterm/ajaxterm.py ajaxterm.new/ajaxterm.py
+--- ajaxterm/ajaxterm.py	2008-08-25 11:14:53.000000000 +0200
++++ ajaxterm.new/ajaxterm.py	2008-08-25 11:15:26.000000000 +0200
+@@ -419,7 +419,7 @@
+ 		else:
+ 			fcntl.fcntl(fd, fcntl.F_SETFL, os.O_NONBLOCK)
+ 			# python bug http://python.org/sf/1112949 on amd64
+-			fcntl.ioctl(fd, struct.unpack('i',struct.pack('I',termios.TIOCSWINSZ))[0], struct.pack("HHHH",h,w,0,0))
++			fcntl.ioctl(fd, termios.TIOCSWINSZ, struct.pack("HHHH",h,w,0,0))
+ 			self.proc[fd]={'pid':pid,'term':Terminal(w,h),'buf':'','time':time.time()}
+ 			return fd
+ 	def die(self):

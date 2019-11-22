@@ -1,0 +1,12 @@
+Description: Use default python version
+Author: Julien Valroff <julien@debian.org>
+
+diff -Nur ajaxterm/qweb.py ajaxterm.new/qweb.py
+--- ajaxterm/qweb.py	2006-07-10 18:27:05.000000000 +0200
++++ ajaxterm.new/qweb.py	2006-07-15 11:15:09.000000000 +0200
+@@ -1,4 +1,4 @@
+-#!/usr/bin/python2.3
++#!/usr/bin/env python
+ #
+ # vim:set et ts=4 fdc=0 fdn=2 fdl=0:
+ #

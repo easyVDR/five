@@ -1,0 +1,20 @@
+Source: ajaxterm
+Section: web
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Build-Depends: debhelper (>= 9), python (>= 2.6.6-3)
+Standards-Version: 3.9.6 
+X-Python-Version: >= 2.3
+Homepage: http://antony.lesuisse.org/qweb/trac/wiki/AjaxTerm
+Vcs-Git: git://git.kirya.net/debian/ajaxterm.git
+Vcs-Browser: http://git.kirya.net/?p=debian/ajaxterm.git;a=summary
+
+Package: ajaxterm
+Architecture: all
+Depends: ${python:Depends}, ${misc:Depends}, adduser
+Recommends: apache2 | httpd, openssh-server, python-psyco
+Suggests: openssl
+Description: Web based terminal written in Python
+ Ajaxterm is a web based terminal written in Python and some AJAX
+ javascript for client side. It can use almost any web browser
+ and even works through firewalls.

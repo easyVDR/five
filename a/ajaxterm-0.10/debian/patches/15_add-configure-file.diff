@@ -1,0 +1,35 @@
+Description: Adds a configuration file allowing to set terminal size
+Author: Julien Valroff
+Bug-Debian: http://bugs.debian.org/515987
+
+--- a/ajaxterm.html
++++ b/ajaxterm.html
+@@ -7,9 +7,10 @@
+ 	<script type="text/javascript" src="sarissa.js"></script>
+ 	<script type="text/javascript" src="sarissa_dhtml.js"></script>
+ 	<script type="text/javascript" src="ajaxterm.js"></script>
++	<script type="text/javascript" src="ajaxterm_config.js"></script>
+ 	<script type="text/javascript">
+ 	window.onload=function() {
+-		t=ajaxterm.Terminal("term",80,25);
++		t=ajaxterm.Terminal("term",width,height);
+ 	};
+ 	</script>
+ </head>
+--- a/ajaxterm.js
++++ b/ajaxterm.js
+@@ -4,6 +4,14 @@
+ 	if(window.ActiveXObject)
+ 		ie=1;
+ 	var sid=""+Math.round(Math.random()*1000000000);
++
++        if (width==0) {
++                width=80;
++        }
++        if (height==0) {
++                height=25;
++        }
++
+ 	var query0="s="+sid+"&w="+width+"&h="+height;
+ 	var query1=query0+"&c=1&k=";
+ 	var buf="";

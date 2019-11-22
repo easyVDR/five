@@ -1,0 +1,58 @@
+Description: Fixes for manpage
+Author: Julien Valroff <julien@debian.org>
+
+--- a/ajaxterm.1
++++ b/ajaxterm.1
+@@ -1,4 +1,4 @@
+-.TH ajaxterm "1" "May 2006" "ajaxterm 0.5" "User commands"
++.TH ajaxterm "1" "Jul 2006" "ajaxterm 0.7" "User commands"
+ .SH NAME
+ ajaxterm \- Web based terminal written in python
+ 
+@@ -8,20 +8,40 @@
+ It can use almost any web browser and even works through firewalls.
+ 
+ .SH USAGE
+-\fBajaxterm.py\fR [options]
++\fBajaxterm\fR [options]
+ 
+ .SH OPTIONS
+ A summary of the options supported by \fBajaxterm\fR is included below.
+-    \fB-h, --help\fR            show this help message and exit
+-    \fB-pPORT, --port=PORT\fR   Set the TCP port (default: 8022)
+-    \fB-cCMD, --command=CMD\fR  set the command (default: /bin/login or ssh localhost)
+-    \fB-l, --log\fR             log requests to stderr (default: quiet mode)
++.TP
++\fB\-h\fR, \fB\-\-help\fR
++show the help message and exit
++.TP
++\fB\-p\fR PORT, \fB\-\-port\fR=\fIPORT\fR
++Set the TCP port (default: 8022)
++.TP
++\fB\-c\fR CMD, \fB\-\-command\fR=\fICMD\fR
++set the command (default: /bin/login or ssh localhost)
++.TP
++\fB\-l\fR, \fB\-\-log\fR
++log requests to stderr (default: quiet mode)
++.TP
++\fB\-d\fR, \fB\-\-daemon\fR
++run as daemon in the background
++.TP
++\fB\-P\fR PIDFILE, \fB\-\-pidfile\fR=\fIPIDFILE\fR
++set the pidfile (default: /var/run/ajaxterm.pid)
++.TP
++\fB\-i\fR INDEX_FILE, \fB\-\-index\fR=\fIINDEX_FILE\fR
++default index file (default: ajaxterm.html)
++.TP
++\fB\-u\fR UID, \fB\-\-uid\fR=\fIUID\fR
++Set the daemon's user id
+ 
+ .SH AUTHOR
+ Antony Lesuisse <al@udev.org>
+ 
+ This manual page was written for the Debian system by
+-Julien Valroff <julien@kirya.net> (but may be used by others).
++Julien Valroff <julien@debian.org> (but may be used by others).
+ 
+ .SH "REPORTING BUGS"
+ Report any bugs to the author: Antony Lesuisse <al@udev.org>

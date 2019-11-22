@@ -1,0 +1,36 @@
+Description: Allow use of psyco when available
+Author: Brian Minton <brian@minton.name>
+Bug-Debian: http://bugs.debian.org/504020
+
+diff -Nur -x '*.orig' -x '*~' ajaxterm/ajaxterm.py ajaxterm.new/ajaxterm.py
+--- ajaxterm/ajaxterm.py	2008-10-31 17:45:08.000000000 +0100
++++ ajaxterm.new/ajaxterm.py	2008-10-31 17:45:44.000000000 +0100
+@@ -2,6 +2,12 @@
+ 
+ """ Ajaxterm """
+ 
++try:
++	import psyco
++	psyco.profile()
++except:
++	pass
++
+ import array,cgi,fcntl,glob,mimetypes,optparse,os,pty,random,re,signal,select,sys,threading,time,termios,struct,pwd
+ 
+ os.chdir(os.path.normpath(os.path.dirname(__file__)))
+diff -Nur -x '*.orig' -x '*~' ajaxterm/qweb.py ajaxterm.new/qweb.py
+--- ajaxterm/qweb.py	2008-10-31 17:45:07.000000000 +0100
++++ ajaxterm.new/qweb.py	2008-10-31 17:46:07.000000000 +0100
+@@ -116,6 +116,12 @@
+ except ImportError:
+     import StringIO
+ 
++try:
++        import psyco
++        psyco.profile()
++except:
++        pass
++
+ #----------------------------------------------------------
+ # Qweb Xml t-raw t-esc t-if t-foreach t-set t-call t-trim
+ #----------------------------------------------------------
