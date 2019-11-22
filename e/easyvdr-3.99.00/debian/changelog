@@ -1,3 +1,9 @@
+easyvdr (3.99.00-1easyVDR1~focal) focal; urgency=high
+
+  * added pre-depends inputlirc usb-irmp 
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 22 Nov 2019 14:42:22 +0100
+
 easyvdr (3.99.00-1easyVDR0~focal) focal; urgency=high
 
   * rebuild for focal

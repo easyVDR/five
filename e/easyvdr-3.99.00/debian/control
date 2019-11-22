@@ -2,11 +2,13 @@ Source: easyvdr
 Section: misc
 Priority: optional
 Maintainer: Matthias Kuehne <mkabie@web.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
 Standards-Version: 4.1.2
 Build-Depends: debhelper (>= 9)
 
 Package: easyvdr
 Architecture: any
+Pre-Depends: inputlirc, usb-irmp
 Depends: ${misc:Depends}, ${easyvdr}
 Description: Packages for easyVDR
   Basispaket easyVDR
