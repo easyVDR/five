@@ -1,3 +1,9 @@
+easyvdr-5 (00.03-0easyVDR1~focal) focal; urgency=medium
+
+  * depends to easyvdr-temproot (this must be removed before any productive use !!!!)
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 Nov 2019 15:20:32 +0100
+
 easyvdr-5 (00.02-0easyVDR03~focal) focal; urgency=high
 
   * depends 

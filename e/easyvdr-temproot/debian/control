@@ -1,0 +1,11 @@
+Source: easyvdr-temproot
+Section: misc
+Priority: optional
+Maintainer: Martin <none@easy-vdr.de>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.5
+
+Package: easyvdr-temproot
+Architecture: all
+Depends: ${misc:Depends}
+Description: Package for temp root login

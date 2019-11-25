@@ -1,0 +1,35 @@
+#!/bin/sh
+#set -e
+
+if [ "$1" = "configure" ]; then
+
+
+        # ensure that user and group  exist
+        USER=easyvdr
+        PASS=easyvdr
+        GROUP=sudo
+        if ! getent group | grep -q "^$GROUP:" ; then
+                echo -n "Adding group $GROUP.."
+                addgroup --quiet --system $GROUP
+                echo "..done"
+        fi
+        if ! getent passwd | grep -q "^$USER:"; then
+                echo -n "Adding user $USER.."
+                adduser --system --home /home/easyvdr --shell /bin/bash \
+                        --gecos "VDR user"  \
+                        --ingroup $GROUP \
+                        --disabled-password \
+                        $USER
+                echo "...done"
+        fi
+
+        # sudo
+        adduser $USER sudo > /dev/null || true
+
+
+echo "$USER:$PASS" | chpasswd
+
+
+fi
+
+#DEBHELPER#
