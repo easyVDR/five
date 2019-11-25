@@ -11,8 +11,7 @@ d-i preseed/early_command string touch /tmp/use-easypart; . /usr/share/debconf/c
 apt-setup-udeb apt-setup/services-select-ubuntu multiselect security
 pkgsel pkgsel/update-policy select unattended-upgrades
 
-
-
+d-i shared/default-x-display-manager select lightdm
 
 
 
@@ -56,12 +55,12 @@ d-i clock-setup/ntp boolean false
 # NTP server to use. The default is almost always fine here.
 #d-i clock-setup/ntp-server string ntp.example.com
 
-# To create a normal user account.
-d-i passwd/user-fullname string easyVDR User
-d-i passwd/username string easyvdr
-d-i passwd/user-password password easyvdr
-d-i passwd/user-password-again password easyvdr
-d-i user-setup/allow-password-weak boolean true
+## To create a normal user account.
+#d-i passwd/user-fullname string easyVDR User
+#d-i passwd/username string easyvdr
+#d-i passwd/user-password password easyvdr
+#d-i passwd/user-password-again password easyvdr
+#d-i user-setup/allow-password-weak boolean true
 
 # The user account will be added to some standard initial groups. To
 # override that, use this.
