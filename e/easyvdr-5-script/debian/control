@@ -1,0 +1,12 @@
+Source: easyvdr-5-script
+Section: misc
+Priority: optional
+Maintainer: Martin <none@easy-vdr.de>
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 4.1.2
+
+Package: easyvdr-5-script
+Architecture: any
+Description: Test Package for easyVDR Install Script
+  Installationspaket für easyVDR
+ 

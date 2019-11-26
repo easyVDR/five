@@ -1,0 +1,37 @@
+# This first command is run as early as possible, just after preseeding is read.
+d-i preseed/early_command string touch /tmp/use-easypart; . /usr/share/debconf/confmodule; db_get debconf/priority; case $RET in low|medium) db_fset tasksel/first seen false; echo 'tasksel tasksel/first seen false' >>/var/lib/preseed/log ;; esac
+
+# This command is run immediately before the partitioner starts. It may be useful to apply dynamic partitioner preseeding that depends on the state
+# of the disks (which may not be visible when preseed/early_command runs).
+#d-i partman/early_command string cd /tmp; wget http://dev.easy-vdr.de/tmp/09/pre-partition; chmod +x ./pre-partition; \
+
+
+
+
+# Suite to install.
+#d-i mirror/suite string focal
+#d-i mirror/udeb/suite string focal
+
+# Additional repositories, local[0-9] available
+d-i apt-setup/local0/repository string deb http://ppa.launchpad.net/easyvdr-team/5-vdr-unstable/ubuntu focal main
+d-i apt-setup/local0/comment string vdr unstable
+d-i apt-setup/local0/source boolean false
+d-i apt-setup/local0/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+d-i apt-setup/local1/repository string deb http://ppa.launchpad.net/easyvdr-team/5-base-unstable/ubuntu focal main
+d-i apt-setup/local1/comment string unbase-stable
+d-i apt-setup/local1/source boolean false
+d-i apt-setup/local1/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+d-i apt-setup/local2/repository string deb http://ppa.launchpad.net/easyvdr-team/5-others-unstable/ubuntu focal main
+d-i apt-setup/local2/comment string unothers-stable
+d-i apt-setup/local2/source boolean false
+d-i apt-setup/local2/key string http://keyserver.ubuntu.com:11371/pks/lookup?op=get&search=0x81438A40094D330A
+
+
+
+### Package selection
+tasksel tasksel/first multiselect  
+# Individual additional packages to install
+d-i pkgsel/include string easyvdr-5
+
