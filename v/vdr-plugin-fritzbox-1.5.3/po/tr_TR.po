@@ -1,0 +1,298 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+# Oktay Yolgeçen <oktay_73@yahoo.de>, 2007
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-12-01 20:07+0100\n"
+"PO-Revision-Date: 2007-08-12 21:40+0200\n"
+"Last-Translator: Oktay Yolgeçen <oktay_73@yahoo.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-9\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Fritz Plugin for AVM Fritz!Box"
+msgstr ""
+
+#, fuzzy
+msgid "Fritz!Box"
+msgstr "Fritz!Box URL"
+
+#, fuzzy
+msgid "missed calls"
+msgstr "kaçýrýlan"
+
+#, fuzzy
+msgid "missed call"
+msgstr "kaçýrýlan"
+
+#, fuzzy
+msgid "Data not yet available."
+msgstr "Telefon defteri mevcut deðil"
+
+msgid "Private"
+msgstr ""
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "home"
+msgid "H"
+msgstr ""
+
+msgid "Mobile"
+msgstr ""
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "mobile"
+msgid "M"
+msgstr ""
+
+msgid "Business"
+msgstr ""
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "work"
+msgid "W"
+msgstr ""
+
+#, fuzzy, c-format
+msgid "Calling %s [%s]"
+msgstr "Arayan numara"
+
+#, fuzzy
+msgid "Call"
+msgstr "Arayan numara"
+
+msgid "Call from"
+msgstr "Arayan numara"
+
+msgid "POTS"
+msgstr "analog"
+
+msgid "ISDN"
+msgstr "ISDN"
+
+msgid "VoIP"
+msgstr "VoIP"
+
+#, fuzzy
+msgid "This phonebook is not yet available."
+msgstr "Telefon defteri mevcut deðil"
+
+msgid "You may need to wait some minutes,"
+msgstr ""
+
+msgid "otherwise there may be a network problem."
+msgstr ""
+
+#, fuzzy
+msgid "This phonebook is not displayable"
+msgstr "Telefon defteri mevcut deðil"
+
+#, fuzzy
+msgid "> PB"
+msgstr "TD"
+
+msgid "Fritz!Box call list"
+msgstr "Fritz!Box konuþma listesi"
+
+msgid "incoming"
+msgstr "gelen"
+
+msgid "missed"
+msgstr "kaçýrýlan"
+
+msgid "outgoing"
+msgstr "giden"
+
+msgid "unknown"
+msgstr "mechul"
+
+#, fuzzy
+msgid "The call list is not yet available."
+msgstr "Telefon defteri mevcut deðil"
+
+#. TRANSLATORS: this is the short form of "phone book"
+msgid "PB"
+msgstr "TD"
+
+msgid "Call details"
+msgstr ""
+
+msgid "Date"
+msgstr ""
+
+msgid "Time"
+msgstr ""
+
+msgid "Duration"
+msgstr ""
+
+msgid "call was not accepted"
+msgstr ""
+
+msgid "Extension"
+msgstr "MSN"
+
+msgid "Callee"
+msgstr ""
+
+#, fuzzy
+msgid "Caller"
+msgstr "Arayan numara"
+
+#. TRANSLATORS: these are labels for color keys in the CallDetails menu
+#. TRANSLATORS: this is the label for the button to initiate a call
+#, fuzzy
+msgid "Button$Call"
+msgstr "Telefon gelince sesi kes"
+
+msgid "No number to call"
+msgstr "Numarasýz arama imkansýz"
+
+msgid "Pick up your phone now"
+msgstr "Telefonu þimdi kaldýrýn"
+
+msgid "Error while initiating call"
+msgstr "Baglantý hatasý"
+
+msgid "Phone book details"
+msgstr ""
+
+msgid "Name"
+msgstr ""
+
+msgid "Numbers"
+msgstr ""
+
+msgid "Default"
+msgstr ""
+
+#, fuzzy
+msgid "Outgoing call"
+msgstr "Telefon gelince sesi kes"
+
+#, fuzzy
+msgid "Incoming call"
+msgstr "Gelen aramalarý göster"
+
+msgid "any"
+msgstr ""
+
+#, fuzzy
+msgid "only incoming"
+msgstr "gelen"
+
+#, fuzzy
+msgid "only outgoing"
+msgstr "giden"
+
+msgid "Fritz!Box URL"
+msgstr "Fritz!Box URL"
+
+msgid "Username"
+msgstr ""
+
+msgid "Password"
+msgstr "Þifre"
+
+msgid "Country code"
+msgstr ""
+
+msgid "Region code"
+msgstr ""
+
+#, fuzzy
+msgid "React on calls"
+msgstr "Telefon gelince sesi kes"
+
+msgid "Mute on call"
+msgstr "Telefon gelince sesi kes"
+
+msgid "Mute only after connect"
+msgstr ""
+
+msgid "Decrease volume by [1..100%]"
+msgstr ""
+
+msgid "Pause on call"
+msgstr "Telefon gelince durakla"
+
+msgid "Pause live tv"
+msgstr ""
+
+msgid "Resume after call"
+msgstr ""
+
+#, fuzzy
+msgid "Show calls"
+msgstr "Gelen aramalarý göster"
+
+#, fuzzy
+msgid "Show detailed call information"
+msgstr "Detaylý konuþma listesi"
+
+msgid "Detailed call lists"
+msgstr "Detaylý konuþma listesi"
+
+msgid "Group call lists by date"
+msgstr ""
+
+msgid "Hide main menu entry"
+msgstr "Ana menüde sakla"
+
+msgid "Default menu"
+msgstr ""
+
+msgid "Setup phonebooks to use..."
+msgstr ""
+
+msgid "Restrict monitor to certain extensions"
+msgstr "Gözlenen MSN'leri sýnýrla"
+
+msgid "Number of monitored extensions"
+msgstr "Gözlenen MSN'lerinin sayýsý"
+
+msgid "Reload"
+msgstr "Tekrar yükle"
+
+msgid "Retrieving phone book"
+msgstr "Telefon defteri yükleniyor"
+
+msgid "Setup phonebooks to use"
+msgstr ""
+
+msgid "More"
+msgstr ""
+
+msgid "Less"
+msgstr ""
+
+#~ msgid "Fritz!Box phone book"
+#~ msgstr "Fritz!Box telefon defteri"
+
+#, fuzzy
+#~ msgid "Local phone book"
+#~ msgstr "Fritz!Box telefon defteri"
+
+#, fuzzy
+#~ msgid "Button$To PB"
+#~ msgstr "Telefon gelince sesi kes"
+
+#~ msgid "Call from unknown extension"
+#~ msgstr "Bilinmeyen baðlantý arýyor"
+
+#~ msgid "Error fetching the call list"
+#~ msgstr "Konuþma listesi yüklenemedi"
+
+#, fuzzy
+#~ msgid "Fritz!Box Notification"
+#~ msgstr "Fritz!Box konuþma listesi"
+
+#, fuzzy
+#~ msgid "No number to add"
+#~ msgstr "Numarasýz arama imkansýz"
+
+#~ msgid "Please wait..."
+#~ msgstr "Lütfen bekleyin"

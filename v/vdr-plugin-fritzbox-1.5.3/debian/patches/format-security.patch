@@ -1,0 +1,17 @@
+Index: vdr-plugin-fritzbox-1.5.3/fritzbox.cpp
+===================================================================
+--- vdr-plugin-fritzbox-1.5.3.orig/fritzbox.cpp	2017-06-29 00:35:44.645996804 +0200
++++ vdr-plugin-fritzbox-1.5.3/fritzbox.cpp	2017-06-29 00:35:44.641996784 +0200
+@@ -49,9 +49,9 @@
+ 
+ 	logger::Log::setPrefix("fritzbox");
+ 	logger::Log::setCustomLogger(
+-		[](const std::string &message) { esyslog(message.c_str()); },
+-		[](const std::string &message) { isyslog(message.c_str()); },
+-		[](const std::string &message) { dsyslog(message.c_str()); }
++		[](const std::string &message) { esyslog("%s", message.c_str()); },
++		[](const std::string &message) { isyslog("%s", message.c_str()); },
++		[](const std::string &message) { dsyslog("%s", message.c_str()); }
+ 	);
+ }
+ 

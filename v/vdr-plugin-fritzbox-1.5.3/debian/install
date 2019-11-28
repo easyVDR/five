@@ -1,0 +1,3 @@
+debian/localphonebook.csv      etc/vdr/plugins/fritzbox/
+templates/on-call.sh          var/lib/vdr/plugins/fritzbox/
+

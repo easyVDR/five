@@ -1,0 +1,4 @@
+version=3
+
+opts=filenamemangle=s/.*=(.*)/$1/,downloadurlmangle=s/download.htm.*=(.*)/downloads\/vdr-fritz\/$1/ \
+  http://www.joachim-wilke.de/vdr-fritz.htm .*file=vdr-fritzbox-(.*)\.tgz

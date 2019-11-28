@@ -1,0 +1,10 @@
+--- a/libnet++/TcpClient.cpp
++++ b/libnet++/TcpClient.cpp
+@@ -19,6 +19,7 @@
+  *
+  */
+ 
++#define BOOST_ASIO_USE_BOOST_DATE_TIME_FOR_SOCKET_IOSTREAM
+ #include "TcpClient.h"
+ 
+ #include <liblog++/Log.h>

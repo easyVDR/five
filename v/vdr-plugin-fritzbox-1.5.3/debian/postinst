@@ -1,0 +1,13 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+
+
+    # Change owner of directory, symlink and chmod
+    chmod a+x  /var/lib/vdr/plugins/fritzbox/on-call.sh
+    chown -R vdr:vdr /var/lib/vdr/plugins/fritzbox
+
+fi
+
+#DEBHELPER#

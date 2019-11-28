@@ -1,0 +1,27 @@
+Index: vdr-plugin-fritzbox-1.5.3/libfritz++/FritzClient.cpp
+===================================================================
+--- vdr-plugin-fritzbox-1.5.3.orig/libfritz++/FritzClient.cpp	2013-12-01 19:49:11.000000000 +0100
++++ vdr-plugin-fritzbox-1.5.3/libfritz++/FritzClient.cpp	2016-05-01 17:54:25.042069749 +0200
+@@ -269,6 +269,22 @@
+ 		return false;
+ 	if (!login())
+ 		return false;
++         INF("Dial (using lua)...");
++         try {
++              msg = httpClient.get("/home/home.lua",
++                              {
++                              { "sid", gConfig->getSid() },
++                              { "query", "dial" },
++                              { "action", "dial" },
++                              { "number", number },
++                           });
++         } catch (std::runtime_error &re) {}
++         if (msg.find("dialing") != std::string::npos) {
++            INF("Sucess.");
++            return true;
++         }
++         INF("failed.");
++ 	
+ 	try {
+ 		INF("sending call init request " << (gConfig->logPersonalInfo() ? number.c_str() : HIDDEN));
+ 		network::HttpClient::param_t params =

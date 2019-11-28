@@ -1,0 +1,784 @@
+VDR Plugin 'fritzbox' Revision History
+--------------------------------------
+
+2007-04-22: Version 0.0.1
+
+- Initial version.
+
+2007-05-02: Version 0.0.2
+
+- Made TCP connection handling more robust and simpler
+- extended the compatibility list in README
+- replaced vector::at in favor to vector[] to avoid possible problems 
+  with gcc-2.95
+  (thanks goes to Tobias [1] for testing this)
+- made plugin compatible to LinVDR 0.7
+  please apply provided patch file linvdr-0.7-fritzbox-*.diff
+  (patch provided by Tobias [1])
+- main menu entry can now be hidden
+  (suggested by pimboli [2])
+- german umlauts and other sonderzeichen are now displayed correctly
+  (bug found by Christian [3])
+- showing line numer on incoming VoIP call
+- showing msn on incoming ISDN call
+  (suggested by Christian [3])
+- added a hint about dialing "#96*5*" with an ISDN telephone to README
+  (problem reported by mentox [4])
+- displaying incoming calls can now be switched off in setup
+  (suggested by Markus [5])
+- fixed MuteOnCall with multiple concurrent incoming calls,
+  i.e. VDR is unmuted, when the last incoming call ends
+- added russian translation
+  (provided by neptunvasja [6])
+  
+2007-06-03: Version 0.0.3
+  
+- fixed a typo in "Call from unknown extension" translation
+- added an include for better gcc-2.95 compatibility
+- &amp; is now correctly displayed in telephone book
+- extended README to include new features
+- extended README to include some hints for ISDN telephones
+  (provided by Strider [7])
+- fixed handling of mute on call, such that outgoing calls
+  can no longer interfere with this
+  (reported by KingJerry[8])
+- fixed a bug in the call list parser that caused invalid entries
+- fixed a bug in replaceEntities() on 64-bit systems
+  (patch provided by Bernd [9])
+- replaceEntities() now replaces multiple occurences of the same
+  entity (reported by Bernd [9])
+- calls are now repeatedly shown until the call is accepted or 
+  the caller hangs up (as suggested by Strider [7])
+- pressing [OK] in the call lists now initiates a call as in the
+  phone book menu
+- implemented MSN-Filter: only calls to certain MSNs are shown
+  (suggested by Christian [3])
+- added local number to call lists. This can be configured in the 
+  plugin's setup
+  (suggested by Christian [3])
+- the password of the Fritz!Box is no longer displayed in the plugin's
+  setup page - instead all characters are replaced by an '*'
+- fixed a bug in auto muting, that caused possible unmuting 
+  without a prior auto mute    
+- updated russian translations
+  (provided by neptunvasja [6])
+
+2007-06-24: Version 0.0.4
+
+- added french translation
+  (provided by Patrice [10])
+- fix for outdated call lists
+  (suggested by Bernd [9] and many others with similar suggestions)
+- implemented new "pause on call" feature, that pauses a running 
+  replay during an incoming call
+  (suggested by Reinhard [11])
+- reduced syslog-verbosity when loading call-lists or phonebook
+- Fritz!Box now recognizes the system codepage when displaying phonebook
+  and call lists (only with VDR >= 1.5.3)  
+
+2007-07-22: Version 0.0.5
+
+- fixed translation of "PB"
+- failed logins to the Fritz!Box are now logged to syslog 
+- support for special characters in Fritz!Box password
+- fixed "pause on call"
+  - do not start a live pause on incoming call
+  - pause only when a replay is running and not paused
+  - do not stop a replay on hangup
+  (reported by and suggestions from Bernd [9], Dirk [12] and Oktay [13])
+  
+2007-09-04: Version 0.0.6
+- added turkish translation
+  (provided by Oktay [13])
+- added support for gettext (VDR >= 1.5.7),
+  plugin is still compatible with older versions 
+- MSN filter is now also applied to all call lists
+  (reported by Saxman2k [14])
+- implemented a submenu, that shows all details of a specific call
+  in any call list
+- dropped duration column in call lists (as this is available 
+  on the detail screen now)
+- dynamic column layout in call lists results in better 
+  usage of the osd screen
+- new setup option "Group call lists by date" results in
+  even better usage of the osd screen :-)   
+- Modified support for gettext (VDR >= 1.5.8)
+  plugin is still compatible with older versions
+- rearranged targets in the makefile
+  according to a discussion in the VDR mailing list
+- corrected a call to memset in fritzlistener.c
+  (patch provided by Axel [15])
+- added some missing close-calls to prevent VDR from crashing
+  with error message "too many open files"
+  (patch provided by Axel [15])
+- reducing network load by resolving Fritz!Box's ip address 
+  only once
+  (patch provided by Axel [15])
+- switched name and number column in the phone book;
+  width of the first column is calculated dynamically
+- using the new trVDR() macro for core translations
+  plugin is still compatible with older versions
+
+2007-09-26: Version 0.0.7
+- fixed wrong display of call details when date separator is enabled or
+  call lists are filtered
+  (reported by Saxman2k [14])
+- now using std::string::erase for compatibility with old libstdc++2.10 
+- added some includes for better gcc-2.95 compatibility
+  (patch provided by Tobias [1])
+
+2007-11-04: Version 0.0.8
+- code restructuring and cleanup, preparation for multiple phonebooks etc.
+- resorted includes for gcc-2.95
+- in cMenuCallDetail::SetText(): std::string::npos is not a uint,
+  using std::string::size_type instead
+  (patch provided by Axel [15])
+- cFritzListener::Action(): using -1 in memset to be compatible with
+  its arg type
+  (patch provided by Axel [15])
+- added missing copyright notices in all sources
+  (reported by Thomas [16])
+- implemented reverse lookup phonebook via www.das-oertliche.de
+- new setup-page for configuring a list of used phonebooks and the order in which
+  they are accessed while resolving numbers to names; in the phonebook view
+  the first displayable phonebook in this list is shown
+- adapted README accordingly
+- the call list is now fetched asynchroneously at startup,
+  avoiding the delay in the menu; to keep it up to date, it is
+  reloaded after every call automatically
+- new makefile target "srcdoc" to generate source code documentation
+- Improved the 'i18n' target in the Makefile to avoid unnecessary work as suggested by
+  vdr-1.5.11
+  
+2007-11-11: Version 0.0.9
+- added cHttpClient for handling HTTP requests; removing end of file detection 
+  in caller classes
+- improved cCallList parser to work around lines starting with '#'
+  (as found in current Fritz!Box Labor Firmware version)
+- call list now works with Fritz!Box Beta-Firmware 29.04.44-9163
+  (reported by Ryker [20])
+- this may fix problems with firmware CH/A FRITZ!Box Fon WLAN 7140 Version 39.04.43 too
+  (reported by Joe [19])
+- Fritz!Box phonebook supports new Fritz!Box Beta-Firmware 29.04.44-9163
+  (only one number per name is supported for now)
+- all communication to the Fritz!Box Webinterface is now protected with a mutex to
+  avoid conflicts of concurrent request from different threads
+- retry delay on communication failures is now increased up to one hour
+  to avoid flooding the syslog 
+- added missing translation in i18n.c to support still-popular old versions of vdr 
+  (reported by Torsten [17])
+- some firmware version do not sort the telephone book, the plugin now sorts the 
+  entries itself
+- removing '!' prefix when displaying Fritz!Box telephonebook VIP-entries
+  (suggested by Oliver [18])
+- supporting multiple phone numbers per entry in newest Fritz!Box firmware versions
+  > added new column in phonebook view, marking (H)ome, (M)obile and (W)ork
+  > on incoming calls this type is shown as well
+  > this is ignored for older firmware versions	 
+- fixed a segfault when accessing the plugins main menu with no telephonebook selected
+  (reported by Thomas [16])
+- the call details menu now issues a reverse lookup if the name of the caller 
+  is not known yet
+  
+2008-01-06: Version 0.0.10
+- including patch to avoid compilation conflicts with C++ STL
+  (suggested by Reinhard [11])
+- normalizing numbers before comparison, e.g., handling +4989..., 004989..., 
+  and 089 the same. This introduces a new setup option "Country Code".
+  (suggested by Reinhard [11])     
+- applied retry delay on communication failures to _all_ connection types
+- applied retry delay on receiving invalid data in cFritzListener to avoid log flooding
+  (reported by Marcus [21])
+- added a warning regarding call monitor activation in syslog 
+- fixed cTcpClient to correctly detect a connection reset
+
+
+2008-02-02: Version 0.0.11
+- fixed the "#96*5*"-code in README.de
+  (reported by Hans Jï¿½rgen [22])
+- fixed request-URL of das-oertliche.de
+  (patch provided by Reinhard [11])
+- now always unlocking FritzBoxMutex even when an exception is thrown
+- fixed wrong logging messages in fritzfonbuch.c claiming to be from calllist.c
+- an error message is now shown, if the phonebook is not read yet
+- replaced gethostbyname with threadsafe function getaddrinfo in cTcpClient
+- improved timing cHttpClient::Read() 
+- simplified socket read in cOertlichesFonbuch::ResolveToName()
+- now reading country- and regioncode from Fritz!Box; 
+  this removes the setup option "Country Code"
+  Set up your location in the Fritz!Box (navigate to "Einstellungen -> 
+  Telefonie -> Internettelefonie -> Erweiterte Einstellungen")
+  (thanks to Reinhard [11] for the hint to this option) 
+- now normalizing number when doing a lookup to dasoertliche.de
+  (reported by Reinhard [11])
+
+2008-03-02: Version 0.0.12
+- reading country- and regioncode from Fritz!Box already at startup to avoid
+  lookup delays on incoming calls
+- modified cTcpClient and cHttpClient to call "recv" non-blocking.
+  This fixes a possible segfault when stopping vdr
+  (reported and fix tested by Frodo [23])
+- fixed handling unknown messages in cFritzListener that caused an SIGABRT
+- fixed reading country- and regioncode from Fritz!Box
+- changed normalizing numbers ("+" -> "00")
+  This should fix das-oertliche reverse lookup without further modifications. 		
+- added italian translation (provided by Diego [24])  
+- removed compatibility for old VDR versions (i18n-handling, UTF8-handling)
+  This is in preparation for a stable plugin release 1.0.0 for VDR 1.6. Please
+  report release-critical bugs as soon as possible. Further, translation 
+  contributions (.po-files) are appreciated.
+  
+2008-03-30: Version 0.0.13
+- updated french translations (provided by Patrice [10])
+- fixed wrong dsyslog output in fritzlistener.c
+- fixed outputting the '#96*5*5'-hint
+- fixed an uninitialized socket variable in cTcpClient that caused closing 
+  sockets not created by the plugin (e.g., cKbdRemote socket) 
+- updated russian translations
+  (provided by neptunvasja [6])
+- fixed translating the plugin description
+- moved call to cFritzTools::GetPhoneSettings() out of 
+  cPluginFritzbox::Initialize() to avoid blocking the main thread 
+- cFritzTools::GetPhoneSettings() handles missing OKZ/LKZ settings in 
+  Fritz!Box correctly. If no LKZ is set, 49 is assumed.
+- extended cFritzListener to handle multiple lines in one message
+- corrected some dsyslog() calls missing the sourcecode filename
+> If no serious bugs appear with this release, it will get the stable plugin 
+  release 1.0.0 for VDR 1.6. Translation contributions (.po-files) are appreciated.
+  
+2008-04-13:  Version 1.0.0
+- updated italian translations (provided by Diego [24])
+- made "This phonebook is not yet available..." error message non-selectable 
+  to avoid a segmentation fault when selecting it (reported by ? [25])   
+  
+2008-06-10: Version 1.0.1
+- fixed a possible buffer overflow when editing MSNs in the plugins' setup
+- fixed a possible race condition when fetching the call list
+- instantiating cFritzListener only if needed for on-call events
+  (suggested by Andreas [26])
+  
+2008-07-17: Version 1.1.0
+- started new development branch (copy from version 1.0.1)
+  This branch is for development use and curious users only. If you like
+  a stable and reliable environment, please use the stable branch 1.0.x.
+  Distribution maintainers: Please take actions to prevent users from
+  accidentially upgrading from a stable 1.0.x version to this branch.
+- new setup option "React on calls" allow configuration if the plugin acts on 
+  incoming, outgoing or any calls
+- normalizing outgoing numbers for fonbook lookups, etc. now includes
+  * removing an appended '#' (includes displaying)
+  * removing German call-by-call provider selection codes
+- implemented support for a local phone book (suggested by neptunvasja [6])
+  * The fonbook is a csv-file located at 
+    $vdrconfigdir/plugins/fritzbox/localfonbuch.csv
+    using the same encoding as VDR
+  * Each line of this file has the pattern 
+    <name>,<type>,<number>
+    For <type> specify 1 (home), 2 (mobile) or 3 (work).
+- changed function of kRed in the menu
+  * "Reload phonebooks" was moved to the setup menu
+  * new function "Next phonebook" ("> PB") iterates through
+    the displayable phonebooks 
+    (the last one shown is remembered beyond vdr restarts)
+- new setup option "Show detailed call information"
+  If switched to yes, the plugin opens an own OSD screen for notifications
+  instead of using Skins.Message. This way, more information can be displayed 
+  (still to be done).
+- shortened message displaying an incoming call from an unknown extension 
+  (suggested by Habib [27])	
+- the number of missed calls is now announced via the plugins' main menu entry.
+  Enter the "missed calls" list to reset this counter.
+- main menu entry is shortened to "Fritz!Box"
+- modifications in the phone book menu
+  * now grouping phone book entries by name
+  * pressing OK now opens a detail menu. Within this detail menu calls can 
+    be triggered with kRed, as in all other detail menus
+    (suggested by apex [28])
+    
+2008-07-29: Version 1.1.1
+- fixed osd width calculation in cNotifyOsd::Show()
+- improved detection of unsuccessful logins to the Fritz!Box
+- made the plugin independent of Fritz!Box's webinterface language
+  (thanks to Gandalf [29] for supporting and testing this)
+- fixed missing SetHelp() in cMenuFonbuchDetail
+- fixed possible segfault when pressing OK in empty fonbuch or call list menu 
+  (reported and fix tested by Gandalf [29])
+- fixed password field in plugin settings to accept empty password
+  (reported by Gandalf [29])
+- if no password is set, the plugin no longer tries to login to the Fritz!Box
+- changed some dsyslog statements to e/isyslog
+- no longer displaying AVM test-entries ("Max & Moritz") in call lists
+- cOertlichesFonbuch no longer tries to resolve non german phone numbers
+- updated russian translations
+  (provided by neptunvasja [6])
+  
+2008-08-20: Version 1.1.2
+- changed name of "Das ï¿½rtliche"-Fonbuch to "das-oertliche.de". New internet 
+  ressources should follow this naming scheme.
+  (based on a bug report of ronnykornexl [30])
+- fixed dasoertliche.de fonbuch by adding a user-agent to the http request, which
+  is required by the webserver recently  
+- fixed possible segfault when pressing OK in empty fonbuch menu
+  (reported by ronnykornexl [30])
+- made LKZ/OKZ parsing more robust against wrong password
+- added support for phone books without number-type (e.g., old Fritz!Boxes) in 
+  phone book detail screen
+  (reported by ronnykornexl [30])
+- fixed possible segfault on invalid data in fritzbox.Fonbooks setup parameter
+- fixed storing the password, which got lost in some cases
+- changed default password to an empty one
+- fixed wrong announcement of missed calls before call list retrieval
+- fixed typo in german translations
+  (reported by ronnykornexl [30])  
+  
+2008-12-20: Version 1.1.3
+- added a missing const in cTcpClient::&operator<<
+- fixed wrong type in comparisons to size_t in cFritzListener, cFritzTools
+- fixed wrong type in dsyslog output in cNotifyOsd, cLocalFonbuch, cMenuSetupFritzboxFonbooks
+- fixed compiler warning wrt comparison in cNotifyOsd
+- updated italian translations (provided by Diego [24])
+- implemented reverse lookup function for +31 (Netherlands)
+- adapting plugin to new Fritz!Box firmware versions: 
+  * auto detecting charset encoding when retrieving phonebook entries
+  * modified interface language detection (currently using a trial-and-error approach, 
+    because old approach is no longer supported by newest firmware)
+- splitted plugin into plugin application and three static libraries
+  * libfritz++ (included all Fritz!Box specific functionality)
+  * libtcpclient++ (providing tcp socket communication)
+  * libpthread++ (providing pthread support, independant of VDRs implementation)  
+  With this, it is possible to use these libraries in other projects not related to VDR.
+- all socket communication of the plugin can now be traced into /tmp/tcpclient.trace.
+  If this file exists at VDR startup, tracing is enabled. If not, tracing is disabled.
+  If you experience problems with vdr-fritzbox, this trace may be helpful in debugging 
+  the issue. However, please be aware that this trace may contain password and other 
+  sensitive information.
+- modified logging to syslog. All log entries related to this plugin are now 
+  prefixed with "vdr-fritzbox:".  
+- removed memory leak in cMenuSetupFritzbox::Store[MSN|Fonbooks]
+- fixed some compiler warnings that occur with recent compiler versions (4.3.x)
+- fixed missing includes which prevented compilation with recent compiler versions (4.3.x)
+
+2008-12-31: Version 1.1.4
+- adapted to changes in libfritz++:
+  * Added type "ALL" to CallList to retrieve complete list of calls at once.
+  * Moved callType from CallList to CallEntry. 
+  * Implemented in-library msn filtering and reverse-lookups.
+  * Renamed various methods in FonbookManager from *Fonbuch* to *Fonbook*.
+  * Made CallList a singleton.
+  * Replaced string tokenizer in Listener.
+  * Refactored MSN-filter functionality.
+  * Added "-fPIC" to Makefiles.
+  * A call to Config::SetupFonbookIDs now deletes a previously instantiated FonbookManager
+    to allow multiple calls to SetupFonbookIDs in case of configuration changes.
+  * Introduced new method CallList::DeleteCallList() to explicitly delete the singleton instance.
+  * Made Listener a singleton. A call to Listener::CreateListener() is used to activate this feature.
+  * Introduced new method CallList::CreateCallList() to explicitly pre-fetch the call list before
+    calling CallList::getCallList().
+  * Moved Config::SetupFonbookIDs to FonbookManager::CreateFonbookManager().
+  * Renamed Tools::GetPhoneSettings() to Tools::GetLocationSettings().
+  * Added resolving of SIP[0-9] to real provider names.
+- configuration changes of MSN filter, selected fonbooks, hostname and password are now 
+  considered immediately without a restart
+- plugin classes no longer hold own references to fonbook, listener and callList. They now use the
+  static getter methods.
+- fixed a possible crash when using the plugin with showNumber = pauseOnCall = muteOnCall = false.
+  (patch provided by Andreas [26])
+- using new library feature: resolving SIP provider names, instead of signalling SIP0, ...
+
+2009-03-14: Version 1.1.5
+- changes in libfritz++
+  * added exception catch in Tools::GetLang() and Tools::Login()
+- changes in libpthread++
+  * added missing include in PThread++.h to fix compiler issue with g++-3.3
+  
+2009-05-12: Version 1.1.6
+- changes in libfritz++
+  * Removed the default of countryCode = "49" if Tools::GetLocationSettings() fails. This task is 
+  handed over to the caller, see next.
+  * Added new parameters to Config::Setup() to give default values for countryCode and regionCode.
+  The default parameters are used, when auto-detection in Tools::GetLocationSettings() fails. The
+  new parameter locationSettingsDetected indicates whether auto-detection was successful. In this
+  case, the given default values are overwritten to give the caller access to the new values.
+  * Fixed naming of local phonebook. The recommended name is now localphonebook.csv, the old name 
+  localfonbuch.csv is still accepted. The directory remains $vdrconfigdir/plugins/fritzbox/.
+- added new setup options for country code and region code. If the plugin is unable to detect 
+  these automatically (e.g., with some older Fritz!Boxes) the values are taken from these setup
+  options.
+  (reported by Ronny [30])
+
+2009-05-28: Version 1.2.0 
+- updated italian translations (provided by Diego [24])
+- changes in libfritz++
+  * Updated OertlichesFonbook to new website layout 
+  (fix provided by Matthias [31])
+  
+2009-08-27: Version 1.3.0.
+- fixed naming of local phonebook. The plugin now really looks for a file called 
+  localphonebook.csv.
+  (reported by Tobias [1])
+- fixed missing translation of phonebooks in cMenuSetupFritzboxFonbooks
+- fixed missing translation of phonebook entries with type TYPE_NONE 
+- first implementation to add call list entries to active phonebook.
+- now saving status of last known missed calls as soon as possible to avoid data loss
+  if VDR does not shutdown cleanly (suggested by Keine_Ahnung [32])
+- moved plugin initialization from cPluginFritzbox::Start() into a separated thread
+  to speed up VDR startup when expecting slow network links
+- changes in libfritz++
+  * Implemented new login method for Fritz!Box firmware >= xx.04.74 using SIDs. This needs 
+    features from openssl library. For compiling, libssl-dev (or similar) is needed.
+  * Fixed a warning warn_unused_result in LocalFonbook.cpp
+  * Fixed wrong HTTP-GET header in Nummerzoeker.cpp
+- adapting Makefile to support new features of libfritz++: 
+  Libssl is now needed to compile and/or run the plugin.
+  
+2009-11-21: Version 1.3.1
+- changes in libfritz++
+  * fixed detection of login failure in Tools::Login()
+  * improved cleanup when deleting Listener, FritzFonbook, CallList
+  * delay destructor of FritzFonbook and CallList to wait for running threads to end
+  * improved concurrent access to Fritz!Box using new FritzClient class
+  * fixed entity decoding in FritzFonbook.cpp (reported and fix tested by Torsten [17])
+  * improved detection of login type (SID or PASSWORD), which is now done only once
+  * improved login to Fritz!Box to avoid unneccessary logins
+  * fixed TcpClient to throw correct exceptions on connect
+    this fixes detection of disabled call monitor, the corresponding hint "dial #96*5*" 
+    is now shown in syslog again  
+  * improved matching of phone numbers: Fritz!Box control codes *xxx# are now ignored.
+    (suggested by koronth [34])
+- added configuration option to choose default screen when calling the plugins' main 
+  menu action.
+- fixed a possible crash when changing the plugins setup
+- improved responsiveness when storing the plugins setup
+- both detail screens (call details and phonebook entry details) can now be closed with
+  OK button, too
+  (patch provided by Uwe [33]) 
+
+2010-01-02: Version 1.3.2
+- changes in libfritz++
+  * added missing include <cstring> in FritzClient.cpp
+    (patch provided by hotzenplotz5 [35])
+  * fixed retry delay calculation in case of connection refused
+  * simplified implementation of connection disconnect
+    this possibly fixes a crash when changing the plugins setup with FB call monitor disabled
+    (reported by Frank [36])
+- updated italian translations (provided by Diego [24])
+
+2010-05-30: Version 1.3.3
+- changes in libfritz++ and libtcpclient++
+  * Fixed missing initialization of HttpClientBuf::state
+  * Improved thread safety in TcpClient: 
+    deleting TcpClient while reading from stream in another thread caused memory corruption
+  * Improved destructor of Listener to allow proper cleanup of thread
+  * Fixed some warnings about ununsed parameters in base-classes and empty implementations
+  * removed FonbookEntry::getTypeName() as this is something the consumer has to take care about
+  * introduced I18N_NOOP macro, this allows application that use libfritz++ to identify strings 
+    delivered by the library (e.g., using xgettext) they should localize
+  * removed dependency to OpenSSL due to licensing issues, libfritz++ now needs libgcrypt's 
+    development header "gcrypt.h" to compile
+  * modified logging to handle full path filenames cause by cmake in __FILE__.
+    Provided new logging macros DBG, INF, ERR
+  * Fixed a possible issue with "thread-safety" of TcpClient, a TcpClient object can now 
+    be deleted out of another thread while running
+- the changes in libfritz++ and libtcpclient++ should improve overall plugin stability
+  especially at shutdown and configuration changes (thx to Torsten [17] and Marcus [21] for testing)
+- removed some translation hints which are now provided by libfritz++ directly
+- implemented cPluginFritzbox::FonbookEntryToName to adapt to changes in libfritz++
+- linking to libgcrypt instead of openssl now because of licensing issues
+- adapted logging to libfritz++
+- adapted Makefile to VDR >= 1.7.13 
+
+2010-07-04: Version 1.3.4
+- changes in libfritz++ 
+  * now parsing the Fritz Box's phone book via xml export file (if available)
+  * FritzFonbook is now writeable, if FB xml import is available 
+    (firmware >= xx.04.76 needed)
+  * phone book entries now have the additional fields "quickdial", "vanity", 
+    "priority", "important"
+  * Fixed decoding of entities in xml phone book parser
+  * Modified FonbookEntry class: one FonbookEntry now holds all numbers of a 
+    person: Changed construction of FonbookEntrys accordingly, Changed interface 
+    of Fonbook::ResolveToName, Adapted FritzFonbook's parser, Adapted LocalFonbook's parser,
+    Adapted ResolveToName in NummerzoekerFonbook and OertlichesFonbook
+  * Adapted local phonebook to use the same xml format, new FB versions use.
+    Existing csv phone books are converted to xml automagically, entries 
+    with TYPE_NONE are converted to TYPE_HOME
+  * Updated OertlichesFonbook to website changes
+    (patch provided by [38])
+- adapted to changes in libfritz++
+  Note: not all new features of libfritz++ are currently used in the plugin
+- added setup option "Resume after call"
+  Up to now the setup option "Pause on call" included both, stopping *and* resuming playback on the 
+  corresponding call events. This has been splitted now. "Pause on call" now only controls playback
+  stopping. "Resume after call" controls, if VDR resumes a previously stopped playback after all
+  calls have been finished. The old behaviour is preserved on upgrade.
+  (suggested by Zimbo [37])
+
+2010-07-29: Version 1.3.5
+- changes in libfritz++
+  * Fixed resolving of calls from unknown caller
+    (reported by Honky 	[39]
+  * Code cleanup in Listener, OertlichesFonbook and Nummerzoeker
+
+2011-01-01: Version 1.3.6
+- changes in libfritz++
+  * Added tel.local.ch phonebook
+    (patch provided by Christian [40]
+  * Added missing initialization of libgcrypt
+  * Sensitive Information like passwords, phone numbers, etc. are no longer 
+    logged by default.
+    (suggested by C-3PO [41])
+  * Moved from libpthread++ to libccgnu2
+  * First steps in migrating to socket implementation of common c++
+    -> To compile vdr-fritz, development header files of the gnu common c++ library 
+    are needed!
+  * Splitted Config::Setup into Config::Setup and Config::Init
+  * Fix reverse lookup in OertlichesFonbook
+    (patch provided by Kurt Wanner [43])
+  * Add missing include to XmlFonbook
+    (reported by Richard Bos [42])
+- The new command line option --log-personal-info re-enables logging all information  
+  (Suggested by C-3PO [41])
+- Migration to gnu common c++ library should fix a possible crash at plugin shutdown
+- Fix parsing SIP provider names
+
+2011-01-22: Version 1.3.7
+- changes in libfritz++
+  * Add Config::Shutdown() to gracefully shutdown the library
+    This can be used for re-inits as well as on program exit
+  * Improve checks when parsing result list in OertlichesFonbook
+    Check that at most one result is returned
+    (reported by Honky [39])
+  * Fix parser of OertlichesFonbook again
+  * Keep current call list as long as possible on reload
+    Current call list is now cleared after the new call list
+    has been parsed (Fixes #514)
+  * Fix XmlFonbook parser
+    XmlFonbook Parser was not aware of empty <number /> tags
+    (reported by Richard Bos [42] and Achim Bohnet [44])
+  * Fix retry delay calculation in Listener
+- Disable "Add to PB" green key until this feature is implemented
+- Adapt to new library function Config::Shutdown()
+  * This fixes changing the configuration at runtime. The library is now
+    shutdown before the configuration is changed and setup again afterwards
+- Change message on entering the plugins main menu in case initialization is 
+  still running
+- Fix segfault in empty call list menu
+  Pressing ok in an uninitialized call list no longer segfaults
+  (reported by SvenS [45])
+- Improved handling situations with multiple calls
+  If detailed call information osd is enabled, the osd shows multiple calls 
+  simultaneously. The traditional osd shows multiple calls sequentially. Calls 
+  are no longer lost.
+- Fixed a possible segfault on signalling incoming and outgoing calls
+- Showing osd messages at least Setup.OSDMessageTimeout seconds
+
+2011-03-06: Version 1.3.8
+- changes in libfritz++
+  * Fix FonbookManager if no phone book is configured at all
+  * Only write phone books back if changes are pending
+  * Added HttpClient to libfritz++ to replace remaining functionality 
+    of libtcpclient++
+  * Imported some files from libcommoncpp to fix different issues
+  * Migrate reverse lookup phone books to use new HttpClient
+  * Make Fonbook::GetFonbookSize() more robust
+    If not initialized, always return 0 and not the current intermediate state
+  * Fix missing initialization in CallList
+  * Fix initialization of LocalFonbook
+    Add setInitialized(true) in case of no local phonebook file exists
+  * Fix possible segfault on incoming or outgoing calls   
+    Fixes #572 [VDR]
+  * Throw exceptions in HttpClient
+    This fixes various issues when the network connection is not
+    available at startup, e.g. empty phone book or call list.
+    Fixes #573, #574, possibly #551 [VDR]
+  * Fix log information about phone book size
+    Fixes #577 [VDR]
+  * Remove translatable string 'unknown' from CallList
+- Fix pausing replays on call 
+  Pause was not reset correctly under certain circumstances.
+- Removed tcpclient++, fully using libcommoncpp now
+- Add command line option for an on-call command (parameter -c 'cmd')
+  Implements #571 [VDR], suggested by Alexander [48].
+- Updated README and README.de
+- Updated italian translations
+  Provided by Diego [24]
+- Fix translation of 'unknown' in call list 
+
+2011-03-11: Version 1.3.9
+- changes in libfritz++
+  * Remove translatable string 'unknown' from CallList
+  * Fix compile error with libcommoncpp2 / IPv6
+  * Add some debug output regarding threading
+  * Remove calls to exit() at end of threads
+  * Shortened time the lock to FritzClient is held by
+    FritzFonbook and CallList
+- Fix translation of 'unknown' in call list
+- Fix an issue with missing mutex releases at the
+  end of CallList and FritzFonbook threads
+  Fixes #551 [VDR]
+  (reported by hrueger [46], Bert [47], Honky [39])
+  Thanks for debugging and testing support!
+- Speedup phone book and call list initialization
+
+2011-04-17: Version 1.4.0
+- New stable version, no changes to 1.3.9
+
+2012-03-25: Version 1.5.0 (list also includes changes of 1.4.1 and 1.4.2)
+- New development branch, stable branch 1.4.x is still maintained
+- Changes in libfritz++
+  * speedup initialization
+  * Fix resolve in OertlichesFonbook
+  * Provide Doxyfile for documentation generation
+  * Fix compiler warnings -Wsign-compare and -Wswitch
+- Save password Hex-encoded in configuration
+  * also works around a problem if password contains '#'
+  (reported by Fridi [49])
+- Fix templates/on-call.sh
+  * Added a missing 'in' to the case part
+  (reported by theonlychriss [50])
+- Fix set of characters possible in Fritz!Box password
+  * Some characters were missing (e.g., !)
+  * Some characters were not allowed
+  (reported by Tommy.Z [51])
+- Adapt to more flexible Fritz!Box phone books
+  (e.g. containing more than one number of the same type per name)
+- Fix possible crash setting msn filter count to zero
+- Fix calling script on call events with OSD notification turned off
+  (reported by Christian Holder [52])
+- Lookup based phone books now cache lookups in memory
+  (based on code by Christian Holder [52])
+- Add option to pause live tv
+  Fixes #506 [VDR]
+- Add option to mute only after connect
+  (Requested by derdoc [53])
+  
+2012-12-23: Version 1.5.1
+- New feature: Only decrease volume on call
+  Fixes #513 [VDR]
+- Fix a bug in cFritzEventHandler
+  Weired behaviour after calls when reactOnDirection is not DIRECTION_ANY
+  Reported by Kurt Wanner and Christian Holder
+- Update german translation
+- Improved privacy in syslog information (hide msns)
+- Support for new FB firmware versions xx.05.50
+- Changes in libfritz++
+  * Fix a possible deadlock in Tools::GetSipSettings()
+  * Move convertEntities from XmlFonbook up to Fonbook and improved it
+  * Fix resolve in TelLocalChFonbook  
+  * Fix resolve in OertlichesFonbook
+  * Implement new login scheme using login_sid.lua for FB firmware >= xx.05.50
+  * Adapt sip settings, location settings, call list and phone book requests
+    to new uris and format
+  * Hide msn in syslog if logPersonalInfo is disabled
+  
+2013-01-05: Version 1.5.2
+- Changes in libfritz++
+  * Fixes login problems with old fw-versions that return 404 on login_sid.lua
+    Fixes #312204 [KDE], reported by sofasurfer [54]
+    Fixes #1203 [VDR], reported by wolfi
+  * Fix encoding conversion when requesting call list
+  * Fix MSN filter to only match if filter is equal number of postfix of number
+  * Fix resolving test in tel.local.ch phonebook
+- Add support for FB phonebooks with >3 numbers per entry, fixes a sigsev 
+  on startup using such phonebooks
+  Fixes #1202, reported by Stefan [56], fix provided by Igel 
+- Fix decreasing/increasing volume on ring/call
+  Fixes #1188 [VDR], reported by SvenS [45]
+- Update Makefile to work with VDR >= 1.7.34
+  For older VDR versions, use the old Makefile, available as Makefile.pre.1.7.34
+  in the plugin directory
+- Show call information during complete ringing phase
+  Fixes #1189 [VDR], reported by speed [55]
+  
+2013-12-01: Version 1.5.3
+- New dependency boost::asio, dropped dependency to commoncpp
+- Fix resolve in TelLocalChFonbook
+- Add support for username authentication: new setup option
+  Fixes #1385 [VDR]
+- Fix some warning about unused parameters
+
+  
+--- References ---
+
+Bugtracker:
+  
+[VDR] -> http://projects.vdr-developer.org/issues/
+[KDE] -> https://bugs.kde.org/show_bug.cgi?id=XXXXXX
+
+Contributors:
+
+[ 1] http://vdr-portal.de/board/profile.php?userid=7164
+     http://www.vdr-online.org/
+[ 2] http://vdr-portal.de/board/profile.php?userid=4808
+[ 3] http://vdr-portal.de/board/profile.php?userid=9345
+[ 4] http://vdr-portal.de/board/profile.php?userid=1293
+[ 5] http://vdr-portal.de/board/profile.php?userid=8180
+[ 6] http://vdr-portal.de/board/profile.php?userid=11837
+[ 7] http://vdr-portal.de/board/profile.php?userid=7641
+[ 8] http://vdr-portal.de/board/profile.php?userid=2604
+[ 9] http://vdr-portal.de/board/profile.php?userid=9009
+[10] Patrice Staudt <staudt@engsystem.net>
+     http://vdr-portal.de/board/profile.php?userid=3409
+[11] http://vdr-portal.de/board/profile.php?userid=6231
+     http://home.vrweb.de/~rnissl/
+[12] http://vdr-portal.de/board/profile.php?userid=8480
+[13] Oktay Yolgecen <Oktay_73@yahoo.de>
+[14] http://vdr-portal.de/board/profile.php?userid=1551
+[15] Axel Naumann <axel-naumann@gmx.de>
+[16] Thomas Günther <tom@toms-cafe.de>
+     http://vdr-portal.de/board/profile.php?userid=4452
+[17] Torsten Weigelt <torsten.weigelt@web.de>
+     http://vdr-portal.de/board/profile.php?userid=16817
+[18] Oliver Linsenmaier <oliver.linsenmaier@googlemail.com>
+[19] http://vdr-portal.de/board/profile.php?userid=99
+[20] http://vdr-portal.de/board/profile.php?userid=15737
+[21] http://vdr-portal.de/board/profile.php?userid=8904
+[22] Hans Jürgen Meier <Hans-Juergen@Kalmei.de>
+[23] http://vdr-portal.de/board/profile.php?userid=272	
+[24] Diego Pierotto <vdr-italian@tiscali.it>
+     http://vdr-italia.phpbb24.com/portal.php
+[25] please contact me to get your credits
+[26] http://vdr-portal.de/board/profile.php?userid=2095	
+[27] Habib Azimi <habib@azimi.de>
+     http://vdr-portal.de/board/profile.php?userid=3
+[28] http://vdr-portal.de/board/profile.php?userid=1450
+[29] Thorsten Pohl <tpohl@me.com> 
+     http://vdr-portal.de/board/profile.php?userid=8029
+[30] http://vdr-portal.de/board/profile.php?userid=6793
+[31] http://vdr-portal.de/board/profile.php?userid=15996
+[32] http://vdr-portal.de/board/profile.php?userid=18589
+[33] Uwe <egal@egal-vdr.de> 
+     http://vdr-portal.de/board/profile.php?userid=862
+[34] http://vdr-portal.de/board/profile.php?userid=25271
+[35] http://vdr-portal.de/board/profile.php?userid=2951
+[36] Frank (hummingbird_de)
+     http://vdr-portal.de/board/profile.php?userid=715
+[37] http://vdr-portal.de/board/profile.php?userid=415     
+[38] http://vdr-portal.de/board/profile.php?userid=12632
+[39] Honky
+     http://vdr-portal.de/board/profile.php?userid=25383
+[40] Christian Richter <cr@crichter.net>
+     http://vdr-portal.de/board/profile.php?userid=12424
+[41] http://vdr-portal.de/board/profile.php?userid=12003    
+[42] Richard Bos <ml@radoeka.nl>
+[43] Kurt Wanner <kurt@wanner.me>
+[44] Achim Bohnet <allee@kubuntu.org>
+[45] SvenS
+     http://www.vdr-portal.de/user/404-svens/
+[46] Hartmut
+     http://vdr-portal.de/board/profile.php?userid=15636
+[47] http://vdr-portal.de/board/profile.php?userid=2579
+[48] Alexander <alexander@chocholaty.de>
+[49] Fridi
+     http://www.vdr-portal.de/user/5231-fridi/
+[50] theonlycriss
+     http://www.vdr-portal.de/user/3200-theonlychriss/
+[51] Tommy.Z
+     http://www.vdr-portal.de/user/165-tommy-z/
+[52] Christian Holder <chris@hchris.selfip.com>
+[53] derdoc
+     http://www.vdr-portal.de/user/28286-derdoc/
+[54] sofasurfer@gmail.com
+[55] speed
+     http://www.vdr-portal.de/user/10911-speed
+[56] Stephan <sg@conectas.net>

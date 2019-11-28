@@ -1,0 +1,29 @@
+Index: vdr-plugin-fritzbox-1.5.3/libfritz++/OertlichesFonbook.cpp
+===================================================================
+--- vdr-plugin-fritzbox-1.5.3.orig/libfritz++/OertlichesFonbook.cpp	2014-03-27 00:34:02.000548168 +0100
++++ vdr-plugin-fritzbox-1.5.3/libfritz++/OertlichesFonbook.cpp	2014-03-27 00:40:09.000000000 +0100
+@@ -62,19 +62,17 @@
+ 		return result;
+ 	}
+ 	// parse answer
+-	size_t start = msg.find("getItemData(");
++	size_t start = msg.find("preview iname\"><span class=\"\">");
+ 	if (start == std::string::npos) {
+ 		INF("no entry found.");
+ 		return result;
+ 	}
+ 	// add the length of the last search pattern
+-	start += 12;
++	   start += 30;
+ 
+-	size_t stop  = msg.find(");", start);
+-	std::string dataset = msg.substr(start, stop - start);
+-	name = Tools::Tokenize(dataset, ',', 5);
+-	name = name.substr(2, name.length()-3);
+-	INF("resolves to " << (gConfig->logPersonalInfo() ? name.c_str() : HIDDEN));
++       size_t stop  = msg.find("&nbsp;", start);
++       name = msg.substr(start, stop - start);
++    INF("resolves to " << (gConfig->logPersonalInfo() ? name.c_str() : HIDDEN));
+ 	result.name = name;
+ 	result.successful = true;
+ 	return result;

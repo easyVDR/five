@@ -1,0 +1,276 @@
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.5.7\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-12-01 20:07+0100\n"
+"PO-Revision-Date: 2007-08-12 21:40+0200\n"
+"Last-Translator: Matthias Becker <becker.matthias@gmail.com>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Fritz Plugin for AVM Fritz!Box"
+msgstr "Fritz Plugin für die AVM Fritz!Box"
+
+msgid "Fritz!Box"
+msgstr "Fritz!Box"
+
+msgid "missed calls"
+msgstr "verpasste Anrufe"
+
+msgid "missed call"
+msgstr "verpasster Anruf"
+
+msgid "Data not yet available."
+msgstr "Daten noch nicht verfügbar."
+
+msgid "Private"
+msgstr "Privat"
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "home"
+msgid "H"
+msgstr "T"
+
+msgid "Mobile"
+msgstr "Mobil"
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "mobile"
+msgid "M"
+msgstr "H"
+
+msgid "Business"
+msgstr "Geschäftlich"
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "work"
+msgid "W"
+msgstr "F"
+
+# c-format
+#, c-format
+msgid "Calling %s [%s]"
+msgstr "Rufe %s an [%s]"
+
+msgid "Call"
+msgstr "Anruf"
+
+msgid "Call from"
+msgstr "Anruf von"
+
+msgid "POTS"
+msgstr "analog"
+
+msgid "ISDN"
+msgstr "ISDN"
+
+msgid "VoIP"
+msgstr "VoIP"
+
+msgid "This phonebook is not yet available."
+msgstr "Telefonbuch noch nicht verfügbar."
+
+msgid "You may need to wait some minutes,"
+msgstr "Der Abruf benötigt entweder noch Zeit"
+
+msgid "otherwise there may be a network problem."
+msgstr "oder es besteht ein Netzwerkproblem."
+
+msgid "This phonebook is not displayable"
+msgstr "Keine anzeigbaren Einträge"
+
+msgid "> PB"
+msgstr "> TB"
+
+msgid "Fritz!Box call list"
+msgstr "Fritz!Box Gesprächsliste"
+
+msgid "incoming"
+msgstr "eingehend"
+
+msgid "missed"
+msgstr "verpasst"
+
+msgid "outgoing"
+msgstr "ausgehend"
+
+msgid "unknown"
+msgstr "unbekannt"
+
+msgid "The call list is not yet available."
+msgstr "Gesprächsliste noch nicht verfügbar."
+
+#. TRANSLATORS: this is the short form of "phone book"
+msgid "PB"
+msgstr "TB"
+
+msgid "Call details"
+msgstr "Anrufdetails"
+
+msgid "Date"
+msgstr "Datum"
+
+msgid "Time"
+msgstr "Uhrzeit"
+
+msgid "Duration"
+msgstr "Dauer"
+
+msgid "call was not accepted"
+msgstr "Anruf nicht angenommen"
+
+msgid "Extension"
+msgstr "MSN"
+
+msgid "Callee"
+msgstr "Ziel"
+
+msgid "Caller"
+msgstr "Anrufer"
+
+#. TRANSLATORS: these are labels for color keys in the CallDetails menu
+#. TRANSLATORS: this is the label for the button to initiate a call
+msgid "Button$Call"
+msgstr "Anrufen"
+
+msgid "No number to call"
+msgstr "Ohne Nummer kein Anruf möglich"
+
+msgid "Pick up your phone now"
+msgstr "Telefon jetzt abnehmen"
+
+msgid "Error while initiating call"
+msgstr "Fehler beim Verbindungsaufbau"
+
+msgid "Phone book details"
+msgstr "Telefonbuchdetails"
+
+msgid "Name"
+msgstr "Name"
+
+msgid "Numbers"
+msgstr "Rufnummern"
+
+msgid "Default"
+msgstr "Standard"
+
+msgid "Outgoing call"
+msgstr "Ausgehender Anruf"
+
+msgid "Incoming call"
+msgstr "Eingehender Anruf"
+
+msgid "any"
+msgstr "alle"
+
+msgid "only incoming"
+msgstr "nur eingehend"
+
+msgid "only outgoing"
+msgstr "nur ausgehend"
+
+msgid "Fritz!Box URL"
+msgstr "Fritz!Box URL"
+
+msgid "Username"
+msgstr "Benutzername"
+
+msgid "Password"
+msgstr "Passwort"
+
+msgid "Country code"
+msgstr "Internationale Vorwahl"
+
+msgid "Region code"
+msgstr "Ortsvorwahl"
+
+msgid "React on calls"
+msgstr "Auf Anruf reagieren"
+
+msgid "Mute on call"
+msgstr "Bei Anruf stummschalten"
+
+msgid "Mute only after connect"
+msgstr "Nur bei Verbindung stummschalten"
+
+msgid "Decrease volume by [1..100%]"
+msgstr "Lautstärke nur absenken [1..100%]"
+
+msgid "Pause on call"
+msgstr "Bei Anruf Wiedergabe pausieren"
+
+msgid "Pause live tv"
+msgstr "Auch Live TV anhalten"
+
+msgid "Resume after call"
+msgstr "Nach Anruf Wiedergabe fortsetzen"
+
+msgid "Show calls"
+msgstr "Anrufe anzeigen"
+
+msgid "Show detailed call information"
+msgstr "Ausführliche Anrufinformation"
+
+msgid "Detailed call lists"
+msgstr "Ausführliche Gesprächslisten"
+
+msgid "Group call lists by date"
+msgstr "Anruflisten nach Datum gruppieren"
+
+msgid "Hide main menu entry"
+msgstr "Hauptmenüeintrag verstecken"
+
+msgid "Default menu"
+msgstr "Standardansicht"
+
+msgid "Setup phonebooks to use..."
+msgstr "Telefonbücher auswählen..."
+
+msgid "Restrict monitor to certain extensions"
+msgstr "Überwachte MSNs einschränken"
+
+msgid "Number of monitored extensions"
+msgstr "Zahl der überwachten MSNs"
+
+msgid "Reload"
+msgstr "Neu laden"
+
+msgid "Retrieving phone book"
+msgstr "Rufe Telefonbuch ab"
+
+msgid "Setup phonebooks to use"
+msgstr "Telefonbücher auswählen"
+
+msgid "More"
+msgstr "Mehr"
+
+msgid "Less"
+msgstr "Weniger"
+
+#~ msgid "Fritz!Box phone book"
+#~ msgstr "Fritz!Box Telefonbuch"
+
+#~ msgid "Local phone book"
+#~ msgstr "Lokales Telefonbuch"
+
+#~ msgid " "
+#~ msgstr " "
+
+#~ msgid "Button$To PB"
+#~ msgstr "In TB"
+
+#~ msgid "Error fetching the call list"
+#~ msgstr "Fehler beim Anfordern der Gesprächsliste"
+
+#~ msgid "Fritz!Box Notification"
+#~ msgstr "Fritz!Box Information"
+
+#~ msgid "No number to add"
+#~ msgstr "Keine Rufnummer zu Speichern"
+
+#~ msgid "Please wait..."
+#~ msgstr "Bitte warten..."

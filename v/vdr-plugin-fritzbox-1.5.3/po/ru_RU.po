@@ -1,0 +1,276 @@
+# translation of ru_RU-UTF8.po to russian
+# VDR plugin language source file.
+# Copyright (C) 2007 Klaus Schmidinger <kls@cadsoft.de>
+# This file is distributed under the same license as the VDR package.
+#
+# Alexander Gross <Bikalexander@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: ru_RU-UTF8\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-12-01 20:07+0100\n"
+"PO-Revision-Date: 2008-09-09 01:48+0200\n"
+"Last-Translator: Alexander Gross\n"
+"Language-Team: russian\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+msgid "Fritz Plugin for AVM Fritz!Box"
+msgstr "Fritz модуль для AVM Fritz!Box"
+
+msgid "Fritz!Box"
+msgstr "Fritz!Box"
+
+msgid "missed calls"
+msgstr "пропущенные звонки"
+
+msgid "missed call"
+msgstr "пропущенный звонок"
+
+#, fuzzy
+msgid "Data not yet available."
+msgstr "Телефонный справочник пока не доступен."
+
+msgid "Private"
+msgstr "Частный"
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "home"
+msgid "H"
+msgstr "Д"
+
+msgid "Mobile"
+msgstr "Мобильный"
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "mobile"
+msgid "M"
+msgstr "М"
+
+msgid "Business"
+msgstr "Рабочий"
+
+#. TRANSLATORS: telephonebook number type: this is a one char abbreviation for "work"
+msgid "W"
+msgstr "Р"
+
+#, c-format
+msgid "Calling %s [%s]"
+msgstr "Звонит %s [%s]"
+
+msgid "Call"
+msgstr "Звонок"
+
+msgid "Call from"
+msgstr "Вам звонит"
+
+msgid "POTS"
+msgstr "аналог"
+
+msgid "ISDN"
+msgstr "ISDN"
+
+msgid "VoIP"
+msgstr "VoIP"
+
+msgid "This phonebook is not yet available."
+msgstr "Телефонный справочник пока не доступен."
+
+msgid "You may need to wait some minutes,"
+msgstr "Вам возможно придеться подождать несколько минут"
+
+msgid "otherwise there may be a network problem."
+msgstr "или возникла проблема сети"
+
+msgid "This phonebook is not displayable"
+msgstr "Телефонный справочник пока не доступен "
+
+msgid "> PB"
+msgstr "> PB"
+
+msgid "Fritz!Box call list"
+msgstr "Список звонков Fritz!Box"
+
+msgid "incoming"
+msgstr "входящие"
+
+msgid "missed"
+msgstr "пропущенные"
+
+msgid "outgoing"
+msgstr "выходящие"
+
+msgid "unknown"
+msgstr "неизвестный"
+
+#, fuzzy
+msgid "The call list is not yet available."
+msgstr "Телефонный справочник пока не доступен."
+
+#. TRANSLATORS: this is the short form of "phone book"
+msgid "PB"
+msgstr "PB"
+
+msgid "Call details"
+msgstr "Подробности звонка"
+
+msgid "Date"
+msgstr "Дата"
+
+msgid "Time"
+msgstr "Время"
+
+msgid "Duration"
+msgstr "Продолжительность"
+
+msgid "call was not accepted"
+msgstr "непринятый звонок"
+
+msgid "Extension"
+msgstr "MSN"
+
+msgid "Callee"
+msgstr "Цель"
+
+msgid "Caller"
+msgstr "Вам звонит  "
+
+#. TRANSLATORS: these are labels for color keys in the CallDetails menu
+#. TRANSLATORS: this is the label for the button to initiate a call
+msgid "Button$Call"
+msgstr "Позвонить"
+
+msgid "No number to call"
+msgstr "Без номера звонок не возможен"
+
+msgid "Pick up your phone now"
+msgstr "Снять телефон сейчас"
+
+msgid "Error while initiating call"
+msgstr "Ошибка при соединении"
+
+msgid "Phone book details"
+msgstr "Подробности справочника"
+
+msgid "Name"
+msgstr "Имя"
+
+msgid "Numbers"
+msgstr "Номера"
+
+msgid "Default"
+msgstr "По умолчанию"
+
+msgid "Outgoing call"
+msgstr "Выходящий звонок"
+
+msgid "Incoming call"
+msgstr "Входящий звонок"
+
+msgid "any"
+msgstr "все"
+
+#, fuzzy
+msgid "only incoming"
+msgstr "входящие"
+
+#, fuzzy
+msgid "only outgoing"
+msgstr "выходящие"
+
+msgid "Fritz!Box URL"
+msgstr "Адрес Fritz!Box "
+
+msgid "Username"
+msgstr ""
+
+msgid "Password"
+msgstr "Пароль"
+
+msgid "Country code"
+msgstr ""
+
+msgid "Region code"
+msgstr ""
+
+msgid "React on calls"
+msgstr "Реагировать при звонке"
+
+msgid "Mute on call"
+msgstr "Выключить звук при звонке"
+
+msgid "Mute only after connect"
+msgstr ""
+
+msgid "Decrease volume by [1..100%]"
+msgstr ""
+
+msgid "Pause on call"
+msgstr "Активировать паузу при звонке"
+
+msgid "Pause live tv"
+msgstr ""
+
+msgid "Resume after call"
+msgstr ""
+
+msgid "Show calls"
+msgstr "Показывать звонки"
+
+msgid "Show detailed call information"
+msgstr "Подробности звонка"
+
+msgid "Detailed call lists"
+msgstr "Подробный список звонков"
+
+msgid "Group call lists by date"
+msgstr "Группировать списки звонков по дате"
+
+msgid "Hide main menu entry"
+msgstr "Скрыть в главном меню"
+
+#, fuzzy
+msgid "Default menu"
+msgstr "По умолчанию"
+
+msgid "Setup phonebooks to use..."
+msgstr "Выбрать телефонные справочники ..."
+
+msgid "Restrict monitor to certain extensions"
+msgstr "Ограничить контролируемые MSNs"
+
+msgid "Number of monitored extensions"
+msgstr "Количество контролируемыx MSNs"
+
+msgid "Reload"
+msgstr "Перезагрузить"
+
+msgid "Retrieving phone book"
+msgstr "Запросить телефонный справочник"
+
+msgid "Setup phonebooks to use"
+msgstr "Выбрать телефонные справочники"
+
+msgid "More"
+msgstr "Больше"
+
+msgid "Less"
+msgstr "Меньше"
+
+#~ msgid "Fritz!Box phone book"
+#~ msgstr "Телефонный справочник Fritz!Box"
+
+#~ msgid "Local phone book"
+#~ msgstr "Локальный справочник"
+
+#, fuzzy
+#~ msgid "Button$To PB"
+#~ msgstr "Позвонить"
+
+#~ msgid "Error fetching the call list"
+#~ msgstr "Ошибка при запросе списка звонков"
+
+#, fuzzy
+#~ msgid "No number to add"
+#~ msgstr "Без номера звонок не возможен"
