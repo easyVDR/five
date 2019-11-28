@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo "if [ -e /home/easyvdr/install.sh ]"    	>> /home/easyvdr/.profile
+echo "then"			    		>> /home/easyvdr/.profile
+echo "    /home/easyvdr/install.sh"    		>> /home/easyvdr/.profile
+echo "fi"    					>> /home/easyvdr/.profile
+
+
+#DEBHELPER#
+
