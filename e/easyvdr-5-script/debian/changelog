@@ -1,4 +1,4 @@
-easyvdr-5-script (0.0.4-0easyVDR0~focal) focal; urgency=high
+easyvdr-5-script (0.0.4-1easyVDR0~focal) focal; urgency=high
 
   * lirc workaround
 

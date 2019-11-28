@@ -7,8 +7,8 @@ if [ "$response" != "n" ]; then
     echo "Installation gestartet."
 
     #Murks solange nötig
-    mkdir -p /etc/lirc/
-    ln -s /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
+    sudo mkdir -p /etc/lirc/
+    sudo ln -s /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
 
 
     sudo debconf-set-selections <<< "postfix postfix/mailname string easyvdr"
