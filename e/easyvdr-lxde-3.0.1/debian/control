@@ -8,7 +8,7 @@ Standards-Version: 3.9.5
 
 Package: easyvdr-lxde
 Architecture: any
-Depends: ${misc:Depends}, gnome-commander, vlc, lxterminal, lxappearance, scrot
+Depends: ${misc:Depends}, vlc, lxterminal, lxappearance, scrot
 Pre-Depends: lxde-core
 Description: LXDE packages for easyVDR
   Metapackage easyvdr-lxde for easyVDR
