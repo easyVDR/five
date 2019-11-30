@@ -1,0 +1,36 @@
+Source: vdr-plugin-osd2web
+Section: video
+Priority: extra
+Maintainer: Alexander Grothe <seahawk1986@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9.0.0),
+               gettext,
+               git,
+               libarchive-dev,
+               libexif-dev,
+               libjansson-dev,
+               libtinyxml2-dev,
+               libwebsockets-dev,
+               pkg-config,
+               python-dev,
+               uuid-dev,
+               vdr-dev (>= 2.2.0)
+Standards-Version: 3.9.5
+Homepage: https://github.com/horchi/vdr-plugin-osd2web
+
+Package: vdr-plugin-osd2web
+Architecture: amd64
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: status display and osd control on a web page
+ osd2web shows the current channel (or recording) played on a themable webpage.
+ It also allows to navigate vdr's OSD.
+
+Package: vdr-plugin-osd2web-dbg
+Architecture: amd64
+Section: debug
+Priority: extra
+Depends: vdr-plugin-osd2web (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-osd2web
+ .
+ This package contains only the debugging symbols for vdr-plugin-osd2web
+

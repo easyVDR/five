@@ -1,0 +1,105 @@
+@import '~bootstrap/scss/bootstrap.scss';
+
+body {
+    padding-top: 4rem;
+}
+
+.viewport {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: column;
+}
+
+.dataarea {
+}
+
+.channel {
+    height: 10vh;
+    overflow: hidden;
+}
+
+.chlogo {
+   height: 100%;
+}
+
+.diaarea{
+    width:100vh;
+    >img {
+        position: absolute;
+        top:0;
+        left:0;
+        width: 100%;
+        height: auto;
+    }
+}
+
+@keyframes fadeIn {
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+ }
+ @keyframes fadeOut {
+    0% {opacity: 1;}
+    100% {opacity: 0;}
+ }
+ @keyframes slideLeftIn {
+    0% {left:100%}
+    100% {left:0;}
+ }
+ @keyframes slideLeftOut {
+    0% {left:0}
+    100% {left:100%;}
+ }
+
+.eventarea {
+}
+
+.rightarea {
+}
+
+.timerarea {
+}
+
+.customarea {
+}
+
+.recordingarea {
+}
+
+.statusbar {
+}
+
+button.but-red {
+    background-color: red;
+    border-color: red;
+    color: #fff;
+}
+
+button.but-green {
+    background-color: green;
+    border-color: green;
+    color: #fff;
+}
+
+button.but-blue {
+    background-color: blue;
+    border-color: blue;
+    color: #fff;
+}
+
+button.but-yellow {
+    background-color: yellow;
+    border-color: yellow;
+    color: #222;
+}
+
+.nav-item.active>a {
+    color: blue !important;
+}
+.auto-h-scroll {
+    overflow: hidden;
+    white-space: nowrap;
+}
+.auto-v-scroll {
+    overflow: hidden;
+    height: 100%;
+}

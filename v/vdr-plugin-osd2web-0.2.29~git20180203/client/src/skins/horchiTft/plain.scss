@@ -1,0 +1,349 @@
+@import "../../common.scss";
+
+.navbar {
+    bottom: 9px;
+    left: 4px;
+    right: 2px;
+    width: 40px;
+    height: 40px;
+    top: unset;
+    overflow: hidden;
+    background-color: #2c4f7a !important;
+    padding: 4px 5px;
+    border-radius: 0.2rem;
+}
+
+.navbar:hover {
+    width: 150px;
+}
+
+body {
+    padding-top: 0px;
+    line-height: 1.1;
+}
+
+// flex stuff
+
+.flexitem {
+    display: flex;
+}
+
+.flexitemgrow {
+    display: flex;
+    flex-grow: 1;
+}
+
+.flexrow {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: nowrap;
+}
+
+// container
+
+.dataarea {
+    height: 94vh;
+    overflow: hidden;
+}
+
+.diaarea {
+    height: 99vh;
+    overflow: hidden;
+}
+
+.statusbar {
+    height: 6vh;
+    position: fixed;
+    bottom: 2px;
+    z-index: 99;
+    left: 4px;
+    right: 7px;
+    border-radius: 0.3rem;
+}
+
+.btn  {
+   height: 40px
+}
+
+.osdbuttons  {
+    margin-left: 50px;
+}
+.eventarea {
+    padding: 0px 5px 0px 5px;
+}
+
+.rightarea {
+    height: 93vh;
+    overflow: hidden;
+    padding: 0px;
+}
+
+.timerarea {
+    max-height: 46vh;
+    overflow: hidden;
+}
+
+.customarea {
+    max-height: 0px;
+    overflow: hidden;
+}
+
+.recordingarea {
+}
+
+.menutitle {
+   height: 4vh;
+   overflow: hidden;
+   margin-top: 1vh;
+   text-align: center;
+}
+
+.event  {
+    height: 40.5vh;
+    overflow: hidden;
+    border-radius: 0.3rem;
+
+    .carousel-item.active  {
+        display: block;
+         > img {
+            width: 100%;
+            max-width: 100%;
+            min-width: 100%;
+            height: auto;
+         }
+    }
+}
+
+.eventpresent  {
+    height: 45vh;
+}
+
+.eventfollowing  {
+    height: 35.7vh;
+}
+
+.eventfull  {
+    height: 88vh;
+}
+
+.eventsep  {
+    margin-top: 2px;
+    border: 2px solid;
+    border-color: white;
+    border-radius: 1rem;
+}
+
+.event-image-frame {
+    width: 19vw;
+}
+
+.replay-image-frame {
+    width: 25vw;
+}
+
+.epg-image {
+    width: 100%;
+}
+
+.img-thumbnail  {
+    background-color: transparent;
+}
+
+.img-fluid  {
+    max-height: 100%;
+}
+
+.replay  {
+    height: 87vh;
+    overflow: hidden;
+}
+
+.replay-control  {
+    width: 100%;
+    height: 5vh;
+    padding: 5px;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+}
+
+.replay-btn {
+   min-height: 100%;
+   max-height: 100%;
+   width: auto;
+   margin-left: 20px;
+   color: black;
+}
+
+.replay-btn-act  {
+   color: red !important;
+}
+
+.channel  {
+    height: 10vh;
+    overflow: hidden;
+    width: 100%;
+    padding-top: 8px;
+    padding-left: 10px;
+    border-radius: 0.3rem;
+}
+
+.chnr  {                        // channel text
+    font-size: 8vh !important;
+}
+
+.chtxt  {                       // channel text
+    min-width: 0;
+}
+
+.chtxt p {
+    font-size: 8vh !important;
+    margin: 0px 0px 0px 10px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.chlogo  {                      // channel logo
+    max-height: 95%;
+    justify-content: flex-end;
+}
+
+.eventtitlerow  {
+    width: 100%;
+    font-size: 6vh;
+//    margin-bottom: 4px;
+}
+
+.titletime  {
+    margin-right: 12px;
+}
+
+.titletxt  {
+    margin-right: 12px;
+}
+
+.recindicator  {
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    align-self: center;
+}
+
+.subtitletxt  {
+    font-size: 5vh;
+}
+
+.durationtxt  {
+}
+
+.htxt  {
+    font-size: 4.2vh;
+}
+
+.desctxt  {
+    font-size: 3.5vh;
+}
+
+.progress  {
+   font-size: 1.4rem;
+   height: auto;
+   position: relative;
+}
+
+.progress-bar  {
+    border-radius: 0.3rem;
+    color: transparent;
+}
+
+.cut-mark {
+    position: absolute;
+    border: 1px solid;
+    height: 50%;
+    top: 25%;
+    background-color: rgba(3, 3, 3, 0.43);
+}
+
+// status bar
+
+.sdatetxt  {
+    font-size: 3.3vh;
+    margin-right: 12px;
+}
+
+.stimetxt  {
+    font-size: 5.3vh;
+}
+
+// timer list
+
+.timer  {
+}
+
+.timeron  {
+}
+
+.tmtxt  {                  // timer text
+    font-size: 2.9vh;
+}
+
+.tltmch  {                 // timer channel
+}
+
+.tltmtxt  {                // timer time text
+    font-size: 2.9vh;
+}
+
+.tlvdrtxt  {               // timer vdr name text
+    font-size: 2.0vh;
+}
+
+.customdata  {
+    overflow: hidden;
+    line-height: 1.0;
+    font-size: 3.8vh;
+}
+
+.customtitle  {
+    text-align: center;
+    height: 0px;           // don't like to see
+    overflow: hidden;
+    font-size: 5.0vh;
+}
+
+.customrow  {
+    width: 100%;
+}
+
+.customname  {
+    display: inline;
+    overflow: hidden;
+}
+
+.customvalue  {
+    float: right;
+    margin-left: 10px;
+}
+
+.recording  {
+    font-size: 2.9vh;
+}
+
+.rectxt  {               // recording list text
+    font-size: 2.9vh;
+}
+
+.rltmtxt  {              // recording list time text
+    font-size: 2.9vh;
+}
+
+// menu
+
+.textmenu  {
+    font-size: 2.7vh;
+    border-radius: .25rem;
+}
+
+.textmenu-current  {
+    border-radius: .25rem;
+    font-size: 3.0vh;
+}

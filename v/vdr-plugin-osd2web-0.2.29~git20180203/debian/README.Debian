@@ -1,0 +1,9 @@
+VDR Plugin 'osd2web' Revision History
+----------------------------------------
+
+2017-05-03: version 0.0.3 (horchi)
+   - Change: VDR 2.3.4 porting
+2017-02-17: version 0.0.2 (rechner)
+   - Initial version client
+2017-02-13: version 0.0.1 (horchi)
+   - Initial version

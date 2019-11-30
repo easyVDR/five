@@ -1,0 +1,267 @@
+vdr-plugin-osd2web (0.2.29~git20180203-0easyVDR4~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 29 Nov 2019 00:22:17 +0100
+
+vdr-plugin-osd2web (0.2.29~git20180203-0easyVDR3~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 15:20:57 +0100
+
+vdr-plugin-osd2web (0.2.29~git20180203-0easyVDR2~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Feb 2018 20:17:23 +0100
+
+vdr-plugin-osd2web (0.2.29~git20180203-0easyVDR1~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:3d3d305 - updated client dist
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 03 Feb 2018 16:47:13 +0100
+ 
+vdr-plugin-osd2web (0.2.18~git20180116-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:18552c7 - build
+                   - add autoscroll for vertical and horizontal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jan 2018 15:25:18 +0100
+
+vdr-plugin-osd2web (0.2.10~git20171223-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:36227c9 - change: VDR 2.2.0 backporting
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Dec 2017 00:08:11 +0100
+
+vdr-plugin-osd2web (0.2.8~git20171220-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2a7e5dd - added: now use firefox as the default browser for the TFT display
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 20 Dec 2017 22:13:47 +0100
+
+vdr-plugin-osd2web (0.2.5~git20171210-0easyVDR1~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Dec 2017 14:00:15 +0100
+
+vdr-plugin-osd2web (0.2.5~git20171210-0easyVDR0~trust) trusty; urgency=high
+
+  * new upstream version
+  * commit:420e822 - - theme fix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Dec 2017 13:55:56 +0100
+
+vdr-plugin-osd2web (0.2.1~git20171209-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:e3e2af5 - - bugfix: Fixed compile with VDR 2.2.0
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 09 Dec 2017 00:03:28 +0100
+
+vdr-plugin-osd2web (0.2.0~git20171207-1easyVDR0~trusty) trusty; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 22:20:14 +0100
+
+vdr-plugin-osd2web (0.2.0~git20171207-0easyVDR1~trusty) trusty; urgency=high
+
+  * added patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 22:08:09 +0100
+
+vdr-plugin-osd2web (0.2.0~git20171207-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:15c0a51 - Version 0.2.0
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 19:58:59 +0100
+
+vdr-plugin-osd2web (0.1.22~git20170712-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:b9e0a00 - Change: VDR 2.3.8 porting
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 12 Jul 2017 12:39:41 +0200
+
+vdr-plugin-osd2web (0.1.21~git20170705-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:968110a - change: some skin improvements
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Jul 2017 16:39:01 +0200
+
+vdr-plugin-osd2web (0.1.21~git20170703-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:7390f67 - improved skin
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 03 Jul 2017 17:07:38 +0200
+
+vdr-plugin-osd2web (0.1.20~git20170630-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:f9d27ff - added: further skin improvements
+                   - change: ported default skin
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 30 Jun 2017 21:00:22 +0200
+
+vdr-plugin-osd2web (0.1.19~git20170629-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:7434b96 - added: provide list of last recordings to client
+                   - added: display last recordings in theme horchiTft
+                   - added: provide epg images of recordings to client
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 29 Jun 2017 16:01:34 +0200
+
+vdr-plugin-osd2web (0.1.18~git20170627-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:920f83b - added new files
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 27 Jun 2017 20:18:47 +0200
+
+vdr-plugin-osd2web (0.1.11~git20170614-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:2bb145f - fixed: skin horchiTft/theme blue missed
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 14 Jun 2017 23:57:57 +0200
+
+vdr-plugin-osd2web (0.1.10+git20170613-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * no commit
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 13 Jun 2017 21:48:53 +0200
+
+vdr-plugin-osd2web (0.1.10~git20170613-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:848933d - Change: further improvements of skin horchiTft
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 13 Jun 2017 20:38:43 +0200
+
+vdr-plugin-osd2web (0.1.9~git20170613-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:7a31979 - Bugfix: Fixed possible crash on missing event
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 13 Jun 2017 15:51:56 +0200
+
+vdr-plugin-osd2web (0.1.8~git20170612-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:e2543c2 - Change: Improved auto size of …theme horchiTft to fit different resolutions
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 12 Jun 2017 19:40:26 +0200
+
+vdr-plugin-osd2web (0.1.7~git20170609-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:27c6362 - fixed vdr 2.2.0 compile problem
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 09 Jun 2017 15:49:31 +0200
+
+vdr-plugin-osd2web (0.1.5-0easyVDR1~trusty) trusty; urgency=high
+
+  * aux feature
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 08 Jun 2017 22:12:19 +0200
+
+vdr-plugin-osd2web (0.1.5-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+  * commit:f55711c - added missing files
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 08 Jun 2017 15:49:56 +0200
+
+vdr-plugin-osd2web (0.1.4~git20160607-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:0d3d5a9 - ReplayControl als eigene Komponente
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 07 Jun 2017 17:59:55 +0200
+
+vdr-plugin-osd2web (0.1.4~git20160606-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:c65168b - fixed dependency
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 06 Jun 2017 19:55:17 +0200
+
+vdr-plugin-osd2web (0.1.1+git20170602-0easyVDR1~trusty) trusty; urgency=high
+
+  * added postinst
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 05 Jun 2017 18:19:46 +0200
+
+vdr-plugin-osd2web (0.1.1+git20170602-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:797e30b - Delete todo
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 22:01:35 +0200
+
+vdr-plugin-osd2web (0.1.1-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 20:36:08 +0200
+
+vdr-plugin-osd2web (0.1.1-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 20:18:04 +0200
+
+vdr-plugin-osd2web (0.1.1-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream version, drop obsolete patch
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 02 Jun 2017 12:36:17 +0200
+
+vdr-plugin-osd2web (0.1.0+git20170601.2fe4312-3yavdr0~trusty) trusty; urgency=medium
+
+  * reenable aux feature
+  * fix a crash with VDR 2.2.0
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 02 Jun 2017 12:20:47 +0200
+
+vdr-plugin-osd2web (0.1.0+git20170601.2fe4312-2yavdr0~trusty) trusty; urgency=medium
+
+  * disable aux feature
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 02 Jun 2017 08:27:30 +0200
+
+vdr-plugin-osd2web (0.1.0+git20170601.2fe4312-1yavdr0~trusty) trusty; urgency=medium
+
+  * enable aux feature
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 02 Jun 2017 08:05:12 +0200
+
+vdr-plugin-osd2web (0.1.0+git20170601.2fe4312-0yavdr0~trusty) trusty; urgency=medium
+
+  * rebuild for trusty
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 02 Jun 2017 07:33:35 +0200
+
+vdr-plugin-osd2web (0.1.0+git20170601.2fe4312-0yavdr0~xenial) xenial; urgency=medium
+
+  * package first beta release
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 02 Jun 2017 07:25:27 +0200
+
+vdr-plugin-osd2web (0.0.3+git20170522.83b66d6-0yavdr0~xenial) xenial; urgency=medium
+
+  * first test for packaging
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 23 May 2017 08:07:55 +0200

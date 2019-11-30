@@ -1,0 +1,144 @@
+@import "plain.scss";
+
+body {
+    background-color: black;
+}
+
+.list-group-item.active {
+   border-color: black;
+}
+
+// container
+
+.statusbar {
+    background-color: black;
+    color: white;
+}
+
+.channel {
+    background-color: black;
+    color: white;
+}
+
+.event {
+    background: linear-gradient(to bottom right, black, #696969);
+}
+
+.eventsep  {
+    border-color: #fad600;
+}
+
+.replay {
+    background: linear-gradient(to bottom right, black, #696969);
+}
+
+.replay-control {
+    background-color: #4d4d4d;
+}
+
+.replay-btn {
+   color: white;
+}
+
+// text elemente
+
+.subtitletxt {
+    color: #fad600;
+}
+
+.chtxt {
+    color: white;
+}
+
+.titletime {
+    color: white;
+}
+
+.titletxt {
+    color: white;
+}
+
+.durationtxt  {
+    color: white;
+}
+
+.htxt {
+    color: #fad600;
+}
+
+.desctxt {
+    color: white;
+}
+
+.progress {
+    background-color: #675807;
+}
+
+.progress-bar {
+    background-color: #fad600;
+}
+
+// recording list
+
+.recording  {
+    background: linear-gradient(to bottom right, #446084, #000);
+    // background: linear-gradient(to bottom right, #000, #5e9fa4);
+}
+
+.rltmtxt {  // recording list time text
+    color: #fad600;
+}
+
+// timer list
+
+.timer {
+    background: linear-gradient(to bottom right, black, #696969);
+    color: #b2aec3 !important;
+}
+
+.timeron {
+    background: linear-gradient(to bottom right, #ed0d0d, #000);
+    color: white !important;
+}
+
+.tmtxt {
+    color: white; // #0d26e0; // white;
+}
+
+.tltmtxt {  // timer time text
+    color: #fad600; // #b2aec3;
+}
+
+.tltmch {  // channel name
+    color: white; // #b2aec3;
+}
+
+.tlvdrtxt{  // timer vdr name text
+    color: #fad600;
+    float: right;
+}
+
+.customdata  {
+    background: linear-gradient(to bottom right, black, #375c8c);
+    color: white !important;
+}
+
+// menu
+
+.textmenu {
+    background: linear-gradient(to bottom right, black, #696969);
+    color: #f2f1f3;
+}
+
+.textmenu-current {
+    background: linear-gradient(to bottom right, black, #696969);
+    color: white;
+}
+
+.menutitle {
+   color: white;
+}
+
+.customfiletxt {
+   color: white;
+}

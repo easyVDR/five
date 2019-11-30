@@ -1,0 +1,13 @@
+--- a/Make.config
++++ b/Make.config
+@@ -6,8 +6,8 @@
+ 
+ # user defined stuff
+ 
+-#PATCHED = 1
+-PREFIX   = /usr/local
++PATCHED = 1
++PREFIX   = /usr
+ DEBUG = 1
+ #USE_CLANG = 1
+ 
