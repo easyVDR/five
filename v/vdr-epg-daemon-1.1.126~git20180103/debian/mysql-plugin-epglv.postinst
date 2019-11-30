@@ -1,0 +1,10 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+    # copy mysqlepglv.so only if it doesn't exist already
+    mkdir -p /usr/lib/mysql/plugin/
+    cp -n /usr/share/vdr-epg-daemon/mysql/plugin/mysqlepglv.so /usr/lib/mysql/plugin/
+fi
+
+#DEBHELPER#

@@ -1,0 +1,16 @@
+[Unit]
+Description=vdr-epg-daemon manages EPG data in a MySQL database
+After=mysql.service
+Wants=mysql.service
+After=vdr.service
+After=network.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/epgd -n
+TimeoutStartSec=5m
+Restart=on-failure
+
+
+[Install]
+WantedBy=multi-user.target

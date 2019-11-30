@@ -1,0 +1,4 @@
+#!/usr/bin/dh-exec
+var/epgd/*
+usr/bin/epgh*
+usr/bin/epgsearchdone.pl => usr/bin/import-epgsearchdone

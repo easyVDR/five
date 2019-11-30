@@ -1,0 +1,5 @@
+etc/epgd
+usr/lib/epgd
+usr/bin/epgd*
+debian/etc/epgd/*       etc/epgd/
+debian/bin/epgd-get-id  usr/bin/

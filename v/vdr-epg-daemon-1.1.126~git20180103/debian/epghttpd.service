@@ -1,0 +1,18 @@
+[Unit]
+Description=epghttpd provides a webinterface for epg data
+After=mysql.service
+Wants=mysql.service
+After=epgd.service
+Wants=epgd.service
+After=vdr.service
+After=network.target
+
+[Service]
+Type=notify
+ExecStart=/usr/bin/epghttpd -n -c /etc/epgd
+TimeoutStartSec=5m
+Restart=on-failure
+
+
+[Install]
+WantedBy=multi-user.target

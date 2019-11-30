@@ -1,0 +1,7 @@
+#etc
+#usr/bin/
+#usr/lib/epgd/plugins
+#scripts/*		usr/lib/epgd/
+#epglv/mysqlepglv.so		usr/share/vdr-epg-daemon/mysql/plugin/
+#alter/alter.sql			usr/share/vdr-epg-daemon/mysql/alter/
+#var/epgd/www/

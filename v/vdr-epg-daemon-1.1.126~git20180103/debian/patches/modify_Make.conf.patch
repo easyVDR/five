@@ -1,0 +1,31 @@
+--- a/Make.config
++++ b/Make.config
+@@ -5,7 +5,7 @@
+ 
+ # user defined stuff
+ 
+-PREFIX       = /usr/local
++PREFIX       = /usr
+ _BINDEST     = $(DESTDIR)$(PREFIX)/bin
+ BINDEST      = $(PREFIX)/bin
+ CACHEDIR     = /var/cache/epgd
+@@ -21,7 +21,8 @@
+ 
+ # select your init system { none, upstart, systemd }
+ 
+-INIT_SYSTEM  = none
++SYSD_NOTIFY = 1
++INIT_SYSTEM  = systemd
+ INIT_AFTER   = mysql.service
+ 
+ # ------------------
+--- a/epglv/Makefile
++++ b/epglv/Makefile
+@@ -37,6 +37,7 @@
+ install: $(TARGET)
+ 	strip $(TARGET)
+ 	if ! test -f $(DESTDIR)/$(MYSQL_PLGDIR)/$(TARGET); then \
++	   mkdir -p $(DESTDIR)/$(MYSQL_PLGDIR)/; \
+ 	   install -D --mode=644 -t $(DESTDIR)/$(MYSQL_PLGDIR) $(TARGET); \
+ 	fi
+ 

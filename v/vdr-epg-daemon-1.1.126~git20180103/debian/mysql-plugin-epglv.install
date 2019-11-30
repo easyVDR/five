@@ -1,0 +1,2 @@
+#!/usr/bin/dh-exec
+usr/lib/mysql/plugin/mysqlepglv.so => usr/share/vdr-epg-daemon/mysql/plugin/mysqlepglv.so

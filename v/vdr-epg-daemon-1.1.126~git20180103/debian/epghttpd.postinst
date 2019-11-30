@@ -1,0 +1,17 @@
+#!/bin/sh
+set -e
+
+if [ "$1" = "configure" ]; then
+    # found logos
+    if [ ! -e /var/epgd/www/channellogos ]; then
+        if [ -e /usr/share/vdr/plugins/skindesigner/logos ]; then
+            ln -s /usr/share/vdr/plugins/skindesigner/logos /var/epgd/www/channellogos
+        elif [ -e /usr/share/vdr/plugins/skinnopacity/logos ]; then
+                ln -s /usr/share/vdr/plugins/skinnopacity/logos /var/epgd/www/channellogos
+        elif [ -e /var/lib/vdr/channellogos ] ; then
+                    ln -s /var/lib/vdr/channellogos /var/epgd/www/channellogos
+        fi
+    fi
+fi
+
+#DEBHELPER#

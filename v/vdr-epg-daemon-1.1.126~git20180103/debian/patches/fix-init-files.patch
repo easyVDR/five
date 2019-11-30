@@ -1,0 +1,59 @@
+--- a/contrib/epghttpd.init.d
++++ b/contrib/epghttpd.init.d
+@@ -21,7 +21,7 @@
+ DESC="EPG HTTP Daemon"
+ 
+ # Check for missing binaries (stale symlinks should not happen)
+-EPGHTTPD_BIN=/usr/local/bin/epghttpd
++EPGHTTPD_BIN=/usr/bin/epghttpd
+ test -x $EPGHTTPD_BIN || exit 5
+ 
+ . /lib/lsb/init-functions
+@@ -47,7 +47,7 @@
+ 
+ status_epghttpd()
+ {
+-    status_of_proc /usr/local/bin/epghttpd $NAME && exit 0 || exit $?
++    status_of_proc /usr/bin/epghttpd $NAME && exit 0 || exit $?
+ }
+ 
+ case "$1" in
+--- a/contrib/epgd.init.d
++++ b/contrib/epgd.init.d
+@@ -22,7 +22,7 @@
+ DESC="EPG Daemon"
+ 
+ # Check for missing binaries (stale symlinks should not happen)
+-EPGD_BIN=/usr/local/bin/epgd
++EPGD_BIN=/usr/bin/epgd
+ test -x $EPGD_BIN || exit 5
+ 
+ # Check for existence of needed config directory
+@@ -34,7 +34,7 @@
+ test -r $EPGD_CONFIG || exit 6
+ 
+ # Check for existance of needed plugin directory
+-EPGD_PLGDIR=/usr/local/lib/epgd/plugins
++EPGD_PLGDIR=/usr/lib/epgd/plugins
+ test -d $EPGD_PLGDIR || exit 6
+ 
+ . /lib/lsb/init-functions
+@@ -60,7 +60,7 @@
+ 
+ status_epgd()
+ {
+-    status_of_proc /usr/local/bin/epgd $NAME && exit 0 || exit $?
++    status_of_proc /usr/bin/epgd $NAME && exit 0 || exit $?
+ }
+ 
+ case "$1" in
+--- a/contrib/epghttpd.conf
++++ b/contrib/epghttpd.conf
+@@ -12,6 +12,6 @@
+ 
+ export LANG="de_DE.UTF-8"
+ 
+-exec <BINDEST>/epghttpd -n
++exec epghttpd -n
+ 
+ end script

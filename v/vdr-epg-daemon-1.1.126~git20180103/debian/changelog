@@ -1,0 +1,1631 @@
+vdr-epg-daemon (1:1.1.126~git20180103-0easyVDR4~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 28 Nov 2019 23:46:34 +0100
+
+vdr-epg-daemon (1:1.1.126~git20180103-0easyVDR3~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 28 Nov 2019 23:35:54 +0100
+
+vdr-epg-daemon (1:1.1.126~git20180103-0easyVDR2~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 12 Nov 2019 23:16:52 +0100
+
+vdr-epg-daemon (1:1.1.126~git20180103-0easyVDR1~bionic) bionic; urgency=high
+
+  * new upstream snapshot
+  * commit:67c936be - change: improved handling of reinstated events in merge procedure
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jan 2018 15:02:48 +0100
+
+vdr-epg-daemon (1:1.1.125~git20171226-0easyVDR1~bionic) bionic; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 29 Dec 2017 01:20:01 +0100
+
+vdr-epg-daemon (1:1.1.125~git20171226-0easyVDR0~bionic) bionic; urgency=high
+
+  * new upstream snapshot
+  * commit:8e7b2dba - change: new field in 'recordinglist' to store the original description
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 29 Dec 2017 00:53:24 +0100
+
+vdr-epg-daemon (1:1.1.124~git20171223-0easyVDR1~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 27 Dec 2017 22:26:59 +0100
+
+vdr-epg-daemon (1:1.1.124~git20171223-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ec257583 - change: gcc 7 porting
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Dec 2017 00:03:19 +0100
+ 
+vdr-epg-daemon (1:1.1.123~git20171207-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:09433f62 - added: Trigger osd2web plugins of running VDRs on new recording
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 19:09:21 +0100
+
+vdr-epg-daemon (1:1.1.122~git20170925-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:c9ee5f0c - fixed: error, if no vdr available
+  * added thetvdb.patch  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 25 Sep 2017 00:01:15 +0200
+
+vdr-epg-daemon (1:1.1.121~git20170725-1easyVDR0~trusty) trusty; urgency=high
+
+  * added thetvdb.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 16 Sep 2017 21:15:10 +0200
+
+vdr-epg-daemon (1:1.1.121~git20170725-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1044ac9a - added: show constable in eventdetail, if episodename is available
+                    - added: show constable extracol 1-3 in eventdetail 
+                    - fixed: if recording view was reloaded the functionallity in bar was lost
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 25 Jul 2017 17:03:56 +0200
+
+vdr-epg-daemon (1:1.1.120~git20170629-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:65e13cfa - added: Link to osd2web, if available
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 04 Jul 2017 17:02:29 +0200
+
+vdr-epg-daemon (1:1.1.117~git20170609-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:e0aee67c - change: Fixed install of eventviews*
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Jun 2017 20:01:24 +0200
+
+vdr-epg-daemon (1:1.1.116~git20170609-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:2b2891a2 - change: Modified user views for better skin support
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 09 Jun 2017 15:54:20 +0200
+
+vdr-epg-daemon (1:1.1.115~git20170527-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:fbafc79f - change: Changed apple-mobile-web-app-status-bar-style to black
+                    - bugfix: Fixed typo in eventsviews
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 27 May 2017 16:03:54 +0200
+
+vdr-epg-daemon (1:1.1.114~git20170323-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:dcf08166 - change: Minor view change for peding features
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 23 Mar 2017 22:33:36 +0100
+
+vdr-epg-daemon (1:1.1.113~git20170321-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:dfdedfca - added: Add validity check of the API key for https://www.themoviedb.org (by 3po)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 21 Mar 2017 20:55:44 +0100
+
+vdr-epg-daemon (1:1.1.112~git20170319-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:4ab12d84 - minor imrovement of db api
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 19 Mar 2017 17:37:18 +0100
+
+vdr-epg-daemon (1:1.1.112~git20170318-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:3d410346 - added dynamic pause hadling for scraper movie download
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 18 Mar 2017 23:57:12 +0100
+
+vdr-epg-daemon (1:1.1.110~git20170316-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:9065c5cf - added: Congig option for MovieDb api-key
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Mar 2017 23:28:04 +0100
+
+vdr-epg-daemon (1:1.1.108~git20170312-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:01c04a41 - bugfix: namingmode searchtimer shows always 10 instead of template
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Mar 2017 20:55:24 +0100
+
+vdr-epg-daemon (1:1.1.107~git20170310-0easyVDR1~trusty) trusty; urgency=high
+
+  * fix make.config
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 10 Mar 2017 16:27:04 +0100
+
+vdr-epg-daemon (1:1.1.107~git20170310-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:21057136 - bugfix: default namingmode on searchtimer was shown if VDR was stored
+  * increase build number
+  
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 10 Mar 2017 16:09:05 +0100
+
+vdr-epg-daemon (1:1.1.105~git20170306-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 10 Mar 2017 00:05:50 +0100
+
+vdr-epg-daemon (1.1.105~git20170306-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:a53f2380 - minor fix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 06 Mar 2017 22:31:50 +0100
+
+vdr-epg-daemon (1.1.103~git20170303-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:g208ed9c - bugfix: Fixed os release detection for SuSe (fixed by 3po)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 03 Mar 2017 23:48:36 +0100
+
+vdr-epg-daemon (1.1.102~git20170301-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5f06146c - fixed support script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 01 Mar 2017 21:45:42 +0100
+
+vdr-epg-daemon (1.1.101~git20170227-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1d8761ce - Added: Added support for systemd support in build environment
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 27 Feb 2017 20:26:37 +0100
+
+vdr-epg-daemon (1.1.100~git20170226-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:bd4be69b - bugfix: Fixed mail span on invalid manuel timer
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Feb 2017 18:55:27 +0100
+
+vdr-epg-daemon (1.1.99~git20170224-0easyVDR1~trusty) trusty; urgency=high
+
+  * added build depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Feb 2017 18:34:05 +0100
+
+vdr-epg-daemon (1.1.99~git20170224-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:36f12c19 - minor change
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 24 Feb 2017 18:17:26 +0100
+
+vdr-epg-daemon (1.1.97~git20170223-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:558f9b93 - minor change
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 23 Feb 2017 17:08:06 +0100
+
+vdr-epg-daemon (1.1.95~git20170216-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:28d0944c - added: Optional mail notification on create of 'auto-timer
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 16 Feb 2017 17:18:46 +0100
+
+vdr-epg-daemon (1.1.93~git20170214-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d3819ee4 - bugfix: Fixed timer delete on missing event
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 14 Feb 2017 17:26:43 +0100
+
+vdr-epg-daemon (1.1.92~git20170213-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:d0316ff9 - bugfix: Fixed problem with autotimer update on simultaneous timer adjust
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 13 Feb 2017 17:50:31 +0100
+
+vdr-epg-daemon (1.1.91~git20170209-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:43ffae4f - changed: minor log level change
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 09 Feb 2017 22:09:07 +0100
+
+vdr-epg-daemon (1.1.90~git20170208-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:41a59bf6 - fixed double sending of mails
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 08 Feb 2017 21:13:42 +0100
+
+vdr-epg-daemon (1.1.89~git20170207-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:535f42d3 - changed: Timer 'start time change' messages only on changes greater 2 minutes
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 07 Feb 2017 21:37:36 +0100
+
+vdr-epg-daemon (1.1.88~git20170201-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:3977b3d7 - changed some log level
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 01 Feb 2017 23:37:47 +0100
+
+vdr-epg-daemon (1.1.88~git20170126-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:9ff7aa9c - minor change
+                      bugfix: fixed auto adjust of timer start time 
+                      bugfix: fixed handling of timer mails
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 26 Jan 2017 17:57:48 +0100
+
+vdr-epg-daemon (1.1.87~git20170124-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:07e4ee8e - bugfix: fixed refresh of searchtimer-table after saving from dialog
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 24 Jan 2017 23:55:17 +0100
+
+vdr-epg-daemon (1.1.86~git20170120-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5a9b935 - fixed typo
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 20 Jan 2017 22:10:07 +0100
+
+vdr-epg-daemon (1.1.78~git20170115-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1ee40107 - changed: Compatibility to libmicrohttpd version <= 0x00095102
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 15 Jan 2017 20:48:49 +0100
+
+vdr-epg-daemon (1.1.75~git20170112-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:9aafe2ba - bugfix: fixed config parser
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 13 Jan 2017 00:02:12 +0100
+
+vdr-epg-daemon (1.1.73~git20170104-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:9b344e96 - changed: layout from edit User
+                    - bugfix: load users without cache
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 06 Jan 2017 18:33:55 +0100
+
+vdr-epg-daemon (1.1.70~git20161215-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:99bd7c72 - bugfix: fixed sql syntax error in epgd-dropall (Thx to Michael Schaffner)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 15 Dec 2016 19:43:22 +0100
+
+vdr-epg-daemon (1.1.69~git20161213-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:a25c6df4 - bugfix: send TCC mails only once
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 13 Dec 2016 22:37:37 +0100
+
+vdr-epg-daemon (1.1.66~git20161205-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:3b56b3bc - bugfix: mask ' signs at mal body
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 05 Dec 2016 22:32:53 +0100
+
+vdr-epg-daemon (1.1.65~git20161204-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:5895f29b - bugfix: canceling von delte Timer no longer ignored
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 04 Dec 2016 22:52:26 +0100
+
+vdr-epg-daemon (1.1.53~git20161125-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:ff4f900a - change: Install systemd script only on change
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Nov 2016 16:02:44 +0100
+
+vdr-epg-daemon (1.1.51~git20161124-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:59312db2 - added: constabel test to lib/test tool
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 24 Nov 2016 18:32:29 +0100
+
+vdr-epg-daemon (1.1.46~git20161119-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:13852647 - fixed: Fix app for ipad and old browser (let was not supported)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 20 Nov 2016 00:58:19 +0100
+
+vdr-epg-daemon (1.1.42~git20161112-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:e2d0e770 - fixed: SQL for mysql 5.7 changed (ckone)
+                    - fixed: simple Aprostoph replace with special Aprostoph, 
+                             because sending of Timerkonflikt-Mails failed
+                    - fixed: search for recordigs
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 13 Nov 2016 00:04:18 +0100
+
+vdr-epg-daemon (1.1.41~git20161103-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:c5eaf5d - updated TODOS
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 07 Nov 2016 21:04:55 +0100
+
+vdr-epg-daemon (1.1.39~git20161102-0easyVDR0~trusty) trusty; urgency=high
+
+  * commit:b02151d9 - updated TODOS
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 02 Nov 2016 21:43:59 +0100
+
+vdr-epg-daemon (1.1.36~git20161101-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:35e6b286 - added search for recordigs
+                      rechanged: match-density withot gradiant
+                      fixed: bug while changed between different resolutions
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 01 Nov 2016 17:14:03 +0100
+
+vdr-epg-daemon (1.1.34~git20161031-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:1dfea974 - changed: uses gradient for match-density and show % as title
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 31 Oct 2016 19:54:53 +0100
+
+vdr-epg-daemon (1.1.31~git20161030-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:19b627ae - change: skipping epgsearch timer at timer check
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 30 Oct 2016 16:54:52 +0100
+
+vdr-epg-daemon (1.1.29~git20161028-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:b8771684 - added: notify vdr on timer modification
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 29 Oct 2016 00:02:52 +0200
+
+vdr-epg-daemon (1.1.28~git20161026-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:848b25de - added renaming recording on events data change (for pending timers)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Oct 2016 20:42:47 +0200
+ 
+vdr-epg-daemon (1.1.24~git20161020-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:bc2fdbc8 - bugfix: fixed (removed) string escape for sql bindings
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 20 Oct 2016 22:39:02 +0200
+
+vdr-epg-daemon (1.1.19~git20161019-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:cece16e1 - added: match density to recording data of event detail service
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 19 Oct 2016 23:11:17 +0200
+
+vdr-epg-daemon (1.1.18~git20161018-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:857a8afb - added: recording data to event detail service
+                    - change: improved epgd-dropall script  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 18 Oct 2016 20:55:25 +0200
+
+vdr-epg-daemon (1.1.16-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:3da0f3c3 - fix: detailview on devices > 900
+                    - added: parameter for defaultsort in recordings
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 12 Oct 2016 22:47:47 +0200
+
+vdr-epg-daemon (1.1.15-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:7946b76 - fix: detailview on devices > 768 and < 1139
+  * build for easyVDR only plugin epgdata  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 10 Sep 2016 22:59:48 +0200
+
+vdr-epg-daemon (1.1.12~git20160828-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:56d18d5e - fixed HISTORY
+  * build for easyVDR only plugin epgdata
+  
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 28 Aug 2016 20:41:18 +0200
+
+vdr-epg-daemon (1:1.1.10+dev~git20160721-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - dev branch
+  * commit:97f95526 - fixed: scrping must also using int64
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 21 Jul 2016 23:55:12 +0200
+
+vdr-epg-daemon (1.1.7+dev~git20160718-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - dev branch
+  * commit:ec6af4d9 - change: increased event id to unsigned int64 even for searchtimer
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Jul 2016 00:10:33 +0200
+
+vdr-epg-daemon (1.1.4+dev~git20160714-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - dev branch
+  * commit:f4177011 - change: increased event id to unsigned int64 for epgdata plugin
+  * added new tvsp patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 14 Jul 2016 23:10:09 +0200
+
+vdr-epg-daemon (1.1.2~git20160708-1easyVDR0~trusty) trusty; urgency=high
+
+  * remove tvsp patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Jul 2016 00:08:18 +0200
+
+vdr-epg-daemon (1.1.2~git20160708-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:dfb7b425 - change: optimized Makefiles (by Alexander Grothe)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Jul 2016 19:58:03 +0200
+
+vdr-epg-daemon (1.1.1~git20160706-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:73a64afd - change: Update of epgd-tool by 3po
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Jul 2016 23:39:06 +0200
+
+vdr-epg-daemon (1.1.0~git20160704-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * commit:47170adc - change: Merged http branch into master  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 Jul 2016 20:43:13 +0200
+
+vdr-epg-daemon (1.0.106~git20160625+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:f3cea96a - fixed: avoid errormessage, if no channel has no data
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Jun 2016 22:45:53 +0200
+
+vdr-epg-daemon (1.0.105~git20160620+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:2ecf55d7 - todos erweitert
+  * commit:2a8fe48e - changed: increased tv icon
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 20 Jun 2016 21:31:46 +0200
+
+vdr-epg-daemon (1.0.104~git20160619+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:a2ef9709 - added: tv-switch channel icon to channels
+                      fixed: edit searchtimer from timerlist
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 19 Jun 2016 17:44:50 +0200
+
+vdr-epg-daemon (1.0.103~git20160612+http-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Jun 2016 23:48:14 +0200
+
+vdr-epg-daemon (1.0.103~git20160612+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:9bf1c3ad - changed: logs an erroe, if defaultVDR is invalid or no vdr found
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 12 Jun 2016 23:37:09 +0200
+
+vdr-epg-daemon (1.0.101~git20160603+http-0easyVDR2~trusty) trusty; urgency=high
+
+  * fix upstart
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 08 Jun 2016 22:12:41 +0200
+
+vdr-epg-daemon (1.0.101~git20160603+http-0easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 03 Jun 2016 22:48:44 +0200 
+
+vdr-epg-daemon (1.0.101~git20160603+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:cec62491 - change: Changed Makefile for epglv
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 03 Jun 2016 20:19:14 +0200
+
+vdr-epg-daemon (1.0.100~git20160602+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:769405e4 - fix: storing of namingmode
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 02 Jun 2016 20:57:09 +0200
+
+vdr-epg-daemon (1.0.99~git20160601+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:9f0857c9 - change: system notification thread more silent
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 01 Jun 2016 23:06:20 +0200
+
+vdr-epg-daemon (1.0.95~git20160531+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:6c2e285f - change: update of views
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 18:34:58 +0200
+
+vdr-epg-daemon (1.0.91~git20160526+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:9fa5be1a - fix: deleting of multiple timers
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 26 May 2016 22:53:12 +0200
+
+vdr-epg-daemon (1.0.90~git20160526+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:9b635937 - fix: deleting of timers
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 26 May 2016 19:53:18 +0200
+
+vdr-epg-daemon (1.0.89~git20160525+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:a3b5d890 - change: deleting and selecting from table rows are now only on visible rows
+                      added: shows count of deleting entries in confirm dialog
+                      fixed: 'visible' flag for channels only for flagvalue 1
+                      fixed: wrong timerdialog on record in eventdetail
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 25 May 2016 23:26:17 +0200
+
+vdr-epg-daemon (1.0.85~git20160524+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:4e47d633 - change: minor change in thread context
+
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 24 May 2016 21:18:13 +0200
+
+vdr-epg-daemon (1.0.83~git20160523+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:bd1dbabf - fix: could not open eventdetail after view settings
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 May 2016 23:58:54 +0200
+
+vdr-epg-daemon (1.0.82~git20160523+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:617ea947 - fixed statement
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 23 May 2016 23:41:54 +0200
+
+vdr-epg-daemon (1.0.79~git20160521+http-0easyVDR1~trusty) trusty; urgency=high
+
+  * added new tvm-http patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 22 May 2016 20:12:11 +0200
+
+vdr-epg-daemon (1.0.79~git20160521+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:1f77d354 - fix:css for thumb, if image is 4:30
+                      changed: tip to Goldtip in searchdialog
+                      added: =! for quicktime, which should not be hihlighted in magazine view
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 21 May 2016 22:40:15 +0200
+
+vdr-epg-daemon (1.0.77~git20160520+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:9b9e7c44 - update of configs/eventsview-horchi.sql
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 21 May 2016 00:04:16 +0200
+
+vdr-epg-daemon (1.0.70~git20160519+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:c1a918fc - fix error on session-logout
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 May 2016 21:10:38 +0200
+
+vdr-epg-daemon (1.0.68~git20160518+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:d931c648 - change: improved stop of system notification thread
+                      added: new timer trigger field _starttime for internal usage  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 18 May 2016 19:51:52 +0200
+
+vdr-epg-daemon (1.0.64~git20160517+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:9d52e395 - removed tipp from data/event, data/evetns, data/search 
+                      added parameter ratings
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 17 May 2016 19:57:24 +0200
+
+vdr-epg-daemon (1.0.62~git20160516+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:f13ee677 - added: numrating on data/event, data/evetns, data/search
+                      removed tipp/tagestipp/toptipp from webview, uses numrating instead
+                      added: WOL on VDR menu item
+                      changed: topmenu has now submenus instead of tabs
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 16 May 2016 21:12:04 +0200
+
+vdr-epg-daemon (1.0.61~git20160515+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:1959d6a1 - added: inex for timers table
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 15 May 2016 20:43:23 +0200
+
+vdr-epg-daemon (1.0.60~git20160513+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:678e8b0a - added: wakeup vdr (WOL) for webif requests
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 13 May 2016 20:02:31 +0200
+
+vdr-epg-daemon (1.0.59~git20160512+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:f8a74afe - bugfix: Fixed event insert state handling für epgdata plugin
+                      change: Ported 'groub by' clause to mysql 5.7
+                      change: minor changes
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 13 May 2016 00:12:25 +0200
+
+vdr-epg-daemon (1.0.58~git20160510+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:0d42bfd3 - added: optional config option 'seriesMail' for constabel login
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 10 May 2016 15:39:44 +0200
+
+vdr-epg-daemon (1.0.56~git20160509+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:48acd301 - fixed: added sql string-escape for python return
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 09 May 2016 18:21:04 +0200
+
+vdr-epg-daemon (1.0.55~git20160507+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:e390f0ca - fixed: magazine view for iphone
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 07 May 2016 18:07:17 +0200
+
+vdr-epg-daemon (1.0.54~git20160504+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:b36e46c7 - change: update of eventsview-ck.sql 
+                      change: increased field fileref to ASCII 100
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 04 May 2016 19:15:17 +0200
+
+vdr-epg-daemon (1.0.53~git20160503+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:558158e3 -  bugfix: error on sort or delete record
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 03 May 2016 23:34:47 +0200
+
+vdr-epg-daemon (1.0.47~git20160428+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:f03464e0 - fixed: calendar skiped a day
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 29 Apr 2016 00:01:24 +0200
+
+vdr-epg-daemon (1.0.46~git20160426+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:971452bf - fixed: calendar starts had ignored start of week
+    added: EpgViewWeb in epgd.config configurable
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 26 Apr 2016 23:48:44 +0200
+
+vdr-epg-daemon (1.0.43~git20160426+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:7cbad3b0 - changed: calendar starts now with minEventDay
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 26 Apr 2016 00:34:15 +0200
+
+vdr-epg-daemon (1.0.42~git20160424+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:63f14047 - fix: makefile
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Apr 2016 21:19:33 +0200
+
+vdr-epg-daemon (1.0.41~git20160424+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:7e8b2be9 - fixed: play record on VDR
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 24 Apr 2016 16:50:07 +0200
+
+vdr-epg-daemon (1.0.38~git20160423+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:4816fefb - fixed: timerdialog window centered in magazine view
+    fixed: encode & in title for canstable links 
+    fixed: typo in bugfix: removed timer with state '-' from web request
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 23 Apr 2016 22:56:28 +0200
+
+vdr-epg-daemon (1.0.37~git20160422+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:668dc29 - bugfix: removed timer with state '-' from web request
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 22 Apr 2016 22:18:07 +0200
+
+vdr-epg-daemon (1.0.27~git20160419+http-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot - http branch
+  * commit:076ba81c - fix of makefile to new systemd version (thx to seahawk1986)
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 19 Apr 2016 21:31:35 +0200
+
+vdr-epg-daemon (2:1.0.6-24-g108c12a+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 108c12a: Hilfe angepasst
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 17 Apr 2016 21:07:23 +0200
+
+vdr-epg-daemon (2:1.0.6-20-g45d46b4+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 45d46b4: 2016-04-17: version 1.0.19 (horchi)\n   - change: new files
+    for fedora (thx to marco)\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 17 Apr 2016 11:14:49 +0200
+
+vdr-epg-daemon (2:1.0.6-20-g45d46b4+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 45d46b4: 2016-04-17: version 1.0.19 (horchi)\n   - change: new files
+    for fedora (thx to marco)\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 17 Apr 2016 11:14:38 +0200
+
+vdr-epg-daemon (2:1.0.6-19-gbdb4bcf+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * bdb4bcf: - added: maxListEntries as Parameter for data/search
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 Apr 2016 18:36:56 +0200
+
+vdr-epg-daemon (2:1.0.6-19-gbdb4bcf+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * bdb4bcf: - added: maxListEntries as Parameter for data/search
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 16 Apr 2016 18:36:46 +0200
+
+vdr-epg-daemon (2:1.0.6-13-g9b053fa+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 9b053fa: 2016-04-15: version 1.0.15 (horchi)\n   - added: start to
+    data/search for paging\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 Apr 2016 20:57:47 +0200
+
+vdr-epg-daemon (2:1.0.6-13-g9b053fa+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 9b053fa: 2016-04-15: version 1.0.15 (horchi)\n   - added: start to
+    data/search for paging\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 Apr 2016 20:57:40 +0200
+
+vdr-epg-daemon (2:1.0.6-12-g975a108+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 975a108: hotfix
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 Apr 2016 12:38:55 +0200
+
+vdr-epg-daemon (2:1.0.6-12-g975a108+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 975a108: hotfix
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 Apr 2016 12:37:47 +0200
+
+vdr-epg-daemon (2:1.0.6-10-g5b3caf4+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 5b3caf4: 2016-04-14: version 1.0.13 (rechner)\n   - fixed:
+    searchtimerresultlist could only be execute once\n   - fixed: year
+    in searchdialog gets also 2000-\n   - added: clear button on
+    timepicker (search)\n   - changed: name from searchtimer is always
+    visible\n   - added: searchtimerlist: name or expression will shown
+    and has now icons\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 Apr 2016 06:19:34 +0200
+
+vdr-epg-daemon (2:1.0.6-10-g5b3caf4+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 5b3caf4: 2016-04-14: version 1.0.13 (rechner)\n   - fixed:
+    searchtimerresultlist could only be execute once\n   - fixed: year
+    in searchdialog gets also 2000-\n   - added: clear button on
+    timepicker (search)\n   - changed: name from searchtimer is always
+    visible\n   - added: searchtimerlist: name or expression will shown
+    and has now icons\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 15 Apr 2016 06:19:23 +0200
+
+vdr-epg-daemon (2:1.0.6-3-g75a82c9+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 75a82c9: 2016-04-13: version 1.0.8 (horchi) \n   - change: even more
+    log messages\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 13 Apr 2016 19:51:38 +0200
+
+vdr-epg-daemon (2:1.0.6-3-g75a82c9+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 75a82c9: 2016-04-13: version 1.0.8 (horchi) \n   - change: even more
+    log messages\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 13 Apr 2016 19:51:22 +0200
+
+vdr-epg-daemon (2:1.0.6-1-g831dd58+http-5frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 09 Apr 2016 18:29:58 +0200
+
+vdr-epg-daemon (2:1.0.6-1-g831dd58+http-5frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 09 Apr 2016 18:29:51 +0200
+
+vdr-epg-daemon (2:1.0.6-1-g831dd58+http-4frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 09 Apr 2016 16:50:25 +0200
+
+vdr-epg-daemon (2:1.0.6-1-g831dd58+http-4frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 09 Apr 2016 16:50:18 +0200
+
+vdr-epg-daemon (2:1.0.6-1-g831dd58+http-3frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 09 Apr 2016 16:45:27 +0200
+
+vdr-epg-daemon (2:1.0.6-1-g831dd58+http-3frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 09 Apr 2016 16:45:11 +0200
+
+vdr-epg-daemon (2:1.0.6-1-g831dd58+http-2frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 08 Apr 2016 22:12:44 +0200
+
+vdr-epg-daemon (2:1.0.6-1-g831dd58+http-2frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 08 Apr 2016 22:12:19 +0200
+
+vdr-epg-daemon (1:1.0.6-1-g831dd58+http-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 08 Apr 2016 20:38:54 +0200
+
+vdr-epg-daemon (1:1.0.6-1-g831dd58+http-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 08 Apr 2016 20:38:35 +0200
+
+vdr-epg-daemon (1:1.0.0-11-g831dd58+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 05 Apr 2016 22:13:42 +0200
+
+vdr-epg-daemon (1:1.0.0-11-g831dd58+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 831dd58: changed: sort of timersdone is now desc for starttime
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 05 Apr 2016 22:13:34 +0200
+
+vdr-epg-daemon (1:1.0.0-10-g4d61883+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 4d61883: 2016-04-05: version 1.0.6 (rechner) \n   - added: filter
+    for starttime in timer\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 05 Apr 2016 21:24:11 +0200
+
+vdr-epg-daemon (1:1.0.0-10-g4d61883+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 4d61883: 2016-04-05: version 1.0.6 (rechner) \n   - added: filter
+    for starttime in timer\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Tue, 05 Apr 2016 21:24:02 +0200
+
+vdr-epg-daemon (1:1.0.0-9-g0cfe201+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 0cfe201: todo liste erweitert
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 04 Apr 2016 21:51:05 +0200
+
+vdr-epg-daemon (1:1.0.0-9-g0cfe201+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 0cfe201: todo liste erweitert
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 04 Apr 2016 21:50:55 +0200
+
+vdr-epg-daemon (1:1.0.0-7-g17dbb85+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 17dbb85: 2016-03-28: version 1.0.4 (rechner) \n   - fixed: search:
+    show loading, on new search\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 30 Mar 2016 06:44:41 +0200
+
+vdr-epg-daemon (1:1.0.0-7-g17dbb85+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 17dbb85: 2016-03-28: version 1.0.4 (rechner) \n   - fixed: search:
+    show loading, on new search\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Wed, 30 Mar 2016 06:44:30 +0200
+
+vdr-epg-daemon (1:1.0.0-6-g20a60de+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 20a60de: 2016-03-28: version 1.0.3 (rechner) \n   - added: multiple
+    filter in tables\n   - fixed: sorting of tables\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 28 Mar 2016 18:48:04 +0200
+
+vdr-epg-daemon (1:1.0.0-6-g20a60de+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 20a60de: 2016-03-28: version 1.0.3 (rechner) \n   - added: multiple
+    filter in tables\n   - fixed: sorting of tables\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 28 Mar 2016 18:47:57 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-8frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 28 Mar 2016 13:27:58 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-8frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Mon, 28 Mar 2016 13:27:49 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-7frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 20:01:21 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-7frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 20:01:14 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-6frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 19:57:33 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-6frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 19:57:33 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-5frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 19:30:44 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-5frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 19:30:37 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-4frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 19:13:20 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-3frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 18:34:16 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-3frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 18:34:09 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-2frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 18:21:26 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-2frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 18:21:19 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 15:00:36 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 15:00:30 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 14:50:14 +0200
+
+vdr-epg-daemon (1:1.0.0-5-g6039e2d+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 6039e2d: - changed: editchannels input field now filterlines instead
+    of selecting    - changed: in now view all Items have same height,
+    mouseover on desc will expand it
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 14:50:08 +0200
+
+vdr-epg-daemon (1:1.0.0-4-g3e6a68a+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 3e6a68a: 2016-03-27: version 1.0.2 (rechner)\n   - fixed: daylight
+    flag in localtime\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 14:31:33 +0200
+
+vdr-epg-daemon (1:1.0.0-4-g3e6a68a+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 3e6a68a: 2016-03-27: version 1.0.2 (rechner)\n   - fixed: daylight
+    flag in localtime\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 14:31:19 +0200
+
+vdr-epg-daemon (1:1.0.0-3-g7d8ea0b+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 7d8ea0b: added recording to help
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 11:50:45 +0200
+
+vdr-epg-daemon (1:1.0.0-3-g7d8ea0b+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 7d8ea0b: added recording to help
+
+ -- Frodo <frodo.vdr@gmx.net>  Sun, 27 Mar 2016 11:50:31 +0200
+
+vdr-epg-daemon (1:1.0.0+http-1frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * b4aed47: 2016-03-26: version 1.0.0 (rechner)\n   - added: first
+    Betarelease\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 26 Mar 2016 19:28:56 +0100
+
+vdr-epg-daemon (1:1.0.0+http-1frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b4aed47: 2016-03-26: version 1.0.0 (rechner)\n   - added: first
+    Betarelease\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 26 Mar 2016 19:28:50 +0100
+
+vdr-epg-daemon (1:0.7.8-7-gb4aed47+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * b4aed47: 2016-03-26: version 1.0.0 (rechner)\n   - added: first
+    Betarelease\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 26 Mar 2016 19:01:36 +0100
+
+vdr-epg-daemon (1:0.7.8-7-gb4aed47+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * b4aed47: 2016-03-26: version 1.0.0 (rechner)\n   - added: first
+    Betarelease\n   \n
+
+ -- Frodo <frodo.vdr@gmx.net>  Sat, 26 Mar 2016 19:01:28 +0100
+
+vdr-epg-daemon (1:0.7.8-3-g02f6f16+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * 02f6f16: 2016-03-25: version 0.7.11 (rechner)\n   - fixed: default-
+    values for timer state and action changed to upercase\n   - added:
+    magazine view scrolled on mouseover on border area\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 25 Mar 2016 21:02:16 +0100
+
+vdr-epg-daemon (1:0.7.8-3-g02f6f16+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * 02f6f16: 2016-03-25: version 0.7.11 (rechner)\n   - fixed: default-
+    values for timer state and action changed to upercase\n   - added:
+    magazine view scrolled on mouseover on border area\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Fri, 25 Mar 2016 21:02:09 +0100
+
+vdr-epg-daemon (1:0.7.8+http-0frodo0~precise) precise; urgency=medium
+
+  * rebuild for precise
+  * f0427cd: 2016-03-24: version 0.7.8 (horchi)\n   - added: day range
+    for autotimer\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 24 Mar 2016 19:16:52 +0100
+
+vdr-epg-daemon (1:0.7.8+http-0frodo0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+  * f0427cd: 2016-03-24: version 0.7.8 (horchi)\n   - added: day range
+    for autotimer\n\n
+
+ -- Frodo <frodo.vdr@gmx.net>  Thu, 24 Mar 2016 19:16:46 +0100
+
+vdr-epg-daemon (1:0.3.0a.git20151217+http-0frodo0~trusty) trusty; urgency=medium
+
+  * rebuild, change debian/rules to get a better default plugin dir
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 23 Dec 2015 17:26:58 +0100
+
+vdr-epg-daemon (1:0.3.0a.git20151217+http-3yavdr0~trusty) trusty; urgency=medium
+
+  * rebuild
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 21 Dec 2015 17:15:21 +0100
+
+vdr-epg-daemon (1:0.3.0a.git20151217+http-2yavdr0~trusty) trusty; urgency=medium
+
+  * rebuild, add missing dependencies
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 21 Dec 2015 16:05:11 +0100
+
+vdr-epg-daemon (1:0.3.0a.git20151217+http-1yavdr0~trusty) trusty; urgency=medium
+
+  * add debugging symbols
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 21 Dec 2015 15:52:16 +0100
+
+vdr-epg-daemon (1:0.3.0a.git20151217+http-0yavdr0~trusty) trusty; urgency=medium
+
+  * 1st build of http branch
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 21 Dec 2015 15:43:05 +0100
+
+vdr-epg-daemon (1:0.2.2.git20151027.1343-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot:
+    - update of gentoo ebuild by 3po
+    - epg-tool fix for fedora by 3po
+    - fixed typo in README
+    - update of README
+    - update of README
+    - modified gitignore
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 02 Dec 2015 14:46:09 +0100
+
+vdr-epg-daemon (1:0.2.2.git20150810.1431-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot:
+    fixed problem with invalid constabel season lines
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 10 Aug 2015 18:13:53 +0200
+
+vdr-epg-daemon (1:0.2.2.git20150223.1049-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 27 Feb 2015 13:30:23 +0100
+
+vdr-epg-daemon (1:0.2.2.git20150202.0846-0yavdr0~trusty) trusty; urgency=medium
+
+  * new upstream version
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 05 Feb 2015 09:02:09 +0100
+
+vdr-epg-daemon (1:0.2.1.git20140529.1626-0yavdr0~trusty) trusty; urgency=medium
+
+  * rebuild for precise
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Mon, 18 Aug 2014 09:02:17 +0200
+
+vdr-epg-daemon (1:0.2.1.git20140529.1626-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 29 May 2014 18:28:29 +0200
+
+vdr-epg-daemon (1:0.2.0.git20140515.0645-0avdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 15 May 2014 13:36:48 +0200
+
+vdr-epg-daemon (1:0.2.0.git20140514.0703-0avdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 14 May 2014 09:20:08 +0200
+
+vdr-epg-daemon (0.2.0.git2014050999999999avdr0~precise) precise; urgency=high
+
+  * add libjpeg-turbo8-dev, libimlib2-dev dependencies
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 15:07:25 +0200
+
+vdr-epg-daemon (0.2.0.git20140508.1143-1yavdr0~precise) precise; urgency=high
+
+  * add libjpeg-dev dependency
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 14:49:31 +0200
+
+vdr-epg-daemon (0.2.0.git20140508.1143-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 09 May 2014 14:41:10 +0200
+
+vdr-epg-daemon (0.2.0.git20140507.1305-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Thu, 08 May 2014 14:06:16 +0200
+
+vdr-epg-daemon (0.2.0.git20140428.1744-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 28 Apr 2014 19:45:30 +0200
+
+vdr-epg-daemon (0.2.0.git20140424.0454-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Thu, 24 Apr 2014 06:56:25 +0200
+
+vdr-epg-daemon (0.2.0.git20140418.1305-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 18 Apr 2014 17:52:03 +0200
+
+vdr-epg-daemon (0.2.0.git20140417.1515-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ --  Reiner Paulus <flex0r@gmx.net>  Thu, 17 Apr 2014 17:17:40 +0200
+
+vdr-epg-daemon (0.2.0.git20140416.1812-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 16 Apr 2014 20:14:20 +0200
+
+vdr-epg-daemon (0.2.0.git20140416.1048-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 16 Apr 2014 12:49:58 +0200
+
+vdr-epg-daemon (0.2.0.git20140415.1014-0yavdr0~precise) precise; urgency=medium
+
+  * -added: scraper support
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Tue, 15 Apr 2014 12:16:42 +0200
+
+vdr-epg-daemon (0.1.16.git20140404.0952-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 04 Apr 2014 11:08:27 +0200
+
+vdr-epg-daemon (0.1.16.git20140329.0917-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sat, 29 Mar 2014 10:18:20 +0100
+
+vdr-epg-daemon (0.1.15.git20140321.1258-1yavdr0~precise) precise; urgency=medium
+
+  * fix init
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sat, 29 Mar 2014 10:13:03 +0100
+
+vdr-epg-daemon (0.1.15.git20140321.1258-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 21 Mar 2014 13:59:30 +0100
+
+vdr-epg-daemon (0.1.12.git20140317.1708-0yavdr0~precise) precise; urgency=medium
+
+  * fix build depends
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 17 Mar 2014 18:10:08 +0100
+
+vdr-epg-daemon (0.1.12-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 17 Mar 2014 17:47:54 +0100
+
+vdr-epg-daemon (0.1.10-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 03 Jan 2014 18:12:04 +0100
+
+vdr-epg-daemon (0.1.9-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Fri, 03 Jan 2014 17:23:16 +0100
+
+vdr-epg-daemon (0.1.7-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sat, 07 Dec 2013 10:28:56 +0100
+
+vdr-epg-daemon (0.1.4+git20131204-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Wed, 04 Dec 2013 14:59:09 +0100
+
+vdr-epg-daemon (0.1.3+git20131203-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream snapshot
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 03 Dec 2013 18:14:12 +0100
+
+vdr-epg-daemon (0.1.3-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 29 Nov 2013 14:16:44 +0100
+
+vdr-epg-daemon (0.1.2-1yavdr0~precise) precise; urgency=medium
+
+  * include /usr/share/vdr-epg-daemon/mysql/alter/alter.sql
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 20 Nov 2013 16:42:53 +0100
+
+vdr-epg-daemon (0.1.2-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Wed, 20 Nov 2013 16:00:26 +0100
+
+vdr-epg-daemon (0.1.1-1-0yavdr0~precise) precise; urgency=medium
+
+  * new ustream snapshot
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 28 Oct 2013 15:45:33 +0100
+
+vdr-epg-daemon (0.1.1-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+  * fix overwriting mysqlepglv.so in mysql plugin dir
+  * to prevent corruption of database
+
+ -- Reiner Paulus <flex0r@gmx.net>  Mon, 28 Oct 2013 10:03:55 +0100
+
+vdr-epg-daemon (0.1.0-0yavdr0~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Reiner Paulus <flex0r@gmx.net>  Sun, 22 Sep 2013 13:31:48 +0200
+
+vdr-epg-daemon (0.0.7-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Mon, 16 Sep 2013 20:28:43 +0200
+
+vdr-epg-daemon (0.0.6-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Thu, 05 Sep 2013 20:07:23 +0200
+
+vdr-epg-daemon (0.0.5-1yavdr2~precise) precise; urgency=medium
+
+  * fix rules file
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 04 Sep 2013 19:47:35 +0200
+
+vdr-epg-daemon (0.0.5-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Wed, 04 Sep 2013 16:04:58 +0200
+
+vdr-epg-daemon (0.0.4-1yavdr2~precise) precise; urgency=medium
+
+  * fixed installation of the config files
+
+ -- Gerald Dachs <gda@dachsweb.de>  Tue, 03 Sep 2013 18:40:15 +0200
+
+vdr-epg-daemon (0.0.4-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 01 Sep 2013 19:59:31 +0200
+
+vdr-epg-daemon (0.0.3-1yavdr1~precise) precise; urgency=medium
+
+  * new upstream version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 01 Sep 2013 19:25:21 +0200
+
+vdr-epg-daemon (0.0.1-1yavdr2~precise) precise; urgency=medium
+
+  * renamed upstart and init.d files
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 01 Sep 2013 18:34:28 +0200
+
+vdr-epg-daemon (0.0.1-1yavdr1~precise) precise; urgency=medium
+
+  * Initial release
+
+ -- Gerald Dachs <gda@dachsweb.de>  Sun, 01 Sep 2013 16:37:19 +0200

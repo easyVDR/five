@@ -1,0 +1,76 @@
+Source: vdr-epg-daemon
+Section: misc
+Priority: extra
+Maintainer: Gerald Dachs <gda@dachsweb.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9.0.0), libmysqlclient-dev, libxml2-dev,
+               libxslt1-dev, libarchive-dev, libcurl4-openssl-dev, libz-dev,
+               libssl-dev, libuuid1, uuid-dev, libjansson-dev,
+               libjpeg-turbo8-dev, libimlib2-dev, libarchive-dev,
+               libxslt1-dev, libmicrohttpd-dev, libimlib2-dev,
+               python2.7-dev, python-dev, libsystemd-dev | libsystemd-daemon-dev,
+               mailutils, rhino, pkg-config, dh-exec
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/projects/vdr-epg-daemon
+
+Package: vdr-epg-daemon
+Architecture: all
+Breaks: vdr-epg-daemon (<< 1.1.3)
+Replaces: vdr-epg-daemon (<< 1.1.3)
+Depends: ${misc:Depends}, epgd, epghttpd, mysql-plugin-epglv, jq
+Description: Metapackage for epgd
+ a EPG daemon which fetch the EPG and additional data from various sources 
+ (like epgdata, eplists.constabel.net, ...) and provide it to the epg2vdr
+ plugin via a MySQL database. The epgd get the EPG from the sources by plugins.
+ A plugin for epgdata is contained.
+
+Package: epgd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, unzip, mailutils, lynx
+Recommends: mysql-server
+Breaks: vdr-epg-daemon (<< 1.1.3)
+Replaces: vdr-epg-daemon (<< 1.1.3)
+Description: a EPG daemon which fetch the EPG data
+ a EPG daemon which fetches the EPG and additional data from various sources 
+ (like epgdata, eplists.constabel.net, ...) and provides it to the epg2vdr
+ plugin via a MySQL database. The epgd get the EPG from the sources by plugins.
+ A plugin for epgdata is contained.
+
+Package: epgd-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Breaks: vdr-epg-daemon-dbg (<< 1.1.3)
+Replaces: vdr-epg-daemon-dbg (<< 1.1.3)
+Depends: epgd (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-epg-daemon
+ .
+ This package contains only the debugging symbols for epgd
+
+Package: epghttpd
+Architecture: any
+Breaks: vdr-epg-daemon (<< 1.1.3)
+Replaces: vdr-epg-daemon (<< 1.1.3)
+Depends: ${shlibs:Depends}, ${misc:Depends}, epgd
+Description: Webinterface for epgd
+ epghttpd provides a webinterface to view the EPG and manage timers on client
+ vdrs.
+
+Package: epghttpd-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Breaks: vdr-epg-daemon (<< 1.1.3)
+Replaces: vdr-epg-daemon (<< 1.1.3)
+Depends: epghttpd (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for epghttpd
+ .
+ This package contains only the debugging symbols for epghttpd
+
+Package: mysql-plugin-epglv
+Architecture: any
+Breaks: vdr-epg-daemon (<< 1.1.3)
+Replaces: vdr-epg-daemon (<< 1.1.3)
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: mysql plugin epglv (used by epgd)
+ This plugin implements a levenshtein-distance comparison of strings.
