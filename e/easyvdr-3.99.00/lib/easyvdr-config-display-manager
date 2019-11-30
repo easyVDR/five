@@ -285,7 +285,7 @@ DISABLE_XDG_AUTOSTART()
  if [ "$(cat /etc/X11/default-display-manager 2>/dev/null)" != "/usr/sbin/lightdm" ];then
   $LOGGER "enable display-manager lightdm"
 #  dialog --title "Displaymanager wählen" --msgbox "Falls als nächstes ein Auswahämenü erscheint,\nlightdm wählen." 8 50
-  dpkg-reconfigure lightdm
+  dpkg-reconfigure -u lightdm
  fi
  ENABLE_DISPLAY_MANAGER_LIGHTDM
 
