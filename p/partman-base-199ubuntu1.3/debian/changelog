@@ -1,8 +1,8 @@
-partman-base (192ubuntu1.3) focal; urgency=medium
+partman-base (199ubuntu1.3) focal; urgency=medium
 
-  * rebuild with easypart
+  * initial - with easypart
 
- -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Oct 2019 16:41:17 +0100
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 01 Dec 2019 17:34:26 +0100
 
 partman-base (192ubuntu1.2) bionic; urgency=medium
 

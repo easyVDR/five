@@ -7,4 +7,3 @@ post-base-installer.d usr/lib
 easypart bin
 easypart.recipe etc
 easypart.template etc
-

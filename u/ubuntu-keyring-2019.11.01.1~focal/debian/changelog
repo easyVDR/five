@@ -1,8 +1,8 @@
-ubuntu-keyring (2018.09.18.1~18.04.1) focal; urgency=medium
+ubuntu-keyring (2019.11.01.2~focal) focal; urgency=high
 
-  * add easy key lieke here: https://help.ubuntu.com/community/InstallCDCustomization
+  * plus easyvdr-key
 
- -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 31 Oct 2019 19:24:25 +0100
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 01 Dec 2019 19:09:44 +0100
 
 ubuntu-keyring (2018.09.18.1~18.04.0) bionic; urgency=medium
 
