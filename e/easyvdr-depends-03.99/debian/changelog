@@ -1,3 +1,9 @@
+easyvdr-depends (03.99-4easyVDR4~focal) focal; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 03 Dec 2019 22:56:49 +0100
+
 easyvdr-depends (03.99-4easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild
