@@ -10,6 +10,7 @@
 # vers. 0.7  12.01.15  Added Display Manager
 # vers. 0.8  14.09.17  Systemd update
 # vers. 0.9  06.03.18  Adding Mate Desktop
+# vers. 0.9  05.12.19  Fix Ping
 #################################################
 
 ################################# defines ##########################################
@@ -187,7 +188,7 @@ for PAKET in $PAKET_STRING
 #####
 Check_Online()
 {
-ping -c 5 easy-vdr.de >/dev/null 2>&1
+ping -c 5 www.easy-vdr.de >/dev/null 2>&1
 (( $? == 0 )) && ONLINE="true" || ONLINE="false"
 }
 
