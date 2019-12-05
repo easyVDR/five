@@ -8,6 +8,7 @@
 # vers  0.2  22.12.16 set default display manager, Bleifuss
 # vers  0.3  24.01.18 gdm updates, Bleifuss
 # vers  0.4  04.01.19 dialog lightdm disable, gb
+# vers  0.4  05.12.19 fix mate desktop, mango
 #################################################
 
 ################################# defines ##########################################
@@ -260,6 +261,9 @@ DISABLE_XDG_AUTOSTART()
   fi
   if [ -f $LIGHTDM_CONF_PATH/50-lxde.conf ] && [ $DESKTOP != LXDE ];then
    rm $LIGHTDM_CONF_PATH/50-lxde.conf
+  fi
+    if [ -f $LIGHTDM_CONF_PATH/50-mate.conf ] && [ $DESKTOP != Mate ];then
+   rm $LIGHTDM_CONF_PATH/50-mate.conf
   fi
   if [ -f $LIGHTDM_CONF_PATH/50-xfce4.conf ] && [ $DESKTOP != XFCE ];then
    rm $LIGHTDM_CONF_PATH/50-xfce4.conf

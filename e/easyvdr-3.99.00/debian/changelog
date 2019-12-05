@@ -1,3 +1,9 @@
+easyvdr (3.99.00-1easyVDR5~focal) focal; urgency=high
+
+  * fix mate desktop
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 05 Dec 2019 15:41:04 +0100
+
 easyvdr (3.99.00-1easyVDR4~focal) focal; urgency=high
 
   *  fix version
