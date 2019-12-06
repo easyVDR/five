@@ -1,3 +1,9 @@
+vdr-skins-logos (3.1-2easyVDR3~focal) focal; urgency=high
+
+  * skinnopacity added new logo and renamed logo
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 06 Dec 2019 21:10:52 +0100
+
 vdr-skins-logos (3.1-2easyVDR2~focal) focal; urgency=high
 
   * automatic rebuild
