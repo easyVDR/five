@@ -1,3 +1,9 @@
+easyportal (0.5.37-4easyVDR4~focal) focal; urgency=high
+
+  * fix links.php
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 07 Dec 2019 13:32:13 +0100
+
 easyportal (0.5.37-4easyVDR3~focal) focal; urgency=high
 
   * fix includes in lighttpd.conf
