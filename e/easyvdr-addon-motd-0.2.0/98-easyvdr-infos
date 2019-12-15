@@ -24,7 +24,7 @@ LoginCopyright (){
     EASYVDRSUBVERS=`cat /usr/share/easyvdr/easyvdr-version | grep EASYVDRSUBVERS | cut -b 17-18`
     echo "Ubuntu GNU/Linux $VERSION"
     echo "-------------------------------------------------------"   
-    echo "[0;32mWillkommen zu easyVDR $EASYVDRBASEVERS.$EASYVDRSUBVERS auf Ubuntu-Basis.[0m"
+    echo "[0;32mWillkommen zu easyVDR $EASYVDRBASEVERS$EASYVDRSUBVERS auf Ubuntu-Basis.[0m"
     else
     echo "-------------------------------------------------------"
   fi
@@ -65,7 +65,7 @@ ServerInfo (){
   IPADRESS=`ifconfig $DEVICE | awk '/inet/ { print $2 } ' | sed -e s/addr://`
 
   echo "-------------------------------------------------------"
-  echo "easyVDR-Version:        $EASYVDRBASEVERS.$EASYVDRSUBVERS"
+  echo "easyVDR-Version:        $EASYVDRBASEVERS$EASYVDRSUBVERS"
   echo "VDR-Version:		$VDR"
   echo "System:"
   echo "  Hostname:  	     	$HOSTNAME"                  

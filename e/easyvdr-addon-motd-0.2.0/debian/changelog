@@ -1,3 +1,9 @@
+easyvdr-addon-motd (0.2.0-1easyVDR6~focal) focal; urgency=high
+
+  * fix easyvdr-version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 15 Dec 2019 17:26:46 +0100
+
 easyvdr-addon-motd (0.2.0-1easyVDR5) focal; urgency=high
 
   * automatic rebuild
