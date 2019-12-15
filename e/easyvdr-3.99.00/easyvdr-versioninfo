@@ -2,4 +2,4 @@
 
 [ -e /usr/share/easyvdr/easyvdr-version ] && . /usr/share/easyvdr/easyvdr-version
 
-echo "$EASYVDRBASEVERS.$EASYVDRSUBVERS"
+echo "$EASYVDRBASEVERS$EASYVDRSUBVERS"
