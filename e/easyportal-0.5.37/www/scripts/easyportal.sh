@@ -107,7 +107,7 @@ function getKernel {
 # Aktuell Installierte Version ermitteln ####################################
 function getVersion {
   EASYVDRSUBVERS="${EASYVDRSUBVERS##*.}"
-  echo $EASYVDRBASEVERS.$EASYVDRSUBVERS
+  echo $EASYVDRBASEVERS$EASYVDRSUBVERS
 }
 
 # Plugins auflisten #########################################################

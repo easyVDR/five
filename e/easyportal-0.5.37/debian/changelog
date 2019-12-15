@@ -1,3 +1,9 @@
+easyportal (0.5.37-4easyVDR5~focal) focal; urgency=high
+
+  * fix easyvdr-version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 15 Dec 2019 17:34:52 +0100
+
 easyportal (0.5.37-4easyVDR4~focal) focal; urgency=high
 
   * fix links.php
