@@ -8,7 +8,7 @@ stat_easyvdr_setup_defines="already_loaded"
 [[ X"$stat_easyvdr_config_loader" != X"already_loaded" ]] && . /usr/lib/vdr/easyvdr-config-loader
 . /usr/share/easyvdr/easyvdr-version
 
-EASYVDR_VERSION="$EASYVDRBASEVERS"."$EASYVDRSUBVERS"
+EASYVDR_VERSION="$EASYVDRBASEVERS$EASYVDRSUBVERS"
 
 SETUP="/usr/share/easyvdr/setup"    ###  bleibt
 VDR_LIBS="/usr/lib/vdr"             ### bleibt 
