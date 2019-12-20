@@ -1,3 +1,9 @@
+easyvdr-x-depends (0.01.0-4easyVDR9~focal) focal; urgency=high
+
+  * added depends kodi-gbm
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 20 Dec 2019 16:13:21 +0100
+
 easyvdr-x-depends (0.01.0-4easyVDR8~focal) focal; urgency=high
 
   * added install xorg
