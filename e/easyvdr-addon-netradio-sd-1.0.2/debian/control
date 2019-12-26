@@ -1,0 +1,14 @@
+Source: easyvdr-addon-netradio-sd
+Section: misc
+Priority: optional
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Origin: easyVDR
+Build-Depends: debhelper (>= 8)
+Standards-Version: 3.9.4
+Homepage: http://wiki.easy-vdr.de/index.php?title=Easyvdr-addon-netradio
+
+Package: easyvdr-addon-netradio-sd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, convmv, streamripper
+Description: Listen Internetradio

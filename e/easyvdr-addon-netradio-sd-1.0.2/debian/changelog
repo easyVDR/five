@@ -1,0 +1,124 @@
+easyvdr-addon-netradio-sd (1.0.2-0easyVDR0~focal) focal; urgency=high
+
+  * rename addon
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 21:33:47 +0100
+
+easyvdr-addon-netradio (1.0.1-0easyVDR0~bionic) bionic; urgency=high
+
+  * new version
+  * fix my_radio/*.m3u
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 30 Mar 2019 16:50:37 +0100
+
+easyvdr-addon-netradio (1.0.0-0easyVDR6~bionic) bionic; urgency=medium
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 28 Apr 2018 14:33:43 +0200
+
+easyvdr-addon-netradio (1.0.0-0easyVDR5~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 18:08:57 +0100
+
+easyvdr-addon-netradio (1.0.0-0easyVDR4~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 25 Nov 2017 17:43:05 +0100
+
+easyvdr-addon-netradio (1.0.0-0easyVDR3~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 27 Jun 2017 23:41:51 +0200
+
+easyvdr-addon-netradio (1.0.0-0easyVDR2~trusty) trusty; urgency=high
+
+  * added new url
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 30 May 2017 16:28:39 +0200
+
+easyvdr-addon-netradio (1.0.0-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 25 Oct 2016 23:05:26 +0200
+
+easyvdr-addon-netradio (1.0.0-0easyVDR0~trusty) trusty; urgency=high
+
+  * added genre blues and oldies
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 18 Oct 2016 18:58:50 +0200
+
+easyvdr-addon-netradio (0.0.6-1easyVDR2~trusty) trusty; urgency=high
+
+  * added new url
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 09 Sep 2015 01:39:56 +0200
+
+easyvdr-addon-netradio (0.0.6-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Jan 2015 01:22:12 +0100
+ 
+easyvdr-addon-netradio (0.0.6-0easyVDR1~trusty) trusty; urgency=high
+
+  * add current m3u
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 17 Jan 2015 01:17:12 +0100
+
+easyvdr-addon-netradio (0.0.6-0easyVDR0~trusty) trusty; urgency=high
+
+  * new version
+  * add new script - start stream directly over osd-menu
+  * add depends streamripper
+  * switch to quilt
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 20 Dec 2014 02:34:23 +0100
+
+easyvdr-addon-netradio (0.0.5-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild trusty
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Oct 2013 04:18:33 +0100
+
+easyvdr-addon-netradio (0.0.5-0easyVDR0~saucy) saucy; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 14 Sep 2013 23:04:24 +0200
+
+easyvdr-addon-netradio (0.0.5-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild raring, add new url
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 23 Jun 2013 21:09:12 +0200
+ 
+easyvdr-addon-netradio (0.0.4-0easyVDR0.3) oneiric; urgency=high
+
+  * added new script, added example uk, bugfix
+
+ -- mango <vdr@gmx.de>  Fri, 01 Jun 2012 20:54:00 +0200
+ 
+easyvdr-addon-netradio (0.0.3-0easyVDR0.2) oneiric; urgency=high
+
+  * rebuild, added German Genre, README
+
+ -- mango <vdr@gmx.de>  Fri, 13 Apr 2012 23:24:00 +0200
+ 
+easyvdr-addon-netradio (0.0.2-0easyVDR0.1) oneiric; urgency=high
+
+  * RERADME
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 12 Apr 2012 11:44:31 +0200
+
+easyvdr-addon-netradio (0.0.1-0easyVDR0.1) oneiric; urgency=high
+
+  * 1st build
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 12 Apr 2012 11:01:42 +0200
+

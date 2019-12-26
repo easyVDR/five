@@ -1,0 +1,42 @@
+#!/bin/bash
+#
+# easyvdr-addon-netradio by mango
+# 02.04.2012
+# 11.02.2014 add direct play music files
+#
+# find Genre in DE (Germany)
+# DE-* clear & make dirs
+# copy files
+# add direct play music files
+#######################
+
+#### defines ####
+GENRE=$1
+MED_DIR="/media/easyvdr01"
+PLACE=$MED_DIR/net-radio/musik
+DIR=$MED_DIR/net-radio/Int-$GENRE
+Del_Int=$MED_DIR/net-radio/Int-* 
+SHORT_GENRE=$( echo $GENRE | cut -d- -f2 )
+
+
+#### clear & make dirs ####
+[ ! -f $Del_Int ] &&  rm -rf $Del_Int
+[ ! -e $DIR ] && mkdir $DIR
+
+
+#### copy files ####
+cp $PLACE/Blues/*$SHORT_GENRE*  $DIR
+
+
+#### Play Files PLG music ####
+DIR_NAME=$(echo /media/easyvdr01/net-radio/Int-* | cut -d- -f3)
+
+cd /media/easyvdr01/net-radio/Int-*
+ls > /media/easyvdr01/net-radio/tmp.m3u
+cd ..
+sed -e 's/^/Int-'$DIR_NAME'\//g' tmp.m3u > @current.m3u
+sleep 0.2
+rm -rf tmp.m3u DE*
+sleep 0.1
+svdrpsend PLUG music-sd play /media/easyvdr01/net-radio/@current.m3u >/dev/null 2>&1
+
