@@ -1,3 +1,9 @@
+easyvdr (3.99.00-1easyVDR8~focal) focal; urgency=high
+
+  * fix udev
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 26 Dec 2019 12:35:34 +0100
+
 easyvdr (3.99.00-1easyVDR7~focal) focal; urgency=high
 
   * fix easyvdr-versioninfo

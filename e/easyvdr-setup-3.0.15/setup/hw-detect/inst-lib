@@ -19,7 +19,7 @@
 [[ X$stat_easyvdr_setup_defines != X"already loaded" ]] && . /usr/share/easyvdr/setup/easyvdr-setup-defines
 [[ X$stat_easyvdr_setup_functions != X"already loaded" ]] && . /usr/share/easyvdr/setup/easyvdr-setup-functions
 
-LINE_MARK="inserted_by_easyvdr-detect"
+LINE_MARK="        "
 ####################
 
 #####
@@ -142,7 +142,7 @@ fi
 
 if [[ ${DISP_P_4[0]} != "<empty_value>" ]]
  then
-   echo "ATTRS{idVendor}==\"${DISP_P_4[0]}\", ATTRS{idProduct}==\"${DISP_P_4[1]}\", GROUP=\"uucp\", MODE=\"0660\" # $LINE_MARK"  >> /tmp/.udev.tmp
+   echo "ATTRS{idVendor}==\"${DISP_P_4[0]}\", ATTRS{idProduct}==\"${DISP_P_4[1]}\", GROUP=\"uucp\", MODE=\"0660\"  $LINE_MARK"  >> /tmp/.udev.tmp
    write_udev_rule
  else
    remove_udev_rule
@@ -222,13 +222,13 @@ esac
 case $RMT_P_1 in
    ID_NR) for EACH_ID in $PARAM_D
         do
-             echo "$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\" # $LINE_MARK"  >> /tmp/.udev.tmp
+             echo "$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\"  $LINE_MARK"  >> /tmp/.udev.tmp
         done
           WRITE_FLAG="true"           ;;
   ID_TXT) RMT_P_4=$PARAM_D
-          echo "$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\" # $LINE_MARK"                                                >> /tmp/.udev.tmp
+          echo "$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\"  $LINE_MARK"                                                >> /tmp/.udev.tmp
           WRITE_FLAG="true"           ;;
- ID_LIRC) echo "$KERN_PARA\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\" # $LINE_MARK"                                                                           >> /tmp/.udev.tmp
+ ID_LIRC) echo "$KERN_PARA\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\"  $LINE_MARK"                                                                           >> /tmp/.udev.tmp
           WRITE_FLAG="true"           ;;
        *) WRITE_FLAG="false"          ;;
 esac
@@ -276,10 +276,10 @@ else
 fi
 
 #if [ $EventCnt == 1 ]; then
-#    echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*0\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_A\", GROUP=\"vdr\" # $LINE_MARK"   >> /tmp/.udev.tmp
+#    echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*0\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_A\", GROUP=\"vdr\"  $LINE_MARK"   >> /tmp/.udev.tmp
 #else
-   echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*0\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_A\", GROUP=\"vdr\" # $LINE_MARK"   >> /tmp/.udev.tmp
-   echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*1\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_B\", GROUP=\"vdr\" # $LINE_MARK"   >> /tmp/.udev.tmp
+   echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*0\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_A\", GROUP=\"vdr\"  $LINE_MARK"   >> /tmp/.udev.tmp
+   echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*1\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_B\", GROUP=\"vdr\"  $LINE_MARK"   >> /tmp/.udev.tmp
 #fi
 write_udev_rule
 
@@ -334,7 +334,7 @@ esac
 case $RMT_P_1 in
  ID_NR) for EACH_ID in $PARAM_D
       do
-           echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\" # $LINE_MARK " >> /tmp/.udev.tmp
+           echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\"  $LINE_MARK " >> /tmp/.udev.tmp
       done
         WRITE_FLAG="true"           ;;
      *) WRITE_FLAG="false"          ;;
@@ -380,7 +380,7 @@ inst_package_no_lirc_ir
 
 case $RMT_P_1 in
   ID_TXT) RMT_P_4=$PARAM_D
-          echo "KERNEL==\"$KERN_PARA\", ATTRS{interface}==\"$RMT_P_4\", SYMLINK+=\"$TTYUSB_SYML\", GROUP=\"vdr\" # $LINE_MARK" >> /tmp/.udev.tmp
+          echo "KERNEL==\"$KERN_PARA\", ATTRS{interface}==\"$RMT_P_4\", SYMLINK+=\"$TTYUSB_SYML\", GROUP=\"vdr\"  $LINE_MARK" >> /tmp/.udev.tmp
           WRITE_FLAG="true"           ;;
        *) WRITE_FLAG="false"          ;;
 esac
@@ -627,7 +627,7 @@ udev_irk="/lib/udev/rules.d/40-ir-keytable.rules"
 ##reset
 echo " "    > $script_ldk
 echo " "    > $udev_ldk
-echo "ACTION==\"add\", SUBSYSTEM==\"rc\", RUN+=\"/usr/bin/ir-keytable -a /etc/rc_maps.cfg -s \$name\"# Default-rule, $LINE_MARK"   >  $udev_irk
+echo "ACTION==\"add\", SUBSYSTEM==\"rc\", RUN+=\"/usr/bin/ir-keytable -a /etc/rc_maps.cfg -s \$name\" $LINE_MARK"   >  $udev_irk
 rm -f $CFG_DIR/irmp_keymap
 ##
 
@@ -705,9 +705,9 @@ if [[ $KEYTAB_FOUND == "true" ]]; then
            do
                case "${KEYM_P_2[1]}" in
                 irkeytab)
-                    echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", RUN+=\"$KEY_Com\" # $LINE_MARK" >> $KEY_udev ;;
+                    echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", RUN+=\"$KEY_Com\"  $LINE_MARK" >> $KEY_udev ;;
                  av7110)
-                    echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", RUN+=\"$KEY_Com\" # $LINE_MARK"  >> $KEY_udev
+                    echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", RUN+=\"$KEY_Com\"  $LINE_MARK"  >> $KEY_udev
                     Make_av7110_Script ;;
                esac
            done
@@ -715,9 +715,9 @@ if [[ $KEYTAB_FOUND == "true" ]]; then
        ID_TXT) RMT_P_4=$PARAM_D
               case "${KEYM_P_2[1]}" in
                 irkeytab)
-                   echo "KERNEL==\"$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", RUN+=\"$KEY_Com\" # $LINE_MARK"                                                > $KEY_udev ;;
+                   echo "KERNEL==\"$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", RUN+=\"$KEY_Com\"  $LINE_MARK"                                                > $KEY_udev ;;
                   av7110)
-                   echo "KERNEL==\"$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", RUN+=\"$KEY_Com\" # $LINE_MARK"                                                > $KEY_udev
+                   echo "KERNEL==\"$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", RUN+=\"$KEY_Com\"  $LINE_MARK"                                                > $KEY_udev
                    Make_av7110_Script ;;
               esac
               ;;
