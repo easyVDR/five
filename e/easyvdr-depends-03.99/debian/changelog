@@ -1,3 +1,15 @@
+easyvdr-depends (03.99-4easyVDR6~focalubuntu1) focal; urgency=high
+
+  * adding firefox and ssh
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Dec 2019 18:32:56 +0100
+
+easyvdr-depends (03.99-4easyVDR5~focal) focal; urgency=high
+
+  * sort depends
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Dec 2019 14:13:53 +0100
+
 easyvdr-depends (03.99-4easyVDR4~focal) focal; urgency=high
 
   * fix depends
