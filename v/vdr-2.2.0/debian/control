@@ -81,29 +81,29 @@ Description: Plugin that adds support for full featured SD-DVB cards to VDR
  .
  This package contains the debugging symbols for the dvbsddevice-plugin.
 
-#Package: vdr-plugin-dvbhddevice
-#Architecture: any
-#Breaks: vdr (<< 2.0.0)
-#Depends: ${shlibs:Depends}, ${misc:Depends}, vdr (= ${binary:Version})
-#Description: Plugin that adds support for full featured HD-DVB cards to VDR
-# Video Disk Recorder (VDR) is a digital sat-receiver program using
-# Linux and DVB technologies. It allows one to record MPEG2 streams,
-# as well as output the stream to TV.
-# .
-# This package contains the dvbhddevice-plugin, which implements the output
-# device for the "Full Featured TechnoTrend S2-6400" DVB cards.
+Package: vdr-plugin-dvbhddevice
+Architecture: any
+Breaks: vdr (<< 2.0.0)
+Depends: ${shlibs:Depends}, ${misc:Depends}, vdr (= ${binary:Version})
+Description: Plugin that adds support for full featured HD-DVB cards to VDR
+ Video Disk Recorder (VDR) is a digital sat-receiver program using
+ Linux and DVB technologies. It allows one to record MPEG2 streams,
+ as well as output the stream to TV.
+ .
+ This package contains the dvbhddevice-plugin, which implements the output
+ device for the "Full Featured TechnoTrend S2-6400" DVB cards.
 
-#Package: vdr-plugin-dvbhddevice-dbg
-#Section: debug
-#Priority: extra
-#Architecture: any
-#Depends: ${misc:Depends}, vdr-plugin-dvbhddevice (= ${binary:Version})
-#Description: Plugin that adds support for full featured HD-DVB cards to VDR
-# Video Disk Recorder (VDR) is a digital sat-receiver program using
-# Linux and DVB technologies. It allows one to record MPEG2 streams,
-# as well as output the stream to TV.
-# .
-# This package contains the debugging symbols for the dvbhddevice-plugin.
+Package: vdr-plugin-dvbhddevice-dbg
+Section: debug
+Priority: extra
+Architecture: any
+Depends: ${misc:Depends}, vdr-plugin-dvbhddevice (= ${binary:Version})
+Description: Plugin that adds support for full featured HD-DVB cards to VDR
+ Video Disk Recorder (VDR) is a digital sat-receiver program using
+ Linux and DVB technologies. It allows one to record MPEG2 streams,
+ as well as output the stream to TV.
+ .
+ This package contains the debugging symbols for the dvbhddevice-plugin.
 
 Package: vdr-plugin-examples
 Architecture: any

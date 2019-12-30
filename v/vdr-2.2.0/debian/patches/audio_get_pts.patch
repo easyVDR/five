@@ -1,0 +1,18 @@
+Index: vdr-2.2.0/PLUGINS/src/dvbhddevice/dvbhdffdevice.h
+===================================================================
+--- vdr-2.2.0.orig/PLUGINS/src/dvbhddevice/dvbhdffdevice.h
++++ vdr-2.2.0/PLUGINS/src/dvbhddevice/dvbhdffdevice.h
+@@ -11,7 +11,12 @@
+ #include <vdr/dvbdevice.h>
+ #include <vdr/dvbspu.h>
+ 
+-/// The cDvbHdFfDevice implements a DVB device which can be accessed through the Linux DVB driver API.
++// AUDIO_GET_PTS was dropped from the kernel!
++#ifndef AUDIO_GET_PTS
++#define AUDIO_GET_PTS _IOR('o', 19, __u64)
++#endif
++
++ /// The cDvbHdFfDevice implements a DVB device which can be accessed through the Linux DVB driver API.
+ 
+ class cDvbHdFfDevice : public cDvbDevice {
+ private:

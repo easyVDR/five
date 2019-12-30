@@ -29,6 +29,7 @@
 49_ringbuffer.patch
 50_vdr-2.2.0-aux.patch
 vdr-gcc7-fix.patch
+audio_get_pts.patch
 vdr-2.3.2-unsignedtosigned.patch
 zz-90_plugin_missing.patch
 zz-91_easy_PLUG_Setup_Tiny.patch
