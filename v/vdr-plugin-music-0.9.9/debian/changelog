@@ -1,3 +1,15 @@
+vdr-plugin-music (0.9.9-7easyVDR5~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 28 Dec 2019 19:10:14 +0100
+
+vdr-plugin-music (0.9.9-7easyVDR4~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 18 Dec 2019 23:14:34 +0100
+
 vdr-plugin-music (0.9.9-7easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild
