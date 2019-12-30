@@ -1,0 +1,10 @@
+Tests: defconfig
+Depends: lighttpd
+Restrictions: needs-root
+
+Tests: load-all-modules
+Depends: lighttpd, lighttpd-modules-ldap, lighttpd-modules-mysql, lighttpd-mod-trigger-b4-dl, lighttpd-mod-cml, lighttpd-mod-magnet, lighttpd-mod-webdav, lighttpd-mod-authn-gssapi, lighttpd-mod-authn-pam, lighttpd-mod-authn-sasl, lighttpd-mod-geoip, lighttpd-mod-vhostdb-dbi, lighttpd-mod-vhostdb-pgsql
+
+Tests: serve-static-file
+Depends: lighttpd, curl
+Restrictions: allow-stderr

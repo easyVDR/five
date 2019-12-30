@@ -1,0 +1,8 @@
+core-fix-mixed-use-of-srv-split_vals-array-fixes-293.patch
+mod_magnet-fix-invalid-script-return-type-crash-fixe.patch
+core-fix-assertion-with-server.error-handler-fixes-2.patch
+mod_wstunnel-fix-ping-interval-for-big-endian-fixes-.patch
+core-fix-abort-in-http-parseopts-fixes-2945.patch
+core-remove-repeated-slashes-in-http-parseopts.patch
+build-dev-package.patch
+add-lighttpd.pc-configure.patch

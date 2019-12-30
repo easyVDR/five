@@ -1,0 +1,25 @@
+commit 5440f04e8a9476e9a8665a93db3934a566f8beec
+Author: Glenn Strauss <gstrauss@gluelogic.com>
+Date: Wed, 13 Mar 2019 00:46:49 -0400
+
+[core] fix assertion with server.error-handler (fixes #2941)
+
+(thx andpr)
+
+x-ref:
+  "failed assertion on incoming bad request when server.error-handler option is used"
+  https://redmine.lighttpd.net/issues/2941
+
+diff --git a/src/connections.c b/src/connections.c
+index 2e2be98f..a67c377a 100644
+--- a/src/connections.c
++++ b/src/connections.c
+@@ -1193,6 +1193,8 @@ static int connection_handle_request(server *srv, connection *con) {
+ 								con->error_handler_saved_status = -con->http_status; /*(negative to flag old behavior)*/
+ 							}
+ 
++							if (con->request.http_version == HTTP_VERSION_UNSET) con->request.http_version = HTTP_VERSION_1_0;
++
+ 							buffer_copy_buffer(con->request.uri, error_handler);
+ 							connection_handle_errdoc_init(con);
+ 							con->http_status = 0; /*(after connection_handle_errdoc_init())*/

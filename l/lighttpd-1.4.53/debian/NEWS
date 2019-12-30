@@ -1,0 +1,33 @@
+lighttpd (1.4.52-4) unstable; urgency=medium
+
+  If mod_cgi is enabled, an alias is now configured:
+    alias.url += ( "/cgi-bin/" => "/usr/lib/cgi-bin/" )
+  whereas an alias was previously not specified.  "/usr/lib/cgi-bin" is the
+  Debian standard location for CGI.  If an existing installation placed
+  cgi-bin/ in the document tree, then the alias.url directive in 10-cgi.conf
+  will need to be commented out, or the cgi-bin/ moved to /usr/lib/cgi-bin/
+
+  For consistency and security, this version also changes lighttpd.conf
+  to default to strict parsing and normalization of request URLs.
+  Most websites will be unaffected by these more secure defaults.
+  Some sites may need to comment out or to disable some of the
+  strict options in server.http-parseopts, e.g. if a site encodes
+  URLs in the url-path and requires "%2F" to be preserved as "%2F"
+  instead of being decoded to "/".
+
+ -- Glenn Strauss <gstrauss@gluelogic.com>  Sun, 13 Jan 2019 15:58:07 +0000
+
+lighttpd (1.4.52-2+exp1) experimental; urgency=medium
+
+  This version changes the way binary packages are laid out. Modules are
+  coalesced to reduce the binary package count and runtime dependencies.
+  Therefore two modules got moved out of the main lighttpd package:
+   * mod_vhostdb_ldap -> lighttpd-modules-ldap
+   * mod_vhostdb_mysql -> lighttpd-modules-mysql
+  If you use Recommends, these packages will be installed automatically in
+  buster to ease upgrading. After that, the recommendation will be dropped.
+
+  Do not depend on lighttpd-modules-* or lighttpd for using specific modules.
+  Do depend on virtual packages lighttpd-mod-* instead.
+
+ -- Helmut Grohne <helmut.grohne@intenta.de>  Fri, 04 Jan 2019 08:23:03 +0100

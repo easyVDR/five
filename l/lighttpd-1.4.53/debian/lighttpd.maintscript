@@ -1,0 +1,1 @@
+rm_conffile /etc/lighttpd/conf-available/10-access.conf 1.4.31-4 lighttpd

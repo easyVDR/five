@@ -1,0 +1,26 @@
+#!/bin/sh
+
+set -ue
+
+export PATH="/sbin:/usr/sbin:$PATH"
+
+CONF="$AUTOPKGTEST_TMP/lighttpd.conf"
+(
+	cat <<EOF
+server.document-root = "$AUTOPKGTEST_TMP"
+server.modules = (
+	# must be loaded before mod_cgi
+	"mod_indexfile",
+EOF
+	(
+		cd /usr/lib/lighttpd
+		for mod in *.so; do
+			mod=${mod%.so}
+			test "$mod" = mod_indexfile && continue
+			echo "\"${mod%.so}\","
+		done
+	)
+	echo ")"
+) > "$CONF"
+
+lighttpd -tt -f "$CONF"

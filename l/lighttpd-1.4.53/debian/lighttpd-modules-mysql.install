@@ -1,0 +1,3 @@
+debian/tmp/usr/lib/lighttpd/mod_authn_mysql.so
+debian/tmp/usr/lib/lighttpd/mod_mysql_vhost.so
+debian/tmp/usr/lib/lighttpd/mod_vhostdb_mysql.so

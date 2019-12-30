@@ -1,0 +1,316 @@
+Source: lighttpd
+Section: httpd
+Priority: optional
+Maintainer: Debian QA Group <packages@qa.debian.org>
+Homepage: https://www.lighttpd.net/
+Build-Depends:
+ dpkg-dev (>= 1.16.1~),
+ debhelper (>= 9.20130624~),
+ debhelper (>= 9.20160709) | dh-systemd (>= 1.3),
+ dh-autoreconf,
+ mime-support,
+ libssl-dev,
+ zlib1g-dev,
+ libbz2-dev,
+ libattr1-dev,
+ libpcre3-dev,
+ libgamin-dev,
+ default-libmysqlclient-dev | libmysqlclient-dev,
+ libdbi-dev,
+ libldap2-dev,
+ libfcgi-dev,
+ libgdbm-dev,
+ libgeoip-dev,
+ liblua5.1-0-dev,
+ libmemcached-dev,
+ pkg-config,
+ uuid-dev,
+ libsqlite3-dev,
+ libxml2-dev,
+ libkrb5-dev,
+ libpam0g-dev,
+ libpq-dev,
+ libsasl2-dev,
+ libunwind8-dev <pkg.lighttpd.libunwind>,
+ perl:native,
+ php-cgi:native <!nocheck> | php5-cgi:native <!nocheck>,
+Vcs-Git: https://salsa.debian.org/debian/lighttpd.git
+Vcs-Browser: https://salsa.debian.org/debian/lighttpd
+Standards-Version: 4.3.0
+Rules-Requires-Root: binary-targets
+
+Package: lighttpd
+Architecture: any
+Provides:
+ httpd,
+ httpd-cgi,
+ ${lighttpd:ModuleProvides},
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ mime-support,
+ lsb-base (>= 3.0-6),
+Recommends:
+ lighttpd-modules-ldap,
+ lighttpd-modules-mysql,
+ spawn-fcgi,
+ perl:any,
+Suggests:
+ openssl,
+ rrdtool,
+ php-cgi,
+ apache2-utils,
+ lighttpd-doc,
+ ufw
+Description: fast webserver with minimal memory footprint
+ lighttpd is a small webserver and fast webserver developed with
+ security in mind and a lot of features.
+ It has support for
+   * CGI, FastCGI and SSI
+   * virtual hosts
+   * URL rewriting
+   * authentication (plain files, htpasswd, LDAP)
+   * transparent content compression
+   * conditional configuration
+   * HTTP proxying
+ and configuration is straight-forward and easy.
+
+Package: lighttpd-doc
+Multi-Arch: foreign
+Architecture: all
+Section: doc
+Depends:
+ ${misc:Depends},
+Suggests:
+ lighttpd,
+Description: documentation for lighttpd
+ lighttpd is a small webserver and fast webserver developed with
+ security in mind and a lot of features.
+ .
+ This package contains documentation for lighttpd.
+
+Package: lighttpd-modules-ldap
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Breaks:
+ lighttpd (<< 1.4.52-2+exp1),
+ lighttpd-mod-authn-ldap (<< 1.4.52-2+exp1),
+Replaces:
+ lighttpd (<< 1.4.52-2+exp1),
+ lighttpd-mod-authn-ldap (<< 1.4.52-2+exp1),
+Provides:
+ ${lighttpd:ModuleProvides},
+Description: LDAP-based modules for lighttpd
+ This package contains the following modules:
+  * mod_authn_ldap: With this module, it is possible to perform
+    authentication against an LDAP server.
+  * mod_vhostdb_ldap: Database backend module for using LDAP as
+    a source for virtual host configuration using mod_vhostdb.
+ .
+ Do not depend on this package. Depend on the provided lighttpd-mod-*
+ packages instead.
+
+Package: lighttpd-modules-mysql
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Breaks:
+ lighttpd (<< 1.4.52-2+exp1),
+ lighttpd-mod-mysql-vhost (<< 1.4.52-2+exp1),
+ lighttpd-mod-authn-mysql (<< 1.4.52-2+exp1),
+Replaces:
+ lighttpd (<< 1.4.52-2+exp1),
+ lighttpd-mod-mysql-vhost (<< 1.4.52-2+exp1),
+ lighttpd-mod-authn-mysql (<< 1.4.52-2+exp1),
+Provides:
+ ${lighttpd:ModuleProvides},
+Description: MySQL-based modules for lighttpd
+ This package contains the following modules:
+  * mod_authn_mysql: With this module, it is possible to perform
+    authentication using a MySQL table.
+  * mod_mysql_vhost: With this module, it is possible to write the
+    configuration for virtual hosts into a MySQL table instead of
+    including it in the lighttpd configuration file. Deprecated.
+  * mod_vhostdb_mysql: Database backend module for using MySQL as
+    a source for virtual host configuration using mod_vhostdb.
+ .
+ Do not depend on this package. Depend on the provided lighttpd-mod-*
+ packages instead.
+
+Package: lighttpd-mod-mysql-vhost
+Section: oldlibs
+Architecture: any
+Depends:
+ ${misc:Depends},
+ lighttpd-modules-mysql (= ${binary:Version}),
+Description: Transitional dummy package for lighttpd MySQL-based vhost config
+ This package contains the myqsl_vhost module for lighttpd. With
+ this module, it is possible to write the configuration for virtual
+ hosts into a MySQL table instead of including it in the lighttpd
+ configuration file.
+ .
+ While this transitional dummy package will go away, the package name
+ continues to exist as a virtual package provided by lighttpd-modules-mysql.
+
+Package: lighttpd-mod-trigger-b4-dl
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Recommends:
+ memcached,
+Description: anti-deep-linking module for lighttpd
+ The trigger-b4-dl module for lighttpd can prevent deep linking
+ from other sites by requiring users to visit a trigger URL to
+ be able to download certain files.
+
+Package: lighttpd-mod-cml
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Recommends:
+ memcached,
+Description: cache meta language module for lighttpd
+ With the cache meta language, it is possible to describe to the
+ dependencies of a cached file to its source files/scripts. For the
+ cache files, the scripting language Lua is used.
+ .
+ THIS MODULE IS OBSOLETED, USE mod_magnet INSTEAD.
+
+Package: lighttpd-mod-magnet
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Description: control the request handling module for lighttpd
+ mod_magnet can attract a request in several stages in the request-handling.
+ either at the same level as mod_rewrite, before any parsing of the URL is done
+ or at a later stage, when the doc-root is known and the physical-path is
+ already setup
+
+Package: lighttpd-mod-webdav
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Description: WebDAV module for lighttpd
+ The WebDAV module is a very minimalistic implementation of RFC 2518.
+ Minimalistic means that not all operations are implemented yet.
+ .
+ Currently supports:
+  GET
+  POST
+  HEAD
+  PROPFIND
+  OPTIONS
+  MKCOL
+  DELETE
+  PUT
+
+Package: lighttpd-dev
+Architecture: any
+Suggests: lighttpd
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Development files for lighttpd
+ This package contains the development header-files for lighttpd.
+
+Package: lighttpd-mod-authn-gssapi
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Description: GSSAPI authentication for lighttpd
+ This package contains the authn_gssapi module for lighttpd. With
+ this module, it is possible to perform GSSAPI authentication.
+
+Package: lighttpd-mod-authn-ldap
+Section: oldlibs
+Architecture: any
+Depends:
+ ${misc:Depends},
+ lighttpd-modules-ldap (= ${binary:Version}),
+Description: Transitional dummy package for LDAP authentication for lighttpd
+ This package contains the authn_ldap module for lighttpd. With
+ this module, it is possible to perform authentication against an LDAP
+ server.
+ .
+ While this transitional dummy package will go away, the package name
+ continues to exist as a virtual package provided by lighttpd-modules-ldap.
+
+Package: lighttpd-mod-authn-mysql
+Section: oldlibs
+Architecture: any
+Depends:
+ ${misc:Depends},
+ lighttpd-modules-mysql (= ${binary:Version}),
+Description: Transitional dummy package for MySQL authentication for lighttpd
+ This package contains the authn_mysql module for lighttpd. With
+ this module, it is possible to perform authentication using a MySQL
+ table.
+ .
+ While this transitional dummy package will go away, the package name
+ continues to exist as a virtual package provided by lighttpd-modules-mysql.
+
+Package: lighttpd-mod-authn-pam
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Description: PAM authentication for lighttpd
+ This package contains the authn_pam module for lighttpd. With this module, it
+ is possible to perform authentication using PAM.
+
+Package: lighttpd-mod-authn-sasl
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Description: SASL authentication for lighttpd
+ This package contains the authn_sasl module for lighttpd. With this module, it
+ is possible to perform authentication using SASL.
+
+Package: lighttpd-mod-geoip
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Description: GeoIP restrictions for lighttpd
+ This package contains the geoip module for lighttpd. With
+ this module, it is possible to distinguish users based on the location
+ using a GeoIP database.
+
+Package: lighttpd-mod-vhostdb-dbi
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Description: DBI-based virtual host configuration for lighttpd
+ This package contains the vhostdb_dbi module for lighttpd. With this module,
+ it is possible to write the configuration for virtual hosts into a database
+ table instead of including it in the lighttpd configuration file.
+
+Package: lighttpd-mod-vhostdb-pgsql
+Architecture: any
+Depends:
+ ${misc:Depends},
+ ${shlibs:Depends},
+ lighttpd (= ${binary:Version}),
+Description: PostgreSQL-based virtual host configuration for lighttpd
+ This package contains the vhostdb_pgsql module for lighttpd. With this module,
+ it is possible to write the configuration for virtual hosts into a PostgreSQL
+ table instead of including it in the lighttpd configuration file.

@@ -1,0 +1,36 @@
+commit 9459c0546842930265c8bc19b07609286e7e67cb
+Author: Glenn Strauss <gstrauss@gluelogic.com>
+Date: Wed, 13 Feb 2019 19:53:04 -0500
+
+[core] fix mixed use of srv->split_vals array (fixes #2932)
+
+regression in mod_evhost in lighttpd 1.4.53
+regression in mod_flv_streaming in lighttpd 1.4.51 - lighttpd 1.4.53
+
+(thx moisseev)
+
+x-ref:
+  "[regression] %0 pattern does not match hostnames without the domain part"
+  https://redmine.lighttpd.net/issues/2932
+
+diff --git a/src/array.c b/src/array.c
+index 4331b67b..1b54ec5c 100644
+--- a/src/array.c
++++ b/src/array.c
+@@ -64,6 +64,7 @@ void array_reset(array *a) {
+ 
+ 	for (i = 0; i < a->used; i++) {
+ 		a->data[i]->fn->reset(a->data[i]);
++		a->data[i]->is_index_key = 0;
+ 	}
+ 
+ 	a->used = 0;
+@@ -76,6 +77,7 @@ void array_reset_data_strings(array *a) {
+ 	for (size_t i = 0; i < a->used; ++i) {
+ 		data_string * const ds = (data_string *)a->data[i];
+ 		/*force_assert(ds->type == TYPE_STRING);*/
++		ds->is_index_key = 0;
+ 		buffer_reset(ds->key);
+ 		buffer_reset(ds->value);
+ 	}
+

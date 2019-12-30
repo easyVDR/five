@@ -1,0 +1,17 @@
+Description: Add lighttpd.pc to ac_config_files to make sure its being built
+ correctly.
+Author: Andreas Moog <andreas.moog@warperbbs.de>
+Bug-Debian: http://bugs.debian.org/726934
+
+Index: lighttpd-1.4.49/configure.ac
+===================================================================
+--- lighttpd-1.4.49.orig/configure.ac
++++ lighttpd-1.4.49/configure.ac
+@@ -1383,6 +1383,7 @@
+   tests/docroot/www/indexfile/Makefile \
+   tests/docroot/www/Makefile \
+   tests/Makefile \
++  lighttpd.pc \
+ ])
+ AC_OUTPUT
+ 

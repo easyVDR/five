@@ -1,0 +1,27 @@
+--- /dev/null
++++ lighttpd-1.4.33/lighttpd.pc.in
+@@ -0,0 +1,14 @@
++# lighttpd pkg-config file
++
++prefix=@prefix@
++exec_prefix=@exec_prefix@
++libdir=@libdir@
++includedir=@includedir@
++
++Name: lighttpd
++Description: lighttpd
++Version: @VERSION@
++Requires:
++Conflicts:
++Libs:
++Cflags: -I${includedir} -DHAVE_CONFIG_H @CPPFLAGS@
+
+#--- lighttpd-1.4.44.orig/Makefile.am
+#+++ lighttpd-1.4.44/Makefile.am
+#@@ -7,3 +7,6 @@ ACLOCAL_AMFLAGS = -I m4 -I scripts/m4
+# distcleancheck_listfiles = find -type f -exec sh -c 'test -f $(srcdir)/{} || echo {}' ';'
+# 
+# AM_DISTCHECK_CONFIGURE_FLAGS=--with-openssl
+#+
+#+pkgconfigdir = $(libdir)/pkgconfig
+#+pkgconfig_DATA = lighttpd.pc

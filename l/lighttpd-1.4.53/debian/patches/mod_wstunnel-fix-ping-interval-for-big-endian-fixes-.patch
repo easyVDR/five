@@ -1,0 +1,27 @@
+commit 107fa1f2827d281468e2c12b539751a5a68acbe5
+Author: Glenn Strauss <gstrauss@gluelogic.com>
+Date: Wed, 10 Apr 2019 11:26:02 -0400
+
+[mod_wstunnel] fix ping-interval for big-endian (fixes #2944)
+
+fix wstunnel.ping-interval for big-endian architectures
+
+(thx ste_p_james)
+
+x-ref:
+  "[patch] wstunnel.ping-interval ineffective"
+  https://redmine.lighttpd.net/issues/2944
+
+diff --git a/src/mod_wstunnel.c b/src/mod_wstunnel.c
+index 238791a9..ba3ddc17 100644
+--- a/src/mod_wstunnel.c
++++ b/src/mod_wstunnel.c
+@@ -107,7 +107,7 @@ typedef struct {
+     gw_plugin_config gw;
+     buffer *frame_type;
+     array *origins;
+-    unsigned int ping_interval;
++    unsigned short int ping_interval;
+ } plugin_config;
+ 
+ typedef struct plugin_data {

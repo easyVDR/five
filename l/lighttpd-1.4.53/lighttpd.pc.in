@@ -1,0 +1,14 @@
+# lighttpd pkg-config file
+
+prefix=@prefix@
+exec_prefix=@exec_prefix@
+libdir=@libdir@
+includedir=@includedir@
+
+Name: lighttpd
+Description: lighttpd
+Version: @VERSION@
+Requires:
+Conflicts:
+Libs:
+Cflags: -I${includedir} -DHAVE_CONFIG_H @CPPFLAGS@

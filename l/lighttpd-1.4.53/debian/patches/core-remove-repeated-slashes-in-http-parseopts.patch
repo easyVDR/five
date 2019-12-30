@@ -1,0 +1,49 @@
+commit e757978497c35b2857784f3b4452d0ebef7793f9
+Author: Glenn Strauss <gstrauss@gluelogic.com>
+Date: Mon, 15 Apr 2019 23:36:21 -0400
+
+[core] remove repeated slashes in http-parseopts
+
+remove repeated slashes in server.http-parseopts
+with url-path-dotseg-remove, including leading "//"
+
+(prior to this patch, leading "//" was skipped)
+
+diff --git a/src/burl.c b/src/burl.c
+index c4b928fd..b62a5cd5 100644
+--- a/src/burl.c
++++ b/src/burl.c
+@@ -289,7 +289,7 @@ static int burl_normalize_path (buffer *b, buffer *t, int qs, int flags)
+             path_simplify = 1;
+             break;
+         }
+-        do { ++i; } while (i < len && s[i] != '/');
++        while (i < len && s[i] != '/') ++i;
+         if (s[i] == '/' && s[i+1] == '/') { /*(s[len] != '/')*/
+             path_simplify = 1;
+             break;
+diff --git a/src/t/test_burl.c b/src/t/test_burl.c
+index f7a16815..e9cc80de 100644
+--- a/src/t/test_burl.c
++++ b/src/t/test_burl.c
+@@ -98,6 +98,8 @@ static void test_burl_normalize (void) {
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("/a/b?c=/"), CONST_STR_LEN("/a/b?c=/"));
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("/a/b?c=%2f"), CONST_STR_LEN("/a/b?c=/"));
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("%2f?"), CONST_STR_LEN("/?"));
++    run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("%2f%2f"), CONST_STR_LEN("//"));
++    run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("%2f%2f?"), CONST_STR_LEN("//?"));
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("/%2f?"), CONST_STR_LEN("//?"));
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("/a%2fb"), CONST_STR_LEN("/a/b"));
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("/a%2Fb"), CONST_STR_LEN("/a/b"));
+@@ -112,6 +114,8 @@ static void test_burl_normalize (void) {
+     flags &= ~HTTP_PARSEOPT_URL_NORMALIZE_PATH_2F_REJECT;
+ 
+     flags |= HTTP_PARSEOPT_URL_NORMALIZE_PATH_DOTSEG_REMOVE;
++    run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("//"), CONST_STR_LEN("/"));
++    run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("/a//b"), CONST_STR_LEN("/a/b"));
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("./a/b"), CONST_STR_LEN("/a/b"));
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("../a/b"), CONST_STR_LEN("/a/b"));
+     run_burl_normalize(psrc, ptmp, flags, __LINE__, CONST_STR_LEN("/a/./b"), CONST_STR_LEN("/a/b"));
+-- 
+2.20.1
+
