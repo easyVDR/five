@@ -1,3 +1,9 @@
+vdr-plugin-radio (1.0.0-4easyVDR5~focal) focal; urgency=high
+
+  * added script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 24 Dec 2019 23:25:25 +0100
+
 vdr-plugin-radio (1.0.0-4easyVDR4~focal) focal; urgency=high
 
   * automatic rebuild

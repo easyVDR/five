@@ -1,0 +1,35 @@
+#!/bin/bash
+# iptv vlc
+# $1 = outfile
+LOGFILE=/tmp/vlc.log
+
+### Variabel
+Name="IPTV VLC"
+### 
+
+# get last Artist/Title
+artist=`cat ${LOGFILE} | grep 'Icy-Name' | awk "-F[:]" '{print $3}' | tail -n 1`
+#title=`cat ${LOGFILE} | grep 'New Title' | awk "-F[=]" '{print $2}' | tail -n 1`
+title=`cat ${LOGFILE} | grep 'Icy-Title' | awk "-F[=]" '{print $2}' | tail -n 1`
+genre=`cat ${LOGFILE} | grep 'Icy-Genre' | awk "-F[:]" '{print $3}' | tail -n 1`
+quality=`cat ${LOGFILE} | grep 'icy-br' | awk "-F[:]" '{print $4}' | tail -n 1`
+website=`cat ${LOGFILE} | grep 'icy-url' | awk "-F[:]" '{print $3}' | tail -n 1`
+streamurl=`cat ${LOGFILE} | grep 'http access debug'|grep 'proxy for' | awk "-F[ ]" '{print $8}' | tail -n 1`
+
+# temp. no Info
+artist=${artist:='k.A.'}; 
+title=${title:='k.A.'}
+genre=${genre:='k.A.'}
+quality=${quality:='k.A.'}
+website=${website:='k.A.'}
+streamurl=${streamurl:='k.A.'}
+
+# write...
+#if [ $1 ]; then
+        echo "$Name"    > $1
+        echo "$quality kBr $artist" >> $1
+        echo "$title"  >> $1
+        echo "$title|$quality kBr|$name"  >> $1
+#else
+#       echo "$Name: Interpret/Titel =  $artist / $title"
+#fi
