@@ -68,6 +68,7 @@ libcddb2
 zenity
 dialog
 ############ Ubuntu Desktop tools
+xinit
 lightdm
 #python-xdg wir für die richtige funktion von xdg bei openbox (autostart) benötigt
 python-xdg
@@ -136,12 +137,11 @@ easyvdr-hdet
 easyvdr-ppa-keys
 easyvdr-tripatch
 easyvdr-unload-dvb
-easyvdr-addon-acpi-xinit
+easyvdr-addon-acpi-wakeup
 plymouth-theme-easyvdr-logo
 vdr
 vdr-plugin-streamdev-server
 vdr-plugin-setup
 w-scan
-wakeup
 #easyvdr-usbmount
 
