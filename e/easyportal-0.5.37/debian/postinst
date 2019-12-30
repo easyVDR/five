@@ -61,9 +61,7 @@ esac
 
  mv /etc/lighttpd/lighttpd.conf /etc/lighttpd/lighttpd.conf.orig
  cp /etc/lighttpd/lighttpd.conf.easyvdr /etc/lighttpd/lighttpd.conf
- adduser vdr www-data > /dev/null || true
- adduser www-data vdr > /dev/null || true
- sleep 1
+ sleep 0.5
  systemctl force-reload lighttpd.service
    
 # dh_installdeb will replace this with shell code automatically

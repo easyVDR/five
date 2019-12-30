@@ -75,12 +75,12 @@ include('includes/subnavi_tools.php');
 
 echo "<h2>$txt_ueberschrift</h2>";
 
-$a_base_stable      = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/3-base-stable");
-$a_vdr_stable       = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/3-vdr-stable");
-$a_others_stable    = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/3-others-stable");
-$a_base_testing     = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/3-base-testing");
-$a_vdr_testing      = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/3-vdr-testing");
-$a_others_testing   = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/3-others-testing");
+$a_base_stable      = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/5-base-stable");
+$a_vdr_stable       = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/5-vdr-stable");
+$a_others_stable    = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/5-others-stable");
+$a_base_testing     = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/5-base-testing");
+$a_vdr_testing      = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/5-vdr-testing");
+$a_others_testing   = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/5-others-testing");
 if ($_SESSION["r_expert"] == "y" ) {
   $a_base_unstable    = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/5-base-unstable");
   $a_vdr_unstable     = file("https://launchpad.net/~easyvdr-team/+archive/ubuntu/5-vdr-unstable");

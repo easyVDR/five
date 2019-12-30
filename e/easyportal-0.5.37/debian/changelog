@@ -1,3 +1,15 @@
+easyportal (0.5.37-4easyVDR7~focal) focal; urgency=high
+
+  * fix paketquellen to 5-*-*
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 Dec 2019 18:43:53 +0100
+
+easyportal (0.5.37-4easyVDR6~focal) focal; urgency=high
+
+  * fix posinst
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 Dec 2019 00:14:09 +0100
+
 easyportal (0.5.37-4easyVDR5~focal) focal; urgency=high
 
   * fix easyvdr-version

@@ -1,5 +1,5 @@
 <?php
-include('includes/kopf.php'); 
+include('includes/kopf.php');
 
 if (file_exists($EASYPORTAL_DOC_ROOT."tmp")) {
 //    echo "Das Verzeichnis existiert";
@@ -61,93 +61,93 @@ if (safepost('aendern')) {
      $line = trim($line);
      if ($stable == 1) {
        ## vdr stable
-       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main") or 
-           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main")) {
-           $line =  "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main"; }
-       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main") or 
-           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main")) {
-           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main"; }
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main") {$vdr_stable = 1;}
+       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main") or 
+           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main")) {
+           $line =  "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main"; }
+       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main") or 
+           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main")) {
+           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main") {$vdr_stable = 1;}
        ## base-stable
-       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main") or
-           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main")) {
-           $line =  "deb http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main"; }
-       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main") or 
-           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main")) {
-           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main"; }
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main") {$base_stable = 1;}
+       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main") or
+           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main")) {
+           $line =  "deb http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main"; }
+       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main") or 
+           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main")) {
+           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main") {$base_stable = 1;}
        ## others-stable
-       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main") or
-           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main")) {
-           $line =  "deb http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main"; }
-       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main") or
-           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main")) {
-           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main"; }
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main") {$others_stable = 1;}
+       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main") or
+           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main")) {
+           $line =  "deb http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main"; }
+       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main") or
+           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main")) {
+           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main") {$others_stable = 1;}
     } else {
        $vdr_stable     = 1;
        $base_stable    = 1;
        $others_stable  = 1;
        ## vdr stable
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main") {
-           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main"; }
-       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main") {
-           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main") {
+           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main"; }
+       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main") {
+           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main"; }
        ## base-stable
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main") {
-           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main"; }
-       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main") {
-           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/3-base-stable/ubuntu trusty main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main") {
+           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main"; }
+       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main") {
+           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/5-base-stable/ubuntu focal main"; }
        ## others-stable
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main") {
-           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main"; }
-       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main") {
-           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/3-others-stable/ubuntu trusty main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main") {
+           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main"; }
+       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main") {
+           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/5-others-stable/ubuntu focal main"; }
     }
     if ($testing == 1) {
        ## vdr testing
-       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main") or
-           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main")) {
-           $line =  "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main"; }
-       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main") or
-           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main")) {
-           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main"; }
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main") {$vdr_testing = 1;}
+       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main") or
+           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main")) {
+           $line =  "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main"; }
+       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main") or
+           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main")) {
+           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main") {$vdr_testing = 1;}
        ## base-testing
-       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main") or 
-           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main")) {
-           $line =  "deb http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main"; }
-       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main") or 
-           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main")) {
-           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main"; }
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main") {$base_testing = 1;}
+       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main") or 
+           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main")) {
+           $line =  "deb http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main"; }
+       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main") or 
+           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main")) {
+           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main") {$base_testing = 1;}
        ## others-testing
-       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main") or
-           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main")) {
-           $line =  "deb http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main"; }
-       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main") or 
-           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main")) {
-           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main"; }
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main") {$others_testing = 1;}
+       if (($line == "# deb http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main") or
+           ($line == "#deb http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main")) {
+           $line =  "deb http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main"; }
+       if (($line == "# deb-src http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main") or 
+           ($line == "#deb-src http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main")) {
+           $line =  "deb-src http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main") {$others_testing = 1;}
     } else {
        $vdr_testing     = 1;
        $base_testing    = 1;
        $others_testing  = 1;
        ## vdr testing
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main") {
-           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main"; }
-       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main") {
-           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main") {
+           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main"; }
+       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main") {
+           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main"; }
        ## base-testing
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main") {
-           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main"; }
-       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main") {
-           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main") {
+           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main"; }
+       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main") {
+           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main"; }
        ## others-testing
-       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main") {
-           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main"; }
-       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main") {
-           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main"; }
+       if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main") {
+           $line =  "# deb http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main"; }
+       if ($line == "deb-src http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main") {
+           $line =  "# deb-src http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main"; }
     }
     if ($unstable == 1) {
        ## vdr unstable
@@ -200,18 +200,18 @@ if (safepost('aendern')) {
   }
   if ($vdr_testing == 0) { 
      fwrite($datei_neu, "\n## vdr-testing\n");
-     fwrite($datei_neu, "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main\n"); 
-     fwrite($datei_neu, "deb-src http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main\n"); 
+     fwrite($datei_neu, "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main\n"); 
+     fwrite($datei_neu, "deb-src http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main\n"); 
   }
   if ($base_testing == 0) { 
      fwrite($datei_neu, "\n## base-testing\n");
-     fwrite($datei_neu, "deb http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main\n"); 
-     fwrite($datei_neu, "deb-src http://ppa.launchpad.net/easyvdr-team/3-base-testing/ubuntu trusty main\n"); 
+     fwrite($datei_neu, "deb http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main\n"); 
+     fwrite($datei_neu, "deb-src http://ppa.launchpad.net/easyvdr-team/5-base-testing/ubuntu focal main\n"); 
   }
   if ($others_testing == 0) { 
      fwrite($datei_neu, "\n## others-testing\n");
-     fwrite($datei_neu, "deb http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main\n"); 
-     fwrite($datei_neu, "deb-src http://ppa.launchpad.net/easyvdr-team/3-others-testing/ubuntu trusty main\n"); 
+     fwrite($datei_neu, "deb http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main\n"); 
+     fwrite($datei_neu, "deb-src http://ppa.launchpad.net/easyvdr-team/5-others-testing/ubuntu focal main\n"); 
   }
   if ($vdr_unstable == 0) { 
      fwrite($datei_neu, "\n## vdr-unstable\n");
@@ -254,8 +254,8 @@ $unstable = 0;
 
 while (!feof($datei)) {
   $line = trim(fgets($datei));
-  if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-stable/ubuntu trusty main")   {$stable = 1;}
-  if ($line == "deb http://ppa.launchpad.net/easyvdr-team/3-vdr-testing/ubuntu trusty main")  {$testing = 1;}
+  if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-stable/ubuntu focal main")   {$stable = 1;}
+  if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-testing/ubuntu focal main")  {$testing = 1;}
   if ($line == "deb http://ppa.launchpad.net/easyvdr-team/5-vdr-unstable/ubuntu focal main") {$unstable = 1;}
 }
 
