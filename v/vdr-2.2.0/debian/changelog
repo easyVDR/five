@@ -1,3 +1,9 @@
+vdr (1:2.2.0-15easyVDR1~focal) focal; urgency=high
+
+  * fix postinst
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 02 Jan 2020 22:26:50 +0100
+
 vdr (1:2.2.0-15easyVDR0~focal) focal; urgency=high
 
   * switch to quilt

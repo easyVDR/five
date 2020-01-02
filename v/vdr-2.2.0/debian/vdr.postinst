@@ -28,10 +28,10 @@ case "$1" in
     configure)
 
         # install/move channels.conf 
-        if [ ! -e /var/lib/vdr/channels.conf ]; then
-                cp /usr/share/doc/vdr/examples/channels.conf* /var/lib/vdr/
-                gunzip /var/lib/vdr/channels.conf*.gz
-        fi
+        ##if [ ! -e /var/lib/vdr/channels.conf ]; then
+        ##        cp /usr/share/doc/vdr/examples/channels.conf* /var/lib/vdr/
+        ##        gunzip /var/lib/vdr/channels.conf*.gz
+        ##fi
 
         [ ! -d /var/lib/video.00 ] && mkdir /var/lib/video.00
 
