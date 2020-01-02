@@ -9,7 +9,7 @@ Homepage: https://github.com/FernetMenta/vdr-plugin-vnsiserver
 
 Package: vdr-plugin-vnsiserver
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, kodi-pvr-vdr-vnsi
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
 Description: VDR-Network-Streaming-Interface
  VDR-Network-Streaming-Interface
 

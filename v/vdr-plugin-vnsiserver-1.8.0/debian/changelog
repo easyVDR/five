@@ -1,3 +1,9 @@
+vdr-plugin-vnsiserver (2:1.8.0-0easyVDR2~focal) focal; urgency=high
+
+  * remove depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 02 Jan 2020 22:50:41 +0100
+
 vdr-plugin-vnsiserver (2:1.8.0-0easyVDR1~focal) focal; urgency=high
 
   * automatic rebuild
