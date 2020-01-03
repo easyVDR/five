@@ -604,11 +604,7 @@ for lirc_modul in $lirc_modul_list
 
 Stop_Rmt_Daemons()
 {
-RMT_RECEIVER_DAEMONS="lircd.socket lircd.service easyvdr-inputlirc easyvdr-irtrans easyvdr-irmplircd"
-for RMT_DAEMON in $RMT_RECEIVER_DAEMONS
-  do
-    (systemctl status $RMT_DAEMON | grep -q running ) && stop $RMT_DAEMON  >/dev/null 2>&1 
-  done
+sh /usr/lib/easyvdr/easyvdr-start/easyvdr-remote stop #>/dev/null 2>&1
 }
 
 #### remote.conf in kleinbuchstaben - fuer irtrans
