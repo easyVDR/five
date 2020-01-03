@@ -58,7 +58,7 @@ fi
   if [ ${root_rights_button[$startindex]} == "yes" ]; then
    eval ${start_program_button[$startindex]}
   else
-   DISPLAY=$PCHANGER_DISPLAY su -l $STANDARD_DESKTOP_USER -c " ${start_program_button[$startindex]} "
+   DISPLAY=$PCHANGER_DISPLAY su -l $STANDARD_DESKTOP_USER -c "  DISPLAY=$PCHANGER_DISPLAY ${start_program_button[$startindex]} "
   fi
   if [ ${vdr_remote_button[$startindex]} = "yes" ]; then
    svdrpsend remo on
