@@ -17,7 +17,7 @@ RunPCH=1
 RunLCDd=1
 
 VT_KONSOLE_OLD=$(fgconsole)         ## aktuell aktives Terminal
-chvt 1                              ## Ausgaben unterdruecken - Konsole  1 ist " black on black"
+#chvt 1                              ## Ausgaben unterdruecken - Konsole  1 ist " black on black"
 
 sleep 0.5
 
