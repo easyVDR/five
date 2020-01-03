@@ -125,8 +125,7 @@ while (true) do
 	$LOGGER "kodi run"
         USER=vdr
   	VDRUID=$(id -u $USER)
-	XDG_RUNTIME_DIR=/run/user/$VDRUID /bin/su -l -c "$kodiCmd" - $STANDARD_DESKTOP_USER &
-
+    XDG_RUNTIME_DIR=/run/user/$VDRUID /bin/su -c -l $STANDARD_DESKTOP_USER "$kodiCmd" &
 	# Remember PID of KODI process
 	KODIPID=$!
 
