@@ -21,6 +21,7 @@ kill_daemon ()
 
  if [ $? -eq 0 ] ;then
    kill $PID
+   rm /dev/lircd
  fi
 }
 
