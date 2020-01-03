@@ -1,3 +1,9 @@
+easyvdr-ir-trans (6.09.04-2easyVDR13~focal) focal; urgency=high
+
+  * add rm symlink
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 03 Jan 2020 12:18:34 +0100
+
 easyvdr-ir-trans (6.09.04-2easyVDR12~focal) focal; urgency=high
 
   * automatic rebuild

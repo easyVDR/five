@@ -19,11 +19,9 @@ if [ $(systemctl is-enabled lircd.service) = "enabled"   ];then
         start)
                 EXEC_CMD="systemctl restart lircd.service lircd.socket"
             ;;
-
         stop)
                 EXEC_CMD="systemctl stop lircd.service lircd.socket"
             ;;
-
         status)
                 EXEC_CMD="systemctl status lircd.service lircd.socket"
             ;;
