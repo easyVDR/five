@@ -1,4 +1,4 @@
-vdr-plugin-live (1:2.3.1~git20190124-3easyVDR2~focal) focal; urgency=medium
+vdr-plugin-live (1:2.3.1~git20190124-3easyVDR3~focal) focal; urgency=high
 
   * postinst fix
 
