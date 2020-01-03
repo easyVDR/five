@@ -523,6 +523,8 @@ SYSTEMD_SERVICE[0]=lircd.socket
 SYSTEMD_SERVICE[1]=lircd.service
 SYSTEMD_SERVICE[2]=lircmd.service
 SYSTEMD_SERVICE[3]=lircd-setup.service
+SYSTEMD_SERVICE[4]=inputlirc.service
+SYSTEMD_SERVICE[5]=lircd-uinput.service
 
 if [ $SYSTEMD_AKTIV -eq 0 ]; then
  for Stop_Service in ${SYSTEMD_SERVICE[*]}
@@ -532,12 +534,12 @@ if [ $SYSTEMD_AKTIV -eq 0 ]; then
    systemctl disable $Stop_Service >/dev/null 2>&1
   fi
  done
-else
+fi
+if [ $SYSTEMD_AKTIV -eq 1 ]; then
  #Pfad vom Service Namen abschneiden
  SERVICE_NAME=${SYSTEMD_INSTALL##*/}
  systemctl enable $SYSTEMD_INSTALL >/dev/null 2>&1|dialog --infobox "Aktiviere Systemd Dienst $SERVICE_NAME" $DIA_BOX4_SIZE
  systemctl start $SERVICE_NAME >/dev/null 2>&1
- #systemctl stop display-manager.service
 fi
 }
 
