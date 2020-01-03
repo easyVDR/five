@@ -24,7 +24,7 @@ case "$1" in
 	       openssl req -new -x509 -keyout /var/lib/vdr/plugins/live/live-key.pem -out /var/lib/vdr/plugins/live/live.pem -days 9999 -nodes -batch
             fi
                chown -R vdr:vdr /var/lib/vdr/plugins/live
-            if [[ ! -e /opt ]];
+            if [ ! -e /opt ];
                then
                mkdir -p /opt
             fi
