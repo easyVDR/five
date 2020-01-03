@@ -1,3 +1,9 @@
+easyvdr-make-remote-mapping (0.1.0-29easyVDR4~focal) focal; urgency=high
+
+  * change lirc start
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 03 Jan 2020 14:24:42 +0100
+
 easyvdr-make-remote-mapping (0.1.0-29easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

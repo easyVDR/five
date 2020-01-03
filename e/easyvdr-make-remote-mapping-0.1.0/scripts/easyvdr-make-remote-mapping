@@ -68,7 +68,7 @@ REMOTE_NAME2=" "
               REMOTE_NAME="-n IRMP" ;;
     *)
 	      # Lirc starten
-	      start lircd              >/dev/null 2>&1
+	      easyvdr-remote start >/dev/null 2>&1
               REMOTE_NAME="$(cut -d '#' $LIRC_CONF -f1 | grep name)" #Leerstellen am Anfang der Zeile entfernen
               REMOTE_NAME="-n $(echo $REMOTE_NAME | cut -d" " -f2)" ;;
  esac
