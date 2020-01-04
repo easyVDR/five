@@ -1,3 +1,9 @@
+libwebsockets (1:3.2.0-1easyVDR1~focal) focal; urgency=high
+
+  * increase build number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 04 Jan 2020 16:30:47 +0100
+
 libwebsockets (3.2.0-1easyVDR0~focal) focal; urgency=high
 
   * rebuild for easyVDR
