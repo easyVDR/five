@@ -70,13 +70,14 @@ dialog
 ############ Ubuntu Desktop tools
 xinit
 lightdm
-#python-xdg wir für die richtige funktion von xdg bei openbox (autostart) benötigt
+#python-xdg wird für die richtige funktion von xdg bei openbox (autostart) benötigt
 python-xdg
 openbox
 nautilus
 xfonts-cyrillic
 xfonts-100dpi
 xfonts-75dpi
+xubuntu-desktop
 firefox
 firefox-locale-de
 

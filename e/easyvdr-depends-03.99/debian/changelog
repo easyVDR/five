@@ -1,3 +1,9 @@
+easyvdr-depends (03.99-4easyVDR8~focal) focal; urgency=high
+
+  * add xubuntu-desktop
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 07 Jan 2020 22:12:42 +0100
+
 easyvdr-depends (03.99-4easyVDR7~focal) focal; urgency=high
 
   * bugfix
