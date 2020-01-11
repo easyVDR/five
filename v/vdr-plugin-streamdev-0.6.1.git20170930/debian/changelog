@@ -1,3 +1,9 @@
+vdr-plugin-streamdev (0.6.1.git20170930-1easyVDR5~focal) focal; urgency=high
+
+  * added new externremux.sh
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 11 Jan 2020 16:03:20 +0100
+
 vdr-plugin-streamdev (0.6.1.git20170930-1easyVDR4~focal) focal; urgency=high
 
   * automatic rebuild

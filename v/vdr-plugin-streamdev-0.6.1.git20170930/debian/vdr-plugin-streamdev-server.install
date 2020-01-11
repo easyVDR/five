@@ -2,4 +2,5 @@ usr/lib/vdr/plugins/libvdr-streamdev-server.so.*
 usr/share/locale/*/LC_MESSAGES/vdr-streamdev-server.mo
 
 streamdev-server/streamdevhosts.conf  etc/vdr/plugins/
-streamdev-server/externremux.sh  usr/share/vdr-plugin-streamdev-server/
+## streamdev-server/externremux.sh  usr/share/vdr-plugin-streamdev-server/
+debian/externremux.sh  usr/share/vdr-plugin-streamdev-server/
