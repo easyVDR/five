@@ -15,3 +15,4 @@
 90_token_based_access_control.diff
 91_terminate_on_idle.diff
 93_useless-sys.path-call_LP795159.diff
+94_configure.patch

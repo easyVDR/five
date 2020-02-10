@@ -1,3 +1,15 @@
+ajaxterm (0.10-13easyVDR2~focal) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 09 Feb 2020 17:36:40 +0100
+
+ajaxterm (0.10-13easyVDR1~focal) focal; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 09 Feb 2020 17:36:40 +0100
+
 ajaxterm (0.10-13) focal; urgency=high
 
   * rebuild for focal
