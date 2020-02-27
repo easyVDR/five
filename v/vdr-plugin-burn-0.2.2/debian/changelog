@@ -1,3 +1,9 @@
+vdr-plugin-burn (0.2.2-8easyVDR0~focal) focal; urgency=high
+
+  * fix install
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 27 Feb 2020 15:41:36 +0100
+
 vdr-plugin-burn (0.2.2-7easyVDR10~focal) focal; urgency=high
 
   * automatic rebuild

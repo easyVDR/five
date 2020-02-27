@@ -20,4 +20,4 @@ debian/commands.vdr-burn.conf    usr/share/vdr/command-hooks/
 #locale                           usr/share/
 
 debian/vdr-plugin-burn.groups    usr/share/vdr/groups.d/
-debian/video_format              etc/
+#debian/video_format              etc/
