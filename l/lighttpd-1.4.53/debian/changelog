@@ -1,3 +1,15 @@
+lighttpd (1:1.4.53-6easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 05 Mar 2020 21:24:37 +0100
+
+lighttpd (1:1.4.53-6easyVDR2~focal) focal; urgency=high
+
+  * increase buld number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 28 Feb 2020 17:05:39 +0100
+
 lighttpd (1.4.53-6easyVDR1~focal) focal; urgency=high
 
   * fix rules
