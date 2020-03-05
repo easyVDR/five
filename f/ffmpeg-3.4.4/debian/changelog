@@ -1,3 +1,27 @@
+ffmpeg (8:3.4.4-0easyVDR3~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 05 Mar 2020 21:24:32 +0100
+
+ffmpeg (8:3.4.4-0easyVDR3~focal) focal; urgency=high
+
+  * fix rules
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Feb 2020 00:55:22 +0100
+
+ffmpeg (8:3.4.4-0easyVDR2~focal) focal; urgency=high
+
+  * added depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Feb 2020 00:31:13 +0100
+
+ffmpeg (8:3.4.4-0easyVDR1~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 21 Feb 2020 21:51:27 +0100
+ 
 ffmpeg (8:3.4.4-0easyVDR0~focal) focal; urgency=high
 
   * rebuild

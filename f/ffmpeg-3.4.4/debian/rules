@@ -135,12 +135,10 @@ endif
 ifneq ($(filter stage1,$(DEB_BUILD_PROFILES)),)
 	CONFIG += --disable-frei0r \
 		--disable-chromaprint \
-		--disable-libopencv \
 		--disable-libx264
 else
 	CONFIG += --enable-chromaprint \
 		--enable-frei0r \
-		--enable-libopencv \
 		--enable-libx264
 endif
 
