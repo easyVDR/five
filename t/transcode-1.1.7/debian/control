@@ -1,0 +1,110 @@
+Source: transcode
+Section: video
+Priority: optional
+Maintainer: Debian Multimedia Maintainers <pkg-multimedia-maintainers@lists.alioth.debian.org>
+Uploaders:
+ Reinhard Tartler <siretart@tauware.de>,
+ Alessio Treglia <alessio@debian.org>
+Homepage: https://bitbucket.org/france/transcode-tcforge
+Standards-Version: 3.9.5
+Build-Depends:
+ debhelper (>= 9),
+ dh-autoreconf,
+ liba52-0.7.4-dev,
+ libasound2-dev [linux-any],
+ libavcodec-dev (>= 6:9),
+ libavformat-dev (>= 6:9),
+ libavutil-dev (>= 6:9),
+ libavresample-dev (>= 6.9),
+ libdv4-dev,
+ libdvdread-dev,
+ libfaad-dev,
+ libfreetype6-dev,
+ libjpeg-dev,
+ liblzo2-dev,
+ libmagickcore-dev,
+ libmagickwand-dev,
+ libmjpegtools-dev,
+ libmp3lame-dev,
+ libmpeg2-4-dev,
+ libpopt-dev,
+ libpostproc-dev,
+ libquicktime-dev,
+ libsdl1.2-dev,
+ libswscale-dev,
+ libtheora-dev,
+ libvorbis-dev,
+ libxaw7-dev,
+ libxft-dev,
+ libxml2-dev,
+ libxv-dev,
+ libxxf86vm-dev [i386]
+# libx264-dev and libxvidcore-dev are only required if --enable-x264 and
+# --enable-xvid are passed to configure.
+# libx264-dev,
+# libxvidcore-dev,
+Vcs-Git: git://anonscm.debian.org/pkg-multimedia/transcode.git
+Vcs-Browser: http://anonscm.debian.org/gitweb/?p=pkg-multimedia/transcode.git
+
+Package: transcode
+Architecture: any
+Depends:
+ mawk | gawk,
+ xterm | x-terminal-emulator,
+ ${misc:Depends},
+ ${shlibs:Depends}
+Recommends:
+ sox,
+ transcode-doc,
+ twolame
+Suggests:
+ mjpegtools,
+ xvid4conf
+Replaces:
+ transcode-utils
+Description: Text console video-stream processing tool
+ Transcode is a text console video-stream processing tool. It supports
+ elementary video and audio frame transformations. Some example modules are
+ included to enable import of MPEG-1/2, Digital Video, and other formats. It
+ also includes export modules for writing to AVI files with DivX, OpenDivX,
+ XviD, Digital Video or other codecs. Direct DVD transcoding is also supported.
+ A set of tools is available to extract and decode the sources into raw
+ video/audio streams for import and to enable post-processing of AVI files.
+
+Package: transcode-dbg
+Priority: extra
+Architecture: any
+Section: debug
+Depends:
+ transcode (= ${binary:Version}),
+ ${misc:Depends}
+Description: Text console video-stream processing tool - debugging symbols
+ Transcode is a text console video-stream processing tool. It supports
+ elementary video and audio frame transformations. Some example modules are
+ included to enable import of MPEG-1/2, Digital Video, and other formats. It
+ also includes export modules for writing to AVI files with DivX, OpenDivX,
+ XviD, Digital Video or other codecs. Direct DVD transcoding is also supported.
+ A set of tools is available to extract and decode the sources into raw
+ video/audio streams for import and to enable post-processing of AVI files.
+ .
+ This package contains the debug symbols for the transcode programs.
+
+Package: transcode-doc
+Section: doc
+Architecture: all
+Depends:
+ ${misc:Depends}
+Suggests:
+ doc-base
+Replaces:
+ transcode (<= 2:0.6.2.20030123)
+Description: Text console video-stream processing tool (documentation)
+ Transcode is a text console video-stream processing tool. It supports
+ elementary video and audio frame transformations. Some example modules are
+ included to enable import of MPEG-1/2, Digital Video, and other formats. It
+ also includes export modules for writing to AVI files with DivX, OpenDivX,
+ XviD, Digital Video or other codecs. Direct DVD transcoding is also supported.
+ A set of tools is available to extract and decode the sources into raw
+ video/audio streams for import and to enable post-processing of AVI files.
+ .
+ This package contains the documentation.

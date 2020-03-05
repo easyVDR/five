@@ -1,0 +1,9 @@
+Document: transcode-doc
+Title: Transcode documentation
+Author:  Dr. Thomas Östreich <ostreich@theorie.physik.uni-goettingen.de>
+Abstract: This manual describes what transcode is and how it can be used.
+Section: Video
+
+Format: HTML
+Index: /usr/share/doc/transcode-doc/html/index.html
+Files: /usr/share/doc/transcode-doc/html/*.html

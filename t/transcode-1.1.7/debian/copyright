@@ -1,0 +1,199 @@
+Format: http://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
+Upstream-Name: Transcode
+Upstream-Contact:
+ Francesco Romani <fromani@gmail.com>
+ Andrew Church <achurch@achurch.org>
+Source: https://bitbucket.org/france/transcode-tcforge/downloads
+Comment: The file AUTHORS contains an (almost) complete list of upstream
+ authors and contributors.
+
+Files: *
+Copyright:
+ 2005-2010 Francesco Romani <fromani at gmail dot com>
+ 2007 Georg Martius
+ 2007 Allan Snider
+ 2006 Sebastian Kun <seb at sarolta dot com>
+ 2004 Matthias Hopf
+ 2004 Bryan Mayland <bmayland@leoninedev.com>
+ 2004-2005 Jacob Meuser
+ 2004 Julien Tierny <julien.tierny@wanadoo.fr>
+ 2004 by Dirk Ziegelmeier
+ 2004 Brian de Alwis
+ 2003, 2004 Christopher Cramer
+ 2003 Nicolas LAURENT
+ 2003 Marrq
+ 2003 Max Alekseyev
+ 2003 Guillaume Cottenceau <gc at mandrakesoft.com>
+ 2003 Daniel Pittman
+ 2003 Daniel Moreno <comac@comac.darktech.org>
+ 2002-2004 Tilmann Bitterberg
+ 2002-2003 Thomas Wehrspann
+ 2002-2003 Marzio Malanchini
+ 2002 Tom Barry
+ 2002 Thanassis Tsiodras
+ 2002 Remi Guyomarch <rguyom@pobox.com>
+ 2002 Moritz Bunkus
+ 2002 Chad Page
+ 2002 Alex Stewart
+ 2001-2003 Peter Ross <pross@xvid.org>
+ 2001-2003 Thomas Östreich
+ 2001-2003 Jan Panteltje
+ 2001,2002 Stefan Fendt
+ 2001 Mike Bernson <mike@mlb.org>
+ 2001 Gerhard Monzel
+ 2001 Christoph Lampert <gruel@web.de>
+ 2000-2002 Michel Lespinasse <walken@zoy.org>
+ 2000 Herbert Valerio Riedel <hvr@gnu.org>
+ 2000 Erik Walthinsen
+ 2000 Charles 'Buck' Krasic
+ 1999-2001 Donald A. Graft
+ 1999-2001 Aaron Holtzman <aholtzma@ess.engr.uvic.ca>
+ 1999 Rainer Johanni <Rainer@Johanni.de>
+ 1999 Wim Taymans <wim.taymans@tvd.be>
+ 1998-1999 Joerg Walter <trouble@moes.pmnet.uni-oldenburg.de>
+ 1998 Justin Schoeman <justin@suntiger.ee.up.ac.za>
+License: GPL-2+
+
+Files: avilib/platform.h
+ avilib/platform_posix.c
+ avilib/wavlib.*
+Copyright: 2006-2010 - Francesco Romani <fromani -at- gmail -dot- com>
+License: Zlib
+
+Files: import/framegen/ping.*
+Copyright: No copyright holders
+License: other-portaudio
+Comment: Copyleft 1999 Phil Burk - No rights reserved
+
+Files: libdldarwin/*
+Copyright:
+ 2002 Jorge Acereda  <jacereda@users.sourceforge.net>
+ 2002 Peter O'Gorman <ogorman@users.sourceforge.net>
+License: Expat
+
+Files: libtc/getopt1.c
+Copyright: 1987-2001, Free Software Foundation, Inc.
+License: LGPL-2.1+
+
+Files: libtc/strlcpy.c
+ libtc/strlcat.c
+Copyright: 1998, Todd C. Miller <Todd.Miller@courtesan.com>
+License: ISC
+
+Files: debian/*
+Copyright:
+ 2012 Alessio Treglia <alessio@debian.org>
+ 2009 Alessio Treglia <quadrispro@ubuntu.com>
+ 2001-2009 Christian Marillat <marillat@debian.org>
+License: GPL-2+
+
+License: GPL-2+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+ .
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+Comment:
+ You should have received a copy of the GNU General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems the full text of the GNU General Public
+ License can be found in the `/usr/share/common-licenses/GPL-2' file.
+
+License: Zlib
+ This software is provided 'as-is', without any express or implied
+ warranty.  In no event will the authors be held liable for any damages
+ arising from the use of this software.
+ .
+ Permission is granted to anyone to use this software for any purpose,
+ including commercial applications, and to alter it and redistribute it
+ freely, subject to the following restrictions:
+ .
+ 1. The origin of this software must not be misrepresented; you must not
+    claim that you wrote the original software. If you use this software
+    in a product, an acknowledgment in the product documentation would be
+    appreciated but is not required.
+ 2. Altered source versions must be plainly marked as such, and must not be
+    misrepresented as being the original software.
+ 3. This notice may not be removed or altered from any source distribution.
+
+License: other-portaudio
+ PortAudio Portable Real-Time Audio Library
+ Copyright (c) 1999-2000 Ross Bencina and Phil Burk
+ .
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ Any person wishing to distribute modifications to the Software is
+ requested to send the modifications to the original developer so that
+ they can be incorporated into the canonical version.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND ON INFRINGEMENT.
+ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+ CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+ TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+ SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: Expat
+ Permission is hereby granted, free of charge, to any person obtaining
+ a copy of this software and associated documentation files (the
+ "Software"), to deal in the Software without restriction, including
+ without limitation the rights to use, copy, modify, merge, publish,
+ distribute, sublicense, and/or sell copies of the Software, and to
+ permit persons to whom the Software is furnished to do so, subject to
+ the following conditions:
+ .
+ The above copyright notice and this permission notice shall be
+ included in all copies or substantial portions of the Software.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+ EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+ MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND
+ NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE
+ LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION
+ OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION
+ WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+
+License: LGPL-2.1+
+ This library is free software; you can redistribute it and/or
+ modify it under the terms of the GNU Lesser General Public
+ License as published by the Free Software Foundation; either
+ version 2.1 of the License, or (at your option) any later version.
+ .
+ This library is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU
+ Lesser General Public License for more details.
+Comment:
+ You should have received a copy of the GNU Lesser General Public License
+ along with this program.  If not, see <http://www.gnu.org/licenses/>.
+ .
+ On Debian systems the full text of the GNU Lesser General Public
+ License can be found in the `/usr/share/common-licenses/LGPL-2.1' file.
+
+License: ISC
+ Permission to use, copy, modify, and distribute this software for any
+ purpose with or without fee is hereby granted, provided that the above
+ copyright notice and this permission notice appear in all copies.
+ .
+ THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+ WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+ MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+ WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+ OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.

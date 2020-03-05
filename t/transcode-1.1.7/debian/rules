@@ -1,0 +1,67 @@
+#!/usr/bin/make -f
+
+DEB_HOST_ARCH_OS := $(shell dpkg-architecture -qDEB_HOST_ARCH_OS)
+DEB_HOST_ARCH := $(shell dpkg-architecture -qDEB_HOST_ARCH)
+
+nooptflags += --disable-3dnow
+nooptflags += --disable-altivec
+nooptflags += --disable-mmx
+
+ifneq ($(DEB_HOST_ARCH),amd64)
+	nooptflags += --disable-sse
+	nooptflags += --disable-sse2
+endif
+
+confflags += $(nooptflags)
+confflags += --enable-a52
+confflags += --enable-ffmpeg
+confflags += --enable-freetype2
+confflags += --enable-iconv
+confflags += --enable-imagemagick
+confflags += --enable-lame
+confflags += --enable-libavcodec
+confflags += --enable-libavformat
+confflags += --enable-libavformat
+confflags += --enable-libdv
+confflags += --enable-libdvdread
+confflags += --enable-libjpeg
+confflags += --enable-libmpeg2
+confflags += --enable-libmpeg2convert
+confflags += --enable-libpostproc
+confflags += --enable-libquicktime
+confflags += --enable-libxml2
+confflags += --enable-lzo
+confflags += --enable-mjpegtools
+confflags += --enable-ogg
+confflags += --enable-oss
+confflags += --enable-sdl
+confflags += --enable-theora
+confflags += --enable-vorbis
+# The following flags also need --enable-experimental, but this needs to be
+# ported to libav 9.
+# confflags += --enable-faac
+# confflags += --enable-x264
+# confflags += --enable-xvid
+
+ifeq ($(DEB_HOST_ARCH_OS),linux)
+confflags += --enable-alsa
+confflags += --enable-v4l
+endif
+
+confflags += --libdir=/usr/lib
+
+# Force the use of awk (and /usr/bin/awk)
+export AWK=awk
+
+%:
+	dh $@ --parallel --with autoreconf
+
+override_dh_auto_configure:
+	dh_auto_configure -- $(confflags)
+
+override_dh_auto_install:
+	dh_auto_install
+	rm -f debian/tmp/usr/lib/transcode/*.la
+
+override_dh_strip:
+	dh_strip --dbg-package=transcode-dbg

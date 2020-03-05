@@ -1,0 +1,167 @@
+transcode (3:1.1.7-9easyVDR0) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 27 Feb 2020 13:04:34 +0100
+
+transcode (3:1.1.7-9ubuntu2) zesty; urgency=medium
+
+  * Rebuild against new imagemagick 6.9.7.0.
+
+ -- Gianfranco Costamagna <locutusofborg@debian.org>  Wed, 18 Jan 2017 13:36:24 +0100
+
+transcode (3:1.1.7-9ubuntu1) zesty; urgency=medium
+
+  * Fix building with recent ffmpeg. LP: #1631796.
+
+ -- Matthias Klose <doko@ubuntu.com>  Sat, 19 Nov 2016 23:25:05 +0100
+
+transcode (3:1.1.7-9build4) wily; urgency=medium
+
+  * No-change rebuild against ffmpeg 2.7
+
+ -- Rico Tzschichholz <ricotz@ubuntu.com>  Tue, 01 Sep 2015 18:31:34 +0200
+
+transcode (3:1.1.7-9build3) vivid; urgency=medium
+
+  * Rebuild against libmagickcore-6.q16-2.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Thu, 30 Oct 2014 12:13:30 +0000
+
+transcode (3:1.1.7-9build2) utopic; urgency=medium
+
+  * Rebuild against libav11.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Fri, 05 Sep 2014 02:36:11 +0100
+
+transcode (3:1.1.7-9build1) utopic; urgency=medium
+
+  * Rebuild against libav10.
+
+ -- Colin Watson <cjwatson@ubuntu.com>  Sun, 22 Jun 2014 23:37:28 +0100
+
+transcode (3:1.1.7-9) unstable; urgency=medium
+
+  * Team upload.
+  * debian/patches
+    - 11_libav10.patch: Add patch to fix FTBFS with libav 10.
+      Thanks to Anton Khirnov for the patch. (Closes: #739428)
+    - Rename 11_underlinkage.patch to 12_underlinkage.patch and refresh to fix
+      underlinke in filter_resample.
+  * debian/control: Add libavresample-dev to Build-Depends.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 01 Mar 2014 18:01:41 +0100
+
+transcode (3:1.1.7-8) unstable; urgency=medium
+
+  * Team upload.
+  * debian/patches:
+    - 10_freetype.patch: Fix compilation with recent versions of
+      freetype. (Closes: #732142)
+    - 11_underlinkage.patch: Fix underlinkage of some plugins.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Sat, 21 Dec 2013 16:14:24 +0100
+
+transcode (3:1.1.7-7) unstable; urgency=low
+
+  * Team upload.
+  * debian/control: Bump Standards-Version to 3.9.5.
+  * debian/patches/{08_libav9-opt,09_libav9-arch}.patch: Finish up porting to
+    libav 9 API.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Tue, 12 Nov 2013 17:24:14 +0100
+
+transcode (3:1.1.7-6) unstable; urgency=low
+
+  * Team upload.
+  * debian/patches:
+    - {05-libav9-gentoo.patch,06_libav9-jmm.patch}: Port to libav 9. Thanks to
+      Gentoo and Moritz Muehlenhoff. (Closes: #720828)
+    - 07_libav9-preset.patch: Check preset files with avpreset extension an
+      use /usr/share/avconv to look up preset files.
+  * debian/rules:
+    - Remove --enable-x264 and --enable-xvid. They require
+      --enable-experimental which is not passed. The code enabled by
+      --enable-experimental also needs porting to libav 9.
+    - Force the use of awk and /usr/bin/awk as shebang of the awk scripts.
+  * Bump debhelper compat to 9.
+  * debian/control: Remove libx264-dev and libxvidcore-dev from Build-Depends
+    since they are not needed at the moment.
+
+ -- Sebastian Ramacher <sramacher@debian.org>  Wed, 11 Sep 2013 15:53:38 +0200
+
+transcode (3:1.1.7-5) unstable; urgency=low
+
+  [ Rogério Brito ]
+  * debian/rules: Don't disable SSE and SSE2 on amd64. (Closes: #707321)
+
+  [ Fabian Greffrath ]
+  * Fix Homepage field, we are following the transcode-tcforge fork.
+  * Fix extracting AC3 audio tracks when audio track number is
+    not 0 (Closes: #714958).
+
+  [ Alessio Treglia ]
+  * Upload to unstable.
+  * Bump Standards.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 06 Jul 2013 01:58:47 +0100
+
+transcode (3:1.1.7-4) experimental; urgency=low
+
+  * "yes-indeed-dmm-team-rocks" release:
+    - Enable MJPEGTOOLS support.
+    - Allow transcode to compile on non-Linux archs.
+      Thanks to Pino Toscano for the patch (Closes: #690029)
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 10 Oct 2012 00:43:53 +0100
+
+transcode (3:1.1.7-3) unstable; urgency=low
+
+  [ Alessio Treglia ]
+  * Depends on mawk | gawk, awk scripts don't seem to require
+    any gawk-specific feature. (LP: #997226)
+  * Bump Standards.
+
+  [ Fabian Greffrath ]
+  * Pass --enable-libmpeg2convert to configure to fix MPEG2
+    decoding (Closes: #688618).
+  * Remove myself from Uploaders.
+  * Remove "-vpre medium" from ffmpeg's arguments list to avoid
+    crashes as the "medium" preset doesn't exist. (Closes: #681436)
+
+ -- Alessio Treglia <alessio@debian.org>  Mon, 08 Oct 2012 10:51:41 +0100
+
+transcode (3:1.1.7-2) unstable; urgency=low
+
+  * Upload to unstable.
+  * Update download URL and copyright format.
+
+ -- Alessio Treglia <alessio@debian.org>  Sat, 03 Mar 2012 13:10:54 +0100
+
+transcode (3:1.1.7-1) experimental; urgency=low
+
+  * New upstream release:
+    - Update the video stabilization plugins to version 0.80. Speed boost.
+    - tcdemux: fixed crash when using the new -A mode.
+    - x264: fix to work properly with libx264 >= 78; require libx264 >= 66.
+    - Update the video stabilization plugins to version 0.79. Speed boost.
+    - Better maximum size detection for avisplit.
+    - ffmpeg encoder preset support.
+    - FFMpeg 0.8.x compatibility.
+    - video4linux: made the v1 and v2 modules independent. v1 is deprecated.
+    - Many other fixes.
+    Upstream development has moved to:
+    https://bitbucket.org/france/transcode-tcforge
+  * Build with dh-autoreconf.
+  * Remove 02_toolame.diff, applied upstream.
+  * Refresh 03_libav-api-fixes.diff.
+  * Add build-dependency on libswscale-dev.
+  * Refresh debian/copyright.
+
+ -- Alessio Treglia <alessio@debian.org>  Wed, 22 Feb 2012 02:51:24 +0100
+
+transcode (3:1.1.5-1) unstable; urgency=low
+
+  * Initial release. (Closes: #149568)
+
+ -- Alessio Treglia <alessio@debian.org>  Tue, 07 Feb 2012 18:35:15 +0100
