@@ -1,0 +1,46 @@
+Index: easyvdr-3.99.00/hooks/10_dvb-start.dvb
+===================================================================
+--- easyvdr-3.99.00.orig/hooks/10_dvb-start.dvb
++++ easyvdr-3.99.00/hooks/10_dvb-start.dvb
+@@ -18,9 +18,9 @@ DetectPCImodules() {
+ 		Device=$(cat $i/device | cut -f 2 -d "x")
+ 		SV=$(cat $i/subsystem_vendor | cut -f 2 -d "x")
+ 		SD=$(cat $i/subsystem_device | cut -f 2 -d "x")
+-		driver=$(grep "0x0000$Vendor 0x0000$Device 0x0000$SV 0x0000$SD" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
++		[ -e "$PCIMAP" ] && driver=$(grep "0x0000$Vendor 0x0000$Device 0x0000$SV 0x0000$SD" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
+ 		if [ "$driver" = "" ] ; then
+-			driver=$(grep "0x0000$Vendor 0x0000$Device 0xffffffff 0xffffffff" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
++			[ -e "$PCIMAP" ] && driver=$(grep "0x0000$Vendor 0x0000$Device 0xffffffff 0xffffffff" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
+ 		fi
+ 		if [ "$driver" != "" ] ; then
+ 			[ $(echo $BLACKLISTED | grep -ic "$driver") -gt 0 ] &&  echo "$driver"
+@@ -39,7 +39,7 @@ DetectUSBmodules() {
+ 		if [ "$Vendor" = "0000" ] ; then
+ 			continue
+ 		fi
+-		driver=$(grep -i "0x$Vendor" $USBMAP | grep -i "0x$Device" | cut -f 1 -d " " | tr "-" "_")
++		[ -e "$USBMAP" ] && driver=$(grep -i "0x$Vendor" $USBMAP | grep -i "0x$Device" | cut -f 1 -d " " | tr "-" "_")
+ 		if [ "$driver" != "" ] ; then
+ 			 [ $(echo $BLACKLISTED | grep -ic "$driver") -gt 0 ] &&  echo "$driver"
+ 		fi
+@@ -49,7 +49,7 @@ DetectUSBmodules() {
+ 
+ 
+ loadDVBdriver() {
+-	BLACKLISTED=$(cat $BLACKLIST | grep -v ^#)
++	[ -e "$BLACKLIST" ] && BLACKLISTED=$(cat $BLACKLIST | grep -v ^#)
+ 	DETECTEDMODULES=$(DetectPCImodules ; DetectUSBmodules | sort -u)
+ 
+ 	if [ -e $DVB_MODULES_DEFAULT ] ; then
+Index: easyvdr-3.99.00/hooks/10_dvb-stop.dvb
+===================================================================
+--- easyvdr-3.99.00.orig/hooks/10_dvb-stop.dvb
++++ easyvdr-3.99.00/hooks/10_dvb-stop.dvb
+@@ -3,6 +3,7 @@
+ LOADED_MODULES="/var/run/easyvdr-loaded-modules"
+ 
+ unloadDVBdriver() {
++    [ -e "$LOADED_MODULES" ] || return 0
+ 	for module in $(cat $LOADED_MODULES); do
+ 		logger -t DVB "Unloading <$module>"
+ 		modprobe -rqs $module

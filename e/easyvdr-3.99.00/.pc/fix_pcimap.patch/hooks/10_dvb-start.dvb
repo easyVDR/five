@@ -18,9 +18,9 @@ DetectPCImodules() {
 		Device=$(cat $i/device | cut -f 2 -d "x")
 		SV=$(cat $i/subsystem_vendor | cut -f 2 -d "x")
 		SD=$(cat $i/subsystem_device | cut -f 2 -d "x")
-		[ -e "$PCIMAP" ] && driver=$(grep "0x0000$Vendor 0x0000$Device 0x0000$SV 0x0000$SD" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
+		driver=$(grep "0x0000$Vendor 0x0000$Device 0x0000$SV 0x0000$SD" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
 		if [ "$driver" = "" ] ; then
-			[ -e "$PCIMAP" ] && driver=$(grep "0x0000$Vendor 0x0000$Device 0xffffffff 0xffffffff" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
+			driver=$(grep "0x0000$Vendor 0x0000$Device 0xffffffff 0xffffffff" $PCIMAP | cut -f 1 -d " " | tr "-" "_")
 		fi
 		if [ "$driver" != "" ] ; then
 			[ $(echo $BLACKLISTED | grep -ic "$driver") -gt 0 ] &&  echo "$driver"
@@ -39,7 +39,7 @@ DetectUSBmodules() {
 		if [ "$Vendor" = "0000" ] ; then
 			continue
 		fi
-		[ -e "$USBMAP" ] && driver=$(grep -i "0x$Vendor" $USBMAP | grep -i "0x$Device" | cut -f 1 -d " " | tr "-" "_")
+		driver=$(grep -i "0x$Vendor" $USBMAP | grep -i "0x$Device" | cut -f 1 -d " " | tr "-" "_")
 		if [ "$driver" != "" ] ; then
 			 [ $(echo $BLACKLISTED | grep -ic "$driver") -gt 0 ] &&  echo "$driver"
 		fi
@@ -49,7 +49,7 @@ DetectUSBmodules() {
 
 
 loadDVBdriver() {
-	[ -e "$BLACKLIST" ] && BLACKLISTED=$(cat $BLACKLIST | grep -v ^#)
+	BLACKLISTED=$(cat $BLACKLIST | grep -v ^#)
 	DETECTEDMODULES=$(DetectPCImodules ; DetectUSBmodules | sort -u)
 
 	if [ -e $DVB_MODULES_DEFAULT ] ; then
