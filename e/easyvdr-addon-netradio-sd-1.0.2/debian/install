@@ -1,6 +1,0 @@
-netradio/*                   usr/share/vdr-netradio/
-commands.netradio.conf       usr/share/vdr/command-hooks/
-debian/Antenne_Bayern.m3u    media/easyvdr01/mp3/tmp/   
-debian/@current.m3u          media/easyvdr01/mp3/
-my_radio/*                   media/easyvdr01/mp3/my_radio/                  
-
