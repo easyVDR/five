@@ -1,3 +1,9 @@
+easyvdr (3.99.00-4easyVDR1~focal) focal; urgency=high
+
+  * fix
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 10 Mar 2020 00:04:28 +0100
+
 easyvdr (3.99.00-4easyVDR0~focal) focal; urgency=high
 
   * added patch

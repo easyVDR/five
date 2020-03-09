@@ -3,10 +3,10 @@
 LOADED_MODULES="/var/run/easyvdr-loaded-modules"
 
 unloadDVBdriver() {
-    [ -e "$LOADED_MODULES" ] || return 0
-	for module in $(cat $LOADED_MODULES); do
-		logger -t DVB "Unloading <$module>"
-		modprobe -rqs $module
+	[ -e "$LOADED_MODULES" ] || return 0
+ 	for module in $(cat $LOADED_MODULES); do
+ 		logger -t DVB "Unloading <$module>"
+ 		modprobe -rqs $module
 	done
 
 	rm -f $LOADED_MODULES
