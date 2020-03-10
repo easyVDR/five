@@ -1,0 +1,7 @@
+usr/share/vdr/plugins/graphlcd/fonts    var/lib/vdr/plugins/graphlcd/fonts
+usr/share/vdr/plugins/graphlcd/logos    var/lib/vdr/plugins/graphlcd/logos
+usr/share/vdr/plugins/graphlcd/logos_bmp    var/lib/vdr/plugins/graphlcd/logos_bmp
+usr/share/vdr/plugins/graphlcd/skins    var/lib/vdr/plugins/graphlcd/skins
+etc/vdr/plugins/graphlcd/channels.alias		var/lib/vdr/plugins/graphlcd/channels.alias
+etc/vdr/plugins/graphlcd/fonts.conf             var/lib/vdr/plugins/graphlcd/fonts.conf
+

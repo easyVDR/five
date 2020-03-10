@@ -1,0 +1,8 @@
+vdr-plugin-graphlcd
+-------------------
+
+The command line parameters of the plugin, i.e. for selecting the attached 
+controller, can be configured in /etc/vdr/plugins/plugin.graphlcd.conf
+
+-- Tobias Grimm <tg@e-tobi.net>, Wed, 25 Feb 2004 20:50:00
+
