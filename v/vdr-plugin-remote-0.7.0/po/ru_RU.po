@@ -1,0 +1,51 @@
+# Remote Control plugin language source file.
+# Copyright (C) 2007 Oliver Endriss <o.endriss@gmx.de>
+# This file is distributed under the same license as the Remote Control plugin package.
+# Waldemar Nikel, 2006
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Remote Control plugin 0.4.0\n"
+"Report-Msgid-Bugs-To: <o.endriss@gmx.de>\n"
+"POT-Creation-Date: 2015-09-15 18:54+0200\n"
+"PO-Revision-Date: 2007-10-05 06:58+0200\n"
+"Last-Translator: Waldemar Nikel, 2006\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-5\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Remote control"
+msgstr "Пульт управления"
+
+#, c-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+msgid "Error uploading keymap"
+msgstr "Ошибка при загрузке раскладки"
+
+msgid "Press any key to use pre-loaded keymap"
+msgstr "Нажмите любую кнопку для использования ранее загруженой раскладки"
+
+msgid "User-supplied keymap will be used"
+msgstr "Будет использоваться раскладка пользователя"
+
+msgid "Remote control test - press and hold down any key"
+msgstr "Проверка пульта - нажмите и удержите любую кнопку"
+
+msgid "RC5 protocol detected"
+msgstr "Опознан протокол RC5"
+
+msgid "RC5 protocol detected (inverted signal)"
+msgstr "Опознан протокол RC5 (с инвертированием сигнала)"
+
+msgid "RCMM protocol detected"
+msgstr "Опознан протокол RCMM"
+
+msgid "RCMM protocol detected (inverted signal)"
+msgstr "Опознан протокол RCMM (с инвертированием сигнала)"
+
+msgid "No remote control detected"
+msgstr "Пульт управления не опознан"

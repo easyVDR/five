@@ -1,0 +1,13 @@
+#!/bin/sh
+
+if ! cat /proc/bus/input/handlers 2>/dev/null | grep -q evdev
+then
+    if ! lsmod | grep -q ^evdev
+    then
+        . /usr/share/debconf/confmodule
+
+        # ask module install question:
+        db_input high vdr-plugin-remote/install_evdev || false
+        db_go
+    fi
+fi

@@ -1,0 +1,27 @@
+Source: vdr-plugin-remote
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Peter Siering <ps@ctmagazin.de>, Thomas Schmidt <tschmidt@debian.org>, Tobias Grimm <etobi@debian.org>, Thomas Günther <tom@toms-cafe.de>
+Build-Depends: debhelper (>= 9), po-debconf, vdr-dev (>= 2.0.0), gettext, pkg-config
+Standards-Version: 3.9.3
+Homepage: http://www.escape-edv.de/endriss/vdr/
+Vcs-Git: git://git.debian.org/git/pkg-vdr-dvb/vdr-plugin-remote.git
+Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr-plugin-remote.git
+
+Package: vdr-plugin-remote
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: VDR Plugin to support the built-in remote control port of DVB-Cards
+ This plugin for VDR supports the built-in remote control
+ port of some DVB-Cards or CI-Modules.
+
+Package: vdr-plugin-remote-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-remote (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-remote
+ .
+ This package contains only the debugging symbols for vdr-plugin-remote
+

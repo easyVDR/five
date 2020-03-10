@@ -1,0 +1,77 @@
+# vdr-plugin-remote po-debconf translation to Spanish.
+# Copyright (C) 2009 Software in the Public Interest
+# This file is distributed under the same license as the vdr-plugin-remote package.
+#
+# Changes:
+#   - Initial translation
+#       Gary Ariel Sandi Vigabriel <gary.gsv@gmail.com>, 2009
+#
+#   - Updates
+#       Francisco Javier Cuadrado <fcocuadrado@gmail.com>, 2009
+#
+# Traductores, si no conocen el formato PO, merece la pena leer la
+# documentación de gettext, especialmente las secciones dedicadas a este
+# formato, por ejemplo ejecutando:
+#       info -n '(gettext)PO Files'
+#       info -n '(gettext)Header Entry'
+#
+# Equipo de traducción al español, por favor lean antes de traducir
+# los siguientes documentos:
+#
+#   - El proyecto de traducción de Debian al español
+#     http://www.debian.org/intl/spanish/
+#     especialmente las notas de traducción en
+#     http://www.debian.org/intl/spanish/notas
+#
+#   - La guía de traducción de po's de debconf:
+#     /usr/share/doc/po-debconf/README-trans
+#     o http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-plugin-remote 0.4.0-17\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2009-10-11 10:31+0200\n"
+"PO-Revision-Date: 2009-10-28 09:40+0100\n"
+"Last-Translator: Francisco Javier Cuadrado <fcocuadrado@gmail.com>\n"
+"Language-Team: Debian l10n Spanish <debian-l10n-spanish@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Try to automatically load the evdev module?"
+msgstr "¿Desea intentar cargar el módulo «evdev» automáticamente?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Enable this, if you want a setup which automatically loads the evdev module, needed by the remote-plugin."
+msgstr "Active esto, si quiere que la instalación cargue automáticamente el módulo «evdev», necesario para el complemento remoto («remote-plugin»)."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "This script will try to load the module evdev and, if this is successful,  it will add a new entry for evdev to your /etc/modules."
+msgstr "Este script intentará cargar el módulo «evdev» y, si tiene éxito, añadirá una nueva entrada para «evdev» en el archivo «/etc/modules»."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "If this fails, your kernel maybe does not have evdev support, and you will need to rebuild your kernel with the CONFIG_INPUT_EVDEV option enabled."
+msgstr "Si esto falla, puede que el núcleo no pueda utilizar «evdev», tendrá que recompilar el núcleo con la opción «CONFIG_INPUT_EVDEV» activada."
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid "Error loading evdev module"
+msgstr "Error al cargar el módulo «evdev»"
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid "The evdev module could not be loaded, probably your kernel has builtin-support for evdev, or your kernel is missing evdev support."
+msgstr "El módulo «evdev» no se puede cargar, probablemente el núcleo ya lleve incorporado «evdev», o carece de la posibilidad de utilizarlo de alguna forma."
+

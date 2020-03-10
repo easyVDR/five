@@ -1,0 +1,51 @@
+# Remote Control plugin language source file.
+# Copyright (C) 2007 Oliver Endriss <o.endriss@gmx.de>
+# This file is distributed under the same license as the Remote Control plugin package.
+# Nicola Franchi <franchi at cefriel dot it>, 2006
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Remote Control plugin 0.4.0\n"
+"Report-Msgid-Bugs-To: <o.endriss@gmx.de>\n"
+"POT-Creation-Date: 2015-09-15 18:54+0200\n"
+"PO-Revision-Date: 2007-12-29 02:22+0100\n"
+"Last-Translator: Gringo <vdr-italian@tiscali.it>\n"
+"Language-Team:  <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "Remote control"
+msgstr "Telecomando"
+
+#, c-format
+msgid "%s: %s"
+msgstr "%s: %s"
+
+msgid "Error uploading keymap"
+msgstr "Errore caricamento tabella dei tasti"
+
+msgid "Press any key to use pre-loaded keymap"
+msgstr "Premi un tasto per usare una tabella dei tasti precaricata"
+
+msgid "User-supplied keymap will be used"
+msgstr "Verrà usata una mappa dei tasti fornita dall'utente"
+
+msgid "Remote control test - press and hold down any key"
+msgstr "Prova telecomando - premi e tieni premuto un tasto"
+
+msgid "RC5 protocol detected"
+msgstr "Rilevato protocollo RC5"
+
+msgid "RC5 protocol detected (inverted signal)"
+msgstr "Rilevato protocollo RC5 (segnale invertito)"
+
+msgid "RCMM protocol detected"
+msgstr "Rilevato protocollo RCMM"
+
+msgid "RCMM protocol detected (inverted signal)"
+msgstr "Rilevato protocollo RCMM (segnale invertito)"
+
+msgid "No remote control detected"
+msgstr "Nessun telecomando rilevato"

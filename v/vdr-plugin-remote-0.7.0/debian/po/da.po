@@ -1,0 +1,71 @@
+# Danish translation vdr-plugin-remote.
+# Copyright (C) 2012 vdr-plugin-remote & nedenstående oversættere.
+# This file is distributed under the same license as the vdr-plugin-remote package.
+# Joe Hansen (joedalton2@yahoo.dk), 2012.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-plugin-remote\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2012-02-02 11:30+0100\n"
+"PO-Revision-Date: 2012-02-09 12:42+0000\n"
+"Last-Translator: Joe Hansen <joedalton2@yahoo.dk>\n"
+"Language-Team: Danish <debian-l10n-danish@lists.debian.org>\n"
+"Language: da\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Try to automatically load the evdev module?"
+msgstr "Forsøg automatisk at indlæse modulet evdev?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Enable this, if you want a setup which automatically loads the evdev module, "
+"needed by the remote-plugin."
+msgstr ""
+"Aktiver denne, hvis du ønsker en opsætning som automatisk indlæser modulet "
+"evdev, krævet af remote-plugin."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This script will try to load the module evdev and, if this is successful,  "
+"it will add a new entry for evdev to your /etc/modules."
+msgstr ""
+"Dette skript vil forsøge at indlæse modulet evdev og, hvis dette lykkes "
+"tilføje et nyt punkt for evdev i din /etc/modules."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If this fails, your kernel maybe does not have evdev support, and you will "
+"need to rebuild your kernel with the CONFIG_INPUT_EVDEV option enabled."
+msgstr ""
+"Hvis dette mislykkes så har din kerne måske ikke understøttelse af evdev, "
+"og du skal så genbygge din kerne med tilvalget CONFIG_INPUT_EVDEV aktiveret."
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid "Error loading evdev module"
+msgstr "Fejl under indlæsning af modulet evdev"
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid ""
+"The evdev module could not be loaded, probably your kernel has builtin-"
+"support for evdev, or your kernel is missing evdev support."
+msgstr ""
+"Modulet evdev kunne ikke indlæses, hvilket sikkert skyldes at din kerne "
+"har indbygget understøttelse for evdev, eller den mangler understøttelse "
+"for evdev."
+

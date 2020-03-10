@@ -1,0 +1,18 @@
+Template: vdr-plugin-remote/install_evdev
+Type: boolean
+Default: false
+_Description: Try to automatically load the evdev module?
+ Enable this, if you want a setup which automatically loads the evdev module,
+ needed by the remote-plugin.
+ .
+ This script will try to load the module evdev and, if this is successful, 
+ it will add a new entry for evdev to your /etc/modules.
+ .
+ If this fails, your kernel maybe does not have evdev support, and you will
+ need to rebuild your kernel with the CONFIG_INPUT_EVDEV option enabled.
+
+Template: vdr-plugin-remote/error-evdev
+Type: note
+_Description: Error loading evdev module
+ The evdev module could not be loaded, probably your kernel has builtin-support
+ for evdev, or your kernel is missing evdev support.

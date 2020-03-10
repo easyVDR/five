@@ -1,0 +1,70 @@
+# translation of vdr-plugin-remote debconf to Portuguese
+# Copyright (C) 2007 Américo Monteiro
+# This file is distributed under the same license as the vdr-plugin-remote package.
+#
+# Américo Monteiro <a_monteiro@netcabo.pt>, 2007.
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-plugin-remote 0.3.9-4\n"
+"Report-Msgid-Bugs-To: Source: vdr-plugin-remote@packages.debian.org\n"
+"POT-Creation-Date: 2007-11-27 23:48+0100\n"
+"PO-Revision-Date: 2007-08-06 02:52+0100\n"
+"Last-Translator: Américo Monteiro <a_monteiro@netcabo.pt>\n"
+"Language-Team: Portuguese <traduz@debianpt.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Try to automatically load the evdev module?"
+msgstr "Tentar carregar automaticamente o módulo evdev?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Enable this, if you want a setup which automatically loads the evdev module, "
+"needed by the remote-plugin."
+msgstr ""
+"Active isto, se deseja uma configuração que automáticamente carrega o módulo "
+"evdev, necessário pelo plugin remoto."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This script will try to load the module evdev and, if this is successful,  "
+"it will add a new entry for evdev to your /etc/modules."
+msgstr ""
+"Este script tentará carregar o módulo evdev e, se tiver sucesso, irá "
+"adicionar uma nova entrada para o evdev ao seu /etc/modules."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If this fails, your kernel maybe does not have evdev support, and you will "
+"need to rebuild your kernel with the CONFIG_INPUT_EVDEV option enabled."
+msgstr ""
+"Se falhar, talvez o seu kernel não suporte evdev, e você terá que "
+"reconstruir o seu kernel com a opção CONFIG_INPUT_EVDEV activada."
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid "Error loading evdev module"
+msgstr "Erro ao carregar o módulo evdev."
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid ""
+"The evdev module could not be loaded, probably your kernel has builtin-"
+"support for evdev, or your kernel is missing evdev support."
+msgstr ""
+"O módulo evdev não pode ser carregado, provavelmente o seu kernel tem "
+"suporte para evdev integrado no núcleo, ou o falta suporte evdev ao seu "
+"kernel."

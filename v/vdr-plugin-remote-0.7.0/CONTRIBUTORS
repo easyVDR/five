@@ -1,0 +1,37 @@
+Special thanks go to the following individuals (if your name is missing here,
+please send an email to the plugin author):
+
+Frank Krömmelbein <Frank99 at vdrportal>
+ for reporting that the tcp remote control is causing high cpu load
+
+Mike Gratsas <MikeGratsas at techemail dot com>
+ for fixing the LIRC remote control code
+
+Ville Skyttä <ville dot skytta at iki dot fi>
+ for translating OSD texts to the Finnish language
+ for providing a patch to use plgcfg from pkg-config
+
+Ronny Kornexl <ronny dot kornexl at online dot de>
+ for reporting that cTtyStatus::Recording() and cTtyStatus::Replaying()
+ may cause a segfault due to missing null-pointer checks
+
+Pierre Briec <eclipse dot vdr at gmail dot com>
+ for translating OSD texts to the French language
+
+Nicola Franchi <franchi at cefriel dot it>
+ for translating OSD texts to the Italian language
+
+Jakub Wolnicki
+ for translating OSD texts to the Polish language
+
+Waldemar Nikel
+ for translating OSD texts to the Russian language
+
+Joachim Selinger <selinger at idefix dot s dot bawue dot de>
+ for suggesting to implement selection of the input device by path.
+
+Tobias Grimm <tobias dot grimm at e-tobi dot net>
+ for providing a better gettext detection using i18n.h.
+
+Thomas Reufer <thomas at reufer dot ch>
+ for adding support for event type 2 (mouse wheel, rotary-encoder).

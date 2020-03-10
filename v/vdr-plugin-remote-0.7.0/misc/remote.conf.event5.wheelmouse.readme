@@ -1,0 +1,14 @@
+Configuration for a rotary-encoder/wheel mouse
+==============================================
+
+Notes:
+- This is an example how a standard wheel mouse can be used to move editing marks.
+- See http://www.vdr-portal.de/board18-vdr-hardware/board13-fernbedienungen/125341-schneiden-wie-die-profis
+
+vdr key            code                mouse action                  vdr action
+-------------------------------------------------------------------------------------
+remote-event5.0    0000000100010112    press wheel (middle button)   toggle mark
+remote-event5.7    0000000100010110    press left button             previous mark
+remote-event5.9    0000000100010111    press right button            next mark
+remote-event5.4    0000000100020008    turn wheel up                 move mark left
+remote-event5.6    FFFFFFFF00020008    turn wheel down               move mark right

@@ -1,0 +1,26 @@
+#! /bin/sh
+set -e
+
+# confmodule makes sure that config is called
+. /usr/share/debconf/confmodule
+
+if [ "$1" = "configure" ]
+then
+    db_get vdr-plugin-remote/install_evdev
+    if [ $RET = "true" ]
+    then
+        # Try to load the evdev-module
+        if modprobe evdev
+        then
+            if ! cat /etc/modules | grep -q ^evdev
+            then
+                echo "evdev" >> /etc/modules
+            fi
+        else
+            db_input high vdr-plugin-remote/error-evdev || true
+            db_go || true
+        fi
+    fi
+fi
+
+#DEBHELPER#

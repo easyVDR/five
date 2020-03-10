@@ -1,0 +1,78 @@
+# translation of de.po to German
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans#
+#    Developers do not need to manually edit POT or PO files.
+# Jens Nachtigall <nachtigall@web.de>, 2004.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: de\n"
+"Report-Msgid-Bugs-To: Source: vdr-plugin-remote@packages.debian.org\n"
+"POT-Creation-Date: 2007-11-27 23:48+0100\n"
+"PO-Revision-Date: 2006-09-26 21:33+0100\n"
+"Last-Translator: Tobias Grimm <tg@e-tobi.net>\n"
+"Language-Team: German <debian-l10n-german@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.9.1\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Try to automatically load the evdev module?"
+msgstr "Soll versucht werden, das Kernel-Modul evdev automatisch zu laden?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Enable this, if you want a setup which automatically loads the evdev module, "
+"needed by the remote-plugin."
+msgstr ""
+"Aktivieren Sie diese Option, wenn Sie wollen, dass das vom Remote-Plugin "
+"benötigte Kernel-Modul evdev automatisch geladen wird."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This script will try to load the module evdev and, if this is successful,  "
+"it will add a new entry for evdev to your /etc/modules."
+msgstr ""
+"Dieses Skript wird versuchen, das Modul evdev zu laden. Sollte es gelingen, "
+"so wird das Skript für evdev einen neuen Eintrag zur /etc/modules hinzufügen."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If this fails, your kernel maybe does not have evdev support, and you will "
+"need to rebuild your kernel with the CONFIG_INPUT_EVDEV option enabled."
+msgstr ""
+"Sollte es misslingen, so könnte das bedeuten, dass Ihr Kernel kein evdev "
+"unterstützt. Sie werden Ihren Kernel dann neu bauen müssen, wobei die Option "
+"CONFIG_INPUT_EVDEV gesetzt sein muss."
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid "Error loading evdev module"
+msgstr "Fehler beim Laden des evdev-Moduls."
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid ""
+"The evdev module could not be loaded, probably your kernel has builtin-"
+"support for evdev, or your kernel is missing evdev support."
+msgstr ""
+"Das evdev-Modul konnte nicht geladen werden. Wahrscheinlich ist die evdev-"
+"Unterstützung fest in Ihren Kernel eingebaut oder fehlt."

@@ -1,0 +1,77 @@
+#
+#    Translators, if you are not familiar with the PO format, gettext
+#    documentation is worth reading, especially sections dedicated to
+#    this format, e.g. by running:
+#         info -n '(gettext)PO Files'
+#         info -n '(gettext)Header Entry'
+#
+#    Some information specific to po-debconf are available at
+#            /usr/share/doc/po-debconf/README-trans
+#         or http://www.debian.org/intl/l10n/po-debconf/README-trans
+#
+#    Developers do not need to manually edit POT or PO files.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-plugin-remote\n"
+"Report-Msgid-Bugs-To: Source: vdr-plugin-remote@packages.debian.org\n"
+"POT-Creation-Date: 2007-11-27 23:48+0100\n"
+"PO-Revision-Date: 2006-09-24 13:52+0200\n"
+"Last-Translator: Miroslav Kure <kurem@debian.cz>\n"
+"Language-Team: Czech <debian-l10n-czech@lists.debian.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid "Try to automatically load the evdev module?"
+msgstr "Pokusit se o automatické nahrání modulu evdev?"
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"Enable this, if you want a setup which automatically loads the evdev module, "
+"needed by the remote-plugin."
+msgstr ""
+"Tuto možnost povolte, pokud chcete, aby systém automaticky nahrával jaderný "
+"modul evdev vyžadovaný vdr modulem remote-plugin."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"This script will try to load the module evdev and, if this is successful,  "
+"it will add a new entry for evdev to your /etc/modules."
+msgstr ""
+"Skript se pokusí nahrát modul evdev a pokud bude úspěšný, přidá pro evdev "
+"nový záznam do souboru /etc/modules."
+
+#. Type: boolean
+#. Description
+#: ../templates:1001
+msgid ""
+"If this fails, your kernel maybe does not have evdev support, and you will "
+"need to rebuild your kernel with the CONFIG_INPUT_EVDEV option enabled."
+msgstr ""
+"Pokud nahrávání selže, znamená to, že vaše jádro asi neobsahuje podporu pro "
+"evdev a budete jej muset sestavit znovu, tentokráte s povolenou volbou "
+"CONFIG_INPUT_EVDEV."
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid "Error loading evdev module"
+msgstr "Chyba při zavádění modulu evdev"
+
+#. Type: note
+#. Description
+#: ../templates:2001
+msgid ""
+"The evdev module could not be loaded, probably your kernel has builtin-"
+"support for evdev, or your kernel is missing evdev support."
+msgstr ""
+"Modul evdev se nepodařilo nahrát. Vaše jádro má buď zabudovanou podporu pro "
+"evdev přímo v sobě, nebo naopak podporu evdev úplně postrádá."
