@@ -1,0 +1,73 @@
+Source: graphlcd-base
+Section: libs
+Priority: optional
+Maintainer: Tobias Grimm <tg@e-tobi.net>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 9), libfreetype-dev | libfreetype6-dev, pkg-config, libusb-dev, libmagick9-dev | libmagick-dev | libmagickwand-dev, graphicsmagick-libmagick-dev-compat, libfontconfig1-dev, libvncserver-dev, libgcrypt20-dev
+Standards-Version: 3.9.5
+Homepage: http://projects.vdr-developer.org/git/graphlcd-base.git/log/?h=touchcol
+
+
+Package: libglcddrivers1-dev
+Provides: libglcddrivers-dev
+Conflicts: libglcddrivers-dev, libglcddrivers1 (<< 0.1.9)
+Section: libdevel
+Architecture: any
+Depends: libglcddrivers1
+Description: Development files for the GraphLCD drivers library
+ The GraphLCD drivers library provides a common interface for programming
+ different graphical LC displays. Special devices for frambuffer and
+ image output allow to test the GraphLCD routines, without attaching a
+ LC display.
+
+Package: libglcddrivers1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, libserdisp1 (>= 1.97.7)
+Description: Library for programming graphical LC displays
+ The GraphLCD drivers library provides a common interface for programming
+ different graphical LC displays. Special devices for frambuffer and
+ image output allow to test the GraphLCD routines, without attaching a
+ LC display.
+
+Package: libglcdgraphics2-dev
+Provides: libglcdgraphics-dev
+Conflicts: libglcdgraphics-dev, libglcdgraphics2 (<< 0.1.9)
+Section: libdevel
+Architecture: any
+Depends: libglcdgraphics2
+Description: Development files for the GraphLCD graphics library
+ The GraphLCD graphics library provides methods for processing graphics
+ and fonts to be displayed with the GraphLCD drivers library.
+
+Package: libglcdgraphics2
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Library for handling graphics and fonts with GraphLCD
+ The GraphLCD graphics library provides methods for processing graphics
+ and fonts to be displayed with the GraphLCD drivers library.
+
+Package: graphlcd-tools
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: Tools for GraphLCD VDR Plugin
+ Tools to convert pictures and fonts to GraphLCD format and to display
+ pictures and text on the LCD using the GraphLCD drivers library.
+
+Package: libglcdskin1-dev
+Section: libdevel
+Architecture: any
+Depends: libglcdskin1
+Description: Development files for the GraphLCD graphics library
+ The GraphLCD graphics library
+
+Package: libglcdskin1
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Description: Library for handling skins with GraphLCD
+ The GraphLCD graphics library provides methods for processing skins
+ to be displayed with the GraphLCD drivers library.
+
+

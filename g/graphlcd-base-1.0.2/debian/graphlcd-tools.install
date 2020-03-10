@@ -1,0 +1,16 @@
+tools/convpic/convpic                  usr/bin/
+tools/convpic/convall                  usr/bin/
+tools/convpic/c_bmp2glcd               usr/bin/
+tools/convpic/c_tif2glcd               usr/bin/
+tools/crtfont/crtfont                  usr/bin/
+tools/showpic/showpic                  usr/bin/
+tools/showtext/showtext                usr/bin/
+tools/lcdtestpattern/lcdtestpattern    usr/bin/
+graphlcd/graphlcd.conf.alphacool      /etc/graphlcd/
+graphlcd/graphlcd.conf.default        /etc/graphlcd/
+graphlcd/graphlcd.conf.l4m132c        /etc/graphlcd/
+graphlcd/graphlcd.conf.l4m320t        /etc/graphlcd/
+graphlcd/graphlcd.conf.org            /etc/graphlcd/
+graphlcd/graphlcd.conf.sdcmegtron     /etc/graphlcd/
+graphlcd/graphlcd.conf.std            /etc/graphlcd/
+graphlcd/graphlcd.conf.picolcd256x64  /etc/graphlcd/

@@ -1,0 +1,94 @@
+#!/usr/bin/make -f
+
+#export DH_VERBOSE=1
+
+CFLAGS = -Wall -g -fPIC
+
+ifneq (,$(findstring noopt,$(DEB_BUILD_OPTIONS)))
+	CFLAGS += -O0
+else
+	CFLAGS += -O2
+endif
+
+# To use dpatch uncomment the following line and set Build-Depends to dpatch
+#DPATCH=yes
+
+ifdef DPATCH
+#include /usr/share/dpatch/dpatch.make
+else
+patch:
+patch-stamp:
+unpatch:
+endif
+
+MAKE_OPTIONS = HAVE_DRIVER_AX206DPF=1 HAVE_DRIVER_picoLCD_256x64=1 HAVE_IMAGEMAGICK=1
+
+
+build: build-stamp
+build-stamp: patch-stamp
+	dh_testdir
+
+	# Add here commands to compile the package.
+	$(MAKE) $(MAKE_OPTIONS)
+
+	touch build-stamp
+
+clean: clean-patched unpatch
+clean-patched:
+	dh_testdir
+	dh_testroot
+	rm -f build-stamp configure-stamp
+
+	# Add here commands to clean up after the build process.
+	-$(MAKE) $(MAKE_OPTIONS) clean
+
+	dh_clean 
+
+install: build
+	dh_testdir
+	dh_testroot
+	dh_clean -k 
+	dh_installdirs
+
+	# Add here commands to install the package into debian/tmp
+	$(MAKE) install DESTDIR=$(CURDIR)/debian/tmp UDEVRULESDIR=$(CURDIR)/debian/tmp/usr/lib/udev/rules.d
+
+
+# Build architecture-independent files here.
+binary-indep:
+	@echo "Nothing to do."
+
+# Build architecture-dependent files here.
+binary-arch: build install
+	dh_testdir
+	dh_testroot
+	dh_installchangelogs 
+	dh_installdocs
+	dh_installexamples
+	dh_install
+#	dh_installmenu
+#	dh_installdebconf	
+#	dh_installlogrotate
+#	dh_installemacsen
+#	dh_installpam
+#	dh_installmime
+#	dh_installinit
+#	dh_installcron
+#	dh_installinfo
+	dh_installman
+	dh_link
+	dh_strip
+	dh_compress
+	dh_fixperms
+#	dh_perl
+#	dh_python
+	dh_makeshlibs -V
+	dh_installdeb
+	dh_shlibdeps -l debian/libglcddrivers1/usr/lib:debian/libglcdgraphics2/usr/lib:debian/libglcdskins1/usr/lib
+	dh_gencontrol
+	dh_md5sums
+	dh_builddeb
+
+binary: binary-indep binary-arch
+.PHONY: build clean binary-indep binary-arch binary install \
+        clean-patched patch unpatch

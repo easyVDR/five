@@ -1,0 +1,4 @@
+debian/tmp/usr/include/glcdgraphics
+debian/tmp/usr/lib/libglcdgraphics.so
+
+debian/glcdgraphics.pc    usr/lib/pkgconfig/

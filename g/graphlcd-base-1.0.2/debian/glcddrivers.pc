@@ -1,0 +1,11 @@
+prefix=/usr
+exec_prefix=${prefix}
+libdir=${exec_prefix}/lib
+includedir=${prefix}/include
+
+Name: graphlcd
+Description: Graphical LCD Library
+Requires:
+Version: 0.1.5
+Libs: -L${libdir} -lglcddrivers
+Cflags: -I${includedir}
