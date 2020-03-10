@@ -1,3 +1,9 @@
+easyvdr-setup (3.0.15-1easyVDR5~focal) focal; urgency=high
+
+  * added Netceiver-Detect & Reelbox Info-Display
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 10 Mar 2020 17:21:50 +0100
+
 easyvdr-setup (3.0.15-1easyVDR4~focal) focal; urgency=high
 
   * fix ir-remotes

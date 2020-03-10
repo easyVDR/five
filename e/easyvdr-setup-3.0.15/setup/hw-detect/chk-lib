@@ -13,6 +13,7 @@
 #  v. 0.6.0 14.05.15 graphtft only on non X11        michel8
 #  v. 0.6.1 19.07.15 chk_hbir auch bei live-CD       michel8
 #  v. 0.6.2 19.09.17 change lirc_serial to serial_ir bleifuss
+#  v. 0.6.2 10.03.20 added netceiver via IPv6 multicast  mango 
 ###############################
 
 #####
@@ -172,6 +173,29 @@ chk_hdet()
 hdet_para=$1
 hdet 2>/dev/null | grep "$hdet_para" && RET_STATUS=0 || RET_STATUS=1 
 return $RET_STATUS
+}
+
+##### netceiver via IPv6 multicast
+chk_netceiver()
+{
+SHORTLOG=/tmp/.netceiverfind
+[ -f $SHORTLOG ] && rm $SHORTLOG
+interfaces=$(ip -o link show | grep -F "link/ether" | awk '{ gsub(":", "", $2); print $2 }')
+echo "found ethernet interfaces: $interfaces" >> $SHORTLOG
+for dev in $interfaces; do
+	echo "look for Reelbox Netceiver on network interface: $dev" >> $SHORTLOG
+	# set unconditional interfce up
+	ip link set dev $dev up >> $SHORTLOG 2>&1
+	# wait for initialization
+	sleep 1
+	ping6 -w 1 -c 1 -I $dev ff02::16 >> $SHORTLOG 2>&1
+	if [ $? -eq 0 ]; then
+		echo "Reelbox Netceiver found on network interface: $dev" >> $SHORTLOG
+		return 0
+	fi
+done
+echo "no Reelbox Netceiver found on interfaces: $interfaces" >> $SHORTLOG
+return 1
 }
 
 #####

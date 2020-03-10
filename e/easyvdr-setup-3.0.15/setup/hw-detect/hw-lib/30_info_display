@@ -387,6 +387,16 @@ paraset_c[53]="/etc/graphlcd/graphlcd.conf.picolcd256x64 /etc/graphlcd.conf"
 paraset_d[53]="<empty_value>"
 paraset_e[53]="<empty_value>"
 
+##
+hw_name[54]="st7565-reel"
+hw_ident[54]="yes"
+det_method[54]="chk_dummyhw"
+ins_method[54]="inst_display"
+paraset_a[54]="vdr-plugin-graphlcd"
+paraset_b[54]="LCD graphlcd LCD_DRIVER st7565r-reel"
+paraset_c[54]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[54]="<empty_value>"
+paraset_e[54]="<empty_value>"
+
 #---ENDE---
 hw_ident[100]="FINITO"
-

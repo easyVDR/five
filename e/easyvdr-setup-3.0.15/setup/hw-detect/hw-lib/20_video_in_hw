@@ -303,6 +303,16 @@ paraset_c[25]="<empty_value>"
 paraset_d[25]="<empty_value>"
 paraset_e[25]="<empty_value>"
 
+# Reelbox Netceiver
+hw_name[26]="Reelbox Netceiver"
+hw_ident[26]="yes"
+det_method[26]="chk_netceiver"
+ins_method[26]="inst_write-info"
+paraset_a[26]="<empty_value>"
+paraset_b[26]="<empty_value>"
+paraset_c[26]="<empty_value>"
+paraset_d[26]="<empty_value>"
+paraset_e[26]="<empty_value>"
 
 
 #nichts installieren

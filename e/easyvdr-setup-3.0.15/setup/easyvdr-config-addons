@@ -207,7 +207,7 @@ case $easyvdr_video_out in
     pvr350) [[ ${CONFL_ARRAY[4]} == "O" ]] && ALLOW_STAT=1 ;;
     x)      [[ ${CONFL_ARRAY[5]} == "O" ]] && ALLOW_STAT=1 ;;
   ati)      [[ ${CONFL_ARRAY[6]} == "O" ]] && ALLOW_STAT=1 ;;
-    *)      nop;;
+    *)      true;;
 esac
 [[ ${AUSBLENDE[$i]} != "+" ]]  && ALLOW_STAT=1
 return $ALLOW_STAT
