@@ -36,11 +36,17 @@ Index: easyvdr-3.99.00/hooks/10_dvb-stop.dvb
 ===================================================================
 --- easyvdr-3.99.00.orig/hooks/10_dvb-stop.dvb
 +++ easyvdr-3.99.00/hooks/10_dvb-stop.dvb
-@@ -3,6 +3,7 @@
+@@ -3,9 +3,10 @@
  LOADED_MODULES="/var/run/easyvdr-loaded-modules"
  
  unloadDVBdriver() {
-+    [ -e "$LOADED_MODULES" ] || return 0
- 	for module in $(cat $LOADED_MODULES); do
- 		logger -t DVB "Unloading <$module>"
- 		modprobe -rqs $module
+-	for module in $(cat $LOADED_MODULES); do
+-		logger -t DVB "Unloading <$module>"
+-		modprobe -rqs $module
++	[ -e "$LOADED_MODULES" ] || return 0
++ 	for module in $(cat $LOADED_MODULES); do
++ 		logger -t DVB "Unloading <$module>"
++ 		modprobe -rqs $module
+ 	done
+ 
+ 	rm -f $LOADED_MODULES

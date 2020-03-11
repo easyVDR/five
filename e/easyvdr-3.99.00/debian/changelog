@@ -1,3 +1,9 @@
+easyvdr (3.99.00-4easyVDR2~focal) focal; urgency=high
+
+  * fixed fix_pcimap.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 11 Mar 2020 15:51:06 +0100
+
 easyvdr (3.99.00-4easyVDR1~focal) focal; urgency=high
 
   * fix
