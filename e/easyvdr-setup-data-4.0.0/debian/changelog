@@ -1,3 +1,9 @@
+easyvdr-setup-data (4.0.0-0easyVDR3~focal) focal; urgency=high
+
+  * added reelbox remote.conf
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 11 Mar 2020 15:55:11 +0100
+
 easyvdr-setup-data (4.0.0-0easyVDR2~focal) focal; urgency=high
 
   * automatic rebuild
