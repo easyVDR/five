@@ -1,0 +1,4 @@
+usr/lib/vdr/easyvdr
+var/lib/vdr/channels
+var/lib/vdr/remotes
+var/lib/vdr/plugins

@@ -1,0 +1,11 @@
+<markup><!--
+Netzwerk-Manager
+--><span fgcolor="red" size="22000">        Netzwerk-Manager VLAN</span><!--
+--><big><big><big><span fgcolor="white" size="7000">
+ Beispielsweise bei Multicast-Übertragungen kann leicht das 
+ Netzwerk geflutet werden. Ein virtuelles-LAN (VLAN) erlaubt 
+ die Aufteilung in mehrere virtuelle Netzwerke.
+ Die virtuelle Segmentierung kann hier Besserung bringen.
+ Allerdings ist ein Studium diverser Dokumentionen erforderlich. 
+</span></big></big></big><!--
+--> </markup>

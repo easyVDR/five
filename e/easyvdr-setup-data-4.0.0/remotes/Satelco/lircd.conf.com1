@@ -1,0 +1,83 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.8.7(default) on Tue Jul 24 01:39:08 2012
+#
+# contributed by c.b.
+#
+# brand:                       satelco
+# model no. of remote control: easy watch
+# devices being controlled by this remote:  easyVDR
+#  lirc_serial
+
+begin remote
+
+  name  satelco
+  bits           13
+  flags RC5|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  one           916   758
+  zero          916   758
+  plead         942
+  gap          107175
+  toggle_bit_mask 0x800
+
+      begin codes
+          KEY_POWER                0x1615
+          KEY_MUTE                 0x1616
+          KEY_1                    0x1614
+          KEY_2                    0x1613
+          KEY_3                    0x1612
+          KEY_4                    0x1611
+          KEY_5                    0x1610
+          KEY_6                    0x160F
+          KEY_7                    0x160E
+          KEY_8                    0x160D
+          KEY_9                    0x160C
+          KEY_0                    0x160B
+          KEY_ZOOM                 0x1618
+          KEY_SCREEN               0x161B
+          KEY_VIDEO                0x1617
+          KEY_SLEEP                0x161C
+          KEY_LAST                 0x1619
+          KEY_SUBTITLE             0x161A
+          KEY_TIME                 0x161D
+          KEY_SELECT               0x161E
+          KEY_PROGRAM              0x161F
+          KEY_EPG                  0x1620
+          KEY_TEXT                 0x1621
+          KEY_UP                   0x1622
+          KEY_DOWN                 0x1623
+          KEY_LEFT                 0x1624
+          KEY_RIGHT                0x1625
+          KEY_OK                   0x1626
+          KEY_TV                   0x1627
+          KEY_RADIO                0x1628
+          KEY_DVD                  0x1629
+          KEY_CHANNELUP            0x162A
+          KEY_CHANNELDOWN          0x162B
+          KEY_MENU                 0x162C
+          KEY_BACK                 0x162D
+          KEY_VOLUMEUP             0x162E
+          KEY_VOLUMEDOWN           0x162F
+          KEY_PLAY                 0x1630
+          KEY_PAUSE                0x1631
+          KEY_STOP                 0x1632
+          KEY_RECORD               0x1633
+          KEY_PREVIOUS             0x1634
+          KEY_REWIND               0x1635
+          KEY_FASTFORWARD          0x1636
+          KEY_NEXT                 0x1637
+          KEY_RED                  0x1638
+          KEY_GREEN                0x1639
+          KEY_YELLOW               0x163A
+          KEY_BLUE                 0x163B
+      end codes
+
+end remote
+
+

@@ -1,0 +1,63 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.6.6(any) on Wed Mar  2 19:04:25 2005
+#
+# contributed by Frank Altmann Methusalixx@gmx.de 
+#
+# brand:  Skymaster 10 zu 1 code 089         /etc/lircd89.conf
+# model no. of remote control: Skymaster 2421
+# devices being controlled by this remote: Many
+#
+
+begin remote
+
+  name  /etc/lirc/lircd.conf
+  bits           13
+  flags RC5|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  one           910   835
+  zero          910   835
+  plead         923
+  gap          111519
+  toggle_bit      2
+
+
+      begin codes
+          1                        0x0000000000001001
+          2                        0x0000000000001002
+          3                        0x0000000000001003
+          4                        0x0000000000001004
+          5                        0x0000000000001005
+          6                        0x0000000000001006
+          7                        0x0000000000001007
+          8                        0x0000000000001008
+          9                        0x0000000000001009
+          0                        0x0000000000001000
+          Ok                       0x0000000000001023
+          Up                       0x0000000000000010
+          Down                     0x0000000000000011
+          Left                     0x0000000000000015
+          Right                    0x0000000000000016
+          Volume+                  0x0000000000001010
+          Volume-                  0x0000000000001011
+          Red                      0x000000000000002B
+          Green                    0x000000000000002C
+          Blue                     0x000000000000002E
+          Yellow                   0x000000000000002D
+          Menu                     0x0000000000000012
+          Back                     0x0000000000001022
+          Power                    0x000000000000100C
+          Mute                     0x000000000000100D
+          Up                       0x0000000000001020
+          Down                     0x0000000000001021
+          Test                     0x0000000000001038
+      end codes
+
+end remote
+
+

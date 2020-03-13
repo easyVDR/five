@@ -1,0 +1,10 @@
+Konfiguriert fuer
+
+ - serial Receiver ( Homebrew & Co )
+ - FF-Karten ( av711 )
+ - rc-core receiver (rc5 fähig)
+ - Igor USB
+
+    Die Shuffle Taste (links von der "0") ruft die Channels Liste auf.
+    Die Noten Taste (rechts von der "0") ruft die Audio Auswahl auf.
+    Die Text Taste (zwischen Volume Tasten) ruft das HauptMenu auf.

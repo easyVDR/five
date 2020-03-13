@@ -1,0 +1,12 @@
+Source: easyvdr-setup-data
+Section: misc
+Priority: optional
+Maintainer: Martin Neubauer <martin@easy-vdr.de>
+Build-Depends: debhelper (>= 7), cdbs
+Standards-Version: 3.9.5
+
+Package: easyvdr-setup-data
+Architecture: all
+Depends: ${misc:Depends}, ${easyvdr-setup}
+Description: Setup-Data Package for easyVDR
+  Ergaenzt das Setup Paket

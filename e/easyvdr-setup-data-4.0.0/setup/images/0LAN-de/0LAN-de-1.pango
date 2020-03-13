@@ -1,0 +1,8 @@
+<markup><!--
+Netzwerk-Manager
+--><span fgcolor="red" size="22000">                       Netzwerk-Manager LAN</span><!--
+--><big><big><big><span fgcolor="white" size="9000">
+ Als erstes gehen wir auf die vorhandene Kabel-Netzwerkverbindung und 
+ wählen sie aus, dann den 'Bearbeiten' Button drücken.
+</span></big></big></big><!--
+--> </markup>

@@ -1,0 +1,4 @@
+Infos zu dieser Fernbedienung:
+
+"Im Moncaso312-320 Gehäuse ist ein IR-Empfänger integriert, welcher über FT232 als serielle Schnittstelle über /dev/ttyUSB0 angeboten wird. Desweiteren muss man ggf. LIRC noch ein wenig patchen, sprich einen Treiber anpassen. Funktioniert soweit ganz gut. /etc/lirc/hardware.conf erstellt, lircd läuft, legt einen Eintrag /var/run/lirc/lircd an."
+

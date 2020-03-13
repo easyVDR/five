@@ -1,0 +1,79 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.7.0pre3(serial) on Mon Dec 20 10:40:05 2004
+#
+# contributed by 
+#
+# devices being controlled by this remote:
+# model: OneForALL (VCR 0000)
+# "0" has to be reprogrammed to EFC-Code 239
+# "mute" has to be reprogrammed to EFC-Code 229
+# "vol+" has to be reprogrammed to EFC-Code 228
+# "vol-" has to be reprogrammed to EFC-Code 227
+# (** = wait for double blinking of VCR button)
+#     MAGIC** / 994 / MAGIC / 239 / 0
+#     MAGIC** / 994 / MAGIC / 229 / 'mute'
+#     MAGIC** / 994 / MAGIC / 228 / 'vol+'
+#     MAGIC** / 994 / MAGIC / 227 / 'vol-'
+#
+
+begin remote
+
+  name  ./lircd.conf
+  bits           24
+  flags SPACE_ENC|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  header       3561  3385
+  one           947  2525
+  zero          947   788
+  ptrail        948
+  gap          104746
+  toggle_bit      0
+
+
+      begin codes
+         KEY_POWER                    0x0000000000141EBE
+         KEY_1                        0x000000000017EE81
+         KEY_2                        0x0000000000161E9E
+         KEY_3                        0x0000000000151EAE
+         KEY_4                        0x0000000000171E8E
+         KEY_5                        0x0000000000149EB6
+         KEY_6                        0x0000000000169E96
+         KEY_7                        0x0000000000159EA6
+         KEY_8                        0x0000000000179E86
+         KEY_9                        0x0000000000145EBA
+         KEY_0                        0x0000000000156EA9
+         KEY_VIDEO                    0x0000000000358CA7
+         KEY_TIME                     0x000000000036FC90
+         KEY_MENU                     0x000000000016AE95
+         KEY_BACK                     0x000000000014FEB0
+         KEY_UP                       0x0000000000175E8A
+         KEY_DOWN                     0x0000000000163E9C
+         KEY_LEFT                     0x0000000000173E8C
+         KEY_RIGHT                    0x0000000000968697
+         KEY_OK                       0x000000000015AEA5
+         KEY_CHANNELUP                0x0000000000142EBD
+         KEY_CHANNELDOWN              0x0000000000144EBB
+         KEY_PREVIOUS                 0x000000000014FEB0
+         KEY_MUTE                     0x0000000000346CB9
+         KEY_VOLUMEUP                 0x000000000034ECB1
+         KEY_VOLUMEDOWN               0x000000000097168E
+         KEY_REWIND                   0x000000000014CEB3
+         KEY_PLAY                     0x0000000000154EAB
+         KEY_FASTFORWARD              0x0000000000148EB7
+         KEY_PAUSE                    0x0000000000174E8B
+         KEY_STOP                     0x000000000014EEB1
+         KEY_RECORD                   0x000000000015EEA1
+         KEY_RED                      0x0000000000367C98
+         KEY_GREEN                    0x0000000000347CB8
+         KEY_YELLOW                   0x000000000037BC84
+         KEY_BLUE                     0x0000000000357CA8
+
+      end codes
+
+end remote

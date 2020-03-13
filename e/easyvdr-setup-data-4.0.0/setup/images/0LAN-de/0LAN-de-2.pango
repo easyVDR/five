@@ -1,0 +1,8 @@
+<markup><!--
+Netzwerk-Manager
+--><span fgcolor="red" size="22000">                       Netzwerk-Manager LAN</span><!--
+--><big><big><big><span fgcolor="white" size="9000">
+ Hier kann nun beim Läufer 'Ethernet' ein Netzwerkgerät gewählt
+ werden, wenn z.B. mehrere Netzwerkkarten zur Verfügung stehen.
+</span></big></big></big><!--
+--> </markup>

@@ -1,0 +1,85 @@
+######################################################################
+# driver/module: lirc-serial 
+#
+# brand:                       			Logitech
+# model no. of remote control: 			harmony_kls_vdr_1.6
+# devices being controlled by this remote:	VDR :-)
+#
+#
+#
+
+begin remote
+  name  harmony_kls_vdr_1.6
+  bits           13
+  flags RC5|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  one           922   858
+  zero          922   858
+  plead         937
+  gap          116048
+  min_repeat      2
+  toggle_bit      2
+
+
+      begin codes
+        KEY_MUTE         0x12cd
+        KEY_VOLUMEUP     0x12d0
+        KEY_VOLUMEDOWN   0x12d1
+        KEY_CHANNELDOWN  0x12e1
+        KEY_CHANNELUP    0x12e0
+        KEY_BACK         0x12e2
+        KEY_UP           0x02c4
+        KEY_DOWN         0x02c5
+        KEY_LEFT         0x02c6
+        KEY_RIGHT        0x02c7
+        KEY_OK           0x02c8
+        KEY_MENU         0x02c9
+        KEY_EXIT         0x02ca
+        KEY_PROGRAM      0x02cb
+        KEY_INFO         0x02cc
+        KEY_STOP         0x12f6
+        KEY_REWIND       0x12f0
+        KEY_NEXT         0x12f1
+        KEY_PLAY         0x12f5
+        KEY_RECORD       0x12f7
+        KEY_PREVIOUS     0x12f2
+        KEY_FASTFORWARD  0x12f4
+        KEY_PAUSE        0x12f3
+        KEY_1            0x12c1
+        KEY_2            0x12c2
+        KEY_3            0x12c3
+        KEY_4            0x12c4
+        KEY_5            0x12c5
+        KEY_6            0x12c6
+        KEY_7            0x12c7
+        KEY_8            0x12c8
+        KEY_9            0x12c9
+        KEY_0            0x12c0
+        KEY_RED          0x02c0
+        KEY_GREEN        0x02c1
+        KEY_YELLOW       0x02c2
+        KEY_BLUE         0x02c3
+        KEY_CHANNEL      0x02d3
+        KEY_GOTO         0x02cd
+        KEY_VIDEO        0x02ce
+        KEY_TIME         0x02cf
+        KEY_SETUP        0x02d0
+        KEY_F13          0x02f0 # user1
+        KEY_F14          0x02f1 # user2 usw.
+        KEY_F15          0x02f2
+        KEY_F16          0x02f3
+        KEY_F17          0x02f4
+        KEY_F18          0x02f5
+        KEY_F19          0x02f6
+        KEY_F20          0x02f7
+        KEY_F21          0x02f8
+        KEY_POWER        0x12cc  # standby
+        KEY_POWER        0x12cb
+        KEY_AUDIO        0x02d1
+        KEY_SUBTITLE     0x02d2
+      end codes
+end remote
+
+

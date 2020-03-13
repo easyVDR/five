@@ -1,0 +1,128 @@
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.8.0(atiusb) on Sun Oct  8 16:19:20 2006
+#
+# contributed by tr500
+#
+# brand: Digitainer X10
+# model no. of remote control:
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name          /etc/lircd.conf
+  bits           16
+  eps            30
+  aeps          100
+
+  one             0     0
+  zero            0     0
+  pre_data_bits   8
+  pre_data       0x14
+  post_data_bits  16
+  post_data      0x0
+  gap          219778
+  min_repeat      1
+  toggle_bit      0
+
+
+      begin codes
+          POWER                    0xD702
+          TV                       0x012C
+          TV                      0x81AC
+          AUDIO                    0xDB06
+          AUDIO                   0x5B86
+          LEFT                     0xF21D
+          LEFT                    0x729D
+          RED                      0x0732
+          RED                     0x87B2
+          SKIP-                    0xF621
+          SKIP-                   0x76A1
+          SKIP+                    0xF823
+          SKIP+                   0x78A3
+          VIDEO                    0x82AD
+          VIDEO                   0x022D
+          CD/DVD                   0x5984
+          CD/DVD                   0xD904
+          TEXT                     0x6B96
+          TEXT                    0xEB16
+          RADIO                    0x032E
+          RADIO                   0x83AE
+          BUCH                     0x0631
+          BUCH                    0x86B1
+          PHOTO                     0xDA05
+          PHOTO                    0x5A85
+          INFO                     0x042F
+          INFO                    0x84AF
+          MENU                     0x6E99
+          MENU                    0xEE19
+          UP                      0xCDF8
+          UP                      0x4D78
+          DOWN                    0xC5F0
+          DOWN                    0x4570
+          OK                      0x739E
+          OK                      0xF31E
+          RIGHT                   0xF41F
+          RIGHT                   0x749F
+          BACK                    0xF520
+          BACK                    0x75A0
+          C+                      0xE00B
+          C+                      0x608B
+          C-                      0xE10C
+          C-                      0x618C
+          PREV.CHAN               0xF11C
+          PREV.CHAN               0x719C
+          SELECT                  0xF01B
+          SELECT                  0x709B
+          V+                       0xDE09
+          V+                      0x5E89
+          V-                       0x5D88
+          V-                      0xDD08
+          mute                     0x5580
+          mute                    0xD500
+          GREEN                      0x88B3
+          GREEN                   0x0833
+          YELLOW                      0x89B4
+          YELLOW                   0x0934
+          BLUE                     0x8AB5
+          BLUE                    0x0A35
+          STOP                     0x7DA8
+          STOP                    0xFD28
+          PAUSE                     0x7EA9
+          PAUSE                    0xFE29
+          PLAY                    0x7AA5
+          PLAY                    0xFA25
+          SNAP                     0x6D98
+          SNAP                    0xED18
+          REW                    0x79A4
+          REW                   0xF924
+          REC                      0x7CA7
+          REC                     0xFC27
+          VWD                    0x7BA6
+          VWD                   0xFB26
+          1                        0x628D
+          1                       0xE20D
+          2                        0x638E
+          2                       0xE30E
+          3                        0x648F
+          3                       0xE40F
+          4                        0x6590
+          4                       0xE510
+          5                       0x6691
+          5                        0xE611
+          6                        0x6792
+          6                       0xE712
+          7                       0x6893
+          7                        0xE813
+          8                       0x6994
+          8                        0xE914
+          9                       0x6A95
+          9                        0xEA15
+          0                        0x6C97
+          0                       0xEC17
+      end codes
+
+end remote

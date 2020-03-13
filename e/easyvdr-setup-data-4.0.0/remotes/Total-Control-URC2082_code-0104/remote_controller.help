@@ -1,0 +1,34 @@
+Infos zu dieser Fernbedienung:
+
+Konfiguriert für folgende Empfaenger:
+- serial - Homebrew/atrik/alsa
+- FF-Karte u.ä. (rc-core, av711)
+- PVR-350 (noch nich 100%)    
+
+- Code auf FB: (0104/VCR) (RC5 Code)
+
+- Vorteil: da Belegung als "VCR" ( Geräteklasse 5 )
+  keine Probleme mit z.B. Philips Tv's 
+ 
+Sonderbelegung:
+"-/--"  Aufzeichnungen              ( KEY_STOP )
+"A/V"   Stummschalten               ( KEY_MUTE )
+"+"     gleiche Belegung wie "up"   ( KEY_UP )
+"-"     gleiche Belegung wie "down" ( KEY_DOWN )
+
+Die Fernbedienung kann auch so konfiguriert werden,
+dass z.B. die Taste "SAT" ebenfalls Herstellercodes
+für TV akzeptiert. Normalerweise akzeptierte die Taste "SAT"
+nur Herstellercodes für SAT-Receiver (siehe Handbuch).
+Beispiel:
+<SETUP> <992> <TV> <SAT>   --> Die Sat-Taste ist jetzt eine TV-Taste 
+
+
+Codes reidentifizieren:
+Dies kann im Setup-Prozess durch Verwendung des Steuercodes <990>
+und anschließendes Drücken der Tasten 1 bis 4 nacheinander
+erfragt werden.
+Der beleuchtete on/off-Knopf der Fernbedienung blinkt dann
+entsprechend der Ziffer des Codes.
+(kein Blinken für Ziffer "0", 9x Blinken für Ziffer "9" usw).
+ 

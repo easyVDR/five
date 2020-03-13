@@ -1,0 +1,69 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.8.1pre1(default) on Fri Aug 25 18:41:48 2006
+#
+# contributed by 
+#
+# brand:                       /etc/lircd.conf.md4688
+# model no. of remote control: 
+# devices being controlled by this remote:
+# adapted 4 easyvdr by c.b.  ( serial receiver )
+
+begin remote
+
+  name  /etc/lircd.conf.md4688
+  bits           13
+  flags RC5|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  one           940   791
+  zero          940   791
+  plead         975
+  gap          112098
+  min_repeat      1
+  toggle_bit      2
+
+
+      begin codes
+    KEY_POWER                    0x150C
+    KEY_RED                      0x1500
+    KEY_GREEN                    0x1501
+    KEY_YELLOW                   0x1522
+    KEY_BLUE                     0x150D
+    KEY_F13                      0x150A    # User1
+    KEY_1                        0x1525
+    KEY_2                        0x1526
+    KEY_3                        0x1527
+    KEY_4                        0x1519
+    KEY_5                        0x153D
+    KEY_6                        0x1516
+    KEY_7                        0x1517
+    KEY_8                        0x1518
+    KEY_9                        0x152B
+    KEY_0                        0x151D
+    KEY_F14                      0x1514   # User2
+    KEY_INFO                     0x153A
+    KEY_UP                       0x1502
+    KEY_DOWN                     0x1508
+    KEY_LEFT                     0x1504
+    KEY_RIGHT                    0x1506
+    KEY_OK                       0x1505
+    KEY_MENU                     0x1503
+    KEY_EXIT                     0x1509
+    KEY_REWIND                   0x1535
+    KEY_PLAY                     0x1530
+    KEY_FASTFORWARD              0x1536
+    KEY_RECORD                   0x1523
+    KEY_STOP                     0x1520
+    KEY_PAUSE                    0x153C
+    KEY_CHANNELUP                0x1534
+    KEY_CHANNELDOWN              0x1533
+      end codes
+
+end remote
+
+

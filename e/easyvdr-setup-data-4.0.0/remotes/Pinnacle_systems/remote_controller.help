@@ -1,0 +1,5 @@
+Alle Tasten der Fernbedienung sind belegt.
+Das RC 6 Protokoll wird verwendet.
+
+Mit key_irkeytab.rc6 getestet mit "Mystique SaTiX-S2 Sky Xpress" IR-Empfänger.
+Mit lircd.conf getestet mit "serial" und "tt-usbir" als IR-Empfänger.
