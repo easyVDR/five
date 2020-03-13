@@ -1,0 +1,202 @@
+#!/bin/bash
+# 
+# FTP Konfiguration  fuer easyVDR
+#
+#
+# Captain_Beefheart
+# v.0.1 (initial)
+# 06.03.11
+# 16.01.13  new defines
+# 22.03.16  Typo
+#
+#################################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+. /usr/lib/vdr/functions/easyvdr-functions-lib         ## common functions
+. /usr/share/easyvdr/setup/easyvdr-setup-defines       ## setup only defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions     ## setup only functions
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - FTP "
+BACKTITLE=" FTP Konfiguration " 
+HELP1="f_select_help"
+
+##################### functions #####################################################
+#####
+Set_Ftp_User()
+{
+MISSING_INPUT=0
+while (($MISSING_INPUT == 0))
+  do
+  USER_NAME=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$TITLE"\
+          --inputbox "\n\n\
+        Bitte geben Sie einen neuen Namen fuer Ihren \n\
+                    FTP-User ein \n\
+          der bisherige ist als default vorgegeben \n \n " \
+        $DIA_BOX2_SIZE $FTPD_USER 3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+  GOT_NAME=$USER_NAME
+  Check_Missing
+done
+(( ! $OK_CANCEL )) && SetSysconfig FTPD_USER $USER_NAME
+}
+
+#####
+Set_Ftp_Password()
+{
+MISSING_INPUT=0
+while (( $MISSING_INPUT == 0 ))
+  do
+    FTP_PASS_WORD=$(dialog --backtitle "$BACKTITLE"\
+                        --title "$TITLE" \
+                        --insecure \
+                        --passwordbox "\n\n\n\
+                       Bitte geben Sie nun \n\
+                     das neue \"FTP\"-Passwort ein."\
+                      $DIA_BOX2_SIZE  3>&1 1>&2 2>&3 3>&- )
+     OK_CANCEL=$?
+     clear
+     GOT_NAME=$FTP_PASS_WORD
+     Check_Missing
+  done
+(( ! $OK_CANCEL )) && SetSysconfig FTPD_PASSWD $FTP_PASS_WORD
+}
+
+#####
+Set_Ftp_Port()
+{
+MISSING_INPUT=0
+while (($MISSING_INPUT == 0))
+  do
+  FTP_PORT_NR=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$TITLE"\
+          --inputbox "\n\n\
+        Bitte geben Sie den neuen Port fuer Ihren \n\
+                    FTP-Server ein \n\
+          der bisherige ist als default vorgegeben \n \n " \
+        $DIA_BOX2_SIZE $FTPD_PORT 3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+  GOT_NAME=$FTP_PORT_NR
+  Check_Missing
+done
+(( ! $OK_CANCEL )) && SetSysconfig FTPD_PORT $FTP_PORT_NR
+}
+
+#####
+Set_Ftp_Folder()
+{
+FOLDER_TITLE=" Bitte waehlen Sie das FTP-Verzeichniss "
+MISSING_INPUT=0
+while (($MISSING_INPUT == 0))
+  do
+    HELP_PRESSED="true"
+    while [[ $HELP_PRESSED == "true" ]]
+      do
+        FTP_FOLDER=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$FOLDER_TITLE"\
+          --extra-button\
+          --extra-label " Hilfe "\
+          --fselect $FTPD_DEFAULT_DIR $DIA_BOX4_SIZE 3>&1 1>&2 2>&3 3>&- )
+        OK_CANCEL=$?
+        clear
+
+        if (( $OK_CANCEL == 3 ))
+          then 
+            HELP_PRESSED="true"
+            Show_Help $HELP1
+          else
+            HELP_PRESSED="false"  
+        fi
+      done
+    GOT_NAME=$FTP_FOLDER
+    Check_Missing
+  done
+(( ! $OK_CANCEL )) && SetSysconfig FTPD_DEFAULT_DIR $FTP_FOLDER
+}
+
+#####
+Ftp_Menu()
+{
+[[ x"$START_PROFTPD" == x"yes" ]] &&  SWITCH1="on" || SWITCH1="off"
+[[ x"$FTPD_LOG"      == x"yes" ]] &&  SWITCH2="on" || SWITCH2="off"
+
+OK_CANCEL=1
+SEL_OPTION=$(dialog \
+     --backtitle "$BACKTITLE" \
+     --title "$TITLE" \
+     --cancel-label " Abbrechen " \
+     --ok-label "weiter"\
+     --checklist "\n\
+          Bitte waehlen Sie die Optionen \n\
+          Steuerung mit     [   UP   ] [ DOWN ] \n\
+          Auswaehlen mit    < Leertaste > \n\
+          Abbruch mit       < Abbrechen > "  $DIA_BOX_SIZE\
+      Starte_FTP     "FTP-Server starten   "     "$SWITCH1" \
+      Logging        "FTP-Aktionen loggen  "     "$SWITCH2"  3>&1 1>&2 2>&3 3>&- )
+OK_CANCEL=$?
+clear
+if (( ! $OK_CANCEL )); then
+  SEL_1="no"; SEL_2="no"
+  for dummy in $SEL_OPTION
+  do
+    case  $dummy in
+    \"Starte_FTP\") SEL_1="yes"  ;;
+       \"Logging\") SEL_2="yes"  ;;
+    esac
+  done
+  Run_Install
+fi
+}
+
+#####
+Run_Install()
+{
+SetSysconfig START_PROFTPD $SEL_1
+SetSysconfig FTPD_LOG $SEL_2
+$VDR_LIBS/easyvdr-set-settings "proftpd" 
+}
+
+#################### helper ###########################
+#####
+Check_Missing()
+{
+if [[ (! "$GOT_NAME") && ($OK_CANCEL != 1) ]]
+  then
+    dialog --title " Error:  fehlende Eingabe "\
+           --backtitle "$BACKTITLE"\
+           --colors\
+           --timeout $TIMEOUT\
+           --msgbox "\n\n\
+        \Z1\Zb !! ERROR !!\n\
+        fehlende Eingabe!" $DIA_BOX3_SIZE
+    MISSING_INPUT=0
+  else 
+    MISSING_INPUT=1
+fi
+}
+
+#####
+Show_Help()
+{
+HELP=$1
+HELPFILE="$SETUP_HELP_DIR/$HELP" 
+dialog --textbox $HELPFILE   $DIA_BOX2_SIZE ; clear
+}
+
+######################################### main ####################################################
+
+OK_CANCEL=0
+Set_Ftp_User
+Set_Ftp_Password
+Set_Ftp_Port
+Set_Ftp_Folder
+Ftp_Menu
+ 
+

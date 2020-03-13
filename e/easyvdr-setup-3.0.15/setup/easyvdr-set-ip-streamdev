@@ -1,0 +1,184 @@
+#!/bin/bash
+#
+#-------------------------------------------
+# Dieses Skript konfiguriert die IP-Einstellungen für Streamdev-Server
+#-------------------------------------------
+# Autor: Sinai for easyVDR 2.0
+#-------------------------------------------
+# Hinweis: 
+#-------------------------------------------
+# Version 1.0 by Sinai             # initial version
+# Version 1.1 by Captain_Beefheart # only cleanups etc. 29.12.13
+# Version 1.2 by Captain_Beefheart # small fixes 27.01.14
+# Version 2.0 by michel8           # change over to use of Networkmanager 01.03.15
+# Version 2.1 by michel8           # typo 06.04.16
+# -------------------------------------------
+#
+################################################
+#defines
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+VERSION="2.1"
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - StreamDev-Server "
+BACK_TITLE=" Streamdev-Setup fuer easyVDR - Version $VERSION "
+
+SVDRP_CNF="/etc/vdr/svdrphosts.conf"
+STRDH_CNF="/etc/vdr/plugins/streamdevhosts.conf"
+VNSI_CNF="/etc/vdr/plugins/vnsiserver/allowed_hosts.conf"
+XINEL_CNF="/etc/vdr/plugins/xineliboutput/allowed_hosts.conf"
+XVDR_CNF="/etc/vdr/plugins/xvdr/allowed_hosts.conf"
+EASY_MARK="#inserted by easyvdr"
+HELP_FILE="$CFG_DIR/plugins/setup/help/svdrp_access.hlp"
+
+################## Funktionen ################################################
+
+#####
+Configure_Hosts()
+{
+OK_CANCEL=1
+SEL_HOSTS=$(dialog\
+    --backtitle "$BACKTITLE"\
+    --title " $TITLE "\
+    --colors\
+    --cancel-label " Abbrechen " \
+    --menu "\n\
+    Welche Computer sollen auf den Streamingserver, vnsi \n
+    und den Svdrp-Service dieses VDR zugreifen koennen ?\n\n\
+    Auswahl des Netzzugriffs\n\
+    Auswahl mit <up>/<down> \n\
+    Einstellen  mit  <  OK >  oder < Abbrechen >"  $DIA_BOX_SIZE\
+    "1" "alle Computer im lokalen Netzwerk"\
+    "2" "kein, oder nur ein einzelner Computer"\
+    "3" "alle Computer - auch aus dem Internet - \Z2\Zb!!VORSICHT!!\Zn "\
+  3>&1 1>&2 2>&3 3>&- )
+OK_CANCEL=$?
+clear
+
+if (($OK_CANCEL == 0)); then
+  case $SEL_HOSTS in
+     1) Show_Box ;;
+     2) LocalNet=$(dialog\
+            --backtitle "$BACKTITLE"\
+            --title " $TITLE "\
+	    --cancel-label " Abbrechen " \
+            --inputbox "\n\
+	IP des Computers eingeben, der Zugriff erhalten soll. \n\n\
+	Oder z.B. mit $LocalNet das ganze lokale Subnetz an \"$(echo $NetLocalInterface | cut -d" " -f2)\".\n\
+	Keine Eingabe erlaubt keinem Computer den Zugriff...\n\n\
+	    "\
+            $DIA_BOX2_SIZE 3>&1 1>&2 2>&3 3>&- )
+        (($?==0)) && Show_Box || OK_CANCEL=1 ;;
+     3) LocalNet=0.0.0.0/0
+        Show_Box ;; 
+  esac
+  clear
+fi
+return $OK_CANCEL
+}
+
+######
+Show_Box()
+{
+PLUG_CNF=" "
+if [ -f $VNSI_CNF ]; then
+    PLUG_CNF=" \n           $VNSI_CNF "$PLUG_CNF
+fi
+if [ -f $XINEL_CNF ]; then
+    PLUG_CNF=" \n           $XINEL_CNF "$PLUG_CNF
+fi
+if [ -f $XVDR_CNF ]; then
+    PLUG_CNF=" \n           $XVDR_CNF "$PLUG_CNF
+fi
+
+dialog --backtitle "$BACKTITLE"\
+       --title " $TITLE "\
+       --msgbox "\n\n\
+       Folgende Freigabe wird in diese Configfiles geschrieben:\n\
+           $SVDRP_CNF \n\
+           $STRDH_CNF $PLUG_CNF \n\
+       ==> \"$LocalNet\"\n\n\
+       In der $CFG_DIR/setup.conf werden folgende Eintraege\n
+       gesetzt:\n\
+       ==> streamdev-server.HTTPBindIP = \"$NetLocalIPv4_Addr_Set\"\n\
+       ==> streamdev-server.VTBBindIP  = \"$NetLocalIPv4_Addr_Set\"\n\
+       $InfoText_0000 "\
+       $DIA_BOX2_SIZE
+
+###   Diese Daten noch in die Hilfe fuer das Setup vom OSD schreiben   ###
+PLUG_CNF_=$(echo $PLUG_CNF | sed 's/\\n/\n  /g')
+echo " "								 > $HELP_FILE
+echo "Fuer Streamdev und andere Services wurde vom Setup im Toolmenu"	>> $HELP_FILE
+echo "die folgende Freigabe wird in diese Configfiles geschrieben: "	>> $HELP_FILE
+echo " " 								>> $HELP_FILE
+echo "   $SVDRP_CNF  " 							>> $HELP_FILE
+echo "   $STRDH_CNF $PLUG_CNF_ " 					>> $HELP_FILE
+echo " " 								>> $HELP_FILE
+echo "==> \"$LocalNet\" "						>> $HELP_FILE
+echo " " 								>> $HELP_FILE
+echo "In der $CFG_DIR/setup.conf wurden zudem folgende Eintraege " 	>> $HELP_FILE
+echo "gesetzt: " 							>> $HELP_FILE
+echo " " 								>> $HELP_FILE
+echo "==> streamdev-server.HTTPBindIP = \"$NetLocalIPv4_Addr_Set\" " 	>> $HELP_FILE
+echo "==> streamdev-server.VTBBindIP  = \"$NetLocalIPv4_Addr_Set\" " 	>> $HELP_FILE
+echo "$InfoText_0000 "							>> $HELP_FILE
+}
+
+#####
+Write_Data()
+{
+sed -i '/'"$EASY_MARK"'/d' $SVDRP_CNF; echo "$LocalNet  $EASY_MARK" >> $SVDRP_CNF
+sed -i '/'"$EASY_MARK"'/d' $STRDH_CNF; echo "$LocalNet  $EASY_MARK" >> $STRDH_CNF
+if [ -f $VNSI_CNF ]; then
+    sed -i '/'"$EASY_MARK"'/d' $VNSI_CNF; echo "$LocalNet  $EASY_MARK" >> $VNSI_CNF
+fi
+if [ -f $XINEL_CNF ]; then
+    sed -i '/'"$EASY_MARK"'/d' $XINEL_CNF; echo "$LocalNet  $EASY_MARK" >> $XINEL_CNF
+fi
+if [ -f $XVDR_CNF ]; then
+    sed -i '/'"$EASY_MARK"'/d' $XVDR_CNF; echo "$LocalNet  $EASY_MARK" >> $XVDR_CNF
+fi
+
+
+SetSetupConf streamdev-server.HTTPBindIP  $NetLocalIPv4_Addr_Set
+SetSetupConf streamdev-server.VTPBindIP   $NetLocalIPv4_Addr_Set
+}
+
+###################### main ########################## 
+
+InfoTxt=$1
+
+. $CFG_DIR/sysconfig
+# NetLocalInterface kann folgende Werte enthalten:
+# 		none
+#		one: xxx 	  (xxx   = selected local IP-Interface)
+# 		all: xxx yyy ...  (xxx.. = all local IP-Interfaces)
+
+if [ $(echo $NetLocalInterface | cut -d: -f1) == "one" ]; then
+  NetLocalIPv4_Addr_Set=$NetLocalIPv4_Addr
+  InfoText_0000=" "
+else
+  NetLocalIPv4_Addr_Set="0.0.0.0"
+  InfoText_0000="(\"0.0.0.0\" erlaubt Zugriff ueber alle Interfaces des VDR)"
+fi
+if [ $(echo $NetLocalInterface | cut -d: -f1)  == "none" ]; then
+  INFO_TXT="\
+  Es  wurde kein Netzwerkinterface \n\
+  fuer Streamdev und Svdrp-Services \n\
+  in den Netzwerkeinstellungen\n\
+  freigegeben.\n\n\
+  Eine Konfiguration ist hier nicht\n\
+  erforderlich bzw. moeglich."
+  if [ "$InfoTxt" != "quiet" ]; then
+      MiniInfo " " "$BACKTITLE" "$INFO_TXT"
+      sleep 7; clear
+  fi
+  LocalNet=" "
+  Write_Data
+else
+    LocalNet=$(ipcalc -b $NetLocalIPv4_Addr/$NetLocalIPv4_Mask | grep Network | cut -d: -f2 | sed 's/ //g')
+    Configure_Hosts
+    (($? == 0)) && Write_Data
+fi

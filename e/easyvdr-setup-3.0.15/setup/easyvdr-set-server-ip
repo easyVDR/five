@@ -1,0 +1,134 @@
+#!/bin/bash
+#
+#-------------------------------------------
+# Dieses Skript Stellt die IP-Adressen fuer verschiedene Server ein
+#-------------------------------------------
+# Autor: michel8 for easyVDR 3.0
+#-------------------------------------------
+# Hinweis: 
+#-------------------------------------------
+# Version 1.0  1.03.2016 by michel8           # cloned from easyvdr-set-ip-streamdev
+# Version 1.1 12.03.2016 by michel8           # typo
+#
+# -------------------------------------------
+#
+################################################
+#defines
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+VERSION="1.1"
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Serverlocation "
+BACK_TITLE=" Serverlocations-Setup fuer easyVDR - Version $VERSION "
+
+
+################## Funktionen ################################################
+
+Set_IP_Box()
+{
+text1=$1
+IP_TO_SET=$2
+
+MISSING_INPUT=0
+while (( $MISSING_INPUT == 0 ))
+  do
+  REC_IP=$(dialog \
+         --backtitle "$BACKTITLE"\
+         --title " IP-Eingabe "\
+         --inputbox "\n\n\
+         Bitte geben Sie die $text1 an. \n\
+         Die bisherige ist als default vorgegeben \n \
+        (ein Leerzeichen statt einer IP fuer \"keine IP\") \n \n \
+        Das Lokale Netz an $(echo $NetLocalInterface | cut -d" " -f2) ist $(ipcalc -b $NetLocalIPv4_Addr/$NetLocalIPv4_Mask | grep Network | cut -d: -f2 | sed 's/ //g')\n " \
+        $DIA_BOX2_SIZE $IP_TO_SET 3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+  GOT_NAME=$REC_IP
+  Check_Missing
+done
+(( ! $OK_CANCEL )) && IP_TO_SET=$REC_IP || OK_CANCEL=0
+
+}
+
+#####
+Check_Missing()
+{
+if [[ (! "$GOT_NAME") && ($OK_CANCEL == 0) ]]
+  then
+    dialog --title " Error:  fehlende Eingabe "\
+           --backtitle "$BACKTITLE"\
+           --colors\
+           --pause "\n\n\
+        \Z1\Zb !! ERROR !!\n\
+        fehlende Eingabe!" $DIA_BOX3_SIZE $TIMEOUT
+    MISSING_INPUT=0
+  else 
+    MISSING_INPUT=1
+fi
+}
+
+#####
+
+Menu()
+{
+OK_CANCEL=0
+while (( ! $OK_CANCEL ))
+  do
+    # im Dialog ueber Aktuelle Einstellungen informieren
+    femon_ServerIp=$(GetSetupConf "femon.ServerIp")
+    remotetimers_ServerIp=$(GetSetupConf "remotetimers.ServerIp")
+    streamdev_client_RemoteIp=$(GetSetupConf "streamdev-client.RemoteIp")
+    svdrpservice_ServerIp=$(GetSetupConf "svdrpservice.ServerIp")
+    . $CFG_DIR/sysconfig
+
+    [[ "$femon_ServerIp"            == "" ]] && FEMO_IP=" " || FEMO_IP="$femon_ServerIp"
+    [[ "$remotetimers_ServerIp"     == "" ]] && RTIM_IP=" " || RTIM_IP="$remotetimers_ServerIp"
+    [[ "$streamdev_client_RemoteIp" == "" ]] && SCLI_IP=" " || SCLI_IP="$streamdev_client_RemoteIp"
+    [[ "$svdrpservice_ServerIp"     == "" ]] && SVDR_IP=" " || SVDR_IP="$svdrpservice_ServerIp"
+    [[ "$NAS_Fileserver_IP"         == "" ]] && NASF_IP=" " || NASF_IP="$NAS_Fileserver_IP" 
+
+    SEL_SERVER=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$TITLE"\
+          --cancel-label " Fertig "\
+          --menu "\n\
+          Steuerung mit      [   UP   ] [ DOWN ] \n\
+          Zum Auszuwaehlen   <   OK   > \n\
+          Fertig?  dann      < Fertig > "  $DIA_BOX_SIZE\
+      Femon           "Femon-Server              <=> $FEMO_IP"  \
+      Remotetimers    "Remotetimers-Server       <=> $RTIM_IP"  \
+      Streamdev-cli   "Streamdev-Client-Remote   <=> $SCLI_IP"  \
+      Svdrpservice    "Svdrp-Server              <=> $SVDR_IP"  \
+      NAS             "NAS und Fileserver (test) <=> $NASF_IP"         3>&1 1>&2 2>&3)
+    OK_CANCEL=$?
+    clear
+
+    if (( ! $OK_CANCEL )); then
+      TEXT="neue IP-Adresse fuer $SEL_SERVER"
+      case $SEL_SERVER in
+	Femon)
+	    Set_IP_Box "$TEXT" $FEMO_IP
+	    SetSetupConf "femon.ServerIp" "$IP_TO_SET" ;;
+	Remotetimers)
+	    Set_IP_Box "$TEXT" $RTIM_IP
+	    SetSetupConf "remotetimers.ServerIp" "$IP_TO_SET" ;;
+	Streamdev-cli)
+	    Set_IP_Box "$TEXT" $SCLI_IP
+	    SetSetupConf "streamdev-client.RemoteIp" "$IP_TO_SET" ;;
+	Svdrpservice)
+	    Set_IP_Box "$TEXT" $SVDR_IP
+	    SetSetupConf "svdrpservice.ServerIp" "$IP_TO_SET" ;;
+	NAS)
+	    Set_IP_Box "$TEXT" $NASF_IP
+	    SetSysconfig "NAS_Fileserver_IP" "$IP_TO_SET"  ;;
+      esac
+    fi
+  done
+}
+
+
+###################### main ########################## 
+
+Menu
+

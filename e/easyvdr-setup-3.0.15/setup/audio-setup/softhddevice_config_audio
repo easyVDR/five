@@ -1,0 +1,78 @@
+#!/bin/bash
+#
+#
+#  softhddevice_config_audio
+#  to set audio-parameter from softhddevice automatically
+#
+#  0.0.1 20.12.2012    1st try by michel8
+#  0.0.2 14.01.2013    cleanup $VDR => $CFG_DIR wg. config-loader  C.B.
+#  0.0.3 16.01.2013    auch Parameter in der setup.conf einstellen michel8
+#  0.0.4 26.01.2013    Abbruch, wenn die easyvdr-frontend-softhddevice.conf nicht vorhanden
+#  0.0.5 13.11.2014    angepasst an softhddevice der 2.0 michel8
+#
+#  michel8 for easyvdr
+#
+############################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+. $SETUP_STATUS                                     # Statusfile auslesen
+
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Audio "
+BACKTITLE=" Audio Konfiguration fuer easyVDR"
+
+FILENAME="easyvdr-config-audio"
+FILENAMEX="softhddevice_config_audio"
+FILEVERSIONX="V 0.0.5 vom 13.11.2014"
+SNDLOG="$EASYVDR_LOGDIR/easyvdr-config-audio.log"
+
+softhddevice_settings_file="$CFG_DIR/easyvdr-frontend-softhddevice.conf"
+
+
+if [[ "x$2" == "x" ]]; then
+      echo "Nur als Tochterscript von easyvdr-config-audio oder als postinst von softhddevice ausfuehrbar..."
+elif [[ ! -f $softhddevice_settings_file ]]; then
+      echo "Config-file $softhddevice_settings_file nicht vorhanden, tue nichts..."
+else
+  if [[ "$1" == "postinst" && "$2" == "AddOn" && "$Audio_configured" == "true" ]]; then
+    echo " " >> $SNDLOG
+    echo "************************************************************" >> $SNDLOG
+    echo "`date` Aufruf aus der postinst von softhddevice" >> $SNDLOG
+    echo "************************************************************" >> $SNDLOG
+    # in der setup.state sieht es dazu so aus:
+    #Audio_configured_PassThrough="hdmi:CARD=NVidia,DevNo:7"
+    #Audio_configured_Layout="Stereo 2.0"
+  else
+    echo "************************************************************" >> $SNDLOG
+    echo "     ... Aufruf von $FILENAMEX " >> $SNDLOG
+    echo "************************************************************" >> $SNDLOG
+    Audio_configured_PassThrough=$1	# ist das PassThrough-Device
+    Audio_configured_Layout=$2 		# ist das Boxenlayout
+  fi
+    echo "File-Info: $FILENAMEX $FILEVERSIONX" >> $SNDLOG
+    if [[ "$Audio_configured_PassThrough" == "None" ]]; then
+      echo "---> Softhddevice-Audio-Parameter fuer Analog-Only konfigurieren..." >> $SNDLOG
+      sed -i "s/^\(.*\)AUDIO_DEVICE_PASSTHROUGH=.*/\1AUDIO_DEVICE_PASSTHROUGH=\"\"/g" $softhddevice_settings_file
+      SetSetupConf softhddevice.AudioPassthrough		0
+    else
+      sed -i "s/^\(.*\)AUDIO_DEVICE_PASSTHROUGH=.*/\1AUDIO_DEVICE_PASSTHROUGH=\"-p $Audio_configured_PassThrough,AES0=0x6\"/g" $softhddevice_settings_file
+      echo "  -> Als Passthroughdevice wird $Audio_configured_PassThrough,AES0=0x6 eingestellt..." >> $SNDLOG
+                                #PassThrough-Parameter:="hdmi:CARD=NVidia,DevNo:7,AES0=0x6,AES1=0x82,AES2=0x0,AES3=0x2"
+      SetSetupConf softhddevice.AudioPassthrough		12
+    fi
+    sed -i "s/^\(.*\)AUDIO_DEVICE=.*/\1AUDIO_DEVICE=\"-a default\"/g" $softhddevice_settings_file
+    sed -i "s/^\(.*\)AUDIO_MISCELLANEOUS=.*/\1AUDIO_MISCELLANEOUS=\"-w alsa-driver-broken\"/g" $softhddevice_settings_file
+    SetSetupConf softhddevice.AudioDownmix			0
+
+    #   Optional auch folgende Parameter:
+    #		AUDIO_MIXER_CHANNEL=""
+
+    echo "---> $softhddevice_settings_file wurde angepasst"             >> $SNDLOG
+    echo "---> Die setup.conf wurde fuer Softhddevice angepasst"        >> $SNDLOG
+    echo "------------------------------------------------------------" >> $SNDLOG
+    echo "     $FILENAMEX bis zum Ende durchgelaufen. "                 >> $SNDLOG
+    echo "------------------------------------------------------------" >> $SNDLOG
+fi

@@ -1,0 +1,495 @@
+#!/bin/bash
+#
+# Auswahl der channnel.conf  fuer easyvdr
+#
+#
+#  michel8
+#  v.0.1
+#
+#  v. 0.9     05.01.1  #  Captain_Beefheart
+#  v. 0.9.1   02.02.13  new defines & use setup-f-lib instead Mini_Info-function
+#             18.05.13 default.conf instead hinweis.conf
+#             03.01.14 w_scan Parameter auf neue Version angepasst
+#  v. 0.9.2   22.03.16 typo
+##################################################################################################
+
+############# defines  ######
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Kanallistenauswahl "
+BACKTITLE=" Auswahl der Kanalliste"
+CHANNELS_CONF_DIR="$CFG_DIR/channels"
+DVB_INFO="$SETUP/dvb-info"
+COUNTRY_LIST="$DVB_INFO/Country.List"
+SAT_LIST="$DVB_INFO/Sat.List"
+
+NO_AUTOMATIC="default.conf"
+
+###########  Funktionen  #########################
+
+#####
+Find_Cards()
+{
+Load_Driver
+
+IFS_OLD=$IFS
+IFS=$'\n'                                   # internal field separator auf newline
+CARD_DATA_ARRAY=($(carddetectng))
+IFS=$IFS_OLD
+
+sed -i '/"*select_channellist_carddetect_result:"*/d' $SETUP_STATUS
+echo "# select_channellist_carddetect_result: "${CARD_DATA_ARRAY[@]} >> $SETUP_STATUS
+
+No_of_CARDS=${#CARD_DATA_ARRAY[*]}
+
+j=0
+for ((i=0;i<$No_of_CARDS;i++))
+  do
+    IFS_OLD=$IFS
+    IFS=$';'                                   # internal field separator auf ";"
+    DUMMY_ARRAY=(${CARD_DATA_ARRAY[$i]})
+    IFS=$IFS_OLD
+      dummycount=${#DUMMY_ARRAY[*]}
+      for (( l=3;l<$dummycount;l++))
+        do
+          C_INDEX_ARRAY[$j]=${DUMMY_ARRAY[$l]}; ((++j))
+        done
+  done
+
+for (( m=0;m<20;m++))
+  do
+    CARD_LIST[$m]="index"
+  done
+
+
+No_ALL_DEV=$(($No_of_CARDS * 20))
+j=0; i=0
+while (( $j<$No_ALL_DEV))
+  do
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DVBC_A "           || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DVBC_B "           || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DVBC_C "           || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="ISDBC "            || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DVBT "             || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DVBT2 "            || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="ISDBT "            || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DVBH "             || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DVBS "             || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DVBS2 "            || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="TURBO "            || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="ISDBS "            || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="ATSC "             || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="ARSCMH "           || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DMBTH "            || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DSS "              || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="CMMB "             || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="DAB "              || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="ANALOG_PVR "       || Check_and_Set; ((++i)); ((++j))
+((${C_INDEX_ARRAY[$j]} != 0 )) && CARD_LIST[$i]="ANALOG_PVR_MPEG "  || Check_and_Set;  i=0;    ((++j))
+done
+}
+
+##
+Check_and_Set()
+{
+[[ ${CARD_LIST[$i]} == "index" ]] && CARD_LIST[$i]="empty "
+}
+
+#####
+Load_Driver()
+{
+MiniInfo " working " "$BACKTITLE" "\n\n\n     ... lade DVB-Treiber"
+loaddriver     >/dev/null 2>&1
+sleep $TIMEOUT; clear
+}
+
+#####
+Get_Channel_Conf()
+{
+IFS_OLD=$IFS
+IFS=$'\n'                                   # internal field separator auf newline
+CHANNELS_CONF_ARRAY=( $(ls $CHANNELS_CONF_DIR) )  # Dir-List in Array 
+IFS=$IFS_OLD
+
+i=0; j=0; k=0; l=0; m=0; n=0; o=0
+for  ch_conf in    ${CHANNELS_CONF_ARRAY[@]}
+  do
+    case  $ch_conf in
+      DVB-c*.conf)  DVB_C_ARRAY[$i]=$ch_conf; ((++i));;
+      dvb-c*.conf)  DVB_C_ARRAY[$i]=$ch_conf; ((++i));;
+       atsc*.conf)   ATSC_ARRAY[$j]=$ch_conf; ((++j));;
+      DVB-s*.conf)  DVB_S_ARRAY[$k]=$ch_conf; ((++k));;
+      dvb-s*.conf)  DVB_S_ARRAY[$k]=$ch_conf; ((++k));;
+     DVB-s2*.conf) DVB_S2_ARRAY[$l]=$ch_conf; ((++l));;
+     dvb-s2*.conf) DVB_S2_ARRAY[$l]=$ch_conf; ((++l));;
+      DVB-t*.conf)  DVB_T_ARRAY[$m]=$ch_conf; ((++m));;
+      dvb-t*.conf)  DVB_T_ARRAY[$m]=$ch_conf; ((++m));;
+        PVR*.conf)    PVR_ARRAY[$n]=$ch_conf; ((++n));;
+        pvr*.conf)    PVR_ARRAY[$n]=$ch_conf; ((++n));;
+     default.conf)    HINWEIS_DUMMY=$ch_conf;;
+           *.conf)        RESTE[$o]=$ch_conf; ((++o));;
+    esac
+  done
+}
+
+#####
+Build_Menu_Array()
+{
+unset CH_MENU_ARRAY; PVR_DONE=1
+for FOUND_CARD in ${CARD_LIST[@]}
+  do
+    case  $FOUND_CARD in
+         DVBC_A) CH_MENU_ARRAY=( "${CH_MENU_ARRAY[@]}" "${DVB_C_ARRAY[@]}"  ) ;;
+           DVBT) CH_MENU_ARRAY=( "${CH_MENU_ARRAY[@]}" "${DVB_T_ARRAY[@]}"  ) ;;
+           DVBS) CH_MENU_ARRAY=( "${CH_MENU_ARRAY[@]}" "${DVB_S_ARRAY[@]}"  ) ;;
+          DVBS2) CH_MENU_ARRAY=( "${CH_MENU_ARRAY[@]}" "${DVB_S2_ARRAY[@]}" ) ;;
+           ATCS) CH_MENU_ARRAY=( "${CH_MENU_ARRAY[@]}" "${ATSC_ARRAY[@]}"   ) ;;
+     ANALOG_PVR) CH_MENU_ARRAY=( "${CH_MENU_ARRAY[@]}" "${PVR_ARRAY[@]}"    ) ;         PVR_DONE=0  ;;
+ANALOG_PVR_MPEG) (($PVR_DONE == 0)) || CH_MENU_ARRAY=( "${CH_MENU_ARRAY[@]}" "${PVR_ARRAY[@]}"    ) ;;
+    esac
+  done
+CH_MENU_ARRAY=( "${CH_MENU_ARRAY[@]}" "${RESTE[@]}" )
+}
+
+####
+Exceptions()
+{
+if (( $(echo ${CARD_LIST[@]} | grep -i -c "DVBS2") != 0  ))
+  then
+    EXCEPT_FLAG="DVB_S2_FLAG"
+  else
+    if (( $(echo ${CARD_LIST[@]} | grep -i -c "DVBS") != 0  ))
+      then
+        EXCEPT_FLAG="DVB_S_FLAG"
+      else
+        (( $No_of_CARDS == 0  )) && EXCEPT_FLAG="NO_CARD_FLAG"
+    fi
+fi
+}
+
+#####
+Channel_Menu()
+{
+REPEAT_FLAG=0
+while (( $REPEAT_FLAG == 0 ))
+  do
+    REPEAT_FLAG=1
+    n=1
+    CH_MENUITEMS="$n nichts_auswaehlen/nicht_scannen"
+    n=2
+    for CHANNELS_CONF in ${CH_MENU_ARRAY[@]}    
+      do
+        CHANNELS_CONF="${CHANNELS_CONF%%.conf}"                 # fuer Menu .conf entfernen
+        CH_MENUITEMS="$CH_MENUITEMS $n ${CHANNELS_CONF// /_}"   # Indexnr. dazu, Blanks durch "_" ersetzen  
+        ((++n))
+      done
+
+    CHOOSEN_No=$(dialog \
+             --backtitle "$BACKTITLE" \
+             --title "$TITLE"\
+	     --cancel-label " Abbrechen " \
+             --extra-button\
+             --extra-label " scan "\
+             --menu "\
+          Steuerung mit      [   UP   ]  [ DOWN ] \n\
+          Auswaehlen < OK>   Verlassen < Abbrechen > \n\
+          neue Liste erstellen           <  scan  > " $DIA_BOX_SIZE \
+           $CH_MENUITEMS 3>&1 1>&2 2>&3 3>&- )
+    OK_CANCEL=$?
+    clear
+    case $OK_CANCEL in
+	    0) (( $CHOOSEN_No == 1 )) && No_Channelist || Install_Info ;;
+	    3) Ask_4_Scan; REPEAT_FLAG=0 ;;
+            *) CHOICE="canceled" ;;
+    esac
+  done
+}
+
+#####
+No_Channelist()
+{
+if (($OK_CANCEL == 0)); then
+  dialog --backtitle "$BACKTITLE"\
+         --title "$TITLE"\
+         --pause "\n\n\
+          Es wird keine Kanalliste installiert:" $DIA_BOX2_SIZE $TIMEOUT
+  CHOICE=$HINWEIS_DUMMY
+  clear
+fi
+}
+
+#####
+Install_Info()
+{
+CH_INDEX=$(( $CHOOSEN_No - 2 ))
+if (($OK_CANCEL == 0)); then
+  CHOICE=${CH_MENU_ARRAY[$CH_INDEX]}
+  dialog --backtitle "$BACKTITLE"\
+         --title "$TITLE"\
+         --pause "\n\n\
+          Installiert wird:\n\n\
+          No. $CHOOSEN_No --> $CHOICE" $DIA_BOX2_SIZE $TIMEOUT
+  clear
+fi
+}
+
+##### 
+Inst_channels_Conf()
+{
+rm -f $CFG_DIR/channels.conf 2> /dev/null
+ln -s $CHANNELS_CONF_DIR/$CHOICE $CFG_DIR/channels.conf
+ConfigValue="${CHOICE%%.conf}"
+SetSysconfig   CHANNELLIST "$ConfigValue"
+SetVDRSetupXML CHANNELLIST "$ConfigValue"
+}
+
+##########  scannen ###########
+######
+Ask_4_Scan()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --no-label " Abbruch "\
+       --yes-label " los gehts "\
+       --yesno "\n\n\
+                       Neubau einer Kanalliste \n\n\
+      Im folgendem koennen Sie eine eigene Kanalliste erstellen,\n\
+            dafuer werden mit Hilfe des Programms w_scan\n\
+            alle Frequenzen Ihres Empfaengers abgetastet.\n\n\
+   Vorher muessen Sie einige Angaben ueber Ihren Wohnort/Empfangsart\n\
+   machen, damit gleich eine passende Channellist gebaut werden kann.\n\n\
+      Anschliessend wird das Kanalauswahlmenue nochmals angezeigt\n\
+      und Sie koennen dann dort Ihre neue Kanalliste auswaehlen" $DIA_BOX2_SIZE
+YES_NO=$?
+clear
+(( $YES_NO == 0 )) && Run_W_Scan 
+}
+
+#####
+Run_W_Scan()
+{
+CABLE_TXT="\n               Bitte Ihren Kabelanbieter eingeben.\n"
+LOCAL_TXT="\n                  Bitte Ihren Wohnort eingeben.\n"
+COMMON_TXT="     Unter diesem Namen wird dann Ihre neue Kanalliste angelegt.\n\n\
+                (keine Umlaute und Sonderzeichen) \n\n"
+
+for FOUND_CARD in ${CARD_LIST[@]}
+  do
+    case $FOUND_CARD in
+      DVBC_A) TV_CARD="dvb-c";
+             Get_Country;
+             SC_TEXT="$CABLE_TXT\n $COMMON_TXT";
+             PRE_NAME=$TV_CARD"_"$SEL_COUNTRY_KL;
+             (( $OK_CANCEL != 1 )) && Sc_Loc_Menu;
+             W_SCAN_PARA="-fc -c $SEL_COUNTRY";
+             (( $OK_CANCEL != 1 )) && Make_Conf ;;
+       DVBT) TV_CARD="dvb-t";
+             Get_Country;
+             SC_TEXT="$LOCAL_TXT $COMMON_TXT";
+             PRE_NAME=$TV_CARD"_"$SEL_COUNTRY_KL;
+             (( $OK_CANCEL != 1 )) && Sc_Loc_Menu;
+             W_SCAN_PARA="-ft -c $SEL_COUNTRY";
+             (( $OK_CANCEL != 1 )) && Make_Conf ;;
+       DVBS) TV_CARD="dvb-s";
+             Get_Satellite;
+             PRE_NAME=$TV_CARD;
+             NEW_CONF_NAME=$PRE_NAME"_"$SEL_SAT_NAME".conf";
+             W_SCAN_PARA="-fs -s $SEL_SAT_ID";
+             (( $OK_CANCEL != 1 )) && Make_Conf ;;
+      DVBS2) TV_CARD="dvb-s2";
+             Get_Satellite;
+             PRE_NAME=$TV_CARD;
+             NEW_CONF_NAME=$PRE_NAME"_"$SEL_SAT_NAME".conf";
+             W_SCAN_PARA="-fs -s $SEL_SAT_ID";
+             (( $OK_CANCEL != 1 )) && Make_Conf ;;
+  ANALOG_PVR_MPEG) TV_CARD="pvr";
+             Get_Country;
+             SC_TEXT="$LOCAL_TXT $COMMON_TXT";
+             PRE_NAME=$TV_CARD"_"$SEL_COUNTRY_KL;
+             (( $OK_CANCEL != 1 )) && Sc_Loc_Menu;
+             W_SCAN_PARA="-v 7";
+             (( $OK_CANCEL != 1 )) && Make_Conf ;;
+   ANALOG_PVR) TV_CARD="pvr";
+             Get_Country;
+             SC_TEXT="$LOCAL_TXT $COMMON_TXT";
+             PRE_NAME=$TV_CARD"_"$SEL_COUNTRY_KL;
+             (( $OK_CANCEL != 1 )) && Sc_Loc_Menu;
+             W_SCAN_PARA="-v 7";
+             (( $OK_CANCEL != 1 )) && Make_Conf ;;
+       NONE) No_Card_Mess ;;
+    esac
+    Get_Channel_Conf
+    Build_Menu_Array
+  done
+}
+
+#####
+No_Card_Mess()
+{
+dialog --title " keine (weitere) TV-Karte gefunden "\
+       --backtitle "$BACKTITLE"\
+       --colors\
+       --pause "\n\
+           \Z1\Zb !! ENDE !!\n\
+  - keine (weitere) TV-Karte!" $DIA_BOX3_SIZE $TIMEOUT2
+}
+
+#####
+Get_Country()
+{
+IFS_OLD=$IFS
+IFS=$'\n	'                                # internal field separator auf newline und "tab"
+COUNTRY_ARRAY=($(cat $COUNTRY_LIST))             # COUNTRY-List in Array
+IFS=$IFS_OLD
+ELEMENT_COUNT1=${#COUNTRY_ARRAY[*]}              # Anzahl der Elemente:
+for ((k=0;k<$ELEMENT_COUNT1;k++))
+  do
+    buffer=${COUNTRY_ARRAY[$k]}
+    COUNTRY_ARRAY2[$k]="${buffer// /_}"          # ersetze Leerzeichen durch underscore
+  done
+
+SEL_COUNTRY=$(dialog \
+            --backtitle "$BACKTITLE" \
+            --title "$TITLE" \
+            --menu "\n\
+                Bitte waehlen Sie Ihr Laenderkuerzel.\n\
+       Hiermit wird der passende Frequenzbereich ausgewaehlt\n\
+  und auch die Laenderkennung im Namen der Kanalliste eingetragen.\n\n\
+           Steuerung mit     [   UP   ] [ DOWN ] \n\
+           Zum Auszuwaehlen  <   OK   > \n\
+           Zum Verlassen     < Cancel > " $DIA_BOX_SIZE \
+           "${COUNTRY_ARRAY2[@]}" 3>&1 1>&2 2>&3 3>&- )
+OK_CANCEL=$?
+clear
+
+SEL_COUNTRY_KL=$(echo $SEL_COUNTRY | tr "[:upper:]" "[:lower:]")
+}
+
+#####
+Get_Satellite()
+{
+IFS_OLD=$IFS
+IFS=$'\n	'                            # internal field separator auf newline und "tab"
+SAT_ARRAY=($(cat $SAT_LIST))                 # Sat-List in Array
+IFS=$IFS_OLD
+ELEMENT_COUNT1=${#SAT_ARRAY[*]}              # Anzahl der Elemente:
+l=1
+for ((k=0;k<$ELEMENT_COUNT1;k++))
+  do
+    SAT_ARRAY2[$k]=$l; ((++l)); ((++k))
+    buffer=${SAT_ARRAY[$k]}
+    buffer2=$(echo $buffer | cut -d" " -f3-) #  only human readable
+    buffer3="${buffer2////_}"                #  backslash -> underscore
+    SAT_ARRAY2[$k]="${buffer3// /_}"
+  done
+
+No_SEL_SAT=$(dialog \
+        --backtitle "$BACKTITLE" \
+        --title "$TITLE" \
+        --ok-label "scan" \
+        --menu "\n\
+              Bitte waehlen Sie Ihren Satelliten.\n\
+ Ihre neue Kanalliste wird anschliessend unter diesem Namen angelegt.\n\
+           Steuerung mit     [   UP   ] [ DOWN ] \n\
+           Zum Starten       <   scan  > \n\
+           Zum Verlassen     <  cancel > " $DIA_BOX_SIZE \
+           "${SAT_ARRAY2[@]}" 3>&1 1>&2 2>&3 3>&- )
+OK_CANCEL=$?
+clear
+
+INDEX_OF_SAT=$(( ($No_SEL_SAT * 2 ) - 1  ))    # 1 3 5 7 ... 
+SEL_SAT_NAME=${SAT_ARRAY2[$INDEX_OF_SAT]}
+INDEX_OF_SAT=$(( ($No_SEL_SAT - 1 ) * 2  ))    # 0 2 4 6 ...
+SEL_SAT_ID=${SAT_ARRAY[$INDEX_OF_SAT]}
+}
+
+#####
+Sc_Loc_Menu()
+{
+MISSING_INPUT=0
+while (( $MISSING_INPUT == 0 ))
+  do
+  LOC_INPUT=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$TITLE"\
+          --ok-label "scan" \
+          --inputbox "\n\n $SC_TEXT \
+        Zum Auswaehlen    [   tab   ] \n\
+        Zum Starten       <   scan  > \n\
+        Zum Verlassen     <  Cancel >\n\n "  $DIA_BOX2_SIZE 3>&1 1>&2 2>&3 3>&- )
+  OK_CANCEL=$?
+  clear
+
+  if [[ (! "$LOC_INPUT") && ($OK_CANCEL != 1) ]]
+    then
+      dialog --title " Error:  fehlende Eingabe "\
+             --backtitle "$BACKTITLE"\
+             --colors\
+             --pause "\n\
+           \Z1\Zb !! ERROR !!\n\
+         fehlende Eingabe!" $DIA_BOX3_SIZE $TIMEOUT
+      MISSING_INPUT=0
+  else 
+      MISSING_INPUT=1
+  fi
+done
+
+NEW_CONF_NAME=$PRE_NAME"_"$LOC_INPUT".conf"
+}
+
+#####
+Make_Conf()
+{
+if [[ $TV_CARD == "pvr" ]]
+  then
+    w_pvrscan $W_SCAN_PARA >> $CFG_DIR/channels/$NEW_CONF_NAME
+  else
+    w_scan    $W_SCAN_PARA >> $CFG_DIR/channels/$NEW_CONF_NAME
+fi
+}
+
+############### tools ################
+
+#####
+Write_Status()   ## Ausgewaehlte Funktion ausfuehren und Setup.State schreiben ##
+{
+sed -i '/"*easyvdr-select-channellist"*/d' $SETUP_STATUS
+echo "# `date` easyvdr-select-channellist zuletzt ausgefuehrt" >> $SETUP_STATUS
+sed -i '/Channellist_Selected"*/d' $SETUP_STATUS
+echo "Channellist_Selected=\"true\"" >> $SETUP_STATUS
+}
+
+##############  main  #########################
+FORCE_FLAG=$1
+
+case $FORCE_FLAG in
+       -f) run="all"  ;;
+        *) run="on_install"  ;; 
+esac
+
+Find_Cards
+Get_Channel_Conf
+
+EXCEPT_FLAG="NOT_SET"
+[[ $run == "on_install" ]] && Exceptions
+
+NO_CARD_TXT="      TV-Karte nicht erkannt\n\n         keine automatische\n         Kanallistenauswahl"
+case $EXCEPT_FLAG in
+   DVB_S_FLAG) CHOICE=$DVB_S_DEFAULT;;
+  DVB_S2_FLAG) CHOICE=$DVB_S2_DEFAULT;;
+ NO_CARD_FLAG) CHOICE=$NO_AUTOMATIC
+               MiniInfo " Achtung " "$BACKTITLE" "\n\n\n $NO_CARD_TXT"
+               sleep $TIMEOUT; clear ;;
+            *) Build_Menu_Array; Channel_Menu;;
+esac
+
+if [[ $CHOICE != "canceled" ]]; then
+  Inst_channels_Conf
+  Write_Status
+fi
+

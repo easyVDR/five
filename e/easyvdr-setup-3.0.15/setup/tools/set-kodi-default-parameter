@@ -1,0 +1,64 @@
+#!/bin/bash
+# set-kodi-default-parameter
+# v 0.1 25.11.2016 gb
+
+function SetKodiAudio()
+{
+CHANNELS="1"
+AC3="false"
+DTS="false"
+EAC3="false"
+PASSTHROUGH="false"
+
+while getopts a:c:d:e:p: OPTION
+do
+ case $OPTION in
+   c)        CHANNELS=$OPTARG;;
+   a)        AC3=$OPTARG;;
+   d)        DTS=$OPTARG;;
+   e)        EAC3=$OPTARG;;
+   p)        PASSTHROUGH=$OPTARG;;
+ esac
+done
+echo " <audiooutput>" > /tmp/kodi_audio.xml
+echo "       <channels>"$CHANNELS"</channels>" >> /tmp/kodi_audio.xml
+echo "       <passthrough>"$PASSTHROUGH"</passthrough>" >> /tmp/kodi_audio.xml
+echo "       <ac3passthrough>"$AC3"</ac3passthrough>" >> /tmp/kodi_audio.xml
+echo "       <dtspassthrough>"$DTS"</dtspassthrough>" >> /tmp/kodi_audio.xml
+echo "       <eac3passthrough>"$EAC3"</eac3passthrough>" >> /tmp/kodi_audio.xml
+echo " </audiooutput>" >> /tmp/kodi_audio.xml
+}
+function SetKodiVideo()
+{
+USEVAAPI="false"
+USEVDPAU="false"
+VAAPI_MPG2="false"
+VAAPI_MPG4="false"
+VDPAU_MPG2="false"
+VDPAU_MPG4="false"
+
+while getopts i:n:1:2:3:4: OPTION
+do
+ case $OPTION in
+   i)        USEVAAPI=$OPTARG;;
+   n)        USEVDPAU=$OPTARG;;
+   1)        VAAPI_MPG2=$OPTARG;;
+   2)        VAAPI_MPG4=$OPTARG;;
+   3)        VDPAU_MPG2=$OPTARG;;
+   4)        VDPAU_MPG4=$OPTARG;;
+ esac
+done
+echo " <videoplayer>" > /tmp/kodi_video.xml
+echo "       <usevaapi>"$USEVAAPI"</usevaapi>" >> /tmp/kodi_video.xml
+echo "       <usevdpau>"$USEVDPAU"</usevdpau>" >> /tmp/kodi_video.xml
+echo "       <usevaapimpeg2>"$VAAPI_MPG2"</usevaapimpeg2>" >> /tmp/kodi_video.xml
+echo "       <usevaapimpeg4>"$VAAPI_MPG4"</usevaapimpeg4>" >> /tmp/kodi_video.xml
+echo "       <usevdpaumpeg2>"$VDPAU_MPG2"</usevdpaumpeg2>" >> /tmp/kodi_video.xml
+echo "       <usevdpaumpeg4>"$VDPAU_MPG4"</usevdpaumpeg4>" >> /tmp/kodi_video.xml
+echo "       <usevdpaumixer>true</usevdpaumixer>" >> /tmp/kodi_video.xml
+echo "       <usevaapivc1>true</usevaapivc1>" >> /tmp/kodi_video.xml
+echo "       <usevdpauvc1>true</usevdpauvc1>" >> /tmp/kodi_video.xml
+echo " </videoplayer>" >> /tmp/kodi_video.xml
+}
+#SetKodi???
+$@

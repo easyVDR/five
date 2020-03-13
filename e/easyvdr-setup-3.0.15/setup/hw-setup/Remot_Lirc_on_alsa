@@ -1,0 +1,249 @@
+#!/bin/bash
+
+#--------------------------------------------
+# Dieses Skript aktiviert und konfiguriert die Soundeingaenge fuer die FB
+#---------------------------------------------
+# Version:      0.1.0 fuer easyVDR 0.9
+#---------------------------------------------
+# Autor:        michel8
+#---------------------------------------------
+#  V 0.1.1  11.02.13  C.B.
+#
+#
+########################################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+. $SETUP_STATUS                                     # Statusfile auslesen
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - FB "
+BACKTITLE=" FB Konfiguration fuer easyVDR"
+
+FILENAME="easyvdr-config-FB"
+FILEVERSION="V 0.0.11 vom 30.01.2012"
+SNDLOG="$EASYVDR_LOGDIR/easyvdr-config-FB.log"
+
+
+######################### functions ####################################################
+
+#############################################################################
+#  automatisch ausgefuehrte Konfiguration mit easy-alsa.sh
+Auto_Easy_Alsa()
+{
+AmixerKarte="-c $1"
+echo "`date` Status: Hier folgt die automatisch ausgefuehrte Konfiguration mit easy-alsa.sh fuer Karte $1:" >> $SNDLOG
+echo "#! /bin/bash" > /tmp/easy-alsa.sh
+echo "     #! /bin/bash" >> $SNDLOG
+
+#Controls mit Capability "cswitch" und "cvolume":
+ALL_CAPT_CONTR=$(amixer $AmixerKarte |grep -A 1 "Simple mixer" |sed -e :a -e '$!N;s/\n / /;ta' -e 'P;D' |grep "Simple" |grep "cswitch"  \
+	                             |grep "cvolume" |sed -r "s/Simple mixer control '/'/" |sed -r "s/  Capabilities.*$//"| sed -r "s/ /_/g" )
+
+# Nur das erste Capture-Device Aktivieren
+FirstCapture="true"
+for MIX_PARA in $ALL_CAPT_CONTR
+  do 
+    if [ "$(echo $MIX_PARA | grep "Capture")" != "" ]
+      then
+        if [[ $FirstCapture == "true" ]]; then
+    	    echo amixer $AmixerKarte -q set $MIX_PARA 90% unmute | sed s/_/\ /g >> /tmp/easy-alsa.sh
+    	    echo "    " amixer $AmixerKarte -q set $MIX_PARA 100% unmute | sed s/_/\ /g >> $SNDLOG
+	    FirstCapture="false"
+        else
+    	    echo amixer $AmixerKarte -q set $MIX_PARA 0% mute | sed s/_/\ /g >> /tmp/easy-alsa.sh
+    	    echo "    " amixer $AmixerKarte -q set $MIX_PARA 0% mute | sed s/_/\ /g >> $SNDLOG
+    	fi
+      else
+            echo amixer $AmixerKarte -q set $MIX_PARA 0% mute | sed s/_/\ /g >> /tmp/easy-alsa.sh
+            echo "    " amixer $AmixerKarte -q set $MIX_PARA 0% mute | sed s/_/\ /g >> $SNDLOG
+    fi
+  done
+
+#Controls mit Capability "cenum":
+ALL_CAPT_SEL=$(amixer $AmixerKarte |grep -A 1 "Simple mixer" |sed -e :a -e '$!N;s/\n / /;ta' -e 'P;D' |grep "Simple" |grep "cenum"  \
+                                   |sed -r "s/Simple mixer control '/'/" |cut -d"," -f1| sed -r "s/ /_/g" )
+
+if [[ $ALL_CAPT_SEL != "" ]]
+  then
+    FirstSource="true"
+    for MIX_PARA in $ALL_CAPT_SEL
+      do
+        if [[ $FirstSource == "true" ]]; then
+          echo "amixer $AmixerKarte cget name=$MIX_PARA  > /tmp/SourceItems$1 " | sed s/_/\ /g  >> /tmp/easy-alsa.sh
+          echo "     amixer $AmixerKarte cget name=$MIX_PARA  > /tmp/SourceItems$1 " | sed s/_/\ /g  >> $SNDLOG
+          Karte=$1; CardItem[Karte]=$MIX_PARA
+          FirstSource="false"
+        fi
+      done
+  else
+    echo "No cenum-Controls on Card $1" > /tmp/SourceItems$1
+fi
+. /tmp/easy-alsa.sh
+echo " " >> $SNDLOG
+}
+# Ende automatisch ausgefuehrte Konfiguration mit easy-alsa.sh
+#############################################################################
+
+#############################################################################
+#  manuelle Konfiguration vom alsamixer
+manuell_alsamixer()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --timeout $TIMEOUT2\
+       --yes-label " Manuelle Konfiguration "\
+       --no-label " nur Automatik (default) "\
+       --defaultno\
+       --yesno "\n\n\
+          Die Capture Devices fuer Lirc on Alsa wurden \n\
+                 automatisch voreingestellt.\n\n \
+          Moechten sie jetzt noch von Hand zusaetzliche\n\
+                   Einstellungen vornehmen ?" $DIA_BOX2_SIZE
+OK_CANCEL=$?
+clear  
+
+if (( $OK_CANCEL == 0 ))
+  then
+    echo "   "
+    echo "---> Starte fuer weitere manuelle Konfiguration alsamixer (alsamixer -V all).."  >> $SNDLOG
+    echo "  -> Regler mit M entmuten, Bewegen mit den Pfeil-Tasten und den alsamixer mit ESC verlassen," >> $SNDLOG
+    echo "  -> Abschliessend Werte speichern mit alsactl store." >> $SNDLOG
+    echo " " >> $SNDLOG
+    dialog --backtitle "$BACKTITLE"\
+           --title "$TITLE"\
+           --timeout $TIMEOUT2\
+           --msgbox "\n\n\
+        Zusaetzliche Konfiguration weiterer Sound-Einstellungen!\n\n\
+          Regler mit M entmuten, Bewegen mit den Pfeil-Tasten\n\n\
+           und bei mehreren Soundkarten diese mit F6 waehlen.\n\n\
+             Abschliessend den alsamixer mit ESC verlassen!" $DIA_BOX2_SIZE
+    clear
+    alsamixer  -V capture
+  else
+    echo "---> Fuer spaetere individuelle Einstellungen alsamixer starten (alsamixer -V all)," >> $SNDLOG
+    echo "  -> Regler mit M entmuten, Bewegen mit den Pfeil-Tasten und den alsamixer mit ESC verlassen," >> $SNDLOG
+    echo "  -> Abschliessend Werte speichern mit alsactl store." >> $SNDLOG
+    echo " " >> $SNDLOG
+fi
+}
+# Ende manuelle Konfiguration vom alsamixer
+#############################################################################
+
+#############################################################################
+# Auswahl der Ausgabe-Schnittstelle
+#
+CaptureSelection()
+{
+unset Capture_HW
+i=0
+for KARTE in $Ausgabe_Karten
+  do
+    SourceItems=$( cat /tmp/SourceItems$KARTE | grep "Item #" | cut -d"#" -f2 | sed -r "s/ /_/g" | sed -r "s/_'/ '/g")
+    l=0
+    for Item in $SourceItems
+      do
+        if [[ $l == 0 ]]
+          then
+            Capture_HW[i]="${KARTE}_${Item}" ; ((i++))
+            ItemNo=${Item}
+            l=1
+          else
+            Capture_HW[i]="Karte ${KARTE} (${CardType[KARTE]}), Capture-Quelle $ItemNo ${Item}" ; ((i++))
+            l=0
+        fi
+      done
+  done
+
+CAP_HW=$(dialog --title " $TITLE" \
+                --backtitle " $BACKTITLE" \
+                --ok-label " Auswahl uebernehmen "\
+                --no-cancel \
+                --menu  "\n \
+		Bitte waehlen Sie die Schnittstelle, \n \
+		an die der Fernbedienungs-Empfaenger \n \
+		angeschlossen ist \n " $DIA_BOX_SIZE \
+  "${Capture_HW[@]}" 3>&1 1>&2 2>&3 3>&- )      # Index und Name im Menu
+}
+
+# Ende Auswahl
+#############################################################################
+
+
+#############################################################################
+# Main-Funktion der Capture-Konfiguration
+#
+CaptureDevSet()
+{
+if [ $(aplay -l | grep -c Karte) != 0 ]
+  then
+    S_KARTE="Karte"
+    S_DEVICE="Gerät"
+    echo "Suche nach den Begriffen $S_KARTE und $S_DEVICE in aplay -l" >> $SNDLOG
+  else
+    S_KARTE="card"
+    S_DEVICE="device"
+    echo "Suche nach dem Begriffen $S_KARTE und $S_DEVICE in aplay -l" >> $SNDLOG
+fi
+echo "------------------------------ " >> $SNDLOG
+
+### Erkennung, welche Ausgabe-Hardware vorhanden ist
+if [ $(aplay -l | grep -c $S_KARTE) == 0 ]
+  then
+    MiniInfo " Good Bye " "$BACKTITLE" "\n\n    keine Soundkarte\n        erkannt"
+    echo "---> keine Soundkarte erkannt. Good Bye..."  >> $SNDLOG
+    sleep 2
+  else
+    ### Liste erstellen
+    i=0
+    Ausgabe_Karten=""
+    unset CardType
+    while [ $(aplay -l | grep -c "$S_KARTE $i") != 0 ]
+      do
+        CardType[i]=$(aplay -l | grep -m 1 "$S_KARTE $i" | sed "s/$S_KARTE $i: //g" | cut -d" " -f1 )
+        Ausgabe_Karten="$Ausgabe_Karten $i"
+        (( i++ ))
+      done
+
+    ### alsamixer einstellen, wenn hw vorhanden
+    unset CardItem
+    for KARTE in $Ausgabe_Karten
+      do
+	Auto_Easy_Alsa $KARTE    # automatisch vorbelegen
+      done
+    alsactl store
+
+    ### Auswahl der Capture Schnittstelle
+    CaptureSelection
+    Karte=$(echo $CAP_HW | cut -d"_" -f1)
+    Item=$(echo $CAP_HW | cut -d"_" -f2)
+    Value=$( cat /tmp/SourceItems$Karte | grep "Item #$Item" | cut -d"'" -f2)
+    echo "===> $CAP_HW: Karte $Karte, Capture-Item $Item ('${Value}'), fuer control ${CardItem[Karte]}ausgewaehlt" >> $SNDLOG
+
+    ### Einstellen der Capture Schnittstelle
+    echo "   > Einstellen ueber MiniScript /tmp/easy-alsa.sh" >> $SNDLOG
+    echo "#! /bin/bash" > /tmp/easy-alsa.sh;
+    echo " " >> $SNDLOG
+    echo "     #! /bin/bash" >> $SNDLOG
+    echo amixer -c $Karte -q set ${CardItem[Karte]} \'${Value}\' | sed s/_/\ /g >> /tmp/easy-alsa.sh
+    echo "     amixer -c $Karte -q set ${CardItem[Karte]} '${Value}'" | sed s/_/\ /g >> $SNDLOG
+    echo " " >> $SNDLOG
+    . /tmp/easy-alsa.sh
+
+    ### Nacharbeit, wenn gewuenscht
+    manuell_alsamixer
+    alsactl store
+
+    echo "---> Die Capture-Devices sinnd jetzt fuer eine Auswertung durch Alsa eingestellt!" >> $SNDLOG
+fi
+}
+
+# Ende MainFunktion CaptureDevSet
+#############################################################################
+
+
+#############################################################################
+CaptureDevSet
+

@@ -1,0 +1,249 @@
+#!/bin/bash
+#18.10.13  V 0.1 
+#16.12.13  V 0.1 added Get_Frontend_Class
+#06.09.18  V 0.2 EDID function added
+
+#Hier werden die Bildschirm Daten abgelegt
+RESOLUTION_FILE="/var/log/easyvdr/easyvdr-resolution.log"
+CONF_FILE="/etc/vdr/easyvdr/easyvdr-video-settings.conf"
+
+Get_Frontend_Class()
+{
+case $VDR_FRONTEND in
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "KODI") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+}
+
+
+## Monitor EDID ermitteln und in der easyvdr-video-settings.conf speichern
+function Get_Display {
+NVIDIA_BUSID=$( lspci | grep VGA | grep NVIDIA | cut -d " " -f1)
+if [ $NVIDIA_BUSID ]; then
+ nvidia-smi -pm 1
+fi
+BUSSES=$(get-edid 2>&1| grep "busses found"| cut -d':' -f 2)
+i=0
+for BUS in $BUSSES
+ do
+  #Ist Bus vorhanden?
+  A=$(get-edid -b $BUS -i) 2>&1
+  if [ $? -eq 0 ];then
+   EDID=$(get-edid -b $BUS -i | edid-decode) 2>&1
+   MANUFACTURER[$i]="$(echo "$EDID" | grep -i manufacturer | cut -d':' -f 2 | tr -d "\n") ; "
+   SERIAL_NUMBER[$i]="$(echo "$EDID" | grep -i "serial number:" | cut -d':' -f 2 | tr -d "\n") ; "
+  fi
+  i=$(($i+1))
+done
+
+SetConfFileParameter Manufacturer "${MANUFACTURER[@]}"
+SetConfFileParameter SerialNumber "${SERIAL_NUMBER[@]}"
+}
+
+## Display EDID prüfen ob der Monitor angeschlossen ist
+# Return Wert -1 -> Kein Display angeschlossen
+# Return Wert 0 -> alles passt
+# Return Wert >0 -> Anzahl der gefundenen Bildschirme
+
+
+function Check_Display {
+NVIDIA_BUSID=$( lspci | grep VGA | grep NVIDIA | cut -d " " -f1)
+if [ $NVIDIA_BUSID ]; then
+ nvidia-smi -pm 1
+fi
+#Manufacturer="BNQ Model 7638 Serial Number 1490 ; "
+#SerialNumber="09 d1 38 76 d2 05 00 00 0f 0d ; "
+RET=-1
+
+#EDID Daten einlesen
+. $CONF_FILE
+ COUNT_DISPLAY=$(echo $Manufacturer | grep -o ";" | grep -c ";")
+ for (( COUNT=0 ; $COUNT<$COUNT_DISPLAY; COUNT++))
+ do
+  #tr -d " "  -> Leerzeichen entfernen
+  MANUFACTURER_CONF[$COUNT]="$(echo $Manufacturer | cut -d';' -f $(($COUNT+1)) | tr -d " " )"
+  SERIAL_NUMBER_CONF[$COUNT]="$(echo $SerialNumber | cut -d';' -f $(($COUNT+1)) | tr -d " " )"
+#echo MCONF:  $MANUFACTURER_CONF
+ done
+
+#Prüfen ob die gespeicherten Displays doppelt gefunden wurden
+TROUBLE=0
+for (( i=1 ; $i<= $COUNT_DISPLAY ;i++))
+do
+ FOUND_TROUBLE=$(echo $Manufacturer|tr -d [:space:]|grep -o $(echo $Manufacturer |tr -d [:space:]| cut -d";" -f$i)|grep -c $(echo $Manufacturer |tr -d [:space:]| cut -d";" -f$i))
+ if [ $FOUND_TROUBLE -gt 1 ]; then
+  TROUBLE=$(($TROUBLE+1))
+ fi
+done
+
+## EDID Daten der angeschlossenen Displays lesen
+BUSSES=$(get-edid 2>&1| grep "busses found"| cut -d':' -f 2)
+#if [ $BUSSES -eq "0" ];then
+ #EDID Daten können nicht gelesen werden
+# return 0
+#fi
+
+ii=0
+for BUS in $BUSSES
+ do
+  #Ist Bus vorhanden?
+  A=$(get-edid -b $BUS -i) 2>&1
+  if [ $? -eq 0 ];then
+   EDID=$(get-edid -b $BUS -i | edid-decode) 2>&1
+   MANUFACTURER[$ii]="$(echo "$EDID" | grep -i manufacturer | cut -d':' -f 2 | tr -d " " | tr -d "\n")"
+   SERIAL_NUMBER[$ii]="$(echo "$EDID" | grep -i "serial number:" | cut -d':' -f 2 | tr -d " " | tr -d "\n")"
+  else
+   MANUFACTURER[$ii]="-none-"
+   SERIAL_NUMBER[$ii]="-none-"
+  fi
+  ii=$(($ii+1))
+done
+
+FOUND_DISPLAYS=0
+for (( i=0 ; $i< $COUNT_DISPLAY ;i++))
+do
+for (( COUNT=0 ; $COUNT< $ii ;COUNT++))
+ do
+  if [ "${MANUFACTURER[$COUNT]}" == "${MANUFACTURER_CONF[$i]}" ] && [ "${SERIAL_NUMBER[$COUNT]}" == "${SERIAL_NUMBER_CONF[$i]}" ];then
+   FOUND_DISPLAYS=$(($FOUND_DISPLAYS+1))
+#  echo "${MANUFACTURER[$COUNT]}" : "${MANUFACTURER_CONF[$i]}" 
+  fi
+#  echo "${MANUFACTURER[$COUNT]}" : "${MANUFACTURER_CONF[$i]}" XXX  "${SERIAL_NUMBER[$COUNT]}" : "${SERIAL_NUMBER_CONF[$i]}"
+ done
+done
+
+#Alle Bildschirme gefunden ?
+if [ $COUNT_DISPLAY -eq $(($FOUND_DISPLAYS-$TROUBLE)) ]; then
+ RET=0
+else
+ #Mindestens 1 Display gefunden?
+ if [ "$FOUND_DISPLAYS" -gt "0" ]; then
+  RET=$(($FOUND_DISPLAYS-$TROUBLE))
+ fi
+fi
+#echo $RET
+return $RET
+}
+
+## X Berechtigung, Key löschen sonst läuft X / lightdm nicht richtig 
+  
+function rm_xauthority {
+ if [ -f /home/$STANDARD_DESKTOP_USER/.Xauthority ];then
+  rm /home/$STANDARD_DESKTOP_USER/.Xauthority >/dev/null 2>&1
+ fi
+
+ if [ -f /root/.Xauthority ];then
+  rm /root/.Xauthority >/dev/null 2>&1
+ fi
+}
+
+### Funktion: Diese Funktion aendert bzw. erweitert die Frontend-config und vertraegt auch Variablen mit Spaces
+#$CONF_FILE -> Name des Conf File
+#1 Parameter Variabenn Name
+#2 Parameter Wert
+ 
+function SetConfFileParameter {
+local ConfigVarName="$1"
+shift
+local ConfigValue="\"$*\""
+
+if [ $(grep -w -e "$ConfigVarName=" $CONF_FILE &>/dev/null; echo $?) = "1"  ]
+  then
+    echo "$ConfigVarName=$ConfigValue" >> $CONF_FILE
+  else
+    ConfigValue=${ConfigValue//\//\\/}
+    sed -i 's/^'$ConfigVarName'=.*$/'$ConfigVarName'='"$ConfigValue"'/' $CONF_FILE
+fi
+#echo File: $CONF_FILE
+}
+
+
+######################### Kleinste Zahl suchen ########################
+#Kleinste Zahl in der Variable $1 suchen
+#In COUNT muss die Anzahl der Werte übergeben werden
+#Zahlen im Format: 10.0 40.5 54.4 34.2 ....
+#Ergebins in der Variable RETURN_VALUE
+
+function Search_Lt_Number {
+RETURN_VALUE=65000
+VALUES=$*
+
+for ((i=1; i<=$COUNT; i++)); do
+ TMP=$(echo $VALUES | cut -d' ' -f$i) 
+ #Komma abschneiden
+ TMP=$(echo $TMP | cut -d'.' -f1)
+ if ( [ $TMP -le $RETURN_VALUE ] ) ;then
+  RETURN_VALUE=$TMP
+ fi
+#echo $TMP
+done
+
+#Rest der kleinsten Zahl suchen (59.X)
+RETURN_REST=9
+for ((i=1; i<=$COUNT; i++)); do
+ TMP=$(echo $VALUES | cut -d' ' -f$i) 
+ #Ganzzahl abschneiden
+ TMP_REST=$(echo $TMP | cut -d'.' -f2)
+ #Komma abschneiden
+ TMP=$(echo $TMP | cut -d'.' -f1)
+ if ( [ $TMP -eq $RETURN_VALUE -a $TMP_REST -le $RETURN_REST ] ) ;then
+  RETURN_REST=$TMP_REST
+ fi
+done
+RETURN_VALUE=$RETURN_VALUE.$TMP_REST
+unset i
+unset VALUES
+unset RETURN_REST
+unset TMP_REST
+unset TMP
+}
+
+######################### Größte Zahl suchen ########################
+#Größte Zahl in der Variable $1 suchen
+#In COUNT muss die Anzahl der Werte übergeben werden
+#Zahlen im Format: 10.0 40.5 54.4 34.2 ....
+#Ergebins in der Variable RETURN_VALUE
+
+function Search_Gt_Number {
+RETURN_VALUE=0
+VALUES=$*
+
+for ((i=1; i<=$COUNT; i++)); do
+ TMP=$(echo $VALUES | cut -d' ' -f$i) 
+ #Komma abschneiden
+ TMP=$(echo $TMP | cut -d'.' -f1)
+ if ( [ $TMP -gt $RETURN_VALUE ] ) ;then
+  RETURN_VALUE=$TMP
+ fi
+done
+
+#Rest der größten Zahl suchen (59.X)
+RETURN_REST=0
+for ((i=1; i<=$COUNT; i++)); do
+ TMP=$(echo $VALUES | cut -d' ' -f$i) 
+ #Ganzzahl abschneiden
+ TMP_REST=$(echo $TMP | cut -d'.' -f2)
+ #Komma abschneiden
+ TMP=$(echo $TMP | cut -d'.' -f1)
+ if ( [ $TMP -eq $RETURN_VALUE -a $TMP_REST -gt $RETURN_REST ] ) ;then
+  RETURN_REST=$TMP_REST
+ fi
+done
+RETURN_VALUE=$RETURN_VALUE.$TMP_REST
+unset i
+unset VALUES
+unset RETURN_REST
+unset TMP_REST
+unset TMP
+}
+# Check_Display
+#touch /tmp/OK

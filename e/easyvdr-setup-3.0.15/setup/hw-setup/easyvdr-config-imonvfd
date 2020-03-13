@@ -1,0 +1,52 @@
+#!/bin/bash
+#
+#
+# v 0.2 11.02.13 C.B.
+#
+#
+##################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+IMONDRIVER="lirc_imon"
+
+#####
+EditConfig()
+{
+   #if [ ! -f /etc/LCDd.conf.org ]; then
+   #      cp /etc/LCDd.conf /etc/LCDd.conf.org
+   #fi
+
+   #cp /etc/LCDd.conf.antecv2 /etc/LCDd.conf
+   ##### udev Änderung wegen fehlendem /dev/lcd0 #####
+   FILE="/etc/udev/rules.d/90-imon.rules"
+   BACKUP="/media/backup/90-imon.rules.`date +%Y%m%d%H%M`"
+   cp $FILE $BACKUP
+
+   if [ $(grep -w -e '^BUS=="usb" KERNEL=="lcd?"' $FILE &>/dev/null; echo $?) = "1"  ]; then
+      sed -i '1iBUS=="usb" KERNEL=="lcd?", NAME="%k", SYMLINK+="lcd0"' $FILE
+   else
+      sed -i '/^BUS=="usb" KERNEL=="lcd?"*/ c\BUS=="usb" KERNEL=="lcd?", NAME="%k", SYMLINK+="lcd0"' $FILE
+   fi
+
+   SetSysconfig LCD	"imonlcd"
+   SetSysconfig LIRC	"imon"
+
+   FILE="/media/backup/lirc-remote.`date +%y%m%d%H%M%S`.tar.bz2"
+   echo "--->Sichere lircd.conf+remote.conf nach $FILE"
+   tar cvjf $FILE /etc/lirc/lircd.conf $CFG_DIR/remote.conf >/dev/null 2>&1
+   #rm -f /etc/lirc/lircd.conf
+   rm -f $CFG_DIR/remote.conf
+   #ln -s /var/lib/vdr/remotes/imon-mce/lircd.conf /etc/lirc/lircd.conf
+   ln -s $CFG_DIR/remotes/imon-mce/remote.conf $CFG_DIR/remote.conf
+}
+
+modprobe $IMONDRIVER
+sleep 2
+
+chown -R vdr:vdr $CFG_DIR
+chown -R vdr:vdr /etc/vdr
+

@@ -1,0 +1,195 @@
+#
+# Funktionen zur Erkennung der Hardware
+#
+#  MFG  4 easyVDR
+#
+#
+#  v. 0.5.1 31.08.11 Anpassung an oneiric  Captain_Beefheart
+#  v. 0.5.3 21.02.12 code cleanupII C.B.
+#  v. 0.5.4 04.03.12 clear lirc_serial parameter ( rm lirc-serial.conf )
+#  v. 0.5.5 21.06.12 added chk_usb_iproduct c.b.
+#  v. 0.5.6 04.10.12 added chk_udp_ir       c.b.
+#  v. 0.5.7 16.01.13 added chk_hdet         c.b.
+#  v. 0.6.0 14.05.15 graphtft only on non X11        michel8
+#  v. 0.6.1 19.07.15 chk_hbir auch bei live-CD       michel8
+#  v. 0.6.2 19.09.17 change lirc_serial to serial_ir bleifuss
+###############################
+
+#####
+Get_Frontend_Class()
+{
+. $CFG_DIR/sysconfig
+case $VDR_FRONTEND in
+     "vdr-sxfe") FRONTEND_CLASS="USE_X11" ;;
+         "xine") FRONTEND_CLASS="USE_X11" ;;
+         "ENNA") FRONTEND_CLASS="USE_X11" ;;
+         "XBMC") FRONTEND_CLASS="USE_X11" ;;
+ "Softhddevice") FRONTEND_CLASS="USE_X11" ;;
+       "DVB-FF") FRONTEND_CLASS="NON_X11" ;;
+     "DVBS2-FF") FRONTEND_CLASS="NON_X11" ;;
+      "reelbox") FRONTEND_CLASS="NON_X11" ;;
+       "PVR350") FRONTEND_CLASS="NON_X11" ;;
+       "keines") FRONTEND_CLASS="NON_FRE" ;;
+              *) FRONTEND_CLASS="NON_FRE" ;;
+esac
+}
+
+#####
+chk_lspci()
+{
+PCI_ID_ARRAY=($@)
+RET_STATUS=1
+for PCI_ID in ${PCI_ID_ARRAY[@]}
+  do
+    (($(lspci -n | grep -ic $PCI_ID) != 0)) && RET_STATUS=0
+    ((RET_STATUS == 0)) && break
+  done
+return $RET_STATUS
+}
+
+#
+# verarbeitet Strings mit blanks wie: "0300: 10de:   0400: 20de:"
+# ex.:  Datensatz 1 ist hier "0300: 10de:"; Datensatz 2  ist hier "0400: 20de:" 
+######
+chk_lspci2()
+{
+PCI_ID_ARRAY=($@)
+ELEMENT_COUNT=${#PCI_ID_ARRAY[*]}
+RET_STATUS=1
+for ((i=0;i<$ELEMENT_COUNT;i++))
+  do
+    j=$(($i +1))
+    (($(lspci -n | grep -ic "${PCI_ID_ARRAY[$i]} ${PCI_ID_ARRAY[$j]}") != 0)) && RET_STATUS=0
+    ((RET_STATUS == 0 )) && break
+    ((++i))
+  done
+return $RET_STATUS
+}
+
+#####
+chk_lspci3()
+{
+PCI_ID_ARRAY=($@)
+ELEMENT_COUNT=${#PCI_ID_ARRAY[*]}
+RET_STATUS=1
+if (($(lspci -n | grep -ic ${PCI_ID_ARRAY[0]}) != 0)); then
+  for ((i=1;i<$ELEMENT_COUNT;i++))
+    do
+      (($(lspci -nv | grep -i "sub" | grep -ic ${PCI_ID_ARRAY[$i]}) != 0)) && RET_STATUS=0
+      ((RET_STATUS == 0)) && break
+    done
+fi
+return $RET_STATUS
+}
+
+#####
+chk_lsusb()
+{
+USB_ID_ARRAY=($@)
+RET_STATUS=1
+for USB_ID in ${USB_ID_ARRAY[@]}
+  do
+    (($(lsusb | grep -ic $USB_ID) != 0)) && RET_STATUS=0
+    (($RET_STATUS == 0)) && break
+  done
+return $RET_STATUS
+}
+
+#### lirc homebrew-receiver
+chk_hbir()
+{
+LOGGER=" logger -t chk-lib"
+
+PORT_PARA=($@)
+PORT_MESS="ttyS${PORT_PARA[0]} at I/O"
+RET_STATUS=1
+if (($(dmesg | grep -c "$PORT_MESS") != 0)); then
+  ##Set Parameter
+  LOG_MESS="/var/log/syslog"
+  SHORTLOG="/tmp/HW-det_Tail-Mess.tmp"
+  LIRC_MESS_ALL="serial_ir serial_ir.0: auto-detected active"
+  LIRC_MESS_OK="serial_ir serial_ir.0: auto-detected active low receiver "
+  ##Stop service etc.
+  systemctl stop lircd.socket lircd.service           >/dev/null 2>&1
+  rmmod serial_ir                        >/dev/null 2>&1
+  rm -f /etc/modprobe.d/serial_ir.conf   >/dev/null 2>&1
+  ##Get Data from Port
+  setserial /dev/ttyS${PORT_PARA[0]} uart none
+    echo "### chk_hbir tmp-file (Homebrew) $(date)"   >> $LOG_MESS
+    LineNumber=$(cat $LOG_MESS | wc -l)
+    modprobe serial_ir "${PORT_PARA[1]}" "${PORT_PARA[2]}"
+
+    # Max waiting time in 0.1 Seconds
+    loc_WAIT=300 #30s
+    MODP_STAT=0
+    while (($MODP_STAT == 0 ))
+      do
+        loc_WAIT=$(($loc_WAIT-1))
+        if [ $loc_WAIT -eq 0 ]; then
+          $LOGGER "### chk_hbir \"serial_ir serial_ir.0: auto-detected active \" not found in $SHORTLOG"
+          break
+        fi
+        sleep 0.1
+	awk "NR==$LineNumber,EOF" $LOG_MESS > $SHORTLOG
+        MODP_STAT=$(grep -c "$LIRC_MESS_ALL" $SHORTLOG)
+      done
+  rmmod serial_ir
+  ##Check Homebrew
+  COUNT=$(grep -c "$LIRC_MESS_OK" $SHORTLOG)
+  (($COUNT == 1)) && RET_STATUS=0
+fi
+return $RET_STATUS
+}
+
+##### udp ir-receiver
+chk_udp_ir()
+{
+SHORTLOG=/tmp/.udpfind
+systemctl stop lircd.socket lircd.service           >/dev/null 2>&1
+[ -f $SHORTLOG ] && rm $SHORTLOG
+mode2 -H udp >> $SHORTLOG 2>&1 &
+PID_OF_MODE2=$!
+disown $PID_OF_MODE2
+sleep 4.5
+kill $PID_OF_MODE2
+SPC_COUNT=$(grep -c space $SHORTLOG)
+(( $SPC_COUNT >> 1 )) && RET_STATUS=0 || RET_STATUS=1
+return $RET_STATUS
+}
+
+#####
+chk_usb_iproduct()
+{
+PRODUCT_ID="$1"
+RET_STATUS=1
+(($(lsusb -v | grep "iProduct" | grep -c "$PRODUCT_ID") != 0)) && RET_STATUS=0
+return $RET_STATUS
+}
+
+####  check with hdet   ###
+chk_hdet()
+{
+hdet_para=$1
+hdet 2>/dev/null | grep "$hdet_para" && RET_STATUS=0 || RET_STATUS=1 
+return $RET_STATUS
+}
+
+#####
+chk_dummyhw()
+{
+DUMMY_PARA=($@)
+RET_STATUS=1
+
+case ${DUMMY_PARA[0]} in
+       yes) RET_STATUS=0 ;;
+    nonX11) Get_Frontend_Class
+	    if [[ "$FRONTEND_CLASS" == "USE_X11" ]]; then
+	      # wenn X11-System, dann Graphtft ueber Desktop-Konfiguraation nicht ueber Infodisplay
+	      RET_STATUS=1
+	    else
+	      RET_STATUS=0
+	    fi           ;;
+         *) RET_STATUS=1 ;;
+esac
+return $RET_STATUS
+}

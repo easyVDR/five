@@ -1,0 +1,4 @@
+var/cache/vdr/commands.conf                            var/lib/vdr/commands.conf
+var/cache/vdr/reccmds.conf                             var/lib/vdr/reccmds.conf
+#var/lib/vdr/remote.conf                                etc/vdr/remote.conf
+#var/lib/vdr/channels.conf                              etc/vdr/channels.conf

@@ -1,0 +1,24 @@
+#!/bin/bash
+# 
+#################################################
+
+## aktiviert beide Tuner der cine-s2
+
+CINE_S2_CONF="/etc/modprobe.d/easyvdr-dvb-cine-s2.conf"
+ENTRY="options ngene one_adapter=0"
+ENTRY2="options ngene msi=0"
+
+[ ! -f $CINE_S2_CONF ] && echo "#" > $CINE_S2_CONF
+DOUBLE_TUNER_STAT=$( grep -c "$ENTRY" < $CINE_S2_CONF )
+
+if (( $DOUBLE_TUNER_STAT == 0 )); then
+  modprobe -r ngene
+  echo "#--------------------------------"      >> $CINE_S2_CONF
+  echo "# inserted by \"Vid_In_Cine_DVB-S2\" "  >> $CINE_S2_CONF
+  echo "# aktiviert beide Tuner der cine-s2  "  >> $CINE_S2_CONF
+  echo "$ENTRY"                                 >> $CINE_S2_CONF
+  echo "# und je nach MoBo msi=0 oder =1     "  >> $CINE_S2_CONF
+  echo "$ENTRY2"                                >> $CINE_S2_CONF
+  echo "#--------------------------------"      >> $CINE_S2_CONF
+  modprobe ngene
+fi

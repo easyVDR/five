@@ -1,0 +1,480 @@
+#!/bin/bash
+#
+#
+# Addonmanager fuer easyvdr
+# Captain_Beefheart
+#
+# vers. 0.6   13.08.11
+# vers. 0.6.1 14.01.12 added "ati"
+# vers. 0.7   21.02.12 removed updater C.B.  :-(
+# vers. 0.7   16.01.13 new defines
+#
+############################
+
+####### defines  #####
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+. /usr/lib/vdr/functions/easyvdr-functions-lib         ## common functions
+. /usr/share/easyvdr/setup/easyvdr-setup-defines       ## setup only defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions     ## setup only functions
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Addons "
+BACKTITLE=" Addon Manager fuer easyVDR"
+ADDFILENAME="setup.addonlist.v4"
+ADDFILEPATH="$SETUP/$ADDFILENAME"
+
+
+#####################################  Funktionen #################################
+
+###   
+Choose_Proc()  # general
+{
+proc_choosen=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title "$TITLE"\
+        --cancel-label "Addons überspringen"\
+        --menu "\n\
+        Steuerung mit       [  UP  ]  [ DOWN ] \n\
+        Zum Auszuwaehlen    <  OK  > \n\
+        Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+    Install_Addons   " Addons installieren"        \
+    Deinstall_Addons " Addons deinstallieren"      3>&1 1>&2 2>&3 3>&- )
+OK_CANCEL=$?
+
+(( ! $OK_CANCEL )) && Run_Selected || Write_Status
+clear
+}
+
+#####
+Run_Selected()  # general
+{
+case $proc_choosen in
+      Install_Addons) MENU_TITLE=" Addonauswahl "
+                      BACK_MENU_TITLE=" Installation von Addons"
+                      CONFIRM_TXT=" Jetzt installieren?"
+                      C_BUTTON=" Auswahl loeschen "
+                      OK_BUTTON="weiter"
+                      YES_BUTTON=" Ja " 
+                      NO_BUTTON=" zurueck zur Auswahl "
+                      INST_FLAG=0
+                      MENU_TITLE2=" Installations Info "
+                      run_install;;
+
+    Deinstall_Addons) MENU_TITLE=" Addonauswahl "
+                      BACK_MENU_TITLE=" Deinstallation von Addons"
+                      CONFIRM_TXT=" Jetzt deinstallieren?"
+                      C_BUTTON=" Auswahl loeschen "
+                      OK_BUTTON="weiter"
+                      YES_BUTTON=" Ja "
+                      NO_BUTTON=" zurueck zur Auswahl "
+                      INST_FLAG=1
+                      MENU_TITLE2=" Deinstallations Info "
+                      run_deinstall;;
+esac
+}
+
+#####
+Hide_Blinded()     #   fuer Installer
+{
+dialog --backtitle "$BACKTITLE"\
+       --timeout $TIMEOUT\
+       --defaultno\
+       --yesno "\n\n\
+                     Bereits installierte bzw. \n\
+               versteckte Erweiterungen einblenden?" $DIA_BOX2_SIZE
+HIDE=$?
+clear
+}
+
+#####
+Aktive_Message()   # fuer Deinstaller
+{
+dialog --backtitle "$BACKTITLE"\
+       --defaultno\
+       --yesno "\n\
+                        !!ACHTUNG!! \n\
+          Addons vor Deinstallation deaktivieren! \n\n\
+                   Addons sind deaktiviert? " $DIA_BOX2_SIZE
+YES_NO=$?
+clear
+return $YES_NO
+}
+
+#####
+Get_Set_Data()   # fuer alle
+{
+IFS_OLD=$IFS
+IFS=$'\n	'                            # internal field separator auf newline und "tab"
+ADDARRAY=($(cat $ADDFILEPATH))             # ADD-List in Array
+IFS=$IFS_OLD
+
+ELEMENT_COUNT1=${#ADDARRAY[*]}              # Anzahl der Elemente:
+
+shopt -s extglob
+for ((k=0;k<$ELEMENT_COUNT1;k++))            # Leerzeichen entfernen
+  do
+    buffer=${ADDARRAY[$k]}
+    buffer2="${buffer##*( )}"
+    ADDARRAY2[$k]="${buffer2%%*( )}"
+  done
+
+k=19                                    # wg Dateiheader
+l=0
+while (( $k<$ELEMENT_COUNT1 ))
+  do
+    MENUPUNKT[$l]=${ADDARRAY2[$k]};  ((++k))
+    KOMMENTAR[$l]=${ADDARRAY2[$k]};  ((++k))
+    AUSBLENDE[$l]=${ADDARRAY2[$k]};  ((++k))
+    DEBI_NAME[$l]=${ADDARRAY2[$k]};  ((++k))
+    ADDITION1[$l]=${ADDARRAY2[$k]};  ((++k))
+    ADDITION2[$l]=${ADDARRAY2[$k]};  ((++k))
+    CONFLICTS[$l]=${ADDARRAY2[$k]};  ((++k));  ((++l))
+  done
+ELEMENT_COUNT2=${#MENUPUNKT[*]}
+}
+
+#####
+Get_Installed_Adds()   # fuer alle
+{
+PAKET_STRING=`dpkg --get-selections | cut -f 1`       ##  alle installierten Pakete in String
+
+l=0
+for PAKET in $PAKET_STRING                             ###  String zu Array
+  do
+    PAKET_ARRAY[$l]=$PAKET; ((++l))
+  done
+SIZE_OF_PAKET_ARRAY=${#PAKET_ARRAY[*]}
+}
+
+#####
+Get_Index_of_Installed_Adds()    # fuer deinstaller
+{
+k=0
+  for ((i=0;i<$ELEMENT_COUNT2;i++))
+    do
+      for ((j=0;j<$SIZE_OF_PAKET_ARRAY;j++))
+        do
+          if [[ ${DEBI_NAME[$i]} == ${PAKET_ARRAY[$j]} ]]; then
+             INST_INDEX_ARRAY[$k]=$i; ((++k))                  # gleiche merken
+          fi
+        done
+    done
+NUMBER_OF_INSTALLED_ADDS=$k
+}
+
+#####
+Get_Index_Of_Not_Installed_Adds()  # fuer installer
+{
+k=0
+for ((i=0;i<$ELEMENT_COUNT2;i++))    # Zeilenummernarray generieren
+  do
+    NOT_INST_INDEX_ARRAY1[$i]=$i
+  done
+NOT_INST_INDEX_ARRAY2=("${NOT_INST_INDEX_ARRAY1[@]}")   # und Kopie anlegen
+
+for ((i=0;i<$ELEMENT_COUNT2;i++))
+  do
+    for ((j=0;j<$SIZE_OF_PAKET_ARRAY;j++))
+      do
+        if [[ ${DEBI_NAME[$i]} == ${PAKET_ARRAY[$j]} ]]; then   # gleiche rauschmeissen
+          unset NOT_INST_INDEX_ARRAY1[$i]
+        fi
+      done
+  done
+
+if (( $HIDE != 0 ))
+ then
+   MENU_INST_INDEX=("${NOT_INST_INDEX_ARRAY1[@]}")   ## nur die nicht installierten
+ else
+   MENU_INST_INDEX=("${NOT_INST_INDEX_ARRAY2[@]}")   ## alle anzeigen
+fi
+}
+
+#####
+Get_Hide_Stat()
+{
+CONFL_STR=${CONFLICTS[$i]}
+for position in $(seq 0 $((${#CONFL_STR} - 1)))    ###  Conflict - Matrix zu array
+  do
+    CONFL_ARRAY[$position]=${CONFL_STR:$position:1}
+  done
+
+ALLOW_STAT=0
+case $easyvdr_video_out in
+    dvbsd)  [[ ${CONFL_ARRAY[0]} == "O" ]] && ALLOW_STAT=1 ;;
+    dvbhd)  [[ ${CONFL_ARRAY[1]} == "O" ]] && ALLOW_STAT=1 ;;
+    ehd)    [[ ${CONFL_ARRAY[2]} == "O" ]] && ALLOW_STAT=1 ;;
+    nvidia) [[ ${CONFL_ARRAY[3]} == "O" ]] && ALLOW_STAT=1 ;;
+    pvr350) [[ ${CONFL_ARRAY[4]} == "O" ]] && ALLOW_STAT=1 ;;
+    x)      [[ ${CONFL_ARRAY[5]} == "O" ]] && ALLOW_STAT=1 ;;
+  ati)      [[ ${CONFL_ARRAY[6]} == "O" ]] && ALLOW_STAT=1 ;;
+    *)      true;;
+esac
+[[ ${AUSBLENDE[$i]} != "+" ]]  && ALLOW_STAT=1
+return $ALLOW_STAT
+}
+
+#####
+Build_Deinstall_Menu_Array()   # fuer deinstaller
+{
+j=0
+MENU_AKTIV_STA="off"
+for i in ${INST_INDEX_ARRAY[@]} 
+  do
+    MENUARRAY[$j]=${MENUPUNKT[$i]}; ((++j))
+    MENUARRAY[$j]=${KOMMENTAR[$i]}; ((++j))
+    MENUARRAY[$j]=$MENU_AKTIV_STA;  ((++j))
+ done
+}
+
+#####
+Build_Install_Menu_Array()   # fuer installer
+{
+j=0
+MENU_AKTIV_STA="off"
+for i in ${MENU_INST_INDEX[@]} 
+  do
+    Get_Hide_Stat
+    HIDE_STAT=$?
+    if [[ ($HIDE_STAT == 0 ) || ( $HIDE == 0 ) ]]; then
+      MENUARRAY[$j]=${MENUPUNKT[$i]}; ((++j))
+      MENUARRAY[$j]=${KOMMENTAR[$i]}; ((++j))
+      MENUARRAY[$j]=$MENU_AKTIV_STA;  ((++j))
+    fi
+ done
+}
+
+#####
+Menu()   # fuer installer und deinstaller
+{
+if [[ ($NUMBER_OF_INSTALLED_ADDS > 0) || ($INST_FLAG == 0) ]]
+  then
+    OK_CANCEL=1
+    while (( $OK_CANCEL ))
+      do
+        ADD_MENUITEM=$(dialog --title " $MENU_TITLE" \
+                              --backtitle " $BACK_MENU_TITLE" \
+                              --cancel-label "$C_BUTTON"\
+                              --ok-label "$OK_BUTTON"\
+                              --checklist  "\n \
+    Auswaehlen mit [ Leertaste ]  (Mehrfachauswahl moeglich) \n \
+    (De)Installieren/Beenden mit     < weiter >   " $DIA_BOX_SIZE \
+                                 "${MENUARRAY[@]}" 3>&1 1>&2 2>&3 3>&- )
+        OK_CANCEL=$?
+        clear
+        (($OK_CANCEL == 0)) && Confirm_Selection
+      done
+  else
+    dialog --backtitle "$BACKTITLE"\
+           --timeout $TIMEOUT\
+           --msgbox "\n\n\n\
+                 Keine Addons Installiert!" $DIA_BOX2_SIZE
+    YES_NO=1
+fi
+clear
+return $YES_NO
+}
+
+#####
+Confirm_Selection()
+{
+if [[ $ADD_MENUITEM == "" ]]
+  then
+    dialog --backtitle "$BACKTITLE"\
+           --no-label "$NO_BUTTON"\
+           --yes-label "$YES_BUTTON"\
+           --yesno "\n\
+             Keine Erweiterungen ausgewaehlt!\n\n\
+                     Ist das korrekt? " $DIA_BOX2_SIZE
+    OK_CANCEL=$?
+    YES_NO=1
+    (($OK_CANCEL == 0)) && Write_Status
+  else
+    dialog --backtitle "$BACKTITLE"\
+           --yesno "\
+   Ausgewaehlte Erweiterungen: \n\
+    $ADD_MENUITEM \n\n\
+    $CONFIRM_TXT" $DIA_BOX2_SIZE
+    YES_NO=$?
+    OK_CANCEL=0
+fi
+}
+
+#####
+Build_Install_Index()  # fuer installer
+{
+Get_Menu_Index
+Get_Tool_Index
+INSTALLINDEX=("${MENUINDEX[@]}" "${REDU_TOOLINDEX[@]}")
+INSTALLINDEX=($(echo ${INSTALLINDEX[*]} | tr ' ' '\n' | sort -u))  # doppelte entfernen
+}
+
+#####
+Get_Menu_Index()      # fuer installer und deinstaller
+{
+k=0
+for  ((i=0;i<$ELEMENT_COUNT2;i++))            # menuindex merken
+  do
+    MENUPUNKT2[$i]='"'${MENUPUNKT[$i]}'"'     # Anfuehrungszeichen dazupacken
+    for j in $ADD_MENUITEM
+      do
+        if [[ '"'$j'"' == ${MENUPUNKT2[$i]} ]]; then
+          MENUINDEX[$k]=$i; ((k++))
+        fi
+      done
+  done
+}
+
+#####
+Get_Tool_Index()   # fuer installer
+{
+j=0
+for i in ${MENUINDEX[@]}      ### angeforderte Tools
+  do
+    if [[ ${ADDITION1[$i]} != "empty" ]]; then
+      WANTED_TOOLS[$j]=${ADDITION1[$i]}; ((++j))
+    fi
+    if [[ ${ADDITION2[$i]} != "empty" ]]; then
+      WANTED_TOOLS[$j]=${ADDITION2[$i]}; ((++j))
+    fi
+  done
+
+k=0
+for i in ${WANTED_TOOLS[@]}                  #### Index der Tools merken
+  do
+    for ((j=0;j<$ELEMENT_COUNT2;j++))
+      do
+        if [[ $i == ${MENUPUNKT[$j]} ]]; then      # mit den Menupunkten vergleichen 
+          TOOLINDEX[k]=$j; ((++k))                 # wenn gleich dann Index merken
+        fi
+      done
+  done
+
+SIZE_OF_TOOLINDEX=${#TOOLINDEX[*]}
+k=0
+  for i in ${NOT_INST_INDEX_ARRAY1[@]}                            # nur aus Liste der noch nicht installierten
+    do
+      flagset=0
+      for  ((j=0;j<$SIZE_OF_TOOLINDEX;j++))
+        do
+          if [[ X$i == X${TOOLINDEX[$j]} ]]; then                 # wenn in Liste vorhanden
+            if (( $flagset == 0)); then                           # nur einmal
+                REDU_TOOLINDEX[$k]=${TOOLINDEX[$j]}; ((++k))      # Index merken
+            fi
+            flagset=1
+          fi
+        done
+     done
+}
+
+#####
+Install()  # fuer installer
+{
+APT_GET_INDEX=("${INSTALLINDEX[@]}")   # Parameter definieren
+Do_Apt_Get
+}
+
+#####
+Deinstall()   # fuer deinstaller
+{
+for i in ${MENUINDEX[@]}
+  do
+    debconf-apt-progress -- apt-get remove --purge -y ${DEBI_NAME[$i]} 2>&1
+    DE_INST_STAT=$?
+    if (( $DE_INST_STAT == 0 ))
+      then
+        DE_INST_PACK=$DE_INST_PACK"\n"${DEBI_NAME[$i]}
+      else
+        MISSING_PACK=$MISSING_PACK"\n"${DEBI_NAME[$i]}
+    fi
+  done
+
+if (( $DE_INST_STAT == 0 )); then
+  Write_Status
+fi
+
+dialog --backtitle "$BACKTITLE"\
+       --title "$MENU_TITLE2" \
+       --timeout $TIMEOUT \
+       --msgbox " \n\
+ Deinstalliert wurden: \n\
+             $DE_INST_PACK \n\n\
+ Nicht deinstalliert wurden: \n\
+             $MISSING_PACK" $DIA_BOX2_SIZE
+}
+
+#####
+Do_Apt_Get()
+{
+for i in ${APT_GET_INDEX[@]}
+  do
+    debconf-apt-progress -- apt-get --yes install ${DEBI_NAME[$i]} 2>&1
+    INST_STAT=$?
+    if (( $INST_STAT == 0 ))
+      then
+        INST_PACK=$INST_PACK"\n"${DEBI_NAME[$i]}
+      else
+        MISSING_PACK=$MISSING_PACK"\n"${DEBI_NAME[$i]}
+    fi
+  done
+(($INST_STAT == 0)) && Write_Status
+
+dialog --backtitle "$BACKTITLE"\
+       --title "$MENU_TITLE2" \
+       --timeout $TIMEOUT \
+       --msgbox " \n\
+ Installiert wurden: \n\
+             $INST_PACK \n\n\
+ Nicht installiert wurden: \n\
+             $MISSING_PACK" $DIA_BOX2_SIZE
+}
+
+#####
+Write_Status()  # für alle
+{
+sed -i '/"*easyvdr-config-addons"*/d' $SETUP_STATUS
+echo "# `date` easyvdr-config-addons zuletzt ausgefuehrt" >> $SETUP_STATUS
+sed -i '/Addon_Manager_Selected"*/d' $SETUP_STATUS
+echo "Addon_Manager_Selected=\"true\"" >> $SETUP_STATUS
+}
+
+#####################################  aktion  #################################
+#####
+run_install()
+{
+Hide_Blinded
+MiniInfo " working " "$BACKTITLE" "\n\n\n     \Zb\Z1 collecting plugin data"
+Get_Set_Data
+Get_Installed_Adds
+Get_Index_Of_Not_Installed_Adds
+Build_Install_Menu_Array
+Menu
+if (( $? == 0 )); then
+  Build_Install_Index
+  Install
+fi
+clear
+}
+
+#####
+run_deinstall()
+{
+Aktive_Message
+if (( $? == 0 )); then
+  MiniInfo " working " "$BACKTITLE" "\n\n\n     \Zb\Z1 collecting plugin data"
+  Get_Set_Data
+  Get_Installed_Adds
+  Get_Index_of_Installed_Adds
+  Build_Deinstall_Menu_Array
+  Menu
+  if (( $? == 0 )); then
+    Get_Menu_Index
+    Deinstall
+  fi
+fi
+clear
+}
+
+###################  main  #############################################
+Choose_Proc
+apt-get clean
+

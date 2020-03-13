@@ -1,0 +1,103 @@
+#!/bin/bash
+# V 0.1 28.10.13 Bleifuss
+# V 0.1 25.12.13 Bleifuss check xorg.conf
+# V 0.1 07.01.14 Bleifuss add Graphtft
+# V 0.2 13.02.14 Bleifuss added display check
+
+CONF_FILE=/etc/vdr/easyvdr/easyvdr-video-settings.conf
+. /etc/vdr/easyvdr/easyvdr-video-settings.conf
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+
+LOGGER=" logger -t easyvdr-set-monitor-layout"
+export DISPLAY=$FRONTEND_DISPLAY
+STAT=0
+################# Bildschirme ueber das Skript steuern ? ########################
+ #Testen ob !XORG_CONF_AUTO_MODE="yes" vorhanden ist 
+if [ -f /etc/X11/xorg.conf ];then
+ if [  $(grep -c XORG_CONF_AUTO_MODE=\"yes\" /etc/X11/xorg.conf) -eq 0 ] ;then
+  $LOGGER "wrong xorg.conf" 
+  exit
+ fi
+else
+  $LOGGER "no xorg.conf" 
+fi
+#Passt die Version?
+if [ X$VIDEO_SETTINGS_CONF_VERSION != X"0.2" ] ; then
+ $LOGGER "wrong configuration, please run setup"
+fi
+
+check_x_running
+
+if [ $? -eq "0" ];then
+
+ # VDR Bildschirm aktivieren
+ #Prüfen ob an dem Bildschirm was verändert wurde 
+if [ -f $XRANDR_EDID_FILE ] ; then
+  xrandr  --verbose | grep -A 8 EDID | diff $XRANDR_EDID_FILE -
+  RET=$?
+else
+ RET=1
+fi
+
+ if [ $RET -eq 0 ] || [ X$CHECK_DISPLAY == "Xno" ]; then
+  if [ $(xrandr | grep -c " connected") -gt 1 ]; then
+   xrandr --output $VDR_SCREEN_CONNECTOR --off
+   $LOGGER "switch $VDR_SCREEN_CONNECTOR off"
+   sleep 0.2
+  fi
+
+ ################################## 1 TV/Monitor ########################################
+ # Andere Bildschirme abschalten
+# if [ $MONITOR_LAYOUT == "single" ]; then
+  if [ $DISPLAY_CONNECTOR1 != $VDR_SCREEN_CONNECTOR ] && [ $DISPLAY_CONNECTOR1 != "none" ]; then
+   #Bei manchen Treiber weiÃŸ X nicht das der Bildschirm an ist, also erst ein- dann aus- schalten
+   xrandr --output $DISPLAY_CONNECTOR1 --auto
+   xrandr --output $DISPLAY_CONNECTOR1 --off
+   $LOGGER "switch $DISPLAY_CONNECTOR1 off" 
+  fi
+  if [ $DISPLAY_CONNECTOR2 != $VDR_SCREEN_CONNECTOR ] && [ $DISPLAY_CONNECTOR2 != "none" ]; then
+   xrandr --output $DISPLAY_CONNECTOR2 --auto
+   xrandr --output $DISPLAY_CONNECTOR2 --off
+   $LOGGER "switch $DISPLAY_CONNECTOR2 off" 
+  fi
+  if [ $DISPLAY_CONNECTOR3 != $VDR_SCREEN_CONNECTOR ] && [ $DISPLAY_CONNECTOR3 != "none" ]; then
+   xrandr --output $DISPLAY_CONNECTOR3 --auto
+   xrandr --output $DISPLAY_CONNECTOR3 --off
+   $LOGGER "switch $DISPLAY_CONNECTOR3 off" 
+  fi
+# fi
+ ########################################################################################
+  xrandr --output $VDR_SCREEN_CONNECTOR $VDR_SCREEN_MODE --primary
+  STAT=$?
+  $LOGGER "set $VDR_SCREEN_CONNECTOR $VDR_SCREEN_MODE"
+
+ ############################ 2 Bildschirme Clone Modus #################################
+  if [ $VDR_CLONE_CONNECTOR != "none" ]; then
+#  xrandr  --output $VDR_CLONE_CONNECTOR --off
+   FRAMEBUFFER=$(echo $VDR_SCREEN_MODE| cut -d' ' -f2)
+   xrandr --fb $FRAMEBUFFER
+   sleep 0.2
+   xrandr --fb $FRAMEBUFFER --output $VDR_CLONE_CONNECTOR $VDR_CLONE_SCREEN_MODE --same-as $VDR_SCREEN_CONNECTOR
+   STAT=$?
+   $LOGGER "set clonemode --fb $FRAMEBUFFER --output $VDR_CLONE_CONNECTOR $VDR_CLONE_SCREEN_MODE --same-as $VDR_SCREEN_CONNECTOR" 
+  fi
+ ############################### VDR und Graphtft #######################################
+  if [ $VDR_GRAPHTFT_CONNECTOR != "none" ]; then
+   DISPLAY=$INFO_DISPLAY xrandr --output $VDR_GRAPHTFT_CONNECTOR $VDR_GRAPHTFT_SCREEN_MODE
+   STAT=$?
+   $LOGGER "graphtft --output $VDR_GRAPHTFT_CONNECTOR $VDR_GRAPHTFT_SCREEN_MODE"
+  fi
+ #################################### VDR + Desktop #####################################
+  if [ $SECONDARY_DESKTOP_CONNECTOR != "none" ]; then
+#  xrandr -d :0.0 --output $SECONDARY_DESKTOP_CONNECTOR $SECONDARY_DESKTOP_MODE --right-of $VDR_SCREEN_CONNECTOR --primary
+   xrandr --output $VDR_SCREEN_CONNECTOR --primary --left-of $SECONDARY_DESKTOP_CONNECTOR $SECONDARY_DESKTOP_MODE
+   STAT=$?
+   $LOGGER "secondary desktop --output $VDR_SCREEN_CONNECTOR --primary --left-of $SECONDARY_DESKTOP_CONNECTOR $SECONDARY_DESKTOP_MODE"
+  fi
+ else
+ $LOGGER "display changed, please run setup"
+ fi
+fi
+exit   $STAT
+

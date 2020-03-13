@@ -1,0 +1,163 @@
+#!/bin/bash
+#
+#  Aenderung der Datei-Rechte für Mediadaten
+#  auf 0.9 Standard
+#
+#  
+#  v.0.1  23.04.11   Captain_Beefheart
+#  V.0.2  11.02.13    C.B.
+#
+# 
+#  
+#################################################
+
+############################## defines ######################################
+
+TITLE=" Aenderung der Datei-Rechte für Mediadaten "
+BACKTITLE=" auf 0.9 Standard"
+
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+MEDIA_DEFAULT_DIR="/media/easyvdr01"
+HELP1="ch_media_rights_help"
+HELP2="f_select_help"
+
+
+############################### functions ##########################################
+
+#####
+Intro_Menu()
+{
+HELP_PRESSED="true"
+while [[ $HELP_PRESSED == "true" ]]
+  do
+    dialog --backtitle "$BACKTITLE"\
+           --title "$TITLE"\
+           --cancel-label " cancel-text "\
+           --ok-label " ok-text "\
+           --extra-button\
+           --extra-label " Hilfe "\
+           --defaultno \
+           --yesno "\n\n\
+                       text text text text text \n\n\
+              Im folgendem koennen Sie Einstellungen\n\
+                    text text txet text text text .\n\
+       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\
+           yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy" $DIA_BOX2_SIZE
+    YES_NO=$?
+    clear
+
+    if (( $YES_NO == 3 ))
+      then 
+        Show_Help $HELP1
+        HELP_PRESSED="true"
+      else
+        HELP_PRESSED="false"  
+    fi
+done
+}
+
+#####
+Set_Media_Dir()
+{
+FOLDER_TITLE=" Bitte waehlen Sie das Media-Verzeichniss "
+MISSING_INPUT=0
+while (( $MISSING_INPUT == 0 ))
+  do
+    HELP_PRESSED="true"
+    while [[ $HELP_PRESSED == "true" ]]
+      do
+        SEL_M_DIR=$(dialog \
+          --backtitle "$BACKTITLE"\
+          --title "$TITLE"\
+          --extra-button\
+          --extra-label " Hilfe "\
+          --fselect $MEDIA_DEFAULT_DIR $DIA_BOX4_SIZE 3>&1 1>&2 2>&3 3>&- )
+        OK_CANCEL=$?
+        clear
+
+        if (( $OK_CANCEL == 3 ))
+          then 
+            HELP_PRESSED="true"
+            Show_Help $HELP2
+          else
+            HELP_PRESSED="false"  
+        fi
+      done
+    Check_Missing $SEL_M_DIR
+  done
+}
+
+
+#####
+Run_Change_Rights()
+{
+#rm -f /video0                       >/dev/null 2>&1
+#ln -f -s   $MEDI_DIR/video0 /video0 >/dev/null 2>&1
+chown -R vdr:vdr $SEL_M_DIR          >/dev/null 2>&1
+}
+
+#####
+Check_Missing()
+{
+GOT_NAME=$1
+if [[ (! "$GOT_NAME") && ($OK_CANCEL != 1) ]]
+  then
+    dialog --title " Error:  fehlende Eingabe "\
+           --backtitle "$BACKTITLE"\
+           --colors\
+           --timeout $TIMEOUT\
+           --msgbox "\n\n\
+        \Z1\Zb !! ERROR !!\n\
+        fehlende Eingabe!" $DIA_BOX3_SIZE
+    MISSING_INPUT=0
+  else 
+    MISSING_INPUT=1
+fi
+}
+
+#####
+Ask_Repeat()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --no-label " no-text "\
+       --yes-label " yes-text "\
+       --defaultno \
+       --yesno "\n\n\
+                              Nochmal? \n\n\
+              Im folgendem koennen Sie Einstellungen\n\
+                    text text txet text text text .\n\
+       xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx\n\
+           yyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyyy" $DIA_BOX2_SIZE
+REPEAT=$?
+clear
+}
+
+#####
+Show_Help()
+{
+HELP=$1
+HELPFILE="$SETUP_HELP_DIR/$HELP" 
+dialog --textbox $HELPFILE   $DIA_BOX2_SIZE ; clear
+}
+
+############## main ####################
+
+Intro_Menu
+
+if (( ! $YES_NO    )); then
+  REPEAT=0
+  while  (( $REPEAT == 0 ))
+    do
+      Set_Media_Dir
+      if (( $OK_CANCEL == 0 ))
+        then
+          Run_Change_Rights
+          Ask_Repeat
+        else
+          REPEAT=1 
+      fi
+    done
+fi 
+

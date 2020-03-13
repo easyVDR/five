@@ -1,0 +1,7 @@
+   ---  Hilfe für Info Displays ----
+
+- graphTFT:
+    Dieser Menüpunkt ist immer vorhanden,
+    da es fast unmöglich ist alle HW-Varianten
+    zu erkennen, unter denen es möglich ist,
+    graphTFT zu benutzen.

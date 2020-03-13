@@ -1,0 +1,142 @@
+                     Program-Changer Funktion 
+
+Das Programm kann bei laufendem VDR zwischen verschiedenen Programmen
+wechseln. Das Frontend kann bei laufender Aufnahme nicht gewechselt
+werden. Alle anderen Programme können bei laufender Aufnahme verwendet
+werden.
+Maus Emulation mit der Fernbedienung (nur für kleinere Arbeiten)
+
+Die Programme die im Pchanger Menü vorhanden sind können auch
+im abgestürzten Zustand beendet werden.
+
+Ausnahme:
+Frontend's beenden die Funktion wird bisher nicht benötigt,
+da alles stabil läuft.
+Toppler, das Programm kann beendet werden, aber es ändert die Auflösung.
+
+
+Bedienung:
+Mit der Pchanger Taste das Pchanger Menü aufblenden und die 
+gewünschte Nummer wählen.
+Ausnahme Toppler, dieses Programm muss mit Beenden verlassen werden.
+
+
+Momentan mögliche Frontend's
+Xineliboutput
+Xine
+KODI -> noch nicht freigegeben
+
+
+Momentan eingebaute Programme:
+
+KODI
+Firefox
+Thunderbird
+Supertuxcart
+Toppler
+Gedit
+K3b
+Gimp
+Gnome-commander
+Desktop
+
+Um das Menü zu erweitern einfach die Datei:
+/usr/share/easyvdr/program-changer.sh erweitern. 
+
+Das Setup:
+
+Im Setup muss man mit der Maus wählen, welche Programme man verwenden
+möchte. Momentan können maximal 10 im Pchanger verwendet werden.
+
+
+Wurde das Setup ohne eine funktionierende VDR Fernbedienung gestartet,
+ist die Konfigurationsdatei "Program-changer-lirc.conf" falsch.
+Dann muss der Button Make Program-changer-lirc.conf gedrückt werden um
+eine neue Datei zu erstellen. 
+
+Wenn die Fernbedienung in KODI nicht funktioniert,
+den Button Make KODI Lircmap.xml betätigen.
+
+Die Funktionen des Setup Programms:
+
+Es wird automatisch die Datei "program-changer-lirc.conf" erstellt.
+Es kann ausgewählt werden welche Buttons im Program-changer angezeigt
+werden sollen.
+Mit dem Button Make Program-changer-lirc.conf wird eine neue
+Program-changer-lirc.conf Datei erstellt.
+Mit dem Button Make KODI Lircmap.xml wird für KODI eine neue Datei
+erstellt.
+Mit dem Button OK wird die Button Auswahl gespeichert und das 
+Programm beendet.
+
+
+Um die Pchanger Menü Taste zu ändern, muss in der Datei:
+/etc/vdr/program-changer/program.changer-lirc.conf
+der Eintrag geändert werden:
+
+begin 
+	prog = Program-Changer 
+	button = KEY_A_V 
+	config = SHOW_HIDE_MENU 
+end 
+
+In der Zeile "button = KEY_A_V" muss der Name "KEY_A_V" mit dem Namen
+der gewünschten Fernbedienungstaste ersetzt werden.
+
+Beispiel:
+
+begin 
+	prog = Program-Changer 
+	button = SUPER_TASTE
+	config = SHOW_HIDE_MENU 
+end 
+
+Der Name der Taste kann entweder in der Datei:
+"/etc/lirc/lircd.conf" ermittelt werden;
+
+oder man kann in einem Terminal den Befehl "irw" eingeben
+und die gewünschte Taste drücken.
+Der Text der dann angezeigt wird muss genau gleich
+bei button eingetragen werden.
+
+Beispiel aus einer lircd Datei:
+
+begin remote
+name  OneForAll
+bits           13
+flags RC5|CONST_LENGTH
+eps            30
+aeps          100
+one           866   909
+zero          866   909
+plead         858
+gap          113721
+min_repeat      1
+toggle_bit_mask 0x800
+frequency    36000
+duty_cycle   50
+
+   begin codes
+     OK				0x114b          # sys_05_command_0b
+     POWER			0x114c     	# sys_05_command_0c
+     SUPER_TASTE		0x114d     	# sys_05_command_0d
+     BLUE			0x114e     	# sys_05_command_0e
+     INFO			0x114f     	# sys_05_command_0f
+
+.......
+
+Maus Emulation:
+
+Das Steuerkreuz bewegt den Mauspfeil.
+Wenn eine Taste länger gedrückt ist, wird die Bewegung schneller.
+Wird die Taste kurz losgelassen oder eine andere Taste gedrückt,
+dann wechselt das Tempo wieder auf langsam.
+Mit der Taste OK wird schnell/langsam ebenfalls ein-/ausgeschaltet,
+wenn länger nichts gedrückt wird, geht es wieder auf normales Tempo.
+Die rote Taste ist ein links Klick, die blaue Taste rechts,
+die grüne Taste Doppelklick.
+Mit channelup/-down wird das Mausrad bewegt.
+Vorwärts-/Rückwärtsspulen ist vor & zurück beim surfen.
+Fenster maximieren geht mit Doppelklick auf den Fensterbalken.
+
+

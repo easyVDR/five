@@ -1,0 +1,23 @@
+#!/bin/bash
+#11.04.14  V 0.1 Bleifuss
+
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+. /usr/lib/vdr/functions/easyvdr-functions-lib         ## common functions
+. /usr/share/easyvdr/setup/easyvdr-setup-defines       ## setup only defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions     ## setup only functions
+. $SETUP/video-setup/easyvdr-video-lib
+CONF_FILE="/etc/vdr/easyvdr/easyvdr-video-settings.conf"
+. $CONF_FILE
+
+
+LOGGER=" logger -t easyvdr-x-hardware-detection-check-display-resolution"
+
+###########  main   ##################
+MESSAGE_TIME=5
+/usr/bin/view_picture $SETUP/images/hardware-detection.jpg $MESSAGE_TIME & #Bild anzeigen
+
+#Bildschirm Daten speichern, damit man prüfen kann ob der Bildschirm gewechselt wurde
+xrandr  --verbose | grep -A 8 EDID > $XRANDR_EDID_FILE
+sleep $MESSAGE_TIME
+touch /tmp/easyvdr_x
+exit 0

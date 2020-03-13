@@ -1,0 +1,106 @@
+#!/bin/bash
+#
+#
+#  xineliboutput_config_audio
+#  to set audio-parameter from xineliboutput automatically
+#
+#  0.0.1 20.12.2012    1st try by michel8
+#  0.0.2 15.01.2013    cleanup $VDR => $CFG_DIR wg. config-loader  C.B.
+#  0.0.3 26.01.2013    Abbruch, wenn die xineliboutput/config nicht vorhanden
+#
+#  michel8 for easyvdr
+#
+############################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+. $SETUP_STATUS                                     # Statusfile auslesen
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Audio "
+BACKTITLE=" Audio Konfiguration fuer easyVDR"
+
+FILENAME="easyvdr-config-audio"
+FILENAMEX="xineliboutput_config_audio"
+FILEVERSIONX="V 0.0.3 vom 26.01.2013"
+SNDLOG="$EASYVDR_LOGDIR/easyvdr-config-audio.log"
+
+xineliboutput_settings_file="$PLUGIN_CFG_DIR/xineliboutput/config"
+
+
+if [[ "x$2" == "x" ]]; then
+      echo "Nur als Tochterscript von easyvdr-config-audio oder als postinst von xineliboutput ausfuehrbar..."
+elif [[ ! -f $xineliboutput_settings_file ]]; then
+      echo "Config-file $xineliboutput_settings_file nicht vorhanden, tue nichts..."
+else
+  if [[ "$1" == "postinst" && "$2" == "AddOn" && "$Audio_configured" == "true" ]]; then
+    echo " " >> $SNDLOG
+    echo "************************************************************" >> $SNDLOG
+    echo "`date` Aufruf aus der postinst von xineliboutput" >> $SNDLOG
+    echo "************************************************************" >> $SNDLOG
+    # in der setup.state sieht es dazu so aus:
+    #Audio_configured_PassThrough="hdmi:CARD=NVidia,DevNo:7"
+    #Audio_configured_Layout="Stereo 2.0"
+  else
+    echo "************************************************************" >> $SNDLOG
+    echo "     ... Aufruf von $FILENAMEX " >> $SNDLOG
+    echo "************************************************************" >> $SNDLOG
+    Audio_configured_PassThrough=$1	# ist das PassThrough-Device
+    Audio_configured_Layout=$2 		# ist das Boxenlayout
+  fi
+    echo "File-Info: $FILENAMEX $FILEVERSIONX" >> $SNDLOG
+
+    if [[ $Audio_configured_Layout == "5.1/Pass Through" || $Audio_configured_Layout == "4.0/Pass Through" || $Audio_configured_Layout == "2.0/Pass Through" ]]; then
+        Audio_configured_Layout="Pass Through"
+    fi
+    echo "---> \"$Audio_configured_Layout\" als Boxenlayout fuer xineliboutput einstellen ..." >> $SNDLOG
+
+    echo "---> Die setup.conf wird fuer Xineliboutput angepasst ..." >> $SNDLOG
+      SetSetupConf xineliboutput.Audio.Compression		100
+      SetSetupConf xineliboutput.Audio.Delay			0
+      SetSetupConf xineliboutput.Audio.Driver			auto
+      SetSetupConf xineliboutput.Audio.Equalizer			"0 0 0 0 0 0 0 0 0 0"
+      SetSetupConf xineliboutput.Audio.Headphone			0
+      SetSetupConf xineliboutput.Audio.Port			"default"
+      SetSetupConf xineliboutput.Audio.SoftwareVolumeControl	1
+      SetSetupConf xineliboutput.Audio.Speakers			"$Audio_configured_Layout"
+      SetSetupConf xineliboutput.Audio.Surround			""
+      SetSetupConf xineliboutput.Audio.Upmix			0
+
+    echo "---> Die $xineliboutput_settings_file wird angepasst ..." >> $SNDLOG
+      sed -i '/audio.synchronization.force_rate/d' $xineliboutput_settings_file
+      sed -i '$aaudio.synchronization.force_rate:48000' $xineliboutput_settings_file
+      sed -i '/audio.synchronization.resample_mode/d' $xineliboutput_settings_file
+      sed -i '$aaudio.synchronization.resample_mode:on' $xineliboutput_settings_file
+      sed -i '/engine.buffers.audio_num_buffers/d' $xineliboutput_settings_file
+      sed -i '$aengine.buffers.audio_num_buffers:500' $xineliboutput_settings_file
+
+    echo "  -> \"default\" als PCM-ausgabedevive in der $xineliboutput_settings_file einstellen ..." >> $SNDLOG
+      sed -i '/audio.device.alsa_default_device/d' $xineliboutput_settings_file
+      echo "audio.device.alsa_default_device:default" >> $xineliboutput_settings_file
+      sed -i '/audio.device.alsa_front_device/d' $xineliboutput_settings_file
+      echo "audio.device.alsa_front_device:default" >> $xineliboutput_settings_file
+      sed -i '/audio.device.alsa_surround40_device/d' $xineliboutput_settings_file
+      echo "audio.device.alsa_surround40_device:default" >> $xineliboutput_settings_file
+      sed -i '/audio.device.alsa_surround51_device/d' $xineliboutput_settings_file
+      echo "audio.device.alsa_surround51_device:default" >> $xineliboutput_settings_file
+
+      sed -i '/audio.output.speaker_arrangement/d' $xineliboutput_settings_file
+      echo "audio.output.speaker_arrangement:$Audio_configured_Layout" >> $xineliboutput_settings_file
+
+      sed -i '/audio.device.alsa_passthrough_device/d' $xineliboutput_settings_file
+      if [[ $Audio_configured_PassThrough != "None" ]]; then
+          echo "audio.device.alsa_passthrough_device:$Audio_configured_PassThrough,AES0=0x6,AES1=0x82,AES2=0x0,AES3=0x2" >> $xineliboutput_settings_file
+          echo "  -> \"audio.device.alsa_passthrough_device:$Audio_configured_PassThrough,AES0=0x6,AES1=0x82,AES2=0x0,AES3=0x2\" " >> $SNDLOG
+                       #PassThrough-Parameter:="hdmi:CARD=NVidia,DevNo:7,AES0=0x6,AES1=0x82,AES2=0x0,AES3=0x2"
+          echo "     in der $xineliboutput_settings_file eingestellt" >> $SNDLOG
+      else
+          echo "  -> kein PassThrough-Device in der $xineliboutput_settings_file eingestellt" >> $SNDLOG
+      fi
+
+    echo "---> Audiokonfiguration von xineliboutput erfolgt"            >> $SNDLOG
+    echo "------------------------------------------------------------" >> $SNDLOG
+    echo "     $FILENAMEX bis zum Ende durchgelaufen."                  >> $SNDLOG
+    echo "------------------------------------------------------------" >> $SNDLOG
+fi

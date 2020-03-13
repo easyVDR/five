@@ -1,0 +1,478 @@
+#!/bin/bash 
+# v 0.2 14.10.16 Bleifuss
+# v 0.3 08.01.16 Bleifuss adding gaming sink
+#
+# wird das Skript mit dem Parameter "GAMING" aufgerufen wird für der Gaming Sink gesetzt
+##########################################
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+. /usr/lib/vdr/functions/easyvdr-functions-lib         ## common functions
+. /usr/share/easyvdr/setup/easyvdr-setup-defines       ## setup only defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions     ## setup only functions
+. /$SETUP_STATUS  
+
+export DISPLAY=$FRONTEND_DISPLAY
+PULSE_SINKS_CONF_TMP="/tmp/pulse-sinks"
+
+LOGGER=" logger -t easyvdr-x-lib-pulseaudio"
+
+#Globale Variablen
+
+MESSAGE_TIME=26
+
+CARD_NR=0               #Pulse Audio Karte
+PROFILE_MAX=20          #Maximal Anzahl der Profile, wird für Array gebraucht
+PROFILE_NR=0            #Nummer des gefundenen Profils
+PROFILE_SC=0            #Index der zu suchenden Profille
+
+FILE_PATH="/etc/xdg/autostart"
+
+#profiles               #Profile der Karten
+#card_names             #
+
+test_profile[0]="output:hdmi-stereo"
+test_profile[1]="output:hdmi-surround"
+test_profile[2]="output:hdmi-stereo-extra1"
+test_profile[3]="output:hdmi-surround-extra1"
+test_profile[4]="output:hdmi-stereo-extra2"
+test_profile[5]="output:hdmi-surround-extra2"
+test_profile[6]="output:hdmi-stereo-extra3"
+test_profile[7]="output:hdmi-surround-extra3"
+test_profile[8]="output:hdmi-stereo-extra4"
+test_profile[9]="output:hdmi-surround-extra4"
+test_profile[10]="output:iec958-stereo"
+test_profile[11]="output:analog-stereo"
+test_profile[12]="output:analog-surround-40"
+test_profile[13]="output:analog-surround-41"
+test_profile[14]="output:analog-surround-50"
+test_profile[15]="output:analog-surround-51"
+test_profile[16]="output:analog-surround-70"
+test_profile[17]="output:analog-surround-71"
+#test_profile[3]="output:analog-stereo+input:analog-stereo"
+#test_profile[3]="output:hdmi-stereo-extra1"
+
+##########################################
+#Kartennamen feststellen
+function get_card_name {
+CARDS=$(( $(pactl list cards | grep -c "#") -1 ))
+
+if [ $CARDS -lt 0 ];then
+ #Keine Soundkarte vorhanden
+ $LOGGER "no sink found"
+ save_no_sinks
+ exit 0
+fi
+
+for (( i=0; i<=$CARDS; i++ ));
+ do
+  if [ $(pactl list short cards | head -$(( $i + 1 ))l | tail -1l | cut -f1) -eq $i ] ;then
+   card_names[$i]=$(pactl list short cards | head -$(( $i + 1 ))l | tail -1l | cut -f2)
+  fi
+ done
+}
+
+##########################################
+#Profile der Karten ermitteln
+function get_card_profiles {
+ CARD_NR=0
+ while [ ${card_names[$CARD_NR]} ]
+ do
+  PROFILE_SC=0
+  profiles[$CARD_NR]="X"
+  card_analog[$CARD_NR]="no"
+  card_digital[$CARD_NR]="no"
+  
+  while [ ${test_profile[$PROFILE_SC]} ];
+  do
+   #Testen ob das Profil vorhanden ist
+   pactl set-card-profile  $CARD_NR  ${test_profile[$PROFILE_SC]} 2> /dev/zero
+   if [ $? -eq 0 ] ;then
+    get_connected_device ${card_names[$CARD_NR]} ${test_profile[$PROFILE_SC]}
+    #Sink abschalten
+    pactl set-card-profile $CARD_NR off
+    if [ ${profiles[$CARD_NR]} == "X" ];then
+     profiles[$CARD_NR]="${test_profile[$PROFILE_SC]}"
+     profile_connected_device[$CARD_NR]=$connected_device
+   else
+     profiles[$CARD_NR]="${profiles[$CARD_NR]};${test_profile[$PROFILE_SC]}"
+     profile_connected_device[$CARD_NR]="${profile_connected_device[$CARD_NR]};$connected_device"
+    fi
+   fi
+
+  PROFILE_SC=$(( $PROFILE_SC + 1)) 
+
+ done
+   #Testen ob Analog oder Digital
+   echo ${profiles[$CARD_NR]} | grep analog
+   if [ $? -eq 0 ];then
+     card_analog[$CARD_NR]="yes"
+   fi
+   echo ${profiles[$CARD_NR]} | grep hdmi
+   if [ $? -eq 0 ];then
+     card_digital[$CARD_NR]="yes"
+   fi
+   echo ${profiles[$CARD_NR]} | grep iec958
+   if [ $? -eq 0 ];then
+     card_digital[$CARD_NR]="yes"
+   fi
+  CARD_NR=$(( $CARD_NR + 1))
+ done
+}
+
+##########################################
+#Alle gefundenen Ausgabegeräte Speichern
+function save_all_sinks {
+CARD_NR=0
+PROFILE_NR=0
+
+echo "#!/bin/bash" > $PULSE_SINKS_CONF_TMP
+echo "# V 0.3 27.01.17 Bleifuss" >> $PULSE_SINKS_CONF_TMP
+echo "# Pulseaudio Daten" >> $PULSE_SINKS_CONF_TMP
+echo " " >> $PULSE_SINKS_CONF_TMP
+
+PROFILE_CNT=0
+
+echo "# Name der gefundenen Karten" >>$PULSE_SINKS_CONF_TMP
+echo "# CARD_NAME Hersteller Name" >>$PULSE_SINKS_CONF_TMP
+echo "# CARD_PULSEAUDIO_NAME Pulseaudio Name" >>$PULSE_SINKS_CONF_TMP
+echo " " >> $PULSE_SINKS_CONF_TMP
+ i=0
+ while [ ${card_names[$i]} ]
+ do
+  vendor_name=$(pactl list cards | grep ${card_names[$i]} -A30 | grep -m1 device.vendor.name | cut -d"=" -f2 | tr -d "\"")
+  echo "CARD_NAME[$i]=\"$vendor_name, $(pactl list cards | grep ${card_names[$i]} -A30 | grep -m1 "device.description" | cut -d"=" -f2 | tr -d "\"" | awk '{ print $1" "$2" "$3}') \"" >>$PULSE_SINKS_CONF_TMP
+  echo "CARD_PULSEAUDIO_NAME[$i]=\"${card_names[$i]}\"" >>$PULSE_SINKS_CONF_TMP
+  echo "CARD_DIGITAL[$i]=\"${card_digital[$i]}\"" >>$PULSE_SINKS_CONF_TMP
+  echo "CARD_ANALOG[$i]=\"${card_analog[$i]}\"" >>$PULSE_SINKS_CONF_TMP
+  echo "CARD_OUTPUT_PROFILE[$i]=\"${profiles[$i]}\"" >>$PULSE_SINKS_CONF_TMP
+  echo "CARD_PROFILE_OPTIONS[$i]=\"${card_profile_options[$i]}\"" >>$PULSE_SINKS_CONF_TMP
+  echo "CARD_OUTPUT_PROFILE_CONNECTED_DEVICE[$i]=\"${profile_connected_device[$i]}\"" >>$PULSE_SINKS_CONF_TMP
+  i=$(( i + 1))
+ done
+}
+##########################################
+#Keine Ausgabegeräte gefunden
+function save_no_sinks {
+ touch "/tmp/no-pulse-sinks"
+ touch /tmp/pulse-config-ready
+}
+
+
+#######################################################################################
+function get_pulseaudio_capabilities {
+
+ get_card_name
+
+ # Alle Sinks abschalten
+ for (( i=0; i<=$CARDS; i++ ));
+ do
+  pactl set-card-profile ${card_names[$i]} off 2> /dev/zero
+ done
+
+ get_card_profiles
+}
+#######################################################################################
+function pulseaudio_setup {
+ /usr/bin/view_picture $SETUP/images/hardware-detection.jpg $MESSAGE_TIME &
+ get_pulseaudio_capabilities
+
+ if [ -e /tmp/pulse-x-lib-function ]; then
+  read CARD_NR PROFILE X_FUNCTION PARAMETER </tmp/pulse-x-lib-function
+  $LOGGER "$CARD_NR $PROFILE $X_FUNCTION $PARAMETER"
+
+  $X_FUNCTION $CARD_NR $PROFILE
+ fi
+
+ save_all_sinks
+
+ touch /tmp/pulse-config-ready
+}
+
+#######################################################################################
+function disable_sinks {
+for RESULT in $(echo $card_disable_sinks|tr ";" " ")
+do
+ if [ $card_disable_sinks != "none" ]; then
+  card_name=$RESULT
+  pacmd set-card-profile $card_name off 2> /dev/zero
+  if [ $? -ne 0 ];then
+   $LOGGER "error pacmd set-card-profile $card_name off"
+   return 1
+  fi
+ fi
+done
+}
+#######################################################################################
+# Parameter 1 Profil Name
+# Return connected_device
+function get_connected_device {
+card_name=$1
+output_profile=$2
+
+number=$(echo $output_profile |tr -d "a-z" |tr -d ":-")
+if [ ! $number ];then 
+ number=0
+fi
+
+profile=$(echo $output_profile|cut -d":" -f2|cut -d"-" -f1)'-'$(echo $output_profile|cut -d":" -f1)'-'$(echo $number)":"
+
+connected_device=$(pactl list cards | grep -A90 $card_name | grep -A 4 -i "$profile" | grep -m1 -A1 "device.icon_name" | grep -m1 device.product.name | tr -d "\"" | cut -d "=" -f2)
+
+if [ ! $(echo $connected_device|awk '{ print $1}') ];then
+ connected_device="none"
+fi
+}
+############## Funktionen die vom Bash Setup verwendet werden ################
+##########################################
+#Testen was die Karte kann
+# 1 Parameter Karten Nummer
+# 2 Parameter Profil Name
+
+function test_digital_options {
+
+   pactl set-card-profile  $CARD_NR  $2 2> /dev/zero
+
+   default_sink=$(echo ${card_names[$CARD_NR]} | sed s/card/output/)"."$(echo $card_output_profile | cut -d ":" -f2)
+
+   #default sink setzen
+   pactl set-default-sink $default_sink 2> /dev/zero
+
+   #Testen ob ac3 dts usw vorhanden ist
+   INDEX=$(pacmd list | grep -m 1 "* index" | cut -d ":" -f2 | cut -d " " -f2)
+   pactl set-sink-formats  $INDEX "pcm" 2> /dev/zero
+   if [ $? -eq 0 ] ;then
+    card_profile_options[$CARD_NR]="${card_profile_options[$CARD_NR]};pcm"
+   fi
+   pactl set-sink-formats $INDEX "dts-iec61937" 2> /dev/zero
+   if [ $? -eq 0 ] ;then
+    card_profile_options[$CARD_NR]="${card_profile_options[$CARD_NR]};dts-iec61937"
+   fi
+   pactl set-sink-formats $INDEX "ac3-iec61937" 2> /dev/zero
+   if [ $? -eq 0 ] ;then
+    card_profile_options[$CARD_NR]="${card_profile_options[$CARD_NR]};ac3-iec61937"
+   fi
+   pactl set-sink-formats $INDEX "eac3-iec61937" 2> /dev/zero
+   if [ $? -eq 0 ] ;then
+    card_profile_options[$CARD_NR]="${card_profile_options[$CARD_NR]};eac3-iec61937"
+   fi
+ #  pactl set-sink-formats $INDEX "mpg-iec61937" 2> /dev/zero
+#   if [ $? -eq 0 ] ;then
+#    card_profile_options[$CARD_NR]="${card_profile_options[$CARD_NR]};mpg-iec61937"
+#   fi
+   
+# ; any; ; mpg-iec61937"
+}
+
+#######################################################################################
+#Parameter
+#1 Nicht verwendet
+#2 TV/GAMING
+#3 Känale:
+#A2->2 Kanäle Analog Rauschen
+#A4->4 Kanäle Analog Rauschen
+#A6
+#A8
+#D -> passthrough oder dekodieren des ac3/DTS Tons, je nach gesetztem Audio Profil 
+function sound_test {
+#Parameter
+#pulsaudio_name=${card_names[$CARD_NR]}
+#output_profile=$CARD_OUTPUT_PROFILE
+#output_profile_options=$CARD_PROFILE_OPTIONS
+
+ #default_sink=$(echo ${card_names[$CARD_NR]} | sed s/card/output/)"."$(echo $card_output_profile | cut -d ":" -f2)
+. /etc/vdr/pulseaudio.conf
+ set_default_sink $PARAMETER
+
+ case $1 in
+  "A2") $LOGGER "speaker-test Stereo"   
+        speaker-test -l2 -c2 
+    ;;
+  "A4") $LOGGER "speaker-test 40"
+        speaker-test -l2 -c4
+    ;;
+  "A6") $LOGGER "speaker-test 5.1"
+        speaker-test -l2 -c6 
+    ;;
+  "A8") $LOGGER "speaker-test 7.1"
+        speaker-test -l2 -c8
+    ;;
+  "D")  $LOGGER "cvlc --force-dolby-surround"
+        DISPLAY=$FRONTEND_DISPLAY cvlc --force-dolby-surround 1  $SETUP/audio-setup/tools/www_lynnemusic_com_surround_test.ac3 &
+        sleep 10
+        pkill speaker-test >/dev/null 2>&1
+        DISPLAY=$FRONTEND_DISPLAY cvlc --force-dolby-surround 1  $SETUP/audio-setup/tools/www_lynnemusic_com_surround_test.ac3 &
+        sleep 10
+    ;;
+ esac
+  pkill speaker-test >/dev/null 2>&1&
+  pkill vlc >/dev/null 2>&1&
+}
+#######################################################################################
+#Parameter
+#1=GAMING -> GAMING Profil,1=TV ->TV Profil
+
+
+function set_default_sink {
+
+if [ $1 == "GAMING" -a $GAMING_CARD_PULSEAUDIO_NAME != "none" ]; then
+  $LOGGER "set pulseaudio gaming sink"
+  pulsaudio_name=$GAMING_CARD_PULSEAUDIO_NAME
+  output_profile=$GAMING_CARD_OUTPUT_PROFILE
+  output_profile_options=$GAMING_CARD_PROFILE_OPTIONS
+  disable_sinks=$GAMING_CARD_PULSEAUDIO_NAME_NOT_USED
+else
+#TV
+  $LOGGER "set pulseaudio sink"
+  pulsaudio_name=$CARD_PULSEAUDIO_NAME
+  output_profile=$CARD_OUTPUT_PROFILE
+  output_profile_options=$CARD_PROFILE_OPTIONS
+  disable_sinks=$CARD_PULSEAUDIO_NAME_NOT_USED
+fi
+
+
+default_sink=$(echo $pulsaudio_name | sed s/card/output/)"."$(echo $output_profile | cut -d ":" -f2)
+
+#Profil setzen
+pactl set-card-profile $pulsaudio_name $output_profile 2> /dev/zero
+if [ $? -ne 0 ];then
+  $LOGGER "error pactl set-card-profile $pulsaudio_name $output_profile"
+  return 1
+fi
+
+#default sink setzen
+pactl set-default-sink $default_sink 2> /dev/zero
+
+if [ $? -ne 0 ];then
+   $LOGGER "error pactl set-default-sink $default_sink"
+   return 1
+fi
+
+###
+pactl set-default-source $default_sink.monitor 
+
+if [ $? -ne 0 ];then
+  $LOGGER "error pactl set-default-source $default_sink.monitor"
+  return 1
+fi
+
+#Optionen setzen
+ if [ $output_profile_options != "none" ]; then
+  pactl set-sink-formats $(pacmd list | grep -m 1 "* index" | cut -d ":" -f2 | cut -d " " -f2) $output_profile_options 2> /dev/zero
+  if [ $? -ne 0 ] ;then
+    $LOGGER pactl set-sink-formats @DEFAULT_SINK@ $output_profile_options
+    return 1
+  fi
+ fi
+#Lautstärke setzen
+ pacmd set-sink-volume @DEFAULT_SINK@ 0x10000 2> /dev/zero
+ if [ $? -ne 0 ];then
+   $LOGGER "error set-sink-volume @DEFAULT_SINK@ 100 $default_sink"
+   return 1
+ fi
+}
+
+#######################################################################################
+function set_default_sink_combined {
+
+#Neue Conf einlesen
+. /etc/vdr/pulseaudio.conf 
+card_pulsaudio_name=$CARD_PULSEAUDIO_NAME
+card_output_profile=$CARD_OUTPUT_PROFILE
+card_output_profile_options=$CARD_PROFILE_OPTIONS
+
+ #Profile einlesen
+ i=0
+ 
+ for profile in $(echo $CARD_OUTPUT_PROFILE|tr ";" " ")
+ do
+  profiles[$i]=$profile
+  i=$(( $i+1 ))
+ done
+
+ i=0
+ for card_name in $(echo $CARD_PULSEAUDIO_NAME|tr ";" " ")
+ do
+  #Profil setzen
+  pactl set-card-profile $card_name ${profiles[$i]} 2> /dev/zero
+  if [ $? -ne 0 ];then
+    $LOGGER "error pactl set-card-profile $card_name ${profiles[$i]}"
+    return 1
+  fi
+  #Alsa Device Name ermitteln
+  alsa_device=$(pacmd list sinks | grep -m1 -A18 "<$card_name>" | grep -m1 "alsa.device "| cut -d "=" -f2 | tr -d "\"" | tr -d " ")
+  alsa_card=$(pacmd list sinks | grep -m1 -A18 "<$card_name>" | grep -m1 "alsa.card "| cut -d "=" -f2 | tr -d "\"" | tr -d " ")
+
+  pactl set-card-profile $card_name off 2> /dev/zero
+
+  pacmd load-module module-alsa-sink sink_name=comb_sink$i device=hw:$alsa_card,$alsa_device
+  if [ $? -ne 0 ];then
+     $LOGGER "error pacmd load-module module-alsa-sink sink_name=comb_sink$i device=hw:$alsa_card,$alsa_device"
+     return 1
+  fi
+  #Profil setzen
+  pactl set-card-profile $card_name ${profiles[$i]} 2> /dev/zero
+  if [ $? -ne 0 ];then
+    $LOGGER "error pactl set-card-profile $card_name ${profiles[$i]}"
+    return 1
+  fi
+
+  if [ $slaves ];then
+   slaves=$slaves,comb_sink$i
+  else
+   slaves=comb_sink$i
+  fi
+  i=$(( $i+1 ))
+ done
+
+ pacmd load-module module-combine-sink sink_name=combined slaves=$slaves 2> /dev/zero
+ if [ $? -ne 0 ];then
+   $LOGGER "error pacmd load-module module-combine-sink sink_name=combined slaves=$slaves"
+
+   return 1
+ fi
+
+ pacmd set-default-sink combined 2> /dev/zero
+ if [ $? -ne 0 ];then
+   $LOGGER "error pactl set-default-sink combined"
+   return 1
+ fi
+
+#Lautstärke setzen
+# pacmd set-sink-volume @DEFAULT_SINK@ 0x10000 2> /dev/zero
+# if [ $? -ne 0 ];then
+#   $LOGGER "error set-sink-volume @DEFAULT_SINK@ 100 $default_sink"
+#   return 1
+# fi
+}
+
+
+################################### Main #####################################
+
+#pulseaudio -k
+#sleep 0.1
+#Pulseaudio wieder starten
+#/usr/bin/pulseaudio --start --log-target=syslog
+#pactl list cards 2> /dev/zero
+#sleep 2
+
+if [ -e /tmp/pulse-x-lib-function ]; then
+ $LOGGER "start pulseaudio setup"
+ pulseaudio_setup
+ $LOGGER "pulseaudio setup beendet"
+else
+ if [ -e /etc/vdr/pulseaudio.conf ] ;then 
+ . /etc/vdr/pulseaudio.conf
+   if [ $SINK_COMBINED == "yes" ]; then
+    $LOGGER "set pulseaudio combined sink"
+    set_default_sink_combined
+   else
+    if [ "X"$1 == X"GAMING" -a $GAMING_CARD_PULSEAUDIO_NAME != "none" ]; then
+     set_default_sink "GAMING"
+    else
+     set_default_sink "TV"
+    fi
+    disable_sinks
+   fi
+ fi
+fi
+
+

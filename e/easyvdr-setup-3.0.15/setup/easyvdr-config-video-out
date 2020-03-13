@@ -1,0 +1,109 @@
+#!/bin/bash
+#
+#  Konfiguration der Videoausgabe fuer easyVDR
+#
+#  Captain Beefheart
+#  v.0.6.3
+#
+#  21.11.11 C.B. added easyvdr-packet-fixes
+#  29.01.13 C.B. removed easyvdr-paket-fixes  
+#  29.09.13 Bleifuss2 add Intel
+#################################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Video-Ausgabe "
+TITLE2=" Neue Video-Ausgabe installieren "
+BACKTITLE=" Video-out Konfiguration fuer easyVDR"
+
+############################### functions ##########################################
+
+#####
+New_Video_out()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE2"\
+       --defaultno\
+       --yes-label " neu installieren "\
+       --no-label " abbrechen "\
+       --yesno "\n\n\
+                           !!ACHTUNG!! \n\n\
+         Wenn Sie  \"neue Video Ausgabe installieren\"\n\
+              auswählen, wird Ihre vorherige Konfiguration\n\
+                  unwiederbringlich ueberschrieben!" $DIA_BOX2_SIZE
+YES_NO=$?
+clear
+return $YES_NO
+}
+
+#####
+Run_Auto()
+{
+$DETECT/easyvdr-detect -Vid_Out
+}
+
+#####
+Get_Setup_Stat()
+{
+USE_CNF_FILE=$(cat $SETUP_STATUS | grep Vid_Out_config  | cut -d" " -f3 )
+. $SETUP_STATUS
+}
+
+#####
+Configure_Output_Meta()
+{
+## metapaket abhaengig
+case $easyvdr_video_out in
+     dvbsd) [ -f $HW_SETUP_SP/Meta_dvbsd-out       ] && $HW_SETUP_SP/Meta_dvbsd-out      ;;
+     dvbhd) [ -f $HW_SETUP_SP/Meta_dvbhd-out       ] && $HW_SETUP_SP/Meta_dvbhd-out      ;;
+  headless) [ -f $HW_SETUP_SP/Meta_headless        ] && $HW_SETUP_SP/Meta_headless       ;;
+       ehd) [ -f $HW_SETUP_SP/Meta_ehd-out         ] && $HW_SETUP_SP/Meta_ehd-out        ;;
+    pvr350) [ -f $HW_SETUP_SP/Meta_pvr350-out      ] && $HW_SETUP_SP/Meta_pvr350-out     ;;
+    nvidia) [ -f $HW_SETUP_SP/Meta_nvidia-out      ] && $HW_SETUP_SP/Meta_nvidia-out     ;;
+standard-x) [ -f $HW_SETUP_SP/Meta_standard-x-out  ] && $HW_SETUP_SP/Meta_standard-x-out ;;
+     intel) [ -f $HW_SETUP_SP/Meta_intel-out       ] && $HW_SETUP_SP/Meta_intel-out      ;;    
+esac
+}
+
+#####
+Configure_Output_HW()
+{
+## hw abhaengig
+for CNF_FILE in $USE_CNF_FILE  
+  do
+    [ -f $HW_SETUP_SP/$LIB_NMK_$CNF_FILE ] && $HW_SETUP_SP/$LIB_NMK_$CNF_FILE
+  done
+}
+
+#####
+Write_Status()     ## Setup.State schreiben ##
+{
+sed -i '/"*easyvdr-config-video-out"*/d' $SETUP_STATUS
+echo "# `date` easyvdr-config-video-out zuletzt ausgefuehrt" >> $SETUP_STATUS
+sed -i '/Video_out_configured"*/d' $SETUP_STATUS
+echo "Video_out_configured=\"true\"" >> $SETUP_STATUS
+}
+
+######################################### main ####################################################
+
+FORCE_FLAG=$1
+
+case $FORCE_FLAG in
+     -f) New_Video_out
+         if (( $? == 0 )); then
+           Run_Auto
+         fi
+           Get_Setup_Stat
+           Configure_Output_HW
+           Configure_Output_Meta;;
+      *) log --silent "$SETUP/easyvdr-config-video-out wird gestartet..."
+         Get_Setup_Stat
+         Configure_Output_HW 
+         Configure_Output_Meta;;
+esac
+Write_Status

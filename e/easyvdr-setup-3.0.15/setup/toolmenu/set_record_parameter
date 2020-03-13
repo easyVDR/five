@@ -1,0 +1,202 @@
+#!/bin/bash
+# 
+# Aendern der Dateiparameter fuer neue Aufnahmen - 4 easyVDR
+#
+#
+# v.0.2    02.02.13  Captain_Beefheart
+# v.0.2.1  11.02.13  Captain_Beefheart
+#
+#
+#################################################
+
+################################# defines ##########################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+TITLE=" Dateiparameter fuer neue Aufnahmen - easyVDR $EASYVDR_VERSION "
+TITLE1=" Aendern der Dateirechte fuer neue Aufnahmen - easyVDR $EASYVDR_VERSION "
+TITLE2=" Aendern der Dateigroesse fuer neue Aufnahmen - easyVDR $EASYVDR_VERSION "
+BACKTITLE=" Aufnahmeparameter " 
+
+MARKER="# inserted by easyvdr"
+VDR_DEFAULTS="/etc/default/vdr"
+
+HELP1="ch_record_params_help"
+
+##################### functions #####################################################
+
+Main_Menu()
+{
+REPEAT="true"
+while [[ $REPEAT == "true" ]]
+  do
+    RECORD_MENUITEM=$(dialog \
+        --backtitle "$BACKTITLE"\
+        --title "$TITLE"\
+        --cancel-label " Menue beenden "\
+        --menu "\n\
+          Steuerung mit       [  UP  ] [ DOWN ] \n\
+          Zum Auszuwaehlen    <  OK  > \n\
+          Zum Verlassen     < Abbrechen > "  $DIA_BOX_SIZE\
+        Setze_Rechte  " Nutzerrechte der Aufnahmen " \
+        Setze_Groesse " Maximale Filegroesse der Aufnahmen" 3>&1 1>&2 2>&3 3>&- )
+    OK_CANCEL=$?
+    clear
+
+    case $OK_CANCEL in
+      0) Run_Selected; clear     ;;
+      1) clear; REPEAT="false"   ;;
+    esac
+  done
+}
+
+#####
+Run_Selected()
+{
+case $RECORD_MENUITEM in
+    Setze_Rechte) Init_R_Checkbox
+                  File_Rights_Checkbox
+                  REPEAT="true"  ;;
+   Setze_Groesse) Init_S_Checkbox
+                  File_Size_Checkbox
+                  REPEAT="true"  ;;
+esac
+}
+
+#####
+Init_R_Checkbox()
+{
+UMASK_STRING=$(grep "$MARKER" $VDR_DEFAULTS)
+
+if [ -z "$UMASK_STRING" ]
+  then
+    UMASK_DATA="not_set"
+  else
+    UMASK_DATA=$(echo "$UMASK_STRING" | cut -d" " -f2 )
+fi
+
+SWITCH1="off";  SWITCH2="off";  SWITCH3="off";  SWITCH4="off"
+case $UMASK_DATA in
+      not_set) SWITCH1="on";;
+         0022) SWITCH2="on";;
+         0002) SWITCH3="on";;
+         0000) SWITCH4="on";;
+esac
+}
+
+#####
+File_Rights_Checkbox()
+{
+REPEAT="true"
+while [[ $REPEAT == "true" ]]
+  do
+    OK_CANCEL=1
+    SEL_OPTION=$(dialog \
+      --backtitle "$BACKTITLE" \
+      --title "$TITLE1" \
+      --extra-button\
+      --extra-label " Hilfe "\
+      --ok-label " weiter "\
+      --radiolist "\n\
+          Bitte waehlen Sie einen Parameter \n\
+          Auswaehlen mit    [Leertaste] \n\
+          Ubernehmen mit       < OK > \n\
+          Infos mit           < Hilfe  > \n\
+          Beenden mit         <abbrechen> \n\n\n"  $DIA_BOX_SIZE\
+       No_Set    "VDR-default                         "   "$SWITCH1" \
+       0022      "Files: \"644\" - Dirs: \"755\"      "   "$SWITCH2" \
+       0002      "Files: \"664\" - Dirs: \"775\"      "   "$SWITCH3" \
+       0000      "Files: \"666\" - Dirs: \"777\"      "   "$SWITCH4"  3>&1 1>&2 2>&3 3>&- )
+    OK_CANCEL=$?
+    clear
+
+    case $OK_CANCEL in
+        0) Run_R_Install;    REPEAT="false" ;;
+        1)                   REPEAT="false" ;;
+        3) Show_Help $HELP1; REPEAT="true"  ;;
+        *)                   REPEAT="true"  ;;
+    esac
+  done
+}
+
+#####
+Run_R_Install()
+{
+if [ ! -z "$UMASK_STRING" ]; then
+  grep -v "$MARKER" $VDR_DEFAULTS > /tmp/.VDR_DEFAULTS.tmp
+  mv -f /tmp/.VDR_DEFAULTS.tmp  $VDR_DEFAULTS
+fi
+
+case $SEL_OPTION in
+      No_Set) x=0 ;;
+        0022) echo "umask $SEL_OPTION  $MARKER" >> $VDR_DEFAULTS ;;
+        0002) echo "umask $SEL_OPTION  $MARKER" >> $VDR_DEFAULTS ;;
+        0000) echo "umask $SEL_OPTION  $MARKER" >> $VDR_DEFAULTS ;;
+esac
+}
+
+#####
+Init_S_Checkbox()
+{
+FILESIZE=$(grep "MaxVideoFileSize" $CFG_DIR/setup.conf | cut -d" " -f3)
+SWITCH1="off"; SWITCH2="off"; SWITCH3="off"; SWITCH4="off"; SWITCH5="off"; SWITCH6="off"; SWITCH7="off"; SWITCH8="off"
+case "$FILESIZE" in
+      2000) SWITCH1="on";;
+      4000) SWITCH2="on";;
+      8000) SWITCH3="on";;
+     16000) SWITCH4="on";;
+     24000) SWITCH5="on";;
+     32000) SWITCH6="on";;
+esac
+}
+
+#####
+File_Size_Checkbox()
+{
+REPEAT="true"
+while [[ $REPEAT == "true" ]]
+  do
+    OK_CANCEL=1
+    SEL_SIZE=$(dialog \
+      --backtitle "$BACKTITLE" \
+      --title "$TITLE2" \
+      --extra-button\
+      --extra-label " Hilfe "\
+      --ok-label " weiter "\
+      --radiolist "\n\
+          Aktuelle Groesse: $FILESIZE MByte\n\n "  $DIA_BOX_SIZE\
+       2000      " 2GB alter Standard                 "   "$SWITCH1" \
+       4000      " 4GB FAT32 & reicht für ~2Std DVB-T "   "$SWITCH2" \
+       8000      " 8GB 2:30Std Aufnahme SD            "   "$SWITCH3" \
+      16000      "16GB 2:30Std Aufnahme HD            "   "$SWITCH4" \
+      24000      "24GB  ~ 5Std Aufnahme HD            "   "$SWITCH5" \
+      32000      "32Gb ..wers denn brauch..           "   "$SWITCH6"  3>&1 1>&2 2>&3 3>&- )
+    OK_CANCEL=$?
+    clear
+
+    case $OK_CANCEL in
+        0)  SetSetupConf    "MaxVideoFileSize" "$SEL_SIZE"
+            SetVDRSetupXML  "MaxVideoFileSize" "$SEL_SIZE"
+            REPEAT="false" ;;
+        1)                   REPEAT="false" ;;
+        3) Show_Help $HELP1; REPEAT="true"  ;;
+        *)                   REPEAT="true"  ;;
+    esac
+  done
+}
+
+#####
+Show_Help()
+{
+HELP=$1
+HELPFILE="$SETUP_HELP_DIR/$HELP" 
+dialog --textbox $HELPFILE   $DIA_BOX2_SIZE ; clear
+}
+
+######################################### main ####################################################
+
+Main_Menu
+

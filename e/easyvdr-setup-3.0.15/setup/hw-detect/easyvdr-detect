@@ -1,0 +1,452 @@
+#!/bin/bash
+#set -vx
+#
+#
+# MFG 4 easyVDR
+#
+# Erweitert von michel8 und Captain_Beefheart
+#
+# v 0.5.2   02.09.2011 mit einheitlichem Logging
+# v 0.5.4   18.09.11  Anzahl der Uebergabeparameter auf 4 erweitert
+# V 0.6     29.09.11  Behandlung von Kommentarzeilen in Menue ( Is_Item()) )
+# V 0.7.2   10.10.11  Setzte "default" auf 1ste erkannte HW ( Set_Def_Item() ) & cleanup
+# V 0.8     27.10.11  einzel Aufruf " video-in " zugefügt
+# V 0.8.1   21.11.11  Anzahl der Uebergabeparameter auf 5 erweitert - fuer allgemeine Einst einer hw-lib
+# V 0.9     16.12.11  Erweiterung fuer OSD
+# V 0.10    23.01.12  Erweiterung für OSD II / kein VDR Neustart
+# V 0.11    26.01.12  bugfix
+# V 0.11    28.04.12  cleanup
+# V 0.2     10.05.12  added keymap support
+# V 0.2.1   13.05.12  small fix
+# V 0.3     30.03.12  better help
+# V 0.3.1   04.10.12  mini info "suche Hardware" & little cleanup
+# V 0.4     11.02.13  C.B.
+# V 1.0     20.03.14  michel8: Mit dem HW_INST_FILE Logfile zuerst loeschen, damit Fehlererkennung moeglich
+# V 1.1     14.05.15  michel8: Unbekannte Video-In melden und Korrigieren der Video-In-Eintraege in der setup.state
+# V 1.2     22.03.16  michel8: Unbekannte Video-In verbessert
+################################################
+
+#################### defines  ##################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+BACKTITLE=" easyVDR - Hardware Erkennung"
+FILENAME="easyvdr-detect"
+FILEVERSION="V 1.0 vom 20.03.2014"
+LOGFILE="$EASYVDR_LOGDIR/easyvdr-HW-detect.log"             # eigenes logfile
+RUN_FLAG=$1
+
+echo "" >> $APT_GET_LOG
+echo "===> ########################################################################################" >> $APT_GET_LOG
+echo "===> `date`: Hardware Erkennung ($FILENAME $RUN_FLAG) gestartet..." >> $APT_GET_LOG
+echo "===>" >> $APT_GET_LOG
+
+echo " "                                                                  >> $LOGFILE
+echo "-------------------------------------------------- "                >> $LOGFILE
+echo "File-Info: $FILENAME $FILEVERSION"                                  >> $LOGFILE
+log --silent "Hardware Erkennung ($FILENAME $RUN_FLAG) gestartet..."
+
+. $DETECT/chk-lib
+HW_INSTALL_SCRIPT="$DETECT/easyvdr-detect_install"
+
+#########################  functions   ############################
+#####
+Detect()
+{
+INFO_TEXT="\Zb\Z1         suche Hardware"
+MiniInfo " working " "$BACKTITLE" "\n\n\n $INFO_TEXT"; sleep 1
+
+. $hw_lib    # aktuelle lib aus ./hw-lib reinholen
+
+log --silent "===> Starte HW-Erkennung fuer $lib_name (HW-Lib $lib_version) ..."
+echo "log --silent \" Suche $lib_name ...\""      >> $HW_INSTALL_SCRIPT
+
+unset F_HW_MENU_AR
+unset F_INDEX_STR
+LS_No=1; AR_Element=1
+echo "# Folgende $lib_name wurden gefunden:"            >> $HW_INSTALL_SCRIPT
+while [[ "${hw_ident[$LS_No]}" != "FINITO" ]]
+  do
+    HW_IDENT="${hw_ident[$LS_No]}"
+    DET_METHOD="${det_method[$LS_No]}"
+    HW_NAME="${hw_name[$LS_No]}"
+    if [[ "$HW_IDENT" != "" ]]; then
+      $DET_METHOD "$HW_IDENT"
+      Found_Flag=$?
+      if (( $Found_Flag == 0  )); then
+        F_HW_MENU_AR[$AR_Element]=$LS_No;     ((++AR_Element))     ## erste/dritte/fuenfte/...   Element => der Index
+        F_INDEX_STR="$F_INDEX_STR $LS_No"                          ## Index aller gefundenen in String
+        F_HW_MENU_AR[$AR_Element]=$HW_NAME;   ((++AR_Element))     ## zweite/vierte/sechste/...  Element => der Name
+        echo "#     $HW_NAME"                           >> $HW_INSTALL_SCRIPT
+      fi
+    fi
+  ((++LS_No))
+done                                     # Ende der Listenelemente erreicht
+unset hw_ident
+
+SIZE_AR=${#F_HW_MENU_AR[@]}
+if [ "$hw_lib" == "$DETECT/hw-lib/20_video_in_hw" ]; then
+    . $SETUP_STATUS
+    if [[ $(grep -c "DVB: registering new adapter" /var/log/syslog) == 0 && "$Video_in_configured" == "true" ]]; then
+      cp -f /var/log/syslog.1 /tmp/syslog
+    else
+      cp -f /var/log/syslog /tmp/syslog
+    fi
+    if [ $(grep -c "] Command line: BOOT_IMAGE=/boot/vmlinuz" /tmp/syslog) != 0 ]; then
+      SplitAt=$(egrep -n "] Command line: BOOT_IMAGE=/boot/vmlinuz" /tmp/syslog | tail -1 | cut -d":" -f1)
+      awk "NR==$SplitAt,EOF" /tmp/syslog > /tmp/syslog.tail
+    else
+      mv -f /tmp/syslog  /tmp/syslog.tail
+    fi
+    FoundNo=$(grep "DVB: registering new adapter" /tmp/syslog.tail | sed -e s'/.*DVB: registering new adapter/adapter/g'|uniq -c|grep -c adapter)
+    let FoundNo=$FoundNo+1-$SIZE_AR/2
+    if [ $FoundNo -gt 0 ]; then
+    HW_NAME="$FoundNo Unbekannte(s) DVB Device(s)"
+    let AR_Element=$AR_Element-2
+        F_HW_MENU_AR[$AR_Element]=100;     ((++AR_Element))     ## erste/dritte/fuenfte/...   Element => der Index
+        F_INDEX_STR="$F_INDEX_STR 100"                          ## Index aller gefundenen in String
+        F_HW_MENU_AR[$AR_Element]=$HW_NAME;   ((++AR_Element))  ## zweite/vierte/sechste/...  Element => der Name
+        echo "#     $HW_NAME"                                   >> $HW_INSTALL_SCRIPT
+        let SIZE_AR=$SIZE_AR+2
+    fi
+fi
+case  $SIZE_AR in
+   2) Nothing_Menu ;;
+   *) [[ $force_install == "yes" ]] && Force_Install || Select_Menu ;;
+esac
+
+clear
+}
+
+#####
+Detect_OSD()
+{
+. $CFG_DIR/sysconfig
+LS_No=1
+while  [[ "${hw_ident[$LS_No]}" != "FINITO" ]]
+  do
+    HW_NAME="${hw_name[$LS_No]}"
+    MOD_HW_NAME="${HW_NAME// /_}"       # Leerzeichen durch "_" ersetzen  
+    if [[ "$MOD_HW_NAME" == "${!OSD_PARAM}" ]]; then
+      CH_INDEX=$LS_No
+      break
+    fi
+    ((++LS_No))
+  done                                     # Ende der Listenelemente erreicht
+unset hw_ident
+Do_Install_OSD
+}
+
+####
+Nothing_Menu()
+{
+if [[ $lib_name == "Video-Eingabe-Devices" ]]
+  then
+    NM_TITLE=" Keine nicht standard $lib_name gefunden "
+    NM_TEXT="Non-Standard "
+  else
+    NM_TITLE=" Keine $lib_name gefunden "
+    NM_TEXT=""
+fi
+dialog --backtitle "$BACKTITLE"\
+       --title "$NM_TITLE"\
+       --nocancel\
+       --pause " \n\n\n\
+    $NM_TEXT$lib_name wurden nicht gefunden.\n\
+    Sie koennen erforderliche Pakete fuer weitere $lib_name\n\
+    aber auch zu einer spaeteren Zeit installieren. " $DIA_BOX2_SIZE $TIMEOUT2
+clear
+echo "log --silent \" ---> Nur Info, nichts zu tun ...\""      >> $HW_INSTALL_SCRIPT
+}
+
+#####
+Select_Menu()
+{
+Set_Def_Item
+DEF_ITEM=$?
+REPEAT="true"
+while [[ $REPEAT == "true" ]]
+  do
+    CH_INDEX=$(dialog --title " Erkennung: $lib_name "\
+                      --backtitle " $BACKTITLE"\
+                      --ok-label " weiter "\
+                      --nocancel\
+                      --extra-button\
+                      --extra-label " Hilfe "\
+                      --colors\
+                      --default-item $DEF_ITEM\
+                      --menu  "\n\
+    Folgende $lib_name wurden automatisch erkannt,\n\
+    bitte waehlen Sie, fuer welche die entsprechenden Module \n\
+    installiert und konfiguriert werden sollen   " $DIA_BOX_SIZE\
+                   "${F_HW_MENU_AR[@]}" 3>&1 1>&2 2>&3 3>&- )      # Index und Name im Menu
+    OK_CANCEL=$?
+    clear
+    if (( $OK_CANCEL == 3 ))
+      then
+        REPEAT="true"
+        HW_HLP_NAME="${hw_name[$CH_INDEX]}"
+        MOD_HLP_HW_NAME="${HW_HLP_NAME// /_}"       # Leerzeichen durch "_" ersetzen  
+        Show_Help $lib_name $MOD_HLP_HW_NAME
+      else
+        REPEAT="false"
+        Is_Item
+        (($? != 0)) && REPEAT="true"
+    fi
+  done
+echo ""                                                                                               >> $HW_INSTALL_SCRIPT
+echo "# Fuer die $lib_name ist folgendes zu tun:"                                                     >> $HW_INSTALL_SCRIPT
+Do_Install
+}
+
+##### setzt 1ste gefundene HW als default
+Set_Def_Item()
+{
+ITEM_INDEX=1
+CROSS="#"
+for ((AR_POS=0;AR_POS<$SIZE_AR;++AR_POS))
+  do
+    FOUND=$(echo ${F_HW_MENU_AR[$AR_POS]} | grep -c $CROSS)
+    if (( $FOUND != 0 )); then
+      INDEX_POS=$(( $AR_POS + 1 ))
+      ITEXT_POS=$(( $AR_POS + 2 ))
+      FOUND=$(echo ${F_HW_MENU_AR[$ITEXT_POS]} | grep -c $CROSS)
+      (($FOUND == 0)) &&  ITEM_INDEX=${F_HW_MENU_AR[$INDEX_POS]}
+      AR_POS=$SIZE_AR
+    fi
+  done
+if [ $hw_lib == "$DETECT/hw-lib/30_info_display" ]; then
+    return 1
+else
+    return $ITEM_INDEX
+fi
+}
+
+##### testet ob Kommentarzeile oder echter Menuepunkt
+Is_Item()
+{
+IS_ITEM_STAT=1
+MUSTER="#"
+for ((AR_ELEMENT=0;AR_ELEMENT<$SIZE_AR;++AR_ELEMENT))
+  do
+    if [[ ${F_HW_MENU_AR[$AR_ELEMENT]} == $CH_INDEX ]]; then
+      ((++AR_ELEMENT))
+      CH_TEXT=${F_HW_MENU_AR[$AR_ELEMENT]}
+      AR_ELEMENT=$SIZE_AR  
+    fi
+  done
+IS_ITEM_STAT=$(echo $CH_TEXT | grep -c  $MUSTER)
+return $IS_ITEM_STAT
+}
+
+#####
+Force_Install()
+{
+unset MENU_ST
+SIZE_AR_REDU=$(( $SIZE_AR - 2 ))
+for ((E_COUNT=1;E_COUNT<$SIZE_AR_REDU;++E_COUNT))
+  do
+     CH_INDEX_ST="$CH_INDEX_ST ${F_HW_MENU_AR[$E_COUNT]}"
+     ((++E_COUNT))
+     MENU_ST="$MENU_ST\
+               ${F_HW_MENU_AR[$E_COUNT]} \n"
+  done
+
+dialog --backtitle "$BACKTITLE"\
+       --title " gefundene $lib_name "\
+       --no-cancel \
+       --pause " \n\n\n\
+     Folgende $lib_name wurden gefunden.\n\
+     Sie haben spaeter noch die Moeglichkeit hierfuer\n\
+     hardwarespezifische Spezialtreiber zu installieren.\n\n\
+$MENU_ST " $DIA_BOX2_SIZE $TIMEOUT2
+clear
+
+echo ""                                                                                               >> $HW_INSTALL_SCRIPT
+echo "# Fuer die $lib_name ist folgendes zu tun:"                                                     >> $HW_INSTALL_SCRIPT
+for CH_INDEX in $CH_INDEX_ST
+  do
+    Do_Install
+  done
+}
+
+#####
+Do_Install()
+{
+HW_NAME_SEL="${hw_name[$CH_INDEX]}"
+MOD_HW_NAME_SEL="${HW_NAME_SEL// /_}"       # Leerzeichen durch "_" ersetzen  
+INS_METHOD="${ins_method[$CH_INDEX]}"       # Inst fuer einzelnes Element der Library
+INS_METHOD_LIB="$ins_method_lib"            # Inst fuer alle gefundenen Elemente der Library
+PARASET_A="${paraset_a[$CH_INDEX]}"         # ausgewaeltes Element
+PARASET_B="${paraset_b[$CH_INDEX]}"
+PARASET_C="${paraset_c[$CH_INDEX]}"
+PARASET_D="${paraset_d[$CH_INDEX]}"
+PARASET_E="${paraset_e[$CH_INDEX]}"
+
+ALL_FOUND="$F_INDEX_STR"                    # alle gefundenen Elemente
+
+log --silent "  -> $HW_NAME_SEL Ausgewaehlt, ToDo siehe $HW_INSTALL_SCRIPT"
+
+echo "$INS_METHOD \"$MOD_HW_NAME_SEL\" \"$PARASET_A\" \"$PARASET_B\" \"$PARASET_C\" \"$PARASET_D\" \"$PARASET_E\""   >> $HW_INSTALL_SCRIPT
+echo "$INS_METHOD_LIB \"$ALL_FOUND\""                                                                 >> $HW_INSTALL_SCRIPT
+echo "echo \"#\" \"$lib_nmk\"_\"config\" \"$lib_nmk\"_\"$MOD_HW_NAME_SEL\" >> $SETUP_STATUS "         >> $HW_INSTALL_SCRIPT
+echo ""                                                                                               >> $HW_INSTALL_SCRIPT
+}
+
+#####
+Do_Install_OSD()
+{
+HW_NAME_SEL="${hw_name[$CH_INDEX]}"
+MOD_HW_NAME_SEL="${HW_NAME_SEL// /_}"       # Leerzeichen durch "_" ersetzen  
+INS_METHOD="${ins_method[$CH_INDEX]}"       # Inst fuer einzelnes Element der Library
+PARASET_A="${paraset_a[$CH_INDEX]}"         # ausgewaeltes Element
+PARASET_B="${paraset_b[$CH_INDEX]}"
+PARASET_C="${paraset_c[$CH_INDEX]}"
+PARASET_D="${paraset_d[$CH_INDEX]}"
+
+log --silent "  -> $HW_NAME_SEL Ausgewaehlt, ToDo siehe $HW_INSTALL_SCRIPT"
+
+echo "# Fuer die $lib_name ist folgendes zu tun:"                                                      >> $HW_INSTALL_SCRIPT
+echo "$INS_METHOD \"$MOD_HW_NAME_SEL\" \"$PARASET_A\" \"$PARASET_B\" \"$PARASET_C\" \"$PARASET_D\""   >> $HW_INSTALL_SCRIPT
+echo ""                                                                                               >> $HW_INSTALL_SCRIPT
+}
+
+#####
+Write_todo_Header()
+{
+echo "#!/bin/bash"                                                                            > $HW_INSTALL_SCRIPT
+echo "#set -vx"                                                                              >> $HW_INSTALL_SCRIPT
+echo "#"                                                                                     >> $HW_INSTALL_SCRIPT
+echo "# Automatically generated by easyvdr-detect"                                           >> $HW_INSTALL_SCRIPT
+echo "#"                                                                                     >> $HW_INSTALL_SCRIPT
+echo "###########################################"                                           >> $HW_INSTALL_SCRIPT
+echo ""                                                                                      >> $HW_INSTALL_SCRIPT
+echo ". /usr/lib/vdr/easyvdr-config-loader"                                                  >> $HW_INSTALL_SCRIPT
+echo ". /usr/lib/vdr/functions/easyvdr-functions-lib"                                        >> $HW_INSTALL_SCRIPT
+echo ". $SETUP/easyvdr-setup-defines"                                                        >> $HW_INSTALL_SCRIPT
+echo ". $DETECT/inst-lib"                                                                    >> $HW_INSTALL_SCRIPT
+echo ""                                                                                      >> $HW_INSTALL_SCRIPT
+echo "LOGFILE=\"$EASYVDR_LOGDIR/easyvdr-HW-detect_install.log\""                             >> $HW_INSTALL_SCRIPT
+echo "rm -f \$LOGFILE"                                                                       >> $HW_INSTALL_SCRIPT
+echo "log --silent \"automatically generated script easyvdr-detect_install gestartet\""      >> $HW_INSTALL_SCRIPT
+echo ""                                                                                      >> $HW_INSTALL_SCRIPT
+}
+
+#####
+Write_todo_Tail()
+{
+echo ""                                                                                       >> $HW_INSTALL_SCRIPT
+echo ""                                                                                       >> $HW_INSTALL_SCRIPT
+echo "log --silent \"easyvdr-detect_install beendet\""                                        >> $HW_INSTALL_SCRIPT
+chmod 755 $HW_INSTALL_SCRIPT
+
+log --silent "$HW_INSTALL_SCRIPT geschrieben:"
+echo "=======================================================================================" >> $LOGFILE
+cat $HW_INSTALL_SCRIPT >> $LOGFILE
+echo "=======================================================================================" >> $LOGFILE
+log --silent " "
+}
+
+#####
+Show_Help()
+{
+lib_HELP=$1
+hw_HELP=$2
+
+if [ -e "$SETUP_HELP_DIR/$lib_HELP/$hw_HELP""_help" ]
+  then
+    HELPFILE="$SETUP_HELP_DIR/$lib_HELP/$hw_HELP""_help"
+  else
+    HELPFILE="$SETUP_HELP_DIR/$lib_HELP""_help"
+fi
+
+dialog --textbox $HELPFILE   $DIA_BOX2_SIZE ; clear
+}
+
+#################################### Main Runs ################################################
+#####
+Run_All()
+{
+# setup.state bereinigen
+ sed -i '/"*video_input_hardware"*/d' $SETUP_STATUS
+ sed -i '/"*Vid_In_config"*/d' $SETUP_STATUS
+Write_todo_Header                                        # Kopf vom ToDo-Script schreiben:
+for hw_lib in $DETECT/hw-lib/*
+  do
+    Detect
+  done
+Write_todo_Tail                                          # ToDo-Script abschliessen:
+Run_Inst
+}
+
+#####
+Run_Single()
+{
+SINGLE_LIB=$1
+# setup.state bereinigen
+if [ "$SINGLE_LIB" == "20_video_in_hw" ]; then
+ sed -i '/"*video_input_hardware"*/d' $SETUP_STATUS
+ sed -i '/"*Vid_In_config"*/d' $SETUP_STATUS
+fi
+Write_todo_Header                                        # Kopf vom ToDo-Script schreiben:
+ hw_lib="$DETECT/hw-lib/$SINGLE_LIB"
+ Detect
+Write_todo_Tail                                          # ToDo-Script abschliessen:
+Run_Inst
+}
+
+#####
+Run_OSD_Remot()
+{
+SINGLE_LIB=$1
+OSD_PARAM="FB_RECEIVER"
+hw_lib="$DETECT/hw-lib/$SINGLE_LIB"
+. $hw_lib                                              # aktuelle lib aus ./hw-lib reinholen
+
+Write_todo_Header                                        # Kopf vom ToDo-Script schreiben:
+ Detect_OSD
+Write_todo_Tail                                          # ToDo-Script abschliessen:
+Run_Inst
+}
+
+#################################
+#################################
+
+######
+Run_Inst()
+{
+log --silent "Starte $HW_INSTALL_SCRIPT..."
+$DETECT/easyvdr-detect_install
+
+echo " " >> $LOGFILE
+log --silent "... zurueck in easyvdr-detect..."
+
+case $RUN_FLAG in
+     -Vid_Out) :                 ;;
+      -Vid_In) :                 ;;
+       -Displ) :                 ;;
+       -Remot) $DETECT/easyvdr-post-detect  -Fb_Contr   -NO_UDEV    ;;
+   -OSD_Remot) $DETECT/easyvdr-post-detect  -Fb_Contr   -NO_UDEV    ;;
+            *) $DETECT/easyvdr-post-detect  -Fb_Contr   -NO_UDEV    ;;
+esac
+
+echo "$DETECT/udev-reloader" | at now >/dev/null 2>&1
+}
+
+######################################## Main ###################################################
+
+case $RUN_FLAG in
+     -Vid_Out) Run_Single    10_video_out_hw                ;;
+      -Vid_In) Run_Single    20_video_in_hw                 ;;
+       -Displ) Run_Single    30_info_display                ;;
+       -Remot) Run_Single    40_remote_control_receiver     ;;
+   -OSD_Remot) Run_OSD_Remot 40_remote_control_receiver     ;;
+            *) Run_All                                      ;;
+esac
+
+log --silent "$FILENAME fertig durchgelaufen."
+echo "#############################################################################################" >> $APT_GET_LOG
+echo "" >> $APT_GET_LOG

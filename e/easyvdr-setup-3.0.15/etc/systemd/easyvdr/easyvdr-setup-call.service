@@ -1,0 +1,27 @@
+[Unit]
+Description=Easyvdr Setup
+Conflicts=getty@tty7.service plymouth-quit.service
+After=systemd-user-sessions.service getty@tty7.service plymouth-quit.service 
+
+[Service]
+Type=simple
+#Type=oneshot
+#ExecStartPre=
+#ExecStart=/usr/share/easyvdr/setup/easyvdr-setup-starter
+ExecStart=/sbin/getty -8n 38400 tty8 -l /usr/share/easyvdr/setup/easyvdr-setup-starter
+#ExecStartPost=
+Restart=always
+RemainAfterExit=yes
+StandardInput=tty
+TTYPath=/dev/tty8
+TTYReset=yes
+TTYVHangup=yes
+TTYVTDisallocate=yes
+StandardOutput=syslog
+#StandardOutput=tty
+StandardError=syslog
+
+
+[Install]
+WantedBy=multi-user.target
+

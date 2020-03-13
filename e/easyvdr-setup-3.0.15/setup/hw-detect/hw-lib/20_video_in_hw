@@ -1,0 +1,341 @@
+#
+#------- lib HW-Decoder video in
+#
+lib_name="Video-Eingabe-Devices"
+lib_nmk="Vid_In"
+lib_version="V 0.2.7 vom 29.12.2012"
+force_install="yes"
+ins_method_lib="inst_all_vidin"
+#
+
+
+# ---------Definition-------------------------------
+
+# PVR
+hw_name[1]="PVR-350"
+hw_ident[1]="4444:0803 \
+0070:0003 0070:0009 0070:0801 0070:0807 0070:4000 0070:4001 \
+0070:4009 0070:4800 0070:4801 0070:4803 0070:8003 0070:8801 \
+0070:c801"
+det_method[1]="chk_lspci3"
+ins_method[1]="inst_write-info"
+# muss noch Frage haben Wollen!
+paraset_a[1]="PVR-350"                
+paraset_b[1]="STD_DRV_YES"
+paraset_c[1]="<empty_value>"
+paraset_d[1]="<empty_value>"
+paraset_e[1]="<empty_value>"
+
+# Sundtek
+hw_name[2]="Sundtek"
+hw_ident[2]="eb1a:51b[2-9] 2659:1210"
+det_method[2]="chk_lsusb"
+ins_method[2]="inst_write-info"
+paraset_a[2]="dvb-driver-sundtek"
+paraset_b[2]="STD_DRV_NO"
+paraset_c[2]="<empty_value>"
+paraset_d[2]="<empty_value>"
+paraset_e[2]="<empty_value>"
+
+# Twinhan dst u.a. 2021
+hw_name[3]="Twinhan"
+hw_ident[3]="1822:0001"         
+det_method[3]="chk_lspci"
+ins_method[3]="inst_write-info"
+paraset_a[3]="Twinhan-Karte"
+paraset_b[3]="STD_DRV_YES"
+paraset_c[3]="<empty_value>"
+paraset_d[3]="<empty_value>"
+paraset_e[3]="<empty_value>"
+
+# FF- und Budget-Karten
+hw_name[4]="FF- oder Budget-SD-Karte"
+hw_ident[4]="1131:7146 \
+13c2:0000 13c2:0001 13c2:0002 13c2:0003 13c2:0004 13c2:0006 \
+13c2:0008 13c2:000a 13c2:000e 13c2:1018 13c2:101c 110a:0000"
+det_method[4]="chk_lspci3"
+ins_method[4]="inst_write-info"
+paraset_a[4]="FF-oder_Budget-SD-Karte"
+paraset_b[4]="STD_DRV_YES"
+paraset_c[4]="<empty_value>"
+paraset_d[4]="<empty_value>"
+paraset_e[4]="<empty_value>"
+
+# FF-HD-Karte
+hw_name[5]="FF-HD TT-6400"
+hw_ident[5]="1131:7160 \
+13c2:3009 13c2:300a"
+det_method[5]="chk_lspci3"
+ins_method[5]="inst_write-info"
+paraset_a[5]="FF-HD-Karte(TT6400)"
+paraset_b[5]="STD_DRV_NO"
+paraset_c[5]="<empty_value>"
+paraset_d[5]="<empty_value>"
+paraset_e[5]="<empty_value>"
+
+# Nova T-500
+hw_name[6]="Nova T-500 DVB-T"
+hw_ident[6]="2040:9950"
+det_method[6]="chk_lsusb"
+ins_method[6]="inst_write-info"
+paraset_a[6]="Nova_T-500"
+paraset_b[6]="STD_DRV_YES"
+paraset_c[6]="<empty_value>"
+paraset_d[6]="<empty_value>"
+paraset_e[6]="<empty_value>"
+
+# TeVii-S2 PCI
+hw_name[7]="TeVii DVB-S2"
+hw_ident[7]="14f1:8800 \
+d460:9022 d464:9022 d470:9022 d481:9022 d482:9022"           
+det_method[7]="chk_lspci3"
+ins_method[7]="inst_write-info"
+paraset_a[7]="TeVii-S2"
+paraset_b[7]="STD_DRV_YES"
+paraset_c[7]="<empty_value>"
+paraset_d[7]="<empty_value>"
+paraset_e[7]="<empty_value>"
+
+# TeVii-S2 USB
+hw_name[8]="TeVii DVB-S2"
+hw_ident[8]="9022:d660"           
+det_method[8]="chk_lsusb"
+ins_method[8]="inst_write-info"
+paraset_a[8]="TeVii-S2"
+paraset_b[8]="STD_DRV_YES"
+paraset_c[8]="<empty_value>"
+paraset_d[8]="<empty_value>"
+paraset_e[8]="<empty_value>"
+
+# Cine S2
+hw_name[9]="Cine DVB-S2"
+hw_ident[9]="18c3:0720 \
+18c3:dd00 18c3:db02 18c3:db01 18c3:abc4 18c3:abc3"
+det_method[9]="chk_lspci3"
+ins_method[9]="inst_write-info"
+paraset_a[9]="Cine-S2"
+paraset_b[9]="STD_DRV_YES"
+paraset_c[9]="<empty_value>"
+paraset_d[9]="<empty_value>"
+paraset_e[9]="<empty_value>"
+
+# Anysee USB-DVB-Karten
+hw_name[10]="Anysee USB (siehe Hilfe)"
+hw_ident[10]="1c73:861f 04b4:861f"           
+det_method[10]="chk_lsusb"
+ins_method[10]="inst_write-info"
+paraset_a[10]="Anysee-USB"
+paraset_b[10]="STD_DRV_NO"
+paraset_c[10]="<empty_value>"
+paraset_d[10]="<empty_value>"
+paraset_e[10]="<empty_value>"
+
+# TBS 6981 Double, 6920 Single DVB S2
+hw_name[11]="TBS 69xx PCIe"
+hw_ident[11]="14f1:8852 \
+6981:8888 6920:8888"
+det_method[11]="chk_lspci3"
+ins_method[11]="inst_write-info"
+paraset_a[11]="TBS_69xx_PCIe"
+paraset_b[11]="STD_DRV_NO"
+paraset_c[11]="<empty_value>"
+paraset_d[11]="<empty_value>"
+paraset_e[11]="<empty_value>"
+
+# TT-connect S2-3600
+hw_name[12]="TT-connect S2-3600"
+hw_ident[12]="0b48:3007"           
+det_method[12]="chk_lsusb"
+ins_method[12]="inst_write-info"
+paraset_a[12]="TT-S2-3600"
+paraset_b[12]="STD_DRV_NO"
+paraset_c[12]="<empty_value>"
+paraset_d[12]="<empty_value>"
+paraset_e[12]="<empty_value>"
+
+# Technisat Skystar HD2 (VP-1041)
+hw_name[13]="Technisat Skystar HD2 (VP-1041)"
+hw_ident[13]="1822:4e35 \
+1ae4:0003"
+det_method[13]="chk_lspci3"
+ins_method[13]="inst_write-info"
+paraset_a[13]="Skystar-HD2"
+paraset_b[13]="STD_DRV_NO"
+paraset_c[13]="<empty_value>"
+paraset_d[13]="<empty_value>"
+paraset_e[13]="<empty_value>"
+
+# Digital Devices Cine C2, T2 oder S2(V6.x) ggf. mit DuoFlex
+hw_name[14]="Digital Devices Cine C2T2S2"
+hw_ident[14]="dd01:0003 \
+dd01:0020 dd01:0021 dd01:0030"
+det_method[14]="chk_lspci3"
+ins_method[14]="inst_write-info"
+paraset_a[14]="Cine-C2_T2_S2"
+paraset_b[14]="STD_DRV_NO"
+paraset_c[14]="<empty_value>"
+paraset_d[14]="<empty_value>"
+paraset_e[14]="<empty_value>"
+
+# Digital Devices Cine CT (V6.5) 
+hw_name[15]="Digital Devices Cine V6.5"
+hw_ident[15]="dd01:0006 \
+dd01:0031"
+det_method[15]="chk_lspci3"
+ins_method[15]="inst_write-info"
+paraset_a[15]="Cine_CT_V6.5"
+paraset_b[15]="STD_DRV_NO"
+paraset_c[15]="<empty_value>"
+paraset_d[15]="<empty_value>"
+paraset_e[15]="<empty_value>"
+
+# TBS 6984 Quad, 6982 Double, 6922 Single DVB S2
+hw_name[16]="TBS 69xx DVB S2"
+hw_ident[16]="1131:7160 \
+6984:0013 6982:0002 6922:0001"
+det_method[16]="chk_lspci3"
+ins_method[16]="inst_write-info"
+paraset_a[16]="TBS_69xx_DVB_S2"
+paraset_b[16]="STD_DRV_NO"
+paraset_c[16]="<empty_value>"
+paraset_d[16]="<empty_value>"
+paraset_e[16]="<empty_value>"
+
+# TT S2-4100 DVB S2
+hw_name[17]="TT S2-4100"
+hw_ident[17]="13c2:3010"
+det_method[17]="chk_lspci"
+ins_method[17]="inst_write-info"
+paraset_a[17]="TT-S2-4100"
+paraset_b[17]="STD_DRV_NO"
+paraset_c[17]="<empty_value>"
+paraset_d[17]="<empty_value>"
+paraset_e[17]="<empty_value>"
+
+# DVBSKy S952 T982 und Mystique SaTiX
+hw_name[18]="DVBSKy S952 T982 und SaTiX"
+hw_ident[18]="14f1:8852 \
+4254:0952 4254:0982 14f1:8512"
+det_method[18]="chk_lspci3"
+ins_method[18]="inst_write-info"
+paraset_a[18]="DVBSKy_S952_T982_SaTiX"
+paraset_b[18]="STD_DRV_NO"
+paraset_c[18]="<empty_value>"
+paraset_d[18]="<empty_value>"
+paraset_e[18]="<empty_value>"
+
+# Mystique Satix S2
+hw_name[19]="Mystique Satix S2"
+hw_ident[19]="14f1:8800 \
+14f1:8312"
+det_method[19]="chk_lspci3"
+ins_method[19]="inst_write-info"
+paraset_a[19]="Mystique_Satix_S2"
+paraset_b[19]="STD_DRV_NO"
+paraset_c[19]="<empty_value>"
+paraset_d[19]="<empty_value>"
+paraset_e[19]="<empty_value>"
+
+# PCTV DVB-S2-Stick
+hw_name[20]="DVB-S2-Stick"
+hw_ident[20]="2013:0258"
+det_method[20]="chk_lsusb"
+ins_method[20]="inst_write-info"
+paraset_a[20]="PCTV_DVB-S2-Stick"
+paraset_b[20]="STD_DRV_NO"
+paraset_c[20]="<empty_value>"
+paraset_d[20]="<empty_value>"
+paraset_e[20]="<empty_value>"
+
+# Technisat SkyStar2
+hw_name[21]="Technisat SkyStar2"
+hw_ident[21]="13d0:2103"
+det_method[21]="chk_lspci"
+ins_method[21]="inst_write-info"
+paraset_a[21]="SkyStar2"
+paraset_b[21]="STD_DRV_YES"
+paraset_c[21]="<empty_value>"
+paraset_d[21]="<empty_value>"
+paraset_e[21]="<empty_value>"
+
+# TeVii-S2 PCI
+hw_name[22]="TeVii DVB-S2"
+hw_ident[22]="14f1:8852 d471:9022"
+det_method[22]="chk_lspci3"
+ins_method[22]="inst_write-info"
+paraset_a[22]="TeVii-S2"
+paraset_b[22]="STD_DRV_YES"
+paraset_c[22]="<empty_value>"
+paraset_d[22]="<empty_value>"
+paraset_e[22]="<empty_value>"
+
+# Digital Devices Max S8 TV Card
+hw_name[23]="Digital Devices Max S8"
+hw_ident[23]="dd01:0007 \
+dd01:0023"
+det_method[23]="chk_lspci3"
+ins_method[23]="inst_write-info"
+paraset_a[23]="DD_Max_S8"
+paraset_b[23]="STD_DRV_NO"
+paraset_c[23]="<empty_value>"
+paraset_d[23]="<empty_value>"
+paraset_e[23]="<empty_value>"
+
+# Hauppauge Nova HD-S2
+hw_name[24]="Nova HD-S2"
+hw_ident[24]="14f1:8800 0070:6906"
+det_method[24]="chk_lspci3"
+ins_method[24]="inst_write-info"
+paraset_a[24]="Nova_HD-S2"
+paraset_b[24]="STD_DRV_YES"
+paraset_c[24]="<empty_value>"
+paraset_d[24]="<empty_value>"
+paraset_e[24]="<empty_value>"
+
+# Hauppauge Nova DVB-T
+hw_name[25]="Nova DVB-T"
+hw_ident[25]="14f1:8802 0070:9002"
+det_method[25]="chk_lspci3"
+ins_method[25]="inst_write-info"
+paraset_a[25]="Nova_DVB-T"
+paraset_b[25]="STD_DRV_YES"
+paraset_c[25]="<empty_value>"
+paraset_d[25]="<empty_value>"
+paraset_e[25]="<empty_value>"
+
+# Reelbox Netceiver
+hw_name[26]="Reelbox Netceiver"
+hw_ident[26]="yes"
+det_method[26]="chk_netceiver"
+ins_method[26]="inst_write-info"
+paraset_a[26]="<empty_value>"
+paraset_b[26]="<empty_value>"
+paraset_c[26]="<empty_value>"
+paraset_d[26]="<empty_value>"
+paraset_e[26]="<empty_value>"
+
+
+#nichts installieren
+hw_name[49]="keine $lib_name installieren"
+hw_ident[49]="yes"
+det_method[49]="chk_dummyhw"
+ins_method[49]="do_nothing"
+paraset_a[49]="<empty_value>"
+paraset_b[49]="<empty_value>"
+paraset_c[49]="<empty_value>"
+paraset_d[49]="<empty_value>"
+paraset_e[49]="<empty_value>"
+
+#---ENDE---
+hw_ident[50]="FINITO"
+
+# Dummy fuer unbekannte Devices
+hw_name[100]="unbekannte DVB-Devices"
+hw_ident[100]="yes"
+det_method[100]="chk_dummyhw"
+ins_method[100]="inst_write-info"
+paraset_a[100]="unbekannte_DVB-Devices"
+paraset_b[100]="STD_DRV_NO"
+paraset_c[100]="<empty_value>"
+paraset_d[100]="<empty_value>"
+

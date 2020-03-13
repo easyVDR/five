@@ -1,0 +1,110 @@
+#
+#  1st function MiniInfo 06.02.13
+#
+# v 0.2  add WriteStatus()  11.02.13  Captain_Beefheart
+#
+# adding systemd 24.06.18
+
+[[ X$stat_easyvdr_setup_defines != X"already loaded" ]] && . /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+
+#####
+MiniInfo()
+{
+local MINI_TITLE=$1; local BACK_TITLE=$2; local INPUT_TEXT=$3
+    dialog  --backtitle "$BACK_TITLE"\
+            --title "$MINI_TITLE"\
+            --colors\
+            --infobox "$INPUT_TEXT " $DIA_BOX3_SIZE
+}
+
+#####
+WriteStatus()     ## Setup.State schreiben ##
+{
+local setup_section="$1"
+local setup_sec_stat="$2"
+
+sed -i '/"*'"$setup_section"'"*/d' $SETUP_STATUS
+echo "# `date` $setup_section zuletzt ausgefuehrt" >> $SETUP_STATUS
+sed -i '/'"$setup_sec_stat"'"*/d' $SETUP_STATUS
+echo "$setup_sec_stat=\"true\"" >> $SETUP_STATUS
+}
+
+#############################################################################
+######################### Systemd ###########################################
+
+SERVICE[0]="/etc/systemd/easyvdr/easyvdr-systemstart.service"
+SERVICE[1]="/etc/systemd/easyvdr/easyvdr-alsa-restore.service"
+SERVICE[2]="/etc/systemd/easyvdr/easyvdr-cleanscreen.service"
+SERVICE[3]="/etc/systemd/easyvdr/easyvdr-create-ramdisk.service"
+SERVICE[4]="/etc/systemd/easyvdr/easyvdr-save-ramdisk.service"
+SERVICE[5]="/etc/systemd/easyvdr/easyvdr-program-changer.service"
+SERVICE[6]="/etc/systemd/system/display-manager.service"
+####### plymouth
+SERVICE[7]="/lib/systemd/system/plymouth-halt.service"
+SERVICE[8]="/lib/systemd/system/plymouth-read-write.service"
+SERVICE[9]="/lib/systemd/system/plymouth-kexec.service"
+SERVICE[10]="/lib/systemd/system/plymouth-reboot.service"
+SERVICE[11]="/lib/systemd/system/plymouth-log.service"
+SERVICE[12]="/lib/systemd/system/plymouth.service"
+SERVICE[13]="/lib/systemd/system/plymouth-poweroff.service"
+SERVICE[14]="/lib/systemd/system/plymouth-start.service"
+SERVICE[15]="/lib/systemd/system/plymouth-quit.service"
+SERVICE[16]="/lib/systemd/system/plymouth-switch-root.service"
+SERVICE[17]="/lib/systemd/system/plymouth-quit-wait.service"
+
+EnableSystemd()
+{
+if [ -d /run/systemd/system ] ; then
+  systemctl daemon-reload >/dev/null || true
+fi
+
+for CHK_SERVICE in ${SERVICE[*]}
+do
+
+ if [ -f "$CHK_SERVICE" ]; then
+  systemctl enable "$CHK_SERVICE" || true > /dev/null 2>&1
+ fi
+
+done
+
+##### Spezialfall display manager
+if [ ! -f "/etc/systemd/system/display-manager.service" ] ;then
+ ln -s  /lib/systemd/system/lightdm.service  /etc/systemd/system/display-manager.service
+fi
+
+if [ -d /run/systemd/system ] ; then
+  systemctl daemon-reload >/dev/null || true
+fi
+
+
+}
+
+#Systemd Dienste deaktiviern
+#Dienste die Stören beenden
+DisableSystemd()
+{
+### lirc abschalten
+systemctl stop lircd.socket lircd.service
+systemctl disable lircd.socket lircd.service
+
+ for CHK_SERVICE in ${SERVICE[*]}
+ do
+  #Pfad vom Service Namen abschneiden
+  SERVICE_NAME=${CHK_SERVICE##*/}
+
+  if [ -f $CHK_SERVICE ]; then
+   systemctl is-active "$SERVICE_NAME" > /dev/null 2>&1
+   if [ $? -eq 0 ]; then
+    systemctl stop "$SERVICE_NAME" || true > /dev/null 2>&1
+   fi
+
+   if [ -f "$CHK_SERVICE" ] ;then
+    systemctl is-enabled "$SERVICE_NAME" > /dev/null 2>&1
+    if [ $? -eq 0 ]; then
+     systemctl disable "$SERVICE_NAME" || true > /dev/null 2>&1
+    fi
+   fi
+  fi
+ done
+}

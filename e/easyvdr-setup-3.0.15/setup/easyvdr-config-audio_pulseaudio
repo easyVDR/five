@@ -1,0 +1,1210 @@
+#!/bin/bash
+
+#--------------------------------------------
+# Dieses Skript aktiviert und konfiguriert Pulseaudio
+#---------------------------------------------
+# Version:      0.0.1 vom 23.12.2013 fuer easyVDR 2.0
+#               0.0.2 vom 25.06.2014 erweitert by Bleifuss
+#               0.1.0 vom 29.06.2014 by Bleifuss
+#               0.1.1 vom 16.11.2014 by Michel
+#               0.1.2 vom 18.11.2014 Martin ohne rm *888*
+#               0.1.3 vom 18.10.2015 Bleifuss neue Version
+#               0.1.4 vom 28.09.2016 gb & Bleifuss Bash Setup
+#               0.1.5 vom 08.01.2017 gb Steam-Sound-Profil & Fixed Soundcheck
+#               0.1.6 vom 13.03.2017 gb Fixed Skript Bugs
+#               0.1.7 vom 29.09.2017 remove upstart function
+#               0.2.0 vom 04.01.2019 modify easyVDRV4 Xautority
+#		0.2.1 vom 05.03.2019 set passthrough default 'no'
+#---------------------------------------------
+# Autor:        michel8 & Bleifuss2 & gb
+#---------------------------------------------
+#
+#
+########################################################
+
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+#Für  SetConfFileParameter
+. $SETUP/video-setup/easyvdr-video-lib
+
+. $SETUP_STATUS                                     # Statusfile auslesen
+LOGGER=" logger -t PulseAudioSetup"
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - PulseAudio "
+BACKTITLE=" Audio Konfiguration fuer easyVDR"
+
+FILENAME="easyvdr-config-audio_pulseaudio"
+FILEVERSION="V 0.1.6 vom 13.03.2017"
+SNDLOG="$EASYVDR_LOGDIR/easyvdr-config-audio.log"
+VT_KONSOLE_OLD=""
+LIST_OF_DEVICES=""
+
+######################### functions #########################################
+#####
+Usage()
+{
+    echo ""
+    echo "easyvdr-config-audio_pulseaudio $FILEVERSION"
+    echo ""
+    echo "   Off    Pulseaudio ist per default aus, wird aber vom PChanger ggf. aktiviert"
+    echo "   On     Die Audioausgabe erfolgt immer ueber Pulseaudio"
+    echo ""
+}
+#############################################################################
+Pulseaudio_Default_Off()
+{
+    echo "---> Zum Deaktivieren von Pulseaudio..." >> $SNDLOG
+
+    ## Upstart zum Verhindern von Pulseaudio Autostart entfernen
+
+    ## asound.conf wiederherstellen wenn nicht da
+    echo "  -> asound.conf wiederherstellen wenn nicht da" >> $SNDLOG
+    if [ ! -e /etc/asound.conf ]; then
+        cp -d /etc/asound.conf.ohne_pulseaudio /etc/asound.conf
+    fi
+    ## Pulseaudio Autostart deaktivieren
+    echo "  -> Autostart deaktivieren" >> $SNDLOG
+    FILE_PATH="/etc/xdg/autostart"
+    if [ -e $FILE_PATH/pulseaudio.desktop ]; then
+       mv $FILE_PATH/pulseaudio.desktop $FILE_PATH/pulseaudio.desktop-inactive
+    fi
+
+    if [ -e /etc/vdr/pulseaudio.conf ]; then
+     mv  /etc/vdr/pulseaudio.conf /etc/vdr/pulseaudio.old
+    fi
+##################################################################################
+
+    if ( ! grep -q "^autospawn = no" /etc/pulse/client.conf );then
+       sed -i '/autospawn/d' /etc/pulse/client.conf
+       echo "autospawn = no" >> /etc/pulse/client.conf
+    fi
+
+    #Rechte anpassen
+    usermod -aG audio $STANDARD_DESKTOP_USER > /dev/null 2>&1
+
+    ## Pulseaudio nun auch deaktivieren
+    echo "  -> Pulseaudio nun auch beenden" >> $SNDLOG
+    pulseaudio -k > /dev/null 2>&1
+    killall pulseaudio > /dev/null 2>&1
+    echo "---> Audio-Konfiguration nun ohne defaultmaessiges Pulseaudio aktiviert" >> $SNDLOG
+}
+#############################################################################
+
+Pulseaudio_On()
+{
+    echo "---> Zum Aktivieren von Pulseaudio..." >> $SNDLOG
+
+    ## asound.conf für alsaplugin erzeugen
+    ASOUNDCONF=/etc/asound.conf
+    echo "  -> asound.conf fuer pulseaudio Plugin anlegen" >> $SNDLOG
+
+    echo pcm.!default { > $ASOUNDCONF
+    echo  \ type pulse >> $ASOUNDCONF
+    echo  \ hint.description \"Default Audio Device\" >> $ASOUNDCONF
+    echo } >> $ASOUNDCONF
+    echo ctl.!default { >> $ASOUNDCONF
+    echo  \ type pulse >> $ASOUNDCONF
+    echo } >> $ASOUNDCONF
+
+    ## Pulseaudio Autostart aktivieren
+    echo "  -> Autostart aktivieren" >> $SNDLOG
+ 
+    #Autostart aktivieren
+    if ( ! grep -q "; autospawn = yes" /etc/pulse/client.conf );then
+       sed -i '/autospawn/d' /etc/pulse/client.conf
+       echo "; autospawn = yes" >> /etc/pulse/client.conf
+    fi
+    
+    FILE_PATH="/etc/xdg/autostart"
+    if [ -e $FILE_PATH/pulseaudio.desktop-inactive ]; then
+       mv $FILE_PATH/pulseaudio.desktop-inactive $FILE_PATH/pulseaudio.desktop
+    fi
+
+    #Falls vorhanden löschen damit das Setup durchläuft
+    if [ -e /tmp/pulse-config-ready ] ;then
+     rm /tmp/pulse-config-ready
+    fi
+    if [ -e /etc/vdr/pulseaudio.conf ]; then
+     mv  /etc/vdr/pulseaudio.conf /etc/vdr/pulseaudio.old
+    fi
+
+
+    #Rechte für Easyvdr Syslog anpassen
+    chmod o+rw /var/log/easyvdr
+
+    #Gruppenrechte anpassen
+    gpasswd -d vdr audio  >/dev/null 2>&1
+    gpasswd -d easyvdr audio  >/dev/null 2>&1
+#############################################################################
+    ######################### X beenden
+
+    PID=$(pgrep "easyvdr-runvdr" )
+    if [ $? -eq 0 ]; then
+     easyvdr-vdr stop;sleep 1
+    fi
+
+    PID=$(pgrep "easyvdr-runfron" )
+    if [ $? -eq 0 ]; then
+     easyvdr-frontend stop;sleep 1
+    fi
+
+    #Stop X
+    if ( check_x_running ) >/dev/null 2>&1 ; then
+     easyvdr-desktop stop >/dev/null 2>&1 ; sleep 3
+    fi
+
+    #Rechte passend setzen
+    chown -R vdr:vdr /var/lib/vdr/.config >/dev/null 2>&1 
+
+    #Alte conf löschen
+    if [ -e /var/lib/vdr/.config/pulse ] ;then
+     rm -R /var/lib/vdr/.config/pulse
+    fi
+    #Alsa neu starten
+    alsa reload >/dev/null 2>&1
+}
+
+#############################################################################
+function set_frontend_parameter {
+    #### Frontend einstellungen
+    #Softhd
+     CONF_FILE="$CFG_DIR/easyvdr-frontend-softhddevice.conf"
+     SetConfFileParameter "AUDIO_DEVICE_PASSTHROUGH" " "
+     SetConfFileParameter "AUDIO_DEVICE" "-a default"
+     SetConfFileParameter "AUDIO_MISCELLANEOUS" "-w alsa-driver-broken"
+if [ $SINGLE_DEVICE_CONFIG = "yes" ]; then
+ #   CONF_FILE="$CFG_DIR/setup.conf"
+ #   passthrough
+ if [ $Single_Device_Passthrough_Enable = "yes" ]; then
+     SetSetupConf softhddevice.AudioPassthrough 12
+     SetSetupConf softhddevice.AudioSoftvol 0
+ else
+     SetSetupConf softhddevice.AudioPassthrough 0
+     SetSetupConf softhddevice.AudioSoftvol 1
+ fi
+fi
+#MULTICHANNEL
+if [ $TEST_SOUND_PROFILE = "MULTICHANNEL" ]; then
+     SetSetupConf softhddevice.AudioPassthrough 0
+     SetSetupConf softhddevice.AudioSoftvol 1
+fi
+}
+
+#############################################################################
+function av_reciver_info {
+
+    dialog  --backtitle "$BACKTITLE"\
+        --msgbox "\n\
+             Alle angeschlossenen Audio Geraete einschalten \n\
+                    AV-Receiver,Verstaerker usw. \n\n\
+                             - weiter - "  $DIA_BOX4_SIZE
+
+
+}
+#############################################################################
+##################### Bash Setup Funktionen #################################
+#############################################################################
+
+Digital_Analog()
+{
+VOID="void"
+CARD_PULSEAUDIO_NAME_NOT_USED_TMP="none"
+CARD_PULSEAUDIO_NAME_TMP="none"
+CARD_OUTPUT_PROFILE_TMP="none"
+CARD_PROFILE_OPTIONS_TMP="none"
+GAMING_CARD_PULSEAUDIO_NAME_NOT_USED_TMP="none"
+GAMING_CARD_PULSEAUDIO_NAME_TMP="none"
+GAMING_CARD_OUTPUT_PROFILE_TMP="none"
+GAMING_CARD_PROFILE_OPTIONS_TMP="none"
+if [ ! -e /tmp/pulse-sinks ]; then
+ dialog  --backtitle "$BACKTITLE" --msgbox "\n\
+       Es wurde kein Ausgabegeraete fuer Pulseaudio gefunden. \n\
+                        Pulseaudio inaktiv!\n\n\
+                             - weiter - "  $DIA_BOX4_SIZE
+ Save_Pulseaudio_Config
+ return
+else
+ W=()
+ if [ $(cat /tmp/pulse-sinks |grep -v "#"|grep 'CARD_DIGITAL'|grep -c "yes") -gt 0 ];then
+  BUTTON_DIGITAL="Digital"
+  BUTTON_DIGITAL_DESCRIPTION="Digitale Ausgabe ueber DVI, HDMI, S/PDIF"
+  W+=( "$BUTTON_DIGITAL" "$BUTTON_DIGITAL_DESCRIPTION" )
+ fi
+ if [ $(cat /tmp/pulse-sinks |grep -v "#"|grep 'CARD_ANALOG'|grep -c "yes") -gt 0 ];then
+  BUTTON_ANALOG="Analog"
+  BUTTON_ANALOG_DESCRIPTION="Analoge Ausgabe ueber Soundkarte"
+  W+=( "$BUTTON_ANALOG" "$BUTTON_ANALOG_DESCRIPTION" )
+ fi
+ if [ $LIST_OF_DEVICES -gt 0 ];then
+  BUTTON_MULTIDEVICE="Multiausgabe"
+  BUTTON_MULTIDEVICE_DESCRIPTION="(Alphatest)Stereoton an mehreren Ausgaengen"
+  W+=( "$BUTTON_MULTIDEVICE" "$BUTTON_MULTIDEVICE_DESCRIPTION" )
+ fi
+ if [ -e /etc/vdr/pulseaudio.old ]; then
+  if [ $(cat /etc/vdr/pulseaudio.old |grep 'SINK_COMBINED'|grep -c "yes") -eq 0 ];then
+   BUTTON_GAMING="Steam-Sound-Profil"
+   BUTTON_GAMING_DESCRIPTION="(Alphatest)Individuelles Gaming-Soundprofil"
+   W+=( "$BUTTON_GAMING" "$BUTTON_GAMING_DESCRIPTION" )
+  fi
+ fi
+
+ ANALOG_DIGITAL=$(dialog --backtitle "$BACKTITLE" --title  "$TITLE" --cancel-label "Beenden" \
+--menu "Wie moechtest du deinen Ton ausgeben:" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+ case $? in
+  0)
+  if [ $(echo $ANALOG_DIGITAL|grep -c "Multiausgabe") -eq 1 ];then
+   i=0 
+   DEVICE_SELECT=0
+   DEVICE_CANCEL=1
+   Devices_Multiausgabe
+  fi
+  if [ $(echo $ANALOG_DIGITAL|grep -c "Analog") -eq 1 ];then
+   Devices
+  fi
+  if [ $(echo $ANALOG_DIGITAL|grep -c "Digital") -eq 1 ];then
+   Devices
+  fi
+  if [ -e /etc/vdr/pulseaudio.old ]; then
+   if [ $(echo $ANALOG_DIGITAL|grep -c "Steam") -eq 1 ];then
+    Steam_Gaming_Profil
+   fi
+  fi
+  ;;
+  1)
+  if [ -e /etc/vdr/pulseaudio.old ]; then
+   mv  /etc/vdr/pulseaudio.old /etc/vdr/pulseaudio.conf
+  fi
+  ;;
+  255)
+  if [ -e /etc/vdr/pulseaudio.old ]; then
+   mv  /etc/vdr/pulseaudio.old /etc/vdr/pulseaudio.conf
+  fi
+  ;;
+ esac
+fi
+}
+
+############################################################################################
+######################################GAMING_CONFIG_START###################################
+Steam_Gaming_Profil()
+{
+GAMING_CARD_PULSEAUDIO_NAME_NOT_USED_TMP="none"
+GAMING_CARD_PULSEAUDIO_NAME_TMP="none"
+GAMING_CARD_OUTPUT_PROFILE_TMP="none"
+GAMING_CARD_PROFILE_OPTIONS_TMP="none"
+W_GAMING=()
+if [ $(cat /tmp/pulse-sinks |grep -v "#"|grep 'CARD_DIGITAL'|grep -c "yes") -gt 0 ];then
+ GAMING_BUTTON_DIGITAL="Digital"
+ GAMING_BUTTON_DIGITAL_DESCRIPTION="Digitale Ausgabe ueber DVI, HDMI, S/PDIF"
+ W_GAMING+=( "$GAMING_BUTTON_DIGITAL" "$GAMING_BUTTON_DIGITAL_DESCRIPTION" )
+fi
+if [ $(cat /tmp/pulse-sinks |grep -v "#"|grep 'CARD_ANALOG'|grep -c "yes") -gt 0 ];then
+ GAMING_BUTTON_ANALOG="Analog"
+ GAMING_BUTTON_ANALOG_DESCRIPTION="Analoge Ausgabe ueber Soundkarte"
+ W_GAMING+=( "$GAMING_BUTTON_ANALOG" "$GAMING_BUTTON_ANALOG_DESCRIPTION" )
+fi
+   ANALOG_DIGITAL_GAMING_PROFIL=$(dialog --backtitle "$BACKTITLE" --title  "$TITLE" --no-cancel \
+--menu "Wie moechtest du deinen Ton ueber Steam ausgeben:" $DIA_BOX_SIZE "${W_GAMING[@]}" 3>&2 2>&1 1>&3 )
+case $? in
+ 0)
+ Devices_Gaming_Profil
+ ;;
+ 1)
+ Digital_Analog
+ ;;
+ 255)
+ Digital_Analog
+ ;;
+esac
+
+}
+
+Devices_Gaming_Profil()
+{
+W=()
+i=0 
+while [ $i -le $LIST_OF_DEVICES ]
+ do 
+ CARDSELECT[$i]=$(echo ${CARD_NAME[$i]})
+ if [ $ANALOG_DIGITAL_GAMING_PROFIL = "Digital" ]; then 
+  if [ $(echo ${CARD_DIGITAL[$i]}|grep -c "yes") -eq 1 ]; then
+   if [ $(echo ${CARD_OUTPUT_PROFILE[$i]}|grep -c "hdmi") -gt 0 ];then 
+    if [ $(echo ${CARDSELECT[$i]}|grep -c -i "NVIDIA") -eq 1 ];then 
+     W+=( "$i" "Grafikkarte: ${CARDSELECT[$i]}" )
+    fi
+   fi
+  fi
+ fi
+i=$(($i+1))
+done
+i=0 
+while [ $i -le $LIST_OF_DEVICES ]
+ do 
+ CARDSELECT[$i]=$(echo ${CARD_NAME[$i]})
+ if [ $ANALOG_DIGITAL_GAMING_PROFIL = "Digital" ]; then 
+  if [ $(echo ${CARD_DIGITAL[$i]}|grep -c "yes") -eq 1 ]; then
+   if [ $(echo ${CARD_OUTPUT_PROFILE[$i]}|grep -c "hdmi") -gt 0 ];then 
+    if [ $(echo ${CARDSELECT[$i]}|grep -c -i "NVIDIA") -eq 0 ];then 
+     W+=( "$i" "Grafikkarte: ${CARDSELECT[$i]}" )
+	fi
+   else 
+    W+=( "$i" "Soundkarte: ${CARDSELECT[$i]}" )
+   fi
+  fi
+ else
+  if [ $(echo ${CARD_ANALOG[$i]}|grep -c "yes") -eq 1 ]; then
+   if [ $(echo ${CARD_OUTPUT_PROFILE[$i]}|grep -c "hdmi") -gt 0 ];then 
+    W+=( "$i" "Grafikkarte: ${CARDSELECT[$i]}" )
+   else 
+    W+=( "$i" "Soundkarte: ${CARDSELECT[$i]}" )
+   fi
+  fi
+ fi
+i=$(($i+1))
+done
+SELECT_BUTTON_DEVICE=$(dialog --backtitle "$BACKTITLE" --title  "$TITLE" --cancel-label "zurueck" \
+--menu "Bitte waehle nun dein $ANALOG_DIGITAL_GAMING_PROFIL-Ausgabegeraet" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+case $? in
+ 0)
+ if [ $ANALOG_DIGITAL_GAMING_PROFIL = "Digital" ]; then 
+  Passthrough_Gaming_Profil
+ else
+  Passthrough_Enable="no"
+  Sinks_Gaming_Profil
+ fi
+ ;;
+ 1)
+ Digital_Analog
+ ;;
+ 255)
+ Digital_Analog
+ ;;
+esac
+}
+Sinks_Gaming_Profil()
+{
+i=0 
+DEVICE_COUNT=0
+OUTPUT_COUNT=1
+GAMING_CARD_PULSEAUDIO_NAME_NOT_USED="none"
+W=()
+for RESULT1 in $(echo ${CARD_OUTPUT_PROFILE[$SELECT_BUTTON_DEVICE]}|tr ";" " ");do
+ RESULT2=$(echo ${CARD_OUTPUT_PROFILE_CONNECTED_DEVICE[$SELECT_BUTTON_DEVICE]}|cut -d";" -f$OUTPUT_COUNT)
+ if [ $ANALOG_DIGITAL_GAMING_PROFIL = "Digital" ]; then 
+  if [ $(echo $RESULT2|grep -c "none") -eq 0 ];then
+   if [ $(echo $RESULT1|grep -c "hdmi-stereo") -eq 1 ]; then
+    W+=( "$RESULT1" "$RESULT2")
+   fi
+   if [ $Passthrough_Enable = "no" ]; then
+    if [ $(echo $RESULT1|grep -c "hdmi-surround") -eq 1 ]; then
+     W+=( "$RESULT1" "$RESULT2")
+    fi
+   fi
+  fi
+ else
+  if [ $(echo $RESULT2|grep -c "none") -eq 1 ]; then
+   RESULT2=""
+  fi
+  if [ $(echo $RESULT1|grep -c "analog") -eq 1 ]; then
+   W+=( "$RESULT1" "$RESULT2")
+  fi
+ fi
+ OUTPUT_COUNT=$(($OUTPUT_COUNT+1))
+done
+OUTPUT_COUNT=1
+for RESULT1 in $(echo ${CARD_OUTPUT_PROFILE[$SELECT_BUTTON_DEVICE]}|tr ";" " ");do
+ RESULT2=$(echo ${CARD_OUTPUT_PROFILE_CONNECTED_DEVICE[$SELECT_BUTTON_DEVICE]}|cut -d";" -f$OUTPUT_COUNT)
+ if [ $(echo $RESULT2|grep -c "none") -eq 1 ];then
+  RESULT2=""
+  if [ $ANALOG_DIGITAL_GAMING_PROFIL = "Digital" ]; then 
+   if [ $(echo $RESULT1|grep -c "analog-stereo") -eq 1 ]; then
+    DUMMY="DUMMY"
+   else
+    if [ $(echo $RESULT1|grep -c "hdmi-stereo") -eq 1 ]; then
+     W+=( "$RESULT1" "$RESULT2")
+    else
+	 if [ $(echo $RESULT1|grep -c "stereo") -eq 1 ]; then
+      W+=( "$RESULT1" "$RESULT2")
+     fi
+     if [ $Passthrough_Enable = "no" ]; then
+      if [ $(echo $RESULT1|grep -c "hdmi-surround") -eq 1 ]; then
+       W+=( "$RESULT1" "$RESULT2")
+      fi
+     fi
+    fi
+   fi
+  fi
+ fi
+ OUTPUT_COUNT=$(($OUTPUT_COUNT+1))
+done
+
+SELECT_BUTTON_OUTPUT=$(dialog --backtitle "$BACKTITLE" --title  "$TITLE" --cancel-label "zurueck"  \
+--menu "An welchem Ausgang soll ausgegeben werden?" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+case $? in
+ 0)
+ GAMING_CARD_PULSEAUDIO_NAME_TMP=${CARD_PULSEAUDIO_NAME[SELECT_BUTTON_DEVICE]}
+ while [ $DEVICE_COUNT -le $LIST_OF_DEVICES ]
+ do 
+  if [ $DEVICE_COUNT -eq $SELECT_BUTTON_DEVICE ]; then
+   DUMMY="DUMMY"
+  else
+   if [ $GAMING_CARD_PULSEAUDIO_NAME_NOT_USED = "none" ];then
+    GAMING_CARD_PULSEAUDIO_NAME_NOT_USED=${CARD_PULSEAUDIO_NAME[$DEVICE_COUNT]}
+   else
+    GAMING_CARD_PULSEAUDIO_NAME_NOT_USED=$(echo $GAMING_CARD_PULSEAUDIO_NAME_NOT_USED";"${CARD_PULSEAUDIO_NAME[$DEVICE_COUNT]})
+   fi
+  fi
+ DEVICE_COUNT=$(($DEVICE_COUNT + 1))
+ done
+ GAMING_CARD_PULSEAUDIO_NAME_NOT_USED_TMP=$GAMING_CARD_PULSEAUDIO_NAME_NOT_USED
+ GAMING_CARD_OUTPUT_PROFILE_TMP=$SELECT_BUTTON_OUTPUT
+ SINK_COMBINED_TMP="no"
+ if [ $Passthrough_Enable = "yes" ]; then
+  echo $SELECT_BUTTON_DEVICE' '$SELECT_BUTTON_OUTPUT' test_digital_options' > /tmp/pulse-x-lib-function
+  Desktop_Start
+  Gaming_Mehrkanal_Tonsyteme_Auswahl
+  #####löschen der temporären Daten für die easyvdr-x-lib-pulseaudio#####
+  if [ -e /tmp/pulse-x-lib-function ];then 
+   rm /tmp/pulse-x-lib-function
+  fi
+  #######################################################################
+ fi
+ if [ $Passthrough_Enable = "no" ]; then
+  if [ $ANALOG_DIGITAL_GAMING_PROFIL = "Digital" ];then
+   GAMING_CARD_PROFILE_OPTIONS_TMP="pcm"
+  else
+   GAMING_CARD_PROFILE_OPTIONS_TMP="none"
+  fi
+ fi 
+ Save_Pulseaudio_Config
+ TEST_SOUND_PROFILE="GAMING"
+ $LOGGER $TEST_SOUND_PROFILE" durchlaufen"
+ Soundtest
+ ;;
+ 1)
+ Devices_Gaming_Profil
+ ;;
+ 255)
+ Devices_Gaming_Profil
+ ;;
+esac
+}
+Gaming_Mehrkanal_Tonsyteme_Auswahl()
+{
+. /tmp/pulse-sinks
+W=()
+i=0
+x=0
+MULTICHANNEL_ALL="none"
+for RESULT in $(echo ${CARD_PROFILE_OPTIONS[$SELECT_BUTTON_DEVICE]}|tr ";" " ");do
+ if [ $RESULT = "pcm" ]; then
+   SELECT='on'
+ else
+   SELECT='off'
+ fi
+ W+=( $i "$RESULT" $SELECT )
+ MULTICHANNEL[$i]=$RESULT
+ i=$(($i+1))
+done
+SELECT_MULTICHANNEL=$(dialog --backtitle "$BACKTITLE" --title "$TITLE" --cancel-label "zurueck" --checklist "Mehrkanal-Tonsyteme" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+
+case $? in
+ 0)
+ while [ $x -le $i ]; do
+  for MULTICHANNEL_SELECT in $SELECT_MULTICHANNEL; do
+   if [ $MULTICHANNEL_SELECT -eq $x ]; then
+     if [ $MULTICHANNEL_ALL = "none" ]; then 
+      MULTICHANNEL_ALL=${MULTICHANNEL[$x]}
+     else
+	  MULTICHANNEL_ALL=$(echo $MULTICHANNEL_ALL";"${MULTICHANNEL[$x]})
+    fi
+   fi
+  done 
+ let x=$x+1
+ done
+ if [ $MULTICHANNEL_ALL = "none" ]; then 
+  MULTICHANNEL_ALL="pcm"
+ fi 
+ if [ $MULTICHANNEL_ALL = "pcm" ]; then 
+  Passthrough_Enable="no"
+ fi 
+ GAMING_CARD_PROFILE_OPTIONS_TMP=$MULTICHANNEL_ALL
+ Save_Pulseaudio_Config
+ ;;
+ 1)
+ Devices_Gaming_Profil
+ ;;
+ 255)
+ Devices_Gaming_Profil
+ ;;
+esac
+}
+Passthrough_Gaming_Profil()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --no-label "ja"\
+       --yes-label "nein"\
+       --yesno "\n\n\
+ Soll der Ton ueber PassThrough ausgegeben werden? \n\n\
+ Hinweis:\n
+ Wird nur HDMI am TV verwendet (ohne AV-R) wird kein PassThrough\n
+ empfohlen.\n
+ Kurzbeschreibung:\n
+ PassThrough uebergibt die digitalen Sounddaten ungefiltert an  \n
+ das Endgeraet/AV-Receiver, erst dort wird der Ton dekodiert.\n
+ Diese Receiver unterstuetzen unterschiedliche Mehrkanal-Tonsysteme.\n
+ Hierbei handelt es sich um MPEG, AC-3 (Dolby Digital) und E-AC-3.\n
+ Bitte lies dazu die Unterlagen deines Receivers/Endgeraets." $DIA_BOX2_SIZE
+case $? in
+ 1)
+ Passthrough_Enable="yes"
+ Sinks_Gaming_Profil
+ ;;
+ 0)
+ Passthrough_Enable="no"
+ Sinks_Gaming_Profil
+ ;;
+ 255)
+ Devices_Gaming_Profil
+ ;;
+esac
+}
+
+Gaming_Profil_YesNo()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --no-label "ja"\
+       --yes-label "nein"\
+       --yesno "\n\n\
+ Moechtest du ein Gaming Audio Profil einrichten? \n\n\
+ Kurzbeschreibung:\n
+ Es ist moeglich ein individuelles Audioprofil fuer Steam einzurichten.\n
+ Dieses Profil wird dann beim Aufruf von Steam gestartet." $DIA_BOX2_SIZE
+case $? in
+ 1)
+ Steam_Gaming_Profil
+ ;;
+esac
+}
+######################################GAMING_CONFIG_END###################################
+##########################################################################################
+
+
+##########################################################################################
+####################################COMBINED_CONFIG_START#################################
+Devices_Multiausgabe()
+{
+if [ $i -gt $LIST_OF_DEVICES ]; then
+ if [ $DEVICE_SELECT -gt 1 ];then 
+  Passthrough_Enable="no"
+  SINK_COMBINED_TMP="yes"
+ TEST_SOUND_PROFILE="MULTICHANNEL"
+ $LOGGER $TEST_SOUND_PROFILE" durchlaufen"
+ Save_Pulseaudio_Config
+ else
+  dialog  --backtitle "$BACKTITLE" --msgbox "\n\
+       Die minimale Anzahl der Ausgabegeraete fuer Multiausgabe \n\
+                        wurde unterschritten.\n\n\
+                             - weiter - "  $DIA_BOX4_SIZE
+  Digital_Analog
+ fi
+else 
+ W=()
+ OUTPUT_COUNT=1
+ CARDSELECT[$i]=$(echo ${CARD_NAME[$i]})
+ W+=( "$i" "${CARDSELECT[$i]}" )
+ SELECT_BUTTON_DEVICE=$(dialog --backtitle "$BACKTITLE" --title  "$TITLE" --ok-label "ja" --cancel-label "nein" \
+--menu "Bitte waehle nun dein $BUTTON_MULTIDEVICE-Ausgabegeraet" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+
+ case $? in
+  0)
+  Sinks_Multiausgabe
+  ;;
+  1)
+  if [ $CARD_PULSEAUDIO_NAME_NOT_USED_TMP = "none" ];then
+   CARD_PULSEAUDIO_NAME_NOT_USED_TMP=$(echo ${CARD_PULSEAUDIO_NAME[i]}";")
+  else
+   CARD_PULSEAUDIO_NAME_NOT_USED_TMP=$(echo $CARD_PULSEAUDIO_NAME_NOT_USED_TMP${CARD_PULSEAUDIO_NAME[i]}";")
+  fi
+  i=$(($i+1))
+  Devices_Multiausgabe
+  ;;
+  255)
+  Digital_Analog
+  ;;
+ esac
+fi
+}
+
+Sinks_Multiausgabe()
+{
+  W=()
+  for RESULT1 in $(echo ${CARD_OUTPUT_PROFILE[$SELECT_BUTTON_DEVICE]}|tr ";" " ");do
+   RESULT2=$(echo ${CARD_OUTPUT_PROFILE_CONNECTED_DEVICE[$SELECT_BUTTON_DEVICE]}|cut -d";" -f$OUTPUT_COUNT)
+   if [ $(echo $RESULT2|grep -c "none") -eq 0 ];then
+    if [ $(echo $RESULT1|grep -c "hdmi-stereo") -eq 1 ]; then
+     W+=( "$RESULT1" "$RESULT2")
+    fi
+   fi
+   if [ $(echo $RESULT2|grep -c "none") -eq 1 ]; then
+    RESULT2=""
+    if [ $(echo $RESULT1|grep -c "analog-stereo") -eq 1 ]; then
+     W+=( "$RESULT1" "$RESULT2")
+    fi
+    if [ $(echo $RESULT1|grep -c "iec958-stereo") -eq 1 ]; then
+     W+=( "$RESULT1" "$RESULT2")
+    fi
+    if [ $(echo $RESULT1|grep -c "hdmi-stereo") -eq 1 ]; then
+     W+=( "$RESULT1" "$RESULT2")
+    fi
+   fi
+   OUTPUT_COUNT=$(($OUTPUT_COUNT+1))
+  done
+  SELECT_BUTTON_OUTPUT=$(dialog --backtitle "$BACKTITLE" --title  "$TITLE" --cancel-label "zurueck"  \
+--menu "An welchem Ausgang soll ausgegeben werden?" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+      case $? in
+          0)
+          if [ $CARD_PULSEAUDIO_NAME_TMP = "none" ];then
+           CARD_PULSEAUDIO_NAME_TMP=$(echo ${CARD_PULSEAUDIO_NAME[SELECT_BUTTON_DEVICE]}";")
+          else
+           CARD_PULSEAUDIO_NAME_TMP=$(echo $CARD_PULSEAUDIO_NAME_TMP${CARD_PULSEAUDIO_NAME[SELECT_BUTTON_DEVICE]}";")
+          fi
+          if [ $CARD_OUTPUT_PROFILE_TMP = "none" ];then
+           CARD_OUTPUT_PROFILE_TMP=$(echo $SELECT_BUTTON_OUTPUT";")
+          else
+           CARD_OUTPUT_PROFILE_TMP=$(echo $CARD_OUTPUT_PROFILE_TMP$SELECT_BUTTON_OUTPUT";")
+          fi
+          if [ $CARD_PROFILE_OPTIONS_TMP = "none" ];then
+           if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "hdmi") -eq 1 ];then
+            CARD_PROFILE_OPTIONS_TMP="pcm;"
+           fi
+           if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "analog") -eq 1 ];then
+            CARD_PROFILE_OPTIONS_TMP="none;"
+           fi
+           if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "iec958") -eq 1 ];then
+            CARD_PROFILE_OPTIONS_TMP="pcm;"
+           fi
+          else
+           if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "hdmi") -eq 1 ];then
+            CARD_PROFILE_OPTIONS_TMP=$(echo $CARD_PROFILE_OPTIONS_TMP"pcm;")
+           fi
+           if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "analog") -eq 1 ];then
+            CARD_PROFILE_OPTIONS_TMP=$(echo $CARD_PROFILE_OPTIONS_TMP"none;")
+           fi
+           if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "iec958") -eq 1 ];then
+            CARD_PROFILE_OPTIONS_TMP=$(echo $CARD_PROFILE_OPTIONS_TMP"pcm;")
+           fi
+          fi	
+          i=$(($i+1))
+          DEVICE_SELECT=$(($DEVICE_SELECT+1))
+          Devices_Multiausgabe
+          ;;
+          1)
+          Devices_Multiausgabe
+          ;;
+          255)
+          Digital_Analog
+          ;;
+      esac
+}
+####################################COMBINED_DEVICES_CONFIG_END################################
+###############################################################################################
+
+###############################################################################################
+####################################SINGLE_DEVICE_CONFIG_START#################################
+Devices()
+{
+W=()
+i=0 
+while [ $i -le $LIST_OF_DEVICES ]
+ do 
+ CARDSELECT[$i]=$(echo ${CARD_NAME[$i]})
+ if [ $ANALOG_DIGITAL = "Digital" ]; then 
+  if [ $(echo ${CARD_DIGITAL[$i]}|grep -c "yes") -eq 1 ]; then
+   if [ $(echo ${CARD_OUTPUT_PROFILE[$i]}|grep -c "hdmi") -gt 0 ];then 
+    if [ $(echo ${CARDSELECT[$i]}|grep -c -i "NVIDIA") -eq 1 ];then 
+     W+=( "$i" "Grafikkarte: ${CARDSELECT[$i]}" )
+    fi
+   fi
+  fi
+ fi
+i=$(($i+1))
+done
+i=0 
+while [ $i -le $LIST_OF_DEVICES ]
+ do 
+ CARDSELECT[$i]=$(echo ${CARD_NAME[$i]})
+ if [ $ANALOG_DIGITAL = "Digital" ]; then 
+  if [ $(echo ${CARD_DIGITAL[$i]}|grep -c "yes") -eq 1 ]; then
+   if [ $(echo ${CARD_OUTPUT_PROFILE[$i]}|grep -c "hdmi") -gt 0 ];then 
+    if [ $(echo ${CARDSELECT[$i]}|grep -c -i "NVIDIA") -eq 0 ];then 
+     W+=( "$i" "Grafikkarte: ${CARDSELECT[$i]}" )
+	fi
+   else 
+    W+=( "$i" "Soundkarte: ${CARDSELECT[$i]}" )
+   fi
+  fi
+ else
+  if [ $(echo ${CARD_ANALOG[$i]}|grep -c "yes") -eq 1 ]; then
+   if [ $(echo ${CARD_OUTPUT_PROFILE[$i]}|grep -c "hdmi") -gt 0 ];then 
+    W+=( "$i" "Grafikkarte: ${CARDSELECT[$i]}" )
+   else 
+    W+=( "$i" "Soundkarte: ${CARDSELECT[$i]}" )
+   fi
+  fi
+ fi
+i=$(($i+1))
+done
+SELECT_BUTTON_DEVICE=$(dialog --backtitle "$BACKTITLE" --title  "$TITLE" --cancel-label "zurueck" \
+--menu "Bitte waehle nun dein $ANALOG_DIGITAL-Ausgabegeraet" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+case $? in
+ 0)
+ if [ $ANALOG_DIGITAL = "Digital" ]; then 
+  Passthrough
+ else
+  Single_Device_Passthrough_Enable="no"
+  Sinks
+ fi
+ ;;
+ 1)
+ Digital_Analog
+ ;;
+ 255)
+ Digital_Analog
+ ;;
+esac
+}
+Passthrough()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --no-label "ja"\
+       --yes-label "nein"\
+       --yesno "\n\n\
+ Soll der Ton ueber PassThrough ausgegeben werden? \n\n\
+ Hinweis:\n
+ Wird nur HDMI am TV verwendet (ohne AV-R) wird kein PassThrough\n
+ empfohlen.\n
+ Kurzbeschreibung:\n
+ PassThrough uebergibt die digitalen Sounddaten ungefiltert an  \n
+ das Endgeraet/AV-Receiver, erst dort wird der Ton dekodiert.\n
+ Diese Receiver unterstuetzen unterschiedliche Mehrkanal-Tonsysteme.\n
+ Hierbei handelt es sich um MPEG, AC-3 (Dolby Digital) und E-AC-3.\n
+ Bitte lies dazu die Unterlagen deines Receivers/Endgeraets." $DIA_BOX2_SIZE
+case $? in
+ 1)
+ Single_Device_Passthrough_Enable="yes"
+ Sinks
+ ;;
+ 0)
+ Single_Device_Passthrough_Enable="no"
+ Sinks
+ ;;
+ 255)
+ Devices
+ ;;
+esac
+}
+
+
+Sinks()
+{
+i=0 
+DEVICE_COUNT=0
+OUTPUT_COUNT=1
+CARD_PULSEAUDIO_NAME_NOT_USED="none"
+W=()
+for RESULT1 in $(echo ${CARD_OUTPUT_PROFILE[$SELECT_BUTTON_DEVICE]}|tr ";" " ");do
+ RESULT2=$(echo ${CARD_OUTPUT_PROFILE_CONNECTED_DEVICE[$SELECT_BUTTON_DEVICE]}|cut -d";" -f$OUTPUT_COUNT)
+ if [ $ANALOG_DIGITAL = "Digital" ]; then 
+  if [ $(echo $RESULT2|grep -c "none") -eq 0 ];then
+   if [ $(echo $RESULT1|grep -c "hdmi-stereo") -eq 1 ]; then
+    W+=( "$RESULT1" "$RESULT2")
+   fi
+   if [ $Single_Device_Passthrough_Enable = "no" ]; then
+    if [ $(echo $RESULT1|grep -c "hdmi-surround") -eq 1 ]; then
+     W+=( "$RESULT1" "$RESULT2")
+    fi
+   fi
+  fi
+ else
+  if [ $(echo $RESULT2|grep -c "none") -eq 1 ]; then
+   RESULT2=""
+  fi
+  if [ $(echo $RESULT1|grep -c "analog") -eq 1 ]; then
+   W+=( "$RESULT1" "$RESULT2")
+  fi
+ fi
+ OUTPUT_COUNT=$(($OUTPUT_COUNT+1))
+done
+OUTPUT_COUNT=1
+for RESULT1 in $(echo ${CARD_OUTPUT_PROFILE[$SELECT_BUTTON_DEVICE]}|tr ";" " ");do
+ RESULT2=$(echo ${CARD_OUTPUT_PROFILE_CONNECTED_DEVICE[$SELECT_BUTTON_DEVICE]}|cut -d";" -f$OUTPUT_COUNT)
+ if [ $(echo $RESULT2|grep -c "none") -eq 1 ];then
+  RESULT2=""
+  if [ $ANALOG_DIGITAL = "Digital" ]; then 
+   if [ $(echo $RESULT1|grep -c "analog-stereo") -eq 1 ]; then
+    DUMMY="DUMMY"
+   else
+    if [ $(echo $RESULT1|grep -c "hdmi-stereo") -eq 1 ]; then
+     W+=( "$RESULT1" "$RESULT2")
+    else
+	 if [ $(echo $RESULT1|grep -c "stereo") -eq 1 ]; then
+      W+=( "$RESULT1" "$RESULT2")
+     fi
+     if [ $Single_Device_Passthrough_Enable = "no" ]; then
+      if [ $(echo $RESULT1|grep -c "hdmi-surround") -eq 1 ]; then
+       W+=( "$RESULT1" "$RESULT2")
+      fi
+     fi
+    fi
+   fi
+  fi
+ fi
+ OUTPUT_COUNT=$(($OUTPUT_COUNT+1))
+done
+
+SELECT_BUTTON_OUTPUT=$(dialog --backtitle "$BACKTITLE" --title  "$TITLE" --cancel-label "zurueck"  \
+--menu "An welchem Ausgang soll ausgegeben werden?" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+case $? in
+ 0)
+ CARD_PULSEAUDIO_NAME_TMP=${CARD_PULSEAUDIO_NAME[SELECT_BUTTON_DEVICE]}
+ while [ $DEVICE_COUNT -le $LIST_OF_DEVICES ]
+ do 
+  if [ $DEVICE_COUNT -eq $SELECT_BUTTON_DEVICE ]; then
+   DUMMY="DUMMY"
+  else
+   if [ $CARD_PULSEAUDIO_NAME_NOT_USED = "none" ];then
+    CARD_PULSEAUDIO_NAME_NOT_USED=${CARD_PULSEAUDIO_NAME[$DEVICE_COUNT]}
+   else
+    CARD_PULSEAUDIO_NAME_NOT_USED=$(echo $CARD_PULSEAUDIO_NAME_NOT_USED";"${CARD_PULSEAUDIO_NAME[$DEVICE_COUNT]})
+   fi
+  fi
+ DEVICE_COUNT=$(($DEVICE_COUNT + 1))
+ done
+ CARD_PULSEAUDIO_NAME_NOT_USED_TMP=$CARD_PULSEAUDIO_NAME_NOT_USED
+ CARD_OUTPUT_PROFILE_TMP=$SELECT_BUTTON_OUTPUT
+ SINK_COMBINED_TMP="no"
+ if [ $Single_Device_Passthrough_Enable = "yes" ]; then
+  echo $SELECT_BUTTON_DEVICE' '$SELECT_BUTTON_OUTPUT' test_digital_options' > /tmp/pulse-x-lib-function
+  Desktop_Start
+  Mehrkanal_Tonsyteme_Auswahl
+  #####löschen der temporären Daten für die easyvdr-x-lib-pulseaudio#####
+  if [ -e /tmp/pulse-x-lib-function ];then 
+   rm /tmp/pulse-x-lib-function
+  fi
+  #######################################################################
+ fi
+ if [ $Single_Device_Passthrough_Enable = "no" ]; then
+  if [ $ANALOG_DIGITAL = "Digital" ];then
+   CARD_PROFILE_OPTIONS_TMP="pcm"
+  else
+   CARD_PROFILE_OPTIONS_TMP="none"
+  fi
+ fi 
+ Save_Pulseaudio_Config
+ TEST_SOUND_PROFILE="TV"
+ $LOGGER $TEST_SOUND_PROFILE" durchlaufen"
+ SINGLE_DEVICE_CONFIG="yes"
+ Soundtest
+ Gaming_Profil_YesNo
+ ;;
+ 1)
+ Devices
+ ;;
+ 255)
+ Devices
+ ;;
+esac
+}
+Mehrkanal_Tonsyteme_Auswahl()
+{
+. /tmp/pulse-sinks
+W=()
+i=0
+x=0
+MULTICHANNEL_ALL="none"
+for RESULT in $(echo ${CARD_PROFILE_OPTIONS[$SELECT_BUTTON_DEVICE]}|tr ";" " ");do
+ if [ $RESULT = "pcm" ]; then
+   SELECT='on'
+ else
+   SELECT='off'
+ fi
+ W+=( $i "$RESULT" $SELECT )
+ MULTICHANNEL[$i]=$RESULT
+ i=$(($i+1))
+done
+SELECT_MULTICHANNEL=$(dialog --backtitle "$BACKTITLE" --title "$TITLE" --cancel-label "zurueck" --checklist "Mehrkanal-Tonsyteme" $DIA_BOX_SIZE "${W[@]}" 3>&2 2>&1 1>&3 )
+
+case $? in
+ 0)
+ while [ $x -le $i ]; do
+  for MULTICHANNEL_SELECT in $SELECT_MULTICHANNEL; do
+   if [ $MULTICHANNEL_SELECT -eq $x ]; then
+     if [ $MULTICHANNEL_ALL = "none" ]; then 
+      MULTICHANNEL_ALL=${MULTICHANNEL[$x]}
+     else
+	  MULTICHANNEL_ALL=$(echo $MULTICHANNEL_ALL";"${MULTICHANNEL[$x]})
+    fi
+   fi
+  done 
+ let x=$x+1
+ done
+ if [ $MULTICHANNEL_ALL = "none" ]; then 
+  MULTICHANNEL_ALL="pcm"
+ fi 
+ if [ $MULTICHANNEL_ALL = "pcm" ]; then 
+  Single_Device_Passthrough_Enable="no"
+ fi 
+ CARD_PROFILE_OPTIONS_TMP=$MULTICHANNEL_ALL
+ Save_Pulseaudio_Config
+ ;;
+ 1)
+ Devices
+ ;;
+ 255)
+ Devices
+ ;;
+esac
+}
+####################################SINGLE_DEVICE_CONFIG_END#################################
+#############################################################################################
+
+
+Soundtest()
+{
+dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --no-label "nein"\
+       --yes-label "ja"\
+       --yesno "\n\n\
+ Moechtest du einen Soundtest starten?" $DIA_BOX2_SIZE
+case $? in
+ 0)
+ if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "analog-stereo") -eq 1 ]; then
+  echo 'A2 '$VOID' sound_test '$TEST_SOUND_PROFILE > /tmp/pulse-x-lib-function
+ fi
+ if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "analog-surround-4") -eq 1 ]; then
+  echo 'A4 '$VOID' sound_test '$TEST_SOUND_PROFILE > /tmp/pulse-x-lib-function 
+ fi
+ if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "analog-surround-5") -eq 1 ]; then
+  echo 'A6 '$VOID' sound_test '$TEST_SOUND_PROFILE > /tmp/pulse-x-lib-function 
+ fi
+ if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "analog-surround-7") -eq 1 ]; then
+  echo 'A8 '$VOID' sound_test '$TEST_SOUND_PROFILE > /tmp/pulse-x-lib-function
+ fi
+ if [ $(echo $TEST_SOUND_PROFILE|grep -c "GAMING") -eq 1 ]; then
+  if [ $(echo $ANALOG_DIGITAL_GAMING_PROFIL|grep -c "Digital") -eq 1 ]; then
+   if [ $(echo $Passthrough_Enable|grep -c "no") -eq 1 ]; then
+    if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "stereo") -eq 1 ]; then
+     echo 'A2 '$VOID' sound_test '$TEST_SOUND_PROFILE > /tmp/pulse-x-lib-function
+    else 
+     echo 'D '$VOID' sound_test '$TEST_SOUND_PROFILE >/tmp/pulse-x-lib-function
+    fi
+   else
+    echo 'D '$VOID' sound_test '$TEST_SOUND_PROFILE >/tmp/pulse-x-lib-function
+   fi
+  fi 
+ fi
+ if [ $(echo $TEST_SOUND_PROFILE|grep -c "TV") -eq 1 ]; then
+  if [ $ANALOG_DIGITAL = "Digital" ]; then
+   if [ $(echo $Single_Device_Passthrough_Enable|grep -c "no") -eq 1 ]; then
+    if [ $(echo $SELECT_BUTTON_OUTPUT|grep -c "stereo") -eq 1 ]; then
+     echo 'A2 '$VOID' sound_test '$TEST_SOUND_PROFILE > /tmp/pulse-x-lib-function
+    else 
+     echo 'D '$VOID' sound_test '$TEST_SOUND_PROFILE >/tmp/pulse-x-lib-function
+    fi
+   else
+    echo 'D '$VOID' sound_test '$TEST_SOUND_PROFILE >/tmp/pulse-x-lib-function
+   fi
+  fi
+ fi
+ $LOGGER "Soundtest uebergeben an lib:"$(cat /tmp/pulse-x-lib-function)
+ Desktop_Start
+  #####löschen der temporären Daten für die easyvdr-x-lib-pulseaudio#####
+  if [ -e /tmp/pulse-x-lib-function ]; then
+   rm /tmp/pulse-x-lib-function
+  fi
+  #######################################################################
+  dialog --backtitle "$BACKTITLE"\
+       --title "$TITLE"\
+       --no-label "Einstellungen aendern"\
+       --yes-label "Soundcheck ok & beenden"\
+       --yesno "\n\n Wurde der Testsound richtig ausgegeben?" $DIA_BOX2_SIZE
+ case $? in
+  0)
+  return
+  ;;
+  1)
+  Sinks
+  ;;
+  255)
+  Sinks
+  ;;
+ esac
+ ;;
+ 1)
+ return
+ ;;
+ 255)
+ return
+ ;;
+esac
+}
+
+##############################################################################################
+####################################SAVE_DEVICES_CONFIG_START#################################
+Save_Pulseaudio_Config()
+{
+if [ $(echo $ANALOG_DIGITAL|grep -c "Steam") -eq 1 ];then
+. /etc/vdr/pulseaudio.old
+ CARD_PULSEAUDIO_NAME_NOT_USED_TMP=$CARD_PULSEAUDIO_NAME_NOT_USED
+ CARD_PULSEAUDIO_NAME_TMP=$CARD_PULSEAUDIO_NAME
+ CARD_OUTPUT_PROFILE_TMP=$CARD_OUTPUT_PROFILE
+ CARD_PROFILE_OPTIONS_TMP=$CARD_PROFILE_OPTIONS
+fi
+
+if [ -e /etc/vdr/pulseaudio.old ]; then
+ rm  /etc/vdr/pulseaudio.old
+fi
+echo 'CARD_PULSEAUDIO_NAME="'$CARD_PULSEAUDIO_NAME_TMP'"' > /etc/vdr/pulseaudio.conf
+echo 'CARD_PULSEAUDIO_NAME_NOT_USED="'$CARD_PULSEAUDIO_NAME_NOT_USED_TMP'"' >> /etc/vdr/pulseaudio.conf
+echo 'CARD_OUTPUT_PROFILE="'$CARD_OUTPUT_PROFILE_TMP'"' >> /etc/vdr/pulseaudio.conf
+echo 'SINK_COMBINED="'$SINK_COMBINED_TMP'"' >> /etc/vdr/pulseaudio.conf
+echo 'CARD_PROFILE_OPTIONS="'$CARD_PROFILE_OPTIONS_TMP'"' >> /etc/vdr/pulseaudio.conf
+echo 'GAMING_CARD_PULSEAUDIO_NAME="'$GAMING_CARD_PULSEAUDIO_NAME_TMP'"' >> /etc/vdr/pulseaudio.conf
+echo 'GAMING_CARD_PULSEAUDIO_NAME_NOT_USED="'$GAMING_CARD_PULSEAUDIO_NAME_NOT_USED_TMP'"' >> /etc/vdr/pulseaudio.conf
+echo 'GAMING_CARD_OUTPUT_PROFILE="'$GAMING_CARD_OUTPUT_PROFILE_TMP'"' >> /etc/vdr/pulseaudio.conf
+echo 'GAMING_CARD_PROFILE_OPTIONS="'$GAMING_CARD_PROFILE_OPTIONS_TMP'"' >> /etc/vdr/pulseaudio.conf
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PULSEAUDIO_NAME'|head -1)
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PULSEAUDIO_NAME_NOT_USED'|head -1)
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_OUTPUT_PROFILE'|head -1)
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'SINK_COMBINED')
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PROFILE_OPTIONS'|head -1)
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PULSEAUDIO_NAME'|head -1)
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PULSEAUDIO_NAME_NOT_USED')
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_OUTPUT_PROFILE')
+$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PROFILE_OPTIONS')
+
+####Kodi Output setzen####
+if [ $Single_Device_Passthrough_Enable = "yes" ]; then
+ KODI_SET_PASSTHROUGH="-p true "
+fi
+if [ $(echo $CARD_PROFILE_OPTIONS_TMP|grep -c ";ac3") -eq 1 ]; then
+ KODI_SET_AC3="-a true "
+fi
+if [ $(echo $CARD_PROFILE_OPTIONS_TMP|grep -c "eac3") -eq 1 ]; then
+ KODI_SET_EAC3="-e true "
+fi
+if [ $(echo $CARD_PROFILE_OPTIONS_TMP|grep -c "dts") -eq 1 ]; then
+ KODI_SET_DTS="-d true "
+fi
+if [ $ANALOG_DIGITAL = "Digital" ]; then
+ KODI_SET_CHANNELS="-c 1 "
+ else
+ if [ $(echo $CARD_OUTPUT_PROFILE_TMP|grep -c "4") -eq 1 ]; then
+  KODI_SET_CHANNELS="-c 3 "
+ fi
+ if [ $(echo $CARD_OUTPUT_PROFILE_TMP|grep -c "5") -eq 1 ]; then
+  KODI_SET_CHANNELS="-c 4 "
+ fi
+ if [ $(echo $CARD_OUTPUT_PROFILE_TMP|grep -c "7") -eq 1 ]; then
+  KODI_SET_CHANNELS="-c 6 "
+ fi
+fi
+$SETUP/tools/set-kodi-default-parameter SetKodiAudio $KODI_SET_PASSTHROUGH$KODI_SET_AC3$KODI_SET_EAC3$KODI_SET_DTS$KODI_SET_CHANNELS
+}
+####################################SAVE_DEVICES_CONFIG_END#################################
+############################################################################################
+
+Desktop_Start()
+{
+VT_KONSOLE_OLD=$(fgconsole)         # aktuell aktives Terminal
+
+rm_xauthority
+easyvdr-desktop start
+#Auf das Ende des Setups warten
+while [ ! -e /tmp/pulse-config-ready ]
+ do
+ sleep 1
+done
+rm /tmp/pulse-config-ready
+ 
+easyvdr-desktop stop
+rm_xauthority
+chvt $VT_KONSOLE_OLD               # zurueck zur aufrufenden Konsole
+}
+##############################################################################
+function Pulseaudio_Default_On {
+ Pulseaudio_On
+ 
+ #Bash Setup
+ #Datei erzeugen damit Setup startet
+ touch /tmp/pulse-x-lib-function 
+ av_reciver_info
+ Desktop_Start
+ if [ -e /tmp/pulse-x-lib-function ]; then
+  rm /tmp/pulse-x-lib-function
+ fi
+ if [ -e /tmp/pulse-sinks ];then
+  ##### includes #####
+  . /tmp/pulse-sinks
+  LIST_OF_DEVICES=$(($(cat /tmp/pulse-sinks |grep -v "#"|grep -c "CARD_NAME") - 1))
+  Digital_Analog
+ fi
+
+ set_frontend_parameter
+}
+
+############################################################################
+function Write_Status {
+ echo "Audio_configured_Pulse=\"$PulseAudio_Default\"" >> $SETUP_STATUS
+ sed -i '/"*easyvdr-config-audio"*/d' $SETUP_STATUS
+ echo "# `date` easyvdr-config-audio zuletzt ausgefuehrt" >> $SETUP_STATUS
+ sed -i '/Audio_configured"*/d' $SETUP_STATUS
+ echo "Audio_configured=\"true\"" >> $SETUP_STATUS
+ echo "Audio_configured_Pulse=\"On\"" >> $SETUP_STATUS
+}
+
+######################## main ###############################################
+
+[ ! -f  $SNDLOG ] && touch $SNDLOG
+
+#Terminal merken
+VT_KONSOLE_OLD=$(fgconsole)         # aktuell aktives Terminal
+
+
+echo "************************************************************" >> $SNDLOG
+echo "     ... Aufruf von $FILENAME "                               >> $SNDLOG
+echo "         Version $FILEVERSION mit dem Parameter \"$1\""       >> $SNDLOG
+echo "************************************************************" >> $SNDLOG
+echo ""
+
+#############################################################################
+# Aufrufparameter auswerten und erforderliche Schritte ausfuehren
+#############################################################################
+
+case "$1" in
+    "Off")      Pulseaudio_Default_Off        ;;
+    "On" )      Pulseaudio_Default_On         ;;
+        *)  echo "Parameter: $1 unbekannt"; Usage;;
+esac
+
+chvt $VT_KONSOLE_OLD               # zurueck zur aufrufenden Konsole
+
+if [ x$Audio_configured_Pulse == "x" ]; then
+ echo "Audio_configured_Pulse=\"On\"" >> $SETUP_STATUS
+fi
+
+Write_Status
+
+echo "---> Audio-Konfiguration fuer Nutzung von Pulseaudio vorbereitet" >> $SNDLOG
+
+echo "------------------------------------------------------------" >> $SNDLOG
+echo "     $FILENAME bis zum Ende durchgelaufen."                   >> $SNDLOG
+echo "------------------------------------------------------------" >> $SNDLOG

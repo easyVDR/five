@@ -1,0 +1,26 @@
+#!/bin/bash
+#
+#
+# v 1.0  12.10.14 Bleifuss2
+# v 0.2. 11.02.13  Captain_Beefheart
+
+MEDI_DIR="/media/easyvdr01"
+MEDI_FOLDER="\
+/mp3/tmp      /mp3/audiorecorder /photos/vdr   /convert/dvd        /convert/divx \
+/convert/tmp  /convert/iso       /convert/svcd /convert/screenshot /convert/mpg  \
+/cdfs         /dvd               /epgimages    /cdrom              /video0       \
+/filme1       /filme2            /filme3       /usb-mount          /net-radio    \
+/mp3/ripit         /mp3/stream-ripper            /mp3/audiorecorder"
+
+
+for FOLDER in $MEDI_FOLDER
+  do
+      if  [ ! -d $MEDI_DIR$FOLDER ]; then
+       mkdir -p $MEDI_DIR$FOLDER     >/dev/null 2>&1
+      fi
+  done
+
+rm -f /video0                       >/dev/null 2>&1
+ln -f -s   $MEDI_DIR/video0 /video0 >/dev/null 2>&1
+
+chown -R vdr:vdr  $MEDI_DIR     >/dev/null 2>&1

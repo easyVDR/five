@@ -1,0 +1,315 @@
+#!/bin/bash
+#17.10.13  V 0.1 Bleifuss
+#21.11.13  V 0.2 C.B 
+#29.12.13  V 0.3 C.B Update für Interleace Erkennung
+#08.01.14  V 0.3 Bleifuss update für Graphtft
+#26.02.14  V 0.3 Bleifuss 
+#24.11.17  V 0.31 Synax Änderung von 50.0Hz nach XX.00Hz
+
+. /usr/lib/vdr/easyvdr-config-loader                   ## common defines
+. /usr/lib/vdr/functions/easyvdr-functions-lib         ## common functions
+. /usr/share/easyvdr/setup/easyvdr-setup-defines       ## setup only defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions     ## setup only functions
+. $SETUP/video-setup/easyvdr-video-lib
+CONF_FILE="/etc/vdr/easyvdr/easyvdr-video-settings.conf"
+. $CONF_FILE
+
+XRANDR_FILE=/tmp/xrandr-verbose
+LOGGER=" logger -t easyvdr-x-hardware-detection-check-display-resolution"
+
+#######
+Get_Data()
+{
+OLD_IFS=$IFS     # sicher alten IFS
+IFS=$'\n'        # IFS auf newline
+
+OUTPUT=($(cat $XRANDR_FILE))  # ausgabe von xrandr zeilenweise in Array
+
+shopt -s extglob              # erweiterte regular expressions anschalten
+i=0
+for ELEMENT in ${OUTPUT[@]}           # in dieser Schleife werden alle führenden
+  do                                  # und nachfolgenden spaces und tabs gelöscht
+    ELEMENT_1="${ELEMENT##*($'\t'| )}"
+    OUTPUT2[$i]="${ELEMENT_1%%*($'\t'| )}"
+    ((++i))
+  done 
+IFS=$OLD_IFS     # wiederherstellung des orginalen IFS
+}
+
+#########
+Reduce_Data()
+{
+START_POSITIONS=""
+SIZE_OUTPUT2=${#OUTPUT2[@]}
+for ((j=0;j<$SIZE_OUTPUT2;j++))
+  do
+    ELEMENT2=${OUTPUT2[$j]}; set -- $ELEMENT2
+    [[ $2 == "connected" ]] && START_POSITIONS="$START_POSITIONS $j"
+  done 
+
+m=0
+for START_POSITION in $START_POSITIONS
+  do
+    for (( k=$START_POSITION; k<$SIZE_OUTPUT2; k++ ))
+      do
+        ELEMENT3=${OUTPUT2[$j]}; set -- $ELEMENT3
+        [[ $2 == "disconnected" ]] && break
+        RESULT_AR[$m]=${OUTPUT2[$k]}; ((++m))
+        ELEMENT4=${OUTPUT2[$j+1]}; set -- $ELEMENT4
+        [[ $2 == "connected" ]] && break
+      done
+  done
+}
+
+################################ Auflösung suchen #############################
+#CONNECTOR=HDMI-0 Anschluss der geprüft werden soll (Parameter 1)
+#MODE=1920x1080 Gesuchte Auflösung (Parameter 2)
+#RATE=50.0 gesuchte Frequenz (Parameter 3)
+
+#Rückgabewert true/false
+
+
+Search_Display_Resolution()
+{
+local CONNECTOR=$1
+local MODE=$2
+local RATE=$3
+local IL_STAT=$4
+RET_STAT=1   # default "false"
+FOUND_CON=1
+#Anzahl der Array Elemente ermitteln 
+SIZE_RESULT_AR=${#RESULT_AR[@]}
+for (( i=0;i<$SIZE_RESULT_AR;i++))
+ do
+   dummy=${RESULT_AR[$i]}
+   FIRSTELEMENT1="${dummy%% *}"          # erstes Element der 1sten Zeile
+   LASTELEMENT1="${dummy##* }"           # letztes Element der 1sten Zeile
+   dummy=${RESULT_AR[$i+2]}
+   LASTELEMENT2="${dummy##* }"          # letztes Element der 3ten Zeile
+
+   [[ $FIRSTELEMENT1 == $CONNECTOR ]] && FOUND_CON=0
+   if (($FOUND_CON == 0)); then
+     if [[ $MODE == $FIRSTELEMENT1 ]] && ([[ $RATE == $LASTELEMENT2 ]] || [[ $RATE == "default" ]]); then
+       case $IL_STAT in
+         p) [[ "Interlace" != $LASTELEMENT1 ]] && RET_STAT=0  ;;
+         i) [[ "Interlace" == $LASTELEMENT1 ]] && RET_STAT=0  ;;
+       esac
+     fi
+     dummy2=${RESULT_AR[$i+2]}; set -- $dummy2 
+     [[ $2 == "connected" ]] && FOUND_CON=1
+   fi
+ done 
+return $RET_STAT
+}
+
+
+###############################################################################
+####################### Unterstützte Auflösungen suchen #######################
+Define_Search_TV_Modes()
+{
+###### Auflösungen
+#### 16:9
+SEARCH_MODE[0]="1920x1080 200.00Hz p"
+SEARCH_MODE[1]="1920x1080 100.00Hz p"
+SEARCH_MODE[2]="1920x1080 75.00Hz p"
+SEARCH_MODE[3]="1920x1080 50.00Hz p"
+SEARCH_MODE[4]="1920x1080 25.00Hz p"
+SEARCH_MODE[5]="1920x1080 75.00Hz i"
+SEARCH_MODE[6]="1920x1080 50.00Hz i"
+
+### 4:3
+SEARCH_MODE[10]="1600x1200 200.00Hz p"
+SEARCH_MODE[11]="1600x1200 100.00Hz p"
+SEARCH_MODE[12]="1600x1200 75.00Hz p"
+SEARCH_MODE[13]="1600x1200 50.00Hz p"
+SEARCH_MODE[14]="1600x1200 25.00Hz p"
+SEARCH_MODE[15]="1600x1200 75.00Hz i"
+SEARCH_MODE[16]="1600x1200 50.00Hz i"
+
+
+#### 16:9
+SEARCH_MODE[17]="1680x1050 50.00Hz p"
+SEARCH_MODE[18]="1680x1050 75.00Hz p"
+SEARCH_MODE[19]="1680x1050 50.00Hz i"
+
+#### 16:9
+SEARCH_MODE[20]="1600x900 200.00Hz p"
+SEARCH_MODE[21]="1600x900 100.00Hz p"
+SEARCH_MODE[22]="1600x900 75.00Hz p"
+SEARCH_MODE[23]="1600x900 50.00Hz p"
+SEARCH_MODE[24]="1600x900 25.00Hz p"
+SEARCH_MODE[25]="1600x900 75.00Hz i"
+SEARCH_MODE[26]="1600x900 50.00Hz i"
+
+#### 16:9
+SEARCH_MODE[27]="1366x768 100.00Hz p"
+SEARCH_MODE[28]="1366x768 75.00Hz p"
+SEARCH_MODE[29]="1366x768 50.00Hz p"
+SEARCH_MODE[30]="1366x768 25.00Hz p"
+SEARCH_MODE[31]="1366x768 75.00Hz i"
+SEARCH_MODE[32]="1366x768 50.00Hz i"
+SEARCH_MODE[33]="1360x768 100.00Hz p"
+SEARCH_MODE[34]="1360x768 75.00Hz p"
+SEARCH_MODE[35]="1360x768 50.00Hz p"
+SEARCH_MODE[36]="1360x768 25.00Hz p"
+SEARCH_MODE[37]="1360x768 75.00Hz i"
+SEARCH_MODE[38]="1360x768 50.00Hz i"
+
+#### 4:3
+SEARCH_MODE[40]="1280x1024 200.00Hz p"
+SEARCH_MODE[41]="1280x1024 100.00Hz p"
+SEARCH_MODE[42]="1280x1024 75.00Hz p"
+SEARCH_MODE[43]="1280x1024 50.00Hz p"
+SEARCH_MODE[44]="1280x1024 25.00Hz p"
+SEARCH_MODE[45]="1280x1024 75.00Hz i"
+SEARCH_MODE[46]="1280x1024 50.00Hz i"
+
+#### 16:9
+SEARCH_MODE[50]="1280x720 200.00Hz p"
+SEARCH_MODE[51]="1280x720 100.00Hz p"
+SEARCH_MODE[52]="1280x720 75.00Hz p"
+SEARCH_MODE[53]="1280x720 50.00Hz p"
+SEARCH_MODE[54]="1280x720 25.00Hz p"
+SEARCH_MODE[55]="1280x720 75.00Hz i"
+SEARCH_MODE[56]="1280x720 50.00Hz i"
+
+#### 16:9
+SEARCH_MODE[60]="1280x800 200.00Hz p"
+SEARCH_MODE[61]="1280x800 100.00Hz p"
+SEARCH_MODE[62]="1280x800 75.00Hz p"
+SEARCH_MODE[63]="1280x800 50.00Hz p"
+SEARCH_MODE[64]="1280x800 25.00Hz p"
+SEARCH_MODE[65]="1280x800 75.00Hz i"
+SEARCH_MODE[66]="1280x800 50.00Hz i"
+
+#### 16:9
+SEARCH_MODE[67]="3840x2160 25.00Hz p"
+SEARCH_MODE[68]="3840x2160 50.00Hz p"
+
+
+#### 4:3
+SEARCH_MODE[70]="1024x768 200.00Hz p"
+SEARCH_MODE[71]="1024x768 100.00Hz p"
+SEARCH_MODE[72]="1024x768 75.00Hz p"
+SEARCH_MODE[73]="1024x768 50.00Hz p"
+SEARCH_MODE[74]="1024x768 25.00Hz p"
+SEARCH_MODE[75]="1024x768 75.00Hz i"
+SEARCH_MODE[76]="1024x768 50.00Hz i"
+
+#### 4:3
+SEARCH_MODE[80]="800x600 200.00Hz p"
+SEARCH_MODE[81]="800x600 100.00Hz p"
+SEARCH_MODE[82]="800x600 75.00Hz p"
+SEARCH_MODE[83]="800x600 50.00Hz p"
+SEARCH_MODE[84]="800x600 25.00Hz p"
+SEARCH_MODE[85]="800x600 75.00Hz i"
+SEARCH_MODE[86]="800x600 50.00Hz i"
+
+#### 4:3
+SEARCH_MODE[90]="720x576 200.00Hz p"
+SEARCH_MODE[91]="720x576 100.00Hz p"
+SEARCH_MODE[92]="720x576 75.00Hz p"
+SEARCH_MODE[93]="720x576 50.00Hz p"
+SEARCH_MODE[94]="720x576 25.00Hz p"
+SEARCH_MODE[95]="720x576 75.00Hz i"
+SEARCH_MODE[96]="720x576 50.00Hz i"
+
+#PC Modus
+SEARCH_MODE[101]="1920x1080 60.00Hz p"
+SEARCH_MODE[102]="1680x1050 60.00Hz p"
+SEARCH_MODE[103]="1600x1200 60.00Hz p"
+SEARCH_MODE[104]="1600x900 60.00Hz p"
+SEARCH_MODE[105]="1366x768 60.00Hz p"
+SEARCH_MODE[106]="1360x768 60.00Hz p"
+SEARCH_MODE[107]="1280x1024 60.00Hz p"
+SEARCH_MODE[108]="1280x720 60.00Hz p"
+SEARCH_MODE[109]="1280x800 60.00Hz p"
+SEARCH_MODE[110]="1024x768 60.00Hz p"
+SEARCH_MODE[111]="800x600 60.00Hz p"
+SEARCH_MODE[112]="720x576 60.00Hz p"
+# Ende
+
+SEARCH_MODE[115]="FINITO"
+}
+
+
+Define_Search_InfoDisplay_Modes()
+{
+unset SEARCH_MODE
+###### Auflösungen
+##GRAPHTFT
+SEARCH_MODE[0]="800x480 default p"
+SEARCH_MODE[1]="800x480 default i"
+SEARCH_MODE[2]="800x600 default p"
+SEARCH_MODE[3]="800x600 default i"
+SEARCH_MODE[4]="1024x768 default p"
+SEARCH_MODE[5]="1024x768 default i"
+SEARCH_MODE[6]="1280x800 default p"
+SEARCH_MODE[7]="1280x800 default i"
+SEARCH_MODE[8]="1280x1024 default p"
+SEARCH_MODE[9]="1280x1024 default i"
+
+# Ende
+SEARCH_MODE[12]="FINITO"
+}
+
+##############
+# 1 Parameteter Schnittstelle des Bildschirms
+# 2 Parameter Name was für ein Blidschirm z.B VDR Bildschirm
+# 3 Parameter Ziel File für ermittelte Daten
+Check_Display_Resolutions()
+{
+local SCREEN_CONNECTOR=$1
+local SCREEN_NAME=$2
+local DEST_FILE=$3
+
+MODE_COUNTER=0
+ local NR=0
+ while [[ ${SEARCH_MODE[$NR]} != "FINITO" ]]
+  do
+   if [[ ${SEARCH_MODE[$NR]} != "" ]]; then                                 #Testen ob Variable existiert
+     Search_Display_Resolution $SCREEN_CONNECTOR ${SEARCH_MODE[$NR]}
+     if (($? == 0)); then
+        echo "$SCREEN_NAME[$MODE_COUNTER]=\"${SEARCH_MODE[$NR]}\"" >> $DEST_FILE
+        ((++MODE_COUNTER))
+     fi
+    fi
+  ((++NR))
+ done
+#Gefundene Werte speichern
+#SetConfFileParameter $SCREEN_NAME[$MODE_COUNTER] ${SEARCH_MODE[$NR]}
+echo $SCREEN_NAME[$MODE_COUNTER]"="\"${SEARCH_MODE[$NR]}\" >> $DEST_FILE
+}
+
+################
+Main_Run()
+{
+#### Leere Datei erzeugen
+local DATE="$(date)"
+echo "#" $DATE >  $RESOLUTION_FILE
+
+Check_Display_Resolutions $VDR_SCREEN_CONNECTOR VDR_SCREEN $RESOLUTION_FILE
+
+[[ $VDR_CLONE_CONNECTOR != "none" ]]         && Check_Display_Resolutions $VDR_CLONE_CONNECTOR VDR_CLONE_SCREEN $RESOLUTION_FILE
+[[ $SECONDARY_DESKTOP_CONNECTOR != "none" ]] && Check_Display_Resolutions $SECONDARY_DESKTOP_CONNECTOR SECONDARY_DESKTOP_SCREEN $RESOLUTION_FILE
+Define_Search_InfoDisplay_Modes
+[[ $VDR_GRAPHTFT_CONNECTOR != "none" ]]      && Check_Display_Resolutions $VDR_GRAPHTFT_CONNECTOR VDR_GRAPHTFT_SCREEN $RESOLUTION_FILE
+}
+
+###########  main   ##################
+MESSAGE_TIME=5
+/usr/bin/view_picture $SETUP/images/hardware-detection.jpg $MESSAGE_TIME & #Bild anzeigen
+
+xrandr --verbose > $XRANDR_FILE
+
+#Bildschirm Daten speichern, damit man prüfen kann ob der Bildschirm gewechselt wurde
+xrandr --verbose | xrandr  --verbose | grep -A 8 EDID > $XRANDR_EDID_FILE
+
+Get_Data
+Reduce_Data
+Define_Search_TV_Modes
+Main_Run
+
+sleep $MESSAGE_TIME
+touch /tmp/easyvdr_x
+exit 0

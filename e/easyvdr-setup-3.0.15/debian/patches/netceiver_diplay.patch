@@ -1,0 +1,98 @@
+Index: easyvdr-setup-3.0.15/setup/easyvdr-config-addons
+===================================================================
+--- easyvdr-setup-3.0.15.orig/setup/easyvdr-config-addons
++++ easyvdr-setup-3.0.15/setup/easyvdr-config-addons
+@@ -207,7 +207,7 @@ case $easyvdr_video_out in
+     pvr350) [[ ${CONFL_ARRAY[4]} == "O" ]] && ALLOW_STAT=1 ;;
+     x)      [[ ${CONFL_ARRAY[5]} == "O" ]] && ALLOW_STAT=1 ;;
+   ati)      [[ ${CONFL_ARRAY[6]} == "O" ]] && ALLOW_STAT=1 ;;
+-    *)      nop;;
++    *)      true;;
+ esac
+ [[ ${AUSBLENDE[$i]} != "+" ]]  && ALLOW_STAT=1
+ return $ALLOW_STAT
+Index: easyvdr-setup-3.0.15/setup/hw-detect/chk-lib
+===================================================================
+--- easyvdr-setup-3.0.15.orig/setup/hw-detect/chk-lib
++++ easyvdr-setup-3.0.15/setup/hw-detect/chk-lib
+@@ -13,6 +13,7 @@
+ #  v. 0.6.0 14.05.15 graphtft only on non X11        michel8
+ #  v. 0.6.1 19.07.15 chk_hbir auch bei live-CD       michel8
+ #  v. 0.6.2 19.09.17 change lirc_serial to serial_ir bleifuss
++#  v. 0.6.2 10.03.20 added netceiver via IPv6 multicast  mango
+ ###############################
+ 
+ #####
+@@ -174,6 +175,29 @@ hdet 2>/dev/null | grep "$hdet_para" &&
+ return $RET_STATUS
+ }
+ 
++##### netceiver via IPv6 multicast
++chk_netceiver()
++{
++SHORTLOG=/tmp/.netceiverfind
++[ -f $SHORTLOG ] && rm $SHORTLOG
++interfaces=$(ip -o link show | grep -F "link/ether" | awk '{ gsub(":", "", $2); print $2 }')
++echo "found ethernet interfaces: $interfaces" >> $SHORTLOG
++for dev in $interfaces; do
++	echo "look for Reelbox Netceiver on network interface: $dev" >> $SHORTLOG
++	# set unconditional interfce up
++	ip link set dev $dev up >> $SHORTLOG 2>&1
++	# wait for initialization
++	sleep 1
++	ping6 -w 1 -c 1 -I $dev ff02::16 >> $SHORTLOG 2>&1
++	if [ $? -eq 0 ]; then
++		echo "Reelbox Netceiver found on network interface: $dev" >> $SHORTLOG
++		return 0
++	fi
++done
++echo "no Reelbox Netceiver found on interfaces: $interfaces" >> $SHORTLOG
++return 1
++}
++
+ #####
+ chk_dummyhw()
+ {
+Index: easyvdr-setup-3.0.15/setup/hw-detect/hw-lib/20_video_in_hw
+===================================================================
+--- easyvdr-setup-3.0.15.orig/setup/hw-detect/hw-lib/20_video_in_hw
++++ easyvdr-setup-3.0.15/setup/hw-detect/hw-lib/20_video_in_hw
+@@ -303,6 +303,16 @@ paraset_c[25]="<empty_value>"
+ paraset_d[25]="<empty_value>"
+ paraset_e[25]="<empty_value>"
+ 
++# Reelbox Netceiver
++hw_name[26]="Reelbox Netceiver"
++hw_ident[26]="yes"
++det_method[26]="chk_netceiver"
++ins_method[26]="inst_write-info"
++paraset_a[26]="<empty_value>"
++paraset_b[26]="<empty_value>"
++paraset_c[26]="<empty_value>"
++paraset_d[26]="<empty_value>"
++paraset_e[26]="<empty_value>"
+ 
+ 
+ #nichts installieren
+Index: easyvdr-setup-3.0.15/setup/hw-detect/hw-lib/30_info_display
+===================================================================
+--- easyvdr-setup-3.0.15.orig/setup/hw-detect/hw-lib/30_info_display
++++ easyvdr-setup-3.0.15/setup/hw-detect/hw-lib/30_info_display
+@@ -387,6 +387,16 @@ paraset_c[53]="/etc/graphlcd/graphlcd.co
+ paraset_d[53]="<empty_value>"
+ paraset_e[53]="<empty_value>"
+ 
++##
++hw_name[54]="st7565-reel"
++hw_ident[54]="yes"
++det_method[54]="chk_dummyhw"
++ins_method[54]="inst_display"
++paraset_a[54]="vdr-plugin-graphlcd"
++paraset_b[54]="LCD graphlcd LCD_DRIVER st7565r-reel"
++paraset_c[54]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
++paraset_d[54]="<empty_value>"
++paraset_e[54]="<empty_value>"
++
+ #---ENDE---
+ hw_ident[100]="FINITO"
+-

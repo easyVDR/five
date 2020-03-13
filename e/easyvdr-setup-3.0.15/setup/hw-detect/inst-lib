@@ -1,0 +1,746 @@
+#
+#
+#  v. 0.8    11.09.12  C.B.
+#  v. 0.9    11.02.13  C.B.
+#  v. 0.10   01.01.14  C.B.
+#  v. 0.11   27.02.14  michel8
+#  v. 0.12   19.03.14  michel8
+#  v. 0.13   14.05.15  michel8: Keine-FB und irman ueber tty als Auswahl
+#  v. 0.14   22.06.15  michel8: ein oder zwei Events bei inputlirc
+#  v. 0.15   22.09.15  michel8: mehrere USB-Vendor-ID bei Remote-Receivern
+#  v. 0.16   19.09.17  bleifuss2 adding --allow-unauthenticated
+#  v. 0.16   01.12.17  bleifuss2 remove --allow-unauthenticated
+#  ###########
+
+#### defintionen ####
+
+[[ X$stat_easyvdr_config_loader != X"already loaded" ]] && . /usr/lib/vdr/easyvdr-config-loader
+[[ X$stat_easyvdr_functions_lib != X"already loaded" ]] && . /usr/lib/vdr/functions/easyvdr-functions-lib
+[[ X$stat_easyvdr_setup_defines != X"already loaded" ]] && . /usr/share/easyvdr/setup/easyvdr-setup-defines
+[[ X$stat_easyvdr_setup_functions != X"already loaded" ]] && . /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+LINE_MARK="        "
+####################
+
+#####
+inst_package()
+{
+SET_HW_NAME="$1"; PARAM_A="$2"; PARAM_B="$3"; PARAM_C="$4"; PARAM_D="$5"
+
+PACK_P_1=$PARAM_A        # Paketname
+PACK_P_2=($PARAM_B)      # sysconfig Eintrag
+PACK_P_3=($PARAM_C)      # zu kopierende Files
+#PACK_P_4=($PARAM_D)      # ID für udev    #unused
+
+log --silent " ---> Gesetzt $PACK_P_1 .."
+log --silent "      versuche" $PACK_P_1 "zu installieren"
+echo "  => versuche $PACK_P_1 zu installieren" >> $APT_GET_LOG
+
+PAK_INST_FLAG=$(dpkg --get-selections | grep -v "deinstall" | grep -c "$PACK_P_1")
+if  (( $PAK_INST_FLAG != 0 ))
+ then
+   dpkg-reconfigure $PACK_P_1
+   log --silent "      Metapak" $PACK_P_1 "reconfiguriert"
+   echo "     Metapak $PACK_P_1 reconfiguriert" >> $APT_GET_LOG
+ else
+#    debconf-apt-progress --logfile $APT_GET_LOG -- apt-get --yes --allow-unauthenticated install $PACK_P_1
+   debconf-apt-progress --logfile $APT_GET_LOG -- apt-get --yes install $PACK_P_1
+
+   if [ $? -ne 0 ];then
+    log --silent "      E: Fehler beim Installieren von:" $PACK_P_1
+   else
+    log --silent "      Installation von" $PACK_P_1 "durchgelaufen"
+   fi
+fi
+if [[ ${PACK_P_2[0]} != "<empty_value>"  ]]; then
+ ELEMENT_COUNT=${#PACK_P_2[*]}
+ for ((i=0;i<$ELEMENT_COUNT;i++))
+   do
+     j=$(($i +1))  
+     SetSysconfig "${PACK_P_2[$i]}" "${PACK_P_2[$j]}"
+     ((++i))
+   done
+fi
+if [[ ${PACK_P_3[0]} != "<empty_value>"  ]]; then
+ cp -f "${PACK_P_3[0]}" "${PACK_P_3[1]}"
+fi
+}
+
+#####
+set_settings()
+{
+SET_HW_NAME="$1"; SET_PARA="$2"; dummy1="$3"; dummy2="$4"
+
+SYS_PARA_1=($dummy1)
+SYS_PARA_2=($dummy2)
+log --silent " ---> Gesetzt $SET_PARA .."
+log --silent "versuche" $SET_PARA "zu installieren"
+SetSysconfig "${SYS_PARA_1[0]}" "${SYS_PARA_1[1]}"
+if [[ ${SYS_PARA_2[0]} != "<empty_value>"  ]]; then
+ SetSysconfig "${SYS_PARA_2[0]}" "${SYS_PARA_2[1]}"
+fi
+/usr/lib/vdr/easyvdr-set-settings "$SET_PARA"
+}
+
+#####
+inst_write-info()
+{
+SET_HW_NAME="$1"; CARD_NAME=$2; USES_STANDARD_DRV=$3
+KIND_of_HW="# video_input_hardware"
+#sed -i '/"*video_input_hardware"*/d' $SETUP_STATUS   # bereinigung der setup.state jetzt in easyvdr-detect
+echo "$KIND_of_HW $CARD_NAME $USES_STANDARD_DRV" >> $SETUP_STATUS
+}
+
+#####
+do_nothing()
+{
+x=0
+log --silent " ---> nichts ausgewaehlt .."
+}
+
+#####
+inst_display()
+{
+SET_HW_NAME="$1"; PARAM_A="$2"; PARAM_B="$3"; PARAM_C="$4"; PARAM_D="$5"
+
+UDEV_FILE="/lib/udev/rules.d/99-graphlcd-base.rules"
+
+DISP_P_1=$PARAM_A        # Paketname
+DISP_P_2=($PARAM_B)      # sysconfig Eintrag
+DISP_P_3=($PARAM_C)      # zu kopierende Files
+DISP_P_4=($PARAM_D)      # ID für udev
+
+log --silent " ---> Gesetzt $DISP_P_1 .."
+log --silent "      versuche" $DISP_P_1 "zu installieren"
+echo "  => versuche $DISP_P_1 zu installieren" >> $APT_GET_LOG
+
+PAK_INST_FLAG=$(dpkg --get-selections | grep -v "deinstall" | grep -c "$DISP_P_1")
+if  (( $PAK_INST_FLAG != 0 ))
+ then
+    dpkg-reconfigure $DISP_P_1
+   log --silent "      " $DISP_P_1 "reconfiguriert"
+   echo "     $DISP_P_1 reconfiguriert" >> $APT_GET_LOG
+ else
+    debconf-apt-progress --logfile $APT_GET_LOG -- apt-get --yes install $DISP_P_1  
+   if [ $? -ne 0 ];then
+    log --silent "      E: Fehler beim Installieren von:" $DISP_P_1
+   else
+    log --silent "      Installation von" $DISP_P_1 "durchgelaufen"
+   fi
+fi
+if [[ ${DISP_P_2[0]} != "<empty_value>"  ]]; then
+ ELEMENT_COUNT=${#DISP_P_2[*]}
+ for ((i=0;i<$ELEMENT_COUNT;i++))
+   do
+     j=$(($i +1))  
+     SetSysconfig "${DISP_P_2[$i]}" "${DISP_P_2[$j]}"
+     ((++i))
+   done
+fi
+
+[[ ${DISP_P_3[0]} != "<empty_value>"  ]] && cp -f "${DISP_P_3[0]}" "${DISP_P_3[1]}"
+
+if [[ ${DISP_P_4[0]} != "<empty_value>" ]]
+ then
+   echo "ATTRS{idVendor}==\"${DISP_P_4[0]}\", ATTRS{idProduct}==\"${DISP_P_4[1]}\", GROUP=\"uucp\", MODE=\"0660\"  $LINE_MARK"  >> /tmp/.udev.tmp
+   write_udev_rule
+ else
+   remove_udev_rule
+fi
+}
+
+#####
+# check if UDEV_FILE /etc/udev/rules.d/01-easyvdr-remote.rules exist - if not, generate file
+check_remote_rule()
+{
+
+
+CHECK_FILE="/etc/udev/rules.d/01-easyvdr-remote.rules"
+#CHECK_FILE="/tmp/01-easyvdr-remote.rules"
+if [ ! -e $CHECK_FILE ]; then
+   echo "#KERNELS==\"input*\", ATTRS{name}==\"Budget-CI dvb ir receiver\", SYMLINK+=\"input/ir-budgetCI\""                                  > $CHECK_FILE
+   echo "#BUS==\"usb\", ATTRS{product}==\"Griffin PowerMate\", KERNEL==\"event*\", SYMLINK=\"input/powermate\""                            >> $CHECK_FILE
+   echo "#KERNEL==\"event*\", SUBSYSTEM==\"input\", ATTRS{idVendor}==\"15c2\", ATTRS{idProduct}==\"0034\", SYMLINK+=\"input/touchscreen\"" >> $CHECK_FILE
+   echo "#KERNEL==\"event*\", SUBSYSTEM==\"input\", ATTRS{idVendor}==\"0eef\", ATTRS{idProduct}==\"0001\", SYMLINK+=\"input/touchscreen\"" >> $CHECK_FILE
+   echo "#BUS==\"usb\", KERNEL==\"hiddev?\", ATTRS{idVendor}==\"0fe9\", ATTRS{idProduct}==\"9010\", SYMLINK+=\"usb/DVICO\""                >> $CHECK_FILE
+   echo "#KERNEL==\"lirc[0-9]*\", NAME=\"lirc%n\", SYMLINK==\"lirc%n\", MODE==\"0666\""                                                    >> $CHECK_FILE
+fi
+
+}
+
+#####
+remove_all_fb_receiver()
+{
+log --silent " ---> alle Empfaenger deaktivieren .."
+
+## udev-rules bereinigen ##
+UDEV_FILE="/etc/udev/rules.d/01-easyvdr-remote.rules"
+check_remote_rule
+remove_udev_rule
+
+## de-installation ##
+rm -f /etc/default/inputlirc
+rm -f /dev/input/ir-auto_dt*
+rm -f /etc/udev/rules.d/43-easyvdr-loadkey.rules
+rm -f /etc/udev/rules.d/43-easyvdr-loadkey.script
+rm -f /lib/udev/rules.d/40-ir-keytable.rules
+rm -f $CFG_DIR/key_irkeytab
+
+SetSysconfig "FB_RECEIVER"  "keinen_FB-Receiver_aktivieren"
+SetSysconfig "LIRC_HW_CONF" "None"
+
+( ! pidof vdr)  &&  /usr/lib/vdr/easyvdr-set-settings "lirc" ## nur wenn nicht ueber OSD
+
+}
+
+#####
+inst_lirc()
+{
+SET_HW_NAME="$1"; PARAM_A="$2"; PARAM_B="$3"; PARAM_C="$4"; PARAM_D="$5"
+SYSTEMD_AKTIV=0
+Systemd_Service
+SYSTEMD_INSTALL="lircd.socket lircd.service"
+
+RMT_DEF_SYML="input/ir-auto_dtc"
+UDEV_FILE="/etc/udev/rules.d/01-easyvdr-remote.rules"
+check_remote_rule
+
+log --silent " ---> Gesetzt $PARAM_B .."
+log --silent "      versuche $PARAM_B zu installieren"
+
+RMT_P_1=$PARAM_A     #  nun udev method
+RMT_P_2=($PARAM_B)
+RMT_P_3=$PARAM_C     #  nun Event oder Hiddev
+RMT_P_4=($PARAM_D)
+case $RMT_P_3 in
+       tty)  KERN_PARA="SUBSYSTEM==\"tty"     ;;
+     Event)  KERN_PARA="KERNEL==\"event*"     ;;
+    Hiddev)  KERN_PARA="KERNEL==\"hiddev*"    ;;
+   Lirc0-9)  KERN_PARA="KERNEL==\"lirc[0-9]*" ;;
+esac
+
+case $RMT_P_1 in
+   ID_NR) for EACH_ID in $PARAM_D
+        do
+             echo "$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\"  $LINE_MARK"  >> /tmp/.udev.tmp
+        done
+          WRITE_FLAG="true"           ;;
+  ID_TXT) RMT_P_4=$PARAM_D
+          echo "$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\"  $LINE_MARK"                                                >> /tmp/.udev.tmp
+          WRITE_FLAG="true"           ;;
+ ID_LIRC) echo "$KERN_PARA\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\"  $LINE_MARK"                                                                           >> /tmp/.udev.tmp
+          WRITE_FLAG="true"           ;;
+       *) WRITE_FLAG="false"          ;;
+esac
+
+[[ $WRITE_FLAG == "true" ]] && write_udev_rule || remove_udev_rule
+
+## installation ##
+SetSysconfig "FB_RECEIVER"  "$SET_HW_NAME"
+SetSysconfig "LIRC_HW_CONF" "${RMT_P_2[0]}"
+
+( ! pidof vdr)  &&  /usr/lib/vdr/easyvdr-set-settings "lirc" ## nur wenn nicht ueber OSD
+SYSTEMD_AKTIV=1
+Systemd_Service
+}
+
+####
+inst_inputlirc()
+{
+SET_HW_NAME="$1"; PARAM_A="$2"; PARAM_B="$3"; PARAM_C="$4"; PARAM_D="$5"
+
+RMT_DEF_SYML="input/ir-auto_dtc"
+UDEV_FILE="/etc/udev/rules.d/01-easyvdr-remote.rules"
+check_remote_rule
+
+log --silent " ---> Gesetzt $PARAM_B .."
+log --silent "      versuche $PARAM_B zu installieren"
+
+RMT_P_1=$PARAM_A     #  nun udev method
+RMT_P_2=($PARAM_B)
+RMT_P_3=$PARAM_C     #  nun Event oder Hiddev
+RMT_P_4=$PARAM_D
+case $RMT_P_3 in
+     Event)  KERN_PARA="event*"     ;;
+    Hiddev)  KERN_PARA="hiddev*"    ;;
+   Lirc0-9)  KERN_PARA="lirc[0-9]*" ;;
+esac
+
+EVENT_A="$RMT_DEF_SYML""0"
+EVENT_B="$RMT_DEF_SYML""1"
+
+if [ "$(grep "$RMT_P_4" /sys/class/input/input*/name | grep -c "$RMT_P_4")" -gt "1" ]; then
+   EventCnt=2
+else
+   EventCnt=1
+fi
+
+#if [ $EventCnt == 1 ]; then
+#    echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*0\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_A\", GROUP=\"vdr\"  $LINE_MARK"   >> /tmp/.udev.tmp
+#else
+   echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*0\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_A\", GROUP=\"vdr\"  $LINE_MARK"   >> /tmp/.udev.tmp
+   echo "KERNEL==\"$KERN_PARA\", ATTRS{phys}==\"*1\", ATTRS{name}==\"$RMT_P_4\", SYMLINK+=\"$EVENT_B\", GROUP=\"vdr\"  $LINE_MARK"   >> /tmp/.udev.tmp
+#fi
+write_udev_rule
+
+INPUTLIRC_DEF="/etc/default/inputlirc"
+echo "# Options to be passed to inputlircd."                  > $INPUTLIRC_DEF
+if [ $EventCnt == 1 ]; then
+   echo "EVENTS=\"/dev/$EVENT_A\""                              >> $INPUTLIRC_DEF
+else
+   echo "EVENTS=\"/dev/$EVENT_A\\"                              >> $INPUTLIRC_DEF
+   echo "        /dev/$EVENT_B\""                               >> $INPUTLIRC_DEF
+fi
+echo "OPTIONS=\"-m0 -g -r100 -c -d /var/run/lirc/lircd\""    >> $INPUTLIRC_DEF
+
+# installation ##
+SetSysconfig "FB_RECEIVER"  "$SET_HW_NAME"
+SetSysconfig "LIRC_HW_CONF" "${RMT_P_2[0]}"
+
+( ! pidof vdr)  &&  /usr/lib/vdr/easyvdr-set-settings "lirc" ## nur wenn nicht ueber OSD
+}
+
+####
+inst_irmplirc()
+{
+SET_HW_NAME="$1"; PARAM_A="$2"; PARAM_B="$3"; PARAM_C="$4"; PARAM_D="$5"; PARAM_E="$6"
+CONSOLE=$(fgconsole)
+SYSTEMD_AKTIV=0
+Systemd_Service
+#SYSTEMD_INSTALL=""
+RMT_DEF_SYML="input/ir-auto_dtc"
+UDEV_FILE="/etc/udev/rules.d/01-easyvdr-remote.rules"
+check_remote_rule
+
+log --silent " ---> Gesetzt $PARAM_B .."
+log --silent "      versuche $PARAM_B zu installieren"
+
+RMT_P_1=$PARAM_A     #  nun udev method
+RMT_P_2=($PARAM_B)
+RMT_P_3=$PARAM_C     #  nun Event oder Hiddev
+RMT_P_4=($PARAM_D)
+RMT_P_5=($PARAM_E)
+
+inst_package_no_lirc_ir
+
+
+case $RMT_P_3 in
+     Event)  KERN_PARA="event*"     ;;
+    Hiddev)  KERN_PARA="hiddev*"    ;;
+   Lirc0-9)  KERN_PARA="lirc[0-9]*" ;;
+    Hidraw)  KERN_PARA="hidraw*"    ;;
+esac
+
+case $RMT_P_1 in
+ ID_NR) for EACH_ID in $PARAM_D
+      do
+           echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", SYMLINK+=\"$RMT_DEF_SYML\", GROUP=\"vdr\"  $LINE_MARK " >> /tmp/.udev.tmp
+      done
+        WRITE_FLAG="true"           ;;
+     *) WRITE_FLAG="false"          ;;
+esac
+
+write_udev_rule
+
+# installation ##
+SetSysconfig "FB_RECEIVER"  "$SET_HW_NAME"
+SetSysconfig "LIRC_HW_CONF" "${RMT_P_2[0]}"
+
+( ! pidof vdr)  &&  /usr/lib/vdr/easyvdr-set-settings "lirc" ## nur wenn nicht ueber OSD
+
+chvt $CONSOLE
+}
+
+#####
+inst_irtrans()
+{
+SET_HW_NAME="$1"; PARAM_A="$2"; PARAM_B="$3"; PARAM_C="$4"; PARAM_D="$5"; PARAM_E="$6"
+CONSOLE=$(fgconsole)
+
+SYSTEMD_AKTIV=0
+Systemd_Service
+#SYSTEMD_INSTALL=""
+
+RMT_DEF_SYML="input/ir-auto_dtc"
+UDEV_FILE="/etc/udev/rules.d/01-easyvdr-remote.rules"
+check_remote_rule
+
+log --silent " ---> Gesetzt $PARAM_B .."
+log --silent "      versuche $PARAM_B zu installieren"
+
+RMT_P_1=$PARAM_A     #  nun udev method
+RMT_P_2=($PARAM_B)
+RMT_P_3=$PARAM_C     #  nun Event oder Hiddev
+RMT_P_4=($PARAM_D)
+RMT_P_5=($PARAM_E)
+KERN_PARA="ttyUSB*"
+TTYUSB_SYML="ttyUSB99"
+
+inst_package_no_lirc_ir
+
+case $RMT_P_1 in
+  ID_TXT) RMT_P_4=$PARAM_D
+          echo "KERNEL==\"$KERN_PARA\", ATTRS{interface}==\"$RMT_P_4\", SYMLINK+=\"$TTYUSB_SYML\", GROUP=\"vdr\"  $LINE_MARK" >> /tmp/.udev.tmp
+          WRITE_FLAG="true"           ;;
+       *) WRITE_FLAG="false"          ;;
+esac
+
+[[ $WRITE_FLAG == "true" ]] && write_udev_rule || remove_udev_rule
+
+## installation ##
+SetSysconfig "FB_RECEIVER"  "$SET_HW_NAME"
+SetSysconfig "LIRC_HW_CONF" "${RMT_P_2[0]}"
+
+( ! pidof vdr)  &&  /usr/lib/vdr/easyvdr-set-settings "lirc" ## nur wenn nicht ueber OSD
+
+chvt $CONSOLE
+}
+
+###
+write_udev_rule()
+{
+<$UDEV_FILE grep -v "$LINE_MARK" >> $UDEV_FILE.tmp
+mv -f $UDEV_FILE.tmp $UDEV_FILE
+cat /tmp/.udev.tmp  >>  $UDEV_FILE
+rm -f /tmp/.udev.tmp
+log --silent "      entsprechende udev-rule geschrieben"
+}
+
+###
+remove_udev_rule()
+{
+<$UDEV_FILE grep -v "$LINE_MARK" >> $UDEV_FILE.tmp
+mv -f $UDEV_FILE.tmp $UDEV_FILE
+rm -f /tmp/.udev.tmp
+log --silent "      keine entsprechende udev-rule geschrieben"
+}
+
+# Parameter fuer gesammte libs setzen #####################################################
+######### remotes #######
+inst_all_remote()
+{
+F_INDEX_STRING="$1"
+. $DETECT/hw-lib/40_remote_control_receiver
+. $CFG_DIR/sysconfig
+
+PRODUCT_NAMES=""; multi_flag=0; DRIVER_SETS=""
+PATCH_FILE="/tmp/.s_xml_trip"
+SETUP_XML="$PLUGIN_CFG_DIR/setup/vdr-setup.xml"
+
+OSD_ENTRY1_REMOT="                <entry name=\"Auswahl Fb-Empfaenger: \" sysconfig=\"FB_RECEIVER\" type=\"selection\" value=\"$FB_RECEIVER\">"
+OSD_ENTRY3_REMOT="                        <value>kein FB Empfaenger auswaehlbar</value>"
+OSD_ENTRY4_REMOT="                </entry>"
+
+FBR_START_No=$(grep -n  "<entry name=\"Auswahl Fb-Empfaenger:" $SETUP_XML | cut -d: -f1)
+more +$FBR_START_No $SETUP_XML > $PATCH_FILE.dummy
+STOPS_IN_1ST=$(head -n1 $PATCH_FILE.dummy | grep -c "/>")
+if (($STOPS_IN_1ST == 1))
+ then
+   FBR_STOP_No=1
+ else
+   FBR_STOP_No=$(grep -n -m1 "</entry>" $PATCH_FILE.dummy | cut -d: -f1)
+fi
+head -n$FBR_STOP_No $PATCH_FILE.dummy > $PATCH_FILE.del
+rm -f $PATCH_FILE.dummy
+
+echo "$OSD_ENTRY1_REMOT"                  > $PATCH_FILE.ins
+for F_INDEX in $F_INDEX_STRING
+ do
+   Get_Xorg_Exclude_Data
+   Get_Write_Fb_Data
+ done
+if [ -z $OSD_ENTRY2_REMOT ]; then
+ echo "$OSD_ENTRY3_REMOT"               >> $PATCH_FILE.ins
+fi
+echo "$OSD_ENTRY4_REMOT"                 >> $PATCH_FILE.ins
+
+sed -i '/"*all_remote_driver_configs"*/d' $SETUP_STATUS
+echo "# all_remote_driver_configs : $DRIVER_SETS" >>  $SETUP_STATUS
+
+Patch_Setupxml
+Patch_Xorgconf
+}
+
+Get_Xorg_Exclude_Data()
+{
+PRODUCT_NAME="${paraset_e[$F_INDEX]}"
+if [[ $PRODUCT_NAME != "<empty_value>" ]]; then
+ if (( $multi_flag == 0 ))
+   then
+     PRODUCT_NAMES="$PRODUCT_NAME"
+     multi_flag=1
+   else
+     PRODUCT_NAMES="$PRODUCT_NAMES""|""$PRODUCT_NAME"
+ fi
+fi
+}
+
+Get_Write_Fb_Data()
+{
+DRIVER_SET=$(echo "${paraset_b[$F_INDEX]}"| cut -d" " -f1)      #paraset_b[5]="com1 irtable"  -> com1
+[[ X$DRIVER_SET == X$LIRC_HW_CONF  ]] && FORCED_DRIVER="true" || FORCED_DRIVER="false"
+[[ ${paraset_e[$F_INDEX]} == "kein_FB-Receiver" ]] && NO_DRIVER="true" || NO_DRIVER="false"
+DETECT_METHOD="${det_method[$F_INDEX]}"
+if [[ $DETECT_METHOD != "chk_dummyhw" ]] || [[ $FORCED_DRIVER == "true" ]] || [[ $NO_DRIVER == "true" ]]; then
+ DRIVER_SETS="$DRIVER_SET $DRIVER_SETS"
+ dummy_hwname=${hw_name[$F_INDEX]}
+ mod_HW_NAME="${dummy_hwname// /_}"       # Leerzeichen durch "_" ersetzen
+ OSD_ENTRY2_REMOT="                        <value>$mod_HW_NAME</value>"
+ echo "$OSD_ENTRY2_REMOT"                                       >> $PATCH_FILE.ins
+fi
+}
+
+Patch_Setupxml()
+{
+tripatch -q  $PATCH_FILE.del $PATCH_FILE.ins $SETUP_XML
+rm -f $PATCH_FILE.del
+rm -f $PATCH_FILE.ins
+}
+
+Patch_Xorgconf()
+{
+if [ -f /etc/X11/xorg.conf ]; then
+ PATCH_FLAG=$( grep -c "MatchProduct" /etc/X11/xorg.conf )
+ if (( $PATCH_FLAG == 0 )); then
+   echo    "Section \"InputClass\""                                >> /etc/X11/xorg.conf
+   echo    "  Identifier     \"disable Remote key mapping in X\""  >> /etc/X11/xorg.conf
+   echo    "  MatchProduct   \"dummy_entry\""                      >> /etc/X11/xorg.conf
+   echo    "  Option         \"Ignore\" \"on\""                    >> /etc/X11/xorg.conf
+   echo    "EndSection"                                            >> /etc/X11/xorg.conf
+ fi
+
+ echo    "  MatchProduct   \"dummy_entry\""                         > /tmp/xorg.del.patch
+ echo    "  MatchProduct   \"$PRODUCT_NAMES\""                      > /tmp/xorg.ins.patch
+ tripatch -q -d\" /tmp/xorg.del.patch /tmp/xorg.ins.patch /etc/X11/xorg.conf
+ rm /tmp/xorg.del.patch
+ rm /tmp/xorg.ins.patch
+fi
+}
+
+Systemd_Service()
+{
+SYSTEMD_SERVICE[0]=lircd.socket
+SYSTEMD_SERVICE[1]=lircd.service
+SYSTEMD_SERVICE[2]=lircmd.service
+SYSTEMD_SERVICE[3]=lircd-setup.service
+SYSTEMD_SERVICE[4]=inputlirc.service
+SYSTEMD_SERVICE[5]=lircd-uinput.service
+
+if [ $SYSTEMD_AKTIV -eq 0 ]; then
+ for Stop_Service in ${SYSTEMD_SERVICE[*]}
+ do
+  if [ $(systemctl is-enabled $Stop_Service 2>/dev/null | grep -c enabled) -eq 1 ]; then
+   systemctl stop $Stop_Service >/dev/null 2>&1|dialog --infobox "Stoppe Systemd Dienst $Stop_Service" $DIA_BOX4_SIZE
+   systemctl disable $Stop_Service >/dev/null 2>&1
+  fi
+ done
+fi
+if [ $SYSTEMD_AKTIV -eq 1 ]; then
+ #Pfad vom Service Namen abschneiden
+ SERVICE_NAME=${SYSTEMD_INSTALL##*/}
+ systemctl enable $SYSTEMD_INSTALL >/dev/null 2>&1|dialog --infobox "Aktiviere Systemd Dienst $SERVICE_NAME" $DIA_BOX4_SIZE
+ systemctl start $SERVICE_NAME >/dev/null 2>&1
+fi
+}
+
+inst_package_no_lirc_ir()
+{
+PAK_INST_FLAG=$(dpkg --get-selections | grep -v "deinstall" | grep -c "$RMT_P_5")
+if  (( $PAK_INST_FLAG != 0 ))
+ then
+   #apt update  >/dev/null 2>&1|dialog --infobox "Es wird auf Updates geprueft" $DIA_BOX4_SIZE ; clear
+   PACKAGE_1=$(apt-cache policy $RMT_P_5|grep -in install|grep ^2|tr -d [:space:]|cut -d : -f3)
+   PACKAGE_PPA=$(apt-cache policy $RMT_P_5|grep -in install|grep ^3|tr -d [:space:]|cut -d : -f3)
+   if [ $PACKAGE_1 == $PACKAGE_PPA ]; then
+    dpkg-reconfigure $RMT_P_5
+    log --silent "      " $RMT_P_5 "reconfiguriert"
+    echo "     $RMT_P_5 reconfiguriert" >> $APT_GET_LOG
+   else
+         debconf-apt-progress --logfile $APT_GET_LOG -- apt-get --yes install $RMT_P_5  
+    if [ $? -ne 0 ];then
+    log --silent "      E: Fehler beim Installieren von:" $RMT_P_5
+    else
+    log --silent "      Installation von" $RMT_P_5 "durchgelaufen"
+    fi
+   fi
+ else
+    debconf-apt-progress --logfile $APT_GET_LOG -- apt-get --yes install $RMT_P_5  
+   if [ $? -ne 0 ];then
+    log --silent "      E: Fehler beim Installieren von:" $RMT_P_5
+   else
+    log --silent "      Installation von" $RMT_P_5 "durchgelaufen"
+   fi
+fi
+}
+######## Ende Remotes  #########
+
+######### Video_out #######
+inst_all_vidout()
+{
+F_INDEX_STRING="$1"
+. $DETECT/hw-lib/10_video_out_hw
+
+sed -i '/"*available classes of output-devices:"*/d' $SETUP_STATUS
+echo "# available classes of output-devices:" >>  $SETUP_STATUS
+sed -i '/"*Outdev:"*/d' $SETUP_STATUS
+
+for F_INDEX in $F_INDEX_STRING
+ do
+   VID_OUT_NAME="${hw_name[$F_INDEX]}"
+   VID_OUT_CLASS="${paraset_e[$F_INDEX]}"
+   DETECT_METHOD="${det_method[$F_INDEX]}"
+   if [[ $DETECT_METHOD != "chk_dummyhw" ]]; then
+     echo "# Outdev: $VID_OUT_NAME $VID_OUT_CLASS" >>  $SETUP_STATUS
+   fi
+ done
+}
+
+######## Ende Video_out  #########
+
+inst_all_vidin()
+{
+x=0
+}
+
+inst_all_infodis()
+{
+x=0
+}
+# Parameter fuer gesammte libs setzen - Ende ################################################
+
+
+#####
+inst_keymap()
+{
+SET_FBC_NAME="$1"; PARAM_A="$2"; PARAM_B="$3"; PARAM_C="$4"; PARAM_D="$5"
+
+log --silent " ---> Gesetzt $SET_FBC_NAME .."
+log --silent "      versuche Keymap zu $SET_FBC_NAME zu installieren"
+
+KEYM_P_1=$PARAM_A     #  nun udev method
+KEYM_P_2=($PARAM_B)
+KEYM_P_3=$PARAM_C     #  nun Event oder Hiddev
+
+LIRCD_DIR="$CFG_DIR/remotes"
+udev_ldk="/etc/udev/rules.d/43-easyvdr-loadkey.rules"
+script_ldk="/etc/udev/rules.d/43-easyvdr-loadkey.script"
+udev_irk="/lib/udev/rules.d/40-ir-keytable.rules"
+
+##reset
+echo " "    > $script_ldk
+echo " "    > $udev_ldk
+echo "ACTION==\"add\", SUBSYSTEM==\"rc\", RUN+=\"/usr/bin/ir-keytable -a /etc/rc_maps.cfg -s \$name\" $LINE_MARK"   >  $udev_irk
+rm -f $CFG_DIR/irmp_keymap
+##
+
+case "${KEYM_P_2[1]}" in
+  irkeytab)
+         KEY_udev=$udev_irk
+         for EXTENSION in ${KEYM_P_2[@]}
+           do
+             KEYTABLE_NAME=$(ls $LIRCD_DIR/$SET_FBC_NAME/key_irkeytab.$EXTENSION  2>/dev/null  )
+             if [ ! -z $KEYTABLE_NAME ]
+               then
+#                 KEY_Com="/usr/bin/ir-keytable -d /dev/input/ir-auto_dtc -c -w $KEYTABLE_NAME"
+                 rm -f $CFG_DIR/key_irkeytab
+                 ln -s $KEYTABLE_NAME $CFG_DIR/key_irkeytab
+                 KEY_Com="/usr/bin/easyvdr-set-ir_keytable"
+                 KEYTAB_FOUND="true"
+                 break
+               else        
+                 KEYTAB_FOUND="false"
+             fi
+           done
+         ;;
+    av7110)
+         INVERT=" "
+         for inv_dummy in "${KEYM_P_2[@]}"
+           do
+             [[ "$inv_dummy" == "invert" ]] && INVERT="-i"
+           done
+         KEY_udev=$udev_ldk
+         KEY_Com="/etc/udev/rules.d/43-easyvdr-loadkey.script"
+         for EXTENSION in ${KEYM_P_2[@]}
+           do
+             KEYTABLE_NAME=$(ls $LIRCD_DIR/$SET_FBC_NAME/key_*_av7110.$EXTENSION 2>/dev/null )      # # fx. key_30_av7110.rc5
+             if [ ! -z $KEYTABLE_NAME ]
+               then
+                 KEYTABLE_B_NAME=$(basename $KEYTABLE_NAME )
+                 UNIT_No=$( echo $KEYTABLE_B_NAME | cut -d_ -f2 )
+                 (($UNIT_No == 99)) && UNIT_USED=" " || UNIT_USED="-a $UNIT_No"
+                 KEY_Com_Scr="/usr/bin/av7110_loadkeys $INVERT $UNIT_USED $KEYTABLE_NAME > /proc/av7110_ir"
+                 KEYTAB_FOUND="true"
+                 break
+               else        
+                 KEYTAB_FOUND="false"
+             fi
+           done
+         ;;
+     key_irmp)
+          KEYTABLE_NAME=$(ls $LIRCD_DIR/$SET_FBC_NAME/key_irmp  2>/dev/null  )
+            if [ ! -z $KEYTABLE_NAME ]
+              then
+                KEY_Com="cp -f $KEYTABLE_NAME $CFG_DIR/irmp_keymap"
+                KEYTAB_FOUND="true"
+              else        
+                KEYTAB_FOUND="false"
+            fi
+         ;;
+         *)
+         KEYTAB_FOUND="false"
+         ;;
+esac
+
+if [[ $KEYTAB_FOUND == "true" ]]; then
+ if [[ ${KEYM_P_2[1]} == key_irmp ]]
+   then
+     $KEY_Com
+   else
+     case $KEYM_P_3 in
+         Event)  KERN_PARA="event*"     ;;
+        Hiddev)  KERN_PARA="hiddev*"    ;;
+     esac
+
+     case $KEYM_P_1 in
+       ID_NR) echo "#" > $KEY_udev
+           for EACH_ID in $PARAM_D
+           do
+               case "${KEYM_P_2[1]}" in
+                irkeytab)
+                    echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", RUN+=\"$KEY_Com\"  $LINE_MARK" >> $KEY_udev ;;
+                 av7110)
+                    echo "KERNEL==\"$KERN_PARA\", ATTRS{idVendor}==\"$(echo $EACH_ID|cut -d: -f1)\", ATTRS{idProduct}==\"$(echo $EACH_ID|cut -d: -f2)\", RUN+=\"$KEY_Com\"  $LINE_MARK"  >> $KEY_udev
+                    Make_av7110_Script ;;
+               esac
+           done
+               ;;
+       ID_TXT) RMT_P_4=$PARAM_D
+              case "${KEYM_P_2[1]}" in
+                irkeytab)
+                   echo "KERNEL==\"$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", RUN+=\"$KEY_Com\"  $LINE_MARK"                                                > $KEY_udev ;;
+                  av7110)
+                   echo "KERNEL==\"$KERN_PARA\", ATTRS{name}==\"$RMT_P_4\", RUN+=\"$KEY_Com\"  $LINE_MARK"                                                > $KEY_udev
+                   Make_av7110_Script ;;
+              esac
+              ;;
+     esac
+ log --silent "      Keymap installiert"
+ fi
+fi
+}
+
+###
+Make_av7110_Script()
+{
+echo "#!/bin/bash"                           > $script_ldk
+echo "# $LINE_MARK"                         >> $script_ldk
+echo "# wait for device"                    >> $script_ldk
+echo "for ((i=0;i<100;i++))"                >> $script_ldk
+echo "  do"                                 >> $script_ldk
+echo "    sleep 0.1"                        >> $script_ldk
+echo "    [ -e /proc/av7110_ir ] && break"  >> $script_ldk
+echo "  done"                               >> $script_ldk
+echo "# wait done "                         >> $script_ldk
+echo "$KEY_Com_Scr"                         >> $script_ldk
+chmod 777                                      $script_ldk
+}

@@ -1,0 +1,143 @@
+#!/bin/bash
+# 
+# Nova T-500 Konfiguration  fuer easyVDR
+#
+#
+#  v.0.2    01.08.11 Captain_Beefheart
+#  v.0.3    11.02.13  C.B. 
+#
+#################################################
+
+################################# defines ##########################################
+
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - Nova T-500 "
+BACKTITLE=" Nova T-500 Konfiguration " 
+
+##################### functions #####################################################
+
+#####
+Get_HW_State()
+{
+ON_BOARD_AMP_STATE=$(cat /sys/module/dvb_usb_dib0700/parameters/force_lna_activation)
+#F2_STATE=0
+#F3_STATE=0
+#F4_STATE=0
+#F5_STATE=0
+}
+
+#####
+Init_Checkbox()
+{
+Get_HW_State
+
+(( $ON_BOARD_AMP_STATE    == 1 )) &&  SWITCH1="on" || SWITCH1="off"
+#(( $F2_STATE              == 1 )) &&  SWITCH2="on" || SWITCH2="off"
+#(( $F3_STATE              == 1 )) &&  SWITCH2="on" || SWITCH3="off"
+#(( $F4_STATE              == 1 )) &&  SWITCH2="on" || SWITCH4="off"
+#(( $F5_STATE              == 1 )) &&  SWITCH2="on" || SWITCH5="off"
+}
+
+#####
+Nova_T_500_Checkbox()
+{
+Init_Checkbox
+OK_CANCEL=1
+SEL_OPTION=$(dialog \
+     --backtitle "$BACKTITLE" \
+     --title "$TITLE" \
+     --ok-label "weiter"\
+     --checklist "\n\
+          Bitte waehlen Sie die Optionen \n\
+          Steuerung mit     [   UP   ] [ DOWN ] \n\
+          Auswaehlen mit    < weiter > \n\
+          Abbruch mit       < Cancel > "  $DIA_BOX_SIZE\
+      OB_AMP         "OnBoard-Amp - Aktivierung erzwingen "   "$SWITCH1" 3>&1 1>&2 2>&3 3>&- )
+#      Feature_2      "Feature_2 aktivieren                "   "$SWITCH2" \
+#      Feature_3      "Feature_3 aktivieren                "   "$SWITCH3" \
+#      Feature_4      "Feature_4 aktivieren                "   "$SWITCH4" \
+#      Feature_5      "Feature_5 aktivieren                "   "$SWITCH5"  3>&1 1>&2 2>&3 3>&- )
+OK_CANCEL=$?
+clear
+if (( ! $OK_CANCEL )); then
+  Set_New_Stat
+  Run_Install
+fi
+}
+
+#####
+Set_New_Stat()
+{
+#Init_Options
+SEL_1=0  # ; SEL_2=0; SEL_3=0; SEL_4=0; SEL_5=0
+
+for dummy in $SEL_OPTION
+  do
+    case  $dummy in
+         \"OB_AMP\") SEL_1=1 ;;
+#      \"Feature_2\") SEL_2=1 ;;
+#      \"Feature_3\") SEL_3=1 ;;
+#      \"Feature_4\") SEL_4=1 ;;
+#      \"Feature_5\") SEL_5=1 ;;
+    esac
+  done
+}	
+
+#####
+Run_Install()
+{
+Set_OB_AMP
+#Set_Feature_2
+#Set_Feature_3
+#Set_Feature_4
+#Set_Feature_5
+}
+
+#####
+Set_OB_AMP()
+{
+modprobe -q -r dvb_usb_dib0700
+
+MODP_OPTION_FILE="/etc/modprobe.d/options.conf"
+touch $MODP_OPTION_FILE     >/dev/null 2>&1
+
+LINE_MARK="options dvb_usb_dib0700 force_lna_activation="
+
+<$MODP_OPTION_FILE grep -v "$LINE_MARK" >> $MODP_OPTION_FILE.tmp
+mv $MODP_OPTION_FILE.tmp $MODP_OPTION_FILE
+MODP_PARA=$LINE_MARK$SEL_1
+echo $MODP_PARA  >> $MODP_OPTION_FILE 
+
+modprobe -q dvb_usb_dib0700
+}
+
+#####
+Set_Feature_2()
+{
+echo "F2"
+}
+
+#####
+Set_Feature_3()
+{
+echo "F3"
+}
+
+#####
+Set_Feature_4()
+{
+echo "F4"
+}
+
+#####
+Set_Feature_5()
+{
+echo "F5"
+}
+
+######################################### main ####################################################
+
+OK_CANCEL=0
+Nova_T_500_Checkbox
+ 

@@ -1,0 +1,19 @@
+#!/bin/bash
+#
+#
+#  v. 0.3
+#   Captain_Beefheart
+#  18.10.11
+# 
+#################################################
+
+INPUTLIRC_DEF="/etc/default/inputlirc"
+
+/etc/init.d/inputlirc stop
+ echo "# Options to be passed to inputlirc."                                          > $INPUTLIRC_DEF
+ echo "EVENTS=\"/dev/input/by-id/usb-Linux4Media_GmbH_IR__RF_Control-event-kbd\\"    >> $INPUTLIRC_DEF
+ echo "        /dev/input/by-id/usb-Linux4Media_GmbH_IR__RF_Control-event-mouse\" "  >> $INPUTLIRC_DEF
+ echo "OPTIONS=\"-m0 -g -r100 -c -d /var/run/lirc/lircd\""                           >> $INPUTLIRC_DEF
+ echo "mkdir -p /var/run/lirc"                                                       >> $INPUTLIRC_DEF
+/etc/init.d/inputlirc start
+

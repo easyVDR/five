@@ -1,0 +1,402 @@
+#
+lib_name="Info-Displays"
+lib_nmk="Displ"
+lib_version="V 0.4 vom 08.09.2012"
+force_install="no"
+ins_method_lib="inst_all_infodis"
+#
+
+#kein Infodisplay
+hw_name[1]="keine $lib_name installieren"
+hw_ident[1]="yes"            
+det_method[1]="chk_dummyhw"
+ins_method[1]="do_nothing"
+paraset_a[1]="<empty_value>"
+paraset_b[1]="<empty_value>"
+paraset_c[1]="<empty_value>"
+paraset_d[1]="<empty_value>"
+paraset_e[1]="<empty_value>"
+
+#
+hw_name[2]="\Z5#---------------- Erkannte Hardware: -----------------#"
+hw_ident[2]="yes"
+det_method[2]="chk_dummyhw"
+ins_method[2]="do_nothing"
+paraset_a[2]="<empty_value>"
+paraset_b[2]="<empty_value>"
+paraset_c[2]="<empty_value>"
+paraset_d[2]="<empty_value>"
+paraset_e[2]="<empty_value>"
+
+#l4m
+hw_name[3]="linux4media l4m320t"
+hw_ident[3]="4243:ee21"            
+det_method[3]="chk_lsusb"
+ins_method[3]="inst_display"
+paraset_a[3]="vdr-plugin-graphlcd"
+paraset_b[3]="LCD graphlcd LCD_DRIVER serdisp LCD_RESOLUTION 128x64"
+paraset_c[3]="/etc/graphlcd/graphlcd.conf.l4m320t /etc/graphlcd.conf"
+paraset_d[3]="<empty_value>"
+paraset_e[3]="<empty_value>"
+
+#iMon LCD ueber imonlcd
+hw_name[4]="iMON LCD"
+hw_ident[4]="15C2:0034 15C2:0035 15C2:0036 15C2:0037 \
+15C2:0038 15C2:0039 15C2:0040 15C2:0041 15C2:0042 15C2:0043 \
+15C2:0044 15C2:0045 15C2:0046 15C2:FFDC 15C2:FFDA 0AA8:FFDA 04E8:FF30 0AA8:8001"  
+det_method[4]="chk_lsusb"
+ins_method[4]="inst_display"
+paraset_a[4]="vdr-plugin-imonlcd"
+paraset_b[4]="LCD imonlcd"
+paraset_c[4]="<empty_value>"
+paraset_d[4]="<empty_value>"
+paraset_e[4]="<empty_value>"
+
+#Futaba MDM166A/Targa
+hw_name[5]="Futaba MDM166A/Targa"
+hw_ident[5]="19c2:6a11"            
+det_method[5]="chk_lsusb"
+ins_method[5]="do_nothing"
+paraset_a[5]="<empty_value>"
+paraset_b[5]="<empty_value>"
+paraset_c[5]="<empty_value>"
+paraset_d[5]="<empty_value>"
+paraset_e[5]="<empty_value>"
+
+#l4m
+hw_name[6]="linux4media l4m132c"
+hw_ident[6]="4243:ee08"
+det_method[6]="chk_lsusb"
+ins_method[6]="inst_display"
+paraset_a[6]="vdr-plugin-graphlcd"
+paraset_b[6]="LCD graphlcd LCD_DRIVER serdisp LCD_RESOLUTION 128x64"
+paraset_c[6]="/etc/graphlcd/graphlcd.conf.l4m132c /etc/graphlcd.conf"
+paraset_d[6]="<empty_value>"
+paraset_e[6]="<empty_value>"
+
+#alphacool
+hw_name[7]="Alphacool"
+hw_ident[7]="060c:04eb"
+det_method[7]="chk_lsusb"
+ins_method[7]="inst_display"
+paraset_a[7]="vdr-plugin-graphlcd"
+paraset_b[7]="LCD graphlcd LCD_DRIVER serdisp LCD_RESOLUTION 240x128"
+paraset_c[7]="/etc/graphlcd/graphlcd.conf.alphacool /etc/graphlcd.conf"
+paraset_d[7]="060c 04eb"
+paraset_e[7]="<empty_value>"
+
+#SDC Megtron
+hw_name[8]="SDC Megtron"
+hw_ident[8]="152a:8380"
+det_method[8]="chk_lsusb"
+ins_method[8]="inst_display"
+paraset_a[8]="vdr-plugin-graphlcd"
+paraset_b[8]="LCD graphlcd LCD_DRIVER serdisp LCD_RESOLUTION 240x128"
+paraset_c[8]="/etc/graphlcd/graphlcd.conf.sdcmegtron /etc/graphlcd.conf"
+paraset_d[8]="152a 8380"
+paraset_e[8]="<empty_value>"
+
+#LCD IR Trans
+hw_name[9]="LCD IR Trans"
+hw_ident[9]="IRTrans USB"
+det_method[9]="chk_usb_iproduct"
+ins_method[9]="inst_display"
+paraset_a[9]="vdr-plugin-lcdproc"
+paraset_b[9]="LCD lcdproc"
+paraset_c[9]="<empty_value>"
+paraset_d[9]="<empty_value>"
+paraset_e[9]="<empty_value>"
+#paraset_b[9]="LCD lcdproc LCD_DRIVER irtrans"
+#paraset_c[9]="/etc/lcdproc/displays/LCDd.conf.irtrans /etc/LCDd.conf"
+
+#dpf206ax
+hw_name[10]="dpf206ax picture frame"
+hw_ident[10]="1908:0102"
+det_method[10]="chk_lsusb"
+ins_method[10]="inst_package"
+paraset_a[10]="vdr-plugin-graphlcd"
+paraset_b[10]="LCD graphlcd LCD_DRIVER ax206dpf LCD_RESOLUTION 320x240"
+paraset_c[10]="/etc/graphlcd/graphlcd.conf.org /etc/graphlcd.conf"
+paraset_d[10]="<empty_value>"
+paraset_e[10]="<empty_value>"
+
+#iMon VFD ueber lcdproc
+hw_name[11]="iMON VFD"
+hw_ident[11]="15C2:0034 15C2:0035 15C2:0036 15C2:0037 \
+15C2:0038 15C2:0039 15C2:0040 15C2:0041 15C2:0042 15C2:0043 \
+15C2:0044 15C2:0045 15C2:0046 15C2:FFDC 15C2:FFDA 0AA8:FFDA 04E8:FF30 0AA8:8001"  
+det_method[11]="chk_lsusb"
+ins_method[11]="inst_display"
+paraset_a[11]="vdr-plugin-lcdproc"
+paraset_b[11]="LCD lcdproc"
+paraset_c[11]="<empty_value>"
+paraset_d[11]="<empty_value>"
+paraset_e[11]="<empty_value>"
+
+#Crystalfontz 634 ueber lcdproc
+hw_name[12]="Crystalfontz"
+hw_ident[12]="0403:fc09"  
+det_method[12]="chk_lsusb"
+ins_method[12]="inst_display"
+paraset_a[12]="vdr-plugin-lcdproc"
+paraset_b[12]="LCD lcdproc"
+paraset_c[12]="<empty_value>"
+paraset_d[12]="<empty_value>"
+paraset_e[12]="<empty_value>"
+
+###############################################################################
+#
+hw_name[30]="\Z5#-------- Verwendung folgender HW erzwingen: ---------#"
+hw_ident[30]="yes"
+det_method[30]="chk_dummyhw"
+ins_method[30]="do_nothing"
+paraset_a[30]="<empty_value>"
+paraset_b[30]="<empty_value>"
+paraset_c[30]="<empty_value>"
+paraset_d[30]="<empty_value>"
+paraset_e[30]="<empty_value>"
+
+#GraphTFT
+hw_name[32]="GraphTFT (siehe Hilfe)"
+hw_ident[32]="nonX11"            
+det_method[32]="chk_dummyhw"
+ins_method[32]="do_nothing"
+paraset_a[32]="<empty_value>"
+paraset_b[32]="<empty_value>"
+paraset_c[32]="<empty_value>"
+paraset_d[32]="<empty_value>"
+paraset_e[32]="<empty_value>"
+
+##
+hw_name[34]="framebuffer"
+hw_ident[34]="yes"
+det_method[34]="chk_dummyhw"
+ins_method[34]="inst_display"
+paraset_a[34]="vdr-plugin-graphlcd"
+paraset_b[34]="LCD graphlcd LCD_DRIVER framebuffer"
+paraset_c[34]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[34]="<empty_value>"
+paraset_e[34]="<empty_value>"
+
+##
+hw_name[35]="hd61830"
+hw_ident[35]="yes"
+det_method[35]="chk_dummyhw"
+ins_method[35]="inst_display"
+paraset_a[35]="vdr-plugin-graphlcd"
+paraset_b[35]="LCD graphlcd LCD_DRIVER hd61830"
+paraset_c[35]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[35]="<empty_value>"
+paraset_e[35]="<empty_value>"
+
+##
+hw_name[36]="image"
+hw_ident[36]="yes"
+det_method[36]="chk_dummyhw"
+ins_method[36]="inst_display"
+paraset_a[36]="vdr-plugin-graphlcd"
+paraset_b[36]="LCD graphlcd LCD_DRIVER image"
+paraset_c[36]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[36]="<empty_value>"
+paraset_e[36]="<empty_value>"
+
+##
+hw_name[37]="ks0108"
+hw_ident[37]="yes"
+det_method[37]="chk_dummyhw"
+ins_method[37]="inst_display"
+paraset_a[37]="vdr-plugin-graphlcd"
+paraset_b[37]="LCD graphlcd LCD_DRIVER ks0108"
+paraset_c[37]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[37]="<empty_value>"
+paraset_e[37]="<empty_value>"
+
+##
+hw_name[38]="sed1330"
+hw_ident[38]="yes"
+det_method[38]="chk_dummyhw"
+ins_method[38]="inst_display"
+paraset_a[38]="vdr-plugin-graphlcd"
+paraset_b[38]="LCD graphlcd LCD_DRIVER sed1330"
+paraset_c[38]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[38]="<empty_value>"
+paraset_e[38]="<empty_value>"
+
+##
+hw_name[39]="sed1520"
+hw_ident[39]="yes"
+det_method[39]="chk_dummyhw"
+ins_method[39]="inst_display"
+paraset_a[39]="vdr-plugin-graphlcd"
+paraset_b[39]="LCD graphlcd LCD_DRIVER sed1520"
+paraset_c[39]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[39]="<empty_value>"
+paraset_e[39]="<empty_value>"
+
+##
+hw_name[40]="t6963c"
+hw_ident[40]="yes"
+det_method[40]="chk_dummyhw"
+ins_method[40]="inst_display"
+paraset_a[40]="vdr-plugin-graphlcd"
+paraset_b[40]="LCD graphlcd LCD_DRIVER t6963c"
+paraset_c[40]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[40]="<empty_value>"
+paraset_e[40]="<empty_value>"
+
+##
+hw_name[41]="serdisp"
+hw_ident[41]="yes"
+det_method[41]="chk_dummyhw"
+ins_method[41]="inst_display"
+paraset_a[41]="vdr-plugin-graphlcd"
+paraset_b[41]="LCD graphlcd LCD_DRIVER serdisp"
+paraset_c[41]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[41]="<empty_value>"
+paraset_e[41]="<empty_value>"
+
+##
+hw_name[42]="noritake800"
+hw_ident[42]="yes"
+det_method[42]="chk_dummyhw"
+ins_method[42]="inst_display"
+paraset_a[42]="vdr-plugin-graphlcd"
+paraset_b[42]="LCD graphlcd LCD_DRIVER noritake800"
+paraset_c[42]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[42]="<empty_value>"
+paraset_e[42]="<empty_value>"
+
+##
+hw_name[43]="avrctl"
+hw_ident[43]="yes"
+det_method[43]="chk_dummyhw"
+ins_method[43]="inst_display"
+paraset_a[43]="vdr-plugin-graphlcd"
+paraset_b[43]="LCD graphlcd LCD_DRIVER avrctl"
+paraset_c[43]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[43]="<empty_value>"
+paraset_e[43]="<empty_value>"
+
+##
+hw_name[44]="g15daemon"
+hw_ident[44]="yes"
+det_method[44]="chk_dummyhw"
+ins_method[44]="inst_display"
+paraset_a[44]="vdr-plugin-graphlcd"
+paraset_b[44]="LCD graphlcd LCD_DRIVER g15daemon"
+paraset_c[44]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[44]="<empty_value>"
+paraset_e[44]="<empty_value>"
+
+##
+hw_name[45]="network"
+hw_ident[45]="yes"
+det_method[45]="chk_dummyhw"
+ins_method[45]="inst_display"
+paraset_a[45]="vdr-plugin-graphlcd"
+paraset_b[45]="LCD graphlcd LCD_DRIVER network"
+paraset_c[45]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[45]="<empty_value>"
+paraset_e[45]="<empty_value>"
+
+##
+hw_name[46]="dm140gink"
+hw_ident[46]="yes"
+det_method[46]="chk_dummyhw"
+ins_method[46]="inst_display"
+paraset_a[46]="vdr-plugin-graphlcd"
+paraset_b[46]="LCD graphlcd LCD_DRIVER dm140gink"
+paraset_c[46]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[46]="<empty_value>"
+paraset_e[46]="<empty_value>"
+
+##
+hw_name[47]="futabaMDM166A"
+hw_ident[47]="yes"
+det_method[47]="chk_dummyhw"
+ins_method[47]="inst_display"
+paraset_a[47]="vdr-plugin-graphlcd"
+paraset_b[47]="LCD graphlcd LCD_DRIVER futabaMDM166A"
+paraset_c[47]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[47]="<empty_value>"
+paraset_e[47]="<empty_value>"
+
+##
+hw_name[48]="gu140x32f"
+hw_ident[48]="yes"
+det_method[48]="chk_dummyhw"
+ins_method[48]="inst_display"
+paraset_a[48]="vdr-plugin-graphlcd"
+paraset_b[48]="LCD graphlcd LCD_DRIVER gu140x32f"
+paraset_c[48]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[48]="<empty_value>"
+paraset_e[48]="<empty_value>"
+
+##
+hw_name[49]="gu256x64-372"
+hw_ident[49]="yes"
+det_method[49]="chk_dummyhw"
+ins_method[49]="inst_display"
+paraset_a[49]="vdr-plugin-graphlcd"
+paraset_b[49]="LCD graphlcd LCD_DRIVER gu256x64-372"
+paraset_c[49]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[49]="<empty_value>"
+paraset_e[49]="<empty_value>"
+
+##
+hw_name[50]="gu256x64-3900"
+hw_ident[50]="yes"
+det_method[50]="chk_dummyhw"
+ins_method[50]="inst_display"
+paraset_a[50]="vdr-plugin-graphlcd"
+paraset_b[50]="LCD graphlcd LCD_DRIVER gu256x64-3900"
+paraset_c[50]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[50]="<empty_value>"
+paraset_e[50]="<empty_value>"
+
+##
+hw_name[51]="gu126x64D-K610A4"
+hw_ident[51]="yes"
+det_method[51]="chk_dummyhw"
+ins_method[51]="inst_display"
+paraset_a[51]="vdr-plugin-graphlcd"
+paraset_b[51]="LCD graphlcd LCD_DRIVER gu126x64D-K610A4"
+paraset_c[51]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[51]="<empty_value>"
+paraset_e[51]="<empty_value>"
+
+##
+hw_name[52]="ax206dpf"
+hw_ident[52]="yes"
+det_method[52]="chk_dummyhw"
+ins_method[52]="inst_display"
+paraset_a[52]="vdr-plugin-graphlcd"
+paraset_b[52]="LCD graphlcd LCD_DRIVER ax206dpf"
+paraset_c[52]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[52]="<empty_value>"
+paraset_e[52]="<empty_value>"
+
+##
+hw_name[53]="picolcd256x64"
+hw_ident[53]="yes"
+det_method[53]="chk_dummyhw"
+ins_method[53]="inst_display"
+paraset_a[53]="vdr-plugin-graphlcd"
+paraset_b[53]="LCD graphlcd LCD_DRIVER picolcd256x64"
+paraset_c[53]="/etc/graphlcd/graphlcd.conf.picolcd256x64 /etc/graphlcd.conf"
+paraset_d[53]="<empty_value>"
+paraset_e[53]="<empty_value>"
+
+##
+hw_name[54]="st7565-reel"
+hw_ident[54]="yes"
+det_method[54]="chk_dummyhw"
+ins_method[54]="inst_display"
+paraset_a[54]="vdr-plugin-graphlcd"
+paraset_b[54]="LCD graphlcd LCD_DRIVER st7565r-reel"
+paraset_c[54]="/etc/graphlcd/graphlcd.conf.default /etc/graphlcd.conf"
+paraset_d[54]="<empty_value>"
+paraset_e[54]="<empty_value>"
+
+#---ENDE---
+hw_ident[100]="FINITO"

@@ -1,0 +1,21 @@
+#!/bin/bash
+#
+#
+#  v0.1     19.08.13 Captain_Beefheart
+#
+# sichert "alte" lirc Module
+#################################################
+
+#!/bin/bash
+
+AKT_KERNEL=$(uname -r)
+
+L_MODULE_DIR="/lib/modules/$AKT_KERNEL/kernel/drivers/staging/media/lirc"
+L_DRIVER_DIR="/lib/modules/$AKT_KERNEL/kernel/drivers/media/rc"
+if [ ! -e $L_DRIVER_DIR/lirc_dev.org ]; then
+  for L_MODULE in $L_MODULE_DIR/*.ko
+    do
+      cp -af "$L_MODULE" "${L_MODULE/.ko}".org
+    done 
+  cp -af $L_DRIVER_DIR/lirc_dev.ko $L_DRIVER_DIR/lirc_dev.org
+fi

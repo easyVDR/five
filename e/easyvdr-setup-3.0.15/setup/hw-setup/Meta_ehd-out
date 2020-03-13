@@ -1,0 +1,230 @@
+#!/bin/bash
+#
+#-------------------------------------------
+# Dieses Skript konfiguriert die Ausgabe über die eHD
+#-------------------------------------------
+# Autor: michel8 für easyvdr 0.8
+#-------------------------------------------
+# Hinweis: 
+#-------------------------------------------
+# Version 0.0.1
+# -------------------------------------------
+#
+#
+#  21.11.10  vers. 0.0.9 modifiziert von Matthias Kuehne ( Captain_Beefheart ) für easyvdr 0.9
+#  04.06.11  vers. 0.0.10 angepasst an neue Setup-Struktur
+# Version 0.0.2 - sinai,sirnova,C.B.: added set frontend & OSD selection
+#       V 0.0.3   11.02.13  C.B.
+#
+#  offen ist noch ob alle erforderlichen media-Verzeichnisse für die eHD-Plugins angelegt wurden und ob auch die Rechte stimmen
+#
+################################################
+#defines
+. /usr/lib/vdr/easyvdr-config-loader
+. /usr/lib/vdr/functions/easyvdr-functions-lib
+. /usr/share/easyvdr/setup/easyvdr-setup-defines
+. /usr/share/easyvdr/setup/easyvdr-setup-functions
+
+VERSION="0.0.10"
+TITLE=" Setup fuer easyVDR $EASYVDR_VERSION - eHD "
+BACK_TITLE=" eHD Setup fuer easyVDR - Version $VERSION "
+
+
+# LOGFILE="$logdir/easyvdr-config-hde.log" # derzeit ohne eigenes Logfile
+
+
+################## Funktionen ################################################
+#####
+
+#####
+Output_Menu()
+{
+OK_CANCEL=1
+SEL_OUTPUT=`dialog\
+          --backtitle "$BACK_TITLE"\
+          --ok-label "auswählen"\
+          --nocancel\
+          --title "$TITLE"\
+          --menu "\n\
+            In welchem Format bzw. an welchem Video-Ausgang\n\
+            soll die Ausgabe erfolgen?\n\n "   $DIA_BOX_SIZE\
+                HDMI     "HDMI Full HD     (Ton über HDMI oder S/PDIF)"  \
+                YUV      "YUV HD Auflösung (Ton über S/PDIF)"            \
+                SV       "S-Video          (Ton über S/PDIF)"          3>&1 1>&2 2>&3`
+OK_CANCEL=$?
+clear
+return $OK_CANCEL
+}
+
+#####
+Run_Config()
+{
+case $SEL_OUTPUT in
+      SV) Set_SV   ;;
+     YUV) Set_YUV  ;;
+    HDMI) Set_HDMI ;;
+       *) out2="NO"; module="unknown" ;;
+esac
+}
+
+#####
+Set_SV()
+{
+out2="SVideo"
+SetSetupConf reelbox.Ac3 0
+SetSetupConf reelbox.Aspect 0
+SetSetupConf reelbox.AudioMix 1
+SetSetupConf reelbox.AudioOverHD 0
+SetSetupConf reelbox.AudioOverHDMI 0
+SetSetupConf reelbox.Brightness 54
+SetSetupConf reelbox.Contrast 134
+SetSetupConf reelbox.Deint 0
+SetSetupConf reelbox.DelayAc3 0
+SetSetupConf reelbox.DelayStereo 0
+SetSetupConf reelbox.DisplayType 0
+SetSetupConf reelbox.Framerate 0
+SetSetupConf reelbox.Gamma 60
+SetSetupConf reelbox.HDAM 3
+SetSetupConf reelbox.HDAPort 0
+SetSetupConf reelbox.HDAspect 0
+SetSetupConf reelbox.HDauto_format 0
+SetSetupConf reelbox.HDdeint 1
+SetSetupConf reelbox.HDDisplayType 1
+SetSetupConf reelbox.HDDM 0
+SetSetupConf reelbox.HDfb 0
+SetSetupConf reelbox.HDIntProg 1
+SetSetupConf reelbox.HDnorm 0
+SetSetupConf reelbox.HDoutput 3
+SetSetupConf reelbox.HDResolution 2
+SetSetupConf reelbox.Norm 0
+SetSetupConf reelbox.Resolution 1
+SetSetupConf reelbox.Scartmode 0
+SetSetupConf reelbox.UseHdExt 1
+SetSetupConf reelbox.VMM 0
+SetSetupConf reelbox.VSM 0
+}
+
+#####
+Set_YUV()
+{
+out2="YUV"
+SetSetupConf reelbox.Ac3 0
+SetSetupConf reelbox.Aspect 0
+SetSetupConf reelbox.AudioMix 1
+SetSetupConf reelbox.AudioOverHD 1
+SetSetupConf reelbox.AudioOverHDMI 0
+SetSetupConf reelbox.Brightness 54
+SetSetupConf reelbox.Contrast 134
+SetSetupConf reelbox.Deint 0
+SetSetupConf reelbox.DelayAc3 0
+SetSetupConf reelbox.DelayStereo 0
+SetSetupConf reelbox.DisplayType 0
+SetSetupConf reelbox.Framerate 0
+SetSetupConf reelbox.Gamma 60
+SetSetupConf reelbox.HDAM 1
+SetSetupConf reelbox.HDAPort 0
+SetSetupConf reelbox.HDAspect 0
+SetSetupConf reelbox.HDauto_format 0
+SetSetupConf reelbox.HDdeint 1
+SetSetupConf reelbox.HDDisplayType 1
+SetSetupConf reelbox.HDDM 1
+SetSetupConf reelbox.HDfb 0
+SetSetupConf reelbox.HDIntProg 1
+SetSetupConf reelbox.HDnorm 0
+SetSetupConf reelbox.HDoutput 4
+SetSetupConf reelbox.HDResolution 0
+SetSetupConf reelbox.Norm 0
+SetSetupConf reelbox.Resolution 1
+SetSetupConf reelbox.Scartmode 0
+SetSetupConf reelbox.UseHdExt 1
+SetSetupConf reelbox.VMM 0
+SetSetupConf reelbox.VSM 0
+}
+
+#####
+Set_HDMI()
+{
+out2="HDMI"
+SetSetupConf reelbox.Ac3 0
+SetSetupConf reelbox.Aspect 1
+SetSetupConf reelbox.AudioMix 0
+SetSetupConf reelbox.AudioOverHD 1
+SetSetupConf reelbox.AudioOverHDMI 0
+SetSetupConf reelbox.Brightness 56
+SetSetupConf reelbox.Colour 450
+SetSetupConf reelbox.Contrast 128
+SetSetupConf reelbox.Deint 0
+SetSetupConf reelbox.DelayAc3 0
+SetSetupConf reelbox.DelayStereo 0
+SetSetupConf reelbox.DisplayType 0
+SetSetupConf reelbox.Flicker 0
+SetSetupConf reelbox.Framerate 0
+SetSetupConf reelbox.Gamma 70
+SetSetupConf reelbox.HDAM 1
+SetSetupConf reelbox.HDAPort 0
+SetSetupConf reelbox.HDAspect 0
+SetSetupConf reelbox.HDauto_format 0
+SetSetupConf reelbox.HDdeint 1
+SetSetupConf reelbox.HDDisplayType 1
+SetSetupConf reelbox.HDDM 1
+SetSetupConf reelbox.HDfb 0
+SetSetupConf reelbox.HDIntProg 1
+SetSetupConf reelbox.HDnorm 0
+SetSetupConf reelbox.HDoutput 4
+SetSetupConf reelbox.HDResolution 0
+SetSetupConf reelbox.Norm 0
+SetSetupConf reelbox.Resolution 2
+SetSetupConf reelbox.Scartmode 0
+SetSetupConf reelbox.Sharpness 128
+SetSetupConf reelbox.UseHdExt 1
+SetSetupConf reelbox.VMM 0
+SetSetupConf reelbox.VSM 0
+}
+
+#####
+Make_Dirs()
+{
+cd /media/easyvdr01
+if [ ! -d DVDROOT ]; then
+    ln -s ./convert/dvd DVDROOT
+fi
+
+if [ ! -d hd ]; then
+    mkdir hd
+    cd hd
+    ln -s ../mp3 music
+    ln -s ../photos pictures
+    ln -s ../video0 recordings
+    ln -s ../convert video
+    mkdir burn_tmp
+fi
+
+cd /media/easyvdr01
+if [ ! -d reel ]; then
+    mkdir reel
+    cd reel
+    ln -s ../hd/music music
+    ln -s ../hd/pictures pictures
+    ln -s ../hd/recordings recordings
+    ln -s ../hd/video video
+fi
+
+cd /media/easyvdr01
+if [ ! -d iepg ]; then
+    mkdir -p iepg/images
+    chown -R vdr:vdr /media/easyvdr01/iepg
+    #ln -s /media/iepg/images /media/epgimages 
+fi
+}
+
+###################### main ########################## 
+
+Output_Menu
+if (( $? == 0 )); then
+    Run_Config
+    Make_Dirs
+    SetSysconfig "VDR_FRONTEND" "reelbox"
+    WriteStatus "Meta_ehd-out" "Reelhde_configured"
+    sed -i '/Reelhde_configured_output"*/d' $SETUP_STATUS
+    echo "Reelhde_configured_output=\"$out2\"" >> $SETUP_STATUS
+fi
