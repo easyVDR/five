@@ -1,9 +1,0 @@
-#!/bin/bash
-echo "[000] easyvdr-setup-starter v1.0.0"
-chvt 8
-if [ -f /usr/share/easyvdr/installer/pre-start ]; then
-	/usr/share/easyvdr/installer/pre-start
-else
-	/usr/share/easyvdr/setup/easyvdr-setup
-#	setsid sh -c 'exec /usr/share/easyvdr/setup/easyvdr-setup <> /dev/tty8 >&0 2>&1'
-fi

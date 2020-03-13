@@ -1,5 +1,0 @@
-etc/*                           etc/
-fb_type                         var/lib/vdr/
-channels                        var/lib/vdr/
-remotes                         var/lib/vdr/
-setup                           usr/share/easyvdr/

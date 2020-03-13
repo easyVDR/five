@@ -1,8 +1,0 @@
-Origen_ae-Fernbedienung
-
-getestet mit:
-- Atric-USB-Wakeup
-- iMON-VFD310 im Origen
-- IR der TBS-Karten
-- Atric an COM1
-- usb_irmp

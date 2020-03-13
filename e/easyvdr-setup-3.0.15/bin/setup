@@ -1,3 +1,0 @@
-#!/bin/bash
-
-sh /usr/share/easyvdr/setup/easyvdr-setup -f

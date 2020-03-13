@@ -1,6 +1,0 @@
-[Desktop Entry]
-Type=Application
-Name=easyvdr config pulseaudio 
-Exec=/usr/share/easyvdr/setup/audio-setup/tools/x-config-pulseaudio
-
-
