@@ -1,3 +1,15 @@
+vdr (1:2.2.0-15easyVDR4~focal) focal; urgency=medium
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 05 Mar 2020 22:40:22 +0100
+ 
+vdr (1:2.2.0-15easyVDR3~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 05 Mar 2020 22:17:43 +0100
+
 vdr (1:2.2.0-15easyVDR1~focal) focal; urgency=high
 
   * fix postinst

@@ -5,7 +5,7 @@ Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
 Uploaders: mango <vdr@gmx.de
 Build-Depends: debhelper (>= 8), quilt, libjpeg-dev, libcap-dev, libncurses5-dev,
   libncursesw5-dev, libfreetype6-dev, libfontconfig-dev, gettext,
-  python, linux-libc-dev (>= 2.6.32), libfribidi-dev, bash-completion
+  python3, linux-libc-dev (>= 2.6.32), libfribidi-dev, bash-completion
 Standards-Version: 3.9.4
 Vcs-Git: git://git.debian.org/pkg-vdr-dvb/vdr.git
 Vcs-Browser: http://git.debian.org/?p=pkg-vdr-dvb/vdr.git
