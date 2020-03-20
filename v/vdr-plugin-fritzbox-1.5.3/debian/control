@@ -15,7 +15,7 @@ Homepage: http://www.joachim-wilke.de/vdr-fritz.htm
 
 Package: vdr-plugin-fritzbox
 Architecture: any
-Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}, libboost-regex1.71.0
 Description: VDR plugin to access certain functions of an AVM Fritz!Box
  This VDR plugin connects to the Fritz!Box to inform you about incoming
  calls. As an option, the plugin can automatically mute VDR when a call
