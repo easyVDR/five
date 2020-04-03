@@ -1,3 +1,9 @@
+easyportal (0.5.37-4easyVDR8~focal) focal; urgency=high
+
+  * fix depends php-7.4
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 03 Apr 2020 18:38:21 +0200
+
 easyportal (0.5.37-4easyVDR7~focal) focal; urgency=high
 
   * fix paketquellen to 5-*-*
