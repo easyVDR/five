@@ -77,7 +77,7 @@ nautilus
 xfonts-cyrillic
 xfonts-100dpi
 xfonts-75dpi
-xubuntu-desktop
+## xubuntu-desktop
 firefox
 firefox-locale-de
 

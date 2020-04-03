@@ -1,3 +1,10 @@
+easyvdr-depends (03.99-4easyVDR9~focal) focal; urgency=high
+
+  * remove depends xubuntu-desktop
+  * many packages cannot be installed
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 03 Apr 2020 15:30:56 +0200
+
 easyvdr-depends (03.99-4easyVDR8~focal) focal; urgency=high
 
   * add xubuntu-desktop
