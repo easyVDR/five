@@ -1,3 +1,9 @@
+vdr-plugin-fritzbox (1:1.5.3-6easyVDR1~focal) focal; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 07 Apr 2020 15:14:54 +0200
+
 vdr-plugin-fritzbox (1:1.5.3-6easyVDR0~focal) focal; urgency=medium
 
   * added depends libboost-regex1.71.0

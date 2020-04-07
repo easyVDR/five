@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 9), vdr-dev (>= 2.2.0), gettext, pkg-config,
   libgcrypt20-dev,
   libcommoncpp2-dev,
   libboost-system-dev,
-  libboost-regex-dev,
+  libboost-regex1.71-dev,
   libboost-thread-dev
 Standards-Version: 3.9.5
 Homepage: http://www.joachim-wilke.de/vdr-fritz.htm
