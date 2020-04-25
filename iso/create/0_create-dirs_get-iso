@@ -10,4 +10,4 @@ sudo mkdir -p $DIR/loop
 sudo mkdir -p $DIR/org
 
 cd $DIR/org
-wget http://cdimage.ubuntu.com/ubuntu-server/daily/current/focal-server-amd64.iso
+wget http://cdimage.ubuntu.com/ubuntu-legacy-server/releases/focal/release/ubuntu-20.04-legacy-server-amd64.iso
