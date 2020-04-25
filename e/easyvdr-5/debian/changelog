@@ -1,4 +1,4 @@
-easyvdr-5 (00.04-0easyVDR1~focal) focal; urgency=high
+easyvdr-5 (00.04-0easyVDR2~focal) focal; urgency=high
 
   * depend 2 easyvdr-installer
 
