@@ -1,3 +1,9 @@
+easyvdr-5 (00.04-0easyVDR1~focal) focal; urgency=high
+
+  * depend 2 easyvdr-installer
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 25 Apr 2020 09:20:35 +0200
+
 easyvdr-5 (00.03-0easyVDR1~focal) focal; urgency=medium
 
   * depends to easyvdr-temproot (this must be removed before any productive use !!!!)
