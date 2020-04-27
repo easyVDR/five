@@ -40,18 +40,7 @@ SERVICE[3]="/etc/systemd/easyvdr/easyvdr-create-ramdisk.service"
 SERVICE[4]="/etc/systemd/easyvdr/easyvdr-save-ramdisk.service"
 SERVICE[5]="/etc/systemd/easyvdr/easyvdr-program-changer.service"
 SERVICE[6]="/etc/systemd/system/display-manager.service"
-####### plymouth
-SERVICE[7]="/lib/systemd/system/plymouth-halt.service"
-SERVICE[8]="/lib/systemd/system/plymouth-read-write.service"
-SERVICE[9]="/lib/systemd/system/plymouth-kexec.service"
-SERVICE[10]="/lib/systemd/system/plymouth-reboot.service"
-SERVICE[11]="/lib/systemd/system/plymouth-log.service"
-SERVICE[12]="/lib/systemd/system/plymouth.service"
-SERVICE[13]="/lib/systemd/system/plymouth-poweroff.service"
-SERVICE[14]="/lib/systemd/system/plymouth-start.service"
-SERVICE[15]="/lib/systemd/system/plymouth-quit.service"
-SERVICE[16]="/lib/systemd/system/plymouth-switch-root.service"
-SERVICE[17]="/lib/systemd/system/plymouth-quit-wait.service"
+
 
 EnableSystemd()
 {
@@ -77,6 +66,8 @@ if [ -d /run/systemd/system ] ; then
   systemctl daemon-reload >/dev/null || true
 fi
 
+#Runlevel anpassen
+systemctl set-default graphical.target
 
 }
 
@@ -107,4 +98,7 @@ systemctl disable lircd.socket lircd.service
    fi
   fi
  done
+ #Runlevel anpassen
+systemctl set-default multi-user.target
+
 }

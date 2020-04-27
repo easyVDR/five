@@ -26,8 +26,9 @@ if [ "$response" != "n" ]; then
     
     sudo apt dist-upgrade -y
     sudo apt install -y easyvdr-5
-    sudo systemctl daemon-reload >/dev/null || true
-    sudo systemctl enable "/etc/systemd/easyvdr/easyvdr-setup-call.service" || true > /dev/null 2>&1
+    sudo apt install -y easyvdr-installer
+#    sudo systemctl daemon-reload >/dev/null || true
+#    sudo systemctl enable "/etc/systemd/easyvdr/easyvdr-setup-call.service" || true > /dev/null 2>&1
     
     sleep 5
     

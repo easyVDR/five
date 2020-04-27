@@ -22,6 +22,7 @@
 #  24.06.15  Buggy Plugin upnp aus Grundinstallation entfernen - passiert jetzt im presetup 26.07.15
 #  09.03.16  Comment in /etc/vdr/svdrphosts.conf
 #  10.09.17  remove network.conf fix, disable cd rule
+#  17.04.20  remove desktop upstart fix
 #############################
 
 . /usr/lib/vdr/easyvdr-config-loader
@@ -52,11 +53,6 @@ if [ -f $REMOTE_MOD_PATH/ati_remote2.ko ]; then
 fi
 ####
 
-#### Workaround wegen fehlender non-X Runlevel fuer 1st-start
-if [[ -e /etc/init/easyvdr-desktop.deakt ]]; then
-  mv -f /etc/init/easyvdr-desktop.deakt /etc/init/easyvdr-desktop.conf
-fi
-####
 
 #### Workaround damit jeder User den Desktop starten kann
 </etc/X11/Xwrapper.config grep -v "allowed_users=" >> /tmp/Xwrapper.config.tmp

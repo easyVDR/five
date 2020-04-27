@@ -474,8 +474,8 @@ if [ $? -eq 0 ]; then
  
  for i in {1..10}
  do
-    chvt 8
-    (( $(fgconsole) == 8 )) && break
+    chvt 4
+    (( $(fgconsole) == 4 )) && break
     sleep 1
     echo "$i"
  done
@@ -554,23 +554,14 @@ Get_Frontend_Class
         if [ -f /home/$STANDARD_DESKTOP_USER/.Xauthority ];then
          rm /home/$STANDARD_DESKTOP_USER/.Xauthority >/dev/null 2>&1
         fi
-        easyvdr-desktop start >/dev/null 2>&1 
-
-        /usr/lib/vdr/easyvdr-set-monitor-layout > /dev/null 2>&1
-        easyvdr-program-changer start;;
-
+        systemctl start display-manager >/dev/null 2>&1 
+	;;
       "NON_X11") chvt $DKEYB_TTY;;
       "NON_FRE") chvt 1;;
  esac
 
-echo "`date` Starte VDR remote Service..."      >> $SETUPLOG
-easyvdr-remote start                               >/dev/null 2>&1
-sleep 1
-echo "`date` Starte VDR..."      >> $SETUPLOG
-easyvdr-vdr start                               >/dev/null 2>&1
-sleep 1
-echo "`date` Starte Frontend..." >> $SETUPLOG
-easyvdr-frontend start   >/dev/null 2>&1
+ systemctl start easyvdr-systemstart.service  >/dev/null 2>&1 
+
 clear
 
 while true
@@ -659,6 +650,7 @@ esac
 }
 
 ######################################### main ####################################################
+plymouth --quit
 RET_STAT=1
 
 Master_of_Desaster                    # check auf Admin-Rechte

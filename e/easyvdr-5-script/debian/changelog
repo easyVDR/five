@@ -1,3 +1,9 @@
+easyvdr-5-script (0.0.4-1easyVDR5~focal) focal; urgency=high
+
+  * remove enable easyvdr-setup-call
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 18 Apr 2020 09:23:44 +0200
+
 easyvdr-5-script (0.0.4-1easyVDR0~focal) focal; urgency=high
 
   * lirc workaround

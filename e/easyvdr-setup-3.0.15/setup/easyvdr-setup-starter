@@ -1,6 +1,6 @@
 #!/bin/bash
 echo "[000] easyvdr-setup-starter v1.0.0"
-chvt 8
+#chvt 4 ->Terminal 8 gibt es noch nicht
 if [ -f /usr/share/easyvdr/installer/pre-start ]; then
 	/usr/share/easyvdr/installer/pre-start
 else

@@ -1,0 +1,15 @@
+[Unit]
+Description=Easyvdr config Display Manager
+Before=display-manager.service
+
+[Service]
+Type=simple
+#ExecStartPre=
+ExecStart=/usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-config-display-manager
+#ExecStartPost=
+#Restart=always
+StandardOutput=syslog
+StandardError=syslog
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,23 @@
+# Starts Program changer
+#
+#
+#
+# 08.09.17   Bleifuss2
+
+
+[Unit]
+Description=Program Changer
+After=display-manager.service
+
+
+[Service]
+Type=simple
+Restart=on-failure
+RestartSec=10
+ExecStart=/usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-program-changer
+StandardOutput=syslog
+StandardError=syslog
+
+
+[Install]
+WantedBy=multi-user.target

@@ -1,0 +1,10 @@
+#!/bin/bash
+# Save Alsa 16.03.2020 Bleifuss
+
+
+
+
+LOGGER="logger -t easyvdr-alsa-store"
+
+$LOGGER "store alsa settings"
+/usr/sbin/alsactl store

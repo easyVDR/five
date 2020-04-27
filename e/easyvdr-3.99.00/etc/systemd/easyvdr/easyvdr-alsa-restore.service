@@ -10,7 +10,7 @@ After=easyvdr-systemstart.service
 
 [Service]
 Type=simple
-ExecStart="/usr/lib/eayvdr/easyvdr-start/systemd/easyvdr-alsa-restore"
+ExecStart="/usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-alsa-restore"
 StandardOutput=syslog
 StandardError=syslog
 

@@ -1,0 +1,5 @@
+[Seat:*]
+user-session=xubuntu
+autologin-user=vdr
+autologin-user-timeout=0
+autologin-session=xubuntu

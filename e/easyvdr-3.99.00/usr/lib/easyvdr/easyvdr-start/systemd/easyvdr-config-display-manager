@@ -1,0 +1,5 @@
+#!/bin/sh
+
+#V 0.1  Bleifuss
+
+/usr/lib/vdr/easyvdr-config-display-manager

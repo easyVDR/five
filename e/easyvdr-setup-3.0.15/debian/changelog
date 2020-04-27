@@ -1,3 +1,15 @@
+easyvdr-setup (3.0.15-1easyVDR17~focal) focal; urgency=high
+
+  * change easyvdr instal systemd 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 13 Apr 2020 12:23:50 +0200
+
+easyvdr-setup (3.0.15-1easyVDR7~focal) focal; urgency=high
+
+  * adding xubuntu desktop
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 06 Apr 2020 13:07:49 +0200
+
 easyvdr-setup (3.0.15-1easyVDR6~focal) focal; urgency=high
 
   * rebuild

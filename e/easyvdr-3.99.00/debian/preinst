@@ -36,12 +36,14 @@ adduser $USER video > /dev/null || true
  SERVICE[2]="/etc/systemd/easyvdr/easyvdr-cleanscreen.service"
  SERVICE[3]="/etc/systemd/easyvdr/easyvdr-create-ramdisk.service"
  SERVICE[4]="/etc/systemd/easyvdr/easyvdr-save-ramdisk.service"
- SERVICE[5]="/lib/systemd/system/inputlirc.service"
- SERVICE[6]="/lib/systemd/system/lircd-uinput.service"
- SERVICE[7]="/lib/systemd/system/lircd.socket"
- SERVICE[8]="/lib/systemd/system/lircd.service"
- SERVICE[9]="/lib/systemd/system/lircd-setup.service"
- SERVICE[10]="/lib/systemd/system/lircmd.service"
+ SERVICE[5]="/etc/systemd/easyvdr/easyvdr-config-display-manager.service"
+ SERVICE[6]="/etc/systemd/easyvdr/easyvdr-alsa-store.service"
+ SERVICE[7]="/lib/systemd/system/inputlirc.service"
+ SERVICE[8]="/lib/systemd/system/lircd-uinput.service"
+ SERVICE[9]="/lib/systemd/system/lircd.socket"
+ SERVICE[10]="/lib/systemd/system/lircd.service"
+ SERVICE[11]="/lib/systemd/system/lircd-setup.service"
+ SERVICE[12]="/lib/systemd/system/lircmd.service"
 
  for CHK_SERVICE in ${SERVICE[*]}
  do

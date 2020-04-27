@@ -11,6 +11,7 @@
 # vers. 0.8  14.09.17  Systemd update
 # vers. 0.9  06.03.18  Adding Mate Desktop
 # vers. 0.9  05.12.19  Fix Ping
+# vers. 0.9  16.03.20  Adding Xubuntu Desktop
 #################################################
 
 ################################# defines ##########################################
@@ -68,6 +69,7 @@ case  $DESKTOP in
         XFCE)  SWITCH5="on";;
          KDE)  SWITCH6="on";;
 fvwm-crystal)  SWITCH7="on";;
+     XUbuntu)  SWITCH8="on";;
            *)  SWITCH1="on";;
 esac
 }
@@ -92,7 +94,8 @@ SEL_DESKTOP=$(dialog \
         Mate           "           Mate Desktop            "     "$SWITCH4" \
         XFCE           "           XFCE Desktop            "     "$SWITCH5" \
          KDE           "           KDE Desktop             "     "$SWITCH6" \
-fvwm-crystal           "           fvwm-crystal            "     "$SWITCH7"  3>&1 1>&2 2>&3 3>&- )
+fvwm-crystal           "           fvwm-crystal            "     "$SWITCH7" \
+     XUbuntu           "  Xubuntu Desktop ist installiert  "     "$SWITCH8"  3>&1 1>&2 2>&3 3>&- )
 OK_CANCEL=$?
 clear
 
@@ -132,6 +135,12 @@ case $SEL_DESKTOP in
                 cp $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf-inactive $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf
                fi
                ;;
+ XUbuntu) SEL_DESKTOP_PAKET="xubuntu-desktop"
+               if [ -f $LIGHTDM_CONF_PATH/60-xubuntu.conf-inactive ];then
+                cp $LIGHTDM_CONF_PATH/60-xubuntu.conf-inactive $LIGHTDM_CONF_PATH/60-xubuntu.conf
+               fi
+               ;;
+
 esac
 }
 

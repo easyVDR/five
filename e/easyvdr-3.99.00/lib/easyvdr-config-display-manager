@@ -9,6 +9,7 @@
 # vers  0.3  24.01.18 gdm updates, Bleifuss
 # vers  0.4  04.01.19 dialog lightdm disable, gb
 # vers  0.4  05.12.19 fix mate desktop, mango
+# vers  0.4  01.04.20 addin xubuntu, Bleifuss
 #################################################
 
 ################################# defines ##########################################
@@ -24,7 +25,7 @@ XSESSION_PATH=/usr/share/xsessions
 
 LOGGER=" logger -t easyvdr-config-display-manager"
 
-
+#DESKTOP=XUbuntu
 #### Prüfen ob GDM conf vorhanden ist, wenn nicht dann erzeugen
 if [ ! -d "/var/lib/AccountsService" ] ;then
  mkdir "/var/lib/AccountsService"
@@ -191,6 +192,11 @@ ENABLE_DISPLAY_MANAGER_LIGHTDM()
                 cp $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf-inactive $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf
                fi
                ;;
+ XUbuntu)      if [ -f $LIGHTDM_CONF_PATH/60-xubuntu.conf-inactive ];then
+                $LOGGER "xubuntu"
+                cp $LIGHTDM_CONF_PATH/60-xubuntu.conf-inactive $LIGHTDM_CONF_PATH/60-xubuntu.conf
+               fi
+               ;;
             *) if [ -f $LIGHTDM_CONF_PATH/50-openbox.conf-inactive ];then
                 $LOGGER "enable openbox"
                 cp $LIGHTDM_CONF_PATH/50-openbox.conf-inactive $LIGHTDM_CONF_PATH/50-openbox.conf
@@ -262,13 +268,13 @@ DISABLE_XDG_AUTOSTART()
   if [ -f $LIGHTDM_CONF_PATH/50-lxde.conf ] && [ $DESKTOP != LXDE ];then
    rm $LIGHTDM_CONF_PATH/50-lxde.conf
   fi
-    if [ -f $LIGHTDM_CONF_PATH/50-mate.conf ] && [ $DESKTOP != Mate ];then
+  if [ -f $LIGHTDM_CONF_PATH/50-mate.conf ] && [ $DESKTOP != Mate ];then
    rm $LIGHTDM_CONF_PATH/50-mate.conf
   fi
   if [ -f $LIGHTDM_CONF_PATH/50-xfce4.conf ] && [ $DESKTOP != XFCE ];then
    rm $LIGHTDM_CONF_PATH/50-xfce4.conf
   fi
-  if [ -f $LIGHTDM_CONF_PATH/40-kde-plasma.conf ] && [ $DESKTOP != KDE ];then
+  if [ -f $LIGHTDM_CONF_PATH/40-kde-plasma.conf ] && [ $DESKTOP != KDE ];then  !!!!Prüfen
    rm $LIGHTDM_CONF_PATH/40-kde-plasma.conf
   fi
   if [ -f $LIGHTDM_CONF_PATH/50-fvwm-crystal.conf ] && [ $DESKTOP != fvwm-crystal ];then
@@ -276,6 +282,17 @@ DISABLE_XDG_AUTOSTART()
   fi
   if [ -f $LIGHTDM_CONF_PATH/50-ubuntu.conf ];then
    rm $LIGHTDM_CONF_PATH/50-ubuntu.conf
+  fi
+  if [ -f $LIGHTDM_CONF_PATH/60-xubuntu.conf ];then
+   rm $LIGHTDM_CONF_PATH/60-xubuntu.conf
+  fi
+
+  if [ -f $LIGHTDM_CONF_PATH/50-ubuntu.conf ];then
+   rm $LIGHTDM_CONF_PATH/50-ubuntu.conf
+  fi
+
+  if [ -f $LIGHTDM_CONF_PATH/50-unity-greeter.conf ];then
+   rm $LIGHTDM_CONF_PATH/50-unity-greeter.conf
   fi
 
 )
@@ -289,7 +306,7 @@ DISABLE_XDG_AUTOSTART()
  if [ "$(cat /etc/X11/default-display-manager 2>/dev/null)" != "/usr/sbin/lightdm" ];then
   $LOGGER "enable display-manager lightdm"
 #  dialog --title "Displaymanager wählen" --msgbox "Falls als nächstes ein Auswahämenü erscheint,\nlightdm wählen." 8 50
-  dpkg-reconfigure lightdm
+  dpkg-reconfigure -u lightdm 
  fi
  ENABLE_DISPLAY_MANAGER_LIGHTDM
 

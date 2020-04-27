@@ -90,25 +90,29 @@ local-top/bootmessage                   usr/share/initramfs-tools/scripts/local-
 lightdm.conf.d/*                        usr/share/lightdm/lightdm.conf.d/
 etc/xdg/autostart/*                     etc/xdg/autostart/
 
-usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-systemstart	usr/lib/easyvdr/easyvdr-start/systemd
-usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-create-ramdisk 	usr/lib/easyvdr/easyvdr-start/systemd
-usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-save-ramdisk 	usr/lib/easyvdr/easyvdr-start/systemd
-usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-alsa-restore 	usr/lib/easyvdr/easyvdr-start/systemd
-usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-cleanscreen 	usr/lib/easyvdr/easyvdr-start/systemd
-usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-autostart 	usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-systemstart	        usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-create-ramdisk 	        usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-save-ramdisk 	        usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-alsa-restore 	        usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-alsa-store 	        usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-cleanscreen 	        usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-config-display-manager 	usr/lib/easyvdr/easyvdr-start/systemd
+usr/lib/easyvdr/easyvdr-start/systemd/easyvdr-autostart 	        usr/lib/easyvdr/easyvdr-start/systemd
 
 
 #etc/systemd/easyvdr/display-manager.service		etc/systemd/easyvdr
-etc/systemd/easyvdr/easyvdr-systemstart.service		etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-systemstart.service	etc/systemd/easyvdr
 
-#etc/systemd/easyvdr/easyvdr-vdr.service			etc/systemd/easyvdr
+#etc/systemd/easyvdr/easyvdr-vdr.service		etc/systemd/easyvdr
 #etc/systemd/easyvdr/easyvdr-frontend.service		etc/systemd/easyvdr
 
-etc/systemd/easyvdr/easyvdr-alsa-restore.service	etc/systemd/easyvdr
-etc/systemd/easyvdr/easyvdr-create-ramdisk.service	etc/systemd/easyvdr
-etc/systemd/easyvdr/easyvdr-save-ramdisk.service	etc/systemd/easyvdr
-etc/systemd/easyvdr/easyvdr-cleanscreen.service		etc/systemd/easyvdr
-etc/systemd/easyvdr/easyvdr-autostart.service		etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-alsa-restore.service	    etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-alsa-store.service	            etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-create-ramdisk.service	    etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-save-ramdisk.service	    etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-cleanscreen.service	    etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-config-display-manager.service etc/systemd/easyvdr
+etc/systemd/easyvdr/easyvdr-autostart.service		    etc/systemd/easyvdr
 
 usr/lib/easyvdr/easyvdr-start/easyvdr-desktop		usr/lib/easyvdr/easyvdr-start/
 usr/lib/easyvdr/easyvdr-start/easyvdr-vdr		usr/lib/easyvdr/easyvdr-start/

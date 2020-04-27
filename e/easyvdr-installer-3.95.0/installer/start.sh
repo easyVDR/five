@@ -1,11 +1,21 @@
 #!/bin/bash
-chvt 8
+#13.04.2020 enable Terminal 8, set lightdm default
+
+
+dpkg-reconfigure -u lightdm 
+
+#Nur bis zur Konsole booten
+systemctl set-default multi-user.target
+
+TERMINAL=4
+sleep 1
+chvt $TERMINAL
 echo "[100] start.sh v2.0"
 
 function livemodus
 {
 echo "[110] Direct start..."
-chvt 8
+chvt $TERMINAL
 echo "[113] checking for new packages..."
 update_presetup
 echo "[115] pre-setup upgraded..."
@@ -21,7 +31,7 @@ function setup
 echo "[120] Direct setup..."
 echo "[121] Starting setup on colsole 8"
 grep -q "m-proxy" /var/log/installer/syslog && cp /usr/share/easyvdr/installer/01proxy /etc/apt/apt.conf.d/
-chvt 8
+chvt $TERMINAL
 echo "[123] checking for new packages..."
 update_presetup
 echo "[125] pre-setup upgraded..."
@@ -149,11 +159,6 @@ partitioning
 
 
 
-
-
-
-
-
 #autopart)
 #cat 11_autopart >> ../easyvdr.seed
 
@@ -164,7 +169,7 @@ partitioning
 
 #Preparation
 echo "[101] Preparing..."
-chvt 8
+chvt $TERMINAL
 
 
 
@@ -188,7 +193,7 @@ boot-repair
 
 #Preparation
 echo "[101] Preparing..."
-chvt 8
+chvt $TERMINAL
 
 
 . /usr/lib/vdr/functions/easyvdr-functions-lib
@@ -198,16 +203,7 @@ PRESEEDDIR=$INSTALLERDIR/preseeds
 SOURCES=/etc/apt/sources.list
 
 
-
-service lightdm stop > /dev/null 2>&1
-echo "manual" | sudo tee /etc/init/lightdm.override
 rm /etc/X11/xorg.conf > /dev/null 2>&1
-
-
-#201505 Provisorisch
-rm /etc/resolv.conf > /dev/null 2>&1
-cp /usr/share/easyvdr/installer/resolv.conf /etc
-
 
 SHORTLOG="/tmp/HW-det_Tail-Mess.tmp"
 touch $SHORTLOG > /dev/null 2>&1
@@ -241,3 +237,5 @@ case $FOUND in
      run_install-u) installation-u  ;;
      alternative-install)  alternative-install ;;
 esac
+
+

@@ -10,23 +10,14 @@ SERVICE[2]="/etc/systemd/easyvdr/easyvdr-cleanscreen.service"
 SERVICE[3]="/etc/systemd/easyvdr/easyvdr-create-ramdisk.service"
 SERVICE[4]="/etc/systemd/easyvdr/easyvdr-save-ramdisk.service"
 SERVICE[5]="/etc/systemd/easyvdr/easyvdr-program-changer.service"
-####### plymouth
-SERVICE[6]="/lib/systemd/system/plymouth-halt.service"
-SERVICE[7]="/lib/systemd/system/plymouth-read-write.service"
-SERVICE[8]="/lib/systemd/system/plymouth-kexec.service"
-SERVICE[9]="/lib/systemd/system/plymouth-reboot.service"
-SERVICE[10]="/lib/systemd/system/plymouth-log.service"
-SERVICE[11]="/lib/systemd/system/plymouth.service"
-SERVICE[12]="/lib/systemd/system/plymouth-poweroff.service"
-SERVICE[13]="/lib/systemd/system/plymouth-start.service"
-SERVICE[14]="/lib/systemd/system/plymouth-quit.service"
-SERVICE[15]="/lib/systemd/system/plymouth-switch-root.service"
-SERVICE[16]="/lib/systemd/system/plymouth-quit-wait.service"
 
 
 grep -q "ENABLED=\"yes\"" /etc/default/vdr && VDR_START_STAT=0 || VDR_START_STAT=1
 #Ist VDR Start aktiv?
-if [  $VDR_START_STAT -eq "1" ] ; then
+if [  $VDR_START_STAT -eq "1" ] ; then #Nein VDR aus
+  #Installations Start aktivieren
+  systemctl enable "/etc/systemd/easyvdr/easyvdr-setup-call.service" || true > /dev/null 2>&1
+
  ### lirc abschalten
   STAT=$(systemctl is-active "lircd.socket") || true > /dev/null 2>&1
   if [ $STAT != "inactive" ]; then
