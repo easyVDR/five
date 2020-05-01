@@ -6,8 +6,22 @@ EXEC_CMD="easyvdr-desktop"
 
 case "$1" in
         start)
-                /usr/lib/vdr/easyvdr-config-display-manager
-		systemctl start display-manager.service
+#                #Display-manager konfigurieren
+		 dpkg-reconfigure -u lightdm   2>&1&
+                /usr/lib/vdr/easyvdr-config-display-manager  2>&1&
+	        #Display-manager einschalten
+                if [ ! -f "/etc/systemd/system/display-manager.service" ] ;then
+                  ln -s  /lib/systemd/system/lightdm.service  /etc/systemd/system/display-manager.service  2>&1&
+
+                  if [ -d /run/systemd/system ] ; then
+                   systemctl daemon-reload >/dev/null || true
+                  fi
+
+                  #Runlevel anpassen
+                  systemctl set-default graphical.target  2>&1&
+
+                fi
+		systemctl start display-manager.service  2>&1&
             ;;
          
         stop)

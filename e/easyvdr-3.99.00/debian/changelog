@@ -1,4 +1,4 @@
-easyvdr (3.99.00-4easyVDR11~focal) focal; urgency=high
+easyvdr (3.99.00-4easyVDR16~focal) focal; urgency=high
 
   * adding xubuntu desktop, alsa store, bugfix alsa store / restore / config display manager
 

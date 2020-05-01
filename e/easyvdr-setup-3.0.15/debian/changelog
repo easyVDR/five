@@ -1,3 +1,9 @@
+easyvdr-setup (3.0.15-1easyVDR20~focal) focal; urgency=high
+
+  * adding pulseaudio-setup enable display-manager
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 28 Apr 2020 09:52:11 +0200
+
 easyvdr-setup (3.0.15-1easyVDR17~focal) focal; urgency=high
 
   * change easyvdr instal systemd 

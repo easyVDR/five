@@ -96,21 +96,21 @@ if [ ${picture_button[$i]} ]; then
     if [ $? -eq 0 ]; then
      kill $SIGNAL $PID
      sleep 0.1
-    fi
  #2s warten bis Programm beendet ist
 
-    for wait in {0..20};
-    do
+     for wait in {0..20};
+     do
+      PID=$(pgrep ${stop_program_button[$i]} )
+      if [ $? -ne 0 ]; then
+       #Programm ist beendet
+       break
+      fi
+      sleep 0.1
+     done
+     #Programm hängt
      PID=$(pgrep ${stop_program_button[$i]} )
-     if [ $? -ne 0 ]; then
-      #Programm ist beendet
-      break
-     fi
-     sleep 0.1
-    done
-    #Programm hängt
-    PID=$(pgrep ${stop_program_button[$i]} )
-    if [ $? -eq 0 ]; then kill -9 $PID; fi
+     if [ $? -eq 0 ]; then kill -9 $PID; fi
+    fi
    fi
   fi
  fi

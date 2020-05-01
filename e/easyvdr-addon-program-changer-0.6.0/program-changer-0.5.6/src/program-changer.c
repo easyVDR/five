@@ -794,28 +794,28 @@ int iTextHeight;
 		fprintf(pFile,"@define-color foreground_color          rgb(0,0,0);\n");
 		fprintf(pFile,"@define-color button-backround_color    rgb(0,0,0);\n");
 		
-		fprintf(pFile,"\nGtkWindow {\n");
+		fprintf(pFile,"\nwindow {\n");
 		fprintf(pFile,"	color: @text_color;\n");
 		fprintf(pFile,"	background-color: @backround_color;\n");
 		fprintf(pFile,"	border-color: @text_color;\n");
 		fprintf(pFile,"	}\n");
 		
-		fprintf(pFile,"\nGtkLabel {\n");	//Allgemeine Text Parameter
+		fprintf(pFile,"\nlabel {\n");	//Allgemeine Text Parameter
 		fprintf(pFile,"	color: @text_color;\n"); 
 		fprintf(pFile,"	background-color: @backround_color;\n");
-		fprintf(pFile,"	font: %d Ubuntu;\n",iFont_Size);
+		fprintf(pFile,"	font: %dpx Ubuntu;\n",iFont_Size);
 		fprintf(pFile,"	}\n");
 
 	
-		fprintf(pFile,"\nGtkButton, GtkEntry {\n");   
+		fprintf(pFile,"\nbutton, GtkEntry {\n");   
 		fprintf(pFile,"	color: @text_color;\n"); 
 		fprintf(pFile,"	background-color: @button-backround_color;\n");
-		fprintf(pFile,"	font: %d Ubuntu;\n",iFont_Size);
+		fprintf(pFile,"	font: %dpx Ubuntu;\n",iFont_Size);
 		fprintf(pFile,"	}\n");
 
-		fprintf(pFile,"\nGtkLabel#menu-title-label {\n");
+		fprintf(pFile,"\nlabel#menu-title-label {\n");
 		fprintf(pFile,"	color: @text_color;\n");
-		fprintf(pFile,"	font: %d Ubuntu;\n",iFont_Size_Big); 
+		fprintf(pFile,"	font: %dpx Ubuntu;\n",iFont_Size_Big); 
 		fprintf(pFile,"	}\n");
 
 		fclose(pFile);

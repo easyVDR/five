@@ -1,3 +1,9 @@
+easyvdr-addon-program-changer (0.6.0-11easyVDR12~focalubuntu1) focal; urgency=high
+
+  * fix css errors
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 28 Apr 2020 13:47:36 +0200
+
 easyvdr-addon-program-changer (0.6.0-11easyVDR11~focal) focal; urgency=high
 
   * fix program start

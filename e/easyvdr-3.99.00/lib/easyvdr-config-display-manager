@@ -283,12 +283,13 @@ DISABLE_XDG_AUTOSTART()
   if [ -f $LIGHTDM_CONF_PATH/50-ubuntu.conf ];then
    rm $LIGHTDM_CONF_PATH/50-ubuntu.conf
   fi
-  if [ -f $LIGHTDM_CONF_PATH/60-xubuntu.conf ];then
-   rm $LIGHTDM_CONF_PATH/60-xubuntu.conf
+
+  if [ -f /usr/share/xsessions/ubuntu.desktop ];then
+   rm /usr/share/xsessions/ubuntu.desktop
   fi
 
-  if [ -f $LIGHTDM_CONF_PATH/50-ubuntu.conf ];then
-   rm $LIGHTDM_CONF_PATH/50-ubuntu.conf
+  if [ -f $LIGHTDM_CONF_PATH/60-xubuntu.conf ];then
+   rm $LIGHTDM_CONF_PATH/60-xubuntu.conf
   fi
 
   if [ -f $LIGHTDM_CONF_PATH/50-unity-greeter.conf ];then
