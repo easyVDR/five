@@ -30,7 +30,7 @@ function setup
 {
 echo "[120] Direct setup..."
 echo "[121] Starting setup on colsole 8"
-grep -q "m-proxy" /var/log/installer/syslog && cp /usr/share/easyvdr/installer/01proxy /etc/apt/apt.conf.d/
+#grep -q "m-proxy" /var/log/installer/syslog && cp /usr/share/easyvdr/installer/01proxy /etc/apt/apt.conf.d/
 chvt $TERMINAL
 echo "[123] checking for new packages..."
 update_presetup
@@ -222,7 +222,7 @@ grep -q "easyvdr-test"                /proc/cmdline    && FOUND="test"
 grep -q "easyvdr-live"                /proc/cmdline    && FOUND="livemodus"
 grep -q "easyvdr-desktop"             /proc/cmdline    && FOUND="desktop"
 grep -q "easyvdr-boot-repair"         /proc/cmdline    && FOUND="boot-repair"
-grep -q "m-proxy"                     /proc/cmdline    && cp /usr/share/easyvdr/installer/01proxy /etc/apt/apt.conf.d/
+#grep -q "m-proxy"                     /proc/cmdline    && cp /usr/share/easyvdr/installer/01proxy /etc/apt/apt.conf.d/
 
 
 
