@@ -1,0 +1,45 @@
+<!-- Lircmap.xml Version 0.1 25.03.2014 by Bleifuss -->
+
+<!-- Lircmap.xml aus VDR remote.conf mit make-remote-mapping generiert -->
+
+<lircmap>
+  <remote device="IRMP">
+  <up>150034045800</up>
+  <down>150034045900</down>
+  <left>150034045a00</left>
+  <right>150034045b00</right>
+  <red>150034046d00</red>
+  <green>150034046e00</green>
+  <yellow>150034046f00</yellow>
+  <blue>150034047000</blue>
+  <pageplus>150034041e00</pageplus>
+  <pageminus>150034041f00</pageminus>
+  <forward>150034042800</forward>
+  <reverse>150034042900</reverse>
+  <select>150034045c00</select>
+  <menu>150034045d00</menu>
+  <back>150034048300</back>
+  <one>150034040100</one>
+  <two>150034040200</two>
+  <three>150034040300</three>
+  <four>150034040400</four>
+  <five>150034040500</five>
+  <six>150034040600</six>
+  <seven>150034040700</seven>
+  <eight>150034040800</eight>
+  <nine>150034040900</nine>
+  <zero>150034040000</zero>
+  <play>150034042c00</play>
+  <pause>150034043000</pause>
+  <stop>150034043100</stop>
+  <record>150034043700</record>
+  <volumeplus>150034041000</volumeplus>
+  <volumeminus>150034041100</volumeminus>
+  <mute>150034040d00</mute>
+  <skipplus>150034042000</skipplus>
+  <skipminus>150034042100</skipminus>
+  <language></language>
+  <subtitle>150034049b00</subtitle>
+  <recordedtv></recordedtv>
+  </remote>
+</lircmap>

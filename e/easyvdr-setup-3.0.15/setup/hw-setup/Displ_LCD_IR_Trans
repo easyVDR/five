@@ -19,7 +19,8 @@ fi
 SHUTDOWN_FILE="/usr/share/vdr/shutdown-hooks/10_shutdown.custom"
 if [ "$(grep -c "/etc/init.d/LCDd stop" $SHUTDOWN_FILE)" == "0" ]; then
     echo "# SHUTDOWNCMD=sudo /etc/init.d/LCDd stop >/dev/null && sleep 1 && echo -n \" \" >/dev/lcd_irtrans; exit 0" >> $SHUTDOWN_FILE
-    echo "SHUTDOWNCMD=sudo /etc/init.d/LCDd stop >/dev/null && sleep 1; exit 0" >> $SHUTDOWN_FILE
+    echo "# SHUTDOWNCMD=sudo /etc/init.d/LCDd stop >/dev/null && sleep 1; exit 0" >> $SHUTDOWN_FILE
+    echo "SHUTDOWNCMD=sudo killall LCDd >/dev/null && sleep 1; exit 0" >> $SHUTDOWN_FILE
 fi
 
 ################### LCDd.conf fuer das IR Trans LCD konfigurieren:

@@ -1,0 +1,81 @@
+
+# Please make this file available to others
+# by sending it to <lirc@bartelmus.de>
+#
+# this config file was automatically generated
+# using lirc-0.9.0(default) on Sun Dec 28 16:07:52 2014
+#
+# contributed by 
+#
+# brand:                       lircd.conf
+# model no. of remote control: 
+# devices being controlled by this remote:
+#
+
+begin remote
+
+  name  COMAG_M01_SL40HD
+  bits           16
+  flags SPACE_ENC|CONST_LENGTH
+  eps            30
+  aeps          100
+
+  header       8983  4423
+  one           604  1629
+  zero          604   511
+  ptrail        606
+  repeat       8985  2186
+  pre_data_bits   16
+  pre_data       0xFD
+  gap          108346
+  toggle_bit_mask 0x0
+
+      begin codes
+          KEY_POWER2               0x9A65
+          KEY_RECORD               0x1AE5
+          KEY_PVR                  0x18E7
+          KEY_MUTE                 0x9867
+          KEY_EPG                  0xB24D
+          KEY_INFO                 0x708F
+          KEY_TEXT                 0xB04F
+          KEY_AUDIO                0x8A75
+          KEY_MODE                 0x48B7
+          KEY_SUBTITLE             0x8877
+          KEY_MENU                 0xA25D
+          KEY_ESC                  0xA05F
+          KEY_UP                   0x609F
+          KEY_DOWN                 0x6897
+          KEY_LEFT                 0x5AA5
+          KEY_RIGHT                0xD827
+          KEY_OK                   0x58A7
+          KEY_FAVORITES            0xAA55
+          KEY_PROG1                0xA857
+          KEY_PROG2                0xC837
+          KEY_PROG3                0xE817
+          KEY_1                    0x4AB5
+          KEY_2                    0x0AF5
+          KEY_3                    0x08F7
+          KEY_4                    0x6A95
+          KEY_5                    0x2AD5
+          KEY_6                    0x28D7
+          KEY_7                    0x728D
+          KEY_8                    0x32CD
+          KEY_9                    0x30CF
+          KEY_0                    0xF00F
+          KEY_REWIND               0x52AD
+          KEY_FASTFORWARD          0x12ED
+          KEY_BACK                 0x10EF
+          KEY_NEXT                 0xD02F
+          KEY_PLAY                 0x629D
+          KEY_PAUSE                0x22DD
+          KEY_STOP                 0x20DF
+          KEY_PROG4                0xE01F
+          KEY_RED                  0x42BD
+          KEY_GREEN                0x02FD
+          KEY_YELLOW               0x00FF
+          KEY_BLUE                 0xC03F
+      end codes
+
+end remote
+
+

@@ -101,15 +101,15 @@ function pch_setup {
 . /usr/lib/vdr/functions/easyvdr-functions-lib
 . /usr/lib/vdr/easyvdr-config-loader
  /usr/share/easyvdr/program-changer/program-changer-setup.sh
- easyvdr-program-changer
+ easyvdr-program-changer restart
 }
 
 
 function easyvdr_update {
- 
+ apt-get install xterm -y
  DISPLAY=$PCHANGER_DISPLAY xterm -fullscreen -e 'echo ;echo ;echo ;echo ;echo "Easyvdr Update wird gestartet";echo ;echo ;echo "BITTE KEINE TASTE DRÜCKEN BIS DAS UPDATE BEENDET IST"; echo ;echo ; /usr/bin/easyvdr-update -i ; sleep 10;'
  rm /tmp/.start_update
- start easyvdr-frontend START_STATE="sysstart"
+ easyvdr-frontend start START_STATE="sysstart"
 }
 
 
@@ -212,8 +212,9 @@ function raspberry_streaming_on {
 function install_google_chrome {
  if [ $(dpkg -l | grep " google-chrome-stable " | cut -d" " -f1) !="ii" ];then
   cd /tmp/
+  apt-get install xterm -y
   DISPLAY=$PCHANGER_DISPLAY xterm -fullscreen -e "wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -"
-  sh -c 'echo "deb http://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+  sh -c 'echo [arch=amd64] "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
   DISPLAY=$PCHANGER_DISPLAY xterm -fullscreen -e "apt-get update"
   DISPLAY=$PCHANGER_DISPLAY su root -c "$PRG_INSTALLER $1 Google-Chrome google-chrome-stable" 
  fi

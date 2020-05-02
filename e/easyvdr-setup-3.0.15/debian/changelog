@@ -1,3 +1,9 @@
+easyvdr-setup (3.0.15-1easyVDR21~focal) focal; urgency=high
+
+  * adding pulseaudio-setup timeout easyvdr-desktop
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 02 May 2020 17:32:24 +0200
+
 easyvdr-setup (3.0.15-1easyVDR20~focal) focal; urgency=high
 
   * adding pulseaudio-setup enable display-manager

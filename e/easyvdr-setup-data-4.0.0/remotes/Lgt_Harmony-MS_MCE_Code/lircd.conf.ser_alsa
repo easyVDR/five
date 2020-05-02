@@ -8,8 +8,8 @@
 # contributed by 
 #
 # brand:                       lircd.conf
-# model no. of remote control: SMK RC6 MCE 50GB
-# devices being controlled by this remote: EasyVDR 1.0x.0 --> 5.0x stable
+# model no. of remote control: Logitech Harmony
+# devices being controlled by this remote: EasyVDR 1.0x.0 >> 3.5x stable
 #
 
 begin remote
@@ -34,7 +34,7 @@ begin remote
           KEY_DOWN                 0x7BE0
           KEY_MENU                 0xFBF2
           KEY_OK                   0x7BDD
-          KEY_EXIT                 0xFBDC
+          KEY_EXIT                  0xFBDC
           KEY_LEFT                 0x7BDF
           KEY_RIGHT                0xFBDE
           KEY_RED                  0x7BA4
@@ -59,26 +59,22 @@ begin remote
           KEY_FASTFORWARD          0xFBEB
           KEY_REWIND               0x7BEA
           KEY_NEXT                 0xFBE5
-          KEY_GREEN                0x7BE4
-          KEY_POWER                0xFBF3
+          KEY_GREEN                 0x7BE4
+          KEY_POWER                 0xFBF3
           KEY_CHANNELUP            0x7BED
           KEY_CHANNELDOWN          0xFBEC
           KEY_PREVIOUS             0x7BF4
           KEY_VOLUMEUP             0xFBEF
           KEY_VOLUMEDOWN           0x7BEE
           KEY_MUTE                 0xFBF1
-          KEY_GREEN                0x7BD9
+          KEY_GREEN                 0x7BD9
           KEY_MODE                 0xFBE2
           KEY_TIME                 0x7BDB
-          KEY_VIDEO                0xFBB7
+          KEY_VIDEO                  0xFBB7
           KEY_SETUP                0x7BDA
           KEY_TEXT                 0xFBA5
           KEY_CHANNEL              0x7BE3
           KEY_SCREEN               0xFBF5
-          KEY_MP3                  0x7BB8
-          KEY_CAMERA               0xFBB6
-          KEY_MEDIA                0xFBB5
-          KEY_TV                   0xFBB9
       end codes
 
 end remote

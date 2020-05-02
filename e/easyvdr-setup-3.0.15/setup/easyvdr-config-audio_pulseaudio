@@ -41,6 +41,7 @@ FILEVERSION="V 0.1.6 vom 13.03.2017"
 SNDLOG="$EASYVDR_LOGDIR/easyvdr-config-audio.log"
 VT_KONSOLE_OLD=""
 LIST_OF_DEVICES=""
+DEBUG=0
 
 ######################### functions #########################################
 #####
@@ -1081,16 +1082,17 @@ echo 'GAMING_CARD_PULSEAUDIO_NAME="'$GAMING_CARD_PULSEAUDIO_NAME_TMP'"' >> /etc/
 echo 'GAMING_CARD_PULSEAUDIO_NAME_NOT_USED="'$GAMING_CARD_PULSEAUDIO_NAME_NOT_USED_TMP'"' >> /etc/vdr/pulseaudio.conf
 echo 'GAMING_CARD_OUTPUT_PROFILE="'$GAMING_CARD_OUTPUT_PROFILE_TMP'"' >> /etc/vdr/pulseaudio.conf
 echo 'GAMING_CARD_PROFILE_OPTIONS="'$GAMING_CARD_PROFILE_OPTIONS_TMP'"' >> /etc/vdr/pulseaudio.conf
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PULSEAUDIO_NAME'|head -1)
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PULSEAUDIO_NAME_NOT_USED'|head -1)
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_OUTPUT_PROFILE'|head -1)
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'SINK_COMBINED')
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PROFILE_OPTIONS'|head -1)
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PULSEAUDIO_NAME'|head -1)
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PULSEAUDIO_NAME_NOT_USED')
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_OUTPUT_PROFILE')
-$LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PROFILE_OPTIONS')
-
+if [ $DEBUG -eq 1 ]; then
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PULSEAUDIO_NAME'|head -1)
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PULSEAUDIO_NAME_NOT_USED'|head -1)
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_OUTPUT_PROFILE'|head -1)
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'SINK_COMBINED')
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'CARD_PROFILE_OPTIONS'|head -1)
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PULSEAUDIO_NAME'|head -1)
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PULSEAUDIO_NAME_NOT_USED')
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_OUTPUT_PROFILE')
+ $LOGGER "pulseaudio.conf:"$(cat /etc/vdr/pulseaudio.conf|grep 'GAMING_CARD_PROFILE_OPTIONS')
+fi
 ####Kodi Output setzen####
 if [ $Single_Device_Passthrough_Enable = "yes" ]; then
  KODI_SET_PASSTHROUGH="-p true "
@@ -1125,13 +1127,18 @@ $SETUP/tools/set-kodi-default-parameter SetKodiAudio $KODI_SET_PASSTHROUGH$KODI_
 Desktop_Start()
 {
 VT_KONSOLE_OLD=$(fgconsole)         # aktuell aktives Terminal
-
+TIMEOUT=0
 rm_xauthority
 easyvdr-desktop start
 #Auf das Ende des Setups warten
 while [ ! -e /tmp/pulse-config-ready ]
  do
+ let TIMEOUT=$TIMEOUT+1
  sleep 1
+ if [ $TIMEOUT -eq 30 ]; then
+  $LOGGER "easyvdr-PulseAudio-Setup Timeout: easyvdr-desktop stop"
+  touch /tmp/pulse-config-ready
+ fi
 done
 rm /tmp/pulse-config-ready
  

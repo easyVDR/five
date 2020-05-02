@@ -30,8 +30,8 @@ HOME_PATH=$(cat /etc/passwd | grep ^$USER: | awk -F: '{print $6}')
 
 PCH_DIR="/usr/share/easyvdr/program-changer"                              #PChanger directory
 PCH_ETC_CONF="/etc/vdr/easyvdr/program-changer/program-changer.conf"              #Parameter 1: program-changer.conf
-PCH_ETC_CONF_DIR="/etc/vdr/program-changer"                               #Parameter 1: program-changer.conf
-PCH_KEY_CONF="/etc/vdr/program-changer/program-changer-keyboard.conf"     #Pfad für Tastatur Belegung
+PCH_ETC_CONF_DIR="/etc/vdr/easyvdr/program-changer"                               #Parameter 1: program-changer.conf
+PCH_KEY_CONF="/etc/vdr/easyvdr/program-changer/program-changer-keyboard.conf"     #Pfad für Tastatur Belegung
 PCH_REMOTE_MAPPING="/usr/share/easyvdr/setup/easyvdr-make-remote-mapping"
 PCH_ENABLE_SCRIPT="$PCH_DIR/program-changer-enable-skin.sh"
 PCH_TEMPLATES="/usr/share/easyvdr/program-changer/templates"
@@ -84,10 +84,10 @@ if [[ $CFG_FILES_EXIST == "true" ]]
     fi
 
     #Schriftgrößen rücksetzen
-    if [  -e $PCH_ETC_CONF_DIR/program-changer.css ]; then
+    if [ -e $PCH_ETC_CONF_DIR/program-changer.css ]; then
      rm $PCH_ETC_CONF_DIR/program-changer.css
     fi
-    if [  -e $PCH_ETC_CONF_DIR/program-changer-setup.css ]; then
+    if [ -e $PCH_ETC_CONF_DIR/program-changer-setup.css ]; then
      rm $PCH_ETC_CONF_DIR/program-changer-setup.css
     fi
 
@@ -182,7 +182,7 @@ if (ps -e | grep -q easyvdr-runfron); then
   RunF=0
   svdrpsend remo off
   sleep 1
-  stop easyvdr-frontend
+  easyvdr-frontend stop
 fi
 
 
@@ -191,6 +191,6 @@ Run_Pch_Setup
 if [ $RunF -eq 0 ]; then
    svdrpsend remo on
    sleep 1
-   start easyvdr-frontend
+   easyvdr-frontend start
 fi
 
