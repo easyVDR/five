@@ -1,2 +1,0 @@
-debian/tmp/usr/lib/lib*.so.* usr/lib/
-debian/tmp/usr/share/g15tools/fonts/G15/* usr/share/g15tools/fonts/G15/
