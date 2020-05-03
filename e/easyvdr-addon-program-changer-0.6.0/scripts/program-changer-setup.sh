@@ -177,20 +177,20 @@ xterm -e bash $PCH_DIR/lib/Dialog_Message "$TITLE" $TIMEOUT "$TEXT1" "$TEXT2" "$
 
 ####################### run ##################################
 
-RunF=1
-if (ps -e | grep -q easyvdr-runfron); then
-  RunF=0
-  svdrpsend remo off
-  sleep 1
-  easyvdr-frontend stop
-fi
+#RunF=1
+#if (ps -e | grep -q easyvdr-runfron); then
+#  RunF=0
+#  svdrpsend remo off
+#  sleep 1
+#  easyvdr-frontend stop
+#fi
 
 
 Run_Pch_Setup
 
-if [ $RunF -eq 0 ]; then
-   svdrpsend remo on
-   sleep 1
-   easyvdr-frontend start
-fi
+#if [ $RunF -eq 0 ]; then
+#   svdrpsend remo on
+#   sleep 1
+#   easyvdr-frontend start
+#fi
 

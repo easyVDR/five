@@ -101,7 +101,8 @@ function pch_setup {
 . /usr/lib/vdr/functions/easyvdr-functions-lib
 . /usr/lib/vdr/easyvdr-config-loader
  /usr/share/easyvdr/program-changer/program-changer-setup.sh
- easyvdr-program-changer restart
+ touch /tmp/.show_program-changer
+ systemctl restart easyvdr-program-changer
 }
 
 
@@ -214,7 +215,7 @@ function install_google_chrome {
   cd /tmp/
   apt-get install xterm -y
   DISPLAY=$PCHANGER_DISPLAY xterm -fullscreen -e "wget -q -O - https://dl-ssl.google.com/linux/linux_signing_key.pub | sudo apt-key add -"
-  sh -c 'echo [arch=amd64] "deb https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
+  sh -c 'echo "deb [arch=amd64] https://dl.google.com/linux/chrome/deb/ stable main" >> /etc/apt/sources.list.d/google-chrome.list'
   DISPLAY=$PCHANGER_DISPLAY xterm -fullscreen -e "apt-get update"
   DISPLAY=$PCHANGER_DISPLAY su root -c "$PRG_INSTALLER $1 Google-Chrome google-chrome-stable" 
  fi
