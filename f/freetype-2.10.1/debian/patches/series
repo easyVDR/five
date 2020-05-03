@@ -1,9 +1,0 @@
-fix-js-doc-paths.patch
-remove-gstatic-code.patch
-scale-phantom-points.patch
-enable-subpixel-rendering.patch
-enable-gxvalid-otvalid.patch
-verbose-libtool.patch
-ft2demos-no-rpath.patch
-no-web-fonts.patch
-hide-donations-information.patch
