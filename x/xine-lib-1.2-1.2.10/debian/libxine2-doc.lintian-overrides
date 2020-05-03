@@ -1,0 +1,2 @@
+# it's just a damn long line that can't be shortened
+manpage-has-errors-from-man usr/share/man/man5/xine.5.gz 221: warning [p 3, 7.0i]: cannot adjust line
