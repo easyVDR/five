@@ -1,3 +1,9 @@
+easyvdr-setup (3.0.15-1easyVDR22~focal) focal; urgency=high
+
+  * rebuild pulseaudio-setup
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 03 May 2020 17:01:47 +0200
+
 easyvdr-setup (3.0.15-1easyVDR21~focal) focal; urgency=high
 
   * adding pulseaudio-setup timeout easyvdr-desktop

@@ -1163,6 +1163,8 @@ function Pulseaudio_Default_On {
   . /tmp/pulse-sinks
   LIST_OF_DEVICES=$(($(cat /tmp/pulse-sinks |grep -v "#"|grep -c "CARD_NAME") - 1))
   Digital_Analog
+ else
+  Digital_Analog
  fi
 
  set_frontend_parameter
