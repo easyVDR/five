@@ -1,5 +1,0 @@
-debian/tmp/usr/lib/libglcddrivers.so.*
-
-99-graphlcd-base.rules                lib/udev/rules.d
-debian/20-l4m.rules                   lib/udev/rules.d
-debian/11-picolcd.rules               lib/udev/rules.d

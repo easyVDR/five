@@ -1,2 +1,0 @@
-KERNEL=="hiddev?", ATTRS{idVendor}=="4243", ATTRS{idProduct}=="ee08", SYMLINK+="usb/hiddev9", GROUP="vdr", MODE="0660"
-# SYSFS{idVendor}=="4243", SYSFS{idProduct}=="ee21", GROUP="lp", MODE="0660"

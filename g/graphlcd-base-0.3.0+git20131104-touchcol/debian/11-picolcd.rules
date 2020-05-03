@@ -1,3 +1,0 @@
-#
-# PicoLCD 256x64
-SUBSYSTEMS=="usb", ATTRS{idProduct}=="c002", ATTRS{idVendor}=="04d8", GROUP="uucp", MODE="0660"

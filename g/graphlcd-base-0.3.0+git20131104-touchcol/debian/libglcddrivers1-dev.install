@@ -1,3 +1,0 @@
-debian/tmp/usr/lib/libglcddrivers.so
-debian/tmp/usr/include/glcddrivers
-debian/glcddrivers.pc                 usr/lib/pkgconfig/
