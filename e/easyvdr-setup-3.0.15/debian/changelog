@@ -1,3 +1,15 @@
+easyvdr-setup (3.0.15-1easyVDR23~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:09:11 +0200
+
+easyvdr-setup (3.0.15-1easyVDR23~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:58:43 +0200
+
 easyvdr-setup (3.0.15-1easyVDR22~focal) focal; urgency=high
 
   * rebuild pulseaudio-setup

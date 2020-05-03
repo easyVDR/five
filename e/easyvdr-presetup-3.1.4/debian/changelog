@@ -1,3 +1,15 @@
+easyvdr-presetup (3.1.4-0easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:09:09 +0200
+
+easyvdr-presetup (3.1.4-0easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:58:27 +0200
+
 easyvdr-presetup (3.1.4-0easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

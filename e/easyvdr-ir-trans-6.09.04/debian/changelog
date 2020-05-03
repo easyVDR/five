@@ -1,3 +1,15 @@
+easyvdr-ir-trans (6.09.04-2easyVDR14~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:08:55 +0200
+
+easyvdr-ir-trans (6.09.04-2easyVDR14~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:56:44 +0200
+
 easyvdr-ir-trans (6.09.04-2easyVDR13~focal) focal; urgency=high
 
   * add rm symlink

@@ -1,3 +1,15 @@
+easyvdr-depends (03.99-4easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:08:38 +0200
+
+easyvdr-depends (03.99-4easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:46:40 +0200
+
 easyvdr-depends (03.99-4easyVDR9~focal) focal; urgency=high
 
   * remove depends xubuntu-desktop

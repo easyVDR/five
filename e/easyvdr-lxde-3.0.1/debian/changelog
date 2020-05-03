@@ -1,3 +1,15 @@
+easyvdr-lxde (3.0.1-0easyVDR3~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:09:00 +0200
+
+easyvdr-lxde (3.0.1-0easyVDR3~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:57:18 +0200
+
 easyvdr-lxde (3.0.1-0easyVDR2~focal) focal; urgency=high
 
   * remove depends - gnome-commander obsolet

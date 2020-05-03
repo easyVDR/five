@@ -1,3 +1,15 @@
+fonts-ds-digital (1.0-0easyVDR5~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:10:04 +0200
+
+fonts-ds-digital (1.0-0easyVDR5~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 20:25:45 +0200
+
 fonts-ds-digital (1.0-0easyVDR4~focal) focal; urgency=high
 
   * automatic rebuild

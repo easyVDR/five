@@ -1,3 +1,15 @@
+easyvdr-carddetectng (0.0.1-1easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:08:31 +0200
+
+easyvdr-carddetectng (0.0.1-1easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:45:59 +0200
+
 easyvdr-carddetectng (0.0.1-1easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

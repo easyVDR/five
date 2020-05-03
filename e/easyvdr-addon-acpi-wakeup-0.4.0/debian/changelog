@@ -1,3 +1,15 @@
+easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR7~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:07:44 +0200
+
+easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR7~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:25:49 +0200
+
 easyvdr-addon-acpi-wakeup (0.4.0-0easyVDR6~focal) focal; urgency=high
 
   * automatic rebuild

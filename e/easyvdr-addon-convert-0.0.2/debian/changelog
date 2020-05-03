@@ -1,3 +1,15 @@
+easyvdr-addon-convert (0.0.2-2easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:07:46 +0200
+
+easyvdr-addon-convert (0.0.2-2easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:26:05 +0200
+
 easyvdr-addon-convert (0.0.2-2easyVDR1~focal) focal; urgency=high
 
   * automatic rebuild

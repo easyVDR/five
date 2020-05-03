@@ -1,3 +1,15 @@
+easyvdr-stm32-irmp (0.0.3-20150615easyVDR5~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:09:27 +0200
+
+easyvdr-stm32-irmp (0.0.3-20150615easyVDR5~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 23:06:29 +0200
+
 easyvdr-stm32-irmp (0.0.3-20150615easyVDR4~focal) focal; urgency=high
 
   * automatic rebuild

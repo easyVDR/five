@@ -1,3 +1,15 @@
+easyvdr-installer (4.95.0-0easyVDR1~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:08:52 +0200
+
+easyvdr-installer (4.95.0-0easyVDR1~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 22:48:15 +0200
+
 easyvdr-installer (4.95.0-0easyVDR0~focal) focal; urgency=high
 
   * proxy commented
