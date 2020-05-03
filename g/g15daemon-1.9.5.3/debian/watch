@@ -1,7 +1,0 @@
-# See uscan(1) for format
-
-# Compulsory line, this is a version 3 file
-version=3
-
-https://sf.net/g15daemon/g15daemon-([1-9].*)\.tar\.gz
-
