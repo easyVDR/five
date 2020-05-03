@@ -172,7 +172,7 @@ ENABLE_DISPLAY_MANAGER_LIGHTDM()
                fi
                ;;
          Mate) if [ -f $LIGHTDM_CONF_PATH/50-mate.conf-inactive ];then
-                $LOGGER "enable lxde"
+                $LOGGER "enable mate"
                 cp $LIGHTDM_CONF_PATH/50-mate.conf-inactive $LIGHTDM_CONF_PATH/50-mate.conf
                fi
                ;;

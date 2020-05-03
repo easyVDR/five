@@ -1,3 +1,9 @@
+easyvdr (3.99.00-5easyVDR0~focal) focal; urgency=high
+
+  * fix typo
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 21:48:35 +0200
+
 easyvdr (3.99.00-4easyVDR16~focal) focal; urgency=high
 
   * adding xubuntu desktop, alsa store, bugfix alsa store / restore / config display manager
