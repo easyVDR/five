@@ -1,3 +1,15 @@
+vdpau-video (0.7.4-8easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:11:08 +0200
+
+vdpau-video (0.7.4-8easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 14:17:21 +0200
+
 vdpau-video (0.7.4-8easyVDR1~focal) focal; urgency=high
 
   * rebuild for focal

@@ -1,3 +1,15 @@
+linux-firmware-easyvdr (0.2.6-3easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:10:41 +0200
+
+linux-firmware-easyvdr (0.2.6-3easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 20:31:56 +0200
+
 linux-firmware-easyvdr (0.2.6-3easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

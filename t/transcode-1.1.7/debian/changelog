@@ -1,3 +1,15 @@
+transcode (3:1.1.7-9easyVDR1) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:11:05 +0200
+
+transcode (3:1.1.7-9easyVDR1) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 14:16:32 +0200
+
 transcode (3:1.1.7-9easyVDR0) focal; urgency=high
 
   * rebuild for focal

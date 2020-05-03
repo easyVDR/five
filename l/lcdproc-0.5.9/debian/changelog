@@ -1,3 +1,15 @@
+lcdproc (0.5.9-12easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:10:21 +0200
+
+lcdproc (0.5.9-12easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 20:27:43 +0200
+
 lcdproc (0.5.9-12easyVDR1~focal) focal; urgency=high
 
   * automatic rebuild
