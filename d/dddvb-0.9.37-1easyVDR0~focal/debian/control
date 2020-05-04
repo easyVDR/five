@@ -1,0 +1,14 @@
+Source: dddvb-0.9.37
+Section: misc
+Priority: optional
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 8), dkms, libproc-processtable-perl, python3-apport
+Standards-Version: 3.9.5
+
+Package: dddvb-0.9.37
+Architecture: all
+Depends: dkms (>= 1.95), ${misc:Depends}
+Conflicts: s2-liplianin-dkms, v4l-dvb-dkms, linux-tbs-drivers-dkms, linux-media-tbs-dkms, linux-media-dkms, linux-media, linux-media-comp, linux-media-dvbsky-c, linux-media-dvbsky, media-build-experimental-dkms
+Replaces: s2-liplianin-dkms, v4l-dvb-dkms, linux-tbs-drivers-dkms, linux-media-tbs-dkms, linux-media-dkms, linux-media, linux-media-comp, linux-media-dvbsky-c, linux-media-dvbsky, media-build-experimental-dkms
+Description: dddvb driver in DKMS format.

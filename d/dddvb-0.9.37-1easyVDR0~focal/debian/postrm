@@ -1,0 +1,18 @@
+#!/bin/sh
+# postrm script for dddvb
+#
+# see: dh_installdeb(1)
+
+set -e
+
+case "$1" in
+    purge|remove)
+         cd /usr/src
+         dkms remove dddvb/0.9.37 -k $(uname -r)
+         rm -rf dddvb-0.9.37
+         echo "...dddvb-0.9.37 entfernt!"
+    ;;
+
+esac
+
+:

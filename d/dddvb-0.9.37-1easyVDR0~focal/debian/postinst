@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e
+
+if [ "$1" = "configure" ]; then
+    cp -R /usr/src/dddvb-0.9.37-easy /usr/src/dddvb-0.9.37
+    sleep 0.5    
+    cd /usr/src/dddvb-0.9.37
+    dkms build dddvb/0.9.37 -k $(uname -r)
+    sleep 0.5
+    dkms install dddvb/0.9.37 -k $(uname -r)
+
+fi
+#DEBHELPER#
+

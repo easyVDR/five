@@ -1,3 +1,9 @@
+easyvdr-addon-netradio-sd (1.0.3-0easyVDR1~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:39:01 +0200
+
 easyvdr-addon-netradio-sd (1.0.3-0easyVDR0~focal) focal; urgency=high
 
   * new version
