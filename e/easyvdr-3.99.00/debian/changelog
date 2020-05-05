@@ -1,3 +1,9 @@
+easyvdr (3.99.00-5easyVDR1~focal) focal; urgency=high
+
+  * disable xserver ir 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 05 May 2020 20:47:11 +0200
+
 easyvdr (3.99.00-5easyVDR0~focal) focal; urgency=high
 
   * fix typo

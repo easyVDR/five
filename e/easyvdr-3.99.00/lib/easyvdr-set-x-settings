@@ -25,4 +25,7 @@ $LOGGER "screensaver off xset -dpms && xset s off"
 xset -dpms >/dev/null 2>&1 || true
 #DISPLAY=$FRONTEND_DISPLAY xset s off >/dev/null 2>&1 || true
 xset s off >/dev/null 2>&1 || true
-
+#X REMOTE OFF
+if ( systemctl is-active lircd.service ); then
+ xinput --disable $(xinput --list |grep IR |grep keyboard | cut -d'=' -f2 |awk '{print $1}')
+fi
