@@ -1,3 +1,9 @@
+vdr-plugin-radiolist (0.0.2-24easyVDR0~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 17:26:15 +0200
+
 vdr-plugin-radiolist (0.0.2-23easyVDR9~focal) focal; urgency=high
 
   * automatic rebuild

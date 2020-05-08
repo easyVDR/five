@@ -1,0 +1,47 @@
+-----BEGIN PGP SIGNED MESSAGE-----
+Hash: SHA512
+
+Format: 1.8
+Date: Fri, 08 May 2020 17:26:15 +0200
+Source: vdr-plugin-radiolist
+Binary: vdr-plugin-radiolist vdr-plugin-radiolist-dbg
+Architecture: source
+Version: 0.0.2-24easyVDR0~focal
+Distribution: focal
+Urgency: high
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Changed-By: Wolfgang Mangold <vdr@gmx.de>
+Description:
+ vdr-plugin-radiolist - VDR-Plugin that provides a radio channellist
+ vdr-plugin-radiolist-dbg - VDR-Plugin that provides a radio channellist
+Changes:
+ vdr-plugin-radiolist (0.0.2-24easyVDR0~focal) focal; urgency=high
+ .
+   * automatic rebuild
+Checksums-Sha1:
+ 83b6a4602ce9b217b99eaf6a76a5084594ea11e2 1805 vdr-plugin-radiolist_0.0.2-24easyVDR0~focal.dsc
+ 92d71712803f8b9187b1203499ec044ce052f05e 11056 vdr-plugin-radiolist_0.0.2.orig.tar.xz
+ c159450da5fcff8497de4b0db69d97d6bc4292d8 3288 vdr-plugin-radiolist_0.0.2-24easyVDR0~focal.debian.tar.xz
+ d8d5a559948c7be4e98d73969a2e8061ea0a53c8 7693 vdr-plugin-radiolist_0.0.2-24easyVDR0~focal_source.buildinfo
+Checksums-Sha256:
+ 595cfb973788360d04cab41c7cd9e06fe80d3c93957aa6544b5dc9b62f245266 1805 vdr-plugin-radiolist_0.0.2-24easyVDR0~focal.dsc
+ 62ecc1d3329768bdee0ca73767f202f6f2c68e914c6fe9c9a3f26b20448b5b55 11056 vdr-plugin-radiolist_0.0.2.orig.tar.xz
+ 8d84ceba23e512f6caf0010a1b3dac067f9f985577378adae5c738e601847f6b 3288 vdr-plugin-radiolist_0.0.2-24easyVDR0~focal.debian.tar.xz
+ 0c7d9f441e5a33226d819cd290829f00f5c7ecad7b4550c72b15e20b53b02047 7693 vdr-plugin-radiolist_0.0.2-24easyVDR0~focal_source.buildinfo
+Files:
+ cef801636af75ae5ff215f9ebbaf7132 1805 video extra vdr-plugin-radiolist_0.0.2-24easyVDR0~focal.dsc
+ d487ca98c76682e6854bc03c0bb20904 11056 video extra vdr-plugin-radiolist_0.0.2.orig.tar.xz
+ 5a4157e7defc48c90c56e8e8bcd0b991 3288 video extra vdr-plugin-radiolist_0.0.2-24easyVDR0~focal.debian.tar.xz
+ 0d83ea85b38ac180ab802cb38252dacc 7693 video extra vdr-plugin-radiolist_0.0.2-24easyVDR0~focal_source.buildinfo
+
+-----BEGIN PGP SIGNATURE-----
+
+iQE/BAEBCgApFiEEnS6obbZZ+zp3ktJAHuh1H4YfjvEFAl61fDQLHHZkckBnbXgu
+ZGUACgkQHuh1H4YfjvEjwwf+MYjlHPodQDuEDmh7kU7xy7a0zL6v33BmZWmHFKcO
+jCVhPB2QsJTCcOjHl8rn1zAPxBufg23BEuApERs/f68qB4rpZxy5gC/A0ICIQ707
+KqJO6S4XFg2BUmavIDNQ7DoOF0oYC9cX/RjWclF+XiYzs433jiLtNtO0T5RVnVrO
+9vY5O1WeFdIkxW/INuNe0nPoWv3FiRNJyIwlfDB6PBqLPEuyhpKA+ClMkSHea0fB
+3rmwXj67dLDtkAplTa60527ygozpgNWkgDQL7CFSYiEImT4LbeHaEoM+xXLE8O4w
+CVrxgo5lufsKsC54rwqJ7alPQnjPsC5kCV1m3/hb4kTJTg==
+=HUzV
+-----END PGP SIGNATURE-----
