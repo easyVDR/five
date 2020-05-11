@@ -1,3 +1,9 @@
+skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR7~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 14:15:12 +0200
+
 skindesigner-skin-simplex (1.0.0~git20160421-0easyVDR6~focal) focal; urgency=high
 
   * automatic rebuild

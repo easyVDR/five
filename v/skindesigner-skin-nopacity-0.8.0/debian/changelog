@@ -1,3 +1,9 @@
+skindesigner-skin-nopacity (0.8.0-0easyVDR8~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 14:10:02 +0200
+
 skindesigner-skin-nopacity (0.8.0-0easyVDR7~focal) focal; urgency=high
 
   * automatic rebuild
