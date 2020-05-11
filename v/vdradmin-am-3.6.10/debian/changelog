@@ -1,3 +1,9 @@
+vdradmin-am (3.6.10-6easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 14:27:48 +0200
+
 vdradmin-am (3.6.10-6easyVDR1~focal) focal; urgency=high
 
   * automatic rebuild
