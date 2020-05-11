@@ -1,5 +1,11 @@
 vdr-skins-sd (2easyVDR5~focal) focal; urgency=high
 
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 14:41:24 +0200
+
+vdr-skins-sd (2easyVDR5~focal) focal; urgency=high
+
   * automatic rebuild for focal
 
  -- Wolfgang Mangold <vdr@gmx.de>  Sun, 10 Nov 2019 23:38:10 +0100
