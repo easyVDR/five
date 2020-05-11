@@ -1,3 +1,9 @@
+vdr (1:2.2.0-15easyVDR5~focal) focal; urgency=high
+
+  * added 51_glibc.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 02 Apr 2020 14:57:57 +0200
+
 vdr (1:2.2.0-15easyVDR4~focal) focal; urgency=medium
 
   * fix depends
