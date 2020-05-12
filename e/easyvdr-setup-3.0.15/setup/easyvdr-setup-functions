@@ -40,6 +40,7 @@ SERVICE[3]="/etc/systemd/easyvdr/easyvdr-create-ramdisk.service"
 SERVICE[4]="/etc/systemd/easyvdr/easyvdr-save-ramdisk.service"
 SERVICE[5]="/etc/systemd/easyvdr/easyvdr-program-changer.service"
 SERVICE[6]="/etc/systemd/system/display-manager.service"
+SERVICE[7]="/etc/systemd/easyvdr/easyvdr-config-display-manager.service"
 
 
 EnableSystemd()
