@@ -1,3 +1,9 @@
+vdr-plugin-noepg (20130712-3easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 16:14:49 +0200
+
 vdr-plugin-noepg (20130712-3easyVDR9~focal) focal; urgency=high
 
   * automatic rebuild

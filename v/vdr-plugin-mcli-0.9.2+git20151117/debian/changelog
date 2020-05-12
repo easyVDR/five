@@ -1,3 +1,9 @@
+vdr-plugin-mcli (0.9.2+git20151117-2easyVDR3~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 16:12:10 +0200
+
 vdr-plugin-mcli (0.9.2+git20151117-2easyVDR2~focal) focal; urgency=high
 
   * automatic rebuild

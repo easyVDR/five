@@ -1,3 +1,9 @@
+vdr-plugin-nordlichtsepg (0.9~test2-19easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 16:15:02 +0200
+
 vdr-plugin-nordlichtsepg (0.9~test2-19easyVDR9~focal) focal; urgency=high
 
   * automatic rebuild

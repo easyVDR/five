@@ -1,3 +1,9 @@
+vdr-plugin-osdteletext-sd (0.9.5+git20150213-0easyVDR9~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 17:06:22 +0200
+
 vdr-plugin-osdteletext-sd (0.9.5+git20150213-0easyVDR8~focal) focal; urgency=high
 
   * automatic rebuild

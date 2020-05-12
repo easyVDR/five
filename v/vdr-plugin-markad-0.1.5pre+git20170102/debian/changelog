@@ -1,3 +1,15 @@
+vdr-plugin-markad (0.1.5pre+git20170102-0easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 16:16:27 +0200
+
+vdr-plugin-markad (0.1.5pre+git20170102-0easyVDR9~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Feb 2020 11:00:43 +0100
+
 vdr-plugin-markad (0.1.5pre+git20170102-0easyVDR8~focal) focal; urgency=high
 
   * automatic rebuild
