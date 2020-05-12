@@ -1,3 +1,9 @@
+vdr-plugin-epgsync (1.0.1-8easyVDR1~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 15:54:41 +0200
+
 vdr-plugin-epgsync (1.0.1-8easyVDR0~focal) focal; urgency=high
 
   * rebuild
