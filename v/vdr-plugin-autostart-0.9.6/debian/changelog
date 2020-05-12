@@ -1,3 +1,9 @@
+vdr-plugin-autostart (0.9.6-2easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 15:39:19 +0200
+
 vdr-plugin-autostart (0.9.6-2easyVDR1~focal) focal; urgency=high
 
   * automatic rebuild

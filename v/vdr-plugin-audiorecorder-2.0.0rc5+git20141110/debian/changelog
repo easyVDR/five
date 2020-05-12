@@ -1,3 +1,15 @@
+vdr-plugin-audiorecorder (2.0.0rc5+git20141110-0easyVDR5~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 15:38:58 +0200
+
+vdr-plugin-audiorecorder (2.0.0rc5+git20141110-0easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Feb 2020 10:59:25 +0100
+
 vdr-plugin-audiorecorder (2.0.0rc5+git20141110-0easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

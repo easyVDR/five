@@ -1,3 +1,9 @@
+vdr-plugin-avards (0.2.5-0easyVDR9~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 15:39:59 +0200
+
 vdr-plugin-avards (0.2.5-0easyVDR8~focal) focal; urgency=high
 
   * automatic rebuild

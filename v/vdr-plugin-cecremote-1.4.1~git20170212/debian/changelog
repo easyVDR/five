@@ -1,3 +1,9 @@
+vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR15~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 20:48:13 +0200
+
 vdr-plugin-cecremote (1.4.1~git20170212-0easyVDR14~focal) focal; urgency=high
 
   * automatic rebuild

@@ -1,3 +1,9 @@
+vdr-plugin-ddci2 (1.0.5~git20170804-0easyVDR5~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 15:48:27 +0200
+
 vdr-plugin-ddci2 (1.0.5~git20170804-0easyVDR4~focal) focal; urgency=high
 
   * automatic rebuild
