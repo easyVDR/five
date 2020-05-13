@@ -1,0 +1,37 @@
+Installation Instructions
+*************************
+
+ROXTerm now uses CMake to build and install.
+
+Requirements
+************
+
+ROXTerm additionally needs xsltproc (and docbook-xsl if building without net
+access), and everything else required to compile an application linked with
+vte.
+
+Building with CMake
+*******************
+
+Using a separate build directory is recommended:
+
+mkdir build
+cd build
+
+To see available build options etc:
+
+cmake --help ..
+
+To configure make:
+
+cmake .. [OPTIONS]
+
+Build step:
+
+make -j 4
+
+(the -j 4 is optional, but recommended for quad core CPUs).
+
+Install:
+
+sudo make install

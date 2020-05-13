@@ -1,0 +1,119 @@
+#!/bin/sh
+
+PROG=roxterm
+
+APP_DIR=`dirname "$0"`
+APP_DIR=`cd "$APP_DIR";pwd`; export APP_DIR
+APPRUN="${APP_DIR}/AppRun"
+
+[ -d "${APP_DIR}/Help" ] || ln -nfs "docs" "${APP_DIR}/Help"
+
+for f in AUTHORS COPYING NEWS README ; do
+    [ -f "$APP_DIR/Help/$f" ] || ln -nfs ../$f "$APP_DIR/Help/$f"
+done
+[ -f "$APP_DIR/Help/Changes" ] || ln -nfs ../ChangeLog "$APP_DIR/Help/Changes"
+
+MAINTAIN="--enable-maintainer-mode"
+if [ -f "$APP_DIR/tony" ]; then
+    cd $APP_DIR
+    DEV_LDFLAGS="-L/usr/lib/debug $LDFLAGS"
+    ulimit -c unlimited
+else
+    LOGFILE=
+fi
+PREFIX="--prefix=/usr/local/stow/roxterm"
+
+DEBUGGER=""
+DBGENV=""
+FATAL=""
+
+configure() {
+    if [ ! -d "$APP_DIR/src" ] ; then
+        echo "ERROR from $APPRUN:" >&2
+        echo "Cannot configure/compile - source code is missing!" >&2
+        exit 1
+    fi
+    echo "Configuring/compiling $APP_DIR... please wait..." >&2
+    mkdir -p "$APP_DIR/build"
+    cd "$APP_DIR/build"
+    cmake -DCMAKE_BUILD_TYPE=RELWITHDEBINFO ..
+}
+
+RECOGNISED=1
+while [ "$RECOGNISED" = "1" ] ; do
+    case $1 in
+        --verbose)
+            shift
+            DBGENV='G_MESSAGES_DEBUG=all'
+            ;;
+        --debug)
+            shift
+            DEBUGGER="gdb --args"
+            DBGENV='G_MESSAGES_DEBUG=all'
+            ;;
+        --fatal)
+            shift
+            G_DEBUG=fatal-warnings
+            ;;
+        --config)
+            shift
+            PROG=roxterm-config
+            ;;
+        --valgrind)
+            shift
+            ulimit -c unlimited
+            DEBUGGER="valgrind --freelist-vol=50000000"
+            DBGENV='G_SLICE=always-malloc G_MESSAGES_DEBUG=all'
+            ;;
+        --leaks)
+            shift
+            DEBUGGER="valgrind --freelist-vol=50000000 "
+            DEBUGGER="$DEBUGGER --leak-check=full --num-callers=80"
+            DBGENV='G_SLICE=always-malloc G_MESSAGES_DEBUG=all'
+            ;;
+        --compile|--configure)
+            configure && ( [ "$1" = "--compile" ] && make || true ) && \
+            echo Done >&2 && exit 0
+            echo Compile/configure failed >&2
+            echo Press Return... >&2
+            read WAIT
+            exit 1 ;;
+        *)
+            RECOGNISED=0
+            ;;
+    esac
+done
+
+exitcode=1
+
+if [ -d "${APP_DIR}/src" ] ; then
+    BIN="${APP_DIR}/build/src/$PROG"
+    if [ ! -x "$BIN" ]; then
+        echo "ERROR from $APPRUN:" >&2
+        echo "I cannot find an executable file." >&2
+        echo "Trying to compile..." >&2
+        if [ -n "$DISPLAY" ] && echo $TERM | egrep -q -v 'term|rxvt' ; then
+            xterm -e "$APPRUN" --compile
+        else
+            "$APPRUN" --compile
+        fi
+    fi
+else
+    old_ifs="$IFS"
+    IFS=':'
+    for i in $PATH ; do
+        BIN="$i/$PROG"
+        [ -x "$BIN" ] && exec $DEBUGGER "$BIN" "$@"
+    done
+    IFS="$old_ifs"
+fi
+
+if [ -x "$BIN" ]; then
+    exitcode=0
+    [ -n "$DBGENV" ] && export $DBGENV
+    [ -n "$G_DEBUG" ] && export G_DEBUG
+    exec $DEBUGGER "$BIN" "--appdir=$APP_DIR" "$@"
+else
+    echo "No roxterm executable found" >&2
+fi
+exit $exitcode
