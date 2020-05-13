@@ -1,0 +1,30 @@
+#!/usr/bin/make -f
+
+# Uncomment this to turn on verbose mode.
+#export DH_VERBOSE=1
+
+MAKE_OPTIONS = VDRDIR=/usr/include/vdr LIBDIR=. LOCALEDIR=locale
+
+%:
+	dh $@
+
+override_dh_auto_build:
+	mv Makefile Makefile-plugin
+	mv Makefile_ Makefile
+	make -- all $(MAKE_OPTIONS)
+	mv Makefile Makefile_
+	mv Makefile-plugin Makefile
+	dh_auto_build -- all $(MAKE_OPTIONS)
+	
+override_dh_strip:
+	dh_strip --dbg-package=vdr-plugin-xmltv2vdr-dbg
+
+override_dh_auto_clean:
+	$(MAKE) -o .dependencies clean $(MAKE_OPTIONS)
+	rm -rf locale libvdr-*.so.*	
+	rm -rf dist/epgdata2xmltv/epgdata2xmltv
+	rm -rf dist/epgdata2xmltv/epgdata2xmltv.o
+
+override_dh_gencontrol:
+	sh /usr/share/vdr-dev/dependencies.sh
+	dh_gencontrol
