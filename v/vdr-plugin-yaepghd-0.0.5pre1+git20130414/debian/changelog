@@ -1,0 +1,316 @@
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 20:35:13 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR9~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 13 Nov 2019 00:47:01 +0100
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR8~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 06 Dec 2017 22:35:01 +0100
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 Dec 2017 01:33:03 +0100
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 08 Jul 2017 17:20:58 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 02 Jun 2017 19:51:04 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:52:12 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:53:11 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:12:31 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:58:15 +0100
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 25 Nov 2015 01:08:09 +0100
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-0easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:34:34 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-0easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:46:33 +0100
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-0easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 20 Mar 2015 23:26:37 +0100
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 23:25:10 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:34:58 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-0easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 01 Dec 2013 22:59:05 +0100
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-0easyVDR0~raring) raring; urgency=high
+
+  * rebuild for easyvdr, fix path 
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 10 Jul 2013 01:26:13 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 23 Jun 2013 10:35:46 +0200
+
+vdr-plugin-yaepghd (0.0.5pre1+git20130414-1yavdr0~precise) precise; urgency=high
+
+  * New upstream snapshot 
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 15 Apr 2013 10:54:30 +0200
+
+vdr-plugin-yaepghd (0.0.4-0yavdr0~lucid) lucid; urgency=high
+
+  * rebuild for yavdr 0.3.4 
+
+ -- Frank Neumann <fnu@yavdr.org>  Thu, 21 Mar 2013 12:54:09 +0100
+
+vdr-plugin-yaepghd (0.0.4-0yavdr0~precise) precise; urgency=medium
+
+  * yaepghd 0.4 
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Tue, 19 Mar 2013 13:59:50 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-12yavdr5~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 17 Mar 2013 16:02:11 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-12yavdr4~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Thu, 14 Mar 2013 01:12:26 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-12yavdr2~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 13 Mar 2013 22:03:02 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-12yavdr1~precise) precise; urgency=high
+
+  * Rebuild for yaVDR64 0.6.0alpha
+
+ -- Frank Neumann <fnu@yavdr.org>  Mon, 11 Mar 2013 12:20:42 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-12yavdr0~precise) precise; urgency=medium
+
+  * refactored patch for vdr 1.7.33
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 06 Mar 2013 21:17:33 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-11yavdr1~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 19:35:43 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-11yavdr0~precise) precise; urgency=medium
+
+  * add patch for vdr 1.7.33
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sun, 09 Dec 2012 18:57:41 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr30~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 05 Dec 2012 21:20:38 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr29~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Sat, 01 Dec 2012 16:05:13 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr28~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Lars Hanisch <dvb@flensrocker.de>  Wed, 21 Nov 2012 20:14:47 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr27~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Wed, 21 Nov 2012 07:44:36 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr26~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 11 Oct 2012 11:24:07 +0200
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr25~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Mar 2012 22:32:25 +0200
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr24~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 15 Mar 2012 10:24:28 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr23~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 13 Mar 2012 19:23:41 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr22~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 23 Feb 2012 09:07:50 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr21~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 13 Feb 2012 20:15:01 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr21~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 29 Dec 2011 11:18:41 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr20~oneiric) oneiric; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 25 Dec 2011 11:42:14 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr19~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 24 Dec 2011 11:30:55 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr18~precise) precise; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 17 Oct 2011 15:47:40 +0200
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr17~natty) natty; urgency=medium
+
+  * rebuild
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 05 Sep 2011 18:27:03 +0200
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-10yavdr12~natty) natty; urgency=medium
+
+  * depends vdr-plugin-yaepghd-themes
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 16 Jul 2011 10:41:47 +0200
+
+vdr-plugin-yaepghd (0.0.3-ce-epgimages-0yavdr1) lucid; urgency=low
+
+  * New upstream release (http://vdrportal.de/board/thread.php?postid=957175#post957175)
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sun, 21 Nov 2010 09:04:26 +0100
+
+vdr-plugin-yaepghd (0.0.3-ce-1yavdr3) lucid; urgency=low
+
+  * New upstream release 
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Sat, 02 Oct 2010 21:07:12 +0200
+
+vdr-plugin-yaepghd (0.0.2~beta-1yavdr2) lucid; urgency=low
+
+  * Non Maintainer release (http://vdrportal.de/board/thread.php?postid=917036#post917036)
+  * source/format 3.0
+  * Standards-Version: 3.8.4 
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Thu, 16 Jun 2010 23:14:22 +0200
+
+vdr-plugin-yaepghd (0.0.1-9yavdr1) karmic; urgency=low
+
+  * added yaepghd patch http://vdrportal.de/board/thread.php?postid=874874#post874874
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Tue, 19 Jan 2010 23:10:28 +0100
+
+vdr-plugin-yaepghd (0.0.1-7tvt1) karmic; urgency=low
+
+  * updated ABI version
+
+ -- Gerald Dachs <gda@dachsweb.de>  Fri, 25 Dec 2009 21:10:30 +0100
+
+vdr-plugin-yaepghd (0.0.1-5ubuntu1) karmic; urgency=low
+
+  * Build-depend dpatch
+  * Build-depend libmagick++-dev
+
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 28 Sep 2009 23:01:37 +0200
+
+vdr-plugin-yaepghd (0.0.1-1) karmic; urgency=low
+
+  * Initial release 
+  
+  
+ -- Holger Schvestka <hotzenplotz5@gmx.de>  Mon, 28 Sep 2009 17:58:28 +0200
+

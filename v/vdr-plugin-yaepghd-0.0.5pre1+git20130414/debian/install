@@ -1,0 +1,15 @@
+yaepghd/anthra_1280             usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/anthra_1920             usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/default                 usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/default_720             usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/elchi_720               usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/nOpacity_1920_darkblue  usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/PearlHD_1280            usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/PearlHD_1920            usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/PearlHD_1920_accessibility  usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/PearlHD_1920_beige      usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/PearlHD_1920_blue       usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/PearlHD_1920_white      usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/spockele_1920           usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/Vid_Win_1920            usr/share/vdr-plugin-yaepghd-themes/
+yaepghd/*.theme 		var/lib/vdr/plugins/yaepghd/

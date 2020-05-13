@@ -1,0 +1,143 @@
+# VDR plugin language source file.
+# Copyright (C) 2009 bball <bball950@yahoo.com>
+# This file is distributed under the same license as the yaepghd package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Yaepghd 0.0.4\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-03-24 13:54+0100\n"
+"PO-Revision-Date: 2013-03-24 14:05+0100\n"
+"Last-Translator: Lucian Muresan <lucianm@users.sorceforge.net>\n"
+"Language-Team:  <vdr@linuxtv.org>\n"
+"Language: Romanian\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.5.5\n"
+
+msgid "No Info"
+msgstr "Nu sunt date disponibile."
+
+msgid "Page up"
+msgstr "Pagină în sus"
+
+msgid "Page down"
+msgstr "Pagină în jos"
+
+msgid "Start"
+msgstr "Început"
+
+msgid "Stop"
+msgstr "Sfârșit"
+
+msgid "Switch timer added"
+msgstr "Am creat timer pentru comutare"
+
+msgid "Switch timer deleted"
+msgstr "Am șters timer-ul pentru comutare"
+
+msgid "Timer added"
+msgstr "Am adăugat timer"
+
+msgid "Failed to add timer"
+msgstr "Nu s-a putut adăuga timer"
+
+msgid "Remote timer deactivated"
+msgstr "S-a deactivat timer-ul la distanță"
+
+msgid "Timer deactivated"
+msgstr "Timer-ul a fost deactivat"
+
+msgid "YaepgHD"
+msgstr "YaepgHD"
+
+msgid "24h"
+msgstr "24h"
+
+msgid "12h"
+msgstr "12h"
+
+msgid "Up"
+msgstr "în sus"
+
+msgid "Down"
+msgstr "în jos"
+
+msgid "Close YaepgHD"
+msgstr "YaepgHD este închis"
+
+msgid "Leave YaepgHD open"
+msgstr "YaepgHD rămâne deschis"
+
+msgid "Automatic"
+msgstr "Automat"
+
+msgid "pixel algo"
+msgstr "Algoritm pixeli"
+
+msgid "ratio algo"
+msgstr "Algoritm raport"
+
+msgid "zoom image"
+msgstr "Zoomează imaginea"
+
+msgid "Hide mainmenu entry"
+msgstr "Ascunde în meniul principal"
+
+msgid "Main menu entry"
+msgstr "Arată în meniul principal"
+
+msgid "Replace original schedule"
+msgstr "Înlocuiește programul original"
+
+msgid "Channel change"
+msgstr "Comutare canal"
+
+msgid "Switch channel with OK"
+msgstr "Comută canalul cu tasta 'Ok'"
+
+msgid "Mainmenu with BACK"
+msgstr "Revino în meniul principal cu tasta 'Înapoi'"
+
+msgid "   Select menu at position..."
+msgstr "   Selectează meniul de pe poziția"
+
+msgid "      Select submenu at position..."
+msgstr "      Selectează submeniul de pe poziția"
+
+msgid "Record dialog with red button"
+msgstr "Dialogul înregistrare cu tasta roșie"
+
+msgid "Time format"
+msgstr "Format timp"
+
+msgid "Channel order"
+msgstr "Ordinea canalelor"
+
+msgid "Channel number"
+msgstr "Numărul canalului"
+
+msgid "Info symbols"
+msgstr "Simboluri info"
+
+msgid "EPG images"
+msgstr "Imagini EPG"
+
+msgid "  Resize images"
+msgstr " Adaptează mărimea imaginilor "
+
+msgid "  Image format"
+msgstr " Formatul imaginilor"
+
+msgid "Switch timer"
+msgstr "Timer de comutare"
+
+msgid "  Switch ... minutes before start"
+msgstr "  Comută cu ... minute înainte de începere"
+
+msgid "Remote timer"
+msgstr "Timer la distanță"
+
+msgid "Yet another EPG in HD"
+msgstr "Încă un EPG în HD"

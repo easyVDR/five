@@ -1,0 +1,150 @@
+# VDR plugin language source file.
+# Copyright (C) 2009 bball <bball950@yahoo.com>
+# This file is distributed under the same license as the yaepghd package.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: Yaepghd 0.0.1\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-03-24 13:54+0100\n"
+"PO-Revision-Date: 2009-01-28 10:51+0200\n"
+"Last-Translator: Klaus Schmidinger <kls@cadsoft.de>\n"
+"Language-Team: <vdr@linuxtv.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "No Info"
+msgstr "Aucune données."
+
+msgid "Page up"
+msgstr "Page vers le haut"
+
+msgid "Page down"
+msgstr "Page vers le bas"
+
+msgid "Start"
+msgstr "Démarrer"
+
+msgid "Stop"
+msgstr "Arreter"
+
+msgid "Switch timer added"
+msgstr ""
+
+msgid "Switch timer deleted"
+msgstr ""
+
+msgid "Timer added"
+msgstr ""
+
+msgid "Failed to add timer"
+msgstr ""
+
+msgid "Remote timer deactivated"
+msgstr ""
+
+msgid "Timer deactivated"
+msgstr ""
+
+msgid "YaepgHD"
+msgstr "YaepgHD"
+
+msgid "24h"
+msgstr "24h"
+
+msgid "12h"
+msgstr "12h"
+
+msgid "Up"
+msgstr "Haut"
+
+msgid "Down"
+msgstr "Bas"
+
+#, fuzzy
+msgid "Close YaepgHD"
+msgstr "YaepgHD"
+
+msgid "Leave YaepgHD open"
+msgstr ""
+
+msgid "Automatic"
+msgstr "Automatique"
+
+msgid "pixel algo"
+msgstr ""
+
+msgid "ratio algo"
+msgstr ""
+
+msgid "zoom image"
+msgstr ""
+
+msgid "Hide mainmenu entry"
+msgstr "Cacher dans le menu principal"
+
+msgid "Main menu entry"
+msgstr "entrée dans le menu principal"
+
+msgid "Replace original schedule"
+msgstr "Remplacer le guide des programmes original"
+
+msgid "Channel change"
+msgstr "Changement de chaîne"
+
+msgid "Switch channel with OK"
+msgstr ""
+
+msgid "Mainmenu with BACK"
+msgstr ""
+
+msgid "   Select menu at position..."
+msgstr ""
+
+msgid "      Select submenu at position..."
+msgstr ""
+
+msgid "Record dialog with red button"
+msgstr ""
+
+msgid "Time format"
+msgstr "Format horaire"
+
+msgid "Channel order"
+msgstr "Ordre des chaînes"
+
+msgid "Channel number"
+msgstr ""
+
+msgid "Info symbols"
+msgstr ""
+
+msgid "EPG images"
+msgstr ""
+
+msgid "  Resize images"
+msgstr ""
+
+#, fuzzy
+msgid "  Image format"
+msgstr "Format horaire"
+
+msgid "Switch timer"
+msgstr ""
+
+msgid "  Switch ... minutes before start"
+msgstr ""
+
+msgid "Remote timer"
+msgstr ""
+
+msgid "Yet another EPG in HD"
+msgstr "Yet another EPG in HD"
+
+#~ msgid "Manual"
+#~ msgstr "Manuel"
+
+#~ msgid "Semi-automatic"
+#~ msgstr "Semi-automatique"

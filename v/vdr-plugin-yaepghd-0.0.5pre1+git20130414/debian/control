@@ -1,0 +1,29 @@
+Source: vdr-plugin-yaepghd
+Section: video
+Priority: extra
+Maintainer: Lucian Muresan <lucianm@users.sourceforge.net>
+Build-Depends: debhelper (>= 8), vdr-dev (>= 2.0.0), gettext, pkg-config, libmagick++-dev
+Standards-Version: 3.9.4
+Homepage: http://projects.vdr-developer.org/projects/show/plg-yaepghd
+
+Package: vdr-plugin-yaepghd
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}
+Conflicts: vdr-plugin-yaepghd-themes
+Description: Rewrite for Yaepg 
+ Yaepghd is a compelte rewrite of the original yaepg plugin. The
+ original yaepg plugin was designed for FF cards and only used 4
+ colors due to limitations on the amount of OSD memory on FF cards.
+ Yaepghd requires output devices with an OSD capable of high color
+ full screen grpahics (e.g. eHD or xine) and will _not_ work with FF
+ cards (unless you have the 4MB mod).
+
+Package: vdr-plugin-yaepghd-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-yaepghd (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-yaepghd
+ .
+ This package contains only the debugging symbols for vdr-plugin-yaepghd 
+
