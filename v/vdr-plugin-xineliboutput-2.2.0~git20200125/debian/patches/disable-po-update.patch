@@ -1,0 +1,19 @@
+Index: vdr-plugin-xineliboutput-2.2.0~git20200125/Makefile
+===================================================================
+--- vdr-plugin-xineliboutput-2.2.0~git20200125.orig/Makefile
++++ vdr-plugin-xineliboutput-2.2.0~git20200125/Makefile
+@@ -333,10 +333,10 @@ $(I18Npot): $(wildcard *.c)
+ 	@echo GT $@
+ 	$(Q)xgettext -C -cTRANSLATORS --no-wrap --no-location -k -ktr -ktrNOOP --package-name=vdr-$(PLUGIN) --package-version=$(VERSION) --msgid-bugs-address='<phintuka@users.sourceforge.net>' -o $@ `ls $^`
+ 
+-%.po: $(I18Npot)
+-	@echo PO $@
+-	$(Q)msgmerge -U --no-wrap --no-location --backup=none -q -N $@ $<
+-	@touch $@
++#%.po: $(I18Npot)
++#	@echo PO $@
++#	$(Q)msgmerge -U --no-wrap --no-location --backup=none -q -N $@ $<
++#	@touch $@
+ 
+ $(I18Nmsgs): $(DESTDIR)$(LOCDIR)/%/LC_MESSAGES/vdr-$(PLUGIN).mo: $(PODIR)/%.mo
+ 	@echo Installing $^

@@ -1,0 +1,13 @@
+Index: vdr-plugin-xineliboutput-2.2.0~git20200125/configure
+===================================================================
+--- vdr-plugin-xineliboutput-2.2.0~git20200125.orig/configure
++++ vdr-plugin-xineliboutput-2.2.0~git20200125/configure
+@@ -402,7 +402,7 @@ if enabled libxine; then
+     test_library X11  xshape       "X11/extensions/shape.h"    "-lXext"      "XShapeQueryExtension(0,0,0)"
+     test_library X11  xdpms        "X11/extensions/dpms.h"     "-lXext"      "DPMSDisable(0)"
+     test_library X11  xinerama     "X11/extensions/Xinerama.h" "-lXinerama"  "XineramaQueryScreens(0,0)"
+-    test_library X11  opengl       "GL/glx.h"                  "-lGL -lGLU"  "glXQueryVersion(0,0,0)"
++    test_library X11  OpenGL       "GL/glx.h"                  "-lGL -lGLU"  "glXQueryVersion(0,0,0)"
+     test_library X11  dbus-glib-1  \
+       "dbus/dbus-glib.h" \
+       "-ldbus-glib-1 -lgobject-2.0 -lglib-2.0" \
