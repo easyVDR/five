@@ -1,0 +1,39 @@
+--- a/epg_item.c
++++ b/epg_item.c
+@@ -25,7 +25,7 @@
+ {
+   event = Event;
+   progress = Progress;
+-  timerMatch = 0;
++  timerMatch = tmNone;
+   Update(true);
+ }
+ 
+@@ -34,7 +34,12 @@
+   bool result = false;
+   const cChannel* channel = zapChannel->GetChannel();
+   
+-  int OldTimerMatch = timerMatch;
++#if VDRVERSNUM < 10733
++  int OldTimerMatch;
++#else
++  eTimerMatch OldTimerMatch;
++#endif
++  OldTimerMatch = timerMatch;
+   bool hasMatch = false;
+   
+   if (event)
+--- a/epg_item.h
++++ b/epg_item.h
+@@ -18,7 +18,11 @@
+   const cEvent *event;
+   
+   int progress;
++#if VDRVERSNUM < 10733
+   int timerMatch;
++#else
++  eTimerMatch timerMatch;
++#endif
+ 
+ public:
+   

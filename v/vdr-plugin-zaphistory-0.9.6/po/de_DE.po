@@ -1,0 +1,114 @@
+# SOME DESCRIPTIVE TITLE.
+# Copyright (C) YEAR THE PACKAGE'S COPYRIGHT HOLDER
+# This file is distributed under the same license as the PACKAGE package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, YEAR.
+#
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: vdr-zaphistory 0.9.5\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-08-13 20:23+0200\n"
+"PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
+"Last-Translator: FULL NAME <EMAIL@ADDRESS>\n"
+"Language-Team: LANGUAGE <LL@li.org>\n"
+"Language: \n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=ISO-8859-15\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "no info"
+msgstr "keine Info"
+
+msgid "Reset history"
+msgstr "History zurücksetzen"
+
+msgid "Delete all entries"
+msgstr "Alle Einträge löschen"
+
+msgid "Reset all statistics"
+msgstr "Reset der kompletten Statistik"
+
+msgid "Delete entry"
+msgstr "Lösche Eintrag"
+
+msgid "Reset statistics for"
+msgstr "Reset Statistik für"
+
+msgid "Button$Ok"
+msgstr "Ok"
+
+msgid "Button$Back"
+msgstr "Zurück"
+
+msgid "Delete complete history?"
+msgstr "Gesamte History löschen?"
+
+msgid "Reset all?"
+msgstr "Alle zurücksetzen?"
+
+msgid "Delete entry?"
+msgstr "Eintrag entfernen?"
+
+msgid "Reset entry?"
+msgstr "Eintrag zurücksetzen?"
+
+msgid "Latest view"
+msgstr "Zuletzt eingeschaltet"
+
+msgid "Zap count"
+msgstr "Wie oft Eingeschaltet"
+
+msgid "View time"
+msgstr "Gesamtzeit"
+
+msgid "Button$Schedule"
+msgstr "EPG Übersicht"
+
+msgid "Button$Statistic"
+msgstr "Statistik"
+
+msgid "old text bar"
+msgstr "Text Balken"
+
+msgid "VDRSymbols"
+msgstr "VDRSymbols"
+
+msgid "Percent"
+msgstr "Prozent"
+
+msgid "Zaphistory"
+msgstr "Zaphistorie"
+
+msgid "Number of entries"
+msgstr "Anzahl der Einträge"
+
+msgid "Hide mainmenu entry"
+msgstr "Hauptmenüeintrag verstecken"
+
+msgid "Default view"
+msgstr "Standard-Ansicht"
+
+msgid "Default sort"
+msgstr "Standard-Sortierung"
+
+msgid "Progress view"
+msgstr "Fortschrittsanzeige"
+
+msgid "Zapping History"
+msgstr "Letzte Kanäle"
+
+msgid "Sorted by"
+msgstr "Geordnet nach"
+
+msgid "Button$Sort"
+msgstr "Sortieren"
+
+msgid "Button$Reset"
+msgstr "Reset"
+
+msgid "Button$Info"
+msgstr "Info"
+
+msgid "Channel"
+msgstr "Kanal"

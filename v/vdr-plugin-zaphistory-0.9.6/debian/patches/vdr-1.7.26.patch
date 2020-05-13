@@ -1,0 +1,37 @@
+Index: vdr-plugin-zaphistory-0.9.5/monitor.c
+===================================================================
+--- vdr-plugin-zaphistory-0.9.5.orig/monitor.c	2012-03-14 10:03:42.290988526 +0100
++++ vdr-plugin-zaphistory-0.9.5/monitor.c	2012-03-14 10:07:06.320988650 +0100
+@@ -13,10 +13,14 @@
+ #include "setup-zaphistory.h"
+ #include "zaphistory.h"
+ 
++#if VDRVERSNUM >= 10726
++void cZapHistoryMonitor::ChannelSwitch(const cDevice *Device, int ChannelNumber, bool LiveView)
++#else
+ void cZapHistoryMonitor::ChannelSwitch(const cDevice *Device, int ChannelNumber)
++#endif
+ {
+     // Inform history, that channel has been switched
+-    if (ChannelNumber > 0 && Device->IsPrimaryDevice() && !EITScanner.UsesDevice(Device) )
++    if (ChannelNumber > 0 && LiveView)
+     {
+ 	ZapHistory.ChannelSwitch( Channels.GetByNumber (ChannelNumber) );
+     }
+Index: vdr-plugin-zaphistory-0.9.5/monitor.h
+===================================================================
+--- vdr-plugin-zaphistory-0.9.5.orig/monitor.h	2012-03-14 10:03:44.340988528 +0100
++++ vdr-plugin-zaphistory-0.9.5/monitor.h	2012-03-14 10:08:33.650988702 +0100
+@@ -14,8 +14,11 @@
+ 
+ class cZapHistoryMonitor : public cStatus {
+     public:
++#if VDRVERSNUM >= 10726
++        void ChannelSwitch( const cDevice *Device, int ChannelNumber, bool LiveView);
++#else
+ 	void ChannelSwitch( const cDevice *Device, int ChannelNumber);
+-	
++#endif
+ 	void Replaying( const cControl *Control, const char *Name, const char *FileName, bool On);
+ };
+ 

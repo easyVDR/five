@@ -1,0 +1,25 @@
+Source: vdr-plugin-zaphistory
+Section: video
+Priority: extra
+Maintainer: Debian VDR Team <pkg-vdr-dvb-devel@lists.alioth.debian.org>
+Uploaders: Thomas Günther <tom@toms-cafe.de>, Tobias Grimm <tg@e-tobi.net>, Thomas Schmidt <tschmidt@debian.org>, Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7.0.50~), vdr-dev (>= 1.7.26), pkg-config
+Standards-Version: 3.9.2
+Vcs-Svn: svn://svn.debian.org/pkg-vdr-dvb/vdr/vdr-plugin-zaphistory/trunk/
+Vcs-Browser: http://svn.debian.org/wsvn/pkg-vdr-dvb/vdr/vdr-plugin-zaphistory/trunk/
+
+Package: vdr-plugin-zaphistory
+Architecture: any
+Depends: ${shlibs:Depends}, ${misc:Depends}, ${vdr:Depends}
+Description: Plugin for VDR to zap in channels history
+ Just a history of the last visited channels.
+
+Package: vdr-plugin-zaphistory-dbg
+Architecture: any
+Section: debug
+Priority: extra
+Depends: vdr-plugin-zaphistory (= ${binary:Version}), ${misc:Depends}
+Description: debugging symbols for vdr-plugin-zaphistory
+ .
+ This package contains only the debugging symbols for vdr-plugin-zaphistory
+
