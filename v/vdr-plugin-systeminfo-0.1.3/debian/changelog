@@ -1,3 +1,9 @@
+vdr-plugin-systeminfo (0.1.3-5easyVDR3~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 18:29:21 +0200
+
 vdr-plugin-systeminfo (0.1.3-5easyVDR2~focal) focal; urgency=high
 
   * automatic rebuild

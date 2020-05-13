@@ -1,3 +1,9 @@
+vdr-plugin-satip (1:2.2.5~git20180317-0easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 17:48:10 +0200
+
 vdr-plugin-satip (1:2.2.5~git20180317-0easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

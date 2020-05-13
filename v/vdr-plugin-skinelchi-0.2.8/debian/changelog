@@ -1,3 +1,9 @@
+vdr-plugin-skinelchi (0.2.8-2easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 21:34:02 +0200
+
 vdr-plugin-skinelchi (0.2.8-2easyVDR9~focal) focal; urgency=high
 
   * automatic rebuild

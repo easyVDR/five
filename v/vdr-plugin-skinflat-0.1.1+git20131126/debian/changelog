@@ -1,3 +1,9 @@
+vdr-plugin-skinflat (0.1.1+git20131126-2easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 17:50:05 +0200
+
 vdr-plugin-skinflat (0.1.1+git20131126-2easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

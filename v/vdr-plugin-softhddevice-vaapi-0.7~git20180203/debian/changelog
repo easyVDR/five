@@ -1,3 +1,21 @@
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR7~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 18:23:15 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR6~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 01 May 2020 15:56:19 +0200
+
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR5~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 22 Feb 2020 11:02:21 +0100
+
 vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR4~focal) focal; urgency=high
 
   * automatic rebuild

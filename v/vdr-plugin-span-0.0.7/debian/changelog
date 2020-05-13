@@ -1,3 +1,9 @@
+vdr-plugin-span (0.0.7-1easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 18:23:30 +0200
+
 vdr-plugin-span (0.0.7-1easyVDR9~focal) focal; urgency=high
 
   * automatic rebuild

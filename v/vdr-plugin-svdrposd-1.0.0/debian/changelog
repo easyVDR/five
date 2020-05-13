@@ -1,3 +1,9 @@
+vdr-plugin-svdrposd (1.0.0-11easyVDR1~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 18:28:55 +0200
+
 vdr-plugin-svdrposd (1.0.0-11easyVDR0~focal) focal; urgency=high
 
   * rebuild

@@ -1,3 +1,9 @@
+vdr-plugin-serial (0.0.6d-3easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 17:49:11 +0200
+
 vdr-plugin-serial (0.0.6d-3easyVDR9~focal) focal; urgency=high
 
   * automatic rebuild
