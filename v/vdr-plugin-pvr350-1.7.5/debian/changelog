@@ -1,3 +1,9 @@
+vdr-plugin-pvr350 (1.7.5-1easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 17:07:48 +0200
+
 vdr-plugin-pvr350 (1.7.5-1easyVDR9~focal) focal; urgency=high
 
   * automatic rebuild

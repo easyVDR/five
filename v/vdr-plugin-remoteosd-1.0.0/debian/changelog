@@ -1,3 +1,9 @@
+vdr-plugin-remoteosd (1.0.0-6easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 17:20:29 +0200
+
 vdr-plugin-remoteosd (1.0.0-6easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

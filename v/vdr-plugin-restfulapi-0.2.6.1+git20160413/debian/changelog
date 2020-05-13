@@ -1,3 +1,9 @@
+vdr-plugin-restfulapi (0.2.6.1+git20160413-1easyVDR9~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 17:20:59 +0200
+
 vdr-plugin-restfulapi (0.2.6.1+git20160413-1easyVDR8~focal) focal; urgency=high
 
   * automatic rebuild
