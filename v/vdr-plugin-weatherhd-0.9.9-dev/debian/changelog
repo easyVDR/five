@@ -1,3 +1,9 @@
+vdr-plugin-weatherhd (0.9.9-dev-4easyVDR4~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 18:38:57 +0200
+
 vdr-plugin-weatherhd (0.9.9-dev-4easyVDR3~focal) focal; urgency=high
 
   * automatic rebuild

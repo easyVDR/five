@@ -1,3 +1,9 @@
+vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR10~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 22:03:29 +0200
+
 vdr-plugin-targavfd (0.3.0+git20140614-2easyVDR9~focal) focal; urgency=high
 
   * rebuild for focal

@@ -1,3 +1,9 @@
+vdr-plugin-wirbelscan (0.0.9~20161018-0easyVDR6~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 18:41:18 +0200
+
 vdr-plugin-wirbelscan (0.0.9~20161018-0easyVDR5~focal) focal; urgency=high
 
   * automatic rebuild

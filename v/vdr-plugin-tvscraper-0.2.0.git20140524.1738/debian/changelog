@@ -1,3 +1,9 @@
+vdr-plugin-tvscraper (0.2.0.git20140524.1738-2easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 22:03:44 +0200
+
 vdr-plugin-tvscraper (0.2.0.git20140524.1738-2easyVDR1~focal) focal; urgency=high
 
   * automatic rebuild
