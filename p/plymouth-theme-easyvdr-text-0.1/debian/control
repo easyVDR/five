@@ -2,8 +2,8 @@ Source: plymouth-theme-easyvdr-text
 Section: x11
 Priority: optional
 Maintainer: Martin <none@easy-vdr.de>
-Build-Depends: debhelper (>= 7.0.50~)
-Standards-Version: 3.9.1
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
 
 Package: plymouth-theme-easyvdr-text
 Architecture: all

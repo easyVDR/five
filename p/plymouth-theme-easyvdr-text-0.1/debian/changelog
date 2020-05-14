@@ -1,3 +1,9 @@
+plymouth-theme-easyvdr-text (0.1-1easyVDR0~focal) focal; urgency=high
+
+  * fix install path
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 14 May 2020 15:26:00 +0200
+
 plymouth-theme-easyvdr-text (0.1-0easyVDR3~focal) focal; urgency=medium
 
   * automatic rebuild
