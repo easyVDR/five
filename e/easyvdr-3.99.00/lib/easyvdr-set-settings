@@ -224,6 +224,9 @@ disable_hddtemp() {
 
 ##### start lirc ##### 
 do_write_lirc_hardware() {
+	if [ ! -f /etc/lirc/lirc_options.conf ]; then 
+	 cp /etc/lirc/lirc_options.conf.dist /etc/lirc/lirc_options.conf
+	fi
  	sed -i~ -r '/code =/ s/^# +//' $LIRC_HW_CONF_FILE
 	sed -i~ -r '/modinit/ s/^# +//' $LIRC_HW_CONF_FILE
 	sed -i -e "

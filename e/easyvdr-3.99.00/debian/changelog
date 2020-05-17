@@ -1,3 +1,9 @@
+easyvdr (3.99.00-6easyVDR0~focal) focal; urgency=high
+
+  * fix lirc_options.conf
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 May 2020 14:04:03 +0200
+
 easyvdr (3.99.00-5easyVDR1~focal) focal; urgency=high
 
   * disable xserver ir 
