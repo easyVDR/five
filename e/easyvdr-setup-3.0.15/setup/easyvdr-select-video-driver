@@ -73,30 +73,30 @@ SEL_DRIVER=$(dialog\
     --title " $TITLE "\
     --colors\
     --cancel-label " Abbrechen " \
-    --default-item "2"\
+    --default-item "1"\
     --menu  "\n\
     Welcher Treiber soll fuer die NVidiakarte installiert werden?\n\n\
     $CURRENT_DRIVER\n\
     Markierten Treiber Installieren mit < OK >\n\
     Beenden ohne Installation mit < Abbrechen >"  $DIA_BOX_SIZE\
-    "1" "NVidia-304 - fuer alte 8000/9000 (OnBoard-) Grafik-Chips"\
-    "2" "NVidia 340 - (oder neuerer) Stable aus dem Ubuntu ppa"\
-    "3" "NVidia-370 - (oder neuerer) Treiber aus dem easyvdr ppa"\
-    "4" "NVidia-38X - für die neuen 10XX Karten, aus dem easyvdr ppa"\
+    "1" "NVidia 340 - (oder neuerer) Treiber aus dem Ubuntu ppa"\
+    "2" "NVidia-390 - (oder neuerer) Treiber aus dem Ubuntu ppa"\
+    "3" "NVidia-440 - für die neuen 10XX Karten, aus dem Ubuntu ppa"\
+    "4" "NVidia-Latest - letzter angebotene Treiber aus dem Ubuntu ppa"\
   3>&1 1>&2 2>&3 3>&- )
 OK_CANCEL=$?
 clear
 
 if (($OK_CANCEL == 0)); then
   case $SEL_DRIVER in
-     1) echo "Installiere Treiber 304.117"
-        Install_Nvidia_Driver "nvidia-304";;
-     2) echo "Installiere Treiber 340 oder neuer aus dem Ubuntu ppa"
-        Install_Nvidia_Driver "nvidia-331-updates";;
-     3) echo "Installiere aktuellen Treiber aus dem easyvdr ppa"
-        Install_Nvidia_Driver " nvidia-370" ;;
-     4) echo "Installiere aktuellen Treiber aus dem easyvdr ppa"
-        Install_Nvidia_Driver "easyvdr-nvidia-latest" ;;
+     1) echo "Installiere Treiber 340 aus dem Ubuntu ppa"
+        Install_Nvidia_Driver "nvidia-340";;
+     2) echo "Installiere Treiber 390 aus dem Ubuntu ppa"
+        Install_Nvidia_Driver " nvidia-driver-390" ;;
+     3) echo "Installiere Treiber 440 aus dem Ubuntu ppa"
+        Install_Nvidia_Driver " nvidia-driver-440" ;;
+     4) echo "Installiere aktuellen Treiber aus dem Ubuntu ppa"
+        Install_Nvidia_Driver " easyvdr-nvidia-latest" ;;
   esac
 fi
 return $OK_CANCEL

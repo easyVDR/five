@@ -1,3 +1,9 @@
+easyvdr-nvidia-latest (0.0.1-2easyVDR4~focal) focal; urgency=medium
+
+  * fix nvidia-driver
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 18 May 2020 22:05:07 +0200
+
 easyvdr-nvidia-latest (0.0.1-2easyVDR3~focal) focal; urgency=medium
 
   * automatic rebuild

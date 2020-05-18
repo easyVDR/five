@@ -7,7 +7,7 @@ Build-Depends: debhelper (>= 7)
 
 Package: easyvdr-nvidia-latest
 Architecture: any
-Depends: ${misc:Depends}, ${easyvdr-nvidia-latest},  nvidia-384, nvidia-settings
-Conflicts:xvba-va-driver,fglrx,fglrx-amdcccle,nvidia-304,nvidia-340
+Depends: ${misc:Depends}, ${easyvdr-nvidia-latest}, nvidia-driver-440, nvidia-settings
+Conflicts:xvba-va-driver,fglrx,fglrx-amdcccle,nvidia-340,nvidia-driver-390
 Description: latest nvidia driver
   Metapackage for nvidia driver
