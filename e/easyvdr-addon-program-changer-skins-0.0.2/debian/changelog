@@ -1,3 +1,9 @@
+easyvdr-addon-program-changer-skins (0.0.2-4easyVDR7~focal) focal; urgency=medium
+
+  * fix skin select pchanger
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 22 May 2020 17:33:06 +0200
+
 easyvdr-addon-program-changer-skins (0.0.2-4easyVDR6~focal) focal; urgency=medium
 
   * automatic rebuild
