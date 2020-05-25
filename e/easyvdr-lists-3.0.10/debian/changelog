@@ -1,3 +1,9 @@
+easyvdr-lists (3.0.10-2easyVDR4~focal) focal; urgency=high
+
+  * fix typo
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 26 May 2020 00:12:16 +0200
+
 easyvdr-lists (3.0.10-2easyVDR3~focal) focal; urgency=medium
 
   * automatic rebuild

@@ -55,7 +55,7 @@ Mcli		ReelBox NetCeiver Plugin			+	vdr-plugin-mcli			empty		empty		XXXXXXXX
 MList		Liste letzter OSD-Nachrichten			+	vdr-plugin-mlist		empty		empty		XXXXXXXX
 MP3		MP3-Player					+	vdr-plugin-mp3			empty		empty		XXXXXXXX
 Mplayer		Spielt diverse Videoformate			+	vdr-plugin-mplayer		empty		empty		XOXXXXXX
-MPV		Aktueller Medienplayer				+	vdr-plugin-mplayer		empty		empty		XOXXXXXX
+MPV		Aktueller Medienplayer				+	vdr-plugin-mpv		empty		empty		XOXXXXXX
 Music		Music-Player-Plugin				+	vdr-plugin-music		empty		empty		X000X000
 Music-SD-FF	Music-Player-Plugin fuer SD-FF Karte		+	vdr-plugin-music-sd		empty		empty		XXXXXXXX
 Netradio	Python Skript um NetRadio Staion einzubinden	+	easyvdr-addon-netradio		empty		empty		XXXXXXXX
