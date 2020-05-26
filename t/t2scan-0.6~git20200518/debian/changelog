@@ -1,0 +1,67 @@
+t2scan (0.6~git20200518-0easyVDR0~focal) focal; urgency=medium
+
+  * new upstream snapshot  
+  * commit:7d35e17 - move iconv to iso8859-1 directly into dump-vlc-m3u code (addresses Is…
+  * sources:https://github.com/mighty-p/t2scan/   
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 26 May 2020 18:00:29 +0200
+
+t2scan (0.5-0easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 04 May 2020 00:10:58 +0200
+
+t2scan (0.5-0easyVDR2~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 03 May 2020 14:16:13 +0200
+
+t2scan (0.5-0easyVDR1~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Nov 2019 17:09:36 +0100
+
+t2scan (0.5-0easyVDR0~bionic) bionic; urgency=high
+
+  * new upstream release
+  * commit:c6244ab - bump version number to 20190318 for post-0.5 work
+  * sources:https://github.com/mighty-p/t2scan/  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 17 Mar 2019 15:35:53 +0100
+
+t2scan (0.4+git20190121-0easyVDR0~bionic) bionic; urgency=high
+
+  * new upstream snapshot
+  * commit:ce9aef7 - tested hardware update
+  * sources:https://github.com/mighty-p/t2scan/
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 21 Jan 2019 20:59:22 +0100
+
+t2scan (0.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * new releases
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 03 Nov 2018 19:37:41 +0100
+
+t2scan (0.1+git20180329-1-363b865-0yavdr0~trusty) trusty; urgency=medium
+
+  * rebuild for trusty
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 30 Mar 2018 05:54:56 +0000
+
+t2scan (0.1+git20180329-1-363b865-0yavdr0~xenial) xenial; urgency=medium
+
+  * rebuild for xenial
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 30 Mar 2018 05:54:29 +0000
+
+t2scan (0.1+git20180329-1-363b865-0yavdr0~bionic) bionic; urgency=medium
+
+  * initial build
+  * use git snapshot instead of release file
+  * use git-friendly version scheme
+
+ -- Alexander Grothe <seahawk1986@gmx.de>  Fri, 30 Mar 2018 05:49:38 +0000
