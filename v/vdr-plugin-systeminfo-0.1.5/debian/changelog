@@ -1,0 +1,163 @@
+vdr-plugin-systeminfo (0.1.5-0easyVDR1~focal) focal; urgency=high
+
+  * postinst added sensors-detect
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 28 May 2020 13:23:51 +0200
+
+vdr-plugin-systeminfo (0.1.5-0easyVDR0~focal) focal; urgency=high
+
+  * new upstream version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 27 May 2020 23:55:33 +0200
+
+vdr-plugin-systeminfo (0.1.4-0easyVDR0~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 27 May 2020 23:40:33 +0200
+
+vdr-plugin-systeminfo (0.1.4-0easyVDR3~trusty) trusty; urgency=high
+
+  * added script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 17 Oct 2017 19:02:11 +0200
+
+vdr-plugin-systeminfo (0.1.4-0easyVDR2~trusty) trusty; urgency=high
+
+  * fix script
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 11 Oct 2017 23:44:34 +0200
+
+vdr-plugin-systeminfo (0.1.4-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.3.8
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 17 Aug 2017 21:22:57 +0200
+
+vdr-plugin-systeminfo (0.1.4-0easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 14 Aug 2017 23:18:23 +0200
+
+vdr-plugin-systeminfo (0.1.3-4easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 22:01:35 +0200
+
+vdr-plugin-systeminfo (0.1.3-4easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:47:27 +0200
+
+vdr-plugin-systeminfo (0.1.3-4easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:48:15 +0200
+
+vdr-plugin-systeminfo (0.1.3-4easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 20:07:52 +0200
+
+vdr-plugin-systeminfo (0.1.3-4easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:52:03 +0100
+
+vdr-plugin-systeminfo (0.1.3-4easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 18 Nov 2015 22:51:17 +0100
+
+vdr-plugin-systeminfo (0.1.3-3easyVDR10~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 19:09:29 +0200
+
+vdr-plugin-systeminfo (0.1.3-3easyVDR9~trusty) trusty; urgency=high
+
+  * fix script hddtemp
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 29 May 2015 18:50:32 +0200
+
+vdr-plugin-systeminfo (0.1.3-3easyVDR8~trusty) trusty; urgency=high
+
+  * fix script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 28 May 2015 01:44:12 +0200
+
+vdr-plugin-systeminfo (0.1.3-3easyVDR7~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 02 Apr 2015 01:27:48 +0200
+
+vdr-plugin-systeminfo (0.1.3-3easyVDR6~trusty) trusty; urgency=high
+
+  * automatic rebuild for 2.2-vdr-testing PPA
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 24 Mar 2015 04:51:32 +0100
+
+vdr-plugin-systeminfo (0.1.3-3easyVDR5~trusty) trusty; urgency=high
+
+  * added dependencies
+
+ -- Wolfgang <vdr@gmx.de>  Mon, 23 Mar 2015 19:44:41 +0100
+
+vdr-plugin-systeminfo (0.1.3-2easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 19 Mar 2015 01:25:29 +0100
+
+vdr-plugin-systeminfo (0.1.3-2easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.2.0 Happy B'day
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 20 Feb 2015 01:32:34 +0100
+
+vdr-plugin-systeminfo (0.1.3-2easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild for vdr-2.0.7
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 25 Jan 2015 23:54:18 +0100
+
+vdr-plugin-systeminfo (0.1.3-2easyVDR2~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 14 Jan 2014 23:09:39 +0100
+
+vdr-plugin-systeminfo (0.1.3-1easyVDR2~trusty) trusty; urgency=high
+
+  * fix script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 24 Nov 2013 04:03:19 +0100
+
+vdr-plugin-systeminfo (0.1.3-1easyVDR1~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 23 Nov 2013 04:03:32 +0100
+
+vdr-plugin-systeminfo (0.1.3-0easyVDR1~raring) raring; urgency=high
+
+  * add patch fix script
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 15 Aug 2013 22:00:17 +0200
+
+vdr-plugin-systeminfo (0.1.3-0easyVDR0~raring) raring; urgency=high
+
+  * Initial release
+  * switch to quilt
+  * add dbg package  
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 15 Aug 2013 00:25:06 +0200

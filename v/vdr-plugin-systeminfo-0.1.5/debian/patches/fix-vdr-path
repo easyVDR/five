@@ -1,0 +1,13 @@
+Index: b/scripts/systeminfo.sh
+===================================================================
+--- a/scripts/systeminfo.sh
++++ b/scripts/systeminfo.sh
+@@ -118,7 +118,7 @@
+ 		;;
+ 
+ 	12)	# video disk usage
+-		VAR=$(df -Pk /video0 | tail -n 1 | tr -s ' ' | cut -d' ' -f 2,4)
++		VAR=$(df -Pk /srv/vdr/ | tail -n 1 | tr -s ' ' | cut -d' ' -f 2,4)
+ 		echo -ne "Video Disk:\t"$VAR
+ 		exit
+         	;;

@@ -1,0 +1,4 @@
+debian/systeminfo.sh      usr/share/vdr-plugin-systeminfo/
+debian/oberlooser_systeminfo.sh      usr/share/vdr-plugin-systeminfo/
+debian/mango_systeminfo.sh      usr/share/vdr-plugin-systeminfo/
+debian/orig_systeminfo.sh      usr/share/vdr-plugin-systeminfo/

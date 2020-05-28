@@ -1,0 +1,35 @@
+# VDR System Info plugin language source file
+# Copyright (C) 2008 Christoph haubrich
+# This file is distributed under the same license as the SystemInfo package.
+# Christoph Haubrich, 2008
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: System Info\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-09 18:58+0100\n"
+"PO-Revision-Date: 2008-10-07 20:16+0100\n"
+"Last-Translator: Diego Pierotto <vdr-italian@tiscali.it>\n"
+"Language-Team: <see README>\n"
+"Language: it\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+msgid "System Information"
+msgstr "Info sistema"
+
+msgid "please wait"
+msgstr "Attendere prego..."
+
+msgid "Error getting system information"
+msgstr "Errore recupero info sistema"
+
+msgid "Display various system informations"
+msgstr "Mostra diverse informazioni di sistema"
+
+msgid "Refresh intervall (s)"
+msgstr "Intervallo aggiornamento (s)"
+
+msgid "Close display after 2 min."
+msgstr "Chiudi schermata dopo 2 min."
