@@ -172,6 +172,8 @@ fi
 remove_all_fb_receiver()
 {
 log --silent " ---> alle Empfaenger deaktivieren .."
+SYSTEMD_AKTIV=0
+Systemd_Service
 
 ## udev-rules bereinigen ##
 UDEV_FILE="/etc/udev/rules.d/01-easyvdr-remote.rules"
@@ -248,6 +250,9 @@ Systemd_Service
 inst_inputlirc()
 {
 SET_HW_NAME="$1"; PARAM_A="$2"; PARAM_B="$3"; PARAM_C="$4"; PARAM_D="$5"
+SYSTEMD_AKTIV=0
+Systemd_Service
+SYSTEMD_INSTALL="inputlirc.service"
 
 RMT_DEF_SYML="input/ir-auto_dtc"
 UDEV_FILE="/etc/udev/rules.d/01-easyvdr-remote.rules"
@@ -298,6 +303,8 @@ SetSysconfig "FB_RECEIVER"  "$SET_HW_NAME"
 SetSysconfig "LIRC_HW_CONF" "${RMT_P_2[0]}"
 
 ( ! pidof vdr)  &&  /usr/lib/vdr/easyvdr-set-settings "lirc" ## nur wenn nicht ueber OSD
+SYSTEMD_AKTIV=1
+Systemd_Service
 }
 
 ####

@@ -13,6 +13,25 @@ if [ x"$LIRC_HW_CONF" = x"irtrans_server"   ];then
  EXEC_CMD="/usr/lib/easyvdr/easyvdr-start/easyvdr-irtrans"
 fi
 
+###29.05.2020 restart inputlic devices###
+if [ x"$LIRC_HW_CONF" = x"input_lirc"   ];then
+ case "$1" in
+        start)
+                EXEC_CMD="systemctl restart inputlirc.service"
+            ;;
+        stop)
+                EXEC_CMD="systemctl stop inputlirc.service"
+            ;;
+        status)
+                EXEC_CMD="systemctl status inputlirc.service"
+            ;;
+        restart)
+                EXEC_CMD="systemctl restart inputlirc.service"
+            ;;
+ esac
+ shift
+fi
+
 ###02-01-2020 restart lirc devices###
 if [ $(systemctl is-enabled lircd.service) = "enabled"   ];then
  case "$1" in

@@ -1,3 +1,9 @@
+easyvdr (3.99.00-6easyVDR1~focal) focal; urgency=high
+
+  * add restart inputlirc
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 May 2020 10:16:19 +0200
+
 easyvdr (3.99.00-6easyVDR0~focal) focal; urgency=high
 
   * fix lirc_options.conf

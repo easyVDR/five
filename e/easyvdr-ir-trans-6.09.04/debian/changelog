@@ -1,3 +1,9 @@
+easyvdr-ir-trans (6.09.04-2easyVDR15~focal) focal; urgency=medium
+
+  * fix restart
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sat, 30 May 2020 10:13:38 +0200
+
 easyvdr-ir-trans (6.09.04-2easyVDR14~focal) focal; urgency=medium
 
   * automatic rebuild
