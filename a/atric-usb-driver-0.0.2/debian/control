@@ -1,0 +1,12 @@
+Source: atric-usb-driver
+Section: libs
+Maintainer: easyVDR-Developer <easyvdr-dev@easy-vdr.de>
+Uploaders: Martin Neubauer <none@gmx.de>
+Build-Depends: debhelper (>= 9)
+Standards-Version: 3.9.5
+
+Package: atric-usb-driver
+Section: libs
+Architecture: any
+Description: Support for Atric USB
+

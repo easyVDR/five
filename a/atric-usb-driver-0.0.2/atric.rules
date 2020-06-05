@@ -1,0 +1,1 @@
+SUBSYSTEM=="tty", ATTRS{idVendor}=="04d8", ATTRS{idProduct}=="f844", SYMLINK+="ttyatric", RUN+="/bin/ln -s /dev/ttyatric /dev/input/ir-auto_dtc"

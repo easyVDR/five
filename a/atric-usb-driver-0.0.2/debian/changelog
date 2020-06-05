@@ -1,0 +1,11 @@
+atric-usb-driver (0.0.2-0easyVDR0~focal) focal; urgency=high
+
+  * rebuild for focal
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 05 Jun 2020 12:54:36 +0200
+
+atric-usb-driver (0.0.2-0easyVDR0~trusty) trusty; urgency=high
+
+  * initial version
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 15 Dec 2014 21:05:11 +0100
