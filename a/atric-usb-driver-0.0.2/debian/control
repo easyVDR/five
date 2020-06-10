@@ -9,4 +9,4 @@ Package: atric-usb-driver
 Section: libs
 Architecture: any
 Description: Support for Atric USB
-
+Pre-Depends: lirc-drv-irman

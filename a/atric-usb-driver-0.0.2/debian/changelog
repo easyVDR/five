@@ -1,3 +1,9 @@
+atric-usb-driver (0.0.2-0easyVDR1~focal) focal; urgency=high
+
+  * add pre depends lirc-drv-irman
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 10 Jun 2020 20:49:27 +0200
+
 atric-usb-driver (0.0.2-0easyVDR0~focal) focal; urgency=high
 
   * rebuild for focal
