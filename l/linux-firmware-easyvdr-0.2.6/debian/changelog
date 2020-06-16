@@ -1,3 +1,9 @@
+linux-firmware-easyvdr (0.2.6-3easyVDR5~focal) focal; urgency=high
+
+  * added new firmware for SkyStar USB HD
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jun 2020 15:59:30 +0200
+
 linux-firmware-easyvdr (0.2.6-3easyVDR4~focal) focal; urgency=medium
 
   * automatic rebuild
