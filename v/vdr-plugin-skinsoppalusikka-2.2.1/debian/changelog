@@ -1,3 +1,9 @@
+vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR8~focal) focal; urgency=high
+
+  * added dir
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 16 Jun 2020 16:09:34 +0200
+
 vdr-plugin-skinsoppalusikka (2.2.1-2easyVDR7~focal) focal; urgency=medium
 
   * automatic rebuild
