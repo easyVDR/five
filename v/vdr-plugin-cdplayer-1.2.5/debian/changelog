@@ -1,0 +1,156 @@
+vdr-plugin-cdplayer (1.2.5-0easyVDR0~focal) focal; urgency=high
+
+  * new upstream version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 13 Oct 2020 22:16:47 +0200
+
+vdr-plugin-cdplayer (1.2.4-1easyVDR0~focal) focal; urgency=high
+
+  * addet use_gnudb.patch
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 12 Oct 2020 15:33:03 +0200
+
+vdr-plugin-cdplayer (1.2.4-0easyVDR6~focal) focal; urgency=medium
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 May 2020 15:41:41 +0200
+
+vdr-plugin-cdplayer (1.2.4-0easyVDR5~focal) focal; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 11 Nov 2019 00:21:58 +0100
+
+vdr-plugin-cdplayer (1.2.4-0easyVDR4~bionic) bionic; urgency=high
+
+  * fix depends
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 16 Jan 2019 21:24:00 +0100
+
+vdr-plugin-cdplayer (1.2.4-0easyVDR3~bionic) bionic; urgency=high
+
+  * automatic rebuild for bionic
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Dec 2017 16:40:11 +0100
+
+vdr-plugin-cdplayer (1.2.4-0easyVDR2~artful) artful; urgency=high
+
+  * fix include
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Dec 2017 16:23:00 +0100
+
+vdr-plugin-cdplayer (1.2.4-0easyVDR1~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 08 Dec 2017 16:17:47 +0100
+
+vdr-plugin-cdplayer (1.2.4-0easyVDR0~zesty) zesty; urgency=high
+
+  * new upstream version
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Thu, 07 Dec 2017 21:22:11 +0100
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR8~artful) artful; urgency=high
+
+  * fix include
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 00:44:05 +0100
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR7~artful) artful; urgency=high
+
+  * automatic rebuild for artful
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 26 Nov 2017 00:38:40 +0100
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR6~zesty) zesty; urgency=high
+
+  * automatic rebuild for zesty zapus
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 28 Jun 2017 00:15:20 +0200
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR5~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 14 Oct 2016 21:44:59 +0200
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR4~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 05 Oct 2016 21:29:23 +0200
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR3~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Tue, 31 May 2016 19:33:50 +0200
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 30 May 2016 19:52:59 +0200
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 25 Dec 2015 15:34:43 +0100
+
+vdr-plugin-cdplayer (1.2.3-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild for easyVDR
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 17 Nov 2015 00:05:31 +0100
+
+vdr-plugin-cdplayer (1.2.3-0easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Wed, 26 Aug 2015 18:51:24 +0200
+
+vdr-plugin-cdplayer (1.2.3-0easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 04 Jun 2015 23:31:30 +0200
+
+vdr-plugin-cdplayer (1.2.3-0easyVDR0~trusty) trusty; urgency=high
+
+  * new stable release
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 04 Jun 2015 22:52:47 +0200
+
+vdr-plugin-cdplayer (1.2.1-1easyVDR2~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 26 Aug 2014 22:38:05 +0200
+
+vdr-plugin-cdplayer (1.2.1-1easyVDR1~trusty) trusty; urgency=high
+
+  * automatic rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 24 Apr 2014 22:05:30 +0200
+
+vdr-plugin-cdplayer (1.2.1-1easyVDR0~trusty) trusty; urgency=high
+
+  * rebuild
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 17 Nov 2013 01:35:15 +0100
+
+vdr-plugin-cdplayer (1.2.1-1easyVDR0~raring) raring; urgency=high
+
+  * add path
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 06 Sep 2013 22:14:17 +0200
+
+vdr-plugin-cdplayer (1.2.1-0easyVDR0~raring) raring; urgency=high
+
+  * Initial release
+  * add mpg easyvdr
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Wed, 04 Sep 2013 22:02:37 +0200

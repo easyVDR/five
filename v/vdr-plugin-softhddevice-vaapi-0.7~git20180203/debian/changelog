@@ -1,3 +1,9 @@
+vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR7~focalubuntu1) focal; urgency=high
+
+  * rebuild
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Mon, 12 Oct 2020 17:37:22 +0200
+
 vdr-plugin-softhddevice-vaapi (1:0.7~git20180203-0easyVDR7~focal) focal; urgency=medium
 
   * automatic rebuild

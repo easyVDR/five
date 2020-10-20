@@ -1,0 +1,159 @@
+# CD-Player plugin language source file.
+# Copyright (C) 2010 Ulrich Eckhardt <uli-vdr@uli-eckhardt.de>
+# This file is distributed under the same license as the VDR package.
+# Ulrich Eckhardt
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: VDR 1.7.x\n"
+"Report-Msgid-Bugs-To: <see README>\n"
+"POT-Creation-Date: 2013-02-12 13:53+0100\n"
+"PO-Revision-Date: 2013-02-17 19:47+0100\n"
+"Last-Translator: Bernard Jaulin <bernard.jaulin@gmail.com>\n"
+"Language-Team: French\n"
+"Language: fr_FR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=utf-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+
+msgid "Arranger"
+msgstr "Arrangeur"
+
+msgid "Composer"
+msgstr "Compositeur"
+
+msgid "Disk ID"
+msgstr "ID du disque"
+
+msgid "Genre"
+msgstr "Genre"
+
+msgid "Message"
+msgstr "Message"
+
+msgid "Isrc"
+msgstr "ISRC"
+
+msgid "Performer"
+msgstr "Interprète"
+
+msgid "Songwriter"
+msgstr "Auteur"
+
+msgid "Title"
+msgstr "Titre"
+
+msgid "Upc Ean"
+msgstr "Upc Ean"
+
+msgid "Invalid"
+msgstr "Invalide"
+
+msgid "Size Info"
+msgstr "Info sur la taille"
+
+msgid "Info1"
+msgstr "Info 1"
+
+msgid "Info2"
+msgstr "Info 2"
+
+msgid "Can not open"
+msgstr "Ouverture impossible"
+
+msgid "No disc in drive"
+msgstr "Pas de disque dans le lecteur"
+
+msgid "Problem on read"
+msgstr "Problème à la lecture"
+
+msgid "Problem on read lsn"
+msgstr "Problème à la lecture du LSN"
+
+msgid "Problem on read lba"
+msgstr "Problème à la lecture du LBA"
+
+msgid "Not an audio disk"
+msgstr "Disque audio non trouvé"
+
+msgid "Read error"
+msgstr "Erreur de lecture"
+
+msgid "CD Player"
+msgstr "Lecture CD"
+
+msgid "CD Information"
+msgstr "Information sur le CD"
+
+msgid "Song Information"
+msgstr "Information sur la chanson"
+
+msgid "random"
+msgstr "aléatoire"
+
+msgid "sort"
+msgstr "trier"
+
+msgid "1 min -"
+msgstr "1 min -"
+
+msgid "1 min +"
+msgstr "1 min +"
+
+msgid "playlist"
+msgstr "liste de chansons"
+
+msgid "detail"
+msgstr "détail"
+
+msgid "Playlist"
+msgstr "Liste de chansons"
+
+msgid "Can not open still picture: "
+msgstr "Impossible d'ouvrir l'image de fond: "
+
+msgid "Sorted"
+msgstr "Trié"
+
+msgid "Random"
+msgstr "Aléatoire"
+
+msgid "No Function"
+msgstr "Pas de fonction"
+
+msgid "Pause"
+msgstr "Pause"
+
+msgid "Exit"
+msgstr "Sortir"
+
+msgid "CD-Player"
+msgstr "Lecture de CD audio"
+
+msgid "Max CD speed"
+msgstr "Vitesse maxi du CD"
+
+msgid "Show in main menu"
+msgstr "Afficher dans le menu principale"
+
+msgid "Play mode"
+msgstr "Mode lecture"
+
+msgid "Show artist"
+msgstr "Afficher l'artiste"
+
+msgid "Restart playback"
+msgstr "Réécouter"
+
+msgid "Enable Paranoia"
+msgstr "Activer le mode paranoïa"
+
+msgid "Use GraphTFT special characters"
+msgstr "Utiliser l'écran TFT "
+
+msgid "Back Key"
+msgstr "Touche Retour"
+
+msgid "OK Key"
+msgstr "Touche OK"
