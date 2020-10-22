@@ -1,6 +1,0 @@
-debian/plugin.cdplayer.conf        etc/vdr/plugins/
-debian/cd_1080.mpg	var/lib/vdr/plugins/cdplayer/
-debian/cd_720.mpg	var/lib/vdr/plugins/cdplayer/
-debian/cd_420.mpg   var/lib/vdr/plugins/cdplayer/
-contrib/convert.sh   var/lib/vdr/plugins/cdplayer/
-
