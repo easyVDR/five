@@ -1,0 +1,14 @@
+Source: linux-media-tbs
+Section: misc
+Priority: optional
+Maintainer: Wolfgang Mangold <vdr@gmx.de>
+Uploaders: Wolfgang Mangold <vdr@gmx.de>
+Build-Depends: debhelper (>= 7)
+Standards-Version: 3.9.5
+
+Package: linux-media-tbs
+Architecture: all
+Depends: ${misc:Depends}, libproc-processtable-perl
+Conflicts: linux-media, linux-media-comp, linux-media-dvbsky-c, linux-media-dvbsky, linux-media-satix, media-build-experimental-dkms, dddvb-dkms, linux-media-tbs-c 
+Replaces: linux-media, linux-media-comp, linux-media-dvbsky-c, linux-media-dvbsky, linux-media-satix, media-build-experimental-dkms, dddvb-dkms, linux-media-tbs-c 
+Description: Drivers for TBS-Cards from http://support.tbs-technology.de/downloads/

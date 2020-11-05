@@ -1,0 +1,41 @@
+#! /bin/sh
+
+set -e
+
+
+Saved_Kernelmodules="Kernel_vor_TBS_Inst.tar.bz2"
+## Saved_Firmware="Firmware_vor_TBS_Inst.tar.bz2"
+TmpInstPath="/tmp/linux-tbs-drivers_v200923"
+
+case "$1" in
+        remove) if [ -f /lib/modules/$(uname -r)/_saved/$Saved_Kernelmodules ]; then
+	           echo "Gesicherte media Kernel-Module Wiederherstellen..."
+		   rm -rf /lib/modules/$(uname -r)/kernel/drivers/media
+		   rm -rf /lib/modules/$(uname -r)/kernel/drivers/linux
+		   rm -rf /lib/modules/$(uname -r)/kernel/drivers/staging/media
+		   tar xjf /lib/modules/$(uname -r)/_saved/$Saved_Kernelmodules -C /
+		   rm /lib/modules/$(uname -r)/_saved/$Saved_Kernelmodules
+		   sudo depmod -a
+		fi
+		 echo "...Reste entfernt!"
+		 ## rm -rf $Saved_Firmware
+		 rm -rf /lib/modules/$(uname -r)/_saved
+		 rm -rf $TmpInstPath
+		 echo "...System Bitte neu starten!"  ;;
+	purge)  if [ -f /lib/modules/$(uname -r)/_saved/$Saved_Kernelmodules ]; then
+	          echo "Gesicherte media Kernel-Module Wiederherstellen..."
+		  rm -rf /lib/modules/$(uname -r)/kernel/drivers/media
+		  rm -rf /lib/modules/$(uname -r)/kernel/drivers/linux
+		  rm -rf /lib/modules/$(uname -r)/kernel/drivers/staging/media
+		  tar xjf /lib/modules/$(uname -r)/_saved/$Saved_Kernelmodules -C /
+		  rm /lib/modules/$(uname -r)/_saved/$Saved_Kernelmodules
+		  sudo depmod -a
+		fi
+		echo "...Reste entfernt!"
+		## rm -rf $Saved_Firmware
+		rm -rf /lib/modules/$(uname -r)/_saved
+		rm -rf $TmpInstPath  
+		echo "...System Bitte neu starten!"  ;;
+esac
+
+:

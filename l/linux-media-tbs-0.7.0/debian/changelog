@@ -1,0 +1,97 @@
+linux-media-tbs (0.7.0-0easyVDR1~focal) focal; urgency=high
+
+  * new linux-tbs-drivers_v200923
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 30 Oct 2020 16:00:20 +0100
+
+linux-media-tbs (0.6.2-0easyVDR0~bionic) bionic; urgency=high
+
+  * rebuild
+  * increase build number
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 27 Jan 2019 19:53:36 +0100
+
+linux-media-tbs (0.6.0-20180525easyVDR0~bionic) bionic; urgency=high
+
+  * new linux-tbs-drivers_v180525
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 26 Jan 2019 21:49:35 +0100
+
+linux-media-tbs (0.5.0-20170330easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * linux-tbs-drivers_v170330
+  * removed wrong lirc_serial  
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sun, 14 May 2017 21:08:15 +0200
+
+linux-media-tbs (0.4.0-20160919easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * linux-tbs-drivers_v160919
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Sat, 24 Sep 2016 23:25:36 +0200
+
+linux-media-tbs (0.3.3-20160213easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * linux-tbs-drivers_v160126
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 12 Feb 2016 18:01:53 +0100
+
+linux-media-tbs (0.3.0-20160114easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * removed wrong lirc_serial
+
+ -- Wolfgang Mangold <vdr@gmx.de>  Fri, 15 Jan 2016 21:28:26 +0100
+
+linux-media-tbs (0.2.0-20150109easyVDR0~trusty) trusty; urgency=medium
+
+  * kernel 3.16
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Sun, 29 Mar 2015 18:35:23 +0200
+
+linux-media-tbs (0.1.3-20150109easyVDR1~trusty) trusty; urgency=high
+
+  * correct conflicts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 29 Jan 2015 08:49:52 +0100
+
+linux-media-tbs (0.1.3-20150109easyVDR0~trusty) trusty; urgency=high
+
+  * new upstream snapshot
+  * add new postinst and postrm
+  * add conflicts
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Thu, 29 Jan 2015 02:05:41 +0100
+
+linux-media-tbs (0.1.0-20130927easyVDR7~trusty) trusty; urgency=high
+
+  * removed wrong lirc_serial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 27 May 2014 14:31:51 +0200
+
+linux-media-tbs (0.1.0-20130927easyVDR6~trusty) trusty; urgency=high
+
+  * rebuild without lirc_serial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Mon, 28 Apr 2014 19:32:53 +0200
+
+linux-media-tbs (0.1.0-20130927easyVDR5~trusty) trusty; urgency=high
+
+  * adding lirc_serial
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 18 Apr 2014 11:12:48 +0200
+
+linux-media-tbs (0.1.0-20130927easyVDR2~trusty) trusty; urgency=high
+
+  * building source on the fly
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Tue, 18 Feb 2014 12:10:36 +0100
+
+linux-media-tbs (0.1.0-20130927easyVDR1~trusty) trusty; urgency=high
+
+  * added binary modules for 3.12.0-7-generic
+
+ -- easyVDR-Developer <easyvdr-dev@easy-vdr.de>  Fri, 13 Dec 2013 12:00:02 +0100

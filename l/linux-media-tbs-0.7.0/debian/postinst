@@ -1,0 +1,25 @@
+#!/bin/bash
+
+set -e
+
+Saved_Kernelmodules="Kernel_vor_TBS_Inst.tar.bz2"
+Saved_Firmware="Firmware_vor_TBS_Inst.tar.bz2"
+TmpInstPath="/tmp/linux-tbs-drivers_v200923"
+
+if [ "$1" = "configure" ]; then
+
+  # alle media Kernel-Module sichern
+  mkdir -p /lib/modules/$(uname -r)/_saved
+  if [ ! -f /lib/modules/$(uname -r)/_saved/$Saved_Kernelmodules ]; then
+    echo "Sichere alle media Kernel-Module..."
+    mkdir -p /lib/modules/$(uname -r)/kernel/drivers/linux
+    tar cjf /lib/modules/$(uname -r)/_saved/$Saved_Kernelmodules /lib/modules/$(uname -r)/kernel/drivers/media \
+           /lib/modules/$(uname -r)/kernel/drivers/staging/media \
+           /lib/modules/$(uname -r)/kernel/drivers/linux
+  fi
+
+  cd $TmpInstPath
+  sleep 1
+  ./install.sh
+
+fi
