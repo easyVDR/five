@@ -1,0 +1,33 @@
+Basic Installation
+==================
+
+Prerequisite: build-essential vdr-dev libavcodec-dev libavformat-dev libavfilter-dev git
+e.g. for Ubuntu: sudo apt-get install vdr-dev build-essential libavcodec-dev libavformat-dev libavfilter-dev git
+
+recommended minimum version of libavcodec: 56.x.x
+
+If you want to build with the classic decoder remove the comment of the line "CLASSIC_DECODER=1" in command/Makefile.
+
+
+The simplest way to compile this package is:
+
+  1. Type `make' to compile the package.
+
+  2. Type `make install' to install the programs and any data files and
+     documentation.
+
+  3. You can remove the program binaries and object files from the
+     source code directory by typing `make clean'.
+
+  4. If you're running VDR >= 1.7.15, please check if you have an
+     entry in /etc/services:
+     svdrp	6419/tcp	# svdrp (vdr)
+
+
+
+See README for recommended plugin default settings.
+If you have any problems post here: https://www.vdr-portal.de
+
+To report bugs please execute markad with the following command line parameters:
+markad --loglevel=3 --log2rec nice <path to recording>
+Post the files markad.log, marks und info from the recording directory at https://www.vdr-portal.de.

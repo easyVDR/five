@@ -1,0 +1,69 @@
+This is a "plugin" for the Video Disk Recorder (VDR).
+
+Written by:                  Jochen Dolze <vdr@dolze.de>
+
+Project's homepage:          http://projects.vdr-developer.org/projects/show/plg-markad
+
+Latest version available at: http://projects.vdr-developer.org/projects/plg-markad/files
+
+This program is free software; you can redistribute it and/or modify
+it under the terms of the GNU General Public License as published by
+the Free Software Foundation; either version 2 of the License, or
+(at your option) any later version.
+See the file COPYING for more information.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+Description:
+
+MarkAd marks advertisements in VDR recordings.
+
+
+Command line options:
+   A few settings are given on the command line rather than in the setup menu.
+   Available options:
+
+     -b DIR,   --bindir=DIR          use DIR as location for markad executable
+                                     (default: /usr/bin)
+     -l DIR    --logocachedir=DIR    use DIR as location for markad logos
+                                     (default: /var/lib/markad)
+
+               --astopoffs=SECONDS   assume stop of the recording SECONDS after the end of the EPG time.
+                                     default is 0 s
+                                     If end marks are to early, try to add some seconds
+
+               --cut                 cut video based on marks and write it in the recording directory
+                                     there are no splits of the target file, make sure your filesystem can handle big files
+
+               --ac3reencode         re-encode AC3 stream to fix low audio level of cutted video on same devices
+                                     requires --cut
+
+               --autologo=<option>   0 = disable, only use logos from logo cache directory (default)
+                                     1 = enable, if there is no suitable logo in the logo cache directroy
+                                         find logo from recording and store it in the recording directory
+                                         memory usage optimized operation mode, but runs slow
+                                     2 = enable, if there is no suitable logo in the logo cache directroy
+                                         find logo from recording and store it in the recording directory
+                                         speed optimized operation mode, but needs a lot of memonry, use it only > 1 GB memory
+                                     If this option is set you can not configure this feature from the VDR menue
+
+
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+VPS and markad plugin:
+You can use VPS events to optimize your start and stop marks.
+Prerequisites:
+- Set "use VPS" to yes in the VDR plugin setup menue. If you use markad from command line, additional add parameter --vps to your markad call.
+- pre timer must be smaller than post timer
+
+It will only work with channels that send a valid VPS signal (see comment in plugin/status.cpp for examples).
+The VPS events are checked at the end of the recording and only used if they appear valid.
+If markad is running during the recording, the VPS marks are applied after the end of the recording.
+This is not a real VPS function and does not control your recording start/stop time. If you want to do this, use the VPS flag on the VDR timer.
+
+--------------------------------------------------------------------------------------------------------------------------------------------------
+
+To report bugs please execute markad with at least the following command line parameters:
+markad --loglevel=3 --log2rec nice <path to recording>
+Post the files markad.log, marks und info from the recording directory at https://www.vdr-portal.de.

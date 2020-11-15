@@ -1,0 +1,3 @@
+debian/plugin.markad.conf     etc/vdr/plugins
+usr/lib/vdr/plugins
+usr/share/locale/*/LC_MESSAGES/vdr-markad.mo

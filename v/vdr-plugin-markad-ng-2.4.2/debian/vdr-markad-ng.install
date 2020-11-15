@@ -1,0 +1,4 @@
+#var/lib/markad/
+usr/bin/
+usr/share/man
+usr/share/locale/*/LC_MESSAGES/markad.mo
