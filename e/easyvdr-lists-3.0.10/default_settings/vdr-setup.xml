@@ -93,6 +93,7 @@
         <plugin name="loadepg" info="EPG-Import (Canal+ Gruppe)" active="no" />
         <plugin name="mailbox" info="E-Mail-Anzeige von IMAP oder POP3 Postfächern" active="no" />
         <plugin name="markad" info="Werbung automatisch markieren" active="no" />
+        <plugin name="markad-ng" param="--astopoffs=0 --cDecoder" info="Werbung automatisch markieren" active="no" />        
         <plugin name="mcli" info="Reel Netceiver in VDR integrieren" active="no" />
         <plugin name="mediad" info="Erweiterte Version des vdrcd Plugins" active="no" />
         <plugin name="mediamanager" info="Erkennt automatisch CDs/DVDs im Laufwerk" active="no" />

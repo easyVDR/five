@@ -51,6 +51,7 @@ Lircrc		Native LIRC-Unterstuetzung			-	vdr-plugin-lircrc		empty		empty		XXXXXXXX
 Lifeguard	Shutdown überwachen				+	vdr-addon-lifeguard		empty		empty		XXXXXXXX
 Live		Live-Web-Tool ala VDRadmin			+	vdr-plugin-live			empty		empty		XXXXXXXX
 Markad		Setzt Schnittmarken				+	vdr-plugin-markad		empty		empty		XXXXXXXX
+Markad-NG	Setzt Schnittmarken				+	vdr-plugin-markad-ng	empty		empty		XXXXXXXX
 Mcli		ReelBox NetCeiver Plugin			+	vdr-plugin-mcli			empty		empty		XXXXXXXX
 MList		Liste letzter OSD-Nachrichten			+	vdr-plugin-mlist		empty		empty		XXXXXXXX
 MP3		MP3-Player					+	vdr-plugin-mp3			empty		empty		XXXXXXXX
